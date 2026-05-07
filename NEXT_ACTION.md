@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Maintain the closed-state active-context and archive the F29 execution evidence.
+Prepare F30.B — Official Phase Naming Cleanup.

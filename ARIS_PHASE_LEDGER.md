@@ -61,6 +61,13 @@ Closed as a foundation track, not as official V6 closure.
 - F30 is reserved for Roadmap Canonicalization & Phase Hygiene if the closed state remains stable.
 - Avoid creating new parallel `V6-*` operational families when canonical `F` phases exist.
 
+## F30.A Baseline
+
+- f30_roadmap_canonicalization_baseline_warn.
+- The historical Project_ARIS line is mapped to the canonical closed V6 baseline.
+- The roadmap PDF reference is missing from the repository snapshot, so the baseline uses current state artifacts and live context as source-of-truth evidence.
+- F39 is deferred and is not the active demo objective.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
@@ -72,6 +79,7 @@ Closed as a foundation track, not as official V6 closure.
 - F29 readiness warning repair artifacts generated.
 - F29 final execution gate plan artifacts generated.
 - F29 final practical closure execution artifacts generated.
+- F30.A roadmap canonicalization baseline artifacts generated.
 
 ## Archive note
 
