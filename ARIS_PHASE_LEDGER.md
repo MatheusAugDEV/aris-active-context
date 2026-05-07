@@ -189,3 +189,9 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E10] Prompt Budget Script Scaffold Repair Plan classified the CTX-E8 warning as a baseline gap, not a script defect.
 - No CTX-E8 script needs immediate repair; CTX-E11 should collect a real token-usage baseline before any claim-status refinement.
 
+## CTX-E11 Real Token Usage Baseline Plan
+
+- [CTX-E11] Real Token Usage Baseline Plan is warn-passed.
+- The plan is estimate-only, keeps F31.E as the next principal phase, and records manual `/usage` capture for future evidence without touching billing or network surfaces.
+- Baseline real remains absent at plan time.
+- Next parallel action: CTX-E12 — Real Token Usage Baseline Manual Evidence Capture Runbook.

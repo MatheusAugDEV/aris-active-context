@@ -31,3 +31,4 @@ As of 2026-05-07:
 - CTX-E8 script scaffold materialization completed in parallel.
 - CTX-E9 script scaffold validation review completed in parallel.
 - CTX-E10 script scaffold repair plan completed in parallel.
+- CTX-E11 real token usage baseline plan completed in parallel; baseline remains uncollected and F31.E stays next principal phase.

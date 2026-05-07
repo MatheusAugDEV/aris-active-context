@@ -39,3 +39,5 @@ Read in this order:
 24. [docs/context/ctxe10_prompt_budget_script_scaffold_repair_plan.md](../docs/context/ctxe10_prompt_budget_script_scaffold_repair_plan.md) for the prompt budget script scaffold repair plan
 25. [artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_plan.json](../artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_plan.json) for the prompt budget script scaffold repair plan
 26. [artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json](../artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json) for the prompt budget script scaffold repair findings
+27. [docs/context/ctxe11_real_token_usage_baseline_plan.md](../docs/context/ctxe11_real_token_usage_baseline_plan.md) for the real token usage baseline plan
+28. [artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json](../artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json) for the manual evidence template
