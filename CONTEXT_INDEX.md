@@ -105,3 +105,11 @@ Read in this order:
 86. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_report.md) for the F32.L report
 87. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_provenance_contract.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_provenance_contract.json) for the F32.L provenance contract
 88. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_validation_matrix.json) for the F32.L validation matrix
+
+89. [docs/fase32/f32m_future_mcp_readonly_disable_rollback_rehearsal_gate.md](../docs/fase32/f32m_future_mcp_readonly_disable_rollback_rehearsal_gate.md) for the F32.M disable/rollback rehearsal gate doc
+90. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_decision.json) for the F32.M decision
+91. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_summary.json) for the F32.M summary
+92. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_report.md) for the F32.M report
+93. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_disable_plan.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_disable_plan.json) for the F32.M disable plan
+94. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rollback_plan.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rollback_plan.json) for the F32.M rollback plan
+95. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rehearsal_matrix.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rehearsal_matrix.json) for the F32.M rehearsal matrix

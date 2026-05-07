@@ -218,3 +218,9 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.L] Future MCP Read-Only Provenance Gate completed.
 - Provenance contract materialized with required source, trust, scope, and rejection fields.
 - No MCP implementation is authorized now, no Obsidian access is activated, and F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate is next.
+
+## F32.M Future MCP Read-Only Disable and Rollback Rehearsal Gate
+
+- [F32.M] Future MCP Read-Only Disable and Rollback Rehearsal Gate completed.
+- Disable and rollback plans are rehearsal-only, and future MCP read-only re-enable remains blocked until explicit human review.
+- No MCP implementation is authorized now, no Obsidian access is activated, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next.

@@ -44,3 +44,5 @@
 - F32.K future MCP read-only security review gate is warn-passed; the security review preserves future gating, and F32.L — Future MCP Read-Only Provenance Gate is next.
 
 - F32.L future MCP read-only provenance gate is warn-passed; provenance remains contract-only, and F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate is next.
+- F32.M future MCP read-only disable and rollback rehearsal gate is warn-passed; disable and rollback remain rehearsal-only, no re-enable is authorized now, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next.
+- F32.M future MCP read-only disable and rollback rehearsal gate is warn-passed; disable and rollback remain rehearsal-only, no re-enable is authorized now, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next.

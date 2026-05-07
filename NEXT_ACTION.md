@@ -1,1 +1,1 @@
-Prepare F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate.
+Prepare F32.N — Future MCP Read-Only Re-Enable Preconditions Gate.
