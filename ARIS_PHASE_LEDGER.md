@@ -74,6 +74,12 @@ Closed as a foundation track, not as official V6 closure.
 - [F30.B] The formal roadmap reference `ROADMAP_F30_F50.md` is saved in `aris-active-context`.
 - F30.B is the active naming and roadmap publication step.
 
+## F30.C Artifact, Warning & Residual Risk Index
+
+- [F30.C] Artifact, warning & residual risk index is warn-passed.
+- The current state is indexed without starting F31.
+- F30.D is the next publication gate.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
@@ -86,6 +92,8 @@ Closed as a foundation track, not as official V6 closure.
 - F29 final execution gate plan artifacts generated.
 - F29 final practical closure execution artifacts generated.
 - F30.A roadmap canonicalization baseline artifacts generated.
+- F30.B roadmap reference saved.
+- F30.C artifact, warning & residual risk index artifacts generated.
 
 ## Archive note
 

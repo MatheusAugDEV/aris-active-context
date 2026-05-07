@@ -11,7 +11,8 @@ As of 2026-05-07:
 - F29 final practical closure execution has passed and V6 is closed.
 - F30.A historical-to-canonical phase mapping baseline is warn-passed.
 - F30.B official phase naming cleanup and roadmap save are complete.
+- F30.C artifact, warning & residual risk index is warn-passed.
 - F30 is reserved for Roadmap Canonicalization & Phase Hygiene.
-- F30.C artifact, warning & residual risk index is next.
+- F30.D roadmap publication gate is next.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.

@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Prepare F30.C — Artifact, Warning & Residual Risk Index.
+Prepare F30.D — Roadmap Publication Gate.
