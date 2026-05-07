@@ -1,1 +1,1 @@
-Prepare F31.E — Source-of-Truth Drift Repair Controlled Apply. CTX-E11 real token usage baseline plan completed in parallel; next parallel action is CTX-E12 — Real Token Usage Baseline Manual Evidence Capture Runbook.
+Prepare F31.E — Source-of-Truth Drift Repair Controlled Apply. CTX-E11 real token usage baseline plan completed in parallel; CTX-E12 real token usage baseline manual evidence runbook completed in parallel; next parallel action is CTX-E13 — Real Token Usage Baseline Manual Evidence Dry Run.

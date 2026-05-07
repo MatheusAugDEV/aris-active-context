@@ -41,3 +41,5 @@ Read in this order:
 26. [artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json](../artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json) for the prompt budget script scaffold repair findings
 27. [docs/context/ctxe11_real_token_usage_baseline_plan.md](../docs/context/ctxe11_real_token_usage_baseline_plan.md) for the real token usage baseline plan
 28. [artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json](../artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json) for the manual evidence template
+29. [docs/context/ctxe12_real_token_usage_baseline_manual_evidence_runbook.md](../docs/context/ctxe12_real_token_usage_baseline_manual_evidence_runbook.md) for the manual evidence runbook
+30. [docs/context/aris_real_token_usage_manual_evidence_runbook.md](../docs/context/aris_real_token_usage_manual_evidence_runbook.md) for the reusable manual evidence policy note

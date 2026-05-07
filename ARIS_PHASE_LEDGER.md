@@ -195,3 +195,10 @@ Closed as a foundation track, not as official V6 closure.
 - The plan is estimate-only, keeps F31.E as the next principal phase, and records manual `/usage` capture for future evidence without touching billing or network surfaces.
 - Baseline real remains absent at plan time.
 - Next parallel action: CTX-E12 — Real Token Usage Baseline Manual Evidence Capture Runbook.
+
+## CTX-E12 Real Token Usage Baseline Manual Evidence Runbook
+
+- [CTX-E12] Real Token Usage Baseline Manual Evidence Runbook is warn-passed.
+- The runbook is manual-only, keeps F31.E as the next principal phase, and defines redacted evidence capture without billing, API, network, or secret access.
+- Baseline real remains absent at runbook time.
+- Next parallel action: CTX-E13 — Real Token Usage Baseline Manual Evidence Dry Run.
