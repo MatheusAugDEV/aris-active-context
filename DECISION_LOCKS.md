@@ -20,6 +20,13 @@
 - F31.B hash/signature/metadata index is warn-passed and is read-only; no real signature has been applied.
 - F31.C source-of-truth consistency gate is warn-passed.
 - F31.E source-of-truth drift repair controlled apply is complete; and F32 — Context Boundary, Obsidian/MCP & Trust Firewall is next.
+- F32.A bootstrap gate is ready; boundary matrix (14 sources), threat model (10 threats), and trust firewall (10 access rules) are defined; 0 blockers.
+- Context boundary precedence is locked: active_context (canonical, auto) > code/artifacts > ADRs > CURRENT_STATE > CONTEXT_INDEX > PROJECT_CONTEXT > MkDocs > Obsidian > archive > prompts.
+- Obsidian is read-only, query-first, bounded; no bulk read; not in F32.A; requires future gate for structured use.
+- MCP remains blocked until an explicit future gate is opened; write/network/secrets/tool-execution MCP requires a dedicated future phase.
+- CTX-E skills remain integration-blocked; token_saving_claim=false; baseline_real_collected=false.
+- DECISION_LOCKS cannot be overridden by narrative docs, Obsidian, archive, or chat history.
+- F32.B — Context Boundary Trust Firewall Implementation Gate is the singular next principal phase.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.

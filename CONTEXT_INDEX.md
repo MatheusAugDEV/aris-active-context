@@ -17,9 +17,13 @@ Read in this order:
 13. [artifacts/f31/f31_source_of_truth_drift_repair_controlled_apply_diff_summary.json](../artifacts/f31/f31_source_of_truth_drift_repair_controlled_apply_diff_summary.json) for the F31.E apply diff summary
 14. [artifacts/f31/f31_source_of_truth_drift_repair_controlled_apply_requirements.json](../artifacts/f31/f31_source_of_truth_drift_repair_controlled_apply_requirements.json) for the F31.E apply requirements
 15. [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md) for the formal post-V6 operational roadmap
-16. Obsidian only after the repair and only query-first
-17. `archive/` only when history is needed
-18. `Project_ARIS` artifacts/docs only when cited
+16. [docs/fase32/f32a_context_boundary_trust_firewall_bootstrap_gate.md](../docs/fase32/f32a_context_boundary_trust_firewall_bootstrap_gate.md) for the F32.A bootstrap gate doc
+17. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_decision.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_decision.json) for the F32.A decision
+18. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_boundary_matrix.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_boundary_matrix.json) for the context boundary matrix
+19. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_threat_model.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_threat_model.json) for the trust firewall threat model
+20. Obsidian only after the repair and only query-first
+21. `archive/` only when history is needed
+22. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.
