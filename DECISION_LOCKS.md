@@ -18,16 +18,11 @@
 - F30.D roadmap publication gate is warn-passed and F30 is complete.
 - F31.A source inventory is warn-passed and is inventory-only; cleanup real has not started.
 - F31.B hash/signature/metadata index is warn-passed and is read-only; no real signature has been applied.
-- F31.C source-of-truth consistency gate is next.
+- F31.C source-of-truth consistency gate is warn-passed and F31.D — Source-of-Truth Drift Repair Plan is next.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.
 - F30 is reserved for Roadmap Canonicalization & Phase Hygiene if the closed state remains stable.
-- F51-F58 are reserved for Security & Cybersecurity Hardening after F50.
-- F59-F68 are reserved for the ARIS Internal Capability Lab after F51-F58.
-- The Capability Lab only starts after F50 and after the Security & Cybersecurity Hardening cycle.
-- F51-F68 do not mean product, demo, SaaS, marketplace, enterprise real, or multi-tenant scope.
-- The Lab measures capability; it does not sell a product.
 - Every Codex prompt must end with an active-context update.
 - After repair, relevant Codex prompts must also require Obsidian sync.
 - This repo does not author runtime, frontend, action, audio, network, secrets, or dependencies.

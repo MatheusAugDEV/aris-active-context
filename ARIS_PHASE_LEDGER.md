@@ -98,10 +98,12 @@ Closed as a foundation track, not as official V6 closure.
 - No real signature has been applied.
 - F31.C Source-of-Truth Consistency Gate is next.
 
-## Roadmap Extension
+## F31.C Source-of-Truth Consistency Gate
 
-- [Roadmap extension] Post-F50 extension recorded: F51-F58 Security & Cybersecurity Hardening; F59-F68 ARIS Internal Capability Lab.
-- This extension does not start F51 or alter the current NEXT_ACTION.
+- [F31.C] Source-of-Truth Consistency Gate is warn-passed.
+- Historical V6-* references remain legacy narrative material only.
+- The F30 roadmap PDF gap remains a warning, not a blocker.
+- F31.D — Source-of-Truth Drift Repair Plan is next.
 
 ## Historical Blocked State
 
@@ -120,6 +122,7 @@ Closed as a foundation track, not as official V6 closure.
 - F30.D roadmap publication gate completed.
 - F31.A source inventory artifacts generated.
 - F31.B hash/signature/metadata index artifacts generated.
+- F31.C consistency gate evaluated.
 
 ## Archive note
 

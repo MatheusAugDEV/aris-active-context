@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Prepare F31.C — Source-of-Truth Consistency Gate.
+Prepare F31.D — Source-of-Truth Drift Repair Plan.
