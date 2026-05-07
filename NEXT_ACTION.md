@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Prepare F32.E — Future MCP Read-Only Candidate Contract Gate.
+Prepare F32.F — Future MCP Read-Only Candidate Contract Review Gate.

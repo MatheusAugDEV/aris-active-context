@@ -24,6 +24,7 @@
 - F32.B trust-firewall implementation gate is complete; boundary lint is mandatory for future context-boundary changes; F32.C — Structured Obsidian Query Contract Gate is next.
 - F32.C structured Obsidian query contract is the only allowed shape for future bounded Obsidian lookups; note content stays untrusted, read-only, query-first, and cannot outrank active-context, DECISION_LOCKS, code/tests, or official artifacts.
 - F32.D structured Obsidian query contract review gate is complete; the contract is approved for future planning only and cannot authorize real Obsidian or productive MCP use.
+- F32.E future MCP read-only candidate contract is contract-only; no MCP server, network, tool execution, secrets, or Obsidian activation is authorized now.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.

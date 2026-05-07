@@ -44,3 +44,11 @@ Read in this order:
 - Do not advance phase without checking `NEXT_ACTION`.
 - Do not declare token savings without evidence.
 - Keep this repo compact.
+
+36. [docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md](../docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md) for the F32.E candidate contract gate doc
+37. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json) for the F32.E candidate contract
+38. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json) for the F32.E decision
+39. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json) for the F32.E summary
+40. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json) for the F32.E validation matrix
+41. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json) for the F32.E requirements
+42. `Project_ARIS` artifacts/docs only when cited
