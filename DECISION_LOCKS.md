@@ -17,7 +17,8 @@
 - F30.C artifact, warning & residual risk index is warn-passed and does not start F31.
 - F30.D roadmap publication gate is warn-passed and F30 is complete.
 - F31.A source inventory is warn-passed and is inventory-only; cleanup real has not started.
-- F31.B hash/signature/metadata index is next.
+- F31.B hash/signature/metadata index is warn-passed and is read-only; no real signature has been applied.
+- F31.C source-of-truth consistency gate is next.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.

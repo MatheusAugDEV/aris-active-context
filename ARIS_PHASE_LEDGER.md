@@ -91,6 +91,13 @@ Closed as a foundation track, not as official V6 closure.
 - Inventory is read-only; cleanup real has not started.
 - F31.B Hash / Signature / Metadata Index is next.
 
+## F31.B Hash / Signature / Metadata Index
+
+- [F31.B] Hash / Signature / Metadata Index is warn-passed.
+- 35 entries were indexed with deterministic SHA-256 metadata.
+- No real signature has been applied.
+- F31.C Source-of-Truth Consistency Gate is next.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
@@ -107,6 +114,7 @@ Closed as a foundation track, not as official V6 closure.
 - F30.C artifact, warning & residual risk index artifacts generated.
 - F30.D roadmap publication gate completed.
 - F31.A source inventory artifacts generated.
+- F31.B hash/signature/metadata index artifacts generated.
 
 ## Archive note
 

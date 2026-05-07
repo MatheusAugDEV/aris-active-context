@@ -15,6 +15,7 @@ As of 2026-05-07:
 - F30.D roadmap publication gate is warn-passed.
 - F30 is complete.
 - F31.A source inventory is warn-passed.
-- F31.B hash/signature/metadata index is next.
+- F31.B hash/signature/metadata index is warn-passed with 35 entries indexed.
+- F31.C source-of-truth consistency gate is next.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
