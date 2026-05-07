@@ -139,3 +139,12 @@ Read in this order:
 116. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_candidate_config.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_candidate_config.json) for the F32.P candidate config
 117. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_validation_matrix.json) for the F32.P validation matrix
 118. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_safety_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_safety_matrix.json) for the F32.P safety matrix
+
+119. [docs/fase32/f32q_future_mcp_readonly_configuration_candidate_review_gate.md](../docs/fase32/f32q_future_mcp_readonly_configuration_candidate_review_gate.md) for the F32.Q configuration candidate review gate doc
+120. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_decision.json) for the F32.Q decision
+121. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_summary.json) for the F32.Q summary
+122. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_report.md) for the F32.Q report
+123. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_requirements.json) for the F32.Q requirements
+124. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_review_matrix.json) for the F32.Q review matrix
+125. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_risk_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_risk_matrix.json) for the F32.Q risk matrix
+126. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_next_phase_contract.json) for the F32.Q next phase contract

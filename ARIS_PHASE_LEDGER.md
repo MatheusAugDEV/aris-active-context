@@ -239,3 +239,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.P] Future MCP Read-Only Configuration Candidate Gate completed.
 - The candidate configuration is artifact-only, disabled by default, and retains read-only-only constraints with provenance, context usage report, and source precedence requirements.
 - F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next.
+## F32.Q Future MCP Read-Only Configuration Candidate Review Gate
+
+- [F32.Q] Future MCP Read-Only Configuration Candidate Review Gate completed.
+- The candidate configuration is reviewed as artifact-only and disabled by default; no real MCP activation, server creation, or Obsidian access is authorized.
+- F32.R — Future MCP Read-Only Configuration Planning Gate is next.

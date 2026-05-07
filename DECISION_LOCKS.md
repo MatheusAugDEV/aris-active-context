@@ -49,3 +49,4 @@
 - F32.N future MCP read-only re-enable preconditions gate is warn-passed; re-enable remains blocked now, human review is required, and F32.O — Future MCP Read-Only Final Readiness Consolidation Gate is next.
 - F32.O future MCP read-only final readiness consolidation gate is warn-passed; final readiness is consolidated for a future configuration candidate gate only, human review remains required, and F32.P — Future MCP Read-Only Configuration Candidate Gate is next.
 - F32.P future MCP read-only configuration candidate gate is warn-passed; the candidate remains artifact-only, disabled by default, and F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next.
+- F32.Q future MCP read-only configuration candidate review gate is warn-passed; the review remains artifact-only and F32.R — Future MCP Read-Only Configuration Planning Gate is next.
