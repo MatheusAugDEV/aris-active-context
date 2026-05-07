@@ -24,17 +24,17 @@ Closed as a foundation track, not as official V6 closure.
 - F27 ready, 5 warnings.
 - F28 technically ready, operationally incomplete.
 
+## Ready for Review
+
+- F29 final practical closure gate.
+
 ## Blocked
 
-- F29 final closure.
+- Final V6 closure execution has not been run yet.
 
-## Deferred
+## Current repair
 
-- Full history expansion in active files.
-
-## Current blocker
-
-- Obsidian Context Law / Context Control.
+- Obsidian Context Law / Context Control repair passed.
 
 ## Archive note
 

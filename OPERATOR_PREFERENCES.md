@@ -34,5 +34,6 @@
 
 - Consult `aris-active-context` before technical ARIS decisions.
 - For any technical ARIS topic, consult `aris-active-context` first.
+- After Obsidian repair, relevant Codex prompts must also require Obsidian sync.
 - Every Codex prompt must end with an active-context update.
 - If active-context is unavailable, say so before deciding.

@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Repair Obsidian Context Law / Context Control.
+Review F29 final practical closure gate readiness.
