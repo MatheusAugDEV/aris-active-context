@@ -60,6 +60,7 @@ Closed as a foundation track, not as official V6 closure.
 - After F29, continuation should be numerical: F30, F31, F32, and so on.
 - F30 is reserved for Roadmap Canonicalization & Phase Hygiene if the closed state remains stable.
 - Avoid creating new parallel `V6-*` operational families when canonical `F` phases exist.
+- [F30.B] `ROADMAP_F30_F50.md` was saved as the formal post-V6 roadmap reference.
 
 ## F30.A Baseline
 
@@ -67,6 +68,11 @@ Closed as a foundation track, not as official V6 closure.
 - The historical Project_ARIS line is mapped to the canonical closed V6 baseline.
 - The roadmap PDF reference is missing from the repository snapshot, so the baseline uses current state artifacts and live context as source-of-truth evidence.
 - F39 is deferred and is not the active demo objective.
+
+## F30.B Official Phase Naming Cleanup
+
+- [F30.B] The formal roadmap reference `ROADMAP_F30_F50.md` is saved in `aris-active-context`.
+- F30.B is the active naming and roadmap publication step.
 
 ## Historical Blocked State
 

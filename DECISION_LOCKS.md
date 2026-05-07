@@ -13,6 +13,8 @@
 - F29 final practical closure execution has passed and the closed state is authoritative.
 - F29 work is organized canonically as F29.A Readiness Review, F29.B Warning Repair, F29.C Final Execution Gate Plan, and F29.D Final Practical Closure Execution Gate.
 - F30.A baseline is warn-passed and records the roadmap PDF reference gap as a warning, not a blocker.
+- F30.B saves the formal F30-F50 roadmap reference; no demo, product, SaaS, marketplace, enterprise real, or multi-tenant work enters this cycle.
+- F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.
 - F30 is reserved for Roadmap Canonicalization & Phase Hygiene if the closed state remains stable.

@@ -8,9 +8,10 @@ Read in this order:
 4. [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 5. [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
 6. [README.md](README.md)
-7. Obsidian only after the repair and only query-first
-8. `archive/` only when history is needed
-9. `Project_ARIS` artifacts/docs only when cited
+7. [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md) for the formal post-V6 operational roadmap
+8. Obsidian only after the repair and only query-first
+9. `archive/` only when history is needed
+10. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.
