@@ -52,3 +52,4 @@
 - F32.Q future MCP read-only configuration candidate review gate is warn-passed; the review remains artifact-only and F32.R — Future MCP Read-Only Configuration Planning Gate is next.
 - F32.R future MCP read-only configuration planning gate is warn-passed; the planning remains artifact-only and F32.S — Future MCP Read-Only Configuration Planning Review Gate is next.
 - F32.S future MCP read-only configuration planning review gate is warn-passed; the planning review remains artifact-only and F32.T — Future MCP Read-Only Configuration Apply Dry-Run Plan Gate is next.
+- F32.T future MCP read-only configuration apply dry-run plan gate is warn-passed; the apply dry-run plan remains artifact-only and F32.U — Future MCP Read-Only Configuration Apply Dry-Run Plan Review Gate is next.

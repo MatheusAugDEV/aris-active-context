@@ -166,3 +166,13 @@ Read in this order:
 140. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_review_matrix.json) for the F32.S review matrix
 141. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_risk_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_risk_matrix.json) for the F32.S risk matrix
 142. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_review_gate_next_phase_contract.json) for the F32.S next phase contract
+
+143. [docs/fase32/f32t_future_mcp_readonly_configuration_apply_dry_run_plan_gate.md](../docs/fase32/f32t_future_mcp_readonly_configuration_apply_dry_run_plan_gate.md) for the F32.T apply dry-run plan gate doc
+144. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_decision.json) for the F32.T decision
+145. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_summary.json) for the F32.T summary
+146. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_report.md) for the F32.T report
+147. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_requirements.json) for the F32.T requirements
+148. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_apply_dry_run_plan.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_apply_dry_run_plan.json) for the F32.T apply dry-run plan
+149. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_dry_run_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_dry_run_matrix.json) for the F32.T dry-run matrix
+150. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_safety_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_safety_matrix.json) for the F32.T safety matrix
+151. [artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_apply_dry_run_plan_gate_next_phase_contract.json) for the F32.T next phase contract

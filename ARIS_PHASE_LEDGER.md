@@ -254,3 +254,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.S] Future MCP Read-Only Configuration Planning Review Gate completed.
 - The configuration planning review is artifact-only and plan-only; no real MCP configuration, activation, or Obsidian access is authorized.
 - F32.T — Future MCP Read-Only Configuration Apply Dry-Run Plan Gate is next.
+## F32.T Future MCP Read-Only Configuration Apply Dry-Run Plan Gate
+
+- [F32.T] Future MCP Read-Only Configuration Apply Dry-Run Plan Gate completed.
+- The apply dry-run plan is artifact-only and plan-only; no real apply, no real config file creation, and no real MCP activation are authorized.
+- F32.U — Future MCP Read-Only Configuration Apply Dry-Run Plan Review Gate is next.
