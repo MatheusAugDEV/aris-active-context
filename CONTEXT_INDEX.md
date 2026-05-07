@@ -30,3 +30,5 @@ Read in this order:
 - Do not declare token savings without evidence.
 - Keep this repo compact.
 17. [docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md](../docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md) for the prompt budget skill and script implementation plan
+18. [docs/context/ctxe7_prompt_budget_skill_scaffold_materialization.md](../docs/context/ctxe7_prompt_budget_skill_scaffold_materialization.md) for the prompt budget skill scaffold materialization
+19. [.agents/skills/](../.agents/skills/) and [.claude/skills/](../.claude/skills/) for the prompt budget skill scaffolds

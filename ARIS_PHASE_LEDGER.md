@@ -172,3 +172,8 @@ Closed as a foundation track, not as official V6 closure.
 
 - [CTX-E6] Prompt Budget Skill & Script Implementation Plan completed as a parallel planning diagnostic.
 - The plan is estimate-only, keeps F31.E as the next principal phase, and recommends CTX-E7 for skill scaffolds before script scaffolds.
+## CTX-E7 Skill Scaffold Materialization
+
+- [CTX-E7] Prompt Budget Skill Scaffold Materialization completed as a parallel control phase.
+- The scaffold is minimal and audit-friendly, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E8.
+

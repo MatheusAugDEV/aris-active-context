@@ -27,3 +27,4 @@ As of 2026-05-07:
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
 - CTX-E6 prompt-budget skill & script implementation plan completed in parallel.
+- CTX-E7 skill scaffold materialization completed in parallel.
