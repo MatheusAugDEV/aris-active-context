@@ -29,3 +29,5 @@ As of 2026-05-07:
 - F32.I future MCP read-only dry-run gate completed; the dry-run is synthetic/local, no MCP implementation is authorized now, and F32.J — Future MCP Read-Only Dry-Run Review Gate is next principal phase.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
+
+- F32.J future MCP read-only dry-run review gate completed; the dry-run review is synthetic/local, no MCP implementation is authorized now, and F32.K — Future MCP Read-Only Security Review Gate is next principal phase.

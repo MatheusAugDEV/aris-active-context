@@ -38,3 +38,5 @@
 - F32.H future MCP read-only implementation plan review gate is warn-passed; the reviewed plan is planning-only, does not authorize real MCP or Obsidian, and F32.I — Future MCP Read-Only Dry-Run Gate is next.
 
 - F32.I future MCP read-only dry-run gate is warn-passed; the dry-run is synthetic/local, does not authorize real MCP or Obsidian, and F32.J — Future MCP Read-Only Dry-Run Review Gate is next.
+
+- F32.J future MCP read-only dry-run review gate is warn-passed; the reviewed dry-run remains synthetic/local, does not authorize real MCP or Obsidian, and F32.K — Future MCP Read-Only Security Review Gate is next.
