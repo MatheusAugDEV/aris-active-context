@@ -22,5 +22,6 @@ As of 2026-05-07:
 - CTX-E1 token-economy visibility audit completed in parallel.
 - CTX-E2 prompt-template compression contract completed in parallel.
 - CTX-E3 prompt budget gate completed in parallel.
+- CTX-E4 prompt budget threshold calibration completed in parallel.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.

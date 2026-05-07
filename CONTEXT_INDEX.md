@@ -18,7 +18,8 @@ Read in this order:
 10. Obsidian only after the repair and only query-first
 11. `archive/` only when history is needed
 12. [docs/context/ctxe3_prompt_budget_gate.md](../docs/context/ctxe3_prompt_budget_gate.md) for the prompt budget gate
-13. `Project_ARIS` artifacts/docs only when cited
+13. [docs/context/ctxe4_prompt_budget_threshold_calibration.md](../docs/context/ctxe4_prompt_budget_threshold_calibration.md) for the prompt budget threshold calibration
+14. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.

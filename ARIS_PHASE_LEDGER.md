@@ -134,6 +134,11 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E3] Prompt Budget Gate completed as a parallel diagnostic.
 - The gate is estimate-only and keeps F31.E as the next principal phase.
 
+## CTX-E4 Prompt Budget Threshold Calibration
+
+- [CTX-E4] Prompt Budget Threshold Calibration completed as a parallel diagnostic.
+- The calibration is estimate-only and keeps F31.E as the next principal phase.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
