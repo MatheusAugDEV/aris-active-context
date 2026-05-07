@@ -8,9 +8,14 @@ project context dump.
 Read order:
 
 1. `CURRENT_STATE.md`
-2. `DECISION_LOCKS.md`
-3. `NEXT_ACTION.md`
+2. `NEXT_ACTION.md`
+3. `DECISION_LOCKS.md`
 4. `ARIS_PHASE_LEDGER.md`
 5. `CONTEXT_INDEX.md`
+6. `OPERATOR_PREFERENCES.md`
 
 Official V6 naming follows the PDF roadmap F1-F29.
+The full history is in `archive/`, and `Project_ARIS` remains the detailed
+technical source-of-truth.
+
+GitHub: https://github.com/MatheusAugDEV/aris-active-context

@@ -1,24 +1,39 @@
 # ARIS_PHASE_LEDGER
 
-## Done
+## Early ARIS
 
-- Official V6 work through F28 has been executed in the main ARIS repo.
-- F28 technical debt, risk, tenant defer, and source-of-truth sync passed technically.
+Initial ARIS emerged as a personal assistant concept in Python and then grew into a gated, safety-first system with memory, voice, UI/orb, action runtime, observability, and context governance.
 
-## Corrected
+## Mature tracks
 
-- The pre-V6 cockpit/evidence trail is separated from the official V6 roadmap.
-- `V6-O-*` is treated only as an internal reconciliation alias, not the official phase name.
+- F14-F21 established the semantic/context/action structure.
+- F23-F28 covered voice safety, rich output proofs, observability, reliability, packaging, and technical debt.
 
-## Deferred
+## Pre-V6 / Cockpit Evidence Foundation
 
-- F29 closure is deferred until Obsidian Context Law / Context Control is corrected.
+Closed as a foundation track, not as official V6 closure.
+
+## Official V6
+
+- F23 ready.
+- F24 passed with 6 warnings.
+- F25 ready with 2 warned requirements.
+- F26 ready, reliability score 85, 9 warnings.
+- F27 ready, 5 warnings.
+- F28 technically ready, operationally incomplete.
 
 ## Blocked
 
-- Final V6 closure.
-- Any claim that V6 is fully closed today.
+- F29 final closure.
 
-## Open
+## Deferred
 
-- Run F29 only after the context-law fix is in place.
+- Full history expansion in active files.
+
+## Current blocker
+
+- Obsidian Context Law / Context Control.
+
+## Full history
+
+See [archive/ARIS_FULL_HISTORY.md](archive/ARIS_FULL_HISTORY.md).
