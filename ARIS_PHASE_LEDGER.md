@@ -80,6 +80,11 @@ Closed as a foundation track, not as official V6 closure.
 - The current state is indexed without starting F31.
 - F30.D is the next publication gate.
 
+## F30.D Roadmap Publication Gate
+
+- [F30.D] Roadmap Publication Gate is warn-passed.
+- F30 is complete; F31 is next.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
@@ -94,6 +99,7 @@ Closed as a foundation track, not as official V6 closure.
 - F30.A roadmap canonicalization baseline artifacts generated.
 - F30.B roadmap reference saved.
 - F30.C artifact, warning & residual risk index artifacts generated.
+- F30.D roadmap publication gate completed.
 
 ## Archive note
 
