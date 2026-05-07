@@ -40,12 +40,15 @@ Closed as a foundation track, not as official V6 closure.
 
 - F29 final execution gate plan is ready.
 
-## Blocked
+## Final Practical Closure Execution
 
-- Final V6 closure execution has not been run yet.
-- F29 final execution remains blocked until a later gate.
-- F29 final execution remains blocked while the final execution gate plan is prepared.
-- F29 final execution remains blocked until the final practical closure execution gate runs.
+- F29 final practical closure execution passed.
+- V6 is officially closed.
+- The 22 carry-forward warnings from F25-F28 remain documented as accepted residual risk.
+
+## Historical Blocked State
+
+- F29 final execution was blocked until the final practical closure execution gate ran.
 
 ## Current repair
 
@@ -53,6 +56,7 @@ Closed as a foundation track, not as official V6 closure.
 - F29 readiness review artifacts generated.
 - F29 readiness warning repair artifacts generated.
 - F29 final execution gate plan artifacts generated.
+- F29 final practical closure execution artifacts generated.
 
 ## Archive note
 

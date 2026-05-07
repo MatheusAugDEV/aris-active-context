@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Prepare the F29 final practical closure execution gate.
+Maintain the closed-state active-context and archive the F29 execution evidence.
