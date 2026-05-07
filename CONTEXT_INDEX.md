@@ -32,3 +32,5 @@ Read in this order:
 17. [docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md](../docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md) for the prompt budget skill and script implementation plan
 18. [docs/context/ctxe7_prompt_budget_skill_scaffold_materialization.md](../docs/context/ctxe7_prompt_budget_skill_scaffold_materialization.md) for the prompt budget skill scaffold materialization
 19. [.agents/skills/](../.agents/skills/) and [.claude/skills/](../.claude/skills/) for the prompt budget skill scaffolds
+20. [docs/context/ctxe8_prompt_budget_script_scaffold_materialization.md](../docs/context/ctxe8_prompt_budget_script_scaffold_materialization.md) for the prompt budget script scaffold materialization
+21. [scripts/check_*.py](../scripts/check_active_context_first.py) and [scripts/run_standard_validation_pack.py](../scripts/run_standard_validation_pack.py) for local prompt-budget checks

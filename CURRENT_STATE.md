@@ -28,3 +28,4 @@ As of 2026-05-07:
 - Full history lives in `archive/` and is not the default read path.
 - CTX-E6 prompt-budget skill & script implementation plan completed in parallel.
 - CTX-E7 skill scaffold materialization completed in parallel.
+- CTX-E8 script scaffold materialization completed in parallel.
