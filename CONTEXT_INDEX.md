@@ -52,3 +52,11 @@ Read in this order:
 40. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json) for the F32.E validation matrix
 41. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json) for the F32.E requirements
 42. `Project_ARIS` artifacts/docs only when cited
+
+43. [docs/fase32/f32f_future_mcp_readonly_candidate_contract_review_gate.md](../docs/fase32/f32f_future_mcp_readonly_candidate_contract_review_gate.md) for the F32.F review gate doc
+44. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_decision.json) for the F32.F decision
+45. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_summary.json) for the F32.F summary
+46. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_report.md) for the F32.F report
+47. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_requirements.json) for the F32.F requirements
+48. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_review_gate_review_matrix.json) for the F32.F review matrix
+49. `Project_ARIS` artifacts/docs only when cited

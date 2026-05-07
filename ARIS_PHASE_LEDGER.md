@@ -173,3 +173,10 @@ Closed as a foundation track, not as official V6 closure.
 - Candidate contract defines the minimum read-only future MCP envelope: query validation, bounded scope classification, metadata provenance, context usage reporting, and unsafe-request rejection only.
 - No MCP server is created, no network/tool execution is enabled, and Obsidian remains future-gated.
 - F32.F — Future MCP Read-Only Candidate Contract Review Gate is next.
+
+## F32.F Future MCP Read-Only Candidate Contract Review Gate
+
+- [F32.F] Future MCP Read-Only Candidate Contract Review Gate completed.
+- Review matrix confirmed the F32.E candidate contract stays complete, conservative, future-gated, and read-only only.
+- F32.C and F32.D remain respected, DECISION_LOCKS remains protected, and no real MCP server, network, secrets, or tool execution is authorized.
+- F32.G — Future MCP Read-Only Implementation Plan Gate is next.

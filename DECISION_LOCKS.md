@@ -33,3 +33,4 @@
 - After repair, relevant Codex prompts must also require Obsidian sync.
 - This repo does not author runtime, frontend, action, audio, network, secrets, or dependencies.
 - No one may claim token savings without evidence.
+- F32.F future MCP read-only candidate contract review gate is warn-passed; the candidate contract stays contract-only, no MCP server/network/tool execution/secrets/Obsidian activation is authorized now, and F32.G — Future MCP Read-Only Implementation Plan Gate is next.
