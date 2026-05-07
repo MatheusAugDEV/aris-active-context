@@ -25,9 +25,14 @@ Read in this order:
 21. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_decision.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_decision.json) for the F32.B decision
 22. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_validation_matrix.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_validation_matrix.json) for the F32.B validation matrix
 23. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_rule_results.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_rule_results.json) for the F32.B rule results
-24. Obsidian only after the repair and only query-first
-25. `archive/` only when history is needed
-26. `Project_ARIS` artifacts/docs only when cited
+24. [docs/fase32/f32c_structured_obsidian_query_contract_gate.md](../docs/fase32/f32c_structured_obsidian_query_contract_gate.md) for the F32.C contract gate doc
+25. [artifacts/f32/f32_structured_obsidian_query_contract_gate_contract.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_contract.json) for the F32.C structured query contract
+26. [artifacts/f32/f32_structured_obsidian_query_contract_gate_decision.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_decision.json) for the F32.C decision
+27. [artifacts/f32/f32_structured_obsidian_query_contract_gate_summary.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_summary.json) for the F32.C summary
+28. [artifacts/f32/f32_structured_obsidian_query_contract_gate_validation_matrix.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_validation_matrix.json) for the F32.C validation matrix
+29. Obsidian only after the repair and only query-first
+30. `archive/` only when history is needed
+31. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.

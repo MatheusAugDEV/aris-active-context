@@ -22,6 +22,7 @@
 - F31.E source-of-truth drift repair controlled apply is complete; and F32 — Context Boundary, Obsidian/MCP & Trust Firewall is next.
 - F32.A bootstrap gate is ready; boundary matrix (13 sources), threat model (10 threats), and trust firewall (10 access rules) are defined; 0 blockers.
 - F32.B trust-firewall implementation gate is complete; boundary lint is mandatory for future context-boundary changes; F32.C — Structured Obsidian Query Contract Gate is next.
+- F32.C structured Obsidian query contract is the only allowed shape for future bounded Obsidian lookups; note content stays untrusted, read-only, query-first, and cannot outrank active-context, DECISION_LOCKS, code/tests, or official artifacts.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.

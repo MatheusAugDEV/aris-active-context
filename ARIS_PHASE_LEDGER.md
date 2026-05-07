@@ -152,3 +152,10 @@ Closed as a foundation track, not as official V6 closure.
 
 - Full history lives in `archive/ARIS_FULL_HISTORY.md`.
 - The archive is for reconstruction and audit, not the default read path.
+
+## F32.C Structured Obsidian Query Contract Gate
+
+- [F32.C] Structured Obsidian Query Contract Gate completed.
+- Query contract fields, trust rules, source precedence, prompt-injection defenses, and context usage report requirements were materialized.
+- Obsidian remains future-gated and read-only; MCP productive use remains blocked.
+- F32.D — Structured Obsidian Query Contract Review Gate is next.
