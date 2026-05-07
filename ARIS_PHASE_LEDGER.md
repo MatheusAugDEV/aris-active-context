@@ -221,3 +221,9 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E15] Real Token Usage Baseline Manual Evidence Collection Readiness Review passed with no blockers.
 - The review confirms CTX-E14 readiness, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E16 — Real Token Usage Baseline Manual Evidence Collection Authorization Gate.
 - Baseline real remains absent at review time.
+
+## CTX-E16 Real Token Usage Baseline Manual Evidence Collection Authorization Gate
+
+- [CTX-E16] Real Token Usage Baseline Manual Evidence Collection Authorization Gate is warn-passed.
+- The gate authorizes future manual intake of redacted evidence with restrictions, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E17 — Real Token Usage Baseline Manual Evidence Intake Controlled Apply.
+- Baseline real remains absent at authorization time.
