@@ -40,3 +40,5 @@
 - F32.I future MCP read-only dry-run gate is warn-passed; the dry-run is synthetic/local, does not authorize real MCP or Obsidian, and F32.J — Future MCP Read-Only Dry-Run Review Gate is next.
 
 - F32.J future MCP read-only dry-run review gate is warn-passed; the reviewed dry-run remains synthetic/local, does not authorize real MCP or Obsidian, and F32.K — Future MCP Read-Only Security Review Gate is next.
+
+- F32.K future MCP read-only security review gate is warn-passed; the security review preserves future gating, and F32.L — Future MCP Read-Only Provenance Gate is next.

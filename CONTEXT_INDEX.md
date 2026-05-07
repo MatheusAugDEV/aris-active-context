@@ -92,3 +92,9 @@ Read in this order:
 75. [artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_report.md) for the F32.J report
 76. [artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_requirements.json) for the F32.J requirements
 77. [artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_review_gate_review_matrix.json) for the F32.J review matrix
+
+78. [docs/fase32/f32k_future_mcp_readonly_security_review_gate.md](../docs/fase32/f32k_future_mcp_readonly_security_review_gate.md) for the F32.K security review gate doc
+79. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_decision.json) for the F32.K decision
+80. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_summary.json) for the F32.K summary
+81. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_report.md) for the F32.K report
+82. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_security_matrix.json](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_security_matrix.json) for the F32.K security matrix

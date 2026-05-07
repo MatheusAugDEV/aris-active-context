@@ -1,3 +1,1 @@
-# NEXT_ACTION
-
-Prepare F32.K — Future MCP Read-Only Security Review Gate.
+Prepare F32.L — Future MCP Read-Only Provenance Gate.

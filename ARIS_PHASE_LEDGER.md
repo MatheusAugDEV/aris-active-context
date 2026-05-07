@@ -206,3 +206,9 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.J] Future MCP Read-Only Dry-Run Review Gate completed.
 - The dry-run review confirms the synthetic/local dry-run and preserves MCP/Obsidian blocking.
 - No MCP implementation is authorized now, no Obsidian access is activated, and F32.K — Future MCP Read-Only Security Review Gate is next.
+
+## F32.K Future MCP Read-Only Security Review Gate
+
+- [F32.K] Future MCP Read-Only Security Review Gate completed.
+- Security review confirmed the synthetic/local dry-run remains safe and future-gated.
+- No MCP implementation is authorized now, no Obsidian access is activated, and F32.L — Future MCP Read-Only Provenance Gate is next.
