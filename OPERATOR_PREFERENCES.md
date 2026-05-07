@@ -22,6 +22,21 @@
 - Never claim something is proven without artifacts.
 - ChatGPT consolidates short, assesses risk, and proposes the next action.
 
+## Roadmap Canonicalization
+
+- Use the phase-by-phase canonical roadmap structure.
+- Follow the official V6 PDF path F1-F29 as the naming source.
+- Treat internal work as substeps inside the current phase, not as parallel phase families.
+- Use this structure for active work:
+  - `Fase N — Nome oficial`
+  - `Fase N.A — Diagnóstico / Readiness`
+  - `Fase N.B — Repair / Contrato / Plano`
+  - `Fase N.C — Gate / Implementação controlada`
+  - `Fase N.D — Review / Closure`
+- Do not create new operational families like `V6-*` when a canonical `F` phase exists.
+- After F29, continue numerically with F30, F31, F32, and so on.
+- Reserve F30 for `Roadmap Canonicalization & Phase Hygiene` if F29 remains closed.
+
 ## Multi-agent workflow
 
 - Codex implements.

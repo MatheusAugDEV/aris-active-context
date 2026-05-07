@@ -28,6 +28,13 @@ Closed as a foundation track, not as official V6 closure.
 
 - F29 final practical closure gate.
 
+## Canonical F29 Subtracks
+
+- F29.A Readiness Review.
+- F29.B Warning Repair.
+- F29.C Final Execution Gate Plan.
+- F29.D Final Practical Closure Execution Gate.
+
 ## Readiness Review
 
 - F29 final practical closure readiness review passed with warnings.
@@ -45,6 +52,14 @@ Closed as a foundation track, not as official V6 closure.
 - F29 final practical closure execution passed.
 - V6 is officially closed.
 - The 22 carry-forward warnings from F25-F28 remain documented as accepted residual risk.
+
+## Roadmap Canonicalization
+
+- Future ARIS work should return to phase-by-phase canonical naming.
+- The official V6 roadmap remains the PDF sequence F1-F29.
+- After F29, continuation should be numerical: F30, F31, F32, and so on.
+- F30 is reserved for Roadmap Canonicalization & Phase Hygiene if the closed state remains stable.
+- Avoid creating new parallel `V6-*` operational families when canonical `F` phases exist.
 
 ## Historical Blocked State
 
