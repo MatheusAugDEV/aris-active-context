@@ -215,3 +215,9 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E14] Real Token Usage Baseline Manual Evidence Collection Prep is ready-passed.
 - The prep is local-only, reserves the future evidence directory and blank template, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E15 — Real Token Usage Baseline Manual Evidence Collection Readiness Review.
 - Baseline real remains absent at prep time.
+
+## CTX-E15 Real Token Usage Baseline Manual Evidence Collection Readiness Review
+
+- [CTX-E15] Real Token Usage Baseline Manual Evidence Collection Readiness Review passed with no blockers.
+- The review confirms CTX-E14 readiness, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E16 — Real Token Usage Baseline Manual Evidence Collection Authorization Gate.
+- Baseline real remains absent at review time.
