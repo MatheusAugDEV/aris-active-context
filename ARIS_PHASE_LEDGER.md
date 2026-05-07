@@ -180,4 +180,8 @@ Closed as a foundation track, not as official V6 closure.
 
 - [CTX-E8] Prompt Budget Script Scaffold Materialization completed as a parallel control phase.
 - Nine read-only local script/check scaffolds were materialized, F31.E stays the next principal phase, and CTX-E9 is the next parallel trail.
+## CTX-E9 Script Scaffold Validation Review
+
+- [CTX-E9] Script Scaffold Validation Review audited the CTX-E8 script scaffolds without mutating them.
+- F31.E stays the next principal phase, and CTX-E10 is the next parallel trail.
 

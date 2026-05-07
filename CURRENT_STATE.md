@@ -29,3 +29,4 @@ As of 2026-05-07:
 - CTX-E6 prompt-budget skill & script implementation plan completed in parallel.
 - CTX-E7 skill scaffold materialization completed in parallel.
 - CTX-E8 script scaffold materialization completed in parallel.
+- CTX-E9 script scaffold validation review completed in parallel.
