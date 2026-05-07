@@ -17,6 +17,7 @@ As of 2026-05-07:
 - F31.A source inventory is warn-passed.
 - F31.B hash/signature/metadata index is warn-passed with 35 entries indexed.
 - F31.C source-of-truth consistency gate is warn-passed.
-- F31.D — Source-of-Truth Drift Repair Plan is next.
+- F31.D source-of-truth drift repair plan is ready.
+- F31.E — Source-of-Truth Drift Repair Controlled Apply is next.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.

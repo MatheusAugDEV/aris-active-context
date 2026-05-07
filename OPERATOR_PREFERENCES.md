@@ -22,6 +22,10 @@
 - Never claim something is proven without artifacts.
 - ChatGPT consolidates short, assesses risk, and proposes the next action.
 
+## High Bar For Stage Progression
+
+- Régua alta para passagem de etapa: o ARIS não deve avançar deixando erros reais para trás, nem erros pequenos, nem warnings corrigíveis, nem inconsistências que "não atrapalham agora". Se o problema for verificável e estiver dentro do escopo seguro da fase, deve ser corrigido antes do avanço. Se não puder ser corrigido na fase, deve ser registrado com severidade adequada, evidência, impacto e próxima ação explícita. Não mascarar, tolerar ou acumular dívida operacional invisível.
+
 ## Roadmap Canonicalization
 
 - Use the phase-by-phase canonical roadmap structure.

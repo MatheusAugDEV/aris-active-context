@@ -103,7 +103,20 @@ Closed as a foundation track, not as official V6 closure.
 - [F31.C] Source-of-Truth Consistency Gate is warn-passed.
 - Historical V6-* references remain legacy narrative material only.
 - The F30 roadmap PDF gap remains a warning, not a blocker.
-- F31.D — Source-of-Truth Drift Repair Plan is next.
+- F31.D source-of-truth drift repair plan is ready.
+- F31.E — Source-of-Truth Drift Repair Controlled Apply is next.
+
+## F31.D Source-of-Truth Drift Repair Plan
+
+- [F31.D] Source-of-Truth Drift Repair Plan is ready.
+- The known F31.C drift warnings have exact bounded repair plans.
+- The next step is a controlled apply in F31.E.
+
+## F31.D Source-of-Truth Drift Repair Plan
+
+- [F31.D] Source-of-Truth Drift Repair Plan is ready.
+- The known F31.C drift warnings have exact bounded repair plans.
+- The next step is a controlled apply in F31.E.
 
 ## Historical Blocked State
 
