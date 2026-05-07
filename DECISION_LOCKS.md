@@ -48,3 +48,4 @@
 - F32.M future MCP read-only disable and rollback rehearsal gate is warn-passed; disable and rollback remain rehearsal-only, no re-enable is authorized now, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next.
 - F32.N future MCP read-only re-enable preconditions gate is warn-passed; re-enable remains blocked now, human review is required, and F32.O — Future MCP Read-Only Final Readiness Consolidation Gate is next.
 - F32.O future MCP read-only final readiness consolidation gate is warn-passed; final readiness is consolidated for a future configuration candidate gate only, human review remains required, and F32.P — Future MCP Read-Only Configuration Candidate Gate is next.
+- F32.P future MCP read-only configuration candidate gate is warn-passed; the candidate remains artifact-only, disabled by default, and F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next.

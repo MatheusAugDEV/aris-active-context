@@ -1,1 +1,1 @@
-Prepare F32.P — Future MCP Read-Only Configuration Candidate Gate.
+Prepare F32.Q — Future MCP Read-Only Configuration Candidate Review Gate.

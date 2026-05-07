@@ -38,3 +38,4 @@ As of 2026-05-07:
 - F32.M future MCP read-only disable and rollback rehearsal gate completed; the disable/rollback rehearsal is warn-passed, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next principal phase.
 - F32.N future MCP read-only re-enable preconditions gate completed; the re-enable contract remains future-gated and read-only only, and F32.O — Future MCP Read-Only Final Readiness Consolidation Gate is next principal phase.
 - F32.O future MCP read-only final readiness consolidation gate completed; final readiness remains future-gated and read-only only, and F32.P — Future MCP Read-Only Configuration Candidate Gate is next principal phase.
+- F32.P future MCP read-only configuration candidate gate completed; the configuration candidate remains artifact-only and disabled by default, and F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next principal phase.

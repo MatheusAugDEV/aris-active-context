@@ -130,3 +130,12 @@ Read in this order:
 108. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_evidence_map.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_evidence_map.json) for the F32.O evidence map
 109. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_readiness_matrix.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_readiness_matrix.json) for the F32.O readiness matrix
 110. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_next_phase_contract.json) for the F32.O next phase contract
+
+111. [docs/fase32/f32p_future_mcp_readonly_configuration_candidate_gate.md](../docs/fase32/f32p_future_mcp_readonly_configuration_candidate_gate.md) for the F32.P configuration candidate gate doc
+112. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_decision.json) for the F32.P decision
+113. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_summary.json) for the F32.P summary
+114. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_report.md) for the F32.P report
+115. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_requirements.json) for the F32.P requirements
+116. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_candidate_config.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_candidate_config.json) for the F32.P candidate config
+117. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_validation_matrix.json) for the F32.P validation matrix
+118. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_safety_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_gate_safety_matrix.json) for the F32.P safety matrix

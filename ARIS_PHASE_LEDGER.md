@@ -234,3 +234,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.O] Future MCP Read-Only Final Readiness Consolidation Gate completed.
 - Final readiness is consolidated from F32.I, F32.J, F32.K, F32.L, F32.M, and F32.N evidence; no MCP implementation is authorized now and no Obsidian access is activated.
 - F32.P — Future MCP Read-Only Configuration Candidate Gate is next.
+## F32.P Future MCP Read-Only Configuration Candidate Gate
+
+- [F32.P] Future MCP Read-Only Configuration Candidate Gate completed.
+- The candidate configuration is artifact-only, disabled by default, and retains read-only-only constraints with provenance, context usage report, and source precedence requirements.
+- F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next.
