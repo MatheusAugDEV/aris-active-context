@@ -15,7 +15,9 @@
 - F30.A baseline is warn-passed and records the roadmap PDF reference gap as a warning, not a blocker.
 - F30.B saves the formal F30-F50 roadmap reference; no demo, product, SaaS, marketplace, enterprise real, or multi-tenant work enters this cycle.
 - F30.C artifact, warning & residual risk index is warn-passed and does not start F31.
-- F30.D roadmap publication gate is warn-passed and F30 is complete; F31 is next.
+- F30.D roadmap publication gate is warn-passed and F30 is complete.
+- F31.A source inventory is warn-passed and is inventory-only; cleanup real has not started.
+- F31.B hash/signature/metadata index is next.
 - F48 is diagnostic only: Pente Fino — Full ARIS System Sweep.
 - Future operational phases must continue numerically as F30, F31, F32, and so on.
 - Do not create new parallel `V6-*` operational phase families where an `F` phase exists.

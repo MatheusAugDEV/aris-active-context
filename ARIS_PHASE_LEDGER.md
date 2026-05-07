@@ -83,7 +83,13 @@ Closed as a foundation track, not as official V6 closure.
 ## F30.D Roadmap Publication Gate
 
 - [F30.D] Roadmap Publication Gate is warn-passed.
-- F30 is complete; F31 is next.
+- F30 is complete.
+
+## F31.A Source Inventory
+
+- [F31.A] Source-of-Truth & Artifact Source Inventory is warn-passed.
+- Inventory is read-only; cleanup real has not started.
+- F31.B Hash / Signature / Metadata Index is next.
 
 ## Historical Blocked State
 
@@ -100,6 +106,7 @@ Closed as a foundation track, not as official V6 closure.
 - F30.B roadmap reference saved.
 - F30.C artifact, warning & residual risk index artifacts generated.
 - F30.D roadmap publication gate completed.
+- F31.A source inventory artifacts generated.
 
 ## Archive note
 

@@ -13,6 +13,8 @@ As of 2026-05-07:
 - F30.B official phase naming cleanup and roadmap save are complete.
 - F30.C artifact, warning & residual risk index is warn-passed.
 - F30.D roadmap publication gate is warn-passed.
-- F30 is complete; F31 is next.
+- F30 is complete.
+- F31.A source inventory is warn-passed.
+- F31.B hash/signature/metadata index is next.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
