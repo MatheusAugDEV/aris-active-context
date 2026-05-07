@@ -36,3 +36,6 @@ Read in this order:
 21. [scripts/check_*.py](../scripts/check_active_context_first.py) and [scripts/run_standard_validation_pack.py](../scripts/run_standard_validation_pack.py) for local prompt-budget checks
 22. [docs/context/ctxe9_prompt_budget_script_scaffold_validation_review.md](../docs/context/ctxe9_prompt_budget_script_scaffold_validation_review.md) for the prompt budget script scaffold validation review
 23. [artifacts/context/ctxe9_prompt_budget_script_scaffold_validation_review_matrix.json](../artifacts/context/ctxe9_prompt_budget_script_scaffold_validation_review_matrix.json) for the script review matrix
+24. [docs/context/ctxe10_prompt_budget_script_scaffold_repair_plan.md](../docs/context/ctxe10_prompt_budget_script_scaffold_repair_plan.md) for the prompt budget script scaffold repair plan
+25. [artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_plan.json](../artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_plan.json) for the prompt budget script scaffold repair plan
+26. [artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json](../artifacts/context/ctxe10_prompt_budget_script_scaffold_repair_plan_findings.json) for the prompt budget script scaffold repair findings
