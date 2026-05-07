@@ -36,3 +36,4 @@ As of 2026-05-07:
 
 - F32.L future MCP read-only provenance gate completed; provenance remains contract-only, and F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate is next principal phase.
 - F32.M future MCP read-only disable and rollback rehearsal gate completed; the disable/rollback rehearsal is warn-passed, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next principal phase.
+- F32.N future MCP read-only re-enable preconditions gate completed; the re-enable contract remains future-gated and read-only only, and F32.O — Future MCP Read-Only Final Readiness Consolidation Gate is next principal phase.

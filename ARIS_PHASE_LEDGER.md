@@ -224,3 +224,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.M] Future MCP Read-Only Disable and Rollback Rehearsal Gate completed.
 - Disable and rollback plans are rehearsal-only, and future MCP read-only re-enable remains blocked until explicit human review.
 - No MCP implementation is authorized now, no Obsidian access is activated, and F32.N — Future MCP Read-Only Re-Enable Preconditions Gate is next.
+## F32.N Future MCP Read-Only Re-Enable Preconditions Gate
+
+- [F32.N] Future MCP Read-Only Re-Enable Preconditions Gate completed.
+- Re-enable is not allowed now; the gate defines mandatory human review, operator approval, source-precedence revalidation, provenance revalidation, and rollback-state verification before any future re-enable.
+- No MCP implementation is authorized now, no Obsidian access is activated, and F32.O — Future MCP Read-Only Final Readiness Consolidation Gate is next.

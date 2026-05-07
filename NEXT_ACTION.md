@@ -1,1 +1,1 @@
-Prepare F32.N — Future MCP Read-Only Re-Enable Preconditions Gate.
+Prepare F32.O — Future MCP Read-Only Final Readiness Consolidation Gate.

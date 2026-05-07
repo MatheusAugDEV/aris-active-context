@@ -113,3 +113,11 @@ Read in this order:
 93. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_disable_plan.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_disable_plan.json) for the F32.M disable plan
 94. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rollback_plan.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rollback_plan.json) for the F32.M rollback plan
 95. [artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rehearsal_matrix.json](../artifacts/f32/f32_future_mcp_readonly_disable_rollback_rehearsal_gate_rehearsal_matrix.json) for the F32.M rehearsal matrix
+
+96. [docs/fase32/f32n_future_mcp_readonly_reenable_preconditions_gate.md](../docs/fase32/f32n_future_mcp_readonly_reenable_preconditions_gate.md) for the F32.N re-enable preconditions gate doc
+97. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_decision.json) for the F32.N decision
+98. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_summary.json) for the F32.N summary
+99. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_report.md) for the F32.N report
+100. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_requirements.json) for the F32.N requirements
+101. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_preconditions.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_preconditions.json) for the F32.N preconditions contract
+102. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_validation_matrix.json) for the F32.N validation matrix
