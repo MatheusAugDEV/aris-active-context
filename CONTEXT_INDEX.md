@@ -13,6 +13,7 @@ Read in this order:
 9. [docs/fase31/f31d_source_of_truth_drift_repair_plan.md](../docs/fase31/f31d_source_of_truth_drift_repair_plan.md) for the repair plan
 9. [docs/fase31/f31d_source_of_truth_drift_repair_plan.md](../docs/fase31/f31d_source_of_truth_drift_repair_plan.md) for the repair plan
 9. [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md) for the formal post-V6 operational roadmap
+10. [docs/context/ctxe1_token_economy_visibility_audit.md](../docs/context/ctxe1_token_economy_visibility_audit.md) for the token economy audit
 10. Obsidian only after the repair and only query-first
 11. `archive/` only when history is needed
 12. `Project_ARIS` artifacts/docs only when cited

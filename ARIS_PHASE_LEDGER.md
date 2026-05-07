@@ -118,6 +118,12 @@ Closed as a foundation track, not as official V6 closure.
 - The known F31.C drift warnings have exact bounded repair plans.
 - The next step is a controlled apply in F31.E.
 
+## CTX-E1 Token Economy Visibility Audit
+
+- [CTX-E1] Token Economy Visibility & Prompt Budget Audit completed as a parallel diagnostic.
+- The audit is estimate-only; no measured token savings were claimed.
+- F31.E remains the next principal phase.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
