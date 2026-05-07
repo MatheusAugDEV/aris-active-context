@@ -15,6 +15,8 @@ Read order:
 6. `OPERATOR_PREFERENCES.md`
 
 Official V6 naming follows the PDF roadmap F1-F29.
+Consult this repo before ARIS technical decisions.
+Update it at the end of every Codex phase.
 The full history is in `archive/`, and `Project_ARIS` remains the detailed
 technical source-of-truth.
 

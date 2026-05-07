@@ -12,6 +12,7 @@
 - Context compactness before context mass.
 - Safety before convenience.
 - Observability before expansion.
+- Context OS should become a derived navigation layer, not a source-of-truth replacement.
 
 ## System map
 
@@ -84,6 +85,7 @@ ARIS
 - Safety posture: read-only, query-first, no bulk read.
 - Status: critical and still under repair.
 - Risks: stale context, drift, incorrect closure claims.
+- The approved direction is an ARIS-owned read-only wrapper with allowlisted paths, ledgered reads, and no broad-vault access.
 
 ### 9. Cockpit / Evidence Browser
 - Purpose: index and inspect evidence.

@@ -7,6 +7,7 @@
 - F14-F21: semantic understanding, evaluation, voice safety, action contracts, context OS.
 - Roadmap V4/V6: broader gates, evidence, reliability, packaging, and closure discipline.
 - Long-roadmap critique: the gap between current state and final roadmap was large.
+- F21-A specifically explored Context Intelligence, token economy, and safe Obsidian integration.
 - Pre-V6 cockpit/evidence foundation: separated from official V6.
 - Official V6: PDF F1-F29.
 - F1-F22: covered by reconciliation.

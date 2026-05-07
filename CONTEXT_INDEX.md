@@ -8,11 +8,13 @@ Read in this order:
 4. [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 5. [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
 6. [README.md](README.md)
-7. `archive/` only when history is needed
-8. `Project_ARIS` artifacts/docs only when cited
+7. Obsidian only after the repair and only query-first
+8. `archive/` only when history is needed
+9. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.
 - Do not rely on old memory against `CURRENT_STATE`.
 - Do not advance phase without checking `NEXT_ACTION`.
+- Do not declare token savings without evidence.
 - Keep this repo compact.

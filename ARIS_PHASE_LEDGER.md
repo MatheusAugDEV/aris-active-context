@@ -3,11 +3,13 @@
 ## Early ARIS
 
 Initial ARIS emerged as a personal assistant concept in Python and then grew into a gated, safety-first system with memory, voice, UI/orb, action runtime, observability, and context governance.
+The pre-ARIS Debian/Lenovo/kernel/Waydroid troubleshooting is background context only.
 
 ## Mature tracks
 
 - F14-F21 established the semantic/context/action structure.
 - F23-F28 covered voice safety, rich output proofs, observability, reliability, packaging, and technical debt.
+- F21-A focused on Context Intelligence, token economy, and safe Obsidian integration attempts.
 
 ## Pre-V6 / Cockpit Evidence Foundation
 
@@ -34,6 +36,7 @@ Closed as a foundation track, not as official V6 closure.
 
 - Obsidian Context Law / Context Control.
 
-## Full history
+## Archive note
 
-See [archive/ARIS_FULL_HISTORY.md](archive/ARIS_FULL_HISTORY.md).
+- Full history lives in `archive/ARIS_FULL_HISTORY.md`.
+- The archive is for reconstruction and audit, not the default read path.

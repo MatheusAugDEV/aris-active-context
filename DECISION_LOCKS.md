@@ -6,7 +6,12 @@
 - F28 is technically green, but it does not mean final V6 closure.
 - F29 stays blocked until Obsidian Context Law / Context Control is corrected.
 - `aris-active-context` beats memory and old conversation history.
-- Obsidian is a derived navigation layer after repair, not the primary source.
+- Obsidian is mandatory after repair for context and token economy, but it remains a derived navigation layer, not the primary source.
+- Obsidian must use query-first access after repair.
+- Obsidian must not bulk-read.
+- Obsidian must not replace artifacts or source-of-truth files.
 - Archive is not the default read path.
 - Every Codex prompt must end with an active-context update.
+- After repair, relevant Codex prompts must also require Obsidian sync.
 - This repo does not author runtime, frontend, action, audio, network, secrets, or dependencies.
+- No one may claim token savings without evidence.
