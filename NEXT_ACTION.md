@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Prepare F32.I — Future MCP Read-Only Dry-Run Gate.
+Prepare F32.J — Future MCP Read-Only Dry-Run Review Gate.

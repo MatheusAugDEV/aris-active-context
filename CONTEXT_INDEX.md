@@ -77,3 +77,11 @@ Read in this order:
 62. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_requirements.json) for the F32.H requirements
 63. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_review_matrix.json) for the F32.H review matrix
 64. `Project_ARIS` artifacts/docs only when cited
+
+65. [docs/fase32/f32i_future_mcp_readonly_dry_run_gate.md](../docs/fase32/f32i_future_mcp_readonly_dry_run_gate.md) for the F32.I dry-run gate doc
+66. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_decision.json) for the F32.I decision
+67. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_summary.json) for the F32.I summary
+68. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_report.md) for the F32.I report
+69. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_requirements.json) for the F32.I requirements
+70. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_dry_run_results.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_dry_run_results.json) for the F32.I dry-run results
+71. [artifacts/f32/f32_future_mcp_readonly_dry_run_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_dry_run_gate_validation_matrix.json) for the F32.I validation matrix

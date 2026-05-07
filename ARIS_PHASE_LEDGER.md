@@ -192,3 +192,10 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.H] Future MCP Read-Only Implementation Plan Review Gate completed.
 - Review artifacts confirm the F32.G plan stays planning-only, conservative, and future-gated.
 - No MCP implementation is authorized now, no Obsidian access is activated, and F32.I — Future MCP Read-Only Dry-Run Gate is next.
+
+
+## F32.I Future MCP Read-Only Dry-Run Gate
+
+- [F32.I] Future MCP Read-Only Dry-Run Gate completed.
+- The dry-run is synthetic/local only and keeps MCP/Obsidian blocked.
+- No MCP implementation is authorized now, no Obsidian access is activated, and F32.J — Future MCP Read-Only Dry-Run Review Gate is next.
