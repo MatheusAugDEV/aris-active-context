@@ -69,3 +69,11 @@ Read in this order:
 55. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_gate_plan.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_gate_plan.json) for the F32.G plan
 56. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_gate_validation_matrix.json) for the F32.G validation matrix
 57. `Project_ARIS` artifacts/docs only when cited
+
+58. [docs/fase32/f32h_future_mcp_readonly_implementation_plan_review_gate.md](../docs/fase32/f32h_future_mcp_readonly_implementation_plan_review_gate.md) for the F32.H review gate doc
+59. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_decision.json) for the F32.H decision
+60. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_summary.json) for the F32.H summary
+61. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_report.md) for the F32.H report
+62. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_requirements.json) for the F32.H requirements
+63. [artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_implementation_plan_review_gate_review_matrix.json) for the F32.H review matrix
+64. `Project_ARIS` artifacts/docs only when cited

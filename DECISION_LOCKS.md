@@ -35,3 +35,4 @@
 - No one may claim token savings without evidence.
 - F32.F future MCP read-only candidate contract review gate is warn-passed; the candidate contract stays contract-only, no MCP server/network/tool execution/secrets/Obsidian activation is authorized now, and F32.G — Future MCP Read-Only Implementation Plan Gate is next.
 - F32.G future MCP read-only implementation plan gate is warn-passed; the plan is planning-only, does not authorize real MCP or Obsidian, and F32.H — Future MCP Read-Only Implementation Plan Review Gate is next.
+- F32.H future MCP read-only implementation plan review gate is warn-passed; the reviewed plan is planning-only, does not authorize real MCP or Obsidian, and F32.I — Future MCP Read-Only Dry-Run Gate is next.
