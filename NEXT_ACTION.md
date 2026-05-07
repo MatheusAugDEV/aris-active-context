@@ -1,1 +1,1 @@
-Prepare F32.S — Future MCP Read-Only Configuration Planning Review Gate.
+Prepare F32.T — Future MCP Read-Only Configuration Apply Dry-Run Plan Gate.
