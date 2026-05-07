@@ -124,6 +124,11 @@ Closed as a foundation track, not as official V6 closure.
 - The audit is estimate-only; no measured token savings were claimed.
 - F31.E remains the next principal phase.
 
+## CTX-E2 Prompt Template Compression Contract
+
+- [CTX-E2] Prompt Template Compression Contract completed as a parallel diagnostic.
+- The contract is estimate-only and keeps F31.E as the next principal phase.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.
