@@ -180,3 +180,9 @@ Closed as a foundation track, not as official V6 closure.
 - Review matrix confirmed the F32.E candidate contract stays complete, conservative, future-gated, and read-only only.
 - F32.C and F32.D remain respected, DECISION_LOCKS remains protected, and no real MCP server, network, secrets, or tool execution is authorized.
 - F32.G — Future MCP Read-Only Implementation Plan Gate is next.
+
+## F32.G Future MCP Read-Only Implementation Plan Gate
+
+- [F32.G] Future MCP Read-Only Implementation Plan Gate completed.
+- Planning-only artifacts define the future read-only implementation envelope, required guards, future validation gates, rollback paths, and the future file set.
+- No MCP implementation is authorized now, no Obsidian access is activated, and F32.H — Future MCP Read-Only Implementation Plan Review Gate is next.

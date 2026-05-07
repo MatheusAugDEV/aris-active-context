@@ -24,5 +24,6 @@ As of 2026-05-07:
 - F32.D structured Obsidian query contract review gate completed; the contract is complete, approved for future MCP read-only planning, and F32.E — Future MCP Read-Only Candidate Contract Gate is next principal phase.
 - F32.E future MCP read-only candidate contract gate completed; the candidate contract is defined, no MCP is activated, and F32.F — Future MCP Read-Only Candidate Contract Review Gate is next principal phase.
 - F32.F future MCP read-only candidate contract review gate completed; the candidate contract is approved for future planning only, no MCP is activated, and F32.G — Future MCP Read-Only Implementation Plan Gate is next principal phase.
+- F32.G future MCP read-only implementation plan gate completed; the plan is future-gated, planning-only, and no MCP implementation is authorized now, and F32.H — Future MCP Read-Only Implementation Plan Review Gate is next principal phase.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
