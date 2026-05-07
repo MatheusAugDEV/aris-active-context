@@ -1,3 +1,3 @@
 # NEXT_ACTION
 
-Repair F29 readiness warnings before final execution gate.
+Prepare the F29 final execution gate plan.

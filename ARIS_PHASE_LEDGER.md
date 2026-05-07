@@ -32,15 +32,21 @@ Closed as a foundation track, not as official V6 closure.
 
 - F29 final practical closure readiness review passed with warnings.
 
+## Warning Repair
+
+- F29 readiness warning repair gate repaired the warning classification.
+
 ## Blocked
 
 - Final V6 closure execution has not been run yet.
 - F29 final execution remains blocked until a later gate.
+- F29 final execution remains blocked while the final execution gate plan is prepared.
 
 ## Current repair
 
 - Obsidian Context Law / Context Control repair passed.
 - F29 readiness review artifacts generated.
+- F29 readiness warning repair artifacts generated.
 
 ## Archive note
 
