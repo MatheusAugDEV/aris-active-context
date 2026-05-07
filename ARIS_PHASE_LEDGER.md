@@ -202,3 +202,10 @@ Closed as a foundation track, not as official V6 closure.
 - The runbook is manual-only, keeps F31.E as the next principal phase, and defines redacted evidence capture without billing, API, network, or secret access.
 - Baseline real remains absent at runbook time.
 - Next parallel action: CTX-E13 — Real Token Usage Baseline Manual Evidence Dry Run.
+
+## CTX-E13 Real Token Usage Baseline Manual Evidence Dry Run
+
+- [CTX-E13] Real Token Usage Baseline Manual Evidence Dry Run is warn-passed.
+- The dry run is synthetic-only, keeps F31.E as the next principal phase, and confirms that valid samples are accepted while secret, claim, and comparison violations are rejected.
+- Baseline real remains absent at dry-run time.
+- Next parallel action: CTX-E14 — Real Token Usage Baseline Manual Evidence Collection Prep.

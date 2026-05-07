@@ -43,3 +43,6 @@ Read in this order:
 28. [artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json](../artifacts/context/ctxe11_real_token_usage_baseline_plan_manual_evidence_template.json) for the manual evidence template
 29. [docs/context/ctxe12_real_token_usage_baseline_manual_evidence_runbook.md](../docs/context/ctxe12_real_token_usage_baseline_manual_evidence_runbook.md) for the manual evidence runbook
 30. [docs/context/aris_real_token_usage_manual_evidence_runbook.md](../docs/context/aris_real_token_usage_manual_evidence_runbook.md) for the reusable manual evidence policy note
+31. [docs/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run.md](../docs/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run.md) for the synthetic dry run report
+32. [artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_results.json](../artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_results.json) for the dry-run validation results
+33. [artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_samples.json](../artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_samples.json) for the synthetic sample set
