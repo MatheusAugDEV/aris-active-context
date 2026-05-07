@@ -121,3 +121,12 @@ Read in this order:
 100. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_requirements.json) for the F32.N requirements
 101. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_preconditions.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_preconditions.json) for the F32.N preconditions contract
 102. [artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_reenable_preconditions_gate_validation_matrix.json) for the F32.N validation matrix
+
+103. [docs/fase32/f32o_future_mcp_readonly_final_readiness_consolidation_gate.md](../docs/fase32/f32o_future_mcp_readonly_final_readiness_consolidation_gate.md) for the F32.O final readiness consolidation gate doc
+104. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_decision.json) for the F32.O decision
+105. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_summary.json) for the F32.O summary
+106. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_report.md) for the F32.O report
+107. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_requirements.json) for the F32.O requirements
+108. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_evidence_map.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_evidence_map.json) for the F32.O evidence map
+109. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_readiness_matrix.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_readiness_matrix.json) for the F32.O readiness matrix
+110. [artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_final_readiness_consolidation_gate_next_phase_contract.json) for the F32.O next phase contract

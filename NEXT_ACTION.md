@@ -1,1 +1,1 @@
-Prepare F32.O — Future MCP Read-Only Final Readiness Consolidation Gate.
+Prepare F32.P — Future MCP Read-Only Configuration Candidate Gate.
