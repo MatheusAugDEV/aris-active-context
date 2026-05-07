@@ -98,6 +98,11 @@ Closed as a foundation track, not as official V6 closure.
 - No real signature has been applied.
 - F31.C Source-of-Truth Consistency Gate is next.
 
+## Roadmap Extension
+
+- [Roadmap extension] Post-F50 extension recorded: F51-F58 Security & Cybersecurity Hardening; F59-F68 ARIS Internal Capability Lab.
+- This extension does not start F51 or alter the current NEXT_ACTION.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.

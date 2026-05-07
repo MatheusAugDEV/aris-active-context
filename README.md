@@ -21,6 +21,7 @@ Current repair status: Obsidian Context Law / Context Control repair passed; F29
 Canonical roadmap preference: phase-by-phase organization with subtracks inside each phase (`F29.A`, `F29.B`, `F29.C`, `F29.D`), then continue numerically with `F30`, `F31`, `F32`, and so on. Avoid new parallel `V6-*` operational families.
 If the closed state remains stable, reserve `F30` for `Roadmap Canonicalization & Phase Hygiene`.
 Formal post-V6 roadmap reference: [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md).
+That roadmap now also records the future F51-F58 Security & Cybersecurity Hardening cycle and the F59-F68 ARIS Internal Capability Lab extension. Current operational next action remains F31.C.
 The full history is in `archive/`, and `Project_ARIS` remains the detailed
 technical source-of-truth.
 

@@ -17,5 +17,6 @@ As of 2026-05-07:
 - F31.A source inventory is warn-passed.
 - F31.B hash/signature/metadata index is warn-passed with 35 entries indexed.
 - F31.C source-of-truth consistency gate is next.
+- Post-F50 roadmap extension is recorded for F51-F58 Security & Cybersecurity Hardening and F59-F68 ARIS Internal Capability Lab.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.

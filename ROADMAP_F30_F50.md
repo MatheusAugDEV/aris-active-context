@@ -222,3 +222,71 @@ estabelecer rotina de dívida técnica, atualização de dependências, risk reg
 
 Validação:
 backlog priorizado, rotina de manutenção definida e próximo roadmap aprovado.
+
+## Extensão futura pós-F50
+
+Depois de F50, a sequência operacional futura pode ser estendida com dois ciclos adicionais, sem reduzir nem fundir F30-F50:
+
+### F51-F58 — Security & Cybersecurity Hardening Cycle
+
+Objetivo:
+endurecer o ARIS contra vazamento de dados, brechas locais, prompt injection, tool poisoning, abuso de providers, falhas de sandbox, ataques de voz/UI e riscos de supply-chain antes de iniciar um laboratório prático amplo.
+
+F51 — Security Architecture & Threat Model
+Objetivo: mapear ameaças reais do ARIS, superfícies de ataque, trust boundaries, abuse cases e security risk register.
+
+F52 — Data Protection, Privacy & Secrets Hardening
+Objetivo: proteger dados sensíveis, secrets, logs, artifacts, memória, provider redaction, PII, paths sensíveis e evitar vazamentos.
+
+F53 — Runtime & Desktop Attack Surface Reduction
+Objetivo: reduzir superfície de ataque local, incluindo permissões, subprocess, filesystem, symlink attacks, path traversal, sandbox escape e políticas do host.
+
+F54 — Prompt Injection, Tool Poisoning & Context Attack Defense
+Objetivo: reforçar defesa contra indirect prompt injection, lethal-trifecta, untrusted content, tool output boundary e memory poisoning.
+
+F55 — Provider, Network & Cost Abuse Security
+Objetivo: proteger provider keys, redaction, network policy, budget abuse, resource amplification, fallback poisoning e circuit breakers.
+
+F56 — UI, Voice & Multimodal Security Hardening
+Objetivo: endurecer comandos por voz, wake word, readback, confirmação, anexos, OCR/PDF, UI action buttons e fronteiras multimodais.
+
+F57 — Cybersecurity Red-Team Simulation
+Objetivo: simular ataques contra o ARIS, incluindo vazamento de dados, bypass de gate, ação não autorizada, prompt injection, rollback bypass, sandbox escape e provider leakage.
+
+F58 — Security Closure & Internal Hardening Gate
+Objetivo: validar correções, riscos aceitos, riscos bloqueantes, política de operação segura e readiness para o laboratório interno.
+
+### F59-F68 — ARIS Internal Capability Lab Cycle
+
+Objetivo:
+medir capacidades reais do ARIS em ambiente local controlado, incluindo competência, segurança, velocidade, uso de CPU/RAM/disco, resposta, contexto, memória, ações, rollback, UI, voz, providers, confiabilidade e utilidade prática.
+
+F59 — ARIS Internal Capability Lab Foundation
+Objetivo: criar estrutura local do laboratório, fixtures, cenários, scoring e relatórios.
+
+F60 — Small Task Capability Suite
+Objetivo: testar tarefas pequenas como resumo, CSV, notas, resposta factual, prompt injection simples e dry-run local.
+
+F61 — Medium Workflow Capability Suite
+Objetivo: testar workflows multi-etapa com documentos, memória, aprovação, ledger e rollback.
+
+F62 — Local Systems Simulation Lab
+Objetivo: criar sistemas falsos locais, como fake CRM, fake tickets, fake calendar, fake files e fake office data.
+
+F63 — Desktop Resource & Performance Lab
+Objetivo: medir CPU, RAM, disco, startup, shutdown, artifact growth, SQLite growth e sessão longa.
+
+F64 — Security Attack Lab
+Objetivo: testar prompt injection, tool poisoning, path traversal, data exfiltration, voice attack e ações proibidas.
+
+F65 — Automation Execution Lab
+Objetivo: testar execução local controlada, rollback, compensação, falha no meio e estado final.
+
+F66 — UI, Voice & Multimodal Lab
+Objetivo: testar cockpit, resposta longa, approval UX, voz, readback, fallback textual, PDF/OCR e anexos.
+
+F67 — Practical Utility Metrics
+Objetivo: medir tempo economizado, erros evitados, retrabalho reduzido, intervenção humana e custo por tarefa.
+
+F68 — Capability Review & Next Direction
+Objetivo: decidir se o ARIS está pronto para uso operacional interno, automação vertical ou novo ciclo técnico.
