@@ -10,7 +10,7 @@
 - Obsidian must not bulk-read.
 - Obsidian must not replace artifacts or source-of-truth files.
 - Archive is not the default read path.
-- F29 final execution remains gated; next review is allowed.
+- F29 final execution remains gated; readiness warnings must be repaired before execution.
 - Every Codex prompt must end with an active-context update.
 - After repair, relevant Codex prompts must also require Obsidian sync.
 - This repo does not author runtime, frontend, action, audio, network, secrets, or dependencies.
