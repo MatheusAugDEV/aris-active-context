@@ -17,7 +17,8 @@ Read in this order:
 11. [docs/context/ctxe2_prompt_template_compression_contract.md](../docs/context/ctxe2_prompt_template_compression_contract.md) for the prompt template compression contract
 10. Obsidian only after the repair and only query-first
 11. `archive/` only when history is needed
-12. `Project_ARIS` artifacts/docs only when cited
+12. [docs/context/ctxe3_prompt_budget_gate.md](../docs/context/ctxe3_prompt_budget_gate.md) for the prompt budget gate
+13. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.

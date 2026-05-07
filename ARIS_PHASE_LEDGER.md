@@ -129,6 +129,11 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E2] Prompt Template Compression Contract completed as a parallel diagnostic.
 - The contract is estimate-only and keeps F31.E as the next principal phase.
 
+## CTX-E3 Prompt Budget Gate
+
+- [CTX-E3] Prompt Budget Gate completed as a parallel diagnostic.
+- The gate is estimate-only and keeps F31.E as the next principal phase.
+
 ## Historical Blocked State
 
 - F29 final execution was blocked until the final practical closure execution gate ran.

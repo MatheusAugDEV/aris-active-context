@@ -1,1 +1,1 @@
-Prepare F31.E — Source-of-Truth Drift Repair Controlled Apply. CTX-E1 token-economy visibility audit completed in parallel. CTX-E2 prompt-template compression contract completed in parallel.
+Prepare F31.E — Source-of-Truth Drift Repair Controlled Apply. CTX-E1 token-economy visibility audit completed in parallel. CTX-E2 prompt-template compression contract completed in parallel. CTX-E3 prompt budget gate completed in parallel.
