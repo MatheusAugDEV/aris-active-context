@@ -17,7 +17,7 @@ Read order:
 Official V6 naming follows the PDF roadmap F1-F29.
 Consult this repo before ARIS technical decisions.
 Update it at the end of every Codex phase.
-Current repair status: Obsidian Context Law / Context Control repair passed; F29 readiness review is warn-passed, F29 warning repair is repaired, and final execution is still blocked.
+Current repair status: Obsidian Context Law / Context Control repair passed; F29 readiness review is warn-passed, F29 warning repair is repaired, F29 final execution plan is ready, and final execution is still blocked.
 The full history is in `archive/`, and `Project_ARIS` remains the detailed
 technical source-of-truth.
 
