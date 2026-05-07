@@ -264,3 +264,9 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.U] Future MCP Read-Only Configuration Apply Dry-Run Plan Review Gate completed.
 - The apply dry-run plan review is artifact-only and dry-run-review-only; no real apply, no real config file creation, and no real MCP activation are authorized.
 - F32.V — Future MCP Read-Only Configuration Apply Dry-Run Execution Plan Gate is next.
+
+## F32.V Future MCP Read-Only Configuration Apply Dry-Run Execution Plan Gate
+
+- [F32.V] Future MCP Read-Only Configuration Apply Dry-Run Execution Plan Gate completed.
+- The execution plan is artifact-only and execution-plan-only; no real dry-run execution, no real apply, and no real MCP activation are authorized.
+- F32.W — Future MCP Read-Only Configuration Apply Dry-Run Execution Plan Review Gate is next.
