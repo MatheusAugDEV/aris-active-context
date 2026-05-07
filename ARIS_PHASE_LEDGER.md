@@ -239,3 +239,9 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E18] Real Token Usage Baseline Manual Evidence Validation Review is warn-passed.
 - The review validates the CTX-E17 no-evidence state, confirms the reserved manual directory stayed safe, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E19 — Real Token Usage Baseline Manual Evidence Submission Window.
 - Baseline real remains absent at review time.
+
+## CTX-E19 Real Token Usage Baseline Manual Evidence Submission Window
+
+- [CTX-E19] Real Token Usage Baseline Manual Evidence Submission Window is ready-passed.
+- The window opens future manual redacted submission without collecting evidence, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E20 — Token Economy Track Closure and Integration Readiness Gate.
+- Baseline real remains absent at window time.
