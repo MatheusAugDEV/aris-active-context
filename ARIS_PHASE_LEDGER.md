@@ -245,3 +245,12 @@ Closed as a foundation track, not as official V6 closure.
 - [CTX-E19] Real Token Usage Baseline Manual Evidence Submission Window is ready-passed.
 - The window opens future manual redacted submission without collecting evidence, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E20 — Token Economy Track Closure and Integration Readiness Gate.
 - Baseline real remains absent at window time.
+
+## CTX-E20 Token Economy Track Closure and Integration Readiness Gate
+
+- [CTX-E20] Token Economy Track Closure and Integration Readiness Gate is warn-passed.
+- The CTX-E1..CTX-E19 infrastructure is structurally complete and paused pending manual real evidence or explicit skill integration authorization.
+- Read-only policies, scripts, and checks remain available for bounded future use.
+- Skill scaffolds are still not integrated into AGENTS.md or CLAUDE.md.
+- The manual evidence submission window remains open, but no real baseline evidence exists yet.
+- F31.E stays the next principal phase.
