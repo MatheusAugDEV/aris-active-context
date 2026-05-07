@@ -148,3 +148,12 @@ Read in this order:
 124. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_review_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_review_matrix.json) for the F32.Q review matrix
 125. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_risk_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_risk_matrix.json) for the F32.Q risk matrix
 126. [artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_candidate_review_gate_next_phase_contract.json) for the F32.Q next phase contract
+
+127. [docs/fase32/f32r_future_mcp_readonly_configuration_planning_gate.md](../docs/fase32/f32r_future_mcp_readonly_configuration_planning_gate.md) for the F32.R configuration planning gate doc
+128. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_decision.json) for the F32.R decision
+129. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_summary.json) for the F32.R summary
+130. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_report.md) for the F32.R report
+131. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_requirements.json) for the F32.R requirements
+132. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_configuration_plan.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_configuration_plan.json) for the F32.R configuration plan
+133. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_planning_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_planning_matrix.json) for the F32.R planning matrix
+134. [artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_safety_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_planning_gate_safety_matrix.json) for the F32.R safety matrix

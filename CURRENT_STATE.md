@@ -40,3 +40,4 @@ As of 2026-05-07:
 - F32.O future MCP read-only final readiness consolidation gate completed; final readiness remains future-gated and read-only only, and F32.P — Future MCP Read-Only Configuration Candidate Gate is next principal phase.
 - F32.P future MCP read-only configuration candidate gate completed; the configuration candidate remains artifact-only and disabled by default, and F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next principal phase.
 - F32.Q future MCP read-only configuration candidate review gate completed; the configuration candidate review remains future-gated and artifact-only, and F32.R — Future MCP Read-Only Configuration Planning Gate is next principal phase.
+- F32.R future MCP read-only configuration planning gate completed; the configuration planning remains artifact-only and plan-only, and F32.S — Future MCP Read-Only Configuration Planning Review Gate is next principal phase.

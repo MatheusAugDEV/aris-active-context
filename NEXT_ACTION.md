@@ -1,1 +1,1 @@
-Prepare F32.R — Future MCP Read-Only Configuration Planning Gate.
+Prepare F32.S — Future MCP Read-Only Configuration Planning Review Gate.
