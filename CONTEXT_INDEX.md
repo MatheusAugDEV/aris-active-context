@@ -21,9 +21,13 @@ Read in this order:
 17. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_decision.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_decision.json) for the F32.A decision
 18. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_boundary_matrix.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_boundary_matrix.json) for the context boundary matrix
 19. [artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_threat_model.json](../artifacts/f32/f32_context_boundary_trust_firewall_bootstrap_gate_threat_model.json) for the trust firewall threat model
-20. Obsidian only after the repair and only query-first
-21. `archive/` only when history is needed
-22. `Project_ARIS` artifacts/docs only when cited
+20. [docs/fase32/f32b_context_boundary_trust_firewall_implementation_gate.md](../docs/fase32/f32b_context_boundary_trust_firewall_implementation_gate.md) for the F32.B implementation gate doc
+21. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_decision.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_decision.json) for the F32.B decision
+22. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_validation_matrix.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_validation_matrix.json) for the F32.B validation matrix
+23. [artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_rule_results.json](../artifacts/f32/f32_context_boundary_trust_firewall_implementation_gate_rule_results.json) for the F32.B rule results
+24. Obsidian only after the repair and only query-first
+25. `archive/` only when history is needed
+26. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.

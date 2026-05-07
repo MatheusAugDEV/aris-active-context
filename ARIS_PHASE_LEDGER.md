@@ -115,12 +115,19 @@ Closed as a foundation track, not as official V6 closure.
 ## F32.A Context Boundary, Obsidian/MCP & Trust Firewall Bootstrap Gate
 
 - [F32.A] Bootstrap gate is ready; 0 blockers.
-- Boundary matrix: 14 sources classified with authority level, trust level, access mode, bulk-read policy, injection/stale risk.
+- Boundary matrix: 13 sources classified with authority level, trust level, access mode, bulk-read policy, injection/stale risk.
 - Threat model: 10 threats assessed (stale context, prompt injection, bulk read, secret leakage, source precedence confusion, MCP over-permission, external claims, token budget blowup, false source-of-truth from prompts).
 - Trust firewall: 10 access rules defined; DECISION_LOCKS immutable by narrative.
 - MCP blocked; Obsidian read-only/query-first/future-gated; CTX-E skills integration blocked.
 - F31 residual warnings preserved and classified (not masked).
 - F32.B — Context Boundary Trust Firewall Implementation Gate is next.
+
+## F32.B Context Boundary Trust Firewall Implementation Gate
+
+- [F32.B] Context Boundary Trust Firewall Implementation Gate completed.
+- Trust firewall lint validated ACR-01..ACR-10 against the bootstrap matrix and threat model.
+- Obsidian/archive/MCP remain blocked or future-gated; DECISION_LOCKS remains immutable by narrative sources.
+- F32.C — Structured Obsidian Query Contract Gate is next.
 
 ## Historical Blocked State
 
