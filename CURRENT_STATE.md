@@ -38,3 +38,4 @@ As of 2026-05-07:
 - CTX-E15 real token usage baseline manual evidence collection readiness review completed in parallel; readiness passed with no blockers, baseline remains uncollected, and F31.E stays next principal phase.
 - CTX-E16 real token usage baseline manual evidence collection authorization gate completed in parallel; future manual intake is authorized with restrictions, baseline remains uncollected, and F31.E stays next principal phase.
 - CTX-E17 real token usage baseline manual evidence intake controlled apply completed in parallel; no evidence was submitted, the intake stayed local-only, baseline remains uncollected, and F31.E stays next principal phase.
+- CTX-E18 real token usage baseline manual evidence validation review completed in parallel; the no-evidence state was validated, the reserved manual directory stayed safe, baseline remains uncollected, and F31.E stays next principal phase.
