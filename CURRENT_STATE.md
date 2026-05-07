@@ -33,3 +33,5 @@ As of 2026-05-07:
 - F32.J future MCP read-only dry-run review gate completed; the dry-run review is synthetic/local, no MCP implementation is authorized now, and F32.K — Future MCP Read-Only Security Review Gate is next principal phase.
 
 - F32.K future MCP read-only security review gate completed; the dry-run security review remains future-gated, and F32.L — Future MCP Read-Only Provenance Gate is next principal phase.
+
+- F32.L future MCP read-only provenance gate completed; provenance remains contract-only, and F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate is next principal phase.

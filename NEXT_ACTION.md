@@ -1,1 +1,1 @@
-Prepare F32.L — Future MCP Read-Only Provenance Gate.
+Prepare F32.M — Future MCP Read-Only Disable and Rollback Rehearsal Gate.

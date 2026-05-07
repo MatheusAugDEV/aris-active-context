@@ -98,3 +98,10 @@ Read in this order:
 80. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_summary.json) for the F32.K summary
 81. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_report.md) for the F32.K report
 82. [artifacts/f32/f32_future_mcp_readonly_security_review_gate_security_matrix.json](../artifacts/f32/f32_future_mcp_readonly_security_review_gate_security_matrix.json) for the F32.K security matrix
+
+83. [docs/fase32/f32l_future_mcp_readonly_provenance_gate.md](../docs/fase32/f32l_future_mcp_readonly_provenance_gate.md) for the F32.L provenance gate doc
+84. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_decision.json) for the F32.L decision
+85. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_summary.json) for the F32.L summary
+86. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_report.md) for the F32.L report
+87. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_provenance_contract.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_provenance_contract.json) for the F32.L provenance contract
+88. [artifacts/f32/f32_future_mcp_readonly_provenance_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_provenance_gate_validation_matrix.json) for the F32.L validation matrix
