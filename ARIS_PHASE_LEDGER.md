@@ -239,6 +239,12 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.P] Future MCP Read-Only Configuration Candidate Gate completed.
 - The candidate configuration is artifact-only, disabled by default, and retains read-only-only constraints with provenance, context usage report, and source precedence requirements.
 - F32.Q — Future MCP Read-Only Configuration Candidate Review Gate is next.
+
+## Brand Identity Meaning
+
+- The ARIS brand identity meaning is recorded in `docs/reference/brand_identity_meaning.md`.
+- The three-point symbol is interpreted as intention -> control -> execution and as a decision-map reference to Aries / ARIS, not as decorative astrology.
+- The visual identity communicates control before execution and does not expand technical capability claims beyond what is already evidenced in active context and artifacts.
 ## F32.Q Future MCP Read-Only Configuration Candidate Review Gate
 
 - [F32.Q] Future MCP Read-Only Configuration Candidate Review Gate completed.

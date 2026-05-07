@@ -213,3 +213,4 @@ Read in this order:
 183. [artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_authorization_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_authorization_matrix.json) for the F32.X authorization matrix
 184. [artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_safety_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_safety_matrix.json) for the F32.X safety matrix
 185. [artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_dry_run_execution_authorization_gate_next_phase_contract.json) for the F32.X next phase contract
+186. [docs/reference/brand_identity_meaning.md](../docs/reference/brand_identity_meaning.md) for the ARIS brand identity meaning reference
