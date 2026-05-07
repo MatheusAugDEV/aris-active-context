@@ -29,3 +29,4 @@ Read in this order:
 - Do not advance phase without checking `NEXT_ACTION`.
 - Do not declare token savings without evidence.
 - Keep this repo compact.
+17. [docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md](../docs/context/ctxe6_prompt_budget_skill_script_implementation_plan.md) for the prompt budget skill and script implementation plan

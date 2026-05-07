@@ -167,3 +167,8 @@ Closed as a foundation track, not as official V6 closure.
 
 - Full history lives in `archive/ARIS_FULL_HISTORY.md`.
 - The archive is for reconstruction and audit, not the default read path.
+
+## CTX-E6 Prompt Budget Skill & Script Implementation Plan
+
+- [CTX-E6] Prompt Budget Skill & Script Implementation Plan completed as a parallel planning diagnostic.
+- The plan is estimate-only, keeps F31.E as the next principal phase, and recommends CTX-E7 for skill scaffolds before script scaffolds.
