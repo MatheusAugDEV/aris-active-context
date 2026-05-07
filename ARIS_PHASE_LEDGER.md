@@ -159,3 +159,10 @@ Closed as a foundation track, not as official V6 closure.
 - Query contract fields, trust rules, source precedence, prompt-injection defenses, and context usage report requirements were materialized.
 - Obsidian remains future-gated and read-only; MCP productive use remains blocked.
 - F32.D — Structured Obsidian Query Contract Review Gate is next.
+
+## F32.D Structured Obsidian Query Contract Review Gate
+
+- [F32.D] Structured Obsidian Query Contract Review Gate completed.
+- Review matrix confirmed the F32.C contract completeness, conservative scope, source precedence, DECISION_LOCKS protection, and query rejection coverage.
+- Contract approved for future MCP read-only planning only; no real Obsidian or productive MCP activation is authorized.
+- F32.E — Future MCP Read-Only Candidate Contract Gate is next.

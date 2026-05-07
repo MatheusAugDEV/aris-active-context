@@ -30,9 +30,13 @@ Read in this order:
 26. [artifacts/f32/f32_structured_obsidian_query_contract_gate_decision.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_decision.json) for the F32.C decision
 27. [artifacts/f32/f32_structured_obsidian_query_contract_gate_summary.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_summary.json) for the F32.C summary
 28. [artifacts/f32/f32_structured_obsidian_query_contract_gate_validation_matrix.json](../artifacts/f32/f32_structured_obsidian_query_contract_gate_validation_matrix.json) for the F32.C validation matrix
-29. Obsidian only after the repair and only query-first
-30. `archive/` only when history is needed
-31. `Project_ARIS` artifacts/docs only when cited
+29. [docs/fase32/f32d_structured_obsidian_query_contract_review_gate.md](../docs/fase32/f32d_structured_obsidian_query_contract_review_gate.md) for the F32.D review gate doc
+30. [artifacts/f32/f32_structured_obsidian_query_contract_review_gate_decision.json](../artifacts/f32/f32_structured_obsidian_query_contract_review_gate_decision.json) for the F32.D decision
+31. [artifacts/f32/f32_structured_obsidian_query_contract_review_gate_summary.json](../artifacts/f32/f32_structured_obsidian_query_contract_review_gate_summary.json) for the F32.D summary
+32. [artifacts/f32/f32_structured_obsidian_query_contract_review_gate_review_matrix.json](../artifacts/f32/f32_structured_obsidian_query_contract_review_gate_review_matrix.json) for the F32.D review matrix
+33. Obsidian only after the repair and only query-first
+34. `archive/` only when history is needed
+35. `Project_ARIS` artifacts/docs only when cited
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.

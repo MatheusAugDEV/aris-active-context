@@ -21,5 +21,6 @@ As of 2026-05-07:
 - F32.A context boundary, Obsidian/MCP & trust firewall bootstrap gate is ready; boundary matrix (13 sources), threat model (10 threats), and trust firewall (10 rules) are defined; 0 blockers; F32.B is next.
 - F32.B context boundary trust firewall implementation gate completed in parallel; validation matrix and rule results were generated, Obsidian/archive/MCP remain blocked or future-gated, and F32.C — Structured Obsidian Query Contract Gate is next principal phase.
 - F32.C structured Obsidian query contract gate is warn-passed; the future query contract is defined, Obsidian remains future-gated and read-only, and F32.D — Structured Obsidian Query Contract Review Gate is next principal phase.
+- F32.D structured Obsidian query contract review gate completed; the contract is complete, approved for future MCP read-only planning, and F32.E — Future MCP Read-Only Candidate Contract Gate is next principal phase.
 - `aris-active-context` is the compact entrypoint, not the full ARIS dump.
 - Full history lives in `archive/` and is not the default read path.
