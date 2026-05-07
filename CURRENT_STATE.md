@@ -34,3 +34,4 @@ As of 2026-05-07:
 - CTX-E11 real token usage baseline plan completed in parallel; baseline remains uncollected and F31.E stays next principal phase.
 - CTX-E12 real token usage baseline manual evidence runbook completed in parallel; manual capture procedure is prepared and baseline remains uncollected.
 - CTX-E13 real token usage baseline manual evidence dry run completed in parallel; synthetic samples were validated and baseline remains uncollected.
+- CTX-E14 real token usage baseline manual evidence collection prep completed in parallel; reserved local evidence prep and blank template are ready and baseline remains uncollected.

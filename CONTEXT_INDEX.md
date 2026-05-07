@@ -46,3 +46,8 @@ Read in this order:
 31. [docs/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run.md](../docs/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run.md) for the synthetic dry run report
 32. [artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_results.json](../artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_results.json) for the dry-run validation results
 33. [artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_samples.json](../artifacts/context/ctxe13_real_token_usage_baseline_manual_evidence_dry_run_samples.json) for the synthetic sample set
+34. [docs/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep.md](../docs/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep.md) for the evidence collection prep report
+35. [docs/context/aris_real_token_usage_evidence_prep.md](../docs/context/aris_real_token_usage_evidence_prep.md) for the reusable evidence prep policy note
+36. [artifacts/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep_blank_sample_template.json](../artifacts/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep_blank_sample_template.json) for the blank future evidence template
+37. [artifacts/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep_operator_checklist.json](../artifacts/context/ctxe14_real_token_usage_baseline_manual_evidence_collection_prep_operator_checklist.json) for the operator checklist
+38. [artifacts/context/manual_token_usage_evidence/README.md](../artifacts/context/manual_token_usage_evidence/README.md) for the reserved future evidence directory

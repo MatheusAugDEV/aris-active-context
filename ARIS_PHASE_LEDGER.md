@@ -209,3 +209,9 @@ Closed as a foundation track, not as official V6 closure.
 - The dry run is synthetic-only, keeps F31.E as the next principal phase, and confirms that valid samples are accepted while secret, claim, and comparison violations are rejected.
 - Baseline real remains absent at dry-run time.
 - Next parallel action: CTX-E14 — Real Token Usage Baseline Manual Evidence Collection Prep.
+
+## CTX-E14 Real Token Usage Baseline Manual Evidence Collection Prep
+
+- [CTX-E14] Real Token Usage Baseline Manual Evidence Collection Prep is ready-passed.
+- The prep is local-only, reserves the future evidence directory and blank template, keeps F31.E as the next principal phase, and points the next parallel trail to CTX-E15 — Real Token Usage Baseline Manual Evidence Collection Readiness Review.
+- Baseline real remains absent at prep time.
