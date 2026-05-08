@@ -312,3 +312,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.Z3] Future MCP Read-Only Configuration Controlled Apply Preparation Plan Review Gate completed.
 - The apply-preparation plan review remains artifact-only and review-only; human checklist, technical checklist, permission matrix, rollback, audit ledger, and failure mode reviews are validated.
 - F32.Z4 — Future MCP Read-Only Configuration Controlled Apply Authorization Gate is next principal phase.
+## F32.Z4 Future MCP Read-Only Configuration Controlled Apply Authorization Gate
+
+- [F32.Z4] Future MCP Read-Only Configuration Controlled Apply Authorization Gate completed.
+- The authorization contract remains artifact-only and contract-only; no real apply, no real config write, no MCP activation, and no real Obsidian access are authorized here.
+- F32.Z5 — Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate is next.
