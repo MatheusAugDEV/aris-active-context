@@ -302,3 +302,8 @@ Closed as a foundation track, not as official V6 closure.
 - [F32.Z1] Future MCP Read-Only Configuration Controlled Dry-Run Execution Review Gate completed.
 - The controlled dry-run review remained artifact-only and review-only; the simulated read-only configuration and noop proof are consistent, with no real config file creation or modification, no MCP activation, and no real Obsidian access.
 - F32.Z2 — Future MCP Read-Only Configuration Controlled Apply Preparation Plan is next principal phase.
+## F32.Z2 Future MCP Read-Only Configuration Controlled Apply Preparation Plan
+
+- [F32.Z2] Future MCP Read-Only Configuration Controlled Apply Preparation Plan completed.
+- The apply-preparation plan remains artifact-only and preparation-only; human confirmation, manual path and permission review, rollback, hash checks, and append-only audit ledger planning are required.
+- F32.Z3 — Future MCP Read-Only Configuration Controlled Apply Preparation Plan Review Gate is next principal phase.
