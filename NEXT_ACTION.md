@@ -1,1 +1,1 @@
-Prepare F32.Z — Future MCP Read-Only Configuration Controlled Dry-Run Execution Review Gate; next recommended gate: F32.Z1.
+Prepare F32.Z2 — Future MCP Read-Only Configuration Controlled Apply Preparation Plan; anchor phase F32.Z.
