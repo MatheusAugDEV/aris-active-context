@@ -32,3 +32,10 @@ GitHub: https://github.com/MatheusAugDEV/aris-active-context
 - [F32.Z4] Future MCP Read-Only Configuration Controlled Apply Authorization Gate completed.
 - The authorization contract remains artifact-only and contract-only; no real apply, no real config write, no MCP activation, and no real Obsidian access are authorized here.
 - F32.Z5 — Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate is next.
+Current repair status update: F32.Z5 is completed as a warn-passed review gate, and F32.Z6 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation is next.
+
+## F32.Z5 Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate
+
+- [F32.Z5] Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate completed.
+- The authorization review remains artifact-only and review-only; no real apply, no real config write, no MCP activation, and no real Obsidian access are authorized here.
+- F32.Z6 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation is next.
