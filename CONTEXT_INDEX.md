@@ -388,3 +388,4 @@ Read in this order:
 
 - [f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_decision.json) records the F32.Z11 controlled apply dry-run simulation decision and artifact-only evidence.
 - [f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_review_gate_decision.json) records the F32.Z12 controlled apply dry-run simulation review gate decision and review-only evidence.
+- [f32_future_mcp_readonly_configuration_controlled_apply_pre_apply_authorization_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_pre_apply_authorization_gate_decision.json) records the F32.Z13 pre-apply authorization gate decision and final authorization intake evidence.
