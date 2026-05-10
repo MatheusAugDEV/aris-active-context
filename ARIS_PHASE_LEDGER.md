@@ -494,3 +494,14 @@ Closed as a foundation track, not as official V6 closure.
 - Human pre-apply authorization granted: `False`.
 - Retry outcome: `manual_evidence_still_absent`.
 - Next principal phase: `F32.Z13K-Hold — Future MCP Read-Only Configuration Manual Authorization Hold`.
+
+## F32.Z13K-Hold Manual Authorization Hold
+
+- [F32.Z13K-Hold] Future MCP Read-Only Configuration Manual Authorization Hold completed as a deterministic hold gate.
+- Status: `f32_future_mcp_readonly_configuration_manual_authorization_hold_active`.
+- Hold active: `True`.
+- No more automatic retries: `True`.
+- Manual stop remains active: `True`.
+- Dedicated pre-apply statement found: `False`.
+- Human pre-apply authorization granted: `False`.
+- Next principal phase: `F32.Z13M — Future MCP Read-Only Configuration Manual Authorization Evidence Awaiting Human Input`.
