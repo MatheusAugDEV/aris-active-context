@@ -350,17 +350,17 @@ Closed as a foundation track, not as official V6 closure.
 ## F32.Z7I Human Authorization Evidence Validation
 
 - [F32.Z7I] Future MCP Read-Only Configuration Human Authorization Evidence Validation completed as a deterministic human authorization validator.
-- Status: f32_future_mcp_readonly_configuration_human_authorization_evidence_validation_pending.
-- Dedicated authorization statement found: False.
-- Human authorization granted: False.
+- Status: f32_future_mcp_readonly_configuration_human_authorization_evidence_validation_warn.
+- Dedicated authorization statement found: True.
+- Human authorization granted: True.
 - Validation matrix created: True.
-- Next principal phase: F32.Z7J — Future MCP Read-Only Configuration Manual Human Authorization Statement Required.
+- Next principal phase: F32.Z8 — Future MCP Read-Only Configuration Controlled Apply Plan.
 
 ## F32.Z7J Manual Human Authorization Statement Required
 
 - [F32.Z7J] Future MCP Read-Only Configuration Manual Human Authorization Statement Required completed as a manual stop gate.
 - Status: f32_future_mcp_readonly_configuration_manual_human_authorization_required.
-- Real authorization statement found: False.
-- Real authorization statement valid: False.
+- Real authorization statement found: True.
+- Real authorization statement valid: True.
 - Human authorization granted: False.
-- Next principal phase: HUMAN_REQUIRED — Manually create artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_statement.json, then run F32.Z7I again.
+- Next principal phase: F32.Z7I rerun already completed; F32.Z8 — Future MCP Read-Only Configuration Controlled Apply Plan is next.
