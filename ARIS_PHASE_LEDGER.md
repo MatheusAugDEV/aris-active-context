@@ -431,3 +431,4 @@ Closed as a foundation track, not as official V6 closure.
 - Previous Z10 replaced by Z10R: True.
 - Controlled dry-run allowed next phase: True.
 - Next principal phase: F32.Z11 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation.
+- F32.Z11 controlled apply dry-run simulation completed; the simulated preflight, apply steps, rollback, abort matrix, ledger preview, and real surface audit remain artifact-only, and F32.Z12 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation Review Gate is next principal phase.
