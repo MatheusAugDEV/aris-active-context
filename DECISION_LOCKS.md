@@ -69,3 +69,4 @@
 - F32.Z7H human authorization evidence intake is evidence-only; placeholder and instructions never count as authorization, and only the dedicated JSON statement can set human_authorization_granted true.
 - F32.Z7I human authorization evidence validation is evidence-only; placeholder, template, and instructions never count as authorization, and only the dedicated JSON statement can set human_authorization_granted true.
 - F32.Z7J is a manual stop gate; placeholder, checklist, stop marker, chat context, Codex status, commit text, and next-phase recommendations never count as authorization, and only the dedicated JSON statement can be validated by F32.Z7I.
+- F32.Z8 future MCP read-only controlled apply plan is plan-only; validated human authorization is a prerequisite for planning only, no real apply or real config write is authorized now, and F32.Z9 — Future MCP Read-Only Configuration Controlled Apply Plan Review Gate is next.

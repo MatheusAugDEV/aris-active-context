@@ -335,3 +335,14 @@ Read in this order:
 306. [artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_exact_statement_template.json](../artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_exact_statement_template.json) for the F32.Z7J exact statement template
 307. [artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_stop_marker.json](../artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_stop_marker.json) for the F32.Z7J stop marker
 308. [artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_manual_human_authorization_next_phase_contract.json) for the F32.Z7J next phase contract
+
+309. [docs/fase32/f32z8_future_mcp_readonly_configuration_controlled_apply_plan.md](../docs/fase32/f32z8_future_mcp_readonly_configuration_controlled_apply_plan.md) for the F32.Z8 apply plan doc
+310. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_decision.json) for the F32.Z8 decision
+311. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_summary.json) for the F32.Z8 summary
+312. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_report.md) for the F32.Z8 report
+313. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_steps.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_steps.json) for the F32.Z8 steps
+314. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_preflight_checks.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_preflight_checks.json) for the F32.Z8 preflight checks
+315. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_rollback_plan.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_rollback_plan.json) for the F32.Z8 rollback plan
+316. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_abort_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_abort_matrix.json) for the F32.Z8 abort matrix
+317. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_ledger_entry_plan.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_ledger_entry_plan.json) for the F32.Z8 ledger entry plan
+318. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_plan_next_phase_contract.json) for the F32.Z8 next phase contract

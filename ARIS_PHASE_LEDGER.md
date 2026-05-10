@@ -364,3 +364,13 @@ Closed as a foundation track, not as official V6 closure.
 - Real authorization statement valid: True.
 - Human authorization granted: False.
 - Next principal phase: F32.Z7I rerun already completed; F32.Z8 — Future MCP Read-Only Configuration Controlled Apply Plan is next.
+
+## F32.Z8 Controlled Apply Plan
+
+- [F32.Z8] Future MCP Read-Only Configuration Controlled Apply Plan completed as a deterministic plan-only gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_plan_ready.
+- Human authorization granted: True.
+- Planned config hash found: True.
+- Preflight checks created: True.
+- Rollback plan created: True.
+- Next principal phase: F32.Z9 — Future MCP Read-Only Configuration Controlled Apply Plan Review Gate.
