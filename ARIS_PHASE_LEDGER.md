@@ -390,4 +390,34 @@ Closed as a foundation track, not as official V6 closure.
 - Status: f32_future_mcp_readonly_configuration_controlled_apply_dry_run_authorization_gate_warn.
 - Warning accepted: True.
 - Controlled dry-run allowed next phase: True.
-- Next principal phase: F32.Z11 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation.
+- Next principal phase requires the Z8R repair and Z9R rerun before any F32.Z11 path.
+
+## F32.Z8R Controlled Apply Plan Test Coverage Repair
+
+- [F32.Z8R] Future MCP Read-Only Configuration Controlled Apply Plan Test Coverage Repair After Z10 Warning Acceptance completed as a repair-only gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_plan_test_coverage_repair_ready.
+- Original Z8 test count observed: 12.
+- Repaired Z8 test count observed: 21.
+- Z9 rerun required: True.
+- Z11 must wait: True.
+- Next principal phase: F32.Z9R — Future MCP Read-Only Configuration Controlled Apply Plan Review Gate Rerun.
+
+## F32.Z8R Controlled Apply Plan Test Coverage Repair
+
+- [F32.Z8R] Future MCP Read-Only Configuration Controlled Apply Plan Test Coverage Repair After Z10 Warning Acceptance completed as a repair-only gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_plan_test_coverage_repair_ready.
+- Original Z8 test count observed: 12.
+- Repaired Z8 test count observed: 21.
+- Z9 rerun required: True.
+- Z11 must wait: True.
+- Next principal phase: F32.Z9R — Future MCP Read-Only Configuration Controlled Apply Plan Review Gate Rerun.
+
+## F32.Z9R Controlled Apply Plan Review Gate Rerun
+
+- [F32.Z9R] Future MCP Read-Only Configuration Controlled Apply Plan Review Gate Rerun After Z8R Coverage Repair completed as a rerun review gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_plan_review_gate_rerun_passed.
+- Z8 repaired test count observed: 22.
+- Z8 previous warning resolved: True.
+- Previous Z10 marked stale by Z8R: True.
+- Z10 rerun required: True.
+- Next principal phase: F32.Z10R — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate Rerun.
