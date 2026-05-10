@@ -37,6 +37,7 @@ Read in this order:
 33. Obsidian only after the repair and only query-first
 34. `archive/` only when history is needed
 35. `Project_ARIS` artifacts/docs only when cited
+36. [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md) for the F32/F33 scope boundary and the official F33 SQLite Memory, FTS5 & Evaluation Baseline target
 
 - Do not bulk-read `archive/`.
 - Do not bulk-read Obsidian.
@@ -45,12 +46,12 @@ Read in this order:
 - Do not declare token savings without evidence.
 - Keep this repo compact.
 
-36. [docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md](../docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md) for the F32.E candidate contract gate doc
-37. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json) for the F32.E candidate contract
-38. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json) for the F32.E decision
-39. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json) for the F32.E summary
-40. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json) for the F32.E validation matrix
-41. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json) for the F32.E requirements
+37. [docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md](../docs/fase32/f32e_future_mcp_readonly_candidate_contract_gate.md) for the F32.E candidate contract gate doc
+38. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_contract.json) for the F32.E candidate contract
+39. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_decision.json) for the F32.E decision
+40. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_summary.json) for the F32.E summary
+41. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_validation_matrix.json) for the F32.E validation matrix
+42. [artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json](../artifacts/f32/f32_future_mcp_readonly_candidate_contract_gate_requirements.json) for the F32.E requirements
 42. `Project_ARIS` artifacts/docs only when cited
 
 43. [docs/fase32/f32f_future_mcp_readonly_candidate_contract_review_gate.md](../docs/fase32/f32f_future_mcp_readonly_candidate_contract_review_gate.md) for the F32.F review gate doc
