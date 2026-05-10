@@ -32,7 +32,7 @@ GitHub: https://github.com/MatheusAugDEV/aris-active-context
 - [F32.Z4] Future MCP Read-Only Configuration Controlled Apply Authorization Gate completed.
 - The authorization contract remains artifact-only and contract-only; no real apply, no real config write, no MCP activation, and no real Obsidian access are authorized here.
 - F32.Z5 — Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate is next.
-Current repair status update: F32.Z6 is completed as a warn-passed final pre-apply dry-run simulation, and F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate is next.
+Current repair status update: F32.Z6 is completed as a warn-passed final pre-apply dry-run simulation with simulated config payload, safety flags, and source inputs, and F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate is next.
 
 ## F32.Z5 Future MCP Read-Only Configuration Controlled Apply Authorization Review Gate
 
@@ -43,5 +43,5 @@ Current repair status update: F32.Z6 is completed as a warn-passed final pre-app
 ## F32.Z6 Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation
 
 - [F32.Z6] Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation completed.
-- The final pre-apply dry-run simulation remained artifact-only and simulation-only; planned config content, planned hash, simulated pre/post state, rollback handle, ledger entry, and final denylist were materialized without real config writes, MCP activation, or real Obsidian access.
+- The final pre-apply dry-run simulation remained artifact-only and simulation-only; simulated config payload, planned hash, simulated pre/post state, rollback handle, ledger entry, denylist, safety flags, and source inputs were materialized without real config writes, MCP activation, real Obsidian access, or vault writes.
 - F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate is next.

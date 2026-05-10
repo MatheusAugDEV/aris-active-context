@@ -326,5 +326,5 @@ Closed as a foundation track, not as official V6 closure.
 ## F32.Z6 Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation
 
 - [F32.Z6] Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation completed.
-- The final pre-apply dry-run simulation remained artifact-only and simulation-only; planned config content, planned hash, simulated pre/post state, rollback handle, ledger entry, and final denylist were materialized without real config writes, MCP activation, Obsidian access, or vault writes.
+- The final pre-apply dry-run simulation remained artifact-only and simulation-only; simulated config payload, planned hash, simulated pre/post state, rollback handle, ledger entry, denylist, safety flags, and source inputs were materialized without real config writes, MCP activation, Obsidian access, vault writes, or external execution.
 - F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate is next.
