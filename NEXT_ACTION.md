@@ -1,1 +1,1 @@
-Prepare F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate; anchor phase F32.Z.
+Prepare F32.Z7H — Future MCP Read-Only Configuration Human Authorization Evidence Intake review and evidence intake; anchor phase F32.Z7.

@@ -45,3 +45,5 @@ Current repair status update: F32.Z6 is completed as a warn-passed final pre-app
 - [F32.Z6] Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation completed.
 - The final pre-apply dry-run simulation remained artifact-only and simulation-only; simulated config payload, planned hash, simulated pre/post state, rollback handle, ledger entry, denylist, safety flags, and source inputs were materialized without real config writes, MCP activation, real Obsidian access, or vault writes.
 - F32.Z7 — Future MCP Read-Only Configuration Final Pre-Apply Dry-Run Simulation Review Gate is next.
+
+Current repair status update: F32.Z7 is a conservative human authorization gate; only a dedicated JSON authorization statement counts, and F32.Z7H — Future MCP Read-Only Configuration Human Authorization Evidence Intake is next when authorization is absent.
