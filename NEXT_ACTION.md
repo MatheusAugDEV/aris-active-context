@@ -1,1 +1,1 @@
-Prepare F32.Z7J — Future MCP Read-Only Configuration Manual Human Authorization Statement Required review and evidence validation; anchor phase F32.Z7I.
+Manual human authorization required: create artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_statement.json by hand, then rerun F32.Z7I; anchor phase F32.Z7J.

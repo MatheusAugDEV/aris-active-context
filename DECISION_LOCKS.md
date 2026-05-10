@@ -68,3 +68,4 @@
 - F32.Z7 human authorization only counts when a dedicated JSON authorization statement is present; chat context, Codex status, and next-phase recommendations do not count as authorization.
 - F32.Z7H human authorization evidence intake is evidence-only; placeholder and instructions never count as authorization, and only the dedicated JSON statement can set human_authorization_granted true.
 - F32.Z7I human authorization evidence validation is evidence-only; placeholder, template, and instructions never count as authorization, and only the dedicated JSON statement can set human_authorization_granted true.
+- F32.Z7J is a manual stop gate; placeholder, checklist, stop marker, chat context, Codex status, commit text, and next-phase recommendations never count as authorization, and only the dedicated JSON statement can be validated by F32.Z7I.
