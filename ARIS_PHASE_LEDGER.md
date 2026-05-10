@@ -482,3 +482,15 @@ Closed as a foundation track, not as official V6 closure.
 - Human pre-apply authorization granted: `False`.
 - Evidence manifest created: `True`.
 - Next principal phase: `F32.Z13K-Retry — Future MCP Read-Only Configuration Manual Human Authorization Evidence Intake Rerun Retry`.
+
+## F32.Z13K-Retry Manual Human Authorization Evidence Intake Rerun Retry
+
+- [F32.Z13K-Retry] Future MCP Read-Only Configuration Manual Human Authorization Evidence Intake Rerun Retry completed as a deterministic intake-only retry.
+- Status: `f32_future_mcp_readonly_configuration_manual_human_authorization_evidence_intake_rerun_retry_pending`.
+- Manual stop remains active: `True`.
+- Human authorization required: `True`.
+- Dedicated pre-apply statement found: `False`.
+- Dedicated pre-apply statement valid: `False`.
+- Human pre-apply authorization granted: `False`.
+- Retry outcome: `manual_evidence_still_absent`.
+- Next principal phase: `F32.Z13K-Hold — Future MCP Read-Only Configuration Manual Authorization Hold`.
