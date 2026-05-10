@@ -82,3 +82,6 @@
 - F32 remains the owner for Context Boundary, Obsidian/MCP & Trust Firewall work; if read-only MCP configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, or closure happen before F33, they must remain in F32 and not be reassigned to F33.
 - F33 is reserved for SQLite Memory, FTS5 & Evaluation Baseline and must not be repurposed for MCP activation or closure work.
 - If MCP activation is deferred rather than completed inside F32, a formal closure or adiamento gate must record the deferment, blockers, backlog, and justification before F33 begins.
+- F32.Z13H pre-apply human authorization evidence intake is intake-only; the dedicated statement path, placeholder, instructions, and schema are non-authorizing, and only F32.Z13I may validate a future dedicated JSON statement.
+- F32.Z13I human authorization evidence validation is validation-only; placeholder, instructions, schema, chat context, Codex status, and commit text never count as authorization, and only a dedicated JSON statement can set human_pre_apply_authorization_granted true.
+- F32.Z13J manual stop is non-authorizing; placeholder, instructions, schema, stop marker, chat context, Codex status, and commit text never count as authorization, and only a human-created dedicated JSON statement outside Codex can unblock later rerun or validation.

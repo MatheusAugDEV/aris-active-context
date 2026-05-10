@@ -1,2 +1,2 @@
-Prepare F32.Z13H — Future MCP Read-Only Configuration Pre-Apply Human Authorization Evidence Intake; anchor phase F32.Z13.
-Keep the F32/F33 scope boundary explicit: F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure decisions; F33 stays on SQLite Memory, FTS5 & Evaluation Baseline unless a formal closure/adiamento decision says otherwise.
+Prepare F32.Z13K — Future MCP Read-Only Configuration Manual Human Authorization Evidence Intake Rerun; anchor phase F32.Z13J.
+Keep the F32/F33 scope boundary explicit: F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
