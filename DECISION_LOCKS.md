@@ -77,3 +77,4 @@
 - F32.Z9R future MCP read-only controlled apply plan review gate rerun is review-only; it can only confirm the Z8R repair and mark the earlier Z10 acceptance stale, and F32.Z10R — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate Rerun is next.
 - F32.Z10R future MCP read-only dry-run authorization rerun is simulation-only; it can only unlock F32.Z11 dry-run simulation and never authorizes a real apply, real config write, or productive MCP use.
 - F32.Z11 future MCP read-only controlled apply dry-run simulation is simulation-only; it may produce artifact-only evidence for the future dry-run review gate, but it cannot authorize a real apply, real config write, or productive MCP use.
+- F32.Z12 future MCP read-only controlled apply dry-run simulation review gate is review-only; it may validate artifact-only evidence for the future apply authorization gate, but it cannot authorize a real apply, real config write, or productive MCP use.

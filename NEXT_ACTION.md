@@ -1,1 +1,1 @@
-Prepare F32.Z12 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation Review Gate; anchor phase F32.Z11.
+Prepare F32.Z13 — Future MCP Read-Only Configuration Controlled Apply Pre-Apply Authorization Gate; anchor phase F32.Z12.

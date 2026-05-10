@@ -387,3 +387,4 @@ Read in this order:
 353. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_authorization_gate_rerun_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_authorization_gate_rerun_next_phase_contract.json) for the F32.Z10R next phase contract
 
 - [f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_decision.json) records the F32.Z11 controlled apply dry-run simulation decision and artifact-only evidence.
+- [f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_dry_run_simulation_review_gate_decision.json) records the F32.Z12 controlled apply dry-run simulation review gate decision and review-only evidence.

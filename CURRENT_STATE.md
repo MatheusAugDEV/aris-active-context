@@ -68,3 +68,4 @@ As of 2026-05-07:
 - F32.Z10R controlled apply dry-run authorization gate rerun completed; the rerun is dry-run-only, the earlier Z10 acceptance is superseded, and F32.Z11 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation is next principal phase.
 
 - F32.Z11 future MCP read-only controlled apply dry-run simulation completed; the simulation remained artifact-only, the real surface audit confirmed zero real mutation, and F32.Z12 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation Review Gate is next principal phase.
+- F32.Z12 future MCP read-only controlled apply dry-run simulation review gate completed; the Z11 simulation remained artifact-only, the real surface review confirmed zero real mutation, and F32.Z13 — Future MCP Read-Only Configuration Controlled Apply Pre-Apply Authorization Gate is next principal phase.
