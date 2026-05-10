@@ -383,3 +383,11 @@ Closed as a foundation track, not as official V6 closure.
 - Test coverage observed: 12.
 - Test coverage sufficient: False.
 - Next principal phase: F32.Z10 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate.
+
+## F32.Z10 Controlled Apply Dry-Run Authorization Gate
+
+- [F32.Z10] Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate completed as a deterministic dry-run authorization gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_dry_run_authorization_gate_warn.
+- Warning accepted: True.
+- Controlled dry-run allowed next phase: True.
+- Next principal phase: F32.Z11 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation.
