@@ -374,3 +374,12 @@ Closed as a foundation track, not as official V6 closure.
 - Preflight checks created: True.
 - Rollback plan created: True.
 - Next principal phase: F32.Z9 — Future MCP Read-Only Configuration Controlled Apply Plan Review Gate.
+
+## F32.Z9 Controlled Apply Plan Review Gate
+
+- [F32.Z9] Future MCP Read-Only Configuration Controlled Apply Plan Review Gate completed as a deterministic review-only gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_plan_review_gate_warn.
+- Plan review passed: True.
+- Test coverage observed: 12.
+- Test coverage sufficient: False.
+- Next principal phase: F32.Z10 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate.
