@@ -505,3 +505,15 @@ Closed as a foundation track, not as official V6 closure.
 - Dedicated pre-apply statement found: `False`.
 - Human pre-apply authorization granted: `False`.
 - Next principal phase: `F32.Z13M — Future MCP Read-Only Configuration Manual Authorization Evidence Awaiting Human Input`.
+
+## F32.Z13M Manual Authorization Evidence Awaiting Human Input
+
+- [F32.Z13M] Future MCP Read-Only Configuration Manual Authorization Evidence Awaiting Human Input completed as a deterministic awaiting-human-input gate.
+- Status: `f32_future_mcp_readonly_configuration_manual_authorization_awaiting_human_input`.
+- Awaiting human input: `True`.
+- Hold active: `True`.
+- No more automatic retries: `True`.
+- Evidence available: `False`.
+- Dedicated pre-apply statement found: `False`.
+- Human pre-apply authorization granted: `False`.
+- Next principal phase: `BLOCKED_AWAITING_HUMAN_INPUT_FOR_F32_Z13L`.
