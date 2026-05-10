@@ -421,3 +421,13 @@ Closed as a foundation track, not as official V6 closure.
 - Previous Z10 marked stale by Z8R: True.
 - Z10 rerun required: True.
 - Next principal phase: F32.Z10R — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate Rerun.
+
+## F32.Z10R Controlled Apply Dry-Run Authorization Gate Rerun
+
+- [F32.Z10R] Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate Rerun After Z9R completed as a rerun authorization gate.
+- Status: f32_future_mcp_readonly_configuration_controlled_apply_dry_run_authorization_gate_rerun_passed.
+- Z9R old warning resolved: True.
+- Previous Z10 marked stale by Z9R: True.
+- Previous Z10 replaced by Z10R: True.
+- Controlled dry-run allowed next phase: True.
+- Next principal phase: F32.Z11 — Future MCP Read-Only Configuration Controlled Apply Dry-Run Simulation.

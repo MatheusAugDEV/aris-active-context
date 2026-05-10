@@ -75,3 +75,4 @@
 - F32.Z10 controlled apply dry-run authorization gate is future-only; it may unlock a later dry-run simulation gate but does not authorize a real apply, does not permit config writes, and does not override the human evidence gate or the Z9 warning acceptance record.
 - F32.Z8R test coverage repair is repair-only; it may raise Z8 coverage breadth but does not authorize dry-run now, and F32.Z9R must happen before any F32.Z11 path.
 - F32.Z9R future MCP read-only controlled apply plan review gate rerun is review-only; it can only confirm the Z8R repair and mark the earlier Z10 acceptance stale, and F32.Z10R — Future MCP Read-Only Configuration Controlled Apply Dry-Run Authorization Gate Rerun is next.
+- F32.Z10R future MCP read-only dry-run authorization rerun is simulation-only; it can only unlock F32.Z11 dry-run simulation and never authorizes a real apply, real config write, or productive MCP use.
