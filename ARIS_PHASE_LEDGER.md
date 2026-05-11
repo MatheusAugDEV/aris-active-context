@@ -664,3 +664,12 @@ Closed as a foundation track, not as official V6 closure.
 - Extracted candidates, rejections, locks, and gates are advisory-only.
 - No architectural decision was taken.
 - Next phase recommendation: `F32.RESEARCH-P2H — Cross-Model Research Inputs Consolidation`.
+
+## F32.RESEARCH-P2H Cross-Model Research Inputs Consolidation
+
+- Status: `cross_model_research_inputs_consolidation_ready`.
+- Mandatory inputs found: Gemini Research 2 and GPT Research 2.
+- Optional inputs searched under `artifacts/f32/research/` are recorded as missing unless officially present.
+- The consolidated matrix and category analysis remain external_unverified.
+- No architectural decision was taken.
+- Next phase recommendation: `F32.RESEARCH-P3 — Roadmap Impact Analysis`.

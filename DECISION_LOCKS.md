@@ -85,3 +85,8 @@
 
 - F32.RESEARCH-P2GPT is external_unverified evidence intake only; no architectural decision, roadmap mutation, or implementation follows without cross-model comparison and review gates.
 - GPT Research 2 is preserved for comparison, but not as source-of-truth.
+
+## F32.RESEARCH-P2H Research Lock
+
+- F32.RESEARCH-P2H consolidates external_unverified research inputs only; it does not authorize architecture decisions, roadmap mutation, or implementation.
+- Mandatory Gemini and GPT inputs are validated, while optional sources remain missing unless officially found in `artifacts/f32/research/`.

@@ -18,3 +18,4 @@ As of 2026-05-10:
 - F32.RESEARCH-P2 synthesized Gemini/Kimi/Claude into elite-only ARIS improvement candidates; operational next action unchanged.
 - F32.RESEARCH-P2G registered Gemini Research 2 as external_unverified evidence intake; operational next action unchanged.
 - F32.RESEARCH-P2GPT registered GPT Research 2 as external_unverified evidence intake; operational next action unchanged.
+- F32.RESEARCH-P2H consolidated cross-model research inputs; mandatory external_unverified inputs validated, optional sources recorded as missing or not ingested yet; operational next action unchanged.
