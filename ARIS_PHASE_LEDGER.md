@@ -517,3 +517,15 @@ Closed as a foundation track, not as official V6 closure.
 - Dedicated pre-apply statement found: `False`.
 - Human pre-apply authorization granted: `False`.
 - Next principal phase: `BLOCKED_AWAITING_HUMAN_INPUT_FOR_F32_Z13L`.
+
+## F32.Z13L Validation Rerun Recovery
+
+- [F32.Z13L] Future MCP Read-Only Configuration Pre-Apply Human Authorization Validation Rerun recovered the missing local phase and validated the human-created dedicated JSON authorization statement.
+- Status: `f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_rerun_passed`.
+- Dedicated pre-apply statement found: `True`.
+- Dedicated pre-apply statement valid: `True`.
+- Human pre-apply authorization granted: `True`.
+- Human authorization file committed as evidence: `True`.
+- Ready for next phase: `True`.
+- Next principal phase: `F32.Z13L-Review — Future MCP Read-Only Configuration Pre-Apply Human Authorization Validation Review Gate`.
+- Review was previously blocked because Z13L was not materialized locally; this recovery materialized the official artifacts without authorizing apply.
