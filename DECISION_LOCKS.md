@@ -130,3 +130,11 @@
 - Immutable hashed plan and deterministic preview are mandatory before side effects.
 - Side effects require sidecar isolation, append-only ledger evidence, and rollback or compensation coverage.
 - MCP write/command, auto-run, continuous learning/auto-retraining, and external vector DB as mandatory base remain prohibited.
+
+## F32.Z13P Intake Review Lock
+
+- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_human_authorization_evidence_intake_ready`.
+- F32.Z13P remains evidence-intake-only and does not authorize apply.
+- Evidence status: `valid_dedicated_authorization_evidence`.
+- Human authorization evidence may be recorded for future review, but it does not authorize real apply in this phase.
+- No real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation, and no implementation are authorized.
