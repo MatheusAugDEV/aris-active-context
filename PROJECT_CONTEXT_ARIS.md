@@ -52,3 +52,10 @@ input_type: external_advisory_research
 raw_input_saved: True
 next_research_phase: `F32.RESEARCH-P1C — Claude External Research Input Intake & Claim Classification Gate`
 advisory_only; no implementation or roadmap mutation authorized
+
+## F32.RESEARCH-P1K - Kimi External Research Validated Intake & Useful Pattern Extraction Gate
+status: f32_research_p1k_kimi_external_research_validated_intake_ready
+input_type: external_advisory_research
+raw_input_saved: True
+next_research_phase: `F32.RESEARCH-P1C — Claude External Research Input Intake & Claim Classification Gate`
+advisory_only; no implementation or roadmap mutation authorized

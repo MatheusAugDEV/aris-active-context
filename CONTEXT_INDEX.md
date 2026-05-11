@@ -45,6 +45,13 @@ Recent F32 chain references:
 - [artifacts/research/external/gemini_ai_agent_workflow_voice_reference_verification_backlog.json](../artifacts/research/external/gemini_ai_agent_workflow_voice_reference_verification_backlog.json)
 - [docs/research/external/gemini_ai_agent_workflow_voice_reference_notes.md](../docs/research/external/gemini_ai_agent_workflow_voice_reference_notes.md)
 - [docs/research/aris_external_research_improvement_backlog.md](../docs/research/aris_external_research_improvement_backlog.md)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_research_raw.md](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_research_raw.md)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_research_intake.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_research_intake.json)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_claims_matrix.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_claims_matrix.json)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_useful_patterns.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_useful_patterns.json)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_antipatterns.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_antipatterns.json)
+- [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_verification_backlog.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_verification_backlog.json)
+- [docs/research/external/kimi_ai_agent_workflow_voice_reference_notes.md](../docs/research/external/kimi_ai_agent_workflow_voice_reference_notes.md)
 
 Rules:
 
@@ -55,4 +62,5 @@ Rules:
 - `NEXT_ACTION.md` currently points to `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
+- F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - Use `Project_ARIS` artifacts/docs only when cited.
