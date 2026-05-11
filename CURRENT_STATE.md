@@ -12,3 +12,4 @@ As of 2026-05-10:
 - F32 owns any MCP-related closure work before F33; F33 stays reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Full historical chain lives in `ARIS_PHASE_LEDGER.md`.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not change the operational next action.
+- F32.RESEARCH-P1G saved Gemini raw input and extracted advisory-only claims/patterns; operational next action unchanged.

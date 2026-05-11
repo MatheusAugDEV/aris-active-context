@@ -50,3 +50,9 @@
 - Research artifacts do not authorize implementation.
 - External research reports are advisory only.
 - No third-party project pattern enters ARIS without gate, test, and security review.
+
+## F32.RESEARCH-P1G Research Lock
+
+- F32.RESEARCH-P1G is external_advisory_research only.
+- Raw Gemini input is preserved, but claims and patterns remain advisory-only.
+- No implementation or roadmap mutation follows from P1G without cross-model comparison and primary-source verification.

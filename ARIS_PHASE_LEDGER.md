@@ -610,3 +610,12 @@ Closed as a foundation track, not as official V6 closure.
 - No implementation authorized; no runtime mutation, dependency installation, network access, or MCP/Obsidian access authorized.
 - Next research phase: `F32.RESEARCH-P1 — External Research Input Collection Gate`.
 - F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+
+## F32.RESEARCH-P1G Gemini External Research Validated Intake & Useful Pattern Extraction Gate
+
+- [F32.RESEARCH-P1G] Gemini external research was saved as raw input and classified as advisory-only evidence.
+- Status: `f32_research_p1g_gemini_external_research_validated_intake_ready`.
+- Created assets: raw Gemini transcript, intake summary, claims matrix, useful patterns, anti-patterns, verification backlog, synthesis notes, and the ARIS improvement backlog.
+- External research remains advisory-only; no implementation or roadmap mutation authorized.
+- Next research phase: `F32.RESEARCH-P1C — Claude External Research Input Intake & Claim Classification Gate`.
+- F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
