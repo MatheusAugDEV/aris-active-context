@@ -1,38 +1,17 @@
-**F32.Z13L-Review - Future MCP Read-Only Configuration Pre-Apply Human Authorization Validation Review Gate**
-status: f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate_passed
-review_passed: True
-z13l_artifacts_valid: True
-human_pre_apply_authorization_granted: True
-next_principal_phase: `F32.Z13N — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate`
-review only; no apply or runtime activation
-
-## F32.Z13N - Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate
-status: f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_passed
-readiness_gate_passed: True
-z13l_review_verified: True
-human_pre_apply_authorization_verified: True
-controlled_apply_readiness_ready: True
-next_principal_phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`
-readiness/preflight only; no apply or runtime activation
-
-## F32.Z13N-Review - Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate
-status: f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_review_gate_passed
+## F32.Z13O-Review - Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate
+status: f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_passed
 review_gate_passed: True
-ready_for_next_phase: True
-z13n_status_verified: True
-z13n_artifacts_valid: True
-human_pre_apply_authorization_verified: True
-next_principal_phase: `F32.Z13O — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate`
-review only; no apply or runtime activation
-
-## F32.Z13O - Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate
-status: f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_passed
-authorization_planning_gate_passed: True
-final_authorization_plan_created: True
-final_authorization_requirements_created: True
-rollback_plan_created: True
-abort_matrix_created: True
-audit_ledger_requirements_created: True
+z13o_status_verified: True
+z13o_artifacts_present: True
+z13o_artifacts_valid: True
+authorization_plan_reviewed: True
+requirements_reviewed: True
+abort_matrix_reviewed: True
+rollback_plan_reviewed: True
+audit_ledger_requirements_reviewed: True
+planning_only_status_preserved: True
+active_context_compact_state_preserved: True
+active_context_duplicate_reintroduced: False
 controlled_apply_execution_allowed_now: False
 real_apply_allowed_now: False
 real_config_write_allowed_now: False
@@ -57,6 +36,5 @@ awaiting_marker_counts_as_authorization: False
 awaiting_contract_counts_as_authorization: False
 f32_scope_preserved: True
 f33_reserved_for_sqlite_memory_fts5_eval: True
-next_principal_phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`
-planning only; no apply or runtime activation
-
+next_principal_phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`
+review-only; no apply or runtime activation

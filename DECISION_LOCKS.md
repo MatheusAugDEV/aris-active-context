@@ -27,8 +27,20 @@
 
 ## F32.Z13O-Review Review Lock
 
-- Next principal phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`.
-- Z13O-Review is review-only and does not authorize real apply, real config write, MCP activation, or real Obsidian access.
+- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_passed`.
+- F32.Z13O-Review is review-only and does not authorize real apply, real config write, MCP activation, or real Obsidian access.
+- real apply allowed now: `False`
+- real config write allowed now: `False`
+- MCP activation allowed now: `False`
+- real Obsidian access allowed now: `False`
+- vault write allowed: `False`
+- bulk Obsidian read allowed: `False`
+- network allowed: `False`
+- dependency installation allowed: `False`
+- runtime mutation allowed: `False`
+
+## F32.Z13P Intake Lock
+
+- F32.Z13P is evidence-intake-only and must not execute apply.
 - Chat context, Codex status, commit text, placeholder, instructions, schema, marker, contract, checklist, evidence manifest, awaiting marker, and awaiting contract do not count as authorization.
 - `NEXT_ACTION.md` is the only source for the next step.
-

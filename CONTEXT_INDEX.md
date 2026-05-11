@@ -33,11 +33,5 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- `NEXT_ACTION.md` currently points to `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
 - Use `Project_ARIS` artifacts/docs only when cited.
-
-235. [docs/fase32/f32z13o_review_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate.md](../docs/fase32/f32z13o_review_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate.md) for the F32.Z13O-Review review gate doc
-236. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_decision.json) for the F32.Z13O-Review decision
-237. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_summary.json) for the F32.Z13O-Review summary
-238. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_report.md) for the F32.Z13O-Review report
-239. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json) for the F32.Z13O-Review matrix
-240. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json) for the F32.Z13O-Review next phase contract

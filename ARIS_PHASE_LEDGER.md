@@ -591,3 +591,12 @@ Closed as a foundation track, not as official V6 closure.
 - Final state: latest completed phase is `F32.Z13O`; `F32.Z13O` remains planning-only; `F32.Z13O-Review` remains the next principal phase.
 - F32 retains MCP-related closure ownership before F33; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 
+## F32.ACTX-R2 Active Context Z13O-Review Handoff Reconciliation Gate
+
+- [F32.ACTX-R2] Active-context handoff reconciliation aligned the compact operational state with the passed Z13O-Review gate and the Z13P evidence-intake next step.
+- Inconsistency detected: `CURRENT_STATE.md` still described Z13O / Z13O-Review as an in-flight handoff, and `DECISION_LOCKS.md` still carried the Z13O-Review next-phase framing instead of Z13P.
+- Evidence used: Z13O-Review decision, summary, matrix, next-phase contract, report, and the dedicated human pre-apply authorization statement JSON.
+- Files repaired: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `CONTEXT_INDEX.md`, `README.md`, `PROJECT_CONTEXT_ARIS.md`.
+- Absence of contradiction: no file granted real apply, real config write, MCP activation, or real Obsidian access.
+- Final state: latest completed phase is `F32.Z13O-Review`; next principal phase is `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
+- F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
