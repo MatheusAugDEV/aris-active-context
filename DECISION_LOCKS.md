@@ -149,23 +149,33 @@
 - Next principal phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`.
 - Next phase is review-only.
 
-## F32.Z13O Controlled Apply Final Authorization Planning Lock
-- [F32.Z13O] Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate completed as a deterministic planning gate.
-- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_passed`.
-- authorization planning gate passed: `True`.
-- final authorization plan created: `True`.
-- final authorization requirements created: `True`.
-- rollback plan created: `True`.
-- abort matrix created: `True`.
-- audit ledger requirements created: `True`.
-- controlled apply execution allowed now: `False`.
-- real apply allowed now: `False`.
-- real config write allowed now: `False`.
+## F32.Z13O-Review Controlled Apply Final Authorization Planning Review Lock
+- [F32.Z13O-Review] Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate completed as a deterministic review gate.
+- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_passed`.
+- Review gate passed: `True`.
+- Z13O status verified: `True`.
+- Z13O artifacts present: `True`.
+- Z13O artifacts valid: `True`.
+- Authorization plan reviewed: `True`.
+- Requirements reviewed: `True`.
+- Abort matrix reviewed: `True`.
+- Rollback plan reviewed: `True`.
+- Audit ledger requirements reviewed: `True`.
+- Planning-only status preserved: `True`.
+- Active-context duplicate-equivalent entry warning: `True`.
+- Active-context duplicate-equivalent entry repaired: `True`.
+- Controlled apply execution allowed now: `False`.
+- Real apply allowed now: `False`.
+- Real config write allowed now: `False`.
 - MCP activation allowed now: `False`.
-- real Obsidian access allowed now: `False`.
-- Z13O is planning-only and does not authorize apply real, config write, MCP activation, or real Obsidian access.
-- chat context, Codex status, commit text, placeholder, instructions, schema, markers, checklist, evidence manifests, and awaiting markers/contracts do not count as authorization.
+- Real Obsidian access allowed now: `False`.
+- Vault write allowed: `False`.
+- Bulk Obsidian read allowed: `False`.
+- Network allowed: `False`.
+- Dependency installation allowed: `False`.
+- Runtime mutation allowed: `False`.
+- Chat, Codex status, commit text, placeholder, instructions, schema, marker, contract, checklist, evidence manifest, awaiting marker, and awaiting contract do not count as authorization.
 - F32 scope preserved: `True`.
 - F33 reserved for SQLite Memory, FTS5 & Evaluation Baseline: `True`.
-- Next principal phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`.
-- Next phase is review-only.
+- Next principal phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
+- Review-only; no apply real.

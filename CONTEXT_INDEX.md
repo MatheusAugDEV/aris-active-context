@@ -520,7 +520,7 @@ read_if_needed:
 notes:
 - F32 remains responsible for MCP read-only configuration and controlled apply readiness work.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- Next principal phase: `F32.Z13O — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate`
+- Next principal phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`
 
 ## F32.Z13O
 
@@ -543,3 +543,10 @@ notes:
 232. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_abort_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_abort_matrix.json) for the F32.Z13O abort matrix
 233. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_rollback_plan.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_rollback_plan.json) for the F32.Z13O rollback plan
 234. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_next_phase_contract.json) for the F32.Z13O next phase contract
+
+235. [docs/fase32/f32z13o_review_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate.md](../docs/fase32/f32z13o_review_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate.md) for the F32.Z13O-Review review gate doc
+236. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_decision.json) for the F32.Z13O-Review decision
+237. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_summary.json) for the F32.Z13O-Review summary
+238. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_report.md) for the F32.Z13O-Review report
+239. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json) for the F32.Z13O-Review matrix
+240. [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json) for the F32.Z13O-Review next phase contract

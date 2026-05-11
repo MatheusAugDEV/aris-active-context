@@ -581,20 +581,31 @@ Closed as a foundation track, not as official V6 closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Next principal phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`.
 
-## F32.Z13O Controlled Apply Final Authorization Planning Gate
-- [F32.Z13O] Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate completed as a planning-only gate.
-- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_passed`.
-- Planning-only: `True`.
-- Final authorization plan created: `True`.
-- Final authorization requirements created: `True`.
-- Rollback plan created: `True`.
-- Abort matrix created: `True`.
-- Audit ledger requirements created: `True`.
+## F32.Z13O-Review Controlled Apply Final Authorization Planning Review Gate
+- [F32.Z13O-Review] Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate completed as a review-only gate.
+- Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_passed`.
+- Review gate passed: `True`.
+- Z13O status verified: `True`.
+- Z13O artifacts present: `True`.
+- Z13O artifacts valid: `True`.
+- Authorization plan reviewed: `True`.
+- Requirements reviewed: `True`.
+- Abort matrix reviewed: `True`.
+- Rollback plan reviewed: `True`.
+- Audit ledger requirements reviewed: `True`.
+- Planning-only status preserved: `True`.
+- Active-context duplicate-equivalent entry warning: `True`.
+- Active-context duplicate-equivalent entry repaired: `True`.
 - Controlled apply execution allowed now: `False`.
 - Real apply allowed now: `False`.
 - Real config write allowed now: `False`.
 - MCP activation allowed now: `False`.
 - Real Obsidian access allowed now: `False`.
+- Vault write allowed: `False`.
+- Bulk Obsidian read allowed: `False`.
+- Network allowed: `False`.
+- Dependency installation allowed: `False`.
+- Runtime mutation allowed: `False`.
 - F32 scope preserved.
-- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- Next principal phase: `F32.Z13O-Review — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate`.
+- F33 reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- Next principal phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
