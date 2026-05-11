@@ -609,3 +609,13 @@ Closed as a foundation track, not as official V6 closure.
 - F32 scope preserved.
 - F33 reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Next principal phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
+
+## F32.ACTX-R1 Active Context Integrity, Deduplication & Compaction Repair Gate
+
+- [F32.ACTX-R1] Active-context integrity repair compacted `CURRENT_STATE.md`, normalized `NEXT_ACTION.md`, deduplicated `DECISION_LOCKS.md`, normalized `CONTEXT_INDEX.md`, and refreshed `README.md` for compact operational use.
+- Problem found: duplicate-equivalent Z13O / Z13O-Review state blocks, long historical repetition in `CURRENT_STATE.md`, and next-action drift toward Z13P.
+- Duplicate-equivalent entries repaired: `True`.
+- Contradictory authorization entries found: `False`.
+- Files repaired: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `CONTEXT_INDEX.md`, `README.md`.
+- Final state: latest completed phase is `F32.Z13O`; `F32.Z13O` remains planning-only; `F32.Z13O-Review` remains the next principal phase.
+- F32 retains MCP-related closure ownership before F33; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
