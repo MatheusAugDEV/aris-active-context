@@ -17,3 +17,4 @@ As of 2026-05-10:
 - F32.RESEARCH-P1C saved Claude raw input and extracted advisory-only claims/patterns/risk/roadmap-candidate artifacts; operational next action unchanged.
 - F32.RESEARCH-P2 synthesized Gemini/Kimi/Claude into elite-only ARIS improvement candidates; operational next action unchanged.
 - F32.RESEARCH-P2G registered Gemini Research 2 as external_unverified evidence intake; operational next action unchanged.
+- F32.RESEARCH-P2GPT registered GPT Research 2 as external_unverified evidence intake; operational next action unchanged.

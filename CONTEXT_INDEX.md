@@ -90,3 +90,10 @@ Recent F32 P2G references for F32.RESEARCH-P2G:
 - [artifacts/f32/research/gemini_research_2_ingestion_summary.json](../artifacts/f32/research/gemini_research_2_ingestion_summary.json)
 - [artifacts/f32/research/gemini_research_2_ingestion_report.md](../artifacts/f32/research/gemini_research_2_ingestion_report.md)
 - [docs/fase32/f32_research_p2g_gemini_research_2_ingestion.md](../docs/fase32/f32_research_p2g_gemini_research_2_ingestion.md)
+
+Recent F32 P2GPT references for F32.RESEARCH-P2GPT:
+
+- [artifacts/f32/research/gpt_research_2_ingestion.json](../artifacts/f32/research/gpt_research_2_ingestion.json)
+- [artifacts/f32/research/gpt_research_2_ingestion_summary.json](../artifacts/f32/research/gpt_research_2_ingestion_summary.json)
+- [artifacts/f32/research/gpt_research_2_ingestion_report.md](../artifacts/f32/research/gpt_research_2_ingestion_report.md)
+- [docs/fase32/f32_research_p2gpt_gpt_research_2_ingestion.md](../docs/fase32/f32_research_p2gpt_gpt_research_2_ingestion.md)

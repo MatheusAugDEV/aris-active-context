@@ -655,3 +655,12 @@ Closed as a foundation track, not as official V6 closure.
 - Extracted candidates, rejections, gaps, and locks are advisory-only.
 - No architectural decision was taken.
 - Next phase recommendation: `F32.RESEARCH-P2H — Cross-Model Research Inputs Consolidation`.
+
+## F32.RESEARCH-P2GPT GPT Research 2 Ingestion & Candidate Extraction
+
+- Status: `gpt_research_2_ingestion_ready`.
+- External evidence: GPT Research 2 recorded as external_unverified.
+- Artifacts created: ingestion JSON, summary JSON, report, and phase doc.
+- Extracted candidates, rejections, locks, and gates are advisory-only.
+- No architectural decision was taken.
+- Next phase recommendation: `F32.RESEARCH-P2H — Cross-Model Research Inputs Consolidation`.

@@ -80,3 +80,8 @@
 
 - F32.RESEARCH-P2G is external_unverified evidence intake only; no architectural decision, roadmap mutation, or implementation follows without cross-model comparison and review gates.
 - Gemini Research 2 is preserved for comparison, but not as source-of-truth.
+
+## F32.RESEARCH-P2GPT Research Lock
+
+- F32.RESEARCH-P2GPT is external_unverified evidence intake only; no architectural decision, roadmap mutation, or implementation follows without cross-model comparison and review gates.
+- GPT Research 2 is preserved for comparison, but not as source-of-truth.
