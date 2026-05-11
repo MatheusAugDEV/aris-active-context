@@ -18,6 +18,7 @@ Current snapshot:
 - Latest completed phase: `F32.Z13O-Review`.
 - Next principal phase: `F32.Z13P`.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
 Rules:
 

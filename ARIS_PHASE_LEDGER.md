@@ -600,3 +600,13 @@ Closed as a foundation track, not as official V6 closure.
 - Absence of contradiction: no file granted real apply, real config write, MCP activation, or real Obsidian access.
 - Final state: latest completed phase is `F32.Z13O-Review`; next principal phase is `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
 - F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+
+## F32.RESEARCH-P0 AI Agent, Workflow Automation & Voice Runtime Reference Research Intake Program
+
+- [F32.RESEARCH-P0] Artifact-only research program created to collect, classify, and synthesize external evidence on AI agents, workflow automation, voice runtimes, sandboxing, context engineering, and security.
+- Status: `f32_research_p0_ai_agent_workflow_voice_reference_research_program_ready`.
+- External research inputs pending: `True`.
+- Created assets: research charter, input manifest, evaluation matrix schema, synthesis template, roadmap impact template, backlog, and prompt templates for Claude/Gemini/Kimi.
+- No implementation authorized; no runtime mutation, dependency installation, network access, or MCP/Obsidian access authorized.
+- Next research phase: `F32.RESEARCH-P1 — External Research Input Collection Gate`.
+- F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.

@@ -38,3 +38,10 @@ f32_scope_preserved: True
 f33_reserved_for_sqlite_memory_fts5_eval: True
 next_principal_phase: `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`
 review-only; no apply or runtime activation
+
+## F32.RESEARCH-P0 - AI Agent, Workflow Automation & Voice Runtime Reference Research Intake Program
+status: f32_research_p0_ai_agent_workflow_voice_reference_research_program_ready
+program_type: artifact_only
+external_research_inputs_pending: True
+next_research_phase: `F32.RESEARCH-P1 — External Research Input Collection Gate`
+research-only; no implementation or runtime mutation authorized

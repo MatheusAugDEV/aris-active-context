@@ -44,3 +44,9 @@
 - F32.Z13P is evidence-intake-only and must not execute apply.
 - Chat context, Codex status, commit text, placeholder, instructions, schema, marker, contract, checklist, evidence manifest, awaiting marker, and awaiting contract do not count as authorization.
 - `NEXT_ACTION.md` is the only source for the next step.
+
+## F32.RESEARCH-P0 Research Lock
+
+- Research artifacts do not authorize implementation.
+- External research reports are advisory only.
+- No third-party project pattern enters ARIS without gate, test, and security review.

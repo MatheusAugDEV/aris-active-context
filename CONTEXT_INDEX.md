@@ -26,6 +26,17 @@ Recent F32 chain references:
 - [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_matrix.json)
 - [artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_next_phase_contract.json)
 - [artifacts/f32/f32_future_mcp_readonly_configuration_final_pre_apply_authorization_statement.json](../artifacts/f32/f32_future_mcp_readonly_configuration_final_pre_apply_authorization_statement.json)
+- [docs/research/ai_agent_workflow_voice_reference_synthesis_template.md](../docs/research/ai_agent_workflow_voice_reference_synthesis_template.md)
+- [docs/research/aris_roadmap_impact_analysis_template.md](../docs/research/aris_roadmap_impact_analysis_template.md)
+- [docs/research/ai_agent_workflow_voice_reference_research_backlog.md](../docs/research/ai_agent_workflow_voice_reference_research_backlog.md)
+- [docs/research/prompts/claude_ai_agent_workflow_voice_research_prompt.md](../docs/research/prompts/claude_ai_agent_workflow_voice_research_prompt.md)
+- [docs/research/prompts/gemini_ai_agent_workflow_voice_research_prompt.md](../docs/research/prompts/gemini_ai_agent_workflow_voice_research_prompt.md)
+- [docs/research/prompts/kimi_ai_agent_workflow_voice_research_prompt.md](../docs/research/prompts/kimi_ai_agent_workflow_voice_research_prompt.md)
+- [artifacts/research/ai_agent_workflow_voice_reference_research_charter.json](../artifacts/research/ai_agent_workflow_voice_reference_research_charter.json)
+- [artifacts/research/ai_agent_workflow_voice_reference_research_input_manifest.json](../artifacts/research/ai_agent_workflow_voice_reference_research_input_manifest.json)
+- [artifacts/research/ai_agent_workflow_voice_reference_evaluation_matrix_schema.json](../artifacts/research/ai_agent_workflow_voice_reference_evaluation_matrix_schema.json)
+- [artifacts/research/ai_agent_workflow_voice_reference_research_program_summary.json](../artifacts/research/ai_agent_workflow_voice_reference_research_program_summary.json)
+- [artifacts/research/ai_agent_workflow_voice_reference_research_program_report.md](../artifacts/research/ai_agent_workflow_voice_reference_research_program_report.md)
 
 Rules:
 
@@ -34,4 +45,5 @@ Rules:
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - `NEXT_ACTION.md` currently points to `F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate`.
+- F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - Use `Project_ARIS` artifacts/docs only when cited.
