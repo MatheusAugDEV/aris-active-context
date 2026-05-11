@@ -31,3 +31,4 @@
 - Z13O-Review is review-only and does not authorize real apply, real config write, MCP activation, or real Obsidian access.
 - Chat context, Codex status, commit text, placeholder, instructions, schema, marker, contract, checklist, evidence manifest, awaiting marker, and awaiting contract do not count as authorization.
 - `NEXT_ACTION.md` is the only source for the next step.
+

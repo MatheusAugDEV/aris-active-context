@@ -15,8 +15,8 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F32.Z13O`.
-- Next principal phase: `F32.Z13O-Review`.
+- Latest completed phase: `F32.Z13O-Review`.
+- Next principal phase: `F32.Z13P`.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 
 Rules:
