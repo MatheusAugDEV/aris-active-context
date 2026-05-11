@@ -102,3 +102,12 @@
 - Technology integration allowed: `False`.
 - Runtime, frontend, audio, action runtime, MCP activation, network, dependency install, and Obsidian bulk read remain blocked.
 - External claims remain `external_unverified` unless later validated with primary sources.
+
+## F32.RESEARCH-P4 Research Lock
+
+- Status: `canonical_roadmap_delta_review_passed`.
+- F32.RESEARCH-P4 approves only a candidate canonical roadmap delta.
+- The current canonical roadmap is not replaced in this phase.
+- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- F32.Z13P remains the next operational action.
+- No implementation, runtime mutation, frontend mutation, audio mutation, action runtime mutation, MCP activation, network use, dependency installation, or Obsidian bulk read is authorized.

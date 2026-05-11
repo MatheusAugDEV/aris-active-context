@@ -111,3 +111,11 @@ Recent F32 P3 references for F32.RESEARCH-P3:
 - [artifacts/f32/research/roadmap_impact_analysis_summary.json](../artifacts/f32/research/roadmap_impact_analysis_summary.json)
 - [artifacts/f32/research/roadmap_impact_analysis_report.md](../artifacts/f32/research/roadmap_impact_analysis_report.md)
 - [docs/fase32/f32_research_p3_roadmap_impact_analysis.md](../docs/fase32/f32_research_p3_roadmap_impact_analysis.md)
+
+Recent F32 P4 references for F32.RESEARCH-P4:
+
+- [artifacts/f32/research/canonical_roadmap_delta_review.json](../artifacts/f32/research/canonical_roadmap_delta_review.json)
+- [artifacts/f32/research/canonical_roadmap_delta_review_summary.json](../artifacts/f32/research/canonical_roadmap_delta_review_summary.json)
+- [artifacts/f32/research/canonical_roadmap_delta_review_report.md](../artifacts/f32/research/canonical_roadmap_delta_review_report.md)
+- [artifacts/f32/research/canonical_roadmap_supersession_plan.json](../artifacts/f32/research/canonical_roadmap_supersession_plan.json)
+- [docs/fase32/f32_research_p4_canonical_roadmap_delta_review_gate.md](../docs/fase32/f32_research_p4_canonical_roadmap_delta_review_gate.md)
