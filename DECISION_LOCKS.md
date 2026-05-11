@@ -68,3 +68,10 @@
 - F32.RESEARCH-P1C is external_advisory_research only.
 - Raw Claude input is preserved, but claims, patterns, risk signals, and candidate roadmap remain advisory-only.
 - No implementation or roadmap mutation follows from P1C without cross-model comparison and primary-source verification.
+
+## F32.RESEARCH-P2 Research Lock
+
+- F32.RESEARCH-P2 synthesis is advisory-only and does not authorize implementation.
+- F32.RESEARCH-P2 does not mutate the operational roadmap.
+- Only elite candidates may proceed to F32.RESEARCH-P3 impact analysis.
+- External research remains advisory until verified and accepted through review gates.

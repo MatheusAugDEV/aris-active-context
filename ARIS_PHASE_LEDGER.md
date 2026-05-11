@@ -637,3 +637,12 @@ Closed as a foundation track, not as official V6 closure.
 - External research remains advisory-only; no implementation or roadmap mutation authorized.
 - Next research phase: `F32.RESEARCH-P2 — Cross-Model Research Synthesis & Architecture Candidate Consolidation Gate`.
 - F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+
+## F32.RESEARCH-P2 Cross-Model Research Synthesis & Elite ARIS Improvement Candidate Consolidation Gate
+
+- [F32.RESEARCH-P2] Gemini, Kimi, and Claude research were synthesized into elite-only ARIS improvement candidates.
+- Status: `f32_research_p2_cross_model_elite_synthesis_ready`.
+- Created assets: cross-model synthesis, consensus matrix, conflict matrix, elite candidate patterns, rejected/deferred candidates, consolidated anti-patterns, capability gap matrix, preliminary roadmap impact, and synthesis report.
+- External research remains advisory-only; no implementation or roadmap mutation authorized.
+- Next research phase: `F32.RESEARCH-P3 — Current ARIS Roadmap Impact Analysis Gate`.
+- F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.

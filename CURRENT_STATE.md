@@ -15,3 +15,4 @@ As of 2026-05-10:
 - F32.RESEARCH-P1G saved Gemini raw input and extracted advisory-only claims/patterns; operational next action unchanged.
 - F32.RESEARCH-P1K saved Kimi raw input and extracted advisory-only claims/patterns; operational next action unchanged.
 - F32.RESEARCH-P1C saved Claude raw input and extracted advisory-only claims/patterns/risk/roadmap-candidate artifacts; operational next action unchanged.
+- F32.RESEARCH-P2 synthesized Gemini/Kimi/Claude into elite-only ARIS improvement candidates; operational next action unchanged.

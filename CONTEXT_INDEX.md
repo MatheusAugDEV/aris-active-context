@@ -62,6 +62,15 @@ Recent F32 chain references:
 - [artifacts/research/external/claude_ai_agent_workflow_voice_reference_candidate_roadmap_f30_f48.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_candidate_roadmap_f30_f48.json)
 - [artifacts/research/external/claude_ai_agent_workflow_voice_reference_verification_backlog.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_verification_backlog.json)
 - [docs/research/external/claude_ai_agent_workflow_voice_reference_notes.md](../docs/research/external/claude_ai_agent_workflow_voice_reference_notes.md)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_cross_model_synthesis.json](../artifacts/research/synthesis/ai_agent_workflow_voice_cross_model_synthesis.json)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_consensus_matrix.json](../artifacts/research/synthesis/ai_agent_workflow_voice_consensus_matrix.json)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_conflict_matrix.json](../artifacts/research/synthesis/ai_agent_workflow_voice_conflict_matrix.json)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_elite_candidate_patterns.json](../artifacts/research/synthesis/ai_agent_workflow_voice_elite_candidate_patterns.json)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_rejected_or_deferred_candidates.json](../artifacts/research/synthesis/ai_agent_workflow_voice_rejected_or_deferred_candidates.json)
+- [artifacts/research/synthesis/ai_agent_workflow_voice_consolidated_antipatterns.json](../artifacts/research/synthesis/ai_agent_workflow_voice_consolidated_antipatterns.json)
+- [artifacts/research/synthesis/aris_capability_gap_matrix_from_external_research.json](../artifacts/research/synthesis/aris_capability_gap_matrix_from_external_research.json)
+- [artifacts/research/synthesis/aris_roadmap_impact_preliminary_from_external_research.json](../artifacts/research/synthesis/aris_roadmap_impact_preliminary_from_external_research.json)
+- [docs/research/synthesis/ai_agent_workflow_voice_cross_model_synthesis_report.md](../docs/research/synthesis/ai_agent_workflow_voice_cross_model_synthesis_report.md)
 
 Rules:
 
