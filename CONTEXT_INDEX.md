@@ -83,3 +83,10 @@ Rules:
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - Use `Project_ARIS` artifacts/docs only when cited.
+
+Recent F32 P2G references for F32.RESEARCH-P2G:
+
+- [artifacts/f32/research/gemini_research_2_ingestion.json](../artifacts/f32/research/gemini_research_2_ingestion.json)
+- [artifacts/f32/research/gemini_research_2_ingestion_summary.json](../artifacts/f32/research/gemini_research_2_ingestion_summary.json)
+- [artifacts/f32/research/gemini_research_2_ingestion_report.md](../artifacts/f32/research/gemini_research_2_ingestion_report.md)
+- [docs/fase32/f32_research_p2g_gemini_research_2_ingestion.md](../docs/fase32/f32_research_p2g_gemini_research_2_ingestion.md)

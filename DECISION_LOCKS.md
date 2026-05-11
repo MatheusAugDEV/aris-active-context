@@ -75,3 +75,8 @@
 - F32.RESEARCH-P2 does not mutate the operational roadmap.
 - Only elite candidates may proceed to F32.RESEARCH-P3 impact analysis.
 - External research remains advisory until verified and accepted through review gates.
+
+## F32.RESEARCH-P2G Research Lock
+
+- F32.RESEARCH-P2G is external_unverified evidence intake only; no architectural decision, roadmap mutation, or implementation follows without cross-model comparison and review gates.
+- Gemini Research 2 is preserved for comparison, but not as source-of-truth.

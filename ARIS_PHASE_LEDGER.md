@@ -646,3 +646,12 @@ Closed as a foundation track, not as official V6 closure.
 - External research remains advisory-only; no implementation or roadmap mutation authorized.
 - Next research phase: `F32.RESEARCH-P3 — Current ARIS Roadmap Impact Analysis Gate`.
 - F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+
+## F32.RESEARCH-P2G Gemini Research 2 Ingestion & Candidate Extraction
+
+- Status: `gemini_research_2_ingestion_ready`.
+- External evidence: Gemini Research 2 recorded as external_unverified.
+- Artifacts created: ingestion JSON, summary JSON, report, and phase doc.
+- Extracted candidates, rejections, gaps, and locks are advisory-only.
+- No architectural decision was taken.
+- Next phase recommendation: `F32.RESEARCH-P2H — Cross-Model Research Inputs Consolidation`.
