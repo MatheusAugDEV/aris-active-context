@@ -90,3 +90,15 @@
 
 - F32.RESEARCH-P2H consolidates external_unverified research inputs only; it does not authorize architecture decisions, roadmap mutation, or implementation.
 - Mandatory Gemini and GPT inputs are validated, while optional sources remain missing unless officially found in `artifacts/f32/research/`.
+
+## F32.RESEARCH-P3 Research Lock
+
+- Status: `roadmap_impact_analysis_passed_candidate_delta_ready`.
+- F32.RESEARCH-P3 is advisory roadmap impact analysis only.
+- The roadmap delta is candidate-only and does not change the canonical roadmap.
+- Architecture decision allowed: `False`.
+- Roadmap change allowed: `False`.
+- Implementation allowed: `False`.
+- Technology integration allowed: `False`.
+- Runtime, frontend, audio, action runtime, MCP activation, network, dependency install, and Obsidian bulk read remain blocked.
+- External claims remain `external_unverified` unless later validated with primary sources.

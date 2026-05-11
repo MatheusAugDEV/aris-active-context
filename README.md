@@ -25,3 +25,4 @@ Rules:
 - Query-first, no bulk-read, no network, no dependency installs, no real MCP activation, no secret reads.
 - `CURRENT_STATE.md`, `NEXT_ACTION.md`, and `DECISION_LOCKS.md` are the operational sources of truth.
 - Historical depth belongs in `ARIS_PHASE_LEDGER.md`.
+- F32.RESEARCH-P3 created a candidate roadmap impact delta; canonical roadmap and operational next action unchanged.

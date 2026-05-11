@@ -104,3 +104,10 @@ Recent F32 P2H references for F32.RESEARCH-P2H:
 - [artifacts/f32/research/cross_model_research_inputs_consolidation_summary.json](../artifacts/f32/research/cross_model_research_inputs_consolidation_summary.json)
 - [artifacts/f32/research/cross_model_research_inputs_consolidation_report.md](../artifacts/f32/research/cross_model_research_inputs_consolidation_report.md)
 - [docs/fase32/f32_research_p2h_cross_model_research_inputs_consolidation.md](../docs/fase32/f32_research_p2h_cross_model_research_inputs_consolidation.md)
+
+Recent F32 P3 references for F32.RESEARCH-P3:
+
+- [artifacts/f32/research/roadmap_impact_analysis.json](../artifacts/f32/research/roadmap_impact_analysis.json)
+- [artifacts/f32/research/roadmap_impact_analysis_summary.json](../artifacts/f32/research/roadmap_impact_analysis_summary.json)
+- [artifacts/f32/research/roadmap_impact_analysis_report.md](../artifacts/f32/research/roadmap_impact_analysis_report.md)
+- [docs/fase32/f32_research_p3_roadmap_impact_analysis.md](../docs/fase32/f32_research_p3_roadmap_impact_analysis.md)
