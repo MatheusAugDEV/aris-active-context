@@ -111,3 +111,22 @@
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - F32.Z13P remains the next operational action.
 - No implementation, runtime mutation, frontend mutation, audio mutation, action runtime mutation, MCP activation, network use, dependency installation, or Obsidian bulk read is authorized.
+
+## F32.RESEARCH-P5 Research Lock
+
+- Status: `canonical_roadmap_supersession_materialization_passed`.
+- F32.RESEARCH-P5 materializes only canonical roadmap documentation and archive state.
+- `ROADMAP_CANONICAL_F33_F50.md` is the only active canonical roadmap.
+- `ROADMAP_F30_F50.md` is superseded/tombstone only.
+- F32.Z13P remains the next operational action.
+- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- No implementation, runtime mutation, frontend mutation, audio mutation, action runtime mutation, MCP activation, network use, dependency installation, or Obsidian bulk read is authorized.
+
+## Canonical Action Runtime Chain Locks
+
+- Action Registry is the source-of-truth for actions.
+- Tool schema is derived-only and never authoritative.
+- Typed plan and typed approval are mandatory before execution.
+- Immutable hashed plan and deterministic preview are mandatory before side effects.
+- Side effects require sidecar isolation, append-only ledger evidence, and rollback or compensation coverage.
+- MCP write/command, auto-run, continuous learning/auto-retraining, and external vector DB as mandatory base remain prohibited.

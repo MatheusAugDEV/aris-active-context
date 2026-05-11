@@ -695,3 +695,12 @@ Closed as a foundation track, not as official V6 closure.
 - Supersession plan created for P5.
 - Canonical roadmap changed: `False`.
 - Implementation authorized: `False`.
+
+## F32.RESEARCH-P5 Canonical Roadmap Supersession Materialization
+
+- Status: `canonical_roadmap_supersession_materialization_passed`.
+- The old F30-F50 roadmap was archived and tombstoned.
+- `ROADMAP_CANONICAL_F33_F50.md` is now the only active canonical roadmap.
+- F33 remains preserved as SQLite Memory, FTS5, Provenance & Evaluation Baseline.
+- F32.Z13P remains the next operational action.
+- No implementation, runtime mutation, frontend mutation, audio mutation, action runtime mutation, MCP activation, network use, dependency installation, or Obsidian bulk read was authorized.

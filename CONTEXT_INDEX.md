@@ -8,7 +8,7 @@ Read in this order:
 4. [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 5. [README.md](README.md)
 6. [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
-7. [ROADMAP_F30_F50.md](ROADMAP_F30_F50.md)
+7. [ROADMAP_CANONICAL_F33_F50.md](ROADMAP_CANONICAL_F33_F50.md)
 
 Recent F32 chain references:
 
@@ -119,3 +119,13 @@ Recent F32 P4 references for F32.RESEARCH-P4:
 - [artifacts/f32/research/canonical_roadmap_delta_review_report.md](../artifacts/f32/research/canonical_roadmap_delta_review_report.md)
 - [artifacts/f32/research/canonical_roadmap_supersession_plan.json](../artifacts/f32/research/canonical_roadmap_supersession_plan.json)
 - [docs/fase32/f32_research_p4_canonical_roadmap_delta_review_gate.md](../docs/fase32/f32_research_p4_canonical_roadmap_delta_review_gate.md)
+
+Recent F32 P5 references for F32.RESEARCH-P5:
+
+- [aris-active-context/ROADMAP_CANONICAL_F33_F50.md](ROADMAP_CANONICAL_F33_F50.md)
+- [aris-active-context/ROADMAP_F30_F50.md](ROADMAP_F30_F50.md)
+- [aris-active-context/archive/ROADMAP_F30_F50_SUPERSEDED_2026-05-11.md](archive/ROADMAP_F30_F50_SUPERSEDED_2026-05-11.md)
+- [artifacts/f32/research/canonical_roadmap_supersession_materialization.json](../artifacts/f32/research/canonical_roadmap_supersession_materialization.json)
+- [artifacts/f32/research/canonical_roadmap_supersession_materialization_summary.json](../artifacts/f32/research/canonical_roadmap_supersession_materialization_summary.json)
+- [artifacts/f32/research/canonical_roadmap_supersession_materialization_report.md](../artifacts/f32/research/canonical_roadmap_supersession_materialization_report.md)
+- [docs/fase32/f32_research_p5_canonical_roadmap_supersession_materialization.md](../docs/fase32/f32_research_p5_canonical_roadmap_supersession_materialization.md)
