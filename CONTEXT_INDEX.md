@@ -484,3 +484,11 @@ notes:
 - F32 remains responsible for MCP read-only configuration and controlled apply readiness work.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Next principal phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`
+
+## F32.Z13N Artifact References
+
+- [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_decision.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_decision.json)
+- [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_summary.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_summary.json)
+- [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_matrix.json)
+- [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_preflight.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_preflight.json)
+- [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_next_phase_contract.json)

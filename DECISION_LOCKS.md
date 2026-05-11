@@ -111,4 +111,6 @@
 - Controlled apply readiness ready: `True`.
 - Controlled apply execution allowed now: `False`.
 - This gate does not authorize real apply, config writes, MCP activation, or real Obsidian access.
+- Z13N is readiness/preflight-only and cannot be used as an authorization surrogate.
+- Z13N does not authorize config write, MCP activation, or real Obsidian access.
 - Next principal phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`.
