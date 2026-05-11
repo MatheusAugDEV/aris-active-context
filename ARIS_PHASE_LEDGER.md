@@ -551,3 +551,13 @@ Closed as a foundation track, not as official V6 closure.
 
 - [F32.Z13N-ACR1] The local active-context was reconciled after the first Z13N-Review preflight detected a mismatch between the Z13N readiness evidence and the active-context state.
 - The reconciliation keeps the gate read-only and review-bound while ensuring the active-context now points cleanly to `F32.Z13N-Review`.
+
+## F32.Z13N-Review Controlled Apply Readiness Review Gate
+
+- [F32.Z13N-Review] Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate reviewed the Z13N readiness gate, the Z13L evidence chain, and the human authorization evidence, and confirmed the chain is ready for future planning only.
+- Status: `f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_review_gate_passed`.
+- Review gate passed: `True`.
+- Ready for next phase: `True`.
+- Z13N artifacts valid: `True`.
+- Next principal phase: `F32.Z13O — Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Gate`.
+- This review did not authorize apply, config writes, MCP activation, or real Obsidian access.
