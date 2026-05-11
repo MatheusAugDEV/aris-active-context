@@ -62,3 +62,9 @@
 - F32.RESEARCH-P1K is external_advisory_research only.
 - Raw Kimi input is preserved, but claims and patterns remain advisory-only.
 - No implementation or roadmap mutation follows from P1K without cross-model comparison and primary-source verification.
+
+## F32.RESEARCH-P1C Research Lock
+
+- F32.RESEARCH-P1C is external_advisory_research only.
+- Raw Claude input is preserved, but claims, patterns, risk signals, and candidate roadmap remain advisory-only.
+- No implementation or roadmap mutation follows from P1C without cross-model comparison and primary-source verification.

@@ -52,6 +52,16 @@ Recent F32 chain references:
 - [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_antipatterns.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_antipatterns.json)
 - [artifacts/research/external/kimi_ai_agent_workflow_voice_reference_verification_backlog.json](../artifacts/research/external/kimi_ai_agent_workflow_voice_reference_verification_backlog.json)
 - [docs/research/external/kimi_ai_agent_workflow_voice_reference_notes.md](../docs/research/external/kimi_ai_agent_workflow_voice_reference_notes.md)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_raw.md](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_raw.md)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_intake.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_intake.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_summary.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_research_summary.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_claims_matrix.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_claims_matrix.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_useful_patterns.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_useful_patterns.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_antipatterns.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_antipatterns.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_risk_matrix.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_risk_matrix.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_candidate_roadmap_f30_f48.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_candidate_roadmap_f30_f48.json)
+- [artifacts/research/external/claude_ai_agent_workflow_voice_reference_verification_backlog.json](../artifacts/research/external/claude_ai_agent_workflow_voice_reference_verification_backlog.json)
+- [docs/research/external/claude_ai_agent_workflow_voice_reference_notes.md](../docs/research/external/claude_ai_agent_workflow_voice_reference_notes.md)
 
 Rules:
 

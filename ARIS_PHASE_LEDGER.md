@@ -628,3 +628,12 @@ Closed as a foundation track, not as official V6 closure.
 - External research remains advisory-only; no implementation or roadmap mutation authorized.
 - Next research phase: `F32.RESEARCH-P1C — Claude External Research Input Intake & Claim Classification Gate`.
 - F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+
+## F32.RESEARCH-P1C Claude External Research Validated Intake, Pattern Catalog & Candidate Roadmap Gate
+
+- [F32.RESEARCH-P1C] Claude external research was saved as raw input and classified as advisory-only evidence.
+- Status: `f32_research_p1c_claude_external_research_validated_intake_ready`.
+- Created assets: raw Claude transcript, intake summary, summary JSON, claims matrix, useful patterns, anti-patterns, risk matrix, candidate roadmap, verification backlog, synthesis notes, and the ARIS improvement backlog.
+- External research remains advisory-only; no implementation or roadmap mutation authorized.
+- Next research phase: `F32.RESEARCH-P2 — Cross-Model Research Synthesis & Architecture Candidate Consolidation Gate`.
+- F32 scope preserved; F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
