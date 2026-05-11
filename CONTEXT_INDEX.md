@@ -447,3 +447,21 @@ Read in this order:
 - [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_rerun_matrix.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_rerun_matrix.json) for the F32.Z13L validation matrix
 - [artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_rerun_next_phase_contract.json](../artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_rerun_next_phase_contract.json) for the F32.Z13L next phase contract
 - [artifacts/f32/f32_future_mcp_readonly_configuration_final_pre_apply_authorization_statement.json](../artifacts/f32/f32_future_mcp_readonly_configuration_final_pre_apply_authorization_statement.json) for the human-created dedicated pre-apply authorization statement
+
+## F32.Z13L-Review Review Gate
+when_to_use: Use for deterministic review of the recovered Z13L validation rerun and the human authorization evidence.
+read_first:
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate_summary.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate_decision.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate_report.md
+- docs/fase32/f32z13l_review_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate.md
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_human_authorization_validation_review_gate_next_phase_contract.json
+read_if_needed:
+- PROJECT_CONTEXT_ARIS.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+notes:
+- F32 remains responsible for MCP read-only configuration and controlled apply readiness work.
+- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- Next principal phase: `F32.Z13N — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate`
