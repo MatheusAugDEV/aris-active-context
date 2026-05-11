@@ -100,3 +100,15 @@
 - Human pre-apply authorization granted: `True`.
 - This evidence is pre-apply only and does not authorize real apply, config writes, MCP activation, or real Obsidian access.
 - Next principal phase: `F32.Z13N — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate`.
+
+## F32.Z13N Controlled Apply Readiness Lock
+
+- [F32.Z13N] Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate completed as a deterministic readiness gate.
+- Status: `f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_passed`.
+- Readiness gate passed: `True`.
+- Z13L review verified: `True`.
+- Human pre-apply authorization verified: `True`.
+- Controlled apply readiness ready: `True`.
+- Controlled apply execution allowed now: `False`.
+- This gate does not authorize real apply, config writes, MCP activation, or real Obsidian access.
+- Next principal phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`.

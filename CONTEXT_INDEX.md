@@ -465,3 +465,22 @@ notes:
 - F32 remains responsible for MCP read-only configuration and controlled apply readiness work.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Next principal phase: `F32.Z13N — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate`
+
+## F32.Z13N Controlled Apply Readiness Gate
+when_to_use: Use for deterministic readiness and preflight assessment before the future review gate.
+read_first:
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_summary.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_decision.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_matrix.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_preflight.json
+- artifacts/f32/f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_next_phase_contract.json
+- docs/fase32/f32z13n_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate.md
+read_if_needed:
+- PROJECT_CONTEXT_ARIS.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+notes:
+- F32 remains responsible for MCP read-only configuration and controlled apply readiness work.
+- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- Next principal phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`

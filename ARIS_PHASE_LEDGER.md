@@ -537,3 +537,12 @@ Closed as a foundation track, not as official V6 closure.
 - Review passed: `True`.
 - Next principal phase: `F32.Z13N — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate`.
 - This review did not authorize apply, config writes, MCP activation, or real Obsidian access.
+
+## F32.Z13N Controlled Apply Readiness Gate
+
+- [F32.Z13N] Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Gate reviewed the recovered Z13L evidence chain and confirmed the human authorization evidence and readiness preflight are in place for a future review gate.
+- Status: `f32_future_mcp_readonly_configuration_pre_apply_controlled_apply_readiness_gate_passed`.
+- Readiness gate passed: `True`.
+- Controlled apply readiness ready: `True`.
+- Next principal phase: `F32.Z13N-Review — Future MCP Read-Only Configuration Pre-Apply Controlled Apply Readiness Review Gate`.
+- This readiness gate did not authorize apply, config writes, MCP activation, or real Obsidian access.
