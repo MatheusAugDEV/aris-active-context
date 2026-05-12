@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F33.KR — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Gate`
-- Next principal phase: `F33.KS — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Submission`
-- F33 now advances through Governed Local Memory human authorization intake/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
+- Latest completed phase: `F33.KS — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Submission`
+- Next principal phase: `F33.KS/R1 — Human Authorization Evidence Submission Recovery`
+- F33 now advances through Governed Local Memory human authorization submission/recheck-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
 Rules:
