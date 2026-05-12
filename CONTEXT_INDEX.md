@@ -523,3 +523,13 @@ Recent ARIS-LAB Bedrock Full references:
 - [artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_decision.json](../artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_decision.json)
 - [artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_summary.json](../artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_summary.json)
 - [artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_report.md](../artifacts/aris_lab/bedrock_full/aris_lab_bedrock_full_report.md)
+Recent F33 KR2-BEDROCK references:
+
+
+- [docs/fase33/f33kr2_bedrock_evidence_recheck_gate.md](../docs/fase33/f33kr2_bedrock_evidence_recheck_gate.md)
+- [artifacts/f33/f33kr2_bedrock_preflight.json](../artifacts/f33/f33kr2_bedrock_preflight.json)
+- [artifacts/f33/f33kr2_bedrock_evidence_recheck_matrix.json](../artifacts/f33/f33kr2_bedrock_evidence_recheck_matrix.json)
+- [artifacts/f33/f33kr2_bedrock_artifact_completeness.json](../artifacts/f33/f33kr2_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33kr2_bedrock_decision.json](../artifacts/f33/f33kr2_bedrock_decision.json)
+- [artifacts/f33/f33kr2_bedrock_summary.json](../artifacts/f33/f33kr2_bedrock_summary.json)
+- [artifacts/f33/f33kr2_bedrock_report.md](../artifacts/f33/f33kr2_bedrock_report.md)

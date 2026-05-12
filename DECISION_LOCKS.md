@@ -928,3 +928,12 @@
 - Product promotion allowed now: `False`.
 - Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
 - F33.KR2 remains the preserved resume point.
+## F33.KR2-BEDROCK Evidence Recheck Lock
+
+- Status: `f33kr2_bedrock_evidence_recheck_passed`.
+- The Bedrock recheck only authorizes artifact/evidence decisions, never product promotion.
+- F33.L is the next principal phase under the Lab contract.
+- F33.KR2 evidence chain remains preserved.
+- Bedrock Gate executable now: `True` for artifact/evidence decisions only.
+- Product promotion allowed now: `False`.
+- Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.

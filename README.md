@@ -15,10 +15,10 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- ARIS-LAB-BEDROCK-FULL is complete and F33.KR2 is the active next action under the Lab contract.
-- Latest completed phase: `ARIS-LAB-BEDROCK-FULL — Complete Lab & Executable Bedrock Gate`
-- Next principal phase: `F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate`
-- F33.KR2 is the active next action under the Lab contract; product promotion remains blocked.
+- F33.KR2-BEDROCK passed and F33.L is the active next action under the Lab contract.
+- Latest completed phase: `F33.KR2-BEDROCK — Governed Local Memory SQLite Human Authorization Evidence Recheck With Complete Bedrock Gate`
+- Next principal phase: `F33.L — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate`
+- F33.KR2-BEDROCK passed on artifact/evidence only; F33.L is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
 Rules:

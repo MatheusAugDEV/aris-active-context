@@ -1,1 +1,1 @@
-Proceed to F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate; Bedrock-FULL completed the Lab and preserved the resume point.
+Proceed to F33.L — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate; F33.KR2-BEDROCK passed on artifact/evidence only and preserved the evidence chain.

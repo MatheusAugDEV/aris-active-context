@@ -42,3 +42,10 @@
 | lab.full_lab_review_gate | lab_validated | No | ARIS-LAB-BEDROCK-FULL full lab review gate | Lab complete for governance |
 | f33.governed_local_memory.sqlite_dry_run | resume_allowed/contract_required | No | F33.KR2 preserved | Resume point preserved after Bedrock FULL |
 | f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening, expansion, benchmark, audit only |
+
+## F33.KR2-BEDROCK Evidence Recheck
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33kr2_bedrock_evidence_recheck | lab_validated | No | F33.KR2-BEDROCK evidence recheck | Artifact/evidence-only Bedrock gate passed |
+| f33.governed_local_memory.sqlite_dry_run | bedrock_recheck_passed/contract_required | No | F33.KR2-BEDROCK preserved | F33.L is the next action under the Lab contract |
