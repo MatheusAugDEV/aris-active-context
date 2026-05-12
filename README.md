@@ -15,9 +15,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F33.B — Governed Local Memory Charter Review Gate`
-- Next principal phase: `F33.C — Governed Local Memory Technical Planning Gate`
-- F33 now advances through Governed Local Memory charter/review-only work; F32 closure is complete.
+- Latest completed phase: `F33.C — Governed Local Memory Technical Planning Gate`
+- Next principal phase: `F33.D — Governed Local Memory Technical Planning Review Gate`
+- F33 now advances through Governed Local Memory technical planning/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
 Rules:

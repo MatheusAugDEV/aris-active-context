@@ -78,7 +78,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F33.C — Governed Local Memory Technical Planning Gate`.
+- `NEXT_ACTION.md` currently points to `F33.D — Governed Local Memory Technical Planning Review Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -208,3 +208,15 @@ Recent F33 RESEARCH-SP0 references for Similar Projects Reference Library Intake
 - [artifacts/f33/research/similar_projects/aris_similar_projects_report.md](../artifacts/f33/research/similar_projects/aris_similar_projects_report.md)
 - [artifacts/f33/research/similar_projects/aris_similar_projects_recovery_closure_summary.json](../artifacts/f33/research/similar_projects/aris_similar_projects_recovery_closure_summary.json)
 - [artifacts/f33/research/similar_projects/aris_similar_projects_recovery_closure_report.md](../artifacts/f33/research/similar_projects/aris_similar_projects_recovery_closure_report.md)
+
+Recent F33 C references for F33.C:
+
+- [docs/fase33/f33c_governed_local_memory_technical_plan.md](../docs/fase33/f33c_governed_local_memory_technical_plan.md)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_decision.json](../artifacts/f33/f33_governed_local_memory_technical_plan_decision.json)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_summary.json](../artifacts/f33/f33_governed_local_memory_technical_plan_summary.json)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_report.md](../artifacts/f33/f33_governed_local_memory_technical_plan_report.md)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_schema_plan.json](../artifacts/f33/f33_governed_local_memory_technical_plan_schema_plan.json)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_policy_matrix.json](../artifacts/f33/f33_governed_local_memory_technical_plan_policy_matrix.json)
+- [artifacts/f33/f33_governed_local_memory_technical_plan_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_technical_plan_next_phase_contract.json)
+
+Similar Projects Reference Library remains advisory-only and is consulted at the start of each new phase; it does not authorize implementation or roadmap mutation.

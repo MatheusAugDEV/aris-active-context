@@ -784,3 +784,21 @@ Closed as a foundation track, not as official V6 closure.
 - Status: `f33_research_similar_projects_reference_library_intake_recovered`.
 - The missing raw input was restored and the Similar Projects Reference Library intake reran successfully.
 - The library remains external_unverified/advisory-only and does not authorize implementation, roadmap mutation, runtime mutation, or next-action replacement.
+
+## F33.C — Governed Local Memory Technical Planning Gate
+
+- Status: `f33_governed_local_memory_technical_planning_gate_ready`.
+- Anchor phase: `F33.B — Governed Local Memory Charter Review Gate`.
+- Technical planning only: no database creation, schema application, FTS5 creation, runtime integration, or ingestion is authorized.
+- Memory domains, source authority, validity states, provenance, future schema shape, policy matrix, and next phase contract are materialized only as declarative planning artifacts.
+- Similar Projects consulted at phase start: `True`.
+- Similar Projects advisory-only: `True`.
+- Similar Projects is never treated as source-of-truth or implementation authorization.
+- Claims from Similar Projects require primary-source verification before any technical use.
+- Next phase recommendation: `F33.D — Governed Local Memory Technical Planning Review Gate`.
+
+## Similar Projects Advisory Procedure
+
+- At the start of each new phase, consult Similar Projects Reference Library as advisory-only research.
+- Extract only risk, pattern, antipattern, and future-gate notes.
+- Do not promote external claims to implementation decisions without primary-source verification.

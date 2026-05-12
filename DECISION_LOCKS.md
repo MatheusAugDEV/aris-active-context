@@ -368,3 +368,57 @@
 - F33.RESEARCH-SP0/R1 is recovery/closure-only for the Similar Projects Reference Library and does not authorize implementation, roadmap mutation, dependency installation, runtime mutation, DB/schema/FTS5 creation, MCP activation, Obsidian access, or network use.
 - The library remains external_unverified/advisory-only.
 - Principal NEXT_ACTION is preserved and must not be replaced by this recovery.
+
+## F33.C Planning Lock
+
+- Status: `f33_governed_local_memory_technical_planning_gate_ready`.
+- F33.C is planning-only and does not authorize database creation, schema apply, FTS5 table creation, runtime integration, ingestion, dependency selection, or implementation.
+- anchor_phase: `F33.B — Governed Local Memory Charter Review Gate`.
+- f33b_status_verified: `True`.
+- f33b_review_passed_verified: `True`.
+- f32_closed_verified: `True`.
+- canonical_f33_scope_verified: `True`.
+- technical_plan_created: `True`.
+- schema_plan_created: `True`.
+- policy_matrix_created: `True`.
+- next_phase_contract_created: `True`.
+- memory_domains_planned: `True`.
+- source_authority_planned: `True`.
+- validity_states_planned: `True`.
+- provenance_required: `True`.
+- source_fk_required_in_future_schema: `True`.
+- ttl_policy_planned: `True`.
+- supersession_policy_planned: `True`.
+- pii_redaction_policy_planned: `True`.
+- contradiction_check_policy_planned: `True`.
+- write_gate_policy_planned: `True`.
+- read_path_policy_planned: `True`.
+- audit_ledger_policy_planned: `True`.
+- similar_projects_consulted: `True`.
+- similar_projects_advisory_only: `True`.
+- similar_projects_used_for_decision: `False`.
+- similar_projects_primary_source_verification_required: `True`.
+- similar_projects_start_of_phase_rule_planned: `True`.
+- direct_llm_memory_write_allowed: `False`.
+- runtime_memory_integration_allowed_now: `False`.
+- sqlite_database_creation_allowed_now: `False`.
+- sqlite_schema_apply_allowed_now: `False`.
+- fts5_table_creation_allowed_now: `False`.
+- real_memory_ingestion_allowed_now: `False`.
+- external_vector_db_required: `False`.
+- continuous_learning_allowed_now: `False`.
+- auto_retraining_allowed_now: `False`.
+- memory_without_source_allowed: `False`.
+- obsidian_real_access_allowed_now: `False`.
+- bulk_obsidian_read_allowed_now: `False`.
+- network_allowed_now: `False`.
+- dependency_install_allowed_now: `False`.
+- runtime_mutation_allowed_now: `False`.
+- implementation_allowed_now: `False`.
+- Next phase recommendation: `F33.D — Governed Local Memory Technical Planning Review Gate`.
+
+## Similar Projects Advisory Rule
+
+- At the start of each new phase, consult the Similar Projects Reference Library as advisory-only research.
+- Similar Projects must never become source-of-truth or implementation authorization.
+- Claims from Similar Projects require primary-source verification before technical use.
