@@ -10,6 +10,7 @@ Read order:
 4. `ARIS_PHASE_LEDGER.md`
 5. `CONTEXT_INDEX.md`
 6. `OPERATOR_PREFERENCES.md`
+7. `PROMPT_CONTRACT.md`
 
 Current snapshot:
 

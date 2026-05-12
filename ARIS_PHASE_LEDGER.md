@@ -797,6 +797,12 @@ Closed as a foundation track, not as official V6 closure.
 - Claims from Similar Projects require primary-source verification before any technical use.
 - Next phase recommendation: `F33.D — Governed Local Memory Technical Planning Review Gate`.
 
+## F33.RULE-P0 — ARIS Phase Prompt Compact Contract
+
+- Status: `f33_rule_p0_aris_phase_prompt_compact_contract_ready`.
+- Operational-rule-only: `ARIS_PHASE_PROMPT_CONTRACT_V2` defines compact future phase prompts, named guards, Similar Projects advisory start-of-phase consultation, and compact prompt requirements.
+- Does not authorize implementation, roadmap mutation, runtime mutation, or next-action change.
+
 ## Similar Projects Advisory Procedure
 
 - At the start of each new phase, consult Similar Projects Reference Library as advisory-only research.

@@ -8,7 +8,8 @@ Read in this order:
 4. [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 5. [README.md](README.md)
 6. [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
-7. [ROADMAP_CANONICAL_F33_F50.md](ROADMAP_CANONICAL_F33_F50.md)
+7. [PROMPT_CONTRACT.md](PROMPT_CONTRACT.md)
+8. [ROADMAP_CANONICAL_F33_F50.md](ROADMAP_CANONICAL_F33_F50.md)
 
 Recent F32 chain references:
 
@@ -220,3 +221,9 @@ Recent F33 C references for F33.C:
 - [artifacts/f33/f33_governed_local_memory_technical_plan_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_technical_plan_next_phase_contract.json)
 
 Similar Projects Reference Library remains advisory-only and is consulted at the start of each new phase; it does not authorize implementation or roadmap mutation.
+
+Prompt contract references:
+
+- [PROMPT_CONTRACT.md](PROMPT_CONTRACT.md)
+- [docs/runbooks/codex_phase_prompt_contract.md](../docs/runbooks/codex_phase_prompt_contract.md)
+- [docs/runbooks/codex_compact_prompt_template.md](../docs/runbooks/codex_compact_prompt_template.md)

@@ -422,3 +422,12 @@
 - At the start of each new phase, consult the Similar Projects Reference Library as advisory-only research.
 - Similar Projects must never become source-of-truth or implementation authorization.
 - Claims from Similar Projects require primary-source verification before technical use.
+
+## F33.RULE-P0 Prompt Compact Contract Lock
+
+- Status: `f33_rule_p0_aris_phase_prompt_compact_contract_ready`.
+- `ARIS_PHASE_PROMPT_CONTRACT_V2` is the compact prompt contract for future ARIS phases.
+- Future prompts may reference named guards instead of repeating full prohibition blocks, but safety, tests, runner artifacts, active-context updates, and source-of-truth precedence remain mandatory.
+- Similar Projects Reference Library must be consulted at the start of every new ARIS phase as advisory-only research for risks, patterns, antipatterns, and future verification candidates.
+- Similar Projects remains advisory-only and does not authorize implementation, roadmap mutation, dependency authority, runtime authority, DB/schema/FTS5 creation, MCP activation, Obsidian bulk read, or network access.
+- Chat instructions alone do not override active-context.
