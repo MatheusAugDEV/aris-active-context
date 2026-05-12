@@ -778,3 +778,9 @@ Closed as a foundation track, not as official V6 closure.
 - Advisory-only external research intake was attempted for a Similar Projects Reference Library.
 - The operator raw input was not present in the workspace, so the intake failed deterministically and no verified library was materialized.
 - No implementation, roadmap mutation, runtime mutation, or next-action replacement was authorized.
+
+## F33.RESEARCH-SP0/R1 — Similar Projects Intake Recovery Closure
+
+- Status: `f33_research_similar_projects_reference_library_intake_recovered`.
+- The missing raw input was restored and the Similar Projects Reference Library intake reran successfully.
+- The library remains external_unverified/advisory-only and does not authorize implementation, roadmap mutation, runtime mutation, or next-action replacement.

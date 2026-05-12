@@ -362,3 +362,9 @@
 - F33.RESEARCH-SP0 is external_unverified/advisory-only research intake and does not authorize implementation, roadmap mutation, dependency installation, runtime mutation, MCP activation, or next-action replacement.
 - No external claim becomes verified here without primary-source validation.
 - Missing operator raw input must fail deterministically and must not be treated as authorization.
+
+## F33.RESEARCH-SP0/R1 Similar Projects Intake Recovery Closure Lock
+
+- F33.RESEARCH-SP0/R1 is recovery/closure-only for the Similar Projects Reference Library and does not authorize implementation, roadmap mutation, dependency installation, runtime mutation, DB/schema/FTS5 creation, MCP activation, Obsidian access, or network use.
+- The library remains external_unverified/advisory-only.
+- Principal NEXT_ACTION is preserved and must not be replaced by this recovery.
