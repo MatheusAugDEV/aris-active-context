@@ -16,8 +16,8 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F33.D — Governed Local Memory Technical Planning Review Gate`
-- Next principal phase: `F33.E — Governed Local Memory Schema Contract Gate`
+- Latest completed phase: `F33.E — Governed Local Memory Schema Contract Gate`
+- Next principal phase: `F33.F — Governed Local Memory Schema Contract Review Gate`
 - F33 now advances through Governed Local Memory technical planning/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
@@ -28,4 +28,4 @@ Rules:
 - Historical depth belongs in `ARIS_PHASE_LEDGER.md`.
 - F32.RESEARCH-P3 created a candidate roadmap impact delta; canonical roadmap and operational next action unchanged.
 
-- F33.D — Governed Local Memory Technical Planning Review Gate completed; status `f33_governed_local_memory_technical_planning_review_gate_passed`; anchor phase `F33.C — Governed Local Memory Technical Planning Gate`; schema plan reviewed; FTS5 planning-only confirmed; policy matrix reviewed; Similar Projects remained advisory-only; next phase recommendation `F33.E — Governed Local Memory Schema Contract Gate`.
+- F33.E — Governed Local Memory Schema Contract Gate completed; status `f33_governed_local_memory_schema_contract_gate_ready`; anchor phase `F33.D — Governed Local Memory Technical Planning Review Gate`; schema contract materialized; field catalog materialized; constraints matrix materialized; migration safety contract materialized; FTS5 planned only; next phase recommendation `F33.F — Governed Local Memory Schema Contract Review Gate`.

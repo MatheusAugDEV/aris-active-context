@@ -1,4 +1,4 @@
-Prepare F33.E — Governed Local Memory Schema Contract Gate; anchor phase F33.D.
+Prepare F33.F — Governed Local Memory Schema Contract Review Gate; anchor phase F33.E.
 <!-- F33.RULE-P0 saved ARIS_PHASE_PROMPT_CONTRACT_V2; principal NEXT_ACTION remains unchanged. -->
 <!-- F33.RESEARCH-SP0 Similar Projects Reference Library Intake was attempted as advisory-only research but failed deterministically because the operator raw input was not present; NEXT_ACTION remains unchanged. -->
 <!-- F33.RESEARCH-SP0/R1 recovered the Similar Projects Reference Library intake with the raw input restored; NEXT_ACTION remains unchanged and advisory-only. -->
