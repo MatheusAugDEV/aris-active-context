@@ -437,3 +437,19 @@ Recent ARIS-LAB A3 references:
 - [artifacts/aris_lab/aris_lab_a3_decision.json](../artifacts/aris_lab/aris_lab_a3_decision.json)
 - [artifacts/aris_lab/aris_lab_a3_summary.json](../artifacts/aris_lab/aris_lab_a3_summary.json)
 - [artifacts/aris_lab/aris_lab_a3_report.md](../artifacts/aris_lab/aris_lab_a3_report.md)
+
+Recent ARIS-LAB A4 references:
+
+- [docs/aris_lab/aris_lab_scoring_model.md](../docs/aris_lab/aris_lab_scoring_model.md)
+- [docs/aris_lab/aris_bedrock_gate_contract.md](../docs/aris_lab/aris_bedrock_gate_contract.md)
+- [docs/aris_lab/aris_lab_hard_block_catalog.md](../docs/aris_lab/aris_lab_hard_block_catalog.md)
+- [docs/aris_lab/aris_lab_product_readiness_contract.md](../docs/aris_lab/aris_lab_product_readiness_contract.md)
+- [artifacts/aris_lab/aris_lab_scoring_model.json](../artifacts/aris_lab/aris_lab_scoring_model.json)
+- [artifacts/aris_lab/aris_lab_threshold_policy.json](../artifacts/aris_lab/aris_lab_threshold_policy.json)
+- [artifacts/aris_lab/aris_lab_hard_block_catalog.json](../artifacts/aris_lab/aris_lab_hard_block_catalog.json)
+- [artifacts/aris_lab/aris_bedrock_gate_decision_schema.json](../artifacts/aris_lab/aris_bedrock_gate_decision_schema.json)
+- [artifacts/aris_lab/aris_bedrock_gate_contract.json](../artifacts/aris_lab/aris_bedrock_gate_contract.json)
+- [artifacts/aris_lab/aris_lab_product_readiness_contract.json](../artifacts/aris_lab/aris_lab_product_readiness_contract.json)
+- [artifacts/aris_lab/aris_lab_a4_decision.json](../artifacts/aris_lab/aris_lab_a4_decision.json)
+- [artifacts/aris_lab/aris_lab_a4_summary.json](../artifacts/aris_lab/aris_lab_a4_summary.json)
+- [artifacts/aris_lab/aris_lab_a4_report.md](../artifacts/aris_lab/aris_lab_a4_report.md)

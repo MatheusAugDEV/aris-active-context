@@ -869,3 +869,12 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - F33.KR2 remains preserved as the paused resume point.
+
+## ARIS-LAB-A4 Scoring and Bedrock Gate Lock
+
+- The scoring model is declarative, versioned, and contract-only.
+- The Bedrock Gate decision schema and contract are deterministic, non-LLM, and non-bypassable.
+- No capability may move to produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.

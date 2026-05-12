@@ -1118,3 +1118,11 @@ Closed as a foundation track, not as official V6 closure.
 - All suites remain contract-only and non-executing.
 - Bedrock Gate remains required for any future promotion.
 - Next phase recommendation: `ARIS-LAB-A4 — Scoring Engine & Bedrock Gate Contract`.
+
+## ARIS-LAB-A4 — Scoring Engine & Bedrock Gate Contract
+
+- Status: `aris_lab_scoring_bedrock_contract_ready`.
+- Anchor phase: `ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton`.
+- Scoring model, threshold policy, hard block catalog, product readiness contract, and Bedrock Gate contract materialized.
+- Bedrock Gate remains declarative and not executable.
+- Next phase recommendation: `ARIS-LAB-A5 — Phase-to-Phase Regression, Demotion & Obsolescence Policy`.
