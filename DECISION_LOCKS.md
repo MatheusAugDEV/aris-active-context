@@ -722,3 +722,37 @@
 - future_no_db_precheck_required: `True`.
 - future_dry_run_execution_allowed_now: `False`.
 - Next phase recommendation: `F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate`.
+
+## F33.K Controlled Dry-Run Authorization Lock
+
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_authorization_required`.
+- F33.K is authorization-only and does not execute the dry-run, create a SQLite database, call sqlite3.connect, apply schema, run migrations, create FTS5, ingest memory, or integrate runtime.
+- anchor_phase: `F33.J`.
+- dedicated_authorization_evidence_path: `artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_statement.json`.
+- dedicated_authorization_evidence_found: `False`.
+- dedicated_authorization_evidence_valid: `False`.
+- human_authorization_granted: `False`.
+- current_phase_execution_allowed: `False`.
+- current_phase_db_creation_allowed: `False`.
+- current_phase_sqlite_connect_allowed: `False`.
+- current_phase_schema_apply_allowed: `False`.
+- current_phase_fts5_creation_allowed: `False`.
+- future_dry_run_execution_allowed_next_phase: `False`.
+- Next phase recommendation: `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`.
+
+## F33.K Controlled Dry-Run Authorization Lock
+
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_authorization_required`.
+- F33.K is authorization-only and does not execute the dry-run, create a SQLite database, open a SQLite connection, apply schema, run migrations, create FTS5, ingest memory, or integrate runtime.
+- anchor_phase: `F33.J`.
+- dedicated_authorization_evidence_path: `artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_statement.json`.
+- dedicated_authorization_evidence_found: `False`.
+- dedicated_authorization_evidence_valid: `False`.
+- human_authorization_granted: `False`.
+- current_phase_execution_allowed: `False`.
+- current_phase_db_creation_allowed: `False`.
+- current_phase_sqlite_connect_allowed: `False`.
+- current_phase_schema_apply_allowed: `False`.
+- current_phase_fts5_creation_allowed: `False`.
+- future_dry_run_execution_allowed_next_phase: `False`.
+- Next phase recommendation: `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`.

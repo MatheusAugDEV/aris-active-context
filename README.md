@@ -16,8 +16,8 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F33.J — Governed Local Memory SQLite Controlled Dry-Run Preparation Review Gate`
-- Next principal phase: `F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate`
+- Latest completed phase: `F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate`
+- Next principal phase: `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`
 - F33 now advances through Governed Local Memory technical planning/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
@@ -31,3 +31,5 @@ Rules:
 - F33.J — Governed Local Memory SQLite Controlled Dry-Run Preparation Review Gate completed; status `f33_governed_local_memory_sqlite_controlled_dry_run_preparation_review_gate_passed`; anchor phase `F33.I — Governed Local Memory SQLite Controlled Dry-Run Preparation Gate`; source phase F33.I reviewed; preparation contract reviewed; preconditions reviewed; permission contract reviewed; execution boundary reviewed; abort matrix reviewed; ledger entry shape reviewed; operator explanation rule verified; no DB file created; next phase recommendation `F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate`.
 
 - Operator-facing phase explanation rule: saved in PROMPT_CONTRACT.md.
+
+- F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate completed; status `f33_governed_local_memory_sqlite_controlled_dry_run_authorization_required`; anchor phase `F33.J — Governed Local Memory SQLite Controlled Dry-Run Preparation Review Gate`; source phase F33.J reviewed; preparation package reviewed; dedicated authorization evidence path checked; human authorization granted `False`; operator explanation rule verified; no DB file created; next phase recommendation `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`.
