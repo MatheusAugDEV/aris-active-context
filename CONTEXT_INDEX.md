@@ -422,3 +422,18 @@ Recent ARIS-LAB A2 references:
 - [artifacts/aris_lab/aris_lab_a2_decision.json](../artifacts/aris_lab/aris_lab_a2_decision.json)
 - [artifacts/aris_lab/aris_lab_a2_summary.json](../artifacts/aris_lab/aris_lab_a2_summary.json)
 - [artifacts/aris_lab/aris_lab_a2_report.md](../artifacts/aris_lab/aris_lab_a2_report.md)
+
+Recent ARIS-LAB A3 references:
+
+- [docs/aris_lab/aris_lab_suite_registry.md](../docs/aris_lab/aris_lab_suite_registry.md)
+- [docs/aris_lab/aris_lab_universal_evaluation_skeleton.md](../docs/aris_lab/aris_lab_universal_evaluation_skeleton.md)
+- [docs/aris_lab/aris_lab_capability_to_suite_mapping.md](../docs/aris_lab/aris_lab_capability_to_suite_mapping.md)
+- [docs/aris_lab/aris_lab_suite_requirement_matrix.md](../docs/aris_lab/aris_lab_suite_requirement_matrix.md)
+- [artifacts/aris_lab/aris_lab_suite_registry.json](../artifacts/aris_lab/aris_lab_suite_registry.json)
+- [artifacts/aris_lab/aris_lab_suite_type_catalog.json](../artifacts/aris_lab/aris_lab_suite_type_catalog.json)
+- [artifacts/aris_lab/aris_lab_capability_to_suite_mapping.json](../artifacts/aris_lab/aris_lab_capability_to_suite_mapping.json)
+- [artifacts/aris_lab/aris_lab_universal_evaluation_skeleton.json](../artifacts/aris_lab/aris_lab_universal_evaluation_skeleton.json)
+- [artifacts/aris_lab/aris_lab_suite_requirement_matrix.json](../artifacts/aris_lab/aris_lab_suite_requirement_matrix.json)
+- [artifacts/aris_lab/aris_lab_a3_decision.json](../artifacts/aris_lab/aris_lab_a3_decision.json)
+- [artifacts/aris_lab/aris_lab_a3_summary.json](../artifacts/aris_lab/aris_lab_a3_summary.json)
+- [artifacts/aris_lab/aris_lab_a3_report.md](../artifacts/aris_lab/aris_lab_a3_report.md)

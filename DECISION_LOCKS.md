@@ -861,3 +861,11 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - F33.KR2 remains preserved as the paused resume point.
+
+## ARIS-LAB-A3 Suite Registry Lock
+
+- Suite registry and evaluation skeleton do not authorize product on their own.
+- No suite or capability may move to produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.

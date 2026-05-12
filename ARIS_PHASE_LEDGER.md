@@ -1109,3 +1109,12 @@ Closed as a foundation track, not as official V6 closure.
 - Evidence packages and ledger refs are audit structures only and do not authorize product promotion.
 - Bedrock Gate remains required for any future promotion.
 - Next phase recommendation: `ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton`.
+
+## ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton
+
+- Status: `aris_lab_suite_registry_ready`.
+- Anchor phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`.
+- Suite registry, suite type catalog, capability mapping, and universal evaluation skeleton materialized.
+- All suites remain contract-only and non-executing.
+- Bedrock Gate remains required for any future promotion.
+- Next phase recommendation: `ARIS-LAB-A4 — Scoring Engine & Bedrock Gate Contract`.
