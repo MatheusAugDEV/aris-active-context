@@ -703,3 +703,22 @@
 - PROMPT_CONTRACT.md includes the operator-facing phase explanation rule.
 - The rule is operator-facing only and does not weaken guards or authorize implementation.
 - The rule must state what the phase is, what it does, what it does not do, why it matters, and one-sentence summary.
+
+## F33.J Controlled Dry-Run Preparation Review Lock
+
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_preparation_review_gate_passed`.
+- F33.J is review-only and does not authorize execution, SQLite connect, schema apply, migration execution, FTS5 creation, runtime integration, or ingestion.
+- anchor_phase: `F33.I`.
+- current_phase_execution_allowed: `False`.
+- current_phase_db_creation_allowed: `False`.
+- current_phase_sqlite_connect_allowed: `False`.
+- current_phase_schema_apply_allowed: `False`.
+- current_phase_fts5_creation_allowed: `False`.
+- future_operator_confirmation_required: `True`.
+- future_human_authorization_required: `True`.
+- future_preflight_required: `True`.
+- future_rollback_required: `True`.
+- future_ledger_required: `True`.
+- future_no_db_precheck_required: `True`.
+- future_dry_run_execution_allowed_now: `False`.
+- Next phase recommendation: `F33.K — Governed Local Memory SQLite Controlled Dry-Run Authorization Gate`.
