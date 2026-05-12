@@ -19,6 +19,22 @@
 - The ARIS Bedrock Gate is deterministic, auditable, versioned, non-LLM, and evidence-based.
 - No capability may move from ARIS Project to ARIS Produto without a Bedrock Gate pass.
 - F44 is reinterpreted as ARIS Lab hardening, red-team expansion, and benchmark maturity.
+## ARIS-LAB-A1 Capability Taxonomy Lock
+
+- The ARIS Lab capability taxonomy is canonical, declarative, and versioned.
+- The Project to Product boundary remains blocked until a Bedrock Gate pass exists.
+- No capability may reach produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.
+## ARIS-LAB-A1 Capability Taxonomy Lock
+
+- The ARIS Lab capability taxonomy is canonical, declarative, and versioned.
+- The Project to Product boundary remains blocked until a Bedrock Gate pass exists.
+- No capability may reach produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.
 ## F32.Z13O Planning Lock
 
 - Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_passed`.

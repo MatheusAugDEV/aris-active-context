@@ -4,12 +4,12 @@ As of 2026-05-12:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
-- Status: `aris_lab_authority_charter_ready`
+- Latest completed phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
+- Status: `aris_lab_capability_taxonomy_ready`
 - F33.KR2 is preserved as the paused resume point until an explicit active-context decision reopens F33 work.
 - F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
-- Next principal phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
-- Hard blocks remain: no real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation.
+- Next principal phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`
+- Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime.
 
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not change the operational next action.
 - F32.RESEARCH-P1G saved Gemini raw input and extracted advisory-only claims/patterns; operational next action unchanged.

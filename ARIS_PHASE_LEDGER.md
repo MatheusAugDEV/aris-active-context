@@ -1067,3 +1067,35 @@ Closed as a foundation track, not as official V6 closure.
 - f44_new_role: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
 - next phase recommendation: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
 - preserved blocks: no real DB creation, sqlite connect, schema apply, migration execution, FTS5 creation, runtime integration, real memory ingestion, direct LLM memory write, network, dependency install, Obsidian bulk read, vault write, and runtime mutation beyond the files strictly required by this phase.
+
+## ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract
+
+- Status: `aris_lab_capability_taxonomy_ready`
+- anchor_phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
+- a0_verified: `True`
+- f33_temporarily_paused: `True`
+- f33_resume_point_preserved: `after ARIS-LAB foundation review or explicit active-context decision`
+- capability_taxonomy_created: `True`
+- product_boundary_contract_created: `True`
+- capability_state_machine_created: `True`
+- phase_capability_impact_contract_created: `True`
+- bedrock_gate_required_for_product: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- preserved blocks: no runtime mutation, no real DB creation, no sqlite connect, no schema apply, no migration execution, no FTS5 creation, no real memory ingestion, no direct LLM memory write, no network, no dependency install, no Obsidian bulk read, no vault write, and no runtime integration beyond the files strictly required by this phase.
+
+## ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract
+
+- Status: `aris_lab_capability_taxonomy_ready`
+- anchor_phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
+- a0_verified: `True`
+- f33_temporarily_paused: `True`
+- f33_resume_point_preserved: `after ARIS-LAB foundation review or explicit active-context decision`
+- capability_taxonomy_created: `True`
+- product_boundary_contract_created: `True`
+- capability_state_machine_created: `True`
+- phase_capability_impact_contract_created: `True`
+- bedrock_gate_required_for_product: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- preserved blocks: no mutable runtime, no real DB creation, no local sqlite access, no schema application, no migration execution, no FTS5 creation, no real memory ingestion, no direct LLM memory write, no external network use, no dependency install, no bulk vault read, and no runtime integration beyond the files strictly required by this phase.
