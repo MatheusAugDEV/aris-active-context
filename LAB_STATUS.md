@@ -1,9 +1,8 @@
 # LAB_STATUS
 
-- Current Lab phase: ARIS-LAB-B0
-- Lab status: integration backlog ready; F33 resume allowed under Lab contract
+- Current Lab phase: ARIS-LAB-B0/R1
+- Lab status: operational completion supersession ready
+- F33 status: temporarily deferred; resume point preserved
+- Next Lab phase: ARIS-LAB-B1 — Lab Impact Summary Template
 - Bedrock Gate status: declared, not executable yet
 - Product promotion: not allowed
-- Next principal phase: F33.KR2
-- F33 resume point: active next action
-- F44 interpretation: hardening/maturity of existing Lab

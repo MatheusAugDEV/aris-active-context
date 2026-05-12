@@ -24,3 +24,12 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - Bedrock Gate remains declared, not executable yet.
 - No product decision exists yet.
 - F33.KR2 remains a contract-governed resume point, not productization.
+
+## ARIS-LAB-B0/R1 Operational Completion Note
+
+- B0/R1 temporarily defers immediate F33.KR2 return.
+- B1-B5 are required before F33 resume.
+- C1-C5 are required before product promotion candidate use.
+- Bedrock Gate remains declared, not executable yet.
+- No product decision exists yet.
+- F33.KR2 remains a contract-governed resume point, not productization.

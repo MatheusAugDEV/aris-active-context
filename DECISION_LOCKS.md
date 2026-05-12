@@ -906,5 +906,16 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
+
+## ARIS-LAB-B0/R1 Operational Completion Supersession Lock
+
+- Status: `aris_lab_operational_completion_supersession_ready`.
+- The operator has temporarily deferred F33.KR2 to complete the minimal operational Lab.
+- F33.KR2 remains preserved as the paused resume point.
+- B1-B5 are required before F33 resume.
+- C1-C5 are required before product promotion candidate use.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
 - F44 remains reinterpreted as lab hardening and maturity.
 - Runtime, DB, schema, FTS5, network, dependency, action, MCP, Obsidian, vault, and bulk-read remain blocked.

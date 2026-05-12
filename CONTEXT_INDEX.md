@@ -493,3 +493,11 @@ Recent ARIS-LAB B0 references:
 - [artifacts/aris_lab/aris_lab_b0_decision.json](../artifacts/aris_lab/aris_lab_b0_decision.json)
 - [artifacts/aris_lab/aris_lab_b0_summary.json](../artifacts/aris_lab/aris_lab_b0_summary.json)
 - [artifacts/aris_lab/aris_lab_b0_report.md](../artifacts/aris_lab/aris_lab_b0_report.md)
+
+Recent ARIS-LAB B0/R1 references:
+
+- [docs/aris_lab/aris_lab_operational_completion_supersession.md](../docs/aris_lab/aris_lab_operational_completion_supersession.md)
+- [artifacts/aris_lab/aris_lab_operational_completion_plan.json](../artifacts/aris_lab/aris_lab_operational_completion_plan.json)
+- [artifacts/aris_lab/aris_lab_b0r1_decision.json](../artifacts/aris_lab/aris_lab_b0r1_decision.json)
+- [artifacts/aris_lab/aris_lab_b0r1_summary.json](../artifacts/aris_lab/aris_lab_b0r1_summary.json)
+- [artifacts/aris_lab/aris_lab_b0r1_report.md](../artifacts/aris_lab/aris_lab_b0r1_report.md)

@@ -16,5 +16,6 @@
 | lab.foundation_review | lab_validated | No | ARIS-LAB-A6 foundation review | Cross-phase foundation review passed |
 | lab.integration_backlog | lab_validated | No | ARIS-LAB-B0 integration backlog | Lab backlog materialized for F33 resume |
 | lab.f33_resume_decision | lab_validated | No | ARIS-LAB-B0 F33 resume decision | F33.KR2 is allowed only under Lab contract |
-| f33.governed_local_memory.sqlite_dry_run | resume_allowed/contract_required | No | F33.KR2 contract | Resume point active next action under Lab contract |
+| lab.operational_completion_supersession | lab_validated | No | ARIS-LAB-B0/R1 operational completion supersession | F33.KR2 is temporarily deferred to complete the operational Lab |
+| f33.governed_local_memory.sqlite_dry_run | temporarily_deferred/resume_point_preserved | No | F33.KR2 preserved | Resume point preserved while operational Lab is completed |
 | f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening role |

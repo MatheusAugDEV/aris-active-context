@@ -1154,3 +1154,14 @@ Closed as a foundation track, not as official V6 closure.
 - Bedrock Gate remains declared, not executable yet.
 - Product promotion remains blocked.
 - Next phase: `F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate`.
+
+## ARIS-LAB-B0/R1 — Lab Operational Completion Supersession Gate
+
+- Status: `aris_lab_operational_completion_supersession_ready`.
+- Anchor phase: `ARIS-LAB-B0 — Lab Integration Backlog & F33 Resume Decision Gate`.
+- The operator superseded the immediate F33.KR2 return in favor of operational Lab completion.
+- F33.KR2 remains preserved as the paused resume point.
+- The B1-B5 and C1-C5 operational tracks are now declared.
+- Bedrock Gate remains declared, not executable yet.
+- Product promotion remains blocked.
+- Next phase: `ARIS-LAB-B1 — Lab Impact Summary Template`.

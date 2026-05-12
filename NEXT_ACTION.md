@@ -1,1 +1,1 @@
-Proceed to F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate; F33.KR2 resume is allowed only under the Lab phase-to-phase contract.
+Proceed to ARIS-LAB-B1 — Lab Impact Summary Template; F33.KR2 remains preserved and temporarily deferred.

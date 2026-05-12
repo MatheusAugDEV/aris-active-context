@@ -15,10 +15,10 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- ARIS-LAB-B0 is complete and F33.KR2 is the active next action under the Lab contract.
-- Latest completed phase: `ARIS-LAB-B0 — Lab Integration Backlog & F33 Resume Decision Gate`
-- Next principal phase: `F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate`
-- F33.KR2 is governed by the Lab phase-to-phase contract and does not authorize product promotion.
+- ARIS-LAB-B0/R1 is complete and F33.KR2 is temporarily deferred for operational completion.
+- Latest completed phase: `ARIS-LAB-B0/R1 — Lab Operational Completion Supersession Gate`
+- Next principal phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
+- F33.KR2 remains preserved and the Lab phase-to-phase contract still blocks product promotion.
 - F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
 
 Rules:
