@@ -151,3 +151,25 @@
 - Evidence status: `valid_dedicated_authorization_evidence`.
 - No real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation, and no implementation are authorized.
 - Next phase recommendation: `F32.Z13P/R1 — Final Human Authorization Evidence Recovery`.
+
+## F32.Z13P/R1 Recovery Lock
+
+- Status: `f32_future_mcp_readonly_configuration_final_human_authorization_evidence_recovery_passed`.
+- F32.Z13P/R1 is recovery-only and does not authorize apply.
+- anchor_phase: `F32.Z13Q`.
+- Evidence status: `valid_dedicated_authorization_evidence`.
+- source_phase_checked: `True`.
+- intake_artifacts_found: `True`.
+- z13p_intake_found: `True`.
+- z13q_review_found: `True`.
+- dedicated_authorization_evidence_found: `True`.
+- dedicated_authorization_evidence_valid: `True`.
+- evidence_review_passed: `True`.
+- evidence_chain_recovered: `True`.
+- evidence_chain_consistent: `True`.
+- stale_or_conflicting_context_found: `False`.
+- stale_or_conflicting_context_repaired: `False`.
+- recovery_manifest_created: `True`.
+- recovery_report_created: `True`.
+- No real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation, and no implementation are authorized.
+- Next phase recommendation: `F32.Z13S — Final Human Authorization Evidence Closure Gate`.

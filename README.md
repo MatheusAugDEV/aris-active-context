@@ -15,8 +15,8 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F32.Z13Q — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Review Gate`
-- Next principal phase: `F32.Z13P/R1 — Final Human Authorization Evidence Recovery`
+- Latest completed phase: `F32.Z13P/R1 — Final Human Authorization Evidence Recovery`
+- Next principal phase: `F32.Z13S — Final Human Authorization Evidence Closure Gate`
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
