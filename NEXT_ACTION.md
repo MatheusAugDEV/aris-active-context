@@ -1,4 +1,4 @@
-Prepare F33.A — SQLite Memory, FTS5, Provenance & Evaluation Baseline; anchor phase F32.Z13T/R1.
+Prepare F33.B — Governed Local Memory Charter Review Gate; anchor phase F33.A.
 <!-- F32.RESEARCH-P2G recorded: Gemini Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2GPT recorded: GPT Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2H recorded: cross-model research inputs consolidated as external_unverified evidence; operational next action unchanged. -->

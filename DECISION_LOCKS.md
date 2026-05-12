@@ -286,3 +286,36 @@
 - implementation_allowed_now: `False`.
 - f33_reserved_scope: `SQLite Memory, FTS5, Provenance & Evaluation Baseline`.
 - Next phase recommendation: `F33.A — SQLite Memory, FTS5, Provenance & Evaluation Baseline`.
+
+## F33.A Charter Lock
+
+- Status: `f33_governed_local_memory_charter_passed`.
+- F33.A is charter-only and does not authorize database creation, schema apply, FTS5 table creation, runtime integration, or ingestion.
+- anchor_phase: `F32.Z13T/R1`.
+- f32_closed_verified: `True`.
+- f33_next_action_verified: `True`.
+- roadmap_canonical_f33_scope_verified: `True`.
+- roadmap_canonical_preserved: `True`.
+- f33_charter_created: `True`.
+- governed_local_memory_detailing_created: `True`.
+- memory_domains_defined: `True`.
+- source_authority_defined: `True`.
+- validity_states_defined: `True`.
+- provenance_required: `True`.
+- direct_llm_memory_write_allowed: `False`.
+- runtime_memory_integration_allowed_now: `False`.
+- sqlite_database_creation_allowed_now: `False`.
+- sqlite_schema_apply_allowed_now: `False`.
+- fts5_table_creation_allowed_now: `False`.
+- real_memory_ingestion_allowed_now: `False`.
+- external_vector_db_required: `False`.
+- continuous_learning_allowed_now: `False`.
+- auto_retraining_allowed_now: `False`.
+- memory_without_source_allowed: `False`.
+- obsidian_real_access_allowed_now: `False`.
+- bulk_obsidian_read_allowed_now: `False`.
+- network_allowed_now: `False`.
+- dependency_install_allowed_now: `False`.
+- runtime_mutation_allowed_now: `False`.
+- implementation_allowed_now: `False`.
+- Next phase recommendation: `F33.B — Governed Local Memory Charter Review Gate`.

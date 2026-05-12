@@ -753,3 +753,12 @@ Closed as a foundation track, not as official V6 closure.
 - MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, closure evidence, active-context consistency, decision locks, and canonical F33 reservation were reviewed from local evidence.
 - F32 is formally closed without authorizing real apply, config write, MCP activation, real Obsidian access, vault write, bulk Obsidian read, network, dependency install, runtime mutation, or implementation.
 - Next phase recommendation: `F33.A — SQLite Memory, FTS5, Provenance & Evaluation Baseline`.
+
+## F33.A — Governed Local Memory Charter
+
+- Status: `f33_governed_local_memory_charter_passed`.
+- Anchor phase: `F32.Z13T/R1 — Final F32 Closure Gate`.
+- F33 opens as Governed Local Memory charter-only work.
+- Memory domains, source authority, validity states, provenance, SQLite/FTS5 constraints, privacy and deletion semantics, and evaluation baseline are defined here.
+- No SQLite database, schema, FTS5 table, runtime integration, ingestion, or external vector base is created in this phase.
+- Next phase recommendation: `F33.B — Governed Local Memory Charter Review Gate`.
