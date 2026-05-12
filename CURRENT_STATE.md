@@ -4,12 +4,12 @@ As of 2026-05-12:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.L-BEDROCK — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate`
-- Status: `f33l_bedrock_sqlite_controlled_dry_run_execution_plan_ready`
+- Latest completed phase: `F33.M-BEDROCK — SQLite Controlled Dry-Run Execution Authorization Gate`
+- Status: `f33m_bedrock_sqlite_controlled_dry_run_execution_authorization_ready`
 - Bedrock Gate status: `executable for artifact/evidence decisions only`
-- F33.KR2 evidence chain is preserved; F33.M becomes the next action under the Lab contract.
+- F33.L evidence chain is preserved; F33.N becomes the next action under the Lab contract.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next principal phase: `F33.M — Governed Local Memory SQLite Controlled Dry-Run Execution Authorization Gate`
+- Next principal phase: `F33.N — Governed Local Memory SQLite Controlled Dry-Run Execution Gate`
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime.
 
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not change the operational next action.

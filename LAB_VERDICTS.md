@@ -62,3 +62,16 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | execution_plan_ready/contract_required | No | F33.L-BEDROCK passed | F33.M is now the next action under the Lab contract |
+
+## F33.M-BEDROCK Authorization Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33m_bedrock_authorization | lab_validated | No | F33.M-BEDROCK authorization gate | Controlled dry-run authorization gate passed |
+| f33.governed_local_memory.sqlite_dry_run | authorization_ready/contract_required | No | F33.M-BEDROCK preserved | F33.N is the next action under the Lab contract |
+
+## F33.M-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | authorization_ready/contract_required | No | F33.M-BEDROCK passed | F33.N is now the next action under the Lab contract |

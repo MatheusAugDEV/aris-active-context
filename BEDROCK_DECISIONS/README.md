@@ -52,3 +52,8 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - F33.L-BEDROCK is artifact/evidence-only and does not authorize real SQLite execution.
 - F33.M remains the next principal phase after the execution plan gate passes.
 - Product promotion remains blocked.
+## F33.M-BEDROCK Authorization Note
+
+- F33.M-BEDROCK is artifact/evidence-only and does not execute SQLite.
+- F33.N remains the next principal phase after the authorization gate passes.
+- Product promotion remains blocked.

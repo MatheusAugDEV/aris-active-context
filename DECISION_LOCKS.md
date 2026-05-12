@@ -946,3 +946,11 @@
 - Runtime mutation remains blocked.
 - No SQLite database creation, schema apply, FTS5 creation, real ingestion, network, dependency install, MCP activation, Obsidian access, vault write, or bulk Obsidian read is authorized.
 - F33.M is the next principal phase under the Lab contract.
+## F33.M-BEDROCK Authorization Lock
+
+- Status: `f33m_bedrock_sqlite_controlled_dry_run_execution_authorization_ready`.
+- F33.M-BEDROCK is artifact/evidence-only and does not execute SQLite.
+- F33.N is the next principal phase if authorization passes.
+- Product promotion remains blocked.
+- Runtime mutation remains blocked.
+- No SQLite database creation, schema apply, FTS5 creation, real ingestion, network, dependency install, MCP activation, Obsidian access, vault write, or bulk Obsidian read is authorized.

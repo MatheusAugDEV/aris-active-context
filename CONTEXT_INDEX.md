@@ -546,3 +546,14 @@ Recent F33 L-BEDROCK references:
 - [artifacts/f33/f33l_bedrock_decision.json](../artifacts/f33/f33l_bedrock_decision.json)
 - [artifacts/f33/f33l_bedrock_summary.json](../artifacts/f33/f33l_bedrock_summary.json)
 - [artifacts/f33/f33l_bedrock_report.md](../artifacts/f33/f33l_bedrock_report.md)
+Recent F33 M-BEDROCK references:
+
+
+- [docs/fase33/f33m_bedrock_sqlite_controlled_dry_run_execution_authorization_gate.md](../docs/fase33/f33m_bedrock_sqlite_controlled_dry_run_execution_authorization_gate.md)
+- [artifacts/f33/f33m_bedrock_preflight.json](../artifacts/f33/f33m_bedrock_preflight.json)
+- [artifacts/f33/f33m_sqlite_controlled_dry_run_authorization_matrix.json](../artifacts/f33/f33m_sqlite_controlled_dry_run_authorization_matrix.json)
+- [artifacts/f33/f33m_sqlite_controlled_dry_run_risk_abort_review.json](../artifacts/f33/f33m_sqlite_controlled_dry_run_risk_abort_review.json)
+- [artifacts/f33/f33m_bedrock_artifact_completeness.json](../artifacts/f33/f33m_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33m_bedrock_decision.json](../artifacts/f33/f33m_bedrock_decision.json)
+- [artifacts/f33/f33m_bedrock_summary.json](../artifacts/f33/f33m_bedrock_summary.json)
+- [artifacts/f33/f33m_bedrock_report.md](../artifacts/f33/f33m_bedrock_report.md)
