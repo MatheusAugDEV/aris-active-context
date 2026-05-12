@@ -75,3 +75,19 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | authorization_ready/contract_required | No | F33.M-BEDROCK passed | F33.N is now the next action under the Lab contract |
+
+## F33.N-BEDROCK Controlled Dry-Run Execution Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33n_bedrock_dry_run_execution | lab_validated | No | F33.N-BEDROCK execution evidence | Controlled dry-run executed in temporary boundary |
+| lab.f33n_bedrock_schema_replay | lab_validated | No | F33.N-BEDROCK schema replay evidence | Core schema replayed locally in temp DB |
+| lab.f33n_bedrock_cleanup | lab_validated | No | F33.N-BEDROCK cleanup evidence | Temporary DB boundary cleaned |
+| lab.f33n_bedrock_ledger_actual | lab_validated | No | F33.N-BEDROCK ledger actual | Deterministic ledger chain recorded |
+| f33.governed_local_memory.sqlite_dry_run | controlled_dry_run_executed/contract_required | No | F33.N-BEDROCK preserved | F33.O is the next action under the Lab contract |
+
+## F33.N-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | controlled_dry_run_executed/contract_required | No | F33.N-BEDROCK passed | F33.O is now the next action under the Lab contract |

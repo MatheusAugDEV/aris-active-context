@@ -954,3 +954,13 @@
 - Product promotion remains blocked.
 - Runtime mutation remains blocked.
 - No SQLite database creation, schema apply, FTS5 creation, real ingestion, network, dependency install, MCP activation, Obsidian access, vault write, or bulk Obsidian read is authorized.
+## F33.N-BEDROCK Dry-Run Execution Lock
+
+- Status: `f33n_bedrock_sqlite_controlled_dry_run_execution_passed`.
+- F33.N-BEDROCK executed a controlled dry-run only inside the allowed temporary boundary.
+- No operational SQLite database was created.
+- Ledger actual, cleanup evidence, and schema replay evidence remain artifact-only and decision-support only.
+- Product promotion remains blocked.
+- Runtime mutation remains blocked.
+- No real memory ingestion, network, dependency install, MCP activation, Obsidian access, vault write, or bulk Obsidian read is authorized.
+- F33.O is the next principal phase under the Lab contract if the gate passes.

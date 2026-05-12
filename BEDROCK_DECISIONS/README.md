@@ -57,3 +57,8 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - F33.M-BEDROCK is artifact/evidence-only and does not execute SQLite.
 - F33.N remains the next principal phase after the authorization gate passes.
 - Product promotion remains blocked.
+## F33.N-BEDROCK Controlled Dry-Run Execution Note
+
+- F33.N-BEDROCK executes a controlled SQLite dry-run only inside the approved temporary artifact boundary.
+- F33.O remains the next principal phase after the execution review gate passes.
+- Product promotion remains blocked.
