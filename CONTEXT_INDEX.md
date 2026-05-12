@@ -79,7 +79,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F33.F — Governed Local Memory Schema Contract Review Gate`.
+- `NEXT_ACTION.md` currently points to `F33.G — Governed Local Memory SQLite Dry-Run Plan Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -248,3 +248,12 @@ Recent F33 E references for F33.E:
 - [artifacts/f33/f33_governed_local_memory_schema_constraints_matrix.json](../artifacts/f33/f33_governed_local_memory_schema_constraints_matrix.json)
 - [artifacts/f33/f33_governed_local_memory_schema_migration_safety_contract.json](../artifacts/f33/f33_governed_local_memory_schema_migration_safety_contract.json)
 - [artifacts/f33/f33_governed_local_memory_schema_contract_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_schema_contract_next_phase_contract.json)
+
+Recent F33 F references for F33.F:
+
+- [docs/fase33/f33f_governed_local_memory_schema_contract_review_gate.md](../docs/fase33/f33f_governed_local_memory_schema_contract_review_gate.md)
+- [artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_decision.json](../artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_decision.json)
+- [artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_summary.json](../artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_summary.json)
+- [artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_report.md](../artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_report.md)
+- [artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_matrix.json](../artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_matrix.json)
+- [artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_schema_contract_review_gate_next_phase_contract.json)
