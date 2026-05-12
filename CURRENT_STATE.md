@@ -3,11 +3,11 @@
 As of 2026-05-12:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
-- F33 now advances through Governed Local Memory human authorization submission/recheck-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
-- Latest completed phase: `F33.KS — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Submission`
-- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_authorization_required`
+- F33 now advances through Governed Local Memory human authorization recovery/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
+- Latest completed phase: `F33.KS/R1 — Human Authorization Evidence Submission Recovery`
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_submission_recovered`
 - Last relevant transitions: `F32.Z13P` ingested the evidence, `F32.Z13Q` reviewed it, `F32.Z13P/R1` recovered it, `F32.Z13S` closed it, `F32.Z13T` consolidated the transition boundary, `F32.Z13T/R1` formally closed F32, `F33.A` opened Governed Local Memory as a charter-only track, `F33.B` reviewed the charter for technical planning readiness, `F33.C` materialized the technical planning gate, and `F33.D` reviewed the technical planning gate for schema-contract readiness.
-- Next principal phase: `F33.KS/R1 — Human Authorization Evidence Submission Recovery`
+- Next principal phase: `F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate`
 - Hard blocks remain: no real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation.
 - F32 owns any MCP-related closure work before F33; F33 stays reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Full historical chain lives in `ARIS_PHASE_LEDGER.md`.
