@@ -481,3 +481,15 @@ Recent ARIS-LAB A6 references:
 - [artifacts/aris_lab/aris_lab_foundation_review_report.md](../artifacts/aris_lab/aris_lab_foundation_review_report.md)
 - [artifacts/aris_lab/aris_lab_foundation_readiness_matrix.json](../artifacts/aris_lab/aris_lab_foundation_readiness_matrix.json)
 - [artifacts/aris_lab/aris_lab_a0_decision.json](../artifacts/aris_lab/aris_lab_a0_decision.json)
+
+Recent ARIS-LAB B0 references:
+
+- [docs/aris_lab/aris_lab_integration_backlog.md](../docs/aris_lab/aris_lab_integration_backlog.md)
+- [docs/aris_lab/aris_lab_f33_resume_decision_gate.md](../docs/aris_lab/aris_lab_f33_resume_decision_gate.md)
+- [docs/aris_lab/aris_lab_f33_kr2_compliance_contract.md](../docs/aris_lab/aris_lab_f33_kr2_compliance_contract.md)
+- [artifacts/aris_lab/aris_lab_integration_backlog.json](../artifacts/aris_lab/aris_lab_integration_backlog.json)
+- [artifacts/aris_lab/aris_lab_f33_resume_decision.json](../artifacts/aris_lab/aris_lab_f33_resume_decision.json)
+- [artifacts/aris_lab/aris_lab_f33_kr2_compliance_contract.json](../artifacts/aris_lab/aris_lab_f33_kr2_compliance_contract.json)
+- [artifacts/aris_lab/aris_lab_b0_decision.json](../artifacts/aris_lab/aris_lab_b0_decision.json)
+- [artifacts/aris_lab/aris_lab_b0_summary.json](../artifacts/aris_lab/aris_lab_b0_summary.json)
+- [artifacts/aris_lab/aris_lab_b0_report.md](../artifacts/aris_lab/aris_lab_b0_report.md)

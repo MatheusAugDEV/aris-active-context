@@ -9,7 +9,7 @@
 - No vault write.
 - Chat context, Codex status, commit text, placeholder, instructions, schema, marker, contract, checklist, evidence manifest, awaiting marker, and awaiting contract do not count as authorization.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure before F33.
-- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
+- F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline; F33.KR2 may resume under Lab contract without product authorization.
 
 ## ARIS-LAB-A0 Authority Lock
 
@@ -896,5 +896,15 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - F33.KR2 remains preserved as the paused resume point.
+
+## ARIS-LAB-B0 Integration Backlog Lock
+
+- Status: `aris_lab_integration_backlog_ready_f33_resume_allowed`.
+- The Lab integration backlog authorizes F33.KR2 to resume only under the Lab phase-to-phase contract.
+- F33.KR2 resume does not authorize product promotion or any runtime mutation outside the gate scope.
+- F33.KR2 compliance contract is required before any Lab review recheck.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
 - F44 remains reinterpreted as lab hardening and maturity.
 - Runtime, DB, schema, FTS5, network, dependency, action, MCP, Obsidian, vault, and bulk-read remain blocked.

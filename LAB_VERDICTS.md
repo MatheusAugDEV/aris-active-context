@@ -14,5 +14,7 @@
 | lab.demotion_policy | lab_validated | No | ARIS-LAB-A5 demotion policy | Demotion policy materialized |
 | lab.obsolescence_policy | lab_validated | No | ARIS-LAB-A5 obsolescence policy | Obsolescence policy materialized |
 | lab.foundation_review | lab_validated | No | ARIS-LAB-A6 foundation review | Cross-phase foundation review passed |
-| f33.governed_local_memory.sqlite_dry_run | paused | No | F33 pause decision | Resume point preserved at F33.KR2 |
+| lab.integration_backlog | lab_validated | No | ARIS-LAB-B0 integration backlog | Lab backlog materialized for F33 resume |
+| lab.f33_resume_decision | lab_validated | No | ARIS-LAB-B0 F33 resume decision | F33.KR2 is allowed only under Lab contract |
+| f33.governed_local_memory.sqlite_dry_run | resume_allowed/contract_required | No | F33.KR2 contract | Resume point active next action under Lab contract |
 | f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening role |

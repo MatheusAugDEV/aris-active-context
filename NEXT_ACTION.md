@@ -1,1 +1,1 @@
-Proceed to ARIS-LAB-B0 — Lab Integration Backlog & F33 Resume Decision Gate; F33.KR2 preserved as paused resume point.
+Proceed to F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate; F33.KR2 resume is allowed only under the Lab phase-to-phase contract.

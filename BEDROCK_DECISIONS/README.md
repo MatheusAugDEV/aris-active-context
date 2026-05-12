@@ -16,3 +16,11 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - Bedrock Gate remains declared, not executable yet.
 - No product decision exists yet.
 - F33 remains paused and F33.KR2 remains the preserved resume point.
+
+## ARIS-LAB-B0 Integration Backlog Note
+
+- A0-A6 are validated as the Lab foundation.
+- B0 creates the integration backlog and allows F33.KR2 to resume under Lab contract.
+- Bedrock Gate remains declared, not executable yet.
+- No product decision exists yet.
+- F33.KR2 remains a contract-governed resume point, not productization.
