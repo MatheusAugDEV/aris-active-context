@@ -79,3 +79,9 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - blocker_count=0; workspace_residue_free=True; source_chain_verified=True.
 - F33.R is the next principal phase recommendation after the closure planning gate passes.
 - Product promotion remains blocked.
+## F33.R-BEDROCK Cycle Closure Review Note
+
+- F33.R-BEDROCK reviews the F33.Q closure plan artifacts for completeness and conservatism.
+- Closure criteria, residual risks, next-step options, and cleanup expectations are all reviewed.
+- closure_review_passed=True; blocker_count=0; F33.S is the next principal phase.
+- Product promotion remains blocked.

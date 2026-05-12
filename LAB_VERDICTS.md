@@ -138,3 +138,19 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | closure_plan_ready/contract_required | No | F33.Q-BEDROCK passed | F33.R is now the next action under the Lab contract |
+
+## F33.R-BEDROCK Cycle Closure Review Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33r_bedrock_closure_criteria_review | lab_validated | No | F33.R-BEDROCK closure criteria review | 8 criteria reviewed; CC-08 retroactively met; all adequate |
+| lab.f33r_bedrock_residual_risk_review | lab_validated | No | F33.R-BEDROCK residual risk review | 6 risks reviewed; severity counts consistent; all mitigations present |
+| lab.f33r_bedrock_next_step_review | lab_validated | No | F33.R-BEDROCK next-step recommendation review | NSO-01 confirmed allowed; F33.S recommended; cleanup expectations met |
+| lab.f33r_bedrock_artifact_completeness | lab_validated | No | F33.R-BEDROCK artifact completeness | All required review artifacts present and valid |
+| f33.governed_local_memory.sqlite_dry_run | closure_review_passed/contract_required | No | F33.R-BEDROCK preserved | F33.S is the next action under the Lab contract |
+
+## F33.R-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | closure_review_passed/contract_required | No | F33.R-BEDROCK passed | F33.S is now the next action under the Lab contract |
