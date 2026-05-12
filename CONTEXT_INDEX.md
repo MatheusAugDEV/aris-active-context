@@ -582,3 +582,15 @@ Recent F33 O-BEDROCK references:
 - [artifacts/f33/f33o_bedrock_decision.json](../artifacts/f33/f33o_bedrock_decision.json)
 - [artifacts/f33/f33o_bedrock_summary.json](../artifacts/f33/f33o_bedrock_summary.json)
 - [artifacts/f33/f33o_bedrock_report.md](../artifacts/f33/f33o_bedrock_report.md)
+Recent F33 P-BEDROCK references:
+
+
+- [docs/fase33/f33p_bedrock_sqlite_controlled_dry_run_cycle_consolidation_gate.md](../docs/fase33/f33p_bedrock_sqlite_controlled_dry_run_cycle_consolidation_gate.md)
+- [artifacts/f33/f33p_bedrock_preflight.json](../artifacts/f33/f33p_bedrock_preflight.json)
+- [artifacts/f33/f33p_sqlite_controlled_dry_run_cycle_consolidation_matrix.json](../artifacts/f33/f33p_sqlite_controlled_dry_run_cycle_consolidation_matrix.json)
+- [artifacts/f33/f33p_sqlite_controlled_dry_run_cycle_safety_summary.json](../artifacts/f33/f33p_sqlite_controlled_dry_run_cycle_safety_summary.json)
+- [artifacts/f33/f33p_sqlite_controlled_dry_run_residue_continuity_review.json](../artifacts/f33/f33p_sqlite_controlled_dry_run_residue_continuity_review.json)
+- [artifacts/f33/f33p_bedrock_artifact_completeness.json](../artifacts/f33/f33p_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33p_bedrock_decision.json](../artifacts/f33/f33p_bedrock_decision.json)
+- [artifacts/f33/f33p_bedrock_summary.json](../artifacts/f33/f33p_bedrock_summary.json)
+- [artifacts/f33/f33p_bedrock_report.md](../artifacts/f33/f33p_bedrock_report.md)

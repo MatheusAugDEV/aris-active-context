@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.O-BEDROCK passed and F33.P is the active next action under the Lab contract.
-- Latest completed phase: `F33.O-BEDROCK — Governed Local Memory SQLite Controlled Dry-Run Execution Review Gate`
-- F33.O-BEDROCK reviewed the controlled SQLite dry-run evidence and confirmed the residue-free temporary boundary.
-- Next principal phase: `F33.P — Governed Local Memory SQLite Controlled Dry-Run Cycle Consolidation Gate`
-- F33.O-BEDROCK passed on artifact/evidence only; F33.P is the active next action under the Lab contract and product promotion remains blocked.
+- F33.P-BEDROCK passed and F33.Q is the active next action under the Lab contract.
+- Latest completed phase: `F33.P-BEDROCK — Governed Local Memory SQLite Controlled Dry-Run Cycle Consolidation Gate`
+- F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
+- Next principal phase: `F33.Q — Governed Local Memory SQLite Controlled Dry-Run Cycle Closure Planning Gate`
+- F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
 Rules:

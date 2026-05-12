@@ -106,3 +106,18 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | review_passed/contract_required | No | F33.O-BEDROCK passed | F33.P is now the next action under the Lab contract |
+
+## F33.P-BEDROCK Cycle Consolidation Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33p_bedrock_cycle_consolidation | lab_validated | No | F33.P-BEDROCK cycle consolidation | L→M→N→O chain consolidated for Bedrock review |
+| lab.f33p_bedrock_residue_continuity_review | lab_validated | No | F33.P-BEDROCK residue continuity review | Historical residues stay registered and no new residue was created |
+| lab.f33p_bedrock_artifact_completeness | lab_validated | No | F33.P-BEDROCK artifact completeness | Source artifacts, active-context, and gate files are complete |
+| f33.governed_local_memory.sqlite_dry_run | cycle_consolidated/contract_required | No | F33.P-BEDROCK preserved | F33.Q is the next action under the Lab contract |
+
+## F33.P-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | cycle_consolidated/contract_required | No | F33.P-BEDROCK passed | F33.Q is now the next action under the Lab contract |

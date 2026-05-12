@@ -67,3 +67,8 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - F33.O-BEDROCK forensically reviews the controlled SQLite dry-run evidence and boundary cleanup only.
 - F33.P remains the next principal phase after the review gate passes.
 - Product promotion remains blocked.
+## F33.P-BEDROCK Cycle Consolidation Note
+
+- F33.P-BEDROCK consolidates the controlled dry-run chain and residue continuity evidence only.
+- F33.Q remains the next principal phase recommendation after the consolidation gate passes.
+- Product promotion remains blocked.
