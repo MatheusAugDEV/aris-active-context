@@ -79,7 +79,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`.
+- `NEXT_ACTION.md` currently points to `F33.KR — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -311,3 +311,14 @@ Recent F33 K references for F33.K:
 - [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_gate_report.md](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_gate_report.md)
 - [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_gate_matrix.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_gate_matrix.json)
 - [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_next_phase_contract.json)
+
+
+Recent F33 KH references for F33.KH:
+- [docs/fase33/f33kh_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake.md](../docs/fase33/f33kh_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake.md)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_decision.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_decision.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_summary.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_summary.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_report.md](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_intake_report.md)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_statement_template.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_statement_template.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_operator_instructions.md](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_operator_instructions.md)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_intake_requirements.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_intake_requirements.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_intake_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_sqlite_controlled_dry_run_authorization_intake_next_phase_contract.json)
