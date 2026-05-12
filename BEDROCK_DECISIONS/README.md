@@ -33,3 +33,9 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - Bedrock Gate remains declared, not executable yet.
 - No product decision exists yet.
 - F33.KR2 remains a contract-governed resume point, not productization.
+## ARIS-LAB-BEDROCK-FULL Executable Bedrock Gate Note
+
+- Bedrock Gate is now executable for artifact/evidence decisions only.
+- No product decision exists yet.
+- F33.KR2 remains the preserved resume point and next action.
+- Product promotion is still blocked.

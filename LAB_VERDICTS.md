@@ -17,5 +17,28 @@
 | lab.integration_backlog | lab_validated | No | ARIS-LAB-B0 integration backlog | Lab backlog materialized for F33 resume |
 | lab.f33_resume_decision | lab_validated | No | ARIS-LAB-B0 F33 resume decision | F33.KR2 is allowed only under Lab contract |
 | lab.operational_completion_supersession | lab_validated | No | ARIS-LAB-B0/R1 operational completion supersession | F33.KR2 is temporarily deferred to complete the operational Lab |
-| f33.governed_local_memory.sqlite_dry_run | temporarily_deferred/resume_point_preserved | No | F33.KR2 preserved | Resume point preserved while operational Lab is completed |
-| f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening role |
+| f33.governed_local_memory.sqlite_dry_run | resume_allowed/contract_required | No | F33.KR2 preserved | Resume point preserved after Bedrock FULL |
+| f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening, expansion, benchmark, audit only |
+
+## ARIS-LAB-BEDROCK-FULL Lab Completion
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.full_phase_audit | lab_validated | No | ARIS-LAB-BEDROCK-FULL full phase audit | Cross-phase audit complete |
+| lab.lab_impact_summary | lab_validated | No | ARIS-LAB-BEDROCK-FULL lab impact summary | Contract-only impact summary generated |
+| lab.artifact_completeness | lab_validated | No | ARIS-LAB-BEDROCK-FULL artifact completeness | Required artifacts present |
+| lab.capability_impact | lab_validated | No | ARIS-LAB-BEDROCK-FULL capability impact | Capability impact reviewed |
+| lab.lab_verdicts_validation | lab_validated | No | ARIS-LAB-BEDROCK-FULL lab verdicts validation | Lab verdicts remain non-product |
+| lab.bedrock_decisions_validation | lab_validated | No | ARIS-LAB-BEDROCK-FULL bedrock decisions validation | Bedrock decisions remain non-product |
+| lab.fixture_suites | lab_validated | No | ARIS-LAB-BEDROCK-FULL fixture suites | Deterministic suite fixtures declared |
+| lab.local_suite_runner | lab_validated | No | ARIS-LAB-BEDROCK-FULL local suite runner | Deterministic local suites executed |
+| lab.deterministic_scoring | lab_validated | No | ARIS-LAB-BEDROCK-FULL scoring engine | Deterministic scores computed |
+| lab.hard_block_scan | lab_validated | No | ARIS-LAB-BEDROCK-FULL hard block scan | No hard blocks found |
+| lab.evidence_package_verification | lab_validated | No | ARIS-LAB-BEDROCK-FULL evidence verifier | Evidence package verified |
+| lab.gate_ledger_verification | lab_validated | No | ARIS-LAB-BEDROCK-FULL ledger verifier | Hash-chain verified |
+| lab.executable_bedrock_gate | lab_validated | No | ARIS-LAB-BEDROCK-FULL executable Bedrock Gate | Artifact/evidence decision-only gate executed |
+| lab.bedrock_decision_writer | lab_validated | No | ARIS-LAB-BEDROCK-FULL bedrock decision writer | Decision artifacts written |
+| lab.phase_regression_audit | lab_validated | No | ARIS-LAB-BEDROCK-FULL phase regression audit | No regressions to product |
+| lab.full_lab_review_gate | lab_validated | No | ARIS-LAB-BEDROCK-FULL full lab review gate | Lab complete for governance |
+| f33.governed_local_memory.sqlite_dry_run | resume_allowed/contract_required | No | F33.KR2 preserved | Resume point preserved after Bedrock FULL |
+| f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening, expansion, benchmark, audit only |

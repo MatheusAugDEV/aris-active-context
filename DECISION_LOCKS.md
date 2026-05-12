@@ -919,3 +919,12 @@
 - Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
 - F44 remains reinterpreted as lab hardening and maturity.
 - Runtime, DB, schema, FTS5, network, dependency, action, MCP, Obsidian, vault, and bulk-read remain blocked.
+## ARIS-LAB-BEDROCK-FULL Executable Bedrock Gate Lock
+
+- Status: `aris_lab_bedrock_full_ready`.
+- Bedrock Gate executable now: `True` for artifact/evidence decisions only.
+- Bedrock Gate scope: `artifact_and_evidence_decision_only`.
+- Product state mutation allowed by gate: `False`.
+- Product promotion allowed now: `False`.
+- Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
+- F33.KR2 remains the preserved resume point.
