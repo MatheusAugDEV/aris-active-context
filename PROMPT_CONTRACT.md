@@ -51,6 +51,18 @@ Notes:
 - maximum 5 phase-relevant notes
 - no web/primary-source validation unless a later phase explicitly authorizes it
 
+## Operator-facing phase explanation rule
+
+Before every Codex prompt and after every Codex result, the assistant must give a brief operator-facing explanation outside the prompt that states:
+
+- what the phase is
+- what it does
+- what it does not do
+- why it matters
+- one-sentence summary
+
+This rule is operator-facing only. It must not bloat Codex prompts, weaken guards, replace active-context evidence, or authorize implementation.
+
 ## Compactness rule
 
 - Use guard names instead of restating full prohibition blocks.

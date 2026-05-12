@@ -678,3 +678,28 @@
 - dependency_install_allowed_now: `False`.
 - runtime_mutation_allowed_now: `False`.
 - Next phase recommendation: `F33.I — Governed Local Memory SQLite Controlled Dry-Run Preparation Gate`.
+
+## F33.I Controlled Dry-Run Preparation Lock
+
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_preparation_gate_ready`.
+- F33.I is preparation-only and does not authorize execution, SQLite connect, schema apply, migration execution, FTS5 creation, runtime integration, or ingestion.
+- anchor_phase: `F33.H`.
+- current_phase_execution_allowed: `False`.
+- current_phase_db_creation_allowed: `False`.
+- current_phase_sqlite_connect_allowed: `False`.
+- current_phase_schema_apply_allowed: `False`.
+- current_phase_fts5_creation_allowed: `False`.
+- future_operator_confirmation_required: `True`.
+- future_human_authorization_required: `True`.
+- future_preflight_required: `True`.
+- future_rollback_required: `True`.
+- future_ledger_required: `True`.
+- future_no_db_precheck_required: `True`.
+- future_dry_run_execution_allowed_now: `False`.
+- Next phase recommendation: `F33.J — Governed Local Memory SQLite Controlled Dry-Run Preparation Review Gate`.
+
+## Operator-facing Phase Explanation Rule Lock
+
+- PROMPT_CONTRACT.md includes the operator-facing phase explanation rule.
+- The rule is operator-facing only and does not weaken guards or authorize implementation.
+- The rule must state what the phase is, what it does, what it does not do, why it matters, and one-sentence summary.
