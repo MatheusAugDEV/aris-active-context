@@ -1,1 +1,1 @@
-Prepare F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate; anchor phase F33.KS/R1.
+Proceed to ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract; F33.KR2 preserved as paused resume point.

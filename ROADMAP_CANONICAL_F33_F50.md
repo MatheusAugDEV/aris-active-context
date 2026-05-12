@@ -4,7 +4,7 @@ Status: CANONICAL / ACTIVE
 Activated in: F32.RESEARCH-P5
 Date: 2026-05-11
 Supersedes: ROADMAP_F30_F50.md
-Operational next action remains: F32.Z13P — Future MCP Read-Only Configuration Controlled Apply Final Human Authorization Evidence Intake Gate
+Operational next action remains: ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment
 
 ## Activation Guardrails
 
@@ -177,20 +177,23 @@ Prohibited:
 - Self-review as sole validation.
 - Cross-model review as executor.
 
-## F44 — Evaluation, Reliability, Red-Team & Benchmark Lab
+## F44 — ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity
 
 Scope:
-- Golden suites.
-- Red-team suites.
-- Action safety suite.
-- Memory and retrieval suite.
-- Voice safety suite.
-- Ledger, replay, and rollback suite.
-- Reliability score.
+- expand golden suites
+- expand red-team suites
+- benchmark at scale
+- validate Bedrock Gate under accumulated phase-to-phase evidence
+- audit evaluation theater risk
+- test demotion and obsolescence in practice
+- harden Lab governance
+- mature reliability score
 
 Prohibited:
-- Release without suites.
-- Invented benchmark.
+- treating F44 as initial Lab creation
+- release without suites
+- invented benchmark
+- bypassing Bedrock Gate
 
 ## F45 — Operational Cockpit, Audit UI & Runtime Visibility
 

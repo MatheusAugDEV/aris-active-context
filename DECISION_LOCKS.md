@@ -11,6 +11,14 @@
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure before F33.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 
+## ARIS-LAB-A0 Authority Lock
+
+- F33 is temporarily paused for ARIS Lab foundation.
+- F33.KR2 remains preserved as the paused resume point.
+- The ARIS Lab governs promotion, demotion, and obsolescence decisions.
+- The ARIS Bedrock Gate is deterministic, auditable, versioned, non-LLM, and evidence-based.
+- No capability may move from ARIS Project to ARIS Produto without a Bedrock Gate pass.
+- F44 is reinterpreted as ARIS Lab hardening, red-team expansion, and benchmark maturity.
 ## F32.Z13O Planning Lock
 
 - Status: `f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_gate_passed`.
@@ -815,3 +823,17 @@
 - operator_submission_valid: `True`.
 - final_authorization_statement_created: `True`.
 - No runtime integration, ingestion, network, Obsidian, MCP, or production use is authorized.
+
+## F33.KR2 Recheck Lock
+
+- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_review_recheck_passed`.
+- Anchor phase: `F33.KS/R1 — Human Authorization Evidence Submission Recovery`.
+- Source phase checked: `True`.
+- Source chain consistent: `True`.
+- Final authorization statement found: `True`.
+- Final authorization statement valid: `True`.
+- Operator submission found: `True`.
+- Operator submission valid: `True`.
+- Dedicated authorization evidence valid: `True`.
+- No real SQLite DB creation, sqlite connect, schema apply, migration execution, FTS5 creation, memory ingestion, runtime integration, Obsidian real access, MCP activation, network access, dependency installation, vault write, direct LLM memory write, or runtime mutation is authorized.
+- Next phase recommendation: `F33.L — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate`.

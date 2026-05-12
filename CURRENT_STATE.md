@@ -3,14 +3,14 @@
 As of 2026-05-12:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
-- F33 now advances through Governed Local Memory human authorization recovery/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
-- Latest completed phase: `F33.KS/R1 — Human Authorization Evidence Submission Recovery`
-- Status: `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_submission_recovered`
-- Last relevant transitions: `F32.Z13P` ingested the evidence, `F32.Z13Q` reviewed it, `F32.Z13P/R1` recovered it, `F32.Z13S` closed it, `F32.Z13T` consolidated the transition boundary, `F32.Z13T/R1` formally closed F32, `F33.A` opened Governed Local Memory as a charter-only track, `F33.B` reviewed the charter for technical planning readiness, `F33.C` materialized the technical planning gate, and `F33.D` reviewed the technical planning gate for schema-contract readiness.
-- Next principal phase: `F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate`
+- F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
+- Latest completed phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
+- Status: `aris_lab_authority_charter_ready`
+- F33.KR2 is preserved as the paused resume point until an explicit active-context decision reopens F33 work.
+- F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
+- Next principal phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
 - Hard blocks remain: no real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation.
-- F32 owns any MCP-related closure work before F33; F33 stays reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- Full historical chain lives in `ARIS_PHASE_LEDGER.md`.
+
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not change the operational next action.
 - F32.RESEARCH-P1G saved Gemini raw input and extracted advisory-only claims/patterns; operational next action unchanged.
 - F32.RESEARCH-P1K saved Kimi raw input and extracted advisory-only claims/patterns; operational next action unchanged.
@@ -61,3 +61,5 @@ As of 2026-05-12:
 - F33.KR — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Gate completed; status `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_review_pending`; anchor phase `F33.KH — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Intake`; source phase F33.KH reviewed; final authorization statement found `False`; final authorization statement valid `False`; template, operator instructions, intake requirements, placeholder, and evidence schema reviewed; next phase recommendation `F33.KS — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Submission`.
 
 - F33.KS — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Submission completed; status `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_submission_required`; anchor phase `F33.KR — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Gate`; source phase F33.KR reviewed; final authorization statement absent before submission `True`; operator submission found `False`; operator submission valid `False`; final authorization statement created `False`; next phase recommendation `F33.KS/R1 — Human Authorization Evidence Submission Recovery`.
+
+- F33.KR2 — Governed Local Memory SQLite Controlled Dry-Run Human Authorization Evidence Review Recheck Gate completed; status `f33_governed_local_memory_sqlite_controlled_dry_run_human_authorization_evidence_review_recheck_passed`; anchor phase `F33.KS/R1 — Human Authorization Evidence Submission Recovery`; source phase F33.KS/R1 reviewed; final authorization statement found `True`; final authorization statement valid `True`; operator submission found `True`; operator submission valid `True`; next phase recommendation `F33.L — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate`.
