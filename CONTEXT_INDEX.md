@@ -78,7 +78,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F32.Z13T — Final F32 Closure Transition Gate`.
+- `NEXT_ACTION.md` currently points to `F32.Z13T/R1 — Final F32 Closure Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -161,3 +161,11 @@ Recent F32 Z13S references for F32.Z13S:
 - [artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_evidence_closure_gate_report.md](../artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_evidence_closure_gate_report.md)
 - [artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_evidence_closure_gate_manifest.json](../artifacts/f32/f32_future_mcp_readonly_configuration_final_human_authorization_evidence_closure_gate_manifest.json)
 - [docs/fase32/f32z13s_final_human_authorization_evidence_closure_gate.md](../docs/fase32/f32z13s_final_human_authorization_evidence_closure_gate.md)
+
+Recent F32 Z13T references for F32.Z13T:
+
+- [artifacts/f32/f32_final_closure_transition_gate_decision.json](../artifacts/f32/f32_final_closure_transition_gate_decision.json)
+- [artifacts/f32/f32_final_closure_transition_gate_summary.json](../artifacts/f32/f32_final_closure_transition_gate_summary.json)
+- [artifacts/f32/f32_final_closure_transition_gate_report.md](../artifacts/f32/f32_final_closure_transition_gate_report.md)
+- [artifacts/f32/f32_final_closure_transition_gate_manifest.json](../artifacts/f32/f32_final_closure_transition_gate_manifest.json)
+- [docs/fase32/f32z13t_final_f32_closure_transition_gate.md](../docs/fase32/f32z13t_final_f32_closure_transition_gate.md)
