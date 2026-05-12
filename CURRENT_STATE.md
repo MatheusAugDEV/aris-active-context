@@ -3,11 +3,11 @@
 As of 2026-05-11:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
-- F33 now opens as Governed Local Memory charter-only work; F32 closure is complete.
-- Latest completed phase: `F33.A — Governed Local Memory Charter`
-- Status: `f33_governed_local_memory_charter_passed`
-- Last relevant transitions: `F32.Z13P` ingested the evidence, `F32.Z13Q` reviewed it, `F32.Z13P/R1` recovered it, `F32.Z13S` closed it, `F32.Z13T` consolidated the transition boundary, `F32.Z13T/R1` formally closed F32, and `F33.A` opened Governed Local Memory as a charter-only track.
-- Next principal phase: `F33.B — Governed Local Memory Charter Review Gate`
+- F33 now advances through Governed Local Memory charter/review-only work; F32 closure is complete.
+- Latest completed phase: `F33.B — Governed Local Memory Charter Review Gate`
+- Status: `f33_governed_local_memory_charter_review_gate_passed`
+- Last relevant transitions: `F32.Z13P` ingested the evidence, `F32.Z13Q` reviewed it, `F32.Z13P/R1` recovered it, `F32.Z13S` closed it, `F32.Z13T` consolidated the transition boundary, `F32.Z13T/R1` formally closed F32, `F33.A` opened Governed Local Memory as a charter-only track, and `F33.B` reviewed the charter for technical planning readiness.
+- Next principal phase: `F33.C — Governed Local Memory Technical Planning Gate`
 - Hard blocks remain: no real apply, no real config write, no MCP activation, no real Obsidian access, no vault write, no bulk Obsidian read, no network, no dependency install, no runtime mutation.
 - F32 owns any MCP-related closure work before F33; F33 stays reserved for SQLite Memory, FTS5 & Evaluation Baseline.
 - Full historical chain lives in `ARIS_PHASE_LEDGER.md`.
@@ -37,3 +37,5 @@ As of 2026-05-11:
 - F32.Z13T/R1 — Final F32 Closure Gate completed; status `f32_future_mcp_readonly_configuration_final_f32_closure_gate_passed`; anchor phase `F32.Z13T — Final F32 Closure Transition Gate`; final closure manifest created; final closure report created; source phase checked; z13p intake found; z13q review found; z13p/r1 recovery found; z13s closure found; z13t transition found; evidence chain closed; evidence chain consistent; formal closure criteria complete; F32 closed; no apply real authorized; no config write, MCP activation, real Obsidian access, vault write, or bulk Obsidian read authorized; next phase recommendation `F33.A — SQLite Memory, FTS5, Provenance & Evaluation Baseline`.
 
 - F33.A — Governed Local Memory Charter completed; status `f33_governed_local_memory_charter_passed`; anchor phase `F32.Z13T/R1 — Final F32 Closure Gate`; charter and plan materialized; memory domains defined; source authority defined; validity states defined; provenance required; roadmap canonical preserved; F32 closed verified; next phase recommendation `F33.B — Governed Local Memory Charter Review Gate`.
+
+- F33.B — Governed Local Memory Charter Review Gate completed; status `f33_governed_local_memory_charter_review_gate_passed`; anchor phase `F33.A — Governed Local Memory Charter`; charter reviewed as apt for technical planning only; memory domains reviewed; source authority reviewed; validity states reviewed; provenance required; roadmap canonical preserved; F32 closed verified; next phase recommendation `F33.C — Governed Local Memory Technical Planning Gate`.
