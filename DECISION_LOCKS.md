@@ -356,3 +356,9 @@
 - runtime_mutation_allowed_now: `False`.
 - implementation_allowed_now: `False`.
 - Next phase recommendation: `F33.C — Governed Local Memory Technical Planning Gate`.
+
+## F33.RESEARCH-SP0 Similar Projects Reference Library Intake Lock
+
+- F33.RESEARCH-SP0 is external_unverified/advisory-only research intake and does not authorize implementation, roadmap mutation, dependency installation, runtime mutation, MCP activation, or next-action replacement.
+- No external claim becomes verified here without primary-source validation.
+- Missing operator raw input must fail deterministically and must not be treated as authorization.

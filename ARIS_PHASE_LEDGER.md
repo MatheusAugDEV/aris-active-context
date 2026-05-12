@@ -771,3 +771,10 @@ Closed as a foundation track, not as official V6 closure.
 - Memory domains, source authority, validity states, provenance, SQLite/FTS5 constraints, privacy and deletion semantics, and evaluation baseline remain conservative.
 - No SQLite database, schema, FTS5 table, runtime integration, ingestion, or external vector base is created in this phase.
 - Next phase recommendation: `F33.C — Governed Local Memory Technical Planning Gate`.
+
+## F33.RESEARCH-SP0 — Similar Projects Reference Library Intake
+
+- Status: `f33_research_similar_projects_reference_library_intake_failed_missing_input`.
+- Advisory-only external research intake was attempted for a Similar Projects Reference Library.
+- The operator raw input was not present in the workspace, so the intake failed deterministically and no verified library was materialized.
+- No implementation, roadmap mutation, runtime mutation, or next-action replacement was authorized.

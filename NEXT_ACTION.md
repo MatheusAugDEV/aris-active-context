@@ -1,4 +1,5 @@
 Prepare F33.C — Governed Local Memory Technical Planning Gate; anchor phase F33.B.
+<!-- F33.RESEARCH-SP0 Similar Projects Reference Library Intake was attempted as advisory-only research but failed deterministically because the operator raw input was not present; NEXT_ACTION remains unchanged. -->
 <!-- F32.RESEARCH-P2G recorded: Gemini Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2GPT recorded: GPT Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2H recorded: cross-model research inputs consolidated as external_unverified evidence; operational next action unchanged. -->

@@ -192,3 +192,16 @@ Recent F33 B references for F33.B:
 - [artifacts/f33/f33_governed_local_memory_charter_review_gate_decision.json](../artifacts/f33/f33_governed_local_memory_charter_review_gate_decision.json)
 - [artifacts/f33/f33_governed_local_memory_charter_review_gate_summary.json](../artifacts/f33/f33_governed_local_memory_charter_review_gate_summary.json)
 - [artifacts/f33/f33_governed_local_memory_charter_review_gate_report.md](../artifacts/f33/f33_governed_local_memory_charter_review_gate_report.md)
+
+Recent F33 RESEARCH-SP0 references for Similar Projects Reference Library Intake:
+
+- [docs/research/similar_projects/README.md](../docs/research/similar_projects/README.md)
+- [docs/research/similar_projects/aris_similar_projects_reference_library.md](../docs/research/similar_projects/aris_similar_projects_reference_library.md)
+- [docs/research/similar_projects/aris_similar_projects_normalized_notes.md](../docs/research/similar_projects/aris_similar_projects_normalized_notes.md)
+- [docs/research/similar_projects/aris_similar_projects_decision_backlog.md](../docs/research/similar_projects/aris_similar_projects_decision_backlog.md)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_raw.md](../artifacts/f33/research/similar_projects/aris_similar_projects_raw.md)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_intake.json](../artifacts/f33/research/similar_projects/aris_similar_projects_intake.json)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_summary.json](../artifacts/f33/research/similar_projects/aris_similar_projects_summary.json)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_reference_matrix.json](../artifacts/f33/research/similar_projects/aris_similar_projects_reference_matrix.json)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_candidate_backlog.json](../artifacts/f33/research/similar_projects/aris_similar_projects_candidate_backlog.json)
+- [artifacts/f33/research/similar_projects/aris_similar_projects_report.md](../artifacts/f33/research/similar_projects/aris_similar_projects_report.md)
