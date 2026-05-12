@@ -1134,3 +1134,12 @@ Closed as a foundation track, not as official V6 closure.
 - Phase-to-phase regression policy, demotion policy, quarantine policy, deprecation policy, supersession policy, obsolescence policy, verdict transition policy, and phase exit impact contract materialized.
 - Promotion remains blocked; demotion and obsolescence are policy-only in A5.
 - Next phase recommendation: `ARIS-LAB-A6 — Lab Foundation Review Gate`.
+## ARIS-LAB-A6 — Lab Foundation Review Gate
+
+- Status: `aris_lab_foundation_review_passed`.
+- Anchor phase: `ARIS-LAB-A5 — Phase-to-Phase Regression, Demotion & Obsolescence Policy`.
+- A0-A5 decision and summary artifacts verified.
+- A0 decision repair artifact materialized from the A0 summary to close the missing decision slot.
+- Bedrock Gate remains declared, not executable yet.
+- Product promotion remains blocked.
+- Next phase: `ARIS-LAB-B0 — Lab Integration Backlog & F33 Resume Decision Gate`.

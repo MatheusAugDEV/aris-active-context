@@ -887,3 +887,14 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - F33.KR2 remains preserved as the paused resume point.
+## ARIS-LAB-A6 Foundation Review Lock
+
+- Status: `aris_lab_foundation_review_passed`.
+- The ARIS Lab foundation review gate validates A0-A5 without promoting anything to product.
+- Bedrock Gate remains required for product and is not executable yet.
+- No capability may move to produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.
+- F44 remains reinterpreted as lab hardening and maturity.
+- Runtime, DB, schema, FTS5, network, dependency, action, MCP, Obsidian, vault, and bulk-read remain blocked.

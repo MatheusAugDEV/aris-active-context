@@ -15,9 +15,9 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- ARIS-LAB-A5 is complete and F33 is temporarily paused for Lab foundation.
-- Latest completed phase: `ARIS-LAB-A5 — Phase-to-Phase Regression, Demotion & Obsolescence Policy`
-- Next principal phase: `ARIS-LAB-A6 — Lab Foundation Review Gate`
+- ARIS-LAB-A6 is complete and F33 is temporarily paused for Lab foundation.
+- Latest completed phase: `ARIS-LAB-A6 — Lab Foundation Review Gate`
+- Next principal phase: `ARIS-LAB-B0 — Lab Integration Backlog & F33 Resume Decision Gate`
 - F33.KR2 is preserved as the paused resume point until an explicit active-context decision reopens F33 work.
 - F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
 

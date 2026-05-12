@@ -472,3 +472,12 @@ Recent ARIS-LAB A5 references:
 - [artifacts/aris_lab/aris_lab_a5_decision.json](../artifacts/aris_lab/aris_lab_a5_decision.json)
 - [artifacts/aris_lab/aris_lab_a5_summary.json](../artifacts/aris_lab/aris_lab_a5_summary.json)
 - [artifacts/aris_lab/aris_lab_a5_report.md](../artifacts/aris_lab/aris_lab_a5_report.md)
+Recent ARIS-LAB A6 references:
+
+
+- [docs/aris_lab/aris_lab_foundation_review_gate.md](../docs/aris_lab/aris_lab_foundation_review_gate.md)
+- [artifacts/aris_lab/aris_lab_foundation_review_decision.json](../artifacts/aris_lab/aris_lab_foundation_review_decision.json)
+- [artifacts/aris_lab/aris_lab_foundation_review_summary.json](../artifacts/aris_lab/aris_lab_foundation_review_summary.json)
+- [artifacts/aris_lab/aris_lab_foundation_review_report.md](../artifacts/aris_lab/aris_lab_foundation_review_report.md)
+- [artifacts/aris_lab/aris_lab_foundation_readiness_matrix.json](../artifacts/aris_lab/aris_lab_foundation_readiness_matrix.json)
+- [artifacts/aris_lab/aris_lab_a0_decision.json](../artifacts/aris_lab/aris_lab_a0_decision.json)
