@@ -1,1 +1,1 @@
-Proceed to F33.Q — Governed Local Memory SQLite Controlled Dry-Run Cycle Closure Planning Gate; F33.P-BEDROCK consolidated the controlled dry-run chain, preserved the residue-free boundary, and kept the hard blocks intact.
+Proceed to F33.R — Governed Local Memory SQLite Controlled Dry-Run Cycle Closure Review Gate; F33.Q-BEDROCK created the closure plan (criteria, residual risks, next-step options, cleanup expectations), blocker_count=0, and kept all hard blocks intact.

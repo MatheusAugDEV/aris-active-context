@@ -121,3 +121,20 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | cycle_consolidated/contract_required | No | F33.P-BEDROCK passed | F33.Q is now the next action under the Lab contract |
+
+## F33.Q-BEDROCK Cycle Closure Planning Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33q_bedrock_closure_criteria | lab_validated | No | F33.Q-BEDROCK closure criteria | 8 mandatory criteria defined; all met or met-pending |
+| lab.f33q_bedrock_residual_risk_register | lab_validated | No | F33.Q-BEDROCK residual risk register | 6 residual risks documented (1 high, 3 medium, 2 low) |
+| lab.f33q_bedrock_next_step_options_matrix | lab_validated | No | F33.Q-BEDROCK next-step options matrix | 5 options defined; NSO-01 (F33.R review) is the only allowed-now option |
+| lab.f33q_bedrock_final_cleanup_expectations | lab_validated | No | F33.Q-BEDROCK cleanup expectations | 5 cleanup expectations defined; all met |
+| lab.f33q_bedrock_artifact_completeness | lab_validated | No | F33.Q-BEDROCK artifact completeness | All required artifacts present and valid |
+| f33.governed_local_memory.sqlite_dry_run | closure_plan_ready/contract_required | No | F33.Q-BEDROCK preserved | F33.R is the next action under the Lab contract |
+
+## F33.Q-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | closure_plan_ready/contract_required | No | F33.Q-BEDROCK passed | F33.R is now the next action under the Lab contract |

@@ -72,3 +72,10 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - F33.P-BEDROCK consolidates the controlled dry-run chain and residue continuity evidence only.
 - F33.Q remains the next principal phase recommendation after the consolidation gate passes.
 - Product promotion remains blocked.
+## F33.Q-BEDROCK Cycle Closure Planning Note
+
+- F33.Q-BEDROCK creates the closure plan for the L→M→N→O→P controlled dry-run cycle.
+- Closure criteria, residual risk register, next-step options matrix, and final cleanup expectations are artifact/evidence-only.
+- blocker_count=0; workspace_residue_free=True; source_chain_verified=True.
+- F33.R is the next principal phase recommendation after the closure planning gate passes.
+- Product promotion remains blocked.
