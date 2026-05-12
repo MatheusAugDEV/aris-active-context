@@ -15,9 +15,9 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- ARIS-LAB-A1 is complete and F33 is temporarily paused for Lab foundation.
-- Latest completed phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
-- Next principal phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`
+- ARIS-LAB-A2 is complete and F33 is temporarily paused for Lab foundation.
+- Latest completed phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`
+- Next principal phase: `ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton`
 - F33.KR2 is preserved as the paused resume point until an explicit active-context decision reopens F33 work.
 - F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
 

@@ -853,3 +853,11 @@
 - Dedicated authorization evidence valid: `True`.
 - No real SQLite DB creation, sqlite connect, schema apply, migration execution, FTS5 creation, memory ingestion, runtime integration, Obsidian real access, MCP activation, network access, dependency installation, vault write, direct LLM memory write, or runtime mutation is authorized.
 - Next phase recommendation: `F33.L — Governed Local Memory SQLite Controlled Dry-Run Execution Plan Gate`.
+
+## ARIS-LAB-A2 Evidence Contract Lock
+
+- Evidence packages and hash-chain refs do not authorize product on their own.
+- No capability may move to produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.

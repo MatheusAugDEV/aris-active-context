@@ -406,3 +406,19 @@ Recent ARIS-LAB A1 references:
 - [LAB_STATUS.md](LAB_STATUS.md)
 - [LAB_VERDICTS.md](LAB_VERDICTS.md)
 - [BEDROCK_DECISIONS/README.md](BEDROCK_DECISIONS/README.md)
+
+Recent ARIS-LAB A2 references:
+
+- [docs/aris_lab/aris_lab_run_schema.md](../docs/aris_lab/aris_lab_run_schema.md)
+- [docs/aris_lab/aris_lab_evidence_package.md](../docs/aris_lab/aris_lab_evidence_package.md)
+- [docs/aris_lab/aris_lab_gate_ledger_contract.md](../docs/aris_lab/aris_lab_gate_ledger_contract.md)
+- [docs/aris_lab/aris_lab_phase_evidence_handoff_contract.md](../docs/aris_lab/aris_lab_phase_evidence_handoff_contract.md)
+- [artifacts/aris_lab/aris_lab_run_schema.json](../artifacts/aris_lab/aris_lab_run_schema.json)
+- [artifacts/aris_lab/aris_lab_evaluation_result_schema.json](../artifacts/aris_lab/aris_lab_evaluation_result_schema.json)
+- [artifacts/aris_lab/aris_lab_evidence_package_schema.json](../artifacts/aris_lab/aris_lab_evidence_package_schema.json)
+- [artifacts/aris_lab/aris_lab_gate_ledger_entry_schema.json](../artifacts/aris_lab/aris_lab_gate_ledger_entry_schema.json)
+- [artifacts/aris_lab/aris_lab_gate_ledger_contract.json](../artifacts/aris_lab/aris_lab_gate_ledger_contract.json)
+- [artifacts/aris_lab/aris_lab_phase_evidence_handoff_contract.json](../artifacts/aris_lab/aris_lab_phase_evidence_handoff_contract.json)
+- [artifacts/aris_lab/aris_lab_a2_decision.json](../artifacts/aris_lab/aris_lab_a2_decision.json)
+- [artifacts/aris_lab/aris_lab_a2_summary.json](../artifacts/aris_lab/aris_lab_a2_summary.json)
+- [artifacts/aris_lab/aris_lab_a2_report.md](../artifacts/aris_lab/aris_lab_a2_report.md)

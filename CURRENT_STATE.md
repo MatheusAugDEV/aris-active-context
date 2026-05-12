@@ -4,11 +4,11 @@ As of 2026-05-12:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`
-- Status: `aris_lab_capability_taxonomy_ready`
+- Latest completed phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`
+- Status: `aris_lab_evidence_contract_ready`
 - F33.KR2 is preserved as the paused resume point until an explicit active-context decision reopens F33 work.
 - F44 interpretation: `ARIS Lab Hardening, Red-Team Expansion & Benchmark Maturity`
-- Next principal phase: `ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract`
+- Next principal phase: `ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton`
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime.
 
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not change the operational next action.

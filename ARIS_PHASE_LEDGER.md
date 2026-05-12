@@ -1099,3 +1099,13 @@ Closed as a foundation track, not as official V6 closure.
 - bedrock_gate_executable_now: `False`
 - product_promotion_allowed_now: `False`
 - preserved blocks: no mutable runtime, no real DB creation, no local sqlite access, no schema application, no migration execution, no FTS5 creation, no real memory ingestion, no direct LLM memory write, no external network use, no dependency install, no bulk vault read, and no runtime integration beyond the files strictly required by this phase.
+
+## ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract
+
+- Status: `aris_lab_evidence_contract_ready`.
+- Anchor phase: `ARIS-LAB-A1 — Capability Taxonomy & Product Boundary Contract`.
+- Lab Run schema, evaluation result schema, evidence package schema, and gate ledger contract materialized.
+- Hash-chain contract is deterministic, append-only, and non-LLM.
+- Evidence packages and ledger refs are audit structures only and do not authorize product promotion.
+- Bedrock Gate remains required for any future promotion.
+- Next phase recommendation: `ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton`.

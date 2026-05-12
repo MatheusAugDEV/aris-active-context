@@ -1,1 +1,1 @@
-Proceed to ARIS-LAB-A2 — Lab Run, Evidence Package & Gate Ledger Contract; F33.KR2 preserved as paused resume point.
+Proceed to ARIS-LAB-A3 — Suite Registry & Universal Evaluation Skeleton; F33.KR2 preserved as paused resume point.
