@@ -453,3 +453,22 @@ Recent ARIS-LAB A4 references:
 - [artifacts/aris_lab/aris_lab_a4_decision.json](../artifacts/aris_lab/aris_lab_a4_decision.json)
 - [artifacts/aris_lab/aris_lab_a4_summary.json](../artifacts/aris_lab/aris_lab_a4_summary.json)
 - [artifacts/aris_lab/aris_lab_a4_report.md](../artifacts/aris_lab/aris_lab_a4_report.md)
+
+Recent ARIS-LAB A5 references:
+
+- [docs/aris_lab/aris_lab_phase_to_phase_regression_policy.md](../docs/aris_lab/aris_lab_phase_to_phase_regression_policy.md)
+- [docs/aris_lab/aris_lab_demotion_policy.md](../docs/aris_lab/aris_lab_demotion_policy.md)
+- [docs/aris_lab/aris_lab_obsolescence_policy.md](../docs/aris_lab/aris_lab_obsolescence_policy.md)
+- [docs/aris_lab/aris_lab_verdict_transition_policy.md](../docs/aris_lab/aris_lab_verdict_transition_policy.md)
+- [docs/aris_lab/aris_lab_phase_exit_impact_contract.md](../docs/aris_lab/aris_lab_phase_exit_impact_contract.md)
+- [artifacts/aris_lab/aris_lab_phase_to_phase_regression_policy.json](../artifacts/aris_lab/aris_lab_phase_to_phase_regression_policy.json)
+- [artifacts/aris_lab/aris_lab_demotion_policy.json](../artifacts/aris_lab/aris_lab_demotion_policy.json)
+- [artifacts/aris_lab/aris_lab_quarantine_policy.json](../artifacts/aris_lab/aris_lab_quarantine_policy.json)
+- [artifacts/aris_lab/aris_lab_deprecation_policy.json](../artifacts/aris_lab/aris_lab_deprecation_policy.json)
+- [artifacts/aris_lab/aris_lab_supersession_policy.json](../artifacts/aris_lab/aris_lab_supersession_policy.json)
+- [artifacts/aris_lab/aris_lab_obsolescence_policy.json](../artifacts/aris_lab/aris_lab_obsolescence_policy.json)
+- [artifacts/aris_lab/aris_lab_verdict_transition_policy.json](../artifacts/aris_lab/aris_lab_verdict_transition_policy.json)
+- [artifacts/aris_lab/aris_lab_phase_exit_impact_contract.json](../artifacts/aris_lab/aris_lab_phase_exit_impact_contract.json)
+- [artifacts/aris_lab/aris_lab_a5_decision.json](../artifacts/aris_lab/aris_lab_a5_decision.json)
+- [artifacts/aris_lab/aris_lab_a5_summary.json](../artifacts/aris_lab/aris_lab_a5_summary.json)
+- [artifacts/aris_lab/aris_lab_a5_report.md](../artifacts/aris_lab/aris_lab_a5_report.md)

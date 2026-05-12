@@ -8,6 +8,9 @@
 | lab.suite_registry | lab_validated | No | ARIS-LAB-A3 suite registry | Declarative suite registry materialized |
 | lab.evaluation_skeleton | lab_validated | No | ARIS-LAB-A3 evaluation skeleton | Universal evaluation skeleton materialized |
 | lab.scoring_model | lab_validated | No | ARIS-LAB-A4 scoring model | Declarative scoring model materialized |
+| lab.regression_policy | lab_validated | No | ARIS-LAB-A5 regression policy | Phase regression policy materialized |
+| lab.demotion_policy | lab_validated | No | ARIS-LAB-A5 demotion policy | Demotion policy materialized |
+| lab.obsolescence_policy | lab_validated | No | ARIS-LAB-A5 obsolescence policy | Obsolescence policy materialized |
 | lab.gate_ledger_contract | lab_validated | No | ARIS-LAB-A2 gate ledger hash-chain contract | Append-only hash-chain declared |
 | lab.bedrock_gate_contract | project/planned | No | Bedrock Gate declaration | Deterministic non-LLM gate contract |
 | f33.governed_local_memory.sqlite_dry_run | paused | No | F33 pause decision | Resume point preserved at F33.KR2 |

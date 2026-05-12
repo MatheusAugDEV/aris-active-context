@@ -1126,3 +1126,11 @@ Closed as a foundation track, not as official V6 closure.
 - Scoring model, threshold policy, hard block catalog, product readiness contract, and Bedrock Gate contract materialized.
 - Bedrock Gate remains declarative and not executable.
 - Next phase recommendation: `ARIS-LAB-A5 — Phase-to-Phase Regression, Demotion & Obsolescence Policy`.
+
+## ARIS-LAB-A5 — Phase-to-Phase Regression, Demotion & Obsolescence Policy
+
+- Status: `aris_lab_regression_demotion_obsolescence_policy_ready`.
+- Anchor phase: `ARIS-LAB-A4 — Scoring Engine & Bedrock Gate Contract`.
+- Phase-to-phase regression policy, demotion policy, quarantine policy, deprecation policy, supersession policy, obsolescence policy, verdict transition policy, and phase exit impact contract materialized.
+- Promotion remains blocked; demotion and obsolescence are policy-only in A5.
+- Next phase recommendation: `ARIS-LAB-A6 — Lab Foundation Review Gate`.

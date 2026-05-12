@@ -878,3 +878,12 @@
 - Bedrock Gate executable now: `False`.
 - Product promotion allowed now: `False`.
 - F33.KR2 remains preserved as the paused resume point.
+
+## ARIS-LAB-A5 Regression and Demotion Lock
+
+- The regression policy is declarative and blocks promotion on detected regression.
+- Demotion, quarantine, deprecation, supersession, and obsolescence remain contract-only in A5.
+- No capability may move to produto without Bedrock Gate evidence and the required contract chain.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.KR2 remains preserved as the paused resume point.
