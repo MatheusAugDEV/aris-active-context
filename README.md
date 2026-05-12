@@ -16,8 +16,8 @@ Current snapshot:
 
 - Official V6 is closed.
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
-- Latest completed phase: `F33.F — Governed Local Memory Schema Contract Review Gate`
-- Next principal phase: `F33.G — Governed Local Memory SQLite Dry-Run Plan Gate`
+- Latest completed phase: `F33.G — Governed Local Memory SQLite Dry-Run Plan Gate`
+- Next principal phase: `F33.H — Governed Local Memory SQLite Dry-Run Plan Review Gate`
 - F33 now advances through Governed Local Memory technical planning/review-only work; Similar Projects remains advisory-only at phase start; F32 closure is complete.
 - F32.RESEARCH-P0 created an artifact-only research intake program; it does not alter the operational next action.
 
@@ -28,4 +28,4 @@ Rules:
 - Historical depth belongs in `ARIS_PHASE_LEDGER.md`.
 - F32.RESEARCH-P3 created a candidate roadmap impact delta; canonical roadmap and operational next action unchanged.
 
-- F33.F — Governed Local Memory Schema Contract Review Gate completed; status `f33_governed_local_memory_schema_contract_review_gate_passed`; anchor phase `F33.E — Governed Local Memory Schema Contract Gate`; schema contract reviewed; field catalog reviewed; constraints matrix reviewed; migration safety contract reviewed; FTS5 planned only; next phase recommendation `F33.G — Governed Local Memory SQLite Dry-Run Plan Gate`.
+- F33.G — Governed Local Memory SQLite Dry-Run Plan Gate completed; status `f33_governed_local_memory_sqlite_dry_run_plan_gate_ready`; anchor phase `F33.F — Governed Local Memory Schema Contract Review Gate`; dry-run plan materialized; SQL render plan materialized; abort matrix materialized; rollback plan materialized; ledger preview materialized; target paths planned; next phase recommendation `F33.H — Governed Local Memory SQLite Dry-Run Plan Review Gate`.
