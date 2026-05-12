@@ -1,4 +1,4 @@
-Prepare F32.Z13S — Final Human Authorization Evidence Closure Gate; anchor phase F32.Z13P/R1.
+Prepare F32.Z13T — Final F32 Closure Transition Gate; anchor phase F32.Z13S.
 <!-- F32.RESEARCH-P2G recorded: Gemini Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2GPT recorded: GPT Research 2 evidence intake completed as external_unverified; operational next action unchanged. -->
 <!-- F32.RESEARCH-P2H recorded: cross-model research inputs consolidated as external_unverified evidence; operational next action unchanged. -->
