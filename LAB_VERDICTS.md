@@ -49,3 +49,16 @@
 | --- | --- | --- | --- | --- |
 | lab.f33kr2_bedrock_evidence_recheck | lab_validated | No | F33.KR2-BEDROCK evidence recheck | Artifact/evidence-only Bedrock gate passed |
 | f33.governed_local_memory.sqlite_dry_run | bedrock_recheck_passed/contract_required | No | F33.KR2-BEDROCK preserved | F33.L is the next action under the Lab contract |
+
+## F33.L-BEDROCK Execution Plan
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33l_bedrock_execution_plan | lab_validated | No | F33.L-BEDROCK execution plan | Controlled dry-run remains blocked until F33.M |
+| f33.governed_local_memory.sqlite_dry_run | execution_plan_ready/contract_required | No | F33.L-BEDROCK preserved | F33.M is the next action under the Lab contract |
+
+## F33.L-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | execution_plan_ready/contract_required | No | F33.L-BEDROCK passed | F33.M is now the next action under the Lab contract |

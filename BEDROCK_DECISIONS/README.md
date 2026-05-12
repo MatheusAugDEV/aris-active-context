@@ -47,3 +47,8 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - F33.L is now the next action under the Lab contract.
 - No product decision exists yet.
 - Product promotion remains blocked.
+## F33.L-BEDROCK Execution Plan Note
+
+- F33.L-BEDROCK is artifact/evidence-only and does not authorize real SQLite execution.
+- F33.M remains the next principal phase after the execution plan gate passes.
+- Product promotion remains blocked.

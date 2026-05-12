@@ -937,3 +937,12 @@
 - Bedrock Gate executable now: `True` for artifact/evidence decisions only.
 - Product promotion allowed now: `False`.
 - Runtime, DB, schema, FTS5, network, dependency install, action runtime, MCP activation, Obsidian, vault write, and bulk read remain blocked.
+## F33.L-BEDROCK Execution Plan Lock
+
+- Status: `f33l_bedrock_sqlite_controlled_dry_run_execution_plan_ready`.
+- F33.L-BEDROCK is artifact/evidence-only and does not authorize real SQLite execution.
+- Future controlled dry-run execution stays blocked until F33.M.
+- Product promotion remains blocked.
+- Runtime mutation remains blocked.
+- No SQLite database creation, schema apply, FTS5 creation, real ingestion, network, dependency install, MCP activation, Obsidian access, vault write, or bulk Obsidian read is authorized.
+- F33.M is the next principal phase under the Lab contract.

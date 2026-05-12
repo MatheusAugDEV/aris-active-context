@@ -533,3 +533,16 @@ Recent F33 KR2-BEDROCK references:
 - [artifacts/f33/f33kr2_bedrock_decision.json](../artifacts/f33/f33kr2_bedrock_decision.json)
 - [artifacts/f33/f33kr2_bedrock_summary.json](../artifacts/f33/f33kr2_bedrock_summary.json)
 - [artifacts/f33/f33kr2_bedrock_report.md](../artifacts/f33/f33kr2_bedrock_report.md)
+Recent F33 L-BEDROCK references:
+
+
+- [docs/fase33/f33l_bedrock_sqlite_controlled_dry_run_execution_plan_gate.md](../docs/fase33/f33l_bedrock_sqlite_controlled_dry_run_execution_plan_gate.md)
+- [artifacts/f33/f33l_bedrock_preflight.json](../artifacts/f33/f33l_bedrock_preflight.json)
+- [artifacts/f33/f33l_sqlite_controlled_dry_run_execution_plan.json](../artifacts/f33/f33l_sqlite_controlled_dry_run_execution_plan.json)
+- [artifacts/f33/f33l_sqlite_controlled_dry_run_abort_matrix.json](../artifacts/f33/f33l_sqlite_controlled_dry_run_abort_matrix.json)
+- [artifacts/f33/f33l_sqlite_controlled_dry_run_ledger_preview.json](../artifacts/f33/f33l_sqlite_controlled_dry_run_ledger_preview.json)
+- [artifacts/f33/f33l_sqlite_controlled_dry_run_rollback_cleanup_plan.json](../artifacts/f33/f33l_sqlite_controlled_dry_run_rollback_cleanup_plan.json)
+- [artifacts/f33/f33l_bedrock_artifact_completeness.json](../artifacts/f33/f33l_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33l_bedrock_decision.json](../artifacts/f33/f33l_bedrock_decision.json)
+- [artifacts/f33/f33l_bedrock_summary.json](../artifacts/f33/f33l_bedrock_summary.json)
+- [artifacts/f33/f33l_bedrock_report.md](../artifacts/f33/f33l_bedrock_report.md)
