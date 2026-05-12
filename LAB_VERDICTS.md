@@ -91,3 +91,18 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | controlled_dry_run_executed/contract_required | No | F33.N-BEDROCK passed | F33.O is now the next action under the Lab contract |
+
+## F33.O-BEDROCK Controlled Dry-Run Execution Review Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33o_bedrock_execution_review | lab_validated | No | F33.O-BEDROCK execution review evidence | Controlled dry-run evidence reviewed for boundary cleanup |
+| lab.f33o_bedrock_filesystem_residue_review | lab_validated | No | F33.O-BEDROCK filesystem residue review | Workspace empty and no DB residue found |
+| lab.f33o_bedrock_ledger_review | lab_validated | No | F33.O-BEDROCK ledger review | Hash-chain and ledger actual verified |
+| f33.governed_local_memory.sqlite_dry_run | review_passed/contract_required | No | F33.O-BEDROCK preserved | F33.P is the next action under the Lab contract |
+
+## F33.O-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | review_passed/contract_required | No | F33.O-BEDROCK passed | F33.P is now the next action under the Lab contract |
