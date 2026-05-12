@@ -79,7 +79,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F33.H — Governed Local Memory SQLite Dry-Run Plan Review Gate`.
+- `NEXT_ACTION.md` currently points to `F33.I — Governed Local Memory SQLite Controlled Dry-Run Preparation Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -270,3 +270,12 @@ Recent F33 G references for F33.G:
 - [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_rollback_plan.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_rollback_plan.json)
 - [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_ledger_preview.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_ledger_preview.json)
 - [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_next_phase_contract.json)
+
+Recent F33 H references for F33.H:
+
+- [docs/fase33/f33h_governed_local_memory_sqlite_dry_run_plan_review_gate.md](../docs/fase33/f33h_governed_local_memory_sqlite_dry_run_plan_review_gate.md)
+- [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_decision.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_decision.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_summary.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_summary.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_report.md](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_report.md)
+- [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_matrix.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_matrix.json)
+- [artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_next_phase_contract.json](../artifacts/f33/f33_governed_local_memory_sqlite_dry_run_plan_review_gate_next_phase_contract.json)

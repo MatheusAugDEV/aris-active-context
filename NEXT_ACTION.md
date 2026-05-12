@@ -1,4 +1,4 @@
-Prepare F33.H — Governed Local Memory SQLite Dry-Run Plan Review Gate; anchor phase F33.G.
+Prepare F33.I — Governed Local Memory SQLite Controlled Dry-Run Preparation Gate; anchor phase F33.H.
 <!-- F33.RULE-P0 saved ARIS_PHASE_PROMPT_CONTRACT_V2; principal NEXT_ACTION remains unchanged. -->
 <!-- F33.RESEARCH-SP0 Similar Projects Reference Library Intake was attempted as advisory-only research but failed deterministically because the operator raw input was not present; NEXT_ACTION remains unchanged. -->
 <!-- F33.RESEARCH-SP0/R1 recovered the Similar Projects Reference Library intake with the raw input restored; NEXT_ACTION remains unchanged and advisory-only. -->
