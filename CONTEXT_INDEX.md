@@ -629,3 +629,18 @@ Recent F33 P-BEDROCK references:
 - [artifacts/f33/f33s_bedrock_decision.json](../artifacts/f33/f33s_bedrock_decision.json)
 - [artifacts/f33/f33s_bedrock_summary.json](../artifacts/f33/f33s_bedrock_summary.json)
 - [artifacts/f33/f33s_bedrock_report.md](../artifacts/f33/f33s_bedrock_report.md)
+
+## F33.T-BEDROCK — Governed Local Memory SQLite Post-Dry-Run Next Capability Planning Gate
+
+- [src/aris/lab/f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py](../src/aris/lab/f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py)
+- [scripts/run_f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py](../scripts/run_f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py)
+- [tests/test_f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py](../tests/test_f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.py)
+- [docs/fase33/f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.md](../docs/fase33/f33t_bedrock_sqlite_post_dry_run_next_capability_planning_gate.md)
+- [artifacts/f33/f33t_bedrock_preflight.json](../artifacts/f33/f33t_bedrock_preflight.json)
+- [artifacts/f33/f33t_post_dry_run_capability_options_matrix.json](../artifacts/f33/f33t_post_dry_run_capability_options_matrix.json)
+- [artifacts/f33/f33t_post_dry_run_selected_next_capability.json](../artifacts/f33/f33t_post_dry_run_selected_next_capability.json)
+- [artifacts/f33/f33t_post_dry_run_residual_constraints.json](../artifacts/f33/f33t_post_dry_run_residual_constraints.json)
+- [artifacts/f33/f33t_bedrock_artifact_completeness.json](../artifacts/f33/f33t_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33t_bedrock_decision.json](../artifacts/f33/f33t_bedrock_decision.json)
+- [artifacts/f33/f33t_bedrock_summary.json](../artifacts/f33/f33t_bedrock_summary.json)
+- [artifacts/f33/f33t_bedrock_report.md](../artifacts/f33/f33t_bedrock_report.md)

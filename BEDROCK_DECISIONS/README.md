@@ -92,3 +92,9 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - cycle_final_closure_passed=True; chain_integrity_verified=True; safety_attestation_passed=True; blocker_count=0.
 - F33.T is the next principal phase recommendation after the final closure gate passes.
 - Product promotion remains blocked.
+## F33.T-BEDROCK Post-Dry-Run Next Capability Planning Note
+
+- F33.T-BEDROCK evaluates 6 post-dry-run capability options and selects F33.U (Persistent Boundary Planning) as the single conservative next phase; artifact/evidence-only.
+- capability_options_matrix_created=True; selected_next_capability_created=True (CO-01, F33.U, low risk); residual_constraints_created=True (6 constraints); plan_ready=True; blocker_count=0.
+- F33.U is the next principal phase recommendation after the planning gate passes.
+- Product promotion remains blocked.

@@ -171,3 +171,19 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | final_closure_passed/contract_required | No | F33.S-BEDROCK passed | F33.T is now the next action under the Lab contract |
+
+## F33.T-BEDROCK Post-Dry-Run Next Capability Planning Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33t_bedrock_capability_options_matrix | lab_validated | No | F33.T-BEDROCK capability options matrix | 6 options evaluated; CO-01 (F33.U) selected as single conservative next phase |
+| lab.f33t_bedrock_selected_next_capability | lab_validated | No | F33.T-BEDROCK selected next capability | CO-01 selected; F33.U Persistent Boundary Planning; prerequisite_met=True; risk=low |
+| lab.f33t_bedrock_residual_constraints | lab_validated | No | F33.T-BEDROCK residual constraints | 6 residual constraints documented; all_constraints_documented=True |
+| lab.f33t_bedrock_artifact_completeness | lab_validated | No | F33.T-BEDROCK artifact completeness | All required planning artifacts present and valid |
+| f33.governed_local_memory.sqlite_next_capability | plan_ready/contract_required | No | F33.T-BEDROCK preserved | F33.U is the next action under the Lab contract |
+
+## F33.T-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_next_capability | plan_ready/contract_required | No | F33.T-BEDROCK passed | F33.U is now the next action under the Lab contract |
