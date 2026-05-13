@@ -661,3 +661,20 @@ Recent F33 P-BEDROCK references:
 - [artifacts/f33/f33u_bedrock_decision.json](../artifacts/f33/f33u_bedrock_decision.json)
 - [artifacts/f33/f33u_bedrock_summary.json](../artifacts/f33/f33u_bedrock_summary.json)
 - [artifacts/f33/f33u_bedrock_report.md](../artifacts/f33/f33u_bedrock_report.md)
+
+## F33.V-BEDROCK — Governed Local Memory SQLite Persistent Boundary Review Gate
+
+- [src/aris/lab/f33v_bedrock_sqlite_persistent_boundary_review_gate.py](../src/aris/lab/f33v_bedrock_sqlite_persistent_boundary_review_gate.py)
+- [scripts/run_f33v_bedrock_sqlite_persistent_boundary_review_gate.py](../scripts/run_f33v_bedrock_sqlite_persistent_boundary_review_gate.py)
+- [tests/test_f33v_bedrock_sqlite_persistent_boundary_review_gate.py](../tests/test_f33v_bedrock_sqlite_persistent_boundary_review_gate.py)
+- [docs/fase33/f33v_bedrock_sqlite_persistent_boundary_review_gate.md](../docs/fase33/f33v_bedrock_sqlite_persistent_boundary_review_gate.md)
+- [artifacts/f33/f33v_bedrock_preflight.json](../artifacts/f33/f33v_bedrock_preflight.json)
+- [artifacts/f33/f33v_sqlite_persistent_boundary_policy_review.json](../artifacts/f33/f33v_sqlite_persistent_boundary_policy_review.json)
+- [artifacts/f33/f33v_sqlite_persistent_allowed_denied_path_review.json](../artifacts/f33/f33v_sqlite_persistent_allowed_denied_path_review.json)
+- [artifacts/f33/f33v_sqlite_persistent_lifecycle_ownership_review.json](../artifacts/f33/f33v_sqlite_persistent_lifecycle_ownership_review.json)
+- [artifacts/f33/f33v_sqlite_persistent_risk_register_review.json](../artifacts/f33/f33v_sqlite_persistent_risk_register_review.json)
+- [artifacts/f33/f33v_sqlite_persistent_future_gate_sequence_review.json](../artifacts/f33/f33v_sqlite_persistent_future_gate_sequence_review.json)
+- [artifacts/f33/f33v_bedrock_artifact_completeness.json](../artifacts/f33/f33v_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33v_bedrock_decision.json](../artifacts/f33/f33v_bedrock_decision.json)
+- [artifacts/f33/f33v_bedrock_summary.json](../artifacts/f33/f33v_bedrock_summary.json)
+- [artifacts/f33/f33v_bedrock_report.md](../artifacts/f33/f33v_bedrock_report.md)

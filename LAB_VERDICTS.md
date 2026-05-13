@@ -205,3 +205,21 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_persistent_boundary | boundary_plan_ready/contract_required | No | F33.U-BEDROCK passed | F33.V is now the next action under the Lab contract |
+
+## F33.V-BEDROCK Persistent Boundary Review Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33v_bedrock_boundary_policy_review | lab_validated | No | F33.V-BEDROCK boundary policy review | 6 rules reviewed; BP-03 gate-required check passed; BP-05 legacy/residue isolation check passed |
+| lab.f33v_bedrock_allowed_denied_path_review | lab_validated | No | F33.V-BEDROCK path matrix review | 4 allowed (none active); 7 denied; DP-01 covers source tree; DP-02 covers artifacts |
+| lab.f33v_bedrock_lifecycle_ownership_review | lab_validated | No | F33.V-BEDROCK lifecycle plan review | 6 phases reviewed; LC-01 current; backup_rollback_plan conceptual; write_access exclusive |
+| lab.f33v_bedrock_risk_register_review | lab_validated | No | F33.V-BEDROCK risk register review | 7 risks reviewed; critical_count=2 (PR-02, PR-07); all mitigations verified |
+| lab.f33v_bedrock_gate_sequence_review | lab_validated | No | F33.V-BEDROCK gate sequence review | 8 gates ordered; human auth gate present; sequence_note confirms skipped phases |
+| lab.f33v_bedrock_artifact_completeness | lab_validated | No | F33.V-BEDROCK artifact completeness | All required review artifacts present and valid |
+| f33.governed_local_memory.sqlite_persistent_boundary | boundary_review_passed/contract_required | No | F33.V-BEDROCK preserved | F33.W is the next action under the Lab contract |
+
+## F33.V-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_persistent_boundary | boundary_review_passed/contract_required | No | F33.V-BEDROCK passed | F33.W is now the next action under the Lab contract |
