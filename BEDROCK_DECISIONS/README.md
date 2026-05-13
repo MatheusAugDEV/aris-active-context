@@ -98,3 +98,10 @@ Chat text, commit text, status narrative, placeholder text, schema text, checkli
 - capability_options_matrix_created=True; selected_next_capability_created=True (CO-01, F33.U, low risk); residual_constraints_created=True (6 constraints); plan_ready=True; blocker_count=0.
 - F33.U is the next principal phase recommendation after the planning gate passes.
 - Product promotion remains blocked.
+## F33.U-BEDROCK Persistent Boundary Planning Note
+
+- F33.U-BEDROCK defines the persistent SQLite boundary policy, allowed/denied path matrix, lifecycle/ownership plan, persistence risk register, and future gate sequence; artifact/evidence-only.
+- persistent_boundary_policy_created=True (6 rules); allowed_denied_path_matrix_created=True (4 allowed, 7 denied); lifecycle_ownership_plan_created=True (6 phases); persistence_risk_register_created=True (7 risks: 2 critical, 3 high, 2 medium); future_gate_sequence_created=True (8 gates); plan_ready=True; blocker_count=0.
+- persistent_sqlite_database_creation_allowed_now=False; no DB created; no schema applied.
+- F33.V is the next principal phase recommendation after the boundary planning gate passes.
+- Product promotion remains blocked.

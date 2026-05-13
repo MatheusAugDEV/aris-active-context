@@ -187,3 +187,21 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_next_capability | plan_ready/contract_required | No | F33.T-BEDROCK passed | F33.U is now the next action under the Lab contract |
+
+## F33.U-BEDROCK Persistent Boundary Planning Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33u_bedrock_persistent_boundary_policy | lab_validated | No | F33.U-BEDROCK boundary policy | 6-rule boundary policy (BP-01→BP-06); policy_status=planned_not_implemented |
+| lab.f33u_bedrock_allowed_denied_path_matrix | lab_validated | No | F33.U-BEDROCK path matrix | 4 allowed paths (require future gate); 7 denied paths (enforced immediately) |
+| lab.f33u_bedrock_lifecycle_ownership_plan | lab_validated | No | F33.U-BEDROCK lifecycle plan | 6-phase lifecycle (LC-01→LC-06); current=LC-01 Boundary Planning |
+| lab.f33u_bedrock_persistence_risk_register | lab_validated | No | F33.U-BEDROCK risk register | 7 risks (PR-01→PR-07); 2 critical, 3 high, 2 medium |
+| lab.f33u_bedrock_future_gate_sequence | lab_validated | No | F33.U-BEDROCK gate sequence | 8-gate sequence (F33.U→F33.Z); no gate may be skipped |
+| lab.f33u_bedrock_artifact_completeness | lab_validated | No | F33.U-BEDROCK artifact completeness | All required artifacts present and valid |
+| f33.governed_local_memory.sqlite_persistent_boundary | boundary_plan_ready/contract_required | No | F33.U-BEDROCK preserved | F33.V is the next action under the Lab contract |
+
+## F33.U-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_persistent_boundary | boundary_plan_ready/contract_required | No | F33.U-BEDROCK passed | F33.V is now the next action under the Lab contract |

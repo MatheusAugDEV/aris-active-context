@@ -1,9 +1,9 @@
 # LAB_STATUS
 
-- Current Lab phase: F33.T-BEDROCK
-- Lab status: post-dry-run next capability planning passed; F33.S closure verified; 6-option capability matrix evaluated; F33.U selected as single conservative next phase; 6 residual constraints documented; plan_ready=True; blocker_count=0
-- Bedrock Gate status: executed for artifact/evidence next capability planning only
+- Current Lab phase: F33.U-BEDROCK
+- Lab status: persistent boundary planning passed; F33.T source verified; 6-rule boundary policy; 4 allowed/7 denied path matrix; 6-phase lifecycle/ownership plan; 7-risk register (2 critical, 3 high, 2 medium); 8-gate future sequence (F33.U→F33.Z); plan_ready=True; blocker_count=0; persistent_sqlite_database_creation_allowed_now=False
+- Bedrock Gate status: executed for artifact/evidence persistent boundary planning only
 - Product promotion: not allowed
-- Next principal phase: F33.U — Governed Local Memory SQLite Persistent Boundary Planning Gate
+- Next principal phase: F33.V — Governed Local Memory SQLite Persistent Boundary Review Gate
 - F33 resume point: preserved
 - F44 interpretation: hardening/maturity of existing Lab

@@ -644,3 +644,20 @@ Recent F33 P-BEDROCK references:
 - [artifacts/f33/f33t_bedrock_decision.json](../artifacts/f33/f33t_bedrock_decision.json)
 - [artifacts/f33/f33t_bedrock_summary.json](../artifacts/f33/f33t_bedrock_summary.json)
 - [artifacts/f33/f33t_bedrock_report.md](../artifacts/f33/f33t_bedrock_report.md)
+
+## F33.U-BEDROCK — Governed Local Memory SQLite Persistent Boundary Planning Gate
+
+- [src/aris/lab/f33u_bedrock_sqlite_persistent_boundary_planning_gate.py](../src/aris/lab/f33u_bedrock_sqlite_persistent_boundary_planning_gate.py)
+- [scripts/run_f33u_bedrock_sqlite_persistent_boundary_planning_gate.py](../scripts/run_f33u_bedrock_sqlite_persistent_boundary_planning_gate.py)
+- [tests/test_f33u_bedrock_sqlite_persistent_boundary_planning_gate.py](../tests/test_f33u_bedrock_sqlite_persistent_boundary_planning_gate.py)
+- [docs/fase33/f33u_bedrock_sqlite_persistent_boundary_planning_gate.md](../docs/fase33/f33u_bedrock_sqlite_persistent_boundary_planning_gate.md)
+- [artifacts/f33/f33u_bedrock_preflight.json](../artifacts/f33/f33u_bedrock_preflight.json)
+- [artifacts/f33/f33u_sqlite_persistent_boundary_policy.json](../artifacts/f33/f33u_sqlite_persistent_boundary_policy.json)
+- [artifacts/f33/f33u_sqlite_persistent_allowed_denied_path_matrix.json](../artifacts/f33/f33u_sqlite_persistent_allowed_denied_path_matrix.json)
+- [artifacts/f33/f33u_sqlite_persistent_lifecycle_ownership_plan.json](../artifacts/f33/f33u_sqlite_persistent_lifecycle_ownership_plan.json)
+- [artifacts/f33/f33u_sqlite_persistent_risk_register.json](../artifacts/f33/f33u_sqlite_persistent_risk_register.json)
+- [artifacts/f33/f33u_sqlite_persistent_future_gate_sequence.json](../artifacts/f33/f33u_sqlite_persistent_future_gate_sequence.json)
+- [artifacts/f33/f33u_bedrock_artifact_completeness.json](../artifacts/f33/f33u_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33u_bedrock_decision.json](../artifacts/f33/f33u_bedrock_decision.json)
+- [artifacts/f33/f33u_bedrock_summary.json](../artifacts/f33/f33u_bedrock_summary.json)
+- [artifacts/f33/f33u_bedrock_report.md](../artifacts/f33/f33u_bedrock_report.md)

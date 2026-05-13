@@ -1268,3 +1268,15 @@ Closed as a foundation track, not as official V6 closure.
 - capability_options_matrix_created: True (6 options); selected_next_capability_created: True (CO-01, F33.U); residual_constraints_created: True (6 constraints); plan_ready: True; blocker_count: 0; warning_count: 0; workspace_residue_free: True.
 - No operational SQLite database, no schema apply, no FTS5 creation, no ingestion, no runtime integration, no network, no dependency install, no MCP activation, no Obsidian access, no vault write, and no product promotion is authorized.
 - Next phase: `F33.U — Governed Local Memory SQLite Persistent Boundary Planning Gate`.
+
+## F33.U-BEDROCK — Governed Local Memory SQLite Persistent Boundary Planning Gate
+
+- Phase ID: F33.U-BEDROCK
+- Status: f33u_bedrock_sqlite_persistent_boundary_plan_ready
+- Source phase: F33.T-BEDROCK
+- Source chain: F33.L/F33.M/F33.N/F33.O/F33.P/F33.Q/F33.R/F33.S/F33.T
+- decision_hash: a288948876aeb336a5f9e21e502038c71b168abc19fbe349b9b9d9d866602564
+- This phase defines the persistent SQLite boundary policy, allowed/denied path matrix, lifecycle/ownership plan, persistence risk register, and future gate sequence; artifact/evidence-only.
+- persistent_boundary_policy_created: True (6 rules: BP-01→BP-06); allowed_denied_path_matrix_created: True (4 allowed, 7 denied); lifecycle_ownership_plan_created: True (6 phases LC-01→LC-06); persistence_risk_register_created: True (7 risks: 2 critical, 3 high, 2 medium); future_gate_sequence_created: True (8 gates F33.U→F33.Z); plan_ready: True; blocker_count: 0; warning_count: 0; workspace_residue_free: True.
+- persistent_sqlite_database_creation_allowed_now: False; No operational SQLite database, no schema apply, no FTS5 creation, no ingestion, no runtime integration, no network, no dependency install, no MCP activation, no Obsidian access, no vault write, and no product promotion is authorized.
+- Next phase: `F33.V — Governed Local Memory SQLite Persistent Boundary Review Gate`.

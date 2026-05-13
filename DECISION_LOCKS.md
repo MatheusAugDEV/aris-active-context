@@ -1089,3 +1089,37 @@
 - operational_sqlite_database_created: `False`.
 - All remaining hard blocks preserved.
 - Next principal phase under the Lab contract: `F33.U — Governed Local Memory SQLite Persistent Boundary Planning Gate`.
+## F33.U-BEDROCK Persistent Boundary Planning Lock
+
+- Status: `f33u_bedrock_sqlite_persistent_boundary_plan_ready`.
+- F33.U-BEDROCK is planning-only and does not authorize SQLite database creation, schema apply, FTS5 creation, ingestion, or runtime integration.
+- source_chain: `F33.L/F33.M/F33.N/F33.O/F33.P/F33.Q/F33.R/F33.S/F33.T`.
+- selected_next_capability_verified: `True`.
+- persistent_boundary_policy_created: `True` (6 rules: BP-01 through BP-06).
+- allowed_denied_path_matrix_created: `True` (4 allowed paths, 7 denied paths).
+- lifecycle_ownership_plan_created: `True` (6 phases LC-01 through LC-06).
+- persistence_risk_register_created: `True` (7 risks: PR-01 through PR-07; 2 critical, 3 high, 2 medium).
+- future_gate_sequence_created: `True` (8 gates: F33.U through F33.Z).
+- plan_ready: `True`.
+- artifact_completeness_passed: `True`.
+- blocker_count: `0`.
+- warning_count: `0`.
+- workspace_residue_free: `True`.
+- No operational SQLite database was created.
+- persistent_sqlite_database_creation_allowed_now: `False`.
+- Product promotion remains blocked.
+- Runtime mutation remains blocked.
+- implementation_allowed_now: `False`.
+- product_promotion_allowed_now: `False`.
+- operational_sqlite_database_created: `False`.
+- productive_schema_apply_allowed_now: `False`.
+- productive_fts5_table_creation_allowed_now: `False`.
+- real_memory_ingestion_allowed_now: `False`.
+- runtime_memory_integration_allowed_now: `False`.
+- network_allowed_now: `False`.
+- dependency_install_allowed_now: `False`.
+- mcp_activation_allowed_now: `False`.
+- obsidian_real_access_allowed_now: `False`.
+- vault_write_allowed_now: `False`.
+- All remaining hard blocks preserved.
+- Next principal phase under the Lab contract: `F33.V — Governed Local Memory SQLite Persistent Boundary Review Gate`.
