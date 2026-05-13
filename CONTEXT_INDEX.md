@@ -613,3 +613,19 @@ Recent F33 P-BEDROCK references:
 - [artifacts/f33/f33r_bedrock_decision.json](../artifacts/f33/f33r_bedrock_decision.json)
 - [artifacts/f33/f33r_bedrock_summary.json](../artifacts/f33/f33r_bedrock_summary.json)
 - [artifacts/f33/f33r_bedrock_report.md](../artifacts/f33/f33r_bedrock_report.md)
+
+## F33.S-BEDROCK — Governed Local Memory SQLite Controlled Dry-Run Cycle Final Closure Gate
+
+- [src/aris/lab/f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py](../src/aris/lab/f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py)
+- [scripts/run_f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py](../scripts/run_f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py)
+- [tests/test_f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py](../tests/test_f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.py)
+- [docs/fase33/f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.md](../docs/fase33/f33s_bedrock_sqlite_controlled_dry_run_cycle_final_closure_gate.md)
+- [artifacts/f33/f33s_bedrock_preflight.json](../artifacts/f33/f33s_bedrock_preflight.json)
+- [artifacts/f33/f33s_sqlite_controlled_dry_run_final_closure_manifest.json](../artifacts/f33/f33s_sqlite_controlled_dry_run_final_closure_manifest.json)
+- [artifacts/f33/f33s_sqlite_controlled_dry_run_final_evidence_chain_map.json](../artifacts/f33/f33s_sqlite_controlled_dry_run_final_evidence_chain_map.json)
+- [artifacts/f33/f33s_sqlite_controlled_dry_run_final_safety_attestation.json](../artifacts/f33/f33s_sqlite_controlled_dry_run_final_safety_attestation.json)
+- [artifacts/f33/f33s_sqlite_controlled_dry_run_residual_risk_disposition.json](../artifacts/f33/f33s_sqlite_controlled_dry_run_residual_risk_disposition.json)
+- [artifacts/f33/f33s_bedrock_artifact_completeness.json](../artifacts/f33/f33s_bedrock_artifact_completeness.json)
+- [artifacts/f33/f33s_bedrock_decision.json](../artifacts/f33/f33s_bedrock_decision.json)
+- [artifacts/f33/f33s_bedrock_summary.json](../artifacts/f33/f33s_bedrock_summary.json)
+- [artifacts/f33/f33s_bedrock_report.md](../artifacts/f33/f33s_bedrock_report.md)

@@ -154,3 +154,20 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_dry_run | closure_review_passed/contract_required | No | F33.R-BEDROCK passed | F33.S is now the next action under the Lab contract |
+
+## F33.S-BEDROCK Cycle Final Closure Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33s_bedrock_final_closure_manifest | lab_validated | No | F33.S-BEDROCK final closure manifest | 7-phase cycle formally closed; cycle_outcome=dry_run_completed_safely_no_operational_db_created |
+| lab.f33s_bedrock_evidence_chain_map | lab_validated | No | F33.S-BEDROCK evidence chain map | All 7 phases blocker-free; chain_integrity=verified |
+| lab.f33s_bedrock_safety_attestation | lab_validated | No | F33.S-BEDROCK safety attestation | 10/10 attestations passed; all_attested=True |
+| lab.f33s_bedrock_residual_risk_disposition | lab_validated | No | F33.S-BEDROCK residual risk disposition | 6/6 risks disposed; all_risks_disposed=True |
+| lab.f33s_bedrock_artifact_completeness | lab_validated | No | F33.S-BEDROCK artifact completeness | All required final closure artifacts present and valid |
+| f33.governed_local_memory.sqlite_dry_run | final_closure_passed/contract_required | No | F33.S-BEDROCK preserved | F33.T is the next action under the Lab contract |
+
+## F33.S-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_dry_run | final_closure_passed/contract_required | No | F33.S-BEDROCK passed | F33.T is now the next action under the Lab contract |
