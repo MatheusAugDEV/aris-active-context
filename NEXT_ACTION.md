@@ -1,1 +1,1 @@
-Prepare F33.X-R — Governed Local Memory SQLite Schema Materialization Readiness Review Gate; anchor phase F33.X.
+Prepare F33.X-AUTH — Governed Local Memory SQLite Schema Materialization Readiness Authorization Gate; anchor phase F33.X-R.

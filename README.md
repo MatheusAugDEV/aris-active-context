@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
-- Latest completed phase: `F33.X — Governed Local Memory SQLite Schema Materialization Readiness Planning Gate`
+- Latest completed phase: `F33.X-R — Governed Local Memory SQLite Schema Materialization Readiness Review Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.X-R — Governed Local Memory SQLite Schema Materialization Readiness Review Gate`
+- Next principal phase: `F33.X-AUTH — Governed Local Memory SQLite Schema Materialization Readiness Authorization Gate`
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
@@ -42,3 +42,5 @@ Rules:
 - F33.W-AUTH-RC completed as closure-only evidence consolidation; authorization_review_closed=True; human_authorization_validated=True; ready_for_next_phase=True; authorization_file_hash=`5db82b72f3761d835dcf00369c5842463d7887808799335d264717b9e10ec01c`
 
 - F33.X completed as readiness planning-only; authorization_review_closure_verified=True; schema_materialization_plan_verified=True; ready_for_next_phase=True; schema_materialization_allowed_now=False; decision_hash=`2b9ddbd5f20f8297f2b588d8f75ac556378edc05c9a5890721a96546dd4e772c`
+
+- F33.X-R completed as readiness review-only; f33x_status_verified=True; readiness_plan_reviewed=True; review_passed=True; ready_for_next_phase=True; schema_materialization_allowed_now=False; decision_hash=`5b7f2df0662ff68d6963ca124c81b4af19286a8e376fc0bf727e3aa4641adf6b`
