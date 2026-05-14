@@ -335,3 +335,12 @@
 | --- | --- | --- | --- | --- |
 | lab.f33x_auth_h_readiness_intake_package | lab_validated | No | F33.X-AUTH-H evidence intake package | Placeholder, schema, manifest, and instructions created; no valid authorization created |
 | f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization_intake | intake_ready/contract_required | No | F33.X-AUTH-H preserved | Next phase recommendation: F33.X-AUTH-SUBMIT — Schema Materialization Readiness Human Authorization Evidence Submission |
+
+
+## F33.X-AUTH-SUBMIT Human Authorization Submission
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization_submission | submission_received/contract_required | No | F33.X-AUTH-SUBMIT submission gate | Final statement found=True; ready_for_review=True |
+| lab.f33x_auth_submit_schema_materialization_readiness_human_authorization_evidence_submission | lab_validated | No | F33.X-AUTH-SUBMIT submission gate | Submission evidence tracking, hash, size, and review routing completed; no semantic validation |
+| f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization | submission_received | No | F33.X-AUTH-SUBMIT preserved | Next phase recommendation: F33.X-AUTH-R — Schema Materialization Readiness Human Authorization Evidence Review Gate |

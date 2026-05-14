@@ -1,1 +1,1 @@
-Prepare F33.X-AUTH-SUBMIT — Schema Materialization Readiness Human Authorization Evidence Submission; anchor phase F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake.
+Prepare F33.X-AUTH-R — Schema Materialization Readiness Human Authorization Evidence Review Gate; anchor phase F33.X-AUTH-SUBMIT.
