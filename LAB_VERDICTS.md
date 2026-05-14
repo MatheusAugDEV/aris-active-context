@@ -236,3 +236,16 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_persistent_boundary | finalization_plan_ready/contract_required | No | F33.W passed | F33.W-BEDROCK is now the next action under the Lab contract |
+
+## F33.W-BEDROCK Schema Materialization Planning
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33w_bedrock_schema_materialization_planning | lab_validated | No | F33.W-BEDROCK planning gate | Future schema apply remains blocked |
+| f33.governed_local_memory.sqlite_schema_materialization | plan_ready/authorization_required | No | F33.W-BEDROCK passed | Human authorization gate is next |
+
+## F33.W-BEDROCK Outcome
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization | plan_ready/authorization_required | No | F33.W reviewed | F33.W-AUTH is now the next action under the Lab contract |

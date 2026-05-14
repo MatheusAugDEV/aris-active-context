@@ -79,7 +79,7 @@ Rules:
 - Do not advance a phase without checking `NEXT_ACTION.md`.
 - F32 owns MCP read-only configuration, controlled apply, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline.
-- `NEXT_ACTION.md` currently points to `F33.W-BEDROCK — Governed Local Memory SQLite Schema Materialization Planning Gate`.
+- `NEXT_ACTION.md` currently points to `F33.W-AUTH — Schema Materialization Human Authorization Gate`.
 - F32.RESEARCH-P0 is artifact-only and advisory until the external inputs arrive.
 - F32.RESEARCH-P1G preserved Gemini raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
 - F32.RESEARCH-P1K preserved Kimi raw input and produced advisory-only claim/pattern artifacts; no roadmap mutation follows without verification.
@@ -687,3 +687,13 @@ Recent F33 W references for F33.W:
 - [artifacts/f33/f33w_bedrock_finalization_plan.json](../artifacts/f33/f33w_bedrock_finalization_plan.json)
 - [artifacts/f33/f33w_bedrock_finalization_matrix.json](../artifacts/f33/f33w_bedrock_finalization_matrix.json)
 - [artifacts/f33/f33w_bedrock_next_phase_contract.json](../artifacts/f33/f33w_bedrock_next_phase_contract.json)
+
+Recent F33 W-BEDROCK references for F33.W:
+
+- [docs/fase33/f33w_bedrock_sqlite_schema_materialization_planning_gate.md](../docs/fase33/f33w_bedrock_sqlite_schema_materialization_planning_gate.md)
+- [artifacts/f33/f33w_bedrock_schema_materialization_decision.json](../artifacts/f33/f33w_bedrock_schema_materialization_decision.json)
+- [artifacts/f33/f33w_bedrock_schema_materialization_summary.json](../artifacts/f33/f33w_bedrock_schema_materialization_summary.json)
+- [artifacts/f33/f33w_bedrock_schema_materialization_plan.json](../artifacts/f33/f33w_bedrock_schema_materialization_plan.json)
+- [artifacts/f33/f33w_bedrock_schema_materialization_order.json](../artifacts/f33/f33w_bedrock_schema_materialization_order.json)
+- [artifacts/f33/f33w_bedrock_schema_materialization_invariants.json](../artifacts/f33/f33w_bedrock_schema_materialization_invariants.json)
+- [artifacts/f33/f33w_bedrock_schema_materialization_next_phase_contract.json](../artifacts/f33/f33w_bedrock_schema_materialization_next_phase_contract.json)
