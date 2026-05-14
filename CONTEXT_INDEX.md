@@ -796,3 +796,14 @@ Recent F33 X-R references:
 - [artifacts/f33/f33x_r_schema_materialization_readiness_review_decision.json](../artifacts/f33/f33x_r_schema_materialization_readiness_review_decision.json)
 - [artifacts/f33/f33x_r_schema_materialization_readiness_review_next_phase_contract.json](../artifacts/f33/f33x_r_schema_materialization_readiness_review_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 X-AUTH references:
+
+- [docs/fase33/f33x_auth_sqlite_schema_materialization_readiness_authorization_gate.md](../docs/fase33/f33x_auth_sqlite_schema_materialization_readiness_authorization_gate.md)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_preflight.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_preflight.json)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_requirements.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_requirements.json)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_template.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_template.json)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_checklist.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_checklist.json)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_decision.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_decision.json)
+- [artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_next_phase_contract.json](../artifacts/f33/f33x_auth_schema_materialization_readiness_authorization_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33x_schema_materialization_readiness_authorization_statement.json

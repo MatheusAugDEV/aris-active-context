@@ -321,3 +321,10 @@
 | f33.governed_local_memory.sqlite_schema_materialization_readiness | readiness_review_passed | No | F33.X-R readiness review gate | Readiness plan reviewed=True; review passed=True |
 | lab.f33x_sqlite_schema_materialization_readiness_review_gate | lab_validated | No | F33.X-R readiness review gate | Review-only and non-executable boundary preserved |
 | f33.governed_local_memory.sqlite_schema_materialization_readiness_boundary | readiness_review_passed | No | F33.X preserved | Next phase recommendation: F33.X-AUTH — Governed Local Memory SQLite Schema Materialization Readiness Authorization Gate |
+
+## F33.X-AUTH — Schema Materialization Readiness Authorization Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.f33x_auth_schema_materialization_readiness_authorization_gate | lab_validated | No | F33.X-AUTH readiness authorization gate | Deterministic authorization gate only |
+| f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization | authorization_required/contract_required | No | F33.X-AUTH preserved | Next phase recommendation: F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake |
