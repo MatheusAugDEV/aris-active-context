@@ -742,3 +742,14 @@ Recent F33 W-AUTH-SUBMIT-HOLD references:
 - [artifacts/f33/f33w_auth_submit_hold_schema_materialization_summary.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_summary.json)
 - [artifacts/f33/f33w_auth_submit_hold_schema_materialization_next_phase_contract.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 W-AUTH-R references:
+
+- [docs/fase33/f33w_auth_r_schema_materialization_human_authorization_evidence_review_gate.md](../docs/fase33/f33w_auth_r_schema_materialization_human_authorization_evidence_review_gate.md)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_review_preflight.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_review_preflight.json)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_review_matrix.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_review_matrix.json)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_validation_result.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_validation_result.json)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_decision.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_decision.json)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_summary.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_summary.json)
+- [artifacts/f33/f33w_auth_r_schema_materialization_authorization_next_phase_contract.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json

@@ -285,3 +285,12 @@
 | f33.governed_local_memory.sqlite_schema_materialization_authorization_submission_hold | review_ready | No | F33.W-AUTH-SUBMIT-HOLD hold gate | Final statement found=True; hash=5db82b72f3761d835dcf00369c5842463d7887808799335d264717b9e10ec01c |
 | lab.f33w_auth_schema_materialization_human_authorization_submission_hold | lab_validated | No | F33.W-AUTH-SUBMIT-HOLD hold gate | Submission held for review; final authorization statement recorded but not semantically validated |
 | f33.governed_local_memory.sqlite_schema_materialization_authorization | submission_received | No | F33.W-AUTH-SUBMIT-HOLD preserved | Next phase recommendation: F33.W-AUTH-R — Schema Materialization Human Authorization Evidence Review Gate |
+
+
+## F33.W-AUTH-R Human Authorization Evidence Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization_review | review_passed | No | F33.W-AUTH-R review gate | Authorization file hash=5db82b72f3761d835dcf00369c5842463d7887808799335d264717b9e10ec01c; scope_limited=True |
+| lab.f33w_auth_schema_materialization_human_authorization_evidence_review_gate | lab_validated | No | F33.W-AUTH-R review gate | Manual authorization reviewed as evidence and preserved without mutation |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization | review_passed | No | F33.W-AUTH-R preserved | Next phase recommendation: F33.W-AUTH-RC — Schema Materialization Human Authorization Review Closure Gate |

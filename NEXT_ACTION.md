@@ -1,1 +1,1 @@
-Prepare F33.W-AUTH-R — Schema Materialization Human Authorization Evidence Review Gate; anchor phase F33.W-AUTH-SUBMIT-HOLD.
+Prepare F33.W-AUTH-RC — Schema Materialization Human Authorization Review Closure Gate; anchor phase F33.W-AUTH-R.
