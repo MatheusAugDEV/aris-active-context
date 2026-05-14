@@ -730,3 +730,15 @@ Recent F33 W-AUTH-SUBMIT references:
 - [artifacts/f33/f33w_auth_submit_schema_materialization_evidence_submission_summary.json](../artifacts/f33/f33w_auth_submit_schema_materialization_evidence_submission_summary.json)
 - [artifacts/f33/f33w_auth_submit_schema_materialization_evidence_submission_next_phase_contract.json](../artifacts/f33/f33w_auth_submit_schema_materialization_evidence_submission_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 W-AUTH-SUBMIT-HOLD references:
+
+- [docs/fase33/f33w_auth_submit_hold_schema_materialization_human_authorization_awaiting_input.md](../docs/fase33/f33w_auth_submit_hold_schema_materialization_human_authorization_awaiting_input.md)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_preflight.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_preflight.json)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_hold_manifest.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_hold_manifest.json)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_operator_instructions.md](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_operator_instructions.md)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_exit_conditions.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_exit_conditions.json)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_decision.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_decision.json)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_summary.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_summary.json)
+- [artifacts/f33/f33w_auth_submit_hold_schema_materialization_next_phase_contract.json](../artifacts/f33/f33w_auth_submit_hold_schema_materialization_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json

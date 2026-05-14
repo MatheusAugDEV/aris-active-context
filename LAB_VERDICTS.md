@@ -276,3 +276,12 @@
 | f33.governed_local_memory.sqlite_schema_materialization_authorization_submission | submission_required/contract_required | No | F33.W-AUTH-SUBMIT submission gate | Final statement found=False; ready_for_review=False |
 | lab.f33w_auth_schema_materialization_human_authorization_evidence_submission | lab_validated | No | F33.W-AUTH-SUBMIT submission gate | Submission evidence tracking, awaiting marker, and non-validation completed |
 | f33.governed_local_memory.sqlite_schema_materialization_authorization | submission_awaiting | No | F33.W-AUTH-SUBMIT preserved | Next phase recommendation: F33.W-AUTH-SUBMIT-HOLD — Schema Materialization Human Authorization Awaiting Human Input |
+
+
+## F33.W-AUTH-SUBMIT-HOLD Human Authorization Awaiting Input
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization_submission_hold | review_ready | No | F33.W-AUTH-SUBMIT-HOLD hold gate | Final statement found=True; hash=5db82b72f3761d835dcf00369c5842463d7887808799335d264717b9e10ec01c |
+| lab.f33w_auth_schema_materialization_human_authorization_submission_hold | lab_validated | No | F33.W-AUTH-SUBMIT-HOLD hold gate | Submission held for review; final authorization statement recorded but not semantically validated |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization | submission_received | No | F33.W-AUTH-SUBMIT-HOLD preserved | Next phase recommendation: F33.W-AUTH-R — Schema Materialization Human Authorization Evidence Review Gate |
