@@ -1,1 +1,1 @@
-Prepare F33.W-AUTH-H — Schema Materialization Human Authorization Evidence Intake; anchor phase F33.W-BEDROCK.
+Prepare F33.W-AUTH-SUBMIT — Schema Materialization Human Authorization Evidence Submission; anchor phase F33.W-AUTH-H.

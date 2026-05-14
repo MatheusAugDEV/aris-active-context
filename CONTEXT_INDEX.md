@@ -708,3 +708,14 @@ Recent F33 W-AUTH references:
 - [artifacts/f33/f33w_auth_schema_materialization_authorization_checklist.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_checklist.json)
 - [artifacts/f33/f33w_auth_schema_materialization_authorization_next_phase_contract.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 W-AUTH-H references:
+
+- [docs/fase33/f33w_auth_h_schema_materialization_human_authorization_evidence_intake.md](../docs/fase33/f33w_auth_h_schema_materialization_human_authorization_evidence_intake.md)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_decision.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_decision.json)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_summary.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_summary.json)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_requirements.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_requirements.json)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_manifest.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_manifest.json)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_schema.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_schema.json)
+- [artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_checklist.json](../artifacts/f33/f33w_auth_h_schema_materialization_evidence_intake_checklist.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json

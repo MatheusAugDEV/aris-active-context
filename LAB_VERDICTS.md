@@ -258,3 +258,12 @@
 | f33.governed_local_memory.sqlite_schema_materialization_authorization | authorization_required/contract_required | No | F33.W-AUTH human authorization gate | Dedicated path checked; required=True; ready=False |
 | lab.f33w_auth_schema_materialization_authorization_gate | lab_validated | No | F33.W-AUTH authorization gate | Dedicated authorization statement validation and planning-only packaging completed |
 | f33.governed_local_memory.sqlite_schema_materialization_authorization | authorization_pending | No | F33.W-AUTH preserved | Next phase recommendation: F33.W-AUTH-H — Schema Materialization Human Authorization Evidence Intake |
+
+
+## F33.W-AUTH-H Human Authorization Evidence Intake
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization_evidence_intake | evidence_intake_ready/contract_required | No | F33.W-AUTH-H intake package | Final authorization found before intake=False; placeholder invalid=True |
+| lab.f33w_auth_schema_materialization_human_authorization_evidence_intake | lab_validated | No | F33.W-AUTH-H intake gate | Manual evidence package, placeholder, instructions, schema, manifest, checklist, and decision artifacts materialized |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization | authorization_review_pending | No | F33.W-AUTH-H preserved | Next phase recommendation: F33.W-AUTH-SUBMIT — Schema Materialization Human Authorization Evidence Submission |
