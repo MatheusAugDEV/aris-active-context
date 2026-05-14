@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
-- Latest completed phase: `F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate`
+- Latest completed phase: `F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake`
+- Next principal phase: `F33.Y-AUTH-SUBMIT — Schema Materialization Pre-Apply Human Authorization Evidence Submission`
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
@@ -64,3 +64,5 @@ Rules:
 - F33.Y-R completed as pre-apply review only; planning_verified=True; review_passed=False; ready_for_next_phase=False; decision_hash=`fa99586bb23a90f40b2139e2777c8be9ffe09ee46c447d823fa0a3c2c199dc7a`
 
 - F33.Y-AUTH completed as authorization-only gate; human_authorization_found=False; human_authorization_valid=False; human_authorization_granted=False; authorization_required=True; authorization_file_hash=``; authorization_file_size_bytes=0
+
+- F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake completed as evidence intake only; final authorization remains manual and absent by design.
