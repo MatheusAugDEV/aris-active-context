@@ -249,3 +249,12 @@
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | f33.governed_local_memory.sqlite_schema_materialization | plan_ready/authorization_required | No | F33.W reviewed | F33.W-AUTH is now the next action under the Lab contract |
+
+
+## F33.W-AUTH Human Authorization Gate
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization | authorization_required/contract_required | No | F33.W-AUTH human authorization gate | Dedicated path checked; required=True; ready=False |
+| lab.f33w_auth_schema_materialization_authorization_gate | lab_validated | No | F33.W-AUTH authorization gate | Dedicated authorization statement validation and planning-only packaging completed |
+| f33.governed_local_memory.sqlite_schema_materialization_authorization | authorization_pending | No | F33.W-AUTH preserved | Next phase recommendation: F33.W-AUTH-H — Schema Materialization Human Authorization Evidence Intake |

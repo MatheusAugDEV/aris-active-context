@@ -697,3 +697,14 @@ Recent F33 W-BEDROCK references for F33.W:
 - [artifacts/f33/f33w_bedrock_schema_materialization_order.json](../artifacts/f33/f33w_bedrock_schema_materialization_order.json)
 - [artifacts/f33/f33w_bedrock_schema_materialization_invariants.json](../artifacts/f33/f33w_bedrock_schema_materialization_invariants.json)
 - [artifacts/f33/f33w_bedrock_schema_materialization_next_phase_contract.json](../artifacts/f33/f33w_bedrock_schema_materialization_next_phase_contract.json)
+
+Recent F33 W-AUTH references:
+
+- [docs/fase33/f33w_auth_schema_materialization_human_authorization_gate.md](../docs/fase33/f33w_auth_schema_materialization_human_authorization_gate.md)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_decision.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_decision.json)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_summary.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_summary.json)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_requirements.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_requirements.json)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_template.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_template.json)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_checklist.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_checklist.json)
+- [artifacts/f33/f33w_auth_schema_materialization_authorization_next_phase_contract.json](../artifacts/f33/f33w_auth_schema_materialization_authorization_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json

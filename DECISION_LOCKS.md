@@ -1218,3 +1218,12 @@
 - Next phase recommendation: `F33.W-AUTH — Schema Materialization Human Authorization Gate`.
 
 - No real SQLite database creation, schema apply, DDL execution, FTS5 creation, memory ingestion, runtime integration, network use, dependency installation, MCP activation, Obsidian bulk read, or runtime mutation is authorized now.
+
+## F33.W-AUTH Human Authorization Lock
+
+- Status: `f33w_auth_schema_materialization_human_authorization_required`
+- Dedicated authorization path: `/home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json`
+- Chat context, prompt text, commit text, placeholders, templates, and checklists do not count as authorization.
+- The gate does not create a final authorization file on behalf of the operator.
+- Authorization required now: `True`
+- Ready for next phase: `False`
