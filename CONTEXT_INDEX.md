@@ -765,3 +765,18 @@ Recent F33 W-AUTH-RC references:
 - [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_decision.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_decision.json)
 - [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_next_phase_contract.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 X references:
+
+- [docs/fase33/f33x_sqlite_schema_materialization_readiness_planning_gate.md](../docs/fase33/f33x_sqlite_schema_materialization_readiness_planning_gate.md)
+- [artifacts/f33/f33x_schema_materialization_readiness_preflight.json](../artifacts/f33/f33x_schema_materialization_readiness_preflight.json)
+- [artifacts/f33/f33x_schema_materialization_readiness_plan.json](../artifacts/f33/f33x_schema_materialization_readiness_plan.json)
+- [artifacts/f33/f33x_schema_materialization_pre_apply_checklist.json](../artifacts/f33/f33x_schema_materialization_pre_apply_checklist.json)
+- [artifacts/f33/f33x_schema_materialization_preconditions_matrix.json](../artifacts/f33/f33x_schema_materialization_preconditions_matrix.json)
+- [artifacts/f33/f33x_schema_materialization_abort_conditions_matrix.json](../artifacts/f33/f33x_schema_materialization_abort_conditions_matrix.json)
+- [artifacts/f33/f33x_schema_materialization_rollback_backup_cleanup_readiness.json](../artifacts/f33/f33x_schema_materialization_rollback_backup_cleanup_readiness.json)
+- [artifacts/f33/f33x_schema_materialization_residue_scan_plan.json](../artifacts/f33/f33x_schema_materialization_residue_scan_plan.json)
+- [artifacts/f33/f33x_schema_materialization_future_execution_boundary.json](../artifacts/f33/f33x_schema_materialization_future_execution_boundary.json)
+- [artifacts/f33/f33x_schema_materialization_readiness_decision.json](../artifacts/f33/f33x_schema_materialization_readiness_decision.json)
+- [artifacts/f33/f33x_schema_materialization_readiness_next_phase_contract.json](../artifacts/f33/f33x_schema_materialization_readiness_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
