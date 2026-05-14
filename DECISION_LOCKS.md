@@ -1238,3 +1238,14 @@
 - Final authorization found before intake: `False`
 - Ready for next review: `True`
 - Next phase recommendation: `F33.W-AUTH-SUBMIT — Schema Materialization Human Authorization Evidence Submission`
+
+## F33.W-AUTH-SUBMIT Human Authorization Submission Lock
+
+- Status: `f33w_auth_schema_materialization_human_authorization_submission_required`
+- Final authorization path: `/home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json`
+- Awaiting marker path: `/home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.awaiting_human_input.json`
+- The gate does not create a valid authorization file on behalf of the operator.
+- Placeholder, marker, manifest, instructions, and evidence package do not count as authorization.
+- Final authorization found: `False`
+- Ready for review: `False`
+- Next phase recommendation: `F33.W-AUTH-SUBMIT-HOLD — Schema Materialization Human Authorization Awaiting Human Input`
