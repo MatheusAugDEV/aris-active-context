@@ -1387,3 +1387,19 @@
 - Scope remains limited to the next conservative gate only.
 - Ready for next phase: `True`
 - Next phase recommendation: `F33.Y — Governed Local Memory SQLite Schema Materialization Pre-Apply Planning Gate`
+
+## F33.Y Pre-Apply Planning Lock
+
+- Status: `f33y_sqlite_schema_materialization_pre_apply_plan_ready`
+- Anchor phase: `F33.X-AUTH-RC`
+- Pre-apply plan created: `True`
+- Apply boundary plan created: `True`
+- Preflight checklist created: `True`
+- Rollback/backup/cleanup plan created: `True`
+- Residue verification plan created: `True`
+- Operator confirmation contract created: `True`
+- Manual authorization W unchanged: `True`
+- Manual authorization X unchanged: `True`
+- This gate is planning-only and does not authorize real execution.
+- No database creation, SQLite connection opening, DDL, or FTS5 creation is authorized now.
+- Next phase recommendation: `F33.Y-R — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Gate`

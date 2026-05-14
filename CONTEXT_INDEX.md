@@ -848,3 +848,15 @@ Recent F33 X-AUTH-RC references:
 - [artifacts/f33/f33x_auth_rc_schema_materialization_readiness_human_authorization_review_closure_decision.json](../artifacts/f33/f33x_auth_rc_schema_materialization_readiness_human_authorization_review_closure_decision.json)
 - [artifacts/f33/f33x_auth_rc_schema_materialization_readiness_human_authorization_review_closure_next_phase_contract.json](../artifacts/f33/f33x_auth_rc_schema_materialization_readiness_human_authorization_review_closure_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33x_schema_materialization_readiness_authorization_statement.json
+
+Recent F33 Y references:
+
+- [docs/fase33/f33y_sqlite_schema_materialization_pre_apply_planning_gate.md](../docs/fase33/f33y_sqlite_schema_materialization_pre_apply_planning_gate.md)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_preflight.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_preflight.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_plan.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_plan.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_apply_boundary_plan.json](../artifacts/f33/f33y_sqlite_schema_materialization_apply_boundary_plan.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_preflight_checklist.json](../artifacts/f33/f33y_sqlite_schema_materialization_preflight_checklist.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_rollback_backup_cleanup_plan.json](../artifacts/f33/f33y_sqlite_schema_materialization_rollback_backup_cleanup_plan.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_plan.json](../artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_plan.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_next_phase_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_next_phase_contract.json)
