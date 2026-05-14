@@ -1435,3 +1435,18 @@
 - Next phase recommendation: `F33.Y-R-REPAIR — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Repair Gate`
 - This gate is review-only and does not authorize real execution.
 - No database creation, SQLite connection opening, DDL, or FTS5 creation is authorized now.
+
+## F33.Y-AUTH Pre-Apply Authorization Lock
+
+- Status: `f33y_auth_schema_materialization_pre_apply_authorization_required`
+- Dedicated authorization path: `/home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33y_schema_materialization_pre_apply_authorization_statement.json`
+- Dedicated authorization hash: ``
+- Dedicated authorization size bytes: `0`
+- Human authorization found: `False`
+- Human authorization valid: `False`
+- Human authorization granted: `False`
+- Authorization required: `True`
+- Ready for next phase: `False`
+- Next phase recommendation: `F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake`
+- The gate only detects authorization presence and creates requirements/template/checklist artifacts.
+- No database creation, schema apply, migration execution, FTS5 creation, memory ingestion, runtime integration, network access, dependency installation, or product promotion is authorized here.

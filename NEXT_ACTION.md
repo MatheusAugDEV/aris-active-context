@@ -1,1 +1,1 @@
-Prepare F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate; anchor phase F33.Y-R.
+Prepare F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake; anchor phase F33.Y-AUTH.

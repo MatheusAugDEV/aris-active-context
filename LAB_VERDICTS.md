@@ -407,3 +407,12 @@
 | f33.governed_local_memory.sqlite_schema_materialization_pre_apply_review | review_blocked | No | F33.Y pre-apply review gate | review_passed=False; ready_for_next_phase=False |
 | lab.f33y_sqlite_schema_materialization_pre_apply_review_gate | lab_validated | No | F33.Y pre-apply review gate | Review-only and non-executable boundary preserved |
 | f33.governed_local_memory.sqlite_schema_materialization_pre_apply | review_blocked/repair_required | No | F33.Y preserved | Next phase recommendation: F33.Y-R-REPAIR — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Repair Gate |
+
+
+## F33.Y-AUTH Pre-Apply Authorization
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_authorization | authorization_required | No | F33.Y-AUTH gate | Manual authorization found=False; valid=False; next gate=F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake |
+| lab.f33y_auth_schema_materialization_pre_apply_authorization_gate | lab_authorization_only | No | F33.Y-AUTH gate | Detected missing dedicated authorization, created requirements/template/checklist, and preserved hard blocks |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_authorization_gate | authorization_required | No | F33.Y-AUTH preserved | Next phase recommendation: F33.Y-AUTH-H — Schema Materialization Pre-Apply Human Authorization Evidence Intake |

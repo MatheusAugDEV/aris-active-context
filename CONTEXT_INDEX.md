@@ -873,3 +873,15 @@ Recent F33 Y-R references:
 - [artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_review.json)
 - [artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract_review.json)
 - [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_next_phase_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_next_phase_contract.json)
+
+Recent F33 Y-AUTH references:
+
+- [docs/fase33/f33y_auth_schema_materialization_pre_apply_authorization_gate.md](../docs/fase33/f33y_auth_schema_materialization_pre_apply_authorization_gate.md)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_preflight.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_preflight.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_requirements.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_requirements.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_template.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_template.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_checklist.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_checklist.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_decision.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_decision.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_summary.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_summary.json)
+- [artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_next_phase_contract.json](../artifacts/f33/f33y_auth_schema_materialization_pre_apply_authorization_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33y_schema_materialization_pre_apply_authorization_statement.json
