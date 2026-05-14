@@ -1,1 +1,1 @@
-Prepare F33.W-AUTH-RC — Schema Materialization Human Authorization Review Closure Gate; anchor phase F33.W-AUTH-R.
+Prepare F33.X — Governed Local Memory SQLite Schema Materialization Readiness Planning Gate; anchor phase F33.W-AUTH-RC.

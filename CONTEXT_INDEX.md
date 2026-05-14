@@ -753,3 +753,15 @@ Recent F33 W-AUTH-R references:
 - [artifacts/f33/f33w_auth_r_schema_materialization_authorization_summary.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_summary.json)
 - [artifacts/f33/f33w_auth_r_schema_materialization_authorization_next_phase_contract.json](../artifacts/f33/f33w_auth_r_schema_materialization_authorization_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
+
+Recent F33 W-AUTH-RC references:
+
+- [docs/fase33/f33w_auth_rc_schema_materialization_human_authorization_review_closure_gate.md](../docs/fase33/f33w_auth_rc_schema_materialization_human_authorization_review_closure_gate.md)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_preflight.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_preflight.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_manifest.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_manifest.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_evidence_chain.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_evidence_chain.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_safety_attestation.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_safety_attestation.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_scope_disposition.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_scope_disposition.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_decision.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_decision.json)
+- [artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_next_phase_contract.json](../artifacts/f33/f33w_auth_rc_schema_materialization_review_closure_next_phase_contract.json)
+- /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33w_schema_materialization_authorization_statement.json
