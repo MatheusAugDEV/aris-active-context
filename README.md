@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
-- Latest completed phase: `F33.X-AUTH — Schema Materialization Readiness Authorization Gate`
+- Latest completed phase: `F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake`
+- Next principal phase: `F33.X-AUTH-SUBMIT — Schema Materialization Readiness Human Authorization Evidence Submission`
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
@@ -46,3 +46,5 @@ Rules:
 - F33.X-R completed as readiness review-only; f33x_status_verified=True; readiness_plan_reviewed=True; review_passed=True; ready_for_next_phase=True; schema_materialization_allowed_now=False; decision_hash=`5b7f2df0662ff68d6963ca124c81b4af19286a8e376fc0bf727e3aa4641adf6b`
 
 - F33.X-AUTH completed as readiness authorization gate only; human_authorization_found=False; human_authorization_valid=False; authorization_required=True; ready_for_next_phase=False; next_phase_recommendation=`F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake`
+
+- F33.X-AUTH-H — Schema Materialization Readiness Human Authorization Evidence Intake completed as evidence intake only; final authorization remains manual and absent by design.
