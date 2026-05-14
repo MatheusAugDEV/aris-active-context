@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed.
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
-- Latest completed phase: `F33.Y — Governed Local Memory SQLite Schema Materialization Pre-Apply Planning Gate`
+- Latest completed phase: `F33.Y-R — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Y-R — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Gate`
+- Next principal phase: `F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate`
 - F33.P-BEDROCK passed on artifact/evidence only; F33.Q is the active next action under the Lab contract and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
@@ -56,3 +56,9 @@ Rules:
 - F33.X-AUTH-RC completed as closure-only evidence consolidation; authorization_review_closed=True; human_authorization_validated=True; ready_for_next_phase=True; authorization_file_hash=`a7eaa11510e6686cfc3af13b30c73fe9718ac3ed73c487df33d0be8bad0949ab`
 
 - F33.Y completed as pre-apply planning only; source_chain_verified=True; manual_authorization_w_unchanged=True; manual_authorization_x_unchanged=True; ready_for_next_phase=True; decision_hash=`b9e430884ed3c5f50e301fc289269868e24f79413c995769dde6c74311ffab6e`
+
+- F33.Y-R completed as pre-apply review only; planning_verified=True; review_passed=True; ready_for_next_phase=True; decision_hash=`5d79ced85b43d3f3ee8d1c7e331c59961e4cd7d381de480af6751342a87a6f79`
+
+- F33.Y-R completed as pre-apply review only; planning_verified=True; review_passed=False; ready_for_next_phase=False; decision_hash=`917ffc96446e01b0a2456bc002336d8218cec21410d6e0e7eb7d38734b38f1a8`
+
+- F33.Y-R completed as pre-apply review only; planning_verified=True; review_passed=False; ready_for_next_phase=False; decision_hash=`fa99586bb23a90f40b2139e2777c8be9ffe09ee46c447d823fa0a3c2c199dc7a`

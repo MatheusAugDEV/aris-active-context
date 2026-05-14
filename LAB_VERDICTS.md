@@ -371,3 +371,39 @@
 | f33.governed_local_memory.sqlite_schema_materialization_pre_apply_plan | plan_ready | No | F33.Y pre-apply planning gate | manual_authorization_w_unchanged=True; manual_authorization_x_unchanged=True |
 | lab.f33y_sqlite_schema_materialization_pre_apply_planning_gate | lab_validated | No | F33.Y pre-apply planning gate | Pre-apply boundary, residue, rollback, and operator confirmation artifacts materialized |
 | f33.governed_local_memory.sqlite_schema_materialization_pre_apply | plan_ready/contract_required | No | F33.Y preserved | Next phase recommendation: F33.Y-R — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Gate |
+
+
+## F33.Y Pre-Apply Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_review | review_passed | No | F33.Y pre-apply review gate | review_passed=True; ready_for_next_phase=True |
+| lab.f33y_sqlite_schema_materialization_pre_apply_review_gate | lab_validated | No | F33.Y pre-apply review gate | Review-only and non-executable boundary preserved |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply | review_passed/authorization_required | No | F33.Y preserved | Next phase recommendation: F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate |
+
+
+## F33.Y Pre-Apply Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_review | review_passed | No | F33.Y pre-apply review gate | review_passed=True; ready_for_next_phase=True |
+| lab.f33y_sqlite_schema_materialization_pre_apply_review_gate | lab_validated | No | F33.Y pre-apply review gate | Review-only and non-executable boundary preserved |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply | review_passed/authorization_required | No | F33.Y preserved | Next phase recommendation: F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate |
+
+
+## F33.Y Pre-Apply Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_review | review_passed | No | F33.Y pre-apply review gate | review_passed=True; ready_for_next_phase=True |
+| lab.f33y_sqlite_schema_materialization_pre_apply_review_gate | lab_validated | No | F33.Y pre-apply review gate | Review-only and non-executable boundary preserved |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply | review_passed/authorization_required | No | F33.Y preserved | Next phase recommendation: F33.Y-AUTH — Governed Local Memory SQLite Schema Materialization Pre-Apply Authorization Gate |
+
+
+## F33.Y Pre-Apply Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply_review | review_blocked | No | F33.Y pre-apply review gate | review_passed=False; ready_for_next_phase=False |
+| lab.f33y_sqlite_schema_materialization_pre_apply_review_gate | lab_validated | No | F33.Y pre-apply review gate | Review-only and non-executable boundary preserved |
+| f33.governed_local_memory.sqlite_schema_materialization_pre_apply | review_blocked/repair_required | No | F33.Y preserved | Next phase recommendation: F33.Y-R-REPAIR — Governed Local Memory SQLite Schema Materialization Pre-Apply Review Repair Gate |

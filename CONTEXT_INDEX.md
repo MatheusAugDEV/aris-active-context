@@ -860,3 +860,16 @@ Recent F33 Y references:
 - [artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_plan.json](../artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_plan.json)
 - [artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract.json)
 - [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_next_phase_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_next_phase_contract.json)
+
+Recent F33 Y-R references:
+
+- [docs/fase33/f33y_sqlite_schema_materialization_pre_apply_review_gate.md](../docs/fase33/f33y_sqlite_schema_materialization_pre_apply_review_gate.md)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_preflight.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_preflight.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_matrix.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_matrix.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_apply_boundary_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_apply_boundary_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_preflight_checklist_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_preflight_checklist_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_rollback_backup_cleanup_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_rollback_backup_cleanup_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_residue_verification_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract_review.json](../artifacts/f33/f33y_sqlite_schema_materialization_operator_confirmation_contract_review.json)
+- [artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_next_phase_contract.json](../artifacts/f33/f33y_sqlite_schema_materialization_pre_apply_review_next_phase_contract.json)
