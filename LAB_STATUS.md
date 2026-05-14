@@ -1,9 +1,9 @@
 # LAB_STATUS
 
-- Current Lab phase: F33.X-AUTH-SUBMIT
-- Lab status: f33x_auth_schema_materialization_readiness_human_authorization_submission_received; final_authorization_statement_found=True; operator_submission_found=True; operator_submission_validated=False; human_authorization_granted=False; ready_for_review=True; ready_for_schema_materialization=False; ready_for_real_execution=False
-- Bedrock Gate status: executed for readiness submission receipt only
+- Current Lab phase: F33.X-AUTH-R
+- Lab status: f33x_auth_schema_materialization_readiness_human_authorization_review_passed; human_authorization_found=True; human_authorization_valid=True; human_authorization_granted=True; authorization_scope_limited_to_next_gate=True; ready_for_next_phase=True; ready_for_schema_materialization=False; ready_for_real_execution=False
+- Bedrock Gate status: executed for readiness authorization review only
 - Product promotion: not allowed
-- Next principal phase: `F33.X-AUTH-R — Schema Materialization Readiness Human Authorization Evidence Review Gate`
+- Next principal phase: `F33.X-AUTH-RC — Schema Materialization Readiness Human Authorization Review Closure Gate`
 - F33 resume point: preserved
 - F44 interpretation: hardening/maturity of existing Lab

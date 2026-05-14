@@ -344,3 +344,12 @@
 | f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization_submission | submission_received/contract_required | No | F33.X-AUTH-SUBMIT submission gate | Final statement found=True; ready_for_review=True |
 | lab.f33x_auth_submit_schema_materialization_readiness_human_authorization_evidence_submission | lab_validated | No | F33.X-AUTH-SUBMIT submission gate | Submission evidence tracking, hash, size, and review routing completed; no semantic validation |
 | f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization | submission_received | No | F33.X-AUTH-SUBMIT preserved | Next phase recommendation: F33.X-AUTH-R — Schema Materialization Readiness Human Authorization Evidence Review Gate |
+
+
+## F33.X-AUTH-R Human Authorization Review
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization_review | review_passed/contract_required | No | F33.X-AUTH-R review gate | Manual authorization validated=True; next gate=F33.X-AUTH-RC — Schema Materialization Readiness Human Authorization Review Closure Gate |
+| lab.f33x_auth_r_schema_materialization_readiness_human_authorization_evidence_review | lab_validated | No | F33.X-AUTH-R review gate | Semantically validated manual authorization, hash/size/path binding, and next-gate limitation; no real execution |
+| f33.governed_local_memory.sqlite_schema_materialization_readiness_authorization | review_passed | No | F33.X-AUTH-R preserved | Next phase recommendation: F33.X-AUTH-RC — Schema Materialization Readiness Human Authorization Review Closure Gate |
