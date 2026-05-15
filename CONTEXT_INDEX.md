@@ -1015,3 +1015,20 @@ Recent F33 Z-PRE2 references:
 - [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_brief_validation.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_brief_validation.json)
 - [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_generated_prompt_preview.md](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_generated_prompt_preview.md)
 - [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_next_phase_contract.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_next_phase_contract.json)
+
+## F33.Z-PRE3 References
+
+Recent F33 Z-PRE3 references:
+- [docs/agent/ARIS_PHASE_SCAFFOLD_AUTOMATION.md](../docs/agent/ARIS_PHASE_SCAFFOLD_AUTOMATION.md)
+- [docs/fase33/f33z_pre3_phase_scaffold_automation_gate.md](../docs/fase33/f33z_pre3_phase_scaffold_automation_gate.md)
+- [scripts/aris_plan_phase_scaffold.py](../scripts/aris_plan_phase_scaffold.py)
+- [scripts/aris_validate_phase_scaffold_plan.py](../scripts/aris_validate_phase_scaffold_plan.py)
+- [scripts/aris_phase_scaffold_preview.py](../scripts/aris_phase_scaffold_preview.py)
+- [artifacts/f33/scaffold_plans/f33z_schema_materialization_final_pre_apply_readiness_gate_scaffold_plan.json](../artifacts/f33/scaffold_plans/f33z_schema_materialization_final_pre_apply_readiness_gate_scaffold_plan.json)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_decision.json](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_decision.json)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_summary.json](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_summary.json)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_report.md](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_report.md)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_script_inventory.json](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_script_inventory.json)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_scaffold_plan_validation.json](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_scaffold_plan_validation.json)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_scaffold_preview.md](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_scaffold_preview.md)
+- [artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_next_phase_contract.json](../artifacts/f33/f33z_pre3_phase_scaffold_automation_gate_next_phase_contract.json)

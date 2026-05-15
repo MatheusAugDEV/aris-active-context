@@ -37,6 +37,16 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z-PRE3 Phase Scaffold Automation Lock
+
+- F33.Z-PRE3 is tooling-foundation-only and does not authorize real execution, schema apply, or runtime mutation.
+- The phase may create scaffold planners, scaffold validators, preview wrappers, sample scaffold plans, docs, and workflow artifacts only.
+- Scaffold plans are non-executing evidence only and do not authorize materialization by themselves.
+- Real commit/push automation is intentionally out of scope for this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- `DECISION_LOCKS.md` continues to outrank scaffold previews, prompt convenience, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.

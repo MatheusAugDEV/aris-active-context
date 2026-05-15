@@ -65,6 +65,26 @@ The pre-ARIS Debian/Lenovo/kernel/Waydroid troubleshooting is background context
 - F33.Z-PRE3 is the next continuation phase.
 - no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
 
+## F33.Z-PRE3 - Phase Scaffold Automation Gate
+
+- [F33.Z-PRE3] Phase Scaffold Automation Gate completed.
+- status: `f33z_pre3_phase_scaffold_automation_gate_ready`
+- tooling_foundation_only: `True`
+- phase_scaffold_planner_created: `True`
+- phase_scaffold_validator_created: `True`
+- phase_scaffold_preview_created: `True`
+- sample_f33z_scaffold_plan_created: `True`
+- scaffold_plan_validation_passed: `True`
+- scaffold_preview_created: `True`
+- scripts_stdlib_only: `True`
+- scripts_read_only_except_explicit_plan_write: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- scaffold_materialization_allowed_now: `False`
+- F33.Z remains preserved as the next principal phase.
+- F33.Z-PRE4 is the next continuation phase.
+- no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
+
 ## Mature tracks
 
 - F14-F21 established the semantic/context/action structure.
