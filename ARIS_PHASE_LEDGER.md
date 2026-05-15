@@ -24,6 +24,25 @@ The pre-ARIS Debian/Lenovo/kernel/Waydroid troubleshooting is background context
 - F33.Z remains preserved as the next principal phase.
 - no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
 
+## F33.Z-PRE1 - Local Validation Scripts Foundation Gate
+
+- [F33.Z-PRE1] Local Validation Scripts Foundation Gate completed.
+- status: `f33z_pre1_local_validation_scripts_foundation_ready`
+- tooling_foundation_only: `True`
+- local_validation_scripts_created: `True`
+- aris_safety_grep_created: `True`
+- aris_validate_json_artifacts_created: `True`
+- aris_check_no_sqlite_artifacts_created: `True`
+- aris_local_validation_summary_created: `True`
+- scripts_stdlib_only: `True`
+- scripts_read_only: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- schema_materialization_allowed_now: `False`
+- F33.Z remains preserved as the next principal phase.
+- F33.Z-PRE2 is the next continuation phase.
+- no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
+
 ## Mature tracks
 
 - F14-F21 established the semantic/context/action structure.

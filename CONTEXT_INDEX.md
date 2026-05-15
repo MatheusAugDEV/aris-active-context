@@ -982,3 +982,19 @@ Recent F33 Z-PRE0 references:
 - [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_summary.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_summary.json)
 - [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_contract_inventory.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_contract_inventory.json)
 - [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_next_phase_contract.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_next_phase_contract.json)
+
+## F33.Z-PRE1 References
+
+Recent F33 Z-PRE1 references:
+- [docs/agent/ARIS_LOCAL_VALIDATION_SCRIPTS.md](../docs/agent/ARIS_LOCAL_VALIDATION_SCRIPTS.md)
+- [docs/fase33/f33z_pre1_local_validation_scripts_foundation.md](../docs/fase33/f33z_pre1_local_validation_scripts_foundation.md)
+- [scripts/aris_safety_grep.py](../scripts/aris_safety_grep.py)
+- [scripts/aris_validate_json_artifacts.py](../scripts/aris_validate_json_artifacts.py)
+- [scripts/aris_check_no_sqlite_artifacts.py](../scripts/aris_check_no_sqlite_artifacts.py)
+- [scripts/aris_local_validation_summary.py](../scripts/aris_local_validation_summary.py)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_decision.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_decision.json)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_summary.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_summary.json)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_report.md](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_report.md)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_script_inventory.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_script_inventory.json)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_validation_summary.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_validation_summary.json)
+- [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_next_phase_contract.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_next_phase_contract.json)

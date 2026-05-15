@@ -1,1 +1,1 @@
-Prepare F33.Z — Schema Materialization Final Pre-Apply Readiness Gate; anchor phase F33.Z-PRE0.
+Prepare F33.Z-PRE2 — Execution Brief and Compact Prompt Workflow Gate; anchor phase F33.Z-PRE1.

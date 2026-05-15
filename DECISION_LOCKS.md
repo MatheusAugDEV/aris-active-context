@@ -19,6 +19,15 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z-PRE1 Local Validation Scripts Foundation Lock
+
+- F33.Z-PRE1 is tooling-foundation-only and does not authorize real execution, schema apply, or runtime mutation.
+- The phase may create local validation scripts, docs, artifacts, and validation summaries only.
+- The scripts must stay stdlib-only, read-only, and local-only.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.
