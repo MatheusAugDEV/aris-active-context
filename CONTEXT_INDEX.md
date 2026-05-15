@@ -17,6 +17,22 @@ Read in this order:
 13. [docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md](../docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md)
 14. [docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md](../docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md)
 15. [scripts/aris_print_active_context_digest.py](../scripts/aris_print_active_context_digest.py)
+16. [scripts/aris_active_context_update_common.py](../scripts/aris_active_context_update_common.py)
+17. [scripts/aris_build_active_context_update_plan.py](../scripts/aris_build_active_context_update_plan.py)
+18. [scripts/aris_validate_active_context_update_plan.py](../scripts/aris_validate_active_context_update_plan.py)
+19. [scripts/aris_active_context_update_dry_run.py](../scripts/aris_active_context_update_dry_run.py)
+20. [scripts/aris_active_context_update_sandbox_apply.py](../scripts/aris_active_context_update_sandbox_apply.py)
+21. [docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md](../docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md)
+22. [docs/fase33/f33z_pre4_active_context_update_automation_gate.md](../docs/fase33/f33z_pre4_active_context_update_automation_gate.md)
+
+Recent F33 PRE4 references:
+
+- [docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md](../docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md)
+- [docs/fase33/f33z_pre4_active_context_update_automation_gate.md](../docs/fase33/f33z_pre4_active_context_update_automation_gate.md)
+- [artifacts/f33/active_context_update_plans/f33z_active_context_update_plan.json](../artifacts/f33/active_context_update_plans/f33z_active_context_update_plan.json)
+- [artifacts/f33/f33z_pre4_active_context_update_automation_gate_decision.json](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_decision.json)
+- [artifacts/f33/f33z_pre4_active_context_update_automation_gate_summary.json](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_summary.json)
+- [artifacts/f33/f33z_pre4_active_context_update_automation_gate_report.md](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_report.md)
 
 Recent F32 chain references:
 

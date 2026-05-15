@@ -1878,6 +1878,21 @@
 - The manual authorization file is preserved and not modified by this gate.
 - Scope remains limited to the next conservative gate only.
 
+## F33.Z-PRE4 Active Context Update Automation Lock
+
+- F33.Z-PRE4 is tooling-foundation-only and does not authorize real active-context mutation or real adoption.
+- The phase may create the active-context update plan builder, validator, dry-run helper, sandbox apply helper, docs, artifacts, and tests only.
+- The updater remains plan/dry-run/sandbox-only in PRE4.
+- Real active-context mutation by this updater requires a future dedicated adoption gate.
+- `NEXT_ACTION.md` must be derived from validated phase artifacts and the explicit next-action rule, not chat text.
+- Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- real_active_context_update_automation_adopted: `False`
+- real_active_context_apply_allowed_now: `False`
+- active_context_update_plan_builder_only: `True`
+- active_context_update_sandbox_only: `True`
+- no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
+
 ## F33.Y-AUTH-RC Human Authorization Review Closure Lock
 
 - Status: `f33y_auth_pre_apply_human_authorization_review_closure_passed`
