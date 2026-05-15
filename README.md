@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z-PRE4 created the active-context update automation foundation as tooling-only, and F33.Z remains the next principal phase.
-- Latest completed phase: `F33.Z-PRE4 — Active Context Update Automation Gate`
+- F33.Z-PRE5 created the final-report, commit-message, and hash automation foundation as tooling-only, and F33.Z remains the next principal phase.
+- Latest completed phase: `F33.Z-PRE5 — Final Report, Commit and Hash Automation Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
 - Next principal phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
-- Next continuation phase: `F33.Z-PRE5 — Final Report, Commit and Hash Automation Gate`
+- Next continuation phase: `F33.Z-PRE6 — Codex Skills and Agent Contracts Gate`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

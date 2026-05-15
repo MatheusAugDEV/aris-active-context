@@ -24,6 +24,13 @@ Read in this order:
 20. [scripts/aris_active_context_update_sandbox_apply.py](../scripts/aris_active_context_update_sandbox_apply.py)
 21. [docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md](../docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md)
 22. [docs/fase33/f33z_pre4_active_context_update_automation_gate.md](../docs/fase33/f33z_pre4_active_context_update_automation_gate.md)
+23. [scripts/aris_final_phase_common.py](../scripts/aris_final_phase_common.py)
+24. [scripts/aris_build_artifact_hash_manifest.py](../scripts/aris_build_artifact_hash_manifest.py)
+25. [scripts/aris_build_final_phase_report.py](../scripts/aris_build_final_phase_report.py)
+26. [scripts/aris_suggest_commit_message.py](../scripts/aris_suggest_commit_message.py)
+27. [scripts/aris_phase_close_package_summary.py](../scripts/aris_phase_close_package_summary.py)
+28. [docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md](../docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md)
+29. [docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md](../docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md)
 
 Recent F33 PRE4 references:
 
@@ -33,6 +40,19 @@ Recent F33 PRE4 references:
 - [artifacts/f33/f33z_pre4_active_context_update_automation_gate_decision.json](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_decision.json)
 - [artifacts/f33/f33z_pre4_active_context_update_automation_gate_summary.json](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_summary.json)
 - [artifacts/f33/f33z_pre4_active_context_update_automation_gate_report.md](../artifacts/f33/f33z_pre4_active_context_update_automation_gate_report.md)
+
+Recent F33 PRE5 references:
+
+- [docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md](../docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md)
+- [docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md](../docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_decision.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_decision.json)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_summary.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_summary.json)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_report.md](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_report.md)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_hash_manifest.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_hash_manifest.json)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_generated_final_report.md](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_generated_final_report.md)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_commit_message_suggestion.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_commit_message_suggestion.json)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_package_summary.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_package_summary.json)
+- [artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_next_phase_contract.json](../artifacts/f33/f33z_pre5_final_report_commit_hash_automation_gate_next_phase_contract.json)
 
 Recent F32 chain references:
 

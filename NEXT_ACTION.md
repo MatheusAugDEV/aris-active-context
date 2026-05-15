@@ -1,1 +1,1 @@
-Prepare F33.Z-PRE5 — Final Report, Commit and Hash Automation Gate; anchor phase F33.Z-PRE4.
+Prepare F33.Z-PRE6 — Codex Skills and Agent Contracts Gate; anchor phase F33.Z-PRE5.

@@ -1888,6 +1888,20 @@
 - Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
 - real_active_context_update_automation_adopted: `False`
+
+## F33.Z-PRE5 Final Report, Commit and Hash Automation Lock
+
+- F33.Z-PRE5 is tooling-foundation-only and does not authorize real git automation, real execution, schema apply, or runtime mutation.
+- The phase may create the artifact hash manifest builder, final phase report builder, commit-message suggestion builder, phase close package summary wrapper, docs, artifacts, and tests only.
+- The helpers generate reports and suggestions only; they do not execute `git commit`, `git push`, `git tag`, `rebase`, `amend`, or `force-push`.
+- Real git operations remain manually controlled until a later dedicated adoption gate.
+- `NEXT_ACTION.md` must be derived from validated phase artifacts and the explicit next-action rule, not chat text.
+- Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- real_git_automation_adopted: `False`
+- real_git_commit_allowed_now: `False`
+- real_git_push_allowed_now: `False`
+- real_git_tag_allowed_now: `False`
 - real_active_context_apply_allowed_now: `False`
 - active_context_update_plan_builder_only: `True`
 - active_context_update_sandbox_only: `True`
