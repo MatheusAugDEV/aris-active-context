@@ -1923,6 +1923,23 @@
 - real_active_context_update_automation_adopted: `False`
 - no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
 
+## F33.Z-PRE7 Codex Usage Pilot Metrics Lock
+
+- F33.Z-PRE7 is tooling-foundation-only and does not authorize real execution, measured token-saving claims, live Codex activation, real git automation, or runtime mutation.
+- The phase may create metrics validators, pilot metrics builders, economy-readiness matrices, summaries, docs, artifacts, and tests only.
+- Estimated savings must remain labeled `estimated_not_measured` until real evidence exists.
+- Measured savings are not available yet and must not be claimed in this phase.
+- `NEXT_ACTION.md` must be derived from validated phase artifacts and the explicit next-action rule, not chat text.
+- Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- real_codex_skill_activation_allowed_now: `False`
+- real_codex_hook_activation_allowed_now: `False`
+- real_codex_profile_mutation_allowed_now: `False`
+- live_codex_integration_allowed_now: `False`
+- real_git_automation_adopted: `False`
+- real_active_context_update_automation_adopted: `False`
+- no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
+
 ## F33.Y-AUTH-RC Human Authorization Review Closure Lock
 
 - Status: `f33y_auth_pre_apply_human_authorization_review_closure_passed`

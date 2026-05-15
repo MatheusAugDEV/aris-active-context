@@ -1,1 +1,1 @@
-Prepare F33.Z-PRE7 — Codex Usage Pilot Metrics Gate; anchor phase F33.Z-PRE6.
+Prepare F33.Z — Schema Materialization Final Pre-Apply Readiness Gate; anchor phase F33.Z-PRE7.

@@ -38,6 +38,12 @@ Read in this order:
 34. [scripts/aris_validate_codex_skill_candidate.py](../scripts/aris_validate_codex_skill_candidate.py)
 35. [scripts/aris_build_compact_contract_index.py](../scripts/aris_build_compact_contract_index.py)
 36. [scripts/aris_agent_contracts_summary.py](../scripts/aris_agent_contracts_summary.py)
+37. [docs/agent/ARIS_CODEX_USAGE_METRICS.md](../docs/agent/ARIS_CODEX_USAGE_METRICS.md)
+38. [docs/fase33/f33z_pre7_codex_usage_pilot_metrics_gate.md](../docs/fase33/f33z_pre7_codex_usage_pilot_metrics_gate.md)
+39. [scripts/aris_validate_codex_usage_metrics.py](../scripts/aris_validate_codex_usage_metrics.py)
+40. [scripts/aris_build_codex_usage_pilot_metrics.py](../scripts/aris_build_codex_usage_pilot_metrics.py)
+41. [scripts/aris_codex_economy_readiness_matrix.py](../scripts/aris_codex_economy_readiness_matrix.py)
+42. [scripts/aris_codex_usage_pilot_summary.py](../scripts/aris_codex_usage_pilot_summary.py)
 
 Recent F33 PRE6 references:
 
@@ -56,6 +62,20 @@ Recent F33 PRE6 references:
 - [artifacts/f33/codex_skill_candidates/aris_execution_brief_candidate.json](../artifacts/f33/codex_skill_candidates/aris_execution_brief_candidate.json)
 - [artifacts/f33/codex_skill_candidates/aris_phase_scaffold_candidate.json](../artifacts/f33/codex_skill_candidates/aris_phase_scaffold_candidate.json)
 - [artifacts/f33/codex_skill_candidates/aris_final_report_candidate.json](../artifacts/f33/codex_skill_candidates/aris_final_report_candidate.json)
+
+Recent F33 PRE7 references:
+
+- [docs/agent/ARIS_CODEX_USAGE_METRICS.md](../docs/agent/ARIS_CODEX_USAGE_METRICS.md)
+- [docs/fase33/f33z_pre7_codex_usage_pilot_metrics_gate.md](../docs/fase33/f33z_pre7_codex_usage_pilot_metrics_gate.md)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_decision.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_decision.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_summary.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_summary.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_report.md](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_report.md)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_script_inventory.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_script_inventory.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_usage_metrics.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_usage_metrics.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_economy_readiness_matrix.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_economy_readiness_matrix.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_f33z_pilot_package.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_f33z_pilot_package.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_next_phase_contract.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_next_phase_contract.json)
+- [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_compact_prompt_for_f33z.md](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_compact_prompt_for_f33z.md)
 
 Recent F33 PRE4 references:
 
