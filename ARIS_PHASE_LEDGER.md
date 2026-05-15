@@ -43,6 +43,28 @@ The pre-ARIS Debian/Lenovo/kernel/Waydroid troubleshooting is background context
 - F33.Z-PRE2 is the next continuation phase.
 - no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
 
+## F33.Z-PRE2 - Execution Brief and Compact Prompt Workflow Gate
+
+- [F33.Z-PRE2] Execution Brief and Compact Prompt Workflow Gate completed.
+- status: `f33z_pre2_execution_brief_compact_prompt_workflow_ready`
+- tooling_foundation_only: `True`
+- execution_brief_validator_created: `True`
+- compact_prompt_generator_created: `True`
+- workflow_summary_script_created: `True`
+- sample_f33z_execution_brief_created: `True`
+- execution_brief_workflow_doc_created: `True`
+- generated_prompt_preview_created: `True`
+- scripts_stdlib_only: `True`
+- scripts_read_only: `True`
+- brief_validation_passed: `True`
+- compact_prompt_generation_passed: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- schema_materialization_allowed_now: `False`
+- F33.Z remains preserved as the next principal phase.
+- F33.Z-PRE3 is the next continuation phase.
+- no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
+
 ## Mature tracks
 
 - F14-F21 established the semantic/context/action structure.

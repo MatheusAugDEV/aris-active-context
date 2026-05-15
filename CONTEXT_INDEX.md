@@ -998,3 +998,20 @@ Recent F33 Z-PRE1 references:
 - [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_script_inventory.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_script_inventory.json)
 - [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_validation_summary.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_validation_summary.json)
 - [artifacts/f33/f33z_pre1_local_validation_scripts_foundation_next_phase_contract.json](../artifacts/f33/f33z_pre1_local_validation_scripts_foundation_next_phase_contract.json)
+
+## F33.Z-PRE2 References
+
+Recent F33 Z-PRE2 references:
+- [docs/agent/ARIS_EXECUTION_BRIEF_WORKFLOW.md](../docs/agent/ARIS_EXECUTION_BRIEF_WORKFLOW.md)
+- [docs/fase33/f33z_pre2_execution_brief_compact_prompt_workflow.md](../docs/fase33/f33z_pre2_execution_brief_compact_prompt_workflow.md)
+- [artifacts/f33/execution_briefs/f33z_schema_materialization_final_pre_apply_readiness_gate_EXECUTION_BRIEF.md](../artifacts/f33/execution_briefs/f33z_schema_materialization_final_pre_apply_readiness_gate_EXECUTION_BRIEF.md)
+- [scripts/aris_validate_execution_brief.py](../scripts/aris_validate_execution_brief.py)
+- [scripts/aris_generate_compact_codex_prompt.py](../scripts/aris_generate_compact_codex_prompt.py)
+- [scripts/aris_execution_brief_workflow_summary.py](../scripts/aris_execution_brief_workflow_summary.py)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_decision.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_decision.json)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_summary.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_summary.json)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_report.md](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_report.md)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_script_inventory.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_script_inventory.json)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_brief_validation.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_brief_validation.json)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_generated_prompt_preview.md](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_generated_prompt_preview.md)
+- [artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_next_phase_contract.json](../artifacts/f33/f33z_pre2_execution_brief_compact_prompt_workflow_next_phase_contract.json)

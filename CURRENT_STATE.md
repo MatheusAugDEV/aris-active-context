@@ -4,12 +4,12 @@ As of 2026-05-14:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.Z-PRE1 — Local Validation Scripts Foundation Gate`
-- Status: `f33z_pre1_local_validation_scripts_foundation_ready`
-- Bedrock Gate status: tooling foundation only; local validation scripts created and read-only helpers validated
+- Latest completed phase: `F33.Z-PRE2 — Execution Brief and Compact Prompt Workflow Gate`
+- Status: `f33z_pre2_execution_brief_compact_prompt_workflow_ready`
+- Bedrock Gate status: tooling foundation only; execution brief workflow created and compact prompt preview validated
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `F33.Z-PRE2 — Execution Brief and Compact Prompt Workflow Gate`
+- Next continuation phase: `F33.Z-PRE3 — Phase Scaffold Automation Gate`
 - Next principal phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime.
