@@ -77,6 +77,18 @@ Recent F33 PRE7 references:
 - [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_next_phase_contract.json](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_next_phase_contract.json)
 - [artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_compact_prompt_for_f33z.md](../artifacts/f33/f33z_pre7_codex_usage_pilot_metrics_gate_compact_prompt_for_f33z.md)
 
+Recent F33 Z references:
+
+- [docs/fase33/f33z_schema_materialization_final_pre_apply_readiness_gate.md](../docs/fase33/f33z_schema_materialization_final_pre_apply_readiness_gate.md)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_decision.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_decision.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_summary.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_summary.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_report.md](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_report.md)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_manifest.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_manifest.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_readiness_matrix.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_readiness_matrix.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_pre_apply_boundary_matrix.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_pre_apply_boundary_matrix.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_codex_usage_pilot_observation.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_codex_usage_pilot_observation.json)
+- [artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_next_phase_contract.json](../artifacts/f33/f33z_schema_materialization_final_pre_apply_readiness_gate_next_phase_contract.json)
+
 Recent F33 PRE4 references:
 
 - [docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md](../docs/agent/ARIS_ACTIVE_CONTEXT_UPDATE_AUTOMATION.md)

@@ -1940,6 +1940,22 @@
 - real_active_context_update_automation_adopted: `False`
 - no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
 
+## F33.Z Schema Materialization Final Pre-Apply Readiness Lock
+
+- F33.Z is readiness-only and does not authorize schema materialization, apply, migration, DDL, SQLite table creation, or FTS5.
+- The phase may validate the authorization chain, revalidate the human authorization hash and size, verify the PRE0–PRE7 economy foundation, and record readiness-only evidence.
+- Readiness is not apply authorization.
+- `NEXT_ACTION.md` must be derived from validated phase artifacts and the explicit next-action rule, not chat text.
+- Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- real_codex_skill_activation_allowed_now: `False`
+- real_codex_hook_activation_allowed_now: `False`
+- real_codex_profile_mutation_allowed_now: `False`
+- live_codex_integration_allowed_now: `False`
+- real_git_automation_adopted: `False`
+- real_active_context_update_automation_adopted: `False`
+- no network, no dependency install, no Obsidian access, no archive read, no runtime mutation, no real apply.
+
 ## F33.Y-AUTH-RC Human Authorization Review Closure Lock
 
 - Status: `f33y_auth_pre_apply_human_authorization_review_closure_passed`
