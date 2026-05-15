@@ -1,9 +1,9 @@
 # LAB_STATUS
 
-- Current Lab phase: F33.Y-AUTH-SUBMIT
-- Lab status: f33y_auth_schema_materialization_pre_apply_human_authorization_submission_required; final_authorization_statement_found=False; operator_submission_found=False; operator_submission_validated=False; final_authorization_statement_validated=False; ready_for_review=False; ready_for_schema_materialization=False; ready_for_real_execution=False
-- Bedrock Gate status: executed for pre-apply authorization submission receipt only
+- Current Lab phase: F33.Y-AUTH-SUBMIT/R1
+- Lab status: f33y_auth_submit_recovery_human_authorization_submission_package_ready; source_phase_checked=True; source_status_verified=True; submission_required_verified=True; final_authorization_statement_found=False; operator_submission_found=False; operator_submission_validated=False; ready_for_review=False; ready_for_real_execution=False
+- Bedrock Gate status: hold package materialized for missing submission
 - Product promotion: not allowed
-- Next principal phase: `F33.Y-AUTH-SUBMIT — Schema Materialization Pre-Apply Human Authorization Evidence Submission`
+- Next principal phase: `F33.Y-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`
 - F33 resume point: preserved
 - F44 interpretation: hardening/maturity of existing Lab
