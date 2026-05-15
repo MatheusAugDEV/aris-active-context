@@ -11,6 +11,14 @@
 - F32 owns MCP read-only configuration, controlled apply planning, activation planning, smoke validation, zero-write/no-bulk-read validation, and closure before F33.
 - F33 remains reserved for SQLite Memory, FTS5 & Evaluation Baseline; F33.KR2 may resume under Lab contract without product authorization.
 
+## F33.Z-PRE0 Codex Usage Optimization Foundation Lock
+
+- F33.Z-PRE0 is tooling-foundation-only and does not authorize real execution, schema apply, or runtime mutation.
+- The phase may create read-only digests, compact prompt contracts, execution brief templates, and safety references only.
+- F33.Z remains the next principal phase and must not be skipped.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.

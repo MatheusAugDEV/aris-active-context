@@ -10,6 +10,13 @@ Read in this order:
 6. [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
 7. [PROMPT_CONTRACT.md](PROMPT_CONTRACT.md)
 8. [ROADMAP_CANONICAL_F33_F50.md](ROADMAP_CANONICAL_F33_F50.md)
+9. [docs/agent/ARIS_CODEX_USAGE_POLICY.md](../docs/agent/ARIS_CODEX_USAGE_POLICY.md)
+10. [docs/agent/ARIS_PHASE_PROMPT_CONTRACT_V3.md](../docs/agent/ARIS_PHASE_PROMPT_CONTRACT_V3.md)
+11. [docs/agent/ARIS_EXECUTION_BRIEF_TEMPLATE.md](../docs/agent/ARIS_EXECUTION_BRIEF_TEMPLATE.md)
+12. [docs/agent/ARIS_COMPACT_CODEX_PROMPT_TEMPLATE.md](../docs/agent/ARIS_COMPACT_CODEX_PROMPT_TEMPLATE.md)
+13. [docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md](../docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md)
+14. [docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md](../docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md)
+15. [scripts/aris_print_active_context_digest.py](../scripts/aris_print_active_context_digest.py)
 
 Recent F32 chain references:
 
@@ -962,3 +969,16 @@ Recent F33 Y-AUTH-RC references:
 - [artifacts/f33/f33y_auth_review_closure_schema_materialization_pre_apply_human_authorization_safety_attestation.json](../artifacts/f33/f33y_auth_review_closure_schema_materialization_pre_apply_human_authorization_safety_attestation.json)
 - [artifacts/f33/f33y_auth_review_closure_schema_materialization_pre_apply_human_authorization_next_phase_contract.json](../artifacts/f33/f33y_auth_review_closure_schema_materialization_pre_apply_human_authorization_next_phase_contract.json)
 - /home/matheus/ARIS/Project_ARIS/artifacts/f33/human_authorization/f33y_schema_materialization_pre_apply_authorization_statement.json
+
+Recent F33 Z-PRE0 references:
+
+- [docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md](../docs/fase33/f33z_pre0_codex_usage_optimization_foundation.md)
+- [docs/agent/ARIS_CODEX_USAGE_POLICY.md](../docs/agent/ARIS_CODEX_USAGE_POLICY.md)
+- [docs/agent/ARIS_PHASE_PROMPT_CONTRACT_V3.md](../docs/agent/ARIS_PHASE_PROMPT_CONTRACT_V3.md)
+- [docs/agent/ARIS_EXECUTION_BRIEF_TEMPLATE.md](../docs/agent/ARIS_EXECUTION_BRIEF_TEMPLATE.md)
+- [docs/agent/ARIS_COMPACT_CODEX_PROMPT_TEMPLATE.md](../docs/agent/ARIS_COMPACT_CODEX_PROMPT_TEMPLATE.md)
+- [docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md](../docs/agent/ARIS_CODEX_SAFETY_GUARDS_REFERENCE.md)
+- [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_decision.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_decision.json)
+- [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_summary.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_summary.json)
+- [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_contract_inventory.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_contract_inventory.json)
+- [artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_next_phase_contract.json](../artifacts/f33/f33z_pre0_codex_usage_optimization_foundation_next_phase_contract.json)

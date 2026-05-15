@@ -5,6 +5,25 @@
 Initial ARIS emerged as a personal assistant concept in Python and then grew into a gated, safety-first system with memory, voice, UI/orb, action runtime, observability, and context governance.
 The pre-ARIS Debian/Lenovo/kernel/Waydroid troubleshooting is background context only.
 
+## F33.Z-PRE0 - Codex Usage Optimization Foundation Gate
+
+- [F33.Z-PRE0] Codex Usage Optimization Foundation Gate completed.
+- status: `f33z_pre0_codex_usage_optimization_foundation_ready`
+- tooling_foundation_only: `True`
+- codex_usage_policy_created: `True`
+- compact_prompt_contract_created: `True`
+- execution_brief_template_created: `True`
+- compact_codex_prompt_template_created: `True`
+- safety_guards_reference_created: `True`
+- active_context_digest_script_created: `True`
+- active_context_digest_script_read_only: `True`
+- active_context_digest_script_stdlib_only: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- schema_materialization_allowed_now: `False`
+- F33.Z remains preserved as the next principal phase.
+- no runtime mutation, network, dependency install, Obsidian write, or bulk-read authorized.
+
 ## Mature tracks
 
 - F14-F21 established the semantic/context/action structure.

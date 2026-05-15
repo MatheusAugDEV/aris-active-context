@@ -1,8 +1,8 @@
 # LAB_STATUS
 
-- Current Lab phase: F33.Y-AUTH-RC
-- Lab status: f33y_auth_pre_apply_human_authorization_review_closure_passed; source_phase_checked=True; source_review_status_verified=True; human_authorization_file_found=True; human_authorization_hash_verified=True; human_authorization_size_verified=True; human_authorization_fields_rechecked=True; evidence_review_passed_verified=True; operator_submission_validated_verified=True; final_authorization_statement_validated_verified=True; review_closure_passed=True; ready_for_next_phase=True; ready_for_real_execution=False
-- Bedrock Gate status: closure of pre-apply human authorization review only
+- Current Lab phase: F33.Z-PRE0
+- Lab status: f33z_pre0_codex_usage_optimization_foundation_ready; codex_usage_policy_created=True; compact_prompt_contract_created=True; execution_brief_template_created=True; compact_codex_prompt_template_created=True; safety_guards_reference_created=True; active_context_digest_script_created=True; active_context_digest_script_read_only=True; active_context_digest_script_stdlib_only=True; ready_for_next_phase=True; ready_for_real_execution=False
+- Bedrock Gate status: tooling foundation only
 - Product promotion: not allowed
 - Next principal phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
 - F33 resume point: preserved
