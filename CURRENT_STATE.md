@@ -4,13 +4,14 @@ As of 2026-05-15:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
-- Status: `f33z_schema_materialization_final_pre_apply_readiness_passed`
-- Bedrock Gate status: schema materialization final pre-apply readiness validated
+- Latest completed phase: `F33.Z1 — Schema Materialization Controlled Pre-Apply Plan Gate`
+- Status: `f33z1_schema_materialization_controlled_pre_apply_plan_ready`
+- Bedrock Gate status: schema materialization controlled pre-apply plan validated
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
+- F33.Z1 controlled pre-apply planning verified; schema source inventory, preconditions matrix, rollback plan, idempotency matrix, execution blockers, and codex usage pilot observation created; target DB path remains declarative only; no DB file created; no SQLite connection opened; no real apply authorized.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `F33.Z1 — Schema Materialization Controlled Pre-Apply Plan Gate`
-- Next principal phase: `F33.Z1 — Schema Materialization Controlled Pre-Apply Plan Gate`
+- Next continuation phase: `F33.Z2 — Schema Materialization Controlled Pre-Apply Plan Review Gate`
+- Next principal phase: `F33.Z2 — Schema Materialization Controlled Pre-Apply Plan Review Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 

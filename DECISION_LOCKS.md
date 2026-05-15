@@ -47,6 +47,17 @@
 - `DECISION_LOCKS.md` continues to outrank scaffold previews, prompt convenience, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z1 Controlled Pre-Apply Plan Lock
+
+- F33.Z1 is controlled-plan-only and does not authorize real execution, schema apply, runtime mutation, or DB work.
+- The phase may create a controlled pre-apply plan, schema source inventory, preconditions matrix, rollback plan, idempotency matrix, execution blockers, and pilot observation only.
+- The target database path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- F33.Z2 is the next continuation phase.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.
