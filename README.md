@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z-PRE5 created the final-report, commit-message, and hash automation foundation as tooling-only, and F33.Z remains the next principal phase.
-- Latest completed phase: `F33.Z-PRE5 — Final Report, Commit and Hash Automation Gate`
+- F33.Z-PRE6 created the local Codex skills and agent-contract planning layer as candidate-only evidence, and F33.Z remains the next principal phase.
+- Latest completed phase: `F33.Z-PRE6 — Codex Skills and Agent Contracts Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
 - Next principal phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
-- Next continuation phase: `F33.Z-PRE6 — Codex Skills and Agent Contracts Gate`
+- Next continuation phase: `F33.Z-PRE7 — Codex Usage Pilot Metrics Gate`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

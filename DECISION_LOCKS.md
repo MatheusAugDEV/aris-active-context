@@ -1907,6 +1907,22 @@
 - active_context_update_sandbox_only: `True`
 - no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
 
+## F33.Z-PRE6 Codex Skills and Agent Contracts Lock
+
+- F33.Z-PRE6 is tooling-foundation-only and does not authorize live Codex skill activation, live hook activation, profile mutation, runtime mutation, schema apply, DB work, network, or real git automation.
+- The phase may create candidate specs, validators, compact contract indexes, docs, artifacts, and tests only.
+- Candidate specs and compact contracts are reference-only; they do not activate live Codex skills, hooks, or profiles.
+- `NEXT_ACTION.md` must be derived from validated phase artifacts and the explicit next-action rule, not chat text.
+- Placeholder, instruction, marker, checklist, manifest, and contract do not count as authorization.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- real_codex_skill_activation_allowed_now: `False`
+- real_codex_hook_activation_allowed_now: `False`
+- real_codex_profile_mutation_allowed_now: `False`
+- live_codex_integration_allowed_now: `False`
+- real_git_automation_adopted: `False`
+- real_active_context_update_automation_adopted: `False`
+- no network, no dependency install, no Obsidian access, no archive read, no runtime mutation.
+
 ## F33.Y-AUTH-RC Human Authorization Review Closure Lock
 
 - Status: `f33y_auth_pre_apply_human_authorization_review_closure_passed`

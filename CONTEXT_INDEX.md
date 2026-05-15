@@ -31,6 +31,31 @@ Read in this order:
 27. [scripts/aris_phase_close_package_summary.py](../scripts/aris_phase_close_package_summary.py)
 28. [docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md](../docs/agent/ARIS_FINAL_REPORT_COMMIT_HASH_AUTOMATION.md)
 29. [docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md](../docs/fase33/f33z_pre5_final_report_commit_hash_automation_gate.md)
+30. [docs/agent/ARIS_CODEX_SKILLS_AND_AGENT_CONTRACTS.md](../docs/agent/ARIS_CODEX_SKILLS_AND_AGENT_CONTRACTS.md)
+31. [docs/fase33/f33z_pre6_codex_skills_agent_contracts_gate.md](../docs/fase33/f33z_pre6_codex_skills_agent_contracts_gate.md)
+32. [scripts/aris_agent_contract_common.py](../scripts/aris_agent_contract_common.py)
+33. [scripts/aris_validate_agent_contract_inventory.py](../scripts/aris_validate_agent_contract_inventory.py)
+34. [scripts/aris_validate_codex_skill_candidate.py](../scripts/aris_validate_codex_skill_candidate.py)
+35. [scripts/aris_build_compact_contract_index.py](../scripts/aris_build_compact_contract_index.py)
+36. [scripts/aris_agent_contracts_summary.py](../scripts/aris_agent_contracts_summary.py)
+
+Recent F33 PRE6 references:
+
+- [docs/agent/ARIS_CODEX_SKILLS_AND_AGENT_CONTRACTS.md](../docs/agent/ARIS_CODEX_SKILLS_AND_AGENT_CONTRACTS.md)
+- [docs/fase33/f33z_pre6_codex_skills_agent_contracts_gate.md](../docs/fase33/f33z_pre6_codex_skills_agent_contracts_gate.md)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_decision.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_decision.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_summary.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_summary.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_report.md](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_report.md)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_script_inventory.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_script_inventory.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_contract_inventory.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_contract_inventory.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_contract_index.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_contract_index.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_skill_candidate_validation.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_skill_candidate_validation.json)
+- [artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_next_phase_contract.json](../artifacts/f33/f33z_pre6_codex_skills_agent_contracts_gate_next_phase_contract.json)
+- [artifacts/f33/codex_skill_candidates/aris_active_context_reader_candidate.json](../artifacts/f33/codex_skill_candidates/aris_active_context_reader_candidate.json)
+- [artifacts/f33/codex_skill_candidates/aris_local_validation_candidate.json](../artifacts/f33/codex_skill_candidates/aris_local_validation_candidate.json)
+- [artifacts/f33/codex_skill_candidates/aris_execution_brief_candidate.json](../artifacts/f33/codex_skill_candidates/aris_execution_brief_candidate.json)
+- [artifacts/f33/codex_skill_candidates/aris_phase_scaffold_candidate.json](../artifacts/f33/codex_skill_candidates/aris_phase_scaffold_candidate.json)
+- [artifacts/f33/codex_skill_candidates/aris_final_report_candidate.json](../artifacts/f33/codex_skill_candidates/aris_final_report_candidate.json)
 
 Recent F33 PRE4 references:
 

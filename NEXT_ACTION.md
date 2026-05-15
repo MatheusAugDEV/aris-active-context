@@ -1,1 +1,1 @@
-Prepare F33.Z-PRE6 — Codex Skills and Agent Contracts Gate; anchor phase F33.Z-PRE5.
+Prepare F33.Z-PRE7 — Codex Usage Pilot Metrics Gate; anchor phase F33.Z-PRE6.

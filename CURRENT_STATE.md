@@ -4,12 +4,12 @@ As of 2026-05-15:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.Z-PRE5 — Final Report, Commit and Hash Automation Gate`
-- Status: `f33z_pre5_final_report_commit_hash_automation_gate_ready`
-- Bedrock Gate status: final-report, commit-message, and hash helpers validated
+- Latest completed phase: `F33.Z-PRE6 — Codex Skills and Agent Contracts Gate`
+- Status: `f33z_pre6_codex_skills_agent_contracts_gate_ready`
+- Bedrock Gate status: codex skills and agent contract planning validated
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `F33.Z-PRE6 — Codex Skills and Agent Contracts Gate`
+- Next continuation phase: `F33.Z-PRE7 — Codex Usage Pilot Metrics Gate`
 - Next principal phase: `F33.Z — Schema Materialization Final Pre-Apply Readiness Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
