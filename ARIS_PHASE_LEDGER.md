@@ -2445,3 +2445,24 @@ Closed as a foundation track, not as official V6 closure.
 - controlled_pre_apply_dry_run_allowed_now: `False`
 - next phase recommendation: `F33.Z3 — Schema Materialization Controlled Pre-Apply Dry-Run Gate`
 - next recommended action: `F33.Z3 — Schema Materialization Controlled Pre-Apply Dry-Run Gate`
+
+## F33.Z3 - Schema Materialization Controlled Pre-Apply Dry-Run Gate
+
+- [F33.Z3] Schema Materialization Controlled Pre-Apply Dry-Run Gate completed.
+- status: `f33z3_schema_materialization_controlled_pre_apply_dry_run_passed`
+- simulation_only: `True`
+- dry_run_plan_created: `True`
+- sql_preview_created: `True`
+- filesystem_mutation_preview_created: `True`
+- precondition_evaluation_created: `True`
+- rollback_dry_run_preview_created: `True`
+- idempotency_dry_run_preview_created: `True`
+- blocker_evaluation_created: `True`
+- no_side_effect_proof_created: `True`
+- codex_usage_pilot_observation_created: `True`
+- dry_run_passed: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- schema_materialization_allowed_now: `False`
+- next principal phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
+- no real apply, no sqlite.connect, no schema apply, no DDL, no FTS5, no runtime mutation, no network, no dependency install, no Obsidian write, and no bulk-read authorized.

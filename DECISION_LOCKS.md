@@ -1989,3 +1989,14 @@
 - This closure gate confirms continuity only and does not authorize real execution.
 - The manual authorization file is preserved and not modified by this gate.
 - Scope remains limited to the next conservative gate only.
+
+## F33.Z3 Controlled Pre-Apply Dry-Run Lock
+
+- F33.Z3 is simulation-only and does not authorize real execution, schema apply, runtime mutation, or DB work.
+- The phase may create a dry-run plan, inert SQL preview, filesystem mutation preview, precondition evaluation, rollback dry-run preview, idempotency dry-run preview, blocker evaluation, no-side-effect proof, Codex usage pilot observation, and next phase contract only.
+- The target database path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- F33.Z4 is the next continuation phase.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
