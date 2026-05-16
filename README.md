@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z10 reviews the candidate package created in F33.Z9 and prepares the apply authorization gate.
-- Latest completed phase: `F33.Z10 — Schema Materialization Controlled Apply Candidate Review Gate`
+- F33.Z15 checks for a dedicated final execution authorization and remains hold-only when it is missing.
+- Latest completed phase: `F33.Z15 — Schema Materialization Controlled Apply Final Execution Authorization Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Z11 — Schema Materialization Controlled Apply Authorization Gate`
-- Next continuation phase: `F33.Z11 — Schema Materialization Controlled Apply Authorization Gate`
+- Next principal phase: `F33.Z15-AUTH-SUBMIT-HOLD — Await Real Human Controlled Apply Final Execution Authorization Submission`
+- Next continuation phase: `F33.Z15-AUTH-SUBMIT-HOLD — Await Real Human Controlled Apply Final Execution Authorization Submission`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
