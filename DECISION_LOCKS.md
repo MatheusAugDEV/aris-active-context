@@ -2042,3 +2042,13 @@
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
 - F33.Z8 is the next continuation phase.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
+## F33.Z8 Final Readiness Lock
+
+- F33.Z8 is readiness-only and does not authorize real execution, schema apply, runtime mutation, or DB work.
+- The gate may only consolidate the completed evidence chain and prepare the next candidate gate.
+- The target database path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- F33.Z9 is the next continuation phase.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
