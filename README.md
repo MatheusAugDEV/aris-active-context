@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z3 completed the controlled pre-apply dry-run gate and F33.Z4 is now the next principal phase.
-- Latest completed phase: `F33.Z3 — Schema Materialization Controlled Pre-Apply Dry-Run Gate`
+- F33.Z4 completed the controlled pre-apply dry-run review gate and F33.Z5 is now the next principal phase.
+- Latest completed phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
-- Next continuation phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
+- Next principal phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
+- Next continuation phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

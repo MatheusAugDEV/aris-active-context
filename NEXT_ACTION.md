@@ -1,1 +1,1 @@
-Prepare F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate; anchor phase F33.Z3.
+Prepare F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate; anchor phase F33.Z4.

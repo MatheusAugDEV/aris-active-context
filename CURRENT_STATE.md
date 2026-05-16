@@ -4,14 +4,14 @@ As of 2026-05-15:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.Z3 — Schema Materialization Controlled Pre-Apply Dry-Run Gate`
-- Status: `f33z3_schema_materialization_controlled_pre_apply_dry_run_passed`
-- Bedrock Gate status: schema materialization controlled pre-apply dry-run validated
+- Latest completed phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
+- Status: `f33z4_schema_materialization_controlled_pre_apply_dry_run_review_passed`
+- Bedrock Gate status: schema materialization controlled pre-apply dry-run review validated
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
-- F33.Z3 controlled pre-apply dry-run verified; dry-run plan, inert SQL preview, filesystem mutation preview, precondition evaluation, rollback dry-run preview, idempotency dry-run preview, blocker evaluation, no-side-effect proof, codex usage pilot observation, and next phase contract created; target DB path remains declarative only; no DB file created; no SQLite connection opened; no real apply authorized.
+- F33.Z4 controlled pre-apply dry-run review verified; dry-run package, inert SQL preview, filesystem mutation preview, precondition evaluation, rollback dry-run preview, idempotency dry-run preview, blocker evaluation, no-side-effect review, codex usage pilot observation, and next phase contract reviewed; target DB path remains declarative only; no DB file created; no SQLite connection opened; no real apply authorized.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
-- Next principal phase: `F33.Z4 — Schema Materialization Controlled Pre-Apply Dry-Run Review Gate`
+- Next continuation phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
+- Next principal phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 
