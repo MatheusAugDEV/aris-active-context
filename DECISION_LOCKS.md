@@ -2052,3 +2052,13 @@
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
 - F33.Z9 is the next continuation phase.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
+## F33.Z9 Controlled Apply Candidate Lock
+
+- F33.Z9 is candidate-only and does not authorize real execution, schema apply, runtime mutation, or DB work.
+- The phase may create the candidate package, inert SQL preview, preconditions matrix, rollback plan, idempotency plan, blocker matrix, no-side-effect proof, carry-forward record, safety attestation, drift check, Codex usage pilot observation, and next phase contract only.
+- The target database path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- F33.Z10 is the next continuation phase.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.

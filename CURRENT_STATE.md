@@ -4,14 +4,14 @@ As of 2026-05-15:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33 is temporarily paused for ARIS Lab foundation while the Bedrock Lab authority is established.
-- Latest completed phase: `F33.Z8 — Schema Materialization Controlled Pre-Apply Final Readiness Gate`
-- Status: `f33z8_schema_materialization_controlled_pre_apply_final_readiness_passed`
-- Bedrock Gate status: schema materialization controlled pre-apply final readiness passed
+- Latest completed phase: `F33.Z9 — Schema Materialization Controlled Apply Candidate Gate`
+- Status: `f33z9_schema_materialization_controlled_apply_candidate_ready`
+- Bedrock Gate status: f33z9 schema materialization controlled apply candidate ready
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
-- F33.Z8 final readiness gate verified; the full F33.Z1-F33.Z7 chain was consolidated; final readiness matrix, final preconditions matrix, final blocker matrix, rollback readiness matrix, idempotency readiness matrix, no-side-effect proof, safety attestation, drift check, codex usage pilot observation, and next phase contract created; readiness passed; no real apply authorized.
+- F33.Z9 apply candidate gate verified; the full F33.Z1-F33.Z8 chain was consolidated; apply candidate manifest, schema action candidate list, inert SQL candidate bundle, apply preconditions candidate matrix, rollback candidate plan, idempotency candidate plan, apply blocker candidate matrix, no-side-effect candidate proof, authorization carry-forward record, safety attestation, drift check, codex usage pilot observation, and next phase contract created; candidate passed; no real apply authorized.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `F33.Z9 — Schema Materialization Controlled Apply Candidate Gate`
-- Next principal phase: `F33.Z9 — Schema Materialization Controlled Apply Candidate Gate`
+- Next continuation phase: `F33.Z10 — Schema Materialization Controlled Apply Candidate Review Gate`
+- Next principal phase: `F33.Z10 — Schema Materialization Controlled Apply Candidate Review Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 
