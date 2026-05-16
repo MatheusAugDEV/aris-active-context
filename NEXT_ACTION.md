@@ -1,1 +1,1 @@
-Prepare F33.Z7 — Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate; anchor phase F33.Z6.
+Prepare F33.Z8 — Schema Materialization Controlled Pre-Apply Final Readiness Gate; anchor phase F33.Z7.

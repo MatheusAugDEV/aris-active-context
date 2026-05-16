@@ -2490,30 +2490,30 @@ Closed as a foundation track, not as official V6 closure.
 - next principal phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
 - no real apply, no sqlite.connect, no schema apply, no DDL, no FTS5, no runtime mutation, no network, no dependency install, no Obsidian write, and no bulk-read authorized.
 
-## F33.Z6 - Schema Materialization Controlled Pre-Apply Authorization Review Gate
+## F33.Z7 - Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate
 
-- [F33.Z6] Schema Materialization Controlled Pre-Apply Authorization Review Gate completed.
-- status: `f33z6_schema_materialization_controlled_pre_apply_authorization_review_passed`
+- [F33.Z7] Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate completed.
+- status: `f33z7_schema_materialization_controlled_pre_apply_authorization_review_closure_passed`
 - source_phase_checked: `True`
-- source_f33z4_review_status_verified: `True`
+- source_f33z6_authorization_review_status_verified: `True`
+- dedicated_authorization_hash_verified: `True`
+- dedicated_authorization_size_verified: `True`
 - historical_human_authorization_hash_verified: `True`
 - historical_human_authorization_size_verified: `True`
 - dedicated_authorization_file_checked: `True`
-- dedicated_authorization_file_found: `False`
-- dedicated_authorization_file_validated: `False`
-- authorization_requirements_created: `True`
-- operator_instructions_created: `True`
-- authorization_template_created: `True`
-- authorization_review_created: `True`
-- hold_contract_created: `True`
+- dedicated_authorization_file_found: `True`
+- dedicated_authorization_file_validated: `True`
+- authorization_review_closure_created: `True`
+- authorization_closure_record_created: `True`
+- closure_matrix_created: `True`
 - safety_attestation_created: `True`
 - drift_check_created: `True`
 - codex_usage_pilot_observation_created: `True`
-- ready_for_next_phase: `False`
-- ready_for_authorization_review_gate: `False`
-- returned_to_hold: `True`
+- ready_for_next_phase: `True`
 - ready_for_real_execution: `False`
 - schema_materialization_allowed_now: `False`
 - controlled_pre_apply_authorization_allows_execution_now: `False`
-- next principal phase: `F33.Z5-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`
+- controlled_pre_apply_authorization_closure_allows_execution_now: `False`
+- controlled_pre_apply_authorization_review_allows_execution_now: `False`
+- next principal phase: `F33.Z8 — Schema Materialization Controlled Pre-Apply Final Readiness Gate`
 - no real apply, no sqlite.connect, no schema apply, no DDL, no FTS5, no runtime mutation, no network, no dependency install, no Obsidian write, and no bulk-read authorized.
