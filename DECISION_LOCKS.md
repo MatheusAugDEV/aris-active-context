@@ -54,7 +54,7 @@
 - The target database path remains declarative only and no database file may be created in this phase.
 - No SQLite connection may be opened in this phase.
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
-- F33.Z5 is the next continuation phase.
+- F33.Z5-AUTH-SUBMIT-HOLD is the next continuation phase.
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
@@ -2009,6 +2009,16 @@
 - The target database path remains declarative only and no database file may be created in this phase.
 - No SQLite connection may be opened in this phase.
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
-- F33.Z5 is the next continuation phase.
+- F33.Z5-AUTH-SUBMIT-HOLD is the next continuation phase.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
+## F33.Z5 Controlled Pre-Apply Authorization Lock
+
+- F33.Z5 is authorization-only and does not authorize real execution, schema apply, runtime mutation, DB work, or product promotion.
+- The phase may create authorization requirements, operator instructions, authorization template, authorization review, hold contract, safety attestation, drift check, Codex usage pilot observation, and next phase contract only.
+- The dedicated authorization file is currently missing; the phase must return to hold until a real human submits it.
+- F33.Z5-AUTH-SUBMIT-HOLD is the next continuation phase.
+- F33.Z6 is not authorized unless and until a dedicated authorization file later validates.
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
