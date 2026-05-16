@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z5 completed the controlled pre-apply authorization gate and returned to hold because no dedicated authorization file was found.
+- F33.Z6 reviewed the dedicated authorization file and passed the authorization review gate.
 - Latest completed phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Z5-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`
-- Next continuation phase: `F33.Z5-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`
+- Next principal phase: `F33.Z7 — Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate`
+- Next continuation phase: `F33.Z7 — Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

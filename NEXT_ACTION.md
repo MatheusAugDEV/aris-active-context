@@ -1,1 +1,1 @@
-Prepare F33.Z5-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission; anchor phase F33.Z5.
+Prepare F33.Z7 — Schema Materialization Controlled Pre-Apply Authorization Review Closure Gate; anchor phase F33.Z6.

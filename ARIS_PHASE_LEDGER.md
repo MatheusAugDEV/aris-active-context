@@ -2490,10 +2490,10 @@ Closed as a foundation track, not as official V6 closure.
 - next principal phase: `F33.Z5 — Schema Materialization Controlled Pre-Apply Authorization Gate`
 - no real apply, no sqlite.connect, no schema apply, no DDL, no FTS5, no runtime mutation, no network, no dependency install, no Obsidian write, and no bulk-read authorized.
 
-## F33.Z5 - Schema Materialization Controlled Pre-Apply Authorization Gate
+## F33.Z6 - Schema Materialization Controlled Pre-Apply Authorization Review Gate
 
-- [F33.Z5] Schema Materialization Controlled Pre-Apply Authorization Gate completed.
-- status: `f33z5_schema_materialization_controlled_pre_apply_authorization_required`
+- [F33.Z6] Schema Materialization Controlled Pre-Apply Authorization Review Gate completed.
+- status: `f33z6_schema_materialization_controlled_pre_apply_authorization_review_passed`
 - source_phase_checked: `True`
 - source_f33z4_review_status_verified: `True`
 - historical_human_authorization_hash_verified: `True`

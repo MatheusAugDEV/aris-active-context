@@ -2022,3 +2022,13 @@
 - F33.Z6 is not authorized unless and until a dedicated authorization file later validates.
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
+## F33.Z6 Controlled Pre-Apply Authorization Review Lock
+
+- F33.Z6 is review-only and does not authorize real execution, schema apply, runtime mutation, or DB work.
+- The dedicated authorization file must be human-written, scoped only to the review chain, and keep every execution boolean false.
+- The review may only unlock the next authorization review closure gate.
+- No SQLite connection may be opened in this phase.
+- F33.Z remains preserved as the main resumed phase and must not be skipped.
+- F33.Z7 is the next continuation phase.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
