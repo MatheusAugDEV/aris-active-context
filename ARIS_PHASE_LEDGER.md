@@ -2496,3 +2496,15 @@ Closed as a foundation track, not as official V6 closure.
 - status: `f33z9_schema_materialization_controlled_apply_candidate_ready`
 - ready_for_next_phase: `True`
 - ready_for_real_execution: `False`
+
+
+## F33.Z10 - Schema Materialization Controlled Apply Candidate Review Gate
+
+- [F33.Z10] Schema Materialization Controlled Apply Candidate Review Gate completed.
+- status: `f33z10_schema_materialization_controlled_apply_candidate_review_passed`
+- review_only: `True`
+- candidate_review_passed: `True`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- no real apply authorized.
+- F33.Z11 is the next continuation phase.
