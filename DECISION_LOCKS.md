@@ -89,6 +89,16 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z16 Final Execution Authorization Review Lock
+
+- F33.Z16 is review-only and does not authorize real execution, execution authorization, schema apply, runtime mutation, or DB work.
+- The phase may create a validation matrix, hash record, safety attestation, drift check, Codex usage observation, next phase contract, and documentation updates only.
+- The dedicated final execution authorization path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z17 is the next continuation phase after a passing review and direct apply remains unauthorized.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.
