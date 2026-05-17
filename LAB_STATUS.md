@@ -1,10 +1,13 @@
 # LAB_STATUS
 
-- Current Lab phase: F33.Z16
-- Lab status: f33z16_schema_materialization_controlled_apply_final_execution_authorization_review_passed; source_phase_checked=True; source_f33z15_final_execution_authorization_required_status_verified=True; source_f33z14_final_readiness_status_verified=True; source_f33z13_authorization_closure_status_verified=True; source_f33z12_authorization_review_status_verified=True; source_f33z11_authorization_required_status_verified=True; source_f33z10_candidate_review_status_verified=True; source_f33z9_candidate_status_verified=True; f33z1_to_f33z15_chain_verified=True; final_execution_authorization_file_checked=True; final_execution_authorization_file_found=True; final_execution_authorization_file_validated=True; final_execution_authorization_hash_record_created=True; final_execution_authorization_size_recorded=True; dedicated_controlled_apply_authorization_hash_verified=True; dedicated_controlled_apply_authorization_size_verified=True; previous_pre_apply_authorization_hash_verified=True; previous_pre_apply_authorization_size_verified=True; historical_human_authorization_hash_verified=True; historical_human_authorization_size_verified=True; authorization_validation_matrix_created=True; authorization_review_passed=True; safety_attestation_created=True; drift_check_created=True; codex_usage_pilot_observation_created=True; target_db_path_declarative_only_verified=True; no_sqlite_artifacts_verified=True; no_db_file_created_verified=True; no_sqlite_connection_verified=True; no_schema_apply_verified=True; no_ddl_execution_verified=True; no_fts5_creation_verified=True; ready_for_next_phase=True; ready_for_real_execution=False; measured_savings_available=False; estimated_savings_only=True; token_saving_claim=False; prompt_source=compact/economy workflow; prompt_length_chars=106
-- Bedrock Gate status: schema materialization controlled pre-apply final readiness passed
+- Current Lab phase: ARIS-LAB-A0/R1
+- Lab status: active status materialized; authority and taxonomy locks reconciled
+- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate executable now: False
 - Product promotion: not allowed
-- Next continuation phase: `F33.Z17 — Schema Materialization Controlled Apply Final Execution Authorization Review Closure Gate`
-- Next principal phase: `F33.Z17 — Schema Materialization Controlled Apply Final Execution Authorization Review Closure Gate`
-- F33 resume point: preserved
+- Next Lab phase: ARIS-LAB-B1 — Lab Impact Summary Template
+- F33 resume point: preserved as historical contract
 - F44 interpretation: hardening/maturity of existing Lab
+- Authority lock: preserved
+- Capability taxonomy lock: preserved

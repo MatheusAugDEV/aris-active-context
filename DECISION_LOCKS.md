@@ -2173,3 +2173,13 @@
 - F33.Z remains preserved as the main resumed phase and must not be skipped.
 - F33.Z11 is the next continuation phase.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
+## ARIS-LAB-A0/R1 Authority Reconciliation Lock
+
+- ARIS-LAB-A0 and ARIS-LAB-A1 remain canonical and are not re-decisions.
+- The active Lab layer is materialized from existing authority and taxonomy evidence only.
+- Bedrock Gate executable now: `False`.
+- Product promotion allowed now: `False`.
+- F33.Z22 remains preserved as the latest closed F33 operational closure.
+- `ARIS-LAB-B1 — Lab Impact Summary Template` is the conservative next continuation recommendation.
+- No SQLite connection, schema apply, DDL, FTS5 creation, network access, dependency install, vault write, or Obsidian bulk read is authorized.

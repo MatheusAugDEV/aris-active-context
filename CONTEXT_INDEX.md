@@ -85,6 +85,19 @@ Recent F33 Z22 references:
 - [artifacts/f33/f33z22_schema_materialization_controlled_apply_final_closure_review_closure_gate_report.md](../artifacts/f33/f33z22_schema_materialization_controlled_apply_final_closure_review_closure_gate_report.md)
 - [artifacts/f33/f33z22_schema_materialization_controlled_apply_final_closure_review_closure_gate_next_phase_contract.json](../artifacts/f33/f33z22_schema_materialization_controlled_apply_final_closure_review_closure_gate_next_phase_contract.json)
 
+Recent ARIS-LAB A0/R1 references:
+
+- [docs/aris_lab/aris_lab_a0r1_authority_reconciliation_active_status_materialization.md](../docs/aris_lab/aris_lab_a0r1_authority_reconciliation_active_status_materialization.md)
+- [artifacts/aris_lab/aris_lab_a0r1_decision.json](../artifacts/aris_lab/aris_lab_a0r1_decision.json)
+- [artifacts/aris_lab/aris_lab_a0r1_summary.json](../artifacts/aris_lab/aris_lab_a0r1_summary.json)
+- [artifacts/aris_lab/aris_lab_a0r1_report.md](../artifacts/aris_lab/aris_lab_a0r1_report.md)
+- [artifacts/aris_lab/aris_lab_a0r1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_a0r1_next_phase_contract.json)
+- [CURRENT_STATE.md](CURRENT_STATE.md)
+- [NEXT_ACTION.md](NEXT_ACTION.md)
+- [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- [LAB_STATUS.md](LAB_STATUS.md)
+- [LAB_VERDICTS.md](LAB_VERDICTS.md)
+- [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 Recent F33 Z references:
 
 - [docs/fase33/f33z_schema_materialization_final_pre_apply_readiness_gate.md](../docs/fase33/f33z_schema_materialization_final_pre_apply_readiness_gate.md)

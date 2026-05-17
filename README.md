@@ -14,13 +14,13 @@ Read order:
 
 Current snapshot:
 
-- Official V6 is closed.
-- F33.Z22 closes the final closure review closure and remains read-only even when it passes.
-- Latest completed phase: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
+- Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
+- F33.Z22 remains preserved as the latest closed F33 operational phase.
+- Latest completed phase: `ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
-- Next continuation phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
-- F33.RM-F51-P0/R1 recovered the F51+ roadmap as external advisory research only; it did not alter the canonical roadmap or the operational next action.
+- Next principal phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
+- Next continuation phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
+- F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

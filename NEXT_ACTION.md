@@ -1,2 +1,2 @@
-Prepare ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment; anchor phase F33.Z22.
-- F33.RM-F51-P0/R1 advisory recovery preserved this operational next action.
+Prepare ARIS-LAB-B1 — Lab Impact Summary Template; anchor phase ARIS-LAB-A0/R1.
+- The reconciliation preserves the A0/A1 locks, keeps Bedrock Gate executable=false, and does not authorize product promotion.

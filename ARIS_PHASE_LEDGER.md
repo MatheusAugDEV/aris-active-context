@@ -3216,3 +3216,25 @@ Closed as a foundation track, not as official V6 closure.
 - opportunity_count: `10`
 - roadmap_phase_count: `16`
 - indispensable_phase_count: `12`
+
+## ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization
+
+- status: `aris_lab_a0_r1_lab_authority_reconciliation_active_status_materialized`
+- anchor_phase: `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment`
+- source_phase: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
+- source_f33z22_final_closure_review_status_verified: `True`
+- source_a0_lock_detected: `True`
+- source_a1_lock_detected: `True`
+- authority_reconciliation_completed: `True`
+- authority_reconciliation_conceptually_duplicate_free: `True`
+- active_status_materialized: `True`
+- lab_status_materialized: `True`
+- lab_verdicts_materialized: `True`
+- next_phase_contract_created: `True`
+- f51_advisory_preserved: `True`
+- f51_advisory_did_not_change_operational_next_action: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- ready_for_next_phase: `True`
+- ready_for_real_execution: `False`
+- next_phase_recommendation: `ARIS-LAB-B1 — Lab Impact Summary Template`

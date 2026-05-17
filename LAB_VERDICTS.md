@@ -1,5 +1,15 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-A0/R1 Active Status Materialization
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.authority | lab_validated | No | ARIS-LAB-A0 authority charter | Authority lock preserved |
+| lab.capability_taxonomy | lab_validated | No | ARIS-LAB-A1 taxonomy artifact | Capability taxonomy lock preserved |
+| lab.authority_reconciliation | lab_validated | No | ARIS-LAB-A0/R1 active status materialization | Active Lab layer reconciled without reopening A0/A1 |
+| lab.bedrock_gate_contract | project/planned | No | Bedrock Gate declaration | Deterministic non-LLM gate contract |
+| f33.operational_closure | completed/preserved | No | F33.Z22 final closure review | F33 remains closed and preserved |
+| f44.lab_maturity | future/reinterpreted | No | F44 roadmap amendment | Lab hardening role |
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
 | lab.authority | lab_validated | No | ARIS-LAB-A0 authority charter | Lab authority remains foundational |
