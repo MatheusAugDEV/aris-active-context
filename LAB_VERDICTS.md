@@ -1,3 +1,17 @@
+## ARIS-LAB-B15 — Bedrock Decisions Contract/Schema Consolidation Readiness Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b14_readiness_review | lab_validated | No | B14 decision and summary | B14 package remains PASS and closes into B15 readiness review |
+| lab.b14_readiness_review_matrix | lab_validated | No | B15 readiness review matrix | B14 closure package and chain continuity remain ready |
+| lab.b14_chain_readiness_record | lab_validated | No | B15 chain readiness record | B7 -> B14 chain remains coherent and non-authorizing |
+| lab.phase_narrative_rule_readiness | lab_validated | No | B15 phase narrative rule readiness | previous_phase_short_summary and next_phase_short_explanation remain required |
+| lab.b14_non_authorization_readiness_matrix | lab_validated | No | B15 non-authorization readiness matrix | Dangerous flags remain blocked and review-only |
+| lab.b14_evidence_link_readiness_matrix | lab_validated | No | B15 evidence link readiness matrix | Evidence links remain explicit and consistent |
+| lab.b14_historical_warning_readiness | warning_only | No | B15 historical warning readiness | Historical irregularities remain warning-only |
+| lab.b14_drift_check | lab_validated | No | B14 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B15 next phase contract | B16 recommended; B15 closed |
+
 ## ARIS-LAB-B14 — Bedrock Decisions Contract/Schema Consolidation Review Closure Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
