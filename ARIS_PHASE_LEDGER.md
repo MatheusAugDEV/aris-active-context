@@ -1,5 +1,32 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-LAB-B6 - Bedrock Decisions Placeholder Continuation Gate
+
+- [ARIS-LAB-B6] Bedrock Decisions Placeholder Continuation Gate completed.
+- status: `aris_lab_b6_bedrock_decisions_placeholder_continuation_gate_passed`
+- anchor_phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
+- b5_status_verified: `True`
+- b5_bedrock_verdict_verified: `True`
+- b5_review_matrix_verified: `True`
+- b5_artifact_completeness_matrix_verified: `True`
+- b5_placeholder_safety_review_verified: `True`
+- b5_drift_check_verified: `True`
+- b5_safety_attestation_verified: `True`
+- b5_next_phase_contract_verified: `True`
+- b5_report_verified: `True`
+- lab_verdicts_b5_section_verified: `True`
+- lab_status_lab_verdicts_live_drift_found: `False`
+- placeholder_track_closure_record_created: `True`
+- placeholder_track_ready_for_continuation: `True`
+- continuation_matrix_created: `True`
+- next_phase_must_be_contract_or_schema_planning: `True`
+- next_phase_must_not_execute_bedrock_gate: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+
 ## ARIS-LAB-B5 - Bedrock Decisions Placeholder Review Gate
 
 - [ARIS-LAB-B5] Bedrock Decisions Placeholder Review Gate completed.

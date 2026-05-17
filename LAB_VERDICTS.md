@@ -1,5 +1,20 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b5_package_review | lab_validated | No | B5 decision, summary, report | B5 package remains PASS and recommends B6 |
+| lab.b5_review_matrix_review | lab_validated | No | B5 review matrix | B5 review matrix remains passed |
+| lab.b5_artifact_completeness_review | lab_validated | No | B5 artifact completeness matrix | B5 artifact completeness matrix remains passed |
+| lab.b5_placeholder_safety_review | lab_validated | No | B5 placeholder safety review | Placeholder cannot authorize execution, product promotion, or replace a verdict |
+| lab.b5_drift_check_review | lab_validated | No | B5 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b5_safety_attestation_review | lab_validated | No | B5 safety attestation | B5 dangerous flags remain blocked and review-only |
+| lab.b5_next_phase_contract_review | lab_validated | No | B5 next phase contract | B6 continuation gate is the reviewed anchor |
+| lab.placeholder_track_closure | lab_validated | No | B6 placeholder track closure record | Placeholder track is closed for continuation, not execution |
+| lab.historical_irregularities_review | warning_only | No | B5 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B6 next phase contract | B7 contract/schema planning recommended; B6 closed |
+
 ## ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
