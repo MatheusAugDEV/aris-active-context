@@ -59,6 +59,19 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B5 references
+
+- [docs/aris_lab/aris_lab_b5_bedrock_decisions_placeholder_review_gate.md](../docs/aris_lab/aris_lab_b5_bedrock_decisions_placeholder_review_gate.md)
+- [artifacts/aris_lab/aris_lab_b5_decision.json](../artifacts/aris_lab/aris_lab_b5_decision.json)
+- [artifacts/aris_lab/aris_lab_b5_summary.json](../artifacts/aris_lab/aris_lab_b5_summary.json)
+- [artifacts/aris_lab/aris_lab_b5_report.md](../artifacts/aris_lab/aris_lab_b5_report.md)
+- [artifacts/aris_lab/aris_lab_b5_review_matrix.json](../artifacts/aris_lab/aris_lab_b5_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b5_artifact_completeness_matrix.json](../artifacts/aris_lab/aris_lab_b5_artifact_completeness_matrix.json)
+- [artifacts/aris_lab/aris_lab_b5_placeholder_safety_review.json](../artifacts/aris_lab/aris_lab_b5_placeholder_safety_review.json)
+- [artifacts/aris_lab/aris_lab_b5_drift_check.json](../artifacts/aris_lab/aris_lab_b5_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b5_safety_attestation.json](../artifacts/aris_lab/aris_lab_b5_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b5_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b5_next_phase_contract.json)
+
 ## Recent ARIS-LAB B4 references
 
 - [docs/aris_lab/aris_lab_b4_bedrock_decisions_placeholder_validator.md](../docs/aris_lab/aris_lab_b4_bedrock_decisions_placeholder_validator.md)
@@ -118,9 +131,9 @@ Read in this order:
 - [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
 
-- Latest completed active-context phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
+- Latest completed active-context phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
-- Next principal phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
+- Next principal phase: `ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate`
 - F33 status: paused under Lab governance, not cancelled.
 - F44 interpretation: Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
 - F51+ status: external advisory research only.

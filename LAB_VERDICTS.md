@@ -1,5 +1,23 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b4_package_decision_review | lab_validated | No | B4 decision and summary | B4 package remains PASS and recommends B5 |
+| lab.b4_placeholder_validator_review | lab_validated | No | B4 placeholder validator | B4 validator exists and remains coherent |
+| lab.b4_validator_spec_review | lab_validated | No | B4 validator spec | B4 validator spec remains coherent |
+| lab.b4_valid_fixture_review | lab_validated | No | B4 valid fixture | B4 valid fixture passed deterministically |
+| lab.b4_invalid_missing_placeholder_flag_review | lab_validated | No | B4 missing-placeholder-flag fixture | B4 missing-placeholder-flag fixture failed deterministically |
+| lab.b4_invalid_fake_pass_review | lab_validated | No | B4 fake PASS fixture | B4 fake PASS fixture failed deterministically |
+| lab.b4_invalid_product_promotion_review | lab_validated | No | B4 product-promotion fixture | B4 product-promotion fixture failed deterministically |
+| lab.b4_invalid_execution_authorized_review | lab_validated | No | B4 execution-authorized fixture | B4 execution-authorized fixture failed deterministically |
+| lab.b4_validation_matrix_review | lab_validated | No | B4 validation matrix | B4 validation matrix remains passed |
+| lab.b4_lab_verdicts_section_review | lab_validated | No | B4 LAB_VERDICTS section | B4 section remains canonical and coherent |
+| lab.placeholder_safety_review | lab_validated | No | B5 placeholder safety review | Placeholder cannot authorize execution, product promotion, or replace a verdict |
+| lab.historical_irregularities_review | warning_only | No | B4 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B5 next phase contract | B6 recommended; B5 closed |
+
 ## ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

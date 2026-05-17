@@ -1,5 +1,36 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-LAB-B5 - Bedrock Decisions Placeholder Review Gate
+
+- [ARIS-LAB-B5] Bedrock Decisions Placeholder Review Gate completed.
+- status: `aris_lab_b5_bedrock_decisions_placeholder_review_gate_passed`
+- anchor_phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
+- b4_status_verified: `True`
+- b4_bedrock_verdict_verified: `True`
+- b4_placeholder_validator_verified: `True`
+- b4_validator_spec_verified: `True`
+- b4_valid_fixture_verified: `True`
+- b4_invalid_missing_placeholder_flag_verified: `True`
+- b4_invalid_fake_pass_verified: `True`
+- b4_invalid_product_promotion_verified: `True`
+- b4_invalid_execution_authorized_verified: `True`
+- b4_validation_matrix_verified: `True`
+- b4_report_verified: `True`
+- b4_drift_check_verified: `True`
+- b4_safety_attestation_verified: `True`
+- b4_next_phase_contract_verified: `True`
+- lab_verdicts_b4_section_verified: `True`
+- artifact_completeness_matrix_created: `True`
+- placeholder_safety_review_created: `True`
+- placeholder_cannot_authorize_execution_verified: `True`
+- placeholder_cannot_authorize_product_promotion_verified: `True`
+- placeholder_cannot_replace_bedrock_verdict_verified: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate`
+
 ## ARIS-LAB-B4 - Bedrock Decisions Placeholder Validator
 
 - [ARIS-LAB-B4] Bedrock Decisions Placeholder Validator completed.
