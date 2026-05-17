@@ -1,6 +1,47 @@
 # ARIS_PHASE_LEDGER
 
-## ARIS-LAB-B11 - Bedrock Decisions Contract/Schema Review Assurance Gate
+## ARIS-LAB-B12 - Bedrock Decisions Contract/Schema Review Consolidation Gate
+
+- [ARIS-LAB-B12] Bedrock Decisions Contract/Schema Review Consolidation Gate completed.
+- status: `aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate_passed`
+- anchor_phase: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
+- b11_decision_verified: `True`
+- b11_summary_verified: `True`
+- b11_report_verified: `True`
+- b11_assurance_inputs_verified: `True`
+- b11_drift_check_verified: `True`
+- b11_safety_attestation_verified: `True`
+- b11_next_phase_contract_verified: `True`
+- b7_b8_b9_b10_b11_chain_consolidated: `True`
+- chain_artifact_completeness_verified: `True`
+- schema_contract_continuity_consolidated: `True`
+- non_authorization_consistency_consolidated: `True`
+- evidence_link_consistency_consolidated: `True`
+- historical_warning_treatment_consolidated: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- consolidation_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate`
+
+## ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate
+
 
 - [ARIS-LAB-B11] Bedrock Decisions Contract/Schema Review Assurance Gate completed.
 - status: `aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate_passed`

@@ -1,3 +1,20 @@
+## Recent ARIS-LAB B12 review references
+
+- [docs/aris_lab/aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate.md](../docs/aris_lab/aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate.md)
+- [artifacts/aris_lab/aris_lab_b12_decision.json](../artifacts/aris_lab/aris_lab_b12_decision.json)
+- [artifacts/aris_lab/aris_lab_b12_summary.json](../artifacts/aris_lab/aris_lab_b12_summary.json)
+- [artifacts/aris_lab/aris_lab_b12_report.md](../artifacts/aris_lab/aris_lab_b12_report.md)
+- [artifacts/aris_lab/aris_lab_b12_b11_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b12_b11_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b12_chain_consolidation_record.json](../artifacts/aris_lab/aris_lab_b12_chain_consolidation_record.json)
+- [artifacts/aris_lab/aris_lab_b12_artifact_consolidation_matrix.json](../artifacts/aris_lab/aris_lab_b12_artifact_consolidation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b12_schema_contract_consolidation_matrix.json](../artifacts/aris_lab/aris_lab_b12_schema_contract_consolidation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b12_non_authorization_consolidation_matrix.json](../artifacts/aris_lab/aris_lab_b12_non_authorization_consolidation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b12_evidence_link_consolidation_matrix.json](../artifacts/aris_lab/aris_lab_b12_evidence_link_consolidation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b12_historical_warning_consolidation.json](../artifacts/aris_lab/aris_lab_b12_historical_warning_consolidation.json)
+- [artifacts/aris_lab/aris_lab_b12_drift_check.json](../artifacts/aris_lab/aris_lab_b12_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b12_safety_attestation.json](../artifacts/aris_lab/aris_lab_b12_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b12_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b12_next_phase_contract.json)
+
 # CONTEXT_INDEX
 
 Read in this order:

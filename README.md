@@ -16,6 +16,48 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
+- Latest completed phase: `ARIS-LAB-B12 — Bedrock Decisions Contract/Schema Review Consolidation Gate`
+- F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
+- Next principal phase: `ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate`
+- Next continuation phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
+- F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
+- F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
+- B2 checklist runner was materialized and validated both a valid and invalid fixture deterministically.
+- B3 validator was materialized and the current B2 verdict section was validated deterministically.
+- B4 validator was materialized and the current B3 anchor was validated deterministically.
+- B8 contract/schema planning review gate was materialized and the current B6 package was reviewed deterministically.
+- B1 enforcement hardening passed and the phase pack validation matrix was materialized.
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F44 interpretation: `hardening/maturity of existing Lab`
+
+Rules:
+
+- Query-first, no bulk-read, no network, no dependency installs, no real MCP activation, no secret reads.
+- `CURRENT_STATE.md`, `NEXT_ACTION.md`, and `DECISION_LOCKS.md` are the operational sources of truth.
+- Historical depth belongs in `ARIS_PHASE_LEDGER.md`.
+- New phase foundation docs live in `docs/agent/` and the F33.Z-PRE0/PRE1/PRE2 phase docs.
+- F33.W completed the boundary finalization planning package and F33.W-AUTH-RC — Schema Materialization Human Authorization Review Closure Gate remains preserved in the historical track.
+
+- F33.W-AUTH completed as an authorization gate only; human_authorization_found=False; human_authorization_valid=False; authorization_required=True
+
+# aris-active-context
+
+Compact, read-first ARIS context entrypoint.
+
+Read order:
+
+1. `CURRENT_STATE.md`
+2. `NEXT_ACTION.md`
+3. `DECISION_LOCKS.md`
+4. `ARIS_PHASE_LEDGER.md`
+5. `CONTEXT_INDEX.md`
+6. `OPERATOR_PREFERENCES.md`
+7. `PROMPT_CONTRACT.md`
+
+Current snapshot:
+
+- Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
+- F33.Z22 remains preserved as the latest closed F33 operational phase.
 - Latest completed phase: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
 - Next principal phase: `ARIS-LAB-B12 — Bedrock Decisions Contract/Schema Review Consolidation Gate`
