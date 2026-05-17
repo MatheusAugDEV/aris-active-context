@@ -1,0 +1,80 @@
+# MANDATORY_READ_FIRST_RULES
+
+This file is the compact mandatory rule layer for every ARIS assistant response, Codex prompt, phase review, phase status, roadmap decision, and active-context update.
+
+If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, this file wins together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, and LAB_VERDICTS.md.
+
+## Mandatory read-first order
+
+For every ARIS technical decision, phase prompt, Codex instruction, status review, or next-step recommendation, read first:
+
+1. CURRENT_STATE.md
+2. NEXT_ACTION.md
+3. DECISION_LOCKS.md
+4. MANDATORY_READ_FIRST_RULES.md
+5. LAB_OPERATING_CONTRACT.md
+6. LAB_STATUS.md
+7. LAB_VERDICTS.md
+8. CONTEXT_INDEX.md
+9. ARIS_PHASE_LEDGER.md
+10. README.md
+11. OPERATOR_PREFERENCES.md, if present
+12. PROMPT_CONTRACT.md
+
+If any file is missing, stale, inaccessible, or contradictory, explicitly report the drift before deciding.
+
+## Fundamental ARIS rules
+
+- Active-context outranks assistant memory, chat history, pasted status, summaries, and assumptions.
+- NEXT_ACTION.md is the operational next-step authority unless a later active-context file explicitly supersedes it.
+- DECISION_LOCKS.md is the hard constraint authority.
+- LAB_OPERATING_CONTRACT.md is the Lab/Bedrock enforcement authority.
+- LAB_STATUS.md is the current Lab state authority.
+- LAB_VERDICTS.md is the Lab verdict ledger authority.
+- ARIS_PHASE_LEDGER.md is historical evidence, not a replacement for NEXT_ACTION.
+
+## Lab and Bedrock rules
+
+- ARIS Lab is active as the operational validation control plane.
+- Bedrock Gate is mandatory for future phase/capability advancement.
+- A future phase is not complete unless it has a Bedrock Gate verdict or an explicit Bedrock-preparation exception recorded in its phase contract.
+- Bedrock Gate verdicts are PASS, WARN, BLOCK, NEEDS_REVIEW, REGRESSION, and OBSOLETE.
+- PASS means evidence is sufficient to advance.
+- WARN means the next phase must carry forward warnings explicitly.
+- BLOCK means the phase cannot advance.
+- NEEDS_REVIEW means evidence is incomplete or ambiguous.
+- REGRESSION means baseline worsened and advancement is blocked.
+- OBSOLETE means superseded by a later approved decision.
+
+## Safety and execution rules
+
+- No real execution is allowed unless the current phase explicitly authorizes it through the required evidence chain.
+- No runtime mutation is allowed unless explicitly authorized.
+- No schema apply, SQLite persistence, DDL, CREATE TABLE, CREATE VIRTUAL TABLE, FTS5 creation, memory ingestion, connector use, network, dependency install, MCP activation, vault write, or bulk read is allowed unless explicitly authorized by the current valid gate.
+- Chat context, Codex status, commit text, placeholder, template, checklist, marker, or narrative claim does not count as authorization.
+- External research is advisory until primary-source verified and accepted through gates.
+- F51+ is preserved as advisory research only; it does not authorize implementation, roadmap mutation, productization, real connectors, or pilot execution.
+- F44 is Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
+- F33 is paused under Lab governance, not cancelled.
+
+## Prompt and Codex rules
+
+Every Codex prompt must:
+
+- include the mandatory read-first list or reference this file explicitly;
+- state the expected reasoning level;
+- include named guards;
+- define allowed scope and forbidden scope;
+- require decision JSON, summary/report artifacts, tests or deterministic validation evidence, safety attestation, drift check, next-phase contract, and active-context update;
+- require commit, push, and final hash;
+- preserve Lab/Bedrock verdict requirements when the phase advances a capability.
+
+## Response rule for the assistant
+
+Before giving a phase prompt or next technical recommendation, the assistant must:
+
+- check active-context when accessible;
+- state if the repo or required files cannot be read;
+- avoid treating memory as source-of-truth;
+- keep F51+ advisory-only unless a future gate changes it;
+- keep Bedrock Gate mandatory for future phase/capability advancement.
