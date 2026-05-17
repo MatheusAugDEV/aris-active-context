@@ -4,6 +4,34 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
+- Latest completed phase: `ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate`
+- Status: `aris_lab_b13_bedrock_decisions_contract_schema_consolidation_review_gate_passed`
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate verdict: `PASS`
+- B12 consolidation review matrix created: `True`
+- B12 chain consolidation review record created: `True`
+- B12 artifact consolidation review matrix created: `True`
+- B12 schema contract consolidation review matrix created: `True`
+- B12 non-authorization consolidation review matrix created: `True`
+- B12 evidence link consolidation review matrix created: `True`
+- B12 historical warning review recorded: `True`
+- B12 drift check verified: `True`
+- B12 safety attestation verified: `True`
+- B12 next phase contract verified: `True`
+- B7 -> B8 -> B9 -> B10 -> B11 -> B12 chain reviewed verified: `True`
+- Current-state duplicate historical warning phrase found: `True` (warning only)
+- LAB_VERDICTS structural cleanup candidate deferred: `True`
+- Next principal phase: `ARIS-LAB-B14 — Bedrock Decisions Contract/Schema Consolidation Review Closure Gate`
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and vault write remain blocked.
+
+# CURRENT_STATE
+
+As of 2026-05-17:
+
+- Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
+- F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
 - Latest completed phase: `ARIS-LAB-B12 — Bedrock Decisions Contract/Schema Review Consolidation Gate`
 - Status: `aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate_passed`
 - Bedrock Gate status: declared, not executable yet

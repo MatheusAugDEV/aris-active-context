@@ -1,3 +1,20 @@
+## Recent ARIS-LAB B13 review references
+
+- [docs/aris_lab/aris_lab_b13_bedrock_decisions_contract_schema_consolidation_review_gate.md](../docs/aris_lab/aris_lab_b13_bedrock_decisions_contract_schema_consolidation_review_gate.md)
+- [artifacts/aris_lab/aris_lab_b13_decision.json](../artifacts/aris_lab/aris_lab_b13_decision.json)
+- [artifacts/aris_lab/aris_lab_b13_summary.json](../artifacts/aris_lab/aris_lab_b13_summary.json)
+- [artifacts/aris_lab/aris_lab_b13_report.md](../artifacts/aris_lab/aris_lab_b13_report.md)
+- [artifacts/aris_lab/aris_lab_b13_b12_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b13_b12_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b13_chain_consolidation_review_record.json](../artifacts/aris_lab/aris_lab_b13_chain_consolidation_review_record.json)
+- [artifacts/aris_lab/aris_lab_b13_artifact_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b13_artifact_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b13_schema_contract_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b13_schema_contract_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b13_non_authorization_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b13_non_authorization_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b13_evidence_link_consolidation_review_matrix.json](../artifacts/aris_lab/aris_lab_b13_evidence_link_consolidation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b13_historical_warning_review.json](../artifacts/aris_lab/aris_lab_b13_historical_warning_review.json)
+- [artifacts/aris_lab/aris_lab_b13_drift_check.json](../artifacts/aris_lab/aris_lab_b13_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b13_safety_attestation.json](../artifacts/aris_lab/aris_lab_b13_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b13_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b13_next_phase_contract.json)
+
 ## Recent ARIS-LAB B12 review references
 
 - [docs/aris_lab/aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate.md](../docs/aris_lab/aris_lab_b12_bedrock_decisions_contract_schema_review_consolidation_gate.md)

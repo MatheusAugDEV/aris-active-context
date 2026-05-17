@@ -1,3 +1,18 @@
+## ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b12_consolidation_review | lab_validated | No | B12 decision and summary | B12 package remains PASS and recommends B13 |
+| lab.b12_consolidation_review_matrix | lab_validated | No | B12 consolidation review matrix | B12 consolidation review remains passed |
+| lab.b12_chain_consolidation_review_record | lab_validated | No | B12 chain consolidation review record | B7 -> B8 -> B9 -> B10 -> B11 -> B12 chain remains coherent |
+| lab.b12_artifact_consolidation_review_matrix | lab_validated | No | B12 artifact consolidation review matrix | Artifact chain remains complete |
+| lab.b12_schema_contract_consolidation_review_matrix | lab_validated | No | B12 schema contract consolidation review matrix | Schema and contract continuity remain consolidated |
+| lab.b12_non_authorization_consolidation_review_matrix | lab_validated | No | B12 non-authorization consolidation review matrix | Dangerous flags remain blocked and review-only |
+| lab.b12_evidence_link_consolidation_review_matrix | lab_validated | No | B12 evidence link consolidation review matrix | Evidence links remain explicit and consistent |
+| lab.b12_historical_warning_review | warning_only | No | B12 historical warning review | Historical irregularities remain warning-only |
+| lab.b12_drift_check | lab_validated | No | B12 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B13 next phase contract | B14 recommended; B13 closed |
+
 ## ARIS-LAB-B12 — Bedrock Decisions Contract/Schema Review Consolidation Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
