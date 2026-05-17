@@ -59,6 +59,23 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B4 references
+
+- [docs/aris_lab/aris_lab_b4_bedrock_decisions_placeholder_validator.md](../docs/aris_lab/aris_lab_b4_bedrock_decisions_placeholder_validator.md)
+- [artifacts/aris_lab/aris_lab_b4_decision.json](../artifacts/aris_lab/aris_lab_b4_decision.json)
+- [artifacts/aris_lab/aris_lab_b4_summary.json](../artifacts/aris_lab/aris_lab_b4_summary.json)
+- [artifacts/aris_lab/aris_lab_b4_report.md](../artifacts/aris_lab/aris_lab_b4_report.md)
+- [artifacts/aris_lab/aris_lab_b4_placeholder_validator_spec.json](../artifacts/aris_lab/aris_lab_b4_placeholder_validator_spec.json)
+- [artifacts/aris_lab/aris_lab_b4_valid_placeholder_fixture.json](../artifacts/aris_lab/aris_lab_b4_valid_placeholder_fixture.json)
+- [artifacts/aris_lab/aris_lab_b4_invalid_missing_placeholder_flag_fixture.json](../artifacts/aris_lab/aris_lab_b4_invalid_missing_placeholder_flag_fixture.json)
+- [artifacts/aris_lab/aris_lab_b4_invalid_fake_pass_verdict_fixture.json](../artifacts/aris_lab/aris_lab_b4_invalid_fake_pass_verdict_fixture.json)
+- [artifacts/aris_lab/aris_lab_b4_invalid_product_promotion_fixture.json](../artifacts/aris_lab/aris_lab_b4_invalid_product_promotion_fixture.json)
+- [artifacts/aris_lab/aris_lab_b4_invalid_execution_authorized_fixture.json](../artifacts/aris_lab/aris_lab_b4_invalid_execution_authorized_fixture.json)
+- [artifacts/aris_lab/aris_lab_b4_validation_matrix.json](../artifacts/aris_lab/aris_lab_b4_validation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b4_drift_check.json](../artifacts/aris_lab/aris_lab_b4_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b4_safety_attestation.json](../artifacts/aris_lab/aris_lab_b4_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b4_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b4_next_phase_contract.json)
+
 ## Recent ARIS-LAB B3 references
 
 - [docs/aris_lab/aris_lab_b3_lab_verdicts_update_validator.md](../docs/aris_lab/aris_lab_b3_lab_verdicts_update_validator.md)
@@ -101,9 +118,9 @@ Read in this order:
 - [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
 
-- Latest completed active-context phase: `ARIS-LAB-B3 — LAB_VERDICTS Update Validator`
+- Latest completed active-context phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
-- Next principal phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
+- Next principal phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
 - F33 status: paused under Lab governance, not cancelled.
 - F44 interpretation: Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
 - F51+ status: external advisory research only.

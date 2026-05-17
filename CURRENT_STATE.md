@@ -4,10 +4,17 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
-- Latest completed phase: `ARIS-LAB-B3 — LAB_VERDICTS Update Validator`
-- Status: `aris_lab_b3_lab_verdicts_update_validator_passed`
+- Latest completed phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
+- Status: `aris_lab_b4_bedrock_decisions_placeholder_validator_passed`
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate verdict: `PASS`
+- Bedrock decision placeholder validator created: `True`
+- Current B3 anchor validated: `True`
+- Valid placeholder fixture passed: `True`
+- Missing-placeholder-flag fixture failed: `True`
+- Fake-PASS fixture failed: `True`
+- Product-promotion fixture failed: `True`
+- Execution-authorized fixture failed: `True`
 - Bedrock Gate enforcement hardened: `True`
 - LAB_VERDICTS update validator created: `True`
 - Current B2 section validated: `True`
@@ -26,8 +33,8 @@ As of 2026-05-17:
 - F33.RM-F51-P0/R1 remains external advisory research only; raw input preserved; it does not authorize product promotion or override the Lab contract.
 - F33.Z22 final closure review remains preserved as the latest F33 operational closure.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
-- Next principal phase: `ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator`
+- Next continuation phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
+- Next principal phase: `ARIS-LAB-B5 — Bedrock Decisions Placeholder Review Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 

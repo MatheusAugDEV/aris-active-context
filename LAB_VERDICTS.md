@@ -1,5 +1,19 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.placeholder_validator_spec | lab_validated | No | B4 placeholder validator spec | Placeholder decision requirements codified |
+| lab.current_b3_anchor_validation | lab_validated | No | B3 anchor validation | Current B3 anchor validated as the real positive case |
+| lab.valid_placeholder_fixture_validation | lab_validated | No | B4 valid placeholder fixture | Valid placeholder fixture passed deterministically |
+| lab.invalid_missing_placeholder_flag_validation | lab_validated | No | B4 missing-placeholder-flag fixture | Missing-placeholder-flag fixture failed deterministically |
+| lab.invalid_fake_pass_verdict_validation | lab_validated | No | B4 fake PASS fixture | Fake PASS fixture failed deterministically |
+| lab.invalid_product_promotion_validation | lab_validated | No | B4 product-promotion fixture | Product-promotion fixture failed deterministically |
+| lab.invalid_execution_authorized_validation | lab_validated | No | B4 execution-authorized fixture | Execution-authorized fixture failed deterministically |
+| lab.historical_irregularities_review | warning_only | No | B4 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B4 next phase contract | B5 recommended; B4 closed |
+
 ## ARIS-LAB-B3 — LAB_VERDICTS Update Validator Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
