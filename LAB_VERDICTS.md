@@ -1,5 +1,18 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B3 — LAB_VERDICTS Update Validator Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.verdicts_schema_validator | lab_validated | No | B3 validator spec | Section shape and content rules codified |
+| lab.current_b2_section_validation | lab_validated | No | B2 current LAB_VERDICTS section | Current B2 section validated as the real positive case |
+| lab.valid_fixture_validation | lab_validated | No | B3 valid fixture | Valid B2 section passed deterministically |
+| lab.invalid_missing_section_validation | lab_validated | No | B3 missing-section fixture | Missing-section fixture failed deterministically |
+| lab.invalid_malformed_row_validation | lab_validated | No | B3 malformed-row fixture | Malformed-row fixture failed deterministically |
+| lab.invalid_product_promotion_validation | lab_validated | No | B3 product-promotion fixture | Product-promotion fixture failed deterministically |
+| lab.historical_irregularities_review | warning_only | No | B3 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B3 next phase contract | B4 recommended; B3 closed |
+
 ## ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

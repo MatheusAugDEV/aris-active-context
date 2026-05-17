@@ -1,14 +1,15 @@
 # LAB_STATUS
 
-- Current Lab phase: ARIS-LAB-B2
-- Lab status: minimal checklist runner completed; valid fixture passed; invalid fixture failed
+- Current Lab phase: ARIS-LAB-B3
+- Lab status: LAB_VERDICTS update validator completed; current B2 section validated; invalid fixtures failed
 - F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate executable now: False
 - Bedrock Gate verdict: PASS
 - Product promotion: not allowed
-- Next Lab phase: ARIS-LAB-B3 — LAB_VERDICTS Update Validator
+- Next Lab phase: ARIS-LAB-B4 — Bedrock Decisions Placeholder Validator
 - F33 resume point: preserved as historical contract
 - F44 interpretation: hardening/maturity of existing Lab
 - Authority lock: preserved
 - Capability taxonomy lock: preserved
+- Historical irregularities: found and warning-only
