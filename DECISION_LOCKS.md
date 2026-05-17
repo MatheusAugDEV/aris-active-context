@@ -139,6 +139,16 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z21 Final Closure Review Lock
+
+- F33.Z21 is final closure review only and does not authorize real execution, execution authorization, schema apply, runtime mutation, or DB work.
+- The phase may create a final closure review matrix, final closure review record, reviewed chain consistency record, reviewed authorization containment record, reviewed no-side-effect proof, safety attestation, drift check, Codex usage observation, next phase contract, and documentation updates only.
+- The final closure review path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z22 is the next continuation phase after a passing final closure review and direct apply remains unauthorized.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## F33.RM-F51-P0/R1 F51+ Advisory Recovery Lock
 
 - F33.RM-F51-P0/R1 is external_advisory_research only and does not authorize implementation, canonical roadmap change, productization, real connectors, or pilot execution.
