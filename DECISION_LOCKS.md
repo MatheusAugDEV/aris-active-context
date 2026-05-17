@@ -149,11 +149,21 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z22 Final Closure Review Closure Lock
+
+- F33.Z22 is final closure review closure only and does not authorize real execution, execution authorization, schema apply, runtime mutation, or DB work.
+- The phase may create a final closure review closure matrix, final closure review closure record, chain consistency closure review record, authorization containment closure review record, no-side-effect closure review proof, safety attestation, drift check, Codex usage observation, next phase contract, and documentation updates only.
+- The final closure review closure path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- `ARIS-LAB-A0 — Temporary F33 Pause, Bedrock Lab Authority Charter & F44 Roadmap Amendment` is the conservative next continuation recommendation and direct apply remains unauthorized.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## F33.RM-F51-P0/R1 F51+ Advisory Recovery Lock
 
 - F33.RM-F51-P0/R1 is external_advisory_research only and does not authorize implementation, canonical roadmap change, productization, real connectors, or pilot execution.
 - The recovered F51+ roadmap research is advisory-only and must stay unverified until later primary-source review.
-- The preserved operational next action remains `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`.
+- The recovered F51+ roadmap research remained advisory-only and did not change the operational next action.
 - `canonical_roadmap_changed` remains `False`.
 - `implementation_allowed` remains `False`.
 - `operational_next_action_changed` remains `False`.
