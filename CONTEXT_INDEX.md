@@ -61,6 +61,20 @@ Read in this order:
 
 ## Recent ARIS-LAB B1 references
 
+## Recent ARIS-LAB B2 references
+
+- [docs/aris_lab/aris_lab_b2_minimal_phase_lab_checklist_runner.md](../docs/aris_lab/aris_lab_b2_minimal_phase_lab_checklist_runner.md)
+- [artifacts/aris_lab/aris_lab_b2_decision.json](../artifacts/aris_lab/aris_lab_b2_decision.json)
+- [artifacts/aris_lab/aris_lab_b2_summary.json](../artifacts/aris_lab/aris_lab_b2_summary.json)
+- [artifacts/aris_lab/aris_lab_b2_report.md](../artifacts/aris_lab/aris_lab_b2_report.md)
+- [artifacts/aris_lab/aris_lab_b2_checklist_schema.json](../artifacts/aris_lab/aris_lab_b2_checklist_schema.json)
+- [artifacts/aris_lab/aris_lab_b2_valid_fixture.json](../artifacts/aris_lab/aris_lab_b2_valid_fixture.json)
+- [artifacts/aris_lab/aris_lab_b2_invalid_fixture.json](../artifacts/aris_lab/aris_lab_b2_invalid_fixture.json)
+- [artifacts/aris_lab/aris_lab_b2_validation_matrix.json](../artifacts/aris_lab/aris_lab_b2_validation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b2_drift_check.json](../artifacts/aris_lab/aris_lab_b2_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b2_safety_attestation.json](../artifacts/aris_lab/aris_lab_b2_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b2_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b2_next_phase_contract.json)
+
 - [docs/aris_lab/aris_lab_b1_bedrock_gate_enforcement_hardening.md](../docs/aris_lab/aris_lab_b1_bedrock_gate_enforcement_hardening.md)
 - [artifacts/aris_lab/aris_lab_b1_decision.json](../artifacts/aris_lab/aris_lab_b1_decision.json)
 - [artifacts/aris_lab/aris_lab_b1_summary.json](../artifacts/aris_lab/aris_lab_b1_summary.json)
@@ -71,9 +85,9 @@ Read in this order:
 - [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
 
-- Latest completed active-context phase: `ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization`
+- Latest completed active-context phase: `ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
-- Next principal phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
+- Next principal phase: `ARIS-LAB-B3 — LAB_VERDICTS Update Validator`
 - F33 status: paused under Lab governance, not cancelled.
 - F44 interpretation: Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
 - F51+ status: external advisory research only.

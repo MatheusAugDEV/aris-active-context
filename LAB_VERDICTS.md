@@ -1,5 +1,15 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.checklist_schema | lab_validated | No | B2 checklist schema | Minimum phase pack fields codified |
+| lab.valid_fixture_validation | lab_validated | No | B2 valid fixture | Valid fixture passed deterministically |
+| lab.invalid_fixture_validation | lab_validated | No | B2 invalid fixture | Missing-field fixture failed deterministically |
+| lab.phase_pack_validation_matrix | lab_validated | No | B2 validation matrix | Checklist runner created |
+| lab.next_phase_contract | lab_validated | No | B2 next phase contract | B3 recommended; B2 closed |
+
 ## ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
