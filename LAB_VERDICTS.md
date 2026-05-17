@@ -1,3 +1,16 @@
+## ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b10_assurance_review | lab_validated | No | B10 decision and summary | B10 package remains PASS and recommends B11 |
+| lab.b10_assurance_review_matrix | lab_validated | No | B10 assurance review matrix | B10 assurance review remains passed |
+| lab.b10_schema_contract_assurance_matrix | lab_validated | No | B10 schema contract assurance matrix | Schema and contract continuity remain assured |
+| lab.b10_non_authorization_assurance_matrix | lab_validated | No | B10 non-authorization assurance matrix | Dangerous flags remain blocked and review-only |
+| lab.b10_evidence_link_assurance_matrix | lab_validated | No | B10 evidence link assurance matrix | Evidence links remain explicit and consistent |
+| lab.b10_historical_warning_assurance | warning_only | No | B10 historical warning assurance | Historical irregularities remain warning-only |
+| lab.b10_drift_check | lab_validated | No | B10 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B11 next phase contract | B12 recommended; B11 closed |
+
 ## ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

@@ -59,6 +59,21 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B11 review references
+
+- [docs/aris_lab/aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate.md](../docs/aris_lab/aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate.md)
+- [artifacts/aris_lab/aris_lab_b11_decision.json](../artifacts/aris_lab/aris_lab_b11_decision.json)
+- [artifacts/aris_lab/aris_lab_b11_summary.json](../artifacts/aris_lab/aris_lab_b11_summary.json)
+- [artifacts/aris_lab/aris_lab_b11_report.md](../artifacts/aris_lab/aris_lab_b11_report.md)
+- [artifacts/aris_lab/aris_lab_b11_b10_assurance_review_matrix.json](../artifacts/aris_lab/aris_lab_b11_b10_assurance_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b11_schema_contract_assurance_matrix.json](../artifacts/aris_lab/aris_lab_b11_schema_contract_assurance_matrix.json)
+- [artifacts/aris_lab/aris_lab_b11_non_authorization_assurance_matrix.json](../artifacts/aris_lab/aris_lab_b11_non_authorization_assurance_matrix.json)
+- [artifacts/aris_lab/aris_lab_b11_evidence_link_assurance_matrix.json](../artifacts/aris_lab/aris_lab_b11_evidence_link_assurance_matrix.json)
+- [artifacts/aris_lab/aris_lab_b11_historical_warning_assurance.json](../artifacts/aris_lab/aris_lab_b11_historical_warning_assurance.json)
+- [artifacts/aris_lab/aris_lab_b11_drift_check.json](../artifacts/aris_lab/aris_lab_b11_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b11_safety_attestation.json](../artifacts/aris_lab/aris_lab_b11_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b11_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b11_next_phase_contract.json)
+
 ## Recent ARIS-LAB B10 review references
 
 - [docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md](../docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md)

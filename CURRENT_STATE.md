@@ -4,6 +4,32 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
+- Latest completed phase: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
+- Status: `aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate_passed`
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate verdict: `PASS`
+- B10 assurance review matrix created: `True`
+- B10 schema contract assurance matrix created: `True`
+- B10 non-authorization assurance matrix created: `True`
+- B10 evidence link assurance matrix created: `True`
+- B10 historical warning assurance recorded: `True`
+- B10 drift check verified: `True`
+- B10 safety attestation verified: `True`
+- B10 next phase contract verified: `True`
+- B7 -> B8 -> B9 -> B10 chain carried forward verified: `True`
+- Current-state duplicate historical warning phrase found: `True` (warning only)
+- LAB_VERDICTS structural cleanup candidate deferred: `True`
+- Next principal phase: `ARIS-LAB-B12 — Bedrock Decisions Contract/Schema Review Consolidation Gate`
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and vault write remain blocked.
+
+# CURRENT_STATE
+
+As of 2026-05-17:
+
+- Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
+- F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
 - Latest completed phase: `ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate`
 - Status: `aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate_passed`
 - Bedrock Gate status: declared, not executable yet
