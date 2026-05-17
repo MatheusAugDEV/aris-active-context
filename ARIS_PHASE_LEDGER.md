@@ -1,5 +1,56 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-LAB-B14 - Bedrock Decisions Contract/Schema Consolidation Review Closure Gate
+
+- [ARIS-LAB-B14] Bedrock Decisions Contract/Schema Consolidation Review Closure Gate completed.
+- status: `aris_lab_b14_bedrock_decisions_contract_schema_consolidation_review_closure_gate_passed`
+- anchor_phase: `ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate`
+- previous_phase_short_summary: `B13 closed the B12 consolidation review and kept the B7-B12 chain coherent, non-authorizing, and warning-only.`
+- next_phase_short_explanation: `B15 will review the B14 closure state and verify the new narrative continuity rule carries forward.`
+- phase_narrative_rule_recorded: `True`
+- phase_narrative_rule_persisted: `True`
+- prompt_contract_updated: `True`
+- prompt_contract_update_verified: `True`
+- b13_decision_verified: `True`
+- b13_summary_verified: `True`
+- b13_report_verified: `True`
+- b13_consolidation_review_inputs_verified: `True`
+- b13_drift_check_verified: `True`
+- b13_safety_attestation_verified: `True`
+- b13_next_phase_contract_verified: `True`
+- b7_b8_b9_b10_b11_b12_b13_chain_closure_reviewed: `True`
+- chain_closure_review_passed: `True`
+- artifact_closure_review_passed: `True`
+- schema_contract_closure_review_passed: `True`
+- non_authorization_closure_review_passed: `True`
+- evidence_link_closure_review_passed: `True`
+- historical_warning_closure_review_passed: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- consolidation_review_closure_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B15 — Bedrock Decisions Contract/Schema Consolidation Readiness Gate`
+
+## ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate
+
+# ARIS_PHASE_LEDGER
+
 ## ARIS-LAB-B13 - Bedrock Decisions Contract/Schema Consolidation Review Gate
 
 - [ARIS-LAB-B13] Bedrock Decisions Contract/Schema Consolidation Review Gate completed.

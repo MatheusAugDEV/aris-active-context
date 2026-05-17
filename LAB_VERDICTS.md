@@ -1,3 +1,20 @@
+## ARIS-LAB-B14 — Bedrock Decisions Contract/Schema Consolidation Review Closure Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b13_closure_review | lab_validated | No | B13 decision and summary | B13 package remains PASS and closes into B14 |
+| lab.b13_closure_review_matrix | lab_validated | No | B13 closure review matrix | B13 closure review remains passed |
+| lab.b13_chain_closure_record | lab_validated | No | B13 chain closure record | B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 chain remains coherent |
+| lab.b13_artifact_closure_review_matrix | lab_validated | No | B13 artifact closure review matrix | Artifact chain remains complete |
+| lab.b13_schema_contract_closure_review_matrix | lab_validated | No | B13 schema contract closure review matrix | Schema and contract continuity remain closed |
+| lab.b13_non_authorization_closure_review_matrix | lab_validated | No | B13 non-authorization closure review matrix | Dangerous flags remain blocked and review-only |
+| lab.b13_evidence_link_closure_review_matrix | lab_validated | No | B13 evidence link closure review matrix | Evidence links remain explicit and consistent |
+| lab.b13_historical_warning_closure_review | warning_only | No | B13 historical warning closure review | Historical irregularities remain warning-only |
+| lab.phase_narrative_rule_record | lab_validated | No | B14 phase narrative rule record | previous_phase_short_summary and next_phase_short_explanation are now required |
+| lab.prompt_contract_update_record | lab_validated | No | PROMPT_CONTRACT.md | Narrative continuity rule persisted without removing existing rules |
+| lab.b13_drift_check | lab_validated | No | B13 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B14 next phase contract | B15 recommended; B14 closed |
+
 ## ARIS-LAB-B13 — Bedrock Decisions Contract/Schema Consolidation Review Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

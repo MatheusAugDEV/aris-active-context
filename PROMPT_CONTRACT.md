@@ -159,6 +159,16 @@ This rule is operator-facing only. It must not bloat Codex prompts, weaken guard
 - Keep stable repeated content in this file, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, and docs/runbooks.
 - Do not repeat long safety constitutions in every Codex prompt unless a new subsystem, new risk class, or explicit recovery condition requires it.
 
+## Phase narrative continuity rule
+
+Starting with ARIS-LAB-B14, every future ARIS phase prompt, Codex instruction, phase review, status review, roadmap decision, and next-step recommendation must include both compact continuity fields:
+
+- `previous_phase_short_summary`: a short, operator-facing summary of the immediately previous phase.
+- `next_phase_short_explanation`: a short, operator-facing explanation of what the next phase will do.
+
+The fields must stay brief and continuity-focused. They do not replace active-context evidence, source-of-truth files, or full phase documentation.
+Future next-phase contracts must require both fields.
+
 ## Quality rule
 
 Compact prompts must preserve:
