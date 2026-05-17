@@ -15,11 +15,11 @@ Read order:
 Current snapshot:
 
 - Official V6 is closed.
-- F33.Z19 closes the post-closure review closure and remains read-only even when it passes.
-- Latest completed phase: `F33.Z19 — Schema Materialization Controlled Apply Post-Closure Review Closure Gate`
+- F33.Z20 closes the post-closure review final closure and remains read-only even when it passes.
+- Latest completed phase: `F33.Z20 — Schema Materialization Controlled Apply Post-Closure Review Final Closure Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `F33.Z20 — Schema Materialization Controlled Apply Post-Closure Review Final Closure Gate`
-- Next continuation phase: `F33.Z20 — Schema Materialization Controlled Apply Post-Closure Review Final Closure Gate`
+- Next principal phase: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
+- Next continuation phase: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

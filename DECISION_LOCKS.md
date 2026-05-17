@@ -129,6 +129,16 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z20 Final Closure Lock
+
+- F33.Z20 is final closure only and does not authorize real execution, execution authorization, schema apply, runtime mutation, or DB work.
+- The phase may create a final closure matrix, final closure record, final chain consistency record, final authorization containment record, final no-side-effect proof, final safety attestation, final drift check, Codex usage observation, next phase contract, and documentation updates only.
+- The final closure path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z21 is the next continuation phase after a passing final closure and direct apply remains unauthorized.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.
