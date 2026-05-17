@@ -119,6 +119,16 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.Z19 Post-Closure Review Closure Lock
+
+- F33.Z19 is post-closure review closure only and does not authorize real execution, execution authorization, schema apply, runtime mutation, or DB work.
+- The phase may create a closure matrix, post-closure review closure record, chain closure consistency record, authorization containment closure record, no-side-effect proof, safety attestation, drift check, Codex usage observation, next phase contract, and documentation updates only.
+- The post-closure review closure path remains declarative only and no database file may be created in this phase.
+- No SQLite connection may be opened in this phase.
+- F33.Z20 is the next continuation phase after a passing post-closure review closure and direct apply remains unauthorized.
+- `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
+- Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.
