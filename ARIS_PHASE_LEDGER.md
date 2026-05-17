@@ -1,6 +1,42 @@
 # ARIS_PHASE_LEDGER
 
-## ARIS-LAB-B7 - Bedrock Decisions Contract/Schema Planning Gate
+## ARIS-LAB-B8 - Bedrock Decisions Contract/Schema Planning Review Gate
+
+- [ARIS-LAB-B8] Bedrock Decisions Contract/Schema Planning Review Gate completed.
+- status: `aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate_passed`
+- anchor_phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+- b7_status_verified: `True`
+- b7_bedrock_verdict_verified: `True`
+- b7_decision_schema_plan_verified: `True`
+- b7_decision_contract_plan_verified: `True`
+- b7_field_matrix_verified: `True`
+- b7_invariant_matrix_verified: `True`
+- b7_future_validation_plan_verified: `True`
+- b7_drift_check_verified: `True`
+- b7_safety_attestation_verified: `True`
+- b7_next_phase_contract_verified: `True`
+- lab_verdicts_b7_section_verified: `True`
+- lab_status_lab_verdicts_live_drift_found: `False`
+- current_state_duplicate_historical_warning_found: `True`
+- schema_review_matrix_created: `True`
+- contract_review_matrix_created: `True`
+- field_review_matrix_created: `True`
+- invariant_review_matrix_created: `True`
+- future_validation_review_created: `True`
+- allowed_verdicts_reviewed: `True`
+- non_authorization_flags_reviewed: `True`
+- evidence_links_reviewed: `True`
+- source_phase_binding_reviewed: `True`
+- lab_verdicts_binding_reviewed: `True`
+- phase_pack_checklist_binding_reviewed: `True`
+- placeholder_track_closure_reviewed: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
+
+## ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate
 
 - [ARIS-LAB-B7] Bedrock Decisions Contract/Schema Planning Gate completed.
 - status: `aris_lab_b7_bedrock_decisions_contract_schema_planning_gate_passed`

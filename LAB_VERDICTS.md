@@ -1,3 +1,20 @@
+## ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b7_package_review | lab_validated | No | B7 decision and summary | B7 package remains PASS and recommends B8 |
+| lab.b7_schema_review | lab_validated | No | B7 decision schema plan | Allowed verdicts remain closed and explicit |
+| lab.b7_contract_review | lab_validated | No | B7 decision contract plan | Non-authorization boundaries remain explicit |
+| lab.b7_field_review | lab_validated | No | B7 field matrix | Required fields remain bounded |
+| lab.b7_invariant_review | lab_validated | No | B7 invariant matrix | Required invariants remain bounded |
+| lab.b7_future_validation_review | lab_validated | No | B7 future validation plan | Future validation sequence remains bounded |
+| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Current-state duplicate historical warning phrase confirmed and treated as cleanup candidate |
+| lab.b7_drift_check_review | lab_validated | No | B7 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b7_safety_attestation_review | lab_validated | No | B7 safety attestation | Dangerous flags remain blocked and review-only |
+| lab.b7_next_phase_contract_review | lab_validated | No | B7 next phase contract | B8 review is the reviewed anchor |
+| lab.historical_irregularities_review | warning_only | No | B7 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B8 next phase contract | B9 recommended; B8 closed |
+
 # LAB_VERDICTS
 
 ## ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate Bedrock Enforcement Verdict

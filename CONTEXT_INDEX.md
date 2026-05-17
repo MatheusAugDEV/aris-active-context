@@ -59,6 +59,22 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B8 references
+
+- [docs/aris_lab/aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate.md](../docs/aris_lab/aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate.md)
+- [artifacts/aris_lab/aris_lab_b8_decision.json](../artifacts/aris_lab/aris_lab_b8_decision.json)
+- [artifacts/aris_lab/aris_lab_b8_summary.json](../artifacts/aris_lab/aris_lab_b8_summary.json)
+- [artifacts/aris_lab/aris_lab_b8_report.md](../artifacts/aris_lab/aris_lab_b8_report.md)
+- B8 decision schema plan review alias: `aris_lab_b8_decision_schema_plan` (review-only)
+- [artifacts/aris_lab/aris_lab_b8_schema_review_matrix.json](../artifacts/aris_lab/aris_lab_b8_schema_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b8_contract_review_matrix.json](../artifacts/aris_lab/aris_lab_b8_contract_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b8_field_review_matrix.json](../artifacts/aris_lab/aris_lab_b8_field_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b8_invariant_review_matrix.json](../artifacts/aris_lab/aris_lab_b8_invariant_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b8_future_validation_review.json](../artifacts/aris_lab/aris_lab_b8_future_validation_review.json)
+- [artifacts/aris_lab/aris_lab_b8_drift_check.json](../artifacts/aris_lab/aris_lab_b8_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b8_safety_attestation.json](../artifacts/aris_lab/aris_lab_b8_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b8_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b8_next_phase_contract.json)
+
 ## Recent ARIS-LAB B7 references
 
 - [docs/aris_lab/aris_lab_b7_bedrock_decisions_contract_schema_planning_gate.md](../docs/aris_lab/aris_lab_b7_bedrock_decisions_contract_schema_planning_gate.md)

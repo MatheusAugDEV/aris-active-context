@@ -4,27 +4,21 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
-- Latest completed phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
-- Status: `aris_lab_b7_bedrock_decisions_contract_schema_planning_gate_passed`
+- Latest completed phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
+- Status: `aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate_passed`
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate verdict: `PASS`
-- Bedrock contract/schema planning gate completed: `True`
-- B6 continuation matrix verified: `True`
-- B6 artifact review verified: `True`
-- B6 placeholder track closure verified: `True`
-- B6 drift check verified: `True`
-- B6 safety attestation verified: `True`
-- B6 next phase contract verified: `True`
-- B6 LAB_VERDICTS section reviewed: `True`
-- Placeholder track closure carried forward: `True`
-- Decision schema plan created: `True`
-- Contract plan created: `True`
-- Field matrix created: `True`
-- Invariant matrix created: `True`
-- Future validation plan created: `True`
-- B6 report verified: `True`
+- B7 schema review matrix created: `True`
+- B7 contract review matrix created: `True`
+- B7 field review matrix created: `True`
+- B7 invariant review matrix created: `True`
+- B7 future validation review created: `True`
+- B7 LAB_VERDICTS section reviewed: `True`
+- B7 live drift remains absent: `True`
+- Current-state duplicate historical warning phrase found: `True` (warning only)
+- Next principal phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
-- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; fts5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
 - F33.Z10 candidate review gate verified; the full F33.Z1-F33.Z9 candidate chain was reviewed; apply candidate manifest, schema action candidate list, inert SQL candidate bundle, apply preconditions candidate matrix, rollback candidate plan, idempotency candidate plan, apply blocker candidate matrix, no-side-effect candidate proof, authorization carry-forward record, safety attestation, drift check, codex usage pilot observation, and next phase contract reviewed; review passed; no real apply authorized.
 - F33.Z15 final execution authorization gate verified; the full F33.Z1-F33.Z14 controlled-apply chain was rechecked; dedicated final execution authorization file absent; authorization requirements, operator instructions, authorization template, hold contract, safety attestation, drift check, codex usage pilot observation, and next phase contract created; hold-only; no real execution authorized.

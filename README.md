@@ -16,16 +16,16 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+- Latest completed phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
+- Next principal phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
 - Next continuation phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - B2 checklist runner was materialized and validated both a valid and invalid fixture deterministically.
 - B3 validator was materialized and the current B2 verdict section was validated deterministically.
 - B4 validator was materialized and the current B3 anchor was validated deterministically.
-- B7 contract/schema planning gate was materialized and the current B6 package was reviewed deterministically.
+- B8 contract/schema planning review gate was materialized and the current B6 package was reviewed deterministically.
 - B1 enforcement hardening passed and the phase pack validation matrix was materialized.
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
 - F44 interpretation: `hardening/maturity of existing Lab`
