@@ -1,7 +1,26 @@
 # PROMPT_CONTRACT
 
 `ARIS_PHASE_PROMPT_CONTRACT_V2` is the compact phase prompt contract for ARIS.
-It reduces repetition while preserving phase gates, safety, deterministic evidence, and active-context precedence.
+It reduces repetition while preserving phase gates, safety, deterministic evidence, active-context precedence, and Bedrock Gate enforcement.
+
+## Mandatory read-first rule
+
+Every future ARIS phase prompt, Codex instruction, phase review, status review, roadmap decision, and next-step recommendation must read or explicitly reference:
+
+1. CURRENT_STATE.md
+2. NEXT_ACTION.md
+3. DECISION_LOCKS.md
+4. MANDATORY_READ_FIRST_RULES.md
+5. LAB_OPERATING_CONTRACT.md
+6. LAB_STATUS.md
+7. LAB_VERDICTS.md
+8. CONTEXT_INDEX.md
+9. ARIS_PHASE_LEDGER.md
+10. README.md
+11. OPERATOR_PREFERENCES.md, if present
+12. PROMPT_CONTRACT.md
+
+If a required file is missing, stale, inaccessible, or contradictory, report drift before deciding.
 
 ## Required structure
 
@@ -10,14 +29,15 @@ Future phase prompts should follow this order:
 1. Phase / objective
 2. Read-first sources
 3. Named standard guards
-4. Phase-specific evidence
-5. Phase-specific scope
-6. Required artifacts
-7. Decision JSON fields
-8. Tests
-9. Validation
-10. Active-context update
-11. Commit/push/final report
+4. Bedrock Gate applicability and verdict requirement
+5. Phase-specific evidence
+6. Phase-specific scope
+7. Required artifacts
+8. Decision JSON fields
+9. Tests
+10. Validation
+11. Active-context update
+12. Commit/push/final report
 
 ## Preferred compact prompt skeleton
 
@@ -29,10 +49,13 @@ PROMPT CODEX — <PHASE> <NAME>
 Nível de raciocínio: alto / sênior / conservador / Bedrock-governed.
 
 Leia primeiro:
-CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, LAB_STATUS.md, LAB_VERDICTS.md, PROMPT_CONTRACT.md.
+CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, LAB_VERDICTS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md, PROMPT_CONTRACT.md.
 
 Use os guards:
 AC-READ, BEDROCK-COMPLETE, NO-REAL-EXEC, NO-BULK, ARTIFACT-ONLY, TESTS-RUNNER-DOCS, ACTIVE-CONTEXT-UPDATE, COMMIT-PUSH-HASH.
+
+Bedrock Gate:
+<state whether this phase consumes an existing verdict, produces a verdict, or is an explicit Bedrock-preparation exception>
 
 Contexto:
 <phase-specific context only>
@@ -53,20 +76,18 @@ Validações:
 <py_compile, unittest, runner, json.tool, defensive grep>
 
 Atualização final:
-<active-context update, commit, push, final hash>
+<active-context update, LAB_STATUS/LAB_VERDICTS update when applicable, commit, push, final hash>
 ```
 
 ## Preferred short guard aliases
 
-Use these short guard aliases by default in prompts. They reference the stable rules in this file, active-context, Lab status, and decision locks, so prompts do not need to repeat full prohibition blocks.
-
 - `AC-READ`: read active-context first and obey source-of-truth precedence.
-- `BEDROCK-COMPLETE`: use the full Bedrock/Lab envelope when the current phase is Lab-governed.
-- `NO-REAL-EXEC`: no real runtime/product/db/schema/FTS5/ingestion/network/dependency/action execution unless the current phase explicitly authorizes it by evidence.
+- `BEDROCK-COMPLETE`: preserve Lab/Bedrock enforcement; every future phase/capability must have a Bedrock verdict or explicit Bedrock-preparation exception.
+- `NO-REAL-EXEC`: no real runtime/product/db/schema/FTS5/ingestion/network/dependency/action execution unless the current valid gate explicitly authorizes it by evidence.
 - `NO-BULK`: no bulk Obsidian/archive read; query-first only when specifically needed.
 - `ARTIFACT-ONLY`: phase decisions are artifact/evidence decisions unless explicitly promoted by a valid Bedrock/Product gate.
 - `TESTS-RUNNER-DOCS`: create/update runner, tests, docs, artifacts, and validations for the phase.
-- `ACTIVE-CONTEXT-UPDATE`: update CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, CONTEXT_INDEX.md, and Lab/decision files when applicable.
+- `ACTIVE-CONTEXT-UPDATE`: update CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, CONTEXT_INDEX.md, MANDATORY_READ_FIRST_RULES.md if needed, Lab files, and decision files when applicable.
 - `COMMIT-PUSH-HASH`: commit, push, and report final hash.
 
 ## Legacy named guards
@@ -85,6 +106,21 @@ The following legacy names remain valid and map to the compact guard aliases abo
 - `TESTS_AND_RUNNER_REQUIRED`
 - `ACTIVE_CONTEXT_UPDATE_REQUIRED`
 - `COMMIT_PUSH_HASH_REQUIRED`
+
+## Bedrock Gate rule
+
+ARIS Lab is the active validation control plane. Bedrock Gate is mandatory for every future phase/capability advancement.
+
+Allowed verdicts:
+
+- PASS
+- WARN
+- BLOCK
+- NEEDS_REVIEW
+- REGRESSION
+- OBSOLETE
+
+A phase/capability is not complete unless it records a Bedrock verdict or explicitly states that it is a Bedrock-preparation exception. The exception must be carried into NEXT_ACTION.
 
 ## Similar Projects rule
 
@@ -120,7 +156,7 @@ This rule is operator-facing only. It must not bloat Codex prompts, weaken guard
 - Default to the preferred compact prompt skeleton above.
 - Use short guard aliases instead of restating full prohibition blocks.
 - Include only phase-specific deltas and phase-specific forbidden additions.
-- Keep stable repeated content in this file and in `docs/runbooks/`.
+- Keep stable repeated content in this file, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, and docs/runbooks.
 - Do not repeat long safety constitutions in every Codex prompt unless a new subsystem, new risk class, or explicit recovery condition requires it.
 
 ## Quality rule
@@ -129,6 +165,7 @@ Compact prompts must preserve:
 
 - source-of-truth precedence
 - deterministic gates
+- Bedrock verdict or explicit Bedrock-preparation exception
 - tests
 - runner artifacts
 - defensive grep
@@ -141,9 +178,9 @@ Compact prompts must preserve:
 - Default prompt target: copy/paste friendly, short, surgical, and objective.
 - Prefer compact prompts over long prompts when active-context and this contract already contain the stable rules.
 - Longer prompts are allowed only for new subsystems, first implementation of a new pattern, high-risk recovery, or unresolved blockers.
-- Move repeated stable content into `PROMPT_CONTRACT.md` rather than copying it into each prompt.
+- Move repeated stable content into PROMPT_CONTRACT.md, MANDATORY_READ_FIRST_RULES.md, and LAB_OPERATING_CONTRACT.md rather than copying it into each prompt.
 
 ## How to reference
 
 Use this file as the stable meta-contract.
-Use `docs/runbooks/codex_compact_prompt_template.md` as the prompt skeleton for new phases.
+Use docs/runbooks/codex_compact_prompt_template.md as the prompt skeleton for new phases when available.
