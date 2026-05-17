@@ -139,6 +139,17 @@
 - `DECISION_LOCKS.md` continues to outrank prompt convenience, compact prompt templates, or assistant memory.
 - Obsidian, archive, bulk read, and vault write remain prohibited surfaces unless a later explicit gate authorizes them.
 
+## F33.RM-F51-P0/R1 F51+ Advisory Recovery Lock
+
+- F33.RM-F51-P0/R1 is external_advisory_research only and does not authorize implementation, canonical roadmap change, productization, real connectors, or pilot execution.
+- The recovered F51+ roadmap research is advisory-only and must stay unverified until later primary-source review.
+- The preserved operational next action remains `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`.
+- `canonical_roadmap_changed` remains `False`.
+- `implementation_allowed` remains `False`.
+- `operational_next_action_changed` remains `False`.
+- `primary_source_verified` remains `False` for extracted claims in this recovery.
+- Obsidian, archive, bulk read, vault write, runtime mutation, network, and dependency install remain prohibited surfaces.
+
 ## ARIS-LAB-A0 Authority Lock
 
 - F33 is temporarily paused for ARIS Lab foundation.

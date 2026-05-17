@@ -1429,3 +1429,18 @@ Recent F33 Z20 references:
 - [artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_final_drift_check.json](../artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_final_drift_check.json)
 - [artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_codex_usage_pilot_observation.json](../artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_codex_usage_pilot_observation.json)
 - [artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_next_phase_contract.json](../artifacts/f33/f33z20_schema_materialization_controlled_apply_post_closure_review_final_closure_gate_next_phase_contract.json)
+
+Recent F33 RM-F51-P0/R1 references:
+
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_raw.md](../artifacts/research/f51_plus/f51_plus_automation_roadmap_raw.md)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_raw_input_recovery_report.md](../artifacts/research/f51_plus/f51_plus_automation_roadmap_raw_input_recovery_report.md)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_intake.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_intake.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_claims_matrix.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_claims_matrix.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_risk_matrix.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_risk_matrix.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_opportunity_matrix.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_opportunity_matrix.json)
+- [artifacts/research/f51_plus/f51_plus_proposed_f51_f66_roadmap.json](../artifacts/research/f51_plus/f51_plus_proposed_f51_f66_roadmap.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_decision.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_decision.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_summary.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_summary.json)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_report.md](../artifacts/research/f51_plus/f51_plus_automation_roadmap_advisory_report.md)
+- [artifacts/research/f51_plus/f51_plus_automation_roadmap_future_review_contract.json](../artifacts/research/f51_plus/f51_plus_automation_roadmap_future_review_contract.json)
+- [docs/research/f51_plus_automation_roadmap_advisory_intake.md](../docs/research/f51_plus_automation_roadmap_advisory_intake.md)

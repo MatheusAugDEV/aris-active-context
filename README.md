@@ -20,6 +20,7 @@ Current snapshot:
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
 - Next principal phase: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
 - Next continuation phase: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
+- F33.RM-F51-P0/R1 recovered the F51+ roadmap as external advisory research only; it did not alter the canonical roadmap or the operational next action.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`
 

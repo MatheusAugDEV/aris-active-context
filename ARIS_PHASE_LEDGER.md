@@ -3082,3 +3082,36 @@ Closed as a foundation track, not as official V6 closure.
 - obsidian_write_allowed_now: `False`
 - obsidian_bulk_read_allowed_now: `False`
 - Next phase recommendation: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
+
+## F33.RM-F51-P0/R1 - F51+ Automation Roadmap Advisory Raw Input Recovery & Intake
+
+- [F33.RM-F51-P0/R1] F51+ Automation Roadmap Advisory Raw Input Recovery & Intake completed.
+- status: `f33_rm_f51_p0_r1_automation_roadmap_advisory_intake_recovered`
+- recovery_of_phase: `f33_rm_f51_p0_automation_roadmap_advisory_intake_missing_input`
+- advisory_only: `True`
+- evidence_type: `external_advisory_research`
+- verification_status: `unverified`
+- recovery_input_source: `inline_prompt_raw_block`
+- raw_input_preserved: `True`
+- raw_input_path: `artifacts/research/f51_plus/f51_plus_automation_roadmap_raw.md`
+- raw_input_sha256: `bc6b563d9c80b206cc30c635b8a9aa92067c879cbdb4c074480dd60ae726699d`
+- canonical_roadmap_changed: `False`
+- implementation_allowed: `False`
+- operational_next_action_changed: `False`
+- preserved_next_action: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
+- claims_extracted: `True`
+- risks_extracted: `True`
+- opportunities_extracted: `True`
+- proposed_phases_extracted: `True`
+- vertical_lab_01_detected: `True`
+- productization_deferred_detected: `True`
+- future_review_contract_created: `True`
+- active_context_updated: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- next_phase_recommendation: `F33.Z21 — Schema Materialization Controlled Apply Final Closure Review Gate`
+- claims_count: `20`
+- risk_count: `10`
+- opportunity_count: `10`
+- roadmap_phase_count: `16`
+- indispensable_phase_count: `12`
