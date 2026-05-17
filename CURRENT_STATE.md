@@ -4,29 +4,26 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
-- Latest completed phase: `ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate`
-- Status: `aris_lab_b6_bedrock_decisions_placeholder_continuation_gate_passed`
+- Latest completed phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+- Status: `aris_lab_b7_bedrock_decisions_contract_schema_planning_gate_passed`
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate verdict: `PASS`
-- Bedrock placeholder continuation gate completed: `True`
-- B5 artifact review verified: `True`
-- B5 review matrix verified: `True`
-- B5 artifact completeness matrix verified: `True`
-- B5 placeholder safety review verified: `True`
-- B5 drift check verified: `True`
-- B5 safety attestation verified: `True`
-- B5 next phase contract verified: `True`
-- B5 LAB_VERDICTS section reviewed: `True`
-- Placeholder track closure record created: `True`
-- Placeholder track ready for continuation: `True`
-- Continuation matrix created: `True`
-- Bedrock Gate enforcement hardened: `True`
-- LAB_VERDICTS update validator created: `True`
-- Current B2 section validated: `True`
-- Valid fixture passed: `True`
-- Missing-section fixture failed: `True`
-- Malformed-row fixture failed: `True`
-- Product-promotion fixture failed: `True`
+- Bedrock contract/schema planning gate completed: `True`
+- B6 continuation matrix verified: `True`
+- B6 artifact review verified: `True`
+- B6 placeholder track closure verified: `True`
+- B6 drift check verified: `True`
+- B6 safety attestation verified: `True`
+- B6 next phase contract verified: `True`
+- B6 LAB_VERDICTS section reviewed: `True`
+- Placeholder track closure carried forward: `True`
+- Decision schema plan created: `True`
+- Contract plan created: `True`
+- Field matrix created: `True`
+- Invariant matrix created: `True`
+- Future validation plan created: `True`
+- B6 report verified: `True`
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
 - F33.W-BEDROCK planning: F33.W finalization verified; schema contract sources checked; schema entities, materialization order, preconditions, invariants, rollback plan, and next-phase authorization contract created; FTS5 deferred or blocked; persistent_sqlite_database_creation_allowed_now=False; sqlite_schema_apply_allowed_now=False; sqlite_connect_allowed_now=False; fts5_table_creation_allowed_now=False.
 - F33.Z10 candidate review gate verified; the full F33.Z1-F33.Z9 candidate chain was reviewed; apply candidate manifest, schema action candidate list, inert SQL candidate bundle, apply preconditions candidate matrix, rollback candidate plan, idempotency candidate plan, apply blocker candidate matrix, no-side-effect candidate proof, authorization carry-forward record, safety attestation, drift check, codex usage pilot observation, and next phase contract reviewed; review passed; no real apply authorized.
@@ -38,8 +35,8 @@ As of 2026-05-17:
 - F33.RM-F51-P0/R1 remains external advisory research only; raw input preserved; it does not authorize product promotion or override the Lab contract.
 - F33.Z22 final closure review remains preserved as the latest F33 operational closure.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
-- Next principal phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+- Next continuation phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
+- Next principal phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 

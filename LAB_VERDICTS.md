@@ -1,5 +1,24 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b6_package_review | lab_validated | No | B6 decision, summary, report | B6 package remains PASS and recommends B7 |
+| lab.b6_continuation_matrix_review | lab_validated | No | B6 continuation matrix | B6 continuation matrix remains passed |
+| lab.b6_b5_artifact_review | lab_validated | No | B6 B5 artifact review | B5 artifact review carried forward and remains passed |
+| lab.b6_placeholder_track_closure_review | lab_validated | No | B6 placeholder track closure record | Placeholder track stays closed for continuation, not execution |
+| lab.b6_drift_check_review | lab_validated | No | B6 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b6_safety_attestation_review | lab_validated | No | B6 safety attestation | Dangerous flags remain blocked and review-only |
+| lab.b6_next_phase_contract_review | lab_validated | No | B6 next phase contract | B7 planning is the reviewed anchor |
+| lab.decision_schema_plan | lab_validated | No | B7 decision schema plan | Bedrock decision schema minimum and allowed verdicts planned |
+| lab.decision_contract_plan | lab_validated | No | B7 decision contract plan | Contract boundaries and non-authorization rules planned |
+| lab.field_matrix_review | lab_validated | No | B7 field matrix | Required fields mapped and bounded |
+| lab.invariant_matrix_review | lab_validated | No | B7 invariant matrix | Required invariants mapped and bounded |
+| lab.future_validation_plan_review | lab_validated | No | B7 future validation plan | Future validation sequence planned |
+| lab.historical_irregularities_review | warning_only | No | B6 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B7 next phase contract | B8 recommended; B7 closed |
+
 ## ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

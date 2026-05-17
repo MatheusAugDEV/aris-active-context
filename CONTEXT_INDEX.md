@@ -59,6 +59,21 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B7 references
+
+- [docs/aris_lab/aris_lab_b7_bedrock_decisions_contract_schema_planning_gate.md](../docs/aris_lab/aris_lab_b7_bedrock_decisions_contract_schema_planning_gate.md)
+- [artifacts/aris_lab/aris_lab_b7_decision.json](../artifacts/aris_lab/aris_lab_b7_decision.json)
+- [artifacts/aris_lab/aris_lab_b7_summary.json](../artifacts/aris_lab/aris_lab_b7_summary.json)
+- [artifacts/aris_lab/aris_lab_b7_report.md](../artifacts/aris_lab/aris_lab_b7_report.md)
+- [artifacts/aris_lab/aris_lab_b7_decision_schema_plan.json](../artifacts/aris_lab/aris_lab_b7_decision_schema_plan.json)
+- [artifacts/aris_lab/aris_lab_b7_decision_contract_plan.json](../artifacts/aris_lab/aris_lab_b7_decision_contract_plan.json)
+- [artifacts/aris_lab/aris_lab_b7_field_matrix.json](../artifacts/aris_lab/aris_lab_b7_field_matrix.json)
+- [artifacts/aris_lab/aris_lab_b7_invariant_matrix.json](../artifacts/aris_lab/aris_lab_b7_invariant_matrix.json)
+- [artifacts/aris_lab/aris_lab_b7_future_validation_plan.json](../artifacts/aris_lab/aris_lab_b7_future_validation_plan.json)
+- [artifacts/aris_lab/aris_lab_b7_drift_check.json](../artifacts/aris_lab/aris_lab_b7_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b7_safety_attestation.json](../artifacts/aris_lab/aris_lab_b7_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b7_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b7_next_phase_contract.json)
+
 ## Recent ARIS-LAB B6 references
 
 - [docs/aris_lab/aris_lab_b6_bedrock_decisions_placeholder_continuation_gate.md](../docs/aris_lab/aris_lab_b6_bedrock_decisions_placeholder_continuation_gate.md)
