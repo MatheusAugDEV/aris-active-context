@@ -1,5 +1,4 @@
-Prepare ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation; anchor phase ARIS-LAB-A0/R1.
-- LAB_OPERATING_CONTRACT.md is now authoritative for Lab enforcement.
-- Every future phase/capability must include a Bedrock Gate verdict or an explicit Bedrock-preparation exception in its phase contract.
-- F33 remains paused under Lab governance, not cancelled.
-- F51+ remains advisory-only and does not authorize implementation.
+Prepare ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner; anchor phase ARIS-LAB-B1.
+- B1 enforcement hardening is complete and the minimum phase pack validation passed.
+- Future phases must carry a Bedrock verdict or an explicit Bedrock-preparation exception.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.

@@ -1,5 +1,15 @@
 # LAB_VERDICTS
 
+## ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.bedrock_gate_enforcement_hardening | lab_validated | No | B1 bedrock enforcement matrix | Bedrock Gate remains non-executable now |
+| lab.phase_pack_validation | lab_validated | No | B1 phase pack validation matrix | Minimum phase pack validated for future phases |
+| lab.active_context_consistency | lab_validated | No | B1 drift check | Active-context and Lab status remain aligned; historical summary drift recorded |
+| lab.safety_attestation | lab_validated | No | B1 safety attestation | Dangerous flags verified false |
+| lab.next_phase_contract | lab_validated | No | B1 next phase contract | B2 recommended; B1 closed |
+
 ## ARIS-LAB-A0/R1 Active Status Materialization
 
 | Capability | State | Product Promotion | Evidence | Notes |

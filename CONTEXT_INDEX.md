@@ -59,6 +59,18 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B1 references
+
+- [docs/aris_lab/aris_lab_b1_bedrock_gate_enforcement_hardening.md](../docs/aris_lab/aris_lab_b1_bedrock_gate_enforcement_hardening.md)
+- [artifacts/aris_lab/aris_lab_b1_decision.json](../artifacts/aris_lab/aris_lab_b1_decision.json)
+- [artifacts/aris_lab/aris_lab_b1_summary.json](../artifacts/aris_lab/aris_lab_b1_summary.json)
+- [artifacts/aris_lab/aris_lab_b1_report.md](../artifacts/aris_lab/aris_lab_b1_report.md)
+- [artifacts/aris_lab/aris_lab_b1_phase_pack_validation_matrix.json](../artifacts/aris_lab/aris_lab_b1_phase_pack_validation_matrix.json)
+- [artifacts/aris_lab/aris_lab_b1_bedrock_enforcement_matrix.json](../artifacts/aris_lab/aris_lab_b1_bedrock_enforcement_matrix.json)
+- [artifacts/aris_lab/aris_lab_b1_drift_check.json](../artifacts/aris_lab/aris_lab_b1_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
+
 - Latest completed active-context phase: `ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
 - Next principal phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`

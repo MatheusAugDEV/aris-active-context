@@ -16,12 +16,13 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization`
+- Latest completed phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
-- Next continuation phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
+- Next principal phase: `ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner`
+- Next continuation phase: `ARIS-LAB-B2 — Minimal Phase Lab Checklist Runner`
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
+- B1 enforcement hardening passed and the phase pack validation matrix was materialized.
 - F44 interpretation: `hardening/maturity of existing Lab`
 
 Rules:

@@ -1,5 +1,13 @@
 # DECISION_LOCKS
 
+## ARIS-LAB-B1 Bedrock Gate Enforcement Hardening Lock
+
+- ARIS-LAB-B1 is deterministic enforcement hardening only and does not authorize product promotion, runtime mutation, DB/schema/fts5, network, dependency install, MCP activation, Obsidian bulk read, vault-write, or F33 resume.
+- Future phases and capabilities must include a Bedrock verdict or an explicit Bedrock-preparation exception in their phase contract.
+- Future phase packs must include read-first compliance, phase pack minimum validation, dangerous-flag verification, drift check, and a next-phase contract.
+- Bedrock Gate executable now remains `False` until a later explicit gate changes it.
+- F33 remains preserved under Lab governance.
+
 - Official V6 naming stays on the PDF path F1-F29 only.
 - Obsidian is query-first, read-only, derived, and never authorizing.
 - No bulk Obsidian read.
