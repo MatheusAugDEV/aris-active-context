@@ -59,7 +59,23 @@ Read in this order:
 
 ## Current operational anchor
 
-## Recent ARIS-LAB B8 references
+## Recent ARIS-LAB B9 review references
+
+- [docs/aris_lab/aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate.md](../docs/aris_lab/aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate.md)
+- [artifacts/aris_lab/aris_lab_b9_decision.json](../artifacts/aris_lab/aris_lab_b9_decision.json)
+- [artifacts/aris_lab/aris_lab_b9_summary.json](../artifacts/aris_lab/aris_lab_b9_summary.json)
+- [artifacts/aris_lab/aris_lab_b9_report.md](../artifacts/aris_lab/aris_lab_b9_report.md)
+- B9 closure review alias: `aris_lab_b9_closure_review` (review-only)
+- [artifacts/aris_lab/aris_lab_b9_schema_review_matrix.json](../artifacts/aris_lab/aris_lab_b9_schema_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b9_contract_review_matrix.json](../artifacts/aris_lab/aris_lab_b9_contract_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b9_field_review_matrix.json](../artifacts/aris_lab/aris_lab_b9_field_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b9_invariant_review_matrix.json](../artifacts/aris_lab/aris_lab_b9_invariant_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b9_future_validation_review.json](../artifacts/aris_lab/aris_lab_b9_future_validation_review.json)
+- [artifacts/aris_lab/aris_lab_b9_drift_check.json](../artifacts/aris_lab/aris_lab_b9_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b9_safety_attestation.json](../artifacts/aris_lab/aris_lab_b9_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b9_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b9_next_phase_contract.json)
+
+## Recent ARIS-LAB B9 review references
 
 - [docs/aris_lab/aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate.md](../docs/aris_lab/aris_lab_b8_bedrock_decisions_contract_schema_planning_review_gate.md)
 - [artifacts/aris_lab/aris_lab_b8_decision.json](../artifacts/aris_lab/aris_lab_b8_decision.json)

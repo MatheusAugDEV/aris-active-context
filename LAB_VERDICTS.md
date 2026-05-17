@@ -1,3 +1,20 @@
+## ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b8_package_review | lab_validated | No | B8 decision and summary | B8 package remains PASS and closure review is complete |
+| lab.b8_schema_review | lab_validated | No | B8 decision schema plan | Allowed verdicts remain closed and explicit |
+| lab.b8_contract_review | lab_validated | No | B8 decision contract plan | Non-authorization boundaries remain explicit |
+| lab.b8_field_review | lab_validated | No | B8 field matrix | Required fields remain bounded |
+| lab.b8_invariant_review | lab_validated | No | B8 invariant matrix | Required invariants remain bounded |
+| lab.b8_future_validation_review | lab_validated | No | B8 future validation plan | Future validation sequence remains bounded |
+| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Current-state duplicate historical warning phrase confirmed and treated as cleanup candidate |
+| lab.b8_drift_check_review | lab_validated | No | B8 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b8_safety_attestation_review | lab_validated | No | B8 safety attestation | Dangerous flags remain blocked and review-only |
+| lab.b8_next_phase_contract_review | lab_validated | No | B8 next phase contract | B8 review is the reviewed anchor |
+| lab.historical_irregularities_review | warning_only | No | B8 drift check | Historical irregularities were recorded as warning only |
+| lab.next_phase_contract | lab_validated | No | B8 next phase contract | B10 recommended; B9 closed |
+
 ## ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
@@ -8,7 +25,7 @@
 | lab.b7_field_review | lab_validated | No | B7 field matrix | Required fields remain bounded |
 | lab.b7_invariant_review | lab_validated | No | B7 invariant matrix | Required invariants remain bounded |
 | lab.b7_future_validation_review | lab_validated | No | B7 future validation plan | Future validation sequence remains bounded |
-| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Current-state duplicate historical warning phrase confirmed and treated as cleanup candidate |
+| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Duplicate historical-warning line confirmed and treated as cleanup candidate |
 | lab.b7_drift_check_review | lab_validated | No | B7 drift check | Live drift remains absent and historical irregularities stay warning-only |
 | lab.b7_safety_attestation_review | lab_validated | No | B7 safety attestation | Dangerous flags remain blocked and review-only |
 | lab.b7_next_phase_contract_review | lab_validated | No | B7 next phase contract | B8 review is the reviewed anchor |
