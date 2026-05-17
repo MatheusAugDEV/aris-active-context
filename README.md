@@ -18,8 +18,8 @@ Current snapshot:
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
 - Latest completed phase: `ARIS-LAB-A0/R1 — Lab Authority Reconciliation & Active Status Materialization`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
-- Next continuation phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
+- Next principal phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
+- Next continuation phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.
 - F44 interpretation: `hardening/maturity of existing Lab`

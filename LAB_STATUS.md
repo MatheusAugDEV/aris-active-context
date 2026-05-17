@@ -6,7 +6,7 @@
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate executable now: False
 - Product promotion: not allowed
-- Next Lab phase: ARIS-LAB-B1 — Lab Impact Summary Template
+- Next Lab phase: ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation
 - F33 resume point: preserved as historical contract
 - F44 interpretation: hardening/maturity of existing Lab
 - Authority lock: preserved

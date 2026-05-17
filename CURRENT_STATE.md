@@ -17,8 +17,8 @@ As of 2026-05-16:
 - F33.RM-F51-P0/R1 remains external advisory research only; raw input preserved; it does not authorize product promotion or override the Lab contract.
 - F33.Z22 final closure review remains preserved as the latest F33 operational closure.
 - F44 interpretation: `hardening/maturity of existing Lab`
-- Next continuation phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
-- Next principal phase: `ARIS-LAB-B1 — Lab Impact Summary Template`
+- Next continuation phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
+- Next principal phase: `ARIS-LAB-B1 — Bedrock Gate Enforcement Hardening & Phase Pack Validation`
 - F33.Z remains preserved as the main resumed phase after PRE0–PRE7 complete.
 - Hard blocks remain: no real apply, no config write, no platform activation, no external vault access, no bulk read, no network use, no dependency install, no mutable runtime, no real git automation.
 
