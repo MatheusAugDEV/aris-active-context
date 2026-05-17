@@ -1,3 +1,19 @@
+## Recent ARIS-LAB B16 review references
+
+- [docs/aris_lab/aris_lab_b16_bedrock_decisions_contract_schema_consolidation_readiness_gate.md](../docs/aris_lab/aris_lab_b16_bedrock_decisions_contract_schema_consolidation_readiness_gate.md)
+- [artifacts/aris_lab/aris_lab_b16_decision.json](../artifacts/aris_lab/aris_lab_b16_decision.json)
+- [artifacts/aris_lab/aris_lab_b16_summary.json](../artifacts/aris_lab/aris_lab_b16_summary.json)
+- [artifacts/aris_lab/aris_lab_b16_report.md](../artifacts/aris_lab/aris_lab_b16_report.md)
+- [artifacts/aris_lab/aris_lab_b16_b15_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b16_b15_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b16_phase_narrative_rule_readiness.json](../artifacts/aris_lab/aris_lab_b16_phase_narrative_rule_readiness.json)
+- [artifacts/aris_lab/aris_lab_b16_chain_readiness_record.json](../artifacts/aris_lab/aris_lab_b16_chain_readiness_record.json)
+- [artifacts/aris_lab/aris_lab_b16_non_authorization_readiness_matrix.json](../artifacts/aris_lab/aris_lab_b16_non_authorization_readiness_matrix.json)
+- [artifacts/aris_lab/aris_lab_b16_evidence_link_readiness_matrix.json](../artifacts/aris_lab/aris_lab_b16_evidence_link_readiness_matrix.json)
+- [artifacts/aris_lab/aris_lab_b16_historical_warning_readiness.json](../artifacts/aris_lab/aris_lab_b16_historical_warning_readiness.json)
+- [artifacts/aris_lab/aris_lab_b16_drift_check.json](../artifacts/aris_lab/aris_lab_b16_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b16_safety_attestation.json](../artifacts/aris_lab/aris_lab_b16_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b16_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b16_next_phase_contract.json)
+
 ## Recent ARIS-LAB B15 review references
 
 - [docs/aris_lab/aris_lab_b15_bedrock_decisions_contract_schema_consolidation_readiness_gate.md](../docs/aris_lab/aris_lab_b15_bedrock_decisions_contract_schema_consolidation_readiness_gate.md)
