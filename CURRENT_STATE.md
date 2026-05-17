@@ -4,6 +4,30 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
+- Latest completed phase: `ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate`
+- Status: `aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate_passed`
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate verdict: `PASS`
+- B9 continuation review matrix created: `True`
+- B9 schema contract continuation review created: `True`
+- B9 non-authorization review created: `True`
+- B9 drift check review created: `True`
+- B9 safety attestation review created: `True`
+- B9 next phase contract verified: `True`
+- B8 chain carried forward verified: `True`
+- Current-state duplicate historical warning phrase found: `True` (warning only)
+- LAB_VERDICTS structural cleanup candidate deferred: `True`
+- Next principal phase: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains not allowed; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and vault write remain blocked.
+
+# CURRENT_STATE
+
+As of 2026-05-17:
+
+- Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
+- F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
 - Latest completed phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
 - Status: `aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate_passed`
 - Bedrock Gate status: declared, not executable yet

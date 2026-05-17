@@ -1,3 +1,35 @@
+## ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b9_package_review | lab_validated | No | B9 decision and summary | B9 package remains PASS and recommends B10 |
+| lab.b9_continuation_review_matrix_review | lab_validated | No | B9 continuation review matrix | B9 continuation review remains passed |
+| lab.b9_schema_contract_continuation_review | lab_validated | No | B9 schema contract continuation review | Contract and schema plan remain non-authorizing |
+| lab.b9_non_authorization_review | lab_validated | No | B9 non-authorization review | Dangerous flags remain blocked and review-only |
+| lab.b9_drift_check_review | lab_validated | No | B9 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b9_safety_attestation_review | lab_validated | No | B9 safety attestation | Dangerous flags remain blocked and review-only |
+| lab.b9_next_phase_contract_review | lab_validated | No | B9 next phase contract | B10 review is the reviewed anchor |
+| lab.b8_chain_carried_forward_review | lab_validated | No | B7 -> B8 -> B9 chain | The B7 -> B8 -> B9 chain remains coherent and non-authorizing |
+| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Duplicate historical warning phrase remains warning-only |
+| lab.historical_irregularities_review | warning_only | No | B9 drift check | Historical irregularities remain warning-only |
+| lab.next_phase_contract | lab_validated | No | B10 next phase contract | B11 recommended; B10 closed |
+
+## ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b9_package_review | lab_validated | No | B9 decision and summary | B9 package remains PASS and recommends B10 |
+| lab.b9_continuation_review_matrix_review | lab_validated | No | B9 continuation review matrix | B9 continuation review remains passed |
+| lab.b9_schema_contract_continuation_review | lab_validated | No | B9 schema contract continuation review | Contract and schema plan remain non-authorizing |
+| lab.b9_non_authorization_review | lab_validated | No | B9 non-authorization review | Dangerous flags remain blocked and review-only |
+| lab.b9_drift_check_review | lab_validated | No | B9 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.b9_safety_attestation_review | lab_validated | No | B9 safety attestation | Dangerous flags remain blocked and review-only |
+| lab.b9_next_phase_contract_review | lab_validated | No | B9 next phase contract | B10 review is the reviewed anchor |
+| lab.b8_chain_carried_forward_review | lab_validated | No | B7 -> B8 -> B9 chain | The B7 -> B8 -> B9 chain remains coherent and non-authorizing |
+| lab.current_state_duplicate_historical_warning_review | warning_only | No | CURRENT_STATE.md | Duplicate historical warning phrase remains warning-only |
+| lab.historical_irregularities_review | warning_only | No | B9 drift check | Historical irregularities remain warning-only |
+| lab.next_phase_contract | lab_validated | No | B10 next phase contract | B11 recommended; B10 closed |
+
 ## ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

@@ -59,6 +59,32 @@ Read in this order:
 
 ## Current operational anchor
 
+## Recent ARIS-LAB B10 review references
+
+- [docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md](../docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md)
+- [artifacts/aris_lab/aris_lab_b10_decision.json](../artifacts/aris_lab/aris_lab_b10_decision.json)
+- [artifacts/aris_lab/aris_lab_b10_summary.json](../artifacts/aris_lab/aris_lab_b10_summary.json)
+- [artifacts/aris_lab/aris_lab_b10_report.md](../artifacts/aris_lab/aris_lab_b10_report.md)
+- [artifacts/aris_lab/aris_lab_b10_b9_continuation_review_matrix.json](../artifacts/aris_lab/aris_lab_b10_b9_continuation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b10_schema_contract_continuation_review.json](../artifacts/aris_lab/aris_lab_b10_schema_contract_continuation_review.json)
+- [artifacts/aris_lab/aris_lab_b10_non_authorization_review.json](../artifacts/aris_lab/aris_lab_b10_non_authorization_review.json)
+- [artifacts/aris_lab/aris_lab_b10_drift_check.json](../artifacts/aris_lab/aris_lab_b10_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b10_safety_attestation.json](../artifacts/aris_lab/aris_lab_b10_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b10_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b10_next_phase_contract.json)
+
+## Recent ARIS-LAB B10 review references
+
+- [docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md](../docs/aris_lab/aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate.md)
+- [artifacts/aris_lab/aris_lab_b10_decision.json](../artifacts/aris_lab/aris_lab_b10_decision.json)
+- [artifacts/aris_lab/aris_lab_b10_summary.json](../artifacts/aris_lab/aris_lab_b10_summary.json)
+- [artifacts/aris_lab/aris_lab_b10_report.md](../artifacts/aris_lab/aris_lab_b10_report.md)
+- [artifacts/aris_lab/aris_lab_b10_b9_continuation_review_matrix.json](../artifacts/aris_lab/aris_lab_b10_b9_continuation_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b10_schema_contract_continuation_review.json](../artifacts/aris_lab/aris_lab_b10_schema_contract_continuation_review.json)
+- [artifacts/aris_lab/aris_lab_b10_non_authorization_review.json](../artifacts/aris_lab/aris_lab_b10_non_authorization_review.json)
+- [artifacts/aris_lab/aris_lab_b10_drift_check.json](../artifacts/aris_lab/aris_lab_b10_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b10_safety_attestation.json](../artifacts/aris_lab/aris_lab_b10_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b10_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b10_next_phase_contract.json)
+
 ## Recent ARIS-LAB B9 review references
 
 - [docs/aris_lab/aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate.md](../docs/aris_lab/aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate.md)

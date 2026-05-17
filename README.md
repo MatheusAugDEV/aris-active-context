@@ -16,9 +16,9 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
+- Latest completed phase: `ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate`
 - F33.P-BEDROCK consolidated the controlled SQLite dry-run chain and confirmed the residue continuity boundary.
-- Next principal phase: `ARIS-LAB-B10 — Bedrock Decisions Contract/Schema Review Continuation Gate`
+- Next principal phase: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
 - Next continuation phase: `ARIS-LAB-B8 — Bedrock Decisions Contract/Schema Planning Review Gate`
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - F33.P-BEDROCK remains evidence-only and product promotion remains blocked.

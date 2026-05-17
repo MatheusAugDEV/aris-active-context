@@ -1,6 +1,43 @@
 # ARIS_PHASE_LEDGER
 
-## ARIS-LAB-B9 - Bedrock Decisions Contract/Schema Review Closure Gate
+## ARIS-LAB-B10 - Bedrock Decisions Contract/Schema Review Continuation Gate
+
+- [ARIS-LAB-B10] Bedrock Decisions Contract/Schema Review Continuation Gate completed.
+- status: `aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate_passed`
+- anchor_phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
+- b9_status_verified: `True`
+- b9_bedrock_verdict_verified: `True`
+- b9_summary_verified: `True`
+- b9_report_verified: `True`
+- b9_review_matrices_verified: `True`
+- b9_drift_check_verified: `True`
+- b9_safety_attestation_verified: `True`
+- b9_next_phase_contract_verified: `True`
+- b8_chain_carried_forward_verified: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- continuation_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
+
+## ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate
+
 
 - [ARIS-LAB-B9] Bedrock Decisions Contract/Schema Review Closure Gate completed.
 - status: `aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate_passed`
@@ -41,7 +78,44 @@
 
 # ARIS_PHASE_LEDGER
 
-## ARIS-LAB-B9 - Bedrock Decisions Contract/Schema Review Closure Gate
+## ARIS-LAB-B10 - Bedrock Decisions Contract/Schema Review Continuation Gate
+
+- [ARIS-LAB-B10] Bedrock Decisions Contract/Schema Review Continuation Gate completed.
+- status: `aris_lab_b10_bedrock_decisions_contract_schema_review_continuation_gate_passed`
+- anchor_phase: `ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate`
+- b9_status_verified: `True`
+- b9_bedrock_verdict_verified: `True`
+- b9_summary_verified: `True`
+- b9_report_verified: `True`
+- b9_review_matrices_verified: `True`
+- b9_drift_check_verified: `True`
+- b9_safety_attestation_verified: `True`
+- b9_next_phase_contract_verified: `True`
+- b8_chain_carried_forward_verified: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- continuation_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B11 — Bedrock Decisions Contract/Schema Review Assurance Gate`
+
+## ARIS-LAB-B9 — Bedrock Decisions Contract/Schema Review Closure Gate
+
 
 - [ARIS-LAB-B9] Bedrock Decisions Contract/Schema Review Closure Gate completed.
 - status: `aris_lab_b9_bedrock_decisions_contract_schema_review_closure_gate_passed`
