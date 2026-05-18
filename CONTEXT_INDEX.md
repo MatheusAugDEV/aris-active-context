@@ -177,7 +177,26 @@ Read in this order:
 
 ## Current operational anchor
 
-- B20 closure review completed; B7 -> B19 cycle is closed; next principal phase is B21; the B21/B22/B23 Lab governance plan is recorded; historical warnings remain warning-only; Bedrock stays non-executable.
+- B21 final readiness report completed; governance score is 90/100; the Completion Doctrine / 200% Standard is persisted; next principal phase is B22; B22/B23 remain required; historical warnings remain warning-only; Bedrock stays non-executable.
+
+## Recent ARIS-LAB B21 review references
+
+- [docs/aris_lab/aris_lab_b21_lab_governance_final_readiness_report_gate.md](../docs/aris_lab/aris_lab_b21_lab_governance_final_readiness_report_gate.md)
+- [artifacts/aris_lab/aris_lab_b21_decision.json](../artifacts/aris_lab/aris_lab_b21_decision.json)
+- [artifacts/aris_lab/aris_lab_b21_summary.json](../artifacts/aris_lab/aris_lab_b21_summary.json)
+- [artifacts/aris_lab/aris_lab_b21_report.md](../artifacts/aris_lab/aris_lab_b21_report.md)
+- [artifacts/aris_lab/aris_lab_b21_lab_governance_final_readiness_report.md](../artifacts/aris_lab/aris_lab_b21_lab_governance_final_readiness_report.md)
+- [artifacts/aris_lab/aris_lab_b21_lab_governance_readiness_matrix.json](../artifacts/aris_lab/aris_lab_b21_lab_governance_readiness_matrix.json)
+- [artifacts/aris_lab/aris_lab_b21_control_coverage_matrix.json](../artifacts/aris_lab/aris_lab_b21_control_coverage_matrix.json)
+- [artifacts/aris_lab/aris_lab_b21_non_authorization_readiness_matrix.json](../artifacts/aris_lab/aris_lab_b21_non_authorization_readiness_matrix.json)
+- [artifacts/aris_lab/aris_lab_b21_warning_and_deferred_items_register.json](../artifacts/aris_lab/aris_lab_b21_warning_and_deferred_items_register.json)
+- [artifacts/aris_lab/aris_lab_b21_completion_doctrine_readiness.json](../artifacts/aris_lab/aris_lab_b21_completion_doctrine_readiness.json)
+- [artifacts/aris_lab/aris_lab_b21_completion_doctrine_verification.json](../artifacts/aris_lab/aris_lab_b21_completion_doctrine_verification.json)
+- [artifacts/aris_lab/aris_lab_b21_completion_doctrine_report.md](../artifacts/aris_lab/aris_lab_b21_completion_doctrine_report.md)
+- [artifacts/aris_lab/aris_lab_b21_b20_anchor_review_matrix.json](../artifacts/aris_lab/aris_lab_b21_b20_anchor_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b21_drift_check.json](../artifacts/aris_lab/aris_lab_b21_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b21_safety_attestation.json](../artifacts/aris_lab/aris_lab_b21_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b21_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b21_next_phase_contract.json)
 
 ## Recent ARIS-LAB B20 review references
 

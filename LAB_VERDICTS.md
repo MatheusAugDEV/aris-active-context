@@ -1,3 +1,33 @@
+## ARIS-LAB-B21 — Lab Governance Final Readiness Report Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b20_readiness_report | lab_validated | No | B20 decision and summary | B20 package remains PASS and closes into B21 |
+| lab.b20_chain_readiness_review_record | lab_validated | No | B21 b20 anchor review matrix | B20 closure package remains coherent and review-only |
+| lab.completion_doctrine_readiness | lab_validated | No | B21 completion doctrine readiness | no false completion and no hidden TODO remain explicit |
+| lab.completion_doctrine_verification | lab_validated | No | B21 completion doctrine verification | evidence-backed completion and operator clarity remain explicit |
+| lab.lab_governance_readiness_matrix | lab_validated | No | B21 readiness matrix | Readiness score remains conservative and not 100 yet |
+| lab.control_coverage_matrix | lab_validated | No | B21 control coverage matrix | Active-context precedence and non-authorization remain explicit |
+| lab.warning_and_deferred_items_register | warning_only | No | B21 warning/deferred register | Historical warnings remain warning-only and B22/B23 stay deferred |
+| lab.b20_historical_warning_readiness_review | warning_only | No | B21 drift check | Historical irregularities remain warning-only |
+| lab.b20_chain_textual_drift_readiness_review | warning_only | No | B21 drift check | Historical chain wording remains warning-only |
+| lab.next_phase_contract | lab_validated | No | B21 next phase contract | B22 recommended; B21 closed |
+
+## ARIS-LAB-B21 — Lab Governance Final Readiness Report Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b20_readiness_report | lab_validated | No | B20 decision and summary | B20 package remains PASS and closes into B21 |
+| lab.b20_chain_readiness_review_record | lab_validated | No | B21 b20 anchor review matrix | B20 closure package remains coherent and review-only |
+| lab.completion_doctrine_readiness | lab_validated | No | B21 completion doctrine readiness | no false completion and no hidden TODO remain explicit |
+| lab.completion_doctrine_verification | lab_validated | No | B21 completion doctrine verification | evidence-backed completion and operator clarity remain explicit |
+| lab.lab_governance_readiness_matrix | lab_validated | No | B21 readiness matrix | Readiness score remains conservative and not 100 yet |
+| lab.control_coverage_matrix | lab_validated | No | B21 control coverage matrix | Active-context precedence and non-authorization remain explicit |
+| lab.warning_and_deferred_items_register | warning_only | No | B21 warning/deferred register | Historical warnings remain warning-only and B22/B23 stay deferred |
+| lab.b20_historical_warning_readiness_review | warning_only | No | B21 drift check | Historical irregularities remain warning-only |
+| lab.b20_chain_textual_drift_readiness_review | warning_only | No | B21 drift check | Historical chain wording remains warning-only |
+| lab.next_phase_contract | lab_validated | No | B21 next phase contract | B22 recommended; B21 closed |
+
 ## ARIS-LAB-B20 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

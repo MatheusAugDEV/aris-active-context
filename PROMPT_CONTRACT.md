@@ -169,6 +169,34 @@ Starting with ARIS-LAB-B14, every future ARIS phase prompt, Codex instruction, p
 The fields must stay brief and continuity-focused. They do not replace active-context evidence, source-of-truth files, or full phase documentation.
 Future next-phase contracts must require both fields.
 
+## ARIS Completion Doctrine / 200% Standard
+
+Every future ARIS phase prompt, Codex instruction, phase review, status review, roadmap decision, and next-step recommendation must avoid false completion language unless the evidence package is complete, validated, and non-bypassable.
+
+Completion claims are only allowed when the current gate can support all of the following without known blockers:
+
+- no false completion
+- no hidden TODO
+- evidence-backed completion
+- safe completion
+- efficient completion
+- non-bypassable gate
+- operator clarity
+
+Operational interpretation:
+
+- If it is not complete, do not call it final.
+- If it has a gap, convert it to warning, deferred, blocked, or next-phase requirement.
+- If evidence is missing, it is a hypothesis.
+- If a test is missing, it is a candidate.
+- If safety is missing, do not advance.
+- If operator clarity is insufficient, it is not final.
+- If a known risk lacks classification, do not close.
+- If the gate can be bypassed without detection, the gate is not ready.
+- If efficiency is poor because of repetition, noise, bulk-read, or prompt bloat, record a required improvement.
+- "100%" means complete, validated, safe, and free of known blockers.
+- "200%" means complete plus efficient, operator-clear, evidence-backed, non-bypassable, and without false done.
+
 ## Quality rule
 
 Compact prompts must preserve:
