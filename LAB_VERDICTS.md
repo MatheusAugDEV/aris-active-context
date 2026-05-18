@@ -1,16 +1,16 @@
-## ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate Bedrock Enforcement Verdict
+## ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
 | --- | --- | --- | --- | --- |
-| lab.b17_continuation_review | lab_validated | No | B18 continuation review matrix | B17 closure package remains PASS and carries forward into B18 |
-| lab.b17_chain_continuation_record | lab_validated | No | B18 chain continuation record | B7 -> B17 chain remains coherent and non-authorizing |
-| lab.phase_narrative_rule_continuation_review | lab_validated | No | B18 phase narrative rule continuation review | previous_phase_short_summary and next_phase_short_explanation remain required |
-| lab.b17_non_authorization_continuation_matrix | lab_validated | No | B18 non-authorization continuation matrix | Dangerous flags remain blocked and review-only |
-| lab.b17_evidence_link_continuation_matrix | lab_validated | No | B18 evidence link continuation matrix | Evidence links remain explicit and consistent |
-| lab.b17_historical_warning_continuation_review | warning_only | No | B18 historical warning continuation review | Historical irregularities remain warning-only |
-| lab.chain_textual_drift_continuation_review | warning_only | No | B18 chain textual drift continuation review | Historical wording remains warning-only and B17 continuity is preserved |
-| lab.b17_drift_check | lab_validated | No | B18 drift check | Live drift remains absent and historical irregularities stay warning-only |
-| lab.next_phase_contract | lab_validated | No | B18 next phase contract | B19 recommended; B18 closed |
+| lab.b18_readiness_review | lab_validated | No | B19 readiness review matrix | B18 continuation package remains PASS and carries forward into B19 review |
+| lab.b18_chain_readiness_review_record | lab_validated | No | B19 chain readiness review record | B7 -> B18 chain remains coherent and non-authorizing |
+| lab.phase_narrative_rule_readiness_review | lab_validated | No | B19 phase narrative rule readiness review | previous_phase_short_summary and next_phase_short_explanation remain required |
+| lab.b18_non_authorization_readiness_review_matrix | lab_validated | No | B19 non-authorization readiness review matrix | Dangerous flags remain blocked and review-only |
+| lab.b18_evidence_link_readiness_review_matrix | lab_validated | No | B19 evidence link readiness review matrix | Evidence links remain explicit and consistent |
+| lab.b18_historical_warning_readiness_review | warning_only | No | B19 historical warning readiness review | Historical irregularities remain warning-only |
+| lab.chain_textual_drift_readiness_review | warning_only | No | B19 chain textual drift readiness review | Historical wording remains warning-only and B18 continuity is preserved |
+| lab.b18_drift_check | lab_validated | No | B19 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B19 next phase contract | B20 recommended; B19 closed |
 
 ## ARIS-LAB-B17 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate Bedrock Enforcement Verdict
 

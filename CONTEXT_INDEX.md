@@ -1,19 +1,19 @@
-## Recent ARIS-LAB B18 continuation references
+## Recent ARIS-LAB B19 review references
 
-- [docs/aris_lab/aris_lab_b18_bedrock_decisions_contract_schema_consolidation_readiness_continuation_gate.md](../docs/aris_lab/aris_lab_b18_bedrock_decisions_contract_schema_consolidation_readiness_continuation_gate.md)
-- [artifacts/aris_lab/aris_lab_b18_decision.json](../artifacts/aris_lab/aris_lab_b18_decision.json)
-- [artifacts/aris_lab/aris_lab_b18_summary.json](../artifacts/aris_lab/aris_lab_b18_summary.json)
-- [artifacts/aris_lab/aris_lab_b18_report.md](../artifacts/aris_lab/aris_lab_b18_report.md)
-- [artifacts/aris_lab/aris_lab_b18_b17_continuation_review_matrix.json](../artifacts/aris_lab/aris_lab_b18_b17_continuation_review_matrix.json)
-- [artifacts/aris_lab/aris_lab_b18_chain_continuation_record.json](../artifacts/aris_lab/aris_lab_b18_chain_continuation_record.json)
-- [artifacts/aris_lab/aris_lab_b18_chain_textual_drift_continuation_review.json](../artifacts/aris_lab/aris_lab_b18_chain_textual_drift_continuation_review.json)
-- [artifacts/aris_lab/aris_lab_b18_phase_narrative_rule_continuation_review.json](../artifacts/aris_lab/aris_lab_b18_phase_narrative_rule_continuation_review.json)
-- [artifacts/aris_lab/aris_lab_b18_non_authorization_continuation_matrix.json](../artifacts/aris_lab/aris_lab_b18_non_authorization_continuation_matrix.json)
-- [artifacts/aris_lab/aris_lab_b18_evidence_link_continuation_matrix.json](../artifacts/aris_lab/aris_lab_b18_evidence_link_continuation_matrix.json)
-- [artifacts/aris_lab/aris_lab_b18_historical_warning_continuation_review.json](../artifacts/aris_lab/aris_lab_b18_historical_warning_continuation_review.json)
-- [artifacts/aris_lab/aris_lab_b18_drift_check.json](../artifacts/aris_lab/aris_lab_b18_drift_check.json)
-- [artifacts/aris_lab/aris_lab_b18_safety_attestation.json](../artifacts/aris_lab/aris_lab_b18_safety_attestation.json)
-- [artifacts/aris_lab/aris_lab_b18_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b18_next_phase_contract.json)
+- [docs/aris_lab/aris_lab_b19_bedrock_decisions_contract_schema_consolidation_readiness_review_gate.md](../docs/aris_lab/aris_lab_b19_bedrock_decisions_contract_schema_consolidation_readiness_review_gate.md)
+- [artifacts/aris_lab/aris_lab_b19_decision.json](../artifacts/aris_lab/aris_lab_b19_decision.json)
+- [artifacts/aris_lab/aris_lab_b19_summary.json](../artifacts/aris_lab/aris_lab_b19_summary.json)
+- [artifacts/aris_lab/aris_lab_b19_report.md](../artifacts/aris_lab/aris_lab_b19_report.md)
+- [artifacts/aris_lab/aris_lab_b19_b18_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b19_b18_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b19_chain_readiness_review_record.json](../artifacts/aris_lab/aris_lab_b19_chain_readiness_review_record.json)
+- [artifacts/aris_lab/aris_lab_b19_chain_textual_drift_readiness_review.json](../artifacts/aris_lab/aris_lab_b19_chain_textual_drift_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b19_phase_narrative_rule_readiness_review.json](../artifacts/aris_lab/aris_lab_b19_phase_narrative_rule_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b19_non_authorization_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b19_non_authorization_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b19_evidence_link_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b19_evidence_link_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b19_historical_warning_readiness_review.json](../artifacts/aris_lab/aris_lab_b19_historical_warning_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b19_drift_check.json](../artifacts/aris_lab/aris_lab_b19_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b19_safety_attestation.json](../artifacts/aris_lab/aris_lab_b19_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b19_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b19_next_phase_contract.json)
 
 ## Recent ARIS-LAB B17 review references
 
@@ -350,11 +350,11 @@ Read in this order:
 - [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
 
-- Latest completed active-context phase: `ARIS-LAB-B6 — Bedrock Decisions Placeholder Continuation Gate`
+- Latest completed active-context phase: `ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
-- Next principal phase: `ARIS-LAB-B7 — Bedrock Decisions Contract/Schema Planning Gate`
+- Next principal phase: `ARIS-LAB-B20 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate`
 - F33 status: paused under Lab governance, not cancelled.
-- F44 interpretation: Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
+- F44 interpretation: hardening/maturity of existing Lab.
 - F51+ status: external advisory research only.
 
 ## Recent ARIS-LAB A0/R1 references
