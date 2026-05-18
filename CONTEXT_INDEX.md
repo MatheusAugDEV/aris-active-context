@@ -177,7 +177,30 @@ Read in this order:
 
 ## Current operational anchor
 
-- B22 historical drift / noise classification completed; governance score remains 90/100; the Completion Doctrine / 200% Standard is persisted and carried forward; next principal phase is B23; historical warnings remain warning-only; no destructive cleanup was executed; Bedrock stays non-executable.
+- B23 Bedrock Executability Plan completed; governance score is 100/100 for the Lab track; the Completion Doctrine / 200% Standard is persisted and carried forward; next principal phase is ARIS-BEDROCK-C0; historical warnings remain warning-only; no destructive cleanup was executed; Bedrock stays non-executable.
+
+## Recent ARIS-LAB B23 review references
+
+- [docs/aris_lab/aris_lab_b23_bedrock_executability_plan_gate.md](../docs/aris_lab/aris_lab_b23_bedrock_executability_plan_gate.md)
+- [artifacts/aris_lab/aris_lab_b23_decision.json](../artifacts/aris_lab/aris_lab_b23_decision.json)
+- [artifacts/aris_lab/aris_lab_b23_summary.json](../artifacts/aris_lab/aris_lab_b23_summary.json)
+- [artifacts/aris_lab/aris_lab_b23_report.md](../artifacts/aris_lab/aris_lab_b23_report.md)
+- [artifacts/aris_lab/aris_lab_b23_b22_anchor_review_matrix.json](../artifacts/aris_lab/aris_lab_b23_b22_anchor_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_executability_plan.md](../artifacts/aris_lab/aris_lab_b23_bedrock_executability_plan.md)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_executability_plan.json](../artifacts/aris_lab/aris_lab_b23_bedrock_executability_plan.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_input_package_contract.json](../artifacts/aris_lab/aris_lab_b23_bedrock_input_package_contract.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_output_decision_contract.json](../artifacts/aris_lab/aris_lab_b23_bedrock_output_decision_contract.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_verdict_policy.json](../artifacts/aris_lab/aris_lab_b23_bedrock_verdict_policy.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_non_bypassability_requirements.json](../artifacts/aris_lab/aris_lab_b23_bedrock_non_bypassability_requirements.json)
+- [artifacts/aris_lab/aris_lab_b23_bedrock_future_engine_track_plan.json](../artifacts/aris_lab/aris_lab_b23_bedrock_future_engine_track_plan.json)
+- [artifacts/aris_lab/aris_lab_b23_lab_governance_final_closure_record.json](../artifacts/aris_lab/aris_lab_b23_lab_governance_final_closure_record.json)
+- [artifacts/aris_lab/aris_lab_b23_lab_governance_final_score.json](../artifacts/aris_lab/aris_lab_b23_lab_governance_final_score.json)
+- [artifacts/aris_lab/aris_lab_b23_completion_doctrine_final_review.json](../artifacts/aris_lab/aris_lab_b23_completion_doctrine_final_review.json)
+- [artifacts/aris_lab/aris_lab_b23_non_authorization_final_matrix.json](../artifacts/aris_lab/aris_lab_b23_non_authorization_final_matrix.json)
+- [artifacts/aris_lab/aris_lab_b23_warning_deferred_final_register.json](../artifacts/aris_lab/aris_lab_b23_warning_deferred_final_register.json)
+- [artifacts/aris_lab/aris_lab_b23_drift_check.json](../artifacts/aris_lab/aris_lab_b23_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b23_safety_attestation.json](../artifacts/aris_lab/aris_lab_b23_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b23_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b23_next_phase_contract.json)
 
 ## Recent ARIS-LAB B22 review references
 

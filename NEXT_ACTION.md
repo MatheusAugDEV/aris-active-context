@@ -1,11 +1,10 @@
-Prepare ARIS-LAB-B23 — Bedrock Executability Plan Gate; anchor phase ARIS-LAB-B22.
-- B22 classified historical drift and noise without destructive cleanup.
-- B22 kept warning-only items warning-only and deferred cleanup deferred.
-- B22 confirmed no blocker was found for B23.
+Prepare ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter; anchor phase ARIS-LAB-B23.
+- B23 created the Bedrock Executability Plan and closed Lab governance at 100/100 because blocker_count is zero.
+- B23 kept the Bedrock engine unimplemented and non-executable.
 - The Completion Doctrine / 200% Standard remains verified in PROMPT_CONTRACT.md and carried forward.
-- B22 kept Lab governance below 100% and did not declare Bedrock executable.
+- B23 declared the Bedrock track ARIS-BEDROCK-C for future executable work.
 - Historical irregularities remain warning-only and must not become blockers.
-- The Bedrock Gate remains non-executable.
+- The Bedrock Gate remains declared but non-executable.
 - F33 remains paused under Lab governance and F51+ stays advisory-only.
 - Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
 

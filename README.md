@@ -16,12 +16,12 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-B22 — Historical Drift / Noise Classification Gate`
-- B22 classified historical drift and noise without destructive cleanup.
-- Next principal phase: `ARIS-LAB-B23 — Bedrock Executability Plan Gate`
-- B22 kept the governance plan below 100% and carried the Completion Doctrine / 200% Standard forward.
+- Latest completed phase: `ARIS-LAB-B23 — Bedrock Executability Plan Gate`
+- B23 created the Bedrock Executability Plan and closed Lab governance at 100/100.
+- Next principal phase: `ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter`
+- B23 kept the Bedrock engine unimplemented and non-executable.
 - B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 -> B17 -> B18 -> B19 remains review-only and non-authorizing.
-- The Lab governance score is recorded at 90/100 and the governance plan is not yet 100% closed.
+- The Lab governance score is recorded at 100/100 and the governance plan is closed for the Lab track.
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
 - F44 interpretation: `hardening/maturity of existing Lab`
