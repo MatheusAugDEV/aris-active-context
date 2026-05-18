@@ -1,5 +1,15 @@
 # DECISION_LOCKS
 
+## ARIS-BEDROCK-C1 Phase Package Schema Lock
+
+- ARIS-BEDROCK-C1 is schema-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.
+- The Phase Package Schema defines the minimum contract for future phase evaluation and does not implement loader, evaluator, CLI, or execution.
+- Bedrock executable engine readiness advances only to 20/100 and remains non-executable in C1.
+- Bedrock Gate remains declared but non-executable.
+- `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest` is the next recommended phase.
+- `ARIS-BEDROCK-C` remains a governed planning track until later executable gates exist.
+- Lab governance remains verified at 100/100 and does not imply engine execution.
+
 ## ARIS-BEDROCK-C0 Bedrock Executable Engine Charter Lock
 
 - ARIS-BEDROCK-C0 is charter-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.

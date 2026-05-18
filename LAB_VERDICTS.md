@@ -1,5 +1,48 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C1 — Phase Package Schema Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c1.phase_package_schema | lab_validated | No | C1 phase package schema | Declarative minimum contract for future phase evaluation |
+| bedrock.c1.required_artifacts_by_phase_type | lab_validated | No | C1 required artifacts matrix | charter-only, schema-only, plan-only, review-only, readiness-only, closure-only, dry-run-only, future executable evaluation, future enforcement evaluation |
+| bedrock.c1.required_fields_matrix | lab_validated | No | C1 required fields matrix | Control fields and future phase package fields explicit |
+| bedrock.c1.dangerous_flags_schema | lab_validated | No | C1 dangerous flags schema | Dangerous flags remain false and non-authorizing |
+| bedrock.c1.completion_doctrine_schema | lab_validated | No | C1 completion doctrine schema | no false completion, no hidden TODO, evidence-backed completion |
+| bedrock.c1.classification_schema | lab_validated | No | C1 classification schema | blocker, warning, deferred, no_action_needed, next_phase_requirement |
+| bedrock.c1.source_of_truth_reference_schema | lab_validated | No | C1 source-of-truth reference schema | active-context, docs, artifacts, and protected-source references explicit |
+| bedrock.c1.valid_phase_package_example | lab_validated | No | C1 valid example | Deterministic valid example created |
+| bedrock.c1.invalid_phase_package_examples | lab_validated | No | C1 invalid examples | Missing decision, dangerous flag true, missing narrative, false completion |
+| bedrock.c1.c0_anchor_review_matrix | lab_validated | No | C1 anchor review matrix | C0 anchor evidence verified |
+| bedrock.c1.drift_check | warning_only | No | C1 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c1.safety_attestation | lab_validated | No | C1 safety attestation | dangerous flags false and Bedrock gate non-executable |
+| bedrock.c1.next_phase_contract | lab_validated | No | C1 next phase contract | C2 recommended |
+
+## ARIS-BEDROCK-C1 — Phase Package Schema Summary State
+
+- bedrock_executable_engine_readiness_percent: `20`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+
 ## ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

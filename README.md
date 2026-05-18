@@ -16,11 +16,11 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter`
-- C0 created the Bedrock Executable Engine Charter and preserved Lab governance at 100/100.
-- Next principal phase: `ARIS-BEDROCK-C1 — Phase Package Schema`
-- C0 kept the Bedrock engine unimplemented and non-executable.
-- Bedrock executable engine readiness: `15/100`
+- Latest completed phase: `ARIS-BEDROCK-C1 — Phase Package Schema`
+- C1 created the Phase Package Schema and preserved Lab governance at 100/100.
+- Next principal phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+- C1 kept the Bedrock engine unimplemented and non-executable.
+- Bedrock executable engine readiness: `20/100`
 - Bedrock Gate remains declared but non-executable.
 - B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 -> B17 -> B18 -> B19 remains review-only and non-authorizing.
 - The Lab governance score is recorded at 100/100 and the governance plan is closed for the Lab track.

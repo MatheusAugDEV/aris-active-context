@@ -167,6 +167,15 @@ Read in this order:
 45. [scripts/aris_codex_economy_readiness_matrix.py](../scripts/aris_codex_economy_readiness_matrix.py)
 46. [scripts/aris_codex_usage_pilot_summary.py](../scripts/aris_codex_usage_pilot_summary.py)
 
+## Recent ARIS-BEDROCK-C1 references
+
+- [docs/bedrock/bedrock_c1_phase_package_schema.md](../docs/bedrock/bedrock_c1_phase_package_schema.md)
+- [artifacts/bedrock/bedrock_c1_decision.json](../artifacts/bedrock/bedrock_c1_decision.json)
+- [artifacts/bedrock/bedrock_c1_summary.json](../artifacts/bedrock/bedrock_c1_summary.json)
+- [artifacts/bedrock/bedrock_c1_report.md](../artifacts/bedrock/bedrock_c1_report.md)
+- [artifacts/bedrock/bedrock_c1_phase_package_schema.json](../artifacts/bedrock/bedrock_c1_phase_package_schema.json)
+- [artifacts/bedrock/bedrock_c1_next_phase_contract.json](../artifacts/bedrock/bedrock_c1_next_phase_contract.json)
+
 ## Current Lab / Bedrock priority references
 
 - [MANDATORY_READ_FIRST_RULES.md](MANDATORY_READ_FIRST_RULES.md)
@@ -177,7 +186,7 @@ Read in this order:
 
 ## Current operational anchor
 
-- B23 Bedrock Executability Plan completed; governance score is 100/100 for the Lab track; the Completion Doctrine / 200% Standard is persisted and carried forward; next principal phase is ARIS-BEDROCK-C0; historical warnings remain warning-only; no destructive cleanup was executed; Bedrock stays non-executable.
+- C1 Phase Package Schema completed; governance score remains 100/100 for the Lab track; the Completion Doctrine / 200% Standard is persisted and carried forward; next principal phase is ARIS-BEDROCK-C2; historical warnings remain warning-only; no destructive cleanup was executed; Bedrock stays non-executable.
 
 ## Recent ARIS-LAB B23 review references
 

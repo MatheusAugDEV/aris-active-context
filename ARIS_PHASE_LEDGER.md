@@ -1,5 +1,76 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-BEDROCK-C1 — Phase Package Schema
+
+- [ARIS-BEDROCK-C1] Phase Package Schema completed.
+- status: `aris_bedrock_c1_phase_package_schema_passed`
+- anchor_phase: `ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter`
+- previous_phase_short_summary: `A C0 criou o Bedrock Executable Engine Charter, confirmou Lab governance 100/100, manteve o Bedrock engine não implementado e não executável, e abriu a trilha Bedrock C para trabalho futuro.`
+- next_phase_short_explanation: `A C2 deve criar o Artifact Loader & Hash Manifest para materializar a leitura determinística de artifacts sem implementar o engine Bedrock real.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- c0_decision_verified: `True`
+- c0_summary_verified: `True`
+- c0_report_verified: `True`
+- c0_executable_engine_charter_verified: `True`
+- c0_scope_boundary_verified: `True`
+- c0_security_invariants_verified: `True`
+- c0_verdict_model_charter_verified: `True`
+- c0_input_output_boundary_verified: `True`
+- c0_non_authorization_matrix_verified: `True`
+- c0_non_bypassability_charter_verified: `True`
+- c0_threat_model_seed_verified: `True`
+- c0_future_track_plan_verified: `True`
+- c0_next_phase_contract_verified: `True`
+- lab_governance_100_percent_verified: `True`
+- lab_governance_final_readiness_percent: `100`
+- phase_package_schema_created: `True`
+- required_artifacts_by_phase_type_created: `True`
+- required_fields_matrix_created: `True`
+- dangerous_flags_schema_created: `True`
+- completion_doctrine_schema_created: `True`
+- classification_schema_created: `True`
+- source_of_truth_reference_schema_created: `True`
+- valid_phase_package_example_created: `True`
+- invalid_phase_package_examples_created: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- no_false_completion_rule_verified: `True`
+- no_hidden_todo_rule_verified: `True`
+- evidence_backed_completion_rule_verified: `True`
+- safe_completion_rule_verified: `True`
+- efficient_completion_rule_verified: `True`
+- non_bypassable_gate_rule_verified: `True`
+- operator_clarity_rule_verified: `True`
+- bedrock_engine_charter_created: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_executable_engine_readiness_percent: `20`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- live_drift_found: `False`
+- phase_package_schema_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+
 ## ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter
 
 - [ARIS-BEDROCK-C0] Bedrock Executable Engine Charter completed.
