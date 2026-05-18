@@ -1,5 +1,9 @@
 Current Bedrock note:
 
+- Latest completed phase: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
+- Next principal phase: `ARIS-BEDROCK-C4 — Dangerous Flags Evaluator`
+- Lab governance remains 100/100 and Bedrock execution remains non-executable.
+
 - Latest completed phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
 - Next principal phase: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
 - Lab governance remains 100/100 and Bedrock execution remains non-executable.

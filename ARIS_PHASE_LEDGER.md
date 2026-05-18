@@ -1,5 +1,71 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-BEDROCK-C3 — Decision/Summary Schema Validator
+
+- [ARIS-BEDROCK-C3] Decision/Summary Schema Validator completed.
+- status: `aris_bedrock_c3_decision_summary_schema_validator_passed`
+- anchor_phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+- previous_phase_short_summary: `C2 created the Artifact Loader and deterministic Hash Manifest, kept the Bedrock engine unimplemented and non-executable, and preserved readiness at 25/100.`
+- next_phase_short_explanation: `C4 will evaluate dangerous flags in a deterministic, local-only way without authorizing runtime execution, enforcement, or product promotion.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- c2_decision_verified: `True`
+- c2_summary_verified: `True`
+- c2_report_verified: `True`
+- c2_artifact_loader_contract_verified: `True`
+- c2_hash_manifest_contract_verified: `True`
+- c2_allowed_roots_policy_verified: `True`
+- c2_denied_roots_policy_verified: `True`
+- c2_loader_security_matrix_verified: `True`
+- c2_c1_artifact_hash_manifest_verified: `True`
+- decision_schema_contract_created: `True`
+- summary_schema_contract_created: `True`
+- validation_result_contract_created: `True`
+- required_fields_matrix_created: `True`
+- field_type_matrix_created: `True`
+- consistency_rules_matrix_created: `True`
+- valid_decision_example_created: `True`
+- valid_summary_example_created: `True`
+- invalid_schema_examples_created: `True`
+- valid_decision_validation_passed: `True`
+- valid_summary_validation_passed: `True`
+- invalid_missing_required_field_blocked: `True`
+- invalid_wrong_type_blocked: `True`
+- invalid_dangerous_flag_true_blocked: `True`
+- invalid_missing_narrative_blocked: `True`
+- invalid_false_completion_doctrine_blocked: `True`
+- invalid_bedrock_executable_claim_blocked: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- lab_governance_100_percent_verified: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_executable_engine_readiness_percent: `30`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- live_drift_found: `False`
+- decision_summary_schema_validator_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C4 — Dangerous Flags Evaluator`
+
 ## ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest
 
 - [ARIS-BEDROCK-C2] Artifact Loader & Hash Manifest completed.

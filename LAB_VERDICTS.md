@@ -1,5 +1,47 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C3 — Decision/Summary Schema Validator Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c3.decision_summary_schema_validator | lab_validated | No | C3 decision/summary schema validator | Deterministic, local-only, stdlib-only validator created |
+| bedrock.c3.validation_result_contract | lab_validated | No | C3 validation result contract | Validation results are explicit and deterministic |
+| bedrock.c3.required_fields_matrix | lab_validated | No | C3 required fields matrix | Decision and summary required fields explicit |
+| bedrock.c3.field_type_matrix | lab_validated | No | C3 field type matrix | Strings, booleans, integers, and lists explicit |
+| bedrock.c3.consistency_rules_matrix | lab_validated | No | C3 consistency rules matrix | Non-executable and non-authorizing checks explicit |
+| bedrock.c3.valid_invalid_schema_examples | lab_validated | No | C3 valid/invalid schema examples | Valid decision/summary and invalid cases recorded |
+| bedrock.c3.c2_anchor_review_matrix | lab_validated | No | C3 C2 anchor review matrix | C2 anchor evidence verified |
+| bedrock.c3.non_authorization_matrix | lab_validated | No | C3 non-authorization matrix | Product/runtime/DB/network/MCP/vault remain blocked |
+| bedrock.c3.completion_doctrine_review | lab_validated | No | C3 completion doctrine review | Completion Doctrine / 200% Standard carried forward |
+| bedrock.c3.drift_check | warning_only | No | C3 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c3.safety_attestation | lab_validated | No | C3 safety attestation | Dangerous flags remain false and Bedrock gate remains non-executable |
+| bedrock.c3.next_phase_contract | lab_validated | No | C3 next phase contract | C4 recommended |
+
+## ARIS-BEDROCK-C3 — Decision/Summary Schema Validator Summary State
+
+- bedrock_executable_engine_readiness_percent: `30`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C4 — Dangerous Flags Evaluator`
+
 ## ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
