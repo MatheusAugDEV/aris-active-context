@@ -1,5 +1,23 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c0.charter | lab_validated | No | C0 executable engine charter | Bedrock Executable Engine Charter created; engine remains unimplemented and non-executable |
+| bedrock.c0.scope_boundary | lab_validated | No | C0 scope boundary | Lab governance is verified at 100/100 while product/runtime stay blocked |
+| bedrock.c0.security_invariants | lab_validated | No | C0 security invariants | Deterministic-only, no-LLM, and no-runtime-mutation invariants explicit |
+| bedrock.c0.verdict_model_charter | lab_validated | No | C0 verdict model charter | Allowed verdicts and non-bypassability constraints explicit |
+| bedrock.c0.input_output_boundary | lab_validated | No | C0 input/output boundary | Input package and output decision minimums explicit |
+| bedrock.c0.non_authorization_matrix | lab_validated | No | C0 non-authorization matrix | Product/runtime/DB/network/MCP/vault remain blocked |
+| bedrock.c0.non_bypassability_charter | lab_validated | No | C0 non-bypassability charter | Gate must remain deterministic and non-bypassable |
+| bedrock.c0.threat_model_seed | lab_validated | No | C0 threat model seed | Hidden TODOs, stale state, and bypass attempts remain threats |
+| bedrock.c0.future_track_plan | lab_validated | No | C0 future track plan | ARIS-BEDROCK-C1 through C14 declared |
+| bedrock.c0.completion_doctrine_review | lab_validated | No | C0 completion doctrine review | Completion Doctrine / 200% Standard carried forward |
+| bedrock.c0.drift_check | warning_only | No | C0 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c0.safety_attestation | lab_validated | No | C0 safety attestation | Dangerous flags remain false; gate stays non-executable |
+| bedrock.c0.next_phase_contract | lab_validated | No | C0 next phase contract | C1 is the next recommended phase |
+
 ## ARIS-LAB-B23 — Bedrock Executability Plan Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

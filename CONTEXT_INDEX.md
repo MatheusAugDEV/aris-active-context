@@ -430,10 +430,12 @@ Read in this order:
 - [artifacts/aris_lab/aris_lab_b1_safety_attestation.json](../artifacts/aris_lab/aris_lab_b1_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b1_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b1_next_phase_contract.json)
 
-- Latest completed active-context phase: `ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate`
+- Latest completed active-context phase: `ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter`
 - Latest F33 operational closure anchor: `F33.Z22 — Schema Materialization Controlled Apply Final Closure Review Closure Gate`
-- Next principal phase: `ARIS-LAB-B20 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate`
+- Next principal phase: `ARIS-BEDROCK-C1 — Phase Package Schema`
 - F33 status: paused under Lab governance, not cancelled.
+- Bedrock executable engine readiness: `15/100`
+- Bedrock Gate remains declared but non-executable.
 - F44 interpretation: hardening/maturity of existing Lab.
 - F51+ status: external advisory research only.
 

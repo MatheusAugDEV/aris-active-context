@@ -1,10 +1,9 @@
-Prepare ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter; anchor phase ARIS-LAB-B23.
-- B23 created the Bedrock Executability Plan and closed Lab governance at 100/100 because blocker_count is zero.
-- B23 kept the Bedrock engine unimplemented and non-executable.
+Prepare ARIS-BEDROCK-C1 — Phase Package Schema; anchor phase ARIS-BEDROCK-C0.
+- C0 created the Bedrock Executable Engine Charter and kept the Bedrock engine unimplemented and non-executable.
+- Lab governance remains 100/100 and the Bedrock track ARIS-BEDROCK-C is declared for future executable work.
 - The Completion Doctrine / 200% Standard remains verified in PROMPT_CONTRACT.md and carried forward.
-- B23 declared the Bedrock track ARIS-BEDROCK-C for future executable work.
+- C0 is charter-only and remains a preparation exception, not an execution authorization.
 - Historical irregularities remain warning-only and must not become blockers.
-- The Bedrock Gate remains declared but non-executable.
 - F33 remains paused under Lab governance and F51+ stays advisory-only.
 - Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
 

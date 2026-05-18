@@ -1,5 +1,15 @@
 # DECISION_LOCKS
 
+## ARIS-BEDROCK-C0 Bedrock Executable Engine Charter Lock
+
+- ARIS-BEDROCK-C0 is charter-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.
+- The Bedrock Executable Engine Charter defines the future executable engine boundary but does not implement it.
+- Bedrock executable engine readiness remains partial at 15/100 and non-executable in C0.
+- Bedrock Gate remains declared but non-executable.
+- `ARIS-BEDROCK-C1 — Phase Package Schema` is the next recommended phase.
+- `ARIS-BEDROCK-C` remains a governed planning track until later executable gates exist.
+- Lab governance remains verified at 100/100 and does not imply engine execution.
+
 ## ARIS-LAB-B2 Minimal Phase Lab Checklist Runner Lock
 
 - ARIS-LAB-B2 is tooling-only and does not authorize product promotion, runtime mutation, DB/schema/fts5, network, dependency install, MCP activation, Obsidian bulk read, vault-write, or F33 resume.

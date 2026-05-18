@@ -1,5 +1,74 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-BEDROCK-C0 — Bedrock Executable Engine Charter
+
+- [ARIS-BEDROCK-C0] Bedrock Executable Engine Charter completed.
+- status: `aris_bedrock_c0_executable_engine_charter_passed`
+- anchor_phase: `ARIS-LAB-B23 — Bedrock Executability Plan Gate`
+- previous_phase_short_summary: `A B23 criou o Bedrock Executability Plan, fechou Lab governance em 100/100, registrou ARIS-BEDROCK-C como trilha futura e manteve o Bedrock executable engine não implementado e não executável.`
+- next_phase_short_explanation: `A C1 deve definir o Phase Package Schema para a futura trilha Bedrock executável sem autorizar execução real, produto, runtime ou qualquer mutação protegida.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- b23_decision_verified: `True`
+- b23_summary_verified: `True`
+- b23_report_verified: `True`
+- b23_bedrock_executability_plan_verified: `True`
+- b23_input_package_contract_verified: `True`
+- b23_output_decision_contract_verified: `True`
+- b23_verdict_policy_verified: `True`
+- b23_non_bypassability_requirements_verified: `True`
+- b23_future_engine_track_plan_verified: `True`
+- b23_lab_governance_final_closure_record_verified: `True`
+- b23_lab_governance_final_score_verified: `True`
+- b23_completion_doctrine_final_review_verified: `True`
+- b23_non_authorization_final_matrix_verified: `True`
+- b23_warning_deferred_final_register_verified: `True`
+- b23_drift_check_verified: `True`
+- b23_safety_attestation_verified: `True`
+- b23_next_phase_contract_verified: `True`
+- prompt_contract_completion_doctrine_verified: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- no_false_completion_rule_verified: `True`
+- no_hidden_todo_rule_verified: `True`
+- evidence_backed_completion_rule_verified: `True`
+- safe_completion_rule_verified: `True`
+- efficient_completion_rule_verified: `True`
+- non_bypassable_gate_rule_verified: `True`
+- operator_clarity_rule_verified: `True`
+- bedrock_engine_charter_created: `True`
+- lab_governance_100_percent_verified: `True`
+- lab_governance_final_readiness_percent: `100`
+- bedrock_executable_engine_readiness_percent: `15`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- bedrock_preparation_exception: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- live_drift_found: `False`
+- dangerous_flags_verified_false: `True`
+- historical_drift_noise_classification_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C1 — Phase Package Schema`
+
 ## ARIS-LAB-B23 — Bedrock Executability Plan Gate
 
 - [ARIS-LAB-B23] Bedrock Executability Plan Gate completed.
