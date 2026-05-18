@@ -1,3 +1,9 @@
+Current Bedrock note:
+
+- Latest completed phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+- Next principal phase: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
+- Lab governance remains 100/100 and Bedrock execution remains non-executable.
+
 ## Recent ARIS-LAB B19 review references
 
 - [docs/aris_lab/aris_lab_b19_bedrock_decisions_contract_schema_consolidation_readiness_review_gate.md](../docs/aris_lab/aris_lab_b19_bedrock_decisions_contract_schema_consolidation_readiness_review_gate.md)

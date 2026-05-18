@@ -1,21 +1,25 @@
 # LAB_STATUS
 
-- Current Lab phase: ARIS-BEDROCK-C1
-- Lab status: C1 Phase Package Schema completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
+- Current Lab phase: ARIS-BEDROCK-C2
+- Lab status: C2 Artifact Loader & Hash Manifest completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
 - F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate executable now: False
 - Bedrock Gate verdict: PASS
 - Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest
+- Next Lab phase: ARIS-BEDROCK-C3 — Decision/Summary Schema Validator
 - Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 20
+- Bedrock executable engine readiness percent: 25
 - Bedrock Executable Engine Charter created: True
 - Phase Package Schema created: True
 - Required artifacts by phase type created: True
 - Dangerous flags schema created: True
 - Valid and invalid phase package examples created: True
 - Next phase contract created: True
+- Artifact Loader & Hash Manifest created: True
+- Allowed roots policy created: True
+- Denied roots policy created: True
+- C1 artifact hash manifest created: True
 - Bedrock executable engine implemented now: False
 - Bedrock executable engine declared now: False
 - Lab governance 100 percent verified: True

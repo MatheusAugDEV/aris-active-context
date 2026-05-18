@@ -4,8 +4,8 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
-- Latest completed phase: `ARIS-BEDROCK-C1 — Phase Package Schema`
-- Status: `aris_bedrock_c1_phase_package_schema_passed`
+- Latest completed phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+- Status: `aris_bedrock_c2_artifact_loader_hash_manifest_passed`
 - Lab governance 100 percent verified: `True`
 - Lab governance final readiness score: `100/100`
 - Bedrock Executable Engine Charter created: `True`
@@ -14,14 +14,18 @@ As of 2026-05-17:
 - Dangerous flags schema created: `True`
 - Valid and invalid phase package examples created: `True`
 - Next phase contract created: `True`
-- Bedrock executable engine readiness: `20/100`
-- Bedrock preparation exception: schema-only and non-executable
+- Artifact Loader & Hash Manifest created: `True`
+- Allowed roots policy created: `True`
+- Denied roots policy created: `True`
+- C1 artifact hash manifest created: `True`
+- Bedrock executable engine readiness: `25/100`
+- Bedrock preparation exception: loader/hash-manifest-only and non-executable
 - Bedrock executable engine implemented now: `False`
 - Bedrock executable engine declared now: `False`
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate verdict: `PASS`
 - Bedrock track declared: `ARIS-BEDROCK-C`
-- Next principal phase: `ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest`
+- Next principal phase: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
 - Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
 - Phase narrative continuity rule carried forward: `True`
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.

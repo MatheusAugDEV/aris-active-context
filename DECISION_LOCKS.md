@@ -1,5 +1,15 @@
 # DECISION_LOCKS
 
+## ARIS-BEDROCK-C2 Artifact Loader & Hash Manifest Lock
+
+- ARIS-BEDROCK-C2 is loader/hash-manifest-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.
+- The Artifact Loader is read-only, local-only, stdlib-only, and deterministic; it only validates allowed relative paths and manifest integrity.
+- Bedrock executable engine readiness advances only to 25/100 and remains non-executable in C2.
+- Bedrock Gate remains declared but non-executable.
+- `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator` is the next recommended phase.
+- `ARIS-BEDROCK-C` remains a governed planning track until later executable gates exist.
+- Lab governance remains verified at 100/100 and does not imply engine execution.
+
 ## ARIS-BEDROCK-C1 Phase Package Schema Lock
 
 - ARIS-BEDROCK-C1 is schema-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.

@@ -1,5 +1,45 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c2.artifact_loader | lab_validated | No | C2 artifact loader contract | Read-only, stdlib-only, deterministic loader created |
+| bedrock.c2.hash_manifest | lab_validated | No | C2 hash manifest contract | Stable sha256 manifest and size manifest created |
+| bedrock.c2.allowed_roots_policy | lab_validated | No | C2 allowed roots policy | `artifacts/bedrock`, `docs/bedrock`, and `aris-active-context` only |
+| bedrock.c2.denied_roots_policy | lab_validated | No | C2 denied roots policy | runtime, frontend, audio, action_runtime, provider, secrets, obsidian, vault, archive, db, sqlite, fts5, network, dependencies, and mcp blocked |
+| bedrock.c2.loader_security_matrix | lab_validated | No | C2 loader security matrix | Path traversal, unsafe absolute paths, vault, runtime, network, dependency install, and db/schema remain blocked |
+| bedrock.c2.c1_artifact_hash_manifest | lab_validated | No | C2 C1 artifact hash manifest | Deterministic manifest over C1 artifacts created |
+| bedrock.c2.invalid_loader_examples | lab_validated | No | C2 invalid loader examples | Missing artifact, path traversal, unsafe root, and invalid JSON examples recorded |
+| bedrock.c2.drift_check | warning_only | No | C2 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c2.safety_attestation | lab_validated | No | C2 safety attestation | Dangerous flags remain false and Bedrock gate remains non-executable |
+| bedrock.c2.next_phase_contract | lab_validated | No | C2 next phase contract | C3 recommended |
+
+## ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest Summary State
+
+- bedrock_executable_engine_readiness_percent: `25`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
+
 ## ARIS-BEDROCK-C1 — Phase Package Schema Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

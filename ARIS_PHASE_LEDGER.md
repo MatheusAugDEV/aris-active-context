@@ -1,5 +1,82 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-BEDROCK-C2 — Artifact Loader & Hash Manifest
+
+- [ARIS-BEDROCK-C2] Artifact Loader & Hash Manifest completed.
+- status: `aris_bedrock_c2_artifact_loader_hash_manifest_passed`
+- anchor_phase: `ARIS-BEDROCK-C1 — Phase Package Schema`
+- previous_phase_short_summary: `C1 created the Phase Package Schema, defined the minimum phase package, kept Lab governance at 100/100, and advanced Bedrock readiness to 20/100 without implementing execution.`
+- next_phase_short_explanation: `C3 must create a Decision/Summary Schema Validator that can validate phase decision and summary artifacts without enabling runtime execution, enforcement, or product promotion.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- c1_decision_verified: `True`
+- c1_summary_verified: `True`
+- c1_report_verified: `True`
+- c1_phase_package_schema_verified: `True`
+- c1_required_artifacts_by_phase_type_verified: `True`
+- c1_required_fields_matrix_verified: `True`
+- c1_dangerous_flags_schema_verified: `True`
+- c1_completion_doctrine_schema_verified: `True`
+- c1_classification_schema_verified: `True`
+- c1_source_of_truth_reference_schema_verified: `True`
+- c1_valid_phase_package_example_verified: `True`
+- c1_invalid_phase_package_examples_verified: `True`
+- c1_next_phase_contract_verified: `True`
+- lab_governance_100_percent_verified: `True`
+- lab_governance_final_readiness_percent: `100`
+- artifact_loader_contract_created: `True`
+- hash_manifest_contract_created: `True`
+- allowed_roots_policy_created: `True`
+- denied_roots_policy_created: `True`
+- loader_security_matrix_created: `True`
+- hash_manifest_example_created: `True`
+- invalid_loader_examples_created: `True`
+- c1_artifact_hash_manifest_created: `True`
+- path_traversal_blocked: `True`
+- unsafe_root_blocked: `True`
+- vault_path_blocked: `True`
+- runtime_path_blocked: `True`
+- deterministic_ordering_verified: `True`
+- stable_hash_verified: `True`
+- json_parse_validation_verified: `True`
+- missing_file_classification_verified: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- no_false_completion_rule_verified: `True`
+- no_hidden_todo_rule_verified: `True`
+- evidence_backed_completion_rule_verified: `True`
+- safe_completion_rule_verified: `True`
+- efficient_completion_rule_verified: `True`
+- non_bypassable_gate_rule_verified: `True`
+- operator_clarity_rule_verified: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_executable_engine_readiness_percent: `25`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- live_drift_found: `False`
+- artifact_loader_hash_manifest_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C3 — Decision/Summary Schema Validator`
+
 ## ARIS-BEDROCK-C1 — Phase Package Schema
 
 - [ARIS-BEDROCK-C1] Phase Package Schema completed.
