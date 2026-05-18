@@ -2,6 +2,63 @@
 
 # ARIS_PHASE_LEDGER
 
+## ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator
+
+- [ARIS-BEDROCK-C6] Read-First & Source-of-Truth Compliance Evaluator completed.
+- status: `aris_bedrock_c6_read_first_source_of_truth_compliance_evaluator_passed`
+- anchor_phase: `ARIS-BEDROCK-C5 — Completion Doctrine Evaluator`
+- previous_phase_short_summary: `C5 created the Completion Doctrine Evaluator, completion doctrine evaluation result contract, valid/invalid completion examples, kept the Bedrock engine unimplemented and non-executable, and advanced readiness to 40/100.`
+- next_phase_short_explanation: `C7 should evaluate evidence pack completeness and phase package minimum compliance deterministically without authorizing runtime execution, enforcement, or product promotion.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- read_first_source_of_truth_evaluator_created: `True`
+- read_first_contract_created: `True`
+- source_of_truth_contract_created: `True`
+- read_first_source_of_truth_evaluation_result_contract_created: `True`
+- source_precedence_matrix_created: `True`
+- valid_compliance_example_created: `True`
+- invalid_compliance_examples_created: `True`
+- read_first_compliance_verified: `True`
+- source_of_truth_compliance_verified: `True`
+- source_precedence_verified: `True`
+- no_memory_override_verified: `True`
+- no_bulk_obsidian_verified: `True`
+- no_archive_bulk_read_verified: `True`
+- stale_source_block_rule_verified: `True`
+- next_phase_contract_verified: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- lab_governance_100_percent_verified: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_executable_engine_readiness_percent: `45`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- cleanup_execution_allowed_now: `False`
+- destructive_cleanup_executed: `False`
+- dangerous_flags_verified_false: `True`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- live_drift_found: `False`
+- decision_summary_schema_validator_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+
 ## ARIS-BEDROCK-C5 — Completion Doctrine Evaluator
 
 - [ARIS-BEDROCK-C5] Completion Doctrine Evaluator completed.

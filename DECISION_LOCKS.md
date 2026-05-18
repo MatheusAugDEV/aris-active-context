@@ -1,5 +1,15 @@
 # DECISION_LOCKS
 
+## ARIS-BEDROCK-C6 Read-First & Source-of-Truth Compliance Evaluator Lock
+
+- ARIS-BEDROCK-C6 is evaluator-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.
+- The Read-First & Source-of-Truth Compliance Evaluator validates active-context order, source precedence, narrative continuity, and non-bypassability only; it does not implement Bedrock execution, enforcement, or CLI.
+- Bedrock executable engine readiness advances only to 45/100 and remains non-executable in C6.
+- Bedrock Gate remains declared but non-executable.
+- `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator` is the next recommended phase.
+- `ARIS-BEDROCK-C` remains a governed planning track until later executable gates exist.
+- Lab governance remains verified at 100/100 and does not imply engine execution.
+
 ## ARIS-BEDROCK-C5 Completion Doctrine Evaluator Lock
 
 - ARIS-BEDROCK-C5 is evaluator-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.

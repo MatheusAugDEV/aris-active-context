@@ -1,5 +1,48 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c6.read_first_source_of_truth_compliance_evaluator | lab_validated | No | C6 read-first/source-of-truth compliance evaluator | Deterministic, local-only, stdlib-only evaluator created |
+| bedrock.c6.read_first_contract | lab_validated | No | C6 read-first contract | Read-first order, query-first constraints, and non-bypassability explicit |
+| bedrock.c6.source_of_truth_contract | lab_validated | No | C6 source-of-truth contract | Authority ranking, prompt non-authority, and memory/commit-text non-authority explicit |
+| bedrock.c6.read_first_source_of_truth_evaluation_result_contract | lab_validated | No | C6 evaluation result contract | Validation/evaluation results are explicit and deterministic |
+| bedrock.c6.source_precedence_matrix | lab_validated | No | C6 source precedence matrix | Active-context and source-of-truth precedence explicit |
+| bedrock.c6.valid_invalid_compliance_examples | lab_validated | No | C6 valid/invalid examples | Valid compliance example and invalid blocked cases recorded |
+| bedrock.c6.c5_anchor_review_matrix | lab_validated | No | C6 C5 anchor review matrix | C5 anchor evidence verified |
+| bedrock.c6.non_authorization_matrix | lab_validated | No | C6 non-authorization matrix | Product/runtime/DB/network/MCP/vault remain blocked |
+| bedrock.c6.completion_doctrine_review | lab_validated | No | C6 completion doctrine review | Completion Doctrine / 200% Standard carried forward |
+| bedrock.c6.dangerous_flags_review | lab_validated | No | C6 dangerous flags review | Dangerous flags remain false and are reviewed from C5 evidence |
+| bedrock.c6.drift_check | warning_only | No | C6 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c6.safety_attestation | lab_validated | No | C6 safety attestation | Bedrock gate remains non-executable and dangerous claims remain blocked |
+| bedrock.c6.next_phase_contract | lab_validated | No | C6 next phase contract | C7 recommended |
+
+## ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator Summary State
+
+- bedrock_executable_engine_readiness_percent: `45`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+
 ## ARIS-BEDROCK-C5 — Completion Doctrine Evaluator Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

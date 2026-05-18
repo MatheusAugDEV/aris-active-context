@@ -2,6 +2,31 @@
 
 As of 2026-05-18:
 
+- Latest completed phase: `ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator`
+- Status: `aris_bedrock_c6_read_first_source_of_truth_compliance_evaluator_passed`
+- Anchor phase: `ARIS-BEDROCK-C5 — Completion Doctrine Evaluator`
+- Previous phase short summary: `C5 created the Completion Doctrine Evaluator, completion doctrine evaluation result contract, valid/invalid completion examples, kept the Bedrock engine unimplemented and non-executable, and advanced readiness to 40/100.`
+- Next phase short explanation: `C7 should evaluate evidence pack completeness and phase package minimum compliance deterministically without authorizing runtime execution, enforcement, or product promotion.`
+- Read-First & Source-of-Truth Compliance Evaluator created: `True`
+- Read-first contract created: `True`
+- Source-of-truth contract created: `True`
+- Read-first/source-of-truth evaluation result contract created: `True`
+- Source precedence matrix created: `True`
+- Valid compliance example created: `True`
+- Invalid compliance examples created: `True`
+- Bedrock executable engine readiness: `45/100`
+- Bedrock executable engine implemented now: `False`
+- Bedrock executable engine declared now: `False`
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate verdict: `PASS`
+- Completion Doctrine / 200% Standard verified and carried forward: `True`
+- Lab governance 100 percent verified: `True`
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
+- Historical irregularities remain warning-only and no live drift was found.
+
+As of 2026-05-18:
+
 - Latest completed phase: `ARIS-BEDROCK-C5 — Completion Doctrine Evaluator`
 - Status: `aris_bedrock_c5_completion_doctrine_evaluator_passed`
 - Anchor phase: `ARIS-BEDROCK-C4 — Dangerous Flags Evaluator`
