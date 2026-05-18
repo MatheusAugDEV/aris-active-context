@@ -1,5 +1,54 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-LAB-B17 - Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate
+
+- [ARIS-LAB-B17] Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate completed.
+- status: `aris_lab_b17_bedrock_decisions_contract_schema_consolidation_readiness_review_closure_gate_passed`
+- anchor_phase: `ARIS-LAB-B16 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate`
+- previous_phase_short_summary: `A B16 revisou a readiness da B15, confirmou que a regra narrativa foi verificada e carregada para frente, e manteve a cadeia consolidada non-authorizing sem liberar produto, runtime, DB/schema, SQLite connect, FTS5, rede, dependências, MCP, Obsidian bulk-read ou Vault write.`
+- next_phase_short_explanation: `A B17 deve fechar a revisão da readiness B16, confirmar que o pacote B16 está completo e seguro para continuidade, e preparar a próxima fase sem liberar Bedrock executável, produto ou qualquer superfície real.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- b16_decision_verified: `True`
+- b16_summary_verified: `True`
+- b16_report_verified: `True`
+- b16_readiness_inputs_verified: `True`
+- b16_drift_check_verified: `True`
+- b16_safety_attestation_verified: `True`
+- b16_next_phase_contract_verified: `True`
+- b7_to_b16_chain_closure_reviewed: `True`
+- chain_artifact_completeness_verified: `True`
+- non_authorization_closure_reviewed: `True`
+- evidence_link_closure_reviewed: `True`
+- historical_warning_closure_reviewed: `True`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- dangerous_flags_verified_false: `True`
+- readiness_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- bedrock_verdict: `PASS`
+- next phase recommendation: `ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate`
+
+## ARIS-LAB-B16 — Bedrock Decisions Contract/Schema Consolidation Readiness Gate
+
+# ARIS_PHASE_LEDGER
+
 ## ARIS-LAB-B16 - Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate
 
 - [ARIS-LAB-B16] Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate completed.

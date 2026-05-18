@@ -4,6 +4,35 @@ As of 2026-05-17:
 
 - Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
 - F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
+- Latest completed phase: `ARIS-LAB-B17 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate`
+- Status: `aris_lab_b17_bedrock_decisions_contract_schema_consolidation_readiness_review_closure_gate_passed`
+- Bedrock Gate status: declared, not executable yet
+- Bedrock Gate verdict: `PASS`
+- B17 readiness review closure matrix created: `True`
+- B17 chain readiness closure record created: `True`
+- B17 phase narrative rule review created: `True`
+- B17 chain textual drift review recorded: `True`
+- B17 non-authorization closure matrix created: `True`
+- B17 evidence link closure matrix created: `True`
+- B17 historical warning closure review recorded: `True`
+- B17 drift check verified: `True`
+- B17 safety attestation verified: `True`
+- B17 next phase contract verified: `True`
+- B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 chain closure reviewed verified: `True`
+- PROMPT_CONTRACT.md narrative rule verified: `True`
+- Current-state duplicate historical warning phrase found: `True` (warning only)
+- LAB_VERDICTS structural cleanup candidate deferred: `True`
+- Next principal phase: `ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate`
+- Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
+
+# CURRENT_STATE
+
+As of 2026-05-17:
+
+- Official ARIS V6 is closed; F30 and F31 canonicalization / drift repair are complete.
+- F33.Z22 is closed and the ARIS Lab authority layer is active after reconciliation.
 - Latest completed phase: `ARIS-LAB-B16 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate`
 - Status: `aris_lab_b16_bedrock_decisions_contract_schema_consolidation_readiness_review_gate_passed`
 - Bedrock Gate status: declared, not executable yet
