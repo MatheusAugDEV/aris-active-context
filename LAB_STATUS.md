@@ -1,16 +1,17 @@
 # LAB_STATUS
 
-- Current Lab phase: ARIS-LAB-B21
-- Lab status: B21 governance final readiness report completed; B7 -> B19 cycle closed; historical warnings retained; chain textual drift warning-only
+- Current Lab phase: ARIS-LAB-B22
+- Lab status: B22 historical drift / noise classification completed; warning-only and deferred cleanup items retained; no destructive cleanup executed
 - F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
 - Bedrock Gate status: declared, not executable yet
 - Bedrock Gate executable now: False
 - Bedrock Gate verdict: PASS
 - Product promotion: not allowed
-- Next Lab phase: ARIS-LAB-B22 — Historical Drift / Noise Classification Gate
+- Next Lab phase: ARIS-LAB-B23 — Bedrock Executability Plan Gate
 - Lab governance current readiness percent: 90
 - Lab governance declared 100 percent now: False
 - Completion doctrine verified/persisted/carried forward: True
+- Completion doctrine classification reviewed in B22: True
 - Current-state duplicate historical warning phrase found: `True`
 - LAB_VERDICTS structural cleanup candidate deferred: `True`
 - Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`

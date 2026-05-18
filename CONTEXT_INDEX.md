@@ -177,7 +177,25 @@ Read in this order:
 
 ## Current operational anchor
 
-- B21 final readiness report completed; governance score is 90/100; the Completion Doctrine / 200% Standard is persisted; next principal phase is B22; B22/B23 remain required; historical warnings remain warning-only; Bedrock stays non-executable.
+- B22 historical drift / noise classification completed; governance score remains 90/100; the Completion Doctrine / 200% Standard is persisted and carried forward; next principal phase is B23; historical warnings remain warning-only; no destructive cleanup was executed; Bedrock stays non-executable.
+
+## Recent ARIS-LAB B22 review references
+
+- [docs/aris_lab/aris_lab_b22_historical_drift_noise_classification_gate.md](../docs/aris_lab/aris_lab_b22_historical_drift_noise_classification_gate.md)
+- [artifacts/aris_lab/aris_lab_b22_decision.json](../artifacts/aris_lab/aris_lab_b22_decision.json)
+- [artifacts/aris_lab/aris_lab_b22_summary.json](../artifacts/aris_lab/aris_lab_b22_summary.json)
+- [artifacts/aris_lab/aris_lab_b22_report.md](../artifacts/aris_lab/aris_lab_b22_report.md)
+- [artifacts/aris_lab/aris_lab_b22_historical_drift_classification_matrix.json](../artifacts/aris_lab/aris_lab_b22_historical_drift_classification_matrix.json)
+- [artifacts/aris_lab/aris_lab_b22_noise_taxonomy.json](../artifacts/aris_lab/aris_lab_b22_noise_taxonomy.json)
+- [artifacts/aris_lab/aris_lab_b22_warning_only_register.json](../artifacts/aris_lab/aris_lab_b22_warning_only_register.json)
+- [artifacts/aris_lab/aris_lab_b22_deferred_cleanup_register.json](../artifacts/aris_lab/aris_lab_b22_deferred_cleanup_register.json)
+- [artifacts/aris_lab/aris_lab_b22_blocker_candidate_review.json](../artifacts/aris_lab/aris_lab_b22_blocker_candidate_review.json)
+- [artifacts/aris_lab/aris_lab_b22_active_state_vs_historical_noise_map.json](../artifacts/aris_lab/aris_lab_b22_active_state_vs_historical_noise_map.json)
+- [artifacts/aris_lab/aris_lab_b22_completion_doctrine_classification_review.json](../artifacts/aris_lab/aris_lab_b22_completion_doctrine_classification_review.json)
+- [artifacts/aris_lab/aris_lab_b22_non_authorization_classification_matrix.json](../artifacts/aris_lab/aris_lab_b22_non_authorization_classification_matrix.json)
+- [artifacts/aris_lab/aris_lab_b22_drift_check.json](../artifacts/aris_lab/aris_lab_b22_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b22_safety_attestation.json](../artifacts/aris_lab/aris_lab_b22_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b22_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b22_next_phase_contract.json)
 
 ## Recent ARIS-LAB B21 review references
 

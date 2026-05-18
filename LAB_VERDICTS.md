@@ -1,3 +1,27 @@
+# LAB_VERDICTS
+
+## ARIS-LAB-B22 — Historical Drift / Noise Classification Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b21_readiness_report | lab_validated | No | B21 decision, summary, report | B21 readiness report remains PASS and closes into B22 classification |
+| lab.b21_lab_governance_readiness_matrix | lab_validated | No | B22 anchor review matrix | B21 governance readiness remains conservative and review-only |
+| lab.b21_control_coverage_matrix | lab_validated | No | B22 completion doctrine classification review | Completion Doctrine / 200% Standard remains explicit |
+| lab.b21_non_authorization_readiness_matrix | lab_validated | No | B22 non-authorization classification matrix | Dangerous flags remain blocked and review-only |
+| lab.b21_warning_and_deferred_items_register | warning_only | No | B22 warning-only register | Historical warnings remain warning-only and cleanup remains deferred |
+| lab.b21_completion_doctrine_verification | lab_validated | No | B22 completion doctrine classification review | no false completion and no hidden TODO remain explicit |
+| lab.b21_drift_check | warning_only | No | B22 drift check | Historical irregularities remain warning-only |
+| lab.current_state_duplicate_history | warning_only | No | CURRENT_STATE.md | Current-state duplicate historical sections remain warning-only |
+| lab.next_action_stale_history | warning_only | No | NEXT_ACTION.md | Historical next-action duplication remains warning-only |
+| lab.lab_verdicts_structural_noise | warning_only | No | LAB_VERDICTS.md | Structural historical repetitions remain warning-only |
+| lab.chain_textual_drift | warning_only | No | ARIS_PHASE_LEDGER.md | Chain wording remains warning-only and non-authorizing |
+| lab.context_index_noise_or_gap | warning_only | No | CONTEXT_INDEX.md | Index staleness or duplication remains warning-only |
+| lab.evidence_gap_candidate | deferred | No | B22 deferred cleanup register | Evidence-gap candidates remain deferred, not blockers |
+| lab.blocker_candidate | no_action_needed | No | B22 blocker candidate review | No blocker was found for B23 |
+| lab.cleanup_deferred_candidate | deferred | No | B22 deferred cleanup register | Cleanup stays non-destructive and deferred |
+| lab.b23_next_phase_contract | lab_validated | No | B22 next phase contract | B23 remains required for Bedrock executability planning |
+| lab.no_destructive_cleanup | warning_only | No | B22 report and context noise summary | No destructive cleanup was executed |
+
 ## ARIS-LAB-B21 — Lab Governance Final Readiness Report Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

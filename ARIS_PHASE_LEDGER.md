@@ -1,5 +1,73 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-LAB-B22 — Historical Drift / Noise Classification Gate
+
+- [ARIS-LAB-B22] Historical Drift / Noise Classification Gate completed.
+- status: `aris_lab_b22_historical_drift_noise_classification_gate_passed`
+- anchor_phase: `ARIS-LAB-B21 — Lab Governance Final Readiness Report Gate`
+- previous_phase_short_summary: `A B21 criou o relatório final de prontidão governamental do ARIS Lab, registrou readiness score 90/100, confirmou a Completion Doctrine / 200% Standard, manteve Lab governance ainda não 100% até B22/B23, e preservou Bedrock Gate não executável sem liberar produto, runtime, DB/schema, SQLite connect, FTS5, rede, dependências, MCP, Obsidian bulk-read ou Vault write.`
+- next_phase_short_explanation: `A B23 deve planejar a executabilidade Bedrock depois que o ruído histórico tiver sido classificado e o cleanup permanecer não destrutivo.`
+- prompt_contract_phase_narrative_rule_verified: `True`
+- previous_phase_short_summary_required: `True`
+- next_phase_short_explanation_required: `True`
+- narrative_rule_carried_forward: `True`
+- b21_decision_verified: `True`
+- b21_summary_verified: `True`
+- b21_report_verified: `True`
+- b21_final_readiness_report_verified: `True`
+- b21_readiness_score_verified: `True`
+- b21_completion_doctrine_verified: `True`
+- b21_warning_deferred_register_verified: `True`
+- completion_doctrine_verified: `True`
+- completion_doctrine_carried_to_next_phase: `True`
+- no_false_completion_rule_verified: `True`
+- no_hidden_todo_rule_verified: `True`
+- evidence_backed_completion_rule_verified: `True`
+- safe_completion_rule_verified: `True`
+- efficient_completion_rule_verified: `True`
+- non_bypassable_gate_rule_verified: `True`
+- operator_clarity_rule_verified: `True`
+- historical_drift_classification_matrix_created: `True`
+- noise_taxonomy_created: `True`
+- warning_only_register_created: `True`
+- deferred_cleanup_register_created: `True`
+- blocker_candidate_review_created: `True`
+- active_state_vs_historical_noise_map_created: `True`
+- context_state_noise_summary_created: `True`
+- current_state_duplicate_history_classified: `warning_only`
+- next_action_stale_history_classified: `warning_only`
+- lab_verdicts_structural_noise_classified: `warning_only`
+- chain_textual_drift_classified: `warning_only`
+- context_index_noise_or_gap_classified: `warning_only`
+- historical_irregularities_found: `True`
+- historical_irregularities_treated_as_warning_only: `True`
+- cleanup_execution_allowed_now: `False`
+- cleanup_plan_created: `True`
+- destructive_cleanup_executed: `False`
+- lab_governance_declared_100_percent_now: `False`
+- b23_required_for_bedrock_executability_plan_and_final_closure: `True`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `False`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- historical_drift_noise_classification_gate_passed: `True`
+- blocker_count: `0`
+- warning_count: `7`
+- deferred_cleanup_count: `2`
+- next phase recommendation: `ARIS-LAB-B23 — Bedrock Executability Plan Gate`
+
 ## ARIS-LAB-B20 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate
 
 - [ARIS-LAB-B20] Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate completed.

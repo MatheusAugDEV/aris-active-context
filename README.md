@@ -16,10 +16,10 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-B21 — Lab Governance Final Readiness Report Gate`
-- B21 readiness report was completed and the Completion Doctrine / 200% Standard remains verified in PROMPT_CONTRACT.md.
-- Next principal phase: `ARIS-LAB-B22 — Historical Drift / Noise Classification Gate`
-- B21 readiness report confirmed the Lab is not yet 100% complete and that B22/B23 remain necessary.
+- Latest completed phase: `ARIS-LAB-B22 — Historical Drift / Noise Classification Gate`
+- B22 classified historical drift and noise without destructive cleanup.
+- Next principal phase: `ARIS-LAB-B23 — Bedrock Executability Plan Gate`
+- B22 kept the governance plan below 100% and carried the Completion Doctrine / 200% Standard forward.
 - B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 -> B17 -> B18 -> B19 remains review-only and non-authorizing.
 - The Lab governance score is recorded at 90/100 and the governance plan is not yet 100% closed.
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
