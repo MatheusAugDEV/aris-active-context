@@ -1,5 +1,47 @@
 # LAB_VERDICTS
 
+## ARIS-BEDROCK-C5 — Completion Doctrine Evaluator Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| bedrock.c5.completion_doctrine_evaluator | lab_validated | No | C5 completion doctrine evaluator | Deterministic, local-only, stdlib-only evaluator created |
+| bedrock.c5.completion_doctrine_contract | lab_validated | No | C5 completion doctrine contract | Completion doctrine rules, evidence requirements, and carried-forward obligations explicit |
+| bedrock.c5.completion_doctrine_evaluation_result_contract | lab_validated | No | C5 evaluation result contract | Validation/evaluation results are explicit and deterministic |
+| bedrock.c5.completion_doctrine_rules_matrix | lab_validated | No | C5 completion doctrine rules matrix | False completion, hidden TODO, evidence, safety, and narrative continuity rules explicit |
+| bedrock.c5.valid_invalid_completion_examples | lab_validated | No | C5 valid/invalid examples | Valid completion example and invalid blocked cases recorded |
+| bedrock.c5.c4_anchor_review_matrix | lab_validated | No | C5 C4 anchor review matrix | C4 anchor evidence verified |
+| bedrock.c5.non_authorization_matrix | lab_validated | No | C5 non-authorization matrix | Product/runtime/DB/network/MCP/vault remain blocked |
+| bedrock.c5.dangerous_flags_review | lab_validated | No | C5 dangerous flags review | Dangerous flags remain false and are reviewed from C4 evidence |
+| bedrock.c5.completion_doctrine_review | lab_validated | No | C5 completion doctrine review | Completion Doctrine / 200% Standard carried forward |
+| bedrock.c5.drift_check | warning_only | No | C5 drift check | Historical irregularities remain warning-only; no live drift |
+| bedrock.c5.safety_attestation | lab_validated | No | C5 safety attestation | Bedrock gate remains non-executable and dangerous claims remain blocked |
+| bedrock.c5.next_phase_contract | lab_validated | No | C5 next phase contract | C6 recommended |
+
+## ARIS-BEDROCK-C5 — Completion Doctrine Evaluator Summary State
+
+- bedrock_executable_engine_readiness_percent: `40`
+- bedrock_engine_implemented_now: `False`
+- bedrock_executable_engine_declared_now: `False`
+- bedrock_gate_declared: `True`
+- bedrock_gate_executable_now: `False`
+- bedrock_verdict: `PASS`
+- product_promotion_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- persistent_sqlite_database_creation_allowed_now: `False`
+- sqlite_schema_apply_allowed_now: `False`
+- sqlite_connect_allowed_now: `False`
+- fts5_table_creation_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- dangerous_flags_verified_false: `True`
+- blocker_count: `0`
+- warning_count: `1`
+- deferred_count: `1`
+- next phase recommendation: `ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator`
+
 ## ARIS-BEDROCK-C4 — Dangerous Flags Evaluator Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
