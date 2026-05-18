@@ -1,7 +1,7 @@
-Prepare ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate; anchor phase ARIS-LAB-B17.
-- B17 closure review of the B16 readiness package completed.
-- B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 chain remains coherent and non-authorizing.
-- B17 chain textual drift remains warning-only and does not block closure.
+Prepare ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate; anchor phase ARIS-LAB-B18.
+- B18 continuation review of the B17 closure package completed.
+- B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 -> B17 chain remains coherent and non-authorizing.
+- B18 chain textual drift remains warning-only and does not block continuation.
 - The phase narrative continuity rule remains verified in PROMPT_CONTRACT.md and carried forward.
 - Historical irregularities remain warning-only and must not become blockers.
 - The Bedrock Gate remains non-executable.

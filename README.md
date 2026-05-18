@@ -16,11 +16,11 @@ Current snapshot:
 
 - Official V6 is closed and the ARIS Lab authority layer is now active after reconciliation.
 - F33.Z22 remains preserved as the latest closed F33 operational phase.
-- Latest completed phase: `ARIS-LAB-B17 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate`
-- B17 closure review package was closed and the narrative continuity rule remains verified in PROMPT_CONTRACT.md.
-- Next principal phase: `ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate`
-- B17 closure review gate was materialized and the B16 package was reviewed deterministically.
-- B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 remains review-only and non-authorizing.
+- Latest completed phase: `ARIS-LAB-B18 — Bedrock Decisions Contract/Schema Consolidation Readiness Continuation Gate`
+- B18 continuation review package was closed and the narrative continuity rule remains verified in PROMPT_CONTRACT.md.
+- Next principal phase: `ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate`
+- B18 continuation review gate was materialized and the B17 closure package was reviewed deterministically.
+- B7 -> B8 -> B9 -> B10 -> B11 -> B12 -> B13 -> B14 -> B15 -> B16 -> B17 remains review-only and non-authorizing.
 - F33.RM-F51-P0/R1 remains external advisory research only and does not authorize product promotion or override the Lab contract.
 - Historical irregularities were found in older LAB_VERDICTS sections and treated as warning only.
 - F44 interpretation: `hardening/maturity of existing Lab`
