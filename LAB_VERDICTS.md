@@ -1,3 +1,18 @@
+## ARIS-LAB-B20 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Closure Gate Bedrock Enforcement Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab.b19_readiness_review | lab_validated | No | B19 readiness review matrix | B19 readiness review package remains PASS and closes into B20 |
+| lab.b19_chain_readiness_review_record | lab_validated | No | B20 chain readiness review record | B7 -> B19 cycle remains coherent and non-authorizing |
+| lab.lab_governance_100_percent_plan_record | lab_validated | No | B20 lab 100 percent plan record | B21, B22, and B23 remain the planned completion phases |
+| lab.phase_narrative_rule_closure_review | lab_validated | No | B20 phase narrative rule closure review | previous_phase_short_summary and next_phase_short_explanation remain required |
+| lab.b19_non_authorization_readiness_review_matrix | lab_validated | No | B20 non-authorization closure matrix | Dangerous flags remain blocked and review-only |
+| lab.b19_evidence_link_readiness_review_matrix | lab_validated | No | B20 evidence link closure matrix | Evidence links remain explicit and consistent |
+| lab.b19_historical_warning_readiness_review | warning_only | No | B20 historical warning closure review | Historical irregularities remain warning-only |
+| lab.chain_textual_drift_closure_review | warning_only | No | B20 chain textual drift closure review | Historical wording remains warning-only and B19 continuity is preserved |
+| lab.b19_drift_check | lab_validated | No | B20 drift check | Live drift remains absent and historical irregularities stay warning-only |
+| lab.next_phase_contract | lab_validated | No | B20 next phase contract | B21 recommended; B20 closed |
+
 ## ARIS-LAB-B19 — Bedrock Decisions Contract/Schema Consolidation Readiness Review Gate Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

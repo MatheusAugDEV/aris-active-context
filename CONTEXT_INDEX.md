@@ -177,6 +177,26 @@ Read in this order:
 
 ## Current operational anchor
 
+- B20 closure review completed; B7 -> B19 cycle is closed; next principal phase is B21; the B21/B22/B23 Lab governance plan is recorded; historical warnings remain warning-only; Bedrock stays non-executable.
+
+## Recent ARIS-LAB B20 review references
+
+- [docs/aris_lab/aris_lab_b20_bedrock_decisions_contract_schema_consolidation_readiness_review_closure_gate.md](../docs/aris_lab/aris_lab_b20_bedrock_decisions_contract_schema_consolidation_readiness_review_closure_gate.md)
+- [artifacts/aris_lab/aris_lab_b20_decision.json](../artifacts/aris_lab/aris_lab_b20_decision.json)
+- [artifacts/aris_lab/aris_lab_b20_summary.json](../artifacts/aris_lab/aris_lab_b20_summary.json)
+- [artifacts/aris_lab/aris_lab_b20_report.md](../artifacts/aris_lab/aris_lab_b20_report.md)
+- [artifacts/aris_lab/aris_lab_b20_b19_readiness_review_closure_matrix.json](../artifacts/aris_lab/aris_lab_b20_b19_readiness_review_closure_matrix.json)
+- [artifacts/aris_lab/aris_lab_b20_chain_readiness_review_record.json](../artifacts/aris_lab/aris_lab_b20_chain_readiness_review_record.json)
+- [artifacts/aris_lab/aris_lab_b20_chain_textual_drift_readiness_review.json](../artifacts/aris_lab/aris_lab_b20_chain_textual_drift_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b20_phase_narrative_rule_readiness_review.json](../artifacts/aris_lab/aris_lab_b20_phase_narrative_rule_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b20_non_authorization_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b20_non_authorization_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b20_evidence_link_readiness_review_matrix.json](../artifacts/aris_lab/aris_lab_b20_evidence_link_readiness_review_matrix.json)
+- [artifacts/aris_lab/aris_lab_b20_historical_warning_readiness_review.json](../artifacts/aris_lab/aris_lab_b20_historical_warning_readiness_review.json)
+- [artifacts/aris_lab/aris_lab_b20_lab_100_percent_plan_record.json](../artifacts/aris_lab/aris_lab_b20_lab_100_percent_plan_record.json)
+- [artifacts/aris_lab/aris_lab_b20_drift_check.json](../artifacts/aris_lab/aris_lab_b20_drift_check.json)
+- [artifacts/aris_lab/aris_lab_b20_safety_attestation.json](../artifacts/aris_lab/aris_lab_b20_safety_attestation.json)
+- [artifacts/aris_lab/aris_lab_b20_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b20_next_phase_contract.json)
+
 ## Recent ARIS-LAB B11 review references
 
 - [docs/aris_lab/aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate.md](../docs/aris_lab/aris_lab_b11_bedrock_decisions_contract_schema_review_assurance_gate.md)
