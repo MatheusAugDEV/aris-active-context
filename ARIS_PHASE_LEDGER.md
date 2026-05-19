@@ -1,5 +1,21 @@
 # ARIS_PHASE_LEDGER
 
+## ARIS-ROADMAP-R0 — Governance Foundation
+
+- status: `r0_governance_foundation_passed`
+- anchor_phase: `ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator`
+- previous_phase_short_summary: `C6 created the Read-First & Source-of-Truth Compliance Evaluator and validated read-first / source-of-truth compliance deterministically.`
+- next_phase_short_explanation: `C7 should evaluate evidence pack completeness and phase package minimum compliance deterministically without authorizing runtime execution, enforcement, or product promotion.`
+- required_r0_artifact_coverage: `1.00`
+- schema_validation_rate: `1.00`
+- roadmap_machine_validation_rate: `1.00`
+- missing_governance_artifacts: `0`
+- blocker_count: `0`
+- dangerous_flags_verified_false: `True`
+- next phase recommendation: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+
+The full historical ledger remains in `aris-active-context/ARIS_PHASE_LEDGER.md`.
+
 # ARIS_PHASE_LEDGER
 
 ## ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator

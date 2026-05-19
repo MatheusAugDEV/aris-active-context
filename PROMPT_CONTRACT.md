@@ -1,6 +1,8 @@
 # PROMPT_CONTRACT
 
 `ARIS_PHASE_PROMPT_CONTRACT_V2` is the compact phase prompt contract for ARIS.
+
+R0 governance foundation is materialized; future prompts still require the continuity fields and the active-context update.
 It reduces repetition while preserving phase gates, safety, deterministic evidence, active-context precedence, and Bedrock Gate enforcement.
 
 ## Mandatory read-first rule

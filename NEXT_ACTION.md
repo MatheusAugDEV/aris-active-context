@@ -1,5 +1,19 @@
 # NEXT_ACTION
 
+R0 governance foundation is complete.
+Next recommended phase: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+Operational rule: continue only through evidence-pack completeness; no production promotion or runtime activation.
+
+Prepare ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator; anchor phase ARIS-BEDROCK-C6.
+- C6 created the Read-First & Source-of-Truth Compliance Evaluator, read-first contract, source-of-truth contract, and valid/invalid compliance examples deterministically.
+- Lab governance remains 100/100 and the Bedrock track ARIS-BEDROCK-C is still declared for future executable work.
+- The Completion Doctrine / 200% Standard remains verified in PROMPT_CONTRACT.md and carried forward.
+- C6 is evaluator-only and remains a preparation exception, not an execution authorization.
+- C6 did not implement Bedrock execution, enforcement, CLI, runtime mutation, DB/schema, network, dependency install, MCP activation, Obsidian bulk read, or vault write.
+- Historical irregularities remain warning-only and must not become blockers.
+- F33 remains paused under Lab governance and F51+ stays advisory-only.
+- Product promotion remains false; runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
+
 Prepare `ARIS-ROADMAP-R0 — Governance Foundation`; anchor state: `ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator`.
 
 - Canonical roadmap created: `ARIS_ROADMAP_R0_F120.md`.

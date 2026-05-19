@@ -2,8 +2,13 @@
 
 Compact, read-first ARIS context entrypoint.
 
-## Read order
+Current governance note:
 
+- R0 governance foundation is materialized and is now the active handoff point before C7.
+- Canonical roadmap anchor: `ARIS_ROADMAP_R0_F120.md`
+- Next recommended phase: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+
+Read order:
 1. `CURRENT_STATE.md`
 2. `NEXT_ACTION.md`
 3. `DECISION_LOCKS.md`

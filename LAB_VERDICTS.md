@@ -1,5 +1,30 @@
 # LAB_VERDICTS
 
+## ARIS-ROADMAP-R0 — Governance Foundation Verdict
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| roadmap.r0.governance_foundation | lab_validated | No | R0 governance foundation pack | Deterministic local governance pack created; no production authorization |
+| roadmap.r0.phase_template_schema | lab_validated | No | phase template schema | Global phase template schema materialized |
+| roadmap.r0.gate_authority_policy | lab_validated | No | gate authority policy | Active-context precedence and roadmap authority explicit |
+| roadmap.r0.waiver_policy | lab_validated | No | waiver policy | Waiver cannot authorize production or override critical blockers |
+| roadmap.r0.machine_validation | lab_validated | No | roadmap machine validation report | Coverage, schema validation, and blocker count all pass |
+
+## Summary State
+
+- required_r0_artifact_coverage: `1.00`
+- schema_validation_rate: `1.00`
+- roadmap_machine_validation_rate: `1.00`
+- missing_governance_artifacts: `0`
+- blocker_count: `0`
+- warning_count: `0`
+- dangerous_flags_verified_false: `True`
+- next phase recommendation: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+
+The full historical ledger remains in `aris-active-context/LAB_VERDICTS.md`.
+
+# LAB_VERDICTS
+
 ## ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator Bedrock Enforcement Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |

@@ -66,3 +66,8 @@ input_type: external_advisory_research
 raw_input_saved: True
 next_research_phase: `F32.RESEARCH-P2 — Cross-Model Research Synthesis & Architecture Candidate Consolidation Gate`
 advisory_only; no implementation or roadmap mutation authorized
+## ARIS-ROADMAP-R0 - Governance Foundation
+- R0 materialized the auditable governance base for the roadmap and the Lab handoff to C7.
+- Roadmap canonical anchor: `ARIS_ROADMAP_R0_F120.md`
+- Required artifacts created: phase template schema, authority policy, waiver policy, architecture and research schemas, failure/reopen policies, regulatory scope declaration, machine validation report, summary, and report.
+- Next recommended phase: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`

@@ -1,12 +1,16 @@
 # DECISION_LOCKS
 
-## ARIS-ROADMAP-R0_F120 Canonical Roadmap Lock
+## ARIS-ROADMAP-R0 Governance Foundation Lock
 
+- R0 materializes governance only and does not authorize production, runtime mutation, network access, dependency installation, connector activation, embedded database connection, full-text index creation, private archive mutation, or broad read from the private navigation layer.
+- active-context wins over memory, chat, history, and summaries.
+- NEXT_ACTION governs the next operational step.
+- DECISION_LOCKS governs hard constraints.
+- ARIS_ROADMAP_R0_F120.md governs the roadmap.
+- ARIS_PHASE_LEDGER.md is historical evidence only.
 - `ARIS_ROADMAP_R0_F120.md` is the active canonical roadmap for R0 through F120 Lab Mastery planning.
 - `ROADMAP_CANONICAL_F33_F50.md` is superseded and tombstone-only.
 - `ROADMAP_F30_F50.md` is superseded and tombstone-only.
-- Next authorized phase is `ARIS-ROADMAP-R0 — Governance Foundation`.
-- `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator` is blocked until `R0 = PASS`.
 - F33 remains paused under Lab governance.
 - F51+ remains advisory-only.
 - F120 closes Lab Mastery only and does not authorize production.

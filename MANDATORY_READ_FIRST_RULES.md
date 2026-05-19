@@ -2,6 +2,8 @@
 
 This file is the compact mandatory rule layer for every ARIS assistant response, Codex prompt, phase review, phase status, roadmap decision, and active-context update.
 
+ARIS-ROADMAP-R0 governance foundation is materialized and does not change the read-first order or authority stack.
+
 If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, this file wins together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, and LAB_VERDICTS.md.
 
 ## Mandatory read-first order
