@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
+when_to_use: Validate ordered compression candidates and risk boundaries without rewriting live files.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_compression_candidate_validation_harness_report.md
+- artifacts/context/context_compression_candidate_matrix.json
+- artifacts/context/context_compression_candidate_order.json
+- artifacts/context/context_compression_risk_register.json
+notes:
+- validation only; no compression or routing is introduced
+- next recommended phase: `ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan`
 ## ARIS-CONTEXT-P9 — Context Compression Candidate Plan
 when_to_use: Review the ordered compression candidates and estimated reductions without rewriting live context files.
 read_first:

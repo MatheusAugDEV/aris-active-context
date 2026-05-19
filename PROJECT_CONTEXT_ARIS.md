@@ -1,3 +1,12 @@
+## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
+- status: `context_compression_candidate_validation_harness_warn`
+- compression validation harness created: `True`
+- compression applied: `False`
+- best ROI candidate: `artifacts/context/context_manifest_validation_harness_results.json`
+- largest absolute reduction candidate: `PROJECT_CONTEXT_ARIS.md`
+- next phase recommendation: `ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan`
+
+This note is advisory only; it does not change the live context policy or source-of-truth ordering.
 ## ARIS-CONTEXT-P9 — Context Compression Candidate Plan
 - status: `context_compression_candidate_plan_warn`
 - compression plan created: `True`
