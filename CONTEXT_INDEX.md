@@ -1,3 +1,20 @@
+## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
+when_to_use: Use to validate the draft frontmatter contract and synthetic fixtures before any apply gate.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/active_context_frontmatter_validation_harness_decision.json
+- artifacts/context/active_context_frontmatter_validation_harness_summary.json
+- artifacts/context/active_context_frontmatter_validation_results.json
+- artifacts/context/active_context_frontmatter_validation_samples.json
+- docs/research/active_context_frontmatter_validation_harness.md
+notes:
+- validation only; no live frontmatter is applied
+- next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
 ## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
 when_to_use: Use to review the draft frontmatter contract and file classification matrix before any apply harness.
 read_first:

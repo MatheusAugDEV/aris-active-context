@@ -1,4 +1,15 @@
-## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
+## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
+- status: `active_context_frontmatter_validation_harness_passed`
+- schema valid: `True`
+- matrix valid: `True`
+- matrix rows checked: `24`
+- matrix rows passed: `24`
+- matrix rows failed: `0`
+- invalid samples blocked: `7`
+- frontmatter applied: `False`
+- next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
+
+This phase is harness-only and keeps live active-context files unchanged except for this compact ledger note.## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
 - status: `active_context_frontmatter_contract_draft_warn`
 - baseline reference: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
 - total files checked: `24`

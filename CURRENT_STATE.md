@@ -1,3 +1,12 @@
+## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
+- status: `active_context_frontmatter_validation_harness_passed`
+- schema valid: `True`
+- matrix valid: `True`
+- matrix rows checked: `24`
+- invalid samples blocked: `7`
+- frontmatter applied: `False`
+- next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
+- BOOT.md remains non-canonical; active-context and artifacts continue to outrank it.
 ## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
 - status: `active_context_frontmatter_contract_draft_warn`
 - baseline reference: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`

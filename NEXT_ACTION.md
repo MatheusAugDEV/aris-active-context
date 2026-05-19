@@ -1,3 +1,6 @@
+ARIS-CONTEXT-P4 validation harness recorded.
+Next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
+Operational rule: keep validation harness-only; do not apply frontmatter or alter live prompt behavior yet.
 ARIS-CONTEXT-P3 frontmatter contract draft recorded.
 Next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
 Operational rule: keep the contract draft-only; do not apply frontmatter or change prompt behavior yet.
