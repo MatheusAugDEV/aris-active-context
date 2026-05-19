@@ -1,3 +1,35 @@
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
+when_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_manifest_draft.json
+- artifacts/context/context_manifest_draft_schema.json
+- artifacts/context/context_manifest_context_sets.json
+- artifacts/context/context_manifest_validation_result.json
+notes:
+- validation only; no routing or frontmatter application is introduced
+- next recommended phase: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
+when_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_manifest_draft.json
+- artifacts/context/context_manifest_draft_schema.json
+- artifacts/context/context_manifest_context_sets.json
+- artifacts/context/context_manifest_validation_result.json
+notes:
+- validation only; no routing or frontmatter application is introduced
+- next recommended phase: `Repair missing or invalid P5 manifest inputs and rerun P6`
 ## ARIS-CONTEXT-P5 — Context Manifest Draft
 when_to_use: Use to inspect draft context sets, compare artifact references, and review the manifest draft without changing runtime behavior.
 read_first:

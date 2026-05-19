@@ -1,3 +1,21 @@
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
+status: context_manifest_validation_harness_warn
+source_kind: context_manifest_validation_harness
+manifest_validation_harness_created: True
+manifest_enforcement_enabled: False
+context_routing_enabled: False
+next_recommended_phase: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
+
+This phase validates the manifest draft only; it does not alter prompt routing or apply frontmatter.
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
+status: context_manifest_validation_harness_blocked
+source_kind: context_manifest_validation_harness
+manifest_validation_harness_created: True
+manifest_enforcement_enabled: False
+context_routing_enabled: False
+next_recommended_phase: `Repair missing or invalid P5 manifest inputs and rerun P6`
+
+This phase validates the manifest draft only; it does not alter prompt routing or apply frontmatter.
 ## ARIS-CONTEXT-P5 — Context Manifest Draft
 status: context_manifest_draft_warn
 source_kind: context_manifest_draft

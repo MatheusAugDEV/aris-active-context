@@ -1,3 +1,9 @@
+P6 manifest validation harness complete.
+Next recommended phase: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
+Operational rule: keep routing disabled, keep budget enforcement disabled, and treat the manifest as draft-only evidence.
+P6 manifest validation harness complete.
+Next recommended phase: `Repair missing or invalid P5 manifest inputs and rerun P6`
+Operational rule: keep routing disabled, keep budget enforcement disabled, and treat the manifest as draft-only evidence.
 P5 manifest draft complete.
 Next recommended phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
 Operational rule: keep routing disabled, keep frontmatter unapplied, and use the manifest only as a draft artifact.
