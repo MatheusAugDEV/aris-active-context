@@ -1,3 +1,10 @@
+## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
+- status: `roadmap_r2_lab_simulation_mastery_review_warn`
+- overlay / architecture layer: `True`
+- productization false: `True`
+- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
+This review gate records evidence only and does not alter live runtime or product behavior.
 ## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
 - status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
 - controlled apply plan validation harness created: `True`
@@ -214,6 +221,14 @@ The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
 The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
 
 # ARIS_PHASE_LEDGER
+
+## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
+- status: `roadmap_r2_lab_simulation_mastery_review_warn`
+- overlay / architecture layer: `True`
+- productization false: `True`
+- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
+This review gate records evidence only and does not alter live runtime or product behavior.
 
 ## ARIS-ROADMAP-R0 — Governance Foundation
 

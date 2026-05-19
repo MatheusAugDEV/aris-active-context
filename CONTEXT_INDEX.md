@@ -1,3 +1,20 @@
+## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
+when_to_use: Review the R2 lab-simulation overlay before the next technical readiness gate.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- aris-active-context/ARIS_ROADMAP_R2_LAB_SIMULATION_MASTERY.md
+- aris-active-context/ARIS_LAB_MACROBLOCK_MATURITY_FRAMEWORK.md
+- aris-active-context/ARIS_LAB_OPERATIONAL_LOAD_TEST_PLAN.md
+- aris-active-context/ARIS_ROADMAP_R2_ACTIVE_HANDOFF.md
+notes:
+- overlay review only; no product authorization or runtime mutation
+- next recommended phase: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
 ## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
 when_to_use: Validate the controlled apply plan and rollback readiness before any future readiness gate.
 read_first:

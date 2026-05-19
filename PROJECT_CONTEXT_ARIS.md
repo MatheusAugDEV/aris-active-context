@@ -1,3 +1,32 @@
+## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
+- status: `roadmap_r2_lab_simulation_mastery_review_warn`
+- overlay / architecture layer: `True`
+- productization false: `True`
+- customer pilot false: `True`
+- runtime mutation false: `True`
+- network false: `True`
+- external-channel send false: `True`
+- MCP activation false: `True`
+- real backup execution false: `True`
+- real update execution false: `True`
+- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
+The R2 overlay is lab-only and remains subordinate to R0, R1, and the live active-context.
+## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
+- status: `roadmap_r2_lab_simulation_mastery_review_warn`
+- overlay / architecture layer: `True`
+- productization false: `True`
+- customer pilot false: `True`
+- runtime mutation false: `True`
+- network false: `True`
+- external-channel send false: `True`
+- MCP activation false: `True`
+- real backup execution false: `True`
+- real update execution false: `True`
+- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
+This review gate validates the R2 overlay only and does not authorize product/runtime changes.
+
 ## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
 - status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
 - controlled apply plan validation harness created: `True`

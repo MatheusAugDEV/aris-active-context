@@ -245,3 +245,22 @@ R2 creates and maintains:
 ## Next recommended phase
 
 `ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate`
+
+## Validation Anchors
+
+- overlay and architecture layer
+- does not replace ARIS_ROADMAP_R0_F120.md
+- productization false
+- customer pilot false
+- runtime mutation false
+- network false
+- external-channel send false
+- MCP activation false
+- real backup execution false
+- real update execution false
+- M7+ — Reserved for post-F120/F121+
+- M6-LAB remains lab-only and is not product readiness.
+- MB4 Operational Reality Lab is weak and remains lab-only.
+- MB5 Channel / Product Simulation Lab is weak and remains lab-only.
+- MB9 Full ARIS Lab Gauntlet is weak and remains lab-only.
+- P17 remains the next technical gate after review.
