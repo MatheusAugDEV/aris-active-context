@@ -1,3 +1,13 @@
+## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness
+- status: `artifact_reference_only_compression_validation_harness_warn`
+- artifact reference validation harness created: `True`
+- artifact files modified: `False`
+- artifact files deleted: `False`
+- artifact files moved: `False`
+- artifact candidates checked: `79`
+- next phase recommendation: `ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection`
+
+This note is advisory only and keeps artifacts intact while validating the reference-only plan.
 ## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
 - status: `artifact_reference_only_compression_plan_warn`
 - artifact reference plan created: `True`
