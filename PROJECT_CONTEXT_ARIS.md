@@ -1,3 +1,14 @@
+## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
+- status: `artifact_reference_only_controlled_apply_dry_run_warn`
+- controlled apply dry-run executed: `True`
+- real apply executed: `False`
+- selected candidates: `53`
+- current total reference tokens: `25860`
+- projected prompt surface tokens: `1528`
+- projected reduction tokens: `24332`
+- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
+
+This note is advisory only and simulates reference-only controlled apply without altering artifacts or live context.
 ## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate
 - status: `artifact_reference_only_controlled_apply_readiness_gate_warn`
 - readiness class: `ready_with_warnings_for_controlled_apply_dry_run`

@@ -1,3 +1,12 @@
+## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
+- status: `artifact_reference_only_controlled_apply_dry_run_warn`
+- controlled apply dry-run executed: `True`
+- selected candidates: `53`
+- simulated surfaces: `2`
+- rollback entries: `53`
+- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
+
+This phase records synthetic dry-run evidence only and does not alter live context.
 ## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate
 - status: `artifact_reference_only_controlled_apply_readiness_gate_warn`
 - readiness class: `ready_with_warnings_for_controlled_apply_dry_run`
