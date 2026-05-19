@@ -13,6 +13,18 @@
 
 # DECISION_LOCKS
 
+## ARIS-ROADMAP-R1 Critical Reality Gaps Delta Lock
+
+- R1 materializes roadmap/governance planning only and does not authorize implementation, runtime mutation, product promotion, customer deployment, external-channel sends, network access, MCP activation, backup execution, update execution, or production pilot.
+- no Z-API integration for governed pilot.
+- no marketing template send without explicit opt-in.
+- no sensitive data flow without specific legal basis.
+- no MCP server load without approved descriptor hash pinning.
+- no production update without verified rollback path.
+- no pilot without off-device backup/restore plan.
+- no customer-facing automated dead-end without human handoff path.
+- R1 planned gaps must remain subordinate to `ARIS_ROADMAP_R0_F120.md`, active-context, and existing Global Non-Authorization Lock.
+
 ## ARIS-ROADMAP-R0 Governance Foundation Lock
 
 - R0 materializes governance only and does not authorize production, runtime mutation, network access, dependency installation, connector activation, embedded database connection, full-text index creation, private archive mutation, or broad read from the private navigation layer.
