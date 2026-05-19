@@ -1,3 +1,28 @@
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
+- status: `context_economy_research_ingestion_ready`
+- source_kind: `external_research_advisory_only`
+- implementation_authorized: `False`
+- runtime_mutation_allowed: `False`
+- BOOT.md creation allowed: `False`
+- STATE.json creation allowed: `False`
+- prompt assembly creation allowed: `False`
+- next phase recommendation: `ARIS-ACTIVE-CONTEXT-SYNC-R0`
+
+The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
+
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
+
+- status: `context_economy_research_ingestion_ready`
+- source_kind: `external_research_advisory_only`
+- implementation_authorized: `False`
+- runtime_mutation_allowed: `False`
+- BOOT.md creation allowed: `False`
+- STATE.json creation allowed: `False`
+- prompt assembly creation allowed: `False`
+- next phase recommendation: `ARIS-ACTIVE-CONTEXT-SYNC-R0`
+
+The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
+
 # ARIS_PHASE_LEDGER
 
 ## ARIS-ROADMAP-R0 — Governance Foundation

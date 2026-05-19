@@ -1,3 +1,10 @@
+## ARIS-CONTEXT-P0 Advisory Intake Lock
+
+- advisory-only research ingestion does not authorize implementation, runtime mutation, or prompt/runtime restructuring.
+- P0 does not create BOOT.md, STATE.json, or prompt assembly artifacts.
+- active-context sync remains recommended before P1.
+- active-context, roadmap, and decision-lock authority ordering remains unchanged.
+
 # DECISION_LOCKS
 
 ## ARIS-ROADMAP-R0 Governance Foundation Lock

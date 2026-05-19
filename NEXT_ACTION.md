@@ -1,5 +1,10 @@
 # NEXT_ACTION
 
+ARIS-CONTEXT-P0 advisory intake recorded.
+Active-context sync is required before P1 work.
+Next recommended phase: `ARIS-ACTIVE-CONTEXT-SYNC-R0`
+Do not create BOOT.md, STATE.json, or prompt assembly artifacts in P0.
+
 R0 governance foundation is complete.
 Next recommended phase: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
 Operational rule: continue only through evidence-pack completeness; no production promotion or runtime activation.

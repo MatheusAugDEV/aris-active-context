@@ -1,5 +1,23 @@
 # CONTEXT_INDEX
 
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
+when_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
+read_first:
+- CURRENT_STATE.md
+- NEXT_ACTION.md
+- DECISION_LOCKS.md
+- CONTEXT_INDEX.md
+- ARIS_PHASE_LEDGER.md
+- artifacts/context/context_economy_research_ingestion_decision.json
+- artifacts/context/context_economy_research_ingestion_summary.json
+- artifacts/context/context_economy_claim_matrix.json
+- artifacts/context/context_economy_research_ingestion_report.md
+- docs/research/context_economy_research_ingestion.md
+- docs/research/context_economy_external_research_intake.md
+notes:
+- advisory-only research does not change authoritative runtime state
+- active-context sync is still recommended before P1 in this workspace
+
 ## ARIS-ROADMAP-R0 Governance Foundation
 when_to_use: Use to establish the auditable governance foundation before C7 and any later Lab or roadmap continuation.
 read_first:
@@ -176,6 +194,24 @@ Current Bedrock note:
 - [artifacts/aris_lab/aris_lab_b12_drift_check.json](../artifacts/aris_lab/aris_lab_b12_drift_check.json)
 - [artifacts/aris_lab/aris_lab_b12_safety_attestation.json](../artifacts/aris_lab/aris_lab_b12_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b12_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b12_next_phase_contract.json)
+
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
+when_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
+read_first:
+- CURRENT_STATE.md
+- NEXT_ACTION.md
+- DECISION_LOCKS.md
+- CONTEXT_INDEX.md
+- ARIS_PHASE_LEDGER.md
+- artifacts/context/context_economy_research_ingestion_decision.json
+- artifacts/context/context_economy_research_ingestion_summary.json
+- artifacts/context/context_economy_claim_matrix.json
+- artifacts/context/context_economy_research_ingestion_report.md
+- docs/research/context_economy_research_ingestion.md
+- docs/research/context_economy_external_research_intake.md
+notes:
+- advisory-only research does not change authoritative runtime state
+- active-context sync is still recommended before P1 in this workspace
 
 # CONTEXT_INDEX
 
