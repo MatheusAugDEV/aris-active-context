@@ -1,3 +1,13 @@
+## ARIS-CONTEXT-P5 — Context Manifest Draft
+status: context_manifest_draft_warn
+source_kind: context_manifest_draft
+manifest_created: True
+manifest_status: draft_only
+enforcement_enabled: False
+context_routing_enabled: False
+next_recommended_phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
+
+This phase drafts a manifest only; it does not alter prompt routing or apply frontmatter.
 ## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
 - status: `active_context_frontmatter_validation_harness_passed`
 - schema valid: `True`

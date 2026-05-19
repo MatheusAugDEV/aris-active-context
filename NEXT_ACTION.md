@@ -1,3 +1,6 @@
+P5 manifest draft complete.
+Next recommended phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
+Operational rule: keep routing disabled, keep frontmatter unapplied, and use the manifest only as a draft artifact.
 ARIS-CONTEXT-P4 validation harness recorded.
 Next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
 Operational rule: keep validation harness-only; do not apply frontmatter or alter live prompt behavior yet.

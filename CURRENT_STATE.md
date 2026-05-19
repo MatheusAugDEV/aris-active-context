@@ -1,3 +1,14 @@
+## ARIS-CONTEXT-P5 — Context Manifest Draft
+- status: `context_manifest_draft_warn`
+- manifest created: `True`
+- manifest status: `draft_only`
+- enforcement enabled: `False`
+- context routing enabled: `False`
+- derived file entries: `24`
+- context sets: `6`
+- warning count: `1`
+- next recommended phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
+- Draft-only manifest is advisory; active-context and artifacts remain authoritative.
 ## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
 - status: `active_context_frontmatter_validation_harness_passed`
 - schema valid: `True`

@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P5 — Context Manifest Draft
+when_to_use: Use to inspect draft context sets, compare artifact references, and review the manifest draft without changing runtime behavior.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_manifest_draft.json
+- artifacts/context/context_manifest_draft_schema.json
+- artifacts/context/context_manifest_context_sets.json
+- artifacts/context/context_manifest_validation_result.json
+notes:
+- draft only; no routing or frontmatter application is introduced
+- next recommended phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
 ## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
 when_to_use: Use to validate the draft frontmatter contract and synthetic fixtures before any apply gate.
 read_first:
