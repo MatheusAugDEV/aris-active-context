@@ -1,3 +1,15 @@
+## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate
+- status: `artifact_reference_only_controlled_apply_readiness_gate_warn`
+- readiness class: `ready_with_warnings_for_controlled_apply_dry_run`
+- can advance to controlled apply dry-run: `True`
+- eligible candidates: `53`
+- blocked high-risk references: `2`
+- blocked missing risk review: `5`
+- deferred hot-path review: `17`
+- deferred manual review: `2`
+- next phase recommendation: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
+
+This gate is readiness-only and does not apply artifact references or rewrite live context.
 ## ARIS-ROADMAP-R2-REVIEW — Lab Simulation Mastery Review Gate
 - status: `roadmap_r2_lab_simulation_mastery_review_warn`
 - overlay / architecture layer: `True`
