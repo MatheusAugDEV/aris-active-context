@@ -36,19 +36,24 @@ Creates the auditable governance foundation before C7/F33/F51+ continuation. Pri
 - C13 — Bedrock Enforcement Simulation Gate — `bedrock_c13_enforcement_simulation.json` — known_bad_phase_block_rate=1.00; known_good_phase_pass_rate=1.00.
 - C14 — Bedrock Final Closure Gate — `bedrock_c14_final_closure_gate.json` — bedrock_executable=true; blocker_count=0; bedrock_false_pass_count=0.
 
+## F30.C.1 — Usage Telemetry
+
+STATUS: PLANNED. Instrument collection of `input_tokens`, `cache_read_input_tokens`, `cache_creation_input_tokens`, `output_tokens`, and `cost_estimate` by `interaction_id` after every LLM call in the orchestrator. Persist the data as `UsageEvent` in the ledger. Exit gate: telemetry present in 100% of turns; `cache_read_input_tokens` collected successfully. Justification: prerequisite for all budget gates and performance gates that follow; without a usage baseline, no gate can verify regression.
+
 ## F33-F50 — Foundational Contracts Layer
 
 - F33 — Local Memory/Search/Evaluation Baseline Contract — `f33_memory_eval_baseline_contract.json`.
-- F34 — Action Registry Contract Foundation — `f34_action_registry_contract.json`; `f34_action_slo_baseline.json`.
+- F34 — Action Registry Contract Foundation — `f34_action_registry_contract.json`; `f34_action_slo_baseline.json`; registry schema includes `rollback_action` as a declarative reference to the corresponding compensation action when one exists, for example `create_appointment` → `cancel_appointment`, making compensation mapping auditable and not implicit in orchestrator logic.
+- F34.B — Action Risk Classifier — `f34b_action_risk_classifier.json`; STATUS: PLANNED; add `risk_level` to every `ActionType` in the registry schema. Allowed values: `LOW | MEDIUM | HIGH | CRITICAL`. Actions with `risk_level` HIGH or CRITICAL are automatically intercepted by F37 Permission Gate without manual per-action configuration. Exit gate: 100% of registry actions declare `risk_level`; automatic HIGH+ interception verified by test.
 - F35 — Typed Action Plan Schema — `f35_typed_action_plan_schema.json`.
 - F36 — Security Precheck & Policy Boundary — `f36_security_precheck_boundary.json`.
 - F36.B — MCP Security Gateway Contract — `f36b_mcp_security_gateway_contract.json`.
 - F36.C — Semantic Intent Classifier Contract — `f36c_semantic_intent_classifier_contract.json`.
-- F37 — Permission Gate Contract — `f37_permission_gate_contract.json`; `quorum_approval_policy.json`.
-- F38 — Dry-Run Contract — `f38_dry_run_contract.json`.
+- F37 — Permission Gate Contract — `f37_permission_gate_contract.json`; `quorum_approval_policy.json`; implementation note: Permission Gate should preferably be implemented as a Python decorator `@requires_permission(scope, risk_level)` applied at each action definition, enforcing permission by construction and making direct action invocation impossible without passing through the gate, instead of relying on manual enforcement at each call site.
+- F38 — Dry-Run Contract — `f38_dry_run_contract.json`; every `TaskPlan` step must declare code-verifiable `success_criteria`; the dry-run executor verifies these criteria after simulated execution. If `success_criteria` fails during dry-run, the step is marked `DRY_RUN_FAILED` and the planner decides `retry`, `compensate`, or `escalate`. A dry-run without `success_criteria` is incomplete.
 - F39 — Execution Authorization Contract — `f39_execution_authorization_contract.json`.
 - F40 — Ledger Contract Foundation — `f40_ledger_contract.json`.
-- F41 — Replay/Rollback Contract — `f41_replay_rollback_contract.json`.
+- F41 — Replay/Rollback Contract — `f41_replay_rollback_contract.json`; rollback must use invocation with a specific `checkpoint_id` for time travel, not ledger truncation. The ledger remains append-only; rollback is a fork from the last safe checkpoint and emits a `RollbackEvent` with the source `checkpoint_id`.
 - F42 — Saga & Compensation Contract — `f42_saga_compensation_contract.json`.
 - F43 — Sidecar Boundary Contract — `f43_sidecar_boundary_contract.json`.
 - F43.B — Execution Ring Policy Contract — `f43b_execution_ring_policy.json`.
@@ -56,6 +61,7 @@ Creates the auditable governance foundation before C7/F33/F51+ continuation. Pri
 - F45 — Capability Handle Contract — `f45_capability_handle_contract.json`.
 - F45.B — Agent Identity Contract, DID-Based — `f45b_agent_identity_contract.json`.
 - F46 — Observation Model Contract — `f46_observation_model_contract.json`.
+- F46.B — Stuck Detection Sidecar — `f46b_stuck_detection_sidecar.json`; STATUS: PLANNED; lightweight sidecar observes the event stream and emits `StuckEvent` if: same FSM state persists for more than N supersteps without ledger-recorded action; ledger has no append for M seconds during active execution; or the same tool is called K consecutive times with semantically similar output. `StuckEvent` triggers warning log, operator notification, and if no response arrives within X minutes, activates F44 kill-switch. Exit gate: `StuckEvent` generated correctly in 3 simulated test scenarios.
 - F47 — Runtime Mode Matrix — `f47_runtime_mode_matrix.json`.
 - F48 — Runtime Scaffold Contract — `f48_runtime_scaffold_contract.json`.
 - F49 — Core Runtime Integration Dry-Run Plan — `f49_runtime_integration_dry_run_plan.json`.
@@ -116,6 +122,10 @@ Refinements: F34→F52, F37→F55, F38→F56, F40→F57, F43→F59.
 - F86 — Usage Anomaly Detection & Alerting — `f86_usage_anomaly_detection.json`.
 - F86.G — Operational Maturity Block Closure Gate — `f86g_operational_maturity_closure_gate.json`.
 
+## ADRs
+
+- ADR-CANAL-EXTERNO-WHATSAPP — STATUS: PLANNED; required before any F87+ phase involving external channels. Since Jan/2026, Meta prohibits general-purpose agents on WhatsApp Business API, so ARIS must be exposed only as a task-specific agent with declared purpose, for example `Assistente de Agendamento da [Barbearia X]`. Brazil 2026 cost model: marketing message approximately `$0.0625/msg`, utility message approximately `$0.006/msg`, a roughly 10x difference; all scheduling and confirmation flows must use utility templates, not marketing templates. BSP is mandatory for API access; evaluate Z-API for low-cost SMB use, 360dialog for developer-friendly integration, and Blip for robust larger operations. Design flows to maximize interactions inside the free 24h window when the customer initiates the conversation. Impact: this ADR must be read as a prerequisite before any F87+ phase involving external channels.
+
 ## F87-F94 — Domain Simulation Pack
 
 Parametrizable; no domain hardcode. Use entity, agent, slot, channel, transaction, domain.
@@ -137,6 +147,8 @@ Parametrizable; no domain hardcode. Use entity, agent, slot, channel, transactio
 - F95C — Rollback/Compensation Verification Gate — `f95c_rollback_compensation_gate.json`.
 - F95D — Simulation Evidence Bundle Export Gate — `f95d_simulation_evidence_bundle_gate.json`.
 - F95E — Domain Simulation Closure Gate — `f95e_domain_simulation_closure_gate.json`.
+- F95.F — SMB Approval UX — `f95f_smb_approval_ux.json`; STATUS: PLANNED; confirmation interface for non-technical final users, for example a barbershop owner. For every action with `risk_level` HIGH+ requiring human confirmation, the system generates a simple natural-language message with no technical jargon and clear options: `CONFIRMAR`, `CANCELAR`, `VER DETALHES`. Timeout without response escalates to human fallback and is recorded in the ledger as `timeout_escalated`. Exit gate: complete flow tested in domain simulation with simulated non-technical user; zero technical jargon in the confirmation message.
+- F95.G — Controlled Pilot Gate — `f95g_controlled_pilot_gate.json`; STATUS: PLANNED; controlled execution with one real non-simulated user using the system for at least 2 weeks in simulation domain. Structured feedback collected: confirmed actions, rejected actions, interpretation errors, and UX friction. Results enter as audited evidence before the F96-F114 gauntlet. Exit gate: at least 20 real interactions recorded in the ledger; structured feedback report approved; zero unresolved critical blockers documented. Justification: simulations do not discover everything real users discover; this is the only reality-contact point before the final gauntlet.
 
 ## F96-F114 — Lab Mastery & Simulation Gauntlet
 
