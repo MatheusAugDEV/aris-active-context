@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness
+- status: `context_budget_policy_validation_harness_warn`
+- budget policy validation harness created: `True`
+- policy status: `draft_only`
+- enforcement enabled: `False`
+- warning only: `True`
+- hard blocks enabled: `False`
+- context routing enabled: `False`
+- hot path current approx tokens: `20223`
+- hot path target tokens: `6000`
+- hot path warn tokens: `8000`
+- hot path hard ceiling tokens: `12000`
+- next phase recommendation: `ARIS-CONTEXT-P9 — Context Compression Candidate Plan`
+
+This phase validates the draft budget policy only; it does not enable enforcement, routing, or prompt behavior changes.
+
 ## ARIS-CONTEXT-P7 — Context Budget Policy Draft
 - status: `context_budget_policy_draft_warn`
 - budget policy created: `True`
