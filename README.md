@@ -4,9 +4,9 @@ Compact, read-first ARIS context entrypoint.
 
 Current governance note:
 
-- R0 governance foundation is materialized and is now the active handoff point before C7.
+- BOOT.md read-first entry point contract is materialized and is now the lightweight handoff point before P2.
 - Canonical roadmap anchor: `ARIS_ROADMAP_R0_F120.md`
-- Next recommended phase: `ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator`
+- Next recommended phase: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
 
 Read order:
 1. `CURRENT_STATE.md`
@@ -20,11 +20,11 @@ Read order:
 
 ## Current snapshot
 
-- Latest completed phase: `ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator`.
+- Latest completed phase: `ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract`.
 - Canonical roadmap: `ARIS_ROADMAP_R0_F120.md`.
 - Roadmap status: `PASS by conservative review`.
-- Next authorized phase: `ARIS-ROADMAP-R0 — Governance Foundation`.
-- `ARIS-BEDROCK-C7` is blocked until `R0 = PASS`.
+- Next authorized phase: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`.
+- `ARIS-BEDROCK-C7` remains blocked until `R0 = PASS`.
 - Bedrock executable engine readiness: `45/100`.
 - Bedrock Gate remains declared but non-executable.
 - F33 remains paused under Lab governance.
