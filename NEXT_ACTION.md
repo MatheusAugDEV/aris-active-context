@@ -1,3 +1,7 @@
+P2 baseline diagnostic complete.
+Next recommended phase: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
+Operational rule: use the measured baseline only; do not implement frontmatter, manifest, budget enforcement, `.aris/`, `STATE.json`, or prompt assembly yet.
+
 BOOT.md read-first entry point contract is complete.
 Next recommended phase: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
 Operational rule: continue only with the token-economy baseline diagnostic; no manifest, frontmatter, or budget enforcement yet.

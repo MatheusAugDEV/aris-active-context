@@ -1,3 +1,15 @@
+## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
+- status: `context_os_token_baseline_warn`
+- files checked: `24`
+- files missing: `0`
+- budget warnings: `4`
+- budget overs: `0`
+- hot path files: `BOOT.md, aris-active-context/CURRENT_STATE.md, aris-active-context/NEXT_ACTION.md, aris-active-context/DECISION_LOCKS.md`
+- largest file: `PROJECT_CONTEXT_ARIS.md`
+- next phase recommendation: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
+
+This phase is diagnostic only and does not authorize frontmatter, manifest, or budget enforcement.
+
 ## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract
 - status: `boot_read_first_entry_point_contract_passed`
 - boot_md_created: `True`

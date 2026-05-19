@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
+status: context_os_token_baseline_warn
+source_kind: read_only_context_baseline_diagnostic
+boot_md_is_canonical_source: False
+next_recommended_phase: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
+
+This phase measures the current context stack and does not introduce frontmatter, manifest, or budget enforcement.
+
 ## F32.Z13O-Review - Future MCP Read-Only Configuration Controlled Apply Final Authorization Planning Review Gate
 status: f32_future_mcp_readonly_configuration_controlled_apply_final_authorization_planning_review_gate_passed
 review_gate_passed: True

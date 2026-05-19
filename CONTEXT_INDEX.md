@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
+when_to_use: Use to measure current context file size, classify hot/warm/cold/artifact recommendations, and establish a deterministic baseline without changing behavior.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_os_token_economy_baseline_diagnostic_decision.json
+- artifacts/context/context_os_token_economy_baseline_diagnostic_summary.json
+- artifacts/context/context_os_token_economy_baseline_file_metrics.json
+notes:
+- diagnostic only; no frontmatter, manifest, or budget enforcement is introduced
+- next recommended phase: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
+
 ## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract
 when_to_use: Use BOOT.md first as the lightweight entry point, then continue into active-context for authoritative state.
 read_first:
