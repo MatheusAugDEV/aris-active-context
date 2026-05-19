@@ -1,3 +1,18 @@
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
+when_to_use: Project how artifact references would reshape prompt surface before any validation or application step.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_dry_run_projection.json
+- artifacts/context/artifact_reference_only_dry_run_projection_summary.json
+- artifacts/context/artifact_reference_only_dry_run_prompt_surface.md
+notes:
+- dry-run projection only; no artifact body is modified, moved, or deleted
+- next recommended phase: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
 ## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness
 when_to_use: Validate the P11 artifact-reference plan before any future projection or application step.
 read_first:

@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
+- status: `artifact_reference_only_dry_run_projection_warn`
+- artifact reference projection created: `True`
+- projected prompt surface tokens: `2600`
+- projected reduction tokens: `218806`
+- next phase recommendation: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
+
+This phase records dry-run projection evidence only and does not alter artifact bodies or live context.
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
+- status: `artifact_reference_only_dry_run_projection_blocked`
+- artifact reference projection created: `True`
+- projected prompt surface tokens: `2600`
+- projected reduction tokens: `218806`
+- next phase recommendation: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
+
+This phase records dry-run projection evidence only and does not alter artifact bodies or live context.
 ## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness
 - status: `artifact_reference_only_compression_validation_harness_warn`
 - artifact reference validation harness created: `True`
