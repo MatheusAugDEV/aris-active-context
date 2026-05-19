@@ -1,3 +1,6 @@
+P7 budget policy draft complete.
+Next recommended phase: `ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness`
+Operational rule: keep enforcement disabled, keep routing disabled, and treat the policy as draft-only evidence.
 P6 manifest validation harness complete.
 Next recommended phase: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
 Operational rule: keep routing disabled, keep budget enforcement disabled, and treat the manifest as draft-only evidence.

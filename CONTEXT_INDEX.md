@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P7 — Context Budget Policy Draft
+when_to_use: Review the draft budget policy, per-set budgets, and file recommendations without enabling enforcement.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/context_budget_policy_draft.json
+- artifacts/context/context_budget_policy_draft_summary.json
+- artifacts/context/context_budget_policy_context_set_budgets.json
+- artifacts/context/context_budget_policy_file_recommendations.json
+notes:
+- warning-only draft; no enforcement or routing is introduced
+- next recommended phase: `ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness`
 ## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
 when_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
 read_first:

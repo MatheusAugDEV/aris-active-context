@@ -1,3 +1,12 @@
+## ARIS-CONTEXT-P7 — Context Budget Policy Draft
+status: context_budget_policy_draft_warn
+source_kind: context_budget_policy_draft
+budget_policy_created: True
+enforcement_enabled: False
+warning_only: True
+next_recommended_phase: `ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness`
+
+This phase drafts budget policy only; it does not change prompt behavior or activate enforcement.
 ## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
 status: context_manifest_validation_harness_warn
 source_kind: context_manifest_validation_harness
