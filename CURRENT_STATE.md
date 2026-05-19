@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
+- status: `active_context_frontmatter_contract_draft_warn`
+- baseline reference: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
+- frontmatter contract draft created: `True`
+- frontmatter applied: `False`
+- budget enforced: `False`
+- next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
+- BOOT.md remains non-canonical; active-context and artifacts continue to outrank it.
 # CURRENT_STATE
 
 As of 2026-05-18:

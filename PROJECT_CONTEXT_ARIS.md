@@ -1,3 +1,10 @@
+## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
+- status: `active_context_frontmatter_contract_draft_warn`
+- baseline reference: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
+- frontmatter contract draft created: `True`
+- frontmatter applied: `False`
+- next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
+- This is a draft-only classification step and does not rewrite live frontmatter.
 ## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
 status: context_os_token_baseline_warn
 source_kind: read_only_context_baseline_diagnostic

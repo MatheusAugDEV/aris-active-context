@@ -1,4 +1,15 @@
-## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
+## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
+- status: `active_context_frontmatter_contract_draft_warn`
+- baseline reference: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
+- total files checked: `24`
+- total chars: `418823`
+- budget warnings: `4`
+- budget overs: `0`
+- frontmatter contract draft created: `True`
+- frontmatter applied: `False`
+- next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
+
+This phase is contract-only and keeps live active-context files unchanged except for this compact ledger note.## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
 - status: `context_os_token_baseline_warn`
 - files checked: `24`
 - files missing: `0`

@@ -1,3 +1,20 @@
+## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
+when_to_use: Use to review the draft frontmatter contract and file classification matrix before any apply harness.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/active_context_frontmatter_contract_draft_decision.json
+- artifacts/context/active_context_frontmatter_contract_draft_summary.json
+- artifacts/context/active_context_frontmatter_contract_schema.json
+- artifacts/context/active_context_frontmatter_classification_matrix.json
+- docs/research/active_context_frontmatter_contract_draft.md
+notes:
+- draft only; no live frontmatter is applied
+- next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
 ## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
 when_to_use: Use to measure current context file size, classify hot/warm/cold/artifact recommendations, and establish a deterministic baseline without changing behavior.
 read_first:

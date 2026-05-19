@@ -1,3 +1,6 @@
+ARIS-CONTEXT-P3 frontmatter contract draft recorded.
+Next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
+Operational rule: keep the contract draft-only; do not apply frontmatter or change prompt behavior yet.
 P2 baseline diagnostic complete.
 Next recommended phase: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
 Operational rule: use the measured baseline only; do not implement frontmatter, manifest, budget enforcement, `.aris/`, `STATE.json`, or prompt assembly yet.
