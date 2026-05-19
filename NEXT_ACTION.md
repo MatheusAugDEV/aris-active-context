@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
+- status: `artifact_reference_only_dry_run_projection_validation_harness_warn`
+- dry run projection validation harness created: `True`
+- projection rows checked: `79`
+- prompt surface verified: `True`
+- next phase recommendation: `ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan`
+
+This phase validates the dry-run projection only and does not alter artifacts or live context.
 ## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
 - status: `artifact_reference_only_dry_run_projection_warn`
 - artifact reference projection created: `True`
