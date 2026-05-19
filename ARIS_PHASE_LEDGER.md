@@ -1,3 +1,15 @@
+## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
+- status: `artifact_reference_only_controlled_apply_plan_warn`
+- controlled apply plan created: `True`
+- eligible for future apply: `53`
+- blocked high-risk references: `2`
+- blocked missing risk review: `5`
+- deferred hot-path review: `17`
+- deferred manual review: `2`
+- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
+
+This phase is plan-only and does not apply artifact references or rewrite live context.
+
 ## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
 - status: `artifact_reference_only_dry_run_projection_validation_harness_warn`
 - dry run projection validation harness created: `True`

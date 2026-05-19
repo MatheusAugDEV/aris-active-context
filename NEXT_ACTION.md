@@ -1,3 +1,15 @@
+## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
+- status: `artifact_reference_only_controlled_apply_plan_warn`
+- controlled apply plan created: `True`
+- eligible for future apply: `53`
+- blocked high-risk references: `2`
+- blocked missing risk review: `5`
+- deferred hot-path review: `17`
+- deferred manual review: `2`
+- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
+
+This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
+
 ## ARIS-ROADMAP-R1 — Critical Reality Gaps Delta Pack
 
 R1 critical reality gaps delta materialized in `ARIS_ROADMAP_R1_CRITICAL_REALITY_GAPS_DELTA.md` and R1 locks added to `DECISION_LOCKS.md`.

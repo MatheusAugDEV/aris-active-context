@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
+when_to_use: Review the controlled apply plan and rollback conditions before any future apply gate.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_rollback_plan.json
+notes:
+- plan only; no artifact body is modified, moved, or deleted
+- next recommended phase: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
+
 ## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
 when_to_use: Validate the dry-run projection and its prompt surface before any controlled apply planning.
 read_first:
