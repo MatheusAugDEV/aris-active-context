@@ -13,6 +13,15 @@
 
 # DECISION_LOCKS
 
+## ARIS-ROADMAP-R2 Lab Simulation Mastery Lock
+
+- R2 materializes lab-only macroblock roadmap architecture and operational simulation planning.
+- R2 does not authorize implementation, runtime mutation, product promotion, customer pilot, production deployment, external-channel sends, WhatsApp integration, network use, MCP activation, payment execution, real backup execution, or real update execution.
+- R2 maturity levels are lab-only; `M6-LAB` still means simulated lab evidence, not product readiness.
+- M7+ is reserved for future post-F120/F121+ productization tracks and cannot be claimed in the current roadmap.
+- No product claim may be made from macroblock maturity, load-test plans, product-shadow simulations, or advisory market research.
+- Existing R0/R1/global locks remain in force and outrank R2.
+
 ## ARIS-ROADMAP-R1 Critical Reality Gaps Delta Lock
 
 - R1 materializes roadmap/governance planning only and does not authorize implementation, runtime mutation, product promotion, customer deployment, external-channel sends, network access, MCP activation, backup execution, update execution, or production pilot.
