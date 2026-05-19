@@ -1,3 +1,11 @@
+## ARIS-ROADMAP-R1 — Critical Reality Gaps Delta Pack
+
+R1 critical reality gaps delta materialized in `ARIS_ROADMAP_R1_CRITICAL_REALITY_GAPS_DELTA.md` and R1 locks added to `DECISION_LOCKS.md`.
+
+Next recommended phase: `ARIS-ROADMAP-R1-REVIEW — Critical Reality Gaps Delta Review Gate`
+
+Operational rule: treat R1 as roadmap/governance-only. No runtime mutation, product promotion, network use, external-channel send, MCP activation, backup execution, update execution, customer pilot, or production authorization is allowed.
+
 ## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
 - status: `artifact_reference_only_dry_run_projection_validation_harness_warn`
 - dry run projection validation harness created: `True`
@@ -132,4 +140,4 @@ Prepare `ARIS-ROADMAP-R0 — Governance Foundation`; anchor state: `ARIS-BEDROCK
 - F33 remains paused under Lab governance.
 - F51+ remains advisory-only.
 - Product promotion remains false.
-- Runtime mutation, SQLite schema apply, SQLite connect, FTS5 creation, network, dependency install, MCP activation, Obsidian bulk-read, and Vault write remain blocked.
+- Runtime mutation, SQLite schema apply, SQLite connect, network, dependency install, MCP activation, Obsidian bulk-read, and Vault write remain blocked.
