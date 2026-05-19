@@ -1,3 +1,12 @@
+## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
+- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
+- controlled apply plan validation harness created: `True`
+- matrix rows checked: `79`
+- rollback entries checked: `53`
+- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+
+This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
+
 ## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
 - status: `artifact_reference_only_controlled_apply_plan_warn`
 - controlled apply plan created: `True`
