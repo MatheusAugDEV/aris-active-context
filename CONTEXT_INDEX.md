@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
+when_to_use: Review artifact-only reference plans before any future validation harness or application step.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_compression_plan_report.md
+- artifacts/context/artifact_reference_only_compression_matrix.json
+- artifacts/context/artifact_reference_only_compression_order.json
+- artifacts/context/artifact_reference_only_compression_risk_register.json
+notes:
+- reference-only planning only; no artifact body is modified or moved
+- next recommended phase: `ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness`
 ## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
 when_to_use: Validate ordered compression candidates and risk boundaries without rewriting live files.
 read_first:

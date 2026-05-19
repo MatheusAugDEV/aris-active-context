@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
+- status: `artifact_reference_only_compression_plan_warn`
+- artifact reference plan created: `True`
+- artifact candidates: `79`
+- best reference candidate: `artifacts/context/context_manifest_validation_harness_results.json`
+- next phase recommendation: `ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness`
+
+This phase only plans reference metadata for artifacts and does not rewrite live context or artifacts.
 ## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
 - status: `context_compression_candidate_validation_harness_warn`
 - compression validation harness created: `True`

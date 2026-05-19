@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
+- status: `artifact_reference_only_compression_plan_warn`
+- artifact reference plan created: `True`
+- artifact files modified: `False`
+- artifact candidates: `79`
+- next phase recommendation: `ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness`
+
+This note is advisory only and keeps artifacts intact while shrinking future prompt surfaces by reference.
 ## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
 - status: `context_compression_candidate_validation_harness_warn`
 - compression validation harness created: `True`
