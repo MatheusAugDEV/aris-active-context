@@ -21,3 +21,9 @@
 - next_action_repair_required: `True`
 - ledger_history_preserved: `True`
 - preexisting_untracked_noise: `True`
+
+## Roadmap Macroblocks
+- `docs/roadmap/roadmap_macroblocks.md`
+- `docs/roadmap/roadmap_macroblocks_r0_f120.md`
+- `artifacts/context/active_context_macroblock_cleanup_summary.json`
+- `artifacts/context/active_context_macroblock_cleanup_report.md`

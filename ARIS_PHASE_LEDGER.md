@@ -33,3 +33,21 @@ P29 is closed, F32 is formally closed, F33 remains paused under Lab governance, 
 - manual_selection_required: `False`
 
 P29 remains closed, F32 remains formally closed, F33 remains blocked under Lab governance, and NEXT_ACTION is sanitized to a single forward pointer.
+
+## ACTIVE-CONTEXT-MACROBLOCK-CLEANUP — Macroblock Navigation Cleanup Applied
+- status: `active_context_macroblock_cleanup_ready_warn`
+- macroblock_navigation_model: `macroblock_first`
+- macroblock_current: `MB1`
+- legacy_phase_current: `F21`
+- p29_closed: `true`
+- p29_token_reduction: `130735`
+- f32_closed_tombstone: `true`
+- f33_blocked: `true`
+- r0_f120_lab_governance_only: `true`
+- f120_authorizes_production: `false`
+- production_authorized: `false`
+- customer_real_authorized: `false`
+- next_action_single_forward_pointer: `true`
+- decision_locks_modified: `false`
+- docs_created: `docs/roadmap/roadmap_macroblocks.md; docs/roadmap/roadmap_macroblocks_r0_f120.md`
+- artifact_summary: `artifacts/context/active_context_macroblock_cleanup_summary.json`

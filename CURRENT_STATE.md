@@ -1,32 +1,38 @@
-## ARIS-CONTEXT-ROADMAP-CANONICAL-STATE — Roadmap Canonical State & Next Action Sanitization Gate
-- status: `artifact_reference_only_roadmap_canonical_state_ready_warn`
-- roadmap_class: `f21_canonical_f33_blocked_under_lab_governance`
-- p29_closed: `True`
-- active_track_resume_verified: `True`
-- f21_state: `pending`
-- f21_is_stale_next_action: `False`
-- f32_state: `closed`
-- f32_closure_verified: `True`
+## ARIS-CONTEXT-MACROBLOCK-CLEANUP — Macroblock Navigation Cleanup State
+- status: `active_context_macroblock_cleanup_ready_warn`
+- roadmap_navigation_model: `macroblock_first`
+- macroblock_atual: `MB1`
+- macroblock_title: `Context Governance & Input Trust Boundary`
+- legacy_phase_id: `F21`
+- gate_atual: `F21-A1 — Context Source Access Policy & Untrusted Input Boundary`
+- next_action: `F21-A1`
+- ultimo_fechamento_relevante: `MB0/P29 context compaction`
+- p29_closed: `true`
+- p29_token_reduction: `130735`
+- f32_state: `closed_tombstone`
 - f33_state: `blocked`
-- f33_blocked: `True`
-- f33_allowed_next: `False`
-- canonical_current_state: `P29 closed; PRE-F21 materialized; active track resumes at F21; F32 closed; F33 blocked under Lab governance.`
-- canonical_next_phase: `F21 — Context Source Access Policy & Untrusted Input Boundary`
-- canonical_next_phase_title: `Context Source Access Policy & Untrusted Input Boundary`
-- next_action_repair_required: `True`
-- next_action_single_forward_pointer: `True`
-- ledger_history_preserved: `True`
-- manual_selection_required: `False`
-- recommended_next_action: `Proceed to F21 — Context Source Access Policy & Untrusted Input Boundary.`
-- preexisting_untracked_noise: `True`
+- r0_f120_role: `Lab/Governance roadmap, not live NEXT_ACTION`
+- f120_authorizes_production: `false`
+- production_authorized: `false`
+- customer_real_authorized: `false`
+- decision_locks_modified: `false`
+- preexisting_untracked_noise: `true`
 
-## References
-- roadmap_canonical_state_gate_summary_artifact: `artifacts/context/roadmap_canonical_state_gate_summary.json`
-- roadmap_canonical_state_gate_decision_artifact: `artifacts/context/roadmap_canonical_state_gate_decision.json`
-- roadmap_canonical_phase_matrix_artifact: `artifacts/context/roadmap_canonical_phase_matrix.json`
-- roadmap_next_action_sanitization_plan_artifact: `artifacts/context/roadmap_next_action_sanitization_plan.json`
-- roadmap_next_action_recommendation_artifact: `artifacts/context/roadmap_next_action_recommendation.json`
-- p29r8_closure_summary_artifact: `artifacts/context/active_context_compaction_closure_gate_summary.json`
-- active_track_resume_summary_artifact: `artifacts/context/active_track_resume_gate_summary.json`
-- f32_closure_artifact: `docs/fase32/f32z13t_r1_final_f32_closure_gate.md`
-- f33_hold_summary_artifact: `artifacts/f33/f33z5_schema_materialization_controlled_pre_apply_authorization_gate_summary.json`
+## Macroblock Snapshot
+- MB0: closed/stabilized
+- MB1: active
+- MB2: planned/paused
+- MB3: blocked
+- MB4: foundational/partial/planned
+- MB5: future/blocked
+- MB6: future/controlled
+- MB7: planned
+- MB8: future
+- MB9: future
+
+## Operational Summary
+- where_we_are: `MB1 active; F21 live`
+- what_is_next: `F21-A1`
+- what_is_closed: `MB0/P29`, `F32`
+- what_is_blocked: `F33`
+- not_authorized: `R0-F120 production`, `customer-real use`
