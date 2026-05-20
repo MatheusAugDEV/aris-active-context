@@ -1,3 +1,21 @@
+## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
+- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_warn`
+- previous_phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
+- previous_phase_short_summary: `P18 executed a synthetic controlled apply dry-run with 53 eligible candidates, 2 simulated surfaces, 53 rollback entries, projected prompt surface tokens 1528, projected reduction tokens 24332, and real apply stayed false.`
+- next_phase_short_explanation: `P20 should perform the final readiness gate over the validated P18 evidence and keep real apply unauthorized unless the artifact-only checks remain clean.`
+- p18_dry_run_verified: `True`
+- p18_real_apply_executed: `False`
+- selected_candidates_count: `53`
+- simulated_surfaces_count: `2`
+- rollback_entries_count: `53`
+- warning_count: `12`
+- blocker_count: `0`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+
+This phase validates the P18 dry-run evidence deterministically and does not authorize real apply.
 ## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
 - status: `artifact_reference_only_controlled_apply_dry_run_warn`
 - controlled apply dry-run executed: `True`
