@@ -1,3 +1,27 @@
+## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
+when_to_use: Review the P21 authorization package for completeness, non-bypassability, and future human-request readiness without granting authorization now.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_preconditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_deny_conditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_human_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_findings.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_report.md
+notes:
+- review only; no human authorization accepted, no real apply, no live rewrite, and no artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
 ## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
 when_to_use: Package the deterministic P15→P20 evidence into a future authorization package without granting authorization now.
 read_first:

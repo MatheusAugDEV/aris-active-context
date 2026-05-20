@@ -1,4 +1,19 @@
 ## Current snapshot
+- Latest completed phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
+- Status: `artifact_reference_only_controlled_apply_authorization_package_review_warn`
+- Authorization package review class: `authorization_package_review_passed_with_warnings`
+- Authorization package review passed: `True`
+- Authorization granted now: `False`
+- Human authorization required: `True`
+- Human authorization present: `False`
+- Controlled apply allowed now: `False`
+- Real apply allowed now: `False`
+- Live context rewrite allowed now: `False`
+- Bedrock verdict: `WARN`
+- Next authorized phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
+
+Runtime, product promotion, network, MCP, Obsidian bulk read, and vault write remain blocked.
+## Current snapshot
 - Latest completed phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
 - Status: `artifact_reference_only_controlled_apply_authorization_package_warn`
 - Authorization package class: `authorization_package_ready_with_warnings`
