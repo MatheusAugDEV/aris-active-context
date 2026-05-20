@@ -1,3 +1,13 @@
+## F21-A34 Real MCP Candidate Authorization Readiness Review References
+- phase_id: `F21-A34`
+- next_real_action: `F21-A35 — Real MCP Candidate Authorization Decision Planning`
+- readiness_hash: `sha256:c853c35fa6f513dbe517654b2e390057db358766c7360bef28c269669b2f401e`
+- manifest_hash: `sha256:12d11a607e372827c0f9995787571d62c3b7897ad0dfc2ae0e33386391b07394`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Authorization readiness is review-only and does not authorize MCP activation.
+
 ## F21-A33 Real MCP Candidate Source Safety Audit Closure References
 - phase_id: `F21-A33`
 - next_real_action: `F21-A34 — Real MCP Candidate Authorization Readiness Review`

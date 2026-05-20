@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A35 — Real MCP Candidate Authorization Decision Planning`
+- reason: `source safety is ready, but authorization decision/planning gates are still missing and MCP activation remains blocked`
+
+- future_reentry_option: `Proceed to authorization decision planning before any approval or activation discussion`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A34 — Real MCP Candidate Authorization Readiness Review`
 - reason: `the source-safety audit track is closed review-only, but MCP activation remains blocked`
 
