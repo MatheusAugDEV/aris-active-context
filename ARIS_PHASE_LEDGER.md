@@ -1,3 +1,23 @@
+## F21-A30 — Real MCP Candidate Source Snapshot Intake
+- status: `mcp_real_candidate_source_snapshot_intake_pass`
+- decision: `pass`
+- snapshot_classification: `source_snapshot_intake_ready`
+- source_snapshot_present: `True`
+- source_snapshot_verified: `True`
+- source_snapshot_file_count: `14`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_repository_or_source_url: `https://github.com/gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_commit_verified: `True`
+- candidate_commit_pinned: `True`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A31 — Real MCP Candidate Source Safety Audit`
+
+Snapshot intake is review-only and does not authorize MCP activation.
+
 ## F21-A29 — Real MCP Candidate Source Safety Audit
 - status: `mcp_real_candidate_source_safety_audit_warn`
 - decision: `warn`

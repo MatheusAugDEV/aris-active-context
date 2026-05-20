@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A31 — Real MCP Candidate Source Safety Audit`
+- reason: `the pinned local source snapshot is present; snapshot intake is complete, but MCP activation remains blocked`
+
+- future_reentry_option: `If the local snapshot changes, re-intake it before the safety audit`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A30 — Real MCP Candidate Source Snapshot Intake`
 - reason: `the selected MCP candidate is pinned, but the local source snapshot is missing; the source safety audit cannot authorize MCP activation`
 

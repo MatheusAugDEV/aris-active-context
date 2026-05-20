@@ -1,3 +1,13 @@
+## F21-A30 Real MCP Candidate Source Snapshot Intake References
+- phase_id: `F21-A30`
+- next_real_action: `F21-A31 — Real MCP Candidate Source Safety Audit`
+- snapshot_intake_hash: `sha256:0e35e9f263376f6de3388d33f93fe44212c5908c43cd29e083f727fc46e4f86a`
+- manifest_hash: `sha256:5dfcf845ba6077867d31c20d9ed62450926db2a8deb9c3c5647bef714a6b94bf`
+- source_snapshot_hash: `sha256:5dfcf845ba6077867d31c20d9ed62450926db2a8deb9c3c5647bef714a6b94bf`
+- source_snapshot_path: `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source`
+
+Snapshot intake is review-only and does not authorize MCP activation.
+
 ## F21-A29 Real MCP Candidate Source Safety Audit References
 - phase_id: `F21-A29`
 - next_real_action: `F21-A30 — Real MCP Candidate Source Snapshot Intake`
