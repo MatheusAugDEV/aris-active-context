@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `Pause MCP track and return to next context/lab gate`
+- reason: `the human-submitted input was reviewed and still lacks real MCP candidate evidence, so the loop is closed without another repair cycle`
+
+- future_reentry_option: `Provide a real MCP candidate and real human evidence`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A26 — MCP Candidate Human Evidence Authorization Review`
 - reason: `the repair review confirmed the pending input remains insufficient and does not authorize MCP activation`
 
