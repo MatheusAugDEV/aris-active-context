@@ -1,4 +1,20 @@
 ## Current snapshot
+- Latest completed phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+- Status: `mcp_candidate_human_evidence_submission_apply_warn`
+- Decision: `warn`
+- Active submission created: `True`
+- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- Active submission uses placeholders: `True`
+- Candidate review ready: `False`
+- Previous active submission present: `False`
+- Legacy evidence detected: `True`
+- Blocker count: `0`
+- Warning count: `2`
+- Next recommended phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
 - Latest completed phase: `F21-A7 — MCP Candidate Evidence Review Gate`
 - Status: `mcp_candidate_evidence_review_gate_warn`
 - Decision: `warn`

@@ -1,3 +1,17 @@
+## F21-A8 MCP Candidate Human Evidence Submission Apply References
+- phase_id: `F21-A8`
+- phase_doc: `docs/fase21/f21a_a8_mcp_candidate_human_evidence_submission_apply.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_submission_apply.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_submission_apply_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_submission_apply_report.md`
+- active_submission_artifact: `artifacts/f21/obsidian_mcp_human_evidence_submission.json`
+- template_artifact: `artifacts/f21/templates/obsidian_mcp_human_evidence_submission_template.json`
+- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+## F21-A8 Apply Notes
+- Active submission is placeholder/manual and remains review-only.
+- Legacy evidence remains historical and does not override the active submission path.
+- MCP activation remains blocked.
 ## F21-A7 MCP Candidate Evidence Review Gate References
 - phase_id: `F21-A7`
 - phase_doc: `docs/fase21/f21a_a7_mcp_candidate_evidence_review_gate.md`

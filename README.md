@@ -1,3 +1,12 @@
+**F21-A8 - MCP Candidate Human Evidence Submission Apply**
+status: `mcp_candidate_human_evidence_submission_apply_warn`
+decision: `warn`
+active submission created: `True`
+active submission uses placeholders: `True`
+legacy evidence detected: `True`
+proxima fase recomendada: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+active submission is review-only and does not authorize MCP activation
+legacy evidence remains historical and is not used as active input
 **F21-A7 - MCP Candidate Evidence Review Gate**
 status: `mcp_candidate_evidence_review_gate_warn`
 decision: `warn`

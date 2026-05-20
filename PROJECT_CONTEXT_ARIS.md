@@ -1,3 +1,11 @@
+**F21-A8 - MCP Candidate Human Evidence Submission Apply**
+status: `mcp_candidate_human_evidence_submission_apply_warn`
+decision: `warn`
+active submission created: `True`
+active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+active submission uses placeholders: `True`
+legacy evidence detected: `True`
+proxima fase recomendada: `F21-A9 — MCP Candidate Human Evidence Completion Review`
 **F21-A7 - MCP Candidate Evidence Review Gate**
 status: `mcp_candidate_evidence_review_gate_warn`
 decision: `warn`

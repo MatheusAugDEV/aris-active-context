@@ -1,3 +1,12 @@
+## F21-A8 — MCP Candidate Human Evidence Submission Apply
+- status: `mcp_candidate_human_evidence_submission_apply_warn`
+- decision: `warn`
+- next_gate: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+- reason: `a safe active submission artifact was materialized from the approved template, but review and authorization remain blocked until real evidence is completed`
+- blocker_count: `0`
+- warning_count: `2`
+
+The next operational step is human evidence completion review, not MCP activation or product/runtime work.
 ## F21-A7 — MCP Candidate Evidence Review Gate
 - status: `mcp_candidate_evidence_review_gate_warn`
 - decision: `warn`

@@ -1,3 +1,17 @@
+## F21-A8 — MCP Candidate Human Evidence Submission Apply
+- status: `mcp_candidate_human_evidence_submission_apply_warn`
+- decision: `warn`
+- phase_id: `F21-A8`
+- macroblock_id: `MB1`
+- active_submission_created: `True`
+- active_submission_hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- active_submission_uses_placeholders: `True`
+- candidate_review_ready: `False`
+- blocker_count: `0`
+- warning_count: `2`
+- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+The apply gate materializes a controlled placeholder submission and does not authorize MCP activation.
 ## F21-A7 — MCP Candidate Evidence Review Gate
 - status: `mcp_candidate_evidence_review_gate_warn`
 - decision: `warn`
