@@ -1,3 +1,13 @@
+## F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation
+- status: `mcp_candidate_human_evidence_authorization_evidence_validation_warn`
+- decision: `warn`
+- next_gate: `F21-A24 — MCP Candidate Human Evidence Authorization Evidence Repair`
+- reason: `the authorization evidence validation confirmed the current evidence state and still does not authorize MCP activation`
+- blocker_count: `0`
+- warning_count: `3`
+
+The next operational step is repair or review only if real human evidence appears, not MCP activation or product/runtime work.
+
 ## F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake
 - status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
 - decision: `warn`
