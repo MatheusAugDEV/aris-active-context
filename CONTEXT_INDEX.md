@@ -1,3 +1,19 @@
+## F21-A3 Claude Code Instruction Alignment References
+- phase_id: `F21-A3`
+- phase_doc: `docs/fase21/f21a_a3_claude_code_instruction_alignment.md`
+- summary_artifact: `artifacts/f21/claude_code_instruction_alignment_summary.json`
+- decision_artifact: `artifacts/f21/claude_code_instruction_alignment.json`
+- report_artifact: `artifacts/f21/claude_code_instruction_alignment_report.md`
+- source_boundary_doc: `docs/fase21/f21a_a1_context_source_access_policy_untrusted_input_boundary.md`
+- codex_skill_alignment_doc: `docs/fase21/f21a_a2_codex_skill_alignment_review.md`
+- next_recommended_phase: `F21-A4 — Context Budget Policy Gate`
+
+## F21-A3 Active Track Notes
+- The Claude Code alignment gate is read-first, summary-first, query-first, and final-handoff aware.
+- Active-context update, commit hash, and push reporting are explicit.
+- Obsidian remains query-first and read-only.
+- Bulk reads remain blocked.
+
 ## F21-A2 Codex Skill Alignment Review References
 - phase_id: `F21-A2`
 - phase_doc: `docs/fase21/f21a_a2_codex_skill_alignment_review.md`

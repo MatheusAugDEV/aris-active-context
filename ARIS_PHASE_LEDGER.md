@@ -1,3 +1,17 @@
+## F21-A3 — Claude Code Instruction Alignment
+- status: `claude_code_instruction_alignment_ready`
+- decision: `pass`
+- phase_id: `F21-A3`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A4 — Context Budget Policy Gate`
+- claude_md_modified: `True`
+- f21_a1_verified: `True`
+- f21_a2_verified: `True`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A4.
+
 ## F21-A2 — Codex Skill Alignment Review
 - status: `codex_skill_alignment_review_warn`
 - decision: `warn`

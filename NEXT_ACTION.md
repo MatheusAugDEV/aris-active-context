@@ -1,3 +1,13 @@
+## F21-A3 — Claude Code Instruction Alignment
+- status: `claude_code_instruction_alignment_ready`
+- decision: `pass`
+- next_gate: `F21-A4 — Context Budget Policy Gate`
+- reason: `F21-A3 aligned Claude Code with active-context first, source precedence, untrusted input boundaries, and final handoff requirements; continue with F21-A4`
+- blockers: `0`
+- warnings: `0`
+
+The next operational step is the context budget policy gate, not any product, runtime, or MCP path.
+
 ## F21-A2 — Codex Skill Alignment Review
 - status: `codex_skill_alignment_review_warn`
 - next_gate: `F21-A3 — Claude Code Instruction Alignment`
