@@ -1,3 +1,26 @@
+## F21-A31 — Real MCP Candidate Source Safety Audit
+- Latest completed phase: `F21-A31 — Real MCP Candidate Source Safety Audit`
+- status: `mcp_real_candidate_source_safety_audit_warn`
+- decision: `warn`
+- phase_id: `F21-A31`
+- macroblock_id: `MB1`
+- audit_classification: `source_safety_audit_warn`
+- source_snapshot_present: `True`
+- source_snapshot_verified: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `3`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_repository_or_source_url: `https://github.com/gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_commit_verified: `True`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A32 — Real MCP Candidate Source Safety Audit Review`
+
+This phase audits the pinned local source snapshot statically; the local snapshot is currently present, and the gate does not authorize MCP activation.
+
 ## F21-A30 — Real MCP Candidate Source Snapshot Intake
 - Latest completed phase: `F21-A30 — Real MCP Candidate Source Snapshot Intake`
 - status: `mcp_real_candidate_source_snapshot_intake_pass`

@@ -1,3 +1,22 @@
+## F21-A31 — Real MCP Candidate Source Safety Audit
+- status: `mcp_real_candidate_source_safety_audit_warn`
+- decision: `warn`
+- audit_classification: `source_safety_audit_warn`
+- source_snapshot_present: `True`
+- source_snapshot_verified: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `3`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_commit_verified: `True`
+- candidate_commit_pinned: `True`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A32 — Real MCP Candidate Source Safety Audit Review`
+
+Static source audit is review-only and does not authorize MCP activation.
+
 ## F21-A30 — Real MCP Candidate Source Snapshot Intake
 - status: `mcp_real_candidate_source_snapshot_intake_pass`
 - decision: `pass`
