@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A34 — Real MCP Candidate Authorization Readiness Review`
+- reason: `the source-safety audit track is closed review-only, but MCP activation remains blocked`
+
+- future_reentry_option: `Proceed to authorization readiness review only if a later human-evidence gate is satisfied`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A33 — Real MCP Candidate Source Safety Audit Closure`
 - reason: `the A31 static audit warnings were accepted as review-only, but MCP activation remains blocked`
 
