@@ -1,3 +1,17 @@
+## F21-A6 Obsidian MCP Human Evidence Intake References
+- phase_id: `F21-A6`
+- phase_doc: `docs/fase21/f21a_a6_obsidian_mcp_human_evidence_intake.md`
+- summary_artifact: `artifacts/f21/obsidian_mcp_human_evidence_intake_summary.json`
+- decision_artifact: `artifacts/f21/obsidian_mcp_human_evidence_intake.json`
+- template_artifact: `artifacts/f21/templates/obsidian_mcp_human_evidence_submission_template.json`
+- template_md_artifact: `artifacts/f21/templates/obsidian_mcp_human_evidence_submission_template.md`
+- checklist_artifact: `artifacts/f21/obsidian_mcp_human_evidence_checklist.md`
+- next_recommended_phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+
+## F21-A6 Intake Notes
+- Human evidence is intake-only and review-only.
+- Obsidian remains read-only and query-first.
+- MCP activation remains blocked.
 ## F21-A5 Source-of-Truth Precedence Gate References
 - phase_id: `F21-A5`
 - phase_doc: `docs/fase21/f21a_a5_source_of_truth_precedence_gate.md`

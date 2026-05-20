@@ -1,4 +1,28 @@
 ## Current snapshot
+- Latest completed phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- Status: `obsidian_mcp_human_evidence_intake_warn`
+- Decision: `warn`
+- Human evidence classification: `missing`
+- Human evidence hash: `sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a`
+- Blocker count: `0`
+- Warning count: `3`
+- Next recommended phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
+- Latest completed phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- Status: `obsidian_mcp_human_evidence_intake_blocked`
+- Decision: `blocked`
+- Human evidence classification: `rejected_sensitive_or_unsafe`
+- Human evidence hash: `sha256:19bb985d2f2fe2a9a32e45cf59e7a1b0615cefa1bbd117dc1f34d657e88647d8`
+- Blocker count: `2`
+- Warning count: `2`
+- Next recommended phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
 - Latest completed phase: `F21-A5 — Source-of-Truth Precedence Gate`
 - Status: `source_of_truth_precedence_gate_warn`
 - Decision: `warn`

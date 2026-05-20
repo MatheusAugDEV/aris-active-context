@@ -1,3 +1,21 @@
+## F21-A6 — Obsidian MCP Human Evidence Intake
+- status: `obsidian_mcp_human_evidence_intake_warn`
+- decision: `warn`
+- next_gate: `F21-A7 — MCP Candidate Evidence Review Gate`
+- reason: `human evidence is intake-only, redacted, hashed, and held for review without MCP activation`
+- blockers: `0`
+- warnings: `3`
+
+The next operational step is MCP candidate evidence review, not MCP activation or product/runtime work.
+## F21-A6 — Obsidian MCP Human Evidence Intake
+- status: `obsidian_mcp_human_evidence_intake_blocked`
+- decision: `blocked`
+- next_gate: `F21-A7 — MCP Candidate Evidence Review Gate`
+- reason: `human evidence is intake-only, redacted, hashed, and held for review without MCP activation`
+- blockers: `2`
+- warnings: `2`
+
+The next operational step is MCP candidate evidence review, not MCP activation or product/runtime work.
 ## F21-A5 — Source-of-Truth Precedence Gate
 - status: `source_of_truth_precedence_gate_warn`
 - decision: `warn`

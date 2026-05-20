@@ -1,3 +1,15 @@
+**F21-A6 - Obsidian MCP Human Evidence Intake**
+human evidence classification: `missing`
+human evidence hash: `sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a`
+human evidence template and safety checklist prepared for a future Obsidian MCP candidate review
+legacy P0 evidence remains prior preparation and is not overwritten
+proxima fase recomendada: `F21-A7 — MCP Candidate Evidence Review Gate`
+**F21-A6 - Obsidian MCP Human Evidence Intake**
+human evidence classification: `rejected_sensitive_or_unsafe`
+human evidence hash: `sha256:19bb985d2f2fe2a9a32e45cf59e7a1b0615cefa1bbd117dc1f34d657e88647d8`
+human evidence template and safety checklist prepared for a future Obsidian MCP candidate review
+legacy P0 evidence remains prior preparation and is not overwritten
+proxima fase recomendada: `F21-A7 — MCP Candidate Evidence Review Gate`
 **F21-A5 - Source of Truth Precedence Gate**
 hard locks, next action, and current state outrank consolidated history
 workspace truth remains primary until explicit review authorizes an override

@@ -1,3 +1,41 @@
+## F21-A6 — Obsidian MCP Human Evidence Intake
+- status: `obsidian_mcp_human_evidence_intake_warn`
+- decision: `warn`
+- human_evidence_present: `False`
+- human_evidence_classification: `missing`
+- human_evidence_hash: `sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a`
+- human_decision_kind: `PENDING`
+- evidence_schema_defined: `True`
+- required_fields_defined: `True`
+- forbidden_fields_defined: `True`
+- redaction_policy_defined: `True`
+- template_created: `True`
+- f21_a5_warning_reconciled: `True`
+- f21_a5_warning_count_snapshot_mismatch: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+
+Human evidence intake is review-only and does not authorize MCP activation.
+## F21-A6 — Obsidian MCP Human Evidence Intake
+- status: `obsidian_mcp_human_evidence_intake_blocked`
+- decision: `blocked`
+- human_evidence_present: `True`
+- human_evidence_classification: `rejected_sensitive_or_unsafe`
+- human_evidence_hash: `sha256:19bb985d2f2fe2a9a32e45cf59e7a1b0615cefa1bbd117dc1f34d657e88647d8`
+- human_decision_kind: `PENDING`
+- evidence_schema_defined: `True`
+- required_fields_defined: `True`
+- forbidden_fields_defined: `True`
+- redaction_policy_defined: `True`
+- template_created: `True`
+- f21_a5_warning_reconciled: `True`
+- f21_a5_warning_count_snapshot_mismatch: `True`
+- blocker_count: `2`
+- warning_count: `2`
+- next_recommended_phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+
+Human evidence intake is review-only and does not authorize MCP activation.
 ## F21-A5 — Source-of-Truth Precedence Gate
 - status: `source_of_truth_precedence_gate_warn`
 - decision: `warn`
