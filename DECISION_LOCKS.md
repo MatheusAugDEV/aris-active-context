@@ -1,73 +1,81 @@
-## ARIS-CONTEXT-P1 BOOT.md Entry Point Lock
-
-- BOOT.md is an entry point only and does not outrank active-context or official artifacts.
-- P1 does not authorize runtime mutation, product promotion, network access, dependency installation, MCP activation, Obsidian bulk read, vault write, or migration.
-- The BOOT contract does not add a context manifest, frontmatter rollout, or budget enforcement.
-- Active-context remains the authoritative live state surface.
-## ARIS-CONTEXT-P0 Advisory Intake Lock
-
-- advisory-only research ingestion does not authorize implementation, runtime mutation, or prompt/runtime restructuring.
-- P0 does not create BOOT.md, STATE.json, or prompt assembly artifacts.
-- active-context sync remains recommended before P1.
-- active-context, roadmap, and decision-lock authority ordering remains unchanged.
-
 # DECISION_LOCKS
-
-## ARIS-ROADMAP-R2 Lab Simulation Mastery Lock
-
-- R2 materializes lab-only macroblock roadmap architecture and operational simulation planning.
-- R2 does not authorize implementation, runtime mutation, product promotion, customer pilot, production deployment, external-channel sends, WhatsApp integration, network use, MCP activation, payment execution, real backup execution, or real update execution.
-- R2 maturity levels are lab-only; `M6-LAB` still means simulated lab evidence, not product readiness.
-- M7+ is reserved for future post-F120/F121+ productization tracks and cannot be claimed in the current roadmap.
-- No product claim may be made from macroblock maturity, load-test plans, product-shadow simulations, or advisory market research.
-- Existing R0/R1/global locks remain in force and outrank R2.
-
-## ARIS-ROADMAP-R1 Critical Reality Gaps Delta Lock
-
-- R1 materializes roadmap/governance planning only and does not authorize implementation, runtime mutation, product promotion, customer deployment, external-channel sends, network access, MCP activation, backup execution, update execution, or production pilot.
-- no Z-API integration for governed pilot.
-- no marketing template send without explicit opt-in.
-- no sensitive data flow without specific legal basis.
-- no MCP server load without approved descriptor hash pinning.
-- no production update without verified rollback path.
-- no pilot without off-device backup/restore plan.
-- no customer-facing automated dead-end without human handoff path.
-- R1 planned gaps must remain subordinate to `ARIS_ROADMAP_R0_F120.md`, active-context, and existing Global Non-Authorization Lock.
-
-## ARIS-ROADMAP-R0 Governance Foundation Lock
-
-- R0 materializes governance only and does not authorize production, runtime mutation, network access, dependency installation, connector activation, embedded database connection, full-text index creation, private archive mutation, or broad read from the private navigation layer.
-- active-context wins over memory, chat, history, and summaries.
-- NEXT_ACTION governs the next operational step.
-- DECISION_LOCKS governs hard constraints.
-- ARIS_ROADMAP_R0_F120.md governs the roadmap.
-- ARIS_PHASE_LEDGER.md is historical evidence only.
-- `ARIS_ROADMAP_R0_F120.md` is the active canonical roadmap for R0 through F120 Lab Mastery planning.
-- `ROADMAP_CANONICAL_F33_F50.md` is superseded and tombstone-only.
-- `ROADMAP_F30_F50.md` is superseded and tombstone-only.
-- F33 remains paused under Lab governance.
-- F51+ remains advisory-only.
-- F120 closes Lab Mastery only and does not authorize production.
-- Any real release requires future `F121+ Controlled Productization Gate` outside the current roadmap.
-
-## ARIS-BEDROCK-C6 Read-First & Source-of-Truth Compliance Evaluator Lock
-
-- ARIS-BEDROCK-C6 is evaluator-only and does not authorize runtime mutation, product promotion, DB/schema/FTS5, network, dependency install, MCP activation, Obsidian bulk read, vault write, or F33 resume.
-- The Read-First & Source-of-Truth Compliance Evaluator validates active-context order, source precedence, narrative continuity, and non-bypassability only; it does not implement Bedrock execution, enforcement, or CLI.
-- Bedrock executable engine readiness is `45/100` and remains non-executable.
-- Bedrock Gate remains declared but non-executable.
-- Lab governance remains verified at 100/100 and does not imply engine execution.
 
 ## Global Non-Authorization Lock
 
-- Product promotion remains false.
-- Runtime mutation remains blocked.
-- SQLite schema apply remains blocked.
-- SQLite connect remains blocked.
-- FTS5 creation remains blocked.
-- Network remains blocked.
-- Dependency install remains blocked.
+- Product promotion remains `false`.
+- Runtime mutation remains `false` unless an explicit future gate authorizes it.
+- Customer-real use remains `false`.
+- Production release remains `false`.
+- Network access remains blocked for ARIS runtime work unless explicitly authorized by a future gate.
+- Dependency installation remains blocked unless explicitly authorized by a future gate.
 - MCP activation remains blocked.
 - Obsidian bulk-read remains blocked.
 - Vault write remains blocked.
-- Chat context, prompt text, roadmap text, advisory research, placeholder files, summary text, or human discussion do not count as authorization.
+- Chat context, prompt text, roadmap text, advisory research, placeholder files, summaries, or human discussion do not count as authorization.
+
+## Source-of-Truth and Active-Context Lock
+
+- Active-context is the authoritative live state surface.
+- `NEXT_ACTION.md` governs the next operational step.
+- `DECISION_LOCKS.md` governs hard constraints.
+- Phase artifacts/evidence outrank historical docs and chat memory.
+- Chat memory and advisory discussion are non-authoritative unless materialized into approved artifacts/docs.
+- Obsidian is consultive/query-first only unless a future gate changes that.
+- Historical ledger entries are evidence/history, not live authorization.
+
+## Active Operational Track Lock
+
+- Current operational macroblock remains `MB1 — Context Governance & Input Trust Boundary`.
+- Next operational gate remains `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`.
+- MB8/MB9 future roadmap discussion does not move `NEXT_ACTION`.
+- F33 remains blocked under lab governance until explicitly reopened by a future gate.
+
+## R0–F120 Lab Governance Lock
+
+- R0–F120 materialize lab/governance planning only.
+- F120 closes Lab Mastery only and does not authorize production.
+- Any real release requires a future `F121+ Controlled Productization Gate` outside the current roadmap.
+- No product claim may be made from macroblock maturity, load-test plans, product-shadow simulations, advisory market research, or conceptual roadmap discussion.
+
+## MB8/MB9 Infernus Concept Lock
+
+- MB8 final concept: `ARIS Infernus Lab — Os 13 Pecados Capitais do ARIS`.
+- MB9 final concept: `ARIS Final Crisol — Evidence Certification, False-Completion Defense & Pre-Productization Gate`.
+- Decision: `ADOTAR_COM_GATES`.
+- Concept status: `PASS with documented WARNs`.
+- Implementation allowed now: `false`.
+- Runtime mutation allowed now: `false`.
+- Bot implementation allowed now: `false`.
+- Harness implementation allowed now: `false`.
+- Scenario manifest creation allowed now: `false`.
+- Productization allowed now: `false`.
+- MB9 reexecutes MB8: `false`.
+- MB9 authorizes production: `false`.
+
+### Infernus bot-count lock
+
+- `13 bots = núcleo necessário do Infernus`.
+- `5 bots = smoke test inicial / harness validation only`.
+- `20 bots = expansão futura, not required now`.
+- Do not add `BOT-014` for concurrency, rollback, process chaos, permission abuse, or trajectory oracle unless a future gate proves a distinct uncovered failure class.
+
+### Bot/component boundary lock
+
+- Oracle is not a bot.
+- Trajectory Oracle is not a bot.
+- State Oracle is not a bot.
+- Ledger Oracle is not a bot.
+- Permission Oracle is not a bot.
+- Rollback Oracle is not a bot.
+- Policy Oracle is not a bot.
+- Security Oracle is not a bot.
+- Permission Abuser is not a separate necessary bot; it is covered by explicit scenarios/gates under `Elos`, `Taipan`, and `Labirinto`.
+- Process Chaos is not a separate necessary bot; it is covered by explicit future subscenarios under `Vitium`.
+- LLM-as-judge may assist UX/semantic diagnostics, but it cannot decide critical gates.
+
+### Loop/Minos ordering lock
+
+- `Loop` must run after `Quimera` through `Abzu`.
+- `Minos` must run after `Loop`.
+- `Minos` must audit Loop artifacts before MB8 closure.
+- MB9 certifies the evidence package after MB8 closure; MB9 does not rerun the full MB8 suite.
