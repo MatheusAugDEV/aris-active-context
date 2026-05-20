@@ -1,3 +1,40 @@
+## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
+- status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
+- previous phase: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
+- previous_phase_short_summary: `P29 validated the post-apply state with class post_apply_validation_needs_compaction_repair, confirmed controlled_apply_executed=true, live_context_rewrite_executed=true, artifact_reference_surface_applied=true, rollback_ready=true, rollback_recommended=false, warning_count=13, blocker_count=0, and documented that the prompt surface grew by 1,410 estimated tokens because P28 prepended a new reference-only execution block while preserving the historical P20-P27 chain and carried-forward warnings.`
+- next_phase_short_explanation: `P29-R1 plans a future compact repair only. It identifies the hot path, the cold path, and the expected token reduction without changing any active-context content. P29-R2 will preflight the repair before any rewrite happens.`
+- p29_validation_verified: `True`
+- p28_execution_verified: `True`
+- compaction_repair_planning_class: `compaction_repair_plan_ready`
+- compaction_repair_plan_created: `True`
+- hot_cold_matrix_created: `True`
+- token_projection_created: `True`
+- prompt_surface_reduced: `False`
+- current_estimated_prompt_tokens: `127696`
+- planned_estimated_prompt_tokens: `76617`
+- planned_token_reduction: `51079`
+- planned_percent_reduction: `40.0`
+- minimum_planned_token_reduction: `19155`
+- planned_reduction_meets_threshold: `True`
+- hot_path_items_count: `16`
+- cold_path_items_count: `119`
+- compactable_blocks_count: `119`
+- protected_context_items_count: `12`
+- active_context_files_analyzed_count: `4`
+- active_context_rewrite_executed: `False`
+- rollback_executed: `False`
+- rollback_ready: `True`
+- rollback_recommended: `False`
+- compaction_repair_recommended: `True`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
+
+P29-R1 plans a future compact repair only; no active-context compaction is executed here.
 ## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
 - status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
 - previous phase: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`

@@ -1,3 +1,16 @@
+## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
+- status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
+- next authorized phase: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
+- compaction_repair_planning_class: `compaction_repair_plan_ready`
+- planned_token_reduction: `51079`
+- planned_percent_reduction: `40.0`
+- planned_reduction_meets_threshold: `True`
+- rollback_ready: `True`
+- compaction_repair_recommended: `True`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+
+Next action is P29-R2 preflight of the compact repair plan; no active-context compaction is executed here.
 ## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
 - status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
 - next authorized phase: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
