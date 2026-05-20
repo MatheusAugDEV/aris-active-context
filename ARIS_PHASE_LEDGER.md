@@ -1,13 +1,19 @@
-## ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate
-- status: `artifact_reference_only_controlled_apply_compaction_repair_execution_blocked`
-- blocker_count: `5`
-- actual_token_reduction: `0`
-- rollback_ready: `True`
-- next_phase_recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
-- note: `runner validation stayed blocked; ledger remains non-executing`
+## ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate
+- status: `artifact_reference_only_controlled_apply_baseline_refresh_required_warn`
+- reconciliation_class: `baseline_refresh_required`
+- cause_category: `stale_p29r2_snapshot`
+- current_context_commit_ref: `b89a5224fa5cb3b25624a5aae29cb440f015772b`
+- p29r2_snapshot_matches_current: `False`
+- p29r3_blockers_explained: `True`
+- hot_path_preservation_failure_explained: `True`
+- official_artifact_state_failure_explained: `True`
+- safe_to_rerun_p29r3: `False`
+- repair_plan_required_before_rerun: `True`
+- warning_count: `4`
+- blocker_count: `0`
 
-## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
-- status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
+P29-R4 records a factual baseline reconciliation only; it does not compact, roll back, or alter protected runtime surfaces.
+## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate- status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
 - previous phase: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
 - compaction_repair_preflight_class: `compaction_repair_preflight_passed_with_warnings`
 - current_estimated_prompt_tokens: `129490`
@@ -25,8 +31,7 @@
 - next phase recommendation: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
 
 P29-R2 is preflight only. No active-context compaction is executed here.
-## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
-- status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
+## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate- status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
 - previous phase: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
 - compaction_repair_planning_class: `compaction_repair_plan_ready`
 - current_estimated_prompt_tokens: `127696`
@@ -45,8 +50,7 @@ P29-R2 is preflight only. No active-context compaction is executed here.
 - next phase recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
 
 P29-R1 is planning only. No active-context compaction is executed here.
-## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
-- status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
+## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate- status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
 - previous phase: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
 - post_apply_validation_class: `post_apply_validation_needs_compaction_repair`
 - controlled_apply_executed: `True`
@@ -61,8 +65,7 @@ P29-R1 is planning only. No active-context compaction is executed here.
 - next phase recommendation: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
 
 P29 is post-apply validation only. No new apply or automatic rollback is executed here.
-## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
-- status: `artifact_reference_only_controlled_apply_execution_warn`
+## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate- status: `artifact_reference_only_controlled_apply_execution_warn`
 - previous phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
 - controlled_apply_execution_class: `controlled_apply_execution_passed_with_warnings`
 - controlled_apply_executed: `True`
@@ -75,8 +78,7 @@ P29 is post-apply validation only. No new apply or automatic rollback is execute
 - next phase recommendation: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
 
 P28 is execution only. No runtime mutation or protected-surface expansion is authorized here.
-## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
-- status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate- status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
 - previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
 - preflight_id: `ARIS-P27-37ffacb0a927063f`
 - controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_passed_with_warnings`
@@ -91,8 +93,7 @@ P28 is execution only. No runtime mutation or protected-surface expansion is aut
 - next phase recommendation: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
 
 P27 is preflight only. It does not execute apply, authorize live mutation, or relax protected surfaces.
-## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
-- status: `artifact_reference_only_controlled_apply_execution_preflight_blocked`
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate- status: `artifact_reference_only_controlled_apply_execution_preflight_blocked`
 - previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
 - preflight_id: `ARIS-P27-37ffacb0a927063f`
 - controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_blocked`
@@ -107,8 +108,7 @@ P27 is preflight only. It does not execute apply, authorize live mutation, or re
 - next phase recommendation: `ARIS-CONTEXT-P27-R1 — Artifact Reference-Only Controlled Apply Execution Preflight Repair Review`
 
 P27 is preflight only. It does not execute apply, authorize live mutation, or relax protected surfaces.
-## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
-- status: `artifact_reference_only_controlled_apply_final_authorization_warn`
+## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate- status: `artifact_reference_only_controlled_apply_final_authorization_warn`
 - previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
 - previous_phase_short_summary: `P25 reviewed the submitted human authorization decision over the P23/P24/P24-H1 chain, confirmed human_authorization_final_review_passed_with_warnings=true with human_authorization_final_review_passed=true, and kept authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, and Bedrock-compatible metadata.`
 - next_phase_short_explanation: `P26 creates the final authorization for a later controlled apply preflight only; it does not execute apply or rewrite live context, and it keeps the next phase separate so execution remains gated.`
@@ -128,8 +128,7 @@ P27 is preflight only. It does not execute apply, authorize live mutation, or re
 - historical_duplicate_status_warning: `True`
 - bedrock_verdict: `WARN`
 - next phase recommendation: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
-## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
-- status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
+## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate- status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
 - previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
 - previous_phase_short_summary: `P24-H1 materialized a controlled APPROVE submission for the P23/P24 request chain, recorded the decision for future review only, and kept authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, and Bedrock-compatible metadata.`
 - next_phase_short_explanation: `P25 validates the submitted human authorization review over the P23→P24→P24-H1 chain and, if it remains consistent, opens only a future authorization gate; it does not execute apply or rewire live context.`
@@ -145,8 +144,7 @@ P27 is preflight only. It does not execute apply, authorize live mutation, or re
 - historical_duplicate_status_warning: `True`
 - bedrock_verdict: `WARN`
 - next phase recommendation: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
-## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission
-- status: `artifact_reference_only_controlled_apply_human_decision_submission_warn`
+## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission- status: `artifact_reference_only_controlled_apply_human_decision_submission_warn`
 - previous_phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
 - previous_phase_short_summary: `P24 created and validated the decision intake gate with human_authorization_decision_intake_pending_submission, human_decision_present=false, human_decision_valid=false, human_decision_kind=PENDING, human_decision_intake_recorded=false, authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, implicit_authorization_blocked=true, and Bedrock-compatible metadata.`
 - next_phase_short_explanation: `P24-H1 materializes a controlled APPROVE submission for the P23/P24 request chain, records the decision for future review only, and does not execute apply, rewire live context, or release controlled apply.`
@@ -168,8 +166,7 @@ P27 is preflight only. It does not execute apply, authorize live mutation, or re
 - next phase recommendation: `ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate`
 
 P24-H1 records a controlled APPROVE submission for review only. It does not execute apply, authorize apply, or change live context. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains a warning, not a blocker.
-## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
-- status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
+## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate- status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
 - previous_phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
 - previous_phase_short_summary: `P23 materialized a pending human authorization request with human_authorization_request_ready_with_warnings, human_authorization_request_created=true, human_authorization_request_status=PENDING_NOT_SUBMITTED, human_authorization_request_submitted=false, human_authorization_present=false, authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, implicit_authorization_blocked=true, Bedrock-compatible metadata, and protected surfaces blocked.`
 - next_phase_short_explanation: `P24 validates a controlled human decision intake for the P23 request; if no decision is present the next safe step is submission, and if a valid decision is present the next safe step is P25 review without apply.`
@@ -196,8 +193,7 @@ P24-H1 records a controlled APPROVE submission for review only. It does not exec
 - next phase recommendation: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
 
 P24 records a decision-intake-only conclusion. It does not execute apply, authorize apply, or change live context. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains a warning, not a blocker.
-## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
-- status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
+## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate- status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
 - previous_phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
 - previous_phase_short_summary: `P22 reviewed the P21 authorization package with authorization_package_review_passed_with_warnings, authorization_package_review_passed=true, authorization_granted_now=false, human_authorization_present=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, bypass_risk_detected=false, Bedrock-compatible metadata, and protected surfaces blocked.`
 - next_phase_short_explanation: `P24 should receive a human decision intake only after this request gate materializes the pending, non-submitted authorization request package without granting authorization now.`
@@ -222,8 +218,7 @@ P24 records a decision-intake-only conclusion. It does not execute apply, author
 - next phase recommendation: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
 
 P23 records a request-only conclusion and does not authorize any apply or protected-surface mutation. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains warning-only.
-## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
-- status: `artifact_reference_only_controlled_apply_authorization_package_review_warn`
+## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate- status: `artifact_reference_only_controlled_apply_authorization_package_review_warn`
 - previous_phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
 - previous_phase_short_summary: `P21 created a future-only authorization package with authorization_package_ready_with_warnings, authorization_package_created=true, authorization_granted_now=false, human_authorization_required=true, human_authorization_present=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, drift_detected=false, Bedrock-compatible metadata, and all protected surfaces blocked.`
 - next_phase_short_explanation: `P23 should request human authorization only after this review gate confirms the P21 package is complete, non-bypassable, and still non-authorizing.`
@@ -250,8 +245,7 @@ P23 records a request-only conclusion and does not authorize any apply or protec
 - next phase recommendation: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
 
 P22 records a review-only conclusion and does not authorize any apply or protected-surface mutation. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains warning-only.
-## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
-- status: `artifact_reference_only_controlled_apply_authorization_package_warn`
+## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package- status: `artifact_reference_only_controlled_apply_authorization_package_warn`
 - previous_phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
 - previous_phase_short_summary: `P20 consolidated the P15→P20 chain with WARN readiness, ready_with_warnings_for_controlled_apply_authorization_package, 12 warnings, zero blockers, historical duplicate status warning preserved, and Bedrock-compatible metadata while keeping controlled apply, real apply, live context rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.`
 - next_phase_short_explanation: `P22 should review the authorization package and human-signing path; P21 packages evidence only and does not grant authorization or execute apply.`
@@ -282,8 +276,7 @@ P22 records a review-only conclusion and does not authorize any apply or protect
 - next phase recommendation: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
 
 P21 records a future-only authorization package and does not authorize any apply or protected-surface mutation.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_warn`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_warn`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -308,8 +301,7 @@ P21 records a future-only authorization package and does not authorize any apply
 - next phase recommendation: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -334,8 +326,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -360,8 +351,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -386,8 +376,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -412,8 +401,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate- status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 - previous_phase_short_summary: `P19 validated the dry-run chain deterministically with WARN status, no blockers, real_apply false, 53 selected candidates, 2 simulated surfaces, 53 rollback entries, warning_count 12, and Bedrock-compatible preparation metadata.`
 - next_phase_short_explanation: `P21 should package the controlled-apply authorization evidence only if the chain remains consistent; P20 does not authorize real apply, live rewrite, or protected-surface mutation.`
@@ -438,8 +426,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 
 P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_warn`
+## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_warn`
 - previous_phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
 - previous_phase_short_summary: `P18 executed a synthetic controlled apply dry-run with 53 eligible candidates, 2 simulated surfaces, 53 rollback entries, projected prompt surface tokens 1528, projected reduction tokens 24332, and real apply stayed false.`
 - next_phase_short_explanation: `P20 should perform the final readiness gate over the validated P18 evidence and keep real apply unauthorized unless the artifact-only checks remain clean.`
@@ -456,8 +443,7 @@ P20 consolidates the chain and keeps real apply, live rewrite, runtime mutation,
 - next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
 
 This phase validates the P18 dry-run evidence deterministically and does not authorize real apply.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_warn`
+## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run- status: `artifact_reference_only_controlled_apply_dry_run_warn`
 - controlled apply dry-run executed: `True`
 - selected candidates: `53`
 - simulated surfaces: `2`
@@ -465,8 +451,7 @@ This phase validates the P18 dry-run evidence deterministically and does not aut
 - next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
 
 This phase records synthetic dry-run evidence only and does not alter live context.
-## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate
-- status: `artifact_reference_only_controlled_apply_readiness_gate_warn`
+## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate- status: `artifact_reference_only_controlled_apply_readiness_gate_warn`
 - readiness class: `ready_with_warnings_for_controlled_apply_dry_run`
 - can advance to controlled apply dry-run: `True`
 - eligible candidates: `53`
@@ -484,8 +469,7 @@ This gate is readiness-only and does not apply artifact references or rewrite li
 - next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
 
 This review gate records evidence only and does not alter live runtime or product behavior.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
+## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
 - controlled apply plan validation harness created: `True`
 - matrix rows checked: `79`
 - rollback entries checked: `53`
@@ -493,8 +477,7 @@ This review gate records evidence only and does not alter live runtime or produc
 
 This phase records validation evidence only and does not alter artifact bodies or live context.
 
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
+## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan- status: `artifact_reference_only_controlled_apply_plan_warn`
 - controlled apply plan created: `True`
 - eligible for future apply: `53`
 - blocked high-risk references: `2`
@@ -505,48 +488,42 @@ This phase records validation evidence only and does not alter artifact bodies o
 
 This phase is plan-only and does not apply artifact references or rewrite live context.
 
-## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
-- status: `artifact_reference_only_dry_run_projection_validation_harness_warn`
+## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness- status: `artifact_reference_only_dry_run_projection_validation_harness_warn`
 - dry run projection validation harness created: `True`
 - projection rows checked: `79`
 - prompt surface verified: `True`
 - next phase recommendation: `ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan`
 
 This phase records validation evidence only and does not alter artifact bodies or live context.
-## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
-- status: `artifact_reference_only_dry_run_projection_warn`
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection- status: `artifact_reference_only_dry_run_projection_warn`
 - artifact reference projection created: `True`
 - projected prompt surface tokens: `2600`
 - projected reduction tokens: `218806`
 - next phase recommendation: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
 
 This phase records dry-run projection evidence only and does not alter artifact bodies or live context.
-## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
-- status: `artifact_reference_only_dry_run_projection_blocked`
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection- status: `artifact_reference_only_dry_run_projection_blocked`
 - artifact reference projection created: `True`
 - projected prompt surface tokens: `2600`
 - projected reduction tokens: `218806`
 - next phase recommendation: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
 
 This phase records dry-run projection evidence only and does not alter artifact bodies or live context.
-## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness
-- status: `artifact_reference_only_compression_validation_harness_warn`
+## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness- status: `artifact_reference_only_compression_validation_harness_warn`
 - artifact reference validation harness created: `True`
 - artifact candidates checked: `79`
 - invalid samples blocked: `9`
 - next phase recommendation: `ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection`
 
 This phase records validation evidence only and does not alter artifact bodies or live context.
-## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
-- status: `artifact_reference_only_compression_plan_warn`
+## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan- status: `artifact_reference_only_compression_plan_warn`
 - artifact reference plan created: `True`
 - artifact candidates: `79`
 - high risk artifact candidates: `2`
 - next phase recommendation: `ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness`
 
 This phase records reference-only planning and does not alter artifact bodies or live context.
-## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
-- status: `context_compression_candidate_validation_harness_warn`
+## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness- status: `context_compression_candidate_validation_harness_warn`
 - compression validation harness created: `True`
 - compression applied: `False`
 - candidate rows checked: `8`
@@ -554,8 +531,7 @@ This phase records reference-only planning and does not alter artifact bodies or
 - next phase recommendation: `ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan`
 
 This phase records candidate validation only; it does not authorize compression or live prompt changes.
-## ARIS-CONTEXT-P9 — Context Compression Candidate Plan
-- status: `context_compression_candidate_plan_warn`
+## ARIS-CONTEXT-P9 — Context Compression Candidate Plan- status: `context_compression_candidate_plan_warn`
 - compression plan created: `True`
 - compression applied: `False`
 - candidate count: `8`
@@ -563,8 +539,7 @@ This phase records candidate validation only; it does not authorize compression 
 - next phase recommendation: `ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness`
 
 This phase records candidate planning only; it does not authorize compression or live prompt changes.
-## ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness
-- status: `context_budget_policy_validation_harness_warn`
+## ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness- status: `context_budget_policy_validation_harness_warn`
 - budget policy validation harness created: `True`
 - policy status: `draft_only`
 - enforcement enabled: `False`
@@ -579,8 +554,7 @@ This phase records candidate planning only; it does not authorize compression or
 
 This phase validates the draft budget policy only; it does not enable enforcement, routing, or prompt behavior changes.
 
-## ARIS-CONTEXT-P7 — Context Budget Policy Draft
-- status: `context_budget_policy_draft_warn`
+## ARIS-CONTEXT-P7 — Context Budget Policy Draft- status: `context_budget_policy_draft_warn`
 - budget policy created: `True`
 - policy status: `draft_only`
 - enforcement enabled: `False`
@@ -593,8 +567,7 @@ This phase validates the draft budget policy only; it does not enable enforcemen
 - next phase recommendation: `ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness`
 
 This phase is draft-only and does not authorize budget enforcement, routing, or prompt changes.
-## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
-- status: `context_manifest_validation_harness_warn`
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness- status: `context_manifest_validation_harness_warn`
 - manifest validation harness created: `True`
 - manifest enforcement enabled: `False`
 - context routing enabled: `False`
@@ -604,8 +577,7 @@ This phase is draft-only and does not authorize budget enforcement, routing, or 
 - next phase recommendation: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
 
 This phase is validation-only and does not authorize frontmatter, routing, or budget enforcement.
-## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
-- status: `context_manifest_validation_harness_blocked`
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harness- status: `context_manifest_validation_harness_blocked`
 - manifest validation harness created: `True`
 - manifest enforcement enabled: `False`
 - context routing enabled: `False`
@@ -615,8 +587,7 @@ This phase is validation-only and does not authorize frontmatter, routing, or bu
 - next phase recommendation: `Repair missing or invalid P5 manifest inputs and rerun P6`
 
 This phase is validation-only and does not authorize frontmatter, routing, or budget enforcement.
-## ARIS-CONTEXT-P5 — Context Manifest Draft
-- status: `context_manifest_draft_warn`
+## ARIS-CONTEXT-P5 — Context Manifest Draft- status: `context_manifest_draft_warn`
 - manifest created: `True`
 - manifest status: `draft_only`
 - enforcement enabled: `False`
@@ -627,8 +598,7 @@ This phase is validation-only and does not authorize frontmatter, routing, or bu
 - next phase recommendation: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
 
 This phase is draft-only and does not authorize frontmatter, routing, or budget enforcement.
-## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
-- status: `active_context_frontmatter_validation_harness_passed`
+## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness- status: `active_context_frontmatter_validation_harness_passed`
 - schema valid: `True`
 - matrix valid: `True`
 - matrix rows checked: `24`
@@ -661,8 +631,7 @@ This phase is contract-only and keeps live active-context files unchanged except
 
 This phase is diagnostic only and does not authorize frontmatter, manifest, or budget enforcement.
 
-## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract
-- status: `boot_read_first_entry_point_contract_passed`
+## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract- status: `boot_read_first_entry_point_contract_passed`
 - boot_md_created: `True`
 - boot_md_path: `BOOT.md`
 - boot_md_size_bytes: `1942`
@@ -674,8 +643,7 @@ This phase is diagnostic only and does not authorize frontmatter, manifest, or b
 - next phase recommendation: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
 
 The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
-## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
-- status: `context_economy_research_ingestion_ready`
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix- status: `context_economy_research_ingestion_ready`
 - source_kind: `external_research_advisory_only`
 - implementation_authorized: `False`
 - runtime_mutation_allowed: `False`
@@ -687,7 +655,6 @@ The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
 The full historical ledger remains in aris-active-context/ARIS_PHASE_LEDGER.md.
 
 ## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
-
 - status: `context_economy_research_ingestion_ready`
 - source_kind: `external_research_advisory_only`
 - implementation_authorized: `False`

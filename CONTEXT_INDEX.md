@@ -1,19 +1,24 @@
-## ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate
-- status: `artifact_reference_only_controlled_apply_compaction_repair_execution_blocked`
-- blocker_count: `5`
-- actual_token_reduction: `0`
-- rollback_ready: `True`
-- next_phase_recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
+## ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate
+- status: `artifact_reference_only_controlled_apply_baseline_refresh_required_warn`
+- reconciliation_class: `baseline_refresh_required`
+- cause_category: `stale_p29r2_snapshot`
+- recommended_next_phase: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
 
-## New P29-R3 artifacts
-- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_gate_decision.json`
-- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_gate_summary.json`
-- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_post_hashes.json`
-- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_token_delta.json`
-- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_rollback_package.json`
+## Compact references
+- current_commit_ref: `b89a5224fa5cb3b25624a5aae29cb440f015772b`
+- p29r2_snapshot_matches_current: `False`
+- p29r3_rerun_allowed_now: `False`
+- repair_plan_required_before_rerun: `True`
+- active-context files: aris-active-context/CURRENT_STATE.md, aris-active-context/NEXT_ACTION.md, aris-active-context/ARIS_PHASE_LEDGER.md, aris-active-context/CONTEXT_INDEX.md
 
-## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
-when_to_use: Validate and prepare the compaction repair preflight without executing any rewrite.
+## New artifacts
+- `artifacts/context/active_context_baseline_reconciliation_gate_decision.json`
+- `artifacts/context/active_context_baseline_reconciliation_gate_summary.json`
+- `artifacts/context/active_context_baseline_reconciliation_hash_matrix.json`
+- `artifacts/context/active_context_baseline_reconciliation_drift_manifest.json`
+- `artifacts/context/active_context_baseline_reconciliation_recommendation.json`
+- `artifacts/context/active_context_baseline_reconciliation_gate_report.md`
+## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gatewhen_to_use: Validate and prepare the compaction repair preflight without executing any rewrite.
 
 - status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
 - phase family: controlled apply compaction repair preflight chain
@@ -42,8 +47,7 @@ when_to_use: Validate and prepare the compaction repair preflight without execut
 - aris-active-context/CONTEXT_INDEX.md
 
 - next phase recommendation: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
-## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
-when_to_use: Plan a future compact repair for the active-context without executing any rewrite.
+## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gatewhen_to_use: Plan a future compact repair for the active-context without executing any rewrite.
 
 - status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
 - phase family: controlled apply compaction repair planning chain
@@ -80,8 +84,7 @@ when_to_use: Plan a future compact repair for the active-context without executi
 - aris-active-context/CONTEXT_INDEX.md
 
 - next phase recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
-## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
-when_to_use: Validate the P28 post-apply state, hash reconciliation, and rollback readiness without executing a new apply.
+## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gatewhen_to_use: Validate the P28 post-apply state, hash reconciliation, and rollback readiness without executing a new apply.
 
 - status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
 - phase family: controlled apply post-apply validation chain
@@ -112,8 +115,7 @@ when_to_use: Validate the P28 post-apply state, hash reconciliation, and rollbac
 - aris-active-context/CONTEXT_INDEX.md
 
 - next phase recommendation: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
-## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
-when_to_use: Execute the allowlisted controlled apply from the preflight package with immediate post-apply validation.
+## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gatewhen_to_use: Execute the allowlisted controlled apply from the preflight package with immediate post-apply validation.
 
 - status: `artifact_reference_only_controlled_apply_execution_warn`
 - phase family: controlled apply execution chain
@@ -138,8 +140,7 @@ when_to_use: Execute the allowlisted controlled apply from the preflight package
 - aris-active-context/CONTEXT_INDEX.md
 
 - next phase recommendation: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
-## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
-when_to_use: Prepare the execution preflight package for the controlled apply chain without executing apply.
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gatewhen_to_use: Prepare the execution preflight package for the controlled apply chain without executing apply.
 
 - status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
 - phase family: controlled apply execution chain
@@ -171,8 +172,7 @@ when_to_use: Prepare the execution preflight package for the controlled apply ch
 
 - preflight only; no apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
-## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
-when_to_use: Prepare the execution preflight package for the controlled apply chain without executing apply.
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gatewhen_to_use: Prepare the execution preflight package for the controlled apply chain without executing apply.
 
 - status: `artifact_reference_only_controlled_apply_execution_preflight_blocked`
 - phase family: controlled apply execution chain
@@ -204,8 +204,7 @@ when_to_use: Prepare the execution preflight package for the controlled apply ch
 
 - preflight only; no apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P27-R1 — Artifact Reference-Only Controlled Apply Execution Preflight Repair Review`
-## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
-when_to_use: Grant or deny the final authorization for the controlled apply chain without executing apply.
+## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gatewhen_to_use: Grant or deny the final authorization for the controlled apply chain without executing apply.
 
 - status: `artifact_reference_only_controlled_apply_final_authorization_warn`
 - phase family: controlled apply authorization chain
@@ -237,8 +236,7 @@ when_to_use: Grant or deny the final authorization for the controlled apply chai
 
 - final authorization only; no apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
-## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
-when_to_use: Review the P24-H1 human authorization submission for final review without executing apply.
+## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gatewhen_to_use: Review the P24-H1 human authorization submission for final review without executing apply.
 
 - status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
 - phase family: controlled apply authorization chain
@@ -265,8 +263,7 @@ when_to_use: Review the P24-H1 human authorization submission for final review w
 
 - review only; no human authorization is granted now, no real apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
-## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission
-when_to_use: Materialize a controlled APPROVE submission for the P23/P24 request chain without executing apply.
+## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submissionwhen_to_use: Materialize a controlled APPROVE submission for the P23/P24 request chain without executing apply.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -295,8 +292,7 @@ read_first:
 notes:
 - submission only; no controlled apply, real apply, live rewrite, or artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate`
-## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
-when_to_use: Validate a controlled human decision intake for the P23 request without executing apply.
+## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gatewhen_to_use: Validate a controlled human decision intake for the P23 request without executing apply.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -319,8 +315,7 @@ read_first:
 notes:
 - decision intake only; no controlled apply, real apply, live rewrite, or artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
-## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
-when_to_use: Materialize a future human authorization request for controlled apply without granting authorization now.
+## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gatewhen_to_use: Materialize a future human authorization request for controlled apply without granting authorization now.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -342,8 +337,7 @@ read_first:
 notes:
 - request only; no human authorization accepted, no real apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
-## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
-when_to_use: Review the P21 authorization package for completeness, non-bypassability, and future human-request readiness without granting authorization now.
+## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gatewhen_to_use: Review the P21 authorization package for completeness, non-bypassability, and future human-request readiness without granting authorization now.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -366,8 +360,7 @@ read_first:
 notes:
 - review only; no human authorization accepted, no real apply, no live rewrite, and no artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
-## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
-when_to_use: Package the deterministic P15→P20 evidence into a future authorization package without granting authorization now.
+## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Packagewhen_to_use: Package the deterministic P15→P20 evidence into a future authorization package without granting authorization now.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -406,8 +399,7 @@ notes:
 - package only; no real apply, no human signature, no protected-surface mutation
 - historical duplicate status warning preserved as warning, not blocker
 - next recommended phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-when_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gatewhen_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -445,8 +437,7 @@ read_first:
 notes:
 - final readiness only; no real apply, live rewrite, or artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
-## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
-when_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gatewhen_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -484,8 +475,7 @@ read_first:
 notes:
 - final readiness only; no real apply, live rewrite, or artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-when_to_use: Validate the P18 dry-run evidence, rollback pairing, warning carry-forward, and Bedrock-compatible metadata before the final readiness gate.
+## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harnesswhen_to_use: Validate the P18 dry-run evidence, rollback pairing, warning carry-forward, and Bedrock-compatible metadata before the final readiness gate.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -509,8 +499,7 @@ read_first:
 notes:
 - validation only; no real apply, live rewrite, or artifact body mutation
 - next recommended phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-when_to_use: Simulate the controlled apply for eligible artifact references without changing live files.
+## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Runwhen_to_use: Simulate the controlled apply for eligible artifact references without changing live files.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -537,8 +526,7 @@ read_first:
 notes:
 - dry-run only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
-## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate
-when_to_use: Decide whether the controlled apply plan can advance to a future controlled apply dry-run.
+## ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gatewhen_to_use: Decide whether the controlled apply plan can advance to a future controlled apply dry-run.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -578,8 +566,7 @@ notes:
 - overlay review only; no product authorization or runtime mutation
 - next recommended phase: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
 
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-when_to_use: Validate the controlled apply plan and rollback readiness before any future readiness gate.
+## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harnesswhen_to_use: Validate the controlled apply plan and rollback readiness before any future readiness gate.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -597,8 +584,7 @@ notes:
 - validation harness only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
 
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-when_to_use: Review the controlled apply plan and rollback conditions before any future apply gate.
+## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Planwhen_to_use: Review the controlled apply plan and rollback conditions before any future apply gate.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -613,8 +599,7 @@ notes:
 - plan only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
 
-## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness
-when_to_use: Validate the dry-run projection and its prompt surface before any controlled apply planning.
+## ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harnesswhen_to_use: Validate the dry-run projection and its prompt surface before any controlled apply planning.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -629,8 +614,7 @@ read_first:
 notes:
 - validation harness only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan`
-## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection
-when_to_use: Project how artifact references would reshape prompt surface before any validation or application step.
+## ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projectionwhen_to_use: Project how artifact references would reshape prompt surface before any validation or application step.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -644,8 +628,7 @@ read_first:
 notes:
 - dry-run projection only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P14 — Artifact Reference-Only Dry-Run Projection Validation Harness`
-## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness
-when_to_use: Validate the P11 artifact-reference plan before any future projection or application step.
+## ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harnesswhen_to_use: Validate the P11 artifact-reference plan before any future projection or application step.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -659,8 +642,7 @@ read_first:
 notes:
 - validation only; no artifact body is modified, moved, or deleted
 - next recommended phase: `ARIS-CONTEXT-P13 — Artifact Reference-Only Dry-Run Projection`
-## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan
-when_to_use: Review artifact-only reference plans before any future validation harness or application step.
+## ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Planwhen_to_use: Review artifact-only reference plans before any future validation harness or application step.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -675,8 +657,7 @@ read_first:
 notes:
 - reference-only planning only; no artifact body is modified or moved
 - next recommended phase: `ARIS-CONTEXT-P12 — Artifact Reference-Only Compression Validation Harness`
-## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness
-when_to_use: Validate ordered compression candidates and risk boundaries without rewriting live files.
+## ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harnesswhen_to_use: Validate ordered compression candidates and risk boundaries without rewriting live files.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -691,8 +672,7 @@ read_first:
 notes:
 - validation only; no compression or routing is introduced
 - next recommended phase: `ARIS-CONTEXT-P11 — Artifact Reference-Only Compression Plan`
-## ARIS-CONTEXT-P9 — Context Compression Candidate Plan
-when_to_use: Review the ordered compression candidates and estimated reductions without rewriting live context files.
+## ARIS-CONTEXT-P9 — Context Compression Candidate Planwhen_to_use: Review the ordered compression candidates and estimated reductions without rewriting live context files.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -707,8 +687,7 @@ read_first:
 notes:
 - plan only; no compression or routing is introduced
 - next recommended phase: `ARIS-CONTEXT-P10 — Context Compression Candidate Validation Harness`
-## ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness
-- status: `context_budget_policy_validation_harness_warn`
+## ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness- status: `context_budget_policy_validation_harness_warn`
 - budget policy validation harness created: `True`
 - policy status: `draft_only`
 - enforcement enabled: `False`
@@ -723,8 +702,7 @@ notes:
 
 This phase validates the draft budget policy only; it does not enable enforcement, routing, or prompt behavior changes.
 
-## ARIS-CONTEXT-P7 — Context Budget Policy Draft
-when_to_use: Review the draft budget policy, per-set budgets, and file recommendations without enabling enforcement.
+## ARIS-CONTEXT-P7 — Context Budget Policy Draftwhen_to_use: Review the draft budget policy, per-set budgets, and file recommendations without enabling enforcement.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -739,8 +717,7 @@ read_first:
 notes:
 - warning-only draft; no enforcement or routing is introduced
 - next recommended phase: `ARIS-CONTEXT-P8 — Context Budget Policy Validation Harness`
-## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
-when_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harnesswhen_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -755,8 +732,7 @@ read_first:
 notes:
 - validation only; no routing or frontmatter application is introduced
 - next recommended phase: `ARIS-CONTEXT-P7 — Context Budget Policy Draft`
-## ARIS-CONTEXT-P6 — Context Manifest Validation Harness
-when_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
+## ARIS-CONTEXT-P6 — Context Manifest Validation Harnesswhen_to_use: Validate the draft context manifest and its context sets without activating routing or frontmatter.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -771,8 +747,7 @@ read_first:
 notes:
 - validation only; no routing or frontmatter application is introduced
 - next recommended phase: `Repair missing or invalid P5 manifest inputs and rerun P6`
-## ARIS-CONTEXT-P5 — Context Manifest Draft
-when_to_use: Use to inspect draft context sets, compare artifact references, and review the manifest draft without changing runtime behavior.
+## ARIS-CONTEXT-P5 — Context Manifest Draftwhen_to_use: Use to inspect draft context sets, compare artifact references, and review the manifest draft without changing runtime behavior.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -787,8 +762,7 @@ read_first:
 notes:
 - draft only; no routing or frontmatter application is introduced
 - next recommended phase: `ARIS-CONTEXT-P6 — Context Manifest Validation Harness`
-## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness
-when_to_use: Use to validate the draft frontmatter contract and synthetic fixtures before any apply gate.
+## ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harnesswhen_to_use: Use to validate the draft frontmatter contract and synthetic fixtures before any apply gate.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -804,8 +778,7 @@ read_first:
 notes:
 - validation only; no live frontmatter is applied
 - next recommended phase: `ARIS-CONTEXT-P5 — Context Manifest Draft`
-## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft
-when_to_use: Use to review the draft frontmatter contract and file classification matrix before any apply harness.
+## ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draftwhen_to_use: Use to review the draft frontmatter contract and file classification matrix before any apply harness.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -821,8 +794,7 @@ read_first:
 notes:
 - draft only; no live frontmatter is applied
 - next recommended phase: `ARIS-CONTEXT-P4 — Active Context Frontmatter Validation Harness`
-## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic
-when_to_use: Use to measure current context file size, classify hot/warm/cold/artifact recommendations, and establish a deterministic baseline without changing behavior.
+## ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnosticwhen_to_use: Use to measure current context file size, classify hot/warm/cold/artifact recommendations, and establish a deterministic baseline without changing behavior.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -837,8 +809,7 @@ notes:
 - diagnostic only; no frontmatter, manifest, or budget enforcement is introduced
 - next recommended phase: `ARIS-CONTEXT-P3 — Active Context Frontmatter Contract Draft`
 
-## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contract
-when_to_use: Use BOOT.md first as the lightweight entry point, then continue into active-context for authoritative state.
+## ARIS-CONTEXT-P1 — BOOT.md Read-First Entry Point Contractwhen_to_use: Use BOOT.md first as the lightweight entry point, then continue into active-context for authoritative state.
 read_first:
 - BOOT.md
 - aris-active-context/CURRENT_STATE.md
@@ -852,8 +823,7 @@ notes:
 - next recommended phase: `ARIS-CONTEXT-P2 — Context OS Token Economy Baseline Diagnostic`
 # CONTEXT_INDEX
 
-## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
-when_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrixwhen_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
 read_first:
 - CURRENT_STATE.md
 - NEXT_ACTION.md
@@ -1047,8 +1017,7 @@ Current Bedrock note:
 - [artifacts/aris_lab/aris_lab_b12_safety_attestation.json](../artifacts/aris_lab/aris_lab_b12_safety_attestation.json)
 - [artifacts/aris_lab/aris_lab_b12_next_phase_contract.json](../artifacts/aris_lab/aris_lab_b12_next_phase_contract.json)
 
-## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrix
-when_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
+## ARIS-CONTEXT-P0 — External Context Economy Research Ingestion & Claim Matrixwhen_to_use: Use to review the advisory-only context-economy research intake and claim matrix without authorizing implementation.
 read_first:
 - CURRENT_STATE.md
 - NEXT_ACTION.md
