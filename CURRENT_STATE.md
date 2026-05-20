@@ -7,7 +7,7 @@
 - resolution_classification: `real_mcp_candidate_selection_required`
 - real_candidate_selection_required: `True`
 - selection_template_created: `True`
-- selection_input_created: `True`
+- selection_input_created: `False`
 - selection_input_present: `True`
 - real_candidate_present: `False`
 - ready_for_authorization_review: `False`
