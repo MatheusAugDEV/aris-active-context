@@ -1,3 +1,13 @@
+## F21-A32 Real MCP Candidate Source Safety Audit Review References
+- phase_id: `F21-A32`
+- next_real_action: `F21-A33 — Real MCP Candidate Source Safety Audit Closure`
+- audit_review_hash: `sha256:e6034e436c27d9d63eef1afe9892a06a5e9e1e50417ac30d27f9941f101da217`
+- manifest_hash: `sha256:82e8d6ba5dc2db7b8a546b3b0351d8db33e945da22099831a353ef4978078932`
+- source_snapshot_hash: `sha256:3d8f7a32482f2ac6c28547f103556659de1acbb24b7df80974d20cbc3cdbe6b4`
+- source_snapshot_path: `/home/matheus/ARIS/Project_ARIS/external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source`
+
+Static source audit review is review-only and does not authorize MCP activation.
+
 ## F21-A31 Real MCP Candidate Source Safety Audit References
 - phase_id: `F21-A31`
 - next_real_action: `F21-A32 — Real MCP Candidate Source Safety Audit Review`
