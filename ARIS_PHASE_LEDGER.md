@@ -1,3 +1,9 @@
+## F21-A25 — MCP Candidate Human Evidence Authorization Evidence Repair Review
+- status: `mcp_candidate_human_evidence_authorization_evidence_repair_review_warn`
+- decision: `warn`
+- next_gate: `F21-A26 — MCP Candidate Human Evidence Authorization Review`
+- reason: `the repair review confirmed the pending input remains insufficient and does not authorize MCP activation`
+
 ## F21-A24 — MCP Candidate Human Evidence Authorization Evidence Repair
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_warn`
 - decision: `warn`
