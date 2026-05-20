@@ -1,3 +1,31 @@
+## F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply
+- Latest completed phase: `F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply`
+- status: `mcp_candidate_human_evidence_authorization_evidence_repair_apply_warn`
+- decision: `warn`
+- phase_id: `F21-A19`
+- macroblock_id: `MB1`
+- repair_apply_classification: `repair_apply_manual_completion_required`
+- repair_apply_created: `True`
+- repair_apply_manifest_created: `True`
+- repair_checklist_final_created: `True`
+- repair_package_valid: `True`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- context_index_live_block_stale_detected: `True`
+- context_index_live_block_repaired: `True`
+- blocker_count: `0`
+- warning_count: `4`
+- next_recommended_phase: `F21-A20 — MCP Candidate Human Evidence Authorization Evidence Repair Apply Review`
+
+- active-context update is live-state only and keeps MCP blocked
+- repair apply confirms scaffolding, not evidence
+
 ## F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review
 - Latest completed phase: `F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_review_warn`

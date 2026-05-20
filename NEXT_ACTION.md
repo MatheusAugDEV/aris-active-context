@@ -1,3 +1,13 @@
+## F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply
+- status: `mcp_candidate_human_evidence_authorization_evidence_repair_apply_warn`
+- decision: `warn`
+- next_gate: `F21-A20 — MCP Candidate Human Evidence Authorization Evidence Repair Apply Review`
+- reason: `the validated repair scaffold was applied locally and still requires manual completion before any authorization review can proceed`
+- blocker_count: `0`
+- warning_count: `4`
+
+The next operational step is repair apply review or authorization review only if real human evidence appears, not MCP activation or product/runtime work.
+
 ## F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_review_warn`
 - decision: `warn`
