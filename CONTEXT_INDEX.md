@@ -1,17 +1,34 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair`
-- latest_status: `mcp_candidate_human_evidence_authorization_evidence_repair_warn`
+- latest_completed_phase: `F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+- latest_status: `mcp_candidate_human_evidence_authorization_evidence_repair_review_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
-- repair_package_created: `true`
+- next_operational_gate: `F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply`
+- repair_package_valid: `true`
 - ready_for_authorization_review: `false`
 - candidate_approval_allowed: `false`
 - mcp_activation_allowed: `false`
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A16/F21-A17 boundary and the A17 repair package is indexed below.
+The live operational references pointer has been repaired to the F21-A17/F21-A18 boundary and the A18 review is indexed below.
+
+## F21-A18 MCP Candidate Human Evidence Authorization Evidence Repair Review References
+- phase_id: `F21-A18`
+- phase_doc: `docs/fase21/f21a_a18_mcp_candidate_human_evidence_authorization_evidence_repair_review.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_review_decision.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_review_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_review_report.md`
+- review_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_review.json`
+- review_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_review.md`
+- next_recommended_phase: `F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply`
+- review_record_hash: `sha256:94ce2fa577a4f683ef4d2009861e9400739b339ca9d1371ba982314ad124666e`
+
+## F21-A18 Notes
+- The repair review confirms the package remains a safe manual-completion scaffold.
+- Placeholders remain placeholders; no evidence is invented.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A17 MCP Candidate Human Evidence Authorization Evidence Repair References
 - phase_id: `F21-A17`

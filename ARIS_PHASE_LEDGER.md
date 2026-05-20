@@ -1,3 +1,27 @@
+## F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review
+- status: `mcp_candidate_human_evidence_authorization_evidence_repair_review_warn`
+- decision: `warn`
+- phase_id: `F21-A18`
+- macroblock_id: `MB1`
+- repair_review_classification: `repair_package_reviewed_manual_completion_required`
+- repair_package_valid: `True`
+- repair_package_reviewed: `True`
+- repair_checklist_reviewed: `True`
+- repair_template_reviewed: `True`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- blocker_count: `0`
+- warning_count: `4`
+- next_recommended_phase: `F21-A19 — MCP Candidate Human Evidence Authorization Evidence Repair Apply`
+
+Reviewing the repair package confirms the scaffold only; it never authorizes MCP activation.
+
 ## F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_warn`
 - decision: `warn`
