@@ -1,3 +1,26 @@
+## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
+- status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
+- previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
+- previous_phase_short_summary: `P24-H1 materialized a controlled APPROVE submission for the P23/P24 request chain, recorded the decision for future review only, and kept authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, and Bedrock-compatible metadata.`
+- next_phase_short_explanation: `P25 validates the submitted human authorization review over the P23→P24→P24-H1 chain and, if it remains consistent, opens only a future authorization gate; it does not execute apply or rewire live context.`
+- human_authorization_final_review_class: `human_authorization_final_review_passed_with_warnings`
+- human_authorization_final_review_passed: `True`
+- human_decision_present: `True`
+- human_decision_submitted: `True`
+- human_decision_valid: `True`
+- human_decision_kind: `APPROVE`
+- human_decision_operator_name: `Matheus Augusto`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
+
+P25 performs a final review of the submitted human authorization decision only. It does not execute apply, authorize apply, or change live context.
 ## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission
 - status: `artifact_reference_only_controlled_apply_human_decision_submission_warn`
 - previous phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
