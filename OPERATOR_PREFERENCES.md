@@ -7,7 +7,7 @@
 ## F21-A4 Preference Alignment
 - active-context is required before technical ARIS decisions.
 - summary-first and query-first take priority over broad reads.
-- no token-saving claim without evidence.
+- no token-saving claims without evidence.
 - no runtime, product, or MCP expansion from context budget policy work.
 # OPERATOR_PREFERENCES
 
@@ -36,13 +36,29 @@
 - Every Codex prompt must still require final active-context update, validation, commit, push, final hashes, next phase, and context usage report.
 - If the user says the prompt is too long or copy/paste broke, ChatGPT must immediately compress the Codex prompt while preserving the separate user-facing phase explanation.
 
+## Mandatory human-evidence / manual-input guidance
+
+- When the next phase depends on human evidence, manual input, external candidate selection, or operator-provided data, ChatGPT must add a separate `Manual action before Codex` section before the Codex prompt.
+- This section is mandatory whenever a phase status, NEXT_ACTION, summary, warning, or blocker mentions missing evidence, pending evidence, human evidence, manual completion, candidate selection, authorization input, or real candidate evidence.
+- The section must state explicitly:
+  - whether the operator must create/edit a file before running Codex;
+  - the exact file path to create/edit;
+  - whether the file is required now or optional;
+  - the minimum fields that must be real, not placeholders;
+  - what must remain false or blocked;
+  - the expected outcome if the file is absent, pending, incomplete, or complete.
+- ChatGPT must not only provide a Codex prompt when manual evidence is the real bottleneck.
+- If evidence is missing and the user wants to resolve it, ChatGPT must first explain the concrete evidence file/action, then provide the Codex prompt.
+- If ChatGPT cannot know the correct evidence path from active-context/artifacts, it must say so and make the next Codex phase discover/confirm the canonical path before asking the operator to fill anything.
+- Human evidence created by ChatGPT must never fabricate facts. It may provide templates or conservative review-only envelopes, but must label them clearly as pending/insufficient unless the operator supplies real candidate details.
+
 ## Decision style
 
 - Turn goals into bounded architecture decisions.
 - Prefer gates, ledgers, rollbacks, and tests.
 - Protect runtime, frontend, action runtime, audio, network, secrets, and dependencies.
 - Never claim something is proven without artifacts.
-- ChatGPT consolidates short, assesses risk, explains the phase to the user, and proposes a surgical next action.
+- ChatGPT consolidates short, assesses risk, explains the phase to the user, identifies required manual actions/evidence before Codex, and proposes a surgical next action.
 
 ## High Bar For Stage Progression
 
