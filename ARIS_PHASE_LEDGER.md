@@ -1,3 +1,31 @@
+## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
+- status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
+- previous_phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`
+- previous_phase_short_summary: `P23 materialized a pending human authorization request with human_authorization_request_ready_with_warnings, human_authorization_request_created=true, human_authorization_request_status=PENDING_NOT_SUBMITTED, human_authorization_request_submitted=false, human_authorization_present=false, authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, implicit_authorization_blocked=true, Bedrock-compatible metadata, and protected surfaces blocked.`
+- next_phase_short_explanation: `P24 validates a controlled human decision intake for the P23 request; if no decision is present the next safe step is submission, and if a valid decision is present the next safe step is P25 review without apply.`
+- p23_request_verified: `True`
+- p15_to_p23_chain_verified: `True`
+- human_authorization_decision_intake_class: `human_authorization_decision_intake_pending_submission`
+- human_authorization_request_created: `True`
+- human_authorization_request_status: `PENDING_NOT_SUBMITTED`
+- human_authorization_request_submitted: `False`
+- human_decision_present: `False`
+- human_decision_valid: `False`
+- human_decision_kind: `PENDING`
+- human_decision_intake_recorded: `False`
+- human_decision_template_created: `True`
+- human_decision_template_pending_verified: `True`
+- human_decision_template_non_apply_verified: `True`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- implicit_authorization_blocked: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
+
+P24 records a decision-intake-only conclusion. It does not execute apply, authorize apply, or change live context. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains a warning, not a blocker.
 ## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
 - status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
 - previous_phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`

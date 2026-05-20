@@ -1,3 +1,18 @@
+## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
+- status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
+- human_authorization_decision_intake_class: `human_authorization_decision_intake_pending_submission`
+- human_decision_present: `False`
+- human_decision_valid: `False`
+- human_decision_kind: `PENDING`
+- human_decision_intake_recorded: `False`
+- controlled_apply_allowed_now: `False`
+- real_apply_allowed_now: `False`
+- live_context_rewrite_allowed_now: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
+
+P24 only records intake and keeps authorization non-authorizing. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains warning-only.
 ## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
 - status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
 - human_authorization_request_class: `human_authorization_request_ready_with_warnings`
