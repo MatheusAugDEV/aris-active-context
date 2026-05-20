@@ -36,17 +36,23 @@
 - Every Codex prompt must still require final active-context update, validation, commit, push, final hashes, next phase, and context usage report.
 - If the user says the prompt is too long or copy/paste broke, ChatGPT must immediately compress the Codex prompt while preserving the separate user-facing phase explanation.
 
-## Mandatory human-evidence / manual-input guidance
+## Conditional human-evidence / manual-input guidance
 
-- When the next phase depends on human evidence, manual input, external candidate selection, or operator-provided data, ChatGPT must add a separate `Manual action before Codex` section before the Codex prompt.
-- This section is mandatory whenever a phase status, NEXT_ACTION, summary, warning, or blocker mentions missing evidence, pending evidence, human evidence, manual completion, candidate selection, authorization input, or real candidate evidence.
-- The section must state explicitly:
+- ChatGPT must add a separate `Manual action before Codex` section only when a real operator action is required before Codex can proceed correctly.
+- Do not add a manual-action section just because a phase mentions evidence, manual completion, candidate selection, authorization input, or review if the required data/artifacts already exist and Codex can validate them directly.
+- Add `Manual action before Codex` when one of these is true:
+  - the operator must create or edit a specific file before the next phase;
+  - the phase cannot progress without a real human-provided candidate, path, decision, or evidence value;
+  - active-context/artifacts explicitly say input is missing, placeholder-only, incomplete, or pending and the user wants to resolve that condition now;
+  - the user asks what to fill, where to fill, or how to resolve evidence.
+- When the section is needed, it must state explicitly:
   - whether the operator must create/edit a file before running Codex;
-  - the exact file path to create/edit;
+  - the exact file path to create/edit when known;
   - whether the file is required now or optional;
   - the minimum fields that must be real, not placeholders;
   - what must remain false or blocked;
   - the expected outcome if the file is absent, pending, incomplete, or complete.
+- If no manual action is required before Codex, state briefly: `Manual action before Codex: none required.` Do not create a long manual section.
 - ChatGPT must not only provide a Codex prompt when manual evidence is the real bottleneck.
 - If evidence is missing and the user wants to resolve it, ChatGPT must first explain the concrete evidence file/action, then provide the Codex prompt.
 - If ChatGPT cannot know the correct evidence path from active-context/artifacts, it must say so and make the next Codex phase discover/confirm the canonical path before asking the operator to fill anything.
@@ -58,7 +64,7 @@
 - Prefer gates, ledgers, rollbacks, and tests.
 - Protect runtime, frontend, action runtime, audio, network, secrets, and dependencies.
 - Never claim something is proven without artifacts.
-- ChatGPT consolidates short, assesses risk, explains the phase to the user, identifies required manual actions/evidence before Codex, and proposes a surgical next action.
+- ChatGPT consolidates short, assesses risk, explains the phase to the user, identifies required manual actions only when actually needed before Codex, and proposes a surgical next action.
 
 ## High Bar For Stage Progression
 
