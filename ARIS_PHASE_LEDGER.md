@@ -1,3 +1,17 @@
+## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
+- status: `artifact_reference_only_controlled_apply_execution_warn`
+- previous phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
+- controlled_apply_execution_class: `controlled_apply_execution_passed_with_warnings`
+- controlled_apply_executed: `True`
+- live_context_rewrite_executed: `True`
+- rollback_ready: `True`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
+
+P28 is execution only. No runtime mutation or protected-surface expansion is authorized here.
 ## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
 - status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
 - previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`

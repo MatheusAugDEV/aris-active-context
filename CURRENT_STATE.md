@@ -1,3 +1,33 @@
+## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
+- status: `artifact_reference_only_controlled_apply_execution_warn`
+- previous phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
+- previous_phase_short_summary: `P27 concluded the execution preflight with controlled_apply_preflight_passed=true, controlled_apply_authorized_for_execution_next_phase=true, preflight_id=ARIS-P27-37ffacb0a927063f, request_id=ARIS-P23-5bb468e12b5dcdbf, request_hash=f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914, target_files_count=4, snapshots_count=4, rollback_plan_created=true, deny_conditions_created=true, warning_count=13, blocker_count=0, drift_detected=false, bypass_risk_detected=false, and kept all execution flags false.`
+- next_phase_short_explanation: `P28 executes the allowlisted controlled apply exactly as planned, validates the post-mutation hashes immediately, and leaves rollback readiness intact for the next post-apply validation gate without touching runtime or protected surfaces.`
+- p27_preflight_verified: `True`
+- p26_final_authorization_verified: `True`
+- preflight_id: `ARIS-P27-37ffacb0a927063f`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- controlled_apply_execution_class: `controlled_apply_execution_passed_with_warnings`
+- controlled_apply_executed: `True`
+- live_context_rewrite_executed: `True`
+- artifact_reference_surface_applied: `True`
+- prompt_surface_reduced: `False`
+- pre_apply_estimated_prompt_tokens: `124698`
+- post_apply_estimated_prompt_tokens: `126108`
+- estimated_prompt_token_delta: `1410`
+- post_apply_hashes_created: `True`
+- diff_manifest_created: `True`
+- rollback_ready: `True`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
+
+P28 executes the allowlisted controlled apply and keeps runtime and protected surfaces blocked.
 ## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
 - status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
 - previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
