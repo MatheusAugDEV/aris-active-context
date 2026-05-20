@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A30 — Real MCP Candidate Source Snapshot Intake`
+- reason: `the selected MCP candidate is pinned, but the local source snapshot is missing; the source safety audit cannot authorize MCP activation`
+
+- future_reentry_option: `Provide a local source snapshot for gogogadgetbytes/smart-connections-mcp`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A29 — Real MCP Candidate Source Safety Audit`
 - reason: `the selected real MCP candidate is pinned to a commit and ready for source safety audit before any authorization discussion`
 

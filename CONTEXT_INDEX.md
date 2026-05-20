@@ -1,3 +1,12 @@
+## F21-A29 Real MCP Candidate Source Safety Audit References
+- phase_id: `F21-A29`
+- next_real_action: `F21-A30 — Real MCP Candidate Source Snapshot Intake`
+- audit_hash: `sha256:f12e0a26a471d8f5dce3a292a8362113771c996573503b0f60b5c3a4da6abc49`
+- snapshot_template_hash: `sha256:af35f28271fa54b262c07f4bdfb41abb79b218113f2403bf521c12578737b3b4`
+- source_snapshot_hash: `None`
+
+The source safety audit is review-only and does not authorize MCP activation.
+
 ## F21-A28 Real MCP Candidate Selection Intake References
 - phase_id: `F21-A28`
 - next_real_action: `F21-A29 — Real MCP Candidate Source Safety Audit`
