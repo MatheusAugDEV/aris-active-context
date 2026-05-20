@@ -1,3 +1,24 @@
+## F21-A21 — MCP Candidate Human Evidence Authorization Review
+- status: `mcp_candidate_human_evidence_authorization_review_warn`
+- decision: `warn`
+- phase_id: `F21-A21`
+- macroblock_id: `MB1`
+- authorization_review_classification: `authorization_review_not_ready_missing_real_evidence`
+- evidence_present: `False`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake`
+
+Authorization review remains review-only and does not authorize MCP activation.
+
 ## F21-A20 — MCP Candidate Human Evidence Authorization Evidence Repair Apply Review
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_apply_review_warn`
 - decision: `warn`

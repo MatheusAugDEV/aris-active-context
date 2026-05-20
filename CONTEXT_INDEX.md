@@ -1,17 +1,34 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A20 — MCP Candidate Human Evidence Authorization Evidence Repair Apply Review`
-- latest_status: `mcp_candidate_human_evidence_authorization_evidence_repair_apply_review_warn`
+- latest_completed_phase: `F21-A21 — MCP Candidate Human Evidence Authorization Review`
+- latest_status: `mcp_candidate_human_evidence_authorization_review_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A21 — MCP Candidate Human Evidence Authorization Review`
-- repair_apply_valid: `true`
+- next_operational_gate: `F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- evidence_present: `false`
 - ready_for_authorization_review: `false`
 - candidate_approval_allowed: `false`
 - mcp_activation_allowed: `false`
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A19/F21-A20 boundary and the A20 review is indexed below.
+The live operational references pointer has been repaired to the F21-A20/F21-A21 boundary and the A21 review is indexed below.
+
+## F21-A21 MCP Candidate Human Evidence Authorization Review References
+- phase_id: `F21-A21`
+- phase_doc: `docs/fase21/f21a_a21_mcp_candidate_human_evidence_authorization_review.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_a21_decision.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_a21_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_a21_report.md`
+- review_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_a21.json`
+- review_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_a21.md`
+- next_recommended_phase: `F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- authorization_review_hash: `sha256:706943fceacacd953ec8c4f94c0dc9fb359fec5928e5232645ef753db5ab1750`
+
+## F21-A21 Notes
+- The authorization review remains conservative and review-only.
+- Real human evidence is required before authorization review can be promoted.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A20 MCP Candidate Human Evidence Authorization Evidence Repair Apply Review References
 - phase_id: `F21-A20`

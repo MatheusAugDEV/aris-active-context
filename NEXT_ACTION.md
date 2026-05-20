@@ -1,3 +1,13 @@
+## F21-A21 — MCP Candidate Human Evidence Authorization Review
+- status: `mcp_candidate_human_evidence_authorization_review_warn`
+- decision: `warn`
+- next_gate: `F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- reason: `the authorization review did not find real human evidence sufficient to approve MCP activation`
+- blocker_count: `0`
+- warning_count: `3`
+
+The next operational step is evidence intake if real human evidence appears, not MCP activation, runtime work, or product work.
+
 ## F21-A20 — MCP Candidate Human Evidence Authorization Evidence Repair Apply Review
 - status: `mcp_candidate_human_evidence_authorization_evidence_repair_apply_review_warn`
 - decision: `warn`
