@@ -1,3 +1,12 @@
+## F21-A10 — MCP Candidate Human Evidence Completion Apply
+- status: `mcp_candidate_human_evidence_completion_apply_warn`
+- decision: `warn`
+- next_gate: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+- reason: `placeholder completion was applied locally, but explicit human evidence is still required before authorization review`
+- blocker_count: `0`
+- warning_count: `2`
+
+The next operational step is human evidence completion review, not MCP activation or product/runtime work.
 ## F21-A9H — Active-Context Handoff Repair Gate
 - status: `f21a9h_active_context_handoff_repair_gate_ready`
 - decision: `pass`

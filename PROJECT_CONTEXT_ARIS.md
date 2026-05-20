@@ -1,3 +1,10 @@
+**F21-A10 - MCP Candidate Human Evidence Completion Apply**
+status: `mcp_candidate_human_evidence_completion_apply_warn`
+decision: `warn`
+completion apply classification: `placeholder_completion_applied`
+completed candidate hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+source submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+next recommended phase: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
 **F21-A9 - MCP Candidate Human Evidence Completion Review**
 status: `mcp_candidate_human_evidence_completion_review_warn`
 decision: `warn`

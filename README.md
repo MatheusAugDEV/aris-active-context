@@ -1,3 +1,14 @@
+**F21-A10 - MCP Candidate Human Evidence Completion Apply**
+status: `mcp_candidate_human_evidence_completion_apply_warn`
+decision: `warn`
+completion apply classification: `placeholder_completion_applied`
+manual completion required: `True`
+ready for authorization review: `False`
+completed candidate hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+pending fields: `11`
+proxima fase recomendada: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+the completed candidate preserves placeholders and does not authorize MCP activation
+legacy evidence remains historical and is not used as active input
 **F21-A9 - MCP Candidate Human Evidence Completion Review**
 status: `mcp_candidate_human_evidence_completion_review_warn`
 decision: `warn`

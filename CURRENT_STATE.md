@@ -1,3 +1,30 @@
+## F21-A10 — MCP Candidate Human Evidence Completion Apply
+- Latest completed phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- status: `mcp_candidate_human_evidence_completion_apply_warn`
+- decision: `warn`
+- phase_id: `F21-A10`
+- macroblock_id: `MB1`
+- completion_apply_classification: `placeholder_completion_applied`
+- Completion classification: `placeholder_completion_applied`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- active_submission_present: `True`
+- active_submission_hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+- source_submission_uses_placeholders: `True`
+- completed_candidate_uses_placeholders: `True`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- pending_fields_count: `11`
+- blocker_count: `0`
+- warning_count: `2`
+- next_recommended_phase: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+
+- active-context update is live-state only and keeps MCP blocked
+- historical snapshots below remain preserved
 ## F21-A9H — Active-Context Handoff Repair Gate
 - status: `f21a9h_active_context_handoff_repair_gate_ready`
 - decision: `pass`

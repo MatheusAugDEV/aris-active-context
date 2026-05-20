@@ -1,3 +1,19 @@
+## F21-A10 MCP Candidate Human Evidence Completion Apply References
+- phase_id: `F21-A10`
+- phase_doc: `docs/fase21/f21a_a10_mcp_candidate_human_evidence_completion_apply.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_apply.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_apply_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_apply_report.md`
+- completed_candidate_artifact: `artifacts/f21/obsidian_mcp_human_evidence_submission_completed_candidate.json`
+- pending_fields_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_pending_fields.json`
+- pending_fields_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_pending_fields.md`
+- next_recommended_phase: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+
+## F21-A10 Notes
+- The active submission remains placeholder/manual and is still review-only.
+- The completed candidate preserves safe placeholders and explicit pending fields.
+- Legacy evidence remains historical and does not override the active submission path.
+- MCP activation remains blocked.
 ## F21-A9H Active-Context Handoff Repair Gate References
 - phase_id: `F21-A9H`
 - phase_doc: `docs/fase21/f21a_a9h_active_context_handoff_repair_gate.md`
