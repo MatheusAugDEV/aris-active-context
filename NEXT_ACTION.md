@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A29 — Real MCP Candidate Source Safety Audit`
+- reason: `the selected real MCP candidate is pinned to a commit and ready for source safety audit before any authorization discussion`
+
+- future_reentry_option: `Provide audited source-safety evidence for the selected real candidate`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A28 — Real MCP Candidate Selection Intake`
 - reason: `the evidence loop is closed, but no real MCP candidate has been selected yet; the next step is to intake a real candidate rather than continue passive repair`
 

@@ -1,3 +1,15 @@
+## F21-A28 — Real MCP Candidate Selection Intake
+- status: `mcp_real_candidate_selection_intake_warn`
+- decision: `warn`
+- selection_classification: `real_candidate_selected_for_review`
+- real_candidate_selection_required: `False`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_repository_present: `True`
+- candidate_commit_pinned: `True`
+- next_real_action: `F21-A29 — Real MCP Candidate Source Safety Audit`
+
+The real candidate selection intake is validated for review; MCP activation remains blocked.
+
 ## F21-A27 — Real MCP Candidate Evidence Resolution
 - status: `mcp_real_candidate_evidence_resolution_warn`
 - decision: `warn`

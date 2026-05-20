@@ -1,3 +1,12 @@
+## F21-A28 Real MCP Candidate Selection Intake References
+- phase_id: `F21-A28`
+- next_real_action: `F21-A29 — Real MCP Candidate Source Safety Audit`
+- selection_review_hash: `sha256:722d258fe448a8a4bd0b191bbbfda1cafd4ff78579a9b65726354bed363e3d3b`
+- selection_template_hash: `sha256:c09029db3070a133d1fcc3fded26e2b5a73f966790b5728dc4c365faacd52525`
+- selection_input_hash: `sha256:399dfadf4baa85e5f7187410836c8fc2d8338c43bbcceeb395a50658f9c86925`
+
+The real candidate selection intake is validated for review, not for MCP activation.
+
 ## F21-A27 Real MCP Candidate Evidence Resolution References
 - phase_id: `F21-A27`
 - next_real_action: `F21-A28 — Real MCP Candidate Selection Intake`

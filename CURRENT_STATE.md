@@ -1,3 +1,27 @@
+## F21-A28 — Real MCP Candidate Selection Intake
+- Latest completed phase: `F21-A28 — Real MCP Candidate Selection Intake`
+- status: `mcp_real_candidate_selection_intake_warn`
+- decision: `warn`
+- phase_id: `F21-A28`
+- macroblock_id: `MB1`
+- selection_classification: `real_candidate_selected_for_review`
+- real_candidate_selection_required: `False`
+- selection_template_created: `True`
+- selection_input_created: `False`
+- selection_input_present: `True`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_repository_or_source_url: `https://github.com/gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- real_candidate_present: `True`
+- candidate_repository_present: `True`
+- candidate_commit_pinned: `True`
+- ready_for_authorization_review: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- next_real_action: `F21-A29 — Real MCP Candidate Source Safety Audit`
+
+This phase validates a real candidate selection intake for review without authorizing MCP activation.
+
 ## F21-A27 — Real MCP Candidate Evidence Resolution
 - Latest completed phase: `F21-A27 — Real MCP Candidate Evidence Resolution`
 - status: `mcp_real_candidate_evidence_resolution_warn`
