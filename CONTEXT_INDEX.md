@@ -1,3 +1,33 @@
+## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
+when_to_use: Validate and prepare the compaction repair preflight without executing any rewrite.
+
+- status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
+- phase family: controlled apply compaction repair preflight chain
+- review scope: P29 validation, P29-R1 planning, active-context hot/cold split, snapshots, rollback package, and deny conditions
+
+### Required source artifacts
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_validation_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_validation_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_token_delta_analysis.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_rollback_readiness.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_repair_recommendation.json
+- artifacts/context/artifact_reference_only_controlled_apply_post_apply_validation_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_planning_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_planning_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_hot_cold_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_token_projection.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_deny_conditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_report.md
+
+### Target files modified
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- aris-active-context/CONTEXT_INDEX.md
+
+- next phase recommendation: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
 ## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
 when_to_use: Plan a future compact repair for the active-context without executing any rewrite.
 

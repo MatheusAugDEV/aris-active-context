@@ -1,3 +1,64 @@
+## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
+- status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
+- previous phase: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
+- previous_phase_short_summary: `P29-R1 concluded the compaction repair plan with compaction_repair_plan_ready, planned_token_reduction=51079, planned_percent_reduction=40.0, planned_reduction_meets_threshold=true, hot_path_items_count=16, cold_path_items_count=119, rollback_ready=true, compaction_repair_recommended=true, warning_count=13, blocker_count=0, and no active-context rewrite.`
+- next_phase_short_explanation: `P29-R2 validates the P29-R1 repair plan against the live active-context, captures snapshots, prepares rollback and deny conditions, and authorizes only a future P29-R3 repair execution. It does not compact or rewrite the active-context beyond its own metadata block.`
+- preflight_id: `ARIS-P29-R2-37ffacb0a927063f`
+- p29_validation_verified: `True`
+- p29r1_planning_verified: `True`
+- compaction_repair_preflight_class: `compaction_repair_preflight_passed_with_warnings`
+- compaction_repair_preflight_passed: `True`
+- compaction_repair_authorized_for_execution_next_phase: `True`
+- compaction_repair_plan_verified: `True`
+- hot_cold_matrix_verified: `True`
+- token_projection_verified: `True`
+- expected_post_repair_contract_created: `True`
+- allowlist_created: `True`
+- snapshots_created: `True`
+- snapshots_count: `4`
+- rollback_package_created: `True`
+- rollback_ready: `True`
+- deny_conditions_created: `True`
+- current_estimated_prompt_tokens: `129490`
+- planned_estimated_prompt_tokens: `77694`
+- planned_token_reduction: `51796`
+- planned_percent_reduction: `40.0`
+- minimum_planned_token_reduction: `19424`
+- planned_reduction_meets_threshold: `True`
+- hot_path_items_count: `16`
+- cold_path_items_count: `123`
+- compactable_blocks_count: `123`
+- protected_context_items_count: `12`
+- target_files_count: `4`
+- target_files_allowlisted: `True`
+- active_context_files_analyzed_count: `4`
+- active_context_rewrite_executed: `False`
+- compaction_repair_executed: `False`
+- rollback_executed: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- active_context_valid: `True`
+- official_artifact_state_verified: `True`
+- drift_detected: `False`
+- bypass_risk_detected: `False`
+- forbidden_flags_verified_false: `True`
+- runtime_mutation_executed: `False`
+- artifact_body_mutation_executed: `False`
+- product_promotion_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- next phase recommendation: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
+
+P29-R2 validates the repair preflight only; no active-context compaction is executed here.
 ## ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate
 - status: `artifact_reference_only_controlled_apply_compaction_repair_planning_warn`
 - previous phase: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`
