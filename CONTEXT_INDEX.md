@@ -1,17 +1,36 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
-- latest_status: `mcp_candidate_human_evidence_authorization_review_warn`
+- latest_completed_phase: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- latest_status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
-- manual_completion_required: `true`
-- candidate_review_ready: `false`
+- next_operational_gate: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
+- template_created: `true`
+- ready_for_authorization_review: `false`
 - candidate_approval_allowed: `false`
 - mcp_activation_allowed: `false`
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A13/F21-A14 boundary and the A14 authorization review is indexed below.
+The live operational references pointer has been repaired to the F21-A14/F21-A15 boundary and the A15 intake is indexed below.
+
+## F21-A15 MCP Candidate Human Evidence Authorization Evidence Intake References
+- phase_id: `F21-A15`
+- phase_doc: `docs/fase21/f21a_a15_mcp_candidate_human_evidence_authorization_evidence_intake.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_intake_decision.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_intake_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_intake_report.md`
+- intake_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_intake.json`
+- intake_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_intake.md`
+- template_json_artifact: `artifacts/f21/templates/mcp_candidate_human_evidence_authorization_evidence_intake_template.json`
+- template_md_artifact: `artifacts/f21/templates/mcp_candidate_human_evidence_authorization_evidence_intake_template.md`
+- next_recommended_phase: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
+- authorization_evidence_intake_hash: `sha256:9e8fb93cee7efa23b459df6dd3d6cde54e892721ae36d75acc3cc8612d69cbc8`
+
+## F21-A15 Notes
+- The authorization evidence intake materializes a safe template when no real evidence exists.
+- Pending fields remain explicit and human-completable; no evidence is invented.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A14 MCP Candidate Human Evidence Authorization Review References
 - phase_id: `F21-A14`

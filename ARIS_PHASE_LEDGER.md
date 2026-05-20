@@ -1,3 +1,23 @@
+## F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake
+- status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
+- decision: `warn`
+- phase_id: `F21-A15`
+- macroblock_id: `MB1`
+- evidence_classification: `authorization_evidence_missing`
+- template_created: `True`
+- authorization_input_present: `False`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
+
+The authorization evidence intake is template-only unless real human evidence is supplied.
 ## F21-A14 — MCP Candidate Human Evidence Authorization Review
 - status: `mcp_candidate_human_evidence_authorization_review_warn`
 - decision: `warn`
