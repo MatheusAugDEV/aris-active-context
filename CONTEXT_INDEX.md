@@ -1,17 +1,34 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
-- latest_status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
+- latest_completed_phase: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
+- latest_status: `mcp_candidate_human_evidence_authorization_evidence_validation_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
-- template_created: `true`
+- next_operational_gate: `F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair`
+- evidence_present: `false`
 - ready_for_authorization_review: `false`
 - candidate_approval_allowed: `false`
 - mcp_activation_allowed: `false`
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A14/F21-A15 boundary and the A15 intake is indexed below.
+The live operational references pointer has been repaired to the F21-A15/F21-A16 boundary and the A16 validation is indexed below.
+
+## F21-A16 MCP Candidate Human Evidence Authorization Evidence Validation References
+- phase_id: `F21-A16`
+- phase_doc: `docs/fase21/f21a_a16_mcp_candidate_human_evidence_authorization_evidence_validation.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_validation_decision.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_validation_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_validation_report.md`
+- validation_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_validation.json`
+- validation_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_validation.md`
+- next_recommended_phase: `F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair`
+- validation_record_hash: `sha256:06f22a2c15405ae8d9a479b4a198c9b2361758b45f9af9bc0e40c3bd4b96bd0f`
+
+## F21-A16 Notes
+- Validation only confirms whether real human evidence exists and is safe enough for review.
+- Missing evidence stays a conservative warning and does not authorize MCP activation.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A15 MCP Candidate Human Evidence Authorization Evidence Intake References
 - phase_id: `F21-A15`
