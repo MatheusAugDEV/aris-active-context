@@ -1,4 +1,14 @@
 ## Current snapshot
+- Latest completed phase: `F21-A4 — Context Budget Policy Gate`
+- Status: `context_budget_policy_gate_ready`
+- Decision: `pass`
+- Blocker count: `0`
+- Warning count: `0`
+- Next recommended phase: `F21-A5 — Source-of-Truth Precedence Gate`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
 - Latest completed phase: `F21-A3 — Claude Code Instruction Alignment`
 - Status: `claude_code_instruction_alignment_ready`
 - Decision: `pass`

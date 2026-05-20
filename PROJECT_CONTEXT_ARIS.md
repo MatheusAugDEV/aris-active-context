@@ -1,3 +1,8 @@
+**F21-A4 - Context Budget Policy Gate**
+summary-first, query-first, and bounded context tiers formalized
+F21-A remains active and F21-B stays paused until F21-A closure
+Missing optional context budget inputs are handled conservatively
+proxima fase recomendada: `F21-A5 — Source-of-Truth Precedence Gate`
 ## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
 - status: `artifact_reference_only_controlled_apply_dry_run_warn`
 - controlled apply dry-run executed: `True`

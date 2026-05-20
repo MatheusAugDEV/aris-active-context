@@ -1,3 +1,12 @@
+## F21-A4 — Context Budget Policy Gate
+- status: `context_budget_policy_gate_ready`
+- decision: `pass`
+- next_gate: `F21-A5 — Source-of-Truth Precedence Gate`
+- reason: `summary-first, query-first, and bounded active-context tiers are formalized without measured token-saving claims`
+- blockers: `0`
+- warnings: `0`
+
+The next operational step is the source-of-truth precedence gate, not product, runtime, or MCP work.
 ## F21-A3 — Claude Code Instruction Alignment
 - status: `claude_code_instruction_alignment_ready`
 - decision: `pass`

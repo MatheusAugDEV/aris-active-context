@@ -1,3 +1,17 @@
+## F21-A4 Context Budget Policy Gate References
+- phase_id: `F21-A4`
+- phase_doc: `docs/fase21/f21a_a4_context_budget_policy_gate.md`
+- summary_artifact: `artifacts/f21/context_budget_policy_gate_summary.json`
+- decision_artifact: `artifacts/f21/context_budget_policy_gate.json`
+- report_artifact: `artifacts/f21/context_budget_policy_gate_report.md`
+- usage_report_artifact: `artifacts/f21/context_budget_usage_report.json`
+- next_recommended_phase: `F21-A5 — Source-of-Truth Precedence Gate`
+
+## F21-A4 Active Track Notes
+- The budget policy is summary-first, query-first, and bounded by active-context tiers.
+- Token-saving remains unclaimed unless measured and recorded in artifact form.
+- Obsidian stays read-only and query-first.
+- Bulk reads remain blocked.
 ## F21-A3 Claude Code Instruction Alignment References
 - phase_id: `F21-A3`
 - phase_doc: `docs/fase21/f21a_a3_claude_code_instruction_alignment.md`

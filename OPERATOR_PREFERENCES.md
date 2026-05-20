@@ -1,3 +1,8 @@
+## F21-A4 Preference Alignment
+- active-context is required before technical ARIS decisions.
+- summary-first and query-first take priority over broad reads.
+- no token-saving claim without evidence.
+- no runtime, product, or MCP expansion from context budget policy work.
 # OPERATOR_PREFERENCES
 
 ## Role expected

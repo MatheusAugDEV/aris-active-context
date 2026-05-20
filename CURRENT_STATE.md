@@ -1,3 +1,27 @@
+## F21-A4 — Context Budget Policy Gate
+- status: `context_budget_policy_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A4`
+- macroblock_id: `MB1`
+- context_budget_policy_defined: `True`
+- active_context_required: `True`
+- decision_locks_required: `True`
+- next_action_required: `True`
+- summary_first_policy_defined: `True`
+- query_first_policy_defined: `True`
+- docs_targeted_only: `True`
+- archive_bulk_read_blocked: `True`
+- chat_memory_non_authoritative: `True`
+- external_input_untrusted: `True`
+- full_source_read_requires_reason: `True`
+- token_saving_claim_allowed: `False`
+- token_saving_measured: `not_measured`
+- token_saving_evidence: `none`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A5 — Source-of-Truth Precedence Gate`
+
+F21-A4 formalizes the context budget policy without claiming measured savings.
 ## F21-A3 — Claude Code Instruction Alignment
 - status: `claude_code_instruction_alignment_ready`
 - decision: `pass`

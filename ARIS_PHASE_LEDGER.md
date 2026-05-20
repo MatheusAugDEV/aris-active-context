@@ -1,3 +1,16 @@
+## F21-A4 — Context Budget Policy Gate
+- status: `context_budget_policy_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A4`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A5 — Source-of-Truth Precedence Gate`
+- context_budget_policy_defined: `True`
+- token_saving_claim_allowed: `False`
+- token_saving_measured: `not_measured`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A5.
 ## F21-A3 — Claude Code Instruction Alignment
 - status: `claude_code_instruction_alignment_ready`
 - decision: `pass`
