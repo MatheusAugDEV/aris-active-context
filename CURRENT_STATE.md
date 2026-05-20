@@ -1,3 +1,29 @@
+## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
+- status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
+- decision: `pass`
+- root_repo_last_commit: `30cecee44bf291a2963b6d085473f76b3b1fe705`
+- active_context_last_commit: `a5141c6831fab356e62b67d4ea0a21578189c05d`
+- root_repo_push_succeeded: `True`
+- active_context_push_succeeded: `True`
+- remote_sync_verified: `True`
+- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+## Current snapshot
+- Latest completed phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+- Status: `mcp_candidate_human_evidence_submission_apply_warn`
+- Decision: `warn`
+- Active submission created: `True`
+- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- Active submission uses placeholders: `True`
+- Candidate review ready: `False`
+- Previous active submission present: `False`
+- Legacy evidence detected: `True`
+- Blocker count: `0`
+- Warning count: `2`
+- Next recommended phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
 ## Current snapshot
 - Latest completed phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
 - Status: `mcp_candidate_human_evidence_submission_apply_warn`

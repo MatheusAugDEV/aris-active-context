@@ -1,3 +1,12 @@
+## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
+- status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
+- decision: `pass`
+- next_gate: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+- reason: `the local F21-A8 handoff is synchronized to origin/main and now points clearly to the F21-A9 review step`
+- blocker_count: `0`
+- warning_count: `0`
+
+The next operational step remains human evidence completion review at F21-A9, not MCP activation or product/runtime work.
 ## F21-A8 — MCP Candidate Human Evidence Submission Apply
 - status: `mcp_candidate_human_evidence_submission_apply_warn`
 - decision: `warn`

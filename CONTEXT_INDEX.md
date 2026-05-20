@@ -1,3 +1,15 @@
+## F21-A8R Active-Context Push & Handoff Reconciliation Gate References
+- phase_id: `F21-A8R`
+- phase_doc: `docs/fase21/f21a_a8r_active_context_push_handoff_reconciliation_gate.md`
+- decision_artifact: `artifacts/f21/f21a8r_active_context_push_handoff_reconciliation_gate.json`
+- summary_artifact: `artifacts/f21/f21a8r_active_context_push_handoff_reconciliation_gate_summary.json`
+- report_artifact: `artifacts/f21/f21a8r_active_context_push_handoff_reconciliation_gate_report.md`
+- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+## F21-A8R Notes
+- The local F21-A8 handoff is reconciled to origin/main.
+- Remote sync is verified from local Git refs.
+- The next gate remains F21-A9.
 ## F21-A8 MCP Candidate Human Evidence Submission Apply References
 - phase_id: `F21-A8`
 - phase_doc: `docs/fase21/f21a_a8_mcp_candidate_human_evidence_submission_apply.md`

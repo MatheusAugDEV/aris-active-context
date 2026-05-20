@@ -1,3 +1,11 @@
+**F21-A8R - Active-Context Push & Handoff Reconciliation Gate**
+status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
+decision: `pass`
+root repo commit: `30cecee44bf291a2963b6d085473f76b3b1fe705`
+active-context commit: `a5141c6831fab356e62b67d4ea0a21578189c05d`
+remote sync verified: `True`
+proxima fase recomendada: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+active-context is synchronized and still points to F21-A9
 **F21-A8 - MCP Candidate Human Evidence Submission Apply**
 status: `mcp_candidate_human_evidence_submission_apply_warn`
 decision: `warn`

@@ -1,3 +1,17 @@
+## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
+- status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A8R`
+- macroblock_id: `MB1`
+- root_repo_last_commit: `30cecee44bf291a2963b6d085473f76b3b1fe705`
+- active_context_last_commit: `a5141c6831fab356e62b67d4ea0a21578189c05d`
+- remote_sync_verified: `True`
+- active_context_local_points_to_f21_a9: `True`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+
+The reconciliation gate only records synchronization and handoff continuity; it does not authorize MCP activation.
 ## F21-A8 — MCP Candidate Human Evidence Submission Apply
 - status: `mcp_candidate_human_evidence_submission_apply_warn`
 - decision: `warn`
