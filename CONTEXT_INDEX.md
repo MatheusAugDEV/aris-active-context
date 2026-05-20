@@ -1,3 +1,33 @@
+## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission
+when_to_use: Materialize a controlled APPROVE submission for the P23/P24 request chain without executing apply.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_payload.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_result.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_payload.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submitted_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_report.md
+notes:
+- submission only; no controlled apply, real apply, live rewrite, or artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate`
 ## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
 when_to_use: Validate a controlled human decision intake for the P23 request without executing apply.
 read_first:

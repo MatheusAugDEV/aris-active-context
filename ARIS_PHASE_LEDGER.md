@@ -1,3 +1,26 @@
+## ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission
+- status: `artifact_reference_only_controlled_apply_human_decision_submission_warn`
+- previous_phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
+- previous_phase_short_summary: `P24 created and validated the decision intake gate with human_authorization_decision_intake_pending_submission, human_decision_present=false, human_decision_valid=false, human_decision_kind=PENDING, human_decision_intake_recorded=false, authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, implicit_authorization_blocked=true, and Bedrock-compatible metadata.`
+- next_phase_short_explanation: `P24-H1 materializes a controlled APPROVE submission for the P23/P24 request chain, records the decision for future review only, and does not execute apply, rewire live context, or release controlled apply.`
+- p24_intake_verified: `True`
+- p23_request_verified: `True`
+- human_decision_submission_class: `human_decision_submission_ready_for_final_review`
+- human_decision_template_created: `True`
+- human_decision_present: `True`
+- human_decision_submitted: `True`
+- human_decision_valid: `True`
+- human_decision_kind: `APPROVE`
+- human_decision_operator_name: `Matheus Augusto`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate`
+
+P24-H1 records a controlled APPROVE submission for review only. It does not execute apply, authorize apply, or change live context. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains a warning, not a blocker.
 ## ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate
 - status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
 - previous_phase: `ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate`

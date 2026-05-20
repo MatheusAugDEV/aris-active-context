@@ -1,4 +1,20 @@
 ## Current snapshot
+- Latest completed phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
+- Status: `artifact_reference_only_controlled_apply_human_decision_submission_warn`
+- Human decision submission class: `human_decision_submission_ready_for_final_review`
+- Human decision present: `True`
+- Human decision submitted: `True`
+- Human decision valid: `True`
+- Human decision kind: `APPROVE`
+- Human decision operator name: `Matheus Augusto`
+- Controlled apply allowed now: `False`
+- Real apply allowed now: `False`
+- Live context rewrite allowed now: `False`
+- Bedrock verdict: `WARN`
+- Next authorized phase: `ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate`
+
+Runtime, product promotion, network, MCP, Obsidian bulk read, and vault write remain blocked.
+## Current snapshot
 - Latest completed phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
 - Status: `artifact_reference_only_controlled_apply_human_authorization_decision_intake_warn`
 - Human authorization decision intake class: `human_authorization_decision_intake_pending_submission`
