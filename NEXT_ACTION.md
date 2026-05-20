@@ -1,13 +1,10 @@
-## ARIS-CONTEXT-ACTIVE-TRACK-PHASE-RECONCILIATION — Active Track Phase Reconciliation Gate
-- status: `artifact_reference_only_active_track_phase_reconciliation_ready_warn`
-- next_action_detected: `ARIS-CONTEXT-ACTIVE-TRACK-RESUME — Active Track Resume Gate`
+## ARIS-CONTEXT-ROADMAP-CANONICAL-STATE — Roadmap Canonical State & Next Action Sanitization Gate
+- roadmap_class: `f21_canonical_f33_blocked_under_lab_governance`
 - canonical_next_phase: `F21 — Context Source Access Policy & Untrusted Input Boundary`
 - canonical_next_phase_title: `Context Source Access Policy & Untrusted Input Boundary`
-- recommended_next_phase: `F21 — Context Source Access Policy & Untrusted Input Boundary`
-- return_to_active_track_allowed: `True`
-- f33_blocked: `True`
 - manual_selection_required: `False`
-- next_action_repair_required: `False`
-- decision_locks_update_required: `False`
+- next_action_single_forward_pointer: `True`
+- decision_artifact: `artifacts/context/roadmap_canonical_state_gate_decision.json`
+- recommendation_artifact: `artifacts/context/roadmap_next_action_recommendation.json`
 
-Proceed to F21 — Context Source Access Policy & Untrusted Input Boundary. F33 remains paused under Lab governance and is not the next active-track phase.
+Proceed to F21 — Context Source Access Policy & Untrusted Input Boundary.
