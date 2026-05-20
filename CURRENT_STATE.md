@@ -1,3 +1,22 @@
+## F21-A24 — MCP Candidate Human Evidence Authorization Evidence Repair
+- Latest completed phase: `F21-A24 — MCP Candidate Human Evidence Authorization Evidence Repair`
+- status: `mcp_candidate_human_evidence_authorization_evidence_repair_warn`
+- decision: `warn`
+- phase_id: `F21-A24`
+- macroblock_id: `MB1`
+- repair_classification: `pending_or_incomplete_human_evidence`
+- repair_created: `True`
+- repair_checklist_created: `True`
+- repair_template_created: `True`
+- evidence_present: `False`
+- ready_for_authorization_review: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- next_recommended_phase: `F21-A25 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+
+This phase treats pending human evidence as insufficient and does not authorize MCP activation.
+
 ## F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation
 - Latest completed phase: `F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation`
 - status: `mcp_candidate_human_evidence_authorization_evidence_validation_warn`

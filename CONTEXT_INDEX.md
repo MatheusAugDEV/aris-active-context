@@ -1,3 +1,10 @@
+## F21-A24 MCP Candidate Human Evidence Authorization Evidence Repair References
+- phase_id: `F21-A24`
+- next_recommended_phase: `F21-A25 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+- repair_hash: `sha256:c97bc32cbed315a562c88d43910d6829a23dfabb6c5a2367ae4c565ca040740f`
+
+The input is pending human review and does not authorize MCP activation.
+
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - latest_completed_phase: `F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation`

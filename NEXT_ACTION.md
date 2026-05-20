@@ -1,3 +1,9 @@
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A25 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+- reason: `the pending human evidence input is insufficient for authorization and remains review-only`
+
 ## F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation
 - status: `mcp_candidate_human_evidence_authorization_evidence_validation_warn`
 - decision: `warn`
