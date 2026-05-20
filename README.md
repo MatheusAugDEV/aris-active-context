@@ -1,4 +1,34 @@
 ## Current snapshot
+- Latest completed phase: `F21-A5 — Source-of-Truth Precedence Gate`
+- Status: `source_of_truth_precedence_gate_warn`
+- Decision: `warn`
+- Blocker count: `0`
+- Warning count: `0`
+- Next recommended phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
+- Latest completed phase: `F21-A5 — Source-of-Truth Precedence Gate`
+- Status: `source_of_truth_precedence_gate_ready`
+- Decision: `pass`
+- Blocker count: `0`
+- Warning count: `0`
+- Next recommended phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
+- Latest completed phase: `F21-A5 — Source-of-Truth Precedence Gate`
+- Status: `source_of_truth_precedence_gate_blocked`
+- Decision: `blocked`
+- Blocker count: `1`
+- Warning count: `0`
+- Next recommended phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
 - Latest completed phase: `F21-A4 — Context Budget Policy Gate`
 - Status: `context_budget_policy_gate_ready`
 - Decision: `pass`

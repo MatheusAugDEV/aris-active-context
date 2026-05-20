@@ -1,3 +1,54 @@
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_warn`
+- decision: `warn`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- source_of_truth_precedence_defined: `True`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- unresolved_conflict_blocks: `False`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A6.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- source_of_truth_precedence_defined: `True`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- unresolved_conflict_blocks: `False`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A6.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_blocked`
+- decision: `blocked`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- blocker_count: `1`
+- warning_count: `0`
+- next_recommended_phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- source_of_truth_precedence_defined: `False`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- unresolved_conflict_blocks: `True`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A6.
 ## F21-A4 — Context Budget Policy Gate
 - status: `context_budget_policy_gate_ready`
 - decision: `pass`

@@ -1,3 +1,30 @@
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_warn`
+- decision: `warn`
+- next_gate: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- reason: `hard locks, next action, current state, phase artifacts, official docs, project context, and consultive external context are ranked deterministically`
+- blockers: `0`
+- warnings: `0`
+
+The next operational step is the Obsidian MCP human evidence intake gate, not product, runtime, or MCP work.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_ready`
+- decision: `pass`
+- next_gate: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- reason: `hard locks, next action, current state, phase artifacts, official docs, project context, and consultive external context are ranked deterministically`
+- blockers: `0`
+- warnings: `0`
+
+The next operational step is the Obsidian MCP human evidence intake gate, not product, runtime, or MCP work.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_blocked`
+- decision: `blocked`
+- next_gate: `F21-A6 — Obsidian MCP Human Evidence Intake`
+- reason: `hard locks, next action, current state, phase artifacts, official docs, project context, and consultive external context are ranked deterministically`
+- blockers: `1`
+- warnings: `0`
+
+The next operational step is the Obsidian MCP human evidence intake gate, not product, runtime, or MCP work.
 ## F21-A4 — Context Budget Policy Gate
 - status: `context_budget_policy_gate_ready`
 - decision: `pass`

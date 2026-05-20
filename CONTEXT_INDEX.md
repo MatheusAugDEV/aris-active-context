@@ -1,3 +1,16 @@
+## F21-A5 Source-of-Truth Precedence Gate References
+- phase_id: `F21-A5`
+- phase_doc: `docs/fase21/f21a_a5_source_of_truth_precedence_gate.md`
+- summary_artifact: `artifacts/f21/source_of_truth_precedence_gate_v2_summary.json`
+- decision_artifact: `artifacts/f21/source_of_truth_precedence_gate_v2.json`
+- report_artifact: `artifacts/f21/source_of_truth_precedence_gate_v2_report.md`
+- next_recommended_phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+## F21-A5 Active Track Notes
+- Hard locks are first, next action is second, and live state is third.
+- Phase artifacts outrank historical docs; README and project context remain non-authoritative.
+- Obsidian stays consultive only.
+- Chat history and memory stay non-authoritative.
 ## F21-A4 Context Budget Policy Gate References
 - phase_id: `F21-A4`
 - phase_doc: `docs/fase21/f21a_a4_context_budget_policy_gate.md`

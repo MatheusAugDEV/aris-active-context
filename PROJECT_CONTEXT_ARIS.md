@@ -1,3 +1,7 @@
+**F21-A5 - Source of Truth Precedence Gate**
+hard locks, next action, and current state outrank consolidated history
+workspace truth remains primary until explicit review authorizes an override
+proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
 **F21-A4 - Context Budget Policy Gate**
 summary-first, query-first, and bounded context tiers formalized
 F21-A remains active and F21-B stays paused until F21-A closure

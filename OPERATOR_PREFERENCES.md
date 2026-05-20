@@ -1,3 +1,9 @@
+## F21-A5 Preference Alignment
+- decision locks outrank history.
+- next action outranks consolidated context.
+- current state outranks README history.
+- Obsidian remains consultive only.
+- no runtime, product, or MCP expansion from source precedence work.
 ## F21-A4 Preference Alignment
 - active-context is required before technical ARIS decisions.
 - summary-first and query-first take priority over broad reads.

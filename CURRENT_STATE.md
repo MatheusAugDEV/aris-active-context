@@ -1,3 +1,93 @@
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_warn`
+- decision: `warn`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- source_of_truth_precedence_defined: `True`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- project_context_non_override: `True`
+- obsidian_consultive_only: `True`
+- chat_memory_non_authoritative: `True`
+- external_input_untrusted: `True`
+- context_index_reference_only: `True`
+- phase_ledger_historical_only: `True`
+- stale_roadmap_cannot_override: `True`
+- readme_history_cannot_override: `True`
+- conflict_resolution_policy_defined: `True`
+- conflict_cases_evaluated: `7`
+- unresolved_conflict_blocks: `False`
+- token_saving_claim_allowed: `False`
+- token_saving_measured: `not_measured`
+- token_saving_evidence: `none`
+- blocker_count: `0`
+- warning_count: `0`
+proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+Hard locks outrank lower tiers and active-context remains live.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- source_of_truth_precedence_defined: `True`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- project_context_non_override: `True`
+- obsidian_consultive_only: `True`
+- chat_memory_non_authoritative: `True`
+- external_input_untrusted: `True`
+- context_index_reference_only: `True`
+- phase_ledger_historical_only: `True`
+- stale_roadmap_cannot_override: `True`
+- readme_history_cannot_override: `True`
+- conflict_resolution_policy_defined: `True`
+- conflict_cases_evaluated: `7`
+- unresolved_conflict_blocks: `False`
+- token_saving_claim_allowed: `False`
+- token_saving_measured: `not_measured`
+- token_saving_evidence: `none`
+- blocker_count: `0`
+- warning_count: `0`
+proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+Hard locks outrank lower tiers and active-context remains live.
+## F21-A5 — Source-of-Truth Precedence Gate
+- status: `source_of_truth_precedence_gate_blocked`
+- decision: `blocked`
+- phase_id: `F21-A5`
+- macroblock_id: `MB1`
+- source_of_truth_precedence_defined: `False`
+- hard_locks_ranked_first: `True`
+- next_action_ranked_operational_first: `True`
+- current_state_ranked_live_state: `True`
+- phase_artifacts_ranked_evidence: `True`
+- official_docs_ranked_below_artifacts: `True`
+- project_context_non_override: `True`
+- obsidian_consultive_only: `True`
+- chat_memory_non_authoritative: `True`
+- external_input_untrusted: `True`
+- context_index_reference_only: `True`
+- phase_ledger_historical_only: `True`
+- stale_roadmap_cannot_override: `True`
+- readme_history_cannot_override: `True`
+- conflict_resolution_policy_defined: `True`
+- conflict_cases_evaluated: `7`
+- unresolved_conflict_blocks: `True`
+- token_saving_claim_allowed: `False`
+- token_saving_measured: `not_measured`
+- token_saving_evidence: `none`
+- blocker_count: `1`
+- warning_count: `0`
+proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
+
+Hard locks outrank lower tiers and active-context remains live.
 ## F21-A4 — Context Budget Policy Gate
 - status: `context_budget_policy_gate_ready`
 - decision: `pass`
