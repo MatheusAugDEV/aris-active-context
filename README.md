@@ -1,4 +1,37 @@
 ## Current snapshot
+- Latest completed phase: `F21-A1 — Context Source Access Policy & Untrusted Input Boundary`
+- Status: `f21_a1_context_source_access_policy_ready_with_warnings`
+- Decision: `warn`
+- Blocker count: `0`
+- Warning count: `4`
+- Next recommended phase: `F21-A2 — Codex Skill Alignment Review`
+
+- runtime/product/network/MCP/Obsidian/vault remain blocked
+- historical snapshots below remain preserved
+
+## Current snapshot
+- Latest completed phase: `F21-A1 — Context Source Access Policy & Untrusted Input Boundary`
+- Status: `f21_a1_context_source_access_policy_blocked`
+- Decision: `blocked`
+- Blocker count: `2`
+- Warning count: `4`
+- Next recommended phase: `F21-A2 — Codex Skill Alignment Review`
+
+- runtime/product/network/MCP/Obsidian/vault remain blocked
+- historical snapshots below remain preserved
+
+## Current snapshot
+- Latest completed phase: `F21-A1 — Context Source Access Policy & Untrusted Input Boundary`
+- Status: `f21_a1_context_source_access_policy_blocked`
+- Decision: `blocked`
+- Blocker count: `3`
+- Warning count: `4`
+- Next recommended phase: `F21-A2 — Codex Skill Alignment Review`
+
+- runtime/product/network/MCP/Obsidian/vault remain blocked
+- historical snapshots below remain preserved
+
+## Current snapshot
 - Latest completed phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
 - Status: `artifact_reference_only_controlled_apply_final_authorization_warn`
 - Final authorization class: `final_authorization_granted_for_controlled_apply_next_phase_with_warnings`

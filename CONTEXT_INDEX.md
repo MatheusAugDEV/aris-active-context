@@ -1,3 +1,22 @@
+## F21-A1 Context Source Access Policy & Untrusted Input Boundary References
+- phase_id: `F21-A1`
+- macroblock_id: `MB1`
+- gate_summary_artifact: `artifacts/f21/context_source_access_policy_gate_summary.json`
+- gate_decision_artifact: `artifacts/f21/context_source_access_policy_gate_decision.json`
+- gate_report_artifact: `artifacts/f21/context_source_access_policy_gate_report.md`
+- policy_doc: `docs/fase21/f21a_a1_context_source_access_policy_untrusted_input_boundary.md`
+- source_of_truth_policy: `docs/architecture/source_of_truth_policy.md`
+- obsidian_query_first_summary: `artifacts/f21/obsidian_query_first_access_contract_summary.json`
+- obsidian_bulk_read_summary: `artifacts/f21/obsidian_bulk_read_prevention_gate_summary.json`
+- source_precedence_summary: `artifacts/f21/source_of_truth_precedence_gate_summary.json`
+- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
+- legacy_noise_sources: `src/aris/context/context_source_access_policy.py, docs/fase21/f21_context_source_access_policy.md, artifacts/f21/context_source_access_policy_summary.json, artifacts/f21/context_source_access_policy_report.md, artifacts/f21/context_source_access_policy_decision.json`
+
+## Roadmap Canonical State References
+- canonical_current_state: `MB1 active; F21-A1 materialized; active track continues at F21-A2.`
+- next_action_single_forward_pointer: `True`
+- manual_selection_required: `False`
+
 ## Roadmap Canonical State References
 - roadmap_canonical_state_gate_summary_artifact: `artifacts/context/roadmap_canonical_state_gate_summary.json`
 - roadmap_canonical_state_gate_decision_artifact: `artifacts/context/roadmap_canonical_state_gate_decision.json`

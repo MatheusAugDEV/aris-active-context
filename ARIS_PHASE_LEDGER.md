@@ -1,3 +1,36 @@
+## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
+- status: `f21_a1_context_source_access_policy_ready_with_warnings`
+- decision: `warn`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `4`
+- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
+- legacy_noise_sources: `src/aris/context/context_source_access_policy.py, docs/fase21/f21_context_source_access_policy.md, artifacts/f21/context_source_access_policy_summary.json, artifacts/f21/context_source_access_policy_report.md, artifacts/f21/context_source_access_policy_decision.json`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A2.
+
+## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
+- status: `f21_a1_context_source_access_policy_blocked`
+- decision: `blocked`
+- macroblock_id: `MB1`
+- blocker_count: `2`
+- warning_count: `4`
+- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
+- legacy_noise_sources: `src/aris/context/context_source_access_policy.py, docs/fase21/f21_context_source_access_policy.md, artifacts/f21/context_source_access_policy_summary.json, artifacts/f21/context_source_access_policy_report.md, artifacts/f21/context_source_access_policy_decision.json`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A2.
+
+## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
+- status: `f21_a1_context_source_access_policy_blocked`
+- decision: `blocked`
+- macroblock_id: `MB1`
+- blocker_count: `3`
+- warning_count: `4`
+- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
+- legacy_noise_sources: `src/aris/context/context_source_access_policy.py, docs/fase21/f21_context_source_access_policy.md, artifacts/f21/context_source_access_policy_summary.json, artifacts/f21/context_source_access_policy_report.md, artifacts/f21/context_source_access_policy_decision.json`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A2.
+
 ## ARIS-CONTEXT-ACTIVE-TRACK-PHASE-RECONCILIATION — Active Track Phase Reconciliation Gate
 - status: `artifact_reference_only_active_track_phase_reconciliation_ready_warn`
 - reconciliation_class: `f21_canonical_f33_blocked_under_lab_governance`
