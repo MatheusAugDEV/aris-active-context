@@ -1,3 +1,11 @@
+## F21-A2 — Codex Skill Alignment Review
+- status: `codex_skill_alignment_review_warn`
+- next_gate: `F21-A3 — Claude Code Instruction Alignment`
+- reason: `F21-A2 aligned the Codex skill with active-context, source precedence, and untrusted input boundaries; continue with F21-A3 — Claude Code Instruction Alignment`
+- blockers: `0`
+- warnings: `3`
+
+The next operational step is the Claude Code instruction alignment review, not any product, runtime, or MCP path.
 ## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
 - status: `f21_a1_context_source_access_policy_ready_with_warnings`
 - next_gate: `F21-A2 — Codex Skill Alignment Review`

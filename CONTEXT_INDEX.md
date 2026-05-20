@@ -1,3 +1,17 @@
+## F21-A2 Codex Skill Alignment Review References
+- phase_id: `F21-A2`
+- phase_doc: `docs/fase21/f21a_a2_codex_skill_alignment_review.md`
+- summary_artifact: `artifacts/f21/codex_skill_alignment_review_summary.json`
+- decision_artifact: `artifacts/f21/codex_skill_alignment_review.json`
+- report_artifact: `artifacts/f21/codex_skill_alignment_review_report.md`
+- source_boundary_doc: `docs/fase21/f21a_a1_context_source_access_policy_untrusted_input_boundary.md`
+- next_recommended_phase: `F21-A3 — Claude Code Instruction Alignment`
+
+## F21-A2 Active Track Notes
+- The Codex skill review is read-first, summary-first, and query-first.
+- Obsidian remains query-first and read-only.
+- Bulk reads remain blocked.
+- Prompt handoff requires the final active-context update and commit hash reporting.
 ## F21-A1 Context Source Access Policy & Untrusted Input Boundary References
 - phase_id: `F21-A1`
 - macroblock_id: `MB1`

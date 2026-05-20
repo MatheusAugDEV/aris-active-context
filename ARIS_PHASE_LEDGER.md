@@ -1,3 +1,13 @@
+## F21-A2 — Codex Skill Alignment Review
+- status: `codex_skill_alignment_review_warn`
+- decision: `warn`
+- phase_id: `F21-A2`
+- macroblock_id: `MB1`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A3 — Claude Code Instruction Alignment`
+
+The active track remains MB1/F21 and the next operational pointer advances to F21-A3.
 ## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
 - status: `f21_a1_context_source_access_policy_ready_with_warnings`
 - decision: `warn`

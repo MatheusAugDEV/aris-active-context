@@ -1,3 +1,32 @@
+## F21-A2 — Codex Skill Alignment Review
+- status: `codex_skill_alignment_review_warn`
+- decision: `warn`
+- phase_id: `F21-A2`
+- macroblock_id: `MB1`
+- macroblock_title: `Context Governance & Input Trust Boundary`
+- f21_a1_verified: `True`
+- active_context_read_first_required: `True`
+- source_precedence_enforced: `True`
+- untrusted_input_boundary_enforced: `True`
+- obsidian_query_first_only: `True`
+- bulk_read_blocked: `True`
+- prompt_final_active_context_update_required: `True`
+- commit_push_hash_required: `True`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- f21b_start_allowed: `False`
+- f33_start_allowed: `False`
+- r0_start_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- mcp_activation_allowed: `False`
+- vault_write_allowed: `False`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A3 — Claude Code Instruction Alignment`
+
+F21-A2 aligns the active-context boundary review to the Codex skill, the Claude contract, and the source-of-truth policy without promoting runtime, product, or customer-real execution.
 ## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
 - status: `f21_a1_context_source_access_policy_ready_with_warnings`
 - decision: `warn`
