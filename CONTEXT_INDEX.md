@@ -1,17 +1,38 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A16 — MCP Candidate Human Evidence Authorization Evidence Validation`
-- latest_status: `mcp_candidate_human_evidence_authorization_evidence_validation_warn`
+- latest_completed_phase: `F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair`
+- latest_status: `mcp_candidate_human_evidence_authorization_evidence_repair_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A17 — MCP Candidate Human Evidence Authorization Evidence Repair`
-- evidence_present: `false`
+- next_operational_gate: `F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+- repair_package_created: `true`
 - ready_for_authorization_review: `false`
 - candidate_approval_allowed: `false`
 - mcp_activation_allowed: `false`
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A15/F21-A16 boundary and the A16 validation is indexed below.
+The live operational references pointer has been repaired to the F21-A16/F21-A17 boundary and the A17 repair package is indexed below.
+
+## F21-A17 MCP Candidate Human Evidence Authorization Evidence Repair References
+- phase_id: `F21-A17`
+- phase_doc: `docs/fase21/f21a_a17_mcp_candidate_human_evidence_authorization_evidence_repair.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_decision.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_report.md`
+- repair_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair.json`
+- repair_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair.md`
+- repair_checklist_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_checklist.json`
+- repair_checklist_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_evidence_repair_checklist.md`
+- template_json_artifact: `artifacts/f21/templates/mcp_candidate_human_evidence_authorization_evidence_repair_template.json`
+- template_md_artifact: `artifacts/f21/templates/mcp_candidate_human_evidence_authorization_evidence_repair_template.md`
+- next_recommended_phase: `F21-A18 — MCP Candidate Human Evidence Authorization Evidence Repair Review`
+- repair_package_hash: `sha256:242e84bd6ded687957c0ffa2d5caebd79a3d5c7e58e821a6d858daf6867e0d0c`
+
+## F21-A17 Notes
+- The repair package makes missing evidence explicit and actionable.
+- Pending fields remain human-completable; no evidence is invented.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A16 MCP Candidate Human Evidence Authorization Evidence Validation References
 - phase_id: `F21-A16`
