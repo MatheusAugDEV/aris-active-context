@@ -1,3 +1,27 @@
+## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
+- status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
+- previous phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
+- previous_phase_short_summary: `P22 reviewed the P21 authorization package with authorization_package_review_passed_with_warnings, authorization_package_review_passed=true, authorization_granted_now=false, human_authorization_present=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, bypass_risk_detected=false, Bedrock-compatible metadata, and protected surfaces blocked.`
+- next_phase_short_explanation: `P24 should receive a human decision intake only after this request gate materializes the pending, non-submitted authorization request package without granting authorization now.`
+- human_authorization_request_class: `human_authorization_request_ready_with_warnings`
+- human_authorization_request_created: `True`
+- human_authorization_request_status: `PENDING_NOT_SUBMITTED`
+- human_authorization_request_submitted: `False`
+- human_authorization_required: `True`
+- human_authorization_present: `False`
+- authorization_granted_now: `False`
+- request_payload_created: `True`
+- request_template_created: `True`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- implicit_authorization_blocked: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
+
+P23 materializes a pending human authorization request only. It does not accept a signature, grant authorization, or execute apply. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains a warning, not a blocker.
 ## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
 - status: `artifact_reference_only_controlled_apply_authorization_package_review_warn`
 - previous phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`

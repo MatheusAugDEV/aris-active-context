@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
+- status: `artifact_reference_only_controlled_apply_human_authorization_request_warn`
+- human_authorization_request_class: `human_authorization_request_ready_with_warnings`
+- human_authorization_request_created: `True`
+- human_authorization_request_status: `PENDING_NOT_SUBMITTED`
+- human_authorization_request_submitted: `False`
+- authorization_granted_now: `False`
+- human_authorization_present: `False`
+- controlled_apply_allowed_now: `False`
+- real_apply_allowed_now: `False`
+- live_context_rewrite_allowed_now: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
+
+P23 only materializes a pending request and keeps authorization non-authorizing. The historical duplicate `artifact_reference_only_controlled_apply_final_readiness_gate_blocked` status remains warning-only.
 ## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
 - status: `artifact_reference_only_controlled_apply_authorization_package_review_warn`
 - authorization_package_review_class: `authorization_package_review_passed_with_warnings`

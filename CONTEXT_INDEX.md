@@ -1,3 +1,26 @@
+## ARIS-CONTEXT-P23 — Artifact Reference-Only Controlled Apply Human Authorization Request Gate
+when_to_use: Materialize a future human authorization request for controlled apply without granting authorization now.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_findings.json
+- artifacts/context/artifact_reference_only_controlled_apply_authorization_package_review_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_payload.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_report.md
+notes:
+- request only; no human authorization accepted, no real apply, no live rewrite, and no artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P24 — Artifact Reference-Only Controlled Apply Human Authorization Decision Intake Gate`
 ## ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate
 when_to_use: Review the P21 authorization package for completeness, non-bypassability, and future human-request readiness without granting authorization now.
 read_first:
