@@ -1,3 +1,27 @@
+## F21-A14 — MCP Candidate Human Evidence Authorization Review
+- Latest completed phase: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
+- status: `mcp_candidate_human_evidence_authorization_review_warn`
+- decision: `warn`
+- phase_id: `F21-A14`
+- macroblock_id: `MB1`
+- authorization_review_classification: `authorization_review_not_ready_missing_real_evidence`
+- evidence_present: `False`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- context_index_live_block_stale_detected: `True`
+- context_index_live_block_repaired: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
+
+- active-context update is live-state only and keeps MCP blocked
+- human evidence is required before authorization review can be promoted
 ## F21-A13 — MCP Candidate Human Evidence Manual Completion Intake
 - Latest completed phase: `F21-A13 — MCP Candidate Human Evidence Manual Completion Intake`
 - status: `mcp_candidate_human_evidence_manual_completion_intake_warn`

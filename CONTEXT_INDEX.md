@@ -1,10 +1,9 @@
 ## Live operational references
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
-- latest_status: `mcp_candidate_human_evidence_manual_completion_packet_warn`
+- latest_completed_phase: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
+- latest_status: `mcp_candidate_human_evidence_authorization_review_warn`
 - latest_decision: `warn`
-- next_operational_gate: `F21-A13 — MCP Candidate Human Evidence Manual Completion Intake`
-- manual_completion_intake_created: `true`
+- next_operational_gate: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
 - manual_completion_required: `true`
 - candidate_review_ready: `false`
 - candidate_approval_allowed: `false`
@@ -12,7 +11,23 @@
 - context_index_live_block_stale_detected: `true`
 - context_index_live_block_repaired: `true`
 
-The live operational references pointer has been repaired to the F21-A12/F21-A13 boundary and the A13 intake is indexed below.
+The live operational references pointer has been repaired to the F21-A13/F21-A14 boundary and the A14 authorization review is indexed below.
+
+## F21-A14 MCP Candidate Human Evidence Authorization Review References
+- phase_id: `F21-A14`
+- phase_doc: `docs/fase21/f21a_a14_mcp_candidate_human_evidence_authorization_review.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_authorization_review_report.md`
+- manual_completion_input_artifact: `artifacts/f21/mcp_candidate_human_evidence_manual_completion_input.json`
+- next_recommended_phase: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- manual_completion_input_hash: `None`
+
+## F21-A14 Notes
+- The authorization review remains manual-review-only.
+- Real human evidence is required before any authorization review can be promoted.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
 
 ## F21-A13 MCP Candidate Human Evidence Manual Completion Intake References
 - phase_id: `F21-A13`

@@ -1,3 +1,15 @@
+**F21-A14 - MCP Candidate Human Evidence Authorization Review**
+status: `mcp_candidate_human_evidence_authorization_review_warn`
+decision: `warn`
+authorization review classification: `authorization_review_not_ready_missing_real_evidence`
+manual completion required: `True`
+ready for authorization review: `False`
+evidence present: `False`
+pending fields: `11`
+context index live block repaired: `True`
+proxima fase recomendada: `F21-A15 — MCP Candidate Human Evidence Authorization Evidence Intake`
+the authorization review does not authorize MCP activation without real human evidence
+legacy evidence remains historical and is not used as active input
 **F21-A13 - MCP Candidate Human Evidence Manual Completion Intake**
 status: `mcp_candidate_human_evidence_manual_completion_intake_warn`
 decision: `warn`
