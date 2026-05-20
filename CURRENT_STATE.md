@@ -1,3 +1,29 @@
+## F21-A12 — MCP Candidate Human Evidence Manual Completion Packet
+- Latest completed phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+- status: `mcp_candidate_human_evidence_manual_completion_packet_warn`
+- decision: `warn`
+- phase_id: `F21-A12`
+- macroblock_id: `MB1`
+- completion_review_classification: `placeholder_completion_reviewed`
+- manual_completion_packet_classification: `placeholder_manual_completion_packet`
+- manual_completion_packet_created: `True`
+- manual_completion_packet_hash: `sha256:8429ceab941008819c5ea729ab40a05a019490fcda87a64d03ea0421189840dd`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- context_index_live_block_stale_detected: `True`
+- context_index_live_block_repaired: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A13 — MCP Candidate Human Evidence Manual Completion Intake`
+
+- active-context update is live-state only and keeps MCP blocked
+- historical snapshots below remain preserved
 # CURRENT_STATE
 
 ## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
