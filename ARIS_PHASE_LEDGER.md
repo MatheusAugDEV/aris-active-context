@@ -1,54 +1,40 @@
-## ARIS-CONTEXT-P29-R7 — Post-Apply Consolidation & Recommendation Repair Gate
-- status: `artifact_reference_only_post_apply_consolidation_ready_warn`
-- consolidation_class: `post_apply_consolidation_ready_with_recommendation_repair`
-- p29r6_apply_verified: `True`
-- p29r6_warn_accepted: `True`
-- token_reduction_verified: `True`
-- actual_token_reduction: `0`
-- p29r6_actual_token_reduction_verified: `0`
+## ARIS-CONTEXT-P29-R8 — Active-Context Compaction Closure Gate
+- status: `artifact_reference_only_compaction_closure_ready_warn`
+- closure_class: `p29_chain_closed_with_active_track_resume`
+- p29_chain_verified: `True`
+- p29_compaction_closed: `True`
+- p29r6_controlled_apply_verified: `True`
+- actual_token_reduction_from_p29r6: `130735`
 - p29r6_minimum_planned_token_reduction: `19963`
 - p29r6_projected_token_reduction_from_p29r5: `53232`
 - hot_path_preserved: `True`
 - artifact_reference_only_contract_preserved: `True`
-- allowlist_respected: `True`
-- deny_conditions_respected: `True`
 - rollback_ready: `True`
 - rollback_executed: `False`
-- stale_recommendation_detected: `True`
-- recommendation_repaired: `True`
+- stale_recommendation_repaired: `True`
 - active_context_valid_current: `True`
 - safe_to_continue_after_compaction: `True`
-- p29_compaction_chain_closed: `True`
-- recommended_next_phase: `ARIS-CONTEXT-P29-R8 — Active-Context Compaction Closure Gate`
+- new_compaction_required: `False`
+- return_to_active_track_allowed: `True`
+- recommended_next_phase: `ARIS-CONTEXT-ACTIVE-TRACK-RESUME — Active Track Resume Gate`
+- preexisting_untracked_noise: `True`
 
-The post-apply consolidation records the verified rerun and repaired recommendation without adding a new apply.
+The closure gate records the audited chain and the repaired recommendation as the final P29 outcome.
 
 ## Compact references
-- p29r7_integrity_matrix_artifact: `artifacts/context/artifact_reference_only_post_apply_consolidation_integrity_matrix.json`
+- p29r8_evidence_matrix_artifact: `artifacts/context/active_context_compaction_closure_evidence_matrix.json`
+- p29r8_chain_manifest_artifact: `artifacts/context/active_context_compaction_closure_chain_manifest.json`
+- p29r8_next_action_recommendation_artifact: `artifacts/context/active_context_compaction_closure_next_action_recommendation.json`
 - p29r7_recommendation_repair_artifact: `artifacts/context/artifact_reference_only_post_apply_consolidation_recommendation_repair.json`
 - p29r6_summary_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_gate_summary.json`
-- p29r6_decision_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_gate_decision.json`
-- p29r6_post_hashes_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_post_hashes.json`
-- p29r6_token_delta_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_token_delta.json`
-- p29r6_rollback_package_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_rollback_package.json`
-- p29r6_report_artifact: `artifacts/context/artifact_reference_only_controlled_apply_rerun_gate_report.md`
-- p29r5_refreshed_preflight_hashes_artifact: `artifacts/context/active_context_baseline_refresh_preflight_hashes.json`
 - p29r5_snapshot_artifact: `artifacts/context/active_context_baseline_refresh_snapshot.json`
-- p29r5_rollback_readiness_artifact: `artifacts/context/active_context_baseline_refresh_rollback_readiness.json`
-- p29r5_recommendation_artifact: `artifacts/context/active_context_baseline_refresh_recommendation.json`
-- p29r4_hash_matrix_artifact: `artifacts/context/active_context_baseline_reconciliation_hash_matrix.json`
 - p29r4_drift_manifest_artifact: `artifacts/context/active_context_baseline_reconciliation_drift_manifest.json`
-- p29r4_recommendation_artifact: `artifacts/context/active_context_baseline_reconciliation_recommendation.json`
-- preexisting_untracked_noise: `True`
-- p29r6_status: `artifact_reference_only_controlled_apply_rerun_warn`
-- p29r6_execution_class: `controlled_apply_rerun_passed_with_reduction`
-- p29r6_recommended_next_phase: `ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate`
-- p29r6_summary_actual_token_reduction: `130735`
-- p29r6_recommended_next_phase: `ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate`
-- p29r6_summary_actual_token_reduction: `130735`
-- p29r6_recommended_next_phase: `ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate`
-- p29r6_summary_actual_token_reduction: `130735`
-- p29r6_recommended_next_phase: `ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate`
+- p29r3_execution_report_artifact: `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_report.md`
+- p29r2_expected_contract_artifact: `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_preflight_expected_contract.json`
+- p29r1_token_projection_artifact: `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_token_projection.json`
+- active_track_resume_phase: `ARIS-CONTEXT-ACTIVE-TRACK-RESUME — Active Track Resume Gate`
+- p29r6_root_commit_ref: `6ecd1a599d983df36927edbb7221e6714d3d34c5`
+- p29r7_root_commit_ref: `acb2f06c11eea377ba100499363aabdea96b252d`
 - p29r6_summary_actual_token_reduction: `130735`
 - p29r6_recommended_next_phase: `ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate`
 - p29r6_summary_actual_token_reduction: `130735`
