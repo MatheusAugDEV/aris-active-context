@@ -1,3 +1,11 @@
+**F21-A7 - MCP Candidate Evidence Review Gate**
+status: `mcp_candidate_evidence_review_gate_warn`
+decision: `warn`
+candidate evidence classification: `missing`
+active submission present: `False`
+legacy evidence detected: `True`
+legacy evidence remains historical and is not used as active input
+proxima fase recomendada: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
 **F21-A6 - Obsidian MCP Human Evidence Intake**
 human evidence classification: `missing`
 human evidence hash: `sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a`

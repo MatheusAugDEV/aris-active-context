@@ -1,3 +1,12 @@
+**F21-A7 - MCP Candidate Evidence Review Gate**
+status: `mcp_candidate_evidence_review_gate_warn`
+decision: `warn`
+candidate evidence classification: `missing`
+active submission present: `False`
+legacy evidence detected: `True`
+proxima fase recomendada: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+active submission is review-only and does not authorize MCP activation
+legacy evidence remains historical and is not used as active input
 ## Current snapshot
 - Latest completed phase: `F21-A6 — Obsidian MCP Human Evidence Intake`
 - Status: `obsidian_mcp_human_evidence_intake_warn`

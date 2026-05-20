@@ -1,3 +1,16 @@
+## Current snapshot
+- Latest completed phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+- Status: `mcp_candidate_evidence_review_gate_warn`
+- Decision: `warn`
+- Active submission present: `False`
+- Candidate evidence review classification: `missing`
+- Legacy evidence detected: `True`
+- Blocker count: `0`
+- Warning count: `3`
+- Next recommended phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
 ## F21-A6 — Obsidian MCP Human Evidence Intake
 - status: `obsidian_mcp_human_evidence_intake_warn`
 - decision: `warn`

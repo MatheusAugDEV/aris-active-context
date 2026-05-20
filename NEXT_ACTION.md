@@ -1,3 +1,12 @@
+## F21-A7 — MCP Candidate Evidence Review Gate
+- status: `mcp_candidate_evidence_review_gate_warn`
+- decision: `warn`
+- next_gate: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+- reason: `active human submission is required before any MCP authorization or product/runtime work`
+- blocker_count: `0`
+- warning_count: `3`
+
+The next operational step is human submission application or evidence remediation, not MCP activation or product/runtime work.
 ## F21-A6 — Obsidian MCP Human Evidence Intake
 - status: `obsidian_mcp_human_evidence_intake_warn`
 - decision: `warn`

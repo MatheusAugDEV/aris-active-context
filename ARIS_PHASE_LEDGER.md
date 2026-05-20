@@ -1,3 +1,16 @@
+## F21-A7 — MCP Candidate Evidence Review Gate
+- status: `mcp_candidate_evidence_review_gate_warn`
+- decision: `warn`
+- phase_id: `F21-A7`
+- macroblock_id: `MB1`
+- candidate_evidence_review_classification: `missing`
+- active_submission_present: `False`
+- legacy_evidence_detected: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+
+The review gate classifies active human evidence without authorizing MCP activation.
 ## F21-A6 — Obsidian MCP Human Evidence Intake
 - status: `obsidian_mcp_human_evidence_intake_warn`
 - decision: `warn`
