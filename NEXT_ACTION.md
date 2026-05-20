@@ -1,8 +1,39 @@
 # NEXT_ACTION
 
+
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_warn`
+- decision: `warn`
+- next_gate: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+- reason: `the placeholder-safe completed candidate was reviewed locally and still requires manual completion before any authorization review`
+- blocker_count: `0`
+- warning_count: `2`
+
+The next operational step is manual completion packet work or authorization review only if real human evidence appears, not MCP activation or product/runtime work.
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_blocked`
+- decision: `blocked`
+- next_gate: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+- reason: `the placeholder-safe completed candidate was reviewed locally and still requires manual completion before any authorization review`
+- blocker_count: `1`
+- warning_count: `2`
+
+The next operational step is manual completion packet work or authorization review only if real human evidence appears, not MCP activation or product/runtime work.
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_blocked`
+- decision: `blocked`
+- next_gate: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+- reason: `the placeholder-safe completed candidate was reviewed locally and still requires manual completion before any authorization review`
+- blocker_count: `3`
+- warning_count: `2`
+
+The next operational step is manual completion packet work or authorization review only if real human evidence appears, not MCP activation or product/runtime work.
+## F21-A10 — MCP Candidate Human Evidence Completion Apply
+- status: `mcp_candidate_human_evidence_completion_apply_warn`
+- decision: `warn`
 - next_gate: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
 - reason: `F21-A10 applied placeholder-safe completion, but explicit human evidence remains required before authorization review`
 - latest_status: `mcp_candidate_human_evidence_completion_apply_warn`

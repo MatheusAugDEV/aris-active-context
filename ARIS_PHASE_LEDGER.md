@@ -1,5 +1,73 @@
 # ARIS_PHASE_LEDGER
 
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_warn`
+- decision: `warn`
+- phase_id: `F21-A11`
+- macroblock_id: `MB1`
+- completion_review_classification: `placeholder_completion_reviewed`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+- pending_fields_count: `11`
+- pending_package_created: `True`
+- blocker_count: `0`
+- warning_count: `2`
+- next_recommended_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+
+The review gate confirms the completed candidate is still placeholder-safe and does not authorize MCP activation.
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_warn`
+- decision: `warn`
+- phase_id: `F21-A11`
+- macroblock_id: `MB1`
+- completion_review_classification: `rejected_sensitive_or_unsafe`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+- pending_fields_count: `11`
+- pending_package_created: `True`
+- blocker_count: `0`
+- warning_count: `2`
+- next_recommended_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+
+The review gate confirms the completed candidate is still placeholder-safe and does not authorize MCP activation.
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_blocked`
+- decision: `blocked`
+- phase_id: `F21-A11`
+- macroblock_id: `MB1`
+- completion_review_classification: `rejected_sensitive_or_unsafe`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+- pending_fields_count: `11`
+- pending_package_created: `True`
+- blocker_count: `1`
+- warning_count: `2`
+- next_recommended_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+
+The review gate confirms the completed candidate is still placeholder-safe and does not authorize MCP activation.
+## F21-A11 — MCP Candidate Human Evidence Completion Review Gate
+- status: `mcp_candidate_human_evidence_completion_review_gate_blocked`
+- decision: `blocked`
+- phase_id: `F21-A11`
+- macroblock_id: `MB1`
+- completion_review_classification: `rejected_sensitive_or_unsafe`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+- pending_fields_count: `11`
+- pending_package_created: `True`
+- blocker_count: `3`
+- warning_count: `2`
+- next_recommended_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+
+The review gate confirms the completed candidate is still placeholder-safe and does not authorize MCP activation.
 ## F21-A10 — MCP Candidate Human Evidence Completion Apply
 
 - status: `mcp_candidate_human_evidence_completion_apply_warn`

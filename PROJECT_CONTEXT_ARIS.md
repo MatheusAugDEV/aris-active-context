@@ -1,3 +1,24 @@
+**F21-A11 - MCP Candidate Human Evidence Completion Review Gate**
+status: `mcp_candidate_human_evidence_completion_review_gate_warn`
+decision: `warn`
+completion review classification: `placeholder_completion_reviewed`
+completed candidate hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+pending package hash: `sha256:46776b39385aea15f2d2ac0f543425077e2cb48b2244c8060636121b73d0d57c`
+next recommended phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+**F21-A11 - MCP Candidate Human Evidence Completion Review Gate**
+status: `mcp_candidate_human_evidence_completion_review_gate_warn`
+decision: `warn`
+completion review classification: `rejected_sensitive_or_unsafe`
+completed candidate hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+pending package hash: `sha256:45aa9d50746038abd4f347e883f7b1971fcfe1b8ba335b82fc63525441147f8b`
+next recommended phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+**F21-A11 - MCP Candidate Human Evidence Completion Review Gate**
+status: `mcp_candidate_human_evidence_completion_review_gate_blocked`
+decision: `blocked`
+completion review classification: `rejected_sensitive_or_unsafe`
+completed candidate hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
+pending package hash: `sha256:45aa9d50746038abd4f347e883f7b1971fcfe1b8ba335b82fc63525441147f8b`
+next recommended phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
 **F21-A10 - MCP Candidate Human Evidence Completion Apply**
 status: `mcp_candidate_human_evidence_completion_apply_warn`
 decision: `warn`

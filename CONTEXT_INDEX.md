@@ -5,6 +5,23 @@
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - latest_completed_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
 - next_operational_gate: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+## F21-A11 MCP Candidate Human Evidence Completion Review Gate References
+- phase_id: `F21-A11`
+- phase_doc: `docs/fase21/f21a_a11_mcp_candidate_human_evidence_completion_review_gate.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_gate.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_gate_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_gate_report.md`
+- pending_package_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_pending_package.json`
+- pending_package_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_pending_package.md`
+- next_recommended_phase: `F21-A12 — MCP Candidate Human Evidence Manual Completion Packet`
+
+## F21-A11 Notes
+- The completed candidate remains placeholder-safe and manual-review-only.
+- Pending fields are catalogued for human completion without inventing real evidence.
+- Legacy evidence remains historical only and is not used as active input.
+- MCP activation remains blocked.
+## F21-A10 MCP Candidate Human Evidence Completion Apply References
+- phase_id: `F21-A10`
 - phase_doc: `docs/fase21/f21a_a10_mcp_candidate_human_evidence_completion_apply.md`
 - decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_apply.json`
 - summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_apply_summary.json`
