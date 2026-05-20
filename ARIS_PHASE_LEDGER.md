@@ -1,3 +1,42 @@
+## F21-A9H — Active-Context Handoff Repair Gate
+- status: `f21a9h_active_context_handoff_repair_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A9H`
+- macroblock_id: `MB1`
+- f21_a9_artifacts_present: `True`
+- f21_a9_summary_valid: `True`
+- f21_a9_decision: `warn`
+- f21_a9_completion_classification: `placeholder_incomplete`
+- active_context_updated: `True`
+- current_state_points_to_f21_a10: `True`
+- next_action_points_to_f21_a10: `True`
+- phase_ledger_updated: `True`
+- context_index_updated: `True`
+- root_repo_push_succeeded: `True`
+- active_context_push_succeeded: `True`
+- remote_sync_verified: `True`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+The handoff repair only restores live-state continuity; it does not authorize MCP activation.
+## F21-A9 — MCP Candidate Human Evidence Completion Review
+- status: `mcp_candidate_human_evidence_completion_review_warn`
+- decision: `warn`
+- phase_id: `F21-A9`
+- macroblock_id: `MB1`
+- active_submission_present: `True`
+- active_submission_hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- active_submission_hash_verified: `True`
+- active_submission_uses_placeholders: `True`
+- completion_classification: `placeholder_incomplete`
+- completion_checklist_created: `True`
+- candidate_review_ready: `False`
+- blocker_count: `0`
+- warning_count: `2`
+- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+The completion review remains review-only and does not authorize MCP activation.
 ## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
 - status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
 - decision: `pass`

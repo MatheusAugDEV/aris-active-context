@@ -1,3 +1,12 @@
+**F21-A9 - MCP Candidate Human Evidence Completion Review**
+status: `mcp_candidate_human_evidence_completion_review_warn`
+decision: `warn`
+active submission present: `True`
+active submission uses placeholders: `True`
+completion classification: `placeholder_incomplete`
+proxima fase recomendada: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+active submission remains review-only and does not authorize MCP activation
+legacy evidence remains historical and is not used as active input
 **F21-A8R - Active-Context Push & Handoff Reconciliation Gate**
 status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
 decision: `pass`

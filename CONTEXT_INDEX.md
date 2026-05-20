@@ -1,3 +1,30 @@
+## F21-A9H Active-Context Handoff Repair Gate References
+- phase_id: `F21-A9H`
+- phase_doc: `docs/fase21/f21a_a9h_active_context_handoff_repair_gate.md`
+- decision_artifact: `artifacts/f21/f21a9h_active_context_handoff_repair_gate.json`
+- summary_artifact: `artifacts/f21/f21a9h_active_context_handoff_repair_gate_summary.json`
+- report_artifact: `artifacts/f21/f21a9h_active_context_handoff_repair_gate_report.md`
+- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+## F21-A9H Notes
+- F21-A9 remains warn and placeholder_incomplete.
+- The live handoff is repaired so the next pointer stays at F21-A10.
+- MCP activation remains blocked.
+## F21-A9 MCP Candidate Human Evidence Completion Review References
+- phase_id: `F21-A9`
+- phase_doc: `docs/fase21/f21a_a9_mcp_candidate_human_evidence_completion_review.md`
+- decision_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review.json`
+- summary_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_summary.json`
+- report_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_review_report.md`
+- checklist_json_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_checklist.json`
+- checklist_md_artifact: `artifacts/f21/mcp_candidate_human_evidence_completion_checklist.md`
+- active_submission_artifact: `artifacts/f21/obsidian_mcp_human_evidence_submission.json`
+- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+## F21-A9 Notes
+- Active submission remains placeholder/manual and is still review-only.
+- Legacy evidence remains historical and does not override the active submission path.
+- MCP activation remains blocked.
 ## F21-A8R Active-Context Push & Handoff Reconciliation Gate References
 - phase_id: `F21-A8R`
 - phase_doc: `docs/fase21/f21a_a8r_active_context_push_handoff_reconciliation_gate.md`

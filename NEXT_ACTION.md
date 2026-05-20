@@ -1,3 +1,21 @@
+## F21-A9H — Active-Context Handoff Repair Gate
+- status: `f21a9h_active_context_handoff_repair_gate_ready`
+- decision: `pass`
+- next_gate: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- reason: `the F21-A9 completion review remains warn/placeholder_incomplete, and the live handoff is repaired to point to F21-A10 without authorizing MCP`
+- blocker_count: `0`
+- warning_count: `0`
+
+The next operational step is human evidence completion apply, not MCP activation or product/runtime work.
+## F21-A9 — MCP Candidate Human Evidence Completion Review
+- status: `mcp_candidate_human_evidence_completion_review_warn`
+- decision: `warn`
+- next_gate: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- reason: `the active submission remains placeholder/incomplete and must be completed with explicit local evidence before any authorization review`
+- blocker_count: `0`
+- warning_count: `2`
+
+The next operational step is human evidence completion apply or remediation, not MCP activation or product/runtime work.
 ## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
 - status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
 - decision: `pass`

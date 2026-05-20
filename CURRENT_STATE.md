@@ -1,3 +1,66 @@
+## F21-A9H — Active-Context Handoff Repair Gate
+- status: `f21a9h_active_context_handoff_repair_gate_ready`
+- decision: `pass`
+- phase_id: `F21-A9H`
+- macroblock_id: `MB1`
+- f21_a9_artifacts_present: `True`
+- f21_a9_summary_valid: `True`
+- f21_a9_decision: `warn`
+- f21_a9_completion_classification: `placeholder_incomplete`
+- f21_a9_next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- active_context_updated: `True`
+- current_state_points_to_f21_a10: `True`
+- next_action_points_to_f21_a10: `True`
+- phase_ledger_updated: `True`
+- context_index_updated: `True`
+- root_repo_push_succeeded: `True`
+- active_context_push_succeeded: `True`
+- remote_sync_verified: `True`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- f21b_start_allowed: `False`
+- f33_start_allowed: `False`
+- r0_start_allowed: `False`
+- token_saving_claim_allowed: `False`
+- protected_surfaces_modified: `False`
+- blocker_count: `0`
+- warning_count: `0`
+- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+## Current snapshot
+- Latest completed phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+- Status: `warn`
+- Decision: `warn`
+- Active submission present: `True`
+- Active submission uses placeholders: `True`
+- Completion classification: `placeholder_incomplete`
+- Candidate review ready: `False`
+- MCP activation allowed: `False`
+- Next recommended phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+- active-context repair completed, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
+## Current snapshot
+- Latest completed phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+- Status: `mcp_candidate_human_evidence_completion_review_warn`
+- Decision: `warn`
+- Active submission present: `True`
+- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
+- Active submission uses placeholders: `True`
+- Completion classification: `placeholder_incomplete`
+- Candidate review ready: `False`
+- Blocker count: `0`
+- Warning count: `2`
+- Next recommended phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+
+- active-context final update, commit hash, and push reporting are explicit
+- historical snapshots below remain preserved
 ## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
 - status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
 - decision: `pass`
