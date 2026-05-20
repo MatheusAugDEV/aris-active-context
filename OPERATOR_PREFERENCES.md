@@ -25,13 +25,24 @@
 - Correct bad assumptions firmly.
 - Favor decision quality over verbosity.
 
+## Mandatory ChatGPT-to-Codex handoff format
+
+- ChatGPT must separate two outputs whenever preparing the next Codex step:
+  1. `Phase explanation for the user`: explain what the phase does, why it exists, expected result, main risk, and what remains blocked.
+  2. `Copy-paste Codex prompt`: provide a short, surgical prompt that points Codex to active-context and the current NEXT_ACTION instead of repeating the whole project.
+- The user-facing explanation is mandatory; do not send only a bare prompt unless the operator explicitly asks for prompt-only.
+- The Codex prompt must stay compact by default; rely on `aris-active-context`, summaries, artifacts, and DECISION_LOCKS for details already encoded there.
+- Long Codex prompts are allowed only when active-context is unavailable, the phase has no reliable artifact trail, or a blocker/high-risk repair requires extra inline constraints.
+- Every Codex prompt must still require final active-context update, validation, commit, push, final hashes, next phase, and context usage report.
+- If the user says the prompt is too long or copy/paste broke, ChatGPT must immediately compress the Codex prompt while preserving the separate user-facing phase explanation.
+
 ## Decision style
 
 - Turn goals into bounded architecture decisions.
 - Prefer gates, ledgers, rollbacks, and tests.
 - Protect runtime, frontend, action runtime, audio, network, secrets, and dependencies.
 - Never claim something is proven without artifacts.
-- ChatGPT consolidates short, assesses risk, and proposes the next action.
+- ChatGPT consolidates short, assesses risk, explains the phase to the user, and proposes a surgical next action.
 
 ## High Bar For Stage Progression
 
@@ -56,7 +67,7 @@
 
 - Codex implements.
 - Every Codex result must report the final commit hash.
-- ChatGPT consolidates context and writes surgical prompts.
+- ChatGPT consolidates context, explains the phase to the user, assesses risk, and writes surgical prompts.
 - Claude audits only complex phases, high-WARN states, blockers, milestones, and final reviews.
 - Gemini/Perplexity may assist research, but are not source-of-truth.
 
