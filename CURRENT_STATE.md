@@ -1,3 +1,30 @@
+## F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake
+- Latest completed phase: `F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake`
+- status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
+- decision: `warn`
+- phase_id: `F21-A22`
+- macroblock_id: `MB1`
+- evidence_classification: `authorization_evidence_intake_missing`
+- template_created: `True`
+- checklist_created: `True`
+- evidence_present: `False`
+- authorization_input_present: `False`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- legacy_evidence_detected: `True`
+- legacy_evidence_used_as_input: `False`
+- context_index_live_block_stale_detected: `True`
+- context_index_live_block_repaired: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation`
+
+- active-context update is live-state only and keeps MCP blocked
+- template and checklist remain placeholders until real human evidence appears
+
 ## F21-A21 — MCP Candidate Human Evidence Authorization Review
 - Latest completed phase: `F21-A21 — MCP Candidate Human Evidence Authorization Review`
 - status: `mcp_candidate_human_evidence_authorization_review_warn`

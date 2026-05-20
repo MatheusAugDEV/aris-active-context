@@ -1,3 +1,13 @@
+## F21-A22 — MCP Candidate Human Evidence Authorization Evidence Intake
+- status: `mcp_candidate_human_evidence_authorization_evidence_intake_warn`
+- decision: `warn`
+- next_gate: `F21-A23 — MCP Candidate Human Evidence Authorization Evidence Validation`
+- reason: `the authorization evidence intake materialized a safe template and checklist and still requires real human evidence before validation can proceed`
+- blocker_count: `0`
+- warning_count: `3`
+
+The next operational step is evidence validation only if real human evidence appears, not MCP activation or product/runtime work.
+
 ## F21-A21 — MCP Candidate Human Evidence Authorization Review
 - status: `mcp_candidate_human_evidence_authorization_review_warn`
 - decision: `warn`
