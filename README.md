@@ -1,4 +1,28 @@
 ## Current snapshot
+- Latest completed phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+- Status: `artifact_reference_only_controlled_apply_final_readiness_gate_warn`
+- Final readiness class: `ready_with_warnings_for_controlled_apply_authorization_package`
+- Readiness for future authorization package: `True`
+- Controlled apply allowed now: `False`
+- Real apply allowed now: `False`
+- Live context rewrite allowed now: `False`
+- Bedrock verdict: `WARN`
+- Next authorized phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
+
+Runtime, product promotion, network, MCP, Obsidian bulk read, and vault write remain blocked.
+## Current snapshot
+- Latest completed phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+- Status: `artifact_reference_only_controlled_apply_final_readiness_gate_blocked`
+- Final readiness class: `blocked_before_authorization_package`
+- Readiness for future authorization package: `False`
+- Controlled apply allowed now: `False`
+- Real apply allowed now: `False`
+- Live context rewrite allowed now: `False`
+- Bedrock verdict: `WARN`
+- Next authorized phase: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
+
+Runtime, product promotion, network, MCP, Obsidian bulk read, and vault write remain blocked.
+## Current snapshot
 - Latest completed phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`.
 - Next authorized phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`.
 - P18 dry-run verified: `True`.

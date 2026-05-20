@@ -1,3 +1,81 @@
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
+when_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_samples.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_preconditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_simulated_surfaces.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_rollback_map.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_report.md
+- docs/research/artifact_reference_only_controlled_apply_dry_run.md
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_report.md
+- docs/research/artifact_reference_only_controlled_apply_final_readiness_gate.md
+notes:
+- final readiness only; no real apply, live rewrite, or artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package`
+## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
+when_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_samples.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_preconditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_simulated_surfaces.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_rollback_map.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_report.md
+- docs/research/artifact_reference_only_controlled_apply_dry_run.md
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_report.md
+- docs/research/artifact_reference_only_controlled_apply_final_readiness_gate.md
+notes:
+- final readiness only; no real apply, live rewrite, or artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P20-R1 — Artifact Reference-Only Controlled Apply Final Readiness Repair Review`
 ## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
 when_to_use: Validate the P18 dry-run evidence, rollback pairing, warning carry-forward, and Bedrock-compatible metadata before the final readiness gate.
 read_first:
