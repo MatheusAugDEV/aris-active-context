@@ -1,3 +1,11 @@
+## ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate
+- status: `artifact_reference_only_controlled_apply_compaction_repair_execution_blocked`
+- next authorized phase: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
+- actual_token_reduction: `0`
+- blocker_count: `5`
+- rollback_ready: `True`
+- note: `keep the repair conservative and return to preflight state; do not advance to P29-R4`
+
 ## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
 - status: `artifact_reference_only_controlled_apply_compaction_repair_preflight_warn`
 - next authorized phase: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`

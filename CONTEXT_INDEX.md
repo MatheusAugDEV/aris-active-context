@@ -1,3 +1,17 @@
+## ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate
+- status: `artifact_reference_only_controlled_apply_compaction_repair_execution_blocked`
+- blocker_count: `5`
+- actual_token_reduction: `0`
+- rollback_ready: `True`
+- next_phase_recommendation: `ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate`
+
+## New P29-R3 artifacts
+- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_gate_decision.json`
+- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_gate_summary.json`
+- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_post_hashes.json`
+- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_token_delta.json`
+- `artifacts/context/artifact_reference_only_controlled_apply_compaction_repair_execution_rollback_package.json`
+
 ## ARIS-CONTEXT-P29-R2 — Artifact Reference-Only Controlled Apply Compaction Repair Preflight Gate
 when_to_use: Validate and prepare the compaction repair preflight without executing any rewrite.
 
