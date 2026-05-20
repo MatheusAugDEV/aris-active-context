@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A37 — Real MCP Candidate Config Review Or Lock`
+- reason: `the human signoff was accepted for review-only continuation and config review or lock is now the first remaining gate`
+
+- future_reentry_option: `Proceed to config review or lock only after the signoff remains review-only`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A36 — Real MCP Candidate Human Authorization Signoff Gate`
 - reason: `human authorization signoff is the first missing gate; approval and activation remain blocked`
 

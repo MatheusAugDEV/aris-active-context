@@ -1,3 +1,31 @@
+## F21-A36 — Real MCP Candidate Human Authorization Signoff Gate
+- status: `mcp_real_candidate_human_authorization_signoff_warn`
+- decision: `warn`
+- signoff_classification: `human_signoff_accepted_for_review_only`
+- human_signoff_present: `True`
+- human_signoff_valid: `True`
+- source_safety_ready: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `6`
+- remaining_authorization_gates_count: `6`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A37 — Real MCP Candidate Config Review Or Lock`
+
+Human authorization signoff is review-only and does not authorize MCP activation.
+
 ## F21-A35 — Real MCP Candidate Authorization Decision Planning
 - status: `mcp_real_candidate_authorization_decision_planning_warn`
 - decision: `warn`

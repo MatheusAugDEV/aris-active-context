@@ -1,3 +1,13 @@
+## F21-A36 Real MCP Candidate Human Authorization Signoff Gate References
+- phase_id: `F21-A36`
+- next_real_action: `F21-A37 — Real MCP Candidate Config Review Or Lock`
+- signoff_hash: `sha256:c308e92a4f9c4f97a1011e701032708db8d005d3eae0ebe4459606eac77134f8`
+- manifest_hash: `sha256:21b4a300abc117cd95a8d6264646a1b38e3f71dc1fa58af24a187030158721cb`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Human authorization signoff is review-only and does not authorize MCP activation.
+
 ## F21-A35 Real MCP Candidate Authorization Decision Planning References
 - phase_id: `F21-A35`
 - next_real_action: `F21-A36 — Real MCP Candidate Human Authorization Signoff Gate`
