@@ -1,3 +1,29 @@
+## F21-A35 — Real MCP Candidate Authorization Decision Planning
+- Latest completed phase: `F21-A35 — Real MCP Candidate Authorization Decision Planning`
+- status: `mcp_real_candidate_authorization_decision_planning_warn`
+- decision: `warn`
+- phase_id: `F21-A35`
+- macroblock_id: `MB1`
+- planning_classification: `authorization_decision_plan_ready`
+- source_safety_ready: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `8`
+- missing_authorization_gates_count: `8`
+- planned_gate_order_count: `8`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_repository_or_source_url: `https://github.com/gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A36 — Real MCP Candidate Human Authorization Signoff Gate`
+
+This phase materializes the authorization decision plan only; it does not approve or activate MCP.
+
 ## F21-A34 — Real MCP Candidate Authorization Readiness Review
 - Latest completed phase: `F21-A34 — Real MCP Candidate Authorization Readiness Review`
 - status: `mcp_real_candidate_authorization_readiness_review_warn`

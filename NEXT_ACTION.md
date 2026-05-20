@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A36 — Real MCP Candidate Human Authorization Signoff Gate`
+- reason: `human authorization signoff is the first missing gate; approval and activation remain blocked`
+
+- future_reentry_option: `Proceed to human authorization signoff only after the plan is acknowledged`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A35 — Real MCP Candidate Authorization Decision Planning`
 - reason: `source safety is ready, but authorization decision/planning gates are still missing and MCP activation remains blocked`
 

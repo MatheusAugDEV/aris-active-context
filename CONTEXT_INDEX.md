@@ -1,3 +1,13 @@
+## F21-A35 Real MCP Candidate Authorization Decision Planning References
+- phase_id: `F21-A35`
+- next_real_action: `F21-A36 — Real MCP Candidate Human Authorization Signoff Gate`
+- planning_hash: `sha256:ebac5dcb18a1c05fba7e4a411237ed634d098c6f1bceef6209f46c8f0262fed8`
+- manifest_hash: `sha256:c38ebd4b656e2386a0828e98e02ddb696fce40de1dce3bb8642ee186c22c88a7`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Authorization decision planning is review-only and does not authorize MCP activation.
+
 ## F21-A34 Real MCP Candidate Authorization Readiness Review References
 - phase_id: `F21-A34`
 - next_real_action: `F21-A35 — Real MCP Candidate Authorization Decision Planning`
