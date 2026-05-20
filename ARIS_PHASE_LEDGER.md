@@ -1,3 +1,35 @@
+## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
+- status: `artifact_reference_only_controlled_apply_authorization_package_warn`
+- previous_phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+- previous_phase_short_summary: `P20 consolidated the P15→P20 chain with WARN readiness, ready_with_warnings_for_controlled_apply_authorization_package, 12 warnings, zero blockers, historical duplicate status warning preserved, and Bedrock-compatible metadata while keeping controlled apply, real apply, live context rewrite, runtime mutation, product promotion, network, dependency install, MCP, Obsidian bulk read, and vault write blocked.`
+- next_phase_short_explanation: `P22 should review the authorization package and human-signing path; P21 packages evidence only and does not grant authorization or execute apply.`
+- p20_final_readiness_verified: `True`
+- p15_to_p20_chain_verified: `True`
+- authorization_package_created: `True`
+- authorization_package_class: `authorization_package_ready_with_warnings`
+- authorization_granted_now: `False`
+- human_authorization_required: `True`
+- human_authorization_present: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- controlled_apply_allowed_now: `False`
+- real_apply_allowed_now: `False`
+- live_context_rewrite_allowed_now: `False`
+- artifact_body_mutation_allowed_now: `False`
+- runtime_mutation_allowed_now: `False`
+- product_promotion_allowed_now: `False`
+- network_allowed_now: `False`
+- dependency_install_allowed_now: `False`
+- mcp_activation_allowed_now: `False`
+- obsidian_bulk_read_allowed_now: `False`
+- vault_write_allowed_now: `False`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
+
+P21 records a future-only authorization package and does not authorize any apply or protected-surface mutation.
 ## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
 - status: `artifact_reference_only_controlled_apply_final_readiness_gate_warn`
 - previous_phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`

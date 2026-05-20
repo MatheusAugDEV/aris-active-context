@@ -1,3 +1,43 @@
+## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
+when_to_use: Package the deterministic P15→P20 evidence into a future authorization package without granting authorization now.
+read_first:
+- BOOT.md
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/DECISION_LOCKS.md
+- aris-active-context/CONTEXT_INDEX.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_samples.json
+- artifacts/context/artifact_reference_only_controlled_apply_plan_validation_harness_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_preconditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_simulated_surfaces.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_rollback_map.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_report.md
+- docs/research/artifact_reference_only_controlled_apply_dry_run.md
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_harness_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_results.json
+- artifacts/context/artifact_reference_only_controlled_apply_dry_run_validation_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_readiness_report.md
+- docs/research/artifact_reference_only_controlled_apply_final_readiness_gate.md
+notes:
+- package only; no real apply, no human signature, no protected-surface mutation
+- historical duplicate status warning preserved as warning, not blocker
+- next recommended phase: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
 ## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
 when_to_use: Consolidate the P15→P19 artifact-reference chain and decide whether a future controlled-apply authorization package is warranted.
 read_first:

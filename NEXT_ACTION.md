@@ -1,3 +1,18 @@
+## ARIS-CONTEXT-P21 — Artifact Reference-Only Controlled Apply Authorization Package
+- status: `artifact_reference_only_controlled_apply_authorization_package_warn`
+- authorization_package_class: `authorization_package_ready_with_warnings`
+- authorization_package_created: `True`
+- authorization_granted_now: `False`
+- human_authorization_required: `True`
+- human_authorization_present: `False`
+- controlled_apply_allowed_now: `False`
+- real_apply_allowed_now: `False`
+- live_context_rewrite_allowed_now: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P22 — Artifact Reference-Only Controlled Apply Authorization Package Review Gate`
+
+P21 only packages evidence; it does not authorize apply, live rewrite, or any protected-surface mutation.
 ## ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate
 - status: `artifact_reference_only_controlled_apply_final_readiness_gate_warn`
 - final_readiness_class: `ready_with_warnings_for_controlled_apply_authorization_package`
