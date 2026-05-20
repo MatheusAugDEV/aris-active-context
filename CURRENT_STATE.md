@@ -1,480 +1,91 @@
-## F21-A10 — MCP Candidate Human Evidence Completion Apply
-- Latest completed phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
-- status: `mcp_candidate_human_evidence_completion_apply_warn`
-- decision: `warn`
-- phase_id: `F21-A10`
-- macroblock_id: `MB1`
-- completion_apply_classification: `placeholder_completion_applied`
-- Completion classification: `placeholder_completion_applied`
-- manual_completion_required: `True`
-- ready_for_authorization_review: `False`
-- candidate_review_ready: `False`
-- candidate_approval_allowed: `False`
-- MCP activation allowed: `False`
-- active_submission_present: `True`
-- active_submission_hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
-- completed_candidate_hash: `sha256:8592276f5d418e9ecc003f1b7d2617d8111d418b4d88cb1ed4f358504b49be1c`
-- source_submission_uses_placeholders: `True`
-- completed_candidate_uses_placeholders: `True`
-- legacy_evidence_detected: `True`
-- legacy_evidence_used_as_input: `False`
-- pending_fields_count: `11`
-- blocker_count: `0`
-- warning_count: `2`
-- next_recommended_phase: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+# CURRENT_STATE
 
-- active-context update is live-state only and keeps MCP blocked
-- historical snapshots below remain preserved
-## F21-A9H — Active-Context Handoff Repair Gate
-- status: `f21a9h_active_context_handoff_repair_gate_ready`
-- decision: `pass`
-- phase_id: `F21-A9H`
-- macroblock_id: `MB1`
-- f21_a9_artifacts_present: `True`
-- f21_a9_summary_valid: `True`
-- f21_a9_decision: `warn`
-- f21_a9_completion_classification: `placeholder_incomplete`
-- f21_a9_next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
-- active_context_updated: `True`
-- current_state_points_to_f21_a10: `True`
-- next_action_points_to_f21_a10: `True`
-- phase_ledger_updated: `True`
-- context_index_updated: `True`
-- root_repo_push_succeeded: `True`
-- active_context_push_succeeded: `True`
-- remote_sync_verified: `True`
-- mcp_activation_allowed: `False`
-- mcp_config_write_allowed: `False`
-- vault_write_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f21b_start_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- token_saving_claim_allowed: `False`
-- protected_surfaces_modified: `False`
-- blocker_count: `0`
-- warning_count: `0`
-- next_recommended_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+## Live operational state
 
-## Current snapshot
-- Latest completed phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
-- Status: `warn`
-- Decision: `warn`
-- Active submission present: `True`
-- Active submission uses placeholders: `True`
-- Completion classification: `placeholder_incomplete`
-- Candidate review ready: `False`
-- MCP activation allowed: `False`
-- Next recommended phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- latest_completed_phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+- latest_status: `mcp_candidate_human_evidence_completion_apply_warn`
+- latest_decision: `warn`
+- next_operational_gate: `F21-A11 — MCP Candidate Human Evidence Completion Review Gate`
+- manual_completion_required: `true`
+- candidate_review_ready: `false`
+- candidate_approval_allowed: `false`
+- mcp_activation_allowed: `false`
+- runtime_mutation_allowed: `false`
+- product_promotion_allowed: `false`
+- customer_real_use_allowed: `false`
 
-- active-context repair completed, commit hash, and push reporting are explicit
-- historical snapshots below remain preserved
-## Current snapshot
-- Latest completed phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
-- Status: `mcp_candidate_human_evidence_completion_review_warn`
-- Decision: `warn`
-- Active submission present: `True`
-- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
-- Active submission uses placeholders: `True`
-- Completion classification: `placeholder_incomplete`
-- Candidate review ready: `False`
-- Blocker count: `0`
-- Warning count: `2`
-- Next recommended phase: `F21-A10 — MCP Candidate Human Evidence Completion Apply`
+The active operational track remains MB1/F21. The active submission still uses placeholders and must be reviewed/completed with explicit human evidence before any MCP authorization review.
 
-- active-context final update, commit hash, and push reporting are explicit
-- historical snapshots below remain preserved
-## F21-A8R — Active-Context Push & Handoff Reconciliation Gate
-- status: `f21a8r_active_context_push_handoff_reconciliation_gate_ready`
-- decision: `pass`
-- root_repo_last_commit: `30cecee44bf291a2963b6d085473f76b3b1fe705`
-- active_context_last_commit: `a5141c6831fab356e62b67d4ea0a21578189c05d`
-- root_repo_push_succeeded: `True`
-- active_context_push_succeeded: `True`
-- remote_sync_verified: `True`
-- next_recommended_phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+## Future architecture decision recorded
 
-## Current snapshot
-- Latest completed phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
-- Status: `mcp_candidate_human_evidence_submission_apply_warn`
-- Decision: `warn`
-- Active submission created: `True`
-- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
-- Active submission uses placeholders: `True`
-- Candidate review ready: `False`
-- Previous active submission present: `False`
-- Legacy evidence detected: `True`
-- Blocker count: `0`
-- Warning count: `2`
-- Next recommended phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+- decision_id: `MB8_MB9_INFERNUS_FINAL_CONCEPT`
+- status: `pass_with_warns_recorded`
+- decision: `ADOTAR_COM_GATES`
+- scope: `future roadmap architecture only`
+- implementation_allowed_now: `false`
+- runtime_mutation_allowed: `false`
+- bot_implementation_allowed: `false`
+- harness_implementation_allowed: `false`
+- productization_allowed: `false`
 
-- active-context final update, commit hash, and push reporting are explicit
-- historical snapshots below remain preserved
-## Current snapshot
-- Latest completed phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
-- Status: `mcp_candidate_human_evidence_submission_apply_warn`
-- Decision: `warn`
-- Active submission created: `True`
-- Active submission hash: `sha256:dfe3253beba38e9cd8741c1ea0eace3694a4d948b84049ffd5a70f4fbd5e6b92`
-- Active submission uses placeholders: `True`
-- Candidate review ready: `False`
-- Previous active submission present: `False`
-- Legacy evidence detected: `True`
-- Blocker count: `0`
-- Warning count: `2`
-- Next recommended phase: `F21-A9 — MCP Candidate Human Evidence Completion Review`
+### MB8 — ARIS Infernus Lab
 
-- active-context final update, commit hash, and push reporting are explicit
-- historical snapshots below remain preserved
-## Current snapshot
-- Latest completed phase: `F21-A7 — MCP Candidate Evidence Review Gate`
-- Status: `mcp_candidate_evidence_review_gate_warn`
-- Decision: `warn`
-- Active submission present: `False`
-- Candidate evidence review classification: `missing`
-- Legacy evidence detected: `True`
-- Blocker count: `0`
-- Warning count: `3`
-- Next recommended phase: `F21-A8 — MCP Candidate Human Evidence Submission Apply`
+- subtitle: `Controlled Adversarial Gauntlet, Failure Injection & Synthetic Users`
+- concept: `Os 13 Pecados Capitais do ARIS`
+- role: `testar o ARIS inteiro sob uso realista, ambiguidade, ataque, falha, custo, deriva, vazamento interno, falso sucesso, replay, mutação e auditoria`
 
-- active-context final update, commit hash, and push reporting are explicit
-- historical snapshots below remain preserved
-## F21-A6 — Obsidian MCP Human Evidence Intake
-- status: `obsidian_mcp_human_evidence_intake_warn`
-- decision: `warn`
-- human_evidence_present: `False`
-- human_evidence_classification: `missing`
-- human_evidence_hash: `sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a`
-- human_decision_kind: `PENDING`
-- evidence_schema_defined: `True`
-- required_fields_defined: `True`
-- forbidden_fields_defined: `True`
-- redaction_policy_defined: `True`
-- template_created: `True`
-- f21_a5_warning_reconciled: `True`
-- f21_a5_warning_count_snapshot_mismatch: `True`
-- blocker_count: `0`
-- warning_count: `3`
-- next_recommended_phase: `F21-A7 — MCP Candidate Evidence Review Gate`
+### MB9 — ARIS Final Crisol
 
-Human evidence intake is review-only and does not authorize MCP activation.
-## F21-A6 — Obsidian MCP Human Evidence Intake
-- status: `obsidian_mcp_human_evidence_intake_blocked`
-- decision: `blocked`
-- human_evidence_present: `True`
-- human_evidence_classification: `rejected_sensitive_or_unsafe`
-- human_evidence_hash: `sha256:19bb985d2f2fe2a9a32e45cf59e7a1b0615cefa1bbd117dc1f34d657e88647d8`
-- human_decision_kind: `PENDING`
-- evidence_schema_defined: `True`
-- required_fields_defined: `True`
-- forbidden_fields_defined: `True`
-- redaction_policy_defined: `True`
-- template_created: `True`
-- f21_a5_warning_reconciled: `True`
-- f21_a5_warning_count_snapshot_mismatch: `True`
-- blocker_count: `2`
-- warning_count: `2`
-- next_recommended_phase: `F21-A7 — MCP Candidate Evidence Review Gate`
-
-Human evidence intake is review-only and does not authorize MCP activation.
-## F21-A5 — Source-of-Truth Precedence Gate
-- status: `source_of_truth_precedence_gate_warn`
-- decision: `warn`
-- phase_id: `F21-A5`
-- macroblock_id: `MB1`
-- source_of_truth_precedence_defined: `True`
-- hard_locks_ranked_first: `True`
-- next_action_ranked_operational_first: `True`
-- current_state_ranked_live_state: `True`
-- phase_artifacts_ranked_evidence: `True`
-- official_docs_ranked_below_artifacts: `True`
-- project_context_non_override: `True`
-- obsidian_consultive_only: `True`
-- chat_memory_non_authoritative: `True`
-- external_input_untrusted: `True`
-- context_index_reference_only: `True`
-- phase_ledger_historical_only: `True`
-- stale_roadmap_cannot_override: `True`
-- readme_history_cannot_override: `True`
-- conflict_resolution_policy_defined: `True`
-- conflict_cases_evaluated: `7`
-- unresolved_conflict_blocks: `False`
-- token_saving_claim_allowed: `False`
-- token_saving_measured: `not_measured`
-- token_saving_evidence: `none`
-- blocker_count: `0`
-- warning_count: `0`
-proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
-
-Hard locks outrank lower tiers and active-context remains live.
-## F21-A5 — Source-of-Truth Precedence Gate
-- status: `source_of_truth_precedence_gate_ready`
-- decision: `pass`
-- phase_id: `F21-A5`
-- macroblock_id: `MB1`
-- source_of_truth_precedence_defined: `True`
-- hard_locks_ranked_first: `True`
-- next_action_ranked_operational_first: `True`
-- current_state_ranked_live_state: `True`
-- phase_artifacts_ranked_evidence: `True`
-- official_docs_ranked_below_artifacts: `True`
-- project_context_non_override: `True`
-- obsidian_consultive_only: `True`
-- chat_memory_non_authoritative: `True`
-- external_input_untrusted: `True`
-- context_index_reference_only: `True`
-- phase_ledger_historical_only: `True`
-- stale_roadmap_cannot_override: `True`
-- readme_history_cannot_override: `True`
-- conflict_resolution_policy_defined: `True`
-- conflict_cases_evaluated: `7`
-- unresolved_conflict_blocks: `False`
-- token_saving_claim_allowed: `False`
-- token_saving_measured: `not_measured`
-- token_saving_evidence: `none`
-- blocker_count: `0`
-- warning_count: `0`
-proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
-
-Hard locks outrank lower tiers and active-context remains live.
-## F21-A5 — Source-of-Truth Precedence Gate
-- status: `source_of_truth_precedence_gate_blocked`
-- decision: `blocked`
-- phase_id: `F21-A5`
-- macroblock_id: `MB1`
-- source_of_truth_precedence_defined: `False`
-- hard_locks_ranked_first: `True`
-- next_action_ranked_operational_first: `True`
-- current_state_ranked_live_state: `True`
-- phase_artifacts_ranked_evidence: `True`
-- official_docs_ranked_below_artifacts: `True`
-- project_context_non_override: `True`
-- obsidian_consultive_only: `True`
-- chat_memory_non_authoritative: `True`
-- external_input_untrusted: `True`
-- context_index_reference_only: `True`
-- phase_ledger_historical_only: `True`
-- stale_roadmap_cannot_override: `True`
-- readme_history_cannot_override: `True`
-- conflict_resolution_policy_defined: `True`
-- conflict_cases_evaluated: `7`
-- unresolved_conflict_blocks: `True`
-- token_saving_claim_allowed: `False`
-- token_saving_measured: `not_measured`
-- token_saving_evidence: `none`
-- blocker_count: `1`
-- warning_count: `0`
-proxima fase recomendada: `F21-A6 — Obsidian MCP Human Evidence Intake`
-
-Hard locks outrank lower tiers and active-context remains live.
-## F21-A4 — Context Budget Policy Gate
-- status: `context_budget_policy_gate_ready`
-- decision: `pass`
-- phase_id: `F21-A4`
-- macroblock_id: `MB1`
-- context_budget_policy_defined: `True`
-- active_context_required: `True`
-- decision_locks_required: `True`
-- next_action_required: `True`
-- summary_first_policy_defined: `True`
-- query_first_policy_defined: `True`
-- docs_targeted_only: `True`
-- archive_bulk_read_blocked: `True`
-- chat_memory_non_authoritative: `True`
-- external_input_untrusted: `True`
-- full_source_read_requires_reason: `True`
-- token_saving_claim_allowed: `False`
-- token_saving_measured: `not_measured`
-- token_saving_evidence: `none`
-- blocker_count: `0`
-- warning_count: `0`
-- next_recommended_phase: `F21-A5 — Source-of-Truth Precedence Gate`
-
-F21-A4 formalizes the context budget policy without claiming measured savings.
-## F21-A3 — Claude Code Instruction Alignment
-- status: `claude_code_instruction_alignment_ready`
-- decision: `pass`
-- phase_id: `F21-A3`
-- macroblock_id: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- f21_a1_verified: `True`
-- f21_a2_verified: `True`
-- claude_md_found: `True`
-- claude_md_modified: `True`
-- claude_code_alignment_verified: `True`
-- agents_md_alignment_verified: `True`
-- codex_skill_alignment_verified: `True`
-- active_context_read_first_required: `True`
-- source_precedence_enforced: `True`
-- untrusted_input_boundary_enforced: `True`
-- obsidian_query_first_only: `True`
-- bulk_read_blocked: `True`
-- token_saving_claim_without_evidence_blocked: `True`
-- context_usage_report_required: `True`
-- final_active_context_update_required: `True`
-- commit_push_hash_required: `True`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f21b_start_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- mcp_activation_allowed: `False`
-- vault_write_allowed: `False`
-- blocker_count: `0`
-- warning_count: `0`
-- next_recommended_phase: `F21-A4 — Context Budget Policy Gate`
-
-F21-A3 aligns Claude Code instructions with the active-context contract, source precedence, and final handoff requirements without promoting runtime, product, or customer-real execution.
-
-## F21-A2 — Codex Skill Alignment Review
-- status: `codex_skill_alignment_review_warn`
-- decision: `warn`
-- phase_id: `F21-A2`
-- macroblock_id: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- f21_a1_verified: `True`
-- active_context_read_first_required: `True`
-- source_precedence_enforced: `True`
-- untrusted_input_boundary_enforced: `True`
-- obsidian_query_first_only: `True`
-- bulk_read_blocked: `True`
-- prompt_final_active_context_update_required: `True`
-- commit_push_hash_required: `True`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f21b_start_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- mcp_activation_allowed: `False`
-- vault_write_allowed: `False`
-- blocker_count: `0`
-- warning_count: `3`
-- next_recommended_phase: `F21-A3 — Claude Code Instruction Alignment`
-
-F21-A2 aligns the active-context boundary review to the Codex skill, the Claude contract, and the source-of-truth policy without promoting runtime, product, or customer-real execution.
-## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
-- status: `f21_a1_context_source_access_policy_ready_with_warnings`
-- decision: `warn`
-- phase_id: `F21-A1`
-- macroblock_id: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- active_context_read_first_verified: `True`
-- source_precedence_policy_defined: `True`
-- untrusted_input_boundary_defined: `True`
-- obsidian_query_first_only: `True`
-- bulk_read_blocked: `True`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- mcp_activation_allowed: `False`
-- vault_write_allowed: `False`
-- blocker_count: `0`
-- warning_count: `4`
-- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
-
-F21-A1 is now materialized as the live context boundary gate for MB1.
-
-## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
-- status: `f21_a1_context_source_access_policy_blocked`
-- decision: `blocked`
-- phase_id: `F21-A1`
-- macroblock_id: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- active_context_read_first_verified: `False`
-- source_precedence_policy_defined: `False`
-- untrusted_input_boundary_defined: `True`
-- obsidian_query_first_only: `True`
-- bulk_read_blocked: `True`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- mcp_activation_allowed: `False`
-- vault_write_allowed: `False`
-- blocker_count: `2`
-- warning_count: `4`
-- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
-
-F21-A1 is now materialized as the live context boundary gate for MB1.
-
-## F21-A1 — Context Source Access Policy & Untrusted Input Boundary
-- status: `f21_a1_context_source_access_policy_blocked`
-- decision: `blocked`
-- phase_id: `F21-A1`
-- macroblock_id: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- active_context_read_first_verified: `False`
-- source_precedence_policy_defined: `False`
-- untrusted_input_boundary_defined: `False`
-- obsidian_query_first_only: `True`
-- bulk_read_blocked: `True`
-- runtime_mutation_allowed: `False`
-- product_promotion_allowed: `False`
-- customer_real_use_allowed: `False`
-- f33_start_allowed: `False`
-- r0_start_allowed: `False`
-- network_allowed: `False`
-- dependency_install_allowed: `False`
-- mcp_activation_allowed: `False`
-- vault_write_allowed: `False`
-- blocker_count: `3`
-- warning_count: `4`
-- next_recommended_phase: `F21-A2 — Codex Skill Alignment Review`
-
-F21-A1 is now materialized as the live context boundary gate for MB1.
-
-## ARIS-CONTEXT-MACROBLOCK-CLEANUP — Macroblock Navigation Cleanup State
-- status: `active_context_macroblock_cleanup_ready_warn`
-- roadmap_navigation_model: `macroblock_first`
-- macroblock_atual: `MB1`
-- macroblock_title: `Context Governance & Input Trust Boundary`
-- legacy_phase_id: `F21`
-- gate_atual: `F21-A1 — Context Source Access Policy & Untrusted Input Boundary`
-- next_action: `F21-A1`
-- ultimo_fechamento_relevante: `MB0/P29 context compaction`
-- p29_closed: `true`
-- p29_token_reduction: `130735`
-- f32_state: `closed_tombstone`
-- f33_state: `blocked`
-- r0_f120_role: `Lab/Governance roadmap, not live NEXT_ACTION`
+- subtitle: `Evidence Certification, False-Completion Defense & Pre-Productization Gate`
+- role: `certificar a evidência produzida pelo MB8`
+- mb9_reexecutes_mb8: `false`
+- mb9_authorizes_production: `false`
 - f120_authorizes_production: `false`
-- production_authorized: `false`
-- customer_real_authorized: `false`
-- decision_locks_modified: `false`
-- preexisting_untracked_noise: `true`
+- f121_plus_productization_gate_required: `true`
 
-## Macroblock Snapshot
-- MB0: closed/stabilized
-- MB1: active
-- MB2: planned/paused
-- MB3: blocked
-- MB4: foundational/partial/planned
-- MB5: future/blocked
-- MB6: future/controlled
-- MB7: planned
-- MB8: future
-- MB9: future
+## 13 Pecados Capitais — final conceptual list
 
-## Operational Summary
-- where_we_are: `MB1 active; F21 live`
-- what_is_next: `F21-A1`
-- what_is_closed: `MB0/P29`, `F32`
-- what_is_blocked: `F33`
-- not_authorized: `R0-F120 production`, `customer-real use`
+| # | Codename | Pecado / falha | Technical bot |
+|---:|---|---|---|
+| BOT-001 | `Quimera` | Ilusão de Competência | Normal User Bot |
+| BOT-002 | `Dúbio` | Ambiguidade Assumida | Ambiguous / Changing Intent Bot |
+| BOT-003 | `Elos` | Obediência Cega | Policy-Infeasible Request Bot |
+| BOT-004 | `Taipan` | Corrupção por Injeção | Adversarial Injection Bot |
+| BOT-005 | `Labirinto` | Perigo Acumulado | Trajectory Hazard Bot |
+| BOT-006 | `Vitium` | Dependência Frágil | Offline / Provider Failure Bot |
+| BOT-007 | `Gula` | Consumo Descontrolado | Cost / Unbounded Consumption Bot |
+| BOT-008 | `Apep` | Falso Sucesso | False Completion Attacker Bot |
+| BOT-009 | `Patrono` | Operador Mal Compreendido | Business Owner / Operator Bot |
+| BOT-010 | `Éfeso` | Deriva de Longo Prazo | Long-Horizon Drift Bot |
+| BOT-011 | `Abzu` | Vazamento Interno | Internal Privacy Leak Bot |
+| BOT-012 | `Loop` | Robustez Ilusória | Replay & Mutation Reviewer Bot |
+| BOT-013 | `Minos` | Evidência Corrompida | Auditor / Evidence Verifier Bot |
+
+## Ordering lock
+
+- BOT-001 through BOT-011: execute, simulate, and attack primary failure classes.
+- BOT-012 `Loop`: replay, mutation, variation, and cross-scenario review of previous results.
+- BOT-013 `Minos`: final evidence audit after Loop.
+- F114.G: ARIS Infernus Lab Closure Gate.
+- MB9: ARIS Final Crisol certifies final evidence.
+
+## Required future subscenarios
+
+- `Labirinto`: `concurrent_trajectory_resource_conflict`
+- `Gula`: `concurrent_ledger_write_flood`
+- `Vitium`: `rollback_under_provider_failure`, `process_kill_during_ledger_write`, `disk_full_during_append`, `memory_pressure_during_llm_call`
+- `Apep`: `false_rollback_success`
+- `Loop`: must produce `replay_diff_report.json`, `mutation_survival_report.json`, `gate_decision_drift_matrix.json`, `cross_scenario_review.json`
+- `Minos`: must audit Loop artifacts before MB8 closure
+
+## Future research / implementation prerequisites
+
+1. Deterministic metric for `Éfeso` / Long-Horizon Drift.
+2. Deterministic PII/sensitive-data scanner for `Abzu`.
+3. Replay policy for `Loop`: bit-exact vs semantic equivalence.
+4. `Gula` envelope calibration based on `Quimera` baseline data.
+
+## Non-authorization summary
+
+This active-context update is documentation/context only. It does not implement bots, harness, scenario manifests, runtime paths, tests, scripts, productization, MCP activation, network access, dependency installation, customer-real use, or production release.
