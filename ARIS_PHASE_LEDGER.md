@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
+- status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
+- previous phase: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
+- post_apply_validation_class: `post_apply_validation_needs_compaction_repair`
+- controlled_apply_executed: `True`
+- live_context_rewrite_executed: `True`
+- rollback_ready: `True`
+- rollback_recommended: `False`
+- compaction_repair_recommended: `True`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
+
+P29 is post-apply validation only. No new apply or automatic rollback is executed here.
 ## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
 - status: `artifact_reference_only_controlled_apply_execution_warn`
 - previous phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`

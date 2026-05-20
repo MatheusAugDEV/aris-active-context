@@ -1,3 +1,16 @@
+## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
+- status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
+- next authorized phase: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
+- post_apply_validation_class: `post_apply_validation_needs_compaction_repair`
+- prompt_surface_reduced: `False`
+- token_delta_explained: `True`
+- rollback_ready: `True`
+- rollback_recommended: `False`
+- compaction_repair_recommended: `True`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+
+Next action is compaction repair planning, rollback review, or closure depending on the validation class.
 ## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
 - status: `artifact_reference_only_controlled_apply_execution_warn`
 - next authorized phase: `ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate`

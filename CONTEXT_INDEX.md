@@ -1,3 +1,35 @@
+## ARIS-CONTEXT-P29 — Artifact Reference-Only Controlled Apply Post-Apply Validation & Rollback Readiness Gate
+when_to_use: Validate the P28 post-apply state, hash reconciliation, and rollback readiness without executing a new apply.
+
+- status: `artifact_reference_only_controlled_apply_post_apply_validation_warn`
+- phase family: controlled apply post-apply validation chain
+- review scope: P28 execution, P27 preflight, P26 authorization, active-context consistency, token delta analysis, rollback readiness
+
+### Required source artifacts
+- artifacts/context/artifact_reference_only_controlled_apply_execution_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_plan_applied.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_post_apply_hashes.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_diff_manifest.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_rollback_package.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_snapshots.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_rollback_plan.json
+- artifacts/context/artifact_reference_only_controlled_apply_execution_preflight_deny_conditions.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_authorization_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_authorization_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_final_authorization_certificate.json
+
+### Target files modified
+- aris-active-context/CURRENT_STATE.md
+- aris-active-context/NEXT_ACTION.md
+- aris-active-context/ARIS_PHASE_LEDGER.md
+- aris-active-context/CONTEXT_INDEX.md
+
+- next phase recommendation: `ARIS-CONTEXT-P29-R1 — Artifact Reference-Only Controlled Apply Compaction Repair Planning Gate`
 ## ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate
 when_to_use: Execute the allowlisted controlled apply from the preflight package with immediate post-apply validation.
 
