@@ -1,3 +1,19 @@
+## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
+- status: `artifact_reference_only_controlled_apply_final_authorization_warn`
+- next authorized phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
+- final_authorization_class: `final_authorization_granted_for_controlled_apply_next_phase_with_warnings`
+- final_authorization_granted: `True`
+- controlled_apply_authorized_for_next_phase: `True`
+- p25_final_review_verified: `True`
+- authorization_granted_now: `False`
+- controlled_apply_allowed_now: `False`
+- real_apply_allowed_now: `False`
+- live_context_rewrite_allowed_now: `False`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+
+Next action remains review-only. No apply is authorized here.
 ## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
 - status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
 - next authorized phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`

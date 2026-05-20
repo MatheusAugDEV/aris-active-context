@@ -1,3 +1,30 @@
+## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
+- status: `artifact_reference_only_controlled_apply_final_authorization_warn`
+- previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
+- previous_phase_short_summary: `P25 reviewed the submitted human authorization decision over the P23/P24/P24-H1 chain, confirmed human_authorization_final_review_passed_with_warnings=true with human_authorization_final_review_passed=true, and kept authorization_granted_now=false, controlled_apply_allowed_now=false, real_apply_allowed_now=false, live_context_rewrite_allowed_now=false, warning_count=13, blocker_count=0, historical_duplicate_status_warning=true, and Bedrock-compatible metadata.`
+- next_phase_short_explanation: `P26 creates the final authorization for a later controlled apply preflight only; it does not execute apply or rewrite live context, and it keeps the next phase separate so execution remains gated.`
+- p25_final_review_verified: `True`
+- human_authorization_final_review_class: `human_authorization_final_review_passed_with_warnings`
+- human_authorization_final_review_passed: `True`
+- final_authorization_class: `final_authorization_granted_for_controlled_apply_next_phase_with_warnings`
+- final_authorization_granted: `True`
+- controlled_apply_authorized_for_next_phase: `True`
+- human_decision_present: `True`
+- human_decision_submitted: `True`
+- human_decision_valid: `True`
+- human_decision_kind: `APPROVE`
+- human_decision_operator_name: `Matheus Augusto`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
+
+P26 records a final authorization only. It does not execute apply, authorize apply, or change live context.
 ## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
 - status: `artifact_reference_only_controlled_apply_human_authorization_final_review_warn`
 - previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`

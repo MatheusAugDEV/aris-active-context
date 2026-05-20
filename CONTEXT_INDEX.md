@@ -1,3 +1,36 @@
+## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
+when_to_use: Grant or deny the final authorization for the controlled apply chain without executing apply.
+
+- status: `artifact_reference_only_controlled_apply_final_authorization_warn`
+- phase family: controlled apply authorization chain
+- review scope: P23 request, P24 intake, P24-H1 submission, P25 final review
+
+### Required source artifacts
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_payload.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_request_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_gate_result.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_decision_intake_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_payload.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submission_report.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_decision_submitted_template.md
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_final_review_gate_decision.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_final_review_gate_summary.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_final_review_matrix.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_final_review_findings.json
+- artifacts/context/artifact_reference_only_controlled_apply_human_authorization_final_review_report.md
+
+- final authorization only; no apply, no live rewrite, and no artifact body mutation
+- next recommended phase: `ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate`
 ## ARIS-CONTEXT-P25 — Artifact Reference-Only Controlled Apply Human Authorization Final Review Gate
 when_to_use: Review the P24-H1 human authorization submission for final review without executing apply.
 
