@@ -1,3 +1,12 @@
+## F21-A13 — MCP Candidate Human Evidence Manual Completion Intake
+- status: `mcp_candidate_human_evidence_manual_completion_intake_warn`
+- decision: `warn`
+- next_gate: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
+- reason: `the manual completion intake packet was materialized locally and still requires human evidence before authorization review`
+- blocker_count: `0`
+- warning_count: `3`
+
+The next operational step is human authorization review only if real human evidence appears, not MCP activation or product/runtime work.
 ## F21-A12 — MCP Candidate Human Evidence Manual Completion Packet
 - status: `mcp_candidate_human_evidence_manual_completion_packet_warn`
 - decision: `warn`

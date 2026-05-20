@@ -1,3 +1,10 @@
+**F21-A13 - MCP Candidate Human Evidence Manual Completion Intake**
+status: `mcp_candidate_human_evidence_manual_completion_intake_warn`
+decision: `warn`
+manual completion intake classification: `placeholder_manual_completion_intake`
+manual completion intake hash: `sha256:ca20303ba1f2b1202c98750929652c1ff808ecdd4fd4c7e2cbbd5128b229285f`
+context index live block repaired: `True`
+next recommended phase: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
 **F21-A12 - MCP Candidate Human Evidence Manual Completion Packet**
 status: `mcp_candidate_human_evidence_manual_completion_packet_warn`
 decision: `warn`

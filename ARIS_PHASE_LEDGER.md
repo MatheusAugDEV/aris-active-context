@@ -1,3 +1,24 @@
+## F21-A13 — MCP Candidate Human Evidence Manual Completion Intake
+- status: `mcp_candidate_human_evidence_manual_completion_intake_warn`
+- decision: `warn`
+- phase_id: `F21-A13`
+- macroblock_id: `MB1`
+- manual_completion_intake_classification: `placeholder_manual_completion_intake`
+- manual_completion_intake_created: `True`
+- manual_completion_intake_hash: `sha256:ca20303ba1f2b1202c98750929652c1ff808ecdd4fd4c7e2cbbd5128b229285f`
+- manual_completion_required: `True`
+- ready_for_authorization_review: `False`
+- candidate_review_ready: `False`
+- candidate_approval_allowed: `False`
+- MCP activation allowed: `False`
+- pending_fields_count: `11`
+- context_index_live_block_stale_detected: `True`
+- context_index_live_block_repaired: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- next_recommended_phase: `F21-A14 — MCP Candidate Human Evidence Authorization Review`
+
+The intake packet remains manual-only and does not authorize MCP activation.
 ## F21-A12 — MCP Candidate Human Evidence Manual Completion Packet
 - status: `mcp_candidate_human_evidence_manual_completion_packet_warn`
 - decision: `warn`
