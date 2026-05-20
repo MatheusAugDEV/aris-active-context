@@ -1,3 +1,73 @@
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
+- status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
+- previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
+- previous_phase_short_summary: `P26 concluded the final authorization with final_authorization_granted=true, controlled_apply_authorized_for_next_phase=true, warning_count=13, blocker_count=0, and kept controlled_apply_executed=false, real_apply_executed=false, live_context_rewrite_executed=false, artifact_body_mutation_executed=false, runtime_mutation_executed=false.`
+- next_phase_short_explanation: `P27 prepares the execution preflight package for the future controlled apply only; it does not execute apply or rewrite live context, and it keeps P28 separated so the execution gate can inspect the planned surfaces, snapshots, rollback plan, and deny conditions.`
+- p26_final_authorization_verified: `True`
+- p25_final_review_verified: `True`
+- p24h1_submission_verified: `True`
+- p23_request_verified: `True`
+- preflight_id: `ARIS-P27-37ffacb0a927063f`
+- controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_passed_with_warnings`
+- controlled_apply_preflight_passed: `True`
+- controlled_apply_authorized_for_execution_next_phase: `True`
+- final_authorization_granted: `True`
+- controlled_apply_authorized_for_next_phase: `True`
+- controlled_apply_executed: `False`
+- real_apply_executed: `False`
+- live_context_rewrite_executed: `False`
+- artifact_body_mutation_executed: `False`
+- runtime_mutation_executed: `False`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- target_files_count: `4`
+- snapshots_count: `4`
+- rollback_plan_created: `True`
+- deny_conditions_created: `True`
+- warning_count: `13`
+- blocker_count: `0`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `WARN`
+- next phase recommendation: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
+
+P27 prepares the execution preflight package for the future controlled apply only. It does not execute apply, rewrite live context, or alter artifact bodies.
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
+- status: `artifact_reference_only_controlled_apply_execution_preflight_blocked`
+- previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
+- previous_phase_short_summary: `P26 concluded the final authorization with final_authorization_granted=true, controlled_apply_authorized_for_next_phase=true, warning_count=13, blocker_count=0, and kept controlled_apply_executed=false, real_apply_executed=false, live_context_rewrite_executed=false, artifact_body_mutation_executed=false, runtime_mutation_executed=false.`
+- next_phase_short_explanation: `P27 prepares the execution preflight package for the future controlled apply only; it does not execute apply or rewrite live context, and it keeps P28 separated so the execution gate can inspect the planned surfaces, snapshots, rollback plan, and deny conditions.`
+- p26_final_authorization_verified: `False`
+- p25_final_review_verified: `True`
+- p24h1_submission_verified: `True`
+- p23_request_verified: `True`
+- preflight_id: `ARIS-P27-37ffacb0a927063f`
+- controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_blocked`
+- controlled_apply_preflight_passed: `False`
+- controlled_apply_authorized_for_execution_next_phase: `False`
+- final_authorization_granted: `True`
+- controlled_apply_authorized_for_next_phase: `True`
+- controlled_apply_executed: `False`
+- real_apply_executed: `False`
+- live_context_rewrite_executed: `False`
+- artifact_body_mutation_executed: `False`
+- runtime_mutation_executed: `False`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- target_files_count: `4`
+- snapshots_count: `4`
+- rollback_plan_created: `True`
+- deny_conditions_created: `True`
+- warning_count: `13`
+- blocker_count: `7`
+- historical_duplicate_status_warning: `True`
+- bedrock_preparation_exception: `True`
+- bedrock_verdict_compatible: `True`
+- bedrock_verdict: `BLOCK`
+- next phase recommendation: `ARIS-CONTEXT-P27-R1 — Artifact Reference-Only Controlled Apply Execution Preflight Repair Review`
+
+P27 prepares the execution preflight package for the future controlled apply only. It does not execute apply, rewrite live context, or alter artifact bodies.
 ## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
 - status: `artifact_reference_only_controlled_apply_final_authorization_warn`
 - previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`

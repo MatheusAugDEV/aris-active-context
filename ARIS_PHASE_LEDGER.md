@@ -1,3 +1,35 @@
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
+- status: `artifact_reference_only_controlled_apply_execution_preflight_warn`
+- previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
+- preflight_id: `ARIS-P27-37ffacb0a927063f`
+- controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_passed_with_warnings`
+- controlled_apply_preflight_passed: `True`
+- controlled_apply_authorized_for_execution_next_phase: `True`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- target_files_count: `4`
+- snapshots_count: `4`
+- warning_count: `13`
+- blocker_count: `0`
+- next phase recommendation: `ARIS-CONTEXT-P28 — Artifact Reference-Only Controlled Apply Execution Gate`
+
+P27 is preflight only. It does not execute apply, authorize live mutation, or relax protected surfaces.
+## ARIS-CONTEXT-P27 — Artifact Reference-Only Controlled Apply Execution Preflight Gate
+- status: `artifact_reference_only_controlled_apply_execution_preflight_blocked`
+- previous phase: `ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate`
+- preflight_id: `ARIS-P27-37ffacb0a927063f`
+- controlled_apply_execution_preflight_class: `controlled_apply_execution_preflight_blocked`
+- controlled_apply_preflight_passed: `False`
+- controlled_apply_authorized_for_execution_next_phase: `False`
+- request_id: `ARIS-P23-5bb468e12b5dcdbf`
+- request_hash: `f20b42bc3f19635147e9008dbc0a28a77e224c4a93278c840ac84797dd200914`
+- target_files_count: `4`
+- snapshots_count: `4`
+- warning_count: `13`
+- blocker_count: `7`
+- next phase recommendation: `ARIS-CONTEXT-P27-R1 — Artifact Reference-Only Controlled Apply Execution Preflight Repair Review`
+
+P27 is preflight only. It does not execute apply, authorize live mutation, or relax protected surfaces.
 ## ARIS-CONTEXT-P26 — Artifact Reference-Only Controlled Apply Final Authorization Gate
 - status: `artifact_reference_only_controlled_apply_final_authorization_warn`
 - previous phase: `ARIS-CONTEXT-P24-H1 — Artifact Reference-Only Controlled Apply Human Decision Submission`
