@@ -1,3 +1,37 @@
+## ARIS-CONTEXT-P29-R5 — Active-Context Baseline Refresh Gate
+- status: `artifact_reference_only_controlled_apply_baseline_refresh_ready_warn`
+- refresh_class: `baseline_refresh_ready`
+- source_context_commit_ref: `1f46641fae4fb95cb7b051e1a10f533cbd83e123`
+- p29r4_provenance_verified: `True`
+- stale_p29r2_snapshot_confirmed: `True`
+- baseline_refresh_materialized: `True`
+- refreshed_snapshot_matches_current: `True`
+- hot_path_preserved: `True`
+- rollback_ready: `True`
+- actual_token_reduction: `0`
+- projected_token_reduction_for_rerun: `53232`
+- safe_to_rerun_p29r3_after_refresh: `True`
+- p29r3_rerun_allowed_next: `True`
+- recommended_next_phase: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
+
+The refresh only materializes a baseline package; it does not apply compaction or mutate runtime surfaces.
+## ARIS-CONTEXT-P29-R5 — Active-Context Baseline Refresh Gate
+- status: `artifact_reference_only_controlled_apply_baseline_refresh_ready_warn`
+- refresh_class: `baseline_refresh_ready`
+- source_context_commit_ref: `1f46641fae4fb95cb7b051e1a10f533cbd83e123`
+- p29r4_provenance_verified: `True`
+- stale_p29r2_snapshot_confirmed: `True`
+- baseline_refresh_materialized: `True`
+- refreshed_snapshot_matches_current: `True`
+- hot_path_preserved: `True`
+- rollback_ready: `True`
+- actual_token_reduction: `0`
+- projected_token_reduction_for_rerun: `52886`
+- safe_to_rerun_p29r3_after_refresh: `True`
+- p29r3_rerun_allowed_next: `True`
+- recommended_next_phase: `ARIS-CONTEXT-P29-R3 — Artifact Reference-Only Controlled Apply Compaction Repair Execution Gate`
+
+The refresh only materializes a baseline package; it does not apply compaction or mutate runtime surfaces.
 ## ARIS-CONTEXT-P29-R4 — Active-Context Baseline Reconciliation Gate
 - status: `artifact_reference_only_controlled_apply_baseline_refresh_required_warn`
 - reconciliation_class: `baseline_refresh_required`
