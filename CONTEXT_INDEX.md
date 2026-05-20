@@ -1,3 +1,21 @@
+## F21-A27 Real MCP Candidate Evidence Resolution References
+- phase_id: `F21-A27`
+- next_real_action: `F21-A28 — Real MCP Candidate Selection Intake`
+- resolution_hash: `sha256:bf2cc2db0316514fc72271946cbaf568c353ff3859815dffe2062bab38504096`
+- selection_template_hash: `sha256:341cbbfdfa392b6b9047f3cb7c3f6be90a79ab93fbcaf42c2ba60ec427632d78`
+- selection_input_hash: `sha256:e46f3eceb3bd88fc6e16327af41d0a856faa2fb42b1a09312aa8daa0bb306980`
+
+The loop is resolved by selecting a real candidate intake path, not by authorizing MCP activation.
+
+## F21-A27 Real MCP Candidate Evidence Resolution References
+- phase_id: `F21-A27`
+- next_real_action: `F21-A28 — Real MCP Candidate Selection Intake`
+- resolution_hash: `sha256:0efac3c35844fb70cda4d8d40f84e24b107bd35424089448ace755f3e5629fc6`
+- selection_template_hash: `sha256:341cbbfdfa392b6b9047f3cb7c3f6be90a79ab93fbcaf42c2ba60ec427632d78`
+- selection_input_hash: `sha256:e46f3eceb3bd88fc6e16327af41d0a856faa2fb42b1a09312aa8daa0bb306980`
+
+The loop is resolved by selecting a real candidate intake path, not by authorizing MCP activation.
+
 ## F21-A26 MCP Candidate Human Evidence Authorization Review References
 - phase_id: `F21-A26`
 - next_real_action: `Pause MCP track and return to next context/lab gate`

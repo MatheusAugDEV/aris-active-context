@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A28 — Real MCP Candidate Selection Intake`
+- reason: `the evidence loop is closed, but no real MCP candidate has been selected yet; the next step is to intake a real candidate rather than continue passive repair`
+
+- future_reentry_option: `Provide a real MCP candidate and real human evidence`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `Pause MCP track and return to next context/lab gate`
 - reason: `the human-submitted input was reviewed and still lacks real MCP candidate evidence, so the loop is closed without another repair cycle`
 
