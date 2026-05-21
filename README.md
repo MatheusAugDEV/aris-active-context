@@ -1,3 +1,7 @@
+## Strategic Orientation
+- `NORTH_POLE.md` is the mandatory strategic guide for ARIS direction, excellence criteria, and decision quality.
+- It complements, but does not replace, `DECISION_LOCKS.md`.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`

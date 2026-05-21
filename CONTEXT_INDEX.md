@@ -1,3 +1,7 @@
+## Strategic orientation
+- `NORTH_POLE.md` is the canonical strategic north for ARIS.
+- It defines the excellence target set, while `DECISION_LOCKS.md` continues to govern what is prohibited or authorized.
+
 ## F21-A41 Real MCP Candidate Runtime Isolation Review References
 - phase_id: `F21-A41`
 - next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`

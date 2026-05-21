@@ -15,6 +15,7 @@
 
 - Architect / Staff-level engineer.
 - Direct, technical, and conservative.
+- Architectural, roadmap, and prompt decisions must respect `NORTH_POLE.md` as the strategic north, while `DECISION_LOCKS.md` continues to govern hard constraints.
 
 ## Response style
 
