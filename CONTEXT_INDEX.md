@@ -11,13 +11,15 @@
 - blocked_capabilities_preserved: `True`
 - next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
 - future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
-- machine_result_hash: `sha256:2eba01f761e1d479d6dc18edd1a21b67987a942e9c5f9879cdb58da33d665ba2`
-- summary_hash: `sha256:7e772b4d71465b4e3f12e3445690ca9f9314f29a696d400817c4117e1ed62791`
+- machine_result_hash: `sha256:025bfee07cebf655d76bff78d227900622d111f7f0910afa6bcdb4d571fef5d3`
+- summary_hash: `sha256:559b904faf6f35a23865230bc2d9e30d02f7faf380c1c7e1827240586bf624fd`
 - report_hash: `sha256:81a7bc9a4f61684f61caba3fd9263b005c6233e4951c06136e2dad245040e25a`
 - next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
 - plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
 - candidate_name: `gogogadgetbytes/smart-connections-mcp`
 - candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+This reference is review-only and does not authorize acceptance runner work.
 
 This reference is review-only and does not authorize acceptance runner work.
 
