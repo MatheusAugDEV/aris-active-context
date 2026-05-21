@@ -1,3 +1,13 @@
+## F21-A39 Real MCP Candidate Read-Only Enforcement Review References
+- phase_id: `F21-A39`
+- next_real_action: `F21-A40 — Real MCP Candidate Dependency Security Review`
+- read_only_lock_hash: `sha256:12c178571eb9f1a5a3d25263bc03250754309bc024f9770c96bd6b5ae3a729c4`
+- manifest_hash: `sha256:c9ca2829895f76725e0a15ec99ad777d073e7338df574641ffebb8ce6922a481`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Read-only enforcement review is review-only and does not authorize MCP activation.
+
 ## F21-A38 Real MCP Candidate Sandbox Boundary Review References
 - phase_id: `F21-A38`
 - next_real_action: `F21-A39 — Real MCP Candidate Read-Only Enforcement Review`

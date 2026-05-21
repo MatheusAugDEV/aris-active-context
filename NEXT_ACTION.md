@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A40 — Real MCP Candidate Dependency Security Review`
+- reason: `the read-only enforcement contract is review-only and dependency security review is now the first remaining gate`
+
+- future_reentry_option: `Proceed to dependency security review only after the read-only contract remains review-only`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A39 — Real MCP Candidate Read-Only Enforcement Review`
 - reason: `the sandbox boundary is documented in review-only form and read-only enforcement review is now the first remaining gate`
 
