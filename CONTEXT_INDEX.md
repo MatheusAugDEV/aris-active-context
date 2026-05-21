@@ -1,3 +1,22 @@
+## F21-A49 ARIS Lean Development Protocol v0.1 Machine Result Schema Review Gate References
+- phase_id: `F21-A49`
+- status: `lean_machine_result_schema_review_warn`
+- decision: `warn`
+- schema_review_classification: `machine_result_schema_v0_1_ready_for_validator`
+- next_real_action: `F21-A50 — ARIS Lean Development Protocol v0.1 Machine Result Validator Implementation Gate`
+- schema_hash: `6c462ef6e83e86eb7d1a83ee4ff5a7a8a6acbb8ac557aa7c92bca6221e0a4c1b`
+- review_json_hash: `bce21a4137b3bde5c5d49edfcef863549848dc598ae68d20761fb0b157ef6d00`
+- summary_hash: `5bcabcafd8e2c9592e1e60724feb362bd4658425b6bd476791c64c942fcdabaf`
+- decision_hash: `fa356c0038d03d87bcd8697a5ff5b6b211cd74a98f4571ba7929768e04125583`
+- manifest_hash: `da5cea812174ccc70ee306f2ca97863da6f294ac39f1ec629d5be0194d53df33`
+- checklist_hash: `bd2e59a8cfd926dbb5fda65aed30bb236d2429eb50360d3d8f07afb650db9315`
+- lock_hash: `95df36fab52b057e1008e51ba54d846366b2ec9ab6aaf7e3075a0ea1929a7f43`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- lean_output_v0_1_recorded: `True`
+
+This schema gate is review-only and does not authorize the validator implementation itself.
+
 ## F21-A48 Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review Closure References
 - phase_id: `F21-A48`
 - status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_review_closure_warn`
