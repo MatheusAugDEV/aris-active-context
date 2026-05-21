@@ -1,3 +1,34 @@
+## F21-A41 — Real MCP Candidate Runtime Isolation Review
+- status: `mcp_real_candidate_runtime_isolation_review_warn`
+- decision: `warn`
+- runtime_isolation_review_classification: `runtime_isolation_review_ready`
+- runtime_isolation_boundary_defined: `True`
+- runtime_isolation_proven: `True`
+- runtime_lock_created: `True`
+- runtime_execution_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- package_scripts_execution_allowed: `False`
+- source_safety_ready: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `2`
+- remaining_authorization_gates_count: `1`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
+
+Runtime isolation review is review-only and does not authorize MCP activation.
+
 ## F21-A40 — Real MCP Candidate Dependency Security Review
 - status: `mcp_real_candidate_dependency_security_review_warn`
 - decision: `warn`

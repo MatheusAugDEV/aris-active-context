@@ -1,3 +1,13 @@
+## F21-A41 Real MCP Candidate Runtime Isolation Review References
+- phase_id: `F21-A41`
+- next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
+- runtime_lock_hash: `sha256:8b7a58a0db5ae3358b2264e10b36e088cd79db9a3cb9f5a28411421d90f0aaa0`
+- manifest_hash: `sha256:f2a417ecdaa532dcb0e1bff19d39023b55f3bce48c81fedd9a9d13ebfb8e84b4`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Runtime isolation review is review-only and does not authorize MCP activation.
+
 ## F21-A40 Real MCP Candidate Dependency Security Review References
 - phase_id: `F21-A40`
 - next_real_action: `F21-A41 — Real MCP Candidate Runtime Isolation Review`
