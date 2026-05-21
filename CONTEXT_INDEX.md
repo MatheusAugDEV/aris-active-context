@@ -1,3 +1,13 @@
+## F21-A44 Real MCP Candidate Controlled Authorization Decision Gate References
+- phase_id: `F21-A44`
+- next_real_action: `F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan`
+- decision_lock_hash: `sha256:d1f578f199009b30592f9054c832c4b3df0157ad10f005287becdfdf8ed82a82`
+- manifest_hash: `sha256:068c5b9a42d730dcc382f913696af5891128c5a61b308acfa3ff990d62db9e13`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Controlled authorization decision is review-only and does not authorize MCP activation.
+
 ## F21-A43 Real MCP Candidate Authorization Closure Review References
 - phase_id: `F21-A43`
 - next_real_action: `F21-A44 — Real MCP Candidate Controlled Authorization Decision Gate`
