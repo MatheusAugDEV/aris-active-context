@@ -1,5 +1,32 @@
 # DECISION_LOCKS
 
+## F21-A51 — ARIS Lean Development Protocol v0.1 Validator Review Lock
+
+- Latest completed phase: `F21-A51 — ARIS Lean Development Protocol v0.1 Validator Review Gate`
+- status: `lean_machine_result_validator_review_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- machine_result_validator_reviewed: `True`
+- validator_stdlib_only: `True`
+- a49_machine_result_validated: `True`
+- a50_machine_result_validated: `True`
+- acceptance_runner_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
 ## Global Non-Authorization Lock
 
 - Product promotion remains `false`.
