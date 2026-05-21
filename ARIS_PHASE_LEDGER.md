@@ -1,3 +1,35 @@
+## F21-A42 — Real MCP Candidate Rollback Plan Review
+- status: `mcp_real_candidate_rollback_plan_review_warn`
+- decision: `warn`
+- rollback_review_classification: `rollback_plan_review_ready`
+- rollback_boundary_defined: `True`
+- rollback_plan_created: `True`
+- rollback_lock_created: `True`
+- rollback_execution_allowed: `False`
+- runtime_execution_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- package_scripts_execution_allowed: `False`
+- source_safety_ready: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `2`
+- remaining_authorization_gates_count: `0`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A43 — Real MCP Candidate Authorization Closure Review`
+
+Rollback review is review-only and does not authorize MCP activation.
+
 ## ACTIVE-CONTEXT-R1 — NEXT_ACTION Singularity + Decision Lock Pointer Repair
 - phase_id: `ACTIVE-CONTEXT-R1`
 - macroblock_id: `MB1`

@@ -1,3 +1,13 @@
+## F21-A42 Real MCP Candidate Rollback Plan Review References
+- phase_id: `F21-A42`
+- next_real_action: `F21-A43 — Real MCP Candidate Authorization Closure Review`
+- rollback_lock_hash: `sha256:06ffcb4b4915cef3f9b2fe5828482e9636cb942b3f2bade3b10ff6669754a316`
+- manifest_hash: `sha256:57e96d97aa79995a2cb60a213321256014a5823188895caec4fdee88699f1ddc`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Rollback review is review-only and does not authorize MCP activation.
+
 ## Strategic orientation
 - `NORTH_POLE.md` is the canonical strategic north for ARIS.
 - It defines the excellence target set, while `DECISION_LOCKS.md` continues to govern what is prohibited or authorized.

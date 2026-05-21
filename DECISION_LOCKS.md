@@ -26,11 +26,11 @@
 ## Active Operational Track Lock
 
 - Current operational macroblock remains `MB1 — Context Governance & Input Trust Boundary`.
-- Next operational gate remains `F21-A42 — Real MCP Candidate Rollback Plan Review`.
+- Next operational gate remains `F21-A43 — Real MCP Candidate Authorization Closure Review`.
+- `F21-A42 — Real MCP Candidate Rollback Plan Review` completed the last authorization review in review-only mode and did not authorize activation.
 - `F21-A11 — MCP Candidate Human Evidence Completion Review Gate` is a stale pointer that was repaired by `ACTIVE-CONTEXT-R1`.
 - MB8/MB9 future roadmap discussion does not move `NEXT_ACTION`.
 - F33 remains blocked under lab governance until explicitly reopened by a future gate.
-
 ## R0–F120 Lab Governance Lock
 
 - R0–F120 materialize lab/governance planning only.
