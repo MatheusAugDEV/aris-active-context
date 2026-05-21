@@ -1,3 +1,57 @@
+## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate Ledger
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- phase_id: `F21-A52`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+- machine_result_hash: `sha256:31bd6f48b9e7b7036e4df1253b9708f3af89884fc55683df4e7c19d4c82f3733`
+- summary_hash: `sha256:cd6e36837f7588f395ae35c5f358f1bfc12e32510641a1461fbcd310e2e7c9bb`
+- report_hash: `sha256:81a7bc9a4f61684f61caba3fd9263b005c6233e4951c06136e2dad245040e25a`
+- next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
+- plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+This ledger entry is review-only and does not authorize acceptance runner work.
+
+This ledger entry is review-only and does not authorize acceptance runner work.
+
+This ledger entry is review-only and does not authorize acceptance runner work.
+
+This ledger entry is review-only and does not authorize acceptance runner work.
+
+## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate Ledger
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- phase_id: `F21-A52`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+- machine_result_hash: `sha256:8e02c1d794e4d2f30b83a9a0d85ba51a804dead3eb865b9f7d19bfca9346359b`
+- summary_hash: `sha256:8762b51cba56648414f78c3b2f5254101648ed6fc314d915074fd15fed993565`
+- report_hash: `sha256:fc383ac0515e14fd698b51213e4834b89d442cfcfe08b7011bac6175ae7aa649`
+- next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
+- plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+This ledger entry is review-only and does not authorize acceptance runner work.
+
 ## F21-A51 ARIS Lean Development Protocol v0.1 Validator Review Ledger
 - Latest completed phase: `F21-A51 — ARIS Lean Development Protocol v0.1 Validator Review Gate`
 - phase_id: `F21-A51`

@@ -1,3 +1,122 @@
+## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate Review Lock
+
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
+## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate Review Lock
+
+- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
+- status: `lean_minimal_acceptance_runner_plan_warn`
+- decision: `warn`
+- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- minimal_acceptance_runner_plan_created: `True`
+- acceptance_runner_implementation_allowed_next: `True`
+- acceptance_runner_allowed_now: `False`
+- prompt_kernel_allowed_now: `False`
+- template_library_allowed_now: `False`
+- batch_runner_allowed_now: `False`
+- blocked_capabilities_preserved: `True`
+- controlled_apply_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- runtime_mutation_allowed: `False`
+- dependency_install_allowed: `False`
+- network_allowed: `False`
+- vault_write_allowed: `False`
+- product_promotion_allowed: `False`
+- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
+
+This review lock does not authorize acceptance runner implementation or product promotion.
+
 # DECISION_LOCKS
 
 ## F21-A51 — ARIS Lean Development Protocol v0.1 Validator Review Lock
