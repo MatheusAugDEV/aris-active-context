@@ -32,6 +32,7 @@
 - `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation` completed the artifact-only simulation step and did not authorize activation, config writes, runtime mutation, or apply.
 - `F21-A48 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review Closure` completed the closure-only review step and did not authorize activation, config writes, runtime mutation, or apply.
 - `F21-A49 — ARIS Lean Development Protocol v0.1 Machine Result Schema Review Gate` completed the schema review step and did not authorize acceptance runner implementation or product promotion.
+- Phase completion materialization must be verified before a phase is treated as live complete; use `scripts/check_phase_completion_materialization.py` as the guard for future close-out drift.
 - `F21-A11 — MCP Candidate Human Evidence Completion Review Gate` is a stale pointer that was repaired by `ACTIVE-CONTEXT-R1`.
 - MB8/MB9 future roadmap discussion does not move `NEXT_ACTION`.
 - F33 remains blocked under lab governance until explicitly reopened by a future gate.
