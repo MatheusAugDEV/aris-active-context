@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A38 — Real MCP Candidate Sandbox Boundary Review`
+- reason: `the config contract has been reviewed and locked in review-only mode; sandbox boundary review is now the first remaining gate`
+
+- future_reentry_option: `Proceed to sandbox boundary review only after the config lock remains review-only`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A37 — Real MCP Candidate Config Review Or Lock`
 - reason: `the human signoff was accepted for review-only continuation and config review or lock is now the first remaining gate`
 

@@ -1,3 +1,13 @@
+## F21-A37 Real MCP Candidate Config Review Or Lock References
+- phase_id: `F21-A37`
+- next_real_action: `F21-A38 — Real MCP Candidate Sandbox Boundary Review`
+- config_lock_hash: `sha256:91329f6fbd99da628b55955b0e502a0c357cc600b5b84485b6438e216239bf0c`
+- manifest_hash: `sha256:80a2b4a826575752baf80e68617fde4bd80b1b49375b1835c9f86f9863d33565`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Config review or lock is review-only and does not authorize MCP activation.
+
 ## F21-A36 Real MCP Candidate Human Authorization Signoff Gate References
 - phase_id: `F21-A36`
 - next_real_action: `F21-A37 — Real MCP Candidate Config Review Or Lock`
