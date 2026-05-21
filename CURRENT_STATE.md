@@ -1,3 +1,36 @@
+## F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation
+- Latest completed phase: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_warn`
+- decision: `warn`
+- phase_id: `F21-A46`
+- macroblock_id: `MB1`
+- simulation_classification: `controlled_pre_apply_dry_run_simulation_ready`
+- pre_apply_dry_run_simulation_completed: `True`
+- real_apply_executed: `False`
+- controlled_apply_allowed: `False`
+- automatic_activation_allowed: `False`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- source_chain_valid: `True`
+- candidate_identity_consistent: `True`
+- active_context_singular: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `3`
+- remaining_authorization_gates_count: `0`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- next_real_action: `F21-A47 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review`
+- next_recommended_phase: `F21-A47 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review`
+
+This phase completes the artifact-only simulation and does not authorize activation.
+
 ## F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan
 - Latest completed phase: `F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan`
 - status: `mcp_real_candidate_controlled_pre_apply_dry_run_plan_warn`

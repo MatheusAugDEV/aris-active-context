@@ -1,3 +1,17 @@
+## F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation
+- Latest completed phase: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_warn`
+- decision: `warn`
+- phase_id: `F21-A46`
+- main_simulation_hash: `sha256:7bc287fca72f8c7850afd1d8b1d28bd6a8e1ef1c59aa1aa2d30d387103ec6a71`
+- summary_hash: `sha256:d3d110b8195409ba09273450728cfb9551283bc0e8e4a8cf6fe58dd56683eb0a`
+- machine_result_hash: `sha256:7cbde90be38ad6e8bd1c406a173e3627cd2aad633ebd7066f00b908aa7b8824a`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- next_real_action: `F21-A47 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review`
+
+This phase completes the artifact-only simulation and does not authorize activation.
+
 ## F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan
 - status: `mcp_real_candidate_controlled_pre_apply_dry_run_plan_warn`
 - decision: `warn`

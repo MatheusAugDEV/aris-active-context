@@ -26,8 +26,9 @@
 ## Active Operational Track Lock
 
 - Current operational macroblock remains `MB1 — Context Governance & Input Trust Boundary`.
-- Next operational gate remains `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`.
+- Next operational gate remains `F21-A47 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review`.
 - `F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan` completed the final controlled planning step and did not authorize activation or dry-run execution.
+- `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation` completed the artifact-only simulation step and did not authorize activation, config writes, runtime mutation, or apply.
 - `F21-A11 — MCP Candidate Human Evidence Completion Review Gate` is a stale pointer that was repaired by `ACTIVE-CONTEXT-R1`.
 - MB8/MB9 future roadmap discussion does not move `NEXT_ACTION`.
 - F33 remains blocked under lab governance until explicitly reopened by a future gate.

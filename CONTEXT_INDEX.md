@@ -1,3 +1,22 @@
+## F21-A46 Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation References
+- phase_id: `F21-A46`
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_warn`
+- decision: `warn`
+- simulation_classification: `controlled_pre_apply_dry_run_simulation_ready`
+- next_real_action: `F21-A47 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review`
+- main_simulation_hash: `sha256:7bc287fca72f8c7850afd1d8b1d28bd6a8e1ef1c59aa1aa2d30d387103ec6a71`
+- summary_hash: `sha256:d3d110b8195409ba09273450728cfb9551283bc0e8e4a8cf6fe58dd56683eb0a`
+- decision_hash: `sha256:c7cf489b7742e773021ac5de6a1296e6e645a269a7a9015b759ff27209097f40`
+- manifest_hash: `sha256:d4dd80cb09fedffae328968206f51682fbf16334066db83d09ec47b8ca5ce644`
+- checklist_hash: `sha256:f7c841e8612ac29ce4ac6498600ace92afeaf4d4488a377a7b35a92382541900`
+- lock_hash: `sha256:a30d5b476963d0262ece311e1a25259ab3f987bc26560a426740d437b700fc45`
+- machine_result_hash: `sha256:7cbde90be38ad6e8bd1c406a173e3627cd2aad633ebd7066f00b908aa7b8824a`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- lean_output_bootstrap_recorded: `True`
+
+The A46 simulation is review-only and does not authorize activation.
+
 ## F21-A45 Real MCP Candidate Controlled Pre-Apply Dry-Run Plan References
 - phase_id: `F21-A45`
 - next_real_action: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
