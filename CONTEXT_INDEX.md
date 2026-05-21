@@ -1,3 +1,21 @@
+## F21-A47 Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review References
+- phase_id: `F21-A47`
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_review_warn`
+- decision: `warn`
+- review_classification: `controlled_pre_apply_dry_run_simulation_review_ready`
+- next_real_action: `F21-A48 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation Review Closure`
+- review_json_hash: `sha256:a145a8c95ca673332bbc73a4d9f2524bd53781a974bebf48c204b78ccd8fb1f1`
+- summary_hash: `sha256:2bc8980d457cb439f28a5ed6e14d310c9c521cc11a13cd8fa02ff78397cf1847`
+- decision_hash: `sha256:88e6a3853b09cb3aa976230a6041defc042e377b202d6149280a2f1062e7ce8d`
+- manifest_hash: `sha256:61691d4fe1875fe20afb07ccd31065c02fe2fcc69437aa0f8c9fa35f23f788bb`
+- checklist_hash: `sha256:2a7cbed38c610b8f6486fcbc00df4c3e20a5734a0e59c87983f0debb4b40d4ef`
+- lock_hash: `sha256:27fbd326d2f6854680c25429607f55dbb8ba9ac6ed32e4e06228ad206a4b7ec2`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- lean_output_v0_1_recorded: `True`
+
+This review gate is review-only and does not authorize activation.
+
 ## F21-A46 Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation References
 - phase_id: `F21-A46`
 - status: `mcp_real_candidate_controlled_pre_apply_dry_run_simulation_warn`
