@@ -24,8 +24,8 @@
 - next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
 - next_recommended_phase: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
 - lean_output_v0_1_recorded: `True`
-- machine_result_hash: `sha256:13cff19742b1aae8b58aa19f73dce133179dd0b6effe0a27c46ac3e1381b75c8`
-- summary_hash: `sha256:ab18cf89e1371a743f80bbefbbb36bb18da5564491966214c41bd4b445bf964c`
+- machine_result_hash: `sha256:2eba01f761e1d479d6dc18edd1a21b67987a942e9c5f9879cdb58da33d665ba2`
+- summary_hash: `sha256:7e772b4d71465b4e3f12e3445690ca9f9314f29a696d400817c4117e1ed62791`
 - report_hash: `sha256:81a7bc9a4f61684f61caba3fd9263b005c6233e4951c06136e2dad245040e25a`
 - next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
 - plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
@@ -37,40 +37,6 @@ This phase plans the Lean v0.1 minimal acceptance runner and does not implement 
 This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
 
 This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
-
-This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
-
-## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate
-- Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
-- status: `lean_minimal_acceptance_runner_plan_warn`
-- decision: `warn`
-- phase_id: `F21-A52`
-- macroblock_id: `MB1`
-- minimal_acceptance_runner_plan_created: `True`
-- acceptance_runner_implementation_allowed_next: `True`
-- acceptance_runner_allowed_now: `False`
-- prompt_kernel_allowed_now: `False`
-- template_library_allowed_now: `False`
-- batch_runner_allowed_now: `False`
-- blocked_capabilities_preserved: `True`
-- controlled_apply_allowed: `False`
-- mcp_activation_allowed: `False`
-- mcp_config_write_allowed: `False`
-- runtime_mutation_allowed: `False`
-- dependency_install_allowed: `False`
-- network_allowed: `False`
-- vault_write_allowed: `False`
-- product_promotion_allowed: `False`
-- future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
-- future_acceptance_runner_name: `Lean Phase Acceptance Runner v0.1`
-- next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
-- next_recommended_phase: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
-- lean_output_v0_1_recorded: `True`
-- machine_result_hash: `sha256:8e02c1d794e4d2f30b83a9a0d85ba51a804dead3eb865b9f7d19bfca9346359b`
-- summary_hash: `sha256:8762b51cba56648414f78c3b2f5254101648ed6fc314d915074fd15fed993565`
-- report_hash: `sha256:fc383ac0515e14fd698b51213e4834b89d442cfcfe08b7011bac6175ae7aa649`
-- next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
-- plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
 
 This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
 
