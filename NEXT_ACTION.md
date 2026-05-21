@@ -1,6 +1,14 @@
 ## Next operational gate
 
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
+- next_gate: `F21-A41 — Real MCP Candidate Runtime Isolation Review`
+- reason: `dependency metadata is review-only and runtime isolation review is now the first remaining gate`
+
+- future_reentry_option: `Proceed to runtime isolation review only after the dependency contract remains review-only`
+
+## Next operational gate
+
+- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
 - next_gate: `F21-A40 — Real MCP Candidate Dependency Security Review`
 - reason: `the read-only enforcement contract is review-only and dependency security review is now the first remaining gate`
 
