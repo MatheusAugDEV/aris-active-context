@@ -1,3 +1,81 @@
+## F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_plan_warn`
+- decision: `warn`
+- decision_classification: `controlled_pre_apply_dry_run_plan_ready`
+- plan_classification: `controlled_pre_apply_dry_run_plan_ready`
+- authorization_chain_closed: `True`
+- review_only_chain_complete: `True`
+- controlled_authorization_decision_ready: `True`
+- automatic_activation_allowed: `False`
+- decision_boundary_defined: `True`
+- plan_boundary_defined: `True`
+- decision_lock_created: `True`
+- plan_lock_created: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `2`
+- remaining_authorization_gates_count: `0`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- controlled_pre_apply_planning_allowed: `True`
+- controlled_apply_allowed: `False`
+- pre_apply_plan_created: `True`
+- pre_apply_dry_run_execution_allowed: `False`
+- pre_apply_dry_run_simulation_allowed_next: `True`
+- next_real_action: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+
+Controlled pre-apply dry-run planning is review-only and does not authorize MCP activation.
+
+## F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan
+- status: `mcp_real_candidate_controlled_pre_apply_dry_run_plan_warn`
+- decision: `warn`
+- decision_classification: `controlled_pre_apply_dry_run_plan_ready`
+- plan_classification: `controlled_pre_apply_dry_run_plan_ready`
+- authorization_chain_closed: `True`
+- review_only_chain_complete: `True`
+- controlled_authorization_decision_ready: `True`
+- automatic_activation_allowed: `False`
+- decision_boundary_defined: `True`
+- plan_boundary_defined: `True`
+- decision_lock_created: `True`
+- plan_lock_created: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `2`
+- remaining_authorization_gates_count: `0`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- controlled_pre_apply_planning_allowed: `True`
+- controlled_apply_allowed: `False`
+- pre_apply_plan_created: `True`
+- pre_apply_dry_run_execution_allowed: `False`
+- pre_apply_dry_run_simulation_allowed_next: `True`
+- next_real_action: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+
+Controlled pre-apply dry-run planning is review-only and does not authorize MCP activation.
+
 ## F21-A44 — Real MCP Candidate Controlled Authorization Decision Gate
 - status: `mcp_real_candidate_controlled_authorization_decision_gate_warn`
 - decision: `warn`

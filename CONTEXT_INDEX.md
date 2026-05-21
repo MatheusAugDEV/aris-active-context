@@ -1,3 +1,36 @@
+## F21-A45 Real MCP Candidate Controlled Pre-Apply Dry-Run Plan References
+- phase_id: `F21-A45`
+- next_real_action: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+- plan_lock_hash: `sha256:eda59c13bfa778605e6ebb125d549c45807bde7f0392bd11f84d94c756a97727`
+- decision_lock_hash: `sha256:eda59c13bfa778605e6ebb125d549c45807bde7f0392bd11f84d94c756a97727`
+- manifest_hash: `sha256:7aeff23bb4882dc80c07580789f012454d72fbe6d5f822b82247d25092921e4e`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Controlled pre-apply dry-run planning is review-only and does not authorize MCP activation.
+
+## F21-A45 Real MCP Candidate Controlled Pre-Apply Dry-Run Plan References
+- phase_id: `F21-A45`
+- next_real_action: `F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan`
+- plan_lock_hash: `sha256:13b748fa1fbd03f298412ae4954c9674ea38da4fdc31e0c31361903ad64ce887`
+- decision_lock_hash: `sha256:13b748fa1fbd03f298412ae4954c9674ea38da4fdc31e0c31361903ad64ce887`
+- manifest_hash: `sha256:e6701d888c27bbbcd52b5c68ad582f6215282ede65bb2096624e6860cebb96c8`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Controlled pre-apply dry-run planning is review-only and does not authorize MCP activation.
+
+## F21-A45 Real MCP Candidate Controlled Pre-Apply Dry-Run Plan References
+- phase_id: `F21-A45`
+- next_real_action: `F21-A46 — Real MCP Candidate Controlled Pre-Apply Dry-Run Simulation`
+- plan_lock_hash: `sha256:150964b2560c232cb6dd42f4fd777a7d4203d522919cfe6b1d7513303e57ec5f`
+- decision_lock_hash: `sha256:150964b2560c232cb6dd42f4fd777a7d4203d522919cfe6b1d7513303e57ec5f`
+- manifest_hash: `sha256:9c85ac383e296de0c1aced0c7e2ee668270dda8472d1f431722e108702045925`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+
+Controlled pre-apply dry-run planning is review-only and does not authorize MCP activation.
+
 ## F21-A44 Real MCP Candidate Controlled Authorization Decision Gate References
 - phase_id: `F21-A44`
 - next_real_action: `F21-A45 — Real MCP Candidate Controlled Pre-Apply Dry-Run Plan`
