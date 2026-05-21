@@ -42,6 +42,53 @@ Toda decisão deve aproximar o ARIS deste objetivo:
 
 O ARIS não deve vencer apenas por bloquear riscos. O ARIS deve vencer por entregar mais valor com menos erro, menos atrito e mais controle.
 
+## Princípio de excelência operacional
+Excelência não é acumular mecanismos, fases, locks, documentos ou cerimônia. Excelência é usar o mínimo de mecanismos necessário para entregar o máximo de confiança, capacidade e valor.
+
+O ARIS deve ser rigoroso sem ficar inchado, seguro sem ficar travado, profundo sem ficar confuso, e simples sem ficar raso.
+
+Sempre que um mecanismo novo for proposto, ele deve provar que aumenta confiança, capacidade ou valor mais do que aumenta complexidade, custo operacional e atrito.
+
+## As duas vitórias obrigatórias
+Para ser o melhor agente do mercado, o ARIS precisa vencer em duas frentes ao mesmo tempo:
+
+### 1. Vitória técnica
+O ARIS deve ser superior como motor interno de agente:
+- arquitetura;
+- runtime;
+- action runtime;
+- memória;
+- contexto;
+- segurança;
+- testes;
+- automação;
+- rollback;
+- ledgers;
+- observabilidade;
+- previsibilidade;
+- governança;
+- execução controlada.
+
+### 2. Vitória de produto
+O ARIS deve ser superior como solução utilizável, entregável e vendável:
+- simplicidade;
+- velocidade percebida;
+- UX;
+- interface;
+- onboarding;
+- confiabilidade para usuários leigos;
+- custo-benefício;
+- clareza de valor;
+- integração com rotina real;
+- estética;
+- suporte;
+- entregabilidade;
+- valor de mercado.
+
+A vitória técnica vem primeiro durante F1-F120, mas não pode destruir a vitória de produto futura. A vitória de produto vem depois, em F121+ ou gate futuro autorizado, mas não pode enfraquecer a vitória técnica.
+
+O ARIS só cumpre seu norte quando as duas vitórias se reforçam: motor forte gerando produto confiável, e produto simples expondo a força do motor sem esconder riscos, inventar capacidades ou remover controles.
+
 ## Ordem de construção
 Durante F1-F120, o foco é construir o motor interno com excelência:
 - runtime;
@@ -99,6 +146,9 @@ Antes de aprovar qualquer fase, arquitetura, prompt Codex, feature, refactor ou 
 28. Isto melhora segurança?
 29. Isto melhora valor de mercado?
 30. Isto preserva os locks enquanto aumenta valor real?
+31. Isto entrega o máximo de confiança, capacidade e valor com o mínimo de mecanismos necessário?
+32. Isto fortalece a vitória técnica sem prejudicar a vitória de produto futura?
+33. Isto preserva a vitória de produto futura sem enfraquecer a vitória técnica?
 
 Se a resposta dominante for não, a decisão deve ser revisada, adiada ou rejeitada.
 
@@ -113,6 +163,7 @@ Quando houver conflito:
 5. Tornar o seguro simples, não burocrático.
 6. Tornar o poderoso compreensível, não perigoso.
 7. Tornar o produto bonito e rápido sem enfraquecer o motor.
+8. Preferir o menor mecanismo que preserve segurança e entregue mais confiança, capacidade e valor.
 
 ## Frase operacional
 > O ARIS deve ser o melhor agente: mais seguro, mais simples, mais rápido, mais útil, mais previsível, mais auditável, mais automatizado, mais eficiente, mais bonito, mais implementável, mais escalável e mais entregável do que o que existe no mercado.
