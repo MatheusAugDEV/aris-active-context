@@ -1,3 +1,36 @@
+## F21-A38 — Real MCP Candidate Sandbox Boundary Review
+- Latest completed phase: `F21-A38 — Real MCP Candidate Sandbox Boundary Review`
+- status: `mcp_real_candidate_sandbox_boundary_review_warn`
+- decision: `warn`
+- phase_id: `F21-A38`
+- macroblock_id: `MB1`
+- sandbox_review_classification: `sandbox_boundary_review_ready`
+- sandbox_boundary_defined: `True`
+- sandbox_execution_allowed: `False`
+- sandbox_lock_created: `True`
+- sandbox_lock_kind: `review_only_sandbox_contract_lock`
+- source_safety_ready: `True`
+- authorization_ready: `False`
+- source_safety_chain_closed: `True`
+- source_chain_valid: `True`
+- critical_findings_count: `0`
+- warning_findings_count: `4`
+- remaining_authorization_gates_count: `4`
+- candidate_name: `gogogadgetbytes/smart-connections-mcp`
+- candidate_version_or_commit: `b8c39ae192aa09f49b42492971b1880940276b44`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- next_real_action: `F21-A39 — Real MCP Candidate Read-Only Enforcement Review`
+
+This phase reviews the sandbox boundary only; it does not execute a server, write real config, or authorize activation.
+
 ## F21-A37 — Real MCP Candidate Config Review Or Lock
 - Latest completed phase: `F21-A37 — Real MCP Candidate Config Review Or Lock`
 - status: `mcp_real_candidate_config_review_or_lock_warn`
