@@ -1,3 +1,19 @@
+## ACTIVE-CONTEXT-R1 — NEXT_ACTION Singularity + Decision Lock Pointer Repair
+- phase_id: `ACTIVE-CONTEXT-R1`
+- macroblock_id: `MB1`
+- status: `active_context_repair_warn`
+- decision: `warn`
+- repair_kind: `pointer_singularity_and_lock_repair`
+- latest_completed_phase: `F21-A41 — Real MCP Candidate Runtime Isolation Review`
+- next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
+- authorization_ready: `False`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+
+This repair restored live pointer consistency only. It did not execute F21-A42.
+
 ## F21-A41 — Real MCP Candidate Runtime Isolation Review
 - status: `mcp_real_candidate_runtime_isolation_review_warn`
 - decision: `warn`

@@ -34,6 +34,7 @@
 - dependency_install_allowed: `False`
 - product_promotion_allowed: `False`
 - next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
+- active_context_repair_note: `ACTIVE-CONTEXT-R1 repaired NEXT_ACTION singularity and DECISION_LOCKS pointer drift`
 
 This phase reviews runtime isolation only; it does not execute a server, write real config, or authorize activation.
 

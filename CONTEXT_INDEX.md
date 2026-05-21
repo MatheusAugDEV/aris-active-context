@@ -2,6 +2,17 @@
 - `NORTH_POLE.md` is the canonical strategic north for ARIS.
 - It defines the excellence target set, while `DECISION_LOCKS.md` continues to govern what is prohibited or authorized.
 
+## ACTIVE-CONTEXT-R1 Repair Index
+- phase_id: `ACTIVE-CONTEXT-R1`
+- macroblock_id: `MB1`
+- next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
+- scope: `NEXT_ACTION singularity` and `DECISION_LOCKS` pointer repair
+- authorization_ready: `False`
+- candidate_approval_allowed: `False`
+- mcp_activation_allowed: `False`
+
+This entry records the live-pointer repair only. It does not execute F21-A42.
+
 ## F21-A41 Real MCP Candidate Runtime Isolation Review References
 - phase_id: `F21-A41`
 - next_real_action: `F21-A42 — Real MCP Candidate Rollback Plan Review`
