@@ -61,6 +61,38 @@ This ledger entry records the active-context OS diagnostic only. It does not com
 
 This ledger entry records the active-context OS reform design only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
 
+## F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate
+- latest_completed_phase: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
+- phase_id: `F21-CTX-D3`
+- status: `active_context_os_reform_apply_plan_pass`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D2`
+- apply_plan_created: `True`
+- reform_apply_allowed_now: `False`
+- migration_batches_defined: `True`
+- batch_count: `10`
+- batch_order: `batch_1_boot_profile_read_profile,batch_2_context_index_cleanup,batch_3_current_state_slimming,batch_4_decision_locks_cleanup,batch_5_ledger_audit_only,batch_6_policies_conditional_read,batch_7_research_roadmap_query_first,batch_8_pass_warn_policy,batch_9_handoff_compact_enforcement,batch_10_final_validation_before_f21_a61`
+- batch_validation_defined: `True`
+- batch_rollback_defined: `True`
+- stop_criteria_defined: `True`
+- pass_warn_policy_apply_plan_defined: `True`
+- boot_profile_apply_plan_defined: `True`
+- context_index_cleanup_plan_defined: `True`
+- current_state_slimming_plan_defined: `True`
+- decision_locks_cleanup_plan_defined: `True`
+- ledger_audit_only_plan_defined: `True`
+- policies_conditional_read_plan_defined: `True`
+- research_query_first_plan_defined: `True`
+- handoff_compact_enforcement_plan_defined: `True`
+- final_validation_plan_defined: `True`
+- current_default_boot_file_count: `10`
+- proposed_default_boot_file_count: `4`
+- estimated_boot_reduction_percent: `60.0`
+- f21_a61_allowed_next: `False`
+- next_real_action: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
+
+This ledger entry records the active-context OS reform apply plan only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
 - phase_id: `F21-A60`
