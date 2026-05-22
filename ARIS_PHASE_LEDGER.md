@@ -1,3 +1,31 @@
+## F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate
+- latest_completed_phase: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
+- phase_id: `F21-CTX-D9`
+- status: `agent_adoption_review_gate_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D8`
+- source_d8_status: `agent_adoption_controlled_apply_passed`
+- adoption_review_passed: `True`
+- reviewed_targets: `AGENTS.md, CLAUDE.md, .codex/skills/aris-obsidian-context/SKILL.md, .codex/skills/aris-obsidian-context/references/README.md`
+- profile_references_verified: `True`
+- boot_profile_reference_present: `True`
+- read_profile_reference_present: `True`
+- agents_claude_alignment: `True`
+- skill_read_only_query_first_preserved: `True`
+- bulk_read_forbidden_preserved: `True`
+- d7_historical_safe: `True`
+- d7_historical_safe_reason: `D7 remains a semantic plan gate and the live-state adjustment only made its summary/report historical-safe for D8.`
+- protected_sources_modified: `False`
+- protected_sources_checked: `DECISION_LOCKS.md, MODEL_REASONING_POLICY.md, HANDOFF_RESPONSE_POLICY.md, EXTERNAL_REFERENCES.md`
+- boot_profile_modified: `False`
+- read_profile_modified: `False`
+- adoption_targets_modified_by_d9: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- runtime_scope_untouched: `True`
+- next_real_action: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
+
+This ledger entry records review only. It does not modify targets, profiles, protected sources, or runtime scope.
 # ARIS_PHASE_LEDGER
 
 ## F21-CTX-D8 - Active Context OS Reform Batch 1 Agent Adoption Controlled Apply Gate

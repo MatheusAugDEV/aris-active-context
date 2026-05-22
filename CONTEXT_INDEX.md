@@ -16,6 +16,11 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
+## Agent adoption review
+- D9 reviewed the D8 adoption apply, confirmed the four canonical agent-facing surfaces still point at the boot/read profiles, and kept `F21-A61` blocked.
+- D7 remained historical-safe: its summary/report stayed artifact-driven and it did not become an apply gate.
+- D10 is the next closure gate and must stay query-first, bounded, and runtime-free.
+
 ## Agent adoption apply
 - D8 applied the bounded adoption plan to `AGENTS.md`, `CLAUDE.md`, and the `aris-obsidian-context` skill surfaces without modifying the canonical boot/read profiles.
 - `aris-active-context/README.md` remained optional and was not required for the minimum index.
@@ -68,8 +73,8 @@
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
-- latest_completed_phase: `F21-CTX-D8 - Active Context OS Reform Batch 1 Agent Adoption Controlled Apply Gate`
-- next_recommended_phase: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
+- latest_completed_phase: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
+- next_recommended_phase: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
 - active_context_os_diagnostic_completed: `True`
 - active_context_os_reform_design_completed: `True`
 - active_context_os_reform_apply_plan_created: `True`
