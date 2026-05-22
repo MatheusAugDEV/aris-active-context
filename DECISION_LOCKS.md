@@ -24,7 +24,7 @@
 - token_budget_policy_defined: `True`
 - output_contract_defined: `True`
 - external_reference_huw_fury_used: `False`
-- external_reference_huw_fury_status: `external research pending / not materialized / implementation_allowed_now=false`
+- external_reference_huw_fury_status: `catalogued_external_reference / implementation_allowed_now=false`
 - root_worktree_dirty_unrelated: `True`
 - root_worktree_dirty_blocks_prompt_kernel_planning: `False`
 - template_library_allowed: `False`
@@ -43,7 +43,44 @@
 
 This lock records the plan review only and does not authorize implementation.
 
+## External Reference Locks — Huw Prosser / Fury SDK corpus
+
+- external_reference_id: `ext_ref_huw_prosser_fury_2026_05`
+- status: `catalogued_external_reference`
+- implementation_allowed_now: `false`
+- roadmap_direct_insert_allowed_now: `false`
+- phase_sequence_change_allowed_now: `false`
+- source_of_truth_rank: `reference_only_non_authoritative`
+
+### L-EXTREF
+External references do not authorize implementation, runtime mutation, roadmap sequence changes, product promotion, customer real use, or production release.
+
+### L-PATTERN-FURY
+Fury/Huw patterns cannot bypass `BEDROCK_GATE.md`, `NORTH_POLE.md`, phase-specific gates, permission gates, ledger, rollback, sidecar execution, active-context precedence, or source-of-truth policy.
+
+### L-BASH-FS
+Direct bash/filesystem tools are rejected as LLM tools. They may only be reconsidered through a future sidecar design with permission gate, ledger, rollback/compensation, path jail, deterministic tests, and explicit capability binding.
+
+### L-MEMORY-PROVENANCE
+Durable memory requires provenance, validity window, scope binding, revocation, audit trail, privacy policy, and source-of-truth precedence before implementation.
+
+### L-SKILL-REGISTRY
+External skills require a signed registry, hash pinning, explicit capability declaration, human/security review, and promotion gate before use.
+
+### L-SYSTEM-PROMPT-BOUNDARY
+Raw project-file injection into system prompts is rejected. Master/system/persona content must never be prefixed into user content.
+
+### L-PARALLEL-TOOLS
+Parallel tool execution remains blocked until deterministic scheduling, capability binding, plan-hash binding, and rollback/compensation are proven.
+
+### L-VOICE-CLONING
+Voice cloning remains deferred until anti-impersonation gates and audio retention/privacy policy exist.
+
+### L-LICENSE-REUSE
+External code reuse is blocked until license compatibility, source review, security review, and explicit adoption gate are completed.
+
 ## Recent immutable antecedents
+- `F21-A57`: prompt kernel plan review accepted the plan with warnings only.
 - `F21-A56`: prompt kernel planning created a bounded plan and kept implementation blocked.
 - `F21-A55`: post-sync closure reconciled the commit divergence and kept unrelated root dirtiness visible.
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
