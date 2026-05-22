@@ -2,9 +2,9 @@
 
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
-- next_gate: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
-- reason: `The adoption review is complete; the next safe step is closure while keeping F21-A61 blocked and F21B preserved.`
+- latest_completed_phase: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
+- next_gate: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- reason: `Batch 1 is closed; the next safe step is Batch 2 source-of-truth alignment while keeping F21-A61 blocked and F21B preserved.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `prompt_kernel_implementation_allowed: false`
@@ -22,4 +22,4 @@
   - `action_runtime_mutation_allowed: false`
   - `product_promotion_allowed: false`
 
-The next operational gate is closure only. It must preserve the active-context boundary and leave adoption targets unchanged.
+The next operational gate remains bounded and runtime-free.
