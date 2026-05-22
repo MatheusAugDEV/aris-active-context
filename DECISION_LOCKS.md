@@ -28,6 +28,10 @@
 - roadmap_direct_insert_allowed_now: `False`
 - phase_sequence_change_allowed_now: `False`
 - decision_gate_required_before_use: `True`
+- model_reasoning_policy_available: `True`
+- default_model: `5.4 mini`
+- default_reasoning_level: `baixo`
+- escalation_required_when_phase_risk_increases: `True`
 - root_worktree_dirty_unrelated: `True`
 - root_worktree_dirty_blocks_prompt_kernel_implementation_planning: `False`
 - template_library_allowed: `False`
@@ -45,6 +49,20 @@
 - next_real_action: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
 
 This lock records the implementation planning only and does not authorize implementation.
+
+## Model / Reasoning Policy Lock
+
+- policy_file: `MODEL_REASONING_POLICY.md`
+- default_model: `5.4 mini`
+- default_reasoning_level: `baixo`
+- active_context_touch_default: `5.4 normal / alto`
+- critical_recovery_security_roadmap_default: `5.5 / altissimo`
+- escalation_required_when_phase_risk_increases: `true`
+- policy_is_advisory_not_authorization: `true`
+
+Future ARIS prompts must state the recommended model and reasoning level. `5.4 mini` remains the default, but tasks involving active-context, gates, locks, ledger, parser/gate logic, roadmap, security, Prompt Kernel, Memory Kernel, Action Runtime, Voice Runtime, external reference integration, or recovery from partial execution must be escalated according to `MODEL_REASONING_POLICY.md`.
+
+This policy does not authorize implementation, runtime mutation, MCP, network, dependency installation, product promotion, customer real use, or production release.
 
 ## External Reference Locks — Huw Prosser / Fury SDK corpus
 
@@ -83,8 +101,8 @@ Voice cloning remains deferred until anti-impersonation gates and audio retentio
 External code reuse is blocked until license compatibility, source review, security review, and explicit adoption gate are completed.
 
 ## Recent immutable antecedents
+- `F21-A58`: prompt kernel implementation planning created a contract-only future boundary and catalogued Huw/Fury as reference-only.
+- `F21-A57`: prompt kernel plan review accepted the plan with warnings only.
 - `F21-A56`: prompt kernel planning created a bounded plan and kept implementation blocked.
 - `F21-A55`: post-sync closure reconciled the commit divergence and kept unrelated root dirtiness visible.
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
-- `F21-A54B`: active-context hygiene repair removed stale duplicate blocks.
-- `F21-A58`: prompt kernel implementation planning created a contract-only future boundary and catalogued Huw/Fury as reference-only.
