@@ -16,7 +16,13 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
+## Agent adoption apply
+- D8 applied the bounded adoption plan to `AGENTS.md`, `CLAUDE.md`, and the `aris-obsidian-context` skill surfaces without modifying the canonical boot/read profiles.
+- `aris-active-context/README.md` remained optional and was not required for the minimum index.
+- D9 is the next review gate and must remain query-first, bounded, and runtime-free.
+
 ## Recent phase references
+- `F21-CTX-D8` applied the adoption plan to the agent-facing surfaces, kept `F21-A61` blocked, and recommends `F21-CTX-D9` review before any F21-A61 implementation.
 - `F21-CTX-D5` materialized the boot/read profiles, kept protected sources untouched, and recommends `F21-CTX-D6` review before any F21-A61 implementation.
 - `F21-CTX-D4` planned the batch-1 boot/read profile boundary, kept apply blocked, and recommends `F21-CTX-D5` controlled boot-profile apply before any F21-A61 implementation.
 - `F21-CTX-D3` completed the active-context OS reform apply plan, kept all apply work blocked, and recommends `F21-CTX-D4` batch-1 boot profile planning before any F21-A61 implementation.
@@ -62,8 +68,8 @@
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
-- latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
-- next_recommended_phase: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
+- latest_completed_phase: `F21-CTX-D8 - Active Context OS Reform Batch 1 Agent Adoption Controlled Apply Gate`
+- next_recommended_phase: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
 - active_context_os_diagnostic_completed: `True`
 - active_context_os_reform_design_completed: `True`
 - active_context_os_reform_apply_plan_created: `True`
@@ -75,6 +81,8 @@
 - boot_profile_apply_allowed_now: `False`
 - handoff_response_policy_available: `True`
 - pass_warn_policy_reform_needed: `True`
+- agent_adoption_plan_created: `True`
+- agent_adoption_controlled_apply_completed: `True`
 - proposed_files_read_by_default: `4`
 - current_default_boot_file_count: `10`
 - estimated_boot_reduction_percent: `60.0`
@@ -83,6 +91,9 @@
 - root_repo_push_pending: `False`
 - nested_active_context_push_verified: `True`
 - root_worktree_dirty_unrelated: `True`
+- adoption_targets_planned: `4`
+- adoption_targets_modified: `4`
+- active_context_readme_modified: `False`
 - model_reasoning_policy_available: `True`
 - handoff_response_policy_available: `True`
 - prompt_kernel_planning_allowed_now: `False`

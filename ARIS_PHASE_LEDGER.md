@@ -1,5 +1,30 @@
 # ARIS_PHASE_LEDGER
 
+## F21-CTX-D8 - Active Context OS Reform Batch 1 Agent Adoption Controlled Apply Gate
+- latest_completed_phase: `F21-CTX-D8 - Active Context OS Reform Batch 1 Agent Adoption Controlled Apply Gate`
+- phase_id: `F21-CTX-D8`
+- status: `agent_adoption_controlled_apply_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D7`
+- source_d7_status: `agent_adoption_plan_gate_passed`
+- adoption_apply_completed: `True`
+- modified_adoption_targets: `AGENTS.md, CLAUDE.md, .codex/skills/aris-obsidian-context/SKILL.md, .codex/skills/aris-obsidian-context/references/README.md`
+- optional_targets_modified: `False`
+- active_context_readme_modified: `False`
+- profile_references_added: `True`
+- boot_profile_reference_present: `True`
+- read_profile_reference_present: `True`
+- boot_profile_modified: `False`
+- read_profile_modified: `False`
+- protected_sources_modified: `False`
+- protected_sources_checked: `DECISION_LOCKS.md, MODEL_REASONING_POLICY.md, HANDOFF_RESPONSE_POLICY.md, EXTERNAL_REFERENCES.md`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- runtime_scope_untouched: `True`
+- next_real_action: `F21-CTX-D9 - Active Context OS Reform Batch 1 Agent Adoption Review Gate`
+
+This ledger entry records the adoption apply only. It does not modify BOOT_PROFILE.md, READ_PROFILE.md, protected sources, or runtime scope.
+
 ## F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate
 - latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
 - phase_id: `F21-CTX-D5`
