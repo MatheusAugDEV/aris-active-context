@@ -8,6 +8,7 @@
 - [BEDROCK_GATE.md](BEDROCK_GATE.md)
 - [NORTH_POLE.md](NORTH_POLE.md)
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
+- [EXTERNAL_REFERENCES.md](EXTERNAL_REFERENCES.md)
 
 ## Recent phase references
 - `F21-A57` reviewed the Prompt Kernel v0.1 plan and kept implementation blocked.
@@ -16,6 +17,16 @@
 - `F21-A54C` remote sync verification confirmed both `origin/main` refs matched local HEAD.
 - `F21-A54B` hygiene repair compacted the active-context and kept the root push debt visible.
 - `F21-A54` lean runner review passed locally and recorded stale duplicate blocks as a warning.
+
+## External reference index
+- `ext_ref_huw_prosser_fury_2026_05`: catalogued external architectural reference for future Prompt Kernel, Context Compression, Memory Kernel, Skill Kernel, Tool Harness, Voice Runtime, UI Observability, and Action Runtime decisions.
+- status: `catalogued_external_reference`
+- implementation_allowed_now: `false`
+- roadmap_direct_insert_allowed_now: `false`
+- phase_sequence_change_allowed_now: `false`
+- macroblock_mapping_required: `true`
+- decision_gate_required_before_use: `true`
+- source_of_truth_rank: `reference_only_non_authoritative`
 
 ## Hygiene status
 - active_context_remote_sync_verified: `True`
@@ -29,3 +40,4 @@
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
 - `NORTH_POLE.md` remains the strategic north reference.
+- External references are advisory context only and do not authorize implementation, roadmap sequence changes, runtime mutation, MCP, product promotion, customer real use, or production release.
