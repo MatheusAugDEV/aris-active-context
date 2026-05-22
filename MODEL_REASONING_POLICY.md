@@ -51,25 +51,20 @@ Escalate from `5.4 mini` to `5.4 normal` or `5.5` when any task touches:
 - `5.4 mini` remains the default model.
 - Do not use `5.4 mini` for recovery of a partial ARIS phase unless the patch is strictly one small known issue and the next model escalation is unavailable.
 - Do not use `5.4 mini` for source-of-truth reconciliation, permission boundaries, roadmap placement, security decisions, or multi-file gate closures.
-- For prompts that affect active-context, always state the recommended model and reasoning level explicitly.
+- Future ARIS prompts must not repeat the full model matrix. The prompt must instruct Codex to read this policy and include only a compact model/reasoning line when useful.
 - For F21-A58-like recovery, use `5.5` preferred, `5.4 normal` acceptable, `5.4 mini` not recommended.
 
-## Prompt block template
+## Prompt usage policy
 
-Use this block in future ARIS prompts:
+Prompts must stay compact. Do not paste the full model matrix into every Codex prompt.
+
+Use this compact line format near the top of future ARIS prompts:
 
 ```text
-Modelo recomendado:
-- Preferencial: <5.4 mini | 5.4 normal | 5.5>
-- Alternativa aceitável: <...>
-- Não usar: <... if applicable>
-
-Raciocínio esperado:
-- <baixo | medio | alto | altissimo>
-
-Motivo:
-- <why this phase/task requires this tier>
+Model policy: read `aris-active-context/MODEL_REASONING_POLICY.md`; suggested profile for this task: `<model> / <reasoning>`.
 ```
+
+Only add a short reason if the task is risky or recovery-related. Do not include long model explanations unless the phase specifically reviews model policy.
 
 ## Non-authorizations
 
