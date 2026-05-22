@@ -37,6 +37,30 @@
 
 This ledger entry records the active-context OS diagnostic only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
 
+## F21-CTX-D2 - Active Context Operating System Reform Design Gate
+- latest_completed_phase: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
+- phase_id: `F21-CTX-D2`
+- status: `active_context_os_reform_design_pass`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D1`
+- reform_design_completed: `True`
+- reform_apply_allowed_now: `False`
+- active_context_target_architecture_defined: `True`
+- current_default_boot_file_count: `10`
+- proposed_default_boot_file_count: `4`
+- estimated_boot_reduction_percent: `60.0`
+- pass_warn_policy_defined: `True`
+- codex_read_policy_defined: `True`
+- chatgpt_read_policy_defined: `True`
+- query_first_policy_defined: `True`
+- handoff_compact_policy_defined: `True`
+- migration_batches_defined: `True`
+- rollback_plan_defined: `True`
+- f21_a61_allowed_next: `False`
+- next_real_action: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
+
+This ledger entry records the active-context OS reform design only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
 - phase_id: `F21-A60`
