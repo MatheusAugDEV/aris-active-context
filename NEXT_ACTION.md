@@ -2,9 +2,9 @@
 
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
-- next_gate: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
-- reason: `The active-context OS reform apply plan is complete; the next safe step is the first batch-specific plan gate while keeping F21-A61 blocked.`
+- latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
+- next_gate: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+- reason: `The batch-1 boot/read profile plan is defined; the next safe step is the controlled boot-profile apply gate while keeping F21-A61 blocked.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `prompt_kernel_implementation_allowed: false`
@@ -22,4 +22,4 @@
   - `action_runtime_mutation_allowed: false`
   - `product_promotion_allowed: false`
 
-The next operational gate is batch-1 apply planning only. It may scope the boot-profile batch, but it must not compact, rewrite, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or change external-reference authority.
+The next operational gate is batch-1 controlled apply only. It may create `BOOT_PROFILE.md` and `READ_PROFILE.md` and align the default boot to four files, but it must not compact, rewrite, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or change external-reference authority.

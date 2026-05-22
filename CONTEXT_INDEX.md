@@ -13,6 +13,7 @@
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
 ## Recent phase references
+- `F21-CTX-D4` planned the batch-1 boot/read profile boundary, kept apply blocked, and recommends `F21-CTX-D5` controlled boot-profile apply before any F21-A61 implementation.
 - `F21-CTX-D3` completed the active-context OS reform apply plan, kept all apply work blocked, and recommends `F21-CTX-D4` batch-1 boot profile planning before any F21-A61 implementation.
 - `F21-CTX-D2` completed the active-context OS reform design, kept apply blocked, and recommends `F21-CTX-D3` apply planning before any F21-A61 implementation.
 - `F21-CTX-D1` completed the active-context OS full diagnostic with warnings, found a missing `HANDOFF_RESPONSE_POLICY.md`, and recommends `F21-CTX-D2` design-only reform before any F21-A61 implementation.
@@ -56,11 +57,14 @@
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
-- latest_completed_phase: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
-- next_recommended_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
+- latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
+- next_recommended_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
 - active_context_os_diagnostic_completed: `True`
 - active_context_os_reform_design_completed: `True`
 - active_context_os_reform_apply_plan_created: `True`
+- boot_profile_plan_created: `True`
+- read_profile_plan_created: `True`
+- boot_profile_apply_allowed_now: `False`
 - handoff_response_policy_available: `True`
 - pass_warn_policy_reform_needed: `True`
 - proposed_files_read_by_default: `4`
@@ -81,7 +85,7 @@
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
-- F21-CTX-D3 is apply-plan-only; it does not apply the reform, compact, implement Prompt Kernel, mutate runtime, or authorize F21-A61.
+- F21-CTX-D4 is boot-profile-plan-only; it does not apply the reform, compact, implement Prompt Kernel, mutate runtime, or authorize F21-A61.
 - `HANDOFF_RESPONSE_POLICY.md` is present and defines compact handoff behavior; it is policy-only and not implementation authority.
 - `MODEL_REASONING_POLICY.md` is live, advisory-only, and non-authoritative for implementation.
 - `HANDOFF_RESPONSE_POLICY.md` is live and requires compact Codex phase handoffs by default.
@@ -89,5 +93,5 @@
 - `NORTH_POLE.md` remains the strategic north reference.
 - `MODEL_REASONING_POLICY.md` must be consulted when generating future ARIS prompts so each prompt states model tier and reasoning level compactly.
 - `HANDOFF_RESPONSE_POLICY.md` must be consulted before final phase handoff; detailed evidence belongs in artifacts/reports unless there is a failure or explicit request for full audit.
-- The next gate may create only contract-only files and must not integrate with runtime.
+- The next gate may create `BOOT_PROFILE.md` and `READ_PROFILE.md` and must not integrate with runtime.
 - External references are advisory context only and do not authorize implementation, roadmap sequence changes, runtime mutation, MCP, product promotion, customer real use, or production release.

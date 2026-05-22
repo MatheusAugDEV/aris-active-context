@@ -1,5 +1,30 @@
 # ARIS_PHASE_LEDGER
 
+## F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate
+- latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
+- phase_id: `F21-CTX-D4`
+- status: `active_context_boot_profile_plan_pass`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D3`
+- boot_profile_plan_created: `True`
+- read_profile_plan_created: `True`
+- boot_profile_apply_allowed_now: `False`
+- reform_apply_allowed_now: `False`
+- boot_profile_files_to_create: `BOOT_PROFILE.md, READ_PROFILE.md`
+- minimal_boot_file_count: `4`
+- current_default_boot_file_count: `10`
+- estimated_boot_reduction_percent: `60.0`
+- codex_read_rules_defined: `True`
+- chatgpt_read_rules_defined: `True`
+- research_read_rules_defined: `True`
+- audit_read_rules_defined: `True`
+- boot_validation_defined: `True`
+- rollback_plan_defined: `True`
+- f21_a61_allowed_next: `False`
+- next_real_action: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+
+This ledger entry records the batch-1 boot profile plan only. It does not apply the boot profile, compact, rewrite, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+
 ## F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate
 - latest_completed_phase: `F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate`
 - phase_id: `F21-CTX-D1`
