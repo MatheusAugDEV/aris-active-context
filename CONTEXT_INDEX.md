@@ -10,17 +10,17 @@
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
 ## Recent phase references
-- `F21-A54C` remote sync verification confirms both `origin/main` refs match local HEAD.
+- `F21-A55` post-sync closure reconciles the root commit divergence and keeps unrelated dirty work visible.
+- `F21-A54C` remote sync verification confirmed both `origin/main` refs matched local HEAD.
 - `F21-A54B` hygiene repair compacted the active-context and kept the root push debt visible.
 - `F21-A54` lean runner review passed locally and recorded stale duplicate blocks as a warning.
-- `F21-A53` lean runner implementation produced the minimal local acceptance runner.
 
 ## Hygiene status
 - active_context_remote_sync_verified: `True`
 - root_repo_push_verified: `True`
 - root_repo_push_pending: `False`
 - nested_active_context_push_verified: `True`
-- root_repo_worktree_dirty_unrelated: `True`
+- root_worktree_dirty_unrelated: `True`
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
