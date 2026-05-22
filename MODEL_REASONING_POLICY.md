@@ -90,3 +90,15 @@ This policy does not authorize:
 - Standard default: `5.4 mini` + `baixo` reasoning.
 - ARIS phase default when active-context/gates/artifacts are touched: `5.4 normal` + `alto` reasoning.
 - ARIS critical/recovery/security/roadmap default: `5.5` + `altissimo` reasoning.
+
+## F21-A59 recommendation
+
+- recommended_model_for_phase: `5.4 normal`
+- recommended_reasoning_level_for_phase: `alto`
+
+## Parser compatibility keys
+
+- policy_is_advisory_not_authorization: `true`
+- policy_does_not_authorize_runtime_or_implementation: `true`
+- implementation_allowed_now: `false`
+- runtime_integration_allowed_now: `false`

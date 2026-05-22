@@ -4,14 +4,15 @@
 - [CURRENT_STATE.md](CURRENT_STATE.md)
 - [NEXT_ACTION.md](NEXT_ACTION.md)
 - [DECISION_LOCKS.md](DECISION_LOCKS.md)
-- [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 - [EXTERNAL_REFERENCES.md](EXTERNAL_REFERENCES.md)
 - [MODEL_REASONING_POLICY.md](MODEL_REASONING_POLICY.md)
+- [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 - [BEDROCK_GATE.md](BEDROCK_GATE.md)
 - [NORTH_POLE.md](NORTH_POLE.md)
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
 ## Recent phase references
+- `F21-A59` reviewed the Prompt Kernel implementation plan, repaired the live model-policy pointer, and kept implementation blocked pending readiness review.
 - `F21-A58` planned the future Prompt Kernel v0.1 implementation boundary and kept runtime implementation blocked.
 - `F21-A57` reviewed the Prompt Kernel v0.1 plan and kept implementation blocked.
 - `F21-A56` created the Prompt Kernel v0.1 plan only and keeps implementation blocked until review.
@@ -45,12 +46,14 @@
 - root_repo_push_pending: `False`
 - nested_active_context_push_verified: `True`
 - root_worktree_dirty_unrelated: `True`
+- model_reasoning_policy_available: `True`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_implementation_allowed_now: `False`
 - prompt_kernel_runtime_integration_allowed: `False`
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
+- `MODEL_REASONING_POLICY.md` is live, advisory-only, and non-authoritative for implementation.
 - External references are catalogued and reference-only, never authoritative for implementation.
 - `NORTH_POLE.md` remains the strategic north reference.
 - `MODEL_REASONING_POLICY.md` must be consulted when generating future ARIS prompts so each prompt states model tier and reasoning level.
