@@ -12,6 +12,7 @@
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
 ## Recent phase references
+- `F21-A60` confirmed readiness for a future contract-only Prompt Kernel implementation and kept runtime integration blocked.
 - `F21-A59` reviewed the Prompt Kernel implementation plan, repaired the live model-policy pointer, and kept implementation blocked pending readiness review.
 - `F21-A58` planned the future Prompt Kernel v0.1 implementation boundary and kept runtime implementation blocked.
 - `F21-A57` reviewed the Prompt Kernel v0.1 plan and kept implementation blocked.
@@ -49,6 +50,7 @@
 - model_reasoning_policy_available: `True`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_implementation_allowed_now: `False`
+- controlled_contract_implementation_allowed_next: `True`
 - prompt_kernel_runtime_integration_allowed: `False`
 
 ## Notes
@@ -57,4 +59,5 @@
 - External references are catalogued and reference-only, never authoritative for implementation.
 - `NORTH_POLE.md` remains the strategic north reference.
 - `MODEL_REASONING_POLICY.md` must be consulted when generating future ARIS prompts so each prompt states model tier and reasoning level.
+- The next gate may create only contract-only files and must not integrate with runtime.
 - External references are advisory context only and do not authorize implementation, roadmap sequence changes, runtime mutation, MCP, product promotion, customer real use, or production release.

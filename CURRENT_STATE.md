@@ -1,28 +1,32 @@
 # CURRENT_STATE
 
-## F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate
-- latest_completed_phase: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
-- status: `prompt_kernel_implementation_plan_review_warn`
+## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
+- latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
+- status: `prompt_kernel_minimal_contract_implementation_readiness_warn`
 - decision: `warn`
-- phase_id: `F21-A59`
+- phase_id: `F21-A60`
 - macroblock_id: `MB1`
-- reviewed_phase_id: `F21-A58`
+- reviewed_phase_id: `F21-A59`
 - prompt_kernel_allowed: `False`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_allowed_now: `False`
 - prompt_kernel_implementation_plan_created: `True`
-- prompt_kernel_implementation_plan_reviewed: `True`
-- prompt_kernel_implementation_plan_review_passed: `True`
-- prompt_kernel_implementation_plan_completeness_score: `1.0`
+- minimal_contract_implementation_readiness_reviewed: `True`
+- minimal_contract_implementation_readiness_passed: `True`
+- minimal_contract_implementation_readiness_score: `1.0`
 - prompt_kernel_real_implementation_created: `False`
 - prompt_kernel_class_created: `False`
 - prompt_kernel_runtime_integration_allowed: `False`
 - prompt_kernel_implementation_allowed_now: `False`
 - prompt_kernel_implementation_allowed_next: `False`
+- controlled_contract_implementation_allowed_next: `True`
 - prompt_kernel_contracts_planned: `True`
 - prompt_kernel_future_module_boundary_defined: `True`
 - prompt_kernel_future_contract_objects_defined: `True`
 - prompt_kernel_future_deterministic_functions_defined: `True`
+- future_test_plan_ready: `True`
+- future_artifact_plan_ready: `True`
+- future_rollback_plan_ready: `True`
 - source_precedence_contract_defined: `True`
 - source_exclusion_contract_defined: `True`
 - traceability_hash_plan_defined: `True`
@@ -53,7 +57,7 @@
 - active_context_remote_sync_verified: `True`
 - stale_duplicate_blocks_present: `False`
 - root_worktree_dirty_unrelated: `True`
-- root_worktree_dirty_blocks_prompt_kernel_implementation_plan_review: `False`
+- root_worktree_dirty_blocks_prompt_kernel_minimal_contract_readiness: `False`
 - template_library_allowed: `False`
 - batch_runner_allowed: `False`
 - mcp_activation_allowed: `False`
@@ -66,7 +70,7 @@
 - product_promotion_allowed: `False`
 - customer_real_use_allowed: `False`
 - production_release_allowed: `False`
-- next_real_action: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
-- next_recommended_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
+- next_real_action: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
+- next_recommended_phase: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
 
-This is the single live state block for the prompt kernel implementation plan review pass. The plan is accepted with warnings only, the model policy is now materialized as advisory-only guidance, and implementation remains blocked pending a readiness gate.
+This is the single live state block for the prompt kernel minimal contract implementation readiness gate. Readiness is accepted with warnings only, implementation now remains blocked, and only the next controlled contract-only gate is authorized to proceed.

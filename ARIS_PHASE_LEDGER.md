@@ -1,24 +1,28 @@
 # ARIS_PHASE_LEDGER
 
-## F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate
-- latest_completed_phase: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
-- phase_id: `F21-A59`
-- status: `prompt_kernel_implementation_plan_review_warn`
+## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
+- latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
+- phase_id: `F21-A60`
+- status: `prompt_kernel_minimal_contract_implementation_readiness_warn`
 - decision: `warn`
-- reviewed_phase_id: `F21-A58`
+- reviewed_phase_id: `F21-A59`
 - prompt_kernel_implementation_plan_created: `True`
-- prompt_kernel_implementation_plan_reviewed: `True`
-- prompt_kernel_implementation_plan_review_passed: `True`
-- prompt_kernel_implementation_plan_completeness_score: `1.0`
+- minimal_contract_implementation_readiness_reviewed: `True`
+- minimal_contract_implementation_readiness_passed: `True`
+- minimal_contract_implementation_readiness_score: `1.0`
 - prompt_kernel_real_implementation_created: `False`
 - prompt_kernel_class_created: `False`
 - prompt_kernel_runtime_integration_allowed: `False`
 - prompt_kernel_implementation_allowed_now: `False`
 - prompt_kernel_implementation_allowed_next: `False`
+- controlled_contract_implementation_allowed_next: `True`
 - prompt_kernel_contracts_planned: `True`
 - prompt_kernel_future_module_boundary_defined: `True`
 - prompt_kernel_future_contract_objects_defined: `True`
 - prompt_kernel_future_deterministic_functions_defined: `True`
+- future_test_plan_ready: `True`
+- future_artifact_plan_ready: `True`
+- future_rollback_plan_ready: `True`
 - source_precedence_contract_defined: `True`
 - source_exclusion_contract_defined: `True`
 - traceability_hash_plan_defined: `True`
@@ -41,7 +45,7 @@
 - decision_gate_required_before_use: `True`
 - stale_duplicate_blocks_present: `False`
 - root_worktree_dirty_unrelated: `True`
-- root_worktree_dirty_blocks_prompt_kernel_implementation_plan_review: `False`
+- root_worktree_dirty_blocks_prompt_kernel_minimal_contract_readiness: `False`
 - template_library_allowed: `False`
 - batch_runner_allowed: `False`
 - mcp_activation_allowed: `False`
@@ -54,10 +58,10 @@
 - product_promotion_allowed: `False`
 - customer_real_use_allowed: `False`
 - production_release_allowed: `False`
-- next_real_action: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
-- next_recommended_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
+- next_real_action: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
+- next_recommended_phase: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
 
-This ledger entry records the Prompt Kernel implementation plan review phase and keeps implementation deferred until the readiness gate.
+This ledger entry records the Prompt Kernel minimal contract implementation readiness phase and keeps implementation deferred until the controlled contract-only gate.
 
 ## EXTREF-2026-05-HUW-FURY — External reference catalog entry
 - external_reference_id: `ext_ref_huw_prosser_fury_2026_05`
@@ -79,4 +83,4 @@ The Huw Prosser / Fury SDK Tier-1 report is now catalogued as external reference
 - `F21-A56`: prompt kernel planning created a bounded plan and kept implementation blocked.
 - `F21-A55`: post-sync closure reconciled the commit divergence and kept unrelated root dirtiness visible.
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
-- `F21-A59`: prompt kernel implementation plan review accepted the contract-only future boundary and preserved implementation deferment.
+- `F21-A60`: prompt kernel minimal contract readiness accepted only the next controlled contract-only implementation gate.
