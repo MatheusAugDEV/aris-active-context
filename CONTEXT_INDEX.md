@@ -12,7 +12,12 @@
 - [NORTH_POLE.md](NORTH_POLE.md)
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
+## Active Context Profiles
+- [BOOT_PROFILE.md](BOOT_PROFILE.md)
+- [READ_PROFILE.md](READ_PROFILE.md)
+
 ## Recent phase references
+- `F21-CTX-D5` materialized the boot/read profiles, kept protected sources untouched, and recommends `F21-CTX-D6` review before any F21-A61 implementation.
 - `F21-CTX-D4` planned the batch-1 boot/read profile boundary, kept apply blocked, and recommends `F21-CTX-D5` controlled boot-profile apply before any F21-A61 implementation.
 - `F21-CTX-D3` completed the active-context OS reform apply plan, kept all apply work blocked, and recommends `F21-CTX-D4` batch-1 boot profile planning before any F21-A61 implementation.
 - `F21-CTX-D2` completed the active-context OS reform design, kept apply blocked, and recommends `F21-CTX-D3` apply planning before any F21-A61 implementation.
@@ -57,13 +62,16 @@
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
-- latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
-- next_recommended_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+- latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+- next_recommended_phase: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
 - active_context_os_diagnostic_completed: `True`
 - active_context_os_reform_design_completed: `True`
 - active_context_os_reform_apply_plan_created: `True`
 - boot_profile_plan_created: `True`
 - read_profile_plan_created: `True`
+- boot_profile_controlled_apply_completed: `True`
+- boot_profile_available: `True`
+- read_profile_available: `True`
 - boot_profile_apply_allowed_now: `False`
 - handoff_response_policy_available: `True`
 - pass_warn_policy_reform_needed: `True`
@@ -83,9 +91,13 @@
 - f21_a61_allowed_next: `False`
 - prompt_kernel_runtime_integration_allowed: `False`
 
+## Boot profile
+- [BOOT_PROFILE.md](BOOT_PROFILE.md) is the canonical four-file boot.
+- [READ_PROFILE.md](READ_PROFILE.md) defines the layered read permissions that keep the boot small.
+
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
-- F21-CTX-D4 is boot-profile-plan-only; it does not apply the reform, compact, implement Prompt Kernel, mutate runtime, or authorize F21-A61.
+- F21-CTX-D5 materialized the boot/read profiles and did not modify protected sources.
 - `HANDOFF_RESPONSE_POLICY.md` is present and defines compact handoff behavior; it is policy-only and not implementation authority.
 - `MODEL_REASONING_POLICY.md` is live, advisory-only, and non-authoritative for implementation.
 - `HANDOFF_RESPONSE_POLICY.md` is live and requires compact Codex phase handoffs by default.
@@ -93,5 +105,5 @@
 - `NORTH_POLE.md` remains the strategic north reference.
 - `MODEL_REASONING_POLICY.md` must be consulted when generating future ARIS prompts so each prompt states model tier and reasoning level compactly.
 - `HANDOFF_RESPONSE_POLICY.md` must be consulted before final phase handoff; detailed evidence belongs in artifacts/reports unless there is a failure or explicit request for full audit.
-- The next gate may create `BOOT_PROFILE.md` and `READ_PROFILE.md` and must not integrate with runtime.
+- The next gate may review the boot profile and must not integrate with runtime.
 - External references are advisory context only and do not authorize implementation, roadmap sequence changes, runtime mutation, MCP, product promotion, customer real use, or production release.

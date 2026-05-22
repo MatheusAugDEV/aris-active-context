@@ -1,5 +1,25 @@
 # ARIS_PHASE_LEDGER
 
+## F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate
+- latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+- phase_id: `F21-CTX-D5`
+- status: `active_context_boot_profile_controlled_apply_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D4`
+- boot_profile_controlled_apply_completed: `True`
+- created_profiles: `BOOT_PROFILE.md, READ_PROFILE.md`
+- updated_active_context_files: `BOOT_PROFILE.md, READ_PROFILE.md, CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, CONTEXT_INDEX.md`
+- protected_sources_modified: `False`
+- protected_sources_not_modified: `DECISION_LOCKS.md, MODEL_REASONING_POLICY.md, HANDOFF_RESPONSE_POLICY.md, EXTERNAL_REFERENCES.md`
+- current_default_boot_file_count: `4`
+- previous_default_boot_file_count: `10`
+- estimated_boot_reduction_percent: `60.0`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- next_real_action: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
+
+This ledger entry records the controlled boot-profile apply only. It does not modify protected sources, widen the boot, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+
 ## F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate
 - latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
 - phase_id: `F21-CTX-D4`
@@ -23,7 +43,7 @@
 - f21_a61_allowed_next: `False`
 - next_real_action: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
 
-This ledger entry records the batch-1 boot profile plan only. It does not apply the boot profile, compact, rewrite, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+This ledger entry is preserved for lineage and does not re-authorize the plan phase.
 
 ## F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate
 - latest_completed_phase: `F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate`
@@ -60,8 +80,6 @@ This ledger entry records the batch-1 boot profile plan only. It does not apply 
 - production_release_allowed: `False`
 - next_real_action: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
 
-This ledger entry records the active-context OS diagnostic only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
-
 ## F21-CTX-D2 - Active Context Operating System Reform Design Gate
 - latest_completed_phase: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
 - phase_id: `F21-CTX-D2`
@@ -83,8 +101,6 @@ This ledger entry records the active-context OS diagnostic only. It does not com
 - rollback_plan_defined: `True`
 - f21_a61_allowed_next: `False`
 - next_real_action: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
-
-This ledger entry records the active-context OS reform design only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
 
 ## F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate
 - latest_completed_phase: `F21-CTX-D3 - Active Context Operating System Reform Apply Plan Gate`
@@ -115,8 +131,6 @@ This ledger entry records the active-context OS reform design only. It does not 
 - estimated_boot_reduction_percent: `60.0`
 - f21_a61_allowed_next: `False`
 - next_real_action: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
-
-This ledger entry records the active-context OS reform apply plan only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
 
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
@@ -179,8 +193,6 @@ This ledger entry records the active-context OS reform apply plan only. It does 
 - next_real_action: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
 - next_recommended_phase: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
 
-This ledger entry records the Prompt Kernel minimal contract implementation readiness phase and keeps implementation deferred until the controlled contract-only gate.
-
 ## EXTREF-2026-05-HUW-FURY — External reference catalog entry
 - external_reference_id: `ext_ref_huw_prosser_fury_2026_05`
 - status: `catalogued_external_reference`
@@ -193,8 +205,6 @@ This ledger entry records the Prompt Kernel minimal contract implementation read
 - affected_future_areas: `Prompt Kernel`, `Context Compression`, `Memory Kernel`, `Skill Kernel`, `Tool Harness`, `Voice Runtime`, `UI Observability`, `Action Runtime`
 - next_action_changed: `false`
 - next_real_action_preserved: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
-
-The Huw Prosser / Fury SDK Tier-1 report is now catalogued as external reference only. It does not authorize code reuse, implementation, runtime mutation, MCP, roadmap sequence changes, product promotion, customer real use, or production release.
 
 ## Recent ledger anchors
 - `F21-A57`: prompt kernel plan review accepted the plan with warnings only.
