@@ -1,5 +1,26 @@
 # ARIS_PHASE_LEDGER
 
+## F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate
+- latest_completed_phase: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
+- phase_id: `F21-CTX-D6`
+- status: `active_context_boot_profile_review_gate_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D5`
+- reviewed_profiles: `BOOT_PROFILE.md, READ_PROFILE.md`
+- profile_contract_passed: `True`
+- blocker_count: `0`
+- warning_count: `0`
+- protected_sources_modified: `False`
+- protected_sources_checked: `DECISION_LOCKS.md, MODEL_REASONING_POLICY.md, HANDOFF_RESPONSE_POLICY.md, EXTERNAL_REFERENCES.md`
+- boot_profile_modified: `False`
+- read_profile_modified: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- runtime_scope_untouched: `True`
+- next_real_action: `F21-CTX-D7 - Active Context OS Reform Batch 1 Agent Adoption Plan Gate`
+
+This ledger entry records the boot/read profile review only. It does not modify the profiles, protected sources, or runtime scope.
+
 ## F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate
 - latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
 - phase_id: `F21-CTX-D5`
@@ -17,8 +38,6 @@
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 - next_real_action: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
-
-This ledger entry records the controlled boot-profile apply only. It does not modify protected sources, widen the boot, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
 
 ## F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate
 - latest_completed_phase: `F21-CTX-D4 - Active Context Operating System Reform Batch 1 Boot Profile Plan Apply Gate`
@@ -207,6 +226,7 @@ This ledger entry is preserved for lineage and does not re-authorize the plan ph
 - next_real_action_preserved: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
 
 ## Recent ledger anchors
+- `F21-CTX-D6`: boot profile review accepted the controlled apply output and recommends agent-adoption planning.
 - `F21-A57`: prompt kernel plan review accepted the plan with warnings only.
 - `F21-A56`: prompt kernel planning created a bounded plan and kept implementation blocked.
 - `F21-A55`: post-sync closure reconciled the commit divergence and kept unrelated root dirtiness visible.
