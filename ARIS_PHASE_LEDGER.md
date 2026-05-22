@@ -1,5 +1,42 @@
 # ARIS_PHASE_LEDGER
 
+## F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate
+- latest_completed_phase: `F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate`
+- phase_id: `F21-CTX-D1`
+- status: `active_context_os_full_diagnostic_warn`
+- decision: `warn`
+- diagnostic_completed: `True`
+- active_context_scalability_score: `0.42`
+- boot_context_bloat_score: `0.74`
+- duplication_score: `0.68`
+- warning_policy_risk: `high`
+- total_active_context_files: `27`
+- live_pointer_count: `9`
+- duplicate_key_count: `619`
+- repeated_flag_blocks_count: `100`
+- warn_count_recent: `11`
+- files_read_by_default_now: `9`
+- proposed_files_read_by_default: `4`
+- estimated_boot_reduction_percent: `67.2`
+- handoff_response_policy_missing: `True`
+- pass_warn_policy_reform_needed: `True`
+- root_dirty_noise_status: `dirty_unrelated_noise_present`
+- prompt_kernel_implementation_allowed: `False`
+- f21_a61_allowed_next: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- runtime_mutation_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_real_action: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
+
+This ledger entry records the active-context OS diagnostic only. It does not compact, restructure, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or authorize F21-A61.
+
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
 - phase_id: `F21-A60`

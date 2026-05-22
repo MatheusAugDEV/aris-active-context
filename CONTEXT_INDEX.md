@@ -13,6 +13,7 @@
 - [PHASE_SPECIFIC_GATES.md](PHASE_SPECIFIC_GATES.md)
 
 ## Recent phase references
+- `F21-CTX-D1` completed the active-context OS full diagnostic with warnings, found a missing `HANDOFF_RESPONSE_POLICY.md`, and recommends `F21-CTX-D2` design-only reform before any F21-A61 implementation.
 - `F21-A60` confirmed readiness for a future contract-only Prompt Kernel implementation and kept runtime integration blocked.
 - `F21-A59` reviewed the Prompt Kernel implementation plan, repaired the live model-policy pointer, and kept implementation blocked pending readiness review.
 - `F21-A58` planned the future Prompt Kernel v0.1 implementation boundary and kept runtime implementation blocked.
@@ -53,6 +54,13 @@
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
+- latest_completed_phase: `F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate`
+- next_recommended_phase: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
+- active_context_os_diagnostic_completed: `True`
+- handoff_response_policy_missing: `True`
+- pass_warn_policy_reform_needed: `True`
+- proposed_files_read_by_default: `4`
+- estimated_boot_reduction_percent: `67.2`
 - active_context_remote_sync_verified: `True`
 - root_repo_push_verified: `True`
 - root_repo_push_pending: `False`
@@ -62,11 +70,14 @@
 - handoff_response_policy_available: `True`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_implementation_allowed_now: `False`
-- controlled_contract_implementation_allowed_next: `True`
+- controlled_contract_implementation_allowed_next: `False`
+- f21_a61_allowed_next: `False`
 - prompt_kernel_runtime_integration_allowed: `False`
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
+- F21-CTX-D1 is diagnostic-only; it does not reform, compact, implement Prompt Kernel, mutate runtime, or authorize F21-A61.
+- `HANDOFF_RESPONSE_POLICY.md` is referenced by the F21-CTX-D1 prompt but is not present in active-context; create/design it only in a future authorized reform phase.
 - `MODEL_REASONING_POLICY.md` is live, advisory-only, and non-authoritative for implementation.
 - `HANDOFF_RESPONSE_POLICY.md` is live and requires compact Codex phase handoffs by default.
 - External references are catalogued and reference-only, never authoritative for implementation.

@@ -1,11 +1,13 @@
 # NEXT_ACTION
 
 ## Next operational gate
-- current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
-- next_gate: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
-- reason: `Readiness for a future contract-only Prompt Kernel implementation is complete, rollback scope is defined, and only a controlled non-runtime contract implementation gate may proceed next.`
+- current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
+- latest_completed_phase: `F21-CTX-D1 - Active Context Operating System Full Diagnostic Gate`
+- next_gate: `F21-CTX-D2 - Active Context Operating System Reform Design Gate`
+- reason: `The active-context OS diagnostic is complete with warnings; the next safe step is design-only reform planning before any F21-A61 implementation.`
 - blocked_capabilities:
+  - `f21_a61_allowed_next: false`
+  - `prompt_kernel_implementation_allowed: false`
   - `candidate_approval_allowed: false`
   - `automatic_activation_allowed: false`
   - `mcp_activation_allowed: false`
@@ -15,6 +17,9 @@
   - `network_allowed: false`
   - `dependency_install_allowed: false`
   - `runtime_mutation_allowed: false`
+  - `frontend_mutation_allowed: false`
+  - `audio_mutation_allowed: false`
+  - `action_runtime_mutation_allowed: false`
   - `product_promotion_allowed: false`
 
-The next operational gate is the prompt kernel minimal contract controlled implementation gate. This file is informational only and does not authorize runtime implementation.
+The next operational gate is design-only. It may propose the active-context reform architecture but must not compact, rewrite, implement Prompt Kernel, mutate runtime, activate MCP, install dependencies, or change external-reference authority.
