@@ -2,9 +2,9 @@
 
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
-- next_gate: `F21-CTX-D7 - Active Context OS Reform Batch 1 Agent Adoption Plan Gate`
-- reason: `The boot and read profiles passed deterministic review; the next safe step is the agent adoption plan gate while keeping F21-A61 blocked and F21B preserved.`
+- latest_completed_phase: `F21-CTX-D5 - Active Context OS Reform Batch 1 Boot Profile Controlled Apply Gate`
+- next_gate: `F21-CTX-D6 - Active Context OS Reform Batch 1 Boot Profile Review Gate`
+- reason: `The boot and read profiles are now materialized; the next safe step is the review gate while keeping F21-A61 blocked and F21B preserved.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `prompt_kernel_implementation_allowed: false`
@@ -22,4 +22,4 @@
   - `action_runtime_mutation_allowed: false`
   - `product_promotion_allowed: false`
 
-The next operational gate is batch-1 agent adoption planning only. It must keep the new profiles canonical, avoid bulk-read expansion, and preserve the active-context boundary.
+The next operational gate is batch-1 review only. It must keep the new profiles canonical, avoid bulk-read expansion, and preserve the active-context boundary.
