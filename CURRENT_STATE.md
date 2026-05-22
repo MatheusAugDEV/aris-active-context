@@ -1,32 +1,40 @@
 # CURRENT_STATE
 
-## F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate
-- latest_completed_phase: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
-- status: `prompt_kernel_plan_review_warn`
+## F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate
+- latest_completed_phase: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
+- status: `prompt_kernel_implementation_planning_warn`
 - decision: `warn`
-- phase_id: `F21-A57`
+- phase_id: `F21-A58`
 - macroblock_id: `MB1`
-- reviewed_phase_id: `F21-A56`
-- prompt_kernel_plan_reviewed: `True`
-- prompt_kernel_plan_review_passed: `True`
-- prompt_kernel_plan_completeness_score: `0.952`
+- reviewed_phase_id: `F21-A57`
 - prompt_kernel_allowed: `False`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_allowed_now: `False`
+- prompt_kernel_implementation_plan_created: `True`
+- prompt_kernel_real_implementation_created: `False`
+- prompt_kernel_class_created: `False`
+- prompt_kernel_runtime_integration_allowed: `False`
 - prompt_kernel_implementation_allowed_now: `False`
 - prompt_kernel_implementation_allowed_next: `False`
-- prompt_kernel_runtime_integration_allowed: `False`
-- source_precedence_defined: `True`
-- source_exclusion_policy_defined: `True`
-- context_compression_policy_defined: `True`
-- prompt_injection_boundary_defined: `True`
-- untrusted_content_boundary_defined: `True`
-- stale_context_detection_defined: `True`
-- contradiction_detection_defined: `True`
-- token_budget_policy_defined: `True`
-- output_contract_defined: `True`
+- prompt_kernel_contracts_planned: `True`
+- prompt_kernel_future_module_boundary_defined: `True`
+- prompt_kernel_future_contract_objects_defined: `True`
+- prompt_kernel_future_deterministic_functions_defined: `True`
+- source_precedence_contract_defined: `True`
+- source_exclusion_contract_defined: `True`
+- traceability_hash_plan_defined: `True`
+- false_authorization_prevention_defined: `True`
 - external_reference_huw_fury_used: `False`
-- external_reference_huw_fury_status: `external research pending / not materialized / implementation_allowed_now=false`
+- external_reference_huw_fury_catalogued: `True`
+- external_reference_huw_fury_used_as_authorization: `False`
+- external_reference_huw_fury_changes_sequence_now: `False`
+- external_reference_drift_reconciled: `True`
+- external_reference_huw_fury_status: `catalogued_external_reference`
+- external_reference_huw_fury_source_rank: `reference_only_non_authoritative`
+- external_reference_huw_fury_may_inform_future_design: `True`
+- roadmap_direct_insert_allowed_now: `False`
+- phase_sequence_change_allowed_now: `False`
+- decision_gate_required_before_use: `True`
 - remote_sync_closed: `True`
 - commit_discrepancy_reconciled: `True`
 - root_repo_push_verified: `True`
@@ -35,7 +43,7 @@
 - active_context_remote_sync_verified: `True`
 - stale_duplicate_blocks_present: `False`
 - root_worktree_dirty_unrelated: `True`
-- root_worktree_dirty_blocks_prompt_kernel_planning: `False`
+- root_worktree_dirty_blocks_prompt_kernel_implementation_planning: `False`
 - template_library_allowed: `False`
 - batch_runner_allowed: `False`
 - mcp_activation_allowed: `False`
@@ -48,7 +56,7 @@
 - product_promotion_allowed: `False`
 - customer_real_use_allowed: `False`
 - production_release_allowed: `False`
-- next_real_action: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
-- next_recommended_phase: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
+- next_real_action: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
+- next_recommended_phase: `F21-A59 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Plan Review Gate`
 
-This is the single live state block for the prompt kernel plan review pass. The plan is acceptable with warnings only; implementation remains blocked and the next step is implementation planning.
+This is the single live state block for the prompt kernel implementation planning pass. The future boundary is catalogued and non-runtime; implementation remains blocked and the next step is plan review.

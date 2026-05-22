@@ -1,18 +1,20 @@
 # EXTERNAL_REFERENCES
 
 ## ext_ref_huw_prosser_fury_2026_05
-
+- label: `Huw Prosser / Fury SDK external research`
 - status: `catalogued_external_reference`
 - source_type: `external_architectural_reference`
 - primary_source: `Huw Prosser public GitHub corpus / Fury SDK Tier-1 report`
 - catalogued_date: `2026-05-22`
+- source_of_truth_rank: `reference_only_non_authoritative`
 - implementation_allowed_now: `false`
 - roadmap_direct_insert_allowed_now: `false`
 - phase_sequence_change_allowed_now: `false`
 - roadmap_mutation_allowed: `bounded_macroblock_mapping_only`
 - macroblock_mapping_required: `true`
 - decision_gate_required_before_use: `true`
-- source_of_truth_rank: `reference_only_non_authoritative`
+- may_inform_future_design: `true`
+- used_as_authorization: `false`
 - next_action_changed: `false`
 
 ### Strategic value
@@ -73,3 +75,5 @@ This reference may inform future design only when the active macroblock explicit
 - product_promotion_allowed_now: `false`
 - customer_real_use_allowed_now: `false`
 - production_release_allowed_now: `false`
+
+This catalog is informational only and cannot authorize implementation, runtime mutation, or roadmap changes.

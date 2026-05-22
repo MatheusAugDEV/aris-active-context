@@ -4,6 +4,7 @@
 - [CURRENT_STATE.md](CURRENT_STATE.md)
 - [NEXT_ACTION.md](NEXT_ACTION.md)
 - [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- [EXTERNAL_REFERENCES.md](EXTERNAL_REFERENCES.md)
 - [ARIS_PHASE_LEDGER.md](ARIS_PHASE_LEDGER.md)
 - [BEDROCK_GATE.md](BEDROCK_GATE.md)
 - [NORTH_POLE.md](NORTH_POLE.md)
@@ -11,6 +12,7 @@
 - [EXTERNAL_REFERENCES.md](EXTERNAL_REFERENCES.md)
 
 ## Recent phase references
+- `F21-A58` planned the future Prompt Kernel v0.1 implementation boundary and kept runtime implementation blocked.
 - `F21-A57` reviewed the Prompt Kernel v0.1 plan and kept implementation blocked.
 - `F21-A56` created the Prompt Kernel v0.1 plan only and keeps implementation blocked until review.
 - `F21-A55` post-sync closure reconciles the root commit divergence and keeps unrelated dirty work visible.
@@ -36,8 +38,10 @@
 - root_worktree_dirty_unrelated: `True`
 - prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_implementation_allowed_now: `False`
+- prompt_kernel_runtime_integration_allowed: `False`
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
+- External references are catalogued and reference-only, never authoritative for implementation.
 - `NORTH_POLE.md` remains the strategic north reference.
 - External references are advisory context only and do not authorize implementation, roadmap sequence changes, runtime mutation, MCP, product promotion, customer real use, or production release.
