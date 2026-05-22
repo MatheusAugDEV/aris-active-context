@@ -2,9 +2,9 @@
 
 ## Next operational gate
 - current_macroblock: `MB1 — Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-A56 — ARIS Lean Development Protocol v0.1 Prompt Kernel Planning Gate`
-- next_gate: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
-- reason: `Prompt Kernel v0.1 has a bounded plan only; implementation remains blocked and the remaining root dirty state is unrelated to the planning gate.`
+- latest_completed_phase: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
+- next_gate: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
+- reason: `The prompt kernel plan has been reviewed and remains bounded; implementation remains blocked and the remaining root dirty state is unrelated to the review gate.`
 - blocked_capabilities:
   - `candidate_approval_allowed: false`
   - `automatic_activation_allowed: false`
@@ -17,4 +17,4 @@
   - `runtime_mutation_allowed: false`
   - `product_promotion_allowed: false`
 
-The next operational gate is the prompt kernel plan review gate. This file is informational only and does not authorize implementation.
+The next operational gate is the prompt kernel implementation planning gate. This file is informational only and does not authorize implementation.

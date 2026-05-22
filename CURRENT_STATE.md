@@ -1,15 +1,17 @@
 # CURRENT_STATE
 
-## F21-A56 — ARIS Lean Development Protocol v0.1 Prompt Kernel Planning Gate
-- latest_completed_phase: `F21-A56 — ARIS Lean Development Protocol v0.1 Prompt Kernel Planning Gate`
-- status: `prompt_kernel_planning_warn`
+## F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate
+- latest_completed_phase: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
+- status: `prompt_kernel_plan_review_warn`
 - decision: `warn`
-- phase_id: `F21-A56`
+- phase_id: `F21-A57`
 - macroblock_id: `MB1`
-- reviewed_phase_id: `F21-A55`
-- prompt_kernel_plan_created: `True`
+- reviewed_phase_id: `F21-A56`
+- prompt_kernel_plan_reviewed: `True`
+- prompt_kernel_plan_review_passed: `True`
+- prompt_kernel_plan_completeness_score: `0.952`
 - prompt_kernel_allowed: `False`
-- prompt_kernel_planning_allowed_now: `True`
+- prompt_kernel_planning_allowed_now: `False`
 - prompt_kernel_allowed_now: `False`
 - prompt_kernel_implementation_allowed_now: `False`
 - prompt_kernel_implementation_allowed_next: `False`
@@ -46,7 +48,7 @@
 - product_promotion_allowed: `False`
 - customer_real_use_allowed: `False`
 - production_release_allowed: `False`
-- next_real_action: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
-- next_recommended_phase: `F21-A57 — ARIS Lean Development Protocol v0.1 Prompt Kernel Plan Review Gate`
+- next_real_action: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
+- next_recommended_phase: `F21-A58 — ARIS Lean Development Protocol v0.1 Prompt Kernel Implementation Planning Gate`
 
-This is the single live state block for the prompt kernel planning pass. It defines a plan only; implementation remains blocked until review.
+This is the single live state block for the prompt kernel plan review pass. The plan is acceptable with warnings only; implementation remains blocked and the next step is implementation planning.
