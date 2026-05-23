@@ -1,3 +1,29 @@
+## F21-CTX-D11R - No-Warn Advancement Policy Repair Gate
+- latest_completed_phase: `F21-CTX-D11R - No-Warn Advancement Policy Repair Gate`
+- phase_id: `F21-CTX-D11R`
+- status: `no_warn_advancement_policy_repair_passed`
+- decision: `pass`
+- no_warn_advancement_policy_created: `True`
+- warn_advancement_allowed: `False`
+- pass_required_for_next_gate: `True`
+- warn_requires_repair_or_rework: `True`
+- warn_cannot_close_phase: `True`
+- warn_cannot_release_runtime_or_next_functional_gate: `True`
+- phase_specific_gates_updated: `True`
+- decision_locks_updated: `True`
+- active_context_updated: `True`
+- latest_completed_phase_seen: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- previous_warn_phase_seen: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- next_gate_seen: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
+- runtime_scope_untouched: `True`
+- protected_scope_untouched: `True`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- next_real_action: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
+
+The no-warn policy is now live. Warn remains historical, but it is not an advancing outcome.
+
 ## F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate
 - latest_completed_phase: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
 - phase_id: `F21-CTX-D11`

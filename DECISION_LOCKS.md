@@ -1,3 +1,13 @@
+## L-NO-WARN-ADVANCEMENT — No-Warn Advancement Policy
+- warn_advancement_allowed: `False`
+- pass_required_for_next_gate: `True`
+- warn_requires_repair_or_rework: `True`
+- warn_cannot_close_phase: `True`
+- warn_cannot_release_runtime_or_next_functional_gate: `True`
+- applies_to_future_phases: `True`
+- applies_to_active_context_governance: `True`
+- retroactive_history_rewrite_allowed: `False`
+- historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
 
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate

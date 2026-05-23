@@ -1,3 +1,14 @@
+## No-warn advancement policy
+- latest_completed_phase: `F21-CTX-D11R - No-Warn Advancement Policy Repair Gate`
+- policy_name: `NO_WARN_ADVANCEMENT_POLICY`
+- warn_advancement_allowed: `False`
+- pass_required_for_next_gate: `True`
+- warn_requires_repair_or_rework: `True`
+- warn_cannot_close_phase: `True`
+- warn_cannot_release_runtime_or_next_functional_gate: `True`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
+
+Warn remains historical and diagnostic, not an advancing outcome.
 # CONTEXT_INDEX
 
 ## Live pointers
@@ -17,17 +28,17 @@
 - [READ_PROFILE.md](READ_PROFILE.md)
 
 ## Batch 2 source-of-truth alignment
-- latest_completed_phase: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
-- latest_completed_phase_seen: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
-- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Controlled Apply Gate`
-- next_gate_seen: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- latest_completed_phase: `F21-CTX-D11R - No-Warn Advancement Policy Repair Gate`
+- latest_completed_phase_seen: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
+- next_gate_seen: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
 - duplicate_blocks_detected: `True`
 - stale_live_state_risk_detected: `True`
 - source_of_truth_alignment_needed: `True`
 - planned_apply_allowed_next: `True`
 - cleanup_apply_allowed_now: `False`
 
-D11 keeps the index compact and leaves historical duplicates in place until the controlled apply gate.
+D11R keeps the index compact and routes the next step to warning resolution instead of normal advancement.
 
 ## Batch 1 closure
 - D10 closed Batch 1 after D3-D9 stayed consistent; D7 historical-safe was accepted in D9 and D8 historical-safe refresh was accepted in D9.
@@ -91,8 +102,8 @@ D11 keeps the index compact and leaves historical duplicates in place until the 
 - full_flags_list_in_chat_by_default: `false`
 
 ## Hygiene status
-- latest_completed_phase: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
-- next_recommended_phase: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- latest_completed_phase: `F21-CTX-D11R - No-Warn Advancement Policy Repair Gate`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
 - active_context_os_diagnostic_completed: `True`
 - active_context_os_reform_design_completed: `True`
 - active_context_os_reform_apply_plan_created: `True`

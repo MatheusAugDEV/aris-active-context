@@ -1,3 +1,13 @@
+## No-Warn Advancement Policy
+
+- policy_name: `NO_WARN_ADVANCEMENT_POLICY`
+- PASS is the only outcome that can release the next gate.
+- WARN is diagnostic only and requires repair or rework before any advancement.
+- WARN cannot close a phase and cannot release a functional next gate.
+- WARN may only route to repair, review, or cleanup gates that resolve the warning debt.
+- BLOCKED means security, scope, authorization, evidence, or source-of-truth failure.
+- INVALID means the phase does not prove what it claims to prove.
+- REWORK is an intermediate category that remains non-advancing until resolved.
 # PHASE_SPECIFIC_GATES — Gates Técnicos da Fase
 
 ## Função
@@ -47,7 +57,7 @@ Se uma fase não se encaixar em nenhuma categoria, ela deve ser revisada, fundid
 Uma fase só pode passar se:
 
 - `BEDROCK_GATE` não tiver falha;
-- `NORTH_POLE_ALIGNMENT` for `PASS` ou `WARN` justificado;
+- `NORTH_POLE_ALIGNMENT` for `PASS` only; `WARN` is diagnostic-only and requires repair/rework before advancement;
 - todos os critérios locais da fase forem satisfeitos;
 - o escopo autorizado for respeitado;
 - os locks forem preservados;
@@ -56,9 +66,9 @@ Uma fase só pode passar se:
 - o resultado final for rastreável por commit hash.
 
 ## Resultados possíveis
-- `PASS`: todos os gates críticos passaram e a fase entregou evidência suficiente.
-- `WARN`: a fase passou com dívida, limitação ou risco controlado registrado.
-- `REWORK`: a fase é válida, mas precisa ser refeita, compactada ou ajustada.
+- `PASS`: todos os gates críticos passaram e a fase entregou evidência suficiente para liberar o próximo gate.
+- `WARN`: diagnóstico בלבד; requer repair/review/cleanup antes de qualquer avanço.
+- `REWORK`: a fase é válida, mas precisa ser refeita, compactada ou ajustada antes de poder passar.
 - `BLOCKED`: a fase viola Bedrock, locks, autorização, escopo ou segurança.
 - `INVALID`: a fase não prova o que afirma provar.
 
