@@ -1,33 +1,23 @@
-## F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate
-- latest_completed_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
-- phase_id: `F21-CTX-D16`
-- status: `active_context_os_reform_batch2_closure_passed`
+## F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate
+- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- phase_id: `F21-CTX-D17`
+- status: `active_context_os_reform_batch2_post_closure_continuity_passed`
 - decision: `pass`
-- reviewed_phases: `F21-CTX-D12, F21-CTX-D13, F21-CTX-D14, F21-CTX-D15`
-- source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
-- source_d12_decision: `pass`
-- source_d12_warning_count: `0`
-- source_d12_blocker_count: `0`
-- source_d13_status: `bedrock_gate_v2_operational_diagnostic_passed`
-- source_d13_decision: `pass`
-- source_d13_warning_count: `0`
-- source_d13_blocker_count: `0`
-- source_d14_status: `bedrock_v2_research_parking_batch2_resume_passed`
-- source_d14_decision: `pass`
-- source_d14_warning_count: `0`
-- source_d14_blocker_count: `0`
-- source_d15_status: `active_context_os_reform_batch2_closure_review_passed`
-- source_d15_decision: `pass`
-- source_d15_warning_count: `0`
-- source_d15_blocker_count: `0`
+- reviewed_phase_id: `F21-CTX-D16`
+- source_d16_status: `active_context_os_reform_batch2_closure_passed`
+- source_d16_decision: `pass`
+- source_d16_warning_count: `0`
+- source_d16_blocker_count: `0`
+- batch2_closed_verified: `True`
 - no_warn_policy_verified: `True`
-- source_of_truth_warning_resolution_closed: `True`
-- bedrock_v2_diagnostic_preserved: `True`
-- bedrock_v2_research_parking_preserved: `True`
+- bedrock_v2_research_parking_verified: `True`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
-- batch2_closure_passed: `True`
-- closed_batch: `F21-CTX-Batch2`
+- external_bedrock_research_materialized: `False`
+- external_bedrock_research_candidates: `none`
+- next_route_class: `safe_continuity`
+- next_gate_selected: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
+- next_gate_reason: `No bounded local artifact materializes external Bedrock research, so conservative continuity is the next safe step.`
 - f21_a61_resume_allowed_now: `False`
 - f21b_resume_allowed_now: `False`
 - bedrock_gate_modified: `False`
@@ -49,7 +39,6 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
-- next_recommended_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- next_real_action: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
 
-D16 closes Batch 2 and keeps Bedrock v2 parked until external research is materialized in workspace.
+D17 routes conservatively after Batch 2 closure and does not auto-resume parked work.

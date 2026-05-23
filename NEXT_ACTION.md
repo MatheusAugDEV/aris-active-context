@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
-- next_gate: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
-- reason: `Batch 2 is closed, Bedrock v2 remains parked, and the next step must stay conservative until research appears in the workspace.`
+- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- next_gate: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
+- reason: `No bounded local artifact materializes external Bedrock research, so conservative continuity is the next safe step.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `f21b_resume_allowed_now: false`
@@ -29,4 +29,4 @@
 - bedrock_v2_research_pending: `True`
 - bedrock_v2_apply_deferred: `True`
 - bedrock_v2_apply_plan_deferred_until_research: `True`
-- batch2_closure_passed: `True`
+- batch2_closed_verified: `True`

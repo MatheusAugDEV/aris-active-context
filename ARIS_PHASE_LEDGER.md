@@ -1,3 +1,33 @@
+## F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate
+- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- phase_id: `F21-CTX-D17`
+- status: `active_context_os_reform_batch2_post_closure_continuity_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D16`
+- source_d16_status: `active_context_os_reform_batch2_closure_passed`
+- source_d16_decision: `pass`
+- source_d16_warning_count: `0`
+- source_d16_blocker_count: `0`
+- batch2_closed_verified: `True`
+- no_warn_policy_verified: `True`
+- bedrock_v2_research_parking_verified: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- external_bedrock_research_materialized: `False`
+- external_bedrock_research_candidates: `none`
+- next_route_class: `safe_continuity`
+- next_gate_selected: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
+- next_gate_reason: `No bounded local artifact materializes external Bedrock research, so conservative continuity is the next safe step.`
+- f21_a61_resume_allowed_now: `False`
+- f21b_resume_allowed_now: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
+
+Batch 2 is closed. Bedrock v2 remains parked and F21-A61 remains blocked.
+
 ## F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate
 - latest_completed_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
 - phase_id: `F21-CTX-D16`
