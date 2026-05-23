@@ -16,22 +16,25 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Batch 2 closure review
-- latest_completed_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
-- next_recommended_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
-- next_gate_seen: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
-- batch2_closure_candidate: `True`
-- bedrock_v2_research_parking_verified: `True`
+## Batch 2 closure
+- latest_completed_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
+- next_recommended_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- next_gate_seen: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
+- closed_batch: `F21-CTX-Batch2`
+- batch2_closure_passed: `True`
+- bedrock_v2_research_parking_preserved: `True`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
 - f21_a61_resume_allowed_now: `False`
 - f21b_resume_allowed_now: `False`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
+- research_intake_available: `False`
 
-Batch 2 is closure-candidate, but Bedrock v2 remains parked pending research and F21-A61 remains blocked.
+Batch 2 is closed. Bedrock v2 remains parked pending research, and the next gate stays conservative.
 
 ## Historical markers
+- D15 reviewed Batch 2 and proved closure candidacy.
 - D14 parked Bedrock v2 and restored normal Batch 2 flow.
 - D13 diagnosed Bedrock v2 requirements without applying them.
 - D12 resolved active-context warning debt operationally.
