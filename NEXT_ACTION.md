@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
-- next_gate: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
-- reason: `D11R established the no-warn policy; D12 compacted live source-of-truth and preserved removed history, so the next step is review.`
+- latest_completed_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
+- next_gate: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
+- reason: `D12 review passed; the active-context is compact and traceable, so the next step is closure.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `prompt_kernel_implementation_allowed: false`

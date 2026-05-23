@@ -16,23 +16,31 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Batch 2 warning resolution
-- latest_completed_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Controlled Apply Gate`
-- source_d11r_status: `no_warn_advancement_policy_repair_passed`
+## Batch 2 review
+- latest_completed_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
+- reviewed_phase_id: `F21-CTX-D12`
+- source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
+- source_d12_decision: `pass`
+- source_d12_warning_count: `0`
+- source_d12_blocker_count: `0`
 - no_warn_policy_verified: `True`
-- warning_resolution_completed: `True`
-- current_state_compacted: `True`
-- next_action_compacted: `True`
-- ledger_deduplicated: `True`
-- removed_block_count: `9`
-- next_recommended_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
-- next_gate_seen: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
+- warning_resolution_review_passed: `True`
+- current_state_compaction_verified: `True`
+- next_action_compaction_verified: `True`
+- context_index_alignment_verified: `True`
+- ledger_deduplication_verified: `True`
+- removed_blocks_artifact_verified: `True`
+- hashes_artifact_verified: `True`
+- removed_block_count_verified: `9`
+- next_recommended_phase: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
+- next_gate_seen: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-D12 compacted the live pointers and preserved removed history in artifacts; historical references stay clearly separated below.
+D13 keeps the index compact and routes the next step to closure after reviewing D12.
 
 ## Historical markers
-- D11R created the no-warn advancement policy and kept `WARN` non-advancing.
+- D12 resolved warnings operationally and preserved removed blocks in artifacts.
+- D11R created the no-warn advancement policy and kept WARN non-advancing.
 - D11 remains historical warning-state evidence only.
 - D10 remains historical closure-state evidence only.
