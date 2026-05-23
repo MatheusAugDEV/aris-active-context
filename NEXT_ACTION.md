@@ -1,10 +1,13 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate`
-- next_gate: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
-- reason: `Bedrock v2 diagnostic evidence is preserved, but apply planning is deferred until external research is complete; Batch 2 can resume closure review.`
+- latest_completed_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+- next_gate: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
+- reason: `Batch 2 is closure-candidate; the next step is a closure gate, with Bedrock v2 still parked and F21-A61 still blocked.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
+  - `f21b_resume_allowed_now: false`
+  - `bedrock_v2_apply_allowed_now: false`
+  - `bedrock_v2_apply_plan_allowed_now: false`
   - `prompt_kernel_implementation_allowed: false`
   - `candidate_approval_allowed: false`
   - `automatic_activation_allowed: false`
@@ -21,11 +24,9 @@
   - `product_promotion_allowed: false`
   - `customer_real_use_allowed: false`
   - `production_release_allowed: false`
-  - `bedrock_v2_apply_allowed_now: false`
-  - `bedrock_v2_apply_plan_allowed_next: false`
 - pass_required_for_next_gate: `True`
 - warn_requires_repair_or_rework: `True`
 - bedrock_v2_research_pending: `True`
 - bedrock_v2_apply_deferred: `True`
 - bedrock_v2_apply_plan_deferred_until_research: `True`
-- batch2_resume_allowed: `True`
+- batch2_closure_candidate: `True`

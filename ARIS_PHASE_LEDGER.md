@@ -1,3 +1,39 @@
+## F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate
+- latest_completed_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+- phase_id: `F21-CTX-D15`
+- status: `active_context_os_reform_batch2_closure_review_passed`
+- decision: `pass`
+- reviewed_phases: `F21-CTX-D12, F21-CTX-D13, F21-CTX-D14`
+- source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
+- source_d12_decision: `pass`
+- source_d12_warning_count: `0`
+- source_d12_blocker_count: `0`
+- source_d13_status: `bedrock_gate_v2_operational_diagnostic_passed`
+- source_d13_decision: `pass`
+- source_d13_warning_count: `0`
+- source_d13_blocker_count: `0`
+- source_d14_status: `bedrock_v2_research_parking_batch2_resume_passed`
+- source_d14_decision: `pass`
+- source_d14_warning_count: `0`
+- source_d14_blocker_count: `0`
+- no_warn_policy_verified: `True`
+- source_of_truth_warning_resolution_verified: `True`
+- bedrock_v2_diagnostic_verified: `True`
+- bedrock_v2_research_parking_verified: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- batch2_closure_review_passed: `True`
+- batch2_closure_candidate: `True`
+- f21_a61_resume_allowed_now: `False`
+- f21b_resume_allowed_now: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
+
+Batch 2 is closure-candidate. Bedrock v2 remains parked and F21-A61 remains blocked.
+
 ## F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate
 - latest_completed_phase: `F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate`
 - phase_id: `F21-CTX-D14`

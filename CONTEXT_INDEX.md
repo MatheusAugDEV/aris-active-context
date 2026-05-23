@@ -16,26 +16,22 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 parking and Batch 2 resume
-- latest_completed_phase: `F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate`
-- reviewed_phase_id: `F21-CTX-D13`
-- source_d13_status: `bedrock_gate_v2_operational_diagnostic_passed`
-- source_d13_decision: `pass`
-- bedrock_v2_required: `True`
-- bedrock_v2_research_pending: `True`
+## Batch 2 closure review
+- latest_completed_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+- next_recommended_phase: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
+- next_gate_seen: `F21-CTX-D16 - Active Context OS Reform Batch 2 Closure Gate`
+- batch2_closure_candidate: `True`
+- bedrock_v2_research_parking_verified: `True`
 - bedrock_v2_apply_allowed_now: `False`
-- bedrock_v2_apply_deferred: `True`
-- bedrock_v2_apply_plan_deferred_until_research: `True`
-- batch2_resume_allowed: `True`
-- normal_batch2_flow_restored: `True`
-- next_recommended_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
-- next_gate_seen: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- f21_a61_resume_allowed_now: `False`
+- f21b_resume_allowed_now: `False`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-Bedrock v2 remains required but parked pending external research. The current operational route resumes Batch 2 closure review.
+Batch 2 is closure-candidate, but Bedrock v2 remains parked pending research and F21-A61 remains blocked.
 
 ## Historical markers
-- D13 Bedrock diagnostic remains valid evidence and did not apply Bedrock v2.
-- Prior D13 source-of-truth review remains historical evidence in the ledger.
+- D14 parked Bedrock v2 and restored normal Batch 2 flow.
+- D13 diagnosed Bedrock v2 requirements without applying them.
 - D12 resolved active-context warning debt operationally.
