@@ -16,6 +16,19 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
+## Batch 2 source-of-truth alignment
+- latest_completed_phase: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- latest_completed_phase_seen: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Controlled Apply Gate`
+- next_gate_seen: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- duplicate_blocks_detected: `True`
+- stale_live_state_risk_detected: `True`
+- source_of_truth_alignment_needed: `True`
+- planned_apply_allowed_next: `True`
+- cleanup_apply_allowed_now: `False`
+
+D11 keeps the index compact and leaves historical duplicates in place until the controlled apply gate.
+
 ## Batch 1 closure
 - D10 closed Batch 1 after D3-D9 stayed consistent; D7 historical-safe was accepted in D9 and D8 historical-safe refresh was accepted in D9.
 - The root worktree still shows unrelated dirty noise outside D10; this was not touched by the closure.

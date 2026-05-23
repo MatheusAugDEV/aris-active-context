@@ -1,3 +1,26 @@
+## F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate
+- latest_completed_phase: `F21-CTX-D11 - Active Context OS Reform Batch 2 Source-of-Truth Alignment Plan Gate`
+- phase_id: `F21-CTX-D11`
+- status: `active_context_os_reform_batch2_source_of_truth_alignment_plan_warn`
+- decision: `warn`
+- latest_completed_phase_seen: `F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate`
+- batch2_plan_created: `True`
+- source_of_truth_alignment_needed: `True`
+- duplicate_blocks_detected: `True`
+- stale_live_state_risk_detected: `True`
+- conflict_count: `0`
+- warning_count: `2`
+- blocker_count: `0`
+- planned_apply_allowed_next: `True`
+- cleanup_apply_allowed_now: `False`
+- runtime_scope_untouched: `True`
+- protected_sources_modified: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- next_real_action: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Controlled Apply Gate`
+- next_recommended_phase: `F21-CTX-D12 - Active Context OS Reform Batch 2 Source-of-Truth Controlled Apply Gate`
+
+Batch 2 keeps the live state aligned and defers any cleanup apply.
 # CURRENT_STATE
 
 ## F21-CTX-D10 - Active Context OS Reform Batch 1 Closure Gate
