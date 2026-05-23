@@ -1,24 +1,24 @@
-## F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate
-- latest_completed_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
+## F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate
+- latest_completed_phase: `F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate`
 - phase_id: `F21-CTX-D13`
-- status: `active_context_source_of_truth_warning_resolution_review_passed`
+- status: `bedrock_gate_v2_operational_diagnostic_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-D12`
+- diagnostic_completed: `True`
+- reviewed_contracts: `aris-active-context/BEDROCK_GATE.md, aris-active-context/NORTH_POLE.md, aris-active-context/PHASE_SPECIFIC_GATES.md, aris-active-context/DECISION_LOCKS.md`
 - source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
 - source_d12_decision: `pass`
 - source_d12_warning_count: `0`
 - source_d12_blocker_count: `0`
 - no_warn_policy_verified: `True`
-- pass_required_for_next_gate: `True`
-- warn_advancement_allowed: `False`
-- warning_resolution_review_passed: `True`
-- current_state_compaction_verified: `True`
-- next_action_compaction_verified: `True`
-- context_index_alignment_verified: `True`
-- ledger_deduplication_verified: `True`
-- removed_blocks_artifact_verified: `True`
-- hashes_artifact_verified: `True`
-- removed_block_count_verified: `9`
+- simulated_cases_count: `20`
+- false_positive_cases_detected: `10`
+- critical_gap_count: `10`
+- high_gap_count: `7`
+- medium_gap_count: `3`
+- low_gap_count: `0`
+- bedrock_v2_required: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_recommended_next: `True`
 - runtime_scope_untouched: `True`
 - frontend_scope_untouched: `True`
 - audio_scope_untouched: `True`
@@ -33,5 +33,7 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
-- next_recommended_phase: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
+- next_real_action: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
+- next_recommended_phase: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
+
+D13 diagnosed Bedrock v2 requirements only. Bedrock v2 apply was not executed.

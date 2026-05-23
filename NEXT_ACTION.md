@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
-- next_gate: `F21-CTX-D14 - Active Context OS Reform Batch 2 Closure Gate`
-- reason: `D12 review passed; the active-context is compact and traceable, so the next step is closure.`
+- latest_completed_phase: `F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate`
+- next_gate: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
+- reason: `D13 proved Bedrock v2 is required through deterministic false-positive simulations; the next gate is an apply plan, not direct apply.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `prompt_kernel_implementation_allowed: false`
@@ -21,9 +21,9 @@
   - `product_promotion_allowed: false`
   - `customer_real_use_allowed: false`
   - `production_release_allowed: false`
+  - `bedrock_v2_apply_allowed_now: false`
 - pass_required_for_next_gate: `True`
 - warn_requires_repair_or_rework: `True`
 - warn_cannot_release_runtime_or_next_functional_gate: `True`
-- cleanup_apply_allowed_now: `False`
-- planned_apply_allowed_next: `True`
-- warning_resolution_completed: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_next: `True`

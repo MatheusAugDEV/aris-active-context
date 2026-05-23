@@ -1,3 +1,16 @@
+## L-BEDROCK-V2-DIAGNOSTIC-NO-APPLY
+- lock_id: `L-BEDROCK-V2-DIAGNOSTIC-NO-APPLY`
+- bedrock_v2_diagnostic_completed: `True`
+- bedrock_v2_required: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_required_next: `True`
+- diagnostic_does_not_modify_bedrock_gate: `True`
+- applies_to_active_context_governance: `True`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+
+D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
+
 ## L-NO-WARN-ADVANCEMENT — No-Warn Advancement Policy
 - warn_advancement_allowed: `False`
 - pass_required_for_next_gate: `True`

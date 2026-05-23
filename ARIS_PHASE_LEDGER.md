@@ -1,3 +1,37 @@
+## F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate
+- latest_completed_phase: `F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate`
+- phase_id: `F21-CTX-D13`
+- status: `bedrock_gate_v2_operational_diagnostic_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D12`
+- source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
+- source_d12_decision: `pass`
+- source_d12_warning_count: `0`
+- source_d12_blocker_count: `0`
+- no_warn_policy_verified: `True`
+- diagnostic_completed: `True`
+- simulated_cases_count: `20`
+- false_positive_cases_detected: `10`
+- blocked_cases_count_under_v2: `20`
+- ambiguous_cases_count_under_current_bedrock: `10`
+- critical_gap_count: `10`
+- high_gap_count: `7`
+- medium_gap_count: `3`
+- low_gap_count: `0`
+- bedrock_v2_required: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_recommended_next: `True`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
+
+This diagnostic gate proves the need for Bedrock v2 through simulations. It does not apply Bedrock v2.
+
 ## F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate
 - latest_completed_phase: `F21-CTX-D13 - Active Context OS Reform Batch 2 Source-of-Truth Warning Resolution Review Gate`
 - phase_id: `F21-CTX-D13`
