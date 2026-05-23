@@ -16,26 +16,18 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Batch 2 continuity
-- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
-- next_recommended_phase: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
-- next_gate_seen: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
-- batch2_closed_verified: `True`
-- bedrock_v2_research_parking_verified: `True`
-- external_bedrock_research_materialized: `False`
-- next_route_class: `safe_continuity`
+## Bedrock v2 external research intake
+- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- external_research_materialized: `True`
+- external_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
+- external_research_sha256: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- bedrock_v2_research_ready_for_triage: `True`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
-- f21_a61_resume_allowed_now: `False`
-- f21b_resume_allowed_now: `False`
+- batch2_closed_verified: `True`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-Batch 2 is closed. Bedrock v2 remains parked pending research, and the next gate is chosen conservatively.
-
-## Historical markers
-- D16 closed Batch 2.
-- D15 reviewed Batch 2 and proved closure candidacy.
-- D14 parked Bedrock v2 and restored normal Batch 2 flow.
-- D13 diagnosed Bedrock v2 requirements without applying them.
-- D12 resolved active-context warning debt operationally.
+The external Bedrock research is now materialized and ready for claim verification, but Bedrock v2 remains parked and non-authorizing.

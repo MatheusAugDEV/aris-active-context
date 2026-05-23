@@ -1,30 +1,38 @@
-## F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate
-- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
-- phase_id: `F21-CTX-D17`
-- status: `active_context_os_reform_batch2_post_closure_continuity_passed`
+## F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
+- phase_id: `F21-CTX-BEDROCK-R1`
+- status: `bedrock_v2_external_research_intake_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-D16`
-- source_d16_status: `active_context_os_reform_batch2_closure_passed`
-- source_d16_decision: `pass`
-- source_d16_warning_count: `0`
-- source_d16_blocker_count: `0`
+- reviewed_phase_id: `F21-CTX-D17`
 - batch2_closed_verified: `True`
 - no_warn_policy_verified: `True`
 - bedrock_v2_research_parking_verified: `True`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
-- external_bedrock_research_materialized: `False`
-- external_bedrock_research_candidates: `none`
-- next_route_class: `safe_continuity`
-- next_gate_selected: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
-- next_gate_reason: `No bounded local artifact materializes external Bedrock research, so conservative continuity is the next safe step.`
-- f21_a61_resume_allowed_now: `False`
-- f21b_resume_allowed_now: `False`
+- external_research_materialized: `True`
+- external_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
+- external_research_sha256: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- external_research_size_bytes: `70318`
+- external_research_line_count: `749`
+- required_sections_detected: `verdict_internal, external_sources_relevant, bedrock_failures, false_positive_catalog, market_differentiation, normative_definition, scorecard, allowed_results, automatic_blocking_rules, normative_bedrock_text, negative_tests, risk_self_critique, implementation_sequence, final_verdict`
+- missing_required_sections: `none`
+- bedrock_v2_normative_text_present: `True`
+- scorecard_present: `True`
+- false_positive_catalog_present: `True`
+- implementation_sequence_present: `True`
+- risk_self_critique_present: `True`
+- expanded_false_positive_catalog_detected: `True`
+- bedrock_v2_research_ready_for_triage: `True`
+- source_backed_claims_count: `28`
+- engineering_hypotheses_count: `36`
+- normative_recommendations_count: `84`
+- implementation_recommendations_count: `72`
+- unverified_or_high_risk_claims_count: `48`
+- next_real_action: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- next_gate_reason: `The external research report is materialized in the workspace, so the next safe step is claim verification.`
 - bedrock_gate_modified: `False`
 - north_pole_modified: `False`
 - phase_specific_gates_modified: `False`
-- boot_profile_modified: `False`
-- read_profile_modified: `False`
 - runtime_scope_untouched: `True`
 - frontend_scope_untouched: `True`
 - audio_scope_untouched: `True`
@@ -39,6 +47,5 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
 
-D17 routes conservatively after Batch 2 closure and does not auto-resume parked work.
+Bedrock v2 research is now materialized in the workspace, but it remains intake-only and not authorized for apply.

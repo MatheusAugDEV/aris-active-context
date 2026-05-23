@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
-- next_gate: `F21-CTX-D18 - Post-Batch2 Safe Continuity Decision Gate`
-- reason: `No bounded local artifact materializes external Bedrock research, so conservative continuity is the next safe step.`
+- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
+- next_gate: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- reason: `The external research report is materialized in the workspace, so the next safe step is claim verification.`
 - blocked_capabilities:
   - `f21_a61_allowed_next: false`
   - `f21b_resume_allowed_now: false`
@@ -26,7 +26,6 @@
   - `production_release_allowed: false`
 - pass_required_for_next_gate: `True`
 - warn_requires_repair_or_rework: `True`
-- bedrock_v2_research_pending: `True`
 - bedrock_v2_apply_deferred: `True`
 - bedrock_v2_apply_plan_deferred_until_research: `True`
-- batch2_closed_verified: `True`
+- external_research_materialized: `True`

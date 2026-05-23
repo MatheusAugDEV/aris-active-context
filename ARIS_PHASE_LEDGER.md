@@ -1,3 +1,54 @@
+## F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
+- phase_id: `F21-CTX-BEDROCK-R1`
+- status: `bedrock_v2_external_research_intake_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D17`
+- batch2_closed_verified: `True`
+- no_warn_policy_verified: `True`
+- bedrock_v2_research_parking_verified: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- external_research_materialized: `True`
+- external_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
+- external_research_sha256: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- external_research_size_bytes: `70318`
+- external_research_line_count: `749`
+- required_sections_detected: `verdict_internal, external_sources_relevant, bedrock_failures, false_positive_catalog, market_differentiation, normative_definition, scorecard, allowed_results, automatic_blocking_rules, normative_bedrock_text, negative_tests, risk_self_critique, implementation_sequence, final_verdict`
+- missing_required_sections: `none`
+- bedrock_v2_normative_text_present: `True`
+- scorecard_present: `True`
+- false_positive_catalog_present: `True`
+- implementation_sequence_present: `True`
+- risk_self_critique_present: `True`
+- expanded_false_positive_catalog_detected: `True`
+- bedrock_v2_research_ready_for_triage: `True`
+- source_backed_claims_count: `28`
+- engineering_hypotheses_count: `36`
+- normative_recommendations_count: `84`
+- implementation_recommendations_count: `72`
+- unverified_or_high_risk_claims_count: `48`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- runtime_scope_untouched: `True`
+- frontend_scope_untouched: `True`
+- audio_scope_untouched: `True`
+- action_runtime_scope_untouched: `True`
+- mcp_scope_untouched: `True`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+
+Bedrock v2 external research is intake-only and does not authorize apply or apply-plan creation.
+
 ## F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate
 - latest_completed_phase: `F21-CTX-D17 - Active Context OS Reform Batch 2 Post-Closure Continuity Gate`
 - phase_id: `F21-CTX-D17`
