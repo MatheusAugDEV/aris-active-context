@@ -1,3 +1,32 @@
+## F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate
+- latest_completed_phase: `F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate`
+- phase_id: `F21-CTX-D14`
+- status: `bedrock_v2_research_parking_batch2_resume_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-D13`
+- source_d13_status: `bedrock_gate_v2_operational_diagnostic_passed`
+- source_d13_decision: `pass`
+- source_d13_warning_count: `0`
+- source_d13_blocker_count: `0`
+- bedrock_v2_required: `True`
+- bedrock_v2_research_pending: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_deferred: `True`
+- bedrock_v2_apply_plan_deferred_until_research: `True`
+- bedrock_v2_diagnostic_preserved: `True`
+- batch2_resume_allowed: `True`
+- normal_batch2_flow_restored: `True`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+
+This gate parks Bedrock v2 pending research and resumes normal Batch 2 closure review.
+
 ## F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate
 - latest_completed_phase: `F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate`
 - phase_id: `F21-CTX-D13`

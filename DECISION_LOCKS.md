@@ -1,3 +1,19 @@
+## L-BEDROCK-V2-RESEARCH-PARKING
+- lock_id: `L-BEDROCK-V2-RESEARCH-PARKING`
+- bedrock_v2_required: `True`
+- bedrock_v2_research_pending: `True`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_deferred: `True`
+- bedrock_v2_apply_plan_deferred_until_research: `True`
+- bedrock_v2_diagnostic_preserved: `True`
+- batch2_resume_allowed: `True`
+- normal_batch2_flow_restored: `True`
+- bedrock_gate_modification_allowed_now: `False`
+- north_pole_modification_allowed_now: `False`
+- phase_specific_gates_modification_allowed_now: `False`
+
+D14 supersedes the immediate Bedrock v2 apply-plan route. Research must complete before Bedrock v2 apply planning resumes.
+
 ## L-BEDROCK-V2-DIAGNOSTIC-NO-APPLY
 - lock_id: `L-BEDROCK-V2-DIAGNOSTIC-NO-APPLY`
 - bedrock_v2_diagnostic_completed: `True`

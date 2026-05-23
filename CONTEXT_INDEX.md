@@ -16,26 +16,26 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 diagnostic
-- latest_completed_phase: `F21-CTX-D13 - Bedrock Gate v2 Operational Diagnostic and False-Positive Simulation Gate`
-- reviewed_phase_id: `F21-CTX-D12`
-- source_d12_status: `active_context_source_of_truth_warning_resolution_apply_passed`
-- source_d12_decision: `pass`
-- no_warn_policy_verified: `True`
-- diagnostic_completed: `True`
-- simulated_cases_count: `20`
-- false_positive_cases_detected: `10`
+## Bedrock v2 parking and Batch 2 resume
+- latest_completed_phase: `F21-CTX-D14 - Bedrock v2 Research Parking and Batch 2 Resume Gate`
+- reviewed_phase_id: `F21-CTX-D13`
+- source_d13_status: `bedrock_gate_v2_operational_diagnostic_passed`
+- source_d13_decision: `pass`
 - bedrock_v2_required: `True`
+- bedrock_v2_research_pending: `True`
 - bedrock_v2_apply_allowed_now: `False`
-- bedrock_v2_apply_recommended_next: `True`
-- next_recommended_phase: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
-- next_gate_seen: `F21-CTX-D14 - Bedrock Gate v2 Product-Grade Absolutization Apply Plan Gate`
+- bedrock_v2_apply_deferred: `True`
+- bedrock_v2_apply_plan_deferred_until_research: `True`
+- batch2_resume_allowed: `True`
+- normal_batch2_flow_restored: `True`
+- next_recommended_phase: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
+- next_gate_seen: `F21-CTX-D15 - Active Context OS Reform Batch 2 Closure Review Gate`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-D13 keeps Bedrock v2 as a future apply-plan target. The current Bedrock contract was diagnosed only, not modified.
+Bedrock v2 remains required but parked pending external research. The current operational route resumes Batch 2 closure review.
 
 ## Historical markers
-- Prior D13 source-of-truth review is preserved in the ledger as historical evidence.
-- D12 resolved active-context warning debt operationally and preserved removed blocks in artifacts.
-- D11R created the no-warn advancement policy and kept WARN non-advancing.
+- D13 Bedrock diagnostic remains valid evidence and did not apply Bedrock v2.
+- Prior D13 source-of-truth review remains historical evidence in the ledger.
+- D12 resolved active-context warning debt operationally.
