@@ -16,30 +16,22 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 candidate selection review
-- latest_completed_phase: `F21-CTX-BEDROCK-R6 - Bedrock v2 Candidate Selection Review Gate`
-- next_recommended_phase: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
-- next_gate_seen: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
-- source_r5_decision_path: `artifacts/f21/bedrock_v2_candidate_selection_decision.json`
+## Bedrock v2 adoption risk
+- latest_completed_phase: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+- source_r6_decision_path: `artifacts/f21/bedrock_v2_candidate_selection_review_decision.json`
 - source_candidate_manifest_path: `artifacts/f21/bedrock_v2_candidate_selection_manifest.json`
-- source_r4_decision_path: `artifacts/f21/bedrock_v2_triage_review_decision.json`
-- source_r4_summary_path: `artifacts/f21/bedrock_v2_triage_review_summary.json`
-- source_r4_report_path: `artifacts/f21/bedrock_v2_triage_review_report.md`
-- r5_status: `bedrock_v2_candidate_selection_passed`
-- r5_decision: `pass`
-- candidate_selection_reviewed: `True`
-- manifest_schema_valid: `True`
-- selection_counts_match: `True`
-- category_caps_valid: `True`
-- selected_candidate_count: `60`
-- deferred_candidate_count: `196`
-- quarantined_candidate_count: `3`
-- rejected_candidate_count: `21`
-- candidate_selection_is_not_adoption: `True`
-- bedrock_v2_apply_allowed_now: `False`
-- bedrock_v2_apply_plan_allowed_now: `False`
-- bedrock_v2_candidate_adoption_allowed_now: `False`
+- r6_status: `bedrock_v2_candidate_selection_review_passed`
+- r6_decision: `pass`
+- candidate_risk_review_is_not_adoption: `True`
+- total_selected_candidates_reviewed: `60`
+- low_context_policy_risk_count: `15`
+- medium_design_risk_count: `15`
+- high_security_or_source_risk_count: `20`
+- blocked_for_adoption_risk_count: `10`
+- candidate_approval_allowed_now: `False`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-R6 reviews the manifest only; it does not adopt candidates or create an apply plan.
+R7 is risk-classification only; it does not adopt candidates.

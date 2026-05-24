@@ -1,3 +1,53 @@
+## F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
+- phase_id: `F21-CTX-BEDROCK-R7`
+- status: `bedrock_v2_adoption_candidate_risk_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R6`
+- source_r6_status: `bedrock_v2_candidate_selection_review_passed`
+- source_r6_decision: `pass`
+- r6_verified: `True`
+- risk_register_created: `True`
+- candidate_risk_review_is_not_adoption: `True`
+- total_selected_candidates_reviewed: `60`
+- low_context_policy_risk_count: `15`
+- medium_design_risk_count: `15`
+- high_security_or_source_risk_count: `20`
+- blocked_for_adoption_risk_count: `10`
+- missing_future_gate_count: `0`
+- executable_or_apply_language_risk_count: `0`
+- source_verification_low_risk_violation_count: `0`
+- security_review_low_risk_violation_count: `0`
+- false_positive_low_risk_violation_count: `0`
+- candidate_approval_allowed_now: `False`
+- adopted_candidate_count: `0`
+- approved_candidate_count: `0`
+- applied_candidate_count: `0`
+- false_authorization_detected: `False`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- runtime_scope_untouched: `True`
+- frontend_scope_untouched: `True`
+- audio_scope_untouched: `True`
+- action_runtime_scope_untouched: `True`
+- mcp_scope_untouched: `True`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+
+R7 is risk classification only and preserves adoption blocking.
+
 ## F21-CTX-BEDROCK-R6 - Bedrock v2 Candidate Selection Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R6 - Bedrock v2 Candidate Selection Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R6`
