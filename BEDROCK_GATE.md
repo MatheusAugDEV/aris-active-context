@@ -1,5 +1,149 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Draft de contrato de entrada da avaliação
+Este draft define o formato mínimo de uma solicitação Bedrock válida antes que qualquer avaliação futura possa começar.
+Ele não executa a avaliação, não promove produto e não substitui as camadas R12 a R15.
+
+### Identidade da solicitação
+Campos obrigatórios:
+- `evaluation_request_id`
+- `request_schema_version`
+- `bedrock_gate_version`
+- `requested_at`
+- `requested_by`
+- `request_reason`
+- `target_type`
+- `target_id`
+- `target_phase`
+- `target_scope`
+- `requested_verdict_scope`
+- `requested_output_artifacts`
+- `source_repositories`
+- `source_commits`
+- `source_branch`
+- `worktree_state`
+
+### Tipos de alvo aceitos
+O contrato consolida os `target_type` canônicos de R12/R13/R15:
+- `phase`
+- `capability`
+- `macroblock`
+- `runtime_change`
+- `frontend_change`
+- `backend_change`
+- `action_runtime_change`
+- `voice_change`
+- `network_change`
+- `product_release_candidate`
+- `commercial_delivery_candidate`
+
+Regras por classe:
+- `phase`, `capability`, `macroblock`: podem pedir `lab_continuation_only`, `technical_readiness_only` e `evidence_completeness_review`; promoção de produto exige bundle completo, completeness e blocker scan quando aplicável.
+- `runtime_change`, `frontend_change`, `backend_change`, `action_runtime_change`, `voice_change`, `network_change`: exigem boundary evidence, rollback/recovery evidence, source-of-truth references e human review para escopo product-grade.
+- `product_release_candidate`, `commercial_delivery_candidate`: exigem bundle completo, completeness gate completo, blocker scan completo e human review explícita; não podem ser tratados como lab-only.
+
+### Escopos de veredito aceitos
+`requested_verdict_scope` deve ser um destes valores:
+- `lab_continuation_only`
+- `technical_readiness_only`
+- `product_candidate_review`
+- `product_promotion_review`
+- `commercial_delivery_review`
+- `runtime_change_review`
+- `safety_blocker_review`
+- `evidence_completeness_review`
+
+Regras:
+- `product_promotion_review` exige Evidence Bundle completo.
+- `commercial_delivery_review` exige Evidence Bundle completo, blocker scan completo e human review explícita.
+- `runtime_change_review` exige boundary evidence e rollback/recovery evidence.
+- `safety_blocker_review` pode começar com evidência parcial, mas não pode liberar produto sem completude.
+- `lab_continuation_only` nunca deve ser confundido com product pass.
+
+### Inputs obrigatórios
+Todo request deve referenciar:
+- `target_identity`
+- `requested_scope`
+- `evidence_bundle_reference`
+- `technical_artifact_references`
+- `source_of_truth_references`
+- `validation_references`
+- `risk_references`
+- `blocker_scan_reference`
+- `human_review_reference`
+- `known_limitations`
+- `dirty_worktree_notes`
+- `protected_sources_assertion`
+- `non_goal_assertions`
+
+### Regras de rejeição
+O request deve ser rejeitado antes do início da avaliação se:
+- o target estiver ausente ou ambíguo;
+- o `target_type` for inválido;
+- faltar source commit;
+- faltar Evidence Bundle para escopo product-grade;
+- faltar blocker scan para escopo product-grade;
+- o active-context não tiver sido lido;
+- houver source-of-truth contraditório sem reconciliação;
+- o worktree estiver sujo sem nota;
+- houver tentativa de promover produto com evidência parcial;
+- houver tentativa de pular completeness gate;
+- houver tentativa de pular blocker scan;
+- houver tentativa de usar LLM como juiz único;
+- houver tentativa de usar memória histórica contra active-context;
+- houver tentativa de avaliar mutação real sem rollback;
+- houver tentativa de avaliar comercialmente sem human review.
+
+### Input status
+Estados possíveis:
+- `input_valid`: a solicitação pode iniciar a avaliação futura, mas não implica product pass.
+- `input_incomplete`: faltam campos ou referências obrigatórias; pode permitir continuidade Lab, não produto.
+- `input_invalid`: o request quebra o contrato, está malformado ou impossível de auditar.
+- `input_ambiguous`: o alvo, escopo ou pedido não estão suficientemente definidos.
+- `input_stale`: o request referencia estado ou evidência ultrapassados.
+- `input_contradictory`: a solicitação contradiz source-of-truth ou evidência materializada.
+- `input_product_scope_blocked`: há bloqueio absoluto ou falta de evidência para escopo product-grade.
+- `input_requires_human_review`: a avaliação só pode prosseguir com revisão humana explícita.
+- `input_lab_only_allowed`: apenas continuidade Lab é permitida.
+
+### Segurança e boundaries
+Os campos booleanos a seguir devem sempre ser acompanhados de evidência referenciável, nunca apenas declaração:
+- `runtime_modified`
+- `frontend_modified`
+- `backend_modified`
+- `action_runtime_modified`
+- `voice_modified`
+- `network_enabled`
+- `dependencies_installed`
+- `productive_path_changed`
+- `product_promotion_requested`
+- `commercial_use_requested`
+- `human_review_required`
+- `rollback_required`
+- `bedrock_runtime_gate_requested`
+
+Regras:
+- declaração booleana sem evidência não basta para escopo product-grade;
+- qualquer mutação real exige rollback/recovery evidence;
+- qualquer uso comercial exige human review explícita;
+- qualquer mudança em runtime, produto ou boundary exige evidência de fronteira.
+
+### Relação com R12-R15
+- R12 define o Evidence Bundle.
+- R13 define se o Evidence Bundle está completo.
+- R14 define blocker scan.
+- R15 define o artefato final de veredito.
+- R16 apenas valida se a solicitação pode iniciar a avaliação.
+- Um request válido não implica Evidence Bundle completo.
+- Um request válido não implica Product Ready.
+
+### Futuro artifact path
+Proposta para fases futuras:
+- `artifacts/bedrock/evaluation_inputs/<target_id>_bedrock_evaluation_input.json`
+- `artifacts/bedrock/evaluation_inputs/<target_id>_bedrock_evaluation_input_report.md`
+
+R16 não cria essa árvore agora; apenas documenta o contrato de entrada.
+
 ## Função
 O Bedrock Gate é a primeira camada obrigatória de aprovação de qualquer fase, arquitetura, prompt Codex, feature, refactor, roadmap ou decisão operacional do ARIS.
 

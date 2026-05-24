@@ -1,3 +1,20 @@
+## F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft
+- phase_id: `F21-CTX-BEDROCK-R16`
+- status: `bedrock_evaluation_input_contract_draft_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+- request_validation_contract_required: `True`
+- input_contract_created: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R16 closes with a request-input contract only; the next step is validation rules for that request, not Bedrock execution.
+
 ## F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft
 - phase_id: `F21-CTX-BEDROCK-R11`
 - status: `bedrock_verdict_criteria_draft_ready`
@@ -30,6 +47,23 @@
 - production_release_allowed: `False`
 - next_gate: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - reason: `R11 drafts the verdict criteria only; the next step is the evidence bundle schema, not product promotion or runtime execution.`
+
+## F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft
+- phase_id: `F21-CTX-BEDROCK-R16`
+- status: `bedrock_evaluation_input_contract_draft_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+- request_validation_contract_required: `True`
+- input_contract_created: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R16 closes with a request-input contract only; the next step is validation rules for that request, not Bedrock execution.
 
 ## F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft
 - phase_id: `F21-CTX-BEDROCK-R15`

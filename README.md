@@ -1,3 +1,10 @@
+## Bedrock Evaluation Input Contract Draft
+- R16 defines the minimum valid request a future Bedrock evaluation must receive before any judgment can start.
+- It is the input layer that sits in front of R12 through R15.
+- The contract requires request identity, target identity, scope, source repositories, source commits, branch, worktree state, requested output artifacts, evidence references, risk references, human review references, and boundary assertions.
+- The draft prevents Bedrock from starting on ambiguous, underspecified, stale, or improperly scoped requests.
+- It does not execute a verdict, promote product, or mutate runtime.
+
 ## Strategic Orientation
 - `NORTH_POLE.md` is the mandatory strategic guide for ARIS direction, excellence criteria, and decision quality.
 - It complements, but does not replace, `DECISION_LOCKS.md`.

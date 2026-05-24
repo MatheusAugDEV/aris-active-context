@@ -1,3 +1,35 @@
+## BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT
+
+- lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R16`
+- status: `bedrock_evaluation_input_contract_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- evaluation_input_contract_created: `True`
+- accepted_target_types_defined: `True`
+- requested_verdict_scope_enum_defined: `True`
+- input_rejection_rules_defined: `True`
+- input_status_enum_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+
+Bedrock Evaluation Input Contract is policy only.
+It defines the minimum valid request that a future Bedrock evaluation may accept, but it does not evaluate evidence, compute a verdict, or authorize product promotion.
+
 ## L-BEDROCK-V2-RESEARCH-PARKING
 - lock_id: `L-BEDROCK-V2-RESEARCH-PARKING`
 - bedrock_v2_required: `True`
@@ -38,6 +70,38 @@ D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
 - retroactive_history_rewrite_allowed: `False`
 - historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
+
+# BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT
+
+- lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R16`
+- status: `bedrock_evaluation_input_contract_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- evaluation_input_contract_created: `True`
+- accepted_target_types_defined: `True`
+- requested_verdict_scope_enum_defined: `True`
+- input_rejection_rules_defined: `True`
+- input_status_enum_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft`
+
+Bedrock Evaluation Input Contract is policy only.
+It defines the minimum valid request that a future Bedrock evaluation may accept, but it does not evaluate evidence, compute a verdict, or authorize product promotion.
 
 # BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT
 
