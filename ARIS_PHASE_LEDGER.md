@@ -1,3 +1,40 @@
+## F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- phase_id: `F21-CTX-BEDROCK-R3`
+- status: `bedrock_v2_research_triage_plan_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R2`
+- source_r2_status: `bedrock_v2_external_research_claim_verification_passed`
+- source_r2_decision: `pass`
+- source_r2_verified: `True`
+- triage_plan_created: `True`
+- triage_bucket_count: `8`
+- all_claims_triaged: `True`
+- untriaged_claim_count: `0`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- runtime_scope_untouched: `True`
+- frontend_scope_untouched: `True`
+- audio_scope_untouched: `True`
+- action_runtime_scope_untouched: `True`
+- mcp_scope_untouched: `True`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+
+R3 triages verified Bedrock research into future-review buckets only; no candidate is adopted here.
+
 ## F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
 - phase_id: `F21-CTX-BEDROCK-R2`

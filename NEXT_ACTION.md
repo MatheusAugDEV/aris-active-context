@@ -1,11 +1,12 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- next_gate: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
-- reason: `The research artifact is locally verified, but Bedrock v2 remains parked; the next safe step is triage planning, not apply.`
+- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- next_gate: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+- reason: `R3 classified the verified R2 claims into non-authorizing triage buckets; the next safe step is triage review, not adoption.`
 - blocked_capabilities:
   - `bedrock_v2_apply_allowed_now: false`
   - `bedrock_v2_apply_plan_allowed_now: false`
+  - `bedrock_v2_candidate_adoption_allowed_now: false`
   - `prompt_kernel_implementation_allowed: false`
   - `runtime_mutation_allowed: false`
   - `frontend_mutation_allowed: false`
@@ -13,6 +14,8 @@
   - `action_runtime_mutation_allowed: false`
   - `mcp_activation_allowed: false`
   - `mcp_config_write_allowed: false`
+  - `vault_write_allowed: false`
+  - `obsidian_bulk_read_allowed: false`
   - `network_allowed: false`
   - `dependency_install_allowed: false`
   - `product_promotion_allowed: false`
@@ -22,3 +25,4 @@
 - warn_requires_repair_or_rework: `True`
 - bedrock_v2_apply_deferred: `True`
 - bedrock_v2_apply_plan_deferred_until_research: `True`
+- bedrock_v2_candidate_adoption_deferred: `True`

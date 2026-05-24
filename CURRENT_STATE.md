@@ -1,28 +1,31 @@
-## F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate
-- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- phase_id: `F21-CTX-BEDROCK-R2`
-- status: `bedrock_v2_external_research_claim_verification_passed`
+## F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- phase_id: `F21-CTX-BEDROCK-R3`
+- status: `bedrock_v2_research_triage_plan_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-BEDROCK-R1`
-- source_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
-- source_research_sha256_expected: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- source_research_sha256_actual: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- source_research_hash_match: `True`
-- source_research_size_bytes: `70318`
-- source_research_line_count: `748`
-- required_sections_present: `True`
-- missing_required_sections: `none`
-- claim_registry_created: `True`
-- source_backed_claims_count: `28`
-- engineering_hypotheses_count: `36`
-- normative_recommendations_count: `84`
-- implementation_recommendations_count: `86`
-- unverified_or_high_risk_claims_count: `46`
-- local_evidence_markers_verified: `True`
-- internal_contradictions_detected: `False`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R2`
+- source_r2_decision_path: `artifacts/f21/bedrock_v2_external_research_claim_verification_decision.json`
+- source_r2_summary_path: `artifacts/f21/bedrock_v2_external_research_claim_verification_summary.json`
+- source_claim_registry_path: `artifacts/f21/bedrock_v2_external_research_claim_registry.json`
+- r2_status: `bedrock_v2_external_research_claim_verification_passed`
+- r2_decision: `pass`
+- r2_verified: `True`
+- triage_plan_created: `True`
+- triage_bucket_count: `8`
+- safe_context_policy_candidate_count: `84`
+- needs_future_network_source_verification_count: `28`
+- needs_internal_design_review_count: `21`
+- needs_security_review_count: `25`
+- needs_false_positive_review_count: `10`
+- needs_test_fixture_design_count: `5`
+- defer_until_bedrock_apply_plan_gate_count: `86`
+- reject_for_now_count: `21`
+- all_claims_triaged: `True`
+- untriaged_claim_count: `0`
 - false_authorization_detected: `False`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
 - bedrock_gate_modified: `False`
 - north_pole_modified: `False`
 - phase_specific_gates_modified: `False`
@@ -40,6 +43,6 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- next_real_action: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
 
-Bedrock v2 research claim verification is local-only, non-authorizing, and does not create an apply plan.
+R3 is triage planning only and does not adopt any candidate.

@@ -16,29 +16,23 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 external research claim verification
-- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- next_recommended_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
-- next_gate_seen: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
-- source_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
-- source_research_sha256_expected: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- source_research_sha256_actual: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- source_research_hash_match: `True`
-- source_research_line_count: `748`
-- source_research_size_bytes: `70318`
-- required_sections_present: `True`
-- claim_registry_created: `True`
-- source_backed_claims_count: `28`
-- engineering_hypotheses_count: `36`
-- normative_recommendations_count: `84`
-- implementation_recommendations_count: `86`
-- unverified_or_high_risk_claims_count: `46`
-- local_evidence_markers_verified: `True`
-- internal_contradictions_detected: `False`
-- false_authorization_detected: `False`
+## Bedrock v2 research triage
+- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+- source_r2_decision_path: `artifacts/f21/bedrock_v2_external_research_claim_verification_decision.json`
+- source_claim_registry_path: `artifacts/f21/bedrock_v2_external_research_claim_registry.json`
+- r2_status: `bedrock_v2_external_research_claim_verification_passed`
+- r2_decision: `pass`
+- r2_verified: `True`
+- triage_plan_created: `True`
+- triage_bucket_count: `8`
+- all_claims_triaged: `True`
+- untriaged_claim_count: `0`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-The Bedrock v2 research is locally verified and remains non-authorizing.
+R3 routes claims only; it does not adopt any candidate or create an apply plan.
