@@ -1,5 +1,129 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Draft de regras de validação da solicitação de avaliação
+Este draft define as regras determinísticas que validam uma solicitação Bedrock antes de qualquer completeness gate, blocker scan ou verdict futuro.
+Ele não executa o Bedrock real, não promove produto e não substitui R16.
+
+### Camadas de validação
+As camadas obrigatórias são:
+- `identity_validation`
+- `target_validation`
+- `scope_validation`
+- `source_state_validation`
+- `evidence_reference_validation`
+- `source_of_truth_validation`
+- `boundary_validation`
+- `risk_validation`
+- `human_review_validation`
+- `non_goal_validation`
+- `rejection_reason_validation`
+
+Cada camada deve registrar objetivo, campos exigidos, critérios de aprovação, critérios de rejeição, status possível e remediação mínima.
+
+### Estados de validação
+Estados canônicos:
+- `input_valid`
+- `input_incomplete`
+- `input_invalid`
+- `input_ambiguous`
+- `input_stale`
+- `input_contradictory`
+- `input_product_scope_blocked`
+- `input_requires_human_review`
+- `input_lab_only_allowed`
+
+### Regras por escopo
+- `lab_continuation_only`: aceita evidência parcial, mas marca `product_promotion_allowed=false`.
+- `technical_readiness_only`: nunca emite product pass.
+- `product_candidate_review`: exige evidence bundle referenciado; lacunas documentadas podem existir.
+- `product_promotion_review`: exige evidence bundle, completeness gate e blocker scan.
+- `commercial_delivery_review`: exige evidence bundle completo, blocker scan completo, human review explícita, risk register e known limits.
+- `runtime_change_review`: exige boundary evidence e rollback/recovery evidence.
+- `safety_blocker_review`: pode iniciar com evidência parcial, mas nunca libera produto sozinho.
+- `evidence_completeness_review`: valida completude, não produto.
+
+### Regras por target type
+- `runtime_change`, `frontend_change`, `backend_change`, `action_runtime_change`, `voice_change`, `network_change` exigem boundary evidence.
+- Mudanças mutantes reais exigem rollback/recovery evidence.
+- Candidatos produto exigem Evidence Bundle, blocker scan, source-of-truth atualizado e human review.
+- Candidatos comerciais exigem risk register, known limits, UX evidence, cost/performance evidence e human review.
+- `phase`, `capability` e `macroblock` podem ser Lab-only se o escopo for limitado.
+
+### Rejeições hard-block
+Rejeições canônicas:
+- `missing_target_id`
+- `missing_target_type`
+- `invalid_target_type`
+- `missing_requested_scope`
+- `invalid_requested_scope`
+- `missing_source_commit`
+- `missing_source_repository`
+- `missing_active_context_read_evidence`
+- `stale_or_contradictory_source_of_truth`
+- `dirty_worktree_without_notes`
+- `product_scope_without_evidence_bundle`
+- `product_scope_without_blocker_scan`
+- `product_scope_without_human_review`
+- `runtime_change_without_boundary_evidence`
+- `real_mutation_without_rollback_evidence`
+- `commercial_scope_without_known_limits`
+- `commercial_scope_without_risk_register`
+- `llm_as_sole_judge_requested`
+- `attempt_to_skip_completeness_gate`
+- `attempt_to_skip_blocker_scan`
+- `attempt_to_use_memory_against_active_context`
+- `attempt_to_promote_lab_only_result_to_product`
+
+### Source-of-truth validation
+Request validation must prove:
+- active-context was read;
+- `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `CONTEXT_INDEX.md`, `ARIS_PHASE_LEDGER.md` were considered;
+- `BEDROCK_GATE.md` was considered;
+- stale/conflicting context was recorded;
+- Obsidian was either not used or explicitly not used;
+- stale memory was not used against active source-of-truth.
+
+### Worktree and repo state validation
+Request validation must record:
+- branch
+- commit
+- remote status
+- dirty worktree
+- staged changes
+- unrelated changes preserved
+- source repo separated from active-context repo
+- push status
+
+Worktree dirtiness does not automatically block Lab, but blocks product-grade unless scoped notes exist and diffs are bounded.
+
+### Future output schema
+Future validation output should contain:
+- `phase`
+- `evaluation_request_id`
+- `request_schema_version`
+- `target_id`
+- `target_type`
+- `requested_verdict_scope`
+- `validation_status`
+- `validation_layers`
+- `accepted_for_bedrock_evaluation`
+- `accepted_for_lab_only`
+- `accepted_for_product_scope`
+- `rejection_reasons`
+- `warning_reasons`
+- `missing_inputs`
+- `required_remediations`
+- `required_next_artifacts`
+- `human_review_required`
+- `next_recommended_phase`
+
+### Relation to R10-R16
+- R16 defines the contract of the request.
+- R17 defines the deterministic validation rules for that request.
+- R17 decides whether evaluation may start.
+- R17 does not run completeness, blocker scan, or verdict artifact logic.
+- R17 does not imply product pass.
+
 ## Draft de contrato de entrada da avaliação
 Este draft define o formato mínimo de uma solicitação Bedrock válida antes que qualquer avaliação futura possa começar.
 Ele não executa a avaliação, não promove produto e não substitui as camadas R12 a R15.

@@ -1,3 +1,25 @@
+## F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft
+- phase_id: `F21-CTX-BEDROCK-R17`
+- status: `bedrock_evaluation_request_validation_rules_draft_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R18 - Bedrock Evaluation Request Dry-Run Fixture Schema Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R18 - Bedrock Evaluation Request Dry-Run Fixture Schema Draft`
+- request_validation_rules_created: `True`
+- validation_layers_defined: `True`
+- scope_validation_rules_defined: `True`
+- target_type_validation_rules_defined: `True`
+- hard_block_rejection_rules_defined: `True`
+- source_of_truth_validation_defined: `True`
+- worktree_state_validation_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R17 closes the request-validation layer only; the next step is a dry-run fixture schema, not Bedrock execution.
+
 ## F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft
 - phase_id: `F21-CTX-BEDROCK-R16`
 - status: `bedrock_evaluation_input_contract_draft_ready`

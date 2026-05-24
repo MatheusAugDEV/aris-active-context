@@ -1,3 +1,9 @@
+## Bedrock Evaluation Request Validation Rules Draft
+- R17 defines deterministic rules for deciding whether a Bedrock evaluation request may start.
+- It validates identity, target, scope, source state, evidence references, source-of-truth, boundary assertions, risk, human review, non-goals, and rejection reasons.
+- It does not run completeness, blocker, or verdict logic.
+- It does not imply product pass.
+
 ## Bedrock Evaluation Input Contract Draft
 - R16 defines the minimum valid request a future Bedrock evaluation must receive before any judgment can start.
 - It is the input layer that sits in front of R12 through R15.
