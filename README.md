@@ -5,6 +5,11 @@
 - Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
+## F21-CTX-BEDROCK-R30 - Controlled Execution
+R30 executed the deterministic runner against the real materialized Bedrock fixture tree in dry-run mode only.
+The execution preserved the fixture tree hash and count, wrote official runner artifacts under `artifacts/bedrock/runner/`, and reported 22 evaluated fixtures with 12 mismatches.
+No Bedrock verdict, product promotion, commercial approval, runtime mutation, or fixture mutation occurred.
+
 ## F21-CTX-BEDROCK-R29 - Validation Runner Controlled Execution Plan
 R29 defines how R30 will execute the deterministic Bedrock request-validation runner against the real materialized fixture tree in dry-run mode.
 It intentionally chooses a dedicated R30 script so implementation smoke and real-tree execution remain separate.

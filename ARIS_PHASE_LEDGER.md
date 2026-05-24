@@ -36,6 +36,55 @@
 - bedrock_runtime_gate_executed: `False`
 - next_recommended_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
 
+## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution
+- status: `runner_controlled_execution_failed`
+- decision: `fail`
+- reviewed_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+- controlled_execution_completed: `True`
+- runner_script_created: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- real_fixture_tree_modified: `False`
+- fixture_tree_modified: `False`
+- runner_artifacts_written: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- product_promotion_allowed_in_any_actual: `False`
+- commercial_use_allowed_in_any_actual: `False`
+- runner_execution_allowed_in_any_actual: `False`
+- network_attempted: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- dependencies_installed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- fixture_tree_manifest_hash_before: `e39c692bb012d80d716424e443e735ce89b1c86c2e3cc5ba942c0d3b197ba3ab`
+- fixture_tree_manifest_hash_after: `e39c692bb012d80d716424e443e735ce89b1c86c2e3cc5ba942c0d3b197ba3ab`
+- fixture_tree_file_list_hash_before: `d0332c2f9af0f21bb90c1e0e4dc8e7e5a92bfb74b28e706f88566a026f0c39cc`
+- fixture_tree_file_list_hash_after: `d0332c2f9af0f21bb90c1e0e4dc8e7e5a92bfb74b28e706f88566a026f0c39cc`
+- fixture_tree_content_hash_before: `846c0722603d39ab2041c730deaaa4c194a8cce122b606c464968f402f084a5a`
+- fixture_tree_content_hash_after: `846c0722603d39ab2041c730deaaa4c194a8cce122b606c464968f402f084a5a`
+- warning_count: `9`
+- blocker_count: `12`
+- product_promotion_allowed_by_plan: `False`
+- commercial_use_allowed_by_plan: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- next_recommended_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+
 ## Site Runbook Maintenance Note
 - `site-aris.md` was created, indexed, and versioned as the canonical operational runbook for the official ARIS site.
 - This is documentation maintenance only and is not a Bedrock phase.

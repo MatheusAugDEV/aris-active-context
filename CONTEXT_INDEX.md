@@ -29,6 +29,45 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
 
+## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution
+- latest_completed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+- phase_id: `F21-CTX-BEDROCK-R30`
+- status: `runner_controlled_execution_failed`
+- decision: `fail`
+- next_recommended_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+- reviewed_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+- controlled_execution_completed: `True`
+- runner_script_created: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- real_fixture_tree_modified: `False`
+- fixture_tree_modified: `False`
+- runner_artifacts_written: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- product_promotion_allowed_in_any_actual: `False`
+- commercial_use_allowed_in_any_actual: `False`
+- runner_execution_allowed_in_any_actual: `False`
+- network_attempted: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- dependencies_installed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- warning_count: `9`
+- blocker_count: `12`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
 ## Site Official ARIS Runbook
 - `site-aris.md` is the canonical operational runbook for the official ARIS site / landing page.
 - Use it for site changes, commit, push, deploy, and live-domain validation.

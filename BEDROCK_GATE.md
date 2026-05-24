@@ -1,3 +1,23 @@
+# Bedrock Evaluation Request Validation Runner Controlled Execution
+R30 executed the deterministic runner against the real materialized fixture tree in dry-run mode only.
+The run preserved the manifest hash, file-list hash, and content hash, and kept the fixture tree at 45 JSON files before and after execution.
+It wrote official runner artifacts only under `artifacts/bedrock/runner/`.
+It did not emit a Bedrock verdict, did not promote product, did not use network, and did not mutate the fixture tree.
+
+### Execution outcome
+- `runner_controlled_execution_failed`
+- 22 fixtures loaded
+- 22 fixtures evaluated
+- 22 expected files loaded
+- 10 fixtures matched
+- 12 fixtures mismatched
+- product/commercial allowed remained false
+- runner execution allowed remained false
+- tree preservation hashes matched before/after
+
+### Next phase
+- `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+
 # Bedrock Evaluation Request Validation Runner Controlled Execution Plan
 R29 defines how the future controlled execution phase will run the deterministic runner against the real materialized fixture tree in dry-run mode.
 It selects a dedicated R30 script to keep implementation smoke separate from real-tree execution planning.
