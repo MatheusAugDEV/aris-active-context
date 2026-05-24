@@ -1,3 +1,30 @@
+## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R31`
+- status: `runner_controlled_execution_review_failed_valid`
+- decision: `fail`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R30`
+- r30_failure_confirmed: `True`
+- failure_is_expected_at_review_stage: `True`
+- failure_cause_class: `validation_semantic_mismatch`
+- safety_violation_detected: `False`
+- mismatch_failure_detected: `True`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- runner_artifacts_written: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- fixtures_evaluated: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- blocker_count: `12`
+- warning_count: `9`
+- total_mismatches: `12`
+- repair_plan_required_next: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- note: `R31 confirms the R30 fail as a valid semantic mismatch review gate; next action is the mismatch repair plan R32.`
+
 ## F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
 - phase_id: `F21-CTX-BEDROCK-R29`
@@ -28,6 +55,13 @@
 - fixture_mutation_allowed: `False`
 - technical_pass_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
+
+## Site — Implementation Conversion Section
+- last_site_action: `SITE-IMPL-V2 — dark-shell layout, off-white card, nova headline, 3-step timeline`
+- commit: `64ee9ca`
+- status: `deployed_and_live`
+- live_assets: `index-0IcSjTb-.js, index-qQ_rFQEF.css`
+- next_site_action: `nenhum pendente`
 
 ## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution
 - latest_completed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`

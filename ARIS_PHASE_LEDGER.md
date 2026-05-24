@@ -1,3 +1,63 @@
+## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
+- phase_id: `F21-CTX-BEDROCK-R31`
+- status: `runner_controlled_execution_review_failed_valid`
+- decision: `fail`
+- reviewed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R30`
+- r30_failure_confirmed: `True`
+- failure_is_expected_at_review_stage: `True`
+- failure_cause_class: `validation_semantic_mismatch`
+- safety_violation_detected: `False`
+- mismatch_failure_detected: `True`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- runner_artifacts_written: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- fixtures_evaluated: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- blocker_count: `12`
+- warning_count: `9`
+- total_mismatches: `12`
+- repair_plan_required_next: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- note: `R31 preserves the fail state as a valid mismatch review outcome and does not convert it into a product signal.`
+
+## SITE-IMPL-V2 — Dark-Shell Implementation/Conversion Section Redesign
+- phase_id: `SITE-IMPL-V2`
+- status: `deployed`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `src/App.tsx, src/styles.css`
+- commit: `64ee9ca`
+- push: `origin/main`
+- vercel_status: `Ready`
+- live_assets: `index-0IcSjTb-.js, index-qQ_rFQEF.css`
+- build_passed: `True`
+- runtime_modified: `False`
+- backend_modified: `False`
+- project_aris_runtime_modified: `False`
+- design: `dark-shell (var(--bg-root)) + off-white conversion card (#f2f2f0)`
+- headline: `Automação só entra depois que o fluxo está claro.`
+- supersedes: `SITE-IMPL-V1`
+
+## SITE-IMPL-V1 — Implementation Conversion Section Redesign (superseded by V2)
+- phase_id: `SITE-IMPL-V1`
+- status: `superseded`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `src/App.tsx, src/styles.css`
+- commit: `77160f5`
+- push: `origin/main`
+- vercel_status: `Ready`
+- live_assets: `index-yk5vlJaK.js, index-iLlllyZF.css`
+- build_passed: `True`
+- runtime_modified: `False`
+- backend_modified: `False`
+- project_aris_runtime_modified: `False`
+
 ## F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan
 - status: `runner_controlled_execution_plan_ready`
 - decision: `pass`

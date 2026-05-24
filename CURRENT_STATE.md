@@ -1,3 +1,33 @@
+## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R31`
+- status: `runner_controlled_execution_review_failed_valid`
+- decision: `fail`
+- reviewed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R30`
+- r30_failure_confirmed: `True`
+- failure_is_expected_at_review_stage: `True`
+- failure_cause_class: `validation_semantic_mismatch`
+- safety_violation_detected: `False`
+- mismatch_failure_detected: `True`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- runner_artifacts_written: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- fixtures_evaluated: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- blocker_count: `12`
+- warning_count: `9`
+- total_mismatches: `12`
+- repair_plan_required_next: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- note: `R31 confirms the R30 fail as a valid semantic mismatch review gate and does not treat it as a safety violation.`
+
 ## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution
 - latest_completed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
 - phase_id: `F21-CTX-BEDROCK-R30`
@@ -92,6 +122,7 @@
 ## Site Official ARIS Runbook
 - `site-aris.md` was created and indexed as the canonical operational runbook for the official ARIS site / landing page.
 - The site workflow is anchored to `/home/matheus/ARIS/aris-site` and is explicitly separate from `/home/matheus/ARIS/Project_ARIS`.
+- Last site change: `SITE-IMPL-V2` — dark-shell implementation/conversion section redesign v2 (commit `64ee9ca`, deployed, live at `meetarisia.com.br`).
 
 ## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`

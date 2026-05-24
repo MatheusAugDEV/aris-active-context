@@ -5,10 +5,19 @@
 - Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
+# Bedrock F21 Active Track
+- R31 review gate is the canonical review of the R30 controlled execution fail.
+- The R31 review gate confirms the fail is a valid semantic mismatch failure, not a safety violation.
+- The next Bedrock step is the R32 mismatch repair plan.
+
 ## F21-CTX-BEDROCK-R30 - Controlled Execution
 R30 executed the deterministic runner against the real materialized Bedrock fixture tree in dry-run mode only.
 The execution preserved the fixture tree hash and count, wrote official runner artifacts under `artifacts/bedrock/runner/`, and reported 22 evaluated fixtures with 12 mismatches.
 No Bedrock verdict, product promotion, commercial approval, runtime mutation, or fixture mutation occurred.
+
+## F21-CTX-BEDROCK-R31 - Controlled Execution Review Gate
+R31 reviews the R30 controlled execution evidence and confirms the failure is a valid semantic mismatch failure rather than a safety violation.
+It preserves the real fixture tree, keeps the R30 runner artifacts as evidence, and points the track to R32 for mismatch repair planning.
 
 ## F21-CTX-BEDROCK-R29 - Validation Runner Controlled Execution Plan
 R29 defines how R30 will execute the deterministic Bedrock request-validation runner against the real materialized fixture tree in dry-run mode.

@@ -1,3 +1,52 @@
+## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R31`
+- status: `runner_controlled_execution_review_failed_valid`
+- decision: `fail`
+- reviewed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R30`
+- r30_status: `runner_controlled_execution_failed`
+- r30_decision: `fail`
+- r30_failure_confirmed: `True`
+- failure_is_expected_at_review_stage: `True`
+- failure_cause_class: `validation_semantic_mismatch`
+- safety_violation_detected: `False`
+- mismatch_failure_detected: `True`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- runner_artifacts_written: `True`
+- runner_executed_against_real_fixture_tree: `True`
+- fixtures_evaluated: `22`
+- matched_fixture_count: `10`
+- mismatched_fixture_count: `12`
+- blocker_count: `12`
+- warning_count: `9`
+- total_mismatches: `12`
+- mismatch_categories:
+  - `validation_order_mismatch`
+  - `status_mismatch`
+  - `rejection_id_mismatch`
+  - `warning_mismatch`
+  - `missing_remediation`
+  - `missing_next_scope`
+  - `scope_mismatch`
+  - `evidence_bundle_policy_mismatch`
+  - `blocker_scan_policy_mismatch`
+  - `human_review_policy_mismatch`
+  - `commercial_scope_policy_mismatch`
+  - `source_of_truth_policy_mismatch`
+  - `worktree_notes_mismatch`
+  - `safety_review_judge_policy_mismatch`
+  - `completeness_gate_policy_mismatch`
+  - `lab_to_product_promotion_policy_mismatch`
+- recommended_next_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- docs:
+  - `docs/fase21/f21_ctx_bedrock_r31_bedrock_evaluation_request_validation_runner_controlled_execution_review_gate.md`
+
 ## F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
 - phase_id: `F21-CTX-BEDROCK-R29`

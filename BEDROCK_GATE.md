@@ -130,6 +130,20 @@ It specifies the module paths, runner API, deterministic rules, non-execution en
 
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
+R31 reviews the R30 controlled execution evidence and confirms the failure is a valid semantic mismatch failure rather than a safety violation.
+It does not repair the runner, does not promote product, and does not change the fixture tree.
+
+### Review outcome
+- `runner_controlled_execution_review_failed_valid`
+- R30 failure confirmed as real
+- failure cause is mismatch-driven, not safety-driven
+- fixture tree preservation intact
+- R32 must be a mismatch repair plan
+
+### Next phase
+- `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+
 ## Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate
 R25 reviews the R24 runner plan and confirms it is safe and complete enough to allow a future controlled implementation plan.
 It checks boundaries, algorithm coverage, schemas, mismatch policy, and fixture-tree protection, but it does not implement or execute a runner.
