@@ -1,3 +1,25 @@
+# F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- phase_id: `F21-CTX-BEDROCK-R32`
+- status: `runner_mismatch_repair_plan_ready`
+- decision: `pass`
+- reviewed_source_review_phase: `F21-CTX-BEDROCK-R31`
+- reviewed_source_execution_phase: `F21-CTX-BEDROCK-R30`
+- r31_failure_confirmed: `True`
+- r31_total_mismatches: `12`
+- repair_plan_created: `True`
+- repair_implementation_executed: `False`
+- runner_validation_still_failing: `True`
+- planned_repair_count: `12`
+- affected_fixture_count: `12`
+- recommended_next_phase: `F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runner_execution_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
 ## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R31`
@@ -23,7 +45,7 @@
 - total_mismatches: `12`
 - repair_plan_required_next: `True`
 - recommended_next_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
-- note: `R31 confirms the R30 fail as a valid semantic mismatch review gate; next action is the mismatch repair plan R32.`
+- note: `R31 confirms the R30 fail as a valid semantic mismatch review gate; R32 creates the repair plan and the next controlled phase is R33.`
 
 ## F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`

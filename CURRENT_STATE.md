@@ -1,3 +1,58 @@
+# F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
+- phase_id: `F21-CTX-BEDROCK-R32`
+- status: `runner_mismatch_repair_plan_ready`
+- decision: `pass`
+- reviewed_source_review_phase: `F21-CTX-BEDROCK-R31`
+- reviewed_source_execution_phase: `F21-CTX-BEDROCK-R30`
+- r31_failure_confirmed: `True`
+- r31_total_mismatches: `12`
+- repair_plan_created: `True`
+- repair_implementation_executed: `False`
+- runner_modified: `False`
+- fixtures_modified: `False`
+- expected_fixtures_modified: `False`
+- fixture_tree_preserved: `True`
+- planned_repair_count: `12`
+- affected_fixture_count: `12`
+- repair_categories:
+  - `validation_order_mismatch`
+  - `status_mismatch`
+  - `rejection_id_mismatch`
+  - `warning_mismatch`
+  - `missing_remediation`
+  - `missing_next_scope`
+  - `scope_mismatch`
+  - `evidence_bundle_policy_mismatch`
+  - `blocker_scan_policy_mismatch`
+  - `human_review_policy_mismatch`
+  - `commercial_scope_policy_mismatch`
+  - `source_of_truth_policy_mismatch`
+  - `worktree_notes_mismatch`
+  - `safety_review_judge_policy_mismatch`
+  - `completeness_gate_policy_mismatch`
+  - `lab_to_product_promotion_policy_mismatch`
+- repair_priority_order:
+  - `invalid_missing_target_type`
+  - `invalid_product_promotion_without_evidence_bundle`
+  - `invalid_product_promotion_without_blocker_scan`
+  - `invalid_product_promotion_without_human_review`
+  - `invalid_attempt_to_skip_blocker_scan`
+  - `invalid_attempt_to_skip_completeness_gate`
+  - `invalid_attempt_to_promote_lab_only_to_product`
+  - `invalid_commercial_delivery_without_known_limits`
+  - `invalid_commercial_delivery_without_risk_register`
+  - `invalid_dirty_worktree_without_notes`
+  - `invalid_llm_as_sole_judge_requested`
+  - `invalid_source_of_truth_contradictory`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runner_execution_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair`
+
 ## F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R31 - Bedrock Evaluation Request Validation Runner Controlled Execution Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R31`

@@ -6,6 +6,7 @@
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
 # Bedrock F21 Active Track
+- R32 creates the mismatch repair plan from the valid R30/R31 failure evidence and prepares R33 for targeted repair only.
 - R31 review gate is the canonical review of the R30 controlled execution fail.
 - The R31 review gate confirms the fail is a valid semantic mismatch failure, not a safety violation.
 - The next Bedrock step is the R32 mismatch repair plan.
