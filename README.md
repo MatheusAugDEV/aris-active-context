@@ -18,6 +18,11 @@
 - The schema covers identity, technical artifacts, validation, security, privacy, runtime boundaries, rollback, source-of-truth, completeness, and blocker scan material.
 - R12 does not execute the Bedrock runtime gate and does not promote product.
 
+## Bedrock Evidence Bundle Completeness Gate Draft
+- R13 formalizes the deterministic threshold for deciding whether an evidence bundle is complete enough for Bedrock judgment.
+- It classifies bundles as complete, incomplete, insufficient, contradictory, stale, invalid, or blocked for promotion.
+- R13 does not execute the Bedrock runtime gate and does not promote product.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`

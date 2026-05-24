@@ -1,3 +1,29 @@
+## Bedrock evidence bundle completeness gate draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
+- next_gate_seen: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- completeness_gate_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
+- summary_artifact: `../artifacts/f21/bedrock_evidence_bundle_completeness_gate_draft_summary.json`
+- report_artifact: `../artifacts/f21/bedrock_evidence_bundle_completeness_gate_draft_report.md`
+- status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- decision: `pass`
+- completeness_gate_draft_created: `True`
+- required_evidence_matrix_defined: `True`
+- minimum_validation_rule_defined: `True`
+- minimum_validation_count: `5`
+- blocker_handling_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
+R13 defines the completeness threshold for future Bedrock judgment; it does not execute a Bedrock verdict or authorize product promotion.
+
 ## Bedrock evidence bundle schema draft
 - latest_completed_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - next_recommended_phase: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`

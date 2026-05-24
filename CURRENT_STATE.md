@@ -1,3 +1,35 @@
+## F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
+- phase_id: `F21-CTX-BEDROCK-R13`
+- status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- completeness_gate_draft_created: `True`
+- required_evidence_matrix_defined: `True`
+- minimum_validation_rule_defined: `True`
+- minimum_validation_count: `5`
+- blocker_handling_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
+
+The Bedrock Evidence Bundle Completeness Gate draft defines how a future Bedrock evaluator decides whether an evidence bundle is complete enough for product-grade judgment.
+It sits above the R12 schema and below any real Bedrock execution, so it can block promotion without executing the gate.
+
 ## F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft
 - latest_completed_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - phase_id: `F21-CTX-BEDROCK-R12`

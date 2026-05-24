@@ -312,6 +312,136 @@ Future bundles should follow:
 
 This draft does not create that tree yet. It only defines the shape.
 
+## Draft de gate de completude do Evidence Bundle
+Este draft define a regra deterministica que decide se um bundle do R12 e suficiente para julgamento Bedrock.
+Ele nao executa o Bedrock real, nao promove produto e nao substitui o veredito de R11.
+
+### Classes de completude
+- `COMPLETE`: identidade valida, secoes obrigatorias presentes, matriz minima atendida, validacoes independentes suficientes e sem bloqueio absoluto ativo. Permite julgamento Bedrock, mas nao garante `PRODUCT_READY`.
+- `INCOMPLETE`: ha partes faltando, mas a entrega ainda pode continuar no lab. Bloqueia promocao produto.
+- `INSUFFICIENT`: existe evidenca parcial, porem ela nao sustenta julgamento product-grade. Bloqueia novo veredito ate evidencias adicionais.
+- `CONTRADICTORY`: o bundle conflita com source-of-truth, commits, ledger, ou artefatos previos. Bloqueia julgamento ate reconciliacao.
+- `STALE`: a evidenca relevante esta desatualizada, substituida ou nao corresponde ao estado atual. Bloqueia julgamento ate refresh.
+- `INVALID`: identidade, schema, referencia ou auditabilidade quebradas. Bloqueia julgamento por definicao.
+- `PRODUCT_PROMOTION_BLOCKED`: um bloqueador absoluto do R11 esta ativo; promocao produto e proibida ate remediacao explicita.
+
+### Required evidence matrix
+The matrix below defines the minimum evidence expectations per target type.
+
+- `phase`, `capability`, `macroblock`:
+  - tests: `yes`
+  - rollback: `only if the bundle claims a mutation path`
+  - human_review: `yes`
+  - ux_evidence: `only if user-facing`
+  - security/privacy: `yes` when the target crosses trust boundaries
+  - dependency_evidence: `only if dependencies are touched or referenced`
+  - runtime_boundary_evidence: `only if runtime boundaries are touched`
+  - source_of_truth_evidence: `yes`
+  - performance_and_cost_evidence: `only if the bundle makes performance or cost claims`
+  - lab_only: `yes`
+  - product_ready_candidate: `yes`, but only with full product evidence
+- `runtime_change`, `frontend_change`, `backend_change`, `action_runtime_change`, `voice_change`, `network_change`:
+  - tests: `yes`
+  - rollback: `yes`
+  - human_review: `yes`
+  - ux_evidence: `yes` for frontend and voice, optional otherwise if user-facing
+  - security/privacy: `yes`
+  - dependency_evidence: `yes` when touched or transitively affected
+  - runtime_boundary_evidence: `yes`
+  - source_of_truth_evidence: `yes`
+  - performance_and_cost_evidence: `yes`
+  - lab_only: `yes`
+  - product_ready_candidate: `yes`
+- `product_release_candidate`, `commercial_delivery_candidate`:
+  - tests: `yes`
+  - rollback: `yes`
+  - human_review: `yes`
+  - ux_evidence: `yes`
+  - security/privacy: `yes`
+  - dependency_evidence: `yes`
+  - runtime_boundary_evidence: `yes`
+  - source_of_truth_evidence: `yes`
+  - performance_and_cost_evidence: `yes`
+  - lab_only: `no`
+  - product_ready_candidate: `yes`
+
+### Minimum validation rule
+- A relevant bundle must contain at least `5` independent validation classes.
+- Independent means the classes observe different failure surfaces; duplicate reruns of the same check do not count twice.
+- Valid classes can include `json.tool`, `git diff --check`, `git status`, unit test, runner execution, build, lint, smoke, negative test, regression test, or source-of-truth reread, but each bundle must name the classes explicitly.
+- For product-relevant bundles, at least one validation class must cover security/privacy or runtime boundary risk.
+- For bundles involving real mutation, at least one validation class must cover rollback or compensation.
+
+### Evidence scoring without LLM-as-judge
+- Scores are derived from evidence references, not from model opinion.
+- The model may summarize or classify, but it cannot be the sole authority for a critical Bedrock decision.
+- A critical gate requires deterministic criteria, machine-checkable artifacts, or explicit human review.
+- Missing evidence counts against the bundle.
+- Contradictory evidence blocks the bundle.
+
+### Completeness decision algorithm draft
+1. Validate bundle identity and schema version.
+2. Validate target type and target scope are allowed.
+3. Validate the required sections from the R12 schema.
+4. Validate the required evidence matrix for the target type.
+5. Count independent validation classes and confirm the minimum of `5`.
+6. Scan for blocker findings from the R11 absolute blocker set.
+7. Detect contradictions across source-of-truth, commits, ledger, and artifacts.
+8. Detect stale evidence or evidence superseded by newer material.
+9. Detect evidence that cannot be audited or reproduced.
+10. Determine `completeness_class`.
+11. Determine whether `bedrock_verdict_allowed`.
+12. Determine whether `product_promotion_allowed`, `lab_continuation_allowed`, and `commercial_use_allowed`.
+13. Emit required remediations for missing, stale, contradictory, or blocked evidence.
+
+### Blocker handling
+Each R11 absolute blocker must behave as follows:
+- `secret exposed`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the target is fully quarantined and the secret is not on a product path; required remediation is secret removal and rotation.
+- `network activated without gate`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the network path is lab-only and explicitly gated; required remediation is gate insertion or network disablement.
+- `runtime product altered without authorization`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the change is reverted or confined to a non-product path; required remediation is authorization or revert.
+- `real action without dry-run, permission, ledger, rollback`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the action is never promoted and stays isolated; required remediation is dry-run, permission, ledger, and rollback.
+- `absence of evidence`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the bundle is explicitly lab-only and the missing evidence is non-critical; required remediation is evidence materialization.
+- `critical tests absent`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the target is lab-only and tests are not relevant; required remediation is test coverage or explicit rationale.
+- `source-of-truth contradictory`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only after reconciliation; required remediation is source-of-truth repair.
+- `rollback nonexistent for real mutation`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if no real mutation occurred; required remediation is rollback or compensation design.
+- `behavior non-reproducible`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the behavior is explicitly exploratory; required remediation is reproducibility evidence.
+- `response truncated or false for critical case`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the case is non-critical and clearly labeled; required remediation is corrected behavior and verification.
+- `dependency external not pinned or reviewed`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the dependency is not on the promotion path; required remediation is pinning and review.
+- `Obsidian/context bulk-read`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the bundle does not rely on that read and the violation is repaired; required remediation is query-first repair.
+- `LLM-as-judge without deterministic mitigation`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the critical decision is moved to deterministic criteria or human review; required remediation is deterministic mitigation.
+- `failure of isolation between Lab and Product`: blocks `PRODUCT_READY`; blocks `commercial_use_allowed`; `LAB_ONLY_PASS` only if the path is proven lab-only and isolation is restored; required remediation is boundary repair.
+
+### Future output schema
+Future completeness-gate output should contain at least:
+- `phase`
+- `target_id`
+- `target_type`
+- `bundle_id`
+- `bundle_version`
+- `schema_version`
+- `completeness_class`
+- `bedrock_verdict_allowed`
+- `product_promotion_allowed`
+- `lab_continuation_allowed`
+- `commercial_use_allowed`
+- `minimum_validation_count`
+- `validation_classes_detected`
+- `missing_required_sections`
+- `missing_required_evidence`
+- `blocking_findings`
+- `warning_findings`
+- `stale_findings`
+- `contradiction_findings`
+- `invalid_schema_findings`
+- `required_remediations`
+- `next_recommended_phase`
+
+### Relation with R11 and R12
+- R11 defines what Bedrock judges.
+- R12 defines what evidence must exist.
+- R13 defines whether that evidence is complete enough for judgment.
+- R13 still does not execute the Bedrock runtime gate.
+
 ## Relação com NORTH_POLE
 O Bedrock Gate é o chão. O North Pole é o norte.
 

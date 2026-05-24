@@ -39,6 +39,38 @@ D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
 - historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
 
+# BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT
+
+- lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R13`
+- status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- completeness_gate_draft_created: `True`
+- required_evidence_matrix_defined: `True`
+- minimum_validation_rule_defined: `True`
+- minimum_validation_count: `5`
+- blocker_handling_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
+
+Bedrock Evidence Bundle Completeness Gate is policy only.
+It defines when an evidence bundle is complete enough for product-grade judgment, but it does not execute the Bedrock runtime gate, promote product, or relax the R10 global boundary.
+
 # BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY
 
 - lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
