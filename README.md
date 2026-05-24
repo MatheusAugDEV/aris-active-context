@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate
+R25 reviews the R24 runner plan and confirms it is safe and complete enough for a future controlled implementation phase.
+It is a plan review only: no runner is implemented, no fixtures are executed, and no Bedrock verdict is emitted.
+
 ## Bedrock Evaluation Request Validation Runner Dry-Run Plan
 R24 defines the future deterministic runner that will compare actual request-validation results against the expected dry-run fixtures.
 It is plan-only: the runner is not implemented, no fixtures are executed, and no Bedrock verdict is emitted.

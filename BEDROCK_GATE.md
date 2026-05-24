@@ -1,5 +1,22 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate
+R25 reviews the R24 runner plan and confirms it is safe and complete enough to allow a future controlled implementation plan.
+It checks boundaries, algorithm coverage, schemas, mismatch policy, and fixture-tree protection, but it does not implement or execute a runner.
+
+### Review outcome
+- `runner_dry_run_plan_review_passed`
+- R24 plan found and verified
+- boundary review passed
+- algorithm review passed
+- schema review passed
+- mismatch policy review passed
+- fixture tree preserved
+- no runner implementation or execution
+
+### Next phase
+- `F21-CTX-BEDROCK-R26 - Bedrock Evaluation Request Validation Runner Controlled Implementation Plan`
+
 ## Bedrock Evaluation Request Validation Runner Dry-Run Plan
 R24 plans the future deterministic runner dry-run that will compare actual request-validation output against the expected fixture files.
 It defines purpose, boundaries, inputs, algorithm, output schemas, mismatch policy, artifact paths, and risk blocks for implementation, but it does not implement or execute a runner.
