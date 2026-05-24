@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
-- next_gate: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
-- reason: `R7 classified adoption risk conservatively and kept adoption blocked; the next safe step is risk review, not adoption.`
+- latest_completed_phase: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+- next_gate: `F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate`
+- reason: `R8 confirmed the adoption-risk register remains bounded and non-authorizing; the next safe step is safe candidate review sequencing, not adoption.`
 - blocked_capabilities:
   - `bedrock_v2_apply_allowed_now: false`
   - `bedrock_v2_apply_plan_allowed_now: false`

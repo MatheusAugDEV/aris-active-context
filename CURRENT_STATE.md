@@ -1,26 +1,37 @@
-## F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate
-- latest_completed_phase: `F21-CTX-BEDROCK-R7 - Bedrock v2 Adoption Candidate Risk Gate`
-- phase_id: `F21-CTX-BEDROCK-R7`
-- status: `bedrock_v2_adoption_candidate_risk_passed`
+## F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R8`
+- status: `bedrock_v2_adoption_candidate_risk_review_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-BEDROCK-R6`
-- source_r6_decision_path: `artifacts/f21/bedrock_v2_candidate_selection_review_decision.json`
-- source_r6_summary_path: `artifacts/f21/bedrock_v2_candidate_selection_review_summary.json`
-- source_candidate_manifest_path: `artifacts/f21/bedrock_v2_candidate_selection_manifest.json`
-- r6_status: `bedrock_v2_candidate_selection_review_passed`
-- r6_decision: `pass`
-- r6_verified: `True`
-- risk_register_created: `True`
-- candidate_risk_review_is_not_adoption: `True`
-- total_selected_candidates_reviewed: `60`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R7`
+- source_r7_decision_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_decision.json`
+- source_r7_summary_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_summary.json`
+- source_risk_register_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_register.json`
+- r7_status: `bedrock_v2_adoption_candidate_risk_passed`
+- r7_decision: `pass`
+- r7_verified: `True`
+- risk_register_reviewed: `True`
+- risk_register_schema_valid: `True`
+- risk_counts_match: `True`
+- total_candidates_reviewed: `60`
 - low_context_policy_risk_count: `15`
 - medium_design_risk_count: `15`
 - high_security_or_source_risk_count: `20`
 - blocked_for_adoption_risk_count: `10`
 - unclassified_candidate_count: `0`
+- risk_entry_missing_required_field_count: `0`
 - missing_future_gate_count: `0`
-- executable_or_apply_language_risk_count: `0`
+- source_verification_low_risk_violation_count: `0`
+- security_review_low_risk_violation_count: `0`
+- false_positive_low_risk_violation_count: `0`
+- candidate_risk_review_is_not_adoption: `True`
 - candidate_approval_allowed_now: `False`
+- adopted_candidate_count: `0`
+- approved_candidate_count: `0`
+- applied_candidate_count: `0`
+- apply_instruction_authorized_count: `0`
+- apply_plan_authorized_count: `0`
+- implementation_readiness_promoted_count: `0`
 - false_authorization_detected: `False`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
@@ -42,6 +53,6 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
+- next_real_action: `F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate`
 
-R7 classifies candidate risk only; it does not authorize adoption or approval.
+R8 reviews the risk register only; it does not adopt or approve candidates.
