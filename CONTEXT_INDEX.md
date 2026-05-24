@@ -1,3 +1,33 @@
+## Bedrock blocker scan schema draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft`
+- next_gate_seen: `F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- blocker_scan_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
+- summary_artifact: `../artifacts/f21/bedrock_blocker_scan_schema_draft_summary.json`
+- report_artifact: `../artifacts/f21/bedrock_blocker_scan_schema_draft_report.md`
+- status: `bedrock_blocker_scan_schema_draft_ready`
+- decision: `pass`
+- blocker_scan_schema_created: `True`
+- canonical_blocker_count: `14`
+- blocker_state_enum_defined: `True`
+- blocker_severity_enum_defined: `True`
+- evidence_quality_enum_defined: `True`
+- waiver_policy_defined: `True`
+- completeness_gate_integration_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
+R14 defines the internal blocker scan schema and its audit fields; it does not run a scanner or authorize product promotion.
+
 ## Bedrock evidence bundle completeness gate draft
 - latest_completed_phase: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
 - next_recommended_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`

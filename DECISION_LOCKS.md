@@ -39,6 +39,40 @@ D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
 - historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
 
+# BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT
+
+- lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R14`
+- status: `bedrock_blocker_scan_schema_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- blocker_scan_schema_created: `True`
+- canonical_blocker_count: `14`
+- blocker_state_enum_defined: `True`
+- blocker_severity_enum_defined: `True`
+- evidence_quality_enum_defined: `True`
+- waiver_policy_defined: `True`
+- completeness_gate_integration_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft`
+
+Bedrock Blocker Scan is policy only.
+It defines how absolute blockers are represented, audited, waived, and fed into completeness and promotion blocking, but it does not execute a scanner runtime.
+
 # BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT
 
 - lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`

@@ -442,6 +442,150 @@ Future completeness-gate output should contain at least:
 - R13 defines whether that evidence is complete enough for judgment.
 - R13 still does not execute the Bedrock runtime gate.
 
+## Draft de schema do blocker scan
+Este draft define como o Bedrock representa, valida e materializa blockers absolutos de forma auditavel.
+Ele nao executa scanner runtime real, nao promove produto e nao altera o R10 global boundary.
+
+### Identidade do scan
+Campos obrigatorios do future blocker scan:
+- `scan_id`
+- `scan_version`
+- `schema_version`
+- `target_id`
+- `target_type`
+- `target_phase`
+- `bundle_id`
+- `created_at`
+- `created_by`
+- `source_commits`
+- `scan_scope`
+- `scan_mode`
+- `bedrock_gate_version`
+
+### Estados por blocker
+Cada blocker deve usar exatamente um destes estados:
+- `not_applicable`: exige justificativa e escopo claro.
+- `not_detected`: exige evidencia verificavel.
+- `detected`: bloqueia `PRODUCT_READY` e ativa bloqueio de promocao para target product-grade.
+- `suspected`: bloqueia `PRODUCT_READY` ate verificacao.
+- `unknown`: bloqueia `PRODUCT_READY` quando a evidencia deveria existir.
+- `unverified`: bloqueia `PRODUCT_READY` para target product-grade.
+- `remediated_pending_verification`: continua bloqueando produto ate validacao.
+- `waived_with_human_approval`: exige review humano, escopo, prazo e justificativa; nunca pode bypassar segredo exposto, rede indevida, acao real sem permissao/ledger/rollback, ou falha de isolamento Lab/Produto.
+
+### Severidades
+Cada blocker usa uma severidade desta lista:
+- `critical`
+- `high`
+- `medium`
+- `low`
+- `informational`
+
+Regras de severidade:
+- Todos os 14 blockers absolutos do R11 sao `critical` ou `high`.
+- `critical detected` gera `PRODUCT_PROMOTION_BLOCKED`.
+- `high detected` bloqueia `PRODUCT_READY` e `commercial_use_allowed`.
+- Severidade nao pode ser reduzida por opiniao do modelo.
+- Reducao de severidade exige evidencia materializada ou human review explicita.
+
+### Canonical blocker catalog
+Os 14 IDs canonicos e estaveis sao:
+- `secret_exposed`: title=`Secret exposed`; description=`Secret, token, credential or private key exposed in artifact, log, prompt or output.`; default_severity=`critical`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` when exposure reaches a product path; required_evidence=`secret scan, redaction proof, scope check`; required_remediation=`remove exposure, rotate secret, scrub artifacts`; verification_method=`secret scan plus manual artifact review`; waiver_allowed=`False`; waiver_constraints=`non-waivable`.
+- `network_enabled_without_gate`: title=`Network enabled without gate`; description=`Network path activated without explicit gate, scope or approval.`; default_severity=`critical`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` when network reaches product path; required_evidence=`gate proof, egress control, scope isolation`; required_remediation=`insert gate or disable network`; verification_method=`runtime/config review plus validation`; waiver_allowed=`False`; waiver_constraints=`non-waivable for product paths`.
+- `productive_runtime_modified_without_authorization`: title=`Productive runtime modified without authorization`; description=`Runtime prod path changed without explicit permission and ledgered approval.`; default_severity=`critical`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` when the change touches product path; required_evidence=`authorization record, diff, scope proof`; required_remediation=`authorize or revert`; verification_method=`diff plus decision ledger review`; waiver_allowed=`False`; waiver_constraints=`non-waivable for product runtime`.
+- `real_action_without_dry_run_permission_ledger_rollback`: title=`Real action without dry-run, permission, ledger, rollback`; description=`Real mutation attempted or claimed without dry-run, permission, ledger and rollback/compensation.`; default_severity=`critical`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` when the action is real or promoted; required_evidence=`dry-run record, permission, ledger entry, rollback plan`; required_remediation=`add dry-run, permission, ledger and rollback`; verification_method=`execution ledger review plus rollback proof`; waiver_allowed=`False`; waiver_constraints=`non-waivable for real action`.
+- `materialized_evidence_missing`: title=`Materialized evidence missing`; description=`Required evidence exists only as assertion or is absent.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only when lab-only and non-critical; required_evidence=`materialized artifacts, traceable refs`; required_remediation=`materialize evidence bundle`; verification_method=`artifact presence review`; waiver_allowed=`True`; waiver_constraints=`requires human review, scope and TTL`.
+- `critical_tests_missing`: title=`Critical tests missing`; description=`Critical validation classes are absent for the claimed target.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only for lab-only exploratory work; required_evidence=`test plan, test results, coverage map`; required_remediation=`add critical tests or narrow claim`; verification_method=`test inventory review`; waiver_allowed=`True`; waiver_constraints=`requires human review and explicit lab-only scope`.
+- `source_of_truth_contradictory`: title=`Source of truth contradictory`; description=`Artifacts, ledger or current state conflict with source-of-truth.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` until reconciliation; required_evidence=`conflict trace, precedence decision, reconciled state`; required_remediation=`reconcile source-of-truth`; verification_method=`cross-file reconciliation review`; waiver_allowed=`True`; waiver_constraints=`requires explicit reconciliation plan`.
+- `rollback_missing_for_real_mutation`: title=`Rollback missing for real mutation`; description=`A real mutation path lacks a viable rollback or compensation path.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only if no real mutation occurred; required_evidence=`rollback plan, restore path, compensation plan`; required_remediation=`design or prove rollback`; verification_method=`rollback evidence review`; waiver_allowed=`True`; waiver_constraints=`must not cover real mutation`.
+- `non_reproducible_behavior`: title=`Non reproducible behavior`; description=`The behavior cannot be reproduced under the stated inputs, state and scope.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only for exploratory lab cases; required_evidence=`repro steps, rerun proof, environment notes`; required_remediation=`add reproducibility evidence`; verification_method=`rerun validation plus artifact comparison`; waiver_allowed=`True`; waiver_constraints=`requires explicit lab-only scope`.
+- `critical_response_truncated_or_false`: title=`Critical response truncated or false`; description=`Critical case received a truncated or false response or summary.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only if the case is not product-critical and is clearly labeled; required_evidence=`full response trace, comparison, failure example`; required_remediation=`correct response path and verify`; verification_method=`case review plus comparison`; waiver_allowed=`True`; waiver_constraints=`requires non-critical scope and human review`.
+- `external_dependency_unpinned_or_unreviewed`: title=`External dependency unpinned or unreviewed`; description=`Dependency is not pinned or not reviewed for the promotion path.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only when dependency is not on the promotion path; required_evidence=`pin, review record, dependency inventory`; required_remediation=`pin and review dependency`; verification_method=`dependency audit`; waiver_allowed=`True`; waiver_constraints=`requires explicit risk acceptance`.
+- `obsidian_or_context_bulk_read_violation`: title=`Obsidian or context bulk read violation`; description=`Bulk-read of Obsidian or context occurred outside query-first rules.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only if the violation is repaired and isolated from product path; required_evidence=`query log, scope, read trace`; required_remediation=`repair query-first discipline`; verification_method=`read-path audit`; waiver_allowed=`True`; waiver_constraints=`requires source-of-truth repair and no product-path reuse`.
+- `llm_as_judge_for_critical_gate_without_deterministic_mitigation`: title=`LLM as judge without deterministic mitigation`; description=`Critical decision relied on model opinion without deterministic guardrails or human review.`; default_severity=`high`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`True` only if the critical decision is moved to deterministic criteria or explicit human review; required_evidence=`deterministic criteria, human review trace`; required_remediation=`add deterministic mitigation`; verification_method=`decision trace review`; waiver_allowed=`True`; waiver_constraints=`cannot waive away deterministic mitigation requirement`.
+- `lab_product_isolation_failure`: title=`Lab product isolation failure`; description=`Isolation between lab and product paths failed or is not provable.`; default_severity=`critical`; blocks_product_ready=`True`; blocks_commercial_use=`True`; may_allow_lab_continuation=`False` when the failure touches product boundary; required_evidence=`isolation proof, boundary trace, path separation`; required_remediation=`repair isolation boundary`; verification_method=`boundary audit`; waiver_allowed=`False`; waiver_constraints=`non-waivable for product promotion`.
+
+### Blocker entry fields
+Every blocker scan item must include:
+- `status`
+- `severity`
+- `evidence_refs`
+- `evidence_quality`
+- `source_paths_checked`
+- `commands_or_validations_used`
+- `findings`
+- `remediation_required`
+- `remediation_owner`
+- `verification_required`
+- `blocks_product_ready`
+- `blocks_commercial_use`
+- `lab_continuation_allowed`
+- `human_review_required`
+- `waiver_status`
+- `waiver_reason`
+- `waiver_approved_by`
+- `last_verified_at`
+
+### Evidence quality
+Evidence quality must be one of:
+- `materialized`
+- `partial`
+- `declarative_only`
+- `missing`
+- `contradictory`
+- `stale`
+- `not_auditable`
+
+Rules:
+- `materialized` is preferred for product.
+- `declarative_only` is not enough for `PRODUCT_READY`.
+- `missing`, `contradictory`, `stale`, and `not_auditable` block product when tied to an absolute blocker.
+- `partial` may allow Lab, but not product, unless the target is explicitly lab-only and safe.
+
+### Waiver policy
+- Waiver is an exception, not the default path.
+- Waiver requires explicit human review, scope, TTL and justification.
+- Waiver cannot release commercial use if the blocker involves secret exposure, real mutation without ledger/rollback, network indevida, or Lab/Product isolation failure.
+- Waiver does not turn missing evidence into valid evidence.
+- Waiver must appear in the Evidence Bundle and in the future Bedrock Verdict Artifact.
+
+### Integration with completeness gate
+- Any `detected`, `suspected`, `unknown` or `unverified` blocker on a target product-grade path must affect `completeness_class`.
+- A critical active blocker yields `PRODUCT_PROMOTION_BLOCKED`.
+- A high active blocker blocks `PRODUCT_READY` and `commercial_use_allowed`.
+- A blocker scan that is incomplete, contradictory, stale or invalid can move the bundle to `INSUFFICIENT`, `CONTRADICTORY`, `STALE` or `INVALID`.
+- A clean blocker scan only removes one class of block; it never guarantees `PRODUCT_READY`.
+
+### Future output schema
+Future blocker scan output should contain at least:
+- `phase`
+- `target_id`
+- `target_type`
+- `bundle_id`
+- `scan_id`
+- `scan_status`
+- `scan_completeness`
+- `blocker_count`
+- `detected_blockers`
+- `suspected_blockers`
+- `unknown_blockers`
+- `waived_blockers`
+- `critical_blockers`
+- `high_blockers`
+- `product_promotion_blocked`
+- `commercial_use_allowed`
+- `lab_continuation_allowed`
+- `required_remediations`
+- `human_review_required`
+- `next_recommended_phase`
+
+### Relation with R11, R12 and R13
+- R11 defines the absolute blockers.
+- R12 requires `bedrock_blocker_scan` as a mandatory Evidence Bundle section.
+- R13 determines whether blocker findings collapse completeness into `PRODUCT_PROMOTION_BLOCKED`, `INSUFFICIENT`, `INVALID`, `CONTRADICTORY` or `STALE`.
+- R14 defines the internal blocker scan schema used by future Bedrock evidence.
+- R14 still does not execute a scanner runtime.
+
 ## Relação com NORTH_POLE
 O Bedrock Gate é o chão. O North Pole é o norte.
 

@@ -23,6 +23,11 @@
 - It classifies bundles as complete, incomplete, insufficient, contradictory, stale, invalid, or blocked for promotion.
 - R13 does not execute the Bedrock runtime gate and does not promote product.
 
+## Bedrock Blocker Scan Schema Draft
+- R14 formalizes the internal schema used to represent the 14 canonical Bedrock blockers.
+- It defines blocker states, severity, evidence quality, waiver policy, and the link to completeness gating.
+- R14 does not execute a scanner runtime and does not promote product.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`
