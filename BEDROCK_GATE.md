@@ -1,5 +1,136 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Draft do manifesto de fixtures dry-run de request
+Este draft define o manifesto canônico dos fixtures simulados que serão usados futuramente para testar as regras de validação do request sem executar o Bedrock real.
+Ele não materializa fixtures reais, não valida requests reais, não promove produto e não cria veredito real.
+
+### Identidade do manifesto
+Campos obrigatórios:
+- `manifest_id`
+- `manifest_schema_version`
+- `bedrock_gate_version`
+- `created_for_phase`
+- `created_at`
+- `created_by`
+- `fixture_schema_version`
+- `validation_rules_version`
+- `input_contract_version`
+- `fixture_count`
+- `positive_fixture_count`
+- `negative_fixture_count`
+- `coverage_targets`
+- `non_execution_guarantee`
+
+### Estrutura de cada fixture
+Cada fixture do manifesto deve ter:
+- `fixture_id`
+- `fixture_name`
+- `fixture_category`
+- `fixture_priority`
+- `target_type`
+- `requested_verdict_scope`
+- `expected_validation_status`
+- `expected_rejection_ids`
+- `expected_warning_ids`
+- `expected_lab_continuation_allowed`
+- `expected_product_promotion_allowed`
+- `expected_commercial_use_allowed`
+- `covered_validation_layers`
+- `covered_rejection_rules`
+- `covered_target_rules`
+- `covered_scope_rules`
+- `requires_human_review_mock`
+- `requires_rollback_mock`
+- `requires_boundary_mock`
+- `requires_evidence_bundle_mock`
+- `requires_blocker_scan_mock`
+- `future_fixture_path`
+- `future_expected_path`
+
+### Prioridades
+As prioridades canônicas são:
+- `critical`
+- `high`
+- `medium`
+- `low`
+
+Regras:
+- fixtures que cobrem product promotion indevida devem ser `critical`
+- fixtures que cobrem commercial delivery indevida devem ser `critical`
+- fixtures que cobrem runtime/network/action runtime/real mutation sem rollback devem ser `critical`
+- fixtures positivos Lab-only podem ser `medium` ou `high`
+- fixtures de documentação/cobertura complementar podem ser `low`
+
+### Conjunto mínimo de fixtures
+O manifesto define 22 fixtures no total, com 5 positivos e 17 negativos.
+
+Positivos:
+- `valid_lab_continuation_partial_evidence`
+- `valid_technical_readiness_no_product_pass`
+- `valid_product_candidate_with_conditions`
+- `valid_safety_blocker_review_partial_evidence`
+- `valid_evidence_completeness_review_no_product_pass`
+
+Negativos:
+- `invalid_missing_target_id`
+- `invalid_missing_target_type`
+- `invalid_target_type_unknown`
+- `invalid_missing_source_commit`
+- `invalid_product_promotion_without_evidence_bundle`
+- `invalid_product_promotion_without_blocker_scan`
+- `invalid_product_promotion_without_human_review`
+- `invalid_runtime_change_without_boundary_evidence`
+- `invalid_real_mutation_without_rollback_evidence`
+- `invalid_commercial_delivery_without_risk_register`
+- `invalid_commercial_delivery_without_known_limits`
+- `invalid_source_of_truth_contradictory`
+- `invalid_dirty_worktree_without_notes`
+- `invalid_llm_as_sole_judge_requested`
+- `invalid_attempt_to_skip_completeness_gate`
+- `invalid_attempt_to_skip_blocker_scan`
+- `invalid_attempt_to_promote_lab_only_to_product`
+
+### Coverage matrix
+O manifesto deve cobrir:
+- todas as validation layers do R17
+- todos os requested scopes do R16/R17
+- todos os target types do R16/R17/R15
+- todas as hard-block rejection rules canônicas
+- as invariantes de nao execucao
+
+### Expected outcome rules
+Regras obrigatórias:
+- nenhum fixture pode declarar `expected_product_promotion_allowed=true`
+- nenhum fixture pode declarar `expected_commercial_use_allowed=true`
+- fixtures positivos podem ser aceitos para Bedrock evaluation, mas nunca como product pass
+- fixtures Lab-only devem manter product promotion false
+- fixtures negativos devem ter ao menos um rejection ID
+- commercial delivery sem human review, risk register ou known limits deve ser blocked
+- runtime/action runtime/network/real mutation sem boundary ou rollback deve ser blocked
+- LLM-as-sole-judge deve ser blocked
+- attempts to skip completeness gate or blocker scan devem ser blocked
+
+### Future runner relation
+Um runner determinístico futuro deve:
+- ler o manifesto
+- carregar um fixture por vez
+- aplicar as regras do R17
+- comparar a saida com o esperado
+- permanecer dry-run only
+- não executar runtime
+- não chamar rede
+- não criar veredito real
+- emitir apenas artifact de dry-run
+
+### Future paths
+Os caminhos futuros propostos são:
+- `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>_expected.json`
+
+R19 define o manifesto apenas.
+Ele não materializa os fixtures, não executa runner e não avalia Bedrock.
+
 ## Draft de schema de dry-run fixtures de validação de request
 Este draft define fixtures simulados para testar as regras de validação do request sem executar o Bedrock real.
 Ele não valida requests reais, não promove produto e não cria veredito real.

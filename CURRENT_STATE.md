@@ -1,3 +1,50 @@
+## F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft`
+- phase_id: `F21-CTX-BEDROCK-R19`
+- status: `bedrock_evaluation_request_fixture_manifest_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- reviewed_blocker_scan_status: `bedrock_blocker_scan_schema_draft_ready`
+- reviewed_verdict_artifact_status: `bedrock_verdict_artifact_schema_draft_ready`
+- reviewed_input_contract_status: `bedrock_evaluation_input_contract_draft_ready`
+- reviewed_validation_rules_status: `bedrock_evaluation_request_validation_rules_draft_ready`
+- reviewed_dry_run_fixture_schema_status: `bedrock_evaluation_request_dry_run_fixture_schema_draft_ready`
+- fixture_manifest_created: `True`
+- fixture_manifest_only: `True`
+- future_runner_only: `True`
+- fixture_count_minimum: `20`
+- positive_fixture_count_minimum: `5`
+- negative_fixture_count_minimum: `15`
+- coverage_matrix_defined: `True`
+- expected_outcome_rules_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R20 - Bedrock Evaluation Request Fixture Materialization Plan`
+
+R19 defines the canonical fixture manifest only.
+It enumerates the future dry-run fixtures, assigns coverage and priority, and prepares future deterministic runner inputs, but it does not materialize fixtures, execute validation, or create any real verdict artifact.
+
 ## F21-CTX-BEDROCK-R18 - Bedrock Evaluation Request Dry-Run Fixture Schema Draft
 - latest_completed_phase: `F21-CTX-BEDROCK-R18 - Bedrock Evaluation Request Dry-Run Fixture Schema Draft`
 - phase_id: `F21-CTX-BEDROCK-R18`

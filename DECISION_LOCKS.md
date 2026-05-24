@@ -1,3 +1,38 @@
+## BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R19`
+- status: `bedrock_evaluation_request_fixture_manifest_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- fixture_manifest_created: `True`
+- fixture_manifest_only: `True`
+- future_runner_only: `True`
+- fixture_count_minimum: `20`
+- positive_fixture_count_minimum: `5`
+- negative_fixture_count_minimum: `15`
+- coverage_matrix_defined: `True`
+- expected_outcome_rules_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R20 - Bedrock Evaluation Request Fixture Materialization Plan`
+
+Bedrock Evaluation Request Fixture Manifest is policy only.
+It enumerates future dry-run fixtures and their expected coverage, but it does not materialize fixtures, run a runner, or evaluate Bedrock requests.
+
 ## BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`

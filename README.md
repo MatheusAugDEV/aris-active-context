@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Fixture Manifest Draft
+R19 defines the canonical manifest for future dry-run fixtures that will test request-validation rules.
+It lists the fixtures, priorities, coverage targets, and expected outcomes, but it does not materialize fixtures or run any Bedrock evaluation.
+
 ## Bedrock Evaluation Request Dry-Run Fixture Schema Draft
 - R18 defines the schema for simulated fixtures that test request-validation rules.
 - Fixtures represent valid, invalid, incomplete, ambiguous, lab-only, product-blocked, and commercial-blocked requests.
