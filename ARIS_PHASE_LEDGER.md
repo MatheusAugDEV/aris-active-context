@@ -1,3 +1,32 @@
+## F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft
+- phase_id: `F21-CTX-BEDROCK-R12`
+- status: `bedrock_evidence_bundle_schema_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- evidence_bundle_schema_created: `True`
+- minimum_validation_classes_defined: `True`
+- minimum_validation_count: `5`
+- bundle_completeness_states_defined: `True`
+- blocker_scan_schema_defined: `True`
+- future_bundle_paths_proposed: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_real_action: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
+
+R12 is a schema draft for evidence bundles only; it does not run the Bedrock gate or promote product.
+
 ## F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft
 - phase_id: `F21-CTX-BEDROCK-R11`
 - status: `bedrock_verdict_criteria_draft_ready`

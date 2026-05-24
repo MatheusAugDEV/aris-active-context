@@ -31,6 +31,42 @@
 - next_gate: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - reason: `R11 drafts the verdict criteria only; the next step is the evidence bundle schema, not product promotion or runtime execution.`
 
+## F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft
+- phase_id: `F21-CTX-BEDROCK-R12`
+- status: `bedrock_evidence_bundle_schema_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- evidence_bundle_schema_created: `True`
+- minimum_validation_classes_defined: `True`
+- minimum_validation_count: `5`
+- bundle_completeness_states_defined: `True`
+- blocker_scan_schema_defined: `True`
+- future_bundle_paths_proposed: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_mutation_allowed: `False`
+- frontend_mutation_allowed: `False`
+- backend_mutation_allowed: `False`
+- audio_mutation_allowed: `False`
+- action_runtime_mutation_allowed: `False`
+- voice_mutation_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_gate: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
+- reason: `R12 defines the minimum evidence bundle schema only; the next safe step is bundle completeness criteria, not execution or promotion.`
+
 ## Bedrock Gate Global Product Boundary Lock
 - lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
 - phase_id: `F21-CTX-BEDROCK-R10`

@@ -63,6 +63,39 @@ Bedrock Gate is the mandatory global boundary between ARIS Lab / experimental / 
 It must materialize evidence before any product promotion, and it may block a technically passing phase if the phase is not product-ready.
 This lock wins over local phase summaries, stale memory, and subjective interpretation.
 
+## BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT
+
+- lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R12`
+- status: `bedrock_evidence_bundle_schema_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- evidence_bundle_schema_created: `True`
+- minimum_validation_classes_defined: `True`
+- minimum_validation_count: `5`
+- bundle_completeness_states_defined: `True`
+- blocker_scan_schema_defined: `True`
+- future_bundle_paths_proposed: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R13 - Bedrock Evidence Bundle Completeness Gate Draft`
+
+Bedrock Evidence Bundle Schema is policy only.
+It defines the minimum material evidence package required for a future Bedrock verdict, including identity, technical artifacts, validation, security, rollback, source-of-truth, completeness, and blocker scan sections.
+It does not authorize product promotion or runtime execution.
+
 ## BEDROCK_VERDICT_CRITERIA_DRAFT
 
 - lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`

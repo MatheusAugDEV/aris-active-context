@@ -13,6 +13,11 @@
 - R11 does not execute the Bedrock runtime gate and does not authorize product promotion.
 - The draft preserves the R10 global product boundary and prepares the schema needed for the future evidence bundle.
 
+## Bedrock Evidence Bundle Schema Draft
+- R12 formalizes the minimum material evidence package a future Bedrock verdict must receive.
+- The schema covers identity, technical artifacts, validation, security, privacy, runtime boundaries, rollback, source-of-truth, completeness, and blocker scan material.
+- R12 does not execute the Bedrock runtime gate and does not promote product.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`

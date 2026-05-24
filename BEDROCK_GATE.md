@@ -142,6 +142,176 @@ Um futuro artefato de veredito Bedrock deve conter, no mínimo:
 Bedrock é o mecanismo que transforma o ARIS de um projeto técnico em um produto confiável, vendável e auditável.
 Esse posicionamento é operacional, não promocional: ele depende de evidência, isolamento, rollback e veredito explícito.
 
+## Draft de schema do Evidence Bundle
+Este draft define o pacote mínimo de evidências que o Bedrock deve receber antes de emitir qualquer veredito sério.
+Ele não executa o gate, não promove produto e não materializa bundles reais.
+
+### Identidade do bundle
+Campos obrigatórios:
+- `bundle_id`
+- `bundle_version`
+- `target_type`
+- `target_id`
+- `target_phase`
+- `target_scope`
+- `created_at`
+- `created_by`
+- `source_repositories`
+- `source_commits`
+- `bedrock_schema_version`
+- `intended_bedrock_verdict_scope`
+
+Tipos mínimos de `target_type`:
+- `phase`
+- `capability`
+- `macroblock`
+- `runtime_change`
+- `frontend_change`
+- `backend_change`
+- `action_runtime_change`
+- `voice_change`
+- `network_change`
+- `product_release_candidate`
+- `commercial_delivery_candidate`
+
+### Seções obrigatórias
+Todo bundle deve conter:
+- `technical_artifacts`
+- `test_evidence`
+- `security_evidence`
+- `privacy_and_secret_evidence`
+- `runtime_boundary_evidence`
+- `rollback_and_recovery_evidence`
+- `observability_evidence`
+- `ux_evidence`
+- `documentation_evidence`
+- `source_of_truth_evidence`
+- `dependency_evidence`
+- `performance_and_cost_evidence`
+- `risk_register`
+- `known_limits`
+- `human_review_evidence`
+- `bedrock_blocker_scan`
+
+### Technical artifacts
+`technical_artifacts` deve apontar para:
+- summaries JSON
+- reports MD
+- decision files
+- ledger entries
+- docs touched
+- source files touched
+- tests touched
+- scripts/runners touched
+- generated artifacts
+- commit hashes
+- push status
+- dirty worktree notes
+- unrelated changes preserved
+
+### Test evidence
+`test_evidence` must expose at least five independent validation classes for relevant bundles.
+Minimum validation classes:
+- unit tests
+- runner execution
+- JSON/schema validation
+- diff/static validation
+- source-of-truth reread validation
+
+Additional applicable validation classes:
+- negative/safety tests
+- regression tests
+- build/typecheck/lint
+- manual smoke checklist
+
+Validation rule:
+- A product-relevant bundle must include at least `5` distinct validation classes.
+- More validations can be attached, but fewer than `5` makes the bundle insufficient for product-grade judgment.
+
+### Security and privacy evidence
+`security_evidence` and `privacy_and_secret_evidence` must prove:
+- segredos não expostos
+- rede não ativada indevidamente
+- dependências não instaladas indevidamente
+- ausência de shell/subprocess perigoso quando aplicável
+- ausência de bulk-read indevido
+- egress controlado
+- logs sem dados sensíveis
+- permissões explícitas para mutações reais
+- provider/model gateway boundaries respeitadas
+
+### Runtime boundary evidence
+The bundle must carry boolean claims plus evidence references for:
+- `runtime_modified`
+- `frontend_modified`
+- `backend_modified`
+- `action_runtime_modified`
+- `voice_modified`
+- `network_enabled`
+- `dependencies_installed`
+- `productive_path_changed`
+- `commercial_use_allowed`
+- `product_promotion_executed`
+
+These fields are not assertions by themselves; each must point at evidence in the bundle.
+
+### Rollback and recovery evidence
+`rollback_and_recovery_evidence` must include:
+- rollback plan
+- rollback tested
+- compensation plan
+- previous state preserved
+- ledger entry
+- restore path
+- failure mode recovery
+- irreversible operation flag
+
+### Source-of-truth evidence
+`source_of_truth_evidence` must point to:
+- active-context lido
+- summaries usados
+- docs usados
+- Obsidian usado ou não usado
+- stale conflicts detected
+- precedence aplicada
+- arquivos atualizados
+- próxima ação registrada
+- ledger atualizado
+
+### Bundle completeness rules
+`bundle_completeness` must resolve to one of:
+- `complete`
+- `incomplete`
+- `insufficient`
+- `contradictory`
+- `stale`
+- `invalid`
+- `product_promotion_blocked`
+
+Rule:
+- `incomplete` may allow Lab continuation.
+- `incomplete` never allows product promotion.
+- `invalid`, `contradictory`, `stale`, and `insufficient` must block product-grade judgment until repaired.
+
+### Blocker scan
+`bedrock_blocker_scan` must be an array of objects with:
+- `blocker_id`
+- `description`
+- `status`
+- `evidence`
+- `severity`
+- `blocks_product_ready`
+- `required_remediation`
+
+The scan must inherit the absolute blockers from the verdict criteria draft and surface any failure as evidence-backed status, not opinion.
+
+### Future artifact names
+Future bundles should follow:
+- `artifacts/bedrock/evidence_bundles/<target_id>_evidence_bundle.json`
+- `artifacts/bedrock/evidence_bundles/<target_id>_evidence_bundle_report.md`
+
+This draft does not create that tree yet. It only defines the shape.
+
 ## Relação com NORTH_POLE
 O Bedrock Gate é o chão. O North Pole é o norte.
 
