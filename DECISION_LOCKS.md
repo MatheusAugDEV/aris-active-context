@@ -1,3 +1,43 @@
+## BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE`
+- phase_id: `F21-CTX-BEDROCK-R21`
+- status: `bedrock_evaluation_request_fixture_materialization_dry_run_gate_ready`
+- decision: `pass`
+- draft_only: `True`
+- dry_run_gate_created: `True`
+- fixtures_materialized: `False`
+- fixture_tree_created: `False`
+- fixture_count_previewed: `22`
+- positive_fixture_count_previewed: `5`
+- negative_fixture_count_previewed: `17`
+- duplicate_fixture_ids_detected: `False`
+- invalid_fixture_paths_detected: `False`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- negative_fixture_without_rejection_id_detected: `False`
+- runner_execution_allowed: `False`
+- non_execution_invariants_preserved: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization`
+
+Bedrock Evaluation Request Fixture Materialization Dry-Run Gate is policy only.
+It validates readiness to materialize in the future, but it does not materialize fixtures or create a runner.
+
 ## BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`

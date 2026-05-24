@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
+R21 validates whether the future fixture materialization can proceed safely.
+It is a readiness gate only: no fixture files are created, no runner exists yet, and no Bedrock evaluation is executed.
+
 ## Bedrock Evaluation Request Fixture Materialization Plan
 R20 defines the safe plan for creating the future dry-run fixture files from the manifesto.
 It keeps materialization separate from execution, and it does not create fixtures, runners, or Bedrock verdicts.

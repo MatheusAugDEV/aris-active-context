@@ -1,3 +1,36 @@
+## F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
+- phase_id: `F21-CTX-BEDROCK-R21`
+- status: `bedrock_evaluation_request_fixture_materialization_dry_run_gate_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization`
+- next_recommended_phase: `F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_fixture_manifest_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- reviewed_materialization_plan_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`
+- dry_run_gate_created: `True`
+- fixtures_materialized: `False`
+- fixture_tree_created: `False`
+- fixture_count_previewed: `22`
+- positive_fixture_count_previewed: `5`
+- negative_fixture_count_previewed: `17`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- runner_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R21 defines dry-run readiness only; the next step is controlled materialization, not runner creation or Bedrock evaluation.
+
 ## F21-CTX-BEDROCK-R20 - Bedrock Evaluation Request Fixture Materialization Plan
 - phase_id: `F21-CTX-BEDROCK-R20`
 - status: `bedrock_evaluation_request_fixture_materialization_plan_ready`

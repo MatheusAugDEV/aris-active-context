@@ -1,3 +1,42 @@
+## Bedrock evaluation request fixture materialization dry-run gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization`
+- next_gate_seen: `F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_fixture_manifest_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- reviewed_materialization_plan_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- reviewed_blocker_scan_status: `bedrock_blocker_scan_schema_draft_ready`
+- reviewed_verdict_artifact_status: `bedrock_verdict_artifact_schema_draft_ready`
+- reviewed_input_contract_status: `bedrock_evaluation_input_contract_draft_ready`
+- reviewed_validation_rules_status: `bedrock_evaluation_request_validation_rules_draft_ready`
+- reviewed_dry_run_fixture_schema_status: `bedrock_evaluation_request_dry_run_fixture_schema_draft_ready`
+- reviewed_fixture_manifest_status: `bedrock_evaluation_request_fixture_manifest_draft_ready`
+- reviewed_materialization_plan_status: `bedrock_evaluation_request_fixture_materialization_plan_ready`
+- summary_artifact: `../artifacts/f21/bedrock_evaluation_request_fixture_materialization_dry_run_gate_summary.json`
+- report_artifact: `../artifacts/f21/bedrock_evaluation_request_fixture_materialization_dry_run_gate_report.md`
+- status: `bedrock_evaluation_request_fixture_materialization_dry_run_gate_ready`
+- decision: `pass`
+- dry_run_gate_created: `True`
+- fixtures_materialized: `False`
+- fixture_tree_created: `False`
+- fixture_count_previewed: `22`
+- positive_fixture_count_previewed: `5`
+- negative_fixture_count_previewed: `17`
+
+R21 defines the dry-run readiness gate only and keeps the next step as controlled materialization, not runner creation or Bedrock evaluation.
+
 ## Bedrock evaluation request fixture materialization plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R20 - Bedrock Evaluation Request Fixture Materialization Plan`
 - next_recommended_phase: `F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate`

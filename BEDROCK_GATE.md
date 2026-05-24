@@ -1,5 +1,135 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
+Este gate dry-run valida se a materialização futura dos 22 fixtures Bedrock pode prosseguir com segurança.
+Ele não materializa fixtures reais, não cria runner, não executa Bedrock real e não valida requests reais.
+
+### Manifest readiness
+- manifesto R19 existe e está coerente
+- `fixture_count=22`
+- `positive_fixture_count=5`
+- `negative_fixture_count=17`
+- IDs únicos planejados
+- categorias válidas
+- expected outcome rules preservadas
+- nenhum fixture planejado permite `product/commercial allowed=true`
+
+### Plan readiness
+- paths futuros definidos
+- batches definidos
+- templates definidos
+- validações futuras definidas
+- bloqueios definidos
+- materialização ainda não executada
+- `fixtures_materialized=false`
+
+### Dry-run materialization preview
+O gate registra uma prévia determinística com:
+- 22 fixture IDs
+- batch de cada fixture
+- path futuro planejado para input
+- path futuro planejado para expected
+- expected validation status
+- expected rejection IDs
+- product/commercial flags esperadas como false
+- non-execution guarantee
+
+### Readiness decision
+Status possíveis:
+- `fixture_materialization_dry_run_ready`
+- `fixture_materialization_dry_run_warn`
+- `fixture_materialization_dry_run_blocked`
+
+Condições para `ready`:
+- R18, R19 e R20 presentes ou suficientemente refletidos no active-context
+- 22 fixtures planejados
+- 5 positivos
+- 17 negativos
+- nenhum fixture com expected product/commercial true
+- todos negativos com rejection ID planejado
+- paths futuros dentro de `artifacts/bedrock/fixtures/evaluation_requests/`
+- templates de input/expected definidos
+- non-execution invariants preservadas
+- nenhuma materialização real feita no R21
+
+Condições para `warn`:
+- lacuna documental menor, mas sem risco de product pass falso
+- fixture coverage incompleta em uma dimensão não crítica
+- report precisa de revisão antes de materializar
+
+Condições para `blocked`:
+- fixture count divergente
+- IDs duplicados
+- product/commercial allowed true
+- negativo sem rejection ID
+- path fora do diretório permitido
+- runner execution enabled
+- rede/runtime/dependency/mutação real envolvida
+- active-context não lido
+- R19/R20 ausentes ou contraditórios
+
+### Validation checklist
+- count check
+- unique ID check
+- category check
+- batch assignment check
+- future path check
+- expected result check
+- negative rejection ID check
+- product/commercial false check
+- non-execution guarantee check
+- protected sources unchanged check
+- no fixture tree created check
+
+### Output esperado
+Campos mínimos do summary:
+- `phase`
+- `status`
+- `decision`
+- `dry_run_gate_created`
+- `fixtures_materialized`
+- `fixture_tree_created`
+- `fixture_count_previewed`
+- `positive_fixture_count_previewed`
+- `negative_fixture_count_previewed`
+- `duplicate_fixture_ids_detected`
+- `invalid_fixture_paths_detected`
+- `product_promotion_allowed_in_any_fixture`
+- `commercial_use_allowed_in_any_fixture`
+- `negative_fixture_without_rejection_id_detected`
+- `runner_execution_allowed`
+- `runtime_modified`
+- `frontend_modified`
+- `backend_modified`
+- `action_runtime_modified`
+- `voice_modified`
+- `network_enabled`
+- `dependencies_installed`
+- `next_recommended_phase`
+
+### Artifact report
+O report R21 deve incluir:
+- objetivo do R21
+- relação com R18/R19/R20
+- preview dos batches
+- principais checks
+- decisão final
+- bloqueios preservados
+- próxima fase
+
+### Relação com R16-R20
+- R18 define schema de fixtures
+- R19 define manifesto
+- R20 define materialization plan
+- R21 valida dry-run readiness para materialização
+- R21 não materializa fixtures
+- R21 não cria runner
+- R21 não executa Bedrock real
+
+### Boundary statement
+R21 é um gate dry-run apenas.
+Ele autoriza apenas o próximo passo de materialização controlada, nunca execução real ou product pass.
+
 ## Plano de materialização controlada de fixtures dry-run
 Este plano define como os 22 fixtures futuros do manifesto serão materializados com segurança em uma fase posterior.
 Ele não materializa fixtures reais, não cria runner, não executa validação real e não autoriza Bedrock product pass.
