@@ -1,3 +1,54 @@
+# Bedrock Evaluation Request Validation Runner Controlled Implementation Plan
+R26 defines the exact controlled implementation plan for the future runner.
+It specifies the module paths, runner API, deterministic rules, non-execution enforcement, test plan, artifact write policy, and rollback/cleanup policy, but it does not implement code or execute a runner.
+
+### Planned implementation contract
+- future module path: `src/aris/bedrock/evaluation_request_validation_runner.py`
+- future script path: `scripts/run_f21_ctx_bedrock_r27_evaluation_request_validation_runner_dry_run.py`
+- future test path: `tests/test_f21_ctx_bedrock_r27_evaluation_request_validation_runner_dry_run.py`
+- future artifact paths under `artifacts/bedrock/runner/`
+
+### Planned runner API
+- `EvaluationRequestValidationRunner`
+- `load_manifest(path)`
+- `load_fixture_pair(fixture_id)`
+- `validate_fixture_tree()`
+- `validate_non_execution_guarantee(fixture)`
+- `evaluate_request_against_r17_rules(fixture)`
+- `compare_actual_to_expected(actual, expected)`
+- `run_dry_run()`
+- `write_runner_artifacts(result)`
+
+### Deterministic execution plan
+- manifest load
+- fixture count validation
+- unique ID validation
+- input/expected loading
+- pairing validation
+- non-execution guarantee validation
+- R17 rule classification
+- actual vs expected comparison
+- mismatch recording
+- pass/warn/fail consolidation
+- preserve false product/commercial/runner flags
+
+### Enforcement and blocking
+- no runtime access
+- no network access
+- no LLM-as-judge
+- no fixture mutation
+- no product/commercial allowance
+- no real Bedrock verdict
+- no writing outside `artifacts/bedrock/runner/`
+
+### Future implementation gates
+- `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+
+### Next phase
+- `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
 ## Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate

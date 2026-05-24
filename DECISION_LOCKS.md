@@ -1,3 +1,49 @@
+## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_PLAN
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R26`
+- status: `runner_controlled_implementation_plan_ready`
+- decision: `pass`
+- draft_only: `True`
+- reviewed_phase: `F21-CTX-BEDROCK-R25`
+- reviewed_runner_plan_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN`
+- reviewed_review_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN_REVIEW_GATE`
+- runner_implemented: `False`
+- runner_executed: `False`
+- fixtures_loaded: `False`
+- fixture_tree_modified: `False`
+- planned_module_paths_defined: `True`
+- planned_runner_api_defined: `True`
+- rule_coverage_mapping_defined: `True`
+- deterministic_rules_defined: `True`
+- non_execution_enforcement_defined: `True`
+- future_test_plan_defined: `True`
+- artifact_write_policy_defined: `True`
+- rollback_cleanup_policy_defined: `True`
+- implementation_allowed_next: `True`
+- runner_implementation_allowed_in_r26: `False`
+- product_promotion_allowed_by_plan: `False`
+- commercial_use_allowed_by_plan: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+
+R26 is a plan-only lock.
+It defines exactly how the future runner may be implemented, but it does not authorize implementation in this phase.
+
 ## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN_REVIEW_GATE
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN_REVIEW_GATE`

@@ -1,3 +1,7 @@
+## R26 — Validation Runner Controlled Implementation Plan
+R26 defines the controlled implementation plan for the future Bedrock request-validation runner.
+It is still plan-only: no code, no runner execution, no product/commercial allowance, and no fixture-tree mutation.
+
 ## Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate
 R25 reviews the R24 runner plan and confirms it is safe and complete enough for a future controlled implementation phase.
 It is a plan review only: no runner is implemented, no fixtures are executed, and no Bedrock verdict is emitted.
