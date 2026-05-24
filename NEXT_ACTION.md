@@ -1,3 +1,36 @@
+## F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft
+- phase_id: `F21-CTX-BEDROCK-R11`
+- status: `bedrock_verdict_criteria_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- verdict_classes_defined: `True`
+- critical_dimensions_defined: `True`
+- absolute_blockers_defined: `True`
+- evidence_minima_defined: `True`
+- future_artifact_schema_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_mutation_allowed: `False`
+- frontend_mutation_allowed: `False`
+- backend_mutation_allowed: `False`
+- audio_mutation_allowed: `False`
+- action_runtime_mutation_allowed: `False`
+- voice_mutation_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_gate: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+- reason: `R11 drafts the verdict criteria only; the next step is the evidence bundle schema, not product promotion or runtime execution.`
+
 ## Bedrock Gate Global Product Boundary Lock
 - lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
 - phase_id: `F21-CTX-BEDROCK-R10`
@@ -22,7 +55,7 @@
 - product_promotion_allowed: `False`
 - customer_real_use_allowed: `False`
 - production_release_allowed: `False`
-- next_gate: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- next_gate: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - reason: `Bedrock Gate is the global product boundary; the next step is to draft explicit verdict criteria, not to treat technical pass as product pass.`
 
 ## Next operational gate

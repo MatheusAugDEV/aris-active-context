@@ -1,3 +1,22 @@
+## Bedrock verdict criteria draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+- next_gate_seen: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
+- decision_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- status: `bedrock_verdict_criteria_draft_ready`
+- decision: `pass`
+- verdict_classes_defined: `True`
+- critical_dimensions_defined: `True`
+- absolute_blockers_defined: `True`
+- evidence_minima_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
+R11 drafts the Bedrock verdict taxonomy and thresholds only; it does not execute a product verdict.
+
 ## Bedrock Gate global product boundary lock
 - lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
 - phase_id: `F21-CTX-BEDROCK-R10`
@@ -10,7 +29,7 @@
 - evidence_required: `True`
 - decision_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
 - bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
-- next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 
 This lock is the active boundary for product promotion decisions.
 It sits above the historical low-risk candidate review trail below and prevents product promotion from being inferred from technical pass alone.

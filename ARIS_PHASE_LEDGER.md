@@ -1,3 +1,30 @@
+## F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft
+- phase_id: `F21-CTX-BEDROCK-R11`
+- status: `bedrock_verdict_criteria_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- criteria_draft_created: `True`
+- verdict_class_count: `8`
+- critical_dimension_count: `18`
+- absolute_blocker_count: `14`
+- evidence_minima_defined: `True`
+- future_artifact_schema_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_real_action: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+
+R11 is a policy draft for future Bedrock verdicts only; it does not run the Bedrock gate or promote product.
+
 ## F21-CTX-BEDROCK-R10 - Bedrock Gate Global Product Boundary Lock
 - phase_id: `F21-CTX-BEDROCK-R10`
 - status: `bedrock_gate_global_product_boundary_lock_ready`
@@ -15,7 +42,7 @@
 - backend_modified: `False`
 - network_enabled: `False`
 - dependencies_installed: `False`
-- next_real_action: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- next_real_action: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 
 Bedrock Gate is the global product boundary and must produce an explicit verdict before any promotion from lab to product.
 The historical R10 candidate-source-verification trail remains below as supporting evidence, not as the product boundary itself.

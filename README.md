@@ -5,7 +5,13 @@
 ## Bedrock Gate boundary
 - Bedrock Gate is the official separator between ARIS Lab / experimental / internal readiness and ARIS Produto / commercial-grade / user-facing readiness.
 - A technical pass is not a product pass; promotion requires an explicit Bedrock verdict backed by evidence.
-- The active lock is `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`, and the next recommended phase is `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`.
+- The active lock is `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`, and the drafted criteria live in `BEDROCK_GATE.md`.
+- The next recommended phase is `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`.
+
+## Bedrock Verdict Criteria Draft
+- R11 formalizes the verdict classes, critical dimensions, absolute blockers, and evidence minima for Bedrock.
+- R11 does not execute the Bedrock runtime gate and does not authorize product promotion.
+- The draft preserves the R10 global product boundary and prepares the schema needed for the future evidence bundle.
 
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`

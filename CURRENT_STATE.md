@@ -1,3 +1,33 @@
+## F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- phase_id: `F21-CTX-BEDROCK-R11`
+- status: `bedrock_verdict_criteria_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- criteria_draft_created: `True`
+- verdict_class_count: `8`
+- critical_dimension_count: `18`
+- absolute_blocker_count: `14`
+- evidence_minima_defined: `True`
+- future_artifact_schema_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+
+Bedrock verdict criteria are now drafted, but no Bedrock runtime verdict was executed.
+The draft defines the decision classes, dimensions, blocker rules, evidence minima, and future artifact shape for later materialization.
+The global product boundary from R10 remains in force and is not weakened by this draft.
+
 ## Bedrock Gate Global Product Boundary Lock
 - lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
 - phase_id: `F21-CTX-BEDROCK-R10`
@@ -15,7 +45,7 @@
 - backend_modified: `False`
 - network_enabled: `False`
 - dependencies_installed: `False`
-- next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 
 Bedrock Gate is the principal ARIS product boundary.
 It separates ARIS Lab / experimental / internal readiness from ARIS Produto / commercial-grade / user-facing readiness.

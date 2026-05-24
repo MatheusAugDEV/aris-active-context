@@ -63,6 +63,34 @@ Bedrock Gate is the mandatory global boundary between ARIS Lab / experimental / 
 It must materialize evidence before any product promotion, and it may block a technically passing phase if the phase is not product-ready.
 This lock wins over local phase summaries, stale memory, and subjective interpretation.
 
+## BEDROCK_VERDICT_CRITERIA_DRAFT
+
+- lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R11`
+- status: `bedrock_verdict_criteria_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- criteria_draft_created: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
+
+Bedrock verdict criteria are defined as draft policy only.
+This lock records the taxonomy, blocker rules, evidence minima, and future schema shape without executing any Bedrock runtime gate.
+It does not authorize product promotion, runtime mutation, or commercial use.
+
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
 - status: `prompt_kernel_minimal_contract_implementation_readiness_warn`
