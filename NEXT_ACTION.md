@@ -1,8 +1,8 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
-- next_gate: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
-- reason: `R3 classified the verified R2 claims into non-authorizing triage buckets; the next safe step is triage review, not adoption.`
+- latest_completed_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+- next_gate: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- reason: `R4 confirmed the R3 triage plan remains review-only and non-authorizing; the next safe step is candidate selection review, not adoption.`
 - blocked_capabilities:
   - `bedrock_v2_apply_allowed_now: false`
   - `bedrock_v2_apply_plan_allowed_now: false`

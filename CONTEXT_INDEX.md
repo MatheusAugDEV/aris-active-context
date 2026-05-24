@@ -16,23 +16,24 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 research triage
-- latest_completed_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
-- next_recommended_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
-- next_gate_seen: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
-- source_r2_decision_path: `artifacts/f21/bedrock_v2_external_research_claim_verification_decision.json`
-- source_claim_registry_path: `artifacts/f21/bedrock_v2_external_research_claim_registry.json`
-- r2_status: `bedrock_v2_external_research_claim_verification_passed`
-- r2_decision: `pass`
-- r2_verified: `True`
-- triage_plan_created: `True`
-- triage_bucket_count: `8`
+## Bedrock v2 triage review
+- latest_completed_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- source_r3_decision_path: `artifacts/f21/bedrock_v2_research_triage_plan_decision.json`
+- source_triage_plan_path: `artifacts/f21/bedrock_v2_research_triage_plan.json`
+- r3_status: `bedrock_v2_research_triage_plan_passed`
+- r3_decision: `pass`
+- triage_plan_reviewed: `True`
+- bucket_set_valid: `True`
+- all_entries_reviewed: `True`
 - all_claims_triaged: `True`
 - untriaged_claim_count: `0`
+- future_gate_sequence_valid: `True`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
 - bedrock_v2_candidate_adoption_allowed_now: `False`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-R3 routes claims only; it does not adopt any candidate or create an apply plan.
+R4 reviews the R3 triage plan only; it does not adopt or authorize candidates.
