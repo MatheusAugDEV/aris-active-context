@@ -2,6 +2,25 @@
 - Site-related prompts should consult `site-aris.md` first.
 - The main Bedrock/F21 next action remains unchanged below.
 
+## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R28`
+- status: `runner_controlled_implementation_review_passed`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+- next_recommended_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+- reviewed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- implementation_allowed_next: `True`
+- runner_execution_allowed_in_r28: `False`
+- product_promotion_allowed_by_runner: `False`
+- commercial_use_allowed_by_runner: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - phase_id: `F21-CTX-BEDROCK-R27`

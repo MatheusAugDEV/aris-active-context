@@ -2,6 +2,38 @@
 - `site-aris.md` was created, indexed, and versioned as the canonical operational runbook for the official ARIS site.
 - This is documentation maintenance only and is not a Bedrock phase.
 
+## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
+- phase_id: `F21-CTX-BEDROCK-R28`
+- status: `runner_controlled_implementation_review_passed`
+- decision: `pass`
+- reviewed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- runner_module_exists: `True`
+- runner_script_exists: `True`
+- runner_tests_exist: `True`
+- runner_implemented_verified: `True`
+- runner_executed_against_real_fixture_tree: `False`
+- real_fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- temporary_fixture_smoke_used: `True`
+- future_runner_artifacts_written: `False`
+- code_structure_review_passed: `True`
+- import_safety_review_passed: `True`
+- guard_review_passed: `True`
+- deterministic_rules_review_passed: `True`
+- mismatch_policy_review_passed: `True`
+- test_review_passed: `True`
+- script_smoke_review_passed: `True`
+- product_promotion_allowed_by_runner: `False`
+- commercial_use_allowed_by_runner: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- next_recommended_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - phase_id: `F21-CTX-BEDROCK-R27`
 - status: `runner_controlled_implementation_ready`

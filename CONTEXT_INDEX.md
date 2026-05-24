@@ -2,6 +2,37 @@
 - `site-aris.md` is the canonical operational runbook for the official ARIS site / landing page.
 - Use it for site changes, commit, push, deploy, and live-domain validation.
 
+## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R28`
+- status: `runner_controlled_implementation_review_passed`
+- decision: `pass`
+- next_recommended_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+- reviewed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- reviewed_runner_module_created: `True`
+- reviewed_runner_script_created: `True`
+- reviewed_runner_tests_created: `True`
+- reviewed_runner_implemented: `True`
+- reviewed_runner_executed_against_real_fixture_tree: `False`
+- reviewed_real_fixture_tree_modified: `False`
+- reviewed_fixture_tree_file_count_before: `45`
+- reviewed_fixture_tree_file_count_after: `45`
+- reviewed_temporary_fixture_smoke_used: `True`
+- reviewed_future_runner_artifacts_written: `False`
+- reviewed_code_structure_review_passed: `True`
+- reviewed_import_safety_review_passed: `True`
+- reviewed_guard_review_passed: `True`
+- reviewed_deterministic_rules_review_passed: `True`
+- reviewed_mismatch_policy_review_passed: `True`
+- reviewed_test_review_passed: `True`
+- reviewed_script_smoke_review_passed: `True`
+- reviewed_product_promotion_allowed_by_runner: `False`
+- reviewed_commercial_use_allowed_by_runner: `False`
+- reviewed_llm_as_judge_allowed: `False`
+- reviewed_network_allowed: `False`
+- reviewed_runtime_access_allowed: `False`
+- reviewed_fixture_mutation_allowed: `False`
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - next_recommended_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`

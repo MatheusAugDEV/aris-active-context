@@ -2,6 +2,48 @@
 - `site-aris.md` was created and indexed as the canonical operational runbook for the official ARIS site / landing page.
 - The site workflow is anchored to `/home/matheus/ARIS/aris-site` and is explicitly separate from `/home/matheus/ARIS/Project_ARIS`.
 
+## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R28`
+- status: `runner_controlled_implementation_review_passed`
+- decision: `pass`
+- reviewed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- reviewed_runner_module_created: `True`
+- reviewed_runner_script_created: `True`
+- reviewed_runner_tests_created: `True`
+- reviewed_runner_implemented: `True`
+- reviewed_runner_executed_against_real_fixture_tree: `False`
+- reviewed_real_fixture_tree_modified: `False`
+- reviewed_fixture_tree_file_count_before: `45`
+- reviewed_fixture_tree_file_count_after: `45`
+- reviewed_temporary_fixture_smoke_used: `True`
+- reviewed_future_runner_artifacts_written: `False`
+- reviewed_code_structure_review_passed: `True`
+- reviewed_import_safety_review_passed: `True`
+- reviewed_guard_review_passed: `True`
+- reviewed_deterministic_rules_review_passed: `True`
+- reviewed_mismatch_policy_review_passed: `True`
+- reviewed_test_review_passed: `True`
+- reviewed_script_smoke_review_passed: `True`
+- reviewed_product_promotion_allowed_by_runner: `False`
+- reviewed_commercial_use_allowed_by_runner: `False`
+- reviewed_llm_as_judge_allowed: `False`
+- reviewed_network_allowed: `False`
+- reviewed_runtime_access_allowed: `False`
+- reviewed_fixture_mutation_allowed: `False`
+- reviewed_runtime_modified: `False`
+- reviewed_frontend_modified: `False`
+- reviewed_backend_modified: `False`
+- reviewed_action_runtime_modified: `False`
+- reviewed_voice_modified: `False`
+- reviewed_network_enabled: `False`
+- reviewed_dependencies_installed: `False`
+- reviewed_product_promotion_executed: `False`
+- reviewed_bedrock_runtime_gate_executed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- next_recommended_phase: `F21-CTX-BEDROCK-R29 - Bedrock Evaluation Request Validation Runner Controlled Execution Plan`
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - phase_id: `F21-CTX-BEDROCK-R27`

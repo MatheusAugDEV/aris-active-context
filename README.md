@@ -5,6 +5,10 @@
 - Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
+## R28 — Validation Runner Controlled Implementation Review Gate
+R28 reviews the controlled implementation of the Bedrock request-validation runner.
+It checks the module, script, tests, smoke path, import safety, deterministic rules, and fixture-tree protection, but it does not execute the real fixture tree or emit a Bedrock verdict.
+
 ## R27 — Validation Runner Controlled Implementation
 R27 implements the controlled Bedrock request-validation runner in a stdlib-only form.
 It creates the module, script, and tests, runs only a temporary smoke tree, and keeps the materialized Bedrock tree untouched.
