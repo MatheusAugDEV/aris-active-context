@@ -2,6 +2,11 @@
 - `NORTH_POLE.md` is the mandatory strategic guide for ARIS direction, excellence criteria, and decision quality.
 - It complements, but does not replace, `DECISION_LOCKS.md`.
 
+## Bedrock Gate boundary
+- Bedrock Gate is the official separator between ARIS Lab / experimental / internal readiness and ARIS Produto / commercial-grade / user-facing readiness.
+- A technical pass is not a product pass; promotion requires an explicit Bedrock verdict backed by evidence.
+- The active lock is `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`, and the next recommended phase is `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`

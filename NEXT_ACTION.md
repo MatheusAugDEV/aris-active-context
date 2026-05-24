@@ -1,3 +1,61 @@
+## Bedrock Gate Global Product Boundary Lock
+- lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- phase_id: `F21-CTX-BEDROCK-R10`
+- status: `bedrock_gate_global_product_boundary_lock_ready`
+- decision: `pass`
+- bedrock_gate_role: `global_product_boundary`
+- separates_lab_from_product: `True`
+- product_promotion_requires_bedrock_verdict: `True`
+- technical_pass_is_not_product_pass: `True`
+- evidence_required: `True`
+- runtime_mutation_allowed: `False`
+- frontend_mutation_allowed: `False`
+- backend_mutation_allowed: `False`
+- audio_mutation_allowed: `False`
+- action_runtime_mutation_allowed: `False`
+- mcp_activation_allowed: `False`
+- mcp_config_write_allowed: `False`
+- vault_write_allowed: `False`
+- obsidian_bulk_read_allowed: `False`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_gate: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+- reason: `Bedrock Gate is the global product boundary; the next step is to draft explicit verdict criteria, not to treat technical pass as product pass.`
+
+## Next operational gate
+- current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
+- latest_completed_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
+- next_gate: `F21-CTX-BEDROCK-R11 - Bedrock v2 Low-Risk Candidate Context Policy Review Gate`
+- reason: `R10 verified the low-risk lane only; the next safe step is context-policy review, not adoption.`
+- blocked_capabilities:
+  - `bedrock_v2_apply_allowed_now: false`
+  - `bedrock_v2_apply_plan_allowed_now: false`
+  - `bedrock_v2_candidate_adoption_allowed_now: false`
+  - `candidate_approval_allowed_now: false`
+  - `prompt_kernel_implementation_allowed: false`
+  - `runtime_mutation_allowed: false`
+  - `frontend_mutation_allowed: false`
+  - `audio_mutation_allowed: false`
+  - `action_runtime_mutation_allowed: false`
+  - `mcp_activation_allowed: false`
+  - `mcp_config_write_allowed: false`
+  - `vault_write_allowed: false`
+  - `obsidian_bulk_read_allowed: false`
+  - `network_allowed: false`
+  - `dependency_install_allowed: false`
+  - `product_promotion_allowed: false`
+  - `customer_real_use_allowed: false`
+  - `production_release_allowed: false`
+- pass_required_for_next_gate: `True`
+- warn_requires_repair_or_rework: `True`
+- bedrock_v2_apply_deferred: `True`
+- bedrock_v2_apply_plan_deferred_until_research: `True`
+- bedrock_v2_candidate_adoption_deferred: `True`
+- candidate_approval_deferred: `True`
+
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
 - latest_completed_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`

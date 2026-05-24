@@ -1,3 +1,20 @@
+## Bedrock Gate global product boundary lock
+- lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- phase_id: `F21-CTX-BEDROCK-R10`
+- status: `bedrock_gate_global_product_boundary_lock_ready`
+- decision: `pass`
+- bedrock_gate_role: `global_product_boundary`
+- separates_lab_from_product: `True`
+- product_promotion_requires_bedrock_verdict: `True`
+- technical_pass_is_not_product_pass: `True`
+- evidence_required: `True`
+- decision_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
+- next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+
+This lock is the active boundary for product promotion decisions.
+It sits above the historical low-risk candidate review trail below and prevents product promotion from being inferred from technical pass alone.
+
 ## Bedrock v2 low-risk candidate source verification
 - latest_completed_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
 - next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock v2 Low-Risk Candidate Context Policy Review Gate`

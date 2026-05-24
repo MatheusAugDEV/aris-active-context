@@ -39,6 +39,30 @@ D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
 - historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
 
+# BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY
+
+- lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- phase_id: `F21-CTX-BEDROCK-R10`
+- status: `bedrock_gate_global_product_boundary_lock_ready`
+- decision: `pass`
+- bedrock_gate_role: `global_product_boundary`
+- is_global_product_boundary: `True`
+- separates_lab_from_product: `True`
+- market_differentiator: `safety_predictability_auditability_rollback_maturity_trust`
+- product_promotion_requires_bedrock_verdict: `True`
+- technical_pass_is_not_product_pass: `True`
+- evidence_required: `True`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+
+Bedrock Gate is the mandatory global boundary between ARIS Lab / experimental / internal readiness and ARIS Produto / commercial-grade / user-facing readiness.
+It must materialize evidence before any product promotion, and it may block a technically passing phase if the phase is not product-ready.
+This lock wins over local phase summaries, stale memory, and subjective interpretation.
+
 ## F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate
 - latest_completed_phase: `F21-A60 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Implementation Readiness Gate`
 - status: `prompt_kernel_minimal_contract_implementation_readiness_warn`

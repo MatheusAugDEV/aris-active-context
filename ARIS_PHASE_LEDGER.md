@@ -1,3 +1,25 @@
+## F21-CTX-BEDROCK-R10 - Bedrock Gate Global Product Boundary Lock
+- phase_id: `F21-CTX-BEDROCK-R10`
+- status: `bedrock_gate_global_product_boundary_lock_ready`
+- decision: `pass`
+- lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- bedrock_gate_role: `global_product_boundary`
+- is_global_product_boundary: `True`
+- separates_lab_from_product: `True`
+- market_differentiator: `safety_predictability_auditability_rollback_maturity_trust`
+- product_promotion_requires_bedrock_verdict: `True`
+- technical_pass_is_not_product_pass: `True`
+- evidence_required: `True`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_real_action: `F21-CTX-BEDROCK-R11 - Bedrock Verdict Criteria Draft`
+
+Bedrock Gate is the global product boundary and must produce an explicit verdict before any promotion from lab to product.
+The historical R10 candidate-source-verification trail remains below as supporting evidence, not as the product boundary itself.
+
 ## F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate
 - phase_id: `F21-CTX-BEDROCK-R10`
 - status: `bedrock_v2_low_risk_candidate_source_verification_passed`
