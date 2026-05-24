@@ -1,3 +1,40 @@
+## BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R20`
+- status: `bedrock_evaluation_request_fixture_materialization_plan_ready`
+- decision: `pass`
+- draft_only: `True`
+- fixtures_materialized: `False`
+- fixture_materialization_plan_created: `True`
+- fixture_manifest_verified_for_planning: `True`
+- future_fixture_count: `22`
+- future_positive_fixture_count: `5`
+- future_negative_fixture_count: `17`
+- future_fixture_paths_defined: `True`
+- future_expected_paths_defined: `True`
+- future_runner_only: `True`
+- non_execution_invariants_preserved: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate`
+
+Bedrock Evaluation Request Fixture Materialization Plan is policy only.
+It defines the safe future creation path for dry-run fixtures, but it does not materialize them or create any runner.
+
 ## BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`

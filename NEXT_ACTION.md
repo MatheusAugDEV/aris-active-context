@@ -1,3 +1,33 @@
+## F21-CTX-BEDROCK-R20 - Bedrock Evaluation Request Fixture Materialization Plan
+- phase_id: `F21-CTX-BEDROCK-R20`
+- status: `bedrock_evaluation_request_fixture_materialization_plan_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_fixture_manifest_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- fixtures_materialized: `False`
+- fixture_materialization_plan_created: `True`
+- fixture_manifest_verified_for_planning: `True`
+- future_fixture_count: `22`
+- future_positive_fixture_count: `5`
+- future_negative_fixture_count: `17`
+- future_runner_only: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R20 defines the materialization plan only; the next step is a dry-run gate for fixture materialization, not fixture creation or Bedrock evaluation.
+
 ## F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft
 - phase_id: `F21-CTX-BEDROCK-R19`
 - status: `bedrock_evaluation_request_fixture_manifest_draft_ready`

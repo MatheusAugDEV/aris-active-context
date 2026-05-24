@@ -1,5 +1,153 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Plano de materialização controlada de fixtures dry-run
+Este plano define como os 22 fixtures futuros do manifesto serão materializados com segurança em uma fase posterior.
+Ele não materializa fixtures reais, não cria runner, não executa validação real e não autoriza Bedrock product pass.
+
+### Objetivo da materialização
+Materialização futura significa criar arquivos JSON pequenos, auditáveis e determinísticos para cada fixture listado no manifesto R19.
+Materialização não é execução.
+Materialização não valida request real.
+Materialização não cria Evidence Bundle real.
+Materialização não cria Verdict Artifact real.
+Materialização não altera runtime.
+Materialização não permite produto.
+
+### Estratégia de materialização
+Sequência planejada:
+- confirmar manifesto R19
+- criar diretório futuro de fixtures
+- criar `fixture_manifest.json`
+- criar `<fixture_id>.json` para cada input fixture
+- criar `<fixture_id>_expected.json` para cada expected result
+- validar JSON syntax
+- validar IDs únicos
+- validar categorias contra schema R18
+- validar expected statuses contra R17
+- validar que product/commercial allowed são sempre false
+- validar non-execution invariants
+- gerar summary/report da materialização
+
+### Paths futuros
+Os caminhos futuros propostos são:
+- `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>_expected.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/materialization_summary.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/materialization_report.md`
+
+R20 não cria essa árvore ainda.
+
+### Ordem de materialização
+Primeiro batch positivo:
+- `valid_lab_continuation_partial_evidence`
+- `valid_technical_readiness_no_product_pass`
+- `valid_product_candidate_with_conditions`
+- `valid_safety_blocker_review_partial_evidence`
+- `valid_evidence_completeness_review_no_product_pass`
+
+Segundo batch crítico negativo:
+- `invalid_product_promotion_without_evidence_bundle`
+- `invalid_product_promotion_without_blocker_scan`
+- `invalid_product_promotion_without_human_review`
+- `invalid_runtime_change_without_boundary_evidence`
+- `invalid_real_mutation_without_rollback_evidence`
+- `invalid_llm_as_sole_judge_requested`
+- `invalid_attempt_to_skip_completeness_gate`
+- `invalid_attempt_to_skip_blocker_scan`
+- `invalid_attempt_to_promote_lab_only_to_product`
+
+Terceiro batch estrutural negativo:
+- `invalid_missing_target_id`
+- `invalid_missing_target_type`
+- `invalid_target_type_unknown`
+- `invalid_missing_source_commit`
+- `invalid_source_of_truth_contradictory`
+- `invalid_dirty_worktree_without_notes`
+- `invalid_commercial_delivery_without_risk_register`
+- `invalid_commercial_delivery_without_known_limits`
+
+### Templates futuros
+Template mínimo de `<fixture_id>.json`:
+- `fixture_id`
+- `fixture_schema_version`
+- `fixture_category`
+- `fixture_priority`
+- `input_request`
+- `mock_source_state`
+- `mock_evidence_references`
+- `mock_source_of_truth_state`
+- `mock_boundary_state`
+- `mock_risk_state`
+- `mock_human_review_state`
+- `mock_non_goal_assertions`
+- `non_execution_guarantee`
+
+Template mínimo de `<fixture_id>_expected.json`:
+- `fixture_id`
+- `expected_validation_status`
+- `expected_rejection_ids`
+- `expected_warning_ids`
+- `expected_lab_continuation_allowed`
+- `expected_product_promotion_allowed`
+- `expected_commercial_use_allowed`
+- `expected_validation_layers`
+- `expected_required_remediations`
+- `expected_next_allowed_scope`
+- `expected_blocked_scope`
+- `human_review_required`
+- `runner_execution_allowed`
+
+Regras:
+- `expected_product_promotion_allowed` deve ser false em todos os fixtures
+- `expected_commercial_use_allowed` deve ser false em todos os fixtures
+- `runner_execution_allowed` deve ser false no plano R20
+
+### Validações futuras planejadas
+- JSON syntax para todos os arquivos
+- fixture IDs únicos
+- fixture count = 22
+- positive count = 5
+- negative count = 17
+- categorias válidas
+- expected statuses válidos
+- rejection IDs presentes nos negativos
+- product/commercial allowed sempre false
+- non-execution guarantee presente em todos
+- nenhum segredo real
+- nenhuma rede
+- nenhuma referência a runtime produtivo
+- paths dentro de `artifacts/bedrock/fixtures/evaluation_requests`
+- manifesto cobre todos os fixtures
+
+### Bloqueios da futura materialização
+- manifesto R19 ausente
+- schema R18 ausente
+- fixture ID duplicado
+- expected result ausente
+- fixture positivo declarando product pass
+- fixture negativo sem rejection ID
+- qualquer fixture com `commercial_use_allowed=true`
+- qualquer fixture com `product_promotion_allowed=true`
+- qualquer fixture com `runner_execution_allowed=true`
+- fixture usando segredo real
+- fixture exigindo rede
+- fixture apontando para mutação real
+- fixture fora do path permitido
+- active-context não lido
+
+### Relação com runner futuro
+- R20 só planeja materialização
+- fase futura pode materializar fixtures
+- fase posterior poderá criar runner dry-run
+- runner futuro deverá ler fixture + expected, aplicar R17 e comparar output
+- runner futuro deve permanecer deterministic-only
+- runner futuro não pode executar Bedrock real nem emitir product verdict
+
+### R20 boundary statement
+R20 define o plano de materialização apenas.
+Ele não materializa fixtures reais, não cria runner e não executa Bedrock.
+
 ## Draft do manifesto de fixtures dry-run de request
 Este draft define o manifesto canônico dos fixtures simulados que serão usados futuramente para testar as regras de validação do request sem executar o Bedrock real.
 Ele não materializa fixtures reais, não valida requests reais, não promove produto e não cria veredito real.

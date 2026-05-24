@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Fixture Materialization Plan
+R20 defines the safe plan for creating the future dry-run fixture files from the manifesto.
+It keeps materialization separate from execution, and it does not create fixtures, runners, or Bedrock verdicts.
+
 ## Bedrock Evaluation Request Fixture Manifest Draft
 R19 defines the canonical manifest for future dry-run fixtures that will test request-validation rules.
 It lists the fixtures, priorities, coverage targets, and expected outcomes, but it does not materialize fixtures or run any Bedrock evaluation.
