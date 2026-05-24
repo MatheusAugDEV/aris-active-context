@@ -1,3 +1,36 @@
+## BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R18`
+- status: `bedrock_evaluation_request_dry_run_fixture_schema_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- dry_run_fixture_schema_created: `True`
+- fixture_categories_defined: `True`
+- positive_fixture_classes_defined: `True`
+- negative_fixture_classes_defined: `True`
+- fixture_invariants_defined: `True`
+- future_fixture_paths_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft`
+
+Bedrock Evaluation Request Dry-Run Fixture Schema is policy only.
+It defines the fixture format for simulated request-validation testing, but it does not execute Bedrock, validate real requests, or create a real verdict.
+
 ## BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`

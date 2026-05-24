@@ -1,5 +1,151 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Draft de schema de dry-run fixtures de validação de request
+Este draft define fixtures simulados para testar as regras de validação do request sem executar o Bedrock real.
+Ele não valida requests reais, não promove produto e não cria veredito real.
+
+### Identidade do fixture
+Campos obrigatórios:
+- `fixture_id`
+- `fixture_schema_version`
+- `bedrock_gate_version`
+- `fixture_name`
+- `fixture_description`
+- `fixture_category`
+- `target_type`
+- `requested_verdict_scope`
+- `expected_validation_status`
+- `expected_rejection_ids`
+- `expected_warning_ids`
+- `expected_lab_continuation_allowed`
+- `expected_product_promotion_allowed`
+- `expected_commercial_use_allowed`
+- `created_for_phase`
+- `source_phase`
+- `non_execution_guarantee`
+
+### Categorias de fixture
+Categorize fixtures as:
+- `valid_lab_only_request`
+- `valid_technical_readiness_request`
+- `valid_product_candidate_request_with_conditions`
+- `invalid_missing_target`
+- `invalid_missing_source_commit`
+- `invalid_product_scope_without_evidence_bundle`
+- `invalid_product_scope_without_blocker_scan`
+- `invalid_product_scope_without_human_review`
+- `invalid_runtime_change_without_boundary_evidence`
+- `invalid_real_mutation_without_rollback_evidence`
+- `ambiguous_target_request`
+- `stale_source_of_truth_request`
+- `contradictory_source_of_truth_request`
+- `dirty_worktree_without_notes_request`
+- `llm_as_sole_judge_requested`
+- `attempt_to_skip_completeness_gate`
+- `attempt_to_skip_blocker_scan`
+- `attempt_to_promote_lab_only_result_to_product`
+- `commercial_scope_without_risk_register`
+- `commercial_scope_without_known_limits`
+
+### Fixture payload structure
+Cada fixture deve conter:
+- `input_request`
+- `mock_source_state`
+- `mock_evidence_references`
+- `mock_source_of_truth_state`
+- `mock_boundary_state`
+- `mock_risk_state`
+- `mock_human_review_state`
+- `mock_non_goal_assertions`
+- `expected_validation_result`
+- `expected_remediations`
+- `expected_next_allowed_scope`
+- `expected_blocked_scope`
+
+### Input request
+Use the R16 request fields:
+- `evaluation_request_id`
+- `request_schema_version`
+- `bedrock_gate_version`
+- `requested_at`
+- `requested_by`
+- `request_reason`
+- `target_type`
+- `target_id`
+- `target_phase`
+- `target_scope`
+- `requested_verdict_scope`
+- `requested_output_artifacts`
+- `source_repositories`
+- `source_commits`
+- `source_branch`
+- `worktree_state`
+
+### Expected validation result
+Each fixture must declare:
+- `validation_status`
+- `accepted_for_bedrock_evaluation`
+- `accepted_for_lab_only`
+- `accepted_for_product_scope`
+- `accepted_for_commercial_scope`
+- `rejection_reasons`
+- `warning_reasons`
+- `missing_inputs`
+- `required_remediations`
+- `required_next_artifacts`
+- `human_review_required`
+- `next_recommended_phase`
+
+Positive fixtures must preserve the rule that a valid request does not imply Product Ready.
+
+### Positive fixture classes
+- lab continuation request valid with partial evidence
+- technical readiness request valid without product pass
+- product candidate request valid with conditions
+- safety blocker review valid with partial evidence
+- evidence completeness review valid without product pass
+
+### Negative fixture classes
+- target absent
+- target_type invalid
+- source commit absent
+- product promotion without Evidence Bundle
+- product promotion without blocker scan
+- commercial delivery without human review
+- runtime change without boundary evidence
+- real mutation without rollback evidence
+- source-of-truth contradictory
+- LLM-as-sole-judge attempt
+- completeness gate skip attempt
+- Lab-only to product promotion attempt
+
+### Fixture invariants
+- no runtime execution
+- no network call
+- no real file mutation
+- no real verdict creation
+- no real Evidence Bundle creation
+- no frontend/backend/action runtime/voice mutation
+- no dependency installation
+- no secret use
+- no Obsidian bulk-read
+- small and auditable
+- usable by a future deterministic runner
+
+### Relationship to R16 and R17
+- R16 defines the request contract.
+- R17 defines the request validation rules.
+- R18 defines dry-run fixtures for testing those rules.
+- R18 does not execute validation real or substitute the real Bedrock stack.
+
+### Future fixture paths
+Proposed future paths:
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>_expected.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+
+R18 does not create the future tree yet; it only defines the schema.
+
 ## Draft de regras de validação da solicitação de avaliação
 Este draft define as regras determinísticas que validam uma solicitação Bedrock antes de qualquer completeness gate, blocker scan ou verdict futuro.
 Ele não executa o Bedrock real, não promove produto e não substitui R16.

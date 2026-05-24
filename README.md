@@ -1,3 +1,9 @@
+## Bedrock Evaluation Request Dry-Run Fixture Schema Draft
+- R18 defines the schema for simulated fixtures that test request-validation rules.
+- Fixtures represent valid, invalid, incomplete, ambiguous, lab-only, product-blocked, and commercial-blocked requests.
+- Fixtures are dry-run only: they do not execute Bedrock, do not mutate runtime, and do not create real verdicts.
+- The schema keeps fixtures small, auditable, and deterministic for a future runner.
+
 ## Bedrock Evaluation Request Validation Rules Draft
 - R17 defines deterministic rules for deciding whether a Bedrock evaluation request may start.
 - It validates identity, target, scope, source state, evidence references, source-of-truth, boundary assertions, risk, human review, non-goals, and rejection reasons.

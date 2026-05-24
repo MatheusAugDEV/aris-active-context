@@ -1,3 +1,24 @@
+## F21-CTX-BEDROCK-R18 - Bedrock Evaluation Request Dry-Run Fixture Schema Draft
+- phase_id: `F21-CTX-BEDROCK-R18`
+- status: `bedrock_evaluation_request_dry_run_fixture_schema_draft_ready`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R19 - Bedrock Evaluation Request Fixture Manifest Draft`
+- dry_run_fixture_schema_created: `True`
+- fixture_categories_defined: `True`
+- positive_fixture_classes_defined: `True`
+- negative_fixture_classes_defined: `True`
+- fixture_invariants_defined: `True`
+- future_fixture_paths_defined: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+
+R18 closes with a dry-run fixture schema only; the next step is a fixture manifest, not Bedrock execution.
+
 ## F21-CTX-BEDROCK-R17 - Bedrock Evaluation Request Validation Rules Draft
 - phase_id: `F21-CTX-BEDROCK-R17`
 - status: `bedrock_evaluation_request_validation_rules_draft_ready`
