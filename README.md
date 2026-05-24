@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Validation Runner Dry-Run Plan
+R24 defines the future deterministic runner that will compare actual request-validation results against the expected dry-run fixtures.
+It is plan-only: the runner is not implemented, no fixtures are executed, and no Bedrock verdict is emitted.
+
 ## Bedrock Evaluation Request Fixture Controlled Materialization Review Gate
 R23 reviews the controlled fixture tree and confirms it is safe and coherent for a future runner dry-run phase.
 It validates the materialized manifest, pairings, counts, non-execution guarantees, and safety scan results, but it does not create a runner or execute Bedrock.

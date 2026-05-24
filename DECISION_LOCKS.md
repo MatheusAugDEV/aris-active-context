@@ -1,3 +1,47 @@
+## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_DRY_RUN_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R24`
+- status: `bedrock_evaluation_request_validation_runner_dry_run_plan_ready`
+- decision: `pass`
+- draft_only: `True`
+- runner_dry_run_plan_created: `True`
+- runner_implemented: `False`
+- runner_executed: `False`
+- fixtures_loaded: `False`
+- fixture_tree_modified: `False`
+- future_runner_only: `True`
+- future_runner_mode: `dry_run_only`
+- future_runner_inputs_defined: `True`
+- future_runner_algorithm_defined: `True`
+- future_actual_result_schema_defined: `True`
+- future_summary_schema_defined: `True`
+- mismatch_policy_defined: `True`
+- future_runner_artifact_paths_defined: `True`
+- future_fixture_manifest_path: `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+- future_fixture_tree_root: `artifacts/bedrock/fixtures/evaluation_requests`
+- product_promotion_allowed_by_plan: `False`
+- commercial_use_allowed_by_plan: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R25 - Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate`
+
+Bedrock Evaluation Request Validation Runner Dry-Run Plan is policy only.
+It defines the future deterministic runner, but it does not implement or execute it.
+
 ## BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION_REVIEW_GATE
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION_REVIEW_GATE`

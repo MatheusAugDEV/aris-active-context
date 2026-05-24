@@ -1,5 +1,30 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+## Bedrock Evaluation Request Validation Runner Dry-Run Plan
+R24 plans the future deterministic runner dry-run that will compare actual request-validation output against the expected fixture files.
+It defines purpose, boundaries, inputs, algorithm, output schemas, mismatch policy, artifact paths, and risk blocks for implementation, but it does not implement or execute a runner.
+
+### Planned runner contract
+- read `fixture_manifest.json`
+- load the 22 input fixtures
+- load the 22 expected files
+- apply R17 deterministic rules
+- compare actual vs expected
+- generate dry-run summary/report artifacts
+- keep product/commercial/runner false throughout
+
+### Implementation blocks
+- R23 must be passed and reviewed
+- fixture tree must remain consistent
+- expected files must not declare product/commercial true
+- runner must not write into the fixture tree
+- runner must not import runtime or access network
+- runner must not use LLM-as-judge
+- runner must not create a real Bedrock verdict
+
+### Next phase
+- `F21-CTX-BEDROCK-R25 - Bedrock Evaluation Request Validation Runner Dry-Run Plan Review Gate`
+
 ## Bedrock Evaluation Request Fixture Controlled Materialization Review Gate
 R23 reviews the controlled fixture tree materialized in R22 and confirms that it is safe and coherent for a future runner dry-run phase.
 It checks tree integrity, manifest consistency, input/expected pairing, positive/negative coverage, non-execution invariants, and safety scan results.
