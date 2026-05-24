@@ -5,6 +5,12 @@
 - Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
+## F21-CTX-BEDROCK-R29 - Validation Runner Controlled Execution Plan
+R29 defines how R30 will execute the deterministic Bedrock request-validation runner against the real materialized fixture tree in dry-run mode.
+It intentionally chooses a dedicated R30 script so implementation smoke and real-tree execution remain separate.
+The plan keeps execution dry-run only, with no Bedrock verdict, no product/commercial approval, no runtime/network access, and no fixture mutation.
+The planned write scope for R30 stays inside `artifacts/bedrock/runner/` only.
+
 ## R28 — Validation Runner Controlled Implementation Review Gate
 R28 reviews the controlled implementation of the Bedrock request-validation runner.
 It checks the module, script, tests, smoke path, import safety, deterministic rules, and fixture-tree protection, but it does not execute the real fixture tree or emit a Bedrock verdict.

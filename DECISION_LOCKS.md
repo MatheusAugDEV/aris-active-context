@@ -1,3 +1,45 @@
+## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_EXECUTION_PLAN
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_EXECUTION_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R29`
+- status: `runner_controlled_execution_plan_ready`
+- decision: `pass`
+- draft_only: `True`
+- reviewed_phase: `F21-CTX-BEDROCK-R28`
+- controlled_execution_plan_created: `True`
+- runner_executed_against_real_fixture_tree: `False`
+- real_fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- future_execution_allowed_next: `True`
+- runner_execution_allowed_in_r29: `False`
+- planned_script_strategy: `Option A - create a new dedicated R30 script at scripts/run_f21_ctx_bedrock_r30_evaluation_request_validation_runner_controlled_execution.py`
+- planned_runner_inputs_defined: `True`
+- planned_output_artifacts_defined: `True`
+- execution_safety_gates_defined: `True`
+- expected_execution_outcome_defined: `True`
+- failure_mismatch_policy_defined: `True`
+- fixture_tree_preservation_plan_defined: `True`
+- future_validation_plan_defined: `True`
+- product_promotion_allowed_by_plan: `False`
+- commercial_use_allowed_by_plan: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+
 ## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_REVIEW_GATE
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_REVIEW_GATE`

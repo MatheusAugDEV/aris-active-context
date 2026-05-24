@@ -1,3 +1,28 @@
+# Bedrock Evaluation Request Validation Runner Controlled Execution Plan
+R29 defines how the future controlled execution phase will run the deterministic runner against the real materialized fixture tree in dry-run mode.
+It selects a dedicated R30 script to keep implementation smoke separate from real-tree execution planning.
+It does not execute the runner, it does not emit a Bedrock verdict, and it does not allow product/commercial approval, runtime access, network access, or fixture mutation.
+
+### Planned execution contract
+- read `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+- evaluate the 22 input/expected pairs materialized in R22 and reviewed in R23
+- keep `dry_run_only=true`
+- keep `allow_real_bedrock=false`
+- keep `allow_runtime_access=false`
+- keep `allow_network=false`
+- keep `allow_fixture_mutation=false`
+- keep `allow_product_promotion=false`
+- keep `allow_commercial_use=false`
+
+### Planned execution strategy
+- use a dedicated R30 script: `scripts/run_f21_ctx_bedrock_r30_evaluation_request_validation_runner_controlled_execution.py`
+- keep outputs inside `artifacts/bedrock/runner/`
+- preserve the fixture tree hash and count before and after execution
+- treat mismatches as controlled failures, not product signals
+
+### Next phase
+- `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`
+
 # Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
 R28 reviews the controlled implementation of the Bedrock request-validation runner.
 It confirms the module, script, and tests exist; the code is deterministic and stdlib-only; the smoke path stayed temporary; and the real fixture tree was not executed or modified.
