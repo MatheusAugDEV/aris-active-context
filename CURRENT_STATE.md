@@ -1,3 +1,47 @@
+# F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R35`
+- status: `runner_reexecution_review_passed`
+- decision: `pass`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R34`
+- r34_status: `runner_controlled_reexecution_passed`
+- r34_decision: `pass`
+- r34_reexecution_confirmed: `True`
+- runner_artifacts_verified: `True`
+- result_artifacts_consistent: `True`
+- mismatch_artifact_consistent: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- all_expected_matched: `True`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runner_core_modified_in_r34: `False`
+- safety_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- review_gate_created: `True`
+- closure_gate_required_next: `True`
+- blocker_count: `0`
+- warning_count: `5`
+- blockers: `[]`
+- warnings:
+  - `R34 reported five warnings but zero blockers.`
+  - `Technical pass remains distinct from product pass.`
+  - `Product promotion remains false in all actuals.`
+  - `Commercial use remains false in all actuals.`
+  - `No Bedrock runtime gate or network access occurred.`
+- recommended_next_phase: `F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate`
+
 # F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution
 - latest_completed_phase: `F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution`
 - phase_id: `F21-CTX-BEDROCK-R34`
