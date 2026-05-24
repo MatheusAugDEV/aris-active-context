@@ -1,29 +1,34 @@
-## F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate
-- latest_completed_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
-- phase_id: `F21-CTX-BEDROCK-R4`
-- status: `bedrock_v2_triage_review_passed`
+## F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- phase_id: `F21-CTX-BEDROCK-R5`
+- status: `bedrock_v2_candidate_selection_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-BEDROCK-R3`
-- source_r3_decision_path: `artifacts/f21/bedrock_v2_research_triage_plan_decision.json`
-- source_r3_summary_path: `artifacts/f21/bedrock_v2_research_triage_plan_summary.json`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R4`
+- source_r4_decision_path: `artifacts/f21/bedrock_v2_triage_review_decision.json`
+- source_r4_summary_path: `artifacts/f21/bedrock_v2_triage_review_summary.json`
 - source_triage_plan_path: `artifacts/f21/bedrock_v2_research_triage_plan.json`
-- r3_status: `bedrock_v2_research_triage_plan_passed`
-- r3_decision: `pass`
-- r3_verified: `True`
-- triage_plan_reviewed: `True`
-- expected_bucket_count: `8`
-- actual_bucket_count: `8`
-- bucket_set_valid: `True`
-- all_entries_reviewed: `True`
-- all_claims_triaged: `True`
-- untriaged_claim_count: `0`
-- invalid_bucket_count: `0`
-- missing_required_entry_field_count: `0`
-- adopted_candidate_count: `0`
-- apply_instruction_detected: `True`
-- apply_plan_detected: `True`
-- high_risk_direct_safe_candidate_count: `0`
-- future_gate_sequence_valid: `True`
+- r4_status: `bedrock_v2_triage_review_passed`
+- r4_decision: `pass`
+- r4_verified: `True`
+- candidate_selection_manifest_created: `True`
+- candidate_selection_is_not_adoption: `True`
+- selection_policy_valid: `True`
+- selected_candidate_count: `60`
+- safe_context_policy_candidate_selected_count: `15`
+- design_review_candidate_selected_count: `10`
+- security_review_candidate_selected_count: `10`
+- false_positive_review_candidate_selected_count: `10`
+- test_fixture_design_candidate_selected_count: `5`
+- source_verification_required_selected_count: `10`
+- deferred_candidate_count: `196`
+- quarantined_candidate_count: `3`
+- rejected_candidate_count: `21`
+- selected_from_reject_for_now_count: `0`
+- high_risk_selected_as_safe_count: `0`
+- apply_instruction_selected_count: `0`
+- apply_plan_selected_count: `0`
+- apply_language_window_block_count: `0`
+- manifest_entry_missing_required_field_count: `0`
 - false_authorization_detected: `False`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
@@ -45,6 +50,6 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
-- next_real_action: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- next_real_action: `F21-CTX-BEDROCK-R6 - Bedrock v2 Candidate Selection Review Gate`
 
-R4 reviews triage quality and safety only; it does not adopt candidates or create an apply plan.
+R5 selects candidates only; it does not adopt them.

@@ -1,3 +1,56 @@
+## F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R5 - Bedrock v2 Candidate Selection Gate`
+- phase_id: `F21-CTX-BEDROCK-R5`
+- status: `bedrock_v2_candidate_selection_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R4`
+- source_r4_status: `bedrock_v2_triage_review_passed`
+- source_r4_decision: `pass`
+- r4_verified: `True`
+- candidate_selection_manifest_created: `True`
+- candidate_selection_is_not_adoption: `True`
+- selection_policy_valid: `True`
+- selected_candidate_count: `60`
+- safe_context_policy_candidate_selected_count: `15`
+- design_review_candidate_selected_count: `10`
+- security_review_candidate_selected_count: `10`
+- false_positive_review_candidate_selected_count: `10`
+- test_fixture_design_candidate_selected_count: `5`
+- source_verification_required_selected_count: `10`
+- deferred_candidate_count: `196`
+- quarantined_candidate_count: `3`
+- rejected_candidate_count: `21`
+- selected_from_reject_for_now_count: `0`
+- high_risk_selected_as_safe_count: `0`
+- apply_instruction_selected_count: `0`
+- apply_plan_selected_count: `0`
+- apply_language_window_block_count: `0`
+- manifest_entry_missing_required_field_count: `0`
+- false_authorization_detected: `False`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- runtime_scope_untouched: `True`
+- frontend_scope_untouched: `True`
+- audio_scope_untouched: `True`
+- action_runtime_scope_untouched: `True`
+- mcp_scope_untouched: `True`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R6 - Bedrock v2 Candidate Selection Review Gate`
+
+R5 selects candidates only; no candidate is adopted here.
+
 ## F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R4 - Bedrock v2 Triage Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R4`
