@@ -1,3 +1,16 @@
+## ARIS_SITE_REPO_AND_DEPLOY_FLOW_LOCK
+
+- lock_id: `ARIS_SITE_REPO_AND_DEPLOY_FLOW_LOCK`
+- repo: `/home/matheus/ARIS/aris-site`
+- blocked_repo: `/home/matheus/ARIS/Project_ARIS`
+- required_git_user_name: `MatheusAugDEV`
+- required_git_user_email: `matheuscontaextra99@gmail.com`
+- public_domain: `https://www.meetarisia.com.br`
+- non_www_domain: `https://meetarisia.com.br`
+- required_flow: `npm run build` -> `git status` -> `git add .` -> `git commit -m "<mensagem>"` -> `git push origin main` -> `npx vercel ls --prod` -> `curl -sL https://www.meetarisia.com.br | grep -o '/assets/index-[^"]*'`
+- site_prompts_must_consult: `site-aris.md`
+- project_aris_not_site_repo: `True`
+
 ## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION`

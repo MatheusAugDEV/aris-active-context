@@ -1,3 +1,10 @@
+# Site Official ARIS Runbook
+- Canonical file: `site-aris.md`
+- Scope: official ARIS site / landing page workflow
+- Repository: `/home/matheus/ARIS/aris-site`
+- Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
+- Use this runbook for build, commit, push, Vercel, and live asset validation steps.
+
 ## R27 — Validation Runner Controlled Implementation
 R27 implements the controlled Bedrock request-validation runner in a stdlib-only form.
 It creates the module, script, and tests, runs only a temporary smoke tree, and keeps the materialized Bedrock tree untouched.

@@ -1,3 +1,7 @@
+## Site Official ARIS Runbook
+- `site-aris.md` is the canonical operational runbook for the official ARIS site / landing page.
+- Use it for site changes, commit, push, deploy, and live-domain validation.
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - next_recommended_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`

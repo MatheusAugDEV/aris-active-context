@@ -1,3 +1,7 @@
+## Site Runbook Maintenance Note
+- `site-aris.md` was created, indexed, and versioned as the canonical operational runbook for the official ARIS site.
+- This is documentation maintenance only and is not a Bedrock phase.
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - phase_id: `F21-CTX-BEDROCK-R27`
 - status: `runner_controlled_implementation_ready`

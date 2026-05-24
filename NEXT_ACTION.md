@@ -1,3 +1,7 @@
+## Site Operational Note
+- Site-related prompts should consult `site-aris.md` first.
+- The main Bedrock/F21 next action remains unchanged below.
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - phase_id: `F21-CTX-BEDROCK-R27`

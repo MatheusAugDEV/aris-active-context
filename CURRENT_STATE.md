@@ -1,3 +1,7 @@
+## Site Official ARIS Runbook
+- `site-aris.md` was created and indexed as the canonical operational runbook for the official ARIS site / landing page.
+- The site workflow is anchored to `/home/matheus/ARIS/aris-site` and is explicitly separate from `/home/matheus/ARIS/Project_ARIS`.
+
 ## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
 - latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
 - phase_id: `F21-CTX-BEDROCK-R27`
