@@ -16,18 +16,29 @@
 - [BOOT_PROFILE.md](BOOT_PROFILE.md)
 - [READ_PROFILE.md](READ_PROFILE.md)
 
-## Bedrock v2 external research intake
-- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
-- next_recommended_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- next_gate_seen: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- external_research_materialized: `True`
-- external_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
-- external_research_sha256: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- bedrock_v2_research_ready_for_triage: `True`
+## Bedrock v2 external research claim verification
+- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- source_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
+- source_research_sha256_expected: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- source_research_sha256_actual: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- source_research_hash_match: `True`
+- source_research_line_count: `748`
+- source_research_size_bytes: `70318`
+- required_sections_present: `True`
+- claim_registry_created: `True`
+- source_backed_claims_count: `28`
+- engineering_hypotheses_count: `36`
+- normative_recommendations_count: `84`
+- implementation_recommendations_count: `86`
+- unverified_or_high_risk_claims_count: `46`
+- local_evidence_markers_verified: `True`
+- internal_contradictions_detected: `False`
+- false_authorization_detected: `False`
 - bedrock_v2_apply_allowed_now: `False`
 - bedrock_v2_apply_plan_allowed_now: `False`
-- batch2_closed_verified: `True`
 - f21_a61_status: `blocked`
 - f21b_paused_track: `preserved`
 
-The external Bedrock research is now materialized and ready for claim verification, but Bedrock v2 remains parked and non-authorizing.
+The Bedrock v2 research is locally verified and remains non-authorizing.

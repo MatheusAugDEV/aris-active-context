@@ -1,35 +1,28 @@
-## F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate
-- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
-- phase_id: `F21-CTX-BEDROCK-R1`
-- status: `bedrock_v2_external_research_intake_passed`
+## F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- phase_id: `F21-CTX-BEDROCK-R2`
+- status: `bedrock_v2_external_research_claim_verification_passed`
 - decision: `pass`
-- reviewed_phase_id: `F21-CTX-D17`
-- batch2_closed_verified: `True`
-- no_warn_policy_verified: `True`
-- bedrock_v2_research_parking_verified: `True`
-- bedrock_v2_apply_allowed_now: `False`
-- bedrock_v2_apply_plan_allowed_now: `False`
-- external_research_materialized: `True`
-- external_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
-- external_research_sha256: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
-- external_research_size_bytes: `70318`
-- external_research_line_count: `749`
-- required_sections_detected: `verdict_internal, external_sources_relevant, bedrock_failures, false_positive_catalog, market_differentiation, normative_definition, scorecard, allowed_results, automatic_blocking_rules, normative_bedrock_text, negative_tests, risk_self_critique, implementation_sequence, final_verdict`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R1`
+- source_research_path: `docs/fase21/research/bedrock_v2_external_research_raw.md`
+- source_research_sha256_expected: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- source_research_sha256_actual: `f1b7d669d74f2b971e51384df0127cddd299f58c720e1eda6486a6f1148819c6`
+- source_research_hash_match: `True`
+- source_research_size_bytes: `70318`
+- source_research_line_count: `748`
+- required_sections_present: `True`
 - missing_required_sections: `none`
-- bedrock_v2_normative_text_present: `True`
-- scorecard_present: `True`
-- false_positive_catalog_present: `True`
-- implementation_sequence_present: `True`
-- risk_self_critique_present: `True`
-- expanded_false_positive_catalog_detected: `True`
-- bedrock_v2_research_ready_for_triage: `True`
+- claim_registry_created: `True`
 - source_backed_claims_count: `28`
 - engineering_hypotheses_count: `36`
 - normative_recommendations_count: `84`
-- implementation_recommendations_count: `72`
-- unverified_or_high_risk_claims_count: `48`
-- next_real_action: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- next_gate_reason: `The external research report is materialized in the workspace, so the next safe step is claim verification.`
+- implementation_recommendations_count: `86`
+- unverified_or_high_risk_claims_count: `46`
+- local_evidence_markers_verified: `True`
+- internal_contradictions_detected: `False`
+- false_authorization_detected: `False`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
 - bedrock_gate_modified: `False`
 - north_pole_modified: `False`
 - phase_specific_gates_modified: `False`
@@ -47,5 +40,6 @@
 - f21b_paused_track: `preserved`
 - warning_count: `0`
 - blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
 
-Bedrock v2 research is now materialized in the workspace, but it remains intake-only and not authorized for apply.
+Bedrock v2 research claim verification is local-only, non-authorizing, and does not create an apply plan.

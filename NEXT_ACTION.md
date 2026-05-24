@@ -1,26 +1,20 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
-- latest_completed_phase: `F21-CTX-BEDROCK-R1 - Bedrock v2 External Research Intake Gate`
-- next_gate: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
-- reason: `The external research report is materialized in the workspace, so the next safe step is claim verification.`
+- latest_completed_phase: `F21-CTX-BEDROCK-R2 - Bedrock v2 External Research Claim Verification Gate`
+- next_gate: `F21-CTX-BEDROCK-R3 - Bedrock v2 Research Triage Plan Gate`
+- reason: `The research artifact is locally verified, but Bedrock v2 remains parked; the next safe step is triage planning, not apply.`
 - blocked_capabilities:
-  - `f21_a61_allowed_next: false`
-  - `f21b_resume_allowed_now: false`
   - `bedrock_v2_apply_allowed_now: false`
   - `bedrock_v2_apply_plan_allowed_now: false`
   - `prompt_kernel_implementation_allowed: false`
-  - `candidate_approval_allowed: false`
-  - `automatic_activation_allowed: false`
-  - `mcp_activation_allowed: false`
-  - `mcp_config_write_allowed: false`
-  - `vault_write_allowed: false`
-  - `obsidian_bulk_read_allowed: false`
-  - `network_allowed: false`
-  - `dependency_install_allowed: false`
   - `runtime_mutation_allowed: false`
   - `frontend_mutation_allowed: false`
   - `audio_mutation_allowed: false`
   - `action_runtime_mutation_allowed: false`
+  - `mcp_activation_allowed: false`
+  - `mcp_config_write_allowed: false`
+  - `network_allowed: false`
+  - `dependency_install_allowed: false`
   - `product_promotion_allowed: false`
   - `customer_real_use_allowed: false`
   - `production_release_allowed: false`
@@ -28,4 +22,3 @@
 - warn_requires_repair_or_rework: `True`
 - bedrock_v2_apply_deferred: `True`
 - bedrock_v2_apply_plan_deferred_until_research: `True`
-- external_research_materialized: `True`
