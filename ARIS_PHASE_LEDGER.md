@@ -1343,6 +1343,59 @@ This ledger entry is preserved for lineage and does not re-authorize the plan ph
 - `F21-A55`: post-sync closure reconciled the commit divergence and kept unrelated root dirtiness visible.
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
 - `F21-A60`: prompt kernel minimal contract readiness accepted only the next controlled contract-only implementation gate.
+## F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization
+- phase_id: `F21-CTX-BEDROCK-R22`
+- status: `bedrock_evaluation_request_fixture_controlled_materialization_complete`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_fixture_manifest_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- reviewed_materialization_plan_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`
+- reviewed_dry_run_gate_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- reviewed_blocker_scan_status: `bedrock_blocker_scan_schema_draft_ready`
+- reviewed_verdict_artifact_status: `bedrock_verdict_artifact_schema_draft_ready`
+- reviewed_input_contract_status: `bedrock_evaluation_input_contract_draft_ready`
+- reviewed_validation_rules_status: `bedrock_evaluation_request_validation_rules_draft_ready`
+- reviewed_dry_run_fixture_schema_status: `bedrock_evaluation_request_dry_run_fixture_schema_draft_ready`
+- reviewed_fixture_manifest_status: `bedrock_evaluation_request_fixture_manifest_draft_ready`
+- reviewed_materialization_plan_status: `bedrock_evaluation_request_fixture_materialization_plan_ready`
+- reviewed_dry_run_gate_status: `bedrock_evaluation_request_fixture_materialization_dry_run_gate_ready`
+- fixture_tree_root: `artifacts/bedrock/fixtures/evaluation_requests`
+- fixture_tree_created: `True`
+- fixtures_materialized: `True`
+- fixture_manifest_created: `True`
+- materialized_file_count: `45`
+- materialized_fixture_count: `22`
+- materialized_input_fixture_count: `22`
+- materialized_expected_fixture_count: `22`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- runner_execution_allowed: `False`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R23 - Bedrock Evaluation Request Fixture Controlled Materialization Review Gate`
+
+R22 records the controlled fixture materialization only.
+It creates the manifest plus the 22 input fixtures and 22 expected fixtures, but it does not create a runner or execute Bedrock.
+
 ## F21-CTX-BEDROCK-R21 - Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
 - phase_id: `F21-CTX-BEDROCK-R21`
 - status: `bedrock_evaluation_request_fixture_materialization_dry_run_gate_ready`

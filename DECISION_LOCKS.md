@@ -1,3 +1,42 @@
+## BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION`
+- phase_id: `F21-CTX-BEDROCK-R22`
+- status: `bedrock_evaluation_request_fixture_controlled_materialization_complete`
+- decision: `pass`
+- draft_only: `False`
+- fixture_tree_root: `artifacts/bedrock/fixtures/evaluation_requests`
+- fixture_tree_created: `True`
+- fixtures_materialized: `True`
+- fixture_manifest_created: `True`
+- materialized_file_count: `45`
+- materialized_fixture_count: `22`
+- materialized_input_fixture_count: `22`
+- materialized_expected_fixture_count: `22`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- runner_execution_allowed: `False`
+- non_execution_invariants_preserved: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R23 - Bedrock Evaluation Request Fixture Controlled Materialization Review Gate`
+
+Bedrock Evaluation Request Fixture Controlled Materialization is execution of the controlled file materialization only.
+It writes the manifest and dry-run fixtures, but it does not create a runner or execute Bedrock.
+
 ## BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE`

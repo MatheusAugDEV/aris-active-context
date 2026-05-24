@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Fixture Controlled Materialization
+R22 materializes the controlled fixture tree only: manifest, 22 input fixtures, and 22 expected fixtures.
+It does not create a runner, execute Bedrock, or authorize product promotion.
+
 ## Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
 R21 validates whether the future fixture materialization can proceed safely.
 It is a readiness gate only: no fixture files are created, no runner exists yet, and no Bedrock evaluation is executed.

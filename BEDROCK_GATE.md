@@ -1,5 +1,26 @@
 # BEDROCK_GATE — Chão Inviolável do ARIS
 
+# Bedrock Evaluation Request Fixture Controlled Materialization
+R22 materializes the controlled fixture tree only.
+It writes the manifest plus 22 input fixtures and 22 expected fixtures, but it does not create a runner, execute Bedrock, or authorize product promotion.
+
+### Materialized tree
+- `artifacts/bedrock/fixtures/evaluation_requests/fixture_manifest.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>.json`
+- `artifacts/bedrock/fixtures/evaluation_requests/<fixture_id>_expected.json`
+
+### Materialization guarantees
+- 22 fixtures materialized
+- 5 positive fixtures materialized
+- 17 negative fixtures materialized
+- product/commercial allowed is false in every expected file
+- runner execution is false in every expected file
+- non-execution guarantees preserved
+- no runtime, frontend, backend, action runtime, voice, network, or dependency mutation
+
+### Next phase
+- `F21-CTX-BEDROCK-R23 - Bedrock Evaluation Request Fixture Controlled Materialization Review Gate`
+
 ## Bedrock Evaluation Request Fixture Materialization Dry-Run Gate
 Este gate dry-run valida se a materialização futura dos 22 fixtures Bedrock pode prosseguir com segurança.
 Ele não materializa fixtures reais, não cria runner, não executa Bedrock real e não valida requests reais.
