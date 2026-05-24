@@ -1,3 +1,30 @@
+## F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation
+- latest_completed_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`
+- next_recommended_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+- status: `runner_controlled_implementation_ready`
+- decision: `pass`
+- runner_module_created: `True`
+- runner_script_created: `True`
+- runner_tests_created: `True`
+- runner_implemented: `True`
+- runner_executed: `False`
+- runner_executed_against_real_fixture_tree: `False`
+- real_fixture_tree_modified: `False`
+- fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- temporary_fixture_smoke_used: `True`
+- future_runner_artifacts_written: `False`
+- product_promotion_allowed_by_runner: `False`
+- commercial_use_allowed_by_runner: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+
+R27 implements the controlled runner and keeps the materialized Bedrock tree untouched.
+
 ## F21-CTX-BEDROCK-R26 - Bedrock Evaluation Request Validation Runner Controlled Implementation Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R26 - Bedrock Evaluation Request Validation Runner Controlled Implementation Plan`
 - next_recommended_phase: `F21-CTX-BEDROCK-R27 - Bedrock Evaluation Request Validation Runner Controlled Implementation`

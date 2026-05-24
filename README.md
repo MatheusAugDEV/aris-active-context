@@ -1,3 +1,7 @@
+## R27 — Validation Runner Controlled Implementation
+R27 implements the controlled Bedrock request-validation runner in a stdlib-only form.
+It creates the module, script, and tests, runs only a temporary smoke tree, and keeps the materialized Bedrock tree untouched.
+
 ## R26 — Validation Runner Controlled Implementation Plan
 R26 defines the controlled implementation plan for the future Bedrock request-validation runner.
 It is still plan-only: no code, no runner execution, no product/commercial allowance, and no fixture-tree mutation.

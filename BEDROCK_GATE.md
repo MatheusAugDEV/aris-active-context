@@ -1,3 +1,18 @@
+# Bedrock Evaluation Request Validation Runner Controlled Implementation
+R27 implements the deterministic runner in a controlled, stdlib-only form.
+It creates the module, script, and tests, runs only a temporary smoke tree, and does not execute the materialized Bedrock tree.
+
+### Implementation outcome
+- `runner_controlled_implementation_ready`
+- module, script, and tests created
+- temporary fixture smoke used
+- real fixture tree preserved
+- no Bedrock verdict emitted
+- no product/commercial allowance
+
+### Next phase
+- `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+
 # Bedrock Evaluation Request Validation Runner Controlled Implementation Plan
 R26 defines the exact controlled implementation plan for the future runner.
 It specifies the module paths, runner API, deterministic rules, non-execution enforcement, test plan, artifact write policy, and rollback/cleanup policy, but it does not implement code or execute a runner.

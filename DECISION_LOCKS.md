@@ -1,3 +1,45 @@
+## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION`
+- phase_id: `F21-CTX-BEDROCK-R27`
+- status: `runner_controlled_implementation_ready`
+- decision: `pass`
+- draft_only: `True`
+- reviewed_phase: `F21-CTX-BEDROCK-R26`
+- runner_module_created: `True`
+- runner_script_created: `True`
+- runner_tests_created: `True`
+- runner_implemented: `True`
+- runner_executed: `False`
+- runner_executed_against_real_fixture_tree: `False`
+- real_fixture_tree_modified: `False`
+- fixture_tree_modified: `False`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- temporary_fixture_smoke_used: `True`
+- future_runner_artifacts_written: `False`
+- product_promotion_allowed_by_runner: `False`
+- commercial_use_allowed_by_runner: `False`
+- llm_as_judge_allowed: `False`
+- network_allowed: `False`
+- runtime_access_allowed: `False`
+- fixture_mutation_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
+
+R27 is the controlled implementation lock.
+It confirms the runner module, script, and tests were created, and that only a temporary smoke tree was used.
+
 ## BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_PLAN
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CONTROLLED_IMPLEMENTATION_PLAN`
