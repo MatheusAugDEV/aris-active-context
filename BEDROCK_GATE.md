@@ -1,3 +1,27 @@
+# Bedrock Evaluation Request Validation Runner Controlled Re-Execution
+R34 re-executed the repaired runner against the real fixture tree and matched all 22 fixtures.
+It preserved the tree hashes and count before and after, wrote official runner artifacts only under `artifacts/bedrock/runner/`, and kept product/commercial/runtime boundaries false.
+
+### Re-execution outcome
+- `runner_controlled_reexecution_passed`
+- `fixtures_loaded=22`
+- `fixtures_evaluated=22`
+- `expected_files_loaded=22`
+- `matched_fixture_count=22`
+- `mismatched_fixture_count=0`
+- `runner_executed_against_real_fixture_tree=true`
+- `runner_artifacts_written=true`
+- `fixture_tree_preserved=true`
+- `fixture_tree_modified=false`
+- `product_promotion_allowed_in_any_actual=false`
+- `commercial_use_allowed_in_any_actual=false`
+- `runner_execution_allowed_in_any_actual=false`
+- `bedrock_runtime_gate_executed=false`
+- `product_promotion_executed=false`
+
+### Next phase
+- `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
+
 # Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair
 R33 applies the targeted repair plan to the runner code only.
 It repairs the 12 known semantic mismatches, preserves the real fixture tree, and does not execute a controlled re-run against the real tree.

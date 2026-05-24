@@ -1,3 +1,56 @@
+# F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution
+- latest_completed_phase: `F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution`
+- phase_id: `F21-CTX-BEDROCK-R34`
+- status: `runner_controlled_reexecution_passed`
+- decision: `pass`
+- source_repair_phase: `F21-CTX-BEDROCK-R33`
+- source_plan_phase: `F21-CTX-BEDROCK-R32`
+- source_review_phase: `F21-CTX-BEDROCK-R31`
+- source_execution_phase: `F21-CTX-BEDROCK-R30`
+- r33_status: `runner_targeted_mismatch_repair_implemented`
+- r33_decision: `pass`
+- r33_targeted_checks_passed: `12`
+- r33_targeted_checks_failed: `0`
+- runner_executed_against_real_fixture_tree: `True`
+- runner_artifacts_written: `True`
+- controlled_real_fixture_rerun_executed: `True`
+- runner_modified_in_r34: `False`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- fixture_tree_manifest_hash_before: `e39c692bb012d80d716424e443e735ce89b1c86c2e3cc5ba942c0d3b197ba3ab`
+- fixture_tree_manifest_hash_after: `e39c692bb012d80d716424e443e735ce89b1c86c2e3cc5ba942c0d3b197ba3ab`
+- fixture_tree_file_list_hash_before: `d0332c2f9af0f21bb90c1e0e4dc8e7e5a92bfb74b28e706f88566a026f0c39cc`
+- fixture_tree_file_list_hash_after: `d0332c2f9af0f21bb90c1e0e4dc8e7e5a92bfb74b28e706f88566a026f0c39cc`
+- fixture_tree_content_hash_before: `846c0722603d39ab2041c730deaaa4c194a8cce122b606c464968f402f084a5a`
+- fixture_tree_content_hash_after: `846c0722603d39ab2041c730deaaa4c194a8cce122b606c464968f402f084a5a`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_attempted: `False`
+- dependencies_installed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- product_promotion_allowed_in_any_actual: `False`
+- commercial_use_allowed_in_any_actual: `False`
+- runner_execution_allowed_in_any_actual: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- warning_count: `5`
+- blocker_count: `0`
+- recommended_next_phase: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
+
 # F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair
 - latest_completed_phase: `F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair`
 - phase_id: `F21-CTX-BEDROCK-R33`
@@ -221,7 +274,7 @@
 ## Site Official ARIS Runbook
 - `site-aris.md` was created and indexed as the canonical operational runbook for the official ARIS site / landing page.
 - The site workflow is anchored to `/home/matheus/ARIS/aris-site` and is explicitly separate from `/home/matheus/ARIS/Project_ARIS`.
-- Last site change: `SITE-IMPL-V2` — dark-shell implementation/conversion section redesign v2 (commit `64ee9ca`, deployed, live at `meetarisia.com.br`).
+- Last site change: `SITE-FUNNEL-V1` — conversion funnel audit and copy/structure improvements (commit `9d39272`, deployed, live at `meetarisia.com.br`).
 
 ## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`

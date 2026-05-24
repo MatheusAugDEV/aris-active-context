@@ -1,3 +1,51 @@
+# F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution
+- latest_completed_phase: `F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution`
+- phase_id: `F21-CTX-BEDROCK-R34`
+- status: `runner_controlled_reexecution_passed`
+- decision: `pass`
+- source_repair_phase: `F21-CTX-BEDROCK-R33`
+- source_plan_phase: `F21-CTX-BEDROCK-R32`
+- source_review_phase: `F21-CTX-BEDROCK-R31`
+- source_execution_phase: `F21-CTX-BEDROCK-R30`
+- r33_status: `runner_targeted_mismatch_repair_implemented`
+- r33_decision: `pass`
+- r33_targeted_checks_passed: `12`
+- r33_targeted_checks_failed: `0`
+- runner_executed_against_real_fixture_tree: `True`
+- runner_artifacts_written: `True`
+- controlled_real_fixture_rerun_executed: `True`
+- runner_modified_in_r34: `False`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- fixture_tree_file_count_before: `45`
+- fixture_tree_file_count_after: `45`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_attempted: `False`
+- dependencies_installed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- product_promotion_allowed_in_any_actual: `False`
+- commercial_use_allowed_in_any_actual: `False`
+- runner_execution_allowed_in_any_actual: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- next_action: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
+- warning_count: `5`
+- blocker_count: `0`
+- recommended_next_phase: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
+
 # F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair
 - latest_completed_phase: `F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair`
 - phase_id: `F21-CTX-BEDROCK-R33`
@@ -102,11 +150,11 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
 
-## Site — Implementation Conversion Section
-- last_site_action: `SITE-IMPL-V2 — dark-shell layout, off-white card, nova headline, 3-step timeline`
-- commit: `64ee9ca`
+## Site — Conversion Funnel Audit
+- last_site_action: `SITE-FUNNEL-V1 — funnel audit: new hero headline/sub/microcopy, reorder sections (Problem before How-it-works), nav anchor fix, meta update`
+- commit: `9d39272`
 - status: `deployed_and_live`
-- live_assets: `index-0IcSjTb-.js, index-qQ_rFQEF.css`
+- live_assets: `index-BxjjoBPf.js, index-CtrYr3m-.css`
 - next_site_action: `nenhum pendente`
 
 ## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution

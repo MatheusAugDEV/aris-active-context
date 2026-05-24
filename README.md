@@ -6,11 +6,13 @@
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
 # Bedrock F21 Active Track
+- R34 re-executed the repaired runner against the real fixture tree, matched all 22 fixtures, preserved the tree hashes, and kept product/commercial/runtime boundaries false.
+- R35 is the next review gate for the successful controlled re-execution.
 - R33 implements the targeted repair of the 12 known R30/R31 semantic mismatches and intentionally leaves the full real-tree re-execution for R34.
 - R32 creates the mismatch repair plan from the valid R30/R31 failure evidence and prepares R33 for targeted repair only.
 - R31 review gate is the canonical review of the R30 controlled execution fail.
 - The R31 review gate confirms the fail is a valid semantic mismatch failure, not a safety violation.
-- The next Bedrock step is the R32 mismatch repair plan.
+- The next Bedrock step after the successful re-execution is the R35 re-execution review gate.
 
 ## F21-CTX-BEDROCK-R30 - Controlled Execution
 R30 executed the deterministic runner against the real materialized Bedrock fixture tree in dry-run mode only.
