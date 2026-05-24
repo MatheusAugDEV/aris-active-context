@@ -1,3 +1,33 @@
+## Bedrock verdict artifact schema draft
+- latest_completed_phase: `F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft`
+- next_recommended_phase: `F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft`
+- next_gate_seen: `F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- reviewed_blocker_scan_status: `bedrock_blocker_scan_schema_draft_ready`
+- verdict_artifact_lock: [DECISION_LOCKS.md](DECISION_LOCKS.md)
+- bedrock_gate_contract: [BEDROCK_GATE.md](BEDROCK_GATE.md)
+- summary_artifact: `../artifacts/f21/bedrock_verdict_artifact_schema_draft_summary.json`
+- report_artifact: `../artifacts/f21/bedrock_verdict_artifact_schema_draft_report.md`
+- status: `bedrock_verdict_artifact_schema_draft_ready`
+- decision: `pass`
+- verdict_artifact_schema_created: `True`
+- technical_status_separated_from_product_status: `True`
+- completeness_gate_integration_defined: `True`
+- blocker_scan_integration_defined: `True`
+- llm_as_sole_judge_forbidden: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+
+R15 defines the final canonical Bedrock output artifact; it does not execute a verdict or promote product.
+
 ## Bedrock blocker scan schema draft
 - latest_completed_phase: `F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft`
 - next_recommended_phase: `F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft`

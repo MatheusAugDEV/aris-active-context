@@ -39,6 +39,38 @@ D13 diagnostic evidence does not authorize automatic Bedrock v2 apply.
 - historical_warn_entries_preserved_as_history: `True`
 # DECISION_LOCKS
 
+# BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT
+
+- lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- phase_id: `F21-CTX-BEDROCK-R15`
+- status: `bedrock_verdict_artifact_schema_draft_ready`
+- decision: `pass`
+- draft_only: `True`
+- verdict_artifact_schema_created: `True`
+- technical_status_separated_from_product_status: `True`
+- completeness_gate_integration_defined: `True`
+- blocker_scan_integration_defined: `True`
+- llm_as_sole_judge_forbidden: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft`
+
+Bedrock Verdict Artifact is policy only.
+It defines the final canonical output of a future Bedrock judgment and records how technical and product outcomes remain separated, but it does not execute a verdict.
+
 # BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT
 
 - lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`

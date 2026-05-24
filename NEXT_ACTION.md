@@ -31,6 +31,39 @@
 - next_gate: `F21-CTX-BEDROCK-R12 - Bedrock Evidence Bundle Schema Draft`
 - reason: `R11 drafts the verdict criteria only; the next step is the evidence bundle schema, not product promotion or runtime execution.`
 
+## F21-CTX-BEDROCK-R15 - Bedrock Verdict Artifact Schema Draft
+- phase_id: `F21-CTX-BEDROCK-R15`
+- status: `bedrock_verdict_artifact_schema_draft_ready`
+- decision: `pass`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_boundary_status: `bedrock_gate_global_product_boundary_lock_ready`
+- reviewed_verdict_status: `bedrock_verdict_criteria_draft_ready`
+- reviewed_schema_status: `bedrock_evidence_bundle_schema_draft_ready`
+- reviewed_completeness_status: `bedrock_evidence_bundle_completeness_gate_draft_ready`
+- reviewed_blocker_scan_status: `bedrock_blocker_scan_schema_draft_ready`
+- verdict_artifact_schema_created: `True`
+- technical_status_separated_from_product_status: `True`
+- completeness_gate_integration_defined: `True`
+- blocker_scan_integration_defined: `True`
+- llm_as_sole_judge_forbidden: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- next_gate: `F21-CTX-BEDROCK-R16 - Bedrock Evaluation Input Contract Draft`
+- reason: `R15 defines the final canonical verdict artifact and keeps technical and product status separate; the next safe step is the evaluation input contract, not execution or promotion.`
+
 ## F21-CTX-BEDROCK-R14 - Bedrock Blocker Scan Schema Draft
 - phase_id: `F21-CTX-BEDROCK-R14`
 - status: `bedrock_blocker_scan_schema_draft_ready`

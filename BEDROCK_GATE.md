@@ -586,6 +586,198 @@ Future blocker scan output should contain at least:
 - R14 defines the internal blocker scan schema used by future Bedrock evidence.
 - R14 still does not execute a scanner runtime.
 
+## Draft de schema do Bedrock Verdict Artifact
+Este draft define o artefato final canonical que um futuro Bedrock verdict deve produzir.
+Ele conecta R10, R11, R12, R13 e R14 em uma saida auditavel, reproduzivel e separada de qualquer pass tecnico local.
+
+### Identidade do veredito
+Campos obrigatorios:
+- `verdict_id`
+- `verdict_schema_version`
+- `bedrock_gate_version`
+- `phase`
+- `target_id`
+- `target_type`
+- `target_phase`
+- `target_scope`
+- `evaluated_at`
+- `evaluated_by`
+- `source_repositories`
+- `source_commits`
+- `evidence_bundle_id`
+- `blocker_scan_id`
+- `completeness_gate_id`
+- `verdict_artifact_paths`
+
+### Status tecnico separado do status produto
+O artifact deve manter:
+- `technical_status`
+- `technical_decision`
+- `technical_pass`
+- `bedrock_verdict`
+- `product_boundary_decision`
+- `product_promotion_allowed`
+- `commercial_use_allowed`
+- `lab_continuation_allowed`
+- `runtime_change_allowed`
+- `frontend_change_allowed`
+- `backend_change_allowed`
+- `action_runtime_change_allowed`
+- `voice_change_allowed`
+- `network_change_allowed`
+
+Regra:
+- `technical_pass=true` nunca implica automaticamente `product_promotion_allowed=true`.
+
+### Verdict classes herdadas do R11
+As classes de veredito sao:
+- `INVALID`
+- `BLOCKED`
+- `LAB_ONLY_PASS`
+- `TECHNICAL_PASS_PRODUCT_FAIL`
+- `BEDROCK_WARN`
+- `PRODUCT_CANDIDATE`
+- `PRODUCT_READY`
+- `EXCELLENT_PRODUCT_READY`
+
+Cada classe deve aparecer em `bedrock_verdict` e deve ser acompanhada pelo minimo de campos seguintes:
+- `INVALID`: `technical_status`, `final_bedrock_decision`, `known_limits`, `residual_risks`, `blocked_next_scope`
+- `BLOCKED`: `technical_status`, `blocking_findings`, `required_remediations`, `product_boundary_decision`, `blocked_next_scope`
+- `LAB_ONLY_PASS`: `technical_status`, `lab_continuation_allowed`, `product_promotion_allowed`, `allowed_next_scope`
+- `TECHNICAL_PASS_PRODUCT_FAIL`: `technical_status`, `technical_pass`, `product_boundary_decision`, `required_remediations`
+- `BEDROCK_WARN`: `technical_status`, `warning_findings`, `required_remediations`, `re_evaluation_required`
+- `PRODUCT_CANDIDATE`: `technical_status`, `product_boundary_decision`, `promotion_class`, `human_review_required`, `required_remediations`
+- `PRODUCT_READY`: `technical_status`, `product_promotion_allowed`, `commercial_use_allowed`, `blocker_scan_status`, `evidence_completeness_class`
+- `EXCELLENT_PRODUCT_READY`: `technical_status`, `product_promotion_allowed`, `commercial_use_allowed`, `score_by_dimension`, `dimension_confidence`, `dimension_risk_level`
+
+### Relation with completeness gate
+Campos obrigatorios:
+- `evidence_completeness_class`
+- `evidence_bundle_complete`
+- `missing_required_sections`
+- `missing_required_evidence`
+- `validation_classes_detected`
+- `minimum_validation_count`
+- `minimum_validation_rule_passed`
+- `completeness_findings`
+- `completeness_required_remediations`
+
+Rules:
+- If `evidence_completeness_class` is not `COMPLETE`, the artifact cannot allow product promotion.
+- `INCOMPLETE` may allow Lab continuation.
+- `INSUFFICIENT`, `INVALID`, `CONTRADICTORY`, `STALE` and `PRODUCT_PROMOTION_BLOCKED` block product-grade judgment.
+
+### Relation with blocker scan
+Campos obrigatorios:
+- `blocker_scan_status`
+- `blocker_scan_completeness`
+- `canonical_blocker_count`
+- `detected_blockers`
+- `suspected_blockers`
+- `unknown_blockers`
+- `unverified_blockers`
+- `waived_blockers`
+- `critical_blockers`
+- `high_blockers`
+- `blocking_findings`
+- `blocker_required_remediations`
+
+Rules:
+- Any critical blocker active blocks `PRODUCT_READY`.
+- Waiver cannot release commercial use where R14 forbids it.
+- A clean scan removes one class of block but does not guarantee `PRODUCT_READY`.
+
+### Score and dimension summary
+The artifact must expose:
+- `score_by_dimension`
+- `dimension_findings`
+- `dimension_evidence_refs`
+- `dimension_confidence`
+- `dimension_risk_level`
+
+Dimensions inherited from R11:
+- segurança
+- privacidade/segredos
+- determinismo
+- evidência/auditabilidade
+- testes/reprodutibilidade
+- rollback/recuperação
+- observabilidade
+- failure isolation
+- qualidade de resposta/comportamento
+- UX
+- performance/custo
+- manutenibilidade
+- documentação/source-of-truth
+- roadmap/macroblocos
+- prontidão comercial/produto
+- risco de regressão
+- risco de automação indevida
+- dependências externas
+- boundaries de runtime/frontend/backend/action runtime/voz/rede
+
+Rule:
+- Score must be derived from materialized evidence, validations or explicit human review.
+- LLM may summarize, but cannot be the sole judge in a critical gate.
+
+### Final decision
+Campos obrigatorios:
+- `final_bedrock_decision`
+- `final_product_boundary_decision`
+- `promotion_class`
+- `allowed_next_scope`
+- `blocked_next_scope`
+- `required_remediations`
+- `recommended_next_phase`
+- `human_review_required`
+- `re_evaluation_required`
+- `expires_at_or_stale_after`
+- `known_limits`
+- `residual_risks`
+
+Suggested decision values:
+- `invalid_artifact`
+- `blocked_before_verdict`
+- `lab_continuation_allowed`
+- `technical_pass_product_blocked`
+- `product_candidate_with_conditions`
+- `product_ready_allowed`
+- `excellent_product_ready_allowed`
+
+### Auditability and traceability
+The artifact must record:
+- `input_artifacts`
+- `input_reports`
+- `input_summaries`
+- `input_commits`
+- `commands_executed`
+- `validations_executed`
+- `files_changed`
+- `protected_sources_not_modified`
+- `dirty_worktree_notes`
+- `context_usage_report`
+- `source_of_truth_precedence_applied`
+- `stale_context_conflicts_detected`
+- `obsidian_usage`
+- `human_approvals`
+- `ledger_entries`
+
+### Future artifact names
+Future verdict artifacts should follow:
+- `artifacts/bedrock/verdicts/<target_id>_bedrock_verdict.json`
+- `artifacts/bedrock/verdicts/<target_id>_bedrock_verdict_report.md`
+
+This draft does not create that tree yet. It only defines the shape.
+
+### Relation with R10 through R14
+- R10 defines the global role of Bedrock.
+- R11 defines verdict classes and blockers.
+- R12 defines the Evidence Bundle.
+- R13 defines bundle completeness.
+- R14 defines blocker scan structure.
+- R15 defines the final verdict artifact.
+- R15 still does not execute a real judgment.
+
 ## Relação com NORTH_POLE
 O Bedrock Gate é o chão. O North Pole é o norte.
 

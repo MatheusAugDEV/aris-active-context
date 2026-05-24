@@ -28,6 +28,11 @@
 - It defines blocker states, severity, evidence quality, waiver policy, and the link to completeness gating.
 - R14 does not execute a scanner runtime and does not promote product.
 
+## Bedrock Verdict Artifact Schema Draft
+- R15 formalizes the final canonical artifact emitted by future Bedrock judgments.
+- It separates technical status from product boundary decision and ties the verdict back to the bundle, completeness and blocker scan.
+- R15 does not execute a verdict and does not promote product.
+
 **F21-A14 - MCP Candidate Human Evidence Authorization Review**
 status: `mcp_candidate_human_evidence_authorization_review_warn`
 decision: `warn`
