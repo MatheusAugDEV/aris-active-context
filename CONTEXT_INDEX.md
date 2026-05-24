@@ -1,3 +1,30 @@
+## Bedrock v2 low-risk candidate source verification
+- latest_completed_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
+- next_recommended_phase: `F21-CTX-BEDROCK-R11 - Bedrock v2 Low-Risk Candidate Context Policy Review Gate`
+- next_gate_seen: `F21-CTX-BEDROCK-R11 - Bedrock v2 Low-Risk Candidate Context Policy Review Gate`
+- source_r9_decision_path: `artifacts/f21/bedrock_v2_safe_candidate_review_sequencing_decision.json`
+- source_r8_decision_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_review_decision.json`
+- source_risk_register_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_register.json`
+- r9_status: `bedrock_v2_safe_candidate_review_sequencing_passed`
+- r9_decision: `pass`
+- r9_verified: `True`
+- r8_status: `bedrock_v2_adoption_candidate_risk_review_passed`
+- r8_decision: `pass`
+- r8_verified: `True`
+- source_verification_matrix_created: `True`
+- source_verification_hash: `eefef9503bf2688b2dc57e9130c68e39aab8d7588d817ac7e6d22bf2708fb44e`
+- total_low_risk_candidates_reviewed: `15`
+- verified_low_risk_candidate_count: `15`
+- source_verified_for_future_review_count: `15`
+- source_verification_warn_count: `0`
+- source_verification_blocked_count: `0`
+- candidate_adoption_allowed_now: `False`
+- candidate_approval_allowed_now: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+
+R10 keeps low-risk source verification review-only; it does not approve or adopt candidates.
+
 ## Bedrock v2 safe candidate review sequencing
 - latest_completed_phase: `F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate`
 - next_recommended_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`

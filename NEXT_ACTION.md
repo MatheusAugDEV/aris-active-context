@@ -1,5 +1,36 @@
 ## Next operational gate
 - current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
+- latest_completed_phase: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
+- next_gate: `F21-CTX-BEDROCK-R11 - Bedrock v2 Low-Risk Candidate Context Policy Review Gate`
+- reason: `R10 verified the low-risk lane only; the next safe step is context-policy review, not adoption.`
+- blocked_capabilities:
+  - `bedrock_v2_apply_allowed_now: false`
+  - `bedrock_v2_apply_plan_allowed_now: false`
+  - `bedrock_v2_candidate_adoption_allowed_now: false`
+  - `candidate_approval_allowed_now: false`
+  - `prompt_kernel_implementation_allowed: false`
+  - `runtime_mutation_allowed: false`
+  - `frontend_mutation_allowed: false`
+  - `audio_mutation_allowed: false`
+  - `action_runtime_mutation_allowed: false`
+  - `mcp_activation_allowed: false`
+  - `mcp_config_write_allowed: false`
+  - `vault_write_allowed: false`
+  - `obsidian_bulk_read_allowed: false`
+  - `network_allowed: false`
+  - `dependency_install_allowed: false`
+  - `product_promotion_allowed: false`
+  - `customer_real_use_allowed: false`
+  - `production_release_allowed: false`
+- pass_required_for_next_gate: `True`
+- warn_requires_repair_or_rework: `True`
+- bedrock_v2_apply_deferred: `True`
+- bedrock_v2_apply_plan_deferred_until_research: `True`
+- bedrock_v2_candidate_adoption_deferred: `True`
+- candidate_approval_deferred: `True`
+
+## Next operational gate
+- current_macroblock: `MB1 - Context Governance & Input Trust Boundary`
 - latest_completed_phase: `F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate`
 - next_gate: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
 - reason: `R9 confirmed the safe candidate review sequencing plan remains bounded and non-authorizing; the next safe step is low-risk source verification, not adoption.`
