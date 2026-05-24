@@ -1,3 +1,7 @@
+## Bedrock Evaluation Request Fixture Controlled Materialization Review Gate
+R23 reviews the controlled fixture tree and confirms it is safe and coherent for a future runner dry-run phase.
+It validates the materialized manifest, pairings, counts, non-execution guarantees, and safety scan results, but it does not create a runner or execute Bedrock.
+
 ## Bedrock Evaluation Request Fixture Controlled Materialization
 R22 materializes the controlled fixture tree only: manifest, 22 input fixtures, and 22 expected fixtures.
 It does not create a runner, execute Bedrock, or authorize product promotion.

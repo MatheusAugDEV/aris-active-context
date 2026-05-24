@@ -1,3 +1,57 @@
+## F21-CTX-BEDROCK-R23 - Bedrock Evaluation Request Fixture Controlled Materialization Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R23 - Bedrock Evaluation Request Fixture Controlled Materialization Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R23`
+- status: `fixture_materialization_review_passed`
+- decision: `pass`
+- next_gate: `F21-CTX-BEDROCK-R24 - Bedrock Evaluation Request Validation Runner Dry-Run Plan`
+- next_recommended_phase: `F21-CTX-BEDROCK-R24 - Bedrock Evaluation Request Validation Runner Dry-Run Plan`
+- reviewed_boundary_lock_id: `BEDROCK_GATE_IS_GLOBAL_PRODUCT_BOUNDARY`
+- reviewed_verdict_lock_id: `BEDROCK_VERDICT_CRITERIA_DRAFT`
+- reviewed_schema_lock_id: `BEDROCK_EVIDENCE_BUNDLE_SCHEMA_DRAFT`
+- reviewed_completeness_lock_id: `BEDROCK_EVIDENCE_BUNDLE_COMPLETENESS_GATE_DRAFT`
+- reviewed_blocker_scan_lock_id: `BEDROCK_BLOCKER_SCAN_SCHEMA_DRAFT`
+- reviewed_verdict_artifact_lock_id: `BEDROCK_VERDICT_ARTIFACT_SCHEMA_DRAFT`
+- reviewed_input_contract_lock_id: `BEDROCK_EVALUATION_INPUT_CONTRACT_DRAFT`
+- reviewed_validation_rules_lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RULES_DRAFT`
+- reviewed_dry_run_fixture_schema_lock_id: `BEDROCK_EVALUATION_REQUEST_DRY_RUN_FIXTURE_SCHEMA_DRAFT`
+- reviewed_fixture_manifest_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MANIFEST_DRAFT`
+- reviewed_materialization_plan_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_PLAN`
+- reviewed_dry_run_gate_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_MATERIALIZATION_DRY_RUN_GATE`
+- reviewed_controlled_materialization_lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION`
+- fixture_tree_root: `artifacts/bedrock/fixtures/evaluation_requests`
+- fixture_tree_exists: `True`
+- manifest_present: `True`
+- manifest_valid: `True`
+- json_file_count: `45`
+- input_fixture_count: `22`
+- expected_fixture_count: `22`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- unique_fixture_ids: `True`
+- input_expected_pairing_valid: `True`
+- positive_fixture_review_passed: `True`
+- negative_fixture_review_passed: `True`
+- negative_rejection_ids_valid: `True`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- runner_execution_allowed_in_any_fixture: `False`
+- non_execution_invariants_preserved: `True`
+- safety_string_scan_passed: `True`
+- warning_count: `2`
+- blocker_count: `0`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+
+R23 reviews the controlled fixture tree and confirms it is safe and coherent for a future runner dry-run phase.
+It does not create a runner or execute Bedrock.
+
 ## F21-CTX-BEDROCK-R22 - Bedrock Evaluation Request Fixture Controlled Materialization
 - phase_id: `F21-CTX-BEDROCK-R22`
 - status: `bedrock_evaluation_request_fixture_controlled_materialization_complete`

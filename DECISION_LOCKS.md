@@ -1,3 +1,50 @@
+## BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION_REVIEW_GATE
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION_REVIEW_GATE`
+- phase_id: `F21-CTX-BEDROCK-R23`
+- status: `fixture_materialization_review_passed`
+- decision: `pass`
+- draft_only: `True`
+- review_gate_created: `True`
+- fixture_tree_root: `artifacts/bedrock/fixtures/evaluation_requests`
+- fixture_tree_exists: `True`
+- manifest_present: `True`
+- manifest_valid: `True`
+- json_file_count: `45`
+- input_fixture_count: `22`
+- expected_fixture_count: `22`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- unique_fixture_ids: `True`
+- input_expected_pairing_valid: `True`
+- positive_fixture_review_passed: `True`
+- negative_fixture_review_passed: `True`
+- negative_rejection_ids_valid: `True`
+- product_promotion_allowed_in_any_fixture: `False`
+- commercial_use_allowed_in_any_fixture: `False`
+- runner_execution_allowed_in_any_fixture: `False`
+- non_execution_invariants_preserved: `True`
+- safety_string_scan_passed: `True`
+- warning_count: `2`
+- blocker_count: `0`
+- runtime_modified: `False`
+- frontend_modified: `False`
+- backend_modified: `False`
+- action_runtime_modified: `False`
+- voice_modified: `False`
+- network_enabled: `False`
+- dependencies_installed: `False`
+- product_promotion_executed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- next_recommended_phase: `F21-CTX-BEDROCK-R24 - Bedrock Evaluation Request Validation Runner Dry-Run Plan`
+
+Bedrock Evaluation Request Fixture Controlled Materialization Review Gate is policy only.
+It validates the integrity and safety of the controlled fixture tree, but it does not create a runner or execute Bedrock.
+
 ## BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_FIXTURE_CONTROLLED_MATERIALIZATION`
