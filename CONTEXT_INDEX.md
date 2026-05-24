@@ -1,3 +1,45 @@
+# F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair
+- latest_completed_phase: `F21-CTX-BEDROCK-R33 - Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair`
+- phase_id: `F21-CTX-BEDROCK-R33`
+- status: `runner_targeted_mismatch_repair_implemented`
+- decision: `pass`
+- source_plan_phase: `F21-CTX-BEDROCK-R32`
+- source_review_phase: `F21-CTX-BEDROCK-R31`
+- source_execution_phase: `F21-CTX-BEDROCK-R30`
+- planned_repair_count: `12`
+- implemented_repair_count: `12`
+- targeted_fixture_count: `12`
+- targeted_fixtures:
+  - `invalid_missing_target_type`
+  - `invalid_product_promotion_without_evidence_bundle`
+  - `invalid_product_promotion_without_blocker_scan`
+  - `invalid_product_promotion_without_human_review`
+  - `invalid_attempt_to_skip_blocker_scan`
+  - `invalid_attempt_to_skip_completeness_gate`
+  - `invalid_attempt_to_promote_lab_only_to_product`
+  - `invalid_commercial_delivery_without_known_limits`
+  - `invalid_commercial_delivery_without_risk_register`
+  - `invalid_dirty_worktree_without_notes`
+  - `invalid_llm_as_sole_judge_requested`
+  - `invalid_source_of_truth_contradictory`
+- runner_modified: `True`
+- fixtures_modified: `False`
+- expected_fixtures_modified: `False`
+- fixture_tree_preserved: `True`
+- repair_implementation_executed: `True`
+- controlled_real_fixture_rerun_executed: `False`
+- artifacts_bedrock_runner_written: `False`
+- targeted_checks_passed: `12`
+- targeted_checks_failed: `0`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- runner_execution_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- runner_validation_still_requires_r34: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution`
+
 # F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R32 - Bedrock Evaluation Request Validation Runner Mismatch Repair Plan`
 - phase_id: `F21-CTX-BEDROCK-R32`

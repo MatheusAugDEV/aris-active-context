@@ -1,3 +1,23 @@
+# Bedrock Evaluation Request Validation Runner Targeted Mismatch Repair
+R33 applies the targeted repair plan to the runner code only.
+It repairs the 12 known semantic mismatches, preserves the real fixture tree, and does not execute a controlled re-run against the real tree.
+
+### Repair outcome
+- `runner_targeted_mismatch_repair_implemented`
+- `planned_repair_count=12`
+- `implemented_repair_count=12`
+- `targeted_fixture_count=12`
+- `repair_implementation_executed=true`
+- `controlled_real_fixture_rerun_executed=false`
+- `runner_validation_still_requires_r34=true`
+- `product_promotion_allowed=false`
+- `commercial_use_allowed=false`
+- `bedrock_runtime_gate_executed=false`
+- `runner_execution_allowed=false`
+
+### Next phase
+- `F21-CTX-BEDROCK-R34 - Bedrock Evaluation Request Validation Runner Controlled Re-Execution`
+
 # Bedrock Evaluation Request Validation Runner Controlled Execution
 R30 executed the deterministic runner against the real materialized fixture tree in dry-run mode only.
 The run preserved the manifest hash, file-list hash, and content hash, and kept the fixture tree at 45 JSON files before and after execution.
