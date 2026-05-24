@@ -1,3 +1,60 @@
+## F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R9 - Bedrock v2 Safe Candidate Review Sequencing Gate`
+- phase_id: `F21-CTX-BEDROCK-R9`
+- status: `bedrock_v2_safe_candidate_review_sequencing_passed`
+- decision: `pass`
+- reviewed_phase_id: `F21-CTX-BEDROCK-R8`
+- source_r8_decision_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_review_decision.json`
+- source_r8_summary_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_review_summary.json`
+- source_r8_report_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_review_report.md`
+- source_risk_register_path: `artifacts/f21/bedrock_v2_adoption_candidate_risk_review_decision.json`
+- r8_status: `bedrock_v2_adoption_candidate_risk_review_passed`
+- r8_decision: `pass`
+- r8_verified: `True`
+- sequencing_plan_created: `True`
+- sequencing_matrix_created: `True`
+- sequencing_hash: `233b06d525de2bcc80542adfa4353afbb90289f3b330cb77b2792686671b33b6`
+- sequencing_lane_count: `4`
+- total_candidates_reviewed: `60`
+- reviewable_candidate_count: `50`
+- blocked_not_reviewable_count: `10`
+- low_context_policy_review_count: `15`
+- medium_design_review_count: `15`
+- high_security_or_source_review_count: `20`
+- blocked_for_adoption_count: `10`
+- duplicate_candidate_count: `0`
+- missing_candidate_count: `0`
+- unsequenced_candidate_count: `0`
+- executable_or_apply_language_risk_count: `0`
+- source_verification_low_risk_violation_count: `0`
+- security_review_low_risk_violation_count: `0`
+- false_positive_low_risk_violation_count: `0`
+- candidate_adoption_allowed_now: `False`
+- candidate_approval_allowed_now: `False`
+- bedrock_v2_apply_allowed_now: `False`
+- bedrock_v2_apply_plan_allowed_now: `False`
+- bedrock_v2_candidate_adoption_allowed_now: `False`
+- implementation_readiness_promoted_count: `0`
+- false_authorization_detected: `False`
+- bedrock_gate_modified: `False`
+- north_pole_modified: `False`
+- phase_specific_gates_modified: `False`
+- runtime_scope_untouched: `True`
+- frontend_scope_untouched: `True`
+- audio_scope_untouched: `True`
+- action_runtime_scope_untouched: `True`
+- mcp_scope_untouched: `True`
+- network_allowed: `False`
+- dependency_install_allowed: `False`
+- product_promotion_allowed: `False`
+- customer_real_use_allowed: `False`
+- production_release_allowed: `False`
+- f21_a61_status: `blocked`
+- f21b_paused_track: `preserved`
+- warning_count: `0`
+- blocker_count: `0`
+- next_real_action: `F21-CTX-BEDROCK-R10 - Bedrock v2 Low-Risk Candidate Source Verification Gate`
+
 ## F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R8 - Bedrock v2 Adoption Candidate Risk Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R8`
