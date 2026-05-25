@@ -1,3 +1,27 @@
+# BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_PLAN
+- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R49`
+- status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- decision: `pass`
+- source_site_claims_plan_phase: `F21-CTX-BEDROCK-R48`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- redry_run_plan_created: `True`
+- redry_run_executed: `False`
+- gap_reclassification_created: `True`
+- gaps_reclassified_count: `4`
+- gaps_resolved_count: `0`
+- planned_pending_execution_gap_count: `4`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN
 - lock_id: `BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R48`

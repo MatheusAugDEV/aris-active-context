@@ -1,3 +1,45 @@
+# F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+- phase_id: `F21-CTX-BEDROCK-R49`
+- status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- decision: `pass`
+- source_site_claims_plan_phase: `F21-CTX-BEDROCK-R48`
+- source_site_claims_plan_status: `bedrock_gate_site_claims_audit_gate_plan_ready`
+- source_site_claims_plan_decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_gap_plan_status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- source_gap_plan_decision: `pass`
+- redry_run_plan_created: `True`
+- redry_run_executed: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_reclassification_created: `True`
+- gaps_reclassified_count: `4`
+- gaps_resolved_count: `0`
+- planned_pending_execution_gap_count: `4`
+- evidence_class_count: `10`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+- warnings:
+  - `R45-R48 are formal plans only; they do not count as executed evidence.`
+  - `The four accepted gaps remain planned and pending execution.`
+  - `The re-dry-run is defined only; it is not executed in this phase.`
+  - `R50 remains the conservative next step after this plan.`
+- blockers:
+  - `[]`
+
+
 # F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 - phase_id: `F21-CTX-BEDROCK-R48`

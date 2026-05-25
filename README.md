@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
+
+## Current Position
+
+- Status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- Decision: `pass`
+- Recommended next phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
 
 ## Current Position

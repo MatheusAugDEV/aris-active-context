@@ -2,6 +2,11 @@
 - next action: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 
 
+# F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
+- next action: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+- recommended next phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
 - next action: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 - recommended next phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`

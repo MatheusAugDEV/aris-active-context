@@ -1,3 +1,15 @@
+# F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+- phase_id: `F21-CTX-BEDROCK-R49`
+- status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- decision: `pass`
+- source_site_claims_plan_phase: `F21-CTX-BEDROCK-R48`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- gaps_reclassified_count: `4`
+- planned_pending_execution_gap_count: `4`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 - phase_id: `F21-CTX-BEDROCK-R48`
