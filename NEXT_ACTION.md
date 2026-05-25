@@ -2,6 +2,11 @@
 - next action: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 
 
+# F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
+- next action: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+- recommended next phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+
+
 # F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan`
 - phase_id: `F21-CTX-BEDROCK-R47`

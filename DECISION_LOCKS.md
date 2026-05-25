@@ -1,3 +1,32 @@
+# BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN
+- lock_id: `BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R48`
+- status: `bedrock_gate_site_claims_audit_gate_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_human_review_phase: `F21-CTX-BEDROCK-R47`
+- target_gap_id: `site_claims_full_audit_gap`
+- site_claims_audit_gate_defined: `True`
+- site_claims_schema_created: `True`
+- site_claims_matrix_created: `True`
+- site_claims_audit_executed: `False`
+- site_claims_clean_certification_created: `False`
+- site_copy_modified: `False`
+- aris_site_modified: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_remediation_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+
+
 # BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_PACKAGE_PLAN
 - lock_id: `BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_PACKAGE_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R47`

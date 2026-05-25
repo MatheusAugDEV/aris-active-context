@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+- phase_id: `F21-CTX-BEDROCK-R48`
+- status: `bedrock_gate_site_claims_audit_gate_plan_ready`
+- decision: `pass`
+- target_gap_id: `site_claims_full_audit_gap`
+- recommended_next_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
+
+
 # F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan`
 - phase_id: `F21-CTX-BEDROCK-R47`
