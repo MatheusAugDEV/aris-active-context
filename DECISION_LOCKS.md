@@ -1,3 +1,32 @@
+# BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_SUBGATE_PLAN
+- lock_id: `BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_SUBGATE_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R46`
+- status: `bedrock_gate_dedicated_blocker_scan_subgate_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_gap_plan_status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- source_gap_plan_decision: `pass`
+- source_command_telemetry_phase: `F21-CTX-BEDROCK-R45`
+- source_command_telemetry_status: `bedrock_gate_command_telemetry_evidence_plan_ready`
+- source_command_telemetry_decision: `pass`
+- target_gap_id: `dedicated_blocker_scan_gap`
+- dedicated_blocker_scan_subgate_defined: `True`
+- blocker_scan_schema_created: `True`
+- blocker_scan_matrix_created: `True`
+- dedicated_blocker_scan_executed: `False`
+- blocker_free_certification_created: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_remediation_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan`
+
+
 # BEDROCK_GATE_COMMAND_TELEMETRY_EVIDENCE_PLAN
 - lock_id: `BEDROCK_GATE_COMMAND_TELEMETRY_EVIDENCE_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R45`
