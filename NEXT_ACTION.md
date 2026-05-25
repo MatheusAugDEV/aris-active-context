@@ -1,3 +1,48 @@
+# F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate`
+- phase_id: `F21-CTX-BEDROCK-R36`
+- status: `bedrock_evaluation_request_validation_runner_closure_passed`
+- decision: `pass`
+- closure_gate_created: `True`
+- closed_track: `Bedrock Evaluation Request Validation Runner`
+- closure_scope: `technical closure only; no product/commercial authorization`
+- r30_status: `runner_controlled_execution_failed`
+- r30_decision: `fail`
+- r31_status: `runner_controlled_execution_review_failed_valid`
+- r31_decision: `fail`
+- r32_status: `runner_mismatch_repair_plan_ready`
+- r32_decision: `pass`
+- r33_status: `runner_targeted_mismatch_repair_implemented`
+- r33_decision: `pass`
+- r34_status: `runner_controlled_reexecution_passed`
+- r34_decision: `pass`
+- r35_status: `runner_reexecution_review_passed`
+- r35_decision: `pass`
+- all_expected_matched: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runner_core_modified_in_r36: `False`
+- r36_reexecuted_runner: `False`
+- artifacts_bedrock_runner_modified_in_r36: `False`
+- safety_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- closure_pass_is_not_product_pass: `True`
+- closure_pass_is_not_commercial_approval: `True`
+- warning_count: `5`
+- blocker_count: `0`
+- recommended_next_phase: `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`
+
 # F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R35`
@@ -147,12 +192,15 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
 
-## Site — Conversion Funnel Audit
-- last_site_action: `SITE-FUNNEL-V1 — funnel audit: new hero headline/sub/microcopy, reorder sections (Problem before How-it-works), nav anchor fix, meta update`
-- commit: `9d39272`
+## Site — SITE-SEO-V3
+- last_site_action: `SITE-SEO-V3 — indexability review passed (all 30 items), SEO_INDEXABILITY_CHECKLIST.md created`
+- commit: `55da1c9`
 - status: `deployed_and_live`
-- live_assets: `index-BxjjoBPf.js, index-CtrYr3m-.css`
-- next_site_action: `nenhum pendente`
+- live_assets: `index-DBtnvSmu.js, index-CtrYr3m-.css`
+- og_image: `https://www.meetarisia.com.br/og/aris-og-image.svg`
+- og_image_http: `200 image/svg+xml`
+- next_site_action: `manual — Google Search Console: adicionar propriedade, verificar (meta tag ou DNS), enviar sitemap, solicitar indexação`
+- next_site_action_file: `SEARCH_CONSOLE.md e SEO_INDEXABILITY_CHECKLIST.md`
 
 ## F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution
 - latest_completed_phase: `F21-CTX-BEDROCK-R30 - Bedrock Evaluation Request Validation Runner Controlled Execution`

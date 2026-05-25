@@ -1,3 +1,66 @@
+# F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate`
+- phase_id: `F21-CTX-BEDROCK-R36`
+- status: `bedrock_evaluation_request_validation_runner_closure_passed`
+- decision: `pass`
+- closure_gate_created: `True`
+- closed_track: `Bedrock Evaluation Request Validation Runner`
+- closure_scope: `technical closure only; no product/commercial authorization`
+- r30_status: `runner_controlled_execution_failed`
+- r30_decision: `fail`
+- r31_status: `runner_controlled_execution_review_failed_valid`
+- r31_decision: `fail`
+- r32_status: `runner_mismatch_repair_plan_ready`
+- r32_decision: `pass`
+- r33_status: `runner_targeted_mismatch_repair_implemented`
+- r33_decision: `pass`
+- r34_status: `runner_controlled_reexecution_passed`
+- r34_decision: `pass`
+- r35_status: `runner_reexecution_review_passed`
+- r35_decision: `pass`
+- causal_chain_verified: `True`
+- initial_failure_confirmed: `True`
+- repair_plan_verified: `True`
+- targeted_repair_verified: `True`
+- controlled_reexecution_verified: `True`
+- independent_review_verified: `True`
+- runner_artifacts_verified: `True`
+- all_expected_matched: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- positive_fixture_count: `5`
+- negative_fixture_count: `17`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runner_core_modified_in_r36: `False`
+- r36_reexecuted_runner: `False`
+- artifacts_bedrock_runner_modified_in_r36: `False`
+- safety_boundary_preserved: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- client_delivery_allowed: `False`
+- pricing_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- closure_pass_is_not_product_pass: `True`
+- closure_pass_is_not_commercial_approval: `True`
+- warning_count: `5`
+- blocker_count: `0`
+- warnings:
+  - `R30 through R35 establish a technical pass only; no product pass was granted.`
+  - `Product promotion remains false in all actuals.`
+  - `Commercial use remains false in all actuals.`
+  - `No Bedrock runtime gate or network access occurred.`
+  - `R36 closes the runner track and points to boundary consolidation, not commercialization.`
+- blockers: `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`
+
 # F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R35 - Bedrock Evaluation Request Validation Runner Re-Execution Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R35`
@@ -195,6 +258,108 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
 - note: `R31 preserves the fail state as a valid mismatch review outcome and does not convert it into a product signal.`
+
+## SITE-SEO-V3 — Indexability Review and Search Console Verification Prep
+- phase_id: `SITE-SEO-V3`
+- status: `deployed`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `SEO_INDEXABILITY_CHECKLIST.md (new)`
+- commit: `55da1c9`
+- push: `origin/main`
+- review_result: `all 30 indexability items pass — no issues found`
+- index_html_modified: `False`
+- no_tracking_found: `True`
+- no_noindex_found: `True`
+- no_h1_duplicate: `True`
+- h1_text: `Automação operacional com controle desde a arquitetura.`
+- checklist_created: `SEO_INDEXABILITY_CHECKLIST.md`
+- next_manual_step: `Google Search Console — adicionar propriedade, verificar, enviar sitemap, solicitar indexação`
+- note_svg_fallback: `se scrapers tiverem problema com SVG, considerar adicionar PNG 1200×630 como og:image fallback`
+- no_price: `True`
+- no_testimonials: `True`
+- no_analytics: `True`
+- no_token_invented: `True`
+- validated_live: `True`
+
+## SITE-SEO-V2 — Social Preview Asset and Search Console Readiness
+- phase_id: `SITE-SEO-V2`
+- status: `deployed`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `index.html, public/og/aris-og-image.svg (new), SEARCH_CONSOLE.md (new)`
+- commit: `4220810`
+- push: `origin/main`
+- live_assets: `index-DBtnvSmu.js, index-CtrYr3m-.css`
+- og_image_url: `https://www.meetarisia.com.br/og/aris-og-image.svg`
+- og_image_http_status: `200 image/svg+xml`
+- og_image_dimensions: `1200×630`
+- og_image_palette: `dark #0a0a0f, off-white text, no color gradients`
+- twitter_card: `summary_large_image`
+- build_passed: `True`
+- runtime_modified: `False`
+- backend_modified: `False`
+- project_aris_runtime_modified: `False`
+- no_price: `True`
+- no_testimonials: `True`
+- no_analytics: `True`
+- no_verification_token_invented: `True`
+- no_og_image_invented_content: `True`
+- search_console_runbook: `SEARCH_CONSOLE.md — instruções para adicionar propriedade, verificar, enviar sitemap, inspecionar URL`
+- validated_live: `True`
+
+## SITE-SEO-V1 — Technical SEO and Discoverability
+- phase_id: `SITE-SEO-V1`
+- status: `deployed`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `index.html, public/robots.txt (new), public/sitemap.xml (new)`
+- commit: `2c2221e`
+- push: `origin/main`
+- live_assets: `index-DBtnvSmu.js, index-CtrYr3m-.css`
+- build_passed: `True`
+- runtime_modified: `False`
+- backend_modified: `False`
+- project_aris_runtime_modified: `False`
+- seo_added:
+  - `<link rel="canonical" href="https://www.meetarisia.com.br/" />`
+  - `og:type, og:url, og:title, og:description, og:locale, og:site_name`
+  - `twitter:card (summary), twitter:title, twitter:description`
+  - `<meta name="robots" content="index, follow" />`
+  - `JSON-LD WebSite + Organization (no price, no clients, no reviews)`
+  - `robots.txt: Allow all, Sitemap pointer`
+  - `sitemap.xml: home canonical, lastmod 2026-05-24`
+- no_price: `True`
+- no_testimonials: `True`
+- no_urgency: `True`
+- no_og_image_invented: `True`
+- twitter_card_type: `summary (logo not OG-sized, no fake image added)`
+- validated_live: `True`
+
+## SITE-CALIBRATION — Pre-Product Phase Recalibration
+- phase_id: `SITE-CALIBRATION`
+- status: `deployed`
+- decision: `pass`
+- repo: `/home/matheus/ARIS/aris-site`
+- files_changed: `index.html, src/App.tsx`
+- commit: `6467e56`
+- push: `origin/main`
+- live_assets: `index-DBtnvSmu.js, index-CtrYr3m-.css`
+- build_passed: `True`
+- runtime_modified: `False`
+- backend_modified: `False`
+- project_aris_runtime_modified: `False`
+- hero_headline: `Automação operacional com controle desde a arquitetura.`
+- hero_sub: `O ARIS está sendo construído para separar o que a IA entende do que ela pode executar.`
+- cta_primary: `Conversar sobre um caso de uso`
+- impl_card_title: `Tem um caso de uso?`
+- impl_card_eyebrow: `Avaliação de caso de uso`
+- impl_cta_micro: `Sem implantação automática. Primeiro entendimento, depois validação.`
+- meta_description: `ARIS é uma arquitetura em desenvolvimento para automação operacional com permissões, limites, validação e rastreabilidade antes da execução.`
+- no_price: `True`
+- no_testimonials: `True`
+- no_urgency: `True`
+- no_product_ready_claim: `True`
 
 ## SITE-FUNNEL-V1 — Conversion Funnel Audit and Improvements
 - phase_id: `SITE-FUNNEL-V1`

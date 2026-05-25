@@ -1,3 +1,50 @@
+# BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CLOSURE_GATE
+
+- lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_CLOSURE_GATE`
+- phase_id: `F21-CTX-BEDROCK-R36`
+- status: `bedrock_evaluation_request_validation_runner_closure_passed`
+- decision: `pass`
+- closed_track: `Bedrock Evaluation Request Validation Runner`
+- closure_scope: `technical closure only; no product/commercial authorization`
+- r30_status: `runner_controlled_execution_failed`
+- r30_decision: `fail`
+- r31_status: `runner_controlled_execution_review_failed_valid`
+- r31_decision: `fail`
+- r32_status: `runner_mismatch_repair_plan_ready`
+- r32_decision: `pass`
+- r33_status: `runner_targeted_mismatch_repair_implemented`
+- r33_decision: `pass`
+- r34_status: `runner_controlled_reexecution_passed`
+- r34_decision: `pass`
+- r35_status: `runner_reexecution_review_passed`
+- r35_decision: `pass`
+- causal_chain_verified: `True`
+- all_expected_matched: `True`
+- fixtures_loaded: `22`
+- fixtures_evaluated: `22`
+- expected_files_loaded: `22`
+- matched_fixture_count: `22`
+- mismatched_fixture_count: `0`
+- fixture_tree_preserved: `True`
+- fixture_tree_modified: `False`
+- expected_fixtures_modified: `False`
+- runner_core_modified_in_r36: `False`
+- r36_reexecuted_runner: `False`
+- artifacts_bedrock_runner_modified_in_r36: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- client_delivery_allowed: `False`
+- pricing_allowed: `False`
+- bedrock_runtime_gate_executed: `False`
+- product_promotion_executed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- closure_pass_is_not_product_pass: `True`
+- closure_pass_is_not_commercial_approval: `True`
+- warning_count: `5`
+- blocker_count: `0`
+- recommended_next_phase: `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`
+
 # BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_REEXECUTION_REVIEW_GATE
 
 - lock_id: `BEDROCK_EVALUATION_REQUEST_VALIDATION_RUNNER_REEXECUTION_REVIEW_GATE`

@@ -5,6 +5,11 @@
 - Public domains: `https://www.meetarisia.com.br` and `https://meetarisia.com.br`
 - Use this runbook for build, commit, push, Vercel, and live asset validation steps.
 
+# Bedrock F21 Closure Track
+- R36 closes the Bedrock Evaluation Request Validation Runner as a technical pass only after R30-R35 formed a verified causal chain.
+- The closure does not authorize product pass, commercial approval, client delivery, pricing readiness, runtime activation, or Bedrock real execution.
+- The next recommended phase is `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`.
+
 # Bedrock F21 Active Track
 - R34 re-executed the repaired runner against the real fixture tree, matched all 22 fixtures, preserved the tree hashes, and kept product/commercial/runtime boundaries false.
 - R35 is the next review gate for the successful controlled re-execution.

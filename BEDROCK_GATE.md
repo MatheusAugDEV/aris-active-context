@@ -1,3 +1,23 @@
+# Bedrock Evaluation Request Validation Runner Closure Gate
+R36 closes the validation runner track as a technical pass only after the verified R30-R35 chain.
+It does not reexecute the runner, does not authorize product or commercial readiness, and does not change any protected surfaces.
+
+### Closure outcome
+- `bedrock_evaluation_request_validation_runner_closure_passed`
+- `closure_pass_is_not_product_pass=true`
+- `closure_pass_is_not_commercial_approval=true`
+- `technical_pass_is_not_product_pass_preserved=true`
+- `global_product_boundary_preserved=true`
+- `product_promotion_allowed=false`
+- `commercial_use_allowed=false`
+- `client_delivery_allowed=false`
+- `pricing_allowed=false`
+- `bedrock_runtime_gate_executed=false`
+- `product_promotion_executed=false`
+
+### Next phase
+- `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`
+
 # Bedrock Evaluation Request Validation Runner Controlled Re-Execution
 R34 re-executed the repaired runner against the real fixture tree and matched all 22 fixtures.
 It preserved the tree hashes and count before and after, wrote official runner artifacts only under `artifacts/bedrock/runner/`, and kept product/commercial/runtime boundaries false.
