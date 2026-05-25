@@ -1,3 +1,25 @@
+# BEDROCK_GATE_REMAINING_SCOPE_INVENTORY
+- lock_id: `BEDROCK_GATE_REMAINING_SCOPE_INVENTORY`
+- phase_id: `F21-CTX-BEDROCK-R38`
+- status: `bedrock_gate_remaining_scope_inventory_ready`
+- decision: `pass`
+- request_validation_runner_closed_technical: `True`
+- bedrock_gate_component_pass: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- closure_pass_is_not_product_pass_preserved: `True`
+- closure_pass_is_not_commercial_approval_preserved: `True`
+- global_product_boundary_preserved: `True`
+- site_marketing_claims_limited: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
+
 # BEDROCK_GATE_CLOSURE_BOUNDARY_CONSOLIDATION
 - lock_id: `BEDROCK_GATE_CLOSURE_BOUNDARY_CONSOLIDATION`
 - phase_id: `F21-CTX-BEDROCK-R37`
