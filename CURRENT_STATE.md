@@ -1,17 +1,23 @@
-# F21-CTX-BEDROCK-R57 - Bedrock Gate Evidence Bundle Final Reconciliation Controlled Execution
-- latest_completed_phase: `F21-CTX-BEDROCK-R57 - Bedrock Gate Evidence Bundle Final Reconciliation Controlled Execution`
-- phase_id: `F21-CTX-BEDROCK-R57`
-- status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
+# F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R58`
+- status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
 - decision: `pass`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R57`
+- reviewed_source_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
+- reviewed_source_decision: `pass`
 - source_plan_phase: `F21-CTX-BEDROCK-R56`
 - source_plan_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
 - source_plan_decision: `pass`
 - source_site_claims_phase: `F21-CTX-BEDROCK-R55`
 - source_site_claims_status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
 - source_site_claims_decision: `pass`
-- target_gap_id: `evidence_bundle_final_reconciliation_gap`
-- final_reconciliation_executed: `True`
+- target_gap_id: `evidence_bundle_final_reconciliation_review_gate`
+- final_reconciliation_review_executed: `True`
+- final_reconciliation_reexecuted: `False`
 - evidence_bundle_reconciled: `True`
+- evidence_bundle_complete_reviewed: `True`
+- evidence_bundle_complete_review_passed: `True`
 - evidence_bundle_complete: `True`
 - evidence_class_count: `10`
 - evidence_classes_complete_or_warning_complete: `10`
@@ -19,6 +25,10 @@
 - warning_complete_evidence_class_count: `1`
 - blocked_evidence_class_count: `0`
 - incomplete_evidence_class_count: `0`
+- review_findings_count: `10`
+- accepted_findings_count: `9`
+- warning_findings_count: `1`
+- blocker_findings_count: `0`
 - source_summary_count: `6`
 - support_file_count: `20`
 - gaps_resolved_count: `4`
@@ -40,11 +50,13 @@
 - product_promotion_allowed: `False`
 - commercial_use_allowed: `False`
 - site_marketing_claims_limited: `True`
+- site_claims_warning_complete_preserved: `True`
 - technical_pass_is_not_product_pass_preserved: `True`
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
-- recommended_next_phase: `F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate`
+- final_reconciliation_allowed_next: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
 - warnings:
   - `Site claims remain warning-complete and are limited to controlled-development language.`
   - `Closure is bundle closure only and does not authorize product, commercial, runtime, or production readiness.`

@@ -1,7 +1,7 @@
-# F21-CTX-BEDROCK-R57 - Bedrock Gate Evidence Bundle Final Reconciliation Controlled Execution
-- latest_completed_phase: `F21-CTX-BEDROCK-R57 - Bedrock Gate Evidence Bundle Final Reconciliation Controlled Execution`
-- phase_id: `F21-CTX-BEDROCK-R57`
-- status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
+# F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R58`
+- status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
 - decision: `pass`
 - source_plan_phase: `F21-CTX-BEDROCK-R56`
 - source_plan_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
@@ -44,7 +44,7 @@
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
-- recommended_next_phase: `F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate`
+- recommended_next_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
 - warnings:
   - `Site claims remain warning-complete and are limited to controlled-development language.`
   - `Closure is bundle closure only and does not authorize product, commercial, runtime, or production readiness.`
