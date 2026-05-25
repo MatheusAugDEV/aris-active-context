@@ -1,3 +1,29 @@
+# BEDROCK_GATE_FULL_DEFINITION_CHARTER
+- lock_id: `BEDROCK_GATE_FULL_DEFINITION_CHARTER`
+- phase_id: `F21-CTX-BEDROCK-R39`
+- status: `bedrock_gate_full_definition_charter_ready`
+- decision: `pass`
+- source_inventory_phase: `F21-CTX-BEDROCK-R38`
+- charter_created: `True`
+- charter_schema_created: `True`
+- charter_matrix_created: `True`
+- bedrock_gate_defined: `True`
+- request_validation_subgate_status: `component_closed_technical`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- site_marketing_claims_limited: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+
+
 # BEDROCK_GATE_REMAINING_SCOPE_INVENTORY
 - lock_id: `BEDROCK_GATE_REMAINING_SCOPE_INVENTORY`
 - phase_id: `F21-CTX-BEDROCK-R38`

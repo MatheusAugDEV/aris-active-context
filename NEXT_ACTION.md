@@ -1,3 +1,50 @@
+# F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter
+- latest_completed_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
+- phase_id: `F21-CTX-BEDROCK-R39`
+- status: `bedrock_gate_full_definition_charter_ready`
+- decision: `pass`
+- source_inventory_phase: `F21-CTX-BEDROCK-R38`
+- source_inventory_status: `bedrock_gate_remaining_scope_inventory_ready`
+- source_inventory_decision: `pass`
+- charter_created: `True`
+- charter_schema_created: `True`
+- charter_matrix_created: `True`
+- bedrock_gate_defined: `True`
+- charter_component_count: `16`
+- subgate_count: `14`
+- required_evidence_class_count: `10`
+- request_validation_subgate_status: `component_closed_technical`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- decision_locks_updated: `True`
+- boundary_matrix_created: `True`
+- allowed outputs: `charter_created`, `full_definition_ready_for_subgate_planning`, `component_pass_acknowledged`
+- forbidden outputs: `full_bedrock_gate_pass`, `product_pass`, `commercial_approval`, `client_readiness`, `pricing_readiness`, `runtime_activation`, `bedrock_real_execution`, `product_promotion`
+- warning count: `5`
+- blocker count: `0`
+- warnings:
+  - `R38 confirms the runner track closure and the remaining scope inventory.`
+  - `R38 does not define the full Bedrock Gate, only the remaining scope that needs formal chartering.`
+  - `This charter defines the gate; it does not authorize product, commercial, runtime, or real Bedrock readiness.`
+  - `Evidence bundle, blocker scan, source-of-truth consistency, safety boundary, and human review remain pending definition.`
+  - `Site claims remain limited to controlled-development language and cannot imply readiness or certification.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+- gate purpose: `Gate principal do ARIS para decidir se uma capacidade, trilha, componente ou claim pode avançar de estado técnico para estado mais forte, sempre por evidência materializada, boundaries explícitas, blockers determinísticos, source-of-truth consistente e revisão humana quando aplicável.`
+- next phase policy: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+
+
 # F21-CTX-BEDROCK-R38 - Bedrock Gate Remaining Scope Inventory
 - latest_completed_phase: `F21-CTX-BEDROCK-R38 - Bedrock Gate Remaining Scope Inventory`
 - phase_id: `F21-CTX-BEDROCK-R38`
