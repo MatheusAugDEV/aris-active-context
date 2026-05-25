@@ -1,3 +1,16 @@
+# BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION
+- lock_id: `BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION`
+- phase_id: `F21-CTX-BEDROCK-R49R`
+- status: `bedrock_gate_r49_root_package_reconciled`
+- decision: `pass`
+- recovery_gate_created: `True`
+- r49_root_package_missing_before: `True`
+- r49_package_materialized: `True`
+- r49_artifacts_created: `True`
+- ledger_warning_recorded: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_PLAN
 - lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R49`

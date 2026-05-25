@@ -1,3 +1,17 @@
+# F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate`
+- phase_id: `F21-CTX-BEDROCK-R49R`
+- status: `bedrock_gate_r49_root_package_reconciled`
+- decision: `pass`
+- recovery_gate_created: `True`
+- r49_root_package_missing_before: `True`
+- r49_package_materialized: `True`
+- r49_artifacts_created: `True`
+- ledger_warning_recorded: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+- next action: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
 - phase_id: `F21-CTX-BEDROCK-R49`

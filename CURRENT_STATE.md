@@ -1,3 +1,47 @@
+# F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate`
+- phase_id: `F21-CTX-BEDROCK-R49R`
+- status: `bedrock_gate_r49_root_package_reconciled`
+- decision: `pass`
+- recovery_gate_created: `True`
+- r49_root_package_missing_before: `True`
+- r49_package_materialized: `True`
+- r49_artifacts_created: `True`
+- r49_module_created: `True`
+- r49_runner_created: `True`
+- r49_tests_created: `True`
+- r49_doc_created: `True`
+- r49_gap_reclassification_created: `True`
+- gaps_reclassified_count: `4`
+- gaps_resolved_count: `0`
+- redry_run_executed: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- r50_executed: `False`
+- ledger_warning_recorded: `True`
+- r49_reported_root_commit_reused_or_missing_package_detected: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+- warnings:
+  - `The R49 package was missing from the root checkout before recovery.`
+  - `The reported root commit is reused and must be recorded as a ledger warning, not silent success.`
+  - `R50 remains next only after this recovery is committed and pushed.`
+  - `No real dry-run, runner, site, or Bedrock execution is performed in this recovery gate.`
+- blockers:
+  - `[]`
+
+
 # F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R49 - Bedrock Gate Evidence Bundle Re-Dry-Run Plan`
 - phase_id: `F21-CTX-BEDROCK-R49`

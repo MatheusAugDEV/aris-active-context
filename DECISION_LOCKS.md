@@ -22,6 +22,37 @@
 - recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
 
 
+# BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION
+- lock_id: `BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION`
+- phase_id: `F21-CTX-BEDROCK-R49R`
+- status: `bedrock_gate_r49_root_package_reconciled`
+- decision: `pass`
+- recovery_gate_created: `True`
+- r49_root_package_missing_before: `True`
+- r49_package_materialized: `True`
+- r49_artifacts_created: `True`
+- r49_module_created: `True`
+- r49_runner_created: `True`
+- r49_tests_created: `True`
+- r49_doc_created: `True`
+- r49_gap_reclassification_created: `True`
+- gaps_reclassified_count: `4`
+- gaps_resolved_count: `0`
+- redry_run_executed: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- r50_executed: `False`
+- ledger_warning_recorded: `True`
+- r49_reported_root_commit_reused_or_missing_package_detected: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+
+
 # BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN
 - lock_id: `BEDROCK_GATE_SITE_CLAIMS_AUDIT_GATE_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R48`
