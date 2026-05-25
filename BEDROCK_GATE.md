@@ -1,3 +1,18 @@
+# F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
+- status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
+- decision: `warn`
+- source collection plan phase: `F21-CTX-BEDROCK-R41`
+- dry_run_collection_executed: `True`
+- evidence_collection_executed: `False`
+- evidence_bundle_complete: `False`
+- evidence_classes_evaluated: `10`
+- evidence_classes_passed: `source_of_truth_evidence`, `source_artifacts`, `boundary_evidence`, `runner_evidence`, `fixture_evidence`, `closure_evidence`
+- evidence_classes_warned: `test_evidence`, `blocker_evidence`, `human_review_evidence`, `site_claims_evidence`
+- evidence_classes_blocked: `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+- plan purpose: `Executar um dry-run determinístico da coleta do Evidence Bundle usando a matriz/checklist R41 e os artifacts existentes, sem realizar coleta real nem autorizar produto, comercial, runtime ou Bedrock real.`
+
+
 # F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
 - status: `bedrock_gate_evidence_bundle_collection_plan_ready`
 - decision: `pass`

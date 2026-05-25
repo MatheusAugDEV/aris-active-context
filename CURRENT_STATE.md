@@ -1,3 +1,52 @@
+# F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
+- latest_completed_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- phase_id: `F21-CTX-BEDROCK-R42`
+- status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
+- decision: `warn`
+- source_collection_plan_phase: `F21-CTX-BEDROCK-R41`
+- source_collection_plan_status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- source_collection_plan_decision: `pass`
+- dry_run_collection_executed: `True`
+- evidence_collection_executed: `False`
+- evidence_bundle_complete: `False`
+- dry_run_result_count: `10`
+- gap_count: `4`
+- warning_count: `4`
+- blocker_count: `0`
+- missing_evidence_count: `3`
+- weak_evidence_count: `1`
+- evidence_classes_passed: `source_of_truth_evidence`, `source_artifacts`, `boundary_evidence`, `runner_evidence`, `fixture_evidence`, `closure_evidence`
+- evidence_classes_warned: `test_evidence`, `blocker_evidence`, `human_review_evidence`, `site_claims_evidence`
+- evidence_classes_blocked: `[]`
+- human_review_pending: `True`
+- source_of_truth_conflicts_detected: `False`
+- site_claims_risks_detected: `True`
+- boundary_risks_detected: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- allowed outputs: `dry_run_collection_executed, dry_run_result_created, dry_run_gaps_created`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warnings:
+  - `Dry-run completed with expected gaps and warnings, not a full evidence bundle.`
+  - `Human review, blocker scan, and site-claims audit remain future materialization points.`
+  - `Test evidence includes textual command references rather than dedicated command telemetry.`
+  - `Site claims stay limited to controlled-development language.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+- plan purpose: `Executar um dry-run determinístico da coleta do Evidence Bundle usando a matriz/checklist R41 e os artifacts existentes, sem realizar coleta real nem autorizar produto, comercial, runtime ou Bedrock real.`
+
+
 # F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
 - phase_id: `F21-CTX-BEDROCK-R41`

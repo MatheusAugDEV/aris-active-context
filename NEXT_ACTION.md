@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
+- latest_completed_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- phase_id: `F21-CTX-BEDROCK-R42`
+- status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
+- decision: `warn`
+- recommended_next_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+- next action: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
 - phase_id: `F21-CTX-BEDROCK-R41`

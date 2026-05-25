@@ -1,3 +1,25 @@
+# F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
+- latest_completed_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- phase_id: `F21-CTX-BEDROCK-R42`
+- status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
+- decision: `warn`
+- source_collection_plan_phase: `F21-CTX-BEDROCK-R41`
+- source_collection_plan_status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- source_collection_plan_decision: `pass`
+- dry_run_collection_executed: `True`
+- evidence_bundle_complete: `False`
+- warning count: `4`
+- blocker count: `0`
+- warnings:
+  - `Dry-run completed with expected gaps and warnings, not a full evidence bundle.`
+  - `Human review, blocker scan, and site-claims audit remain future materialization points.`
+  - `Test evidence includes textual command references rather than dedicated command telemetry.`
+  - `Site claims stay limited to controlled-development language.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
 - phase_id: `F21-CTX-BEDROCK-R41`

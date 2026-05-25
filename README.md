@@ -1,3 +1,25 @@
+# F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
+
+## Purpose
+Executar um dry-run determinístico da coleta do Evidence Bundle usando a matriz/checklist R41 e os artifacts existentes, sem realizar coleta real nem autorizar produto, comercial, runtime ou Bedrock real.
+
+## Current Position
+- Source collection plan phase: `F21-CTX-BEDROCK-R41`
+- Source collection plan status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- Source collection plan decision: `pass`
+- Dry-run executed: `True`
+- Evidence collection executed: `False`
+- Evidence bundle complete: `False`
+- Human review pending: `True`
+- Site claims remain limited: `True`
+
+## Dry-Run Position
+This phase inspects materialized evidence and records gaps; it does not execute the real bundle.
+
+## Next Phase
+- `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
 
 ## Purpose
