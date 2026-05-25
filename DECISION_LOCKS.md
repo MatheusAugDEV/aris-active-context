@@ -1546,6 +1546,44 @@ External code reuse is blocked until license compatibility, source review, secur
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
 - `F21-A54B`: active-context hygiene repair removed stale duplicate blocks.
 - `F21-A60`: prompt kernel contract readiness accepted the next controlled contract-only gate and kept runtime/template/batch blocked.
+# BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_REVIEW_GATE
+- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_REVIEW_GATE`
+- phase_id: `F21-CTX-BEDROCK-R51`
+- status: `bedrock_gate_evidence_bundle_redry_run_review_gate_warn`
+- decision: `warn`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R49R`
+- source_reconciliation_status: `bedrock_gate_r49_root_package_reconciled`
+- source_reconciliation_decision: `pass`
+- source_redry_run_controlled_execution_phase: `F21-CTX-BEDROCK-R50`
+- source_redry_run_controlled_execution_status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`
+- source_redry_run_controlled_execution_decision: `warn`
+- review_passed: `True`
+- review_findings_created: `True`
+- review_gap_status_created: `True`
+- review_report_created: `True`
+- review_gate_created: `True`
+- findings_count: `8`
+- warning_count: `5`
+- blocker_count: `0`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- real_collection_executed: `False`
+- gaps_resolved_count: `0`
+- unresolved_gaps_count: `4`
+- planned_pending_execution_gap_count: `4`
+- r49r_ledger_warning_carried_forward: `True`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution`
+
+
 # BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_CONTROLLED_EXECUTION
 - lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_CONTROLLED_EXECUTION`
 - phase_id: `F21-CTX-BEDROCK-R50`

@@ -1,3 +1,18 @@
+# BEDROCK_GATE_R51_REVIEW_GATE
+- phase_id: `F21-CTX-BEDROCK-R51`
+- status: `bedrock_gate_evidence_bundle_redry_run_review_gate_warn`
+- decision: `warn`
+- review_passed: `True`
+- findings_count: `8`
+- warning_count: `5`
+- blocker_count: `0`
+- r49r_ledger_warning_carried_forward: `True`
+- evidence_bundle_complete: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution`
+
+
 # BEDROCK_GATE_R50_CONTROLLED_EXECUTION
 - phase_id: `F21-CTX-BEDROCK-R50`
 - status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`

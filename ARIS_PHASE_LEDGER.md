@@ -1,3 +1,22 @@
+# F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R51`
+- status: `bedrock_gate_evidence_bundle_redry_run_review_gate_warn`
+- decision: `warn`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R49R`
+- source_redry_run_controlled_execution_phase: `F21-CTX-BEDROCK-R50`
+- review_passed: `True`
+- review_findings_count: `8`
+- warning_count: `5`
+- blocker_count: `0`
+- evidence_bundle_complete: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- gaps_resolved_count: `0`
+- unresolved_gaps_count: `4`
+- recommended_next_phase: `F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution`
+
+
 # F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution
 - latest_completed_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
 - phase_id: `F21-CTX-BEDROCK-R50`
