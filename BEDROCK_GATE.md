@@ -1,3 +1,18 @@
+# F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate
+- status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
+- decision: `warn`
+- source_dry_run_phase: `F21-CTX-BEDROCK-R42`
+- dry_run_confirmed: `True`
+- dry_run_warn_is_valid: `True`
+- dry_run_warn_requires_gap_plan: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- real_collection_executed: `False`
+- gap_review_count: `4`
+- accepted_gap_count: `4`
+- recommended_next_phase: `F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan`
+
+
 # F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
 - status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
 - decision: `warn`

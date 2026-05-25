@@ -1,3 +1,50 @@
+# F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate
+- latest_completed_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
+- phase_id: `F21-CTX-BEDROCK-R43`
+- status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
+- decision: `warn`
+- source_dry_run_phase: `F21-CTX-BEDROCK-R42`
+- source_dry_run_status: `bedrock_gate_evidence_bundle_collection_dry_run_ready_warn`
+- source_dry_run_decision: `warn`
+- dry_run_review_created: `True`
+- dry_run_confirmed: `True`
+- real_collection_executed: `False`
+- evidence_collection_executed: `False`
+- evidence_bundle_complete: `False`
+- evidence_classes_expected: `10`
+- evidence_classes_passed: `source_of_truth_evidence`, `source_artifacts`, `boundary_evidence`, `runner_evidence`, `fixture_evidence`, `closure_evidence`
+- evidence_classes_warned: `test_evidence`, `blocker_evidence`, `human_review_evidence`, `site_claims_evidence`
+- evidence_classes_blocked: `[]`
+- warning_review_count: `4`
+- blocker_review_count: `0`
+- gap_review_count: `4`
+- accepted_gap_count: `4`
+- critical_blocker_count: `0`
+- dry_run_warn_is_valid: `True`
+- dry_run_warn_requires_gap_plan: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- allowed outputs: `dry_run_review_created, dry_run_warn_confirmed, gap_review_created`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warnings:
+  - `R42 remains a dry-run and not evidence bundle completion.`
+  - `R42 warnings are expected and should remain warnings.`
+  - `Gap remediation planning is the next safe step.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan`
+
+
 # F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run
 - latest_completed_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
 - phase_id: `F21-CTX-BEDROCK-R42`

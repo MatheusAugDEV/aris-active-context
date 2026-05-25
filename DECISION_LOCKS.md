@@ -1,3 +1,22 @@
+# BEDROCK_GATE_EVIDENCE_BUNDLE_DRY_RUN_REVIEW_GATE
+- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_DRY_RUN_REVIEW_GATE`
+- phase_id: `F21-CTX-BEDROCK-R43`
+- status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
+- decision: `warn`
+- dry_run_warn_is_valid: `True`
+- dry_run_warn_requires_gap_plan: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- real_collection_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan`
+
+
 # BEDROCK_GATE_EVIDENCE_BUNDLE_COLLECTION_DRY_RUN
 - lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_COLLECTION_DRY_RUN`
 - phase_id: `F21-CTX-BEDROCK-R42`
