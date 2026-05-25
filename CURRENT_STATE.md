@@ -1,3 +1,43 @@
+# F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan`
+- phase_id: `F21-CTX-BEDROCK-R44`
+- status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- decision: `pass`
+- source_review_phase: `F21-CTX-BEDROCK-R43`
+- source_review_status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
+- source_review_decision: `warn`
+- gap_remediation_plan_created: `True`
+- gap_remediation_executed: `False`
+- accepted_gap_count: `4`
+- planned_gap_count: `4`
+- high_severity_gap_count: `2`
+- medium_severity_gap_count: `2`
+- remediation_sequence_created: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- planned_gap_ids: `test_command_telemetry_gap`, `dedicated_blocker_scan_gap`, `human_review_materialization_gap`, `site_claims_full_audit_gap`
+- planned_future_phases: `F21-CTX-BEDROCK-R45`, `F21-CTX-BEDROCK-R46`, `F21-CTX-BEDROCK-R47`, `F21-CTX-BEDROCK-R48`
+- warnings:
+  - `R43 remains valid and must not be collapsed into pass.`
+  - `This phase plans gap remediation only; no gaps are corrected here.`
+  - `No runner, site, or Bedrock real surfaces are altered in this phase.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan`
+
+
 # F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate`
 - phase_id: `F21-CTX-BEDROCK-R43`

@@ -1,3 +1,15 @@
+# F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan
+- phase_id: `F21-CTX-BEDROCK-R44`
+- status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- decision: `pass`
+- source_review_phase: `F21-CTX-BEDROCK-R43`
+- source_review_status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
+- source_review_decision: `warn`
+- gap_remediation_plan_created: `True`
+- gap_remediation_executed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan`
+
+
 # F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate
 - phase_id: `F21-CTX-BEDROCK-R43`
 - status: `bedrock_gate_evidence_bundle_dry_run_review_warn_valid`
