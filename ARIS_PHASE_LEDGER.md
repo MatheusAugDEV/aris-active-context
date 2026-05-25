@@ -1,3 +1,78 @@
+# Strategic Reset / Macrostructure Lock
+## Ledger Entry
+- Phase: `Strategic Reset / Macrostructure Lock`
+- Status: `strategic_reset_macrostructure_lock_pass`
+- Decision: `pass`
+- Decision basis: required active-context files were present and readable; new macrostructure, locks, roadmap doc, artifacts, and validation contract were materialized without runtime/productive mutation.
+- Change: previous active direction based on automatic F21/Bedrock/Context continuation is `removed_from_active_direction` when incompatible with the official macrostructure 0-6.
+- Historical treatment: older artifacts, summaries, docs, ledger entries, and commits are preserved as audit trail and treated as `historical_only` or `superseded` when not serving active direction.
+- New macrostructure registered: `True`
+- Core Priority Invariants registered: `True`
+- WARN unlocks critical advancement: `False`
+- Next target: `Product Loop Demonstrável / L1.1 Runtime Awake`
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Action runtime activated: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Files altered:
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+  - `docs/roadmap/aris_macrostructure.md`
+  - `scripts/run_strategic_reset_macrostructure_lock_gate.py`
+  - `tests/test_strategic_reset_macrostructure_lock_gate.py`
+- Artifacts generated:
+  - `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
+  - `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
+- Validations executed:
+  - `python -m json.tool artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json` -> `not_available_python_command_missing`
+  - `python -m py_compile scripts/run_strategic_reset_macrostructure_lock_gate.py` -> `not_available_python_command_missing`
+  - `python -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q` -> `not_available_python_command_missing`
+  - `python3 -m json.tool artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json` -> `pass`
+  - `python3 -m py_compile scripts/run_strategic_reset_macrostructure_lock_gate.py` -> `pass`
+  - `python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q` -> `pass`
+  - `python3 scripts/run_strategic_reset_macrostructure_lock_gate.py` -> `pass`
+  - `grep` required phrase checks -> `pass`
+  - `grep` old NEXT_ACTION continuation checks -> `pass_no_matches`
+- Commit hash final: `reported_in_final_response_after_commit`
+
+# F21-B19 — Context Source Access Policy Dry-Run Enforcement Hardening Plan
+## Current Position
+- Status: `context_source_access_policy_dry_run_enforcement_hardening_plan_ready`
+- Decision: `pass`
+- Reviewed source phase: `F21-B18`
+- Reviewed source status: `context_source_access_policy_dry_run_enforcement_review_gate_pass`
+- Reviewed source decision: `pass`
+- Reviewed B17 warning count: `4`
+- Reviewed B18 scenario count: `16`
+- Reviewed B18 decision distribution: `4/4/4/4`
+- Source contract id: `context_source_access_policy_contract_v1`
+- Implementation plan id: `context_source_access_policy_dry_run_enforcement_implementation_plan_v1`
+- Hardening plan id: `context_source_access_policy_dry_run_enforcement_hardening_plan_v1`
+- Hardening focus count: `5`
+- Dry-run enforcement review executed: `True`
+- Dry-run enforcement reexecuted: `False`
+- Dry-run executed: `True`
+- Real enforcement executed: `False`
+- Enforcement executed: `False`
+- Runtime integration allowed: `False`
+- Source reads executed: `False`
+- Obsidian real access executed: `False`
+- External network access executed: `False`
+- Secrets environment access executed: `False`
+- F21-A61 remains blocked: `True`
+- Selected next phase: `F21-B20 — Context Source Access Policy Dry-Run Enforcement Hardening Plan Review Gate`
+- Selected next phase reason: `The reviewed executor should be hardened and reviewed before any further controlled implementation work.`
+- Recommended next phase: `F21-B20 — Context Source Access Policy Dry-Run Enforcement Hardening Plan Review Gate`
+- Next action: `F21-B20 — Context Source Access Policy Dry-Run Enforcement Hardening Plan Review Gate`
+- Boundary status: `pass`
+- Blocker count: `0`
+- Warning count: `0`
+
 # F21-B18 — Context Source Access Policy Dry-Run Enforcement Review Gate
 ## Current Position
 - Status: `context_source_access_policy_dry_run_enforcement_review_gate_pass`
