@@ -1,3 +1,29 @@
+# CONTEXT_SOURCE_ACCESS_POLICY_REVIEW_GATE
+- lock_id: `CONTEXT_SOURCE_ACCESS_POLICY_REVIEW_GATE`
+- phase_id: `F21-B11`
+- status: `context_source_access_policy_review_gate_pass`
+- decision: `pass`
+- reviewed_source_phase: `F21-B10`
+- reviewed_source_status: `context_source_access_policy_contract_ready`
+- reviewed_contract_id: `context_source_access_policy_contract_v1`
+- contract_review_passed: `True`
+- contract_rewritten: `False`
+- contract_artifacts_complete: `True`
+- source_classes_valid: `True`
+- critical_policies_valid: `True`
+- decision_outcomes_valid: `True`
+- bedrock_gate_closed: `True`
+- bedrock_gate_is_product_directional: `True`
+- bedrock_gate_must_advance_north_pole: `True`
+- bedrock_gate_must_reject_non_product_aligned_work: `True`
+- bedrock_product_direction_filter_required: `True`
+- north_pole_alignment_required: `True`
+- f21_a61_blocked: `True`
+- selected_next_phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- recommended_next_phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- blocker_count: `0`
+- warning_count: `0`
+
 # CONTEXT_SOURCE_ACCESS_POLICY_CONTRACT
 - lock_id: `CONTEXT_SOURCE_ACCESS_POLICY_CONTRACT`
 - phase_id: `F21-B10`

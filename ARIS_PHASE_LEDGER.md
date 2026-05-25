@@ -1,3 +1,22 @@
+# F21-B11 - Context Source Access Policy Review Gate
+- latest_completed_phase: `F21-B11 - Context Source Access Policy Review Gate`
+- phase_id: `F21-B11`
+- status: `context_source_access_policy_review_gate_pass`
+- decision: `pass`
+- reviewed_source_phase: `F21-B10`
+- reviewed_source_status: `context_source_access_policy_contract_ready`
+- reviewed_contract_id: `context_source_access_policy_contract_v1`
+- contract_review_passed: `True`
+- contract_artifacts_complete: `True`
+- source_classes_valid: `True`
+- critical_policies_valid: `True`
+- decision_outcomes_valid: `True`
+- selected_next_phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- recommended_next_phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- f21_a61_blocked: `True`
+- blocker_count: `0`
+- warning_count: `0`
+
 # F21-B10 - Context Source Access Policy Contract
 - latest_completed_phase: `F21-B10 - Context Source Access Policy Contract`
 - phase_id: `F21-B10`

@@ -1,3 +1,12 @@
+# F21-B11 - Context Source Access Policy Review Gate
+## Current Position
+- Status: `context_source_access_policy_review_gate_pass`
+- Decision: `pass`
+- Next action: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- Recommended next phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- Reviewed source phase: `F21-B10`
+- Reviewed contract id: `context_source_access_policy_contract_v1`
+
 # F21-B10 - Context Source Access Policy Contract
 ## Current Position
 - Status: `context_source_access_policy_contract_ready`

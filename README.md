@@ -1,3 +1,17 @@
+## Current snapshot
+- Latest completed phase: `F21-B11 — Context Source Access Policy Review Gate`
+- Status: `context_source_access_policy_review_gate_pass`
+- Decision: `pass`
+- Reviewed contract id: `context_source_access_policy_contract_v1`
+- Source class count: `12`
+- Next recommended phase: `F21-B12 — Context Source Access Policy Enforcement Plan`
+- Blocker count: `0`
+- Warning count: `0`
+
+- B10 contract accepted as coherent and non-runtime
+- F21-A61 remains blocked
+- Bedrock gate remains closed and product-directional
+
 # F21-B10 - Context Source Access Policy Contract
 ## Current Snapshot
 - Status: `context_source_access_policy_contract_ready`
