@@ -1,3 +1,20 @@
+# F21-B10 - Context Source Access Policy Contract
+## Current Position
+- Status: `context_source_access_policy_contract_ready`
+- Decision: `pass`
+- Contract id: `context_source_access_policy_contract_v1`
+- Source pivot phase: `F21-B9P`
+- Reviewed resume phase: `F21B-RESUME-01`
+- Active-context read-first required: `True`
+- Query-first required: `True`
+- F21-A61 remains blocked: `True`
+- Bedrock Gate remains closed and product-directional: `True`
+- Bedrock gate closed: `True`
+- Bedrock gate is product-directional: `True`
+- Bedrock gate only passes work that increases future product value: `True`
+- Next action: `F21-B11 — Context Source Access Policy Review Gate`
+- Recommended next phase: `F21-B11 — Context Source Access Policy Review Gate`
+
 # F21B-RESUME-01 - Preserved Track Resume Readiness Gate
 
 ## Current Position

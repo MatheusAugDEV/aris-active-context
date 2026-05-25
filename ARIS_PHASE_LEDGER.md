@@ -1,3 +1,24 @@
+# F21-B10 - Context Source Access Policy Contract
+- latest_completed_phase: `F21-B10 - Context Source Access Policy Contract`
+- phase_id: `F21-B10`
+- status: `context_source_access_policy_contract_ready`
+- decision: `pass`
+- source_pivot_phase: `F21-B9P`
+- source_pivot_status: `context_source_access_policy_pivot_ready`
+- reviewed_resume_phase: `F21B-RESUME-01`
+- reviewed_resume_status: `f21b_preserved_track_resume_readiness_pass`
+- contract_id: `context_source_access_policy_contract_v1`
+- source_class_count: `12`
+- selected_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- recommended_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- f21_a61_blocked: `True`
+- bedrock_gate_closed: `True`
+- bedrock_gate_is_product_directional: `True`
+- bedrock_product_direction_filter_required: `True`
+- north_pole_alignment_required: `True`
+- blocker_count: `0`
+- warning_count: `0`
+
 # F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit
 - latest_completed_phase: `F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit`
 - phase_id: `F21-CTX-BEDROCK-R64`

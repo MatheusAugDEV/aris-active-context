@@ -1,3 +1,36 @@
+# F21-B10 - Context Source Access Policy Contract
+- latest_completed_phase: `F21-B10 - Context Source Access Policy Contract`
+- phase_id: `F21-B10`
+- status: `context_source_access_policy_contract_ready`
+- decision: `pass`
+- source_pivot_phase: `F21-B9P`
+- source_pivot_status: `context_source_access_policy_pivot_ready`
+- reviewed_resume_phase: `F21B-RESUME-01`
+- reviewed_resume_status: `f21b_preserved_track_resume_readiness_pass`
+- contract_id: `context_source_access_policy_contract_v1`
+- source_class_count: `12`
+- active_context_read_first_required: `True`
+- query_first_required: `True`
+- obsidian_bulk_read_allowed: `False`
+- archive_bulk_read_allowed: `False`
+- runtime_mutation_allowed: `False`
+- source_of_truth_precedence_required: `True`
+- bedrock_product_direction_filter_required: `True`
+- north_pole_alignment_required: `True`
+- f21_a61_blocked: `True`
+- implementation_allowed_in_this_phase: `False`
+- runtime_integration_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- production_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- selected_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- recommended_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- next_action: `F21-B11 — Context Source Access Policy Review Gate`
+- blocker_count: `0`
+- warning_count: `0`
+
 # F21B-RESUME-01 - Preserved Track Resume Readiness Gate
 - latest_completed_phase: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
 - phase_id: `F21B-RESUME-01`

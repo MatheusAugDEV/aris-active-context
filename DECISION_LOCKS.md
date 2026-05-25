@@ -1,3 +1,25 @@
+# CONTEXT_SOURCE_ACCESS_POLICY_CONTRACT
+- lock_id: `CONTEXT_SOURCE_ACCESS_POLICY_CONTRACT`
+- phase_id: `F21-B10`
+- status: `context_source_access_policy_contract_ready`
+- decision: `pass`
+- contract_id: `context_source_access_policy_contract_v1`
+- source_pivot_phase: `F21-B9P`
+- reviewed_resume_phase: `F21B-RESUME-01`
+- active_context_read_first_required: `True`
+- query_first_required: `True`
+- obsidian_bulk_read_allowed: `False`
+- archive_bulk_read_allowed: `False`
+- runtime_mutation_allowed: `False`
+- source_of_truth_precedence_required: `True`
+- bedrock_product_direction_filter_required: `True`
+- north_pole_alignment_required: `True`
+- f21_a61_blocked: `True`
+- selected_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- recommended_next_phase: `F21-B11 — Context Source Access Policy Review Gate`
+- blocker_count: `0`
+- warning_count: `0`
+
 # F21B_PRESERVED_TRACK_RESUME_READINESS
 - lock_id: `F21B_PRESERVED_TRACK_RESUME_READINESS`
 - phase_id: `F21B-RESUME-01`

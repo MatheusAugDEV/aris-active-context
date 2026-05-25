@@ -1,3 +1,24 @@
+# F21-B10 - Context Source Access Policy Contract
+## Current Snapshot
+- Status: `context_source_access_policy_contract_ready`
+- Decision: `pass`
+- Contract id: `context_source_access_policy_contract_v1`
+- F21-B9P is the source pivot phase.
+- F21-B11 is the next recommended phase.
+- Bedrock Gate remains closed and product-directional.
+- F21-A61 remains blocked: `True`
+- Active-context read-first required: `True`
+- Query-first required: `True`
+- Obsidian bulk-read allowed: `False`
+- Archive bulk-read allowed: `False`
+- Runtime mutation allowed: `False`
+- Product pass allowed: `False`
+- Commercial approval allowed: `False`
+- Runtime activation allowed: `False`
+- Production activation allowed: `False`
+- Bedrock-real execution allowed: `False`
+- Next action: `F21-B11 — Context Source Access Policy Review Gate`
+
 # F21B-RESUME-01 - Preserved Track Resume Readiness Gate
 
 ## Current Position
