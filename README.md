@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution
+
+## Current Position
+
+- Status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`
+- Decision: `warn`
+- Recommended next phase: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate
 
 ## Current Position

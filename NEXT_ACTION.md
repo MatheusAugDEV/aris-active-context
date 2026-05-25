@@ -1,3 +1,7 @@
+# F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate
+- next action: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan
 - next action: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
 

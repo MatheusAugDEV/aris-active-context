@@ -1,3 +1,18 @@
+# BEDROCK_GATE_R50_CONTROLLED_EXECUTION
+- phase_id: `F21-CTX-BEDROCK-R50`
+- status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`
+- decision: `warn`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R49R`
+- source_redry_run_plan_phase: `F21-CTX-BEDROCK-R49`
+- redry_run_executed: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- real_collection_executed: `False`
+- planned_pending_execution_gap_count: `4`
+- r49r_ledger_warning_carried_forward: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+
+
 # BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION
 - lock_id: `BEDROCK_GATE_R49_ROOT_PACKAGE_RECONCILIATION`
 - phase_id: `F21-CTX-BEDROCK-R49R`

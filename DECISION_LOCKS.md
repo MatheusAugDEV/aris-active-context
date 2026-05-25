@@ -1546,3 +1546,43 @@ External code reuse is blocked until license compatibility, source review, secur
 - `F21-A54C`: remote sync verification confirmed both `origin/main` refs matched local HEAD.
 - `F21-A54B`: active-context hygiene repair removed stale duplicate blocks.
 - `F21-A60`: prompt kernel contract readiness accepted the next controlled contract-only gate and kept runtime/template/batch blocked.
+# BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_CONTROLLED_EXECUTION
+- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_REDRY_RUN_CONTROLLED_EXECUTION`
+- phase_id: `F21-CTX-BEDROCK-R50`
+- status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`
+- decision: `warn`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R49R`
+- source_reconciliation_status: `bedrock_gate_r49_root_package_reconciled`
+- source_reconciliation_decision: `pass`
+- source_redry_run_plan_phase: `F21-CTX-BEDROCK-R49`
+- source_redry_run_plan_status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- source_redry_run_plan_decision: `pass`
+- redry_run_controlled_execution_created: `True`
+- redry_run_executed: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- real_collection_executed: `False`
+- evidence_classes_evaluated: `10`
+- evidence_classes_passed: `6`
+- evidence_classes_warned: `4`
+- evidence_classes_blocked: `0`
+- planned_pending_execution_gap_count: `4`
+- unresolved_gap_count: `4`
+- resolved_gap_count: `0`
+- missing_evidence_count: `3`
+- weak_evidence_count: `1`
+- human_review_pending: `True`
+- source_of_truth_conflicts_detected: `False`
+- site_claims_risks_detected: `True`
+- boundary_risks_detected: `False`
+- r49r_ledger_check_created: `True`
+- r49r_ledger_warning_carried_forward: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`

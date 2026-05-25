@@ -1,3 +1,18 @@
+# F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution
+- latest_completed_phase: `F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution`
+- phase_id: `F21-CTX-BEDROCK-R50`
+- status: `bedrock_gate_evidence_bundle_redry_run_controlled_execution_warn`
+- decision: `warn`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R49R`
+- source_reconciliation_status: `bedrock_gate_r49_root_package_reconciled`
+- source_reconciliation_decision: `pass`
+- source_redry_run_plan_phase: `F21-CTX-BEDROCK-R49`
+- source_redry_run_plan_status: `bedrock_gate_evidence_bundle_redry_run_plan_ready`
+- source_redry_run_plan_decision: `pass`
+- recommended_next_phase: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+- next action: `F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate`
+
+
 # F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R49R - Root Package Reconciliation & Missing Artifact Materialization Gate`
 - phase_id: `F21-CTX-BEDROCK-R49R`
