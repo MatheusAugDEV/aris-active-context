@@ -1,5 +1,5 @@
-# F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution
-- next action: `F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution`
+# F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution
+- next action: `F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution`
 
 
 # F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate
