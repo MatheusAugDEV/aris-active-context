@@ -1,3 +1,50 @@
+# F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan`
+- phase_id: `F21-CTX-BEDROCK-R47`
+- status: `bedrock_gate_human_review_evidence_package_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_gap_plan_status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- source_gap_plan_decision: `pass`
+- source_blocker_scan_phase: `F21-CTX-BEDROCK-R46`
+- source_blocker_scan_status: `bedrock_gate_dedicated_blocker_scan_subgate_plan_ready`
+- source_blocker_scan_decision: `pass`
+- target_gap_id: `human_review_materialization_gap`
+- human_review_evidence_package_defined: `True`
+- human_review_schema_created: `True`
+- human_review_matrix_created: `True`
+- human_review_complete: `False`
+- human_approval_materialized: `False`
+- risk_accepted: `False`
+- critical_blocker_overridden: `False`
+- review_state_count: `7`
+- reviewer_role_count: `6`
+- review_trigger_category_count: `10`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_remediation_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+- warnings:
+  - `Human review is defined only; no approval is materialized here.`
+  - `Reviewer roles and states are schema contracts, not real approvals.`
+  - `LLM assistance is support only and not a sole judge for critical movement.`
+  - `R48 remains the conservative next gap-remediation step after this plan.`
+- blockers:
+  - `[]`
+
+
 # F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
 - phase_id: `F21-CTX-BEDROCK-R46`

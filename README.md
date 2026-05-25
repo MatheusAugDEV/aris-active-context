@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan
+
+## Current Position
+
+- Status: `bedrock_gate_human_review_evidence_package_plan_ready`
+- Decision: `pass`
+- Recommended next phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+
+
 # F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan
 
 ## Current Position

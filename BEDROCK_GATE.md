@@ -1,3 +1,28 @@
+# BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_PACKAGE_PLAN
+- lock_id: `BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_PACKAGE_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R47`
+- status: `bedrock_gate_human_review_evidence_package_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_blocker_scan_phase: `F21-CTX-BEDROCK-R46`
+- target_gap_id: `human_review_materialization_gap`
+- human_review_evidence_package_defined: `True`
+- human_review_complete: `False`
+- human_approval_materialized: `False`
+- risk_accepted: `False`
+- critical_blocker_overridden: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_remediation_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+
+
 # BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_SUBGATE_PLAN
 - lock_id: `BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_SUBGATE_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R46`

@@ -1,3 +1,14 @@
+# F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R47 - Bedrock Gate Human Review Evidence Package Plan`
+- phase_id: `F21-CTX-BEDROCK-R47`
+- status: `bedrock_gate_human_review_evidence_package_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_blocker_scan_phase: `F21-CTX-BEDROCK-R46`
+- target_gap_id: `human_review_materialization_gap`
+- recommended_next_phase: `F21-CTX-BEDROCK-R48 - Bedrock Gate Site Claims Audit Gate Plan`
+
+
 # F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan
 - latest_completed_phase: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
 - phase_id: `F21-CTX-BEDROCK-R46`
