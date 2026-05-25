@@ -1,3 +1,52 @@
+# BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME
+- lock_id: `BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME`
+- phase_id: `F21-CTX-BEDROCK-R63`
+- status: `bedrock_gate_closure_handoff_main_roadmap_resume_gate_pass`
+- decision: `pass`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R62`
+- reviewed_source_status: `bedrock_gate_scope_limited_verdict_closure_boundary_consolidation_pass`
+- reviewed_source_decision: `pass`
+- bedrock_gate_closed: `True`
+- bedrock_gate_handoff_completed: `True`
+- bedrock_gate_reopen_required: `False`
+- bedrock_gate_closure_status: `scope_limited_technical_closure`
+- closed_verdict_class: `scope_limited_pass`
+- closure_scope: `technical_scope_limited_only`
+- selected_resume_track_id: `F21B`
+- selected_resume_track: `F21B preserved track`
+- selected_next_phase: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+- resume_decision: `resume_f21b_preserved_track`
+- resume_track_selected: `True`
+- f21b_paused_track_preserved: `True`
+- f21_a61_blocked: `True`
+- next_real_action: `F21-A61 — ARIS Lean Development Protocol v0.1 Prompt Kernel Minimal Contract Controlled Implementation Gate`
+- productization_not_authorized: `True`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- production_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- site_marketing_claims_limited: `True`
+- site_claims_warning_complete_preserved: `True`
+- warning_complete_site_claims_preserved: `True`
+- global_product_boundary_preserved: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- warnings:
+  - `Site claims remain warning-complete and limited to controlled-development language.`
+  - `Historical active-context hash drift remains informational and does not block the handoff.`
+  - `The handoff does not authorize product, commercial, runtime, or production readiness.`
+- blockers:
+  - `[]`
+- lock principles:
+  - `R63 is a handoff gate, not a product gate.`
+  - `The preserved F21B track is the selected roadmap resume candidate.`
+  - `F21-A61 remains blocked and must not be resumed by assumption.`
+
 # BEDROCK_GATE_SCOPE_LIMITED_VERDICT_CLOSURE_BOUNDARY_CONSOLIDATION
 - lock_id: `BEDROCK_GATE_SCOPE_LIMITED_VERDICT_CLOSURE_BOUNDARY_CONSOLIDATION`
 - phase_id: `F21-CTX-BEDROCK-R62`

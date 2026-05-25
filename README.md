@@ -1,3 +1,13 @@
+# F21-CTX-BEDROCK-R63 - Bedrock Gate Closure Handoff & Main Roadmap Resume Gate
+
+## Current Position
+
+- Status: `bedrock_gate_closure_handoff_main_roadmap_resume_gate_pass`
+- Decision: `pass`
+- Selected resume track: `F21B preserved track`
+- Next action: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+
+
 # F21-CTX-BEDROCK-R62 - Bedrock Gate Scope-Limited Verdict Closure & Boundary Consolidation
 
 ## Current Position
