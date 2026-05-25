@@ -1,5 +1,14 @@
+# F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan
+- next action: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
+
+
 # F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan
-- next action: `F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan`
+- latest_completed_phase: `F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan`
+- phase_id: `F21-CTX-BEDROCK-R45`
+- status: `bedrock_gate_command_telemetry_evidence_plan_ready`
+- decision: `pass`
+- recommended_next_phase: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
+- next action: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
 
 
 # F21-CTX-BEDROCK-R43 - Bedrock Gate Evidence Bundle Dry-Run Review Gate

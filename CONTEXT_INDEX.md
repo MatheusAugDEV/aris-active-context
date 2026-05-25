@@ -1,3 +1,14 @@
+# F21-CTX-BEDROCK-R45 - Bedrock Gate Command Telemetry Evidence Plan
+- phase_id: `F21-CTX-BEDROCK-R45`
+- status: `bedrock_gate_command_telemetry_evidence_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_gap_plan_status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- source_gap_plan_decision: `pass`
+- target_gap_id: `test_command_telemetry_gap`
+- recommended_next_phase: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
+
+
 # F21-CTX-BEDROCK-R44 - Bedrock Gate Evidence Bundle Gap Remediation Plan
 - phase_id: `F21-CTX-BEDROCK-R44`
 - status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`

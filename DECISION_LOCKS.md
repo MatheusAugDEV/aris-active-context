@@ -1,3 +1,28 @@
+# BEDROCK_GATE_COMMAND_TELEMETRY_EVIDENCE_PLAN
+- lock_id: `BEDROCK_GATE_COMMAND_TELEMETRY_EVIDENCE_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R45`
+- status: `bedrock_gate_command_telemetry_evidence_plan_ready`
+- decision: `pass`
+- source_gap_plan_phase: `F21-CTX-BEDROCK-R44`
+- source_gap_plan_status: `bedrock_gate_evidence_bundle_gap_remediation_plan_ready`
+- source_gap_plan_decision: `pass`
+- target_gap_id: `test_command_telemetry_gap`
+- command_telemetry_plan_created: `True`
+- command_telemetry_executed: `False`
+- historical_commands_reexecuted: `False`
+- telemetry_artifact_created: `False`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- gap_remediation_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- recommended_next_phase: `F21-CTX-BEDROCK-R46 - Bedrock Gate Dedicated Blocker Scan Subgate Plan`
+
+
 # BEDROCK_GATE_EVIDENCE_BUNDLE_GAP_REMEDIATION_PLAN
 - lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_GAP_REMEDIATION_PLAN`
 - phase_id: `F21-CTX-BEDROCK-R44`
