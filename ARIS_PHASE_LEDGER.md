@@ -1,3 +1,30 @@
+# F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+- phase_id: `F21-CTX-BEDROCK-R41`
+- status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- decision: `pass`
+- source_subgate_definition_phase: `F21-CTX-BEDROCK-R40`
+- source_subgate_definition_status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- source_subgate_definition_decision: `pass`
+- planned collection item count: `10`
+- planned check count: `10`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- allowed outputs: `collection_plan_created, collection_plan_matrix_created, collection_plan_checklist_created`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warning count: `5`
+- blocker count: `0`
+- warnings:
+- `This phase plans the collection only; no evidence bundle is executed here.`
+- `Dry-run collection remains the next controlled step, not a full gate pass.`
+- `Source-of-truth alignment is preparatory until future collection materializes.`
+- `Human review remains required for critical changes and model judgment is not authoritative.`
+- `Site claims remain limited to controlled-development language and cannot imply readiness.`
+- blockers:
+- `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+
+
 # F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
 - latest_completed_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
 - phase_id: `F21-CTX-BEDROCK-R40`

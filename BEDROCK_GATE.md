@@ -1,3 +1,19 @@
+# F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
+- status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- decision: `pass`
+- source subgate definition phase: `F21-CTX-BEDROCK-R40`
+- collection plan created: `True`
+- collection plan matrix created: `True`
+- collection plan checklist created: `True`
+- evidence bundle complete: `False`
+- evidence collection executed: `False`
+- evidence class count: `10`
+- allowed outputs: `collection_plan_created`, `collection_plan_matrix_created`, `collection_plan_checklist_created`
+- forbidden outputs: `evidence_bundle_complete`, `full_bedrock_gate_pass`, `product_pass`, `commercial_approval`, `client_readiness`, `pricing_readiness`, `runtime_activation`, `bedrock_real_execution`, `product_promotion`
+- planned future phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- plan purpose: `Plano determinístico de coleta e aplicação futura do Evidence Bundle, com matriz de fontes, artefatos, validações, critérios de aceitação/rejeição e ordem segura de execução.`
+
+
 # F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
 - status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
 - decision: `pass`

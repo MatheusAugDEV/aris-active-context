@@ -1,3 +1,32 @@
+# BEDROCK_GATE_EVIDENCE_BUNDLE_COLLECTION_PLAN
+- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_COLLECTION_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R41`
+- status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- decision: `pass`
+- source_subgate_definition_phase: `F21-CTX-BEDROCK-R40`
+- source_subgate_definition_status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- source_subgate_definition_decision: `pass`
+- collection_plan_created: `True`
+- collection_plan_matrix_created: `True`
+- collection_plan_checklist_created: `True`
+- collection_plan_ready_for_future_phase: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+
+
 # BEDROCK_GATE_EVIDENCE_BUNDLE_SUBGATE_DEFINITION
 - lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_SUBGATE_DEFINITION`
 - phase_id: `F21-CTX-BEDROCK-R40`

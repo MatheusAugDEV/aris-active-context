@@ -1,3 +1,32 @@
+# F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
+
+## Purpose
+Plano determinístico de coleta e aplicação futura do Evidence Bundle, com matriz de fontes, artefatos, validações, critérios de aceitação/rejeição e ordem segura de execução.
+
+## Current Position
+- Source subgate definition phase: `F21-CTX-BEDROCK-R40`
+- Source subgate definition status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- Source subgate definition decision: `pass`
+- Collection plan created: `True`
+- Matrix created: `True`
+- Checklist created: `True`
+- Evidence classes: source_of_truth_evidence, source_artifacts, boundary_evidence, test_evidence, runner_evidence, fixture_evidence, blocker_evidence, human_review_evidence, site_claims_evidence, closure_evidence
+- Evidence bundle complete: `False`
+- Evidence collection executed: `False`
+- Full Bedrock Gate pass remains forbidden: `False`
+- Product pass remains forbidden: `False`
+- Commercial approval remains forbidden: `False`
+- Runtime activation remains forbidden: `False`
+- Bedrock real execution remains forbidden: `False`
+- Site claims remain limited: `True`
+
+## Collection Plan
+This phase prepares the future collection order; it does not execute the bundle yet.
+
+## Next Phase
+- `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+
+
 # F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
 
 ## Purpose

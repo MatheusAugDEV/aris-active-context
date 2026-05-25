@@ -1,3 +1,50 @@
+# F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+- phase_id: `F21-CTX-BEDROCK-R41`
+- status: `bedrock_gate_evidence_bundle_collection_plan_ready`
+- decision: `pass`
+- source_subgate_definition_phase: `F21-CTX-BEDROCK-R40`
+- source_subgate_definition_status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- source_subgate_definition_decision: `pass`
+- collection_plan_created: `True`
+- collection_plan_matrix_created: `True`
+- collection_plan_checklist_created: `True`
+- collection_plan_ready_for_future_phase: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- evidence_class_count: `10`
+- planned_collection_item_count: `10`
+- planned_check_count: `10`
+- required_evidence_classes: `source_of_truth_evidence`, `source_artifacts`, `boundary_evidence`, `test_evidence`, `runner_evidence`, `fixture_evidence`, `blocker_evidence`, `human_review_evidence`, `site_claims_evidence`, `closure_evidence`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- allowed outputs: `collection_plan_created, collection_plan_matrix_created, collection_plan_checklist_created`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warning count: `5`
+- blocker count: `0`
+- warnings:
+  - `This phase plans the collection only; no evidence bundle is executed here.`
+  - `Dry-run collection remains the next controlled step, not a full gate pass.`
+  - `Source-of-truth alignment is preparatory until future collection materializes.`
+  - `Human review remains required for critical changes and model judgment is not authoritative.`
+  - `Site claims remain limited to controlled-development language and cannot imply readiness.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- planned future phase: `F21-CTX-BEDROCK-R42 - Bedrock Gate Evidence Bundle Collection Dry-Run`
+- plan purpose: `Plano determinístico de coleta e aplicação futura do Evidence Bundle, com matriz de fontes, artefatos, validações, critérios de aceitação/rejeição e ordem segura de execução.`
+
+
 # F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
 - latest_completed_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
 - phase_id: `F21-CTX-BEDROCK-R40`
