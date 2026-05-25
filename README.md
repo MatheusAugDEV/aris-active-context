@@ -1,10 +1,10 @@
-# F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate
+# F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan
 
 ## Current Position
 
-- Status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
+- Status: `bedrock_gate_full_verdict_plan_ready`
 - Decision: `pass`
-- Recommended next phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
+- Recommended next phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
 
 
 # F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution

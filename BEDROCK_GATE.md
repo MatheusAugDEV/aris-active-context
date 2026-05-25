@@ -1,27 +1,37 @@
-# BEDROCK_GATE_EVIDENCE_BUNDLE_FINAL_RECONCILIATION_REVIEW_GATE
-- lock_id: `BEDROCK_GATE_EVIDENCE_BUNDLE_FINAL_RECONCILIATION_REVIEW_GATE`
-- phase_id: `F21-CTX-BEDROCK-R58`
-- status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
+# BEDROCK_GATE_FULL_VERDICT_PLAN
+- lock_id: `BEDROCK_GATE_FULL_VERDICT_PLAN`
+- phase_id: `F21-CTX-BEDROCK-R59`
+- status: `bedrock_gate_full_verdict_plan_ready`
 - decision: `pass`
+- source_review_phase: `F21-CTX-BEDROCK-R58`
+- source_review_status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
+- source_review_decision: `pass`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R57`
+- source_reconciliation_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
+- source_reconciliation_decision: `pass`
 - source_plan_phase: `F21-CTX-BEDROCK-R56`
 - source_plan_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
 - source_plan_decision: `pass`
-- reviewed_source_phase: `F21-CTX-BEDROCK-R57`
-- reviewed_source_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
-- reviewed_source_decision: `pass`
-- source_site_claims_phase: `F21-CTX-BEDROCK-R55`
-- source_site_claims_status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
-- source_site_claims_decision: `pass`
 - evidence_bundle_complete_reviewed: `True`
 - evidence_bundle_complete_review_passed: `True`
 - evidence_bundle_complete: `True`
-- final_reconciliation_review_executed: `True`
-- final_reconciliation_reexecuted: `False`
+- evidence_bundle_reviewed: `True`
+- full_verdict_plan_created: `True`
+- verdict_schema_created: `True`
+- verdict_input_contract_created: `True`
+- verdict_boundary_matrix_created: `True`
+- r60_execution_plan_created: `True`
+- full_verdict_executed: `False`
+- full_verdict_execution_allowed_next: `True`
 - evidence_classes_complete_or_warning_complete: `10`
 - complete_evidence_class_count: `9`
 - warning_complete_evidence_class_count: `1`
 - blocked_evidence_class_count: `0`
 - incomplete_evidence_class_count: `0`
+- review_findings_count: `10`
+- accepted_findings_count: `9`
+- warning_findings_count: `1`
+- blocker_findings_count: `0`
 - gaps_resolved_count: `4`
 - unresolved_gaps_count: `0`
 - planned_pending_execution_gap_count: `0`
@@ -45,18 +55,20 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
+- full_verdict_plan_is_not_full_verdict_preserved: `True`
 - global_product_boundary_preserved: `True`
 - final_reconciliation_allowed_next: `True`
-- recommended_next_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
+- recommended_next_phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
 - lock principles:
-  - `R58 reviews the completed reconciliation snapshot only; it does not authorize full Bedrock Gate pass or product/commercial readiness.`
-  - `Site claims warning-classification remains non-product and non-commercial.`
-  - `Evidence bundle complete is not full Bedrock Gate pass.`
+  - `R59 plans the full verdict only; it does not execute the verdict.`
+  - `Evidence bundle complete remains distinct from full Bedrock Gate pass.`
+  - `Warning-complete site claims remain non-product and non-commercial.`
   - `Bedrock Gate remains the primary product boundary; technical pass is not product pass.`
+  - `R60 is the first phase allowed to execute the full verdict plan if no blocker remains.`
 - warnings:
-  - `Site claims remain warning-complete and are limited to controlled-development language.`
-  - `Closure is bundle closure only and does not authorize product, commercial, runtime, or production readiness.`
-  - `Full Bedrock Gate pass, product pass, commercial approval, runtime activation, production activation, and Bedrock real execution remain false.`
+  - `R59 is plan-only and does not execute the full verdict.`
+  - `Evidence bundle complete remains distinct from product, commercial, runtime, and production readiness.`
+  - `Warning-complete site claims remain controlled-development only and must not be promoted.`
 - blockers: `[]`
 
 

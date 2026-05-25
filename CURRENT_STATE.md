@@ -1,24 +1,29 @@
-# F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate
-- latest_completed_phase: `F21-CTX-BEDROCK-R58 - Bedrock Gate Evidence Bundle Final Reconciliation Review Gate`
-- phase_id: `F21-CTX-BEDROCK-R58`
-- status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
+# F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan
+- latest_completed_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
+- phase_id: `F21-CTX-BEDROCK-R59`
+- status: `bedrock_gate_full_verdict_plan_ready`
 - decision: `pass`
-- reviewed_source_phase: `F21-CTX-BEDROCK-R57`
-- reviewed_source_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
-- reviewed_source_decision: `pass`
+- source_review_phase: `F21-CTX-BEDROCK-R58`
+- source_review_status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
+- source_review_decision: `pass`
+- source_reconciliation_phase: `F21-CTX-BEDROCK-R57`
+- source_reconciliation_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
+- source_reconciliation_decision: `pass`
 - source_plan_phase: `F21-CTX-BEDROCK-R56`
 - source_plan_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
 - source_plan_decision: `pass`
-- source_site_claims_phase: `F21-CTX-BEDROCK-R55`
-- source_site_claims_status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
-- source_site_claims_decision: `pass`
-- target_gap_id: `evidence_bundle_final_reconciliation_review_gate`
-- final_reconciliation_review_executed: `True`
-- final_reconciliation_reexecuted: `False`
-- evidence_bundle_reconciled: `True`
+- source_reviewed_evidence_bundle_complete: `True`
 - evidence_bundle_complete_reviewed: `True`
 - evidence_bundle_complete_review_passed: `True`
 - evidence_bundle_complete: `True`
+- evidence_bundle_reviewed: `True`
+- full_verdict_plan_created: `True`
+- verdict_schema_created: `True`
+- verdict_input_contract_created: `True`
+- verdict_boundary_matrix_created: `True`
+- r60_execution_plan_created: `True`
+- full_verdict_executed: `False`
+- full_verdict_execution_allowed_next: `True`
 - evidence_class_count: `10`
 - evidence_classes_complete_or_warning_complete: `10`
 - complete_evidence_class_count: `9`
@@ -54,13 +59,13 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
+- full_verdict_plan_is_not_full_verdict_preserved: `True`
 - global_product_boundary_preserved: `True`
-- final_reconciliation_allowed_next: `True`
-- recommended_next_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
+- recommended_next_phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
 - warnings:
-  - `Site claims remain warning-complete and are limited to controlled-development language.`
-  - `Closure is bundle closure only and does not authorize product, commercial, runtime, or production readiness.`
-  - `Full Bedrock Gate pass, product pass, commercial approval, runtime activation, production activation, and Bedrock real execution remain false.`
+  - `R59 is plan-only and does not execute the full verdict.`
+  - `Evidence bundle complete remains distinct from product, commercial, runtime, and production readiness.`
+  - `Warning-complete site claims remain controlled-development only and must not be promoted.`
 - blockers:
   - `[]`
 
