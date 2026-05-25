@@ -1,29 +1,36 @@
-# BEDROCK_GATE_FULL_VERDICT_CONTROLLED_EXECUTION
-- lock_id: `BEDROCK_GATE_FULL_VERDICT_CONTROLLED_EXECUTION`
-- phase_id: `F21-CTX-BEDROCK-R60`
-- status: `bedrock_gate_full_verdict_controlled_execution_pass`
+# BEDROCK_GATE_FULL_VERDICT_REVIEW_GATE
+- lock_id: `BEDROCK_GATE_FULL_VERDICT_REVIEW_GATE`
+- phase_id: `F21-CTX-BEDROCK-R61`
+- status: `bedrock_gate_full_verdict_review_gate_pass`
 - decision: `pass`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R60`
+- reviewed_source_status: `bedrock_gate_full_verdict_controlled_execution_pass`
+- reviewed_source_decision: `pass`
+- source_plan_phase: `F21-CTX-BEDROCK-R59`
+- source_plan_status: `bedrock_gate_full_verdict_plan_ready`
+- source_plan_decision: `pass`
 - source_review_phase: `F21-CTX-BEDROCK-R58`
 - source_review_status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
 - source_review_decision: `pass`
 - source_reconciliation_phase: `F21-CTX-BEDROCK-R57`
 - source_reconciliation_status: `bedrock_gate_evidence_bundle_final_reconciliation_controlled_execution_pass`
 - source_reconciliation_decision: `pass`
-- source_plan_phase: `F21-CTX-BEDROCK-R56`
-- source_plan_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
-- source_plan_decision: `pass`
+- source_plan_basis_phase: `F21-CTX-BEDROCK-R56`
+- source_plan_basis_status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
+- source_plan_basis_decision: `pass`
+- source_site_claims_phase: `F21-CTX-BEDROCK-R55`
+- source_site_claims_status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
+- source_site_claims_decision: `pass`
 - evidence_bundle_complete_reviewed: `True`
 - evidence_bundle_complete_review_passed: `True`
 - evidence_bundle_complete: `True`
 - evidence_bundle_reviewed: `True`
-- full_verdict_plan_created: `True`
-- verdict_schema_created: `True`
-- verdict_input_contract_created: `True`
-- verdict_boundary_matrix_created: `True`
-- r60_execution_plan_created: `True`
-- full_verdict_executed: `True`
-- full_verdict_result: `scope_limited_pass`
-- selected_verdict_class: `scope_limited_pass`
+- full_verdict_review_executed: `True`
+- full_verdict_reexecuted: `False`
+- full_verdict_review_passed: `True`
+- reviewed_full_verdict_result: `scope_limited_pass`
+- scope_limited_pass_valid: `True`
+- scope_limited_pass_is_not_product_pass_preserved: `True`
 - technical_gate_status: `scope_limited`
 - product_boundary_status: `not_authorized`
 - commercial_boundary_status: `not_authorized`
@@ -31,24 +38,6 @@
 - client_readiness_status: `not_authorized`
 - pricing_readiness_status: `not_authorized`
 - bedrock_real_execution_status: `not_authorized`
-- full_verdict_execution_allowed_next: `False`
-- evidence_classes_complete_or_warning_complete: `10`
-- complete_evidence_class_count: `9`
-- warning_complete_evidence_class_count: `1`
-- blocked_evidence_class_count: `0`
-- incomplete_evidence_class_count: `0`
-- review_findings_count: `10`
-- accepted_findings_count: `9`
-- warning_findings_count: `1`
-- blocker_findings_count: `0`
-- gaps_resolved_count: `4`
-- unresolved_gaps_count: `0`
-- planned_pending_execution_gap_count: `0`
-- source_of_truth_conflicts_detected: `False`
-- boundary_risks_detected: `False`
-- site_claims_risks_detected: `False`
-- blocker_count: `0`
-- warning_count: `3`
 - full_bedrock_gate_pass_allowed: `False`
 - product_pass_allowed: `False`
 - commercial_approval_allowed: `False`
@@ -65,20 +54,21 @@
 - technical_pass_is_not_product_pass_preserved: `True`
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
-- full_verdict_plan_is_not_full_verdict_preserved: `True`
+- full_verdict_is_not_product_pass_preserved: `True`
 - global_product_boundary_preserved: `True`
-- final_reconciliation_allowed_next: `False`
-- recommended_next_phase: `F21-CTX-BEDROCK-R61 - Bedrock Gate Full Verdict Review Gate`
+- closure_boundary_consolidation_ready: `True`
+- closure_not_yet_authorized: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R62 - Bedrock Gate Scope-Limited Verdict Closure & Boundary Consolidation`
 - lock principles:
-  - `R60 executes the full verdict in a scope-limited technical mode only.`
-  - `Evidence bundle complete remains distinct from full Bedrock Gate pass.`
-  - `Warning-complete site claims remain non-product and non-commercial.`
+  - `R61 reviews the R60 verdict only; it does not re-execute the verdict.`
+  - `scope_limited_pass remains a technical verdict and not product/commercial authorization.`
+  - `Closure and boundary consolidation are the next conservative step.`
   - `Bedrock Gate remains the primary product boundary; technical pass is not product pass.`
-  - `R61 is the first review gate after execution and before any closure movement.`
+  - `R62 is the first phase allowed to consolidate the scope-limited verdict for closure if no blocker remains.`
 - warnings:
-  - `R59 is plan-only and does not execute the full verdict.`
-  - `Evidence bundle complete remains distinct from product, commercial, runtime, and production readiness.`
-  - `Warning-complete site claims remain controlled-development only and must not be promoted.`
+  - `Site claims remain warning-complete and limited to controlled-development language.`
+  - `The scope-limited verdict does not authorize product, commercial, runtime, or production readiness.`
+  - `Closure and boundary consolidation remain the next conservative step.`
 - blockers: `[]`
 
 
