@@ -1,23 +1,17 @@
-# BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_MATERIALIZATION_CONTROLLED_EXECUTION
-- lock_id: `BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_MATERIALIZATION_CONTROLLED_EXECUTION`
-- phase_id: `F21-CTX-BEDROCK-R54`
-- status: `bedrock_gate_human_review_evidence_materialization_controlled_execution_pass`
+# BEDROCK_GATE_SITE_CLAIMS_FULL_AUDIT_CONTROLLED_EXECUTION
+- lock_id: `BEDROCK_GATE_SITE_CLAIMS_FULL_AUDIT_CONTROLLED_EXECUTION`
+- phase_id: `F21-CTX-BEDROCK-R55`
+- status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
 - decision: `pass`
-- source_review_gate_phase: `F21-CTX-BEDROCK-R51`
-- source_review_gate_status: `bedrock_gate_evidence_bundle_redry_run_review_gate_warn`
-- source_review_gate_decision: `warn`
-- source_command_telemetry_phase: `F21-CTX-BEDROCK-R52`
-- source_command_telemetry_status: `bedrock_gate_command_telemetry_evidence_controlled_execution_pass`
-- source_command_telemetry_decision: `pass`
-- source_blocker_scan_phase: `F21-CTX-BEDROCK-R53`
-- source_blocker_scan_status: `bedrock_gate_dedicated_blocker_scan_controlled_execution_pass`
-- source_blocker_scan_decision: `pass`
-- human_review_evidence_materialized: `True`
-- human_review_materialization_gap_resolved: `True`
-- human_product_approval_claimed: `False`
-- human_commercial_approval_claimed: `False`
-- human_client_readiness_claimed: `False`
-- human_pricing_readiness_claimed: `False`
+- source_human_review_phase: `F21-CTX-BEDROCK-R54`
+- source_human_review_status: `bedrock_gate_human_review_evidence_materialization_controlled_execution_pass`
+- source_human_review_decision: `pass`
+- site_claims_audit_executed: `True`
+- site_claims_full_audit_gap_resolved: `True`
+- claim_family_count: `12`
+- claim_occurrence_count: `50`
+- blocker_count: `0`
+- warning_count: `3`
 - evidence_bundle_complete: `False`
 - product_promotion_allowed: `False`
 - commercial_use_allowed: `False`
@@ -29,13 +23,16 @@
 - runtime_activation_allowed: `False`
 - production_activation_allowed: `False`
 - bedrock_real_execution_allowed: `False`
-- recommended_next_phase: `F21-CTX-BEDROCK-R55 - Bedrock Gate Site Claims Full Audit Controlled Execution`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- recommended_next_phase: `F21-CTX-BEDROCK-R56 - Bedrock Gate Evidence Bundle Final Reconciliation Plan`
 - lock principles:
-  - `Human review evidence must be traceable to repository sources and ledger decisions.`
-  - `No signature, approval, or human review completion may be invented.`
-  - `LLM is support only and cannot replace human review for critical movement.`
-  - `Product or commercial claims remain forbidden until the Evidence Bundle is complete and the final review gates pass.`
-  - `Bedrock Gate remains the primary product gate; technical pass is not product pass.`
+  - `Site claims audit resolves only the site_claims_full_audit_gap.`
+  - `Controlled-development language is allowed; readiness, approval, and execution claims are forbidden without a future gate.`
+  - `Market-generalization and future-possibility language remain warning-only, not product-pass evidence.`
+  - `Bedrock Gate remains the primary product boundary; technical pass is not product pass.`
 
 
 # BEDROCK_GATE_COMMAND_TELEMETRY_EVIDENCE_CONTROLLED_EXECUTION

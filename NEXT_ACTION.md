@@ -1,5 +1,5 @@
-# F21-CTX-BEDROCK-R55 - Bedrock Gate Site Claims Full Audit Controlled Execution
-- next action: `F21-CTX-BEDROCK-R55 - Bedrock Gate Site Claims Full Audit Controlled Execution`
+# F21-CTX-BEDROCK-R56 - Bedrock Gate Evidence Bundle Final Reconciliation Plan
+- next action: `F21-CTX-BEDROCK-R56 - Bedrock Gate Evidence Bundle Final Reconciliation Plan`
 
 
 # F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate
