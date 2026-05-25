@@ -1,3 +1,16 @@
+# F21B-RESUME-01 - Preserved Track Resume Readiness Gate
+
+## Current Position
+
+- Status: `f21b_preserved_track_resume_readiness_pass`
+- Decision: `pass`
+- F21-B9P is the latest preserved F21B state.
+- F21-B10 is the next real phase.
+- Bedrock Gate remains closed and product-directional.
+- Market release, client delivery, pricing, runtime, production, and Bedrock-real execution remain unauthorized.
+- Selected resume track: `F21B preserved track`
+- Next action: `F21-B10 — Context Source Access Policy Contract`
+
 # F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit
 
 ## Current Position

@@ -1,3 +1,15 @@
+# F21B-RESUME-01 - Preserved Track Resume Readiness Gate
+
+## Current Position
+
+- Status: `f21b_preserved_track_resume_readiness_pass`
+- Decision: `pass`
+- Selected resume track: `F21B preserved track`
+- F21-A61 remains blocked: `True`
+- Bedrock Gate remains closed and product-directional: `True`
+- Next action: `F21-B10 — Context Source Access Policy Contract`
+- Recommended next phase: `F21-B10 — Context Source Access Policy Contract`
+
 # F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit
 
 ## Current Position
