@@ -1,3 +1,40 @@
+# F21-B12 - Context Source Access Policy Enforcement Plan
+- latest_completed_phase: `F21-B12 - Context Source Access Policy Enforcement Plan`
+- phase_id: `F21-B12`
+- status: `context_source_access_policy_enforcement_plan_ready`
+- decision: `pass`
+- source_contract_id: `context_source_access_policy_contract_v1`
+- source_review_phase: `F21-B11`
+- source_review_status: `context_source_access_policy_review_gate_pass`
+- enforcement_plan_created: `True`
+- enforcement_executed: `False`
+- dry_run_only: `True`
+- future_controlled_apply_planned: `True`
+- source_class_count: `12`
+- decision_outcomes_count: `5`
+- active_context_read_first_required: `True`
+- query_first_required: `True`
+- obsidian_bulk_read_allowed: `False`
+- archive_bulk_read_allowed: `False`
+- runtime_mutation_allowed: `False`
+- secrets_environment_dump_allowed: `False`
+- source_of_truth_precedence_required: `True`
+- bedrock_product_direction_filter_required: `True`
+- north_pole_alignment_required: `True`
+- f21_a61_blocked: `True`
+- implementation_allowed_in_this_phase: `False`
+- runtime_integration_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- runtime_activation_allowed: `False`
+- production_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- selected_next_phase: `F21-B13 — Context Source Access Policy Enforcement Plan Review Gate`
+- recommended_next_phase: `F21-B13 — Context Source Access Policy Enforcement Plan Review Gate`
+- next_action: `F21-B13 — Context Source Access Policy Enforcement Plan Review Gate`
+- blocker_count: `0`
+- warning_count: `3`
+
 # F21-B11 - Context Source Access Policy Review Gate
 - latest_completed_phase: `F21-B11 - Context Source Access Policy Review Gate`
 - phase_id: `F21-B11`
