@@ -1,7 +1,7 @@
-# BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_CONTROLLED_EXECUTION
-- lock_id: `BEDROCK_GATE_DEDICATED_BLOCKER_SCAN_CONTROLLED_EXECUTION`
-- phase_id: `F21-CTX-BEDROCK-R53`
-- status: `bedrock_gate_dedicated_blocker_scan_controlled_execution_pass`
+# BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_MATERIALIZATION_CONTROLLED_EXECUTION
+- lock_id: `BEDROCK_GATE_HUMAN_REVIEW_EVIDENCE_MATERIALIZATION_CONTROLLED_EXECUTION`
+- phase_id: `F21-CTX-BEDROCK-R54`
+- status: `bedrock_gate_human_review_evidence_materialization_controlled_execution_pass`
 - decision: `pass`
 - source_review_gate_phase: `F21-CTX-BEDROCK-R51`
 - source_review_gate_status: `bedrock_gate_evidence_bundle_redry_run_review_gate_warn`
@@ -9,13 +9,15 @@
 - source_command_telemetry_phase: `F21-CTX-BEDROCK-R52`
 - source_command_telemetry_status: `bedrock_gate_command_telemetry_evidence_controlled_execution_pass`
 - source_command_telemetry_decision: `pass`
-- dedicated_blocker_scan_executed: `True`
-- dedicated_blocker_scan_gap_resolved: `True`
-- blocker_count: `0`
-- warning_count: `1188`
-- findings_count: `1188`
-- gaps_resolved_count: `2`
-- unresolved_gaps_count: `2`
+- source_blocker_scan_phase: `F21-CTX-BEDROCK-R53`
+- source_blocker_scan_status: `bedrock_gate_dedicated_blocker_scan_controlled_execution_pass`
+- source_blocker_scan_decision: `pass`
+- human_review_evidence_materialized: `True`
+- human_review_materialization_gap_resolved: `True`
+- human_product_approval_claimed: `False`
+- human_commercial_approval_claimed: `False`
+- human_client_readiness_claimed: `False`
+- human_pricing_readiness_claimed: `False`
 - evidence_bundle_complete: `False`
 - product_promotion_allowed: `False`
 - commercial_use_allowed: `False`
@@ -27,9 +29,11 @@
 - runtime_activation_allowed: `False`
 - production_activation_allowed: `False`
 - bedrock_real_execution_allowed: `False`
-- recommended_next_phase: `F21-CTX-BEDROCK-R54 - Bedrock Gate Human Review Evidence Materialization Controlled Execution`
+- recommended_next_phase: `F21-CTX-BEDROCK-R55 - Bedrock Gate Site Claims Full Audit Controlled Execution`
 - lock principles:
-  - `Dedicated blocker scan evidence is mandatory before any Evidence Bundle completeness claim.`
+  - `Human review evidence must be traceable to repository sources and ledger decisions.`
+  - `No signature, approval, or human review completion may be invented.`
+  - `LLM is support only and cannot replace human review for critical movement.`
   - `Product or commercial claims remain forbidden until the Evidence Bundle is complete and the final review gates pass.`
   - `Bedrock Gate remains the primary product gate; technical pass is not product pass.`
 
