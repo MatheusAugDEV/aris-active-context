@@ -1,3 +1,30 @@
+# F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
+
+## Purpose
+Subgate do Bedrock Gate responsável por especificar, validar e consolidar o pacote mínimo de evidências materializadas necessário para qualquer avanço de estado técnico, componente, claim ou trilha dentro do ARIS.
+
+## Current Position
+- Source charter phase: `F21-CTX-BEDROCK-R39`
+- Source charter status: `bedrock_gate_full_definition_charter_ready`
+- Source charter decision: `pass`
+- Evidence bundle subgate defined: `True`
+- Evidence bundle complete: `False`
+- Evidence collection executed: `False`
+- Evidence classes: source_artifacts, test_evidence, runner_evidence, fixture_evidence, boundary_evidence, source_of_truth_evidence, blocker_evidence, human_review_evidence, site_claims_evidence, closure_evidence
+- Full Bedrock Gate pass remains forbidden: `False`
+- Product pass remains forbidden: `False`
+- Commercial approval remains forbidden: `False`
+- Runtime activation remains forbidden: `False`
+- Bedrock real execution remains forbidden: `False`
+- Site claims remain limited: `True`
+
+## Subgate Set
+This phase formalizes the minimum evidence package used by the remaining Bedrock Gate subgates.
+
+## Next Phase
+- `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+
+
 # F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter
 - latest_completed_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
 - phase_id: `F21-CTX-BEDROCK-R39`

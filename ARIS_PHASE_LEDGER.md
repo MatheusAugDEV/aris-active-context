@@ -1,3 +1,27 @@
+# F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
+- latest_completed_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+- phase_id: `F21-CTX-BEDROCK-R40`
+- status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- decision: `pass`
+- source_charter_phase: `F21-CTX-BEDROCK-R39`
+- source_charter_status: `bedrock_gate_full_definition_charter_ready`
+- source_charter_decision: `pass`
+- evidence_class_count: `10`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- allowed outputs: `evidence_bundle_subgate_defined, evidence_bundle_schema_ready, evidence_bundle_collection_ready_for_future_phase`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warning count: `5`
+- blocker count: `0`
+- warnings:
+- `This subgate defines the evidence bundle only; it does not execute the bundle yet.`
+- `Runner evidence alone is not a full evidence bundle.`
+- `Boundary evidence remains definition-bound and conservative.`
+- `Site claims remain limited to controlled-development language.`
+- `Single-model judgment remains prohibited for critical decisions.`
+- recommended_next_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+
+
 # F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter
 - latest_completed_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
 - phase_id: `F21-CTX-BEDROCK-R39`

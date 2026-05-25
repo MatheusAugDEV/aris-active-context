@@ -1,3 +1,12 @@
+# F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
+- latest_completed_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+- phase_id: `F21-CTX-BEDROCK-R40`
+- status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- decision: `pass`
+- recommended_next_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+- next action: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+
+
 # F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter
 - latest_completed_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
 - phase_id: `F21-CTX-BEDROCK-R39`

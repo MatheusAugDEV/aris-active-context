@@ -1,3 +1,50 @@
+# F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition
+- latest_completed_phase: `F21-CTX-BEDROCK-R40 - Bedrock Gate Evidence Bundle Subgate Definition`
+- phase_id: `F21-CTX-BEDROCK-R40`
+- status: `bedrock_gate_evidence_bundle_subgate_definition_ready`
+- decision: `pass`
+- source_charter_phase: `F21-CTX-BEDROCK-R39`
+- source_charter_status: `bedrock_gate_full_definition_charter_ready`
+- source_charter_decision: `pass`
+- evidence_bundle_subgate_defined: `True`
+- evidence_bundle_schema_created: `True`
+- evidence_bundle_matrix_created: `True`
+- evidence_bundle_collection_ready_for_future_phase: `True`
+- evidence_bundle_complete: `False`
+- evidence_collection_executed: `False`
+- evidence_class_count: `10`
+- required_evidence_classes: `source_artifacts`, `test_evidence`, `runner_evidence`, `fixture_evidence`, `boundary_evidence`, `source_of_truth_evidence`, `blocker_evidence`, `human_review_evidence`, `site_claims_evidence`, `closure_evidence`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- decision_locks_updated: `True`
+- boundary_matrix_created: `True`
+- allowed outputs: `evidence_bundle_subgate_defined, evidence_bundle_schema_ready, evidence_bundle_collection_ready_for_future_phase`
+- forbidden outputs: `evidence_bundle_complete, full_bedrock_gate_pass, product_pass, commercial_approval, client_readiness, pricing_readiness, runtime_activation, bedrock_real_execution, product_promotion`
+- warning count: `5`
+- blocker count: `0`
+- warnings:
+  - `This subgate defines the evidence bundle only; it does not execute the bundle yet.`
+  - `Runner evidence alone is not a full evidence bundle.`
+  - `Boundary evidence remains definition-bound and conservative.`
+  - `Site claims remain limited to controlled-development language.`
+  - `Single-model judgment remains prohibited for critical decisions.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+- subgate purpose: `Subgate do Bedrock Gate responsável por especificar, validar e consolidar o pacote mínimo de evidências materializadas necessário para qualquer avanço de estado técnico, componente, claim ou trilha dentro do ARIS.`
+- next phase policy: `F21-CTX-BEDROCK-R41 - Bedrock Gate Evidence Bundle Collection Plan`
+
+
 # F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter
 - latest_completed_phase: `F21-CTX-BEDROCK-R39 - Bedrock Gate Full Definition Charter`
 - phase_id: `F21-CTX-BEDROCK-R39`
