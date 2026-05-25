@@ -1,3 +1,45 @@
+# BEDROCK_GATE_PRODUCT_DIRECTION_BOUNDARY
+- lock_id: `BEDROCK_GATE_PRODUCT_DIRECTION_BOUNDARY`
+- phase_id: `F21-CTX-BEDROCK-R64`
+- status: `bedrock_gate_product_direction_semantics_alignment_pass`
+- decision: `pass`
+- bedrock_gate_is_product_directional: `True`
+- bedrock_gate_must_advance_north_pole: `True`
+- bedrock_gate_must_reject_non_product_aligned_work: `True`
+- bedrock_gate_only_passes_work_that_increases_future_product_value: `True`
+- scope_limited_pass_requires_product_alignment: `True`
+- technical_closure_must_preserve_future_product_value: `True`
+- product_direction_approval_is_not_market_release: `True`
+- semantic_closure_alias: `scope_limited_product_directional_technical_closure`
+- canonical_closure_status: `scope_limited_technical_closure`
+- closed_verdict_class: `scope_limited_pass`
+- meaning_of_product_pass_allowed_false:
+  - `market_release_authorized=false`
+  - `external_product_release_authorized=false`
+  - `commercial_delivery_authorized=false`
+  - `external_client_readiness_authorized=false`
+- non_meanings_of_product_pass_allowed_false:
+  - `ARIS is not being built as a product`
+  - `product value is irrelevant`
+  - `product direction is postponed`
+- north_pole_alignment_principles:
+  - `security is the floor`
+  - `excellence total is the north`
+  - `market value, usability, simplicity, reliability, deliverability, and future product readiness are required targets`
+- boundaries:
+  - `market_release_authorized: False`
+  - `external_product_release_authorized: False`
+  - `commercial_delivery_authorized: False`
+  - `external_client_readiness_authorized: False`
+  - `runtime_production_authorized: False`
+  - `bedrock_real_execution_authorized: False`
+- active_context_hash_drift_detected: `True`
+- active_context_semantically_aligned: `True`
+- warnings:
+  - `Bedrock Gate is product-directional, but it is not market-release authorization.`
+  - `Scope-limited closure remains technical and does not imply product/commercial/runtime/production readiness.`
+  - `Preserved track F21B remains the current resume candidate; F21-A61 remains blocked.`
+
 # BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME
 - lock_id: `BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME`
 - phase_id: `F21-CTX-BEDROCK-R63`

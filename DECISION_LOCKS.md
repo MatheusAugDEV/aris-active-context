@@ -1,3 +1,54 @@
+# BEDROCK_GATE_PRODUCT_DIRECTION_BOUNDARY
+- lock_id: `BEDROCK_GATE_PRODUCT_DIRECTION_BOUNDARY`
+- phase_id: `F21-CTX-BEDROCK-R64`
+- status: `bedrock_gate_product_direction_semantics_alignment_pass`
+- decision: `pass`
+- bedrock_gate_is_product_directional: `True`
+- bedrock_gate_must_advance_north_pole: `True`
+- bedrock_gate_must_reject_non_product_aligned_work: `True`
+- bedrock_gate_only_passes_work_that_increases_future_product_value: `True`
+- scope_limited_pass_requires_product_alignment: `True`
+- technical_closure_must_preserve_future_product_value: `True`
+- product_direction_approval_is_not_market_release: `True`
+- semantic_closure_alias: `scope_limited_product_directional_technical_closure`
+- canonical_closure_status: `scope_limited_technical_closure`
+- closed_verdict_class: `scope_limited_pass`
+- market_release_authorized: `False`
+- external_product_release_authorized: `False`
+- commercial_delivery_authorized: `False`
+- external_client_readiness_authorized: `False`
+- pricing_authorized: `False`
+- runtime_production_authorized: `False`
+- bedrock_real_execution_authorized: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- production_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- product_direction_approval_is_not_market_release_note: `product_pass_allowed=false means market release is closed; it does not mean product direction is irrelevant.`
+- north_pole_alignment_note: `security is the floor; market value, usability, simplicity, reliability, deliverability, and future product readiness are the north.`
+- resume_track_selected: `True`
+- selected_resume_track_id: `F21B`
+- selected_resume_track: `F21B preserved track`
+- selected_next_phase: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+- resume_decision: `resume_f21b_preserved_track`
+- f21b_paused_track_preserved: `True`
+- f21_a61_blocked: `True`
+- active_context_hash_drift_detected: `True`
+- active_context_semantically_aligned: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- warnings:
+  - `Bedrock Gate is product-directional, but product_pass_allowed=false still keeps market release unauthorized.`
+  - `Scope-limited closure remains technical and does not authorize commercial, client, runtime, or production readiness.`
+  - `The preserved F21B track remains the selected roadmap resume candidate; F21-A61 remains blocked.`
+- blockers:
+  - `[]`
+
 # BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME
 - lock_id: `BEDROCK_GATE_CLOSURE_HANDOFF_MAIN_ROADMAP_RESUME`
 - phase_id: `F21-CTX-BEDROCK-R63`

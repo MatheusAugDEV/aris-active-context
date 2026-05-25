@@ -1,3 +1,14 @@
+# F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit
+
+## Current Position
+
+- Status: `bedrock_gate_product_direction_semantics_alignment_pass`
+- Decision: `pass`
+- Product direction is part of the Bedrock Gate boundary.
+- Market release, client delivery, pricing, runtime, production, and Bedrock-real execution remain unauthorized.
+- Selected resume track: `F21B preserved track`
+- Next action: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+
 # F21-CTX-BEDROCK-R63 - Bedrock Gate Closure Handoff & Main Roadmap Resume Gate
 
 ## Current Position

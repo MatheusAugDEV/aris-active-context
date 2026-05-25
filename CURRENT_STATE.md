@@ -1,3 +1,71 @@
+# F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit
+- latest_completed_phase: `F21-CTX-BEDROCK-R64 - Bedrock Gate Product-Directional Semantics Alignment & Track Audit`
+- phase_id: `F21-CTX-BEDROCK-R64`
+- status: `bedrock_gate_product_direction_semantics_alignment_pass`
+- decision: `pass`
+- reviewed_source_phase: `F21-CTX-BEDROCK-R63`
+- reviewed_source_status: `bedrock_gate_closure_handoff_main_roadmap_resume_gate_pass`
+- reviewed_source_decision: `pass`
+- bedrock_gate_is_product_directional: `True`
+- bedrock_gate_must_advance_north_pole: `True`
+- bedrock_gate_must_reject_non_product_aligned_work: `True`
+- bedrock_gate_only_passes_work_that_increases_future_product_value: `True`
+- scope_limited_pass_requires_product_alignment: `True`
+- technical_closure_must_preserve_future_product_value: `True`
+- product_direction_approval_is_not_market_release: `True`
+- bedrock_gate_closed: `True`
+- bedrock_gate_handoff_completed: `True`
+- bedrock_gate_reopen_required: `False`
+- canonical_closure_status: `scope_limited_technical_closure`
+- semantic_closure_alias: `scope_limited_product_directional_technical_closure`
+- closed_verdict_class: `scope_limited_pass`
+- closure_scope: `technical_scope_limited_only`
+- product_direction_validated: `True`
+- north_pole_alignment_validated: `True`
+- market_release_authorized: `False`
+- external_product_release_authorized: `False`
+- commercial_delivery_authorized: `False`
+- external_client_readiness_authorized: `False`
+- pricing_authorized: `False`
+- runtime_production_authorized: `False`
+- bedrock_real_execution_authorized: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- production_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- commercial_use_allowed: `False`
+- site_marketing_claims_limited: `True`
+- site_claims_warning_complete_preserved: `True`
+- warning_complete_site_claims_preserved: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- component_pass_is_not_full_gate_pass_preserved: `True`
+- evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
+- full_verdict_is_not_product_pass_preserved: `True`
+- scope_limited_pass_is_not_product_pass_preserved: `True`
+- global_product_boundary_preserved: `True`
+- resume_track_selected: `True`
+- selected_resume_track_id: `F21B`
+- selected_resume_track: `F21B preserved track`
+- selected_next_phase: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+- recommended_next_phase: `F21B-RESUME-01 - Preserved Track Resume Readiness Gate`
+- resume_decision: `resume_f21b_preserved_track`
+- f21b_paused_track_preserved: `True`
+- f21_a61_blocked: `True`
+- active_context_hash_drift_detected: `True`
+- active_context_semantically_aligned: `True`
+- blocker_count: `0`
+- warning_count: `3`
+- warnings:
+  - `Bedrock Gate is product-directional and must preserve future product value while still prohibiting market release.`
+  - `Semantic aliases are added to prevent misreading scope-limited technical closure as product irrelevance.`
+  - `The preserved F21B track remains the selected continuation path; F21-A61 remains blocked.`
+- blockers:
+  - `[]`
+
 # F21-CTX-BEDROCK-R63 - Bedrock Gate Closure Handoff & Main Roadmap Resume Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R63 - Bedrock Gate Closure Handoff & Main Roadmap Resume Gate`
 - phase_id: `F21-CTX-BEDROCK-R63`
