@@ -1,3 +1,40 @@
+# F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation
+- latest_completed_phase: `F21-CTX-BEDROCK-R37 - Bedrock Gate Closure Boundary Consolidation`
+- phase_id: `F21-CTX-BEDROCK-R37`
+- status: `bedrock_gate_closure_boundary_consolidated`
+- decision: `pass`
+- source_closure_phase: `F21-CTX-BEDROCK-R36`
+- source_closure_status: `bedrock_evaluation_request_validation_runner_closure_passed`
+- source_closure_decision: `pass`
+- boundary_consolidation_created: `True`
+- bedrock_gate_importance_preserved: `True`
+- request_validation_runner_technical_closure_accepted: `True`
+- full_bedrock_gate_pass_allowed: `False`
+- product_pass_allowed: `False`
+- commercial_approval_allowed: `False`
+- client_readiness_allowed: `False`
+- pricing_readiness_allowed: `False`
+- runtime_activation_allowed: `False`
+- bedrock_real_execution_allowed: `False`
+- product_promotion_allowed: `False`
+- site_marketing_claims_limited: `True`
+- technical_pass_is_not_product_pass_preserved: `True`
+- closure_pass_is_not_product_pass_preserved: `True`
+- closure_pass_is_not_commercial_approval_preserved: `True`
+- global_product_boundary_preserved: `True`
+- boundary_matrix_created: `True`
+- decision_locks_updated: `True`
+- warning_count: `4`
+- blocker_count: `0`
+- warnings:
+  - `R36 is a technical closure only; it does not authorize product or commercial readiness.`
+  - `A Bedrock Gate component pass does not equal a full Bedrock Gate pass.`
+  - `Product, commercial, client, pricing, runtime, and Bedrock real execution remain false.`
+  - `Site marketing claims remain limited and cannot claim readiness or certification.`
+- blockers:
+  - `[]`
+- recommended_next_phase: `F21-CTX-BEDROCK-R38 - Bedrock Gate Remaining Scope Inventory`
+
 # F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R36 - Bedrock Evaluation Request Validation Runner Closure Gate`
 - phase_id: `F21-CTX-BEDROCK-R36`
@@ -383,7 +420,7 @@
 ## Site Official ARIS Runbook
 - `site-aris.md` was created and indexed as the canonical operational runbook for the official ARIS site / landing page.
 - The site workflow is anchored to `/home/matheus/ARIS/aris-site` and is explicitly separate from `/home/matheus/ARIS/Project_ARIS`.
-- Last site change: `SITE-SEO-V3` — indexability review (all items pass), SEO_INDEXABILITY_CHECKLIST.md created (commit `55da1c9`, deployed, live at `meetarisia.com.br`). Next manual step: Google Search Console verification.
+- Last site change: `SITE-SEO-V4` — Google Search Console verification token applied (commit `65a2e5c`, deployed, live at `meetarisia.com.br`). Next manual step: click "Verify" in Google Search Console and submit sitemap.
 
 ## F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate
 - latest_completed_phase: `F21-CTX-BEDROCK-R28 - Bedrock Evaluation Request Validation Runner Controlled Implementation Review Gate`
