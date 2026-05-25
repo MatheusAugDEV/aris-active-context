@@ -1,10 +1,10 @@
-# F21-CTX-BEDROCK-R52 - Bedrock Gate Command Telemetry Evidence Controlled Execution
+# F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution
 
 ## Current Position
 
-- Status: `bedrock_gate_command_telemetry_evidence_controlled_execution_pass`
+- Status: `bedrock_gate_dedicated_blocker_scan_controlled_execution_pass`
 - Decision: `pass`
-- Recommended next phase: `F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution`
+- Recommended next phase: `F21-CTX-BEDROCK-R54 - Bedrock Gate Human Review Evidence Materialization Controlled Execution`
 
 
 # F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution

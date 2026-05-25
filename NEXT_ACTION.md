@@ -1,5 +1,5 @@
-# F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution
-- next action: `F21-CTX-BEDROCK-R53 - Bedrock Gate Dedicated Blocker Scan Controlled Execution`
+# F21-CTX-BEDROCK-R54 - Bedrock Gate Human Review Evidence Materialization Controlled Execution
+- next action: `F21-CTX-BEDROCK-R54 - Bedrock Gate Human Review Evidence Materialization Controlled Execution`
 
 
 # F21-CTX-BEDROCK-R51 - Bedrock Gate Evidence Bundle Re-Dry-Run Review Gate
