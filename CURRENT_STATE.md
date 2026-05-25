@@ -1,7 +1,7 @@
-# F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan
-- latest_completed_phase: `F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan`
-- phase_id: `F21-CTX-BEDROCK-R59`
-- status: `bedrock_gate_full_verdict_plan_ready`
+# F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution
+- latest_completed_phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
+- phase_id: `F21-CTX-BEDROCK-R60`
+- status: `bedrock_gate_full_verdict_controlled_execution_pass`
 - decision: `pass`
 - source_review_phase: `F21-CTX-BEDROCK-R58`
 - source_review_status: `bedrock_gate_evidence_bundle_final_reconciliation_review_gate_pass`
@@ -22,8 +22,17 @@
 - verdict_input_contract_created: `True`
 - verdict_boundary_matrix_created: `True`
 - r60_execution_plan_created: `True`
-- full_verdict_executed: `False`
-- full_verdict_execution_allowed_next: `True`
+- full_verdict_executed: `True`
+- full_verdict_result: `scope_limited_pass`
+- selected_verdict_class: `scope_limited_pass`
+- technical_gate_status: `scope_limited`
+- product_boundary_status: `not_authorized`
+- commercial_boundary_status: `not_authorized`
+- runtime_boundary_status: `not_authorized`
+- client_readiness_status: `not_authorized`
+- pricing_readiness_status: `not_authorized`
+- bedrock_real_execution_status: `not_authorized`
+- full_verdict_execution_allowed_next: `False`
 - evidence_class_count: `10`
 - evidence_classes_complete_or_warning_complete: `10`
 - complete_evidence_class_count: `9`
@@ -56,14 +65,15 @@
 - commercial_use_allowed: `False`
 - site_marketing_claims_limited: `True`
 - site_claims_warning_complete_preserved: `True`
+- warning_complete_site_claims_preserved: `True`
 - technical_pass_is_not_product_pass_preserved: `True`
 - component_pass_is_not_full_gate_pass_preserved: `True`
 - evidence_bundle_complete_is_not_full_gate_pass_preserved: `True`
 - full_verdict_plan_is_not_full_verdict_preserved: `True`
 - global_product_boundary_preserved: `True`
-- recommended_next_phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
+- recommended_next_phase: `F21-CTX-BEDROCK-R61 - Bedrock Gate Full Verdict Review Gate`
 - warnings:
-  - `R59 is plan-only and does not execute the full verdict.`
+  - `R60 executes the full verdict in a scope-limited technical mode only.`
   - `Evidence bundle complete remains distinct from product, commercial, runtime, and production readiness.`
   - `Warning-complete site claims remain controlled-development only and must not be promoted.`
 - blockers:

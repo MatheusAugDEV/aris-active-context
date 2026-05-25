@@ -1,10 +1,10 @@
-# F21-CTX-BEDROCK-R59 - Bedrock Gate Full Verdict Plan
+# F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution
 
 ## Current Position
 
-- Status: `bedrock_gate_full_verdict_plan_ready`
+- Status: `bedrock_gate_full_verdict_controlled_execution_pass`
 - Decision: `pass`
-- Recommended next phase: `F21-CTX-BEDROCK-R60 - Bedrock Gate Full Verdict Controlled Execution`
+- Recommended next phase: `F21-CTX-BEDROCK-R61 - Bedrock Gate Full Verdict Review Gate`
 
 
 # F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution
