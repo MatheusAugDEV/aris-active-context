@@ -1,10 +1,10 @@
-# F21-CTX-BEDROCK-R55 - Bedrock Gate Site Claims Full Audit Controlled Execution
+# F21-CTX-BEDROCK-R56 - Bedrock Gate Evidence Bundle Final Reconciliation Plan
 
 ## Current Position
 
-- Status: `bedrock_gate_site_claims_full_audit_controlled_execution_pass`
+- Status: `bedrock_gate_evidence_bundle_final_reconciliation_plan_ready`
 - Decision: `pass`
-- Recommended next phase: `F21-CTX-BEDROCK-R56 - Bedrock Gate Evidence Bundle Final Reconciliation Plan`
+- Recommended next phase: `F21-CTX-BEDROCK-R57 - Bedrock Gate Evidence Bundle Final Reconciliation Controlled Execution`
 
 
 # F21-CTX-BEDROCK-R50 - Bedrock Gate Evidence Bundle Re-Dry-Run Controlled Execution
