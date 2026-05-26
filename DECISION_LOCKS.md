@@ -1,5 +1,40 @@
 # Decision Locks
 
+# Product Loop L1.3 Permissioned Dry-Run Envelope Gate Lock
+- Lock id: `PRODUCT_LOOP_L1_3_PERMISSIONED_DRY_RUN_ENVELOPE`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Execution mode: `permissioned_dry_run_envelope_only`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Permission request created: `True`
+- Permission request presentable: `True`
+- Dry-run preview created: `True`
+- Dry-run has no side effects: `True`
+- Write operation allowed: `False`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Real note creation allowed: `False`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Authorization blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Next phase can prepare controlled apply plan: `True`
+- Next phase is `Product Loop L1.4 - Controlled Apply Plan Gate`.
+- L1.4 is controlled apply planning only, not real write/apply.
+- Product Loop remains not implemented.
+- All applicable Core Priority Invariants passed for L1.3.
+- WARN does not unlock critical advancement.
+
 ## Product Loop L1.2 Single Task E2E Plan Lock
 - Lock id: `PRODUCT_LOOP_L1_2_SINGLE_TASK_E2E_PLAN`
 - Status: `pass`

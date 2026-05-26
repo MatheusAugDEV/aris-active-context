@@ -1,3 +1,72 @@
+# Product Loop L1.3 - Permissioned Dry-Run Envelope Gate
+## Ledger Entry
+- Phase: `Product Loop L1.3 - Permissioned Dry-Run Envelope Gate`
+- Status: `product_loop_l1_3_permissioned_dry_run_envelope_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- L1.2 verified: `True`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Execution mode: `permissioned_dry_run_envelope_only`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Permission request created: `True`
+- Permission request presentable: `True`
+- Dry-run preview created: `True`
+- Dry-run has no side effects: `True`
+- Write operation allowed: `False`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Authorization blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Next phase can prepare controlled apply plan: `True`
+- Blocking gaps before controlled apply:
+  - `L1.4 controlled apply plan has not been created yet.`
+  - `Human permission remains ungranted.`
+  - `No write/apply/runtime integration is authorized by this envelope.`
+- Core Priority Invariants: all applicable priorities passed.
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Files altered:
+  - `src/aris/product_loop/product_loop_permissioned_dry_run_envelope.py`
+  - `scripts/run_product_loop_l1_3_permissioned_dry_run_envelope_gate.py`
+  - `tests/test_product_loop_l1_3_permissioned_dry_run_envelope_gate.py`
+  - `docs/fase_product_loop/product_loop_l1_3_permissioned_dry_run_envelope_gate.md`
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+- Artifacts generated:
+  - `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope.json`
+  - `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
+  - `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_report.md`
+- Validations executed:
+  - `python3 -m py_compile src/aris/product_loop/product_loop_permissioned_dry_run_envelope.py` -> `pass`
+  - `python3 -m py_compile scripts/run_product_loop_l1_3_permissioned_dry_run_envelope_gate.py` -> `pass`
+  - `python3 -m py_compile tests/test_product_loop_l1_3_permissioned_dry_run_envelope_gate.py` -> `pass`
+  - `python3 scripts/run_product_loop_l1_3_permissioned_dry_run_envelope_gate.py` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope.json` -> `pass`
+  - `python3 -m unittest tests.test_product_loop_l1_3_permissioned_dry_run_envelope_gate -q` -> `pass`
+  - `filesystem no-real-note/no-calendar/no-ics check` -> `pass`
+  - `grep` required phrase checks -> `pass`
+  - `git diff --name-only` protected-surface check -> `pass_pending_stage_scope`
+- Next recommended phase: `Product Loop L1.4 - Controlled Apply Plan Gate`
+- Commit hash final: `86cf5f3c9aae330e9045a6b1d87f0b1a13f57df3`
+
 # Product Loop L1.2 - Single Task E2E Plan
 ## Ledger Entry
 - Phase: `Product Loop L1.2 - Single Task E2E Plan`
