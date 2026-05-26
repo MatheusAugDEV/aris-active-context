@@ -1,5 +1,43 @@
 # Decision Locks
 
+## Product Loop L1.2 Single Task E2E Plan Lock
+- Lock id: `PRODUCT_LOOP_L1_2_SINGLE_TASK_E2E_PLAN`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Execution mode: `dry_run_plan_only`
+- Plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Product Loop 12-step envelope is required and ordered:
+  - `intent`
+  - `context_binding`
+  - `typed_plan`
+  - `risk_classifier`
+  - `permission_gate`
+  - `dry_run`
+  - `controlled_apply`
+  - `ledger`
+  - `verification`
+  - `cost_time_measurement`
+  - `response`
+  - `rollback_compensation`
+- `controlled_apply` must remain present but `not_executed` and `planned_only` until a later explicit apply gate.
+- Human permission is required before any future dry-run envelope advances.
+- Write operation allowed: `False`
+- Runtime integration allowed: `False`
+- Action runtime activation allowed: `False`
+- Real note creation allowed: `False`
+- Rollback required before apply: `True`
+- Idempotency key required: `True`
+- Ledger entry planned: `True`
+- Verification planned: `True`
+- Cost/time measurement planned: `True`
+- Next phase is `Product Loop L1.3 - Permissioned Dry-Run Envelope Gate`.
+- L1.3 is not real apply/write/runtime integration.
+- Product Loop remains not implemented.
+- All applicable Core Priority Invariants passed for L1.2.
+- WARN does not unlock critical advancement.
+
 ## Product Loop L1.1 Runtime Awake Discovery Lock
 - Lock id: `PRODUCT_LOOP_L1_1_RUNTIME_AWAKE_DISCOVERY`
 - Status: `pass`

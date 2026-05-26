@@ -9,6 +9,10 @@
 - L1.1 doc: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`
 - L1.1 summary artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - L1.1 report artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_report.md`
+- L1.2 doc: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`
+- L1.2 plan artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
+- L1.2 summary artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
+- L1.2 report artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -18,7 +22,10 @@
 - Strategic Reset: `CURRENT_STATE.md`, `ARIS_PHASE_LEDGER.md`, roadmap report artifacts
 - Product Loop Demonstrável: `NEXT_ACTION.md`, `docs/roadmap/aris_macrostructure.md`
 - Product Loop L1.1 Runtime Awake: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`, `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
-- Product Loop L1.2 Single Task E2E Plan: `NEXT_ACTION.md`
+- Product Loop L1.2 Single Task E2E Plan: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`, `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
+- Product Loop L1.3 Permissioned Dry-Run Envelope Gate: `NEXT_ACTION.md`
+- Product Loop 12-step envelope: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
+- notes.create.local selected task plan: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
 - Runtime entry path inventory: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - Product Loop insertion point: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - notes.create.local first E2E candidate: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`, `artifacts/f19/notes_create_local_dry_run_summary.json`
@@ -43,3 +50,4 @@
 - Strategic Reset does not execute Infernus, Crisol, Productatization Gate, or SIP.
 - Strategic Reset does not authorize runtime, frontend, voice/audio, action runtime, network, dependency installation, real MCP activation, provider calls, or production.
 - L1.1 does not implement Product Loop, does not authorize L1.2 execution, and does not authorize runtime/frontend/voice/action-runtime mutation.
+- L1.2 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
