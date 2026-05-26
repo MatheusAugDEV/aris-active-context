@@ -1,5 +1,54 @@
 # Decision Locks
 
+# Product Loop L1.4 Controlled Apply Plan Gate Lock
+- Lock id: `PRODUCT_LOOP_L1_4_CONTROLLED_APPLY_PLAN`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Execution mode: `controlled_apply_plan_only`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Permission envelope verified: `True`
+- Controlled apply plan created: `True`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Write operation allowed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Target path planned: `data/aris_notes/aris_created_note_preview.md`
+- Target path allowed by policy: `True`
+- Payload schema valid: `True`
+- Rollback plan required: `True`
+- Rollback plan attached: `True`
+- Idempotency key required: `True`
+- Idempotency key attached: `True`
+- Ledger entry required: `True`
+- Ledger entry planned: `True`
+- Verification required: `True`
+- Verification plan attached: `True`
+- Cost/time measurement required: `True`
+- Cost/time measurement plan attached: `True`
+- Apply blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Next phase can prepare pre-apply review: `True`
+- Blocking gaps before real apply:
+  - `L1.5 pre-apply authorization review has not executed yet.`
+  - `Human permission remains ungranted in L1.4.`
+  - `Controlled apply remains plan-only and not authorized in L1.4.`
+  - `Action runtime activation remains blocked-by-default.`
+  - `Runtime integration remains false.`
+  - `No real write path under data/aris_notes is authorized yet.`
+  - `Rollback, idempotency, ledger, verification, and cost/time stay mandatory before any future apply.`
+- All applicable Core Priority Invariants passed for L1.4.
+- WARN does not unlock critical advancement.
+- Next phase is `Product Loop L1.5 - Pre-Apply Authorization Review Gate`.
+- L1.4 is controlled apply planning only, not real write/apply.
+
 # Product Loop L1.3 Permissioned Dry-Run Envelope Gate Lock
 - Lock id: `PRODUCT_LOOP_L1_3_PERMISSIONED_DRY_RUN_ENVELOPE`
 - Status: `pass`

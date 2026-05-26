@@ -17,6 +17,10 @@
 - L1.3 envelope artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope.json`
 - L1.3 summary artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
 - L1.3 report artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_report.md`
+- L1.4 doc: `docs/fase_product_loop/product_loop_l1_4_controlled_apply_plan_gate.md`
+- L1.4 plan artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan.json`
+- L1.4 summary artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_summary.json`
+- L1.4 report artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -29,6 +33,7 @@
 - Product Loop L1.2 Single Task E2E Plan: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`, `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
 - Product Loop L1.3 Permissioned Dry-Run Envelope Gate: `NEXT_ACTION.md`
 - Product Loop L1.4 Controlled Apply Plan Gate: `NEXT_ACTION.md`
+- Product Loop L1.4 controlled apply plan: `docs/fase_product_loop/product_loop_l1_4_controlled_apply_plan_gate.md`, `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_summary.json`
 - Product Loop 12-step envelope: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
 - notes.create.local selected task plan: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
 - notes.create.local permissioned dry-run envelope: `docs/fase_product_loop/product_loop_l1_3_permissioned_dry_run_envelope_gate.md`, `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
@@ -58,3 +63,4 @@
 - L1.1 does not implement Product Loop, does not authorize L1.2 execution, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.2 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.3 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
+- L1.4 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
