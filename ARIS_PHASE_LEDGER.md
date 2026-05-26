@@ -1,3 +1,86 @@
+# Product Loop L1.12 - Verification and Evidence Gate
+## Ledger Entry
+- Phase: `Product Loop L1.12 - Verification and Evidence Gate`
+- Status: `product_loop_l1_12_verification_and_evidence_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Target path: `data/aris_notes/aris_created_note_preview.md`
+- Execution mode: `verification_and_evidence_only`
+- Authorization status: `recorded`
+- Authorization recorded: `True`
+- Human permission granted: `True`
+- Human authorization recorded: `True`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Source review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
+- Source authorization request hash: `sha256:02550e85c1133407bb5c5490ef4aeac1bc199c9898713b15cac5e3464603f5bf`
+- Source authorization capture review hash: `sha256:4b7fe2abf41f556dd66666d71e16e76a704cce899d4882d4d19e6530827f4ce3`
+- Source pending closure hash: `sha256:f9b7971b06475a149441c22fdea738afea5cffa6b65d02688d2e73a7edc977a4`
+- Source authorization record hash: `sha256:37950638334a72d38964768b1ee942f07607e7410c8bb1901a14c64d24158b0b`
+- Source pre-apply readiness hash: `sha256:74da1fd6275662725fc7c54c6efd2bca600f8a2729e4ef08168ba04c5242c199`
+- L1.11 apply result hash: `sha256:b0371535ea4cbe186d99099876c550dc4ad6e20d440268e5ec1d393779ce7cea`
+- Evidence result hash: `sha256:cbf279ce3abcfc9e3ecee82ec8c33b9e22759db966953658347313fc484918cb`
+- L1.2 verified: `True`
+- L1.3 verified: `True`
+- L1.4 verified: `True`
+- L1.5 verified: `True`
+- L1.6 verified: `True`
+- L1.7 verified: `True`
+- L1.8 verified: `True`
+- L1.9 verified: `True`
+- L1.10 verified: `True`
+- L1.11 verified: `True`
+- Artifact chain consistent: `True`
+- Expected content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Observed content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Expected bytes written: `360`
+- Observed bytes: `360`
+- Target file exists: `True`
+- Target file matches expected hash: `True`
+- Target file matches expected bytes: `True`
+- Note content safe: `True`
+- Note contains no secrets: `True`
+- Note contains no env vars: `True`
+- Note contains no external data: `True`
+- Controlled apply executed in L1.11: `True`
+- Write operation executed in L1.11: `True`
+- New write executed in L1.12: `False`
+- Target file modified in L1.12: `False`
+- Rollback available: `True`
+- Rollback executed: `False`
+- Rollback not executed in L1.12: `True`
+- Ledger entry written: `True`
+- Ledger evidence consistent: `True`
+- Verification executed: `True`
+- Verification passed: `True`
+- Cost/time measurement executed: `True`
+- Cost/time evidence consistent: `True`
+- Personal notes unchanged: `True`
+- Calendar unchanged: `True`
+- No ICS created: `True`
+- Evidence gate passed: `True`
+- Evidence blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Unsafe payloads blocked count: `12`
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Product Loop implemented: `False`
+- All applicable Core Priority Invariants passed for L1.12.
+- WARN does not unlock critical advancement.
+- Blocking gaps before rollback proof:
+  - `L1.12 verifies evidence only and does not prove rollback or compensation.`
+  - `A later rollback proof gate is still required.`
+  - `A later closure gate is still required before declaring the loop complete.`
+  - `Rollback remains unexecuted in L1.12.`
+  - `No new write is executed in L1.12.`
+  - `Product Loop remains not fully implemented.`
+- Next phase is `Product Loop L1.13 - Rollback Proof Gate`.
+
 # Product Loop L1.11 - First Real Controlled Apply Gate
 ## Ledger Entry
 - Phase: `Product Loop L1.11 - First Real Controlled Apply Gate`

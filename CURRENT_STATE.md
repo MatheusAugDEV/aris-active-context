@@ -1,13 +1,13 @@
-# Product Loop L1.11 - First Real Controlled Apply Gate
+# Product Loop L1.12 - Verification and Evidence Gate
 
 ## Current Position
-- Status: `product_loop_l1_11_first_real_controlled_apply_pass`
+- Status: `product_loop_l1_12_verification_and_evidence_pass`
 - Decision: `pass`
 - Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.11 - First Real Controlled Apply Gate`
+- Current state: `Product Loop L1.12 - Verification and Evidence Gate`
 - Selected task: `notes.create.local`
 - Target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `first_real_controlled_apply`
+- Execution mode: `verification_and_evidence_only`
 - Authorization status: `recorded`
 - Authorization recorded: `True`
 - Human permission granted: `True`
@@ -21,6 +21,8 @@
 - Source pending closure hash: `sha256:f9b7971b06475a149441c22fdea738afea5cffa6b65d02688d2e73a7edc977a4`
 - Source authorization record hash: `sha256:37950638334a72d38964768b1ee942f07607e7410c8bb1901a14c64d24158b0b`
 - Source pre-apply readiness hash: `sha256:74da1fd6275662725fc7c54c6efd2bca600f8a2729e4ef08168ba04c5242c199`
+- L1.11 apply result hash: `sha256:b0371535ea4cbe186d99099876c550dc4ad6e20d440268e5ec1d393779ce7cea`
+- Evidence result hash: `sha256:cbf279ce3abcfc9e3ecee82ec8c33b9e22759db966953658347313fc484918cb`
 - L1.2 verified: `True`
 - L1.3 verified: `True`
 - L1.4 verified: `True`
@@ -30,47 +32,48 @@
 - L1.8 verified: `True`
 - L1.9 verified: `True`
 - L1.10 verified: `True`
+- L1.11 verified: `True`
 - Artifact chain consistent: `True`
-- Explicit authorization input present: `True`
-- Explicit authorization input valid: `True`
-- Apply review passed: `True`
-- Controlled apply allowed: `True`
-- Controlled apply executed: `True`
-- Write operation allowed: `True`
-- Write operation executed: `True`
-- Note created: `True`
-- Bytes written: `360`
-- Content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
-- Apply result hash: `sha256:b0371535ea4cbe186d99099876c550dc4ad6e20d440268e5ec1d393779ce7cea`
+- Authorization status: `recorded`
+- Human permission granted: `True`
+- Human authorization recorded: `True`
+- Expected content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Observed content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Expected bytes written: `360`
+- Observed bytes: `360`
+- Target file exists: `True`
+- Target file matches expected hash: `True`
+- Target file matches expected bytes: `True`
+- Note content safe: `True`
+- Note contains no secrets: `True`
+- Note contains no env vars: `True`
+- Note contains no external data: `True`
+- Controlled apply executed in L1.11: `True`
+- Write operation executed in L1.11: `True`
+- New write executed in L1.12: `False`
+- Target file modified in L1.12: `False`
 - Rollback available: `True`
 - Rollback executed: `False`
+- Rollback not executed in L1.12: `True`
 - Ledger entry written: `True`
+- Ledger evidence consistent: `True`
 - Verification executed: `True`
 - Verification passed: `True`
 - Cost/time measurement executed: `True`
+- Cost/time evidence consistent: `True`
+- Personal notes unchanged: `True`
+- Calendar unchanged: `True`
+- No ICS created: `True`
 - Action runtime activation allowed: `False`
 - Runtime integration allowed: `False`
 - Generic action runtime activated: `False`
 - Product Loop implemented: `False`
+- Evidence gate passed: `True`
+- Evidence blockers count: `0`
 - Target path allowed by policy: `True`
 - Target path parent exists or creatable: `True`
-- Target file preexisting: `False`
-- Overwrite allowed: `False`
-- Payload schema valid: `True`
-- Rollback plan attached: `True`
-- Rollback ready for future apply: `True`
-- Idempotency key attached: `True`
-- Idempotency ready for future apply: `True`
-- Ledger entry planned: `True`
-- Ledger ready for future apply: `True`
-- Verification plan attached: `True`
-- Verification ready for future apply: `True`
-- Cost/time measurement plan attached: `True`
-- Cost/time ready for future apply: `True`
-- Pre-apply readiness blockers count: `0`
 - Unsafe payloads blocked: `True`
-- Unsafe payloads blocked count: `14`
-- Pre-apply readiness hash: `sha256:74da1fd6275662725fc7c54c6efd2bca600f8a2729e4ef08168ba04c5242c199`
+- Unsafe payloads blocked count: `12`
 - Runtime changed: `False`
 - Frontend changed: `False`
 - Voice/audio changed: `False`
@@ -86,17 +89,20 @@
 - WARN does not unlock critical advancement.
 
 ## Evidence
-- Apply module: `src/aris/product_loop/product_loop_first_real_controlled_apply.py`
-- Runner: `scripts/run_product_loop_l1_11_first_real_controlled_apply_gate.py`
-- Test: `tests/test_product_loop_l1_11_first_real_controlled_apply_gate.py`
+- Verification module: `src/aris/product_loop/product_loop_verification_and_evidence_gate.py`
+- Runner: `scripts/run_product_loop_l1_12_verification_and_evidence_gate.py`
+- Test: `tests/test_product_loop_l1_12_verification_and_evidence_gate.py`
 - Note artifact: `data/aris_notes/aris_created_note_preview.md`
-- Apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
-- Summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
-- Report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
-- Phase doc: `docs/fase_product_loop/product_loop_l1_11_first_real_controlled_apply_gate.md`
-- Manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
+- Evidence artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence.json`
+- Summary artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
+- Report artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_report.md`
+- Phase doc: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`
+- L1.11 apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
+- L1.11 summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
+- L1.11 report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
+- L1.11 manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
 - L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
 
 ## Next
-- Next recommended phase: `Product Loop L1.12 - Verification and Evidence Gate`
-- L1.11 performed the first authorized real controlled write and remains non-closing.
+- Next recommended phase: `Product Loop L1.13 - Rollback Proof Gate`
+- L1.12 verifies evidence only and does not execute rollback or a new write.
