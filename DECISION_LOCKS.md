@@ -1,5 +1,67 @@
 # Decision Locks
 
+# Product Loop L1.8 Authorization Pending Closure Gate Lock
+- Lock id: `PRODUCT_LOOP_L1_8_AUTHORIZATION_PENDING_CLOSURE`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Execution mode: `authorization_pending_closure_only`
+- Authorization status: `pending`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Source review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
+- Source authorization request hash: `sha256:02550e85c1133407bb5c5490ef4aeac1bc199c9898713b15cac5e3464603f5bf`
+- Source authorization capture review hash: `sha256:4b7fe2abf41f556dd66666d71e16e76a704cce899d4882d4d19e6530827f4ce3`
+- Pending closure hash: `sha256:f9b7971b06475a149441c22fdea738afea5cffa6b65d02688d2e73a7edc977a4`
+- L1.2 verified: `True`
+- L1.3 verified: `True`
+- L1.4 verified: `True`
+- L1.5 verified: `True`
+- L1.6 verified: `True`
+- L1.7 verified: `True`
+- Artifact chain consistent: `True`
+- Authorization preparation complete: `True`
+- Authorization request presentable: `True`
+- Authorization capture contract present: `True`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Human authorization recorded: `False`
+- Next requires manual authorization: `True`
+- Next manual authorization must be explicit/scoped/task-bound/path-bound/hash-bound: `True`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Write operation allowed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Target path: `data/aris_notes/aris_created_note_preview.md`
+- Target path allowed by policy: `True`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Pending closure blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Unsafe payloads blocked count: `12`
+- Blocking gaps before real apply:
+  - `L1.9 explicit human authorization record gate has not executed yet.`
+  - `Human permission remains ungranted in L1.8.`
+  - `Human authorization has not been recorded in L1.8.`
+  - `Authorization status remains pending and non-authorizing.`
+  - `Controlled apply remains blocked.`
+  - `Write operation remains blocked.`
+  - `Action runtime activation remains blocked-by-default.`
+  - `Runtime integration remains false.`
+  - `No real write path under data/aris_notes is authorized yet.`
+  - `A later readiness/apply gate is still required after any L1.9 authorization record.`
+- All applicable Core Priority Invariants passed for L1.8.
+- WARN does not unlock critical advancement.
+- Next phase is `Product Loop L1.9 - Explicit Human Authorization Record Gate`.
+- L1.8 is authorization-pending-closure only and does not grant permission or execute real write/apply.
+
 # Product Loop L1.7 Explicit Authorization Capture Review Gate Lock
 - Lock id: `PRODUCT_LOOP_L1_7_EXPLICIT_AUTHORIZATION_CAPTURE_REVIEW`
 - Status: `pass`

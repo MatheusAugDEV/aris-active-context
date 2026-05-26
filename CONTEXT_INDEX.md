@@ -33,6 +33,10 @@
 - L1.7 review artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review.json`
 - L1.7 summary artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_summary.json`
 - L1.7 report artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_report.md`
+- L1.8 doc: `docs/fase_product_loop/product_loop_l1_8_authorization_pending_closure_gate.md`
+- L1.8 closure artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure.json`
+- L1.8 summary artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_summary.json`
+- L1.8 report artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -57,6 +61,7 @@
 - notes.create.local first E2E candidate: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`, `artifacts/f19/notes_create_local_dry_run_summary.json`
 - notes.create.local human authorization request: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`, `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
 - notes.create.local explicit authorization capture review: `docs/fase_product_loop/product_loop_l1_7_explicit_authorization_capture_review_gate.md`, `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_summary.json`
+- notes.create.local authorization pending closure: `docs/fase_product_loop/product_loop_l1_8_authorization_pending_closure_gate.md`, `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_summary.json`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
@@ -84,3 +89,5 @@
 - L1.5 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.7 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
+- L1.8 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
+- L1.8 closes the prepared authorization chain as `pending`; L1.9 is the next explicit human authorization record gate.
