@@ -1,6 +1,10 @@
 # Context Index
 
 ## Active Source Routing
+- H0 doc: `docs/fase_hardening_base/hardening_base_h0_phase_design_brief.md`
+- H0 summary artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
+- H0 report artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
+- H0 record artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief.json`
 - L1.15 doc: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`
 - L1.15 summary artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - L1.15 report artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
@@ -76,6 +80,7 @@
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
 ## Indexed Topics
+- Hardening Base H0 Research Evidence & Phase Design Brief: `docs/fase_hardening_base/hardening_base_h0_phase_design_brief.md`, `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
 - ARIS Macrostructure: `docs/roadmap/aris_macrostructure.md`
 - Core Priority Invariants: `CURRENT_STATE.md`, `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - Strategic Reset: `CURRENT_STATE.md`, `ARIS_PHASE_LEDGER.md`, roadmap report artifacts
@@ -122,6 +127,7 @@
 - Runtime evidence beats assumptions.
 
 ## Boundary Reminders
+- H0 is design-only and does not implement H1, production, runtime integration, or generic action runtime activation.
 - Strategic Reset does not implement Product Loop.
 - Strategic Reset does not execute Infernus, Crisol, Productatization Gate, or SIP.
 - Strategic Reset does not authorize runtime, frontend, voice/audio, action runtime, network, dependency installation, real MCP activation, provider calls, or production.

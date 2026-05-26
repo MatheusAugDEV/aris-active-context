@@ -1,3 +1,34 @@
+# Hardening Base H0 Research Evidence & Phase Design Brief Lock
+- Lock id: `HARDENING_BASE_H0_RESEARCH_EVIDENCE_PHASE_DESIGN_BRIEF`
+- Status: `hardening_base_h0_phase_design_brief_ready`
+- Decision: `pass`
+- Macroblock: `Hardening Base`
+- Source Product Loop closure status: `product_loop_l1_15_product_loop_closure_pass`
+- Source Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Source Product Loop layer closed: `True`
+- Source Product Loop demonstrated: `True`
+- Source final filesystem state: `rolled_back`
+- Production authorized: `False`
+- Product ready: `False`
+- Runtime integration allowed: `False`
+- Generic action runtime activated: `False`
+- Hardening base started as design only: `True`
+- Hardening corrections started: `False`
+- H1 implementation allowed now: `False`
+- H1 implementation allowed next: `True`
+- Candidate Golden Tasks count: `12`
+- Coverage matrix complete: `True`
+- Canonical design hash: `sha256:bb01d798bbbef84f41aa5995e456657a241e3fe7e0ce1127b6e3cef761febc4b`
+- All applicable Core Priority Invariants passed for H0.
+- WARN does not unlock critical advancement.
+- Blocking gaps before H1:
+  - `H0 is design-only and does not implement H1.`
+  - `Production remains unauthorized.`
+  - `Product ready remains false.`
+  - `Runtime integration remains blocked.`
+  - `Generic action runtime remains deactivated.`
+- Next phase is `Hardening Base H1 - Golden Tasks Baseline Gate`.
+
 # Product Loop L1.15 Closure Gate Lock
 - Lock id: `PRODUCT_LOOP_L1_15_CLOSURE`
 - Status: `pass`
