@@ -1,5 +1,55 @@
 # Decision Locks
 
+# Product Loop L1.5 Pre-Apply Authorization Review Gate Lock
+- Lock id: `PRODUCT_LOOP_L1_5_PRE_APPLY_AUTHORIZATION_REVIEW`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
+- Execution mode: `pre_apply_authorization_review_only`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Future human authorization request ready: `True`
+- Authorization review created: `True`
+- Authorization request preview created: `True`
+- Authorization request presentable: `True`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Write operation allowed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Target path reviewed: `True`
+- Target path planned: `data/aris_notes/aris_created_note_preview.md`
+- Target path allowed by policy: `True`
+- Payload schema valid: `True`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Pre-apply blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Next phase requires explicit human confirmation: `True`
+- Next phase can request human authorization: `True`
+- Blocking gaps before real apply:
+  - `L1.6 human authorization request gate has not executed yet.`
+  - `Human permission remains ungranted in L1.5.`
+  - `Controlled apply remains plan-only and not authorized in L1.5.`
+  - `Write operation remains blocked.`
+  - `Action runtime activation remains blocked-by-default.`
+  - `Runtime integration remains false.`
+  - `No real write path under data/aris_notes is authorized yet.`
+  - `Rollback, idempotency, ledger, verification, and cost/time stay mandatory before any future apply.`
+- All applicable Core Priority Invariants passed for L1.5.
+- WARN does not unlock critical advancement.
+- Next phase is `Product Loop L1.6 - Human Authorization Request Gate`.
+- L1.5 is review-only and does not grant authorization or execute real write/apply.
+
 # Product Loop L1.4 Controlled Apply Plan Gate Lock
 - Lock id: `PRODUCT_LOOP_L1_4_CONTROLLED_APPLY_PLAN`
 - Status: `pass`

@@ -1,3 +1,85 @@
+# Product Loop L1.5 - Pre-Apply Authorization Review Gate
+## Ledger Entry
+- Phase: `Product Loop L1.5 - Pre-Apply Authorization Review Gate`
+- Status: `product_loop_l1_5_pre_apply_authorization_review_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- L1.2 verified: `True`
+- L1.3 verified: `True`
+- L1.4 verified: `True`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
+- Execution mode: `pre_apply_authorization_review_only`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Future human authorization request ready: `True`
+- Authorization review created: `True`
+- Authorization request preview created: `True`
+- Authorization request presentable: `True`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Write operation allowed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Target path reviewed: `True`
+- Target path planned: `data/aris_notes/aris_created_note_preview.md`
+- Target path allowed by policy: `True`
+- Payload schema valid: `True`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Pre-apply blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Next phase can request human authorization: `True`
+- Blocking gaps before real apply:
+  - `L1.6 human authorization request gate has not executed yet.`
+  - `Human permission remains ungranted in L1.5.`
+  - `Controlled apply remains plan-only and not authorized in L1.5.`
+  - `Write operation remains blocked.`
+  - `Action runtime activation remains blocked-by-default.`
+  - `Runtime integration remains false.`
+  - `No real write path under data/aris_notes is authorized yet.`
+  - `Rollback, idempotency, ledger, verification, and cost/time stay mandatory before any future apply.`
+- All applicable Core Priority Invariants passed for L1.5.
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Files altered:
+  - `src/aris/product_loop/product_loop_pre_apply_authorization_review.py`
+  - `scripts/run_product_loop_l1_5_pre_apply_authorization_review_gate.py`
+  - `tests/test_product_loop_l1_5_pre_apply_authorization_review_gate.py`
+  - `docs/fase_product_loop/product_loop_l1_5_pre_apply_authorization_review_gate.md`
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+- Artifacts generated:
+  - `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review.json`
+  - `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json`
+  - `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_report.md`
+- Validations executed:
+  - `python3 -m py_compile src/aris/product_loop/product_loop_pre_apply_authorization_review.py` -> `pass`
+  - `python3 -m py_compile scripts/run_product_loop_l1_5_pre_apply_authorization_review_gate.py` -> `pass`
+  - `python3 -m py_compile tests/test_product_loop_l1_5_pre_apply_authorization_review_gate.py` -> `pass`
+  - `python3 scripts/run_product_loop_l1_5_pre_apply_authorization_review_gate.py` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review.json` -> `pass`
+  - `python3 -m unittest tests.test_product_loop_l1_5_pre_apply_authorization_review_gate -q` -> `pass`
+  - `filesystem no-real-note/no-calendar/no-ics check` -> `pass`
+  - `grep` required phrase checks -> `pass`
+  - `git diff --name-only` protected-surface check -> `pass_pending_stage_scope`
+- Next recommended phase: `Product Loop L1.6 - Human Authorization Request Gate`
+- Commit hash final: `aad5075a666b16f274e39471c830f067c51346cd`
+
 # Product Loop L1.4 - Controlled Apply Plan Gate
 ## Ledger Entry
 - Phase: `Product Loop L1.4 - Controlled Apply Plan Gate`
