@@ -41,6 +41,10 @@
 - L1.9 record artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record.json`
 - L1.9 summary artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_summary.json`
 - L1.9 report artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_report.md`
+- L1.10 doc: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`
+- L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
+- L1.10 summary artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
+- L1.10 report artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -67,6 +71,7 @@
 - notes.create.local explicit authorization capture review: `docs/fase_product_loop/product_loop_l1_7_explicit_authorization_capture_review_gate.md`, `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_summary.json`
 - notes.create.local authorization pending closure: `docs/fase_product_loop/product_loop_l1_8_authorization_pending_closure_gate.md`, `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_summary.json`
 - notes.create.local explicit human authorization record: `docs/fase_product_loop/product_loop_l1_9_explicit_human_authorization_record_gate.md`, `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_summary.json`
+- notes.create.local pre-apply execution readiness: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`, `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
@@ -95,4 +100,4 @@
 - L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.7 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.8 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization and L1.10 is the next readiness gate.
+- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 is the next execution gate.
