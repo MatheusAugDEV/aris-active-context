@@ -6,6 +6,9 @@
 - Decision locks: `aris-active-context/DECISION_LOCKS.md`
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 - Roadmap doc: `docs/roadmap/aris_macrostructure.md`
+- L1.1 doc: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`
+- L1.1 summary artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+- L1.1 report artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -14,6 +17,11 @@
 - Core Priority Invariants: `CURRENT_STATE.md`, `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - Strategic Reset: `CURRENT_STATE.md`, `ARIS_PHASE_LEDGER.md`, roadmap report artifacts
 - Product Loop Demonstrável: `NEXT_ACTION.md`, `docs/roadmap/aris_macrostructure.md`
+- Product Loop L1.1 Runtime Awake: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`, `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+- Product Loop L1.2 Single Task E2E Plan: `NEXT_ACTION.md`
+- Runtime entry path inventory: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+- Product Loop insertion point: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+- notes.create.local first E2E candidate: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`, `artifacts/f19/notes_create_local_dry_run_summary.json`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
@@ -34,3 +42,4 @@
 - Strategic Reset does not implement Product Loop.
 - Strategic Reset does not execute Infernus, Crisol, Productatization Gate, or SIP.
 - Strategic Reset does not authorize runtime, frontend, voice/audio, action runtime, network, dependency installation, real MCP activation, provider calls, or production.
+- L1.1 does not implement Product Loop, does not authorize L1.2 execution, and does not authorize runtime/frontend/voice/action-runtime mutation.

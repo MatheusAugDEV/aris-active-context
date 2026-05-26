@@ -1,3 +1,53 @@
+# Product Loop L1.1 - Runtime Awake Discovery Gate
+## Ledger Entry
+- Phase: `Product Loop L1.1 - Runtime Awake Discovery Gate`
+- Status: `product_loop_l1_1_runtime_awake_discovery_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Strategic Reset verified: `True`
+- Runtime entrypoint identified: `orchestrator.processar_e_responder -> orchestrator._submeter_texto_para_processamento -> orchestrator._executar_processamento -> orchestrator._resolve_turn_via_official_trail -> turn.pipeline.resolve_turn -> interaction_router.decidir_rota_interacao/executar_rota_interacao`
+- Recommended Product Loop insertion point: `sidecar planner first; future runtime insertion after turn.pipeline.resolve_turn route evidence and before action_runtime controlled dispatch`
+- Recommended first E2E task: `notes.create.local dry-run plan`
+- Blocking gaps before implementation/execution:
+  - `No Product Loop task envelope is currently wired into the turn path.`
+  - `Action runtime scaffold remains blocked-by-default and not integrated with orchestrator.`
+  - `Human permission presentation for Product Loop E2E is not mapped to current UI/voice.`
+  - `Rollback and idempotency evidence must be attached before any write.`
+  - `No runtime smoke exists for a Product Loop sidecar handoff.`
+- L1.2 authorized next: `True`
+- L1.2 authorization scope: `plan_only_not_runtime_execution`
+- Product Loop implemented: `False`
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Action runtime activated: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Files altered:
+  - `src/aris/product_loop/__init__.py`
+  - `src/aris/product_loop/product_loop_runtime_awake_discovery.py`
+  - `scripts/run_product_loop_l1_1_runtime_awake_discovery_gate.py`
+  - `tests/test_product_loop_l1_1_runtime_awake_discovery_gate.py`
+  - `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+- Artifacts generated:
+  - `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+  - `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_report.md`
+- Validations executed:
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json` -> `pass`
+  - `python3 -m py_compile src/aris/product_loop/product_loop_runtime_awake_discovery.py` -> `pass`
+  - `python3 -m py_compile scripts/run_product_loop_l1_1_runtime_awake_discovery_gate.py` -> `pass`
+  - `python3 -m unittest tests.test_product_loop_l1_1_runtime_awake_discovery_gate -q` -> `pass`
+  - `python3 scripts/run_product_loop_l1_1_runtime_awake_discovery_gate.py` -> `pass`
+  - `grep` required phrase checks -> `pass`
+  - `git diff --name-only` protected-surface check -> `pass`
+- Next recommended phase: `Product Loop L1.2 - Single Task E2E Plan`
+- Commit hash final: `reported_in_final_response_after_commit`
+
 # Strategic Reset / Macrostructure Lock
 ## Ledger Entry
 - Phase: `Strategic Reset / Macrostructure Lock`

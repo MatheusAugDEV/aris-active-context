@@ -1,17 +1,19 @@
 # Next Action
 
-## Product Loop Demonstrável / L1.1 Runtime Awake
+## Product Loop L1.2 - Single Task E2E Plan
 
 - Status: `ready_for_next_phase`
-- Decision dependency: `Strategic Reset / Macrostructure Lock` must remain `pass`.
-- Objective: define and execute the first demonstrable Product Loop step, starting with `L1.1 Runtime Awake`.
-- Required gate posture: evaluate the step against the Core Priority Invariants before any critical advancement.
+- Decision dependency: `Product Loop L1.1 - Runtime Awake Discovery Gate` must remain `pass`.
+- Objective: create a controlled Single Task E2E plan for the first Product Loop task.
+- Recommended first task: `notes.create.local` dry-run plan using existing action runtime preview/blocked-apply components.
+- Scope: plan and deterministic dry-run design only unless the L1.2 prompt explicitly authorizes a bounded sidecar implementation.
+- Runtime mutation: not authorized by L1.1.
+- Real note creation: not authorized by L1.1.
+- Action runtime activation: not authorized by L1.1.
+- Required gate posture: evaluate L1.2 against all Core Priority Invariants.
 - Advancement rule: nothing passes without real PASS on applicable priorities; WARN não destrava avanço crítico.
-- Historical F21/Bedrock/Context continuation prompts are `removed_from_active_direction` unless explicitly revalidated against the official macrostructure 0-6.
-- Product Loop is not implemented by this reset.
-- Runtime mutation remains unauthorized until a specific Product Loop phase authorizes and validates it.
 
 ## Boundary
-- Do not continue F21/Bedrock/Context automatically.
-- Do not treat `historical_only` or `superseded` roadmap material as active direction.
-- Do not activate runtime, frontend, voice/audio, action runtime, network, dependencies, provider calls, or real MCP from this reset.
+- Do not patch orchestrator, frontend, voice/audio, action runtime productive paths, network, dependencies, provider calls, real MCP, or site public from L1.1.
+- Do not declare Product Loop implemented.
+- Do not declare L1.2 complete before its own plan/gate evidence exists.

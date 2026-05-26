@@ -1,10 +1,13 @@
-# Strategic Reset / Macrostructure Lock
+# Product Loop L1.1 - Runtime Awake Discovery Gate
 
 ## Current Position
-- Status: `strategic_reset_macrostructure_lock_pass`
+- Status: `product_loop_l1_1_runtime_awake_discovery_pass`
 - Decision: `pass`
-- Current state: `Strategic Reset / Macrostructure Lock`
-- Phase type: `documental_operational`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Current state: `Product Loop L1.1 - Runtime Awake Discovery Gate`
+- Strategic Reset verified: `True`
+- Product Loop implemented: `False`
+- L1.2 implemented: `False`
 - Runtime changed: `False`
 - Frontend changed: `False`
 - Voice/audio changed: `False`
@@ -12,57 +15,47 @@
 - Network used: `False`
 - Dependencies installed: `False`
 
-## Official ARIS Macrostructure
-0. Strategic Reset
-1. Product Loop Demonstrável
-2. Hardening Base
-3. ARIS Infernus Lab
-4. ARIS Final Crisol
-5. Productatization Gate
-6. SIP
+## Runtime Entry Path Identified
+1. `src/aris/app/orchestrator.py::processar_e_responder`
+2. `src/aris/app/orchestrator.py::_submeter_texto_para_processamento`
+3. `src/aris/app/orchestrator.py::_executar_processamento`
+4. `src/aris/app/orchestrator.py::_resolve_turn_via_official_trail`
+5. `src/aris/turn/pipeline.py::resolve_turn`
+6. `src/aris/app/interaction_router.py::decidir_rota_interacao`
+7. `src/aris/app/interaction_router.py::executar_rota_interacao`
 
-SIP = Sistema Imunológico Permanente.
+## Recommended Insertion Strategy
+- Do not patch orchestrator in L1.1.
+- Use a sidecar Product Loop planner first.
+- Future runtime insertion should happen only after `turn.pipeline.resolve_turn` has route evidence and before any `action_runtime` controlled dispatch.
+- Any runtime patch must be authorized by a later gate.
 
-## Active Direction
-- The previous active direction based on automatic continuation of F21/Bedrock/Context phases is `removed_from_active_direction` when incompatible with the official macrostructure 0-6.
-- Historical F21/Bedrock/Context artifacts, summaries, docs, ledger entries, and commits remain preserved as audit trail only.
-- Preserved historical material must be marked or interpreted as `historical_only`, `superseded`, or `removed_from_active_direction` when it no longer serves the official macrostructure.
-- Product Loop Demonstrável is the next real objective.
-- Recommended next phase: `Product Loop Demonstrável / L1.1 Runtime Awake`.
-- Product Loop is not implemented by this reset.
-- Infernus, Crisol, Productatization Gate, and SIP are not executed by this reset.
-- Production is not authorized.
+## Recommended First E2E Task
+- Candidate: `notes.create.local`
+- Mode for L1.2: dry-run plan only.
+- Evidence: F19 `notes.create.local` dry-run artifacts and `src/aris/action_runtime/local_notes_adapter.py` expose preview/blocked-apply behavior.
+- Real note creation is not authorized by L1.1.
+
+## Gaps Before L1.2
+- No Product Loop task envelope is currently wired into the turn path.
+- Action runtime scaffold remains blocked-by-default and not integrated with orchestrator.
+- Human permission presentation for Product Loop E2E is not mapped to current UI/voice.
+- Rollback and idempotency evidence must be attached before any write.
+- No runtime smoke exists for a Product Loop sidecar handoff.
 
 ## Core Priority Invariants
-Every next phase, gate, Codex prompt, artifact, document, technical decision, and roadmap advance must be evaluated against the ARIS Core Priority Invariants:
-
-1. Determinismo
-2. Tipagem / Type-Safety
-3. Isolamento
-4. Governança
-5. Compressão de Contexto
-6. Sincronismo
-7. Densidade Cognitiva
-8. Autoavaliação
-9. Regressão / Testes
-10. Rastreabilidade
-11. Roteamento
-12. Idempotência
-13. Resiliência
-14. Modularidade
-15. Autonomia
-16. Eficiência
-
-## Passage Rule
-- Nothing passes without real PASS on applicable priorities.
-- WARN não destrava avanço crítico.
-- WARN can be recorded, but it does not unlock critical advancement.
-- Non-applicable priorities must be marked `N/A` with objective justification.
-- False `N/A` is `INVALID`.
+- All applicable Core Priority Invariants: `PASS`
+- N/A priorities: none.
+- WARN does not unlock critical advancement.
 
 ## Evidence
-- Roadmap doc: `docs/roadmap/aris_macrostructure.md`
-- Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
-- Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
-- Validation script: `scripts/run_strategic_reset_macrostructure_lock_gate.py`
-- Validation test: `tests/test_strategic_reset_macrostructure_lock_gate.py`
+- Diagnostic module: `src/aris/product_loop/product_loop_runtime_awake_discovery.py`
+- Runner: `scripts/run_product_loop_l1_1_runtime_awake_discovery_gate.py`
+- Test: `tests/test_product_loop_l1_1_runtime_awake_discovery_gate.py`
+- Summary artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
+- Report artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_report.md`
+- Phase doc: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`
+
+## Next
+- Next recommended phase: `Product Loop L1.2 - Single Task E2E Plan`
+- L1.2 scope must remain plan/controlled dry-run design for the first E2E task, not broad runtime execution.

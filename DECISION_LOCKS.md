@@ -1,5 +1,29 @@
 # Decision Locks
 
+## Product Loop L1.1 Runtime Awake Discovery Lock
+- Lock id: `PRODUCT_LOOP_L1_1_RUNTIME_AWAKE_DISCOVERY`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Runtime entry path identified:
+  - `orchestrator.processar_e_responder`
+  - `orchestrator._submeter_texto_para_processamento`
+  - `orchestrator._executar_processamento`
+  - `orchestrator._resolve_turn_via_official_trail`
+  - `turn.pipeline.resolve_turn`
+  - `interaction_router.decidir_rota_interacao`
+  - `interaction_router.executar_rota_interacao`
+- Product Loop insertion is not authorized in runtime by L1.1.
+- Future insertion strategy must start sidecar-first and only later consider a bounded handoff after `turn.pipeline.resolve_turn` route evidence and before action runtime controlled dispatch.
+- First E2E task candidate is `notes.create.local` dry-run plan.
+- Real note creation is not authorized by L1.1.
+- Action runtime activation is not authorized by L1.1.
+- L1.2 is authorized as `Product Loop L1.2 - Single Task E2E Plan`, not broad execution.
+- Touching orchestrator, interaction_router, or turn.pipeline requires a later explicit runtime patch gate.
+- Product Loop remains not implemented.
+- All applicable Core Priority Invariants passed for L1.1.
+- WARN does not unlock critical advancement.
+
 ## Strategic Reset / Macrostructure Lock
 - Lock id: `STRATEGIC_RESET_MACROSTRUCTURE_LOCK`
 - Status: `pass`
