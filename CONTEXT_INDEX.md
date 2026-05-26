@@ -25,6 +25,10 @@
 - L1.5 review artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review.json`
 - L1.5 summary artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json`
 - L1.5 report artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_report.md`
+- L1.6 doc: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`
+- L1.6 request artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request.json`
+- L1.6 summary artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
+- L1.6 report artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request_report.md`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -40,12 +44,14 @@
 - Product Loop L1.5 Pre-Apply Authorization Review Gate: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `ARIS_PHASE_LEDGER.md`
 - Product Loop L1.4 controlled apply plan: `docs/fase_product_loop/product_loop_l1_4_controlled_apply_plan_gate.md`, `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_summary.json`
 - Product Loop L1.5 pre-apply authorization review: `docs/fase_product_loop/product_loop_l1_5_pre_apply_authorization_review_gate.md`, `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json`
+- Product Loop L1.6 human authorization request: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`, `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
 - Product Loop 12-step envelope: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
 - notes.create.local selected task plan: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
 - notes.create.local permissioned dry-run envelope: `docs/fase_product_loop/product_loop_l1_3_permissioned_dry_run_envelope_gate.md`, `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
 - Runtime entry path inventory: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - Product Loop insertion point: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - notes.create.local first E2E candidate: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`, `artifacts/f19/notes_create_local_dry_run_summary.json`
+- notes.create.local human authorization request: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`, `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
@@ -71,3 +77,4 @@
 - L1.3 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.4 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.5 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
+- L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.

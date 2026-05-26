@@ -1,3 +1,97 @@
+# Product Loop L1.6 - Human Authorization Request Gate
+## Ledger Entry
+- Phase: `Product Loop L1.6 - Human Authorization Request Gate`
+- Status: `product_loop_l1_6_human_authorization_request_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- L1.2 verified: `True`
+- L1.3 verified: `True`
+- L1.4 verified: `True`
+- L1.5 verified: `True`
+- Artifact chain consistent: `True`
+- Selected task: `notes.create.local`
+- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
+- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
+- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
+- Source review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
+- Authorization request hash: `sha256:02550e85c1133407bb5c5490ef4aeac1bc199c9898713b15cac5e3464603f5bf`
+- Execution mode: `human_authorization_request_only`
+- Authorization request created: `True`
+- Authorization request presentable: `True`
+- Authorization request complete: `True`
+- Human permission required: `True`
+- Human permission granted: `False`
+- Human authorization recorded: `False`
+- Future human authorization required before apply: `True`
+- Controlled apply allowed: `False`
+- Controlled apply executed: `False`
+- Write operation allowed: `False`
+- Action runtime activation allowed: `False`
+- Runtime integration allowed: `False`
+- Product Loop implemented: `False`
+- Target path: `data/aris_notes/aris_created_note_preview.md`
+- Target path allowed by policy: `True`
+- Payload summary present: `True`
+- Payload schema valid: `True`
+- Risk summary present: `True`
+- No execution disclaimer present: `True`
+- Rollback plan attached: `True`
+- Idempotency key attached: `True`
+- Ledger entry planned: `True`
+- Verification plan attached: `True`
+- Cost/time measurement plan attached: `True`
+- Authorization blockers count: `0`
+- Unsafe payloads blocked: `True`
+- Unsafe payloads blocked count: `10`
+- Next phase requires explicit human authorization: `True`
+- Next phase can prepare authorization capture: `True`
+- Blocking gaps before real apply:
+  - `L1.7 explicit authorization capture review gate has not executed yet.`
+  - `Human permission remains ungranted in L1.6.`
+  - `Human authorization has not been recorded in L1.6.`
+  - `Controlled apply remains plan-only and not authorized in L1.6.`
+  - `Write operation remains blocked.`
+  - `Action runtime activation remains blocked-by-default.`
+  - `Runtime integration remains false.`
+  - `No real write path under data/aris_notes is authorized yet.`
+  - `Rollback, idempotency, ledger, verification, and cost/time stay mandatory before any future apply.`
+- All applicable Core Priority Invariants passed for L1.6.
+- Runtime changed: `False`
+- Frontend changed: `False`
+- Voice/audio changed: `False`
+- Network used: `False`
+- Dependencies installed: `False`
+- Files altered:
+  - `src/aris/product_loop/product_loop_human_authorization_request.py`
+  - `scripts/run_product_loop_l1_6_human_authorization_request_gate.py`
+  - `tests/test_product_loop_l1_6_human_authorization_request_gate.py`
+  - `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request.json`
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request_report.md`
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+- Artifacts generated:
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request.json`
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
+  - `artifacts/product_loop/product_loop_l1_6_human_authorization_request_report.md`
+- Validations executed:
+  - `python3 -m py_compile src/aris/product_loop/product_loop_human_authorization_request.py` -> `pass`
+  - `python3 -m py_compile scripts/run_product_loop_l1_6_human_authorization_request_gate.py` -> `pass`
+  - `python3 -m py_compile tests/test_product_loop_l1_6_human_authorization_request_gate.py` -> `pass`
+  - `python3 scripts/run_product_loop_l1_6_human_authorization_request_gate.py` -> `pass`
+  - `python3 -m unittest tests.test_product_loop_l1_6_human_authorization_request_gate -q` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json` -> `pass`
+  - `python3 -m json.tool artifacts/product_loop/product_loop_l1_6_human_authorization_request.json` -> `pass`
+  - `filesystem no-real-note/no-calendar/no-ics check` -> `pass`
+  - `grep` required phrase checks -> `pass`
+  - `git diff --name-only` protected-surface check -> `pass_pending_stage_scope`
+- Next recommended phase: `Product Loop L1.7 - Explicit Authorization Capture Review Gate`
+- Commit hash final: `936ce24d2158d1990e6fb216a1a6b3dd99dbeef2`
+
 # Product Loop L1.5 - Pre-Apply Authorization Review Gate
 ## Ledger Entry
 - Phase: `Product Loop L1.5 - Pre-Apply Authorization Review Gate`
