@@ -1,6 +1,10 @@
 # Context Index
 
 ## Active Source Routing
+- L1.14 doc: `docs/fase_product_loop/product_loop_l1_14_response_evidence_gate.md`
+- L1.14 summary artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
+- L1.14 report artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_report.md`
+- L1.14 response evidence artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence.json`
 - L1.13 doc: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`
 - L1.13 summary artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
 - L1.13 report artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
@@ -74,6 +78,7 @@
 - Product Loop Demonstrável: `NEXT_ACTION.md`, `docs/roadmap/aris_macrostructure.md`
 - Product Loop L1.1 Runtime Awake: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`, `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - Product Loop L1.2 Single Task E2E Plan: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`, `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
+- Product Loop L1.14 Response Evidence Gate: `docs/fase_product_loop/product_loop_l1_14_response_evidence_gate.md`, `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
 - Product Loop L1.3 Permissioned Dry-Run Envelope Gate: `NEXT_ACTION.md`
 - Product Loop L1.4 Controlled Apply Plan Gate: `NEXT_ACTION.md`
 - Product Loop L1.5 Pre-Apply Authorization Review Gate: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `ARIS_PHASE_LEDGER.md`
@@ -122,4 +127,4 @@
 - L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.7 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.8 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 performs the first real controlled apply; L1.12 verifies evidence; L1.13 is the next execution gate.
+- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 performs the first real controlled apply; L1.12 verifies evidence; L1.13 proves rollback; L1.14 consolidates response evidence; L1.15 is the next closure gate.
