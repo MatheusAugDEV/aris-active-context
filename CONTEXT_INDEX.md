@@ -1,6 +1,10 @@
 # Context Index
 
 ## Active Source Routing
+- L1.15 doc: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`
+- L1.15 summary artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
+- L1.15 report artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
+- L1.15 record artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure.json`
 - L1.14 doc: `docs/fase_product_loop/product_loop_l1_14_response_evidence_gate.md`
 - L1.14 summary artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
 - L1.14 report artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_report.md`
@@ -75,6 +79,7 @@
 - ARIS Macrostructure: `docs/roadmap/aris_macrostructure.md`
 - Core Priority Invariants: `CURRENT_STATE.md`, `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - Strategic Reset: `CURRENT_STATE.md`, `ARIS_PHASE_LEDGER.md`, roadmap report artifacts
+- Product Loop L1.15 Closure Gate: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`, `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - Product Loop Demonstrável: `NEXT_ACTION.md`, `docs/roadmap/aris_macrostructure.md`
 - Product Loop L1.1 Runtime Awake: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`, `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
 - Product Loop L1.2 Single Task E2E Plan: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`, `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
@@ -99,6 +104,7 @@
 - notes.create.local verification and evidence: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`, `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
 - notes.create.local rollback proof: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`, `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
 - notes.create.local rollback proof authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
+- notes.create.local closure gate: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`, `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
