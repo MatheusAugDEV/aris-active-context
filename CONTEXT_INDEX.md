@@ -45,6 +45,11 @@
 - L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
 - L1.10 summary artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
 - L1.10 report artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_report.md`
+- L1.11 doc: `docs/fase_product_loop/product_loop_l1_11_first_real_controlled_apply_gate.md`
+- L1.11 apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
+- L1.11 summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
+- L1.11 report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
+- L1.11 manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -100,4 +105,4 @@
 - L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.7 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
 - L1.8 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 is the next execution gate.
+- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 performs the first real controlled apply; L1.12 is the next execution gate.

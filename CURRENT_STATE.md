@@ -1,13 +1,13 @@
-# Product Loop L1.10 - Pre-Apply Execution Readiness Gate
+# Product Loop L1.11 - First Real Controlled Apply Gate
 
 ## Current Position
-- Status: `product_loop_l1_10_pre_apply_execution_readiness_pass`
+- Status: `product_loop_l1_11_first_real_controlled_apply_pass`
 - Decision: `pass`
 - Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.10 - Pre-Apply Execution Readiness Gate`
+- Current state: `Product Loop L1.11 - First Real Controlled Apply Gate`
 - Selected task: `notes.create.local`
 - Target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `pre_apply_execution_readiness_only`
+- Execution mode: `first_real_controlled_apply`
 - Authorization status: `recorded`
 - Authorization recorded: `True`
 - Human permission granted: `True`
@@ -20,6 +20,7 @@
 - Source authorization capture review hash: `sha256:4b7fe2abf41f556dd66666d71e16e76a704cce899d4882d4d19e6530827f4ce3`
 - Source pending closure hash: `sha256:f9b7971b06475a149441c22fdea738afea5cffa6b65d02688d2e73a7edc977a4`
 - Source authorization record hash: `sha256:37950638334a72d38964768b1ee942f07607e7410c8bb1901a14c64d24158b0b`
+- Source pre-apply readiness hash: `sha256:74da1fd6275662725fc7c54c6efd2bca600f8a2729e4ef08168ba04c5242c199`
 - L1.2 verified: `True`
 - L1.3 verified: `True`
 - L1.4 verified: `True`
@@ -28,15 +29,28 @@
 - L1.7 verified: `True`
 - L1.8 verified: `True`
 - L1.9 verified: `True`
+- L1.10 verified: `True`
 - Artifact chain consistent: `True`
-- Apply readiness review created: `True`
-- Apply readiness status: `ready_for_controlled_apply_preflight`
-- Next phase can prepare controlled apply execution: `True`
-- Controlled apply allowed: `False`
-- Controlled apply executed: `False`
-- Write operation allowed: `False`
+- Explicit authorization input present: `True`
+- Explicit authorization input valid: `True`
+- Apply review passed: `True`
+- Controlled apply allowed: `True`
+- Controlled apply executed: `True`
+- Write operation allowed: `True`
+- Write operation executed: `True`
+- Note created: `True`
+- Bytes written: `360`
+- Content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Apply result hash: `sha256:b0371535ea4cbe186d99099876c550dc4ad6e20d440268e5ec1d393779ce7cea`
+- Rollback available: `True`
+- Rollback executed: `False`
+- Ledger entry written: `True`
+- Verification executed: `True`
+- Verification passed: `True`
+- Cost/time measurement executed: `True`
 - Action runtime activation allowed: `False`
 - Runtime integration allowed: `False`
+- Generic action runtime activated: `False`
 - Product Loop implemented: `False`
 - Target path allowed by policy: `True`
 - Target path parent exists or creatable: `True`
@@ -62,7 +76,7 @@
 - Voice/audio changed: `False`
 - Network used: `False`
 - Dependencies installed: `False`
-- Real note created: `False`
+- Real note created: `True`
 - Calendar file created: `False`
 - ICS file created: `False`
 
@@ -72,15 +86,17 @@
 - WARN does not unlock critical advancement.
 
 ## Evidence
-- Readiness module: `src/aris/product_loop/product_loop_pre_apply_execution_readiness.py`
-- Runner: `scripts/run_product_loop_l1_10_pre_apply_execution_readiness_gate.py`
-- Test: `tests/test_product_loop_l1_10_pre_apply_execution_readiness_gate.py`
-- Readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
-- Summary artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
-- Report artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_report.md`
-- Phase doc: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`
-- L1.9 authorization record artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record.json`
+- Apply module: `src/aris/product_loop/product_loop_first_real_controlled_apply.py`
+- Runner: `scripts/run_product_loop_l1_11_first_real_controlled_apply_gate.py`
+- Test: `tests/test_product_loop_l1_11_first_real_controlled_apply_gate.py`
+- Note artifact: `data/aris_notes/aris_created_note_preview.md`
+- Apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
+- Summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
+- Report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
+- Phase doc: `docs/fase_product_loop/product_loop_l1_11_first_real_controlled_apply_gate.md`
+- Manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
+- L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
 
 ## Next
-- Next recommended phase: `Product Loop L1.11 - First Real Controlled Apply Gate`
-- L1.10 remains readiness-only; no write/apply execution was performed.
+- Next recommended phase: `Product Loop L1.12 - Verification and Evidence Gate`
+- L1.11 performed the first authorized real controlled write and remains non-closing.
