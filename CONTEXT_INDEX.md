@@ -1,6 +1,11 @@
 # Context Index
 
 ## Active Source Routing
+- L1.13 doc: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`
+- L1.13 summary artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
+- L1.13 report artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
+- L1.13 rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
+- L1.13 manual authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
 - Current state: `aris-active-context/CURRENT_STATE.md`
 - Next action: `aris-active-context/NEXT_ACTION.md`
 - Decision locks: `aris-active-context/DECISION_LOCKS.md`
@@ -54,6 +59,11 @@
 - L1.12 evidence artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence.json`
 - L1.12 summary artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
 - L1.12 report artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_report.md`
+- L1.13 doc: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`
+- L1.13 summary artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
+- L1.13 report artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
+- L1.13 rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
+- L1.13 manual authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
 - Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 
@@ -82,6 +92,8 @@
 - notes.create.local explicit human authorization record: `docs/fase_product_loop/product_loop_l1_9_explicit_human_authorization_record_gate.md`, `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_summary.json`
 - notes.create.local pre-apply execution readiness: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`, `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
 - notes.create.local verification and evidence: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`, `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
+- notes.create.local rollback proof: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`, `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
+- notes.create.local rollback proof authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
 - Hardening Base: `docs/roadmap/aris_macrostructure.md`
 - ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
 - ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`

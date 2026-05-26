@@ -1,3 +1,34 @@
+# Product Loop L1.13 Rollback Proof Gate
+- Phase: `Product Loop L1.13 - Rollback Proof Gate`
+- Status: `product_loop_l1_13_rollback_proof_pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Rollback target path: `data/aris_notes/aris_created_note_preview.md`
+- Execution mode: `rollback_proof`
+- Authorization status: `recorded`
+- Authorization present: `True`
+- Authorization valid: `True`
+- L1.11 verified: `True`
+- L1.12 verified: `True`
+- Artifact chain consistent: `True`
+- Rollback target existed before: `True`
+- Expected pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Observed pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Rollback executed: `True`
+- Rollback target exists after: `False`
+- Rollback verification passed: `True`
+- Ledger entry written: `True`
+- Ledger evidence consistent: `True`
+- Cost/time measurement executed: `True`
+- Personal notes unchanged: `True`
+- Calendar unchanged: `True`
+- No ICS created: `True`
+- Unsafe payloads blocked: `True`
+- Rollback result hash: `sha256:a7a9af1053056e1d68349067f929822793df3995d32441351ad8931f92ef43eb`
+- Next recommended phase: `Product Loop L1.14 - Response Evidence Gate`
+- L1.13 removes only the authorized note and does not close the Product Loop.
+
 # Product Loop L1.12 - Verification and Evidence Gate
 ## Ledger Entry
 - Phase: `Product Loop L1.12 - Verification and Evidence Gate`

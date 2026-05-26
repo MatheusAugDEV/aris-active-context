@@ -1,5 +1,45 @@
 # Decision Locks
 
+# Product Loop L1.13 Rollback Proof Gate Lock
+- Lock id: `PRODUCT_LOOP_L1_13_ROLLBACK_PROOF`
+- Status: `pass`
+- Decision: `pass`
+- Macrostructure phase: `Product Loop Demonstrável`
+- Selected task: `notes.create.local`
+- Rollback target path: `data/aris_notes/aris_created_note_preview.md`
+- Execution mode: `rollback_proof`
+- Authorization status: `recorded`
+- Authorization present: `True`
+- Authorization valid: `True`
+- L1.11 verified: `True`
+- L1.12 verified: `True`
+- Artifact chain consistent: `True`
+- Rollback target exists before: `True`
+- Expected pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Observed pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
+- Rollback allowed: `True`
+- Rollback executed: `True`
+- Rollback target exists after: `False`
+- Rollback verification executed: `True`
+- Rollback verification passed: `True`
+- Ledger entry written: `True`
+- Ledger evidence consistent: `True`
+- Cost/time measurement executed: `True`
+- Personal notes unchanged: `True`
+- Calendar unchanged: `True`
+- No ICS created: `True`
+- Unsafe payloads blocked: `True`
+- Rollback result hash: `sha256:a7a9af1053056e1d68349067f929822793df3995d32441351ad8931f92ef43eb`
+- All applicable Core Priority Invariants passed for L1.13.
+- WARN does not unlock critical advancement.
+- Blocking gaps before response evidence:
+  - `L1.13 proves rollback and compensation only and does not close the Product Loop.`
+  - `A later response evidence gate is still required.`
+  - `A later closure gate is still required before declaring the loop complete.`
+  - `No new write is executed in L1.13.`
+  - `Product Loop remains not fully implemented.`
+- Next phase is `Product Loop L1.14 - Response Evidence Gate`.
+
 # Product Loop L1.12 Verification and Evidence Gate Lock
 - Lock id: `PRODUCT_LOOP_L1_12_VERIFICATION_AND_EVIDENCE`
 - Status: `pass`
