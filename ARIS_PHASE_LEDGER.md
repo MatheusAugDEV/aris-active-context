@@ -26,7 +26,7 @@
 - Output summary artifact: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_summary.json`
 - Output report artifact: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
 - Root commit hash: `ad0481e`
-- Active-context commit hash: `pending-active-context-commit`
+- Active-context commit hash: `55d7807`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
 
 # Lab Real Simulation Pack Design Brief Alignment Gate
