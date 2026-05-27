@@ -1,3 +1,31 @@
+# Lab Real Simulation Pack Controlled Workflow Plan
+- Status: `lab_real_simulation_pack_controlled_workflow_plan_pass`
+- Decision: `pass`
+- Previous phase verified: `True`
+- Synthetic-only confirmed: `True`
+- Real data allowed: `False`
+- PII allowed: `False`
+- Secrets allowed: `False`
+- Network allowed: `False`
+- Runtime mutation allowed: `False`
+- Lab full activation allowed: `False`
+- Productization allowed: `False`
+- Scenario slots covered: `20`
+- Domains covered: `7`
+- Risk classes covered: `6`
+- Document blueprints: `20`
+- Dataset blueprints: `20`
+- Fixture families: `6`
+- Oracle expectation families: `6`
+- Workflow families: `6`
+- Workflow stages: `8`
+- Carry-forward residuals preserved: `True`
+- Blockers: `[]`
+- Warnings: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Expectation Mapping Plan`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
 # Lab Real Simulation Pack Synthetic Document/Dataset Plan
 - Status: `lab_real_simulation_pack_synthetic_document_dataset_plan_pass`
 - Decision: `pass`

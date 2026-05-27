@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Controlled Workflow Plan`
+- Active next block: `Lab Real Simulation Pack / Expectation Mapping Plan`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -161,5 +161,8 @@
 - Lab ASI coverage plan: `artifacts/lab_simulation/lab_real_simulation_scenario_asi_coverage_plan.json`
 - Lab materialization rules: `artifacts/lab_simulation/lab_real_simulation_scenario_materialization_rules.json`
 - Lab synthetic document/dataset plan: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_summary.json`
+- Lab controlled workflow plan summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_summary.json`
+- Lab controlled workflow gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan.json`
+- Lab controlled workflow report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_report.md`
 - Lab synthetic document/dataset gate: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan.json`
 - Lab synthetic document/dataset report: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
