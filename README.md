@@ -27,7 +27,7 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Product Loop layer closed: `True`
 - H0 exists as a materialized design brief.
 - The current active next phase is:
-  `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+  `H0 Design Brief Alignment Patch Apply`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
@@ -36,5 +36,5 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 
 ## Boundaries
 - Do not reopen Product Loop L1.15 from active slots.
-- Do not advance directly into later Hardening Base execution without the H0 roadmap-alignment review gate.
+- Do not advance directly into H1 while the H0 patch and rerun review remain pending.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.

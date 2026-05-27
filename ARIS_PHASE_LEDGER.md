@@ -1,3 +1,29 @@
+# H0 Design Brief Realignment Controlled Plan
+- Phase: `H0 Design Brief Realignment Controlled Plan`
+- Status: `h0_design_brief_realignment_controlled_plan_ready`
+- Decision: `pass`
+- Plan type: `deterministic_read_only_controlled_plan`
+- Source gate status: `h0_design_brief_alignment_review_gate_blocked`
+- Source gate decision: `blocked`
+- H0 design brief found: `True`
+- H0 design brief path: `src/aris/hardening_base/hardening_base_h0_phase_design_brief.py`
+- Blocker confirmed: `h0_design_brief_routes_directly_to_h1_without_alignment_gate`
+- Warning mapped: `h0_design_brief_missing_explicit_pre_pilot_gap_alignment`
+- Warning mapped: `h0_design_brief_does_not_explicitly_repeat_official_positioning_phrase`
+- H0 edited in this phase: `False`
+- H1 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan.json`
+- Output summary artifact: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_summary.json`
+- Output report artifact: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_report.md`
+- Next recommended phase: `H0 Design Brief Alignment Patch Apply`
+
 # H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate
 - Phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
 - Status: `h0_design_brief_alignment_review_gate_blocked`

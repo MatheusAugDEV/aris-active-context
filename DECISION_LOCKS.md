@@ -29,7 +29,9 @@
 - Later Hardening Base execution remains blocked until the H0 design brief is realigned to the canonical roadmap.
 - Active review result: `h0_design_brief_alignment_review_gate_blocked`
 - H1 executed from the review gate: `False`
-- Active next phase: `H0 Design Brief Realignment Controlled Plan`
+- Active realignment plan result: `h0_design_brief_realignment_controlled_plan_ready`
+- H0 edited by the realignment plan: `False`
+- Active next phase: `H0 Design Brief Alignment Patch Apply`
 
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:

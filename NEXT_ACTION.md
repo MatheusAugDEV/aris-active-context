@@ -1,14 +1,14 @@
 # Next Action
 
-## H0 Design Brief Realignment Controlled Plan
+## H0 Design Brief Alignment Patch Apply
 
 - Status: `ready_for_next_phase`
-- Decision dependency: `H0 Design Brief Alignment Review Gate = blocked`
+- Decision dependency: `H0 Design Brief Realignment Controlled Plan = pass`
 - Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-- Objective: create a controlled realignment plan for the already materialized H0 design brief so that it conforms to `Roadmap Canônico ARIS V1.2` before any H1 recommendation becomes active again.
-- Scope: roadmap governance, design-brief patch planning, lock preservation, and active-context continuity only.
+- Objective: patch the H0 design brief generator and regenerate its artifacts so the direct H1 route is removed, the 9 lacunas pré-piloto are explicitly acknowledged, and the official governance positioning phrase is present.
+- Scope: H0 design-brief source patching, artifact regeneration, rerun preparation for the H0 alignment review gate, and active-context continuity only.
 - H0 materialization state: `already_exists`
-- H0 review outcome: `blocked_due_to_direct_h1_route`
+- H0 edited in previous phase: `False`
 - H1 execution state: `not_executed`
 - Production remains unauthorized: `True`
 - Product remains not ready: `True`
@@ -18,4 +18,4 @@
 ## Boundary
 - Do not reopen Product Loop L1.15.
 - Do not execute H1.
-- Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, dependencies, or historical evidence surfaces from this phase.
+- Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, dependencies, or historical evidence surfaces beyond the H0 design-brief patch scope.

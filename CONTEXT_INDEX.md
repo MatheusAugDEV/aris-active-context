@@ -20,6 +20,9 @@
 - H0 alignment review decision: `artifacts/roadmap/h0_design_brief_alignment_review_gate.json`
 - H0 alignment review summary: `artifacts/roadmap/h0_design_brief_alignment_review_gate_summary.json`
 - H0 alignment review report: `artifacts/roadmap/h0_design_brief_alignment_review_gate_report.md`
+- H0 realignment plan decision: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan.json`
+- H0 realignment plan summary: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_summary.json`
+- H0 realignment plan report: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_report.md`
 
 ## Indexed Topics
 - Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
@@ -28,9 +31,10 @@
 - Product Loop layer closed: `True`
 - H0 design brief materialized: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
 - H0 design brief alignment review result: `blocked`
+- H0 design brief realignment plan result: `pass`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `H0 Design Brief Realignment Controlled Plan`
+- Active next phase: `H0 Design Brief Alignment Patch Apply`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -54,4 +58,4 @@
 - Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap changes.
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
-- Do not route directly into H1 while the H0 alignment review result remains blocked.
+- Do not route directly into H1 while the H0 design brief patch and rerun review remain pending.
