@@ -31,7 +31,7 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H4 observability + cost/time + quota baseline is `pass`.
 - H5 degraded mode + failure UX baseline is `pass`.
 - The current active next block is:
-  `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Planning`
+  `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.

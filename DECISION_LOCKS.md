@@ -1,3 +1,193 @@
+# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+- Decision: `pass`
+- Approval packet status: `ready_for_operator_review_packet_review`
+- Previous phase verified: `True`
+- Previous readiness status verified: `True`
+- Synthetic-only confirmed: `True`
+- Controlled apply plan only: `True`
+- Approval packet planning only: `True`
+- Readiness review only consumed: `True`
+- Real apply executed: `False`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Approval execution performed: `False`
+- Network used: `False`
+- External API used: `False`
+- External LLM used: `False`
+- Real data used: `False`
+- Secrets read: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Packet section count: `9`
+- Approval packet checklist item count: `18`
+- Risk acknowledgement entry count: `9`
+- Evidence brief entry count: `12`
+- Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
+- Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
+# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+- Decision: `pass`
+- Approval packet status: `ready_for_operator_review_packet_review`
+- Previous phase verified: `True`
+- Previous readiness status verified: `True`
+- Synthetic-only confirmed: `True`
+- Controlled apply plan only: `True`
+- Approval packet planning only: `True`
+- Readiness review only consumed: `True`
+- Real apply executed: `False`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Approval execution performed: `False`
+- Network used: `False`
+- External API used: `False`
+- External LLM used: `False`
+- Real data used: `False`
+- Secrets read: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Packet section count: `9`
+- Approval packet checklist item count: `18`
+- Risk acknowledgement entry count: `9`
+- Evidence brief entry count: `12`
+- Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
+- Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
+# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+- Decision: `pass`
+- Approval packet status: `ready_for_operator_review_packet_review`
+- Previous phase verified: `True`
+- Previous readiness status verified: `True`
+- Synthetic-only confirmed: `True`
+- Controlled apply plan only: `True`
+- Approval packet planning only: `True`
+- Readiness review only consumed: `True`
+- Real apply executed: `False`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Approval execution performed: `False`
+- Network used: `False`
+- External API used: `False`
+- External LLM used: `False`
+- Real data used: `False`
+- Secrets read: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Packet section count: `9`
+- Approval packet checklist item count: `18`
+- Risk acknowledgement entry count: `9`
+- Evidence brief entry count: `12`
+- Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
+- Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
+# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_fail`
+- Decision: `fail`
+- Approval packet status: `not_ready`
+- Previous phase verified: `False`
+- Previous readiness status verified: `False`
+- Synthetic-only confirmed: `False`
+- Controlled apply plan only: `False`
+- Approval packet planning only: `True`
+- Readiness review only consumed: `True`
+- Real apply executed: `False`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Approval execution performed: `False`
+- Network used: `False`
+- External API used: `False`
+- External LLM used: `False`
+- Real data used: `False`
+- Secrets read: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning`
+- Packet section count: `9`
+- Approval packet checklist item count: `18`
+- Risk acknowledgement entry count: `9`
+- Evidence brief entry count: `0`
+- Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
+- Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
+# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_fail`
+- Decision: `fail`
+- Approval packet status: `not_ready`
+- Previous phase verified: `False`
+- Previous readiness status verified: `False`
+- Synthetic-only confirmed: `False`
+- Controlled apply plan only: `False`
+- Approval packet planning only: `True`
+- Readiness review only consumed: `True`
+- Real apply executed: `False`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Approval execution performed: `False`
+- Network used: `False`
+- External API used: `False`
+- External LLM used: `False`
+- Real data used: `False`
+- Secrets read: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning`
+- Packet section count: `9`
+- Approval packet checklist item count: `18`
+- Risk acknowledgement entry count: `9`
+- Evidence brief entry count: `0`
+- Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
+- Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
 # Lab Real Simulation Pack Controlled Apply Readiness Review Lock
 - Lock id: `LAB_RSP_CONTROLLED_APPLY_READINESS_REVIEW`
 - Status: `lab_real_simulation_pack_controlled_apply_readiness_review_pass`
