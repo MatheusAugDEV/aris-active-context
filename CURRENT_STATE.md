@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h6_eval_harness_baseline_gate_pass`
+- Status: `hardening_base_h7_closure_gate_pass`
 - Decision: `pass`
-- Current state: `H6 Eval Harness Baseline Materialized / H7 Pending`
+- Current state: `H7 Hardening Base Closure Materialized / Lab Real Simulation Pack Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -35,6 +35,13 @@
 - H6 H3 mapping count: `8`
 - H6 H4 mapping count: `10`
 - H6 H5 mapping count: `10`
+- H7 closure result: `pass`
+- H7 evidence rollup count: `7`
+- H7 invariant closure count: `16`
+- H7 V1.2 gap closure count: `9`
+- H7 known drift classification: `warning_only_not_blocking`
+- H7 fast path plan enabled: `False`
+- H7 next block readiness: `ready`
 - H2 ledger event schema version: `1.0`
 - H2 replay policy version: `1.0`
 - H2 tamper matrix version: `1.0`
@@ -79,27 +86,21 @@
 - H4 executed in this phase: `True`
 - H5 executed in this phase: `True`
 - H6 executed in this phase: `True`
-- H7 executed in this phase: `False`
+- H7 executed in this phase: `True`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- The H5 baseline materializes the degraded-mode contract, failure UX contract, kill switch baseline, ledger lock/read-only response contract, blast radius matrix, chaos engineering internal plan, recovery routing policy, and the H1/H2/H3/H4 cross-gate degraded mappings.
-- Degradation levels were declared for 5 states: normal operation, tool/capability failure, provider/dependency failure, integrity/quota lock, and unsafe/unresolved uncertainty.
-- 21 failure modes are declared, including ledger append failure, ledger hash mismatch, tamper detection, capability handle replay, plan hash mismatch, authorization failure, stale context conflict, bulk-read violation, quota exhaustion, telemetry write failure, rollback unavailability, and false-completion suspicion.
-- 12 failure UX templates are declared and remain honest, actionable, and non-false-success.
-- 10 blast radius boundaries are declared to keep degradation local and bounded.
-- 10 chaos scenarios are planned only; none are executed in production or in this phase.
-- 15 H1 golden tasks are mapped to degraded expectations.
-- 12 H2 event types are mapped to degraded responses.
-- 8 H3 policies/checks are mapped to degraded responses.
-- 10 H4 observability expectations are mapped to degraded responses.
-- Ledger append failure blocks any mutable action.
-- Tamper detection escalates to level 3 read-only/suggest-only or level 4 kill switch depending on severity and resolution status.
-- Failure UX must never claim success without evidence.
-- Known drift retained: `roadmap_canonical_current_position_stale`
+- H7 closes Hardening Base by consolidating H0-H6 evidence, phase status, and readiness into a deterministic closure gate.
+- H0-H6 evidence rollup count: `7`
+- 16 Core Priority Invariants are covered by at least one H0-H6 evidence source.
+- 9 V1.2 gaps are covered by at least one H0-H6 evidence source.
+- H0-H6 pass/warn/block matrix is complete, with `roadmap_canonical_current_position_stale` retained as warning-only and non-blocking.
+- Fast path remains disabled and future-gated; H7 only produced a plan, never activation.
+- Pre-pilot lock remains enforced; no pilot, product, or runtime authorization is granted.
+- Known drift classification: `warning_only_not_blocking`
 
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
@@ -108,13 +109,15 @@
 - Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
 - H5 has been executed and passed from this phase.
 - H6 has been executed and passed from this phase.
-- H7 is now the next design gate only; it has not been executed from this phase.
+- H7 has been executed and passed from this phase.
+- Hardening Base is now closed.
+- Lab Real Simulation Pack is now the next block only; it has not been executed from this phase.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active phase: `Hardening Base H7 — Hardening Base Closure Gate`
-- Phase objective: close Hardening Base with the canonical H7 closure gate after H6 eval harness baseline pass, without executing runtime or pilot activation.
-- Phase class: `closure_gate`
+- Next active block: `Lab Real Simulation Pack`
+- Block objective: begin the next governed macroblock only after Hardening Base closure, without executing runtime or pilot activation.
+- Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
 - Voice or audio mutation allowed now: `False`

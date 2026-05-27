@@ -108,9 +108,16 @@
 - H6 H3 mapping count: `8`
 - H6 H4 mapping count: `10`
 - H6 H5 mapping count: `10`
+- H7 closure result: `pass`
+- H7 evidence rollup count: `7`
+- H7 invariant closure count: `16`
+- H7 V1.2 gap closure count: `9`
+- H7 known drift classification: `warning_only_not_blocking`
+- H7 fast path plan enabled: `False`
+- H7 next block readiness: `ready`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `Hardening Base H7 — Hardening Base Closure Gate`
+- Active next block: `Lab Real Simulation Pack`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -136,4 +143,4 @@
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
 - Do not treat the H4 next-step entry as H4 execution.
-- Do not treat the H7 next-step entry as H7 execution.
+- Do not treat the Lab Real Simulation Pack next-step entry as execution.

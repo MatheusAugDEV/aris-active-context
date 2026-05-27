@@ -30,8 +30,8 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H3 context engineering baseline is `pass`.
 - H4 observability + cost/time + quota baseline is `pass`.
 - H5 degraded mode + failure UX baseline is `pass`.
-- The current active next phase is:
-  `Hardening Base H7 — Hardening Base Closure Gate`
+- The current active next block is:
+  `Lab Real Simulation Pack`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
