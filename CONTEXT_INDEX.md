@@ -92,9 +92,25 @@
 - H5 H2 mapping count: `12`
 - H5 H3 mapping count: `8`
 - H5 H4 mapping count: `10`
+- H6 eval harness baseline result: `pass`
+- H6 harness profiles count: `3`
+- H6 harness stage count: `12`
+- H6 evidence fields count: `17`
+- H6 hermeticity requirements count: `12`
+- H6 promotion criteria count: `12`
+- H6 determinism requirements count: `11`
+- H6 property requirements count: `11`
+- H6 chaos requirements count: `11`
+- H6 H1 P0 mapping count: `15`
+- H6 H1 P1 mapping count: `5`
+- H6 H1 P2 mapping count: `5`
+- H6 H2 mapping count: `12`
+- H6 H3 mapping count: `8`
+- H6 H4 mapping count: `10`
+- H6 H5 mapping count: `10`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `Hardening Base H6 — Eval Harness Baseline Gate`
+- Active next phase: `Hardening Base H7 — Hardening Base Closure Gate`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -120,4 +136,4 @@
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
 - Do not treat the H4 next-step entry as H4 execution.
-- Do not treat the H6 next-step entry as H6 execution.
+- Do not treat the H7 next-step entry as H7 execution.

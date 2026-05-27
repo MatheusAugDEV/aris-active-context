@@ -1,3 +1,59 @@
+# Hardening Base H6 — Eval Harness Baseline Gate
+- Phase: `Hardening Base H6 — Eval Harness Baseline Gate`
+- Status: `hardening_base_h6_eval_harness_baseline_gate_pass`
+- Decision: `pass`
+- H5 pass verified: `True`
+- L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Harness profile count: `3`
+- Harness stage count: `12`
+- Evidence fields count: `17`
+- Hermeticity requirements count: `12`
+- Promotion criteria count: `12`
+- Determinism requirements count: `11`
+- Property requirements count: `11`
+- Chaos requirements count: `11`
+- H1 P0 mapping count: `15`
+- H1 P1 mapping count: `5`
+- H1 P2 mapping count: `5`
+- H2 mapping count: `12`
+- H3 mapping count: `8`
+- H4 mapping count: `10`
+- H5 mapping count: `10`
+- LLM-as-judge critical gate decision: `forbidden`
+- DeepEval/Ragas policy: `advisory_only_future_gated`
+- Productive eval harness activated: `False`
+- Dependency installation performed: `False`
+- Real action execution performed: `False`
+- Chaos real execution performed: `False`
+- Infernus executed: `False`
+- Crisol executed: `False`
+- Lab Simulation executed: `False`
+- H6 executed in this phase: `True`
+- H7 executed in this phase: `False`
+- Known drift retained: `roadmap_canonical_current_position_stale`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/hardening_base/hardening_base_h6_eval_harness_baseline_gate.json`
+- Output summary artifact: `artifacts/hardening_base/hardening_base_h6_eval_harness_baseline_gate_summary.json`
+- Output report artifact: `artifacts/hardening_base/hardening_base_h6_eval_harness_baseline_gate_report.md`
+- Output profiles artifact: `artifacts/hardening_base/hardening_base_h6_harness_profiles.json`
+- Output stage contract artifact: `artifacts/hardening_base/hardening_base_h6_harness_stage_contract.json`
+- Output evidence contract artifact: `artifacts/hardening_base/hardening_base_h6_harness_evidence_contract.json`
+- Output hermeticity artifact: `artifacts/hardening_base/hardening_base_h6_hermeticity_contract.json`
+- Output promotion criteria artifact: `artifacts/hardening_base/hardening_base_h6_promotion_criteria_matrix.json`
+- Output determinism artifact: `artifacts/hardening_base/hardening_base_h6_determinism_suite_plan.json`
+- Output property artifact: `artifacts/hardening_base/hardening_base_h6_property_suite_plan.json`
+- Output chaos artifact: `artifacts/hardening_base/hardening_base_h6_chaos_suite_plan.json`
+- Output advisory policy artifact: `artifacts/hardening_base/hardening_base_h6_advisory_evaluator_policy.json`
+- Output cross-gate mapping artifact: `artifacts/hardening_base/hardening_base_h6_cross_gate_harness_mapping.json`
+- Next recommended phase: `Hardening Base H7 — Hardening Base Closure Gate`
+
 # Hardening Base H5 — Degraded Mode + Failure UX Gate
 - Phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
 - Status: `hardening_base_h5_degraded_mode_failure_ux_gate_pass`

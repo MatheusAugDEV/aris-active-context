@@ -147,6 +147,43 @@
 - Network used in this phase: `False`
 - Dependencies installed in this phase: `False`
 
+# H6 Eval Harness Baseline Gate
+- Lock id: `H6_EVAL_HARNESS_BASELINE_GATE`
+- Status: `hardening_base_h6_eval_harness_baseline_gate_pass`
+- Decision: `pass`
+- Harness profile count: `3`
+- Harness stage count: `12`
+- Evidence fields count: `17`
+- Hermeticity requirements count: `12`
+- Promotion criteria count: `12`
+- Determinism requirements count: `11`
+- Property requirements count: `11`
+- Chaos requirements count: `11`
+- H1 P0 mapping count: `15`
+- H1 P1 mapping count: `5`
+- H1 P2 mapping count: `5`
+- H2 mapping count: `12`
+- H3 mapping count: `8`
+- H4 mapping count: `10`
+- H5 mapping count: `10`
+- Productive eval harness activated: `False`
+- Dependency installation performed: `False`
+- Real action execution performed: `False`
+- Chaos real execution performed: `False`
+- Infernus executed: `False`
+- Crisol executed: `False`
+- Lab Simulation executed: `False`
+- H7 executed from the H6 phase flow: `False`
+- Active next phase: `Hardening Base H7 — Hardening Base Closure Gate`
+- Known drift retained: `roadmap_canonical_current_position_stale`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
   1. `Product Loop Demonstrável`

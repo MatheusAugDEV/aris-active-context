@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h5_degraded_mode_failure_ux_gate_pass`
+- Status: `hardening_base_h6_eval_harness_baseline_gate_pass`
 - Decision: `pass`
-- Current state: `H5 Degraded Mode + Failure UX Baseline Materialized / H6 Pending`
+- Current state: `H6 Eval Harness Baseline Materialized / H7 Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -19,6 +19,22 @@
 - H3 context engineering baseline result: `pass`
 - H4 observability + cost/time + quota baseline result: `pass`
 - H5 degraded mode + failure UX baseline result: `pass`
+- H6 eval harness baseline result: `pass`
+- H6 harness profile count: `3`
+- H6 harness stage count: `12`
+- H6 evidence fields count: `17`
+- H6 hermeticity requirements count: `12`
+- H6 promotion criteria count: `12`
+- H6 determinism requirements count: `11`
+- H6 property requirements count: `11`
+- H6 chaos requirements count: `11`
+- H6 H1 P0 mapping count: `15`
+- H6 H1 P1 mapping count: `5`
+- H6 H1 P2 mapping count: `5`
+- H6 H2 mapping count: `12`
+- H6 H3 mapping count: `8`
+- H6 H4 mapping count: `10`
+- H6 H5 mapping count: `10`
 - H2 ledger event schema version: `1.0`
 - H2 replay policy version: `1.0`
 - H2 tamper matrix version: `1.0`
@@ -62,7 +78,8 @@
 - H3 executed in this phase: `True`
 - H4 executed in this phase: `True`
 - H5 executed in this phase: `True`
-- H6 executed in this phase: `False`
+- H6 executed in this phase: `True`
+- H7 executed in this phase: `False`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
@@ -90,13 +107,14 @@
 - L1.15 is closed evidence and must not be reopened or resumed from active slots.
 - Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
 - H5 has been executed and passed from this phase.
-- H6 is now the next design gate only; it has not been executed from this phase.
+- H6 has been executed and passed from this phase.
+- H7 is now the next design gate only; it has not been executed from this phase.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active phase: `Hardening Base H6 — Eval Harness Baseline Gate`
-- Phase objective: define the H6 eval harness baseline on top of H1/H2/H3/H4/H5 contracts without executing runtime or pilot activation.
-- Phase class: `design_and_validation_gate`
+- Next active phase: `Hardening Base H7 — Hardening Base Closure Gate`
+- Phase objective: close Hardening Base with the canonical H7 closure gate after H6 eval harness baseline pass, without executing runtime or pilot activation.
+- Phase class: `closure_gate`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
 - Voice or audio mutation allowed now: `False`
@@ -166,6 +184,6 @@
 
 ## Boundaries
 - Do not reopen Product Loop L1.15.
-- Do not treat H6 recommendation as H6 execution.
+- Do not treat H6 execution as H7 execution.
 - Do not authorize pilot, customer, commercial, or external use from this state.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
