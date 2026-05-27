@@ -115,9 +115,17 @@
 - H7 known drift classification: `warning_only_not_blocking`
 - H7 fast path plan enabled: `False`
 - H7 next block readiness: `ready`
+- Lab Real Simulation Pack design brief alignment summary: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate_summary.json`
+- Lab Real Simulation Pack design brief gate: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate.json`
+- Lab Real Simulation Pack design brief: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief.json`
+- Lab Real Simulation Pack scope matrix: `artifacts/lab_simulation/lab_real_simulation_pack_scope_matrix.json`
+- Lab Real Simulation Pack carry-forward residuals: `artifacts/lab_simulation/lab_real_simulation_pack_carry_forward_residuals.json`
+- Lab Real Simulation Pack domain matrix: `artifacts/lab_simulation/lab_real_simulation_pack_domain_matrix.json`
+- Lab Real Simulation Pack subphase plan: `artifacts/lab_simulation/lab_real_simulation_pack_subphase_plan.json`
+- Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack`
+- Active next block: `Lab Real Simulation Pack / Scenario Manifest Plan`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 

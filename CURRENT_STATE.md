@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h7_closure_gate_pass`
+- Status: `lab_real_simulation_pack_design_brief_alignment_gate_pass`
 - Decision: `pass`
-- Current state: `H7 Hardening Base Closure Materialized / Lab Real Simulation Pack Pending`
+- Current state: `Lab Real Simulation Pack Design Brief Alignment Materialized / Scenario Manifest Plan Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -36,6 +36,10 @@
 - H6 H4 mapping count: `10`
 - H6 H5 mapping count: `10`
 - H7 closure result: `pass`
+- Lab Real Simulation Pack design brief alignment result: `pass`
+- External Claude verdict: `WARN`
+- External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
+- External residuals accepted: `R1/R2/R3`
 - H7 evidence rollup count: `7`
 - H7 invariant closure count: `16`
 - H7 V1.2 gap closure count: `9`
@@ -87,6 +91,7 @@
 - H5 executed in this phase: `True`
 - H6 executed in this phase: `True`
 - H7 executed in this phase: `True`
+- Lab Real Simulation Pack design brief alignment executed in this phase: `True`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
@@ -111,12 +116,13 @@
 - H6 has been executed and passed from this phase.
 - H7 has been executed and passed from this phase.
 - Hardening Base is now closed.
-- Lab Real Simulation Pack is now the next block only; it has not been executed from this phase.
+- Lab Real Simulation Pack design brief alignment has passed.
+- Lab Real Simulation Pack is now the next block only; it has not been fully executed from this phase.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack`
-- Block objective: begin the next governed macroblock only after Hardening Base closure, without executing runtime or pilot activation.
+- Next active block: `Lab Real Simulation Pack / Scenario Manifest Plan`
+- Block objective: continue the next governed macroblock with plan-only scenario manifest alignment, without executing runtime or pilot activation.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
