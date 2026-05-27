@@ -1,3 +1,32 @@
+# Hardening Base H1 — Golden Tasks Baseline Gate
+- Phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
+- Status: `hardening_base_h1_golden_tasks_baseline_gate_pass`
+- Decision: `pass`
+- H0 pass verified: `True`
+- L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- P0 tasks declared: `15`
+- P1 tasks declared: `5`
+- P2 tasks declared: `5`
+- Property candidates declared: `20`
+- Invariants covered count: `16`
+- V1.2 gaps covered count: `9`
+- Real action execution performed: `False`
+- H2 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate.json`
+- Output summary artifact: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
+- Output report artifact: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_report.md`
+- Output matrix artifact: `artifacts/hardening_base/hardening_base_h1_golden_tasks_matrix.json`
+- Output property candidates artifact: `artifacts/hardening_base/hardening_base_h1_property_candidates.json`
+- Next recommended phase: `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
+
 # H0 Design Brief Alignment Patch Apply
 - Phase: `H0 Design Brief Alignment Patch Apply`
 - Status: `h0_design_brief_alignment_patch_apply_pass`

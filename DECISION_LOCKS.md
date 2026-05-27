@@ -30,8 +30,21 @@
 - Active review result: `h0_design_brief_alignment_review_gate_pass`
 - H0 edited in patch phase: `True`
 - H1 executed from the H0 phase flow: `False`
-- Active next phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
-- H1 may be recommended only because the H0 review gate passed; H1 remains not executed.
+
+# H1 Golden Tasks Baseline Lock
+- Lock id: `H1_GOLDEN_TASKS_BASELINE`
+- Status: `hardening_base_h1_golden_tasks_baseline_gate_pass`
+- Decision: `pass`
+- H1 baseline matrix version: `1.0`
+- H1 property candidate version: `1.0`
+- P0 tasks: `15`
+- P1 tasks: `5`
+- P2 tasks: `5`
+- Property candidates: `20`
+- Real action execution performed in H1: `False`
+- H2 executed from the H1 phase flow: `False`
+- Active next phase: `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
+- H2 may be recommended only because the H1 baseline gate passed; H2 remains not executed.
 
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
@@ -51,6 +64,7 @@
 - Silent roadmap mutation is forbidden.
 - Retroactive pass claims are forbidden.
 - Efficiency cannot remove governance gates, ledger, replay, permission, rollback, or evidence requirements.
+- Property-based testing remains candidate-only until a later dependency gate explicitly authorizes installation and execution.
 
 # Protected Surface Lock
 - Production authorized now: `False`
