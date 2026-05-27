@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_controlled_apply_planning_pass`
+- Status: `lab_real_simulation_pack_controlled_apply_readiness_review_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Controlled Apply Planning Materialized / Controlled Apply Readiness Review Pending`
+- Current state: `Lab Real Simulation Pack Controlled Apply Readiness Review Materialized / Controlled Apply Operator Approval Packet Planning Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -35,49 +35,45 @@
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- Controlled apply planning remains synthetic-only, plan-only, and audit-only.
+- Controlled apply readiness review remains synthetic-only, plan-only, and audit-only.
+- Readiness status: `ready_for_operator_approval_packet_planning`
+- Previous phase verified: `True`
 - Controlled apply plan only: `True`
 - Real apply executed: `False`
-- Network used: `False`
-- External API used: `False`
-- Real data used: `False`
-- Runtime touched: `False`
-- Frontend touched: `False`
-- Backend touched: `False`
-- Action runtime touched: `False`
-- Audio touched: `False`
-- Dependencies touched: `False`
-- Source of truth policy touched: `False`
-- Gate count: `15`
-- Apply wave count: `7`
-- Stop condition count: `15`
-- Rollback entry count: `7`
-- Compensation entry count: `7`
-- Evidence artifact count: `5`
+- Dry-run executed: `False`
+- Operator approval granted: `False`
+- Readiness dimension count: `9`
+- Checklist item count: `9`
+- Risk register entry count: `7`
+- Evidence index entry count: `16`
 - Carry-forward residuals preserved: `True`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Readiness Review`
-
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning`
 ## Active Direction
-- Lab Real Simulation Pack controlled apply planning is complete; the next governed block is controlled apply readiness review and remains plan-only.
-- No real apply, runtime mutation, or external execution was authorized here.
-- The stale roadmap warning remains warning-only and carried forward.
-
+- Roadmap Canônico ARIS V1.2 remains the active planning direction.
+- Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
+- Lab Real Simulation Pack controlled apply readiness review is complete; the next governed block is operator approval packet planning and remains plan-only.
+- If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Controlled Apply Readiness Review`
-- Block objective: continue the governed macroblock with controlled apply readiness review, without executing apply or pilot surfaces.
+- Next active block: `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Planning`
+- Block objective: continue the governed macroblock with plan-only operator approval packet planning, without executing runtime or pilot activation.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
 - Voice or audio mutation allowed now: `False`
 - Action runtime mutation allowed now: `False`
 - Backend mutation allowed now: `False`
-
 ## Canonical Evidence
 - Controlled apply planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
 - Controlled apply planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
 - Controlled apply planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
 - Controlled apply gate manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
 - Controlled apply rollback matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
+- Controlled apply readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_summary.json`
+- Controlled apply readiness review gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review.json`
+- Controlled apply readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_report.md`
+- Controlled apply readiness checklist: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_checklist.json`
+- Controlled apply readiness risk register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_risk_register.json`
+- Controlled apply readiness evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_evidence_index.json`
 - Evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
 - Evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
 - Evidence packaging report: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_report.md`
@@ -104,18 +100,25 @@
 - Context index: `aris-active-context/CONTEXT_INDEX.md`
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 - README: `aris-active-context/README.md`
-
 ## Validations
-- `python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.py scripts/run_lab_real_simulation_pack_controlled_apply_planning.py tests/test_lab_real_simulation_pack_controlled_apply_planning.py`
-- `python3 -m unittest tests.test_lab_real_simulation_pack_controlled_apply_planning -q`
-- `python3 scripts/run_lab_real_simulation_pack_controlled_apply_planning.py`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
-
+python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.py scripts/run_lab_real_simulation_pack_controlled_apply_planning.py tests/test_lab_real_simulation_pack_controlled_apply_planning.py
+python3 -m unittest tests.test_lab_real_simulation_pack_controlled_apply_planning -q
+python3 scripts/run_lab_real_simulation_pack_controlled_apply_planning.py
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json
+python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review.py scripts/run_lab_real_simulation_pack_controlled_apply_readiness_review.py tests/test_lab_real_simulation_pack_controlled_apply_readiness_review.py
+python3 -m unittest tests.test_lab_real_simulation_pack_controlled_apply_readiness_review -q
+python3 scripts/run_lab_real_simulation_pack_controlled_apply_readiness_review.py
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_summary.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_checklist.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_risk_register.json
+python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_evidence_index.json
 ## Boundaries
 - Do not reopen Product Loop L1.15.
 - Do not treat the next block as execution.
 - Do not authorize pilot, customer, commercial, or external use from this state.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
+- Do not treat readiness review as real apply or dry-run execution.

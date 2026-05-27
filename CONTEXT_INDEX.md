@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Controlled Apply Readiness Review`
+- Active next block: `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Planning`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -179,3 +179,9 @@
 - Lab Real Simulation Pack controlled apply planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
 - Lab Real Simulation Pack controlled apply gate manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
 - Lab Real Simulation Pack controlled apply rollback matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
+- Lab Real Simulation Pack controlled apply readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_summary.json`
+- Lab Real Simulation Pack controlled apply readiness review gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review.json`
+- Lab Real Simulation Pack controlled apply readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_report.md`
+- Lab Real Simulation Pack controlled apply readiness checklist: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_checklist.json`
+- Lab Real Simulation Pack controlled apply readiness risk register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_risk_register.json`
+- Lab Real Simulation Pack controlled apply readiness evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_evidence_index.json`
