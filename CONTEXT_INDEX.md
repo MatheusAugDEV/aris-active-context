@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Scenario Manifest Plan`
+- Active next block: `Lab Real Simulation Pack / Synthetic Document-Dataset Plan`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -152,3 +152,11 @@
 - Do not reopen Product Loop L1.15 from active routing.
 - Do not treat the H4 next-step entry as H4 execution.
 - Do not treat the Lab Real Simulation Pack next-step entry as execution.
+- Lab scenario manifest plan: `artifacts/lab_simulation/lab_real_simulation_pack_scenario_manifest_plan_summary.json`
+- Lab scenario manifest draft: `artifacts/lab_simulation/lab_real_simulation_scenario_manifest_draft.json`
+- Lab scenario taxonomy: `artifacts/lab_simulation/lab_real_simulation_scenario_taxonomy.json`
+- Lab domain coverage matrix: `artifacts/lab_simulation/lab_real_simulation_scenario_domain_coverage_matrix.json`
+- Lab risk class matrix: `artifacts/lab_simulation/lab_real_simulation_scenario_risk_class_matrix.json`
+- Lab hardening mapping: `artifacts/lab_simulation/lab_real_simulation_scenario_hardening_mapping.json`
+- Lab ASI coverage plan: `artifacts/lab_simulation/lab_real_simulation_scenario_asi_coverage_plan.json`
+- Lab materialization rules: `artifacts/lab_simulation/lab_real_simulation_scenario_materialization_rules.json`

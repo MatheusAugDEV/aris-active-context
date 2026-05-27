@@ -294,3 +294,30 @@
 - Backend changed now: `False`
 - Network used now: `False`
 - Dependencies installed now: `False`
+
+## Lab Real Simulation Pack Scenario Manifest Plan Lock
+- Lock id: `LAB_RSP_SCENARIO_MANIFEST_PLAN`
+- Status: `lab_real_simulation_pack_scenario_manifest_plan_pass`
+- Decision: `pass`
+- H7 closure state: `hardening_base_h7_closure_gate_pass`
+- External Claude verdict: `WARN`
+- External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
+- External warning classification: `accepted_warning_only_not_blocking`
+- Carry-forward R1: `roadmap_canonical_current_position_stale`
+- Carry-forward R2: `h2_determinism_100_run_declared_not_executed`
+- Carry-forward R3: `h7_literal_content_gap`
+- Scenario slots count: `20`
+- Domain coverage count: `7`
+- Risk class coverage count: `6`
+- ASI active tags count: `9`
+- ASI07 deferred: `True`
+- Real execution allowed: `False`
+- Lab full execution authorized: `False`
+- Infernus executed: `False`
+- Crisol executed: `False`
+- Productatization executed: `False`
+- Pilot authorized: `False`
+- Product ready: `False`
+- Runtime integration allowed: `False`
+- Fast path enabled: `False`
+- Next active subphase: `Lab Real Simulation Pack Synthetic Document/Dataset Plan`

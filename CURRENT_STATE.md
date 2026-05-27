@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_design_brief_alignment_gate_pass`
+- Status: `lab_real_simulation_pack_scenario_manifest_plan_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Design Brief Alignment Materialized / Scenario Manifest Plan Pending`
+- Current state: `Lab Real Simulation Pack Scenario Manifest Plan Materialized / Synthetic Document/Dataset Plan Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -37,6 +37,7 @@
 - H6 H5 mapping count: `10`
 - H7 closure result: `pass`
 - Lab Real Simulation Pack design brief alignment result: `pass`
+- Lab Real Simulation Pack scenario manifest planning result: `pass`
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
@@ -92,6 +93,7 @@
 - H6 executed in this phase: `True`
 - H7 executed in this phase: `True`
 - Lab Real Simulation Pack design brief alignment executed in this phase: `True`
+- Lab Real Simulation Pack scenario manifest planning executed in this phase: `True`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
