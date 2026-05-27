@@ -26,8 +26,10 @@
 - Decision: `pass`
 - H0 exists as a design and evidence brief only.
 - H0 implementation started: `False`
-- Later Hardening Base execution remains blocked until the H0 roadmap-alignment review gate passes.
-- Active next phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+- Later Hardening Base execution remains blocked until the H0 design brief is realigned to the canonical roadmap.
+- Active review result: `h0_design_brief_alignment_review_gate_blocked`
+- H1 executed from the review gate: `False`
+- Active next phase: `H0 Design Brief Realignment Controlled Plan`
 
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
