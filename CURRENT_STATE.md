@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_controlled_workflow_plan_pass`
+- Status: `lab_real_simulation_pack_expectation_mapping_plan_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Controlled Workflow Plan Materialized / Expectation Mapping Plan Pending`
+- Current state: `Lab Real Simulation Pack Expectation Mapping Plan Materialized / Evidence Packaging Plan Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -121,12 +121,12 @@
 - H7 has been executed and passed from this phase.
 - Hardening Base is now closed.
 - Lab Real Simulation Pack design brief alignment has passed.
-- Lab Real Simulation Pack controlled workflow plan is complete; the next block is expectation mapping only and remains plan-only.
+- Lab Real Simulation Pack expectation mapping plan is complete; the next block is evidence packaging only and remains plan-only.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Expectation Mapping Plan`
-- Block objective: continue the next governed macroblock with plan-only expectation mapping alignment, without executing runtime or pilot activation.
+- Next active block: `Lab Real Simulation Pack / Evidence Packaging Plan`
+- Block objective: continue the next governed macroblock with plan-only evidence packaging alignment, without executing runtime or pilot activation.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
