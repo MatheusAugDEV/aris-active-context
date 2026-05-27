@@ -22,16 +22,16 @@
 
 # H0 Design Brief Lock
 - Lock id: `H0_DESIGN_BRIEF_MATERIALIZED`
-- Status: `design_brief_materialized`
+- Status: `design_brief_patched_and_reviewed`
 - Decision: `pass`
 - H0 exists as a design and evidence brief only.
 - H0 implementation started: `False`
-- Later Hardening Base execution remains blocked until the H0 design brief is realigned to the canonical roadmap.
-- Active review result: `h0_design_brief_alignment_review_gate_blocked`
-- H1 executed from the review gate: `False`
-- Active realignment plan result: `h0_design_brief_realignment_controlled_plan_ready`
-- H0 edited by the realignment plan: `False`
-- Active next phase: `H0 Design Brief Alignment Patch Apply`
+- H0 patch apply result: `h0_design_brief_alignment_patch_apply_pass`
+- Active review result: `h0_design_brief_alignment_review_gate_pass`
+- H0 edited in patch phase: `True`
+- H1 executed from the H0 phase flow: `False`
+- Active next phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
+- H1 may be recommended only because the H0 review gate passed; H1 remains not executed.
 
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
@@ -50,13 +50,13 @@
 - Historical material must be preserved instead of destructively overwritten when active direction changes.
 - Silent roadmap mutation is forbidden.
 - Retroactive pass claims are forbidden.
-
-# Efficiency Lock
-- Eficiência não será otimizada removendo governança.
-- Efficiency may be improved by context budget, risk-based execution, observability, quota, replay, evidence-based cache, harness profiles, governed fast path, and SIP.
-- Governed fast path is forbidden until invariants, golden tasks baseline, ledger or replay baseline, and cost or time baseline are all materially established.
+- Efficiency cannot remove governance gates, ledger, replay, permission, rollback, or evidence requirements.
 
 # Protected Surface Lock
+- Production authorized now: `False`
+- Product ready now: `False`
+- Runtime integration allowed now: `False`
+- Generic action runtime activated now: `False`
 - Runtime changed now: `False`
 - Frontend changed now: `False`
 - Voice or audio changed now: `False`

@@ -1,14 +1,14 @@
 # Next Action
 
-## H0 Design Brief Alignment Patch Apply
+## Hardening Base H1 — Golden Tasks Baseline Gate
 
 - Status: `ready_for_next_phase`
-- Decision dependency: `H0 Design Brief Realignment Controlled Plan = pass`
+- Decision dependency: `H0 Design Brief Alignment Patch Apply = pass`
+- Supporting review gate: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate = pass`
 - Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-- Objective: patch the H0 design brief generator and regenerate its artifacts so the direct H1 route is removed, the 9 lacunas pré-piloto are explicitly acknowledged, and the official governance positioning phrase is present.
-- Scope: H0 design-brief source patching, artifact regeneration, rerun preparation for the H0 alignment review gate, and active-context continuity only.
-- H0 materialization state: `already_exists`
-- H0 edited in previous phase: `False`
+- Objective: define the deterministic H1 golden tasks baseline and its validation envelope under Hardening Base, without activating runtime or pilot surfaces.
+- Scope: design-and-validation gate only; no runtime execution, no pilot authorization, no product-ready claim.
+- H0 materialization state: `patched_and_reviewed_pass`
 - H1 execution state: `not_executed`
 - Production remains unauthorized: `True`
 - Product remains not ready: `True`
@@ -17,5 +17,5 @@
 
 ## Boundary
 - Do not reopen Product Loop L1.15.
-- Do not execute H1.
-- Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, dependencies, or historical evidence surfaces beyond the H0 design-brief patch scope.
+- Do not treat this routing entry as H1 execution.
+- Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, dependencies, or historical evidence surfaces from this gate.

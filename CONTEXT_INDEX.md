@@ -11,30 +11,32 @@
 - Strategic Reset report: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
 - Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - Product Loop L1.15 report: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
+- H0 design brief artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief.json`
 - H0 design brief summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
 - H0 design brief report: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
-- Recovery diagnostic summary: `artifacts/roadmap/active_context_recovery_diagnostic_summary.json`
-- Recovery diagnostic report: `artifacts/roadmap/active_context_recovery_diagnostic_report.md`
-- Canonicalization cleanup plan summary: `artifacts/roadmap/active_context_canonicalization_cleanup_plan.json`
-- Canonicalization cleanup plan report: `artifacts/roadmap/active_context_canonicalization_cleanup_plan_report.md`
 - H0 alignment review decision: `artifacts/roadmap/h0_design_brief_alignment_review_gate.json`
 - H0 alignment review summary: `artifacts/roadmap/h0_design_brief_alignment_review_gate_summary.json`
 - H0 alignment review report: `artifacts/roadmap/h0_design_brief_alignment_review_gate_report.md`
+- H0 patch apply decision: `artifacts/roadmap/h0_design_brief_alignment_patch_apply.json`
+- H0 patch apply summary: `artifacts/roadmap/h0_design_brief_alignment_patch_apply_summary.json`
+- H0 patch apply report: `artifacts/roadmap/h0_design_brief_alignment_patch_apply_report.md`
 - H0 realignment plan decision: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan.json`
 - H0 realignment plan summary: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_summary.json`
 - H0 realignment plan report: `artifacts/roadmap/h0_design_brief_realignment_controlled_plan_report.md`
+- Recovery diagnostic summary: `artifacts/roadmap/active_context_recovery_diagnostic_summary.json`
+- Recovery diagnostic report: `artifacts/roadmap/active_context_recovery_diagnostic_report.md`
 
 ## Indexed Topics
 - Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Product Loop L1.15 PASS: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - Product Loop layer closed: `True`
-- H0 design brief materialized: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- H0 design brief alignment review result: `blocked`
-- H0 design brief realignment plan result: `pass`
+- H0 design brief materialized and patched: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
+- H0 design brief alignment review result: `pass`
+- H0 patch apply result: `pass`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `H0 Design Brief Alignment Patch Apply`
+- Active next phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -58,4 +60,4 @@
 - Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap changes.
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
-- Do not route directly into H1 while the H0 design brief patch and rerun review remain pending.
+- Do not treat the H1 next-step entry as H1 execution.

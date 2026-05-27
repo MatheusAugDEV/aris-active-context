@@ -1,3 +1,56 @@
+# H0 Design Brief Alignment Patch Apply
+- Phase: `H0 Design Brief Alignment Patch Apply`
+- Status: `h0_design_brief_alignment_patch_apply_pass`
+- Decision: `pass`
+- Source plan status: `h0_design_brief_realignment_controlled_plan_ready`
+- Source plan decision: `pass`
+- Patch target: `src/aris/hardening_base/hardening_base_h0_phase_design_brief.py`
+- Direct H1 route removed: `True`
+- 9 pre-pilot gaps added explicitly: `True`
+- Official positioning phrase added explicitly: `True`
+- 16 Core Priority Invariants referenced as H0 contract axis: `True`
+- H0 design brief regenerated: `True`
+- H0 edited in this phase: `True`
+- H1 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/roadmap/h0_design_brief_alignment_patch_apply.json`
+- Output summary artifact: `artifacts/roadmap/h0_design_brief_alignment_patch_apply_summary.json`
+- Output report artifact: `artifacts/roadmap/h0_design_brief_alignment_patch_apply_report.md`
+- Next recommended phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
+
+# H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate Re-run
+- Phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+- Status: `h0_design_brief_alignment_review_gate_pass`
+- Decision: `pass`
+- Review type: `deterministic_read_only_review_gate`
+- H0 design brief found: `True`
+- H0 design brief traceable in context index: `True`
+- Roadmap canonical found: `True`
+- Roadmap amendment protocol found: `True`
+- Product Loop L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- F21-B18/F21-B19 superseded verified: `True`
+- Blocker count: `0`
+- Warning count: `0`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- H1 executed in this phase: `False`
+- Output decision artifact: `artifacts/roadmap/h0_design_brief_alignment_review_gate.json`
+- Output summary artifact: `artifacts/roadmap/h0_design_brief_alignment_review_gate_summary.json`
+- Output report artifact: `artifacts/roadmap/h0_design_brief_alignment_review_gate_report.md`
+- Next recommended phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
+
 # H0 Design Brief Realignment Controlled Plan
 - Phase: `H0 Design Brief Realignment Controlled Plan`
 - Status: `h0_design_brief_realignment_controlled_plan_ready`
@@ -64,7 +117,7 @@
 - Roadmap amendment protocol materialized: `True`
 - Product Loop closure preserved as closed evidence: `True`
 - H0 design brief preserved as materialized design-only evidence: `True`
-- Active next phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+- Active next phase at that point: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
 - Active-context changed in this phase: `True`
 - Runtime changed in this phase: `False`
 - Frontend changed in this phase: `False`
