@@ -31,7 +31,7 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H4 observability + cost/time + quota baseline is `pass`.
 - H5 degraded mode + failure UX baseline is `pass`.
 - The current active next block is:
-  `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`
+  `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
@@ -45,6 +45,6 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Do not treat the H7 next-step entry as H7 execution.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
 - Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.
-- The active next block remains `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`.
+- The active next block remains `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`.
 - The controlled apply operator approval packet hardening addendum is materialized and plan-only.
 - No runtime, network, secret, or dependency surface was touched.

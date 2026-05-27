@@ -1,8 +1,8 @@
-# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
-- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
-- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+# ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
+- Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
+- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
-- Approval packet status: `ready_for_operator_review_packet_review`
+- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -25,8 +25,8 @@
 - Voice or audio mutation allowed: `False`
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
-- Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Roadmap warning status: `resolved`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
@@ -36,11 +36,11 @@
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
-# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
-- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
-- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+# ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
+- Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
+- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
-- Approval packet status: `ready_for_operator_review_packet_review`
+- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -63,8 +63,8 @@
 - Voice or audio mutation allowed: `False`
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
-- Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Roadmap warning status: `resolved`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
@@ -74,11 +74,11 @@
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
-# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
-- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
-- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`
+# ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
+- Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
+- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
-- Approval packet status: `ready_for_operator_review_packet_review`
+- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -101,8 +101,8 @@
 - Voice or audio mutation allowed: `False`
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
-- Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Roadmap warning status: `resolved`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
@@ -112,8 +112,8 @@
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
-# Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning Lock
-- Lock id: `LAB_RSP_CONTROLLED_APPLY_OPERATOR_APPROVAL_PACKET_PLANNING`
+# ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
+- Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
 - Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_fail`
 - Decision: `fail`
 - Approval packet status: `not_ready`
@@ -139,7 +139,7 @@
 - Voice or audio mutation allowed: `False`
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
-- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Roadmap warning status: `resolved`
 - Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
@@ -424,7 +424,7 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`

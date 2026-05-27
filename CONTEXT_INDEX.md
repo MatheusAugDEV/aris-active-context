@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`
+- Active next block: `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -190,3 +190,13 @@
 - Lab canonical hash manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_canonical_json_hash_manifest.json`
 - Lab filesystem isolation contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_filesystem_isolation_contract.json`
 - Lab shadow workspace blueprint: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_shadow_workspace_blueprint.json`
+- ARIS Tier-1 remediation summary: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration_summary.json`
+- ARIS Tier-1 remediation decision: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration.json`
+- ARIS Tier-1 remediation report: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration_report.md`
+- ARIS Tier-1 remediation phase insertion matrix: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_phase_insertion_matrix.json`
+- ARIS Tier-1 remediation blocker matrix: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_blocker_matrix.json`
+- ARIS Tier-1 remediation risk register: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_risk_register.json`
+- ARIS Tier-1 remediation gate manifest: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_gate_manifest.json`
+- ARIS Tier-1 remediation source-of-truth patch plan: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_source_of_truth_patch_plan.json`
+- ARIS Tier-1 remediation current position update: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_current_position_update.json`
+- ARIS Tier-1 remediation roadmap delta: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_delta.md`

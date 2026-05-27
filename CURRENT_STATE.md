@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_hardening_addendum_pass`
+- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Hardening Addendum Materialized / Controlled Apply Operator Approval Packet Review Pending`
+- Current state: `ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Materialized / Filesystem Isolation Readiness Review Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -28,7 +28,7 @@
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
-- Warning preserved: `roadmap_canonical_current_position_stale`
+- Roadmap warning status: `resolved`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
@@ -49,14 +49,15 @@
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
-- Operator approval packet planning is complete; the next governed block is operator approval packet review and remains plan-only.
+- Operator approval packet planning is complete; the next governed block is filesystem isolation readiness review and remains plan-only.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`
+- Next active block: `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`
 - Block objective: continue governed macroblock with plan-only packet review, without granting approval or executing runtime.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
@@ -133,7 +134,7 @@ git -C aris-active-context diff --name-only
 
 ## Lab Real Simulation Pack Controlled Apply Operator Approval Packet Hardening Addendum
 - Phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Hardening Addendum`
-- Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_hardening_addendum_pass`
+- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
 - Hardening addendum status: `ready_for_operator_review_packet_review`
 - Previous phase verified: `True`
@@ -157,7 +158,8 @@ git -C aris-active-context diff --name-only
 - Dependencies installed: `True`
 - Source of truth policy touched: `True`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`

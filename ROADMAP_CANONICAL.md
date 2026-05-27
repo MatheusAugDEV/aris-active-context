@@ -19,6 +19,38 @@ ARIS não promete automação. ARIS prova automação.
    - H6 — Eval Harness Baseline Gate
    - H7 — Hardening Base Closure Gate
 2.5. Lab Real Simulation Pack
+2.6. Tier-1 Runtime Safety Remediation Track
+   - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
+   - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
+   - The next active phase after this remediation integration is Lab Real Simulation Pack Filesystem Isolation Readiness Review.
+   - Operator Approval Packet Review is explicitly deferred until the preceding hardening and harness phases pass.
+   - Cross-cutting gates:
+   - state_data_plane_boundary_gate
+   - strict_canonical_json_gate
+   - state_drift_gate
+   - operator_approval_contract_gate
+   - filesystem_isolation_gate
+   - shadow_workspace_gate
+   - saga_pivot_compensation_gate
+   - atomic_commit_cas_gate
+   - ledger_temporal_checkpoint_gate
+   - fast_path_non_generative_router_gate
+   - kv_cache_static_prefix_benchmark_gate
+   - edge_golden_scenario_gate
+   - debian_disposable_harness_gate
+   - supply_chain_and_dependency_lock_gate
+   - memory_governor_and_pq_firewall_gate
+   - evidence_graph_and_compliance_compiler_gate
+
+   - Phase sequence:
+     1. Lab Real Simulation Pack Filesystem Isolation Readiness Review
+     2. Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review
+     3. Lab Real Simulation Pack Debian Disposable Harness Planning
+     4. Lab Real Simulation Pack Debian Disposable Harness Readiness Review
+     5. Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review
+     6. Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review
+     7. Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning
+     8. Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -30,7 +62,9 @@ ARIS não promete automação. ARIS prova automação.
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The active next phase is `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`.
+- The Tier-1 runtime safety remediation track is active and the active next phase is `Lab Real Simulation Pack Filesystem Isolation Readiness Review`.
+- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the preceding Tier-1 gates pass.
+- Roadmap current-position stale warning status: `resolved`.
 
 ## Absolute Pre-Pilot Lock
 Nenhum piloto, cliente, design partner operacional ou uso externo do ARIS é autorizado antes de:
