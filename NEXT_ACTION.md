@@ -13,9 +13,6 @@
 - Lab design brief alignment state: `completed_pass`
 - Lab scenario manifest planning state: `completed_pass`
 - Lab synthetic document/dataset planning state: `completed_pass`
-- Lab synthetic document/dataset planning state: `completed_pass`
-- Lab synthetic document/dataset planning state: `completed_pass`
-- Lab synthetic document/dataset planning state: `completed_pass`
 - H5 execution state: `completed_pass`
 - H6 execution state: `completed_pass`
 - H7 execution state: `completed_pass`

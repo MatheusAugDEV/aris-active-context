@@ -39,9 +39,6 @@
 - Lab Real Simulation Pack design brief alignment result: `pass`
 - Lab Real Simulation Pack scenario manifest planning result: `pass`
 - Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
-- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
-- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
-- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
@@ -98,9 +95,6 @@
 - H7 executed in this phase: `True`
 - Lab Real Simulation Pack design brief alignment executed in this phase: `True`
 - Lab Real Simulation Pack scenario manifest planning executed in this phase: `True`
-- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
-- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
-- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
 - Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
 - Production authorized: `False`
 - Product ready: `False`
