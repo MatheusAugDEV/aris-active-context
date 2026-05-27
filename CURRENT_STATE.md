@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h4_observability_cost_time_quota_gate_pass`
+- Status: `hardening_base_h5_degraded_mode_failure_ux_gate_pass`
 - Decision: `pass`
-- Current state: `H4 Observability + Cost/Time + Quota Baseline Materialized / H5 Pending`
+- Current state: `H5 Degraded Mode + Failure UX Baseline Materialized / H6 Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -18,6 +18,7 @@
 - H2 ledger chain + replay baseline result: `pass`
 - H3 context engineering baseline result: `pass`
 - H4 observability + cost/time + quota baseline result: `pass`
+- H5 degraded mode + failure UX baseline result: `pass`
 - H2 ledger event schema version: `1.0`
 - H2 replay policy version: `1.0`
 - H2 tamper matrix version: `1.0`
@@ -35,28 +36,6 @@
 - H3 context integrity checks count: `12`
 - H3 H1 golden tasks mapped count: `8`
 - H3 H2 event types mapped count: `6`
-- H2 executed in this phase: `False`
-- H3 executed in this phase: `True`
-- H4 executed in this phase: `True`
-- H5 executed in this phase: `False`
-- Production authorized: `False`
-- Product ready: `False`
-- Runtime integration allowed: `False`
-- Generic action runtime activated: `False`
-
-## Phase Result
-- The H3 baseline materializes the source-of-truth hierarchy contract, context budget policy, P-LLM/Q-LLM separation contract, query-first retrieval contract, provenance schema, stale-context matrix, no-bulk-read policy, context integrity checks, memory poisoning / ASI06 matrix, and H1/H2 context mappings.
-- Context budget was declared for 6 roles and 6 risk classes.
-- Provenance schema declares 13 required fields.
-- Stale-context, memory poisoning / ASI06, and no-bulk-read baselines each declare 10 scenarios.
-- Context integrity declares 12 deterministic checks.
-- 8 H1 golden tasks are mapped to context-engineering expectations.
-- 6 H2 event types are mapped to provenance expectations.
-- Retrieval runtime, MCP, and Obsidian runtime integrations remain deactivated.
-- No real action was executed from H3.
-- H4 remains not executed.
-- Warning retained: `ROADMAP_CANONICAL.md` still contains a stale current-position paragraph and must be treated as non-authoritative when it conflicts with the live active-context files.
-- Known drift observed in H4: `roadmap_canonical_current_position_stale`
 - H4 observability event types count: `16`
 - H4 metric fields count: `22`
 - H4 quota roles count: `6`
@@ -67,19 +46,56 @@
 - H4 H1 P0 mapping count: `15`
 - H4 H2 telemetry mapping count: `12`
 - H4 H3 telemetry/cost mapping count: `8`
+- H5 degradation levels count: `5`
+- H5 failure modes count: `21`
+- H5 failure UX templates count: `12`
+- H5 blast radius scenarios count: `10`
+- H5 chaos scenarios count: `10`
+- H5 H1 mapping count: `15`
+- H5 H2 mapping count: `12`
+- H5 H3 mapping count: `8`
+- H5 H4 mapping count: `10`
+- H5 ledger append failure blocks mutable actions: `True`
+- H5 failure UX no false success: `True`
+- H5 tamper escalation rule: `level_3_read_only_or_level_4_kill_switch_by_severity`
+- H2 executed in this phase: `False`
+- H3 executed in this phase: `True`
+- H4 executed in this phase: `True`
+- H5 executed in this phase: `True`
+- H6 executed in this phase: `False`
+- Production authorized: `False`
+- Product ready: `False`
+- Runtime integration allowed: `False`
+- Generic action runtime activated: `False`
+
+## Phase Result
+- The H5 baseline materializes the degraded-mode contract, failure UX contract, kill switch baseline, ledger lock/read-only response contract, blast radius matrix, chaos engineering internal plan, recovery routing policy, and the H1/H2/H3/H4 cross-gate degraded mappings.
+- Degradation levels were declared for 5 states: normal operation, tool/capability failure, provider/dependency failure, integrity/quota lock, and unsafe/unresolved uncertainty.
+- 21 failure modes are declared, including ledger append failure, ledger hash mismatch, tamper detection, capability handle replay, plan hash mismatch, authorization failure, stale context conflict, bulk-read violation, quota exhaustion, telemetry write failure, rollback unavailability, and false-completion suspicion.
+- 12 failure UX templates are declared and remain honest, actionable, and non-false-success.
+- 10 blast radius boundaries are declared to keep degradation local and bounded.
+- 10 chaos scenarios are planned only; none are executed in production or in this phase.
+- 15 H1 golden tasks are mapped to degraded expectations.
+- 12 H2 event types are mapped to degraded responses.
+- 8 H3 policies/checks are mapped to degraded responses.
+- 10 H4 observability expectations are mapped to degraded responses.
+- Ledger append failure blocks any mutable action.
+- Tamper detection escalates to level 3 read-only/suggest-only or level 4 kill switch depending on severity and resolution status.
+- Failure UX must never claim success without evidence.
+- Known drift retained: `roadmap_canonical_current_position_stale`
 
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
-- Historical Bedrock, F21, and legacy roadmap materials remain preserved as audit trail only.
+- Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
 - L1.15 is closed evidence and must not be reopened or resumed from active slots.
 - Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
-- H4 has been executed and passed from this phase.
-- H5 is now the next design gate only; it has not been executed from this phase.
+- H5 has been executed and passed from this phase.
+- H6 is now the next design gate only; it has not been executed from this phase.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
-- Phase objective: define the H4 observability, cost/time, and quota baseline on top of H1/H2/H3 contracts without executing runtime or pilot activation.
+- Next active phase: `Hardening Base H6 — Eval Harness Baseline Gate`
+- Phase objective: define the H6 eval harness baseline on top of H1/H2/H3/H4/H5 contracts without executing runtime or pilot activation.
 - Phase class: `design_and_validation_gate`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
@@ -108,23 +124,48 @@
 - H3 memory poisoning / ASI06 matrix: `artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
 - H3 no-bulk-read policy: `artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
 - H3 golden task context mapping: `artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
+- H4 baseline decision: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate.json`
+- H4 baseline summary: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_summary.json`
+- H4 baseline report: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_report.md`
+- H4 observability event schema: `artifacts/hardening_base/hardening_base_h4_observability_event_schema.json`
+- H4 local JSONL telemetry contract: `artifacts/hardening_base/hardening_base_h4_local_jsonl_telemetry_contract.json`
+- H4 OTel-compatible mapping plan: `artifacts/hardening_base/hardening_base_h4_otel_compatible_mapping_plan.json`
+- H4 cost/time measurement schema: `artifacts/hardening_base/hardening_base_h4_cost_time_measurement_schema.json`
+- H4 quota policy: `artifacts/hardening_base/hardening_base_h4_quota_policy.json`
+- H4 performance regression policy: `artifacts/hardening_base/hardening_base_h4_performance_regression_policy.json`
+- H4 cost-quality correlation contract: `artifacts/hardening_base/hardening_base_h4_cost_quality_correlation_contract.json`
+- H4 anomaly detection matrix: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
+- H4 quota exhaustion matrix: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
+- H4 golden task observability mapping: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
+- H5 baseline decision: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
+- H5 baseline summary: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
+- H5 baseline report: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_report.md`
+- H5 degradation levels: `artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
+- H5 failure mode matrix: `artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
+- H5 failure UX message contract: `artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
+- H5 kill switch policy: `artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
+- H5 blast radius matrix: `artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
+- H5 chaos engineering plan: `artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
+- H5 recovery routing policy: `artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
+- H5 cross-gate degraded mapping: `artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
 
 ## Validations
-- `python3 -m py_compile src/aris/hardening_base/hardening_base_h3_context_engineering_baseline_gate.py scripts/run_hardening_base_h3_context_engineering_baseline_gate.py tests/test_hardening_base_h3_context_engineering_baseline_gate.py`
-- `python3 -m unittest tests.test_hardening_base_h3_context_engineering_baseline_gate -q`
-- `python3 scripts/run_hardening_base_h3_context_engineering_baseline_gate.py`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_summary.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_context_budget_policy.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_context_provenance_schema.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_stale_context_matrix.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_context_integrity_checks.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
+- `python3 -m py_compile src/aris/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.py scripts/run_hardening_base_h5_degraded_mode_failure_ux_gate.py tests/test_hardening_base_h5_degraded_mode_failure_ux_gate.py`
+- `python3 -m unittest tests.test_hardening_base_h5_degraded_mode_failure_ux_gate -q`
+- `python3 scripts/run_hardening_base_h5_degraded_mode_failure_ux_gate.py`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
 
 ## Boundaries
 - Do not reopen Product Loop L1.15.
-- Do not treat H4 recommendation as H4 execution.
+- Do not treat H6 recommendation as H6 execution.
 - Do not authorize pilot, customer, commercial, or external use from this state.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.

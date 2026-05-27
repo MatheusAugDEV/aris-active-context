@@ -40,6 +40,17 @@
 - H4 anomaly detection matrix: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
 - H4 quota exhaustion matrix: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
 - H4 golden task observability mapping: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
+- H5 baseline decision: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
+- H5 baseline summary: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
+- H5 baseline report: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_report.md`
+- H5 degradation levels: `artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
+- H5 failure mode matrix: `artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
+- H5 failure UX message contract: `artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
+- H5 kill switch policy: `artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
+- H5 blast radius matrix: `artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
+- H5 chaos engineering plan: `artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
+- H5 recovery routing policy: `artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
+- H5 cross-gate degraded mapping: `artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
 
 ## Indexed Topics
 - Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
@@ -72,9 +83,18 @@
 - H4 H1 P0 mapping count: `15`
 - H4 H2 telemetry mapping count: `12`
 - H4 H3 telemetry/cost mapping count: `8`
+- H5 degradation levels count: `5`
+- H5 failure modes count: `21`
+- H5 failure UX templates count: `12`
+- H5 blast radius scenarios count: `10`
+- H5 chaos scenarios count: `10`
+- H5 H1 mapping count: `15`
+- H5 H2 mapping count: `12`
+- H5 H3 mapping count: `8`
+- H5 H4 mapping count: `10`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
+- Active next phase: `Hardening Base H6 — Eval Harness Baseline Gate`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -100,4 +120,4 @@
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
 - Do not treat the H4 next-step entry as H4 execution.
-- Do not treat the H5 next-step entry as H5 execution.
+- Do not treat the H6 next-step entry as H6 execution.

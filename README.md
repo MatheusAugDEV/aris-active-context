@@ -29,8 +29,9 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H2 ledger chain + replay baseline is `pass`.
 - H3 context engineering baseline is `pass`.
 - H4 observability + cost/time + quota baseline is `pass`.
+- H5 degraded mode + failure UX baseline is `pass`.
 - The current active next phase is:
-  `Hardening Base H5 — Degraded Mode + Failure UX Gate`
+  `Hardening Base H6 — Eval Harness Baseline Gate`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
@@ -41,5 +42,6 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 ## Boundaries
 - Do not reopen Product Loop L1.15 from active slots.
 - Do not treat the H4 next-step entry as H4 execution.
+- Do not treat the H6 next-step entry as H6 execution.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
 - Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.

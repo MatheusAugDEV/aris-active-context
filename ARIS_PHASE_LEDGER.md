@@ -1,3 +1,46 @@
+# Hardening Base H5 — Degraded Mode + Failure UX Gate
+- Phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
+- Status: `hardening_base_h5_degraded_mode_failure_ux_gate_pass`
+- Decision: `pass`
+- H4 pass verified: `True`
+- L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Degradation levels count: `5`
+- Failure modes count: `21`
+- Failure UX templates count: `12`
+- Blast radius scenarios count: `10`
+- Chaos scenarios count: `10`
+- H1 mappings count: `15`
+- H2 mappings count: `12`
+- H3 mappings count: `8`
+- H4 mappings count: `10`
+- Ledger append failure blocks mutable actions: `True`
+- Failure UX no false success: `True`
+- Tamper escalation rule: `level_3_read_only_or_level_4_kill_switch_by_severity`
+- Productive degraded runtime activated: `False`
+- Productive kill switch activated: `False`
+- Chaos real execution performed: `False`
+- H6 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
+- Output summary artifact: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
+- Output report artifact: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_report.md`
+- Output degradation levels artifact: `artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
+- Output failure mode artifact: `artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
+- Output failure UX artifact: `artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
+- Output kill switch artifact: `artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
+- Output blast radius artifact: `artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
+- Output chaos plan artifact: `artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
+- Output recovery routing artifact: `artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
+- Output cross-gate degraded mapping artifact: `artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
+- Next recommended phase: `Hardening Base H6 — Eval Harness Baseline Gate`
+
 # Hardening Base H4 — Observability + Cost/Time + Quota Gate
 - Phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
 - Status: `hardening_base_h4_observability_cost_time_quota_gate_pass`

@@ -117,6 +117,36 @@
 - Network used in this phase: `False`
 - Dependencies installed in this phase: `False`
 
+# H5 Degraded Mode + Failure UX Gate
+- Lock id: `H5_DEGRADED_MODE_FAILURE_UX_GATE`
+- Status: `hardening_base_h5_degraded_mode_failure_ux_gate_pass`
+- Decision: `pass`
+- Degradation levels: `5`
+- Failure modes: `21`
+- Failure UX templates: `12`
+- Blast radius scenarios: `10`
+- Chaos scenarios planned only: `10`
+- H1 mappings: `15`
+- H2 mappings: `12`
+- H3 mappings: `8`
+- H4 mappings: `10`
+- Ledger append failure blocks mutable actions: `True`
+- Failure UX no false success: `True`
+- Tamper escalation rule: `level_3_read_only_or_level_4_kill_switch_by_severity`
+- Productive degraded runtime activated: `False`
+- Productive kill switch activated: `False`
+- Chaos real execution performed: `False`
+- H6 executed from the H5 phase flow: `False`
+- Active next phase: `Hardening Base H6 — Eval Harness Baseline Gate`
+- Known drift retained: `roadmap_canonical_current_position_stale`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
   1. `Product Loop Demonstrável`
