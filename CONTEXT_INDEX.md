@@ -17,6 +17,16 @@
 - H2 replay policy: `artifacts/hardening_base/hardening_base_h2_replay_policy.json`
 - H2 tamper matrix: `artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
 - H2 golden task ledger mapping: `artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
+- H3 baseline decision: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate.json`
+- H3 baseline summary: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_summary.json`
+- H3 baseline report: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_report.md`
+- H3 context budget policy: `artifacts/hardening_base/hardening_base_h3_context_budget_policy.json`
+- H3 context provenance schema: `artifacts/hardening_base/hardening_base_h3_context_provenance_schema.json`
+- H3 stale-context matrix: `artifacts/hardening_base/hardening_base_h3_stale_context_matrix.json`
+- H3 context integrity checks: `artifacts/hardening_base/hardening_base_h3_context_integrity_checks.json`
+- H3 memory poisoning / ASI06 matrix: `artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
+- H3 no-bulk-read policy: `artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
+- H3 golden task context mapping: `artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
 
 ## Indexed Topics
 - Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
@@ -29,9 +39,19 @@
 - H2 P0 mapped count: `15`
 - H2 tamper scenarios count: `10`
 - H2 replay divergence scenarios count: `10`
+- H3 context engineering baseline result: `pass`
+- H3 context budget roles count: `6`
+- H3 risk classes count: `6`
+- H3 provenance fields count: `13`
+- H3 stale-context scenarios count: `10`
+- H3 memory poisoning / ASI06 scenarios count: `10`
+- H3 no-bulk-read violation scenarios count: `10`
+- H3 context integrity checks count: `12`
+- H3 H1 golden tasks mapped count: `8`
+- H3 H2 event types mapped count: `6`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `Hardening Base H3 — Context Engineering Baseline Gate`
+- Active next phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -53,6 +73,7 @@
 - Start with the active-context canonical files.
 - Use `ROADMAP_CANONICAL.md` for active roadmap semantics.
 - Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap changes.
+- If `ROADMAP_CANONICAL.md` current-position text conflicts with `CURRENT_STATE.md` or `NEXT_ACTION.md`, treat that as a stale-context condition and prefer the live active-context files.
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
-- Do not treat the H3 next-step entry as H3 execution.
+- Do not treat the H4 next-step entry as H4 execution.

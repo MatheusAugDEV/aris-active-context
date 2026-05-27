@@ -61,6 +61,33 @@
 - Active next phase: `Hardening Base H3 — Context Engineering Baseline Gate`
 - H3 may be recommended only because the H2 baseline gate passed; H3 remains not executed.
 
+# H3 Context Engineering Baseline Lock
+- Lock id: `H3_CONTEXT_ENGINEERING_BASELINE`
+- Status: `hardening_base_h3_context_engineering_baseline_gate_pass`
+- Decision: `pass`
+- H3 context budget policy version: `1.0`
+- H3 context provenance schema version: `1.0`
+- H3 stale-context matrix version: `1.0`
+- H3 context integrity checks version: `1.0`
+- H3 memory poisoning / ASI06 matrix version: `1.0`
+- H3 no-bulk-read policy version: `1.0`
+- Context budget roles: `6`
+- Risk classes: `6`
+- Provenance fields: `13`
+- Stale-context scenarios: `10`
+- Memory poisoning / ASI06 scenarios: `10`
+- No-bulk-read violation scenarios: `10`
+- Context integrity checks: `12`
+- H1 golden tasks mapped count: `8`
+- H2 event types mapped count: `6`
+- Retrieval runtime activated in H3: `False`
+- MCP or Obsidian runtime integration created in H3: `False`
+- Real action execution performed in H3: `False`
+- H4 executed from the H3 phase flow: `False`
+- Active next phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
+- Known warning: `ROADMAP_CANONICAL.md` current-position paragraph is stale and non-authoritative when it conflicts with the live active-context files.
+- H4 may be recommended only because the H3 baseline gate passed; H4 remains not executed.
+
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
   1. `Product Loop Demonstrável`
@@ -81,6 +108,8 @@
 - Efficiency cannot remove governance gates, ledger, replay, permission, rollback, or evidence requirements.
 - Property-based testing remains candidate-only until a later dependency gate explicitly authorizes installation and execution.
 - `Ed25519`, `Merkle`, `OpenTelemetry`, and `DeepEval` remain future dependency-gated only.
+- Retrieval runtime, MCP, and Obsidian runtime integrations remain future-gated and inactive.
+- Context compression may not override decision quality, provenance, stale-context detection, or security.
 
 # Protected Surface Lock
 - Production authorized now: `False`
