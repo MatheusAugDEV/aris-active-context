@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Controlled Apply Planning`
+- Active next block: `Lab Real Simulation Pack / Controlled Apply Readiness Review`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -173,3 +173,9 @@
 - Lab Real Simulation Pack evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
 - Lab Real Simulation Pack evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
 - Lab Real Simulation Pack evidence packaging gate: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.json`
+
+- Lab Real Simulation Pack controlled apply planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
+- Lab Real Simulation Pack controlled apply planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
+- Lab Real Simulation Pack controlled apply planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
+- Lab Real Simulation Pack controlled apply gate manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
+- Lab Real Simulation Pack controlled apply rollback matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`

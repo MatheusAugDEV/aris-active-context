@@ -1,3 +1,43 @@
+# Lab Real Simulation Pack Controlled Apply Planning
+- Phase: `Lab Real Simulation Pack Controlled Apply Planning`
+- Status: `lab_real_simulation_pack_controlled_apply_planning_pass`
+- Decision: `pass`
+- Previous phase verified: `True`
+- Previous evidence packaging final hashes verified: `True`
+- Synthetic-only confirmed: `True`
+- Controlled apply plan only: `True`
+- Real apply executed: `False`
+- Real data allowed: `False`
+- PII allowed: `False`
+- Secrets allowed: `False`
+- Network allowed: `False`
+- External API allowed: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Gate count: `15`
+- Apply wave count: `7`
+- Stop condition count: `15`
+- Rollback entry count: `7`
+- Compensation entry count: `7`
+- Evidence artifact count: `5`
+- Carry-forward residuals preserved: `True`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Readiness Review`
+- Human/operator approval planned only: `True`
+- Human/operator approval executed: `False`
+- Active next block: `Lab Real Simulation Pack / Controlled Apply Readiness Review`
+- Output decision artifact: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
+- Output summary artifact: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
+- Output report artifact: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
+- Output gate manifest artifact: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
+- Output rollback matrix artifact: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
 # Lab Real Simulation Pack Evidence Packaging Plan
 - Phase: `Lab Real Simulation Pack Evidence Packaging Plan`
 - Status: `lab_real_simulation_pack_evidence_packaging_plan_pass`

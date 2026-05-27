@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_evidence_packaging_plan_pass`
+- Status: `lab_real_simulation_pack_controlled_apply_planning_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Evidence Packaging Plan Materialized / Controlled Apply Planning Pending`
+- Current state: `Lab Real Simulation Pack Controlled Apply Planning Materialized / Controlled Apply Readiness Review Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -24,6 +24,7 @@
 - Lab Real Simulation Pack controlled workflow planning result: `pass`
 - Lab Real Simulation Pack expectation mapping plan result: `pass`
 - Lab Real Simulation Pack evidence packaging plan result: `pass`
+- Lab Real Simulation Pack controlled apply planning result: `pass`
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
@@ -34,20 +35,36 @@
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- Evidence packaging remains synthetic-only and audit-only.
-- Evidence manifest count: `23`
+- Controlled apply planning remains synthetic-only, plan-only, and audit-only.
+- Controlled apply plan only: `True`
+- Real apply executed: `False`
+- Network used: `False`
+- External API used: `False`
+- Real data used: `False`
+- Runtime touched: `False`
+- Frontend touched: `False`
+- Backend touched: `False`
+- Action runtime touched: `False`
+- Audio touched: `False`
+- Dependencies touched: `False`
+- Source of truth policy touched: `False`
+- Gate count: `15`
+- Apply wave count: `7`
+- Stop condition count: `15`
+- Rollback entry count: `7`
+- Compensation entry count: `7`
+- Evidence artifact count: `5`
 - Carry-forward residuals preserved: `True`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Planning`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Readiness Review`
 
 ## Active Direction
-- Roadmap Canônico ARIS V1.2 remains the active planning direction.
-- Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
-- Lab Real Simulation Pack evidence packaging is complete; the next governed block is controlled apply planning and remains plan-only.
-- If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
+- Lab Real Simulation Pack controlled apply planning is complete; the next governed block is controlled apply readiness review and remains plan-only.
+- No real apply, runtime mutation, or external execution was authorized here.
+- The stale roadmap warning remains warning-only and carried forward.
 
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Controlled Apply Planning`
-- Block objective: continue the next governed macroblock with plan-only controlled apply preparation, without executing runtime or pilot activation.
+- Next active block: `Lab Real Simulation Pack / Controlled Apply Readiness Review`
+- Block objective: continue the governed macroblock with controlled apply readiness review, without executing apply or pilot surfaces.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
@@ -56,6 +73,11 @@
 - Backend mutation allowed now: `False`
 
 ## Canonical Evidence
+- Controlled apply planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
+- Controlled apply planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
+- Controlled apply planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
+- Controlled apply gate manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
+- Controlled apply rollback matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
 - Evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
 - Evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
 - Evidence packaging report: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_report.md`
@@ -84,12 +106,13 @@
 - README: `aris-active-context/README.md`
 
 ## Validations
-- `python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.py scripts/run_lab_real_simulation_pack_evidence_packaging_plan.py tests/test_lab_real_simulation_pack_evidence_packaging_plan.py`
-- `python3 -m unittest tests.test_lab_real_simulation_pack_evidence_packaging_plan -q`
-- `python3 scripts/run_lab_real_simulation_pack_evidence_packaging_plan.py`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.json`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
-- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
+- `python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.py scripts/run_lab_real_simulation_pack_controlled_apply_planning.py tests/test_lab_real_simulation_pack_controlled_apply_planning.py`
+- `python3 -m unittest tests.test_lab_real_simulation_pack_controlled_apply_planning -q`
+- `python3 scripts/run_lab_real_simulation_pack_controlled_apply_planning.py`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
 
 ## Boundaries
 - Do not reopen Product Loop L1.15.

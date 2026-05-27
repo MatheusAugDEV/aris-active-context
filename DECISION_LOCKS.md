@@ -1,3 +1,47 @@
+# Lab Real Simulation Pack Controlled Apply Planning Lock
+- Lock id: `LAB_RSP_CONTROLLED_APPLY_PLANNING`
+- Status: `lab_real_simulation_pack_controlled_apply_planning_pass`
+- Decision: `pass`
+- Previous phase verified: `True`
+- Previous evidence packaging final hashes verified: `True`
+- Synthetic-only confirmed: `True`
+- Controlled apply plan only: `True`
+- Real apply executed: `False`
+- Real data allowed: `False`
+- PII allowed: `False`
+- Secrets allowed: `False`
+- Network allowed: `False`
+- External API allowed: `False`
+- Runtime mutation allowed: `False`
+- Frontend mutation allowed: `False`
+- Backend mutation allowed: `False`
+- Action runtime mutation allowed: `False`
+- Voice or audio mutation allowed: `False`
+- Dependencies installed: `False`
+- Source of truth policy touched: `False`
+- Gate count: `15`
+- Apply wave count: `7`
+- Stop condition count: `15`
+- Rollback entry count: `7`
+- Compensation entry count: `7`
+- Evidence artifact count: `5`
+- Carry-forward residuals preserved: `True`
+- Warnings preserved: `['roadmap_canonical_current_position_stale']`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Readiness Review`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- External APIs used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Real apply executed in this phase: `False`
+- Human/operator approval executed: `False`
+- Human/operator approval planned only: `True`
+- Root commit hash: `pending_root_commit`
+- Active-context commit hash: `pending_active_context_commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
 # Lab Real Simulation Pack Evidence Packaging Plan Lock
 - Lock id: `LAB_RSP_EVIDENCE_PACKAGING_PLAN`
 - Status: `lab_real_simulation_pack_evidence_packaging_plan_pass`
