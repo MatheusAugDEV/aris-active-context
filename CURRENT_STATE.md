@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h1_golden_tasks_baseline_gate_pass`
+- Status: `hardening_base_h2_ledger_chain_replay_baseline_gate_pass`
 - Decision: `pass`
-- Current state: `H1 Golden Tasks Baseline Materialized / H2 Pending`
+- Current state: `H2 Ledger/Replay Baseline Materialized / H3 Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -15,38 +15,42 @@
 - H0 design brief state: `materialized_design_only_patched`
 - H0 alignment review result: `pass`
 - H1 golden tasks baseline result: `pass`
-- H1 baseline matrix version: `1.0`
-- H1 property candidate version: `1.0`
-- H1 P0 count: `15`
-- H1 P1 count: `5`
-- H1 P2 count: `5`
-- H1 property candidates count: `20`
-- H1 executed in this phase: `True`
-- H2 executed in this phase: `False`
+- H2 ledger chain + replay baseline result: `pass`
+- H2 ledger event schema version: `1.0`
+- H2 replay policy version: `1.0`
+- H2 tamper matrix version: `1.0`
+- H2 event types count: `12`
+- H2 P0 mapped count: `15`
+- H2 tamper scenarios count: `10`
+- H2 replay divergence scenarios count: `10`
+- H2 determinism 100-run plan status: `declared_not_executed`
+- H2 executed in this phase: `True`
+- H3 executed in this phase: `False`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- The H1 baseline is materialized as a declarative, versioned golden tasks matrix.
-- All 16 Core Priority Invariants are covered by at least one golden task.
-- All 9 lacunas pré-piloto are covered by at least one golden task or property candidate.
-- 100% of the P0 tasks include mutation variants, deterministic pass/fail rules, expected evidence, and expected ledger events.
-- Property-based testing remains foundation-only in this phase; no dependency was installed and no randomized execution was performed.
-- No real action was executed from H1.
-- H2 remains not executed.
+- The H2 baseline materializes the versioned ledger event schema, canonical JSON contract, hash-chain baseline, replay policy, compaction policy, tamper detection matrix, and golden-task ledger mapping.
+- All 15 `P0` tasks from H1 are mapped to required ledger/replay expectations.
+- Tamper detection and replay divergence are both declared with 10 scenarios each.
+- Lock/read-only degraded mode is defined for tamper detection or replay divergence.
+- `Ed25519`, `Merkle`, `OpenTelemetry`, and `DeepEval` remain future dependency-gated only.
+- No productive ledger was activated.
+- No real action was executed from H2.
+- H3 remains not executed.
 
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, and legacy roadmap materials remain preserved as audit trail only.
 - L1.15 is closed evidence and must not be reopened or resumed from active slots.
 - Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
-- H2 is now the next design gate only; it has not been executed from this phase.
+- H3 is now the next design gate only; it has not been executed from this phase.
 
 ## Active Next Phase
-- Next active phase: `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
-- Phase objective: define the deterministic ledger-chain and replay baseline on top of the H1 golden tasks matrix, without executing runtime or pilot activation.
+- Next active phase: `Hardening Base H3 — Context Engineering Baseline Gate`
+- Phase objective: define the H3 context-engineering baseline on top of H1/H2 contracts without executing runtime or pilot activation.
 - Phase class: `design_and_validation_gate`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
@@ -56,27 +60,29 @@
 
 ## Canonical Evidence
 - Product Loop closure summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Product Loop closure report: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
 - H0 design brief summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- H0 alignment review summary: `artifacts/roadmap/h0_design_brief_alignment_review_gate_summary.json`
-- H0 patch apply summary: `artifacts/roadmap/h0_design_brief_alignment_patch_apply_summary.json`
-- H1 baseline decision: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate.json`
 - H1 baseline summary: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
-- H1 baseline report: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_report.md`
-- H1 golden tasks matrix: `artifacts/hardening_base/hardening_base_h1_golden_tasks_matrix.json`
-- H1 property candidates: `artifacts/hardening_base/hardening_base_h1_property_candidates.json`
+- H2 baseline decision: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.json`
+- H2 baseline summary: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_summary.json`
+- H2 baseline report: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_report.md`
+- H2 ledger event schema: `artifacts/hardening_base/hardening_base_h2_ledger_event_schema.json`
+- H2 replay policy: `artifacts/hardening_base/hardening_base_h2_replay_policy.json`
+- H2 tamper detection matrix: `artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
+- H2 golden task ledger mapping: `artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
 
 ## Validations
-- `python3 -m py_compile src/aris/hardening_base/hardening_base_h1_golden_tasks_baseline_gate.py scripts/run_hardening_base_h1_golden_tasks_baseline_gate.py tests/test_hardening_base_h1_golden_tasks_baseline_gate.py`
-- `python3 -m unittest tests.test_hardening_base_h1_golden_tasks_baseline_gate -q`
-- `python3 scripts/run_hardening_base_h1_golden_tasks_baseline_gate.py`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h1_golden_tasks_matrix.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h1_property_candidates.json`
+- `python3 -m py_compile src/aris/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.py scripts/run_hardening_base_h2_ledger_chain_replay_baseline_gate.py tests/test_hardening_base_h2_ledger_chain_replay_baseline_gate.py`
+- `python3 -m unittest tests.test_hardening_base_h2_ledger_chain_replay_baseline_gate -q`
+- `python3 scripts/run_hardening_base_h2_ledger_chain_replay_baseline_gate.py`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_summary.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_ledger_event_schema.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_replay_policy.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
+- `python3 -m json.tool artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
 
 ## Boundaries
 - Do not reopen Product Loop L1.15.
-- Do not treat H2 recommendation as H2 execution.
+- Do not treat H3 recommendation as H3 execution.
 - Do not authorize pilot, customer, commercial, or external use from this state.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.

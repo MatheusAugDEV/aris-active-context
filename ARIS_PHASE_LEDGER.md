@@ -1,3 +1,33 @@
+# Hardening Base H2 — Ledger Chain + Replay Baseline Gate
+- Phase: `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
+- Status: `hardening_base_h2_ledger_chain_replay_baseline_gate_pass`
+- Decision: `pass`
+- H1 pass verified: `True`
+- L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Event types count: `12`
+- P0 golden tasks mapped count: `15`
+- Tamper scenarios count: `10`
+- Replay divergence scenarios count: `10`
+- Determinism 100-run plan status: `declared_not_executed`
+- Real action execution performed: `False`
+- H3 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.json`
+- Output summary artifact: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_summary.json`
+- Output report artifact: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_report.md`
+- Output schema artifact: `artifacts/hardening_base/hardening_base_h2_ledger_event_schema.json`
+- Output replay artifact: `artifacts/hardening_base/hardening_base_h2_replay_policy.json`
+- Output tamper artifact: `artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
+- Output mapping artifact: `artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
+- Next recommended phase: `Hardening Base H3 — Context Engineering Baseline Gate`
+
 # Hardening Base H1 — Golden Tasks Baseline Gate
 - Phase: `Hardening Base H1 — Golden Tasks Baseline Gate`
 - Status: `hardening_base_h1_golden_tasks_baseline_gate_pass`

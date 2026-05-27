@@ -25,10 +25,10 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Strategic Reset: `PASS`
 - Product Loop L1.1-L1.15: `PASS`
 - Product Loop layer closed: `True`
-- H0 exists as a materialized and patched design brief.
-- H1 golden tasks baseline is now `pass`.
+- H1 golden tasks baseline is `pass`.
+- H2 ledger chain + replay baseline is `pass`.
 - The current active next phase is:
-  `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
+  `Hardening Base H3 — Context Engineering Baseline Gate`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
@@ -38,5 +38,5 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 
 ## Boundaries
 - Do not reopen Product Loop L1.15 from active slots.
-- Do not treat the H2 next-step entry as H2 execution.
+- Do not treat the H3 next-step entry as H3 execution.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.

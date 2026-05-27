@@ -43,8 +43,23 @@
 - Property candidates: `20`
 - Real action execution performed in H1: `False`
 - H2 executed from the H1 phase flow: `False`
-- Active next phase: `Hardening Base H2 — Ledger Chain + Replay Baseline Gate`
-- H2 may be recommended only because the H1 baseline gate passed; H2 remains not executed.
+
+# H2 Ledger Chain + Replay Baseline Lock
+- Lock id: `H2_LEDGER_CHAIN_REPLAY_BASELINE`
+- Status: `hardening_base_h2_ledger_chain_replay_baseline_gate_pass`
+- Decision: `pass`
+- H2 ledger event schema version: `1.0`
+- H2 replay policy version: `1.0`
+- H2 tamper matrix version: `1.0`
+- Event types: `12`
+- P0 mapped count: `15`
+- Tamper scenarios: `10`
+- Replay divergence scenarios: `10`
+- Determinism 100-run plan status: `declared_not_executed`
+- Real action execution performed in H2: `False`
+- H3 executed from the H2 phase flow: `False`
+- Active next phase: `Hardening Base H3 — Context Engineering Baseline Gate`
+- H3 may be recommended only because the H2 baseline gate passed; H3 remains not executed.
 
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
@@ -65,6 +80,7 @@
 - Retroactive pass claims are forbidden.
 - Efficiency cannot remove governance gates, ledger, replay, permission, rollback, or evidence requirements.
 - Property-based testing remains candidate-only until a later dependency gate explicitly authorizes installation and execution.
+- `Ed25519`, `Merkle`, `OpenTelemetry`, and `DeepEval` remain future dependency-gated only.
 
 # Protected Surface Lock
 - Production authorized now: `False`
