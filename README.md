@@ -28,8 +28,9 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H1 golden tasks baseline is `pass`.
 - H2 ledger chain + replay baseline is `pass`.
 - H3 context engineering baseline is `pass`.
+- H4 observability + cost/time + quota baseline is `pass`.
 - The current active next phase is:
-  `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
+  `Hardening Base H5 — Degraded Mode + Failure UX Gate`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.

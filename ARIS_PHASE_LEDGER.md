@@ -1,3 +1,48 @@
+# Hardening Base H4 — Observability + Cost/Time + Quota Gate
+- Phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
+- Status: `hardening_base_h4_observability_cost_time_quota_gate_pass`
+- Decision: `pass`
+- H3 pass verified: `True`
+- L1.15 closed verified: `True`
+- Product Loop closure hash verified: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Observability event types count: `16`
+- Metric fields count: `22`
+- Quota roles count: `6`
+- Risk classes count: `6`
+- Execution profiles count: `3`
+- Anomaly scenarios count: `11`
+- Quota exhaustion scenarios count: `8`
+- H1 P0 mapping count: `15`
+- H2 telemetry mapping count: `12`
+- H3 telemetry/cost mapping count: `8`
+- Known drift observed: `roadmap_canonical_current_position_stale`
+- Productive telemetry activated: `False`
+- OTel real integration created: `False`
+- Dependency installation performed: `False`
+- Real action execution performed: `False`
+- H5 executed in this phase: `False`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+- Output decision artifact: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate.json`
+- Output summary artifact: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_summary.json`
+- Output report artifact: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_report.md`
+- Output observability schema artifact: `artifacts/hardening_base/hardening_base_h4_observability_event_schema.json`
+- Output telemetry contract artifact: `artifacts/hardening_base/hardening_base_h4_local_jsonl_telemetry_contract.json`
+- Output OTel mapping plan artifact: `artifacts/hardening_base/hardening_base_h4_otel_compatible_mapping_plan.json`
+- Output cost/time schema artifact: `artifacts/hardening_base/hardening_base_h4_cost_time_measurement_schema.json`
+- Output quota policy artifact: `artifacts/hardening_base/hardening_base_h4_quota_policy.json`
+- Output regression policy artifact: `artifacts/hardening_base/hardening_base_h4_performance_regression_policy.json`
+- Output cost-quality correlation artifact: `artifacts/hardening_base/hardening_base_h4_cost_quality_correlation_contract.json`
+- Output anomaly artifact: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
+- Output quota exhaustion artifact: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
+- Output golden-task observability mapping artifact: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
+- Next recommended phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
+
 # Hardening Base H3 — Context Engineering Baseline Gate
 - Phase: `Hardening Base H3 — Context Engineering Baseline Gate`
 - Status: `hardening_base_h3_context_engineering_baseline_gate_pass`

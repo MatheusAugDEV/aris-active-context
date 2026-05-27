@@ -27,6 +27,19 @@
 - H3 memory poisoning / ASI06 matrix: `artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
 - H3 no-bulk-read policy: `artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
 - H3 golden task context mapping: `artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
+- H4 baseline decision: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate.json`
+- H4 baseline summary: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_summary.json`
+- H4 baseline report: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_report.md`
+- H4 observability event schema: `artifacts/hardening_base/hardening_base_h4_observability_event_schema.json`
+- H4 local JSONL telemetry contract: `artifacts/hardening_base/hardening_base_h4_local_jsonl_telemetry_contract.json`
+- H4 OTel-compatible mapping plan: `artifacts/hardening_base/hardening_base_h4_otel_compatible_mapping_plan.json`
+- H4 cost/time measurement schema: `artifacts/hardening_base/hardening_base_h4_cost_time_measurement_schema.json`
+- H4 quota policy: `artifacts/hardening_base/hardening_base_h4_quota_policy.json`
+- H4 performance regression policy: `artifacts/hardening_base/hardening_base_h4_performance_regression_policy.json`
+- H4 cost-quality correlation contract: `artifacts/hardening_base/hardening_base_h4_cost_quality_correlation_contract.json`
+- H4 anomaly detection matrix: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
+- H4 quota exhaustion matrix: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
+- H4 golden task observability mapping: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
 
 ## Indexed Topics
 - Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
@@ -49,9 +62,19 @@
 - H3 context integrity checks count: `12`
 - H3 H1 golden tasks mapped count: `8`
 - H3 H2 event types mapped count: `6`
+- H4 observability event types count: `16`
+- H4 metric fields count: `22`
+- H4 quota roles count: `6`
+- H4 risk classes count: `6`
+- H4 execution profiles count: `3`
+- H4 anomaly scenarios count: `11`
+- H4 quota exhaustion scenarios count: `8`
+- H4 H1 P0 mapping count: `15`
+- H4 H2 telemetry mapping count: `12`
+- H4 H3 telemetry/cost mapping count: `8`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next phase: `Hardening Base H4 — Observability + Cost/Time + Quota Gate`
+- Active next phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -77,3 +100,4 @@
 - Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
 - Do not reopen Product Loop L1.15 from active routing.
 - Do not treat the H4 next-step entry as H4 execution.
+- Do not treat the H5 next-step entry as H5 execution.

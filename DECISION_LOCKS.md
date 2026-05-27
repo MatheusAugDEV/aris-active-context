@@ -88,6 +88,35 @@
 - Known warning: `ROADMAP_CANONICAL.md` current-position paragraph is stale and non-authoritative when it conflicts with the live active-context files.
 - H4 may be recommended only because the H3 baseline gate passed; H4 remains not executed.
 
+# H4 Observability + Cost/Time + Quota Gate
+- Lock id: `H4_OBSERVABILITY_COST_TIME_QUOTA_GATE`
+- Status: `hardening_base_h4_observability_cost_time_quota_gate_pass`
+- Decision: `pass`
+- Observability event types: `16`
+- Metric fields: `22`
+- Quota roles: `6`
+- Risk classes: `6`
+- Execution profiles: `3`
+- Anomaly scenarios: `11`
+- Quota exhaustion scenarios: `8`
+- H1 P0 mapping count: `15`
+- H2 telemetry mapping count: `12`
+- H3 telemetry/cost mapping count: `8`
+- Productive telemetry activated: `False`
+- OTel real integration created: `False`
+- Dependency installation performed: `False`
+- Real action execution performed: `False`
+- H5 executed from the H4 phase flow: `False`
+- Active next phase: `Hardening Base H5 — Degraded Mode + Failure UX Gate`
+- Known drift retained: `roadmap_canonical_current_position_stale`
+- Runtime changed in this phase: `False`
+- Frontend changed in this phase: `False`
+- Voice or audio changed in this phase: `False`
+- Action runtime changed in this phase: `False`
+- Backend changed in this phase: `False`
+- Network used in this phase: `False`
+- Dependencies installed in this phase: `False`
+
 # Pre-Pilot Absolute Lock
 - No pilot, customer, design partner operational use, or external use is authorized before all of the following are `PASS`:
   1. `Product Loop Demonstrável`

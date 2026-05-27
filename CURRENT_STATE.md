@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `hardening_base_h3_context_engineering_baseline_gate_pass`
+- Status: `hardening_base_h4_observability_cost_time_quota_gate_pass`
 - Decision: `pass`
-- Current state: `H3 Context Engineering Baseline Materialized / H4 Pending`
+- Current state: `H4 Observability + Cost/Time + Quota Baseline Materialized / H5 Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -17,6 +17,7 @@
 - H1 golden tasks baseline result: `pass`
 - H2 ledger chain + replay baseline result: `pass`
 - H3 context engineering baseline result: `pass`
+- H4 observability + cost/time + quota baseline result: `pass`
 - H2 ledger event schema version: `1.0`
 - H2 replay policy version: `1.0`
 - H2 tamper matrix version: `1.0`
@@ -36,7 +37,8 @@
 - H3 H2 event types mapped count: `6`
 - H2 executed in this phase: `False`
 - H3 executed in this phase: `True`
-- H4 executed in this phase: `False`
+- H4 executed in this phase: `True`
+- H5 executed in this phase: `False`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
@@ -54,13 +56,25 @@
 - No real action was executed from H3.
 - H4 remains not executed.
 - Warning retained: `ROADMAP_CANONICAL.md` still contains a stale current-position paragraph and must be treated as non-authoritative when it conflicts with the live active-context files.
+- Known drift observed in H4: `roadmap_canonical_current_position_stale`
+- H4 observability event types count: `16`
+- H4 metric fields count: `22`
+- H4 quota roles count: `6`
+- H4 risk classes count: `6`
+- H4 execution profiles count: `3`
+- H4 anomaly scenarios count: `11`
+- H4 quota exhaustion scenarios count: `8`
+- H4 H1 P0 mapping count: `15`
+- H4 H2 telemetry mapping count: `12`
+- H4 H3 telemetry/cost mapping count: `8`
 
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, and legacy roadmap materials remain preserved as audit trail only.
 - L1.15 is closed evidence and must not be reopened or resumed from active slots.
 - Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
-- H4 is now the next design gate only; it has not been executed from this phase.
+- H4 has been executed and passed from this phase.
+- H5 is now the next design gate only; it has not been executed from this phase.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
