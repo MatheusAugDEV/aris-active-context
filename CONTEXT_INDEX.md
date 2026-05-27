@@ -125,7 +125,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Evidence Packaging Plan`
+- Active next block: `Lab Real Simulation Pack / Controlled Apply Planning`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -169,3 +169,7 @@
 - Lab expectation mapping report: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan_report.md`
 - Lab synthetic document/dataset gate: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan.json`
 - Lab synthetic document/dataset report: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
+
+- Lab Real Simulation Pack evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
+- Lab Real Simulation Pack evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
+- Lab Real Simulation Pack evidence packaging gate: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.json`

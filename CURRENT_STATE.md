@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_expectation_mapping_plan_pass`
+- Status: `lab_real_simulation_pack_evidence_packaging_plan_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Expectation Mapping Plan Materialized / Evidence Packaging Plan Pending`
+- Current state: `Lab Real Simulation Pack Evidence Packaging Plan Materialized / Controlled Apply Planning Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -11,122 +11,43 @@
 - Strategic Reset: `PASS`
 - Product Loop L1.1-L1.15: `PASS`
 - Product Loop layer closed: `True`
-- Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-- H0 design brief state: `materialized_design_only_patched`
-- H0 alignment review result: `pass`
 - H1 golden tasks baseline result: `pass`
 - H2 ledger chain + replay baseline result: `pass`
 - H3 context engineering baseline result: `pass`
 - H4 observability + cost/time + quota baseline result: `pass`
 - H5 degraded mode + failure UX baseline result: `pass`
 - H6 eval harness baseline result: `pass`
-- H6 harness profile count: `3`
-- H6 harness stage count: `12`
-- H6 evidence fields count: `17`
-- H6 hermeticity requirements count: `12`
-- H6 promotion criteria count: `12`
-- H6 determinism requirements count: `11`
-- H6 property requirements count: `11`
-- H6 chaos requirements count: `11`
-- H6 H1 P0 mapping count: `15`
-- H6 H1 P1 mapping count: `5`
-- H6 H1 P2 mapping count: `5`
-- H6 H2 mapping count: `12`
-- H6 H3 mapping count: `8`
-- H6 H4 mapping count: `10`
-- H6 H5 mapping count: `10`
 - H7 closure result: `pass`
 - Lab Real Simulation Pack design brief alignment result: `pass`
 - Lab Real Simulation Pack scenario manifest planning result: `pass`
 - Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
+- Lab Real Simulation Pack controlled workflow planning result: `pass`
+- Lab Real Simulation Pack expectation mapping plan result: `pass`
+- Lab Real Simulation Pack evidence packaging plan result: `pass`
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
-- H7 evidence rollup count: `7`
-- H7 invariant closure count: `16`
-- H7 V1.2 gap closure count: `9`
-- H7 known drift classification: `warning_only_not_blocking`
-- H7 fast path plan enabled: `False`
-- H7 next block readiness: `ready`
-- H2 ledger event schema version: `1.0`
-- H2 replay policy version: `1.0`
-- H2 tamper matrix version: `1.0`
-- H2 event types count: `12`
-- H2 P0 mapped count: `15`
-- H2 tamper scenarios count: `10`
-- H2 replay divergence scenarios count: `10`
-- H2 determinism 100-run plan status: `declared_not_executed`
-- H3 context budget roles count: `6`
-- H3 risk classes count: `6`
-- H3 provenance fields count: `13`
-- H3 stale-context scenarios count: `10`
-- H3 memory poisoning / ASI06 scenarios count: `10`
-- H3 no-bulk-read violation scenarios count: `10`
-- H3 context integrity checks count: `12`
-- H3 H1 golden tasks mapped count: `8`
-- H3 H2 event types mapped count: `6`
-- H4 observability event types count: `16`
-- H4 metric fields count: `22`
-- H4 quota roles count: `6`
-- H4 risk classes count: `6`
-- H4 execution profiles count: `3`
-- H4 anomaly scenarios count: `11`
-- H4 quota exhaustion scenarios count: `8`
-- H4 H1 P0 mapping count: `15`
-- H4 H2 telemetry mapping count: `12`
-- H4 H3 telemetry/cost mapping count: `8`
-- H5 degradation levels count: `5`
-- H5 failure modes count: `21`
-- H5 failure UX templates count: `12`
-- H5 blast radius scenarios count: `10`
-- H5 chaos scenarios count: `10`
-- H5 H1 mapping count: `15`
-- H5 H2 mapping count: `12`
-- H5 H3 mapping count: `8`
-- H5 H4 mapping count: `10`
-- H5 ledger append failure blocks mutable actions: `True`
-- H5 failure UX no false success: `True`
-- H5 tamper escalation rule: `level_3_read_only_or_level_4_kill_switch_by_severity`
-- H2 executed in this phase: `False`
-- H3 executed in this phase: `True`
-- H4 executed in this phase: `True`
-- H5 executed in this phase: `True`
-- H6 executed in this phase: `True`
-- H7 executed in this phase: `True`
-- Lab Real Simulation Pack design brief alignment executed in this phase: `True`
-- Lab Real Simulation Pack scenario manifest planning executed in this phase: `True`
-- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
+- Warning preserved: `roadmap_canonical_current_position_stale`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- H7 closes Hardening Base by consolidating H0-H6 evidence, phase status, and readiness into a deterministic closure gate.
-- H0-H6 evidence rollup count: `7`
-- 16 Core Priority Invariants are covered by at least one H0-H6 evidence source.
-- 9 V1.2 gaps are covered by at least one H0-H6 evidence source.
-- H0-H6 pass/warn/block matrix is complete, with `roadmap_canonical_current_position_stale` retained as warning-only and non-blocking.
-- Fast path remains disabled and future-gated; H7 only produced a plan, never activation.
-- Pre-pilot lock remains enforced; no pilot, product, or runtime authorization is granted.
-- Known drift classification: `warning_only_not_blocking`
+- Evidence packaging remains synthetic-only and audit-only.
+- Evidence manifest count: `23`
+- Carry-forward residuals preserved: `True`
+- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Planning`
 
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
-- L1.15 is closed evidence and must not be reopened or resumed from active slots.
-- Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
-- H5 has been executed and passed from this phase.
-- H6 has been executed and passed from this phase.
-- H7 has been executed and passed from this phase.
-- Hardening Base is now closed.
-- Lab Real Simulation Pack design brief alignment has passed.
-- Lab Real Simulation Pack expectation mapping plan is complete; the next block is evidence packaging only and remains plan-only.
+- Lab Real Simulation Pack evidence packaging is complete; the next governed block is controlled apply planning and remains plan-only.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Evidence Packaging Plan`
-- Block objective: continue the next governed macroblock with plan-only evidence packaging alignment, without executing runtime or pilot activation.
+- Next active block: `Lab Real Simulation Pack / Controlled Apply Planning`
+- Block objective: continue the next governed macroblock with plan-only controlled apply preparation, without executing runtime or pilot activation.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
@@ -135,68 +56,43 @@
 - Backend mutation allowed now: `False`
 
 ## Canonical Evidence
-- Product Loop closure summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- H0 design brief summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- H1 baseline summary: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
-- H2 baseline decision: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.json`
-- H2 baseline summary: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_summary.json`
-- H2 baseline report: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_report.md`
-- H2 ledger event schema: `artifacts/hardening_base/hardening_base_h2_ledger_event_schema.json`
-- H2 replay policy: `artifacts/hardening_base/hardening_base_h2_replay_policy.json`
-- H2 tamper detection matrix: `artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
-- H2 golden task ledger mapping: `artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
-- H3 baseline decision: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate.json`
-- H3 baseline summary: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_summary.json`
-- H3 baseline report: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_report.md`
-- H3 context budget policy: `artifacts/hardening_base/hardening_base_h3_context_budget_policy.json`
-- H3 context provenance schema: `artifacts/hardening_base/hardening_base_h3_context_provenance_schema.json`
-- H3 stale-context matrix: `artifacts/hardening_base/hardening_base_h3_stale_context_matrix.json`
-- H3 context integrity checks: `artifacts/hardening_base/hardening_base_h3_context_integrity_checks.json`
-- H3 memory poisoning / ASI06 matrix: `artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
-- H3 no-bulk-read policy: `artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
-- H3 golden task context mapping: `artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
-- H4 baseline decision: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate.json`
-- H4 baseline summary: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_summary.json`
-- H4 baseline report: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_report.md`
-- H4 observability event schema: `artifacts/hardening_base/hardening_base_h4_observability_event_schema.json`
-- H4 local JSONL telemetry contract: `artifacts/hardening_base/hardening_base_h4_local_jsonl_telemetry_contract.json`
-- H4 OTel-compatible mapping plan: `artifacts/hardening_base/hardening_base_h4_otel_compatible_mapping_plan.json`
-- H4 cost/time measurement schema: `artifacts/hardening_base/hardening_base_h4_cost_time_measurement_schema.json`
-- H4 quota policy: `artifacts/hardening_base/hardening_base_h4_quota_policy.json`
-- H4 performance regression policy: `artifacts/hardening_base/hardening_base_h4_performance_regression_policy.json`
-- H4 cost-quality correlation contract: `artifacts/hardening_base/hardening_base_h4_cost_quality_correlation_contract.json`
-- H4 anomaly detection matrix: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
-- H4 quota exhaustion matrix: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
-- H4 golden task observability mapping: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
-- H5 baseline decision: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
-- H5 baseline summary: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
-- H5 baseline report: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_report.md`
-- H5 degradation levels: `artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
-- H5 failure mode matrix: `artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
-- H5 failure UX message contract: `artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
-- H5 kill switch policy: `artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
-- H5 blast radius matrix: `artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
-- H5 chaos engineering plan: `artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
-- H5 recovery routing policy: `artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
-- H5 cross-gate degraded mapping: `artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
+- Evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
+- Evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
+- Evidence packaging report: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_report.md`
+- Design brief alignment summary: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate_summary.json`
+- Design brief alignment gate: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate.json`
+- Design brief alignment report: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate_report.md`
+- Design brief: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief.json`
+- Scope matrix: `artifacts/lab_simulation/lab_real_simulation_pack_scope_matrix.json`
+- Carry-forward residuals: `artifacts/lab_simulation/lab_real_simulation_pack_carry_forward_residuals.json`
+- Subphase plan: `artifacts/lab_simulation/lab_real_simulation_pack_subphase_plan.json`
+- Safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
+- Synthetic document/dataset summary: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_summary.json`
+- Synthetic document/dataset gate: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan.json`
+- Synthetic document/dataset report: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
+- Controlled workflow summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_summary.json`
+- Controlled workflow gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan.json`
+- Controlled workflow report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_report.md`
+- Expectation mapping summary: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan_summary.json`
+- Expectation mapping gate: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan.json`
+- Expectation mapping report: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan_report.md`
+- Current state: `aris-active-context/CURRENT_STATE.md`
+- Next action: `aris-active-context/NEXT_ACTION.md`
+- Decision locks: `aris-active-context/DECISION_LOCKS.md`
+- Context index: `aris-active-context/CONTEXT_INDEX.md`
+- Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
+- README: `aris-active-context/README.md`
 
 ## Validations
-- `python3 -m py_compile src/aris/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.py scripts/run_hardening_base_h5_degraded_mode_failure_ux_gate.py tests/test_hardening_base_h5_degraded_mode_failure_ux_gate.py`
-- `python3 -m unittest tests.test_hardening_base_h5_degraded_mode_failure_ux_gate -q`
-- `python3 scripts/run_hardening_base_h5_degraded_mode_failure_ux_gate.py`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
-- `python3 -m json.tool artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
+- `python3 -m py_compile src/aris/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.py scripts/run_lab_real_simulation_pack_evidence_packaging_plan.py tests/test_lab_real_simulation_pack_evidence_packaging_plan.py`
+- `python3 -m unittest tests.test_lab_real_simulation_pack_evidence_packaging_plan -q`
+- `python3 scripts/run_lab_real_simulation_pack_evidence_packaging_plan.py`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.json`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
+- `python3 -m json.tool artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
 
 ## Boundaries
 - Do not reopen Product Loop L1.15.
-- Do not treat H6 execution as H7 execution.
+- Do not treat the next block as execution.
 - Do not authorize pilot, customer, commercial, or external use from this state.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
