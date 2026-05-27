@@ -1,329 +1,50 @@
-# Hardening Base H0 - Research Evidence & Phase Design Brief
+# Active Context Canonical State
 
-## Current Position
-- Status: `hardening_base_h0_phase_design_brief_ready`
+## Status
+- Status: `active_context_canonicalization_cleanup_applied`
 - Decision: `pass`
-- Macroblock: `Hardening Base`
-- Current state: `Hardening Base H0 - Research Evidence & Phase Design Brief`
-- Source product loop closure status: `product_loop_l1_15_product_loop_closure_pass`
-- Source product loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-- Source product loop layer closed: `True`
-- Source product loop demonstrated: `True`
-- Source final filesystem state: `rolled_back`
+- Current state: `Active Context Canonicalization Applied / H0 Design Brief Alignment Pending`
+- Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
+- Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
+
+## Consolidated Reality
+- Strategic Reset: `PASS`
+- Product Loop L1.1-L1.15: `PASS`
+- Product Loop layer closed: `True`
+- Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- H0 design brief state: `materialized_design_only`
+- H0 implementation started: `False`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`
 - Generic action runtime activated: `False`
-- Hardening base started as design only: `True`
-- Hardening corrections started: `False`
-- H1 implementation allowed now: `False`
-- H1 implementation allowed next: `True`
-- Candidate Golden Tasks count: `12`
-- Coverage matrix complete: `True`
-- Canonical design hash: `sha256:bb01d798bbbef84f41aa5995e456657a241e3fe7e0ce1127b6e3cef761febc4b`
-- Blockers count: `0`
-- Warning count: `3`
 
-## Core Priority Invariants
-- All applicable Core Priority Invariants: `PASS`
-- N/A priorities: none.
-- WARN does not unlock critical advancement.
+## Active Direction
+- Roadmap Canônico ARIS V1.2 is the active planning direction.
+- Historical Bedrock, F21, and legacy roadmap materials remain preserved as audit trail only.
+- L1.15 is closed evidence and must not be reopened or resumed from active slots.
+- The next active gate is the H0 roadmap-alignment review, not direct advancement into later Hardening Base execution.
 
-## Evidence
-- H0 module: `src/aris/hardening_base/hardening_base_h0_phase_design_brief.py`
-- H0 runner: `scripts/run_hardening_base_h0_phase_design_brief.py`
-- H0 test: `tests/test_hardening_base_h0_phase_design_brief.py`
-- H0 record: `artifacts/hardening_base/hardening_base_h0_phase_design_brief.json`
-- H0 summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- H0 report: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
-- Source Product Loop closure summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Source Product Loop closure record: `artifacts/product_loop/product_loop_l1_15_product_loop_closure.json`
-- Source Product Loop closure report: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`
+## Active Gate
+- Next active phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+- Gate objective: reconcile the existing H0 design brief with `Roadmap Canônico ARIS V1.2` before any later Hardening Base advancement.
+- Gate class: `review_only`
+- Runtime mutation allowed now: `False`
+- Frontend mutation allowed now: `False`
+- Voice or audio mutation allowed now: `False`
+- Action runtime mutation allowed now: `False`
+- Backend mutation allowed now: `False`
 
-## Next
-- Next recommended phase: `Hardening Base H1 - Golden Tasks Baseline Gate`
-- H0 opens Hardening Base only as a design and evidence brief.
-- H0 does not implement H1 and does not authorize production, product readiness, runtime integration, or generic action runtime activation.
+## Canonical Evidence
+- Product Loop closure summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
+- Product Loop closure report: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
+- H0 design brief summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
+- H0 design brief report: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
+- Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
+- Canonicalization plan summary: `artifacts/roadmap/active_context_canonicalization_cleanup_plan.json`
 
-# Product Loop L1.15 - Product Loop Closure Gate
-
-## Current Position
-- Status: `product_loop_l1_15_product_loop_closure_pass`
-- Decision: `pass`
-- Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.15 - Product Loop Closure Gate`
-- Selected task: `notes.create.local`
-- Target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `product_loop_closure_only`
-- L1.1 verified: `True`
-- L1.2 verified: `True`
-- L1.3 verified: `True`
-- L1.4 verified: `True`
-- L1.5 verified: `True`
-- L1.6 verified: `True`
-- L1.7 verified: `True`
-- L1.8 verified: `True`
-- L1.9 verified: `True`
-- L1.10 verified: `True`
-- L1.11 verified: `True`
-- L1.12 verified: `True`
-- L1.13 verified: `True`
-- L1.14 verified: `True`
-- All required artifacts present: `True`
-- Artifact chain consistent: `True`
-- Apply passed: `True`
-- Verification passed: `True`
-- Rollback passed: `True`
-- Response evidence passed: `True`
-- Final filesystem state: `rolled_back`
-- Final target file exists: `False`
-- Product loop steps count: `12`
-- Product loop steps all proven: `True`
-- Product loop demonstrated: `True`
-- Product loop closure gate passed: `True`
-- Product loop layer closed: `True`
-- Hardening base not started: `True`
-- Production authorized: `False`
-- Product ready: `False`
-- Runtime integration allowed: `False`
-- Generic action runtime activated: `False`
-- Personal notes unchanged: `True`
-- Calendar unchanged: `True`
-- No ICS created: `True`
-- Unsafe payloads blocked: `True`
-- Product loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-
-## Core Priority Invariants
-- All applicable Core Priority Invariants: `PASS`
-- N/A priorities: none.
-- WARN does not unlock critical advancement.
-
-## Evidence
-- Closure module: `src/aris/product_loop/product_loop_closure_gate.py`
-- Runner: `scripts/run_product_loop_l1_15_product_loop_closure_gate.py`
-- Test: `tests/test_product_loop_l1_15_product_loop_closure_gate.py`
-- Closure record: `artifacts/product_loop/product_loop_l1_15_product_loop_closure.json`
-- Closure summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Closure report: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
-- L1.14 response evidence summary: `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
-- L1.13 rollback proof summary: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- L1.12 verification and evidence summary: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-
-## Next
-- Next recommended macroblock: `Hardening Base`
-- Next recommended phase: `Hardening Base H1 - Golden Tasks Baseline Gate`
-- L1.15 closes Product Loop Demonstrável with a PASS, but it does not authorize production, product readiness, or runtime integration.
-
-# Product Loop L1.14 - Response Evidence Gate
-
-## Current Position
-- Status: `product_loop_l1_14_response_evidence_pass`
-- Decision: `pass`
-- Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.14 - Response Evidence Gate`
-- Selected task: `notes.create.local`
-- Target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `response_evidence_only`
-- L1.11 verified: `True`
-- L1.12 verified: `True`
-- L1.13 verified: `True`
-- Artifact chain consistent: `True`
-- Apply passed: `True`
-- Verification passed in L1.12: `True`
-- Rollback passed: `True`
-- Rollback target exists after: `False`
-- Final target file exists: `False`
-- Response evidence created: `True`
-- Response evidence gate passed: `True`
-- Response evidence hash: `sha256:af4277a8c95d4e9f7ec37cf9f2bfd3d2136633aa25eae3c0aefa6b2296a2ee71`
-- Ledger evidence consistent: `True`
-- Verification evidence consistent: `True`
-- Rollback evidence consistent: `True`
-- Cost/time evidence consistent: `True`
-- Personal notes unchanged: `True`
-- Calendar unchanged: `True`
-- No ICS created: `True`
-- Unsafe payloads blocked: `True`
-- Response text safe: `True`
-- Response text does not claim Product Loop closed: `True`
-
-## Core Priority Invariants
-- All applicable Core Priority Invariants: `PASS`
-- N/A priorities: none.
-- WARN does not unlock critical advancement.
-
-## Evidence
-- Response evidence module: `src/aris/product_loop/product_loop_response_evidence_gate.py`
-- Runner: `scripts/run_product_loop_l1_14_response_evidence_gate.py`
-- Test: `tests/test_product_loop_l1_14_response_evidence_gate.py`
-- Response evidence artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence.json`
-- Response evidence summary: `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
-- Response evidence report: `artifacts/product_loop/product_loop_l1_14_response_evidence_report.md`
-- L1.13 rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
-- L1.13 rollback proof summary: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- L1.12 evidence summary: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-
-## Next
-- Next recommended phase: `Product Loop L1.15 - Product Loop Closure Gate`
-- L1.14 produces the response evidence only and does not close the Product Loop.
-
-# Product Loop L1.13 - Rollback Proof Gate
-
-## Current Position
-- Status: `product_loop_l1_13_rollback_proof_pass`
-- Decision: `pass`
-- Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.13 - Rollback Proof Gate`
-- Selected task: `notes.create.local`
-- Rollback target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `rollback_proof`
-- Authorization status: `recorded`
-- Authorization present: `True`
-- Authorization valid: `True`
-- L1.11 verified: `True`
-- L1.12 verified: `True`
-- Artifact chain consistent: `True`
-- Rollback target existed before: `True`
-- Expected pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
-- Observed pre-rollback content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
-- Rollback executed: `True`
-- Rollback target exists after: `False`
-- Rollback verification passed: `True`
-- Ledger entry written: `True`
-- Ledger evidence consistent: `True`
-- Cost/time measurement executed: `True`
-- Personal notes unchanged: `True`
-- Calendar unchanged: `True`
-- No ICS created: `True`
-- Unsafe payloads blocked: `True`
-- Rollback result hash: `sha256:a7a9af1053056e1d68349067f929822793df3995d32441351ad8931f92ef43eb`
-
-## Core Priority Invariants
-- All applicable Core Priority Invariants: `PASS`
-- N/A priorities: none.
-- WARN does not unlock critical advancement.
-
-## Evidence
-- Rollback proof module: `src/aris/product_loop/product_loop_rollback_proof_gate.py`
-- Runner: `scripts/run_product_loop_l1_13_rollback_proof_gate.py`
-- Test: `tests/test_product_loop_l1_13_rollback_proof_gate.py`
-- Rollback target: `data/aris_notes/aris_created_note_preview.md`
-- Rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
-- Rollback proof summary: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- Rollback proof report: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
-- Manual authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
-- L1.12 evidence summary: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-- L1.12 evidence report: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_report.md`
-
-## Next
-- Next recommended phase: `Product Loop L1.14 - Response Evidence Gate`
-- L1.13 proves rollback and compensation only and does not close the Product Loop.
-
-# Product Loop L1.12 - Verification and Evidence Gate
-
-## Current Position
-- Status: `product_loop_l1_12_verification_and_evidence_pass`
-- Decision: `pass`
-- Macrostructure phase: `Product Loop Demonstrável`
-- Current state: `Product Loop L1.12 - Verification and Evidence Gate`
-- Selected task: `notes.create.local`
-- Target path: `data/aris_notes/aris_created_note_preview.md`
-- Execution mode: `verification_and_evidence_only`
-- Authorization status: `recorded`
-- Authorization recorded: `True`
-- Human permission granted: `True`
-- Human authorization recorded: `True`
-- Source plan hash: `sha256:41d232e3515acd8720948776e956f07190ecfeb133602365f47a0795e3a8e1a3`
-- Source envelope hash: `sha256:bdee490afddde25056f1e9833512ba713971cf27c6ace0c3f954fc5d7e4eea05`
-- Source apply plan hash: `sha256:8c30c9cc8e4bb3f00ee0ac8818e80c0c748a49fe202fbc8e38fae8c1eb3808d5`
-- Source review hash: `sha256:f52544466031fb484bb85bea19f5f54d3ccec59d5d4671f73685e9cf37594500`
-- Source authorization request hash: `sha256:02550e85c1133407bb5c5490ef4aeac1bc199c9898713b15cac5e3464603f5bf`
-- Source authorization capture review hash: `sha256:4b7fe2abf41f556dd66666d71e16e76a704cce899d4882d4d19e6530827f4ce3`
-- Source pending closure hash: `sha256:f9b7971b06475a149441c22fdea738afea5cffa6b65d02688d2e73a7edc977a4`
-- Source authorization record hash: `sha256:37950638334a72d38964768b1ee942f07607e7410c8bb1901a14c64d24158b0b`
-- Source pre-apply readiness hash: `sha256:74da1fd6275662725fc7c54c6efd2bca600f8a2729e4ef08168ba04c5242c199`
-- L1.11 apply result hash: `sha256:b0371535ea4cbe186d99099876c550dc4ad6e20d440268e5ec1d393779ce7cea`
-- Evidence result hash: `sha256:cbf279ce3abcfc9e3ecee82ec8c33b9e22759db966953658347313fc484918cb`
-- L1.2 verified: `True`
-- L1.3 verified: `True`
-- L1.4 verified: `True`
-- L1.5 verified: `True`
-- L1.6 verified: `True`
-- L1.7 verified: `True`
-- L1.8 verified: `True`
-- L1.9 verified: `True`
-- L1.10 verified: `True`
-- L1.11 verified: `True`
-- Artifact chain consistent: `True`
-- Authorization status: `recorded`
-- Human permission granted: `True`
-- Human authorization recorded: `True`
-- Expected content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
-- Observed content hash: `sha256:46ee236b5cca5da8d2a8369e527c8cb5aa83d91a6c89279917e7e49d18ca4155`
-- Expected bytes written: `360`
-- Observed bytes: `360`
-- Target file exists: `True`
-- Target file matches expected hash: `True`
-- Target file matches expected bytes: `True`
-- Note content safe: `True`
-- Note contains no secrets: `True`
-- Note contains no env vars: `True`
-- Note contains no external data: `True`
-- Controlled apply executed in L1.11: `True`
-- Write operation executed in L1.11: `True`
-- New write executed in L1.12: `False`
-- Target file modified in L1.12: `False`
-- Rollback available: `True`
-- Rollback executed: `False`
-- Rollback not executed in L1.12: `True`
-- Ledger entry written: `True`
-- Ledger evidence consistent: `True`
-- Verification executed: `True`
-- Verification passed: `True`
-- Cost/time measurement executed: `True`
-- Cost/time evidence consistent: `True`
-- Personal notes unchanged: `True`
-- Calendar unchanged: `True`
-- No ICS created: `True`
-- Action runtime activation allowed: `False`
-- Runtime integration allowed: `False`
-- Generic action runtime activated: `False`
-- Product Loop implemented: `False`
-- Evidence gate passed: `True`
-- Evidence blockers count: `0`
-- Target path allowed by policy: `True`
-- Target path parent exists or creatable: `True`
-- Unsafe payloads blocked: `True`
-- Unsafe payloads blocked count: `12`
-- Runtime changed: `False`
-- Frontend changed: `False`
-- Voice/audio changed: `False`
-- Network used: `False`
-- Dependencies installed: `False`
-- Real note created: `True`
-- Calendar file created: `False`
-- ICS file created: `False`
-
-## Core Priority Invariants
-- All applicable Core Priority Invariants: `PASS`
-- N/A priorities: none.
-- WARN does not unlock critical advancement.
-
-## Evidence
-- Verification module: `src/aris/product_loop/product_loop_verification_and_evidence_gate.py`
-- Runner: `scripts/run_product_loop_l1_12_verification_and_evidence_gate.py`
-- Test: `tests/test_product_loop_l1_12_verification_and_evidence_gate.py`
-- Note artifact: `data/aris_notes/aris_created_note_preview.md`
-- Evidence artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence.json`
-- Summary artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-- Report artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_report.md`
-- Phase doc: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`
-- L1.11 apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
-- L1.11 summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
-- L1.11 report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
-- L1.11 manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
-- L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
-
-## Next
-- Next recommended phase: `Product Loop L1.13 - Rollback Proof Gate`
-- L1.12 verifies evidence only and does not execute rollback or a new write.
+## Boundaries
+- Do not treat historical roadmap overlays as active next-step authority.
+- Do not reopen Product Loop L1.15.
+- Do not duplicate H0 materialization.
+- Do not authorize pilot, customer, commercial, or external use from this state.

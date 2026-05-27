@@ -1,142 +1,53 @@
 # Context Index
 
 ## Active Source Routing
-- H0 doc: `docs/fase_hardening_base/hardening_base_h0_phase_design_brief.md`
-- H0 summary artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- H0 report artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
-- H0 record artifact: `artifacts/hardening_base/hardening_base_h0_phase_design_brief.json`
-- L1.15 doc: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`
-- L1.15 summary artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- L1.15 report artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
-- L1.15 record artifact: `artifacts/product_loop/product_loop_l1_15_product_loop_closure.json`
-- L1.14 doc: `docs/fase_product_loop/product_loop_l1_14_response_evidence_gate.md`
-- L1.14 summary artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
-- L1.14 report artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence_report.md`
-- L1.14 response evidence artifact: `artifacts/product_loop/product_loop_l1_14_response_evidence.json`
-- L1.13 doc: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`
-- L1.13 summary artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- L1.13 report artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
-- L1.13 rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
-- L1.13 manual authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
 - Current state: `aris-active-context/CURRENT_STATE.md`
 - Next action: `aris-active-context/NEXT_ACTION.md`
 - Decision locks: `aris-active-context/DECISION_LOCKS.md`
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
-- Roadmap doc: `docs/roadmap/aris_macrostructure.md`
-- L1.1 doc: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`
-- L1.1 summary artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
-- L1.1 report artifact: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_report.md`
-- L1.2 doc: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`
-- L1.2 plan artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
-- L1.2 summary artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
-- L1.2 report artifact: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_report.md`
-- L1.3 doc: `docs/fase_product_loop/product_loop_l1_3_permissioned_dry_run_envelope_gate.md`
-- L1.3 envelope artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope.json`
-- L1.3 summary artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
-- L1.3 report artifact: `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_report.md`
-- L1.4 doc: `docs/fase_product_loop/product_loop_l1_4_controlled_apply_plan_gate.md`
-- L1.4 plan artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan.json`
-- L1.4 summary artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_summary.json`
-- L1.4 report artifact: `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_report.md`
-- L1.5 doc: `docs/fase_product_loop/product_loop_l1_5_pre_apply_authorization_review_gate.md`
-- L1.5 review artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review.json`
-- L1.5 summary artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json`
-- L1.5 report artifact: `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_report.md`
-- L1.6 doc: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`
-- L1.6 request artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request.json`
-- L1.6 summary artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
-- L1.6 report artifact: `artifacts/product_loop/product_loop_l1_6_human_authorization_request_report.md`
-- L1.7 doc: `docs/fase_product_loop/product_loop_l1_7_explicit_authorization_capture_review_gate.md`
-- L1.7 review artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review.json`
-- L1.7 summary artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_summary.json`
-- L1.7 report artifact: `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_report.md`
-- L1.8 doc: `docs/fase_product_loop/product_loop_l1_8_authorization_pending_closure_gate.md`
-- L1.8 closure artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure.json`
-- L1.8 summary artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_summary.json`
-- L1.8 report artifact: `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_report.md`
-- L1.9 doc: `docs/fase_product_loop/product_loop_l1_9_explicit_human_authorization_record_gate.md`
-- L1.9 record artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record.json`
-- L1.9 summary artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_summary.json`
-- L1.9 report artifact: `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_report.md`
-- L1.10 doc: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`
-- L1.10 readiness artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness.json`
-- L1.10 summary artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
-- L1.10 report artifact: `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_report.md`
-- L1.11 doc: `docs/fase_product_loop/product_loop_l1_11_first_real_controlled_apply_gate.md`
-- L1.11 apply artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply.json`
-- L1.11 summary artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_summary.json`
-- L1.11 report artifact: `artifacts/product_loop/product_loop_l1_11_first_real_controlled_apply_report.md`
-- L1.11 manual authorization input: `artifacts/product_loop/manual_authorization_l1_11_apply_input.txt`
-- L1.12 doc: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`
-- L1.12 evidence artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence.json`
-- L1.12 summary artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-- L1.12 report artifact: `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_report.md`
-- L1.13 doc: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`
-- L1.13 summary artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- L1.13 report artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof_report.md`
-- L1.13 rollback proof artifact: `artifacts/product_loop/product_loop_l1_13_rollback_proof.json`
-- L1.13 manual authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
-- Summary artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
-- Report artifact: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
+- Canonical roadmap: `aris-active-context/ROADMAP_CANONICAL.md`
+- Roadmap amendment protocol: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
+- Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
+- Strategic Reset report: `artifacts/roadmap/strategic_reset_macrostructure_lock_report.md`
+- Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
+- Product Loop L1.15 report: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_report.md`
+- H0 design brief summary: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
+- H0 design brief report: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_report.md`
+- Recovery diagnostic summary: `artifacts/roadmap/active_context_recovery_diagnostic_summary.json`
+- Recovery diagnostic report: `artifacts/roadmap/active_context_recovery_diagnostic_report.md`
+- Canonicalization cleanup plan summary: `artifacts/roadmap/active_context_canonicalization_cleanup_plan.json`
+- Canonicalization cleanup plan report: `artifacts/roadmap/active_context_canonicalization_cleanup_plan_report.md`
 
 ## Indexed Topics
-- Hardening Base H0 Research Evidence & Phase Design Brief: `docs/fase_hardening_base/hardening_base_h0_phase_design_brief.md`, `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
-- ARIS Macrostructure: `docs/roadmap/aris_macrostructure.md`
-- Core Priority Invariants: `CURRENT_STATE.md`, `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
-- Strategic Reset: `CURRENT_STATE.md`, `ARIS_PHASE_LEDGER.md`, roadmap report artifacts
-- Product Loop L1.15 Closure Gate: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`, `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Product Loop Demonstrável: `NEXT_ACTION.md`, `docs/roadmap/aris_macrostructure.md`
-- Product Loop L1.1 Runtime Awake: `docs/fase_product_loop/product_loop_l1_1_runtime_awake_discovery.md`, `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
-- Product Loop L1.2 Single Task E2E Plan: `docs/fase_product_loop/product_loop_l1_2_single_task_e2e_plan.md`, `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan_summary.json`
-- Product Loop L1.14 Response Evidence Gate: `docs/fase_product_loop/product_loop_l1_14_response_evidence_gate.md`, `artifacts/product_loop/product_loop_l1_14_response_evidence_summary.json`
-- Product Loop L1.3 Permissioned Dry-Run Envelope Gate: `NEXT_ACTION.md`
-- Product Loop L1.4 Controlled Apply Plan Gate: `NEXT_ACTION.md`
-- Product Loop L1.5 Pre-Apply Authorization Review Gate: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `ARIS_PHASE_LEDGER.md`
-- Product Loop L1.4 controlled apply plan: `docs/fase_product_loop/product_loop_l1_4_controlled_apply_plan_gate.md`, `artifacts/product_loop/product_loop_l1_4_controlled_apply_plan_summary.json`
-- Product Loop L1.5 pre-apply authorization review: `docs/fase_product_loop/product_loop_l1_5_pre_apply_authorization_review_gate.md`, `artifacts/product_loop/product_loop_l1_5_pre_apply_authorization_review_summary.json`
-- Product Loop L1.6 human authorization request: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`, `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
-- Product Loop 12-step envelope: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
-- notes.create.local selected task plan: `artifacts/product_loop/product_loop_l1_2_single_task_e2e_plan.json`
-- notes.create.local permissioned dry-run envelope: `docs/fase_product_loop/product_loop_l1_3_permissioned_dry_run_envelope_gate.md`, `artifacts/product_loop/product_loop_l1_3_permissioned_dry_run_envelope_summary.json`
-- Runtime entry path inventory: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
-- Product Loop insertion point: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`
-- notes.create.local first E2E candidate: `artifacts/product_loop/product_loop_l1_1_runtime_awake_discovery_summary.json`, `artifacts/f19/notes_create_local_dry_run_summary.json`
-- notes.create.local human authorization request: `docs/fase_product_loop/product_loop_l1_6_human_authorization_request_gate.md`, `artifacts/product_loop/product_loop_l1_6_human_authorization_request_summary.json`
-- notes.create.local explicit authorization capture review: `docs/fase_product_loop/product_loop_l1_7_explicit_authorization_capture_review_gate.md`, `artifacts/product_loop/product_loop_l1_7_explicit_authorization_capture_review_summary.json`
-- notes.create.local authorization pending closure: `docs/fase_product_loop/product_loop_l1_8_authorization_pending_closure_gate.md`, `artifacts/product_loop/product_loop_l1_8_authorization_pending_closure_summary.json`
-- notes.create.local explicit human authorization record: `docs/fase_product_loop/product_loop_l1_9_explicit_human_authorization_record_gate.md`, `artifacts/product_loop/product_loop_l1_9_explicit_human_authorization_record_summary.json`
-- notes.create.local pre-apply execution readiness: `docs/fase_product_loop/product_loop_l1_10_pre_apply_execution_readiness_gate.md`, `artifacts/product_loop/product_loop_l1_10_pre_apply_execution_readiness_summary.json`
-- notes.create.local verification and evidence: `docs/fase_product_loop/product_loop_l1_12_verification_and_evidence_gate.md`, `artifacts/product_loop/product_loop_l1_12_verification_and_evidence_summary.json`
-- notes.create.local rollback proof: `docs/fase_product_loop/product_loop_l1_13_rollback_proof_gate.md`, `artifacts/product_loop/product_loop_l1_13_rollback_proof_summary.json`
-- notes.create.local rollback proof authorization input: `artifacts/product_loop/manual_authorization_l1_13_rollback_input.txt`
-- notes.create.local closure gate: `docs/fase_product_loop/product_loop_l1_15_product_loop_closure_gate.md`, `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Hardening Base: `docs/roadmap/aris_macrostructure.md`
-- ARIS Infernus Lab: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
-- ARIS Final Crisol: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
-- Productatization Gate: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
-- SIP: `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
-- removed_from_active_direction / historical_only / superseded policy: `CURRENT_STATE.md`, `DECISION_LOCKS.md`, `docs/roadmap/aris_macrostructure.md`
+- Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
+- Product Loop L1.15 PASS: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
+- Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
+- Product Loop layer closed: `True`
+- H0 design brief materialized: `artifacts/hardening_base/hardening_base_h0_phase_design_brief_summary.json`
+- Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
+- Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
+- Active next phase: `H0 Design Brief Alignment / Hardening Base H0 Roadmap V1.2 Review Gate`
+- Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
+- Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
-## Reading Rules
-- Start with the five active-context canonical files.
-- Use summary artifacts before full historical reports.
-- Use `docs/roadmap/aris_macrostructure.md` for the official macrostructure.
-- Treat old F21/Bedrock/Context continuation material as `historical_only`, `superseded`, or `removed_from_active_direction` unless explicitly revalidated against the macrostructure 0-6.
-- Do not bulk-read docs, archive, Obsidian, or history dumps.
-- Obsidian remains query-first and read-only.
-- Runtime evidence beats assumptions.
+## Historical Preserved Sources
+- `aris-active-context/BEDROCK_GATE.md`
+- `aris-active-context/ARIS_ROADMAP_R0_F120.md`
+- `aris-active-context/ARIS_ROADMAP_R1_CRITICAL_REALITY_GAPS_DELTA.md`
+- `aris-active-context/ARIS_ROADMAP_R2_ACTIVE_HANDOFF.md`
+- `aris-active-context/ARIS_ROADMAP_R2_LAB_SIMULATION_MASTERY.md`
+- `aris-active-context/ARIS_LAB_MACROBLOCK_MATURITY_FRAMEWORK.md`
+- `aris-active-context/ARIS_LAB_OPERATIONAL_LOAD_TEST_PLAN.md`
+- `aris-active-context/ROADMAP_CANONICAL_F33_F50.md`
+- `aris-active-context/ROADMAP_F30_F50.md`
+- `aris-active-context/LAB_STATUS.md`
+- `aris-active-context/LAB_VERDICTS.md`
+- `aris-active-context/EXTERNAL_REFERENCES.md`
 
-## Boundary Reminders
-- H0 is design-only and does not implement H1, production, runtime integration, or generic action runtime activation.
-- Strategic Reset does not implement Product Loop.
-- Strategic Reset does not execute Infernus, Crisol, Productatization Gate, or SIP.
-- Strategic Reset does not authorize runtime, frontend, voice/audio, action runtime, network, dependency installation, real MCP activation, provider calls, or production.
-- L1.1 does not implement Product Loop, does not authorize L1.2 execution, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.2 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.3 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.4 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.5 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.6 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.7 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.8 does not implement Product Loop, does not authorize real apply/write, and does not authorize runtime/frontend/voice/action-runtime mutation.
-- L1.8 closes the prepared authorization chain as `pending`; L1.9 records explicit human authorization; L1.10 validates pre-apply readiness; L1.11 performs the first real controlled apply; L1.12 verifies evidence; L1.13 proves rollback; L1.14 consolidates response evidence; L1.15 is the next closure gate.
+## Routing Rules
+- Start with the active-context canonical files.
+- Use `ROADMAP_CANONICAL.md` for active roadmap semantics.
+- Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap changes.
+- Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
+- Do not reopen Product Loop L1.15 from active routing.
+- Do not route directly into later Hardening Base advancement before the H0 roadmap-alignment review gate.
