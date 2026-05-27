@@ -45,3 +45,6 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Do not treat the H7 next-step entry as H7 execution.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
 - Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.
+- The active next block remains `Lab Real Simulation Pack / Controlled Apply Operator Approval Packet Review`.
+- The controlled apply operator approval packet hardening addendum is materialized and plan-only.
+- No runtime, network, secret, or dependency surface was touched.

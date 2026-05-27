@@ -185,3 +185,8 @@
 - Lab Real Simulation Pack controlled apply readiness checklist: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_checklist.json`
 - Lab Real Simulation Pack controlled apply readiness risk register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_risk_register.json`
 - Lab Real Simulation Pack controlled apply readiness evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_evidence_index.json`
+- Lab hardening addendum: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_hardening_addendum_summary.json`
+- Lab state serialization contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_state_serialization_contract.json`
+- Lab canonical hash manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_canonical_json_hash_manifest.json`
+- Lab filesystem isolation contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_filesystem_isolation_contract.json`
+- Lab shadow workspace blueprint: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_shadow_workspace_blueprint.json`
