@@ -1,9 +1,9 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_scenario_manifest_plan_pass`
+- Status: `lab_real_simulation_pack_synthetic_document_dataset_plan_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Scenario Manifest Plan Materialized / Synthetic Document/Dataset Plan Pending`
+- Current state: `Lab Real Simulation Pack Synthetic Document/Dataset Plan Materialized / Controlled Workflow Plan Pending`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -38,6 +38,10 @@
 - H7 closure result: `pass`
 - Lab Real Simulation Pack design brief alignment result: `pass`
 - Lab Real Simulation Pack scenario manifest planning result: `pass`
+- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
+- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
+- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
+- Lab Real Simulation Pack synthetic document/dataset planning result: `pass`
 - External Claude verdict: `WARN`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - External residuals accepted: `R1/R2/R3`
@@ -94,6 +98,10 @@
 - H7 executed in this phase: `True`
 - Lab Real Simulation Pack design brief alignment executed in this phase: `True`
 - Lab Real Simulation Pack scenario manifest planning executed in this phase: `True`
+- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
+- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
+- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
+- Lab Real Simulation Pack synthetic document/dataset planning executed in this phase: `True`
 - Production authorized: `False`
 - Product ready: `False`
 - Runtime integration allowed: `False`

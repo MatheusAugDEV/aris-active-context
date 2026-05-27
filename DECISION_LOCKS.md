@@ -321,3 +321,29 @@
 - Runtime integration allowed: `False`
 - Fast path enabled: `False`
 - Next active subphase: `Lab Real Simulation Pack Synthetic Document/Dataset Plan`
+
+## Lab Real Simulation Pack Synthetic Document/Dataset Plan Lock
+- Lock id: `LAB_RSP_SYNTHETIC_DOCUMENT_DATASET_PLAN`
+- Status: `lab_real_simulation_pack_synthetic_document_dataset_plan_pass`
+- Decision: `pass`
+- Previous phase verified: `True`
+- Synthetic-only confirmed: `True`
+- Real data allowed: `False`
+- PII allowed: `False`
+- Secrets allowed: `False`
+- Network allowed: `False`
+- Runtime mutation allowed: `False`
+- Lab full activation allowed: `False`
+- Productization allowed: `False`
+- Scenario slots covered: `20`
+- Domains covered: `7`
+- Risk classes covered: `6`
+- Document blueprints: `20`
+- Dataset blueprints: `20`
+- Fixture families: `6`
+- Oracle expectation families: `6`
+- Carry-forward residuals preserved: `True`
+- Carry-forward R1: `roadmap_canonical_current_position_stale`
+- Carry-forward R2: `h2_determinism_100_run_declared_not_executed`
+- Carry-forward R3: `h7_literal_content_gap`
+- Next active subphase: `Lab Real Simulation Pack Controlled Workflow Plan`

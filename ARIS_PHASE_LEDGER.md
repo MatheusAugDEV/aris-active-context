@@ -1,3 +1,34 @@
+# Lab Real Simulation Pack Synthetic Document/Dataset Plan
+- Status: `lab_real_simulation_pack_synthetic_document_dataset_plan_blocked`
+- Decision: `blocked`
+- Previous phase verified: `True`
+- Synthetic-only confirmed: `True`
+- Real data allowed: `False`
+- PII allowed: `False`
+- Secrets allowed: `False`
+- Network allowed: `False`
+- Runtime mutation allowed: `False`
+- Lab full activation allowed: `False`
+- Productization allowed: `False`
+- Scenario slots covered: `0`
+- Domains covered: `7`
+- Risk classes covered: `6`
+- Document blueprints: `0`
+- Dataset blueprints: `0`
+- Fixture families: `6`
+- Oracle expectation families: `6`
+- H1/H2/H3/H4/H5/H6 coverage: `15/12/8/18/16/3`
+- Carry-forward residuals preserved: `True`
+- Blockers: `['scenario_slot_count_mismatch']`
+- Warnings: `['roadmap_canonical_current_position_stale']`
+- Next recommended block: `Lab Real Simulation Pack Controlled Workflow Plan`
+- Output gate artifact: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan.json`
+- Output summary artifact: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_summary.json`
+- Output report artifact: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
+- Root commit hash: `ad0481e`
+- Active-context commit hash: `pending-active-context-commit`
+- Push result: `not_attempted_network_disallowed_by_phase_scope`
+
 # Lab Real Simulation Pack Design Brief Alignment Gate
 - Phase: `Lab Real Simulation Pack Design Brief Alignment Gate`
 - Status: `lab_real_simulation_pack_design_brief_alignment_gate_pass`
