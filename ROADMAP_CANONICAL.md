@@ -22,8 +22,9 @@ ARIS não promete automação. ARIS prova automação.
 2.6. Tier-1 Runtime Safety Remediation Track
    - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
    - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
-   - The current active phase after Debian Disposable Harness Readiness Review is Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review.
-   - Operator Approval Packet Review is explicitly deferred until the preceding hardening and harness phases pass.
+   - The Plan-Only Dry-Run Commit Rehearsal Review phase has passed.
+   - The current active next phase from `ACTIVE_CONTEXT_STATE.json` is Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review.
+   - Operator Approval Packet Review is active as a review-only gate and does not authorize execution.
    - Cross-cutting gates:
    - state_data_plane_boundary_gate
    - strict_canonical_json_gate
@@ -136,13 +137,12 @@ Governed fast path can only exist after:
 
 ## Active vs Historical vs Amendments
 Active direction:
-- `CURRENT_STATE.md`
-- `NEXT_ACTION.md`
-- `DECISION_LOCKS.md`
-- `CONTEXT_INDEX.md`
-- `ARIS_PHASE_LEDGER.md`
-- this file
-- `ROADMAP_AMENDMENT_PROTOCOL.md`
+- `ACTIVE_CONTEXT_STATE.json` is the only canonical live-state file.
+- `ACTIVE_CONTEXT_SCHEMA.json` is the canonical live-state validation contract.
+- `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, and `CONTEXT_INDEX.md` are derived Markdown mirrors, not independent live-state authorities.
+- `ARIS_PHASE_LEDGER.md` is historical ledger only.
+- This file is roadmap sequence/authority, not a live-state source.
+- `ROADMAP_AMENDMENT_PROTOCOL.md` governs future roadmap amendments.
 
 Historical preserved material:
 - legacy Bedrock files
