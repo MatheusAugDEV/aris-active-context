@@ -1,0 +1,184 @@
+{
+  "active_context_version": "2.0",
+  "schema_version": "1.0",
+  "canonical_repository": "MatheusAugDEV/aris-active-context",
+  "canonical_branch": "main",
+  "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+  "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+  "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
+  "status": "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass",
+  "decision": "pass",
+  "latest_completed_phase": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+  "current_status": "ready_for_controlled_apply_operator_approval_packet_review",
+  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+  "active_next_phase_class": "review_gate_only",
+  "required_files_for_transition": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "DECISION_LOCKS.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "ROADMAP_CANONICAL.md",
+    "README.md"
+  ],
+  "completed_phases": [
+    {
+      "phase": "Lab Real Simulation Pack Filesystem Isolation Readiness Review",
+      "decision": "pass",
+      "status": "lab_real_simulation_pack_filesystem_isolation_readiness_review_pass"
+    },
+    {
+      "phase": "Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review",
+      "decision": "pass",
+      "status": "lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review_pass"
+    },
+    {
+      "phase": "Lab Real Simulation Pack Debian Disposable Harness Planning",
+      "decision": "pass",
+      "status": "lab_real_simulation_pack_debian_disposable_harness_planning_pass"
+    },
+    {
+      "phase": "Lab Real Simulation Pack Debian Disposable Harness Readiness Review",
+      "decision": "pass",
+      "status": "lab_real_simulation_pack_debian_disposable_harness_readiness_review_pass"
+    },
+    {
+      "phase": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+      "decision": "pass",
+      "status": "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass"
+    }
+  ],
+  "current_live_route": {
+    "status": "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass",
+    "decision": "pass",
+    "latest_completed_phase": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+    "current_status": "ready_for_controlled_apply_operator_approval_packet_review",
+    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+    "active_next_phase_class": "review_gate_only",
+    "next_phase_execution_authorization": false,
+    "operator_approval_packet_review_is_execution_approval": false,
+    "h4_h5_hx_active_current_route": false
+  },
+  "next_action": {
+    "phase": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+    "status": "ready_for_next_subphase",
+    "review_only": true,
+    "execution_authorization": false,
+    "operator_approval_packet_review_is_execution_approval": false,
+    "notes": [
+      "This gate is review-only.",
+      "It does not authorize real apply, real dry-run, approval execution, runtime mutation, host filesystem mutation, Debian harness execution, container/image/VM creation, or package-manager execution."
+    ]
+  },
+  "locks": {
+    "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
+    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
+    "github_active_context_is_the_only_canonical_active_context_source": true,
+    "no_github_active_context_sync_no_canonical_pass": true,
+    "every_transition_must_update_commit_push_and_verify_github_active_context": true,
+    "stale_live_route_policy": "fail_closed",
+    "markdown_mirror_drift_policy": "fail_closed",
+    "h4_h5_hx_active_current_route": false,
+    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+    "deferred_phase_reason": "Operator Approval Packet Review remains deferred until Plan-Only Dry-Run Commit Rehearsal Review and remaining Tier-1 runtime-safety prerequisites are completed."
+  },
+  "authorization": {
+    "production_authorized": false,
+    "product_ready": false,
+    "runtime_integration_allowed": false,
+    "generic_action_runtime_activated": false,
+    "real_apply_authorized": false,
+    "real_dry_run_execution_authorized": false,
+    "approval_execution_authorized": false,
+    "runtime_refactor_authorized": false,
+    "host_filesystem_mutation_authorized": false,
+    "debian_harness_execution_authorized": false,
+    "container_image_vm_creation_authorized": false,
+    "package_manager_execution_authorized": false,
+    "package_installation_authorized": false,
+    "network_authorized_scope": "github_active_context_governance_only",
+    "secrets_access_authorized": false,
+    "external_llm_api_authorized": false,
+    "dependency_change_authorized": false,
+    "frontend_backend_action_runtime_audio_mutation_authorized": false
+  },
+  "canonicality_rules": {
+    "github_active_context_is_the_only_canonical_active_context_source": true,
+    "canonical_repository": "MatheusAugDEV/aris-active-context",
+    "canonical_branch": "main",
+    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "local_checkout_is_non_canonical_until_remote_verified": true,
+    "no_local_only_update_is_canonical": true,
+    "no_unpushed_commit_is_canonical": true,
+    "no_github_sync_no_canonical_pass": true,
+    "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state": true
+  },
+  "validation_policy": {
+    "json_validation_commands": [
+      "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json"
+    ],
+    "required_validator": "scripts/validate_active_context_state.py",
+    "connector_fallback_allowed": true,
+    "markdown_mirror_validation_required": true,
+    "fail_closed_on_mirror_drift": true,
+    "fail_closed_on_live_route_drift": true
+  },
+  "artifact_routes": {
+    "state_file": "ACTIVE_CONTEXT_STATE.json",
+    "schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "current_state_mirror": "CURRENT_STATE.md",
+    "next_action_mirror": "NEXT_ACTION.md",
+    "decision_locks_mirror": "DECISION_LOCKS.md",
+    "context_index_mirror": "CONTEXT_INDEX.md",
+    "phase_ledger_history": "ARIS_PHASE_LEDGER.md",
+    "roadmap_authority": "ROADMAP_CANONICAL.md",
+    "readme": "README.md",
+    "validator_script": "scripts/validate_active_context_state.py"
+  },
+  "history_summary": {
+    "latest_execution_phase": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+    "previous_execution_phase": "Lab Real Simulation Pack Debian Disposable Harness Readiness Review",
+    "governance_repairs": [
+      "ARIS Active-Context Live-State Normalization and Stale Routing Eradication Gate",
+      "ARIS Active-Context Architecture Refactor Gate"
+    ],
+    "ledger_mode": "historical_only",
+    "markdown_mirrors_are_non_authoritative": true
+  },
+  "last_transition": {
+    "transition_type": "lab_phase_transition",
+    "from_phase": "Lab Real Simulation Pack Debian Disposable Harness Readiness Review",
+    "to_phase": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+    "decision": "pass",
+    "verified_via": "GitHub active-context connector fetch and local repository evidence",
+    "proof_source": "GitHub main"
+  },
+  "required_update_policy": {
+    "on_any_transition": [
+      "update_ACTIVE_CONTEXT_STATE.json",
+      "validate_against_ACTIVE_CONTEXT_SCHEMA.json",
+      "update_markdown_mirrors",
+      "commit",
+      "push",
+      "verify_GitHub_main"
+    ],
+    "markdown_mirror_drift_policy": "fail_closed",
+    "ledger_drift_policy": "fail_closed",
+    "live_state_source_drift_policy": "fail_closed",
+    "current_route_must_be_written_in_json_first": true
+  },
+  "drift_signals": {
+    "local_vs_github_drift": "fail_closed",
+    "markdown_mirror_drift": "fail_closed",
+    "ledger_live_route_drift": "fail_closed",
+    "json_state_mismatch": "fail_closed",
+    "connector_fallback_required_if_cli_dns_or_ssh_fails": true
+  },
+  "additional_live_state_sources_allowed": false
+}

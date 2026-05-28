@@ -1,55 +1,25 @@
 # ARIS Active Context
 
-## Purpose
-This directory is the compact live context surface for ARIS continuity, roadmap authority, lock enforcement, and audit-safe phase retakes.
+## Canonical Architecture
+- GitHub repository MatheusAugDEV/aris-active-context on branch main is the canonical active-context source.
+- ACTIVE_CONTEXT_STATE.json is the only canonical live state file inside this repository.
+- ACTIVE_CONTEXT_SCHEMA.json is the canonical validation contract for that live state.
+- Markdown files are derived mirrors, explanatory docs, or historical ledger entries and are not authoritative live state.
+- Markdown drift against `ACTIVE_CONTEXT_STATE.json` is a blocking error.
+- Future agents must read `ACTIVE_CONTEXT_STATE.json` first, then validate mirrors and history.
 
-## Read First
-1. `CURRENT_STATE.md`
-2. `NEXT_ACTION.md`
-3. `DECISION_LOCKS.md`
-4. `CONTEXT_INDEX.md`
-5. `ROADMAP_CANONICAL.md`
-6. `ROADMAP_AMENDMENT_PROTOCOL.md`
-7. `ARIS_PHASE_LEDGER.md`
-
-## Active Authority
-- `CURRENT_STATE.md` is the real live state.
-- `NEXT_ACTION.md` is the singular active next-step authority.
-- `DECISION_LOCKS.md` is the hard constraint authority.
-- `CONTEXT_INDEX.md` routes supporting evidence.
-- `ROADMAP_CANONICAL.md` is the active roadmap authority.
-- `ROADMAP_AMENDMENT_PROTOCOL.md` is required before proposing roadmap mutation.
-- `ARIS_PHASE_LEDGER.md` is the compact historical ledger for canonical milestones.
-
-## Current Canonical Position
-- Strategic Reset: `PASS`
-- Product Loop L1.1-L1.15: `PASS`
-- Product Loop layer closed: `True`
-- H1 golden tasks baseline is `pass`.
-- H2 ledger chain + replay baseline is `pass`.
-- H3 context engineering baseline is `pass`.
-- H4 observability + cost/time + quota baseline is `pass`.
-- H5 degraded mode + failure UX baseline is `pass`.
+## Live State Summary
 - Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Correct current status: `ready_for_controlled_apply_operator_approval_packet_review`
-- The current active next block is:
-  `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- The deferred premature phase is:
-  `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Current status: `ready_for_controlled_apply_operator_approval_packet_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Active next phase class: `review_gate_only`
+- Operator Approval Packet Review is review-only and does not authorize execution.
 
-## Historical Preservation
-- Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
-- Legacy F21 references remain `historical_only` and `superseded` in the ledger only.
-- Preserved historical files are not active next-step authority.
-- Superseded roadmap files remain useful as tombstones and evidence pointers.
+## Safety Boundaries
+- No real apply, no real dry-run execution, no approval execution, no runtime refactor, no host filesystem mutation, no Debian disposable harness execution, no container/image/VM creation, no apt/dpkg/package-manager execution, no package installation, no secrets access, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
+- GitHub active-context governance read, push, and verification are the only allowed network scope.
 
-## Boundaries
-- Do not reopen Product Loop L1.15 from active slots.
-- Do not treat the H4 next-step entry as H4 execution.
-- Do not treat the H7 next-step entry as H7 execution.
-- Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
-- Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
-- Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.
-- The active next block remains `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`.
-- The controlled apply operator approval packet hardening addendum is materialized and historical.
-- No runtime, network, secret, dependency, Debian disposable harness, container/image/VM, Docker/Podman/Buildah/Nerdctl/containerd, or apt/dpkg/package-manager surface was touched.
+## Validation
+- Validate ACTIVE_CONTEXT_STATE.json against ACTIVE_CONTEXT_SCHEMA.json before trusting any mirror.
+- Markdown drift against JSON is a blocking error.
+- Treat any Markdown live-looking text as non-authoritative if it conflicts with ACTIVE_CONTEXT_STATE.json.

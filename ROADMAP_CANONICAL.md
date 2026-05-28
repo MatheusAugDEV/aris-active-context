@@ -1,7 +1,7 @@
 # Roadmap Canônico ARIS V1.2
 
 ## Purpose
-This file is the active roadmap authority for ARIS after active-context canonicalization. It defines the canonical macrostructure, the non-negotiable locks, the invariants, the pre-pilot gaps, and the distinction between active direction, preserved history, and future amendments.
+This file is the active roadmap authority for ARIS after active-context canonicalization. It defines the canonical macrostructure, the non-negotiable locks, the invariants, the pre-pilot gaps, and the distinction between active direction, preserved history, and future amendments. Live routing is read from ACTIVE_CONTEXT_STATE.json; this file is roadmap sequence only, not the canonical live state.
 
 ## Official Phrase
 ARIS não promete automação. ARIS prova automação.
@@ -58,6 +58,7 @@ ARIS não promete automação. ARIS prova automação.
 7. SIP — Sistema Imunológico Permanente
 
 ## Current Canonical Position
+Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
 - Strategic Reset: `PASS`
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`

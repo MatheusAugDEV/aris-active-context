@@ -1,160 +1,27 @@
+artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_STATE.json wins.
+
 # Context Index
 
-## Active Source Routing
-- Current state: `aris-active-context/CURRENT_STATE.md`
-- Next action: `aris-active-context/NEXT_ACTION.md`
-- Decision locks: `aris-active-context/DECISION_LOCKS.md`
-- Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
-- Canonical roadmap: `aris-active-context/ROADMAP_CANONICAL.md`
-- Roadmap amendment protocol: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
+## Canonical Live State
+- `ACTIVE_CONTEXT_STATE.json`
+- `ACTIVE_CONTEXT_SCHEMA.json`
 - Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Correct current status: `ready_for_controlled_apply_operator_approval_packet_review`
-- Correct active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Next review gate: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
-- Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- H1 baseline summary: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
-- H2 baseline decision: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate.json`
-- H2 baseline summary: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_summary.json`
-- H2 baseline report: `artifacts/hardening_base/hardening_base_h2_ledger_chain_replay_baseline_gate_report.md`
-- H2 ledger event schema: `artifacts/hardening_base/hardening_base_h2_ledger_event_schema.json`
-- H2 replay policy: `artifacts/hardening_base/hardening_base_h2_replay_policy.json`
-- H2 tamper matrix: `artifacts/hardening_base/hardening_base_h2_tamper_detection_matrix.json`
-- H2 golden task ledger mapping: `artifacts/hardening_base/hardening_base_h2_golden_task_ledger_mapping.json`
-- H3 baseline decision: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate.json`
-- H3 baseline summary: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_summary.json`
-- H3 baseline report: `artifacts/hardening_base/hardening_base_h3_context_engineering_baseline_gate_report.md`
-- H3 context budget policy: `artifacts/hardening_base/hardening_base_h3_context_budget_policy.json`
-- H3 context provenance schema: `artifacts/hardening_base/hardening_base_h3_context_provenance_schema.json`
-- H3 stale-context matrix: `artifacts/hardening_base/hardening_base_h3_stale_context_matrix.json`
-- H3 context integrity checks: `artifacts/hardening_base/hardening_base_h3_context_integrity_checks.json`
-- H3 memory poisoning / ASI06 matrix: `artifacts/hardening_base/hardening_base_h3_memory_poisoning_asi06_matrix.json`
-- H3 no-bulk-read policy: `artifacts/hardening_base/hardening_base_h3_no_bulk_read_policy.json`
-- H3 golden task context mapping: `artifacts/hardening_base/hardening_base_h3_golden_task_context_mapping.json`
-- H4 baseline decision: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate.json`
-- H4 baseline summary: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_summary.json`
-- H4 baseline report: `artifacts/hardening_base/hardening_base_h4_observability_cost_time_quota_gate_report.md`
-- H4 observability event schema: `artifacts/hardening_base/hardening_base_h4_observability_event_schema.json`
-- H4 local JSONL telemetry contract: `artifacts/hardening_base/hardening_base_h4_local_jsonl_telemetry_contract.json`
-- H4 OTel-compatible mapping plan: `artifacts/hardening_base/hardening_base_h4_otel_compatible_mapping_plan.json`
-- H4 cost/time measurement schema: `artifacts/hardening_base/hardening_base_h4_cost_time_measurement_schema.json`
-- H4 quota policy: `artifacts/hardening_base/hardening_base_h4_quota_policy.json`
-- H4 performance regression policy: `artifacts/hardening_base/hardening_base_h4_performance_regression_policy.json`
-- H4 cost-quality correlation contract: `artifacts/hardening_base/hardening_base_h4_cost_quality_correlation_contract.json`
-- H4 anomaly detection matrix: `artifacts/hardening_base/hardening_base_h4_anomaly_detection_matrix.json`
-- H4 quota exhaustion matrix: `artifacts/hardening_base/hardening_base_h4_quota_exhaustion_matrix.json`
-- H4 golden task observability mapping: `artifacts/hardening_base/hardening_base_h4_golden_task_observability_mapping.json`
-- H5 baseline decision: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate.json`
-- H5 baseline summary: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_summary.json`
-- H5 baseline report: `artifacts/hardening_base/hardening_base_h5_degraded_mode_failure_ux_gate_report.md`
-- H5 degradation levels: `artifacts/hardening_base/hardening_base_h5_degradation_levels.json`
-- H5 failure mode matrix: `artifacts/hardening_base/hardening_base_h5_failure_mode_matrix.json`
-- H5 failure UX message contract: `artifacts/hardening_base/hardening_base_h5_failure_ux_message_contract.json`
-- H5 kill switch policy: `artifacts/hardening_base/hardening_base_h5_kill_switch_policy.json`
-- H5 blast radius matrix: `artifacts/hardening_base/hardening_base_h5_blast_radius_matrix.json`
-- H5 chaos engineering plan: `artifacts/hardening_base/hardening_base_h5_chaos_engineering_plan.json`
-- H5 recovery routing policy: `artifacts/hardening_base/hardening_base_h5_recovery_routing_policy.json`
-- H5 cross-gate degraded mapping: `artifacts/hardening_base/hardening_base_h5_cross_gate_degraded_mapping.json`
+- Current status: `ready_for_controlled_apply_operator_approval_packet_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 
-## Indexed Topics
-- Strategic Reset PASS: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
-- Product Loop L1.15 PASS: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
-- Product Loop closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
-- Product Loop layer closed: `True`
-- H1 golden tasks baseline result: `pass`
-- H2 ledger/replay baseline result: `pass`
-- H2 event types count: `12`
-- H2 P0 mapped count: `15`
-- H2 tamper scenarios count: `10`
-- H2 replay divergence scenarios count: `10`
-- H3 context engineering baseline result: `pass`
-- H3 context budget roles count: `6`
-- H3 risk classes count: `6`
-- H3 provenance fields count: `13`
-- H3 stale-context scenarios count: `10`
-- H3 memory poisoning / ASI06 scenarios count: `10`
-- H3 no-bulk-read violation scenarios count: `10`
-- H3 context integrity checks count: `12`
-- H3 H1 golden tasks mapped count: `8`
-- H3 H2 event types mapped count: `6`
-- H4 observability event types count: `16`
-- H4 metric fields count: `22`
-- H4 quota roles count: `6`
-- H4 risk classes count: `6`
-- H4 execution profiles count: `3`
-- H4 anomaly scenarios count: `11`
-- H4 quota exhaustion scenarios count: `8`
-- H4 H1 P0 mapping count: `15`
-- H4 H2 telemetry mapping count: `12`
-- H4 H3 telemetry/cost mapping count: `8`
-- H5 degradation levels count: `5`
-- H5 failure modes count: `21`
-- H5 failure UX templates count: `12`
-- H5 blast radius scenarios count: `10`
-- H5 chaos scenarios count: `10`
-- H5 H1 mapping count: `15`
-- H5 H2 mapping count: `12`
-- H5 H3 mapping count: `8`
-- H5 H4 mapping count: `10`
-- H6 eval harness baseline result: `pass`
-- H6 harness profiles count: `3`
-- H6 harness stage count: `12`
-- H6 evidence fields count: `17`
-- H6 hermeticity requirements count: `12`
-- H6 promotion criteria count: `12`
-- H6 determinism requirements count: `11`
-- H6 property requirements count: `11`
-- H6 chaos requirements count: `11`
-- H6 H1 P0 mapping count: `15`
-- H6 H1 P1 mapping count: `5`
-- H6 H1 P2 mapping count: `5`
-- H6 H2 mapping count: `12`
-- H6 H3 mapping count: `8`
-- H6 H4 mapping count: `10`
-- H6 H5 mapping count: `10`
-- H7 closure result: `pass`
-- H7 evidence rollup count: `7`
-- H7 invariant closure count: `16`
-- H7 V1.2 gap closure count: `9`
-- H7 known drift classification: `warning_only_not_blocking`
-- H7 fast path plan enabled: `False`
-- H7 next block readiness: `ready`
-- Lab Real Simulation Pack design brief alignment summary: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate_summary.json`
-- Lab Real Simulation Pack design brief gate: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief_alignment_gate.json`
-- Lab Real Simulation Pack design brief: `artifacts/lab_simulation/lab_real_simulation_pack_design_brief.json`
-- Lab Real Simulation Pack scope matrix: `artifacts/lab_simulation/lab_real_simulation_pack_scope_matrix.json`
-- Lab Real Simulation Pack carry-forward residuals: `artifacts/lab_simulation/lab_real_simulation_pack_carry_forward_residuals.json`
-- Lab Real Simulation Pack domain matrix: `artifacts/lab_simulation/lab_real_simulation_pack_domain_matrix.json`
-- Lab Real Simulation Pack subphase plan: `artifacts/lab_simulation/lab_real_simulation_pack_subphase_plan.json`
-- Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
-- Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
-- Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
-- Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
+## Current Artifact Routes
+- Plan-only rehearsal review summary: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_summary.json`
+- Plan-only rehearsal review gate: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review.json`
+- Plan-only rehearsal review report: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_report.md`
+- Plan-only rehearsal contract: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_contract.json`
+- Plan-only rehearsal plan: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_plan.json`
+- Plan-only rehearsal state machine: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_state_machine.json`
+- Plan-only rehearsal boundary matrix: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_boundary_matrix.json`
+- Plan-only rehearsal risk register: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_risk_register.json`
+- Plan-only rehearsal stop conditions: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_stop_conditions.json`
+- Plan-only rehearsal evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_evidence_index.json`
+- Controlled apply handoff route verification: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_route_verification.json`
 
-## Historical Preserved Sources
-- `aris-active-context/BEDROCK_GATE.md`
-- `aris-active-context/ARIS_ROADMAP_R0_F120.md`
-- `aris-active-context/ARIS_ROADMAP_R1_CRITICAL_REALITY_GAPS_DELTA.md`
-- `aris-active-context/ARIS_ROADMAP_R2_ACTIVE_HANDOFF.md`
-- `aris-active-context/ARIS_ROADMAP_R2_LAB_SIMULATION_MASTERY.md`
-- `aris-active-context/ARIS_LAB_MACROBLOCK_MATURITY_FRAMEWORK.md`
-- `aris-active-context/ARIS_LAB_OPERATIONAL_LOAD_TEST_PLAN.md`
-- `aris-active-context/ROADMAP_CANONICAL_F33_F50.md`
-- `aris-active-context/ROADMAP_F30_F50.md`
-- `aris-active-context/LAB_STATUS.md`
-- `aris-active-context/LAB_VERDICTS.md`
-- `aris-active-context/EXTERNAL_REFERENCES.md`
-
-## Routing Rules
-- Start with the active-context canonical files.
-- Use `ROADMAP_CANONICAL.md` for active roadmap semantics.
-- Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap changes.
-- If `ROADMAP_CANONICAL.md` current-position text conflicts with `CURRENT_STATE.md` or `NEXT_ACTION.md`, treat that as a stale-context condition and prefer the live active-context files.
-- Treat historical preserved sources as `historical_only`, `superseded`, or `removed_from_active_direction` unless a later canonical gate explicitly reactivates them.
-- Do not reopen Product Loop L1.15 from active routing.
-- Do not treat the H4 next-step entry as H4 execution.
-- Do not treat the Lab Real Simulation Pack next-step entry as execution.
-- Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
-- Operator Approval Packet Review is deferred until disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites pass.
+## Historical / Evidence Only
+- Earlier filesystem isolation, shadow workspace, Debian planning, and Debian readiness artifacts remain evidence only.
+- Older routes must not be read as active current routing.

@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+"""Deterministic validator for ARIS active-context canonical state."""
+
+from __future__ import annotations
+
+import json
+import pathlib
+import sys
+from typing import Any
+
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
+SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
+MARKDOWN_PATHS = [
+    ROOT / "CURRENT_STATE.md",
+    ROOT / "NEXT_ACTION.md",
+    ROOT / "DECISION_LOCKS.md",
+    ROOT / "CONTEXT_INDEX.md",
+    ROOT / "ARIS_PHASE_LEDGER.md",
+    ROOT / "ROADMAP_CANONICAL.md",
+    ROOT / "README.md",
+]
+
+
+def _load_json(path: pathlib.Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _require(condition: bool, message: str) -> None:
+    if not condition:
+        raise SystemExit(message)
+
+
+def _validate_schema(schema: dict[str, Any]) -> None:
+    _require(schema.get("type") == "object", "schema must be an object")
+    _require(schema.get("additionalProperties") is False, "schema must be closed")
+    required = schema.get("required", [])
+    props = schema.get("properties", {})
+    state = _load_json(STATE_PATH)
+    for key in required:
+        _require(key in state, f"missing required top-level key: {key}")
+        _require(key in props, f"schema missing property for key: {key}")
+
+
+def _validate_const(schema_node: dict[str, Any], value: Any, path: str) -> None:
+    if "const" in schema_node:
+        _require(value == schema_node["const"], f"{path} must equal {schema_node['const']!r}")
+    if "enum" in schema_node:
+        _require(value in schema_node["enum"], f"{path} must be one of {schema_node['enum']!r}")
+
+
+def _validate_node(schema_node: dict[str, Any], value: Any, path: str) -> None:
+    _validate_const(schema_node, value, path)
+    node_type = schema_node.get("type")
+    if node_type == "object":
+        _require(isinstance(value, dict), f"{path} must be an object")
+        _require(schema_node.get("additionalProperties") is False, f"{path} must be closed")
+        required = schema_node.get("required", [])
+        props = schema_node.get("properties", {})
+        for key in required:
+            _require(key in value, f"{path} missing required key: {key}")
+        for key, child in props.items():
+            if key in value:
+                _validate_node(child, value[key], f"{path}.{key}")
+    elif node_type == "array":
+        _require(isinstance(value, list), f"{path} must be an array")
+        min_items = schema_node.get("minItems")
+        if min_items is not None:
+            _require(len(value) >= min_items, f"{path} must contain at least {min_items} items")
+        items_schema = schema_node.get("items")
+        if items_schema is not None:
+            for index, item in enumerate(value):
+                _validate_node(items_schema, item, f"{path}[{index}]")
+    elif node_type == "boolean":
+        _require(isinstance(value, bool), f"{path} must be boolean")
+    elif node_type == "string":
+        _require(isinstance(value, str), f"{path} must be string")
+
+
+def _mirror_contains(path: pathlib.Path, *phrases: str) -> None:
+    text = path.read_text(encoding="utf-8")
+    for phrase in phrases:
+        _require(phrase in text, f"{path.name} missing required phrase: {phrase}")
+
+
+def main() -> None:
+    state = _load_json(STATE_PATH)
+    schema = _load_json(SCHEMA_PATH)
+
+    _validate_schema(schema)
+    _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
+
+    _require(state["status"] == "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass", "unexpected status")
+    _require(state["decision"] == "pass", "unexpected decision")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_operator_approval_packet_review", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "review_gate_only", "unexpected next phase class")
+    _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
+
+    auth = state["authorization"]
+    for key, value in auth.items():
+        if key == "network_authorized_scope":
+            _require(value == "github_active_context_governance_only", "unexpected network scope")
+        else:
+            _require(value is False, f"authorization flag {key} must be false")
+
+    _mirror_contains(
+        ROOT / "CURRENT_STATE.md",
+        "Derived mirror from ACTIVE_CONTEXT_STATE.json",
+        "ACTIVE_CONTEXT_STATE.json wins",
+        "ready_for_controlled_apply_operator_approval_packet_review",
+        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+    )
+    _mirror_contains(
+        ROOT / "NEXT_ACTION.md",
+        "Derived mirror from ACTIVE_CONTEXT_STATE.json",
+        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+        "review-only",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
+        "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
+        "Markdown files are non-authoritative mirrors/docs/history",
+    )
+    _mirror_contains(
+        ROOT / "CONTEXT_INDEX.md",
+        "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
+        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+    )
+    _mirror_contains(
+        ROOT / "ARIS_PHASE_LEDGER.md",
+        "historical ledger only",
+        "ACTIVE_CONTEXT_STATE.json",
+        "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+    )
+    _mirror_contains(
+        ROOT / "README.md",
+        "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
+        "Markdown drift against JSON is a blocking error",
+    )
+    _mirror_contains(
+        ROOT / "ROADMAP_CANONICAL.md",
+        "Live routing is read from ACTIVE_CONTEXT_STATE.json",
+        "roadmap sequence only, not the canonical live state",
+    )
+
+    forbidden_phrases = [
+        "ready_for_plan_only_dry_run_commit_rehearsal_review",
+        "Lab Real Simulation Pack Debian Disposable Harness Readiness Review is complete and the next governed block is Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review.",
+    ]
+    for path in MARKDOWN_PATHS:
+        text = path.read_text(encoding="utf-8")
+        if path.name != "ARIS_PHASE_LEDGER.md":
+            for phrase in forbidden_phrases:
+                _require(phrase not in text, f"{path.name} contains stale live text: {phrase}")
+
+    print(json.dumps({"decision": "pass", "validated_paths": [str(p) for p in MARKDOWN_PATHS]}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
