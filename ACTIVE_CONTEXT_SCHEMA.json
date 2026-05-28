@@ -1,9 +1,666 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ARIS Active Context Canonical Live State Schema",
-  "description": "Canonical validation contract for ACTIVE_CONTEXT_STATE.json. Markdown files are derived mirrors or history only.",
-  "type": "object",
   "additionalProperties": false,
+  "description": "Canonical validation contract for ACTIVE_CONTEXT_STATE.json. Markdown files are derived mirrors or history only.",
+  "properties": {
+    "active_context_version": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "active_next_phase": {
+      "const": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+      "type": "string"
+    },
+    "active_next_phase_class": {
+      "enum": [
+        "review_gate_only",
+        "planning_gate",
+        "readiness_gate",
+        "normalization_gate",
+        "history_only"
+      ],
+      "type": "string"
+    },
+    "additional_live_state_sources_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "artifact_routes": {
+      "additionalProperties": false,
+      "properties": {
+        "context_index_mirror": {
+          "const": "CONTEXT_INDEX.md",
+          "type": "string"
+        },
+        "current_state_mirror": {
+          "const": "CURRENT_STATE.md",
+          "type": "string"
+        },
+        "decision_locks_mirror": {
+          "const": "DECISION_LOCKS.md",
+          "type": "string"
+        },
+        "next_action_mirror": {
+          "const": "NEXT_ACTION.md",
+          "type": "string"
+        },
+        "phase_ledger_history": {
+          "const": "ARIS_PHASE_LEDGER.md",
+          "type": "string"
+        },
+        "readme": {
+          "const": "README.md",
+          "type": "string"
+        },
+        "roadmap_authority": {
+          "const": "ROADMAP_CANONICAL.md",
+          "type": "string"
+        },
+        "schema_file": {
+          "const": "ACTIVE_CONTEXT_SCHEMA.json",
+          "type": "string"
+        },
+        "state_file": {
+          "const": "ACTIVE_CONTEXT_STATE.json",
+          "type": "string"
+        },
+        "validator_script": {
+          "const": "scripts/validate_active_context_state.py",
+          "type": "string"
+        }
+      },
+      "required": [
+        "state_file",
+        "schema_file",
+        "current_state_mirror",
+        "next_action_mirror",
+        "decision_locks_mirror",
+        "context_index_mirror",
+        "phase_ledger_history",
+        "roadmap_authority",
+        "readme",
+        "validator_script"
+      ],
+      "type": "object"
+    },
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "approval_execution_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "container_image_vm_creation_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "debian_harness_execution_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "dependency_change_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "external_llm_api_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "frontend_backend_action_runtime_audio_mutation_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "generic_action_runtime_activated": {
+          "const": false,
+          "type": "boolean"
+        },
+        "host_filesystem_mutation_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "network_authorized_scope": {
+          "const": "github_active_context_governance_only",
+          "type": "string"
+        },
+        "package_installation_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "package_manager_execution_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "product_ready": {
+          "const": false,
+          "type": "boolean"
+        },
+        "production_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "real_apply_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "real_dry_run_execution_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "runtime_integration_allowed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "runtime_refactor_authorized": {
+          "const": false,
+          "type": "boolean"
+        },
+        "secrets_access_authorized": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "production_authorized",
+        "product_ready",
+        "runtime_integration_allowed",
+        "generic_action_runtime_activated",
+        "real_apply_authorized",
+        "real_dry_run_execution_authorized",
+        "approval_execution_authorized",
+        "runtime_refactor_authorized",
+        "host_filesystem_mutation_authorized",
+        "debian_harness_execution_authorized",
+        "container_image_vm_creation_authorized",
+        "package_manager_execution_authorized",
+        "package_installation_authorized",
+        "network_authorized_scope",
+        "secrets_access_authorized",
+        "external_llm_api_authorized",
+        "dependency_change_authorized",
+        "frontend_backend_action_runtime_audio_mutation_authorized"
+      ],
+      "type": "object"
+    },
+    "canonical_branch": {
+      "const": "main",
+      "type": "string"
+    },
+    "canonical_live_state_file": {
+      "const": "ACTIVE_CONTEXT_STATE.json",
+      "type": "string"
+    },
+    "canonical_repository": {
+      "const": "MatheusAugDEV/aris-active-context",
+      "type": "string"
+    },
+    "canonical_schema_file": {
+      "const": "ACTIVE_CONTEXT_SCHEMA.json",
+      "type": "string"
+    },
+    "canonicality_rules": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_branch": {
+          "const": "main",
+          "type": "string"
+        },
+        "canonical_live_state_file": {
+          "const": "ACTIVE_CONTEXT_STATE.json",
+          "type": "string"
+        },
+        "canonical_repository": {
+          "const": "MatheusAugDEV/aris-active-context",
+          "type": "string"
+        },
+        "canonical_schema_file": {
+          "const": "ACTIVE_CONTEXT_SCHEMA.json",
+          "type": "string"
+        },
+        "github_active_context_is_the_only_canonical_active_context_source": {
+          "const": true,
+          "type": "boolean"
+        },
+        "local_checkout_is_non_canonical_until_remote_verified": {
+          "const": true,
+          "type": "boolean"
+        },
+        "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state": {
+          "const": true,
+          "type": "boolean"
+        },
+        "no_github_sync_no_canonical_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "no_local_only_update_is_canonical": {
+          "const": true,
+          "type": "boolean"
+        },
+        "no_unpushed_commit_is_canonical": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "github_active_context_is_the_only_canonical_active_context_source",
+        "canonical_repository",
+        "canonical_branch",
+        "canonical_live_state_file",
+        "canonical_schema_file",
+        "local_checkout_is_non_canonical_until_remote_verified",
+        "no_local_only_update_is_canonical",
+        "no_unpushed_commit_is_canonical",
+        "no_github_sync_no_canonical_pass",
+        "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state"
+      ],
+      "type": "object"
+    },
+    "completed_phases": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "decision": {
+            "enum": [
+              "pass"
+            ],
+            "type": "string"
+          },
+          "phase": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "phase",
+          "decision",
+          "status"
+        ],
+        "type": "object"
+      },
+      "minItems": 5,
+      "type": "array"
+    },
+    "current_live_route": {
+      "additionalProperties": false,
+      "properties": {
+        "active_next_phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+          "type": "string"
+        },
+        "active_next_phase_class": {
+          "const": "planning_gate",
+          "type": "string"
+        },
+        "current_status": {
+          "const": "ready_for_controlled_apply_dry_run_harness_planning",
+          "type": "string"
+        },
+        "decision": {
+          "const": "pass",
+          "type": "string"
+        },
+        "h4_h5_hx_active_current_route": {
+          "const": false,
+          "type": "boolean"
+        },
+        "latest_completed_phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+          "type": "string"
+        },
+        "next_phase_execution_authorization": {
+          "const": false,
+          "type": "boolean"
+        },
+        "operator_approval_packet_review_is_execution_approval": {
+          "const": false,
+          "type": "boolean"
+        },
+        "status": {
+          "const": "lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_pass",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "decision",
+        "latest_completed_phase",
+        "current_status",
+        "active_next_phase",
+        "active_next_phase_class",
+        "next_phase_execution_authorization",
+        "operator_approval_packet_review_is_execution_approval",
+        "h4_h5_hx_active_current_route"
+      ],
+      "type": "object"
+    },
+    "current_status": {
+      "const": "ready_for_controlled_apply_dry_run_harness_planning",
+      "type": "string"
+    },
+    "decision": {
+      "const": "pass",
+      "type": "string"
+    },
+    "drift_signals": {
+      "additionalProperties": false,
+      "properties": {
+        "connector_fallback_required_if_cli_dns_or_ssh_fails": {
+          "const": true,
+          "type": "boolean"
+        },
+        "json_state_mismatch": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "ledger_live_route_drift": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "local_vs_github_drift": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "markdown_mirror_drift": {
+          "const": "fail_closed",
+          "type": "string"
+        }
+      },
+      "required": [
+        "local_vs_github_drift",
+        "markdown_mirror_drift",
+        "ledger_live_route_drift",
+        "json_state_mismatch",
+        "connector_fallback_required_if_cli_dns_or_ssh_fails"
+      ],
+      "type": "object"
+    },
+    "history_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "governance_repairs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "latest_execution_phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+          "type": "string"
+        },
+        "ledger_mode": {
+          "const": "historical_only",
+          "type": "string"
+        },
+        "markdown_mirrors_are_non_authoritative": {
+          "const": true,
+          "type": "boolean"
+        },
+        "previous_execution_phase": {
+          "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+          "type": "string"
+        }
+      },
+      "required": [
+        "latest_execution_phase",
+        "previous_execution_phase",
+        "governance_repairs",
+        "ledger_mode",
+        "markdown_mirrors_are_non_authoritative"
+      ],
+      "type": "object"
+    },
+    "last_transition": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "const": "pass",
+          "type": "string"
+        },
+        "from_phase": {
+          "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+          "type": "string"
+        },
+        "proof_source": {
+          "const": "GitHub main",
+          "type": "string"
+        },
+        "to_phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+          "type": "string"
+        },
+        "transition_type": {
+          "const": "lab_phase_transition",
+          "type": "string"
+        },
+        "verified_via": {
+          "const": "GitHub active-context CLI fetch, push, and remote verification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "transition_type",
+        "from_phase",
+        "to_phase",
+        "decision",
+        "verified_via",
+        "proof_source"
+      ],
+      "type": "object"
+    },
+    "latest_completed_phase": {
+      "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+      "type": "string"
+    },
+    "locks": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_live_state_file": {
+          "const": "ACTIVE_CONTEXT_STATE.json",
+          "type": "string"
+        },
+        "canonical_schema_file": {
+          "const": "ACTIVE_CONTEXT_SCHEMA.json",
+          "type": "string"
+        },
+        "canonical_source": {
+          "const": "GitHub repository MatheusAugDEV/aris-active-context main branch",
+          "type": "string"
+        },
+        "deferred_phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+          "type": "string"
+        },
+        "deferred_phase_reason": {
+          "const": "Controlled Apply Dry-Run Harness Planning is the next planning-only gate and does not authorize real dry-run execution.",
+          "type": "string"
+        },
+        "every_transition_must_update_commit_push_and_verify_github_active_context": {
+          "const": true,
+          "type": "boolean"
+        },
+        "github_active_context_is_the_only_canonical_active_context_source": {
+          "const": true,
+          "type": "boolean"
+        },
+        "h4_h5_hx_active_current_route": {
+          "const": false,
+          "type": "boolean"
+        },
+        "markdown_files_are": {
+          "const": "derived_mirrors_or_history_not_authoritative_live_state",
+          "type": "string"
+        },
+        "markdown_mirror_drift_policy": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "no_github_active_context_sync_no_canonical_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "stale_live_route_policy": {
+          "const": "fail_closed",
+          "type": "string"
+        }
+      },
+      "required": [
+        "canonical_source",
+        "canonical_live_state_file",
+        "canonical_schema_file",
+        "markdown_files_are",
+        "github_active_context_is_the_only_canonical_active_context_source",
+        "no_github_active_context_sync_no_canonical_pass",
+        "every_transition_must_update_commit_push_and_verify_github_active_context",
+        "stale_live_route_policy",
+        "markdown_mirror_drift_policy",
+        "h4_h5_hx_active_current_route",
+        "deferred_phase",
+        "deferred_phase_reason"
+      ],
+      "type": "object"
+    },
+    "markdown_files_are": {
+      "const": "derived_mirrors_or_history_not_authoritative_live_state",
+      "type": "string"
+    },
+    "next_action": {
+      "additionalProperties": false,
+      "properties": {
+        "execution_authorization": {
+          "const": false,
+          "type": "boolean"
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "operator_approval_packet_review_is_execution_approval": {
+          "const": false,
+          "type": "boolean"
+        },
+        "phase": {
+          "const": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+          "type": "string"
+        },
+        "review_only": {
+          "const": false,
+          "type": "boolean"
+        },
+        "status": {
+          "const": "ready_for_next_subphase",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phase",
+        "status",
+        "review_only",
+        "execution_authorization",
+        "operator_approval_packet_review_is_execution_approval",
+        "notes"
+      ],
+      "type": "object"
+    },
+    "required_files_for_transition": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 9,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "required_update_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "current_route_must_be_written_in_json_first": {
+          "const": true,
+          "type": "boolean"
+        },
+        "ledger_drift_policy": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "live_state_source_drift_policy": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "markdown_mirror_drift_policy": {
+          "const": "fail_closed",
+          "type": "string"
+        },
+        "on_any_transition": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 5,
+          "type": "array"
+        }
+      },
+      "required": [
+        "on_any_transition",
+        "markdown_mirror_drift_policy",
+        "ledger_drift_policy",
+        "live_state_source_drift_policy",
+        "current_route_must_be_written_in_json_first"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0",
+      "type": "string"
+    },
+    "status": {
+      "const": "lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_pass",
+      "type": "string"
+    },
+    "validation_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "connector_fallback_allowed": {
+          "const": true,
+          "type": "boolean"
+        },
+        "fail_closed_on_live_route_drift": {
+          "const": true,
+          "type": "boolean"
+        },
+        "fail_closed_on_mirror_drift": {
+          "const": true,
+          "type": "boolean"
+        },
+        "json_validation_commands": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "markdown_mirror_validation_required": {
+          "const": true,
+          "type": "boolean"
+        },
+        "required_validator": {
+          "const": "scripts/validate_active_context_state.py",
+          "type": "string"
+        }
+      },
+      "required": [
+        "json_validation_commands",
+        "required_validator",
+        "connector_fallback_allowed",
+        "markdown_mirror_validation_required",
+        "fail_closed_on_mirror_drift",
+        "fail_closed_on_live_route_drift"
+      ],
+      "type": "object"
+    }
+  },
   "required": [
     "active_context_version",
     "schema_version",
@@ -33,417 +690,6 @@
     "drift_signals",
     "additional_live_state_sources_allowed"
   ],
-  "properties": {
-    "active_context_version": { "type": "string", "const": "2.0" },
-    "schema_version": { "type": "string", "const": "1.0" },
-    "canonical_repository": { "type": "string", "const": "MatheusAugDEV/aris-active-context" },
-    "canonical_branch": { "type": "string", "const": "main" },
-    "canonical_live_state_file": { "type": "string", "const": "ACTIVE_CONTEXT_STATE.json" },
-    "canonical_schema_file": { "type": "string", "const": "ACTIVE_CONTEXT_SCHEMA.json" },
-    "markdown_files_are": {
-      "type": "string",
-      "const": "derived_mirrors_or_history_not_authoritative_live_state"
-    },
-    "status": {
-      "type": "string",
-      "const": "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass"
-    },
-    "decision": { "type": "string", "const": "pass" },
-    "latest_completed_phase": {
-      "type": "string",
-      "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review"
-    },
-    "current_status": {
-      "type": "string",
-      "const": "ready_for_controlled_apply_operator_approval_packet_review"
-    },
-    "active_next_phase": {
-      "type": "string",
-      "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review"
-    },
-    "active_next_phase_class": {
-      "type": "string",
-      "enum": [
-        "review_gate_only",
-        "planning_gate",
-        "readiness_gate",
-        "normalization_gate",
-        "history_only"
-      ]
-    },
-    "required_files_for_transition": {
-      "type": "array",
-      "minItems": 9,
-      "uniqueItems": true,
-      "items": {
-        "type": "string"
-      }
-    },
-    "completed_phases": {
-      "type": "array",
-      "minItems": 5,
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["phase", "decision", "status"],
-        "properties": {
-          "phase": { "type": "string" },
-          "decision": { "type": "string", "enum": ["pass"] },
-          "status": { "type": "string" }
-        }
-      }
-    },
-    "current_live_route": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "status",
-        "decision",
-        "latest_completed_phase",
-        "current_status",
-        "active_next_phase",
-        "active_next_phase_class",
-        "next_phase_execution_authorization",
-        "operator_approval_packet_review_is_execution_approval",
-        "h4_h5_hx_active_current_route"
-      ],
-      "properties": {
-        "status": {
-          "type": "string",
-          "const": "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass"
-        },
-        "decision": { "type": "string", "const": "pass" },
-        "latest_completed_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review"
-        },
-        "current_status": {
-          "type": "string",
-          "const": "ready_for_controlled_apply_operator_approval_packet_review"
-        },
-        "active_next_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review"
-        },
-        "active_next_phase_class": {
-          "type": "string",
-          "const": "review_gate_only"
-        },
-        "next_phase_execution_authorization": { "type": "boolean", "const": false },
-        "operator_approval_packet_review_is_execution_approval": {
-          "type": "boolean",
-          "const": false
-        },
-        "h4_h5_hx_active_current_route": { "type": "boolean", "const": false }
-      }
-    },
-    "next_action": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "phase",
-        "status",
-        "review_only",
-        "execution_authorization",
-        "operator_approval_packet_review_is_execution_approval",
-        "notes"
-      ],
-      "properties": {
-        "phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review"
-        },
-        "status": { "type": "string", "const": "ready_for_next_subphase" },
-        "review_only": { "type": "boolean", "const": true },
-        "execution_authorization": { "type": "boolean", "const": false },
-        "operator_approval_packet_review_is_execution_approval": {
-          "type": "boolean",
-          "const": false
-        },
-        "notes": {
-          "type": "array",
-          "minItems": 2,
-          "items": { "type": "string" }
-        }
-      }
-    },
-    "locks": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "canonical_source",
-        "canonical_live_state_file",
-        "canonical_schema_file",
-        "markdown_files_are",
-        "github_active_context_is_the_only_canonical_active_context_source",
-        "no_github_active_context_sync_no_canonical_pass",
-        "every_transition_must_update_commit_push_and_verify_github_active_context",
-        "stale_live_route_policy",
-        "markdown_mirror_drift_policy",
-        "h4_h5_hx_active_current_route",
-        "deferred_phase",
-        "deferred_phase_reason"
-      ],
-      "properties": {
-        "canonical_source": {
-          "type": "string",
-          "const": "GitHub repository MatheusAugDEV/aris-active-context main branch"
-        },
-        "canonical_live_state_file": { "type": "string", "const": "ACTIVE_CONTEXT_STATE.json" },
-        "canonical_schema_file": { "type": "string", "const": "ACTIVE_CONTEXT_SCHEMA.json" },
-        "markdown_files_are": {
-          "type": "string",
-          "const": "derived_mirrors_or_history_not_authoritative_live_state"
-        },
-        "github_active_context_is_the_only_canonical_active_context_source": { "type": "boolean", "const": true },
-        "no_github_active_context_sync_no_canonical_pass": { "type": "boolean", "const": true },
-        "every_transition_must_update_commit_push_and_verify_github_active_context": {
-          "type": "boolean",
-          "const": true
-        },
-        "stale_live_route_policy": { "type": "string", "const": "fail_closed" },
-        "markdown_mirror_drift_policy": { "type": "string", "const": "fail_closed" },
-        "h4_h5_hx_active_current_route": { "type": "boolean", "const": false },
-        "deferred_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review"
-        },
-        "deferred_phase_reason": {
-          "type": "string",
-          "const": "Operator Approval Packet Review remains deferred until Plan-Only Dry-Run Commit Rehearsal Review and remaining Tier-1 runtime-safety prerequisites are completed."
-        }
-      }
-    },
-    "authorization": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "production_authorized",
-        "product_ready",
-        "runtime_integration_allowed",
-        "generic_action_runtime_activated",
-        "real_apply_authorized",
-        "real_dry_run_execution_authorized",
-        "approval_execution_authorized",
-        "runtime_refactor_authorized",
-        "host_filesystem_mutation_authorized",
-        "debian_harness_execution_authorized",
-        "container_image_vm_creation_authorized",
-        "package_manager_execution_authorized",
-        "package_installation_authorized",
-        "network_authorized_scope",
-        "secrets_access_authorized",
-        "external_llm_api_authorized",
-        "dependency_change_authorized",
-        "frontend_backend_action_runtime_audio_mutation_authorized"
-      ],
-      "properties": {
-        "production_authorized": { "type": "boolean", "const": false },
-        "product_ready": { "type": "boolean", "const": false },
-        "runtime_integration_allowed": { "type": "boolean", "const": false },
-        "generic_action_runtime_activated": { "type": "boolean", "const": false },
-        "real_apply_authorized": { "type": "boolean", "const": false },
-        "real_dry_run_execution_authorized": { "type": "boolean", "const": false },
-        "approval_execution_authorized": { "type": "boolean", "const": false },
-        "runtime_refactor_authorized": { "type": "boolean", "const": false },
-        "host_filesystem_mutation_authorized": { "type": "boolean", "const": false },
-        "debian_harness_execution_authorized": { "type": "boolean", "const": false },
-        "container_image_vm_creation_authorized": { "type": "boolean", "const": false },
-        "package_manager_execution_authorized": { "type": "boolean", "const": false },
-        "package_installation_authorized": { "type": "boolean", "const": false },
-        "network_authorized_scope": {
-          "type": "string",
-          "const": "github_active_context_governance_only"
-        },
-        "secrets_access_authorized": { "type": "boolean", "const": false },
-        "external_llm_api_authorized": { "type": "boolean", "const": false },
-        "dependency_change_authorized": { "type": "boolean", "const": false },
-        "frontend_backend_action_runtime_audio_mutation_authorized": {
-          "type": "boolean",
-          "const": false
-        }
-      }
-    },
-    "canonicality_rules": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "github_active_context_is_the_only_canonical_active_context_source",
-        "canonical_repository",
-        "canonical_branch",
-        "canonical_live_state_file",
-        "canonical_schema_file",
-        "local_checkout_is_non_canonical_until_remote_verified",
-        "no_local_only_update_is_canonical",
-        "no_unpushed_commit_is_canonical",
-        "no_github_sync_no_canonical_pass",
-        "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state"
-      ],
-      "properties": {
-        "github_active_context_is_the_only_canonical_active_context_source": { "type": "boolean", "const": true },
-        "canonical_repository": { "type": "string", "const": "MatheusAugDEV/aris-active-context" },
-        "canonical_branch": { "type": "string", "const": "main" },
-        "canonical_live_state_file": { "type": "string", "const": "ACTIVE_CONTEXT_STATE.json" },
-        "canonical_schema_file": { "type": "string", "const": "ACTIVE_CONTEXT_SCHEMA.json" },
-        "local_checkout_is_non_canonical_until_remote_verified": { "type": "boolean", "const": true },
-        "no_local_only_update_is_canonical": { "type": "boolean", "const": true },
-        "no_unpushed_commit_is_canonical": { "type": "boolean", "const": true },
-        "no_github_sync_no_canonical_pass": { "type": "boolean", "const": true },
-        "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state": {
-          "type": "boolean",
-          "const": true
-        }
-      }
-    },
-    "validation_policy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "json_validation_commands",
-        "required_validator",
-        "connector_fallback_allowed",
-        "markdown_mirror_validation_required",
-        "fail_closed_on_mirror_drift",
-        "fail_closed_on_live_route_drift"
-      ],
-      "properties": {
-        "json_validation_commands": {
-          "type": "array",
-          "minItems": 2,
-          "items": { "type": "string" }
-        },
-        "required_validator": { "type": "string", "const": "scripts/validate_active_context_state.py" },
-        "connector_fallback_allowed": { "type": "boolean", "const": true },
-        "markdown_mirror_validation_required": { "type": "boolean", "const": true },
-        "fail_closed_on_mirror_drift": { "type": "boolean", "const": true },
-        "fail_closed_on_live_route_drift": { "type": "boolean", "const": true }
-      }
-    },
-    "artifact_routes": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "state_file",
-        "schema_file",
-        "current_state_mirror",
-        "next_action_mirror",
-        "decision_locks_mirror",
-        "context_index_mirror",
-        "phase_ledger_history",
-        "roadmap_authority",
-        "readme",
-        "validator_script"
-      ],
-      "properties": {
-        "state_file": { "type": "string", "const": "ACTIVE_CONTEXT_STATE.json" },
-        "schema_file": { "type": "string", "const": "ACTIVE_CONTEXT_SCHEMA.json" },
-        "current_state_mirror": { "type": "string", "const": "CURRENT_STATE.md" },
-        "next_action_mirror": { "type": "string", "const": "NEXT_ACTION.md" },
-        "decision_locks_mirror": { "type": "string", "const": "DECISION_LOCKS.md" },
-        "context_index_mirror": { "type": "string", "const": "CONTEXT_INDEX.md" },
-        "phase_ledger_history": { "type": "string", "const": "ARIS_PHASE_LEDGER.md" },
-        "roadmap_authority": { "type": "string", "const": "ROADMAP_CANONICAL.md" },
-        "readme": { "type": "string", "const": "README.md" },
-        "validator_script": { "type": "string", "const": "scripts/validate_active_context_state.py" }
-      }
-    },
-    "history_summary": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "latest_execution_phase",
-        "previous_execution_phase",
-        "governance_repairs",
-        "ledger_mode",
-        "markdown_mirrors_are_non_authoritative"
-      ],
-      "properties": {
-        "latest_execution_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review"
-        },
-        "previous_execution_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Debian Disposable Harness Readiness Review"
-        },
-        "governance_repairs": {
-          "type": "array",
-          "minItems": 2,
-          "items": { "type": "string" }
-        },
-        "ledger_mode": { "type": "string", "const": "historical_only" },
-        "markdown_mirrors_are_non_authoritative": { "type": "boolean", "const": true }
-      }
-    },
-    "last_transition": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "transition_type",
-        "from_phase",
-        "to_phase",
-        "decision",
-        "verified_via",
-        "proof_source"
-      ],
-      "properties": {
-        "transition_type": { "type": "string", "const": "lab_phase_transition" },
-        "from_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Debian Disposable Harness Readiness Review"
-        },
-        "to_phase": {
-          "type": "string",
-          "const": "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review"
-        },
-        "decision": { "type": "string", "const": "pass" },
-        "verified_via": {
-          "type": "string",
-          "const": "GitHub active-context connector fetch and local repository evidence"
-        },
-        "proof_source": { "type": "string", "const": "GitHub main" }
-      }
-    },
-    "required_update_policy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "on_any_transition",
-        "markdown_mirror_drift_policy",
-        "ledger_drift_policy",
-        "live_state_source_drift_policy",
-        "current_route_must_be_written_in_json_first"
-      ],
-      "properties": {
-        "on_any_transition": {
-          "type": "array",
-          "minItems": 5,
-          "items": { "type": "string" }
-        },
-        "markdown_mirror_drift_policy": { "type": "string", "const": "fail_closed" },
-        "ledger_drift_policy": { "type": "string", "const": "fail_closed" },
-        "live_state_source_drift_policy": { "type": "string", "const": "fail_closed" },
-        "current_route_must_be_written_in_json_first": { "type": "boolean", "const": true }
-      }
-    },
-    "drift_signals": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "local_vs_github_drift",
-        "markdown_mirror_drift",
-        "ledger_live_route_drift",
-        "json_state_mismatch",
-        "connector_fallback_required_if_cli_dns_or_ssh_fails"
-      ],
-      "properties": {
-        "local_vs_github_drift": { "type": "string", "const": "fail_closed" },
-        "markdown_mirror_drift": { "type": "string", "const": "fail_closed" },
-        "ledger_live_route_drift": { "type": "string", "const": "fail_closed" },
-        "json_state_mismatch": { "type": "string", "const": "fail_closed" },
-        "connector_fallback_required_if_cli_dns_or_ssh_fails": { "type": "boolean", "const": true }
-      }
-    },
-    "additional_live_state_sources_allowed": { "type": "boolean", "const": false }
-  }
+  "title": "ARIS Active Context Canonical Live State Schema",
+  "type": "object"
 }

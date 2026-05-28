@@ -23,8 +23,8 @@ ARIS não promete automação. ARIS prova automação.
    - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
    - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
    - The Plan-Only Dry-Run Commit Rehearsal Review phase has passed.
-   - The current active next phase from `ACTIVE_CONTEXT_STATE.json` is Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review.
-   - Operator Approval Packet Review is active as a review-only gate and does not authorize execution.
+   - The current active next phase from `ACTIVE_CONTEXT_STATE.json` is Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning.
+   - Operator Approval Packet Review has passed as a review-only gate and did not authorize execution.
    - Cross-cutting gates:
    - state_data_plane_boundary_gate
    - strict_canonical_json_gate
@@ -64,9 +64,12 @@ Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The Plan-Only Dry-Run Commit Rehearsal Review phase has passed and the active next phase is `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`.
-- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is the next review gate and does not authorize real apply, real dry-run execution, or runtime mutation.
+- The Controlled Apply Operator Approval Packet Review phase has passed and the active next phase is `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`.
+- `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning` is the next planning gate and does not authorize real apply, real dry-run execution, or runtime mutation.
 - Roadmap current-position stale warning status: `resolved`.
+- Controlled Apply Operator Approval Packet Review passed as review-only and did not execute approval or authorize execution.
+- The next phase is planning-only for controlled apply dry-run harness and does not authorize real dry-run execution.
+- H4/H5/Hx not active current route.
 
 ## Absolute Pre-Pilot Lock
 Nenhum piloto, cliente, design partner operacional ou uso externo do ARIS é autorizado antes de:

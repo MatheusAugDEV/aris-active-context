@@ -11,11 +11,14 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Current status: `ready_for_controlled_apply_operator_approval_packet_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Active next review gate: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Current status: `ready_for_controlled_apply_dry_run_harness_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
+- Active next phase class: `planning_gate`
 - H4/H5/Hx: `not active current route`
+- Operator Approval Packet Review is review-only, not execution approval.
+- Controlled Apply Operator Approval Packet Review passed as review-only and did not execute approval or authorize execution.
+- The next phase is planning-only for controlled apply dry-run harness and does not authorize real dry-run execution.
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
@@ -33,6 +36,6 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No frontend/backend/action-runtime/audio mutation authorization.
 
 ## Historical / Proof-Only Entries
-- Historical routing proof from the prior canonicality gate remains historical only.
+- Historical routing proof from prior gates remains historical only.
 - Do not use historical proof for current routing.
 - Historical snapshot values may include earlier phases, but they are superseded by `ACTIVE_CONTEXT_STATE.json`.

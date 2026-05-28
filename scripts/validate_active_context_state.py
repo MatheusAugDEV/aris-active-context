@@ -91,12 +91,12 @@ def main() -> None:
     _validate_schema(schema)
     _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
 
-    _require(state["status"] == "lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass", "unexpected status")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_controlled_apply_operator_approval_packet_review", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review", "unexpected next phase")
-    _require(state["active_next_phase_class"] == "review_gate_only", "unexpected next phase class")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_harness_planning", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next phase class")
     _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
 
     auth = state["authorization"]
@@ -110,31 +110,35 @@ def main() -> None:
         ROOT / "CURRENT_STATE.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
         "ACTIVE_CONTEXT_STATE.json wins",
-        "ready_for_controlled_apply_operator_approval_packet_review",
-        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+        "lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_pass",
+        "ready_for_controlled_apply_dry_run_harness_planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+        "Controlled Apply Operator Approval Packet Review passed as review-only and did not execute approval or authorize execution.",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
-        "review-only",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+        "planning-only",
+        "does not authorize real dry-run execution",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown files are non-authoritative mirrors/docs/history",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "historical ledger only",
         "ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review",
+        "Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review",
     )
     _mirror_contains(
         ROOT / "README.md",
@@ -145,10 +149,15 @@ def main() -> None:
         ROOT / "ROADMAP_CANONICAL.md",
         "Live routing is read from ACTIVE_CONTEXT_STATE.json",
         "roadmap sequence only, not the canonical live state",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
     )
 
     forbidden_phrases = [
         "ready_for_plan_only_dry_run_commit_rehearsal_review",
+        "Active next phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`",
+        "Active next phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`",
+        "Active next phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`",
+        "Active next phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`",
         "Lab Real Simulation Pack Debian Disposable Harness Readiness Review is complete and the next governed block is Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review.",
     ]
     for path in MARKDOWN_PATHS:

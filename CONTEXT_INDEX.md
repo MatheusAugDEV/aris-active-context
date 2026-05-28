@@ -5,23 +5,22 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Current status: `ready_for_controlled_apply_operator_approval_packet_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Current status: `ready_for_controlled_apply_dry_run_harness_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
+- Active next phase class: `planning_gate`
+- Operator Approval Packet Review is review-only, not execution approval.
+- H4/H5/Hx not active current route.
 
 ## Current Artifact Routes
-- Plan-only rehearsal review summary: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_summary.json`
-- Plan-only rehearsal review gate: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review.json`
-- Plan-only rehearsal review report: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_report.md`
-- Plan-only rehearsal contract: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_contract.json`
-- Plan-only rehearsal plan: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_plan.json`
-- Plan-only rehearsal state machine: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_state_machine.json`
-- Plan-only rehearsal boundary matrix: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_boundary_matrix.json`
-- Plan-only rehearsal risk register: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_risk_register.json`
-- Plan-only rehearsal stop conditions: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_stop_conditions.json`
-- Plan-only rehearsal evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_evidence_index.json`
-- Controlled apply handoff route verification: `artifacts/lab_simulation/lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_route_verification.json`
+- Controlled apply operator approval packet review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_summary.json`
+- Controlled apply operator approval packet review gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review.json`
+- Controlled apply operator approval packet review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_report.md`
+- Controlled apply operator approval packet contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_contract.json`
+- Controlled apply operator approval packet schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_schema.json`
+- Controlled apply operator approval packet risk register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_risk_register.json`
+- Controlled apply operator approval packet route verification: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_route_verification.json`
 
 ## Historical / Evidence Only
-- Earlier filesystem isolation, shadow workspace, Debian planning, and Debian readiness artifacts remain evidence only.
+- Earlier filesystem isolation, shadow workspace, Debian planning, Debian readiness, and plan-only rehearsal artifacts remain evidence only.
 - Older routes must not be read as active current routing.
