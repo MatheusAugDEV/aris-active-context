@@ -1,11 +1,11 @@
 # ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
 - Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
-- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Status: `lab_real_simulation_pack_filesystem_isolation_readiness_review_pass`
 - Decision: `pass`
-- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
-- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
-- Correct current status: `ready_for_filesystem_isolation_readiness_review`
-- Correct active next phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Roadmap remediation status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Latest completed phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Correct current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Correct active next phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
@@ -30,8 +30,8 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Roadmap warning status: `resolved`
-- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
-- Operator Approval Packet Review remains blocked until filesystem isolation, shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
+- Next recommended phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
+- Operator Approval Packet Review remains blocked until shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
 - Anti-regression note: do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
@@ -44,9 +44,9 @@
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
 # ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
 - Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
-- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Status: `lab_real_simulation_pack_filesystem_isolation_readiness_review_pass`
 - Decision: `pass`
-- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
+- Roadmap remediation status: `ready_for_shadow_workspace_dry_run_blueprint_review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -70,7 +70,7 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Roadmap warning status: `resolved`
-- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Next recommended phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
@@ -82,9 +82,9 @@
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
 # ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Lock
 - Lock id: `ARIS_TIER1_RUNTIME_SAFETY_REMEDIATION_INTEGRATION`
-- Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Status: `lab_real_simulation_pack_filesystem_isolation_readiness_review_pass`
 - Decision: `pass`
-- Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
+- Roadmap remediation status: `ready_for_shadow_workspace_dry_run_blueprint_review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -108,7 +108,7 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Roadmap warning status: `resolved`
-- Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Next recommended phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`

@@ -62,8 +62,8 @@ ARIS não promete automação. ARIS prova automação.
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The Tier-1 runtime safety remediation track is active and the active next phase is `Lab Real Simulation Pack Filesystem Isolation Readiness Review`.
-- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the preceding Tier-1 gates pass.
+- The Filesystem Isolation Readiness Review has passed and the active next phase is `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`.
+- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the preceding Tier-1 shadow workspace, disposable harness, and rehearsal phases pass.
 - Roadmap current-position stale warning status: `resolved`.
 
 ## Absolute Pre-Pilot Lock

@@ -7,9 +7,9 @@
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 - Canonical roadmap: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment protocol: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
-- Correct current status: `ready_for_filesystem_isolation_readiness_review`
-- Correct active next phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Latest completed phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Correct current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Correct active next phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
@@ -129,7 +129,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`
+- Active next block: `Lab Real Simulation Pack / Shadow Workspace Dry-Run Blueprint Review`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -157,7 +157,7 @@
 - Do not treat the H4 next-step entry as H4 execution.
 - Do not treat the Lab Real Simulation Pack next-step entry as execution.
 - Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
-- Operator Approval Packet Review is deferred until filesystem isolation, shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites pass.
+- Operator Approval Packet Review is deferred until shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites pass.
 - Lab scenario manifest plan: `artifacts/lab_simulation/lab_real_simulation_pack_scenario_manifest_plan_summary.json`
 - Lab scenario manifest draft: `artifacts/lab_simulation/lab_real_simulation_scenario_manifest_draft.json`
 - Lab scenario taxonomy: `artifacts/lab_simulation/lab_real_simulation_scenario_taxonomy.json`
