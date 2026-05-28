@@ -58,7 +58,7 @@
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
-- Filesystem isolation readiness review is complete; the next governed block is shadow workspace dry-run blueprint review and remains plan-only.
+- Historical note: the prior governed block after filesystem isolation readiness review was shadow workspace dry-run blueprint review; it is superseded by Debian Disposable Harness Planning.
 - Explicit routing correction: Operator Approval Packet Review was previously premature and remains superseded/deferred by the Tier-1 Runtime Safety Remediation roadmap integration until Debian Disposable Harness Readiness Review, plan-only dry-run commit rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
 - Anti-regression note: do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Explicit blocking statement: Operator Approval Packet Review remains blocked until Debian Disposable Harness Readiness Review, plan-only dry-run commit rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
