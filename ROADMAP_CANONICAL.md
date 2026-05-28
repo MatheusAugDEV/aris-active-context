@@ -59,17 +59,20 @@ ARIS não promete automação. ARIS prova automação.
 7. SIP — Sistema Imunológico Permanente
 
 ## Current Canonical Position
+Live routing is read from ACTIVE_CONTEXT_STATE.json; this file is roadmap sequence only, not the canonical live state.
 Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
 - Strategic Reset: `PASS`
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
+- ARIS Active-Context Anti-Corruption Hardening Gate passed as a governance repair gate (schema v2.1, validator hardened, JSON-first enforced).
 - The Controlled Apply Operator Approval Packet Review phase has passed and the active next phase is `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`.
 - `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning` is the next planning gate and does not authorize real apply, real dry-run execution, or runtime mutation.
 - Roadmap current-position stale warning status: `resolved`.
 - Controlled Apply Operator Approval Packet Review passed as review-only and did not execute approval or authorize execution.
 - The next phase is planning-only for controlled apply dry-run harness and does not authorize real dry-run execution.
 - H4/H5/Hx not active current route.
+- ACTIVE_CONTEXT_STATE.json wins. If this file conflicts with ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_STATE.json wins.
 
 ## Absolute Pre-Pilot Lock
 Nenhum piloto, cliente, design partner operacional ou uso externo do ARIS é autorizado antes de:

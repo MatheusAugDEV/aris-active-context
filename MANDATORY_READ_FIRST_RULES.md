@@ -4,36 +4,43 @@ This file is the compact mandatory rule layer for every ARIS assistant response,
 
 ARIS-ROADMAP-R0 governance foundation is materialized and does not change the read-first order or authority stack.
 
-If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, this file wins together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, and LAB_VERDICTS.md.
+If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, **ACTIVE_CONTEXT_STATE.json wins**, followed by this file together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, and LAB_VERDICTS.md.
 
 ## Mandatory read-first order
 
-For every ARIS technical decision, phase prompt, Codex instruction, status review, or next-step recommendation, read first:
+For every ARIS technical decision, phase prompt, Codex instruction, status review, or next-step recommendation, read first — **in this exact order**:
 
-1. CURRENT_STATE.md
-2. NEXT_ACTION.md
-3. DECISION_LOCKS.md
-4. MANDATORY_READ_FIRST_RULES.md
-5. LAB_OPERATING_CONTRACT.md
-6. LAB_STATUS.md
-7. LAB_VERDICTS.md
-8. CONTEXT_INDEX.md
-9. ARIS_PHASE_LEDGER.md
-10. README.md
-11. OPERATOR_PREFERENCES.md, if present
-12. PROMPT_CONTRACT.md
+```
+1. ACTIVE_CONTEXT_STATE.json          ← canonical live state (ALWAYS FIRST)
+2. ACTIVE_CONTEXT_SCHEMA.json         ← validation contract
+3. scripts/validate_active_context_state.py  ← run; if fails, report drift and stop
+4. CURRENT_STATE.md                   ← derived mirror
+5. NEXT_ACTION.md                     ← derived mirror
+6. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
+7. MANDATORY_READ_FIRST_RULES.md      ← this file
+8. LAB_OPERATING_CONTRACT.md
+9. LAB_STATUS.md
+10. LAB_VERDICTS.md
+11. CONTEXT_INDEX.md
+12. ARIS_PHASE_LEDGER.md
+13. README.md
+14. OPERATOR_PREFERENCES.md, if present
+15. PROMPT_CONTRACT.md
+```
+
+**Rule**: No Markdown file may be read before ACTIVE_CONTEXT_STATE.json. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
 
 If any file is missing, stale, inaccessible, or contradictory, explicitly report the drift before deciding.
 
 ## Fundamental ARIS rules
 
-- Active-context outranks assistant memory, chat history, pasted status, summaries, and assumptions.
-- NEXT_ACTION.md is the operational next-step authority unless a later active-context file explicitly supersedes it.
-- DECISION_LOCKS.md is the hard constraint authority.
-- LAB_OPERATING_CONTRACT.md is the Lab/Bedrock enforcement authority.
-- LAB_STATUS.md is the current Lab state authority.
-- LAB_VERDICTS.md is the Lab verdict ledger authority.
-- ARIS_PHASE_LEDGER.md is historical evidence, not a replacement for NEXT_ACTION.
+- `ACTIVE_CONTEXT_STATE.json` outranks all Markdown files, assistant memory, chat history, pasted status, summaries, and assumptions.
+- `NEXT_ACTION.md` is the operational next-step authority **after** confirming it matches the JSON.
+- `DECISION_LOCKS.md` is the hard constraint authority.
+- `LAB_OPERATING_CONTRACT.md` is the Lab/Bedrock enforcement authority.
+- `LAB_STATUS.md` is the current Lab state authority.
+- `LAB_VERDICTS.md` is the Lab verdict ledger authority.
+- `ARIS_PHASE_LEDGER.md` is historical evidence, not a replacement for NEXT_ACTION.
 
 ## Lab and Bedrock rules
 
@@ -64,6 +71,7 @@ If any file is missing, stale, inaccessible, or contradictory, explicitly report
 Every Codex prompt must:
 
 - include the mandatory read-first list or reference this file explicitly;
+- declare ACTIVE_CONTEXT_STATE.json as step 1;
 - state the expected reasoning level;
 - include named guards;
 - define allowed scope and forbidden scope;
@@ -75,7 +83,8 @@ Every Codex prompt must:
 
 Before giving a phase prompt or next technical recommendation, the assistant must:
 
-- check active-context when accessible;
+- read `ACTIVE_CONTEXT_STATE.json` first when accessible;
+- run or reference `scripts/validate_active_context_state.py`;
 - state if the repo or required files cannot be read;
 - avoid treating memory as source-of-truth;
 - keep F51+ advisory-only unless a future gate changes it;

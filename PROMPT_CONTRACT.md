@@ -7,20 +7,27 @@ It reduces repetition while preserving phase gates, safety, deterministic eviden
 
 ## Mandatory read-first rule
 
-Every future ARIS phase prompt, Codex instruction, phase review, status review, roadmap decision, and next-step recommendation must read or explicitly reference:
+Every future ARIS phase prompt, Codex instruction, phase review, status review, roadmap decision, and next-step recommendation must read or explicitly reference — **in this exact order**:
 
-1. CURRENT_STATE.md
-2. NEXT_ACTION.md
-3. DECISION_LOCKS.md
-4. MANDATORY_READ_FIRST_RULES.md
-5. LAB_OPERATING_CONTRACT.md
-6. LAB_STATUS.md
-7. LAB_VERDICTS.md
-8. CONTEXT_INDEX.md
-9. ARIS_PHASE_LEDGER.md
-10. README.md
-11. OPERATOR_PREFERENCES.md, if present
-12. PROMPT_CONTRACT.md
+```
+1. ACTIVE_CONTEXT_STATE.json          ← canonical live state (ALWAYS FIRST)
+2. ACTIVE_CONTEXT_SCHEMA.json         ← validation contract
+3. scripts/validate_active_context_state.py  ← run before any decision
+4. CURRENT_STATE.md                   ← derived mirror
+5. NEXT_ACTION.md                     ← derived mirror
+6. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
+7. MANDATORY_READ_FIRST_RULES.md
+8. LAB_OPERATING_CONTRACT.md
+9. LAB_STATUS.md
+10. LAB_VERDICTS.md
+11. CONTEXT_INDEX.md
+12. ARIS_PHASE_LEDGER.md
+13. README.md
+14. OPERATOR_PREFERENCES.md, if present
+15. PROMPT_CONTRACT.md
+```
+
+**Rule**: ACTIVE_CONTEXT_STATE.json is always step 1. No Markdown file may be consulted before the JSON. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
 
 If a required file is missing, stale, inaccessible, or contradictory, report drift before deciding.
 
@@ -50,8 +57,8 @@ PROMPT CODEX — <PHASE> <NAME>
 
 Nível de raciocínio: alto / sênior / conservador / Bedrock-governed.
 
-Leia primeiro:
-CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, LAB_VERDICTS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md, PROMPT_CONTRACT.md.
+Leia primeiro (nesta ordem):
+ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_SCHEMA.json, scripts/validate_active_context_state.py, CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, LAB_VERDICTS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md, PROMPT_CONTRACT.md.
 
 Use os guards:
 AC-READ, BEDROCK-COMPLETE, NO-REAL-EXEC, NO-BULK, ARTIFACT-ONLY, TESTS-RUNNER-DOCS, ACTIVE-CONTEXT-UPDATE, COMMIT-PUSH-HASH.
