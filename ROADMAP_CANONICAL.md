@@ -62,8 +62,8 @@ ARIS não promete automação. ARIS prova automação.
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The Debian Disposable Harness Readiness Review phase has passed and the active next phase is `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`.
-- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the plan-only rehearsal and remaining Tier-1 runtime-safety prerequisites pass.
+- The Plan-Only Dry-Run Commit Rehearsal Review phase has passed and the active next phase is `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`.
+- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is the next review gate and does not authorize real apply, real dry-run execution, or runtime mutation.
 - Roadmap current-position stale warning status: `resolved`.
 
 ## Absolute Pre-Pilot Lock
