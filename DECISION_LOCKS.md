@@ -2,13 +2,13 @@
 
 ## Current Live Locks
 - Lock id: `ARIS_ACTIVE_CONTEXT_LIVE_STATE_NORMALIZATION_AND_STALE_ROUTING_ERADICATION`
-- Status: `active_context_live_state_normalization_pass`
+- Status: `lab_real_simulation_pack_plan_only_dry_run_commit_rehearsal_review_pass`
 - Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
-- Current status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
-- Active next phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Deferred phase reason: `Operator Approval Packet Review remains deferred until Plan-Only Dry-Run Commit Rehearsal Review and remaining Tier-1 runtime-safety prerequisites are completed.`
+- Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
+- Current status: `ready_for_controlled_apply_operator_approval_packet_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Active next review gate: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Operator Approval Packet Review is the next review gate and does not authorize execution.
 - H4/H5/Hx: `not active current route`
 - GitHub active-context is the only canonical active-context source.
 - No GitHub active-context sync = no canonical PASS.
@@ -157,20 +157,3 @@ These files must be updated at every phase/gate/status transition and must be pu
 - No dependency change authorization.
 - No frontend/backend/action-runtime/audio mutation authorization.
 - GitHub active-context read/push/verification allowed only.
-
-## Gate Validation Proof
-
-- Gate executed: `ARIS GitHub Active-Context Canonicality Rule Gate`
-- GitHub remote verified: `True`
-- Local HEAD before gate: `04c2c46b4ee99357912c08aa1947666812dc85fe`
-- GitHub origin/main before gate: `243963b7f1d105a4374ae488da0996b5e988cf30`
-- GitHub origin/main after push: `04c2c46b4ee99357912c08aa1947666812dc85fe`
-- Local HEAD == origin/main after push: `True`
-- Push succeeded: `True`
-- Drift detected before push: `True` (local HEAD 5 commits newer than origin/main)
-- Drift repaired: `True`
-- Governance gap closed: `True`
-- Policy strings materialized: `True` (all 11 required strings present)
-- Routing strings materialized: `True` (all 6 required strings present)
-- Forbidden authorization strings not present: `True` (no affirmative forbidden authorizations found)
-- Protected surfaces not modified: `True` (frontend/backend/audio/action_runtime/runtime/dependencies untouched)
