@@ -37,6 +37,10 @@
 - Operator Approval Packet Review remains blocked until shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
 - Explicit no-authorization statement: No real apply, no real dry-run execution, no approval execution, no runtime refactor, no host filesystem mutation, no Debian disposable harness execution, no container/image/VM creation, no apt/dpkg/package-manager execution, no network, no secrets, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
 
+## Historical / Proof-Only Entries
+
+- Historical snapshot only; not the active current route. Do not use this block for current routing.
+
 # Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning
 - Phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Planning`
 - Status: `lab_real_simulation_pack_controlled_apply_operator_approval_packet_planning_pass`

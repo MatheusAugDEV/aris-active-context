@@ -37,7 +37,7 @@
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- Debian disposable harness planning is complete and the next governed block is Debian Disposable Harness Readiness Review.
+- Debian disposable harness readiness review is complete and the next governed block is Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review.
 - This gate did not create or execute a Debian disposable harness.
 - Deferred operator approval packet review status: `blocked_until_debian_disposable_harness_readiness_review_and_follow_on_prerequisites`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
@@ -66,7 +66,7 @@
 - Future Codex instruction: any future Codex prompt must first read active-context and then prefer this corrected routing over older chat memory, older roadmap snippets, stale summaries, or hardening-base phase assumptions.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Plan-Only Dry-Run Commit Rehearsal Review`
+- Next active block: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
 - Block objective: continue governed macroblock with plan-only dry-run commit rehearsal, without granting approval or executing runtime.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
@@ -137,7 +137,10 @@
 
 
 
-## Validations
+## Historical / Proof-Only Validation Log
+
+- Historical snapshot only; not the active current route. Do not use this block for current routing.
+
 git -C aris-active-context remote -v
 git -C aris-active-context branch --show-current
 git -C aris-active-context fetch origin main
