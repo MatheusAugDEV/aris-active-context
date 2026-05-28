@@ -4,9 +4,12 @@
 
 - Status: `ready_for_next_subphase`
 - Roadmap remediation state: `completed_pass`
+- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Correct current status: `ready_for_filesystem_isolation_readiness_review`
 - Decision dependency: `ARIS Roadmap Tier-1 Runtime Safety Remediation Integration = pass`
 - Readiness dependency: `Lab Real Simulation Pack Controlled Apply Readiness Review readiness_status = ready_for_operator_approval_packet_planning`
 - Objective: prepare the filesystem isolation readiness review before any operator approval packet review.
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Scope: plan-only; no runtime execution, no productive retrieval/runtime activation, no pilot authorization, no product-ready claim, no real data.
 - H7 closure state: `hardening_base_h7_closure_gate_pass`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`

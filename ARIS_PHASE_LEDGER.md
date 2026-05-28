@@ -30,7 +30,8 @@
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Corrected next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
 - Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
 - Root commit hash: `pending_root_commit`
@@ -68,7 +69,8 @@
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Corrected next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
 - Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
 - Root commit hash: `pending_root_commit`
@@ -106,7 +108,8 @@
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Corrected next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Allowed future decision values: `['approved_for_next_plan_only_dry_run_blueprint_review', 'rejected', 'needs_revision']`
 - Forbidden future decision values: `['approved_for_real_apply', 'ready_for_real_apply', 'approved_for_runtime_change', 'approved_for_network_use', 'approved_for_secret_access', 'approved_for_dependency_change']`
 - Root commit hash: `pending_root_commit`

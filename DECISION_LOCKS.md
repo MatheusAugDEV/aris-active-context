@@ -3,6 +3,10 @@
 - Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
 - Roadmap remediation status: `ready_for_filesystem_isolation_readiness_review`
+- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Correct current status: `ready_for_filesystem_isolation_readiness_review`
+- Correct active next phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Synthetic-only confirmed: `True`
@@ -27,6 +31,8 @@
 - Source of truth policy touched: `False`
 - Roadmap warning status: `resolved`
 - Next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
+- Operator Approval Packet Review remains blocked until filesystem isolation, shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
+- Anti-regression note: do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`

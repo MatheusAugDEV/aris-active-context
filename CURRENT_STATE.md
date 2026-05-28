@@ -4,6 +4,8 @@
 - Status: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
 - Decision: `pass`
 - Current state: `ARIS Roadmap Tier-1 Runtime Safety Remediation Integration Materialized / Filesystem Isolation Readiness Review Pending`
+- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Correct current status: `ready_for_filesystem_isolation_readiness_review`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -35,8 +37,9 @@
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- Controlled apply operator approval packet planning remains synthetic-only, plan-only, and audit-only.
+- Controlled apply operator approval packet planning is superseded/deferred by the Tier-1 remediation track and remains synthetic-only, plan-only, and audit-only.
 - Approval packet status: `ready_for_operator_review_packet_review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
 - Controlled apply plan only: `True`
@@ -55,6 +58,11 @@
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
 - Operator approval packet planning is complete; the next governed block is filesystem isolation readiness review and remains plan-only.
+- Explicit routing correction: Operator Approval Packet Review was previously premature and was superseded/deferred by the Tier-1 Runtime Safety Remediation roadmap integration.
+- Anti-regression note: do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
+- Explicit blocking statement: Operator Approval Packet Review remains blocked until filesystem isolation, shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
+- Explicit no-authorization statement: No real apply, no real dry-run execution, no approval execution, no runtime refactor, no host filesystem mutation, no network, no secrets, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
+- Future Codex instruction: any future Codex prompt must first read active-context and then prefer this corrected routing over older chat memory, older roadmap snippets, stale summaries, or hardening-base phase assumptions.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
 - Next active block: `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`

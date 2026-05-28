@@ -30,8 +30,12 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H3 context engineering baseline is `pass`.
 - H4 observability + cost/time + quota baseline is `pass`.
 - H5 degraded mode + failure UX baseline is `pass`.
+- Latest completed routing/remediation phase: `aris_tier1_runtime_safety_remediation_roadmap_integration_pass`
+- Correct current status: `ready_for_filesystem_isolation_readiness_review`
 - The current active next block is:
   `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`
+- The deferred premature phase is:
+  `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 
 ## Historical Preservation
 - Legacy Bedrock, F21, Lab, and roadmap-overlay files remain preserved for audit.
@@ -43,6 +47,7 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Do not reopen Product Loop L1.15 from active slots.
 - Do not treat the H4 next-step entry as H4 execution.
 - Do not treat the H7 next-step entry as H7 execution.
+- Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
 - Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.
 - The active next block remains `Lab Real Simulation Pack / Filesystem Isolation Readiness Review`.
