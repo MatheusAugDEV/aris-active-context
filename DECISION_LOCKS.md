@@ -4,9 +4,9 @@
 - Status: `lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review_pass`
 - Decision: `pass`
 - Roadmap remediation status: `ready_for_debian_disposable_harness_planning`
-- Latest completed phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
-- Correct current status: `ready_for_debian_disposable_harness_planning`
-- Correct active next phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Correct current status: `ready_for_debian_disposable_harness_readiness_review`
+- Correct active next phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Operator Approval Packet Review remains blocked until disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
 - Previous phase verified: `True`
@@ -128,18 +128,24 @@
 
 These files must be updated at every phase/gate/status transition and must be pushed to GitHub.
 
-## Current Routing (Immutable Until Next Gate)
+## Historical Routing Proof From Canonicality Gate
+
+- Historical snapshot only; not the active current route.
 
 - Latest completed routing/remediation phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
 - Active next phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
 - Deferred/premature phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Deferred phase blocking statement: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review remains deferred until shadow workspace, disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.`
+- Deferred phase blocking statement: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review remains deferred until Debian Disposable Harness Readiness Review, plan-only dry-run commit rehearsal, and related Tier-1 runtime-safety prerequisites are completed.`
 - Anti-regression: `H4/H5/Hx not active current route`
 
 ## Current Authorization (Immutable Until Next Gate)
 
 - No real apply authorization.
+- No real shadow workspace execution authorization.
+- No Debian disposable harness execution authorization.
+- No container/image/VM creation authorization.
+- No apt/dpkg/package-manager execution authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
 - No runtime refactor authorization.

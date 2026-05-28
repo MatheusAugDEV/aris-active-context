@@ -62,7 +62,7 @@ ARIS não promete automação. ARIS prova automação.
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The Shadow Workspace Dry-Run Blueprint Review has passed and the active next phase is `Lab Real Simulation Pack Debian Disposable Harness Planning`.
+- The Debian Disposable Harness Planning phase has passed and the active next phase is `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`.
 - `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the preceding Tier-1 disposable harness and rehearsal phases pass.
 - Roadmap current-position stale warning status: `resolved`.
 

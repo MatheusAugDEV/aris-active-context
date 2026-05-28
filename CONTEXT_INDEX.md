@@ -7,9 +7,9 @@
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 - Canonical roadmap: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment protocol: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Latest completed phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
-- Correct current status: `ready_for_debian_disposable_harness_planning`
-- Correct active next phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Correct current status: `ready_for_debian_disposable_harness_readiness_review`
+- Correct active next phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
@@ -129,7 +129,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack / Debian Disposable Harness Planning`
+- Active next block: `Lab Real Simulation Pack / Debian Disposable Harness Readiness Review`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
