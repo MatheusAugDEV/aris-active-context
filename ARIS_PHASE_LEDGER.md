@@ -944,7 +944,8 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Warnings preserved: `['roadmap_canonical_current_position_stale']`
-- Next recommended phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Corrected next recommended phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
 - Root commit hash: `pending_root_commit`
 - Active-context commit hash: `pending_active_context_commit`
 - Push result: `not_attempted_network_disallowed_by_phase_scope`
