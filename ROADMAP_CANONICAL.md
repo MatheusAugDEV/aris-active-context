@@ -22,7 +22,7 @@ ARIS não promete automação. ARIS prova automação.
 2.6. Tier-1 Runtime Safety Remediation Track
    - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
    - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
-   - The next active phase after this remediation integration is Lab Real Simulation Pack Filesystem Isolation Readiness Review.
+   - The current active phase after Debian Disposable Harness Readiness Review is Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review.
    - Operator Approval Packet Review is explicitly deferred until the preceding hardening and harness phases pass.
    - Cross-cutting gates:
    - state_data_plane_boundary_gate
@@ -62,8 +62,8 @@ ARIS não promete automação. ARIS prova automação.
 - Product Loop Demonstrável: `PASS`
 - Product Loop L1.15 closure hash: `sha256:bd2974c9caf880dc3869eaa5696988d28f54a2f1c37a20d8295ce9b59270a5f0`
 - H0 exists as a materialized design brief and must be reviewed against this roadmap before any later Hardening Base advancement.
-- The Debian Disposable Harness Planning phase has passed and the active next phase is `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`.
-- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the preceding Tier-1 disposable harness and rehearsal phases pass.
+- The Debian Disposable Harness Readiness Review phase has passed and the active next phase is `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`.
+- `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review` is deferred until the plan-only rehearsal and remaining Tier-1 runtime-safety prerequisites pass.
 - Roadmap current-position stale warning status: `resolved`.
 
 ## Absolute Pre-Pilot Lock

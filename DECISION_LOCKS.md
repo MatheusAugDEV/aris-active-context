@@ -4,9 +4,9 @@
 - Status: `lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review_pass`
 - Decision: `pass`
 - Roadmap remediation status: `ready_for_debian_disposable_harness_planning`
-- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
-- Correct current status: `ready_for_debian_disposable_harness_readiness_review`
-- Correct active next phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
+- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
+- Correct current status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
+- Correct active next phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Operator Approval Packet Review remains blocked until disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
 - Previous phase verified: `True`
@@ -32,7 +32,7 @@
 - Dependencies installed: `False`
 - Source of truth policy touched: `False`
 - Roadmap warning status: `resolved`
-- Next recommended phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Next recommended phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
 - Packet section count: `9`
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`

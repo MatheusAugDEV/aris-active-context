@@ -1,11 +1,11 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_debian_disposable_harness_planning_pass`
+- Status: `lab_real_simulation_pack_debian_disposable_harness_readiness_review_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Debian Disposable Harness Planning Completed / Debian Disposable Harness Readiness Review Pending`
-- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
-- Correct current status: `ready_for_debian_disposable_harness_readiness_review`
+- Current state: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review Completed / Plan-Only Dry-Run Commit Rehearsal Review Pending`
+- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
+- Correct current status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -53,21 +53,21 @@
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
-- Next recommended phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
-- Roadmap remediation status: `ready_for_debian_disposable_harness_readiness_review`
+- Next recommended phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
+- Roadmap remediation status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
-- Historical note: the prior governed block after filesystem isolation readiness review was shadow workspace dry-run blueprint review; it is superseded by Debian Disposable Harness Planning.
-- Explicit routing correction: Operator Approval Packet Review was previously premature and remains superseded/deferred by the Tier-1 Runtime Safety Remediation roadmap integration until Debian Disposable Harness Readiness Review, plan-only dry-run commit rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
+- Historical note: the prior governed blocks filesystem isolation readiness, shadow workspace blueprint, and Debian planning are completed prior phases; the current active block is plan-only dry-run commit rehearsal review.
+- Explicit routing correction: Operator Approval Packet Review was previously premature and remains superseded/deferred by the Tier-1 Runtime Safety Remediation roadmap integration until Plan-Only Dry-Run Commit Rehearsal Review and related Tier-1 runtime-safety prerequisites are completed.
 - Anti-regression note: do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
-- Explicit blocking statement: Operator Approval Packet Review remains blocked until Debian Disposable Harness Readiness Review, plan-only dry-run commit rehearsal, and related Tier-1 runtime-safety prerequisites are completed.
+- Explicit blocking statement: Operator Approval Packet Review remains blocked until Plan-Only Dry-Run Commit Rehearsal Review and related Tier-1 runtime-safety prerequisites are completed.
 - Explicit no-authorization statement: No real apply, no real dry-run execution, no approval execution, no runtime refactor, no host filesystem mutation, no Debian disposable harness execution, no container/image/VM creation, no apt/dpkg/package-manager execution, no network, no secrets, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
 - Future Codex instruction: any future Codex prompt must first read active-context and then prefer this corrected routing over older chat memory, older roadmap snippets, stale summaries, or hardening-base phase assumptions.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Debian Disposable Harness Readiness Review`
-- Block objective: continue governed macroblock with plan-only Debian disposable-harness planning, without granting approval or executing runtime.
+- Next active block: `Lab Real Simulation Pack / Plan-Only Dry-Run Commit Rehearsal Review`
+- Block objective: continue governed macroblock with plan-only dry-run commit rehearsal, without granting approval or executing runtime.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
@@ -75,9 +75,9 @@
 - Action runtime mutation allowed now: `False`
 - Backend mutation allowed now: `False`
 ## Canonical Evidence
-- Debian disposable harness planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_planning_summary.json`
-- Debian disposable harness planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_planning.json`
-- Debian disposable harness planning report: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_planning_report.md`
+- Debian disposable harness readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_readiness_review_summary.json`
+- Debian disposable harness readiness review gate: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_readiness_review.json`
+- Debian disposable harness readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_readiness_review_report.md`
 - Debian disposable harness contract: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_contract.json`
 - Debian disposable harness plan: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_plan.json`
 - Debian disposable harness boundary matrix: `artifacts/lab_simulation/lab_real_simulation_pack_debian_disposable_harness_boundary_matrix.json`
