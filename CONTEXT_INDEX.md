@@ -7,10 +7,10 @@
 - Phase ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 - Canonical roadmap: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment protocol: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
-- Correct current status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
-- Correct active next phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
-- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
+- Correct current status: `ready_for_controlled_apply_operator_approval_packet_review`
+- Correct active next phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Next review gate: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Strategic Reset summary: `artifacts/roadmap/strategic_reset_macrostructure_lock_summary.json`
 - Product Loop L1.15 summary: `artifacts/product_loop/product_loop_l1_15_product_loop_closure_summary.json`
 - H1 baseline summary: `artifacts/hardening_base/hardening_base_h1_golden_tasks_baseline_gate_summary.json`
@@ -129,7 +129,7 @@
 - Lab Real Simulation Pack safety/privacy contract: `artifacts/lab_simulation/lab_real_simulation_pack_safety_privacy_contract.json`
 - Active roadmap direction: `aris-active-context/ROADMAP_CANONICAL.md`
 - Active roadmap amendment process: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
-- Active next block: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
+- Active next block: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Pre-pilot lock and active restrictions: `aris-active-context/DECISION_LOCKS.md`
 - Historical milestone ledger: `aris-active-context/ARIS_PHASE_LEDGER.md`
 
@@ -158,51 +158,3 @@
 - Do not treat the Lab Real Simulation Pack next-step entry as execution.
 - Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Operator Approval Packet Review is deferred until disposable harness, plan-only rehearsal, and related Tier-1 runtime-safety prerequisites pass.
-- Lab scenario manifest plan: `artifacts/lab_simulation/lab_real_simulation_pack_scenario_manifest_plan_summary.json`
-- Lab scenario manifest draft: `artifacts/lab_simulation/lab_real_simulation_scenario_manifest_draft.json`
-- Lab scenario taxonomy: `artifacts/lab_simulation/lab_real_simulation_scenario_taxonomy.json`
-- Lab domain coverage matrix: `artifacts/lab_simulation/lab_real_simulation_scenario_domain_coverage_matrix.json`
-- Lab risk class matrix: `artifacts/lab_simulation/lab_real_simulation_scenario_risk_class_matrix.json`
-- Lab hardening mapping: `artifacts/lab_simulation/lab_real_simulation_scenario_hardening_mapping.json`
-- Lab ASI coverage plan: `artifacts/lab_simulation/lab_real_simulation_scenario_asi_coverage_plan.json`
-- Lab materialization rules: `artifacts/lab_simulation/lab_real_simulation_scenario_materialization_rules.json`
-- Lab synthetic document/dataset plan: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_summary.json`
-- Lab controlled workflow plan summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_summary.json`
-- Lab controlled workflow gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan.json`
-- Lab controlled workflow report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_workflow_plan_report.md`
-- Lab expectation mapping plan summary: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan_summary.json`
-- Lab expectation mapping gate: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan.json`
-- Lab expectation mapping report: `artifacts/lab_simulation/lab_real_simulation_pack_expectation_mapping_plan_report.md`
-- Lab synthetic document/dataset gate: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan.json`
-- Lab synthetic document/dataset report: `artifacts/lab_simulation/lab_real_simulation_pack_synthetic_document_dataset_plan_report.md`
-
-- Lab Real Simulation Pack evidence packaging manifest: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_manifest.json`
-- Lab Real Simulation Pack evidence packaging summary: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan_summary.json`
-- Lab Real Simulation Pack evidence packaging gate: `artifacts/lab_simulation/lab_real_simulation_pack_evidence_packaging_plan.json`
-
-- Lab Real Simulation Pack controlled apply planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_summary.json`
-- Lab Real Simulation Pack controlled apply planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning.json`
-- Lab Real Simulation Pack controlled apply planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_planning_report.md`
-- Lab Real Simulation Pack controlled apply gate manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_gate_manifest.json`
-- Lab Real Simulation Pack controlled apply rollback matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_rollback_matrix.json`
-- Lab Real Simulation Pack controlled apply readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_summary.json`
-- Lab Real Simulation Pack controlled apply readiness review gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review.json`
-- Lab Real Simulation Pack controlled apply readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_review_report.md`
-- Lab Real Simulation Pack controlled apply readiness checklist: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_checklist.json`
-- Lab Real Simulation Pack controlled apply readiness risk register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_risk_register.json`
-- Lab Real Simulation Pack controlled apply readiness evidence index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_readiness_evidence_index.json`
-- Lab hardening addendum: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_hardening_addendum_summary.json`
-- Lab state serialization contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_state_serialization_contract.json`
-- Lab canonical hash manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_canonical_json_hash_manifest.json`
-- Lab filesystem isolation contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_filesystem_isolation_contract.json`
-- Lab shadow workspace blueprint: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_shadow_workspace_blueprint.json`
-- ARIS Tier-1 remediation summary: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration_summary.json`
-- ARIS Tier-1 remediation decision: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration.json`
-- ARIS Tier-1 remediation report: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_integration_report.md`
-- ARIS Tier-1 remediation phase insertion matrix: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_phase_insertion_matrix.json`
-- ARIS Tier-1 remediation blocker matrix: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_blocker_matrix.json`
-- ARIS Tier-1 remediation risk register: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_risk_register.json`
-- ARIS Tier-1 remediation gate manifest: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_gate_manifest.json`
-- ARIS Tier-1 remediation source-of-truth patch plan: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_source_of_truth_patch_plan.json`
-- ARIS Tier-1 remediation current position update: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_current_position_update.json`
-- ARIS Tier-1 remediation roadmap delta: `artifacts/roadmap/aris_tier1_runtime_safety_remediation_roadmap_delta.md`
