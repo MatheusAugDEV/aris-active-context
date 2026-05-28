@@ -1,16 +1,16 @@
 # Next Action
 
-## Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review
+## Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review
 
 - Status: `ready_for_next_subphase`
 - Roadmap remediation state: `completed_pass`
-- Latest completed phase: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review`
-- Correct current status: `ready_for_plan_only_dry_run_commit_rehearsal_review`
+- Latest completed phase: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review`
+- Correct current status: `ready_for_controlled_apply_operator_approval_packet_review`
 - Decision dependency: `ARIS Roadmap Tier-1 Runtime Safety Remediation Integration = pass`
-- Readiness dependency: `Lab Real Simulation Pack Debian Disposable Harness Readiness Review = pass`
-- Objective: prepare plan-only dry-run commit rehearsal before any operator approval packet review.
-- Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
-- Scope: plan-only; no Debian harness execution, no container/image/VM creation, no Docker/Podman/Buildah/Nerdctl/containerd execution, no apt/dpkg/package-manager execution, no package installation, no runtime execution, no productive retrieval/runtime activation, no pilot authorization, no product-ready claim, no real data.
+- Readiness dependency: `Lab Real Simulation Pack Plan-Only Dry-Run Commit Rehearsal Review = pass`
+- Objective: prepare controlled apply operator approval packet review before any execution authorization.
+- Next review gate: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
+- Scope: review-only; no real dry-run execution, no real apply, no approval execution, no Debian harness execution, no container/image/VM creation, no Docker/Podman/Buildah/Nerdctl/containerd execution, no apt/dpkg/package-manager execution, no package installation, no runtime execution, no productive retrieval/runtime activation, no pilot authorization, no product-ready claim, no real data.
 - H7 closure state: `hardening_base_h7_closure_gate_pass`
 - External Claude state: `CLOSED_WITH_ACCEPTED_RESIDUALS`
 - Lab design brief alignment state: `completed_pass`
