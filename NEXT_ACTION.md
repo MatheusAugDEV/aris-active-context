@@ -1,14 +1,14 @@
 # Next Action
 
-## Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review
+## Lab Real Simulation Pack Debian Disposable Harness Planning
 
 - Status: `ready_for_next_subphase`
 - Roadmap remediation state: `completed_pass`
-- Latest completed phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
-- Correct current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Latest completed phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
+- Correct current status: `ready_for_debian_disposable_harness_planning`
 - Decision dependency: `ARIS Roadmap Tier-1 Runtime Safety Remediation Integration = pass`
-- Readiness dependency: `Lab Real Simulation Pack Filesystem Isolation Readiness Review = pass`
-- Objective: prepare the shadow workspace dry-run blueprint review before any operator approval packet review.
+- Readiness dependency: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review = pass`
+- Objective: prepare Debian disposable harness planning before any operator approval packet review.
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Scope: plan-only; no runtime execution, no productive retrieval/runtime activation, no pilot authorization, no product-ready claim, no real data.
 - H7 closure state: `hardening_base_h7_closure_gate_pass`

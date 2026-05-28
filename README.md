@@ -30,10 +30,10 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - H3 context engineering baseline is `pass`.
 - H4 observability + cost/time + quota baseline is `pass`.
 - H5 degraded mode + failure UX baseline is `pass`.
-- Latest completed phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
-- Correct current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Latest completed phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
+- Correct current status: `ready_for_debian_disposable_harness_planning`
 - The current active next block is:
-  `Lab Real Simulation Pack / Shadow Workspace Dry-Run Blueprint Review`
+  `Lab Real Simulation Pack / Debian Disposable Harness Planning`
 - The deferred premature phase is:
   `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 
@@ -50,6 +50,6 @@ This directory is the compact live context surface for ARIS continuity, roadmap 
 - Do not route back to Hardening Base H4/H5/Hx when recent remediation evidence shows the Tier-1 Runtime Safety Remediation Track is active.
 - Do not mutate runtime, frontend, voice or audio, action runtime, backend, network, or dependencies from active-context maintenance work unless a later gate explicitly authorizes it.
 - Treat stale current-position text inside preserved or slower-moving roadmap files as non-authoritative whenever it conflicts with the live active-context files.
-- The active next block remains `Lab Real Simulation Pack / Shadow Workspace Dry-Run Blueprint Review`.
+- The active next block remains `Lab Real Simulation Pack / Debian Disposable Harness Planning`.
 - The controlled apply operator approval packet hardening addendum is materialized and plan-only.
 - No runtime, network, secret, or dependency surface was touched.

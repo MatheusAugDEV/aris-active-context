@@ -1,11 +1,11 @@
 # Active Context Canonical State
 
 ## Status
-- Status: `lab_real_simulation_pack_filesystem_isolation_readiness_review_pass`
+- Status: `lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review_pass`
 - Decision: `pass`
-- Current state: `Lab Real Simulation Pack Filesystem Isolation Readiness Review Completed / Shadow Workspace Dry-Run Blueprint Review Pending`
-- Latest completed phase: `Lab Real Simulation Pack Filesystem Isolation Readiness Review`
-- Correct current status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Current state: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review Completed / Debian Disposable Harness Planning Pending`
+- Latest completed phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
+- Correct current status: `ready_for_debian_disposable_harness_planning`
 - Active roadmap authority: `aris-active-context/ROADMAP_CANONICAL.md`
 - Roadmap amendment authority: `aris-active-context/ROADMAP_AMENDMENT_PROTOCOL.md`
 
@@ -37,8 +37,8 @@
 - Generic action runtime activated: `False`
 
 ## Phase Result
-- Filesystem isolation readiness review is complete and the next governed block is shadow workspace dry-run blueprint review.
-- Deferred operator approval packet review status: `blocked_until_shadow_workspace_dry_run_blueprint_review_and_follow_on_prerequisites`
+- Shadow workspace dry-run blueprint review is complete and the next governed block is Debian Disposable Harness Planning.
+- Deferred operator approval packet review status: `blocked_until_debian_disposable_harness_planning_and_follow_on_prerequisites`
 - Deferred phase: `Lab Real Simulation Pack Controlled Apply Operator Approval Packet Review`
 - Previous phase verified: `True`
 - Previous readiness status verified: `True`
@@ -52,8 +52,8 @@
 - Approval packet checklist item count: `18`
 - Risk acknowledgement entry count: `9`
 - Evidence brief entry count: `12`
-- Next recommended phase: `Lab Real Simulation Pack Shadow Workspace Dry-Run Blueprint Review`
-- Roadmap remediation status: `ready_for_shadow_workspace_dry_run_blueprint_review`
+- Next recommended phase: `Lab Real Simulation Pack Debian Disposable Harness Planning`
+- Roadmap remediation status: `ready_for_debian_disposable_harness_planning`
 ## Active Direction
 - Roadmap Canônico ARIS V1.2 remains the active planning direction.
 - Historical Bedrock, F21, Lab, and legacy roadmap materials remain preserved as audit trail only.
@@ -65,8 +65,8 @@
 - Future Codex instruction: any future Codex prompt must first read active-context and then prefer this corrected routing over older chat memory, older roadmap snippets, stale summaries, or hardening-base phase assumptions.
 - If `ROADMAP_CANONICAL.md` current-position text conflicts with these live files, stale-context detection must prefer the live active-context state until a later amendment-safe cleanup addresses the stale paragraph.
 ## Active Next Phase
-- Next active block: `Lab Real Simulation Pack / Shadow Workspace Dry-Run Blueprint Review`
-- Block objective: continue governed macroblock with plan-only shadow-workspace review, without granting approval or executing runtime.
+- Next active block: `Lab Real Simulation Pack / Debian Disposable Harness Planning`
+- Block objective: continue governed macroblock with plan-only Debian disposable-harness planning, without granting approval or executing runtime.
 - Block class: `simulation_pack`
 - Runtime mutation allowed now: `False`
 - Frontend mutation allowed now: `False`
