@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_simulation_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Planning`
+- Active next phase class: `planning_gate`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -59,3 +59,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Operator approval request simulation readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review_summary.json`
 - Operator approval request simulation readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review_report.md`
 - Operator approval request simulation readiness review gaps: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review_gaps.json`
+- Operator approval request simulation final review gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_final_review_gate.json`
+- Operator approval request simulation final review gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_final_review_gate_summary.json`
+- Operator approval request simulation final review gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_final_review_gate_report.md`

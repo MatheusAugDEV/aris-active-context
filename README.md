@@ -13,11 +13,11 @@
 - No GitHub active-context sync = no canonical PASS.
 
 ## Live State Summary
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`
-- Active next phase class: `review_gate_only`
-- Operator Approval Request Simulation Readiness Review completed with decision `pass`.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_simulation_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Planning`
+- Active next phase class: `planning_gate`
+- Operator Approval Request Simulation Final Review Gate completed with decision `pass`.
 - The prior readiness review remains historical `blocked` evidence and was not rewritten.
 - Roadmap amendment required: `True`
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`; Bedrock gate remains non-executable.

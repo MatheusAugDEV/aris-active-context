@@ -25,8 +25,9 @@ ARIS nao promete automacao. ARIS prova automacao.
    - The Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate has passed as review-only.
    - The Controlled Apply Dry-Run Operator Approval Request Simulation Planning phase has passed as planning-only and synthetic-only.
    - The Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review has passed as review-only and synthetic-only.
+   - The Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate has passed as review-only and synthetic-only.
    - Roadmap amendment required: `True`
-   - Explicit amendment: before any future route can reach real approval-facing or execution-facing behavior, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`.
+   - Explicit amendment: before any future route can reach real approval-facing or execution-facing behavior, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Planning`.
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -36,8 +37,9 @@ ARIS nao promete automacao. ARIS prova automacao.
 ## Current Canonical Position
 Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
 - Operator approval request simulation planning then produced a synthetic-only simulation plan without contacting a real operator, reading real human input, or granting authorization.
-- Operator approval request simulation readiness review then verified the synthetic pack remains false-approval resistant and advanced only to a final review gate.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate`
+- Operator approval request simulation readiness review then verified the synthetic pack remains false-approval resistant.
+- Operator approval request simulation final review then revalidated the full synthetic chain and advanced only to conservative operator approval-response simulation planning.
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Planning`
 - Bedrock gate remains non-executable and product promotion remains blocked.
 - H4/H5/Hx not active current route.
 
