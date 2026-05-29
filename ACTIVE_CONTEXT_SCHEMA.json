@@ -327,12 +327,15 @@
       "items": {
         "additionalProperties": false,
         "properties": {
-          "decision": {
-            "enum": [
-              "pass"
-            ],
-            "type": "string"
-          },
+        "decision": {
+          "enum": [
+            "pass",
+            "blocked",
+            "warn",
+            "fail"
+          ],
+          "type": "string"
+        },
           "phase": {
             "type": "string"
           },

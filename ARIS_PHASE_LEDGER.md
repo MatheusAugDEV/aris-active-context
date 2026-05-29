@@ -3,15 +3,15 @@ This file is historical ledger only and is not the canonical current live state.
 # ARIS Phase Ledger
 
 ## Latest Execution Entry
-- Phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_pass`
-- Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
-- Active next phase class: `readiness_gate`
-- Operator Approval Response Evidence Packaging Planning executed as planning-only and consolidated the operator authorization packet, approval request simulation, and approval response simulation chains into a deterministic evidence package plan.
-- The planning pack created a closed schema and a source manifest while keeping the package incomplete by design and preserving `synthetic_approved_response` as fixture-only rather than authorization.
+- Phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review_blocked`
+- Decision: `blocked`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
+- Current status: `blocked_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate`
+- Active next phase class: `planning_gate`
+- Operator Approval Response Evidence Packaging Readiness Review executed as review-only and verified that the package plan, schema, and source manifest remain synthetic-only and non-authorizing.
+- The readiness review blocked the route because the source artifact manifest omitted the required evidence-packaging-planning chain, even though the packet, request-side, and response-side chains remained verified.
 - The previously blocked readiness review remains historical blocked evidence.
 - Authorization granted now: `False`
 - Real operator contacted now: `False`
