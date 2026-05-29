@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Planning`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_simulation_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review`
-- Active next phase class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate`
+- Active next phase class: `review_gate_only`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -28,6 +28,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - README: `README.md`
 
 ## Current Artifact Routes (external_to_active_context_repo)
+- Response simulation readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_readiness_review.json`
+- Response simulation readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_readiness_review_summary.json`
+- Response simulation readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_readiness_review_report.md`
+- Response simulation readiness review gaps: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_readiness_review_gaps.json`
 - Response simulation planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_planning.json`
 - Response simulation planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_planning_summary.json`
 - Response simulation planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_planning_report.md`

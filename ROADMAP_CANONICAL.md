@@ -27,8 +27,9 @@ ARIS nao promete automacao. ARIS prova automacao.
    - The Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review has passed as review-only and synthetic-only.
    - The Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate has passed as review-only and synthetic-only.
    - The Controlled Apply Dry-Run Operator Approval Response Simulation Planning phase has passed as planning-only and synthetic-only.
+   - The Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review has passed as review-only and synthetic-only.
    - Roadmap amendment required: `True`
-   - Explicit amendment: before any future route can reach real approval-facing or execution-facing behavior, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review`.
+   - Explicit amendment: before any future route can reach real approval-facing or execution-facing behavior, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate`.
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -41,7 +42,8 @@ Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
 - Operator approval request simulation readiness review then verified the synthetic pack remains false-approval resistant.
 - Operator approval request simulation final review then revalidated the full synthetic chain and advanced only to conservative operator approval-response simulation planning.
 - Operator approval response simulation planning then produced only synthetic response fixtures, a closed schema, and a conservative state matrix while keeping every scenario non-authorizing.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review`
+- Operator approval response simulation readiness review then verified that all eight synthetic response scenarios remain fixture-only, false-approval resistant, and unable to flip execution flags.
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate`
 - Bedrock gate remains non-executable and product promotion remains blocked.
 - H4/H5/Hx not active current route.
 
