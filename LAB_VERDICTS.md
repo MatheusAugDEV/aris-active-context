@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_harness_correction_readiness_review | correction_readiness_review_pass | No | controlled apply dry-run harness correction readiness review artifact pack | Review-only verification pack created; no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_harness_correction_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + correction readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: correction readiness review consumed the correction pack, verified the inherited blockers as materially resolved, and advanced only to execution-authorization planning while keeping Bedrock non-executable and product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: correction readiness review consumed the correction pack, verified the inherited blockers as materially resolved, and advanced only to execution-authorization planning while keeping Bedrock non-executable and product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
