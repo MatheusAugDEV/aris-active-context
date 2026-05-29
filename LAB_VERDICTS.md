@@ -1,5 +1,23 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Readiness Review — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_operator_authorization_packet_readiness_review | operator_authorization_packet_readiness_review_pass | No | controlled apply dry-run operator authorization packet readiness review artifact pack | Review-only verification pack created; no real operator approval request/capture/grant and no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_operator_authorization_packet_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + operator authorization packet readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: operator authorization packet readiness review consumed the planning-only future packet template and schema, verified they remain default-not-requested, placeholder-only, and non-authorizing, and advanced only to a final review gate while keeping Bedrock non-executable and product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: operator authorization packet readiness review consumed the planning-only future packet template and schema, verified they remain default-not-requested, placeholder-only, and non-authorizing, and advanced only to a final review gate while keeping Bedrock non-executable and product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Planning — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
