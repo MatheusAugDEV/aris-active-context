@@ -1,5 +1,24 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_operator_approval_request_simulation_planning | operator_approval_request_simulation_planning_pass | No | controlled apply dry-run operator approval request simulation planning artifact pack | Planning-only synthetic-only simulation plan created; no real operator contact, no real approval request/capture, and no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_operator_approval_request_simulation_planning.bedrock_exception | bedrock_preparation_exception | No | active-context + operator approval request simulation planning artifact pack | BEDROCK_PREPARATION_EXCEPTION: operator approval request simulation planning consumed the final packet review, produced only synthetic-only planning artifacts for a later simulated request flow, and advanced only to readiness review while Bedrock stayed non-executable and product promotion stayed blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: operator approval request simulation planning consumed the final packet review, produced only synthetic-only planning artifacts for a later simulated request flow, and advanced only to readiness review while Bedrock stayed non-executable and product promotion stayed blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- real_operator_contacted_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

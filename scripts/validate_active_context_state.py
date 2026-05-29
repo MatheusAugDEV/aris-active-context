@@ -104,12 +104,12 @@ def main() -> None:
     _validate_schema(schema)
     _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
 
-    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_pass", "unexpected status")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_planning_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_operator_approval_request_simulation_planning", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning", "unexpected next phase")
-    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next phase class")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "readiness_gate", "unexpected next phase class")
     _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
     _require(state["schema_version"] == "2.1", "schema_version must remain 2.1")
 
@@ -130,24 +130,24 @@ def main() -> None:
     )
     _require(state["current_live_route"]["current_status"] == state["current_status"], "cross-field current_status drift detected")
     _require(state["current_live_route"]["status"] == state["status"], "cross-field status drift detected")
-    _require(state["next_action"]["phase_class"] == "planning_gate", "unexpected next_action phase_class")
-    _require(state["next_action"]["planning_only"] is True, "next_action planning_only must be true")
-    _require(state["next_action"]["review_only"] is False, "next_action review_only must be false")
+    _require(state["next_action"]["phase_class"] == "readiness_gate", "unexpected next_action phase_class")
+    _require(state["next_action"]["planning_only"] is False, "next_action planning_only must be false")
+    _require(state["next_action"]["review_only"] is True, "next_action review_only must be true")
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_pass",
-        "ready_for_controlled_apply_dry_run_operator_approval_request_simulation_planning",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
-        "Operator Authorization Packet Final Review Gate executed as review-only and re-verified that the future packet template and schema remain `not_requested`, placeholder-only, and non-authorizing.",
+        "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_planning_pass",
+        "ready_for_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
+        "Operator Approval Request Simulation Planning executed as planning-only and produced a synthetic-only simulation plan and schema for a later review gate.",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
-        "Planning-only: `true`",
-        "Review-only: `false`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
+        "Planning-only: `false`",
+        "Review-only: `true`",
         "Execution authorization: `false`",
     )
     _mirror_contains(
@@ -155,38 +155,38 @@ def main() -> None:
         "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown files are non-authoritative mirrors/docs/history",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "historical ledger only",
         "ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
     )
     _mirror_contains(
         ROOT / "README.md",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown drift against JSON is a blocking error",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Live routing is read from ACTIVE_CONTEXT_STATE.json",
         "roadmap sequence only, not the canonical live state",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
         "Roadmap amendment required: `True`",
     )
     _mirror_contains(
         ROOT / "LAB_VERDICTS.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate — Bedrock Preparation Exception Record",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning — Bedrock Preparation Exception Record",
         "BEDROCK_PREPARATION_EXCEPTION:",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review",
     )
 
     _check_governance_contracts_json_first()
@@ -196,7 +196,7 @@ def main() -> None:
             {
                 "decision": "pass",
                 "validated_paths": [str(p) for p in MIRROR_PATHS] + [str(ROOT / "LAB_VERDICTS.md")] + [str(p) for p in GOVERNANCE_CONTRACT_PATHS],
-                "review_result": "operator authorization packet final review gate pass",
+                "review_result": "operator approval request simulation planning pass",
             },
             indent=2,
         )

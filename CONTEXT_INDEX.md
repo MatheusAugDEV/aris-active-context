@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_planning`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review`
+- Active next phase class: `readiness_gate`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -50,3 +50,8 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Operator authorization packet final review gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_report.md`
 - Operator authorization packet template: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_template.json`
 - Operator authorization packet schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_schema.json`
+- Operator approval request simulation planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_planning.json`
+- Operator approval request simulation planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_planning_summary.json`
+- Operator approval request simulation planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_planning_report.md`
+- Operator approval request simulation plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_plan.json`
+- Operator approval request simulation schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_request_simulation_schema.json`
