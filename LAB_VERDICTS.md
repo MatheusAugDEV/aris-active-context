@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_harness_readiness_review | blocked_review_gate | No | controlled apply dry-run harness readiness review artifact pack | Review-only verdict; no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_harness_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: readiness review consumed existing Lab/Bedrock verdicts, found the harness planning pack incomplete for safe advancement, and blocked further advancement while keeping Bedrock non-executable and product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: readiness review consumed existing Lab/Bedrock verdicts, found the harness planning pack incomplete for safe advancement, and blocked further advancement while keeping Bedrock non-executable and product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

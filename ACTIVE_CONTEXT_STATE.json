@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
-  "active_next_phase_class": "readiness_gate",
+  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate",
+  "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -155,18 +155,18 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
-    "active_next_phase_class": "readiness_gate",
-    "current_status": "ready_for_controlled_apply_dry_run_harness_readiness_review",
-    "decision": "pass",
+    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "blocked_for_controlled_apply_dry_run_harness_planning_correction",
+    "decision": "blocked",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_pass"
+    "status": "lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_blocked"
   },
-  "current_status": "ready_for_controlled_apply_dry_run_harness_readiness_review",
-  "decision": "pass",
+  "current_status": "blocked_for_controlled_apply_dry_run_harness_planning_correction",
+  "decision": "blocked",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
     "json_state_mismatch": "fail_closed",
@@ -180,26 +180,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Active-Context Anti-Corruption Hardening Gate"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning"
   },
   "last_transition": {
-    "decision": "pass",
-    "from_phase": "ARIS Active-Context Anti-Corruption Hardening Gate",
+    "decision": "blocked",
+    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning",
+  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
-    "deferred_phase_reason": "Controlled Apply Dry-Run Harness Readiness Review is the next readiness gate and does not authorize real dry-run execution or real apply.",
+    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate",
+    "deferred_phase_reason": "Planning Correction Gate is required because readiness review found the harness plan incomplete for safe advancement.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -212,17 +212,17 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "Anti-Corruption Hardening Gate remains carried forward. Schema stays structural (v2.1) and JSON-first governance remains mandatory.",
-      "Controlled Apply Dry-Run Harness Planning passed as planning-only and did not execute a real dry-run, real apply, or approval execution.",
-      "The next phase is a readiness review only and does not authorize real dry-run execution or real apply.",
+      "Controlled Apply Dry-Run Harness Readiness Review executed as review-only and did not execute a real dry-run, real apply, or approval execution.",
+      "The reviewed planning pack is incomplete and a correction gate is required before any execution-authorization planning.",
       "Bedrock remains non-executable and product promotion remains blocked.",
-      "H4/H5/Hx not active current route."
+      "H4/H5/Hx not active current route.",
+      "Roadmap amendment required: True."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review",
-    "phase_class": "readiness_gate",
-    "planning_only": false,
-    "review_only": true,
+    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -262,7 +262,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_pass",
+  "status": "lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_blocked",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

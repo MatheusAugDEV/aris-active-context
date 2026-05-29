@@ -5,14 +5,15 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
-- Current status: `ready_for_controlled_apply_dry_run_harness_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
-- Active next phase class: `readiness_gate`
-- Planning-only: `false`
-- Readiness review only: `true`
-- Controlled Apply Dry-Run Harness Planning passed as planning-only and did not execute a real dry-run, real apply, or approval execution.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
+- Current status: `blocked_for_controlled_apply_dry_run_harness_planning_correction`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+- Active next phase class: `planning_gate`
+- Planning-only: `true`
+- Review-only: `false`
+- Controlled Apply Dry-Run Harness Readiness Review completed with decision `blocked`.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
+- Roadmap amendment required: `True`
 - H4/H5/Hx not active current route.
 
 ## Governance Artifact Routes (local to this repo)
@@ -29,15 +30,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - README: `README.md`
 
 ## Current Artifact Routes (external_to_active_context_repo)
-- These artifact paths are reference routes to files in the ARIS project workspace.
-- Classification: `external_to_active_context_repo`
-- Controlled apply dry-run harness planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_summary.json`
-- Controlled apply dry-run harness planning gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning.json`
-- Controlled apply dry-run harness planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_report.md`
-- Controlled apply operator approval packet review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_summary.json`
-- Controlled apply operator approval packet review gate: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review.json`
-- Controlled apply operator approval packet review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_operator_approval_packet_review_report.md`
-
-## Historical / Evidence Only
-- Earlier filesystem isolation, shadow workspace, Debian planning, Debian readiness, plan-only rehearsal, and operator approval packet artifacts remain evidence only.
-- Older routes must not be read as active current routing.
+- Readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review.json`
+- Readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_summary.json`
+- Readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_report.md`
+- Planning decision reviewed: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning.json`
+- Planning summary reviewed: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_summary.json`
+- Planning report reviewed: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_report.md`

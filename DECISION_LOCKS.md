@@ -11,15 +11,17 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
-- Current status: `ready_for_controlled_apply_dry_run_harness_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
-- Active next phase class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_blocked`
+- Current status: `blocked_for_controlled_apply_dry_run_harness_planning_correction`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+- Active next phase class: `planning_gate`
 - H4/H5/Hx: `not active current route`
-- Controlled Apply Dry-Run Harness Planning passed as planning-only and did not execute a real dry-run, real apply, or approval execution.
-- The next phase is readiness-review only and does not authorize real dry-run execution or real apply.
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
+- False readiness blocked: `True`
+- Dangerous flags verified false: `True`
+- Roadmap amendment required: `True`
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
@@ -27,7 +29,6 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No host filesystem mutation authorization.
 - No Debian disposable harness execution authorization.
 - No container/image/VM creation authorization.
-- No Docker/Podman/Buildah/Nerdctl/containerd execution authorization.
 - No apt/dpkg/package-manager execution authorization.
 - No package installation authorization.
 - No product/pilot/customer activation authorization.
@@ -35,8 +36,3 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No external LLM/API authorization.
 - No dependency change authorization.
 - No frontend/backend/action-runtime/audio mutation authorization.
-
-## Historical / Proof-Only Entries
-- Historical routing proof from prior gates remains historical only.
-- Do not use historical proof for current routing.
-- Historical snapshot values may include earlier phases, but they are superseded by `ACTIVE_CONTEXT_STATE.json`.
