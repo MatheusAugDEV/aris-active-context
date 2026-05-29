@@ -13,13 +13,13 @@
 - No GitHub active-context sync = no canonical PASS.
 
 ## Live State Summary
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
-- Current status: `blocked_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate`
-- Active next phase class: `planning_gate`
-- Operator Approval Response Evidence Packaging Readiness Review completed with decision `blocked`.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate`
+- Current status: `ready_for_operator_approval_response_evidence_packaging_planning_correction_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
+- Active next phase class: `readiness_gate`
+- The planning correction gate completed with decision `pass`.
 - The prior readiness review remains historical `blocked` evidence and was not rewritten.
-- Roadmap amendment required: `True`
+- Roadmap amendment required: `False`
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`; Bedrock gate remains non-executable.
 - H4/H5/Hx not active current route.
 

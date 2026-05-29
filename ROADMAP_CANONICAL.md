@@ -31,8 +31,9 @@ ARIS nao promete automacao. ARIS prova automacao.
    - The Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate has passed as review-only and synthetic-only.
    - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning phase has passed as planning-only and synthetic-only.
    - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review completed with decision `blocked` because the source artifact manifest omitted the required evidence-packaging-planning chain.
-   - Roadmap amendment required: `True`
-   - Explicit amendment: before any future route can reach real approval-facing or execution-facing behavior, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate`.
+   - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate has now passed as planning-only and manifest-coverage-only.
+   - Roadmap amendment required: `False`
+   - Explicit amendment applied: before any future route can reach an evidence-packaging final review gate, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`.
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -41,15 +42,9 @@ ARIS nao promete automacao. ARIS prova automacao.
 
 ## Current Canonical Position
 Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
-- Operator approval request simulation planning then produced a synthetic-only simulation plan without contacting a real operator, reading real human input, or granting authorization.
-- Operator approval request simulation readiness review then verified the synthetic pack remains false-approval resistant.
-- Operator approval request simulation final review then revalidated the full synthetic chain and advanced only to conservative operator approval-response simulation planning.
-- Operator approval response simulation planning then produced only synthetic response fixtures, a closed schema, and a conservative state matrix while keeping every scenario non-authorizing.
-- Operator approval response simulation readiness review then verified that all eight synthetic response scenarios remain fixture-only, false-approval resistant, and unable to flip execution flags.
-- Operator approval response simulation final review then revalidated the planning-to-readiness chain and advanced only to conservative response-evidence packaging planning.
-- Operator approval response evidence packaging planning then consolidated the packet, request-side, and response-side chains into a synthetic-only package plan, schema, and source manifest without declaring the package complete.
-- Operator approval response evidence packaging readiness review then blocked the route because the source artifact manifest still omitted the required evidence-packaging-planning chain.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate`
+- The historical readiness review remains blocked because the original source manifest omitted the evidence-packaging-planning chain.
+- The planning correction gate materialized a corrected manifest and correction matrix without authorizing any real operator or execution behavior.
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
 - Bedrock gate remains non-executable and product promotion remains blocked.
 - H4/H5/Hx not active current route.
 

@@ -104,12 +104,12 @@ def main() -> None:
     _validate_schema(schema)
     _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
 
-    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review_blocked", "unexpected status")
-    _require(state["decision"] == "blocked", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review", "unexpected latest completed phase")
-    _require(state["current_status"] == "blocked_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate", "unexpected next phase")
-    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next phase class")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_gate_pass", "unexpected status")
+    _require(state["decision"] == "pass", "unexpected decision")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_operator_approval_response_evidence_packaging_planning_correction_readiness_review", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "readiness_gate", "unexpected next phase class")
     _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
     _require(state["schema_version"] == "2.1", "schema_version must remain 2.1")
 
@@ -121,72 +121,81 @@ def main() -> None:
             _require(value is False, f"authorization flag {key} must be false")
 
     _require(
-        state["active_next_phase"] == state["current_live_route"]["active_next_phase"] == state["next_action"]["phase"] == state["locks"]["deferred_phase"],
+        state["active_next_phase"]
+        == state["current_live_route"]["active_next_phase"]
+        == state["next_action"]["phase"]
+        == state["locks"]["deferred_phase"],
         "cross-field active_next_phase drift detected",
     )
     _require(
-        state["latest_completed_phase"] == state["current_live_route"]["latest_completed_phase"] == state["history_summary"]["latest_execution_phase"] == state["last_transition"]["to_phase"],
+        state["latest_completed_phase"]
+        == state["current_live_route"]["latest_completed_phase"]
+        == state["history_summary"]["latest_execution_phase"]
+        == state["last_transition"]["to_phase"],
         "cross-field latest_completed_phase drift detected",
     )
     _require(state["current_live_route"]["current_status"] == state["current_status"], "cross-field current_status drift detected")
     _require(state["current_live_route"]["status"] == state["status"], "cross-field status drift detected")
-    _require(state["next_action"]["phase_class"] == "planning_gate", "unexpected next_action phase_class")
-    _require(state["next_action"]["planning_only"] is True, "next_action planning_only must be true")
-    _require(state["next_action"]["review_only"] is False, "next_action review_only must be false")
+    _require(state["next_action"]["phase_class"] == "readiness_gate", "unexpected next_action phase_class")
+    _require(state["next_action"]["planning_only"] is False, "next_action planning_only must be false")
+    _require(state["next_action"]["review_only"] is True, "next_action review_only must be true")
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review_blocked",
-        "blocked_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
-        "Operator Approval Response Evidence Packaging Readiness Review executed as review-only and confirmed that the planned evidence package remains synthetic-only, non-authorizing, and incomplete by design.",
+        "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_gate_pass",
+        "ready_for_operator_approval_response_evidence_packaging_planning_correction_readiness_review",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+        "Roadmap amendment required: `False`",
+        "Corrected source manifest",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
-        "Planning-only: `true`",
-        "Review-only: `false`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+        "Review-only: `true`",
         "Execution authorization: `false`",
+        "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown files are non-authoritative mirrors/docs/history",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+        "Corrected source manifest",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "historical ledger only",
         "ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
     )
     _mirror_contains(
         ROOT / "README.md",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown drift against JSON is a blocking error",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+        "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Live routing is read from ACTIVE_CONTEXT_STATE.json",
         "roadmap sequence only, not the canonical live state",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
-        "Roadmap amendment required: `True`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+        "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "LAB_VERDICTS.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review — Bedrock Preparation Exception Record",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate — Bedrock Preparation Exception Record",
         "BEDROCK_PREPARATION_EXCEPTION:",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
     )
 
     _check_governance_contracts_json_first()
@@ -196,7 +205,7 @@ def main() -> None:
             {
                 "decision": "pass",
                 "validated_paths": [str(p) for p in MIRROR_PATHS] + [str(ROOT / "LAB_VERDICTS.md")] + [str(p) for p in GOVERNANCE_CONTRACT_PATHS],
-                "review_result": "operator approval response evidence packaging readiness review blocked",
+                "review_result": "planning correction gate pass",
             },
             indent=2,
         )

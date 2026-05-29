@@ -1,5 +1,23 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.operator_approval_response_evidence_packaging_planning_correction_gate | operator_approval_response_evidence_packaging_planning_correction_gate_pass | No | planning correction manifest coverage artifact pack | Planning-only correction pack created; no real operator contact, no approval request/capture/grant, and no real dry-run/apply/approval execution |
+| lab_simulation.operator_approval_response_evidence_packaging_planning_correction_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + planning correction artifact pack | BEDROCK_PREPARATION_EXCEPTION: the correction gate preserved the blocked readiness review, added explicit evidence-packaging-planning chain coverage in a corrected manifest, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: planning correction gate preserved the blocked readiness review, materialized deterministic manifest-coverage correction artifacts for the missing evidence-packaging-planning chain, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
