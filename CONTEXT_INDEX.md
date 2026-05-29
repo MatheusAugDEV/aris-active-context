@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Readiness Review`
-- Current status: `ready_for_controlled_apply_dry_run_operator_authorization_packet_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning`
+- Active next phase class: `planning_gate`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -45,5 +45,8 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Operator authorization packet readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_readiness_review.json`
 - Operator authorization packet readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_readiness_review_summary.json`
 - Operator authorization packet readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_readiness_review_report.md`
+- Operator authorization packet final review gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate.json`
+- Operator authorization packet final review gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_summary.json`
+- Operator authorization packet final review gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_report.md`
 - Operator authorization packet template: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_template.json`
 - Operator authorization packet schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_schema.json`

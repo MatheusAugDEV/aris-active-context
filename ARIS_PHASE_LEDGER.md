@@ -3,15 +3,15 @@ This file is historical ledger only and is not the canonical current live state.
 # ARIS Phase Ledger
 
 ## Latest Execution Entry
-- Phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Readiness Review`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_readiness_review_pass`
+- Phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_authorization_packet_final_review_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Readiness Review`
-- Current status: `ready_for_controlled_apply_dry_run_operator_authorization_packet_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
-- Active next phase class: `review_gate_only`
-- Operator Authorization Packet Readiness Review executed as review-only and verified the future packet template and schema remain default `not_requested`, placeholder-only, and non-authorizing.
-- The review confirmed the packet does not include `approved_by`, `signed_by`, `consent_granted`, or real approval capture markers.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_request_simulation_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Request Simulation Planning`
+- Active next phase class: `planning_gate`
+- Operator Authorization Packet Final Review Gate executed as review-only and re-verified the future packet template and schema remain default `not_requested`, placeholder-only, and non-authorizing.
+- The review confirmed the packet does not include `approved_by`, `signed_by`, `consent_granted`, `authorization_granted`, or real approval capture markers.
 - The previously blocked readiness review remains historical blocked evidence.
 - Authorization granted now: `False`
 - Operator approval requested now: `False`
