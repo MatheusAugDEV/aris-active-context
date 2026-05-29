@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
+- Active next phase class: `readiness_gate`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -28,6 +28,12 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - README: `README.md`
 
 ## Current Artifact Routes (external_to_active_context_repo)
+- Response evidence packaging planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning.json`
+- Response evidence packaging planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_summary.json`
+- Response evidence packaging planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_report.md`
+- Response evidence package plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_package_plan.json`
+- Response evidence package schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_package_schema.json`
+- Response evidence source manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_source_manifest.json`
 - Response simulation final review gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate.json`
 - Response simulation final review gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate_summary.json`
 - Response simulation final review gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate_report.md`

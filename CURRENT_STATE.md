@@ -3,12 +3,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate_pass`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_pass`
 - Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
+- Active next phase class: `readiness_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized: `False`
 - Real apply authorized: `False`
@@ -19,10 +19,10 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Schema version: `2.1`
 - Markdown files are derived mirrors or history, not authoritative live state.
 
-## Operator Approval Response Simulation Final Review Gate Result
-- Operator Approval Response Simulation Final Review Gate executed as review-only and revalidated the full `planning -> readiness review -> final review` evidence chain for the synthetic response pack.
-- The final review confirmed that all eight response scenarios remain fixture-only, non-contacting, non-capturing, non-authorizing, and unable to flip any execution flag.
-- `synthetic_approved_response` remained explicitly fixture-only and did not become real approval, real consent, real signature, or execution authorization.
+## Operator Approval Response Evidence Packaging Planning Result
+- Operator Approval Response Evidence Packaging Planning executed as planning-only and consolidated the operator authorization packet, approval request simulation, and approval response simulation chains into a deterministic evidence packaging plan.
+- The planning pack created a closed evidence packaging schema and a source artifact manifest with required paths and hashes for the reviewed synthetic approval chain.
+- The planned package remained explicitly synthetic-only and non-authorizing, and `synthetic_approved_response` remained fixture-only rather than real approval, real consent, real signature, or execution authorization.
 - The prior blocked readiness review remains historical evidence and was not rewritten as a pass.
 - Authorization granted now: `False`
 - Operator approval requested now: `False`
@@ -30,10 +30,16 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Real operator contacted now: `False`
 - Dangerous flags verified false: `True`
 - Roadmap amendment required: `True`
-- Next phase explanation: `The next phase should conservatively plan how the fully reviewed synthetic response evidence would be packaged for later review without contacting a real operator, capturing approval, granting authorization, or enabling execution.`
+- Next phase explanation: `The next phase should review the planned evidence package for manifest coverage, synthetic-only preservation, and non-authorizing semantics before any later packaging review gate is considered.`
 - No real apply, no real dry-run execution, no approval execution, no runtime mutation, no host filesystem mutation, no Debian harness execution, no container/image/VM creation, no package-manager execution, no product/pilot/customer activation, no secrets, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
 
 ## Canonical Evidence
+- Operator approval response evidence packaging planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning.json`
+- Operator approval response evidence packaging planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_summary.json`
+- Operator approval response evidence packaging planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_report.md`
+- Operator approval response evidence package plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_package_plan.json`
+- Operator approval response evidence package schema: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_package_schema.json`
+- Operator approval response evidence source manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_source_manifest.json`
 - Operator approval response simulation final review gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate.json`
 - Operator approval response simulation final review gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate_summary.json`
 - Operator approval response simulation final review gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_simulation_final_review_gate_report.md`

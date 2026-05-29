@@ -1,5 +1,24 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning | operator_approval_response_evidence_packaging_planning_pass | No | controlled apply dry-run operator approval response evidence packaging planning artifact pack | Planning-only evidence package plan, schema, and source manifest created; no real operator contact, no real approval request/capture/grant, and no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning.bedrock_exception | bedrock_preparation_exception | No | active-context + operator approval response evidence packaging planning artifact pack | BEDROCK_PREPARATION_EXCEPTION: operator approval response evidence packaging planning consumed the fully reviewed operator authorization, request simulation, and response simulation chains, produced only synthetic-only packaging artifacts and a source manifest for future review, and advanced only to readiness review while Bedrock stayed non-executable and product promotion stayed blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: operator approval response evidence packaging planning consumed the fully reviewed operator authorization, request simulation, and response simulation chains, produced only synthetic-only packaging artifacts and a source manifest for future review, and advanced only to readiness review while Bedrock stayed non-executable and product promotion stayed blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- real_operator_contacted_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
