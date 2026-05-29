@@ -13,11 +13,12 @@
 - No GitHub active-context sync = no canonical PASS.
 
 ## Live State Summary
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
-- Current status: `blocked_for_controlled_apply_dry_run_harness_planning_correction`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
-- Active next phase class: `planning_gate`
-- Controlled Apply Dry-Run Harness Readiness Review completed with decision `blocked`.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+- Current status: `ready_for_controlled_apply_dry_run_harness_correction_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review`
+- Active next phase class: `readiness_gate`
+- Controlled Apply Dry-Run Harness Planning Correction Gate completed with decision `pass`.
+- The prior readiness review remains historical `blocked` evidence and was not rewritten.
 - Roadmap amendment required: `True`
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`; Bedrock gate remains non-executable.
 - H4/H5/Hx not active current route.

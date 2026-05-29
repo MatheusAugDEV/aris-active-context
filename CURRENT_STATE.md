@@ -3,12 +3,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_blocked`
-- Decision: `blocked`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
-- Current status: `blocked_for_controlled_apply_dry_run_harness_planning_correction`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
-- Active next phase class: `planning_gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_correction_gate_pass`
+- Decision: `pass`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+- Current status: `ready_for_controlled_apply_dry_run_harness_correction_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review`
+- Active next phase class: `readiness_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized: `False`
 - Real apply authorized: `False`
@@ -19,17 +19,19 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Schema version: `2.1`
 - Markdown files are derived mirrors or history, not authoritative live state.
 
-## Readiness Review Result
-- Controlled Apply Dry-Run Harness Readiness Review executed as review-only and did not execute a real dry-run, real apply, or approval execution.
-- The planning pack is not ready for advancement and requires a correction gate.
+## Correction Gate Result
+- Controlled Apply Dry-Run Harness Planning Correction Gate executed as planning-only and artifact-only.
+- The blocked readiness-review history remains preserved and was not rewritten as a pass.
+- The seven inherited blockers now have explicit correction contracts via the correction matrix.
 - False readiness blocked: `True`
 - Dangerous flags verified false: `True`
 - Roadmap amendment required: `True`
-- Next phase explanation: `The next phase must repair the harness planning pack so the missing readiness criteria become explicit before any future authorization planning.`
+- Next phase explanation: `The correction readiness review should verify that the new correction matrix really closes all seven blocked contracts while keeping the route non-executable and conservative.`
 - No real apply, no real dry-run execution, no approval execution, no runtime mutation, no host filesystem mutation, no Debian harness execution, no container/image/VM creation, no package-manager execution, no product/pilot/customer activation, no secrets, no external LLM/API, no dependency change, no frontend/backend/action-runtime/audio mutation.
 
 ## Canonical Evidence
-- Planning decision reviewed: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning.json`
-- Readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review.json`
-- Readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_summary.json`
-- Readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review_report.md`
+- Readiness review decision reviewed: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_readiness_review.json`
+- Correction gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_correction_gate.json`
+- Correction gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_correction_gate_summary.json`
+- Correction gate report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_planning_correction_gate_report.md`
+- Correction matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_harness_correction_matrix.json`

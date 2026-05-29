@@ -15,9 +15,10 @@ ARIS nao promete automacao. ARIS prova automacao.
    - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
    - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
    - The Controlled Apply Dry-Run Harness Planning phase has passed.
-   - The Controlled Apply Dry-Run Harness Readiness Review phase has completed with decision `blocked`.
+   - The Controlled Apply Dry-Run Harness Readiness Review phase completed with decision `blocked` and remains historical evidence.
+   - The Controlled Apply Dry-Run Harness Planning Correction Gate has now passed as planning-only.
    - Roadmap amendment required: `True`
-   - Explicit amendment: before any future route can reach execution authorization planning, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`.
+   - Explicit amendment: before any future route can reach execution authorization planning, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review`.
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -26,8 +27,8 @@ ARIS nao promete automacao. ARIS prova automacao.
 
 ## Current Canonical Position
 Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
-- The readiness review blocked advancement and requires an explicit planning correction gate before any execution-authorization planning.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning Correction Gate`
+- The correction gate repaired the seven readiness blockers by artifact and advanced only to a correction readiness review.
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review`
 - Bedrock gate remains non-executable and product promotion remains blocked.
 - H4/H5/Hx not active current route.
 
