@@ -18,8 +18,9 @@ ARIS nao promete automacao. ARIS prova automacao.
    - The Controlled Apply Dry-Run Harness Readiness Review phase completed with decision `blocked` and remains historical evidence.
    - The Controlled Apply Dry-Run Harness Planning Correction Gate has passed as planning-only.
    - The Controlled Apply Dry-Run Harness Correction Readiness Review has passed as review-only.
+   - The Controlled Apply Dry-Run Execution Authorization Planning phase has passed as planning-only.
    - Roadmap amendment required: `True`
-   - Explicit amendment: before any future route can reach real execution, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning`.
+   - Explicit amendment: before any future route can reach real execution, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`.
 3. ARIS Infernus Lab FULL
 4. ARIS Final Crisol FULL
 5. Productatization Gate
@@ -28,8 +29,8 @@ ARIS nao promete automacao. ARIS prova automacao.
 
 ## Current Canonical Position
 Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
-- The correction readiness review verified the seven inherited blockers as materially resolved and advanced only to execution-authorization planning.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning`
+- Execution authorization planning materialized the future authorization boundary and advanced only to readiness review.
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
 - Bedrock gate remains non-executable and product promotion remains blocked.
 - H4/H5/Hx not active current route.
 

@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_execution_authorization_planning | execution_authorization_planning_pass | No | controlled apply dry-run execution authorization planning artifact pack | Planning-only authorization-boundary pack created; no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_execution_authorization_planning.bedrock_exception | bedrock_preparation_exception | No | active-context + execution authorization planning artifact pack | BEDROCK_PREPARATION_EXCEPTION: execution authorization planning consumed the correction-readiness verdict, produced only a future authorization-boundary plan, and advanced only to readiness review while keeping Bedrock non-executable and product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: execution authorization planning consumed the correction-readiness verdict, produced only a future authorization-boundary plan, and advanced only to readiness review while keeping Bedrock non-executable and product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Correction Readiness Review — Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
