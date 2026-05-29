@@ -11,15 +11,15 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `ARIS Active-Context Anti-Corruption Hardening Gate`
-- Current status: `ready_for_controlled_apply_dry_run_harness_planning`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
-- Active next phase class: `planning_gate`
-- Planning-only: `true`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning`
+- Current status: `ready_for_controlled_apply_dry_run_harness_readiness_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
+- Active next phase class: `readiness_gate`
 - H4/H5/Hx: `not active current route`
-- Operator Approval Packet Review is review-only, not execution approval.
-- Controlled Apply Operator Approval Packet Review passed as review-only and did not execute approval or authorize execution.
-- The next phase is planning-only for controlled apply dry-run harness and does not authorize real dry-run execution.
+- Controlled Apply Dry-Run Harness Planning passed as planning-only and did not execute a real dry-run, real apply, or approval execution.
+- The next phase is readiness-review only and does not authorize real dry-run execution or real apply.
+- Bedrock gate executable now: `False`
+- Product promotion allowed: `False`
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
@@ -35,13 +35,6 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No external LLM/API authorization.
 - No dependency change authorization.
 - No frontend/backend/action-runtime/audio mutation authorization.
-
-## Anti-Corruption Locks (added by Hardening Gate)
-- ACTIVE_CONTEXT_STATE.json must be read before any Markdown mirror.
-- scripts/validate_active_context_state.py must pass before any phase decision.
-- Cross-field drift within the JSON is a blocking error.
-- Extra properties in authorization or any closed object are a blocking error.
-- governance contracts (BOOT_PROFILE, MANDATORY_READ_FIRST_RULES, PROMPT_CONTRACT) must declare JSON-first.
 
 ## Historical / Proof-Only Entries
 - Historical routing proof from prior gates remains historical only.

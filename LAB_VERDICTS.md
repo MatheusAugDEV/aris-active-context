@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Harness Planning — Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.controlled_apply_dry_run_harness_planning | planning_gate_pass | No | controlled apply dry-run harness planning artifact pack | Planning-only artifact pack created; no real dry-run/apply/approval execution |
+| lab_simulation.controlled_apply_dry_run_harness_planning.bedrock_exception | bedrock_preparation_exception | No | active-context + planning artifact pack | BEDROCK_PREPARATION_EXCEPTION: consumed existing Lab/Bedrock verdicts; produced planning artifacts only; Bedrock gate remains non-executable and product promotion remains blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: consumed existing Lab/Bedrock verdicts; produced planning artifacts only; Bedrock gate remains non-executable and product promotion remains blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Harness Readiness Review`
+
 ## ARIS-ROADMAP-R0 — Governance Foundation Verdict
 
 | Capability | State | Product Promotion | Evidence | Notes |
