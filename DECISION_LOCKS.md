@@ -11,11 +11,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_pass`
-- Current status: `ready_for_controlled_apply_dry_run_execution_authorization_planning_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
-- Active next phase class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_readiness_review_pass`
+- Current status: `ready_for_controlled_apply_dry_run_operator_authorization_packet_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Planning`
+- Active next phase class: `planning_gate`
 - H4/H5/Hx: `not active current route`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`

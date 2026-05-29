@@ -5,10 +5,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 ## Canonical Live State
 - `ACTIVE_CONTEXT_STATE.json`
 - `ACTIVE_CONTEXT_SCHEMA.json`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning`
-- Current status: `ready_for_controlled_apply_dry_run_execution_authorization_planning_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
-- Active next phase class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Execution Authorization Planning Readiness Review`
+- Current status: `ready_for_controlled_apply_dry_run_operator_authorization_packet_planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Authorization Packet Planning`
+- Active next phase class: `planning_gate`
 - Controlled Apply Dry-Run Harness Readiness Review remains historically blocked and preserved.
 - Bedrock preparation exception recorded in `LAB_VERDICTS.md`.
 - Roadmap amendment required: `True`
@@ -36,3 +36,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Execution authorization planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_summary.json`
 - Execution authorization planning report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_report.md`
 - Authorization boundary matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_boundary_matrix.json`
+- Execution authorization planning readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_readiness_review.json`
+- Execution authorization planning readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_readiness_review_summary.json`
+- Execution authorization planning readiness review report: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_execution_authorization_planning_readiness_review_report.md`
