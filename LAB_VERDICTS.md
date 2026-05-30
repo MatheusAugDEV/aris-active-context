@@ -1,5 +1,65 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Readiness Consolidation Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.evidence_routes_readiness_consolidation_gate | evidence_routes_readiness_consolidation_gate_pass | No | readiness consolidation artifact pack | Non-executing readiness consolidation completed; harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes revalidated with no real operator contact or real dry-run/apply/approval execution |
+| lab_simulation.evidence_routes_readiness_consolidation_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness consolidation artifact pack | BEDROCK_PREPARATION_EXCEPTION: readiness consolidation revalidated the route set, preserved blocked-history semantics, carried forward residual warnings without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: evidence-routes readiness consolidation revalidated the harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes as a coherent non-executing chain, preserved blocked-history semantics, carried residual warnings forward without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate`
+
+## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Readiness Consolidation Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.evidence_routes_readiness_consolidation_gate | evidence_routes_readiness_consolidation_gate_pass | No | readiness consolidation artifact pack | Non-executing readiness consolidation completed; harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes revalidated with no real operator contact or real dry-run/apply/approval execution |
+| lab_simulation.evidence_routes_readiness_consolidation_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness consolidation artifact pack | BEDROCK_PREPARATION_EXCEPTION: readiness consolidation revalidated the route set, preserved blocked-history semantics, carried forward residual warnings without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: evidence-routes readiness consolidation revalidated the harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes as a coherent non-executing chain, preserved blocked-history semantics, carried residual warnings forward without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate`
+
+## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Readiness Consolidation Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.evidence_routes_readiness_consolidation_gate | evidence_routes_readiness_consolidation_gate_pass | No | readiness consolidation artifact pack | Non-executing readiness consolidation completed; harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes revalidated with no real operator contact or real dry-run/apply/approval execution |
+| lab_simulation.evidence_routes_readiness_consolidation_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness consolidation artifact pack | BEDROCK_PREPARATION_EXCEPTION: readiness consolidation revalidated the route set, preserved blocked-history semantics, carried forward residual warnings without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: evidence-routes readiness consolidation revalidated the harness, execution-authorization, packet, request, response, response-evidence-packaging, and operator-approval-evidence routes as a coherent non-executing chain, preserved blocked-history semantics, carried residual warnings forward without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Closure Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
