@@ -1,6 +1,6 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
+  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate",
   "active_next_phase_class": "review_gate_only",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
@@ -213,6 +213,11 @@
       "decision": "pass",
       "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
       "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_readiness_review_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
+      "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -240,17 +245,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
+    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate",
     "active_next_phase_class": "review_gate_only",
-    "current_status": "ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate",
+    "current_status": "ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_readiness_review_pass"
+    "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate_pass"
   },
-  "current_status": "ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate",
+  "current_status": "ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -265,26 +270,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate",
+    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review",
+  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
-    "deferred_phase_reason": "Final Review Gate must revalidate corrected evidence coverage before any later route can advance.",
+    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate",
+    "deferred_phase_reason": "Closure Gate must conservatively close the synthetic evidence-packaging route without enabling any real behavior.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -297,13 +302,14 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "Planning Correction Readiness Review passed as review-only and preserved the historical blocked readiness review.",
-      "The corrected manifest explicitly covers the evidence-packaging-planning chain.",
-      "Commit-hash placeholders in the reviewed correction decision were accepted as carry-forward warning because canonical Git evidence remained authoritative.",
+      "Evidence Packaging Final Review Gate passed as review-only.",
+      "The historical blocked readiness review remains blocked evidence and was not rewritten.",
+      "The corrected manifest and correction readiness review jointly verify explicit evidence-packaging-planning coverage.",
+      "LAB_VERDICTS duplicate correction-readiness sections were classified as warning-only documentary duplication and deferred to future cleanup.",
       "Bedrock remains non-executable and product promotion remains blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate",
+    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate",
     "phase_class": "review_gate_only",
     "planning_only": false,
     "review_only": true,
@@ -346,7 +352,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_readiness_review_pass",
+  "status": "lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
