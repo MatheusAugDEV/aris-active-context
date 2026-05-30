@@ -11,19 +11,21 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate_pass`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate_pass`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Consolidation Gate`
 - Active next phase class: `review_gate_only`
 - Historical blocked readiness review preserved: `True`
 - Blocked review rewritten: `False`
+- Final review verified: `True`
 - Corrected manifest verified: `True`
 - Correction readiness review verified: `True`
 - Dangerous flags verified false: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
-- LAB_VERDICTS duplicate readiness-review sections: `warning-only classification carried forward`
+- Residual warnings remain carry-forward requirements.
+- Closure scope is route-local only; the broader controlled-apply dry-run track is not closed here.
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
