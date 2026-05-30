@@ -3,16 +3,15 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Closure Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Consolidation Gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Consolidation Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Final Review Gate`
 - Route class: `review_gate_only`
 - Roadmap amendment required: `False`
 
 ## Primary Artifacts
-- Historical blocked readiness review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_readiness_review.json`
 - Corrected source manifest: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_source_manifest_corrected.json`
-- Planning Correction Readiness Review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_planning_correction_readiness_review.json`
-- Evidence Packaging Final Review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_final_review_gate.json`
 - Evidence Packaging Closure decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate.json`
-- Evidence Packaging Closure matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate_closure_matrix.json`
-- Evidence Packaging Closure next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_response_evidence_packaging_closure_gate_next_route_contract.json`
+- Operator Approval Evidence Route Consolidation decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate.json`
+- Operator Approval Evidence Route Consolidation route matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate_route_matrix.json`
+- Operator Approval Evidence Route Consolidation warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate_warning_register.json`
+- Operator Approval Evidence Route Consolidation next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate_next_route_contract.json`
