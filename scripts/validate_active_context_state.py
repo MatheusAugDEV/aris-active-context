@@ -104,11 +104,11 @@ def main() -> None:
     _validate_schema(schema)
     _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
 
-    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_evidence_routes_final_readiness_review_gate_pass", "unexpected status")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_evidence_routes_closure_gate_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_evidence_routes_closure_gate", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate", "unexpected next phase")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_lab_readiness_final_review_gate", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate", "unexpected next phase")
     _require(state["active_next_phase_class"] == "review_gate_only", "unexpected next phase class")
     _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
     _require(state["schema_version"] == "2.1", "schema_version must remain 2.1")
@@ -143,15 +143,15 @@ def main() -> None:
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "lab_real_simulation_pack_controlled_apply_dry_run_evidence_routes_final_readiness_review_gate_pass",
-        "ready_for_controlled_apply_dry_run_evidence_routes_closure_gate",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
+        "lab_real_simulation_pack_controlled_apply_dry_run_evidence_routes_closure_gate_pass",
+        "ready_for_controlled_apply_dry_run_lab_readiness_final_review_gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
         "The Lab Real Simulation Pack macro-phase remains open.",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
         "Review-only: `true`",
         "Execution authorization: `false`",
         "Roadmap amendment required: `False`",
@@ -161,40 +161,40 @@ def main() -> None:
         "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
         "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
         "Markdown files are non-authoritative mirrors/docs/history",
-        "The broader Lab Real Simulation Pack macro-phase remains open.",
+        "Closure scope is limited to the synthetic evidence-routes chain; no macro-phase closure occurred here.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
-        "Final readiness review next-route contract",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
+        "Closure next-route contract",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "historical ledger only",
         "ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
     )
     _mirror_contains(
         ROOT / "README.md",
         "`ACTIVE_CONTEXT_STATE.json` is the only canonical live state.",
         "Markdown drift against JSON is a blocking error",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
         "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Live routing is read from ACTIVE_CONTEXT_STATE.json",
         "roadmap sequence only, not the canonical live state",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
         "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "LAB_VERDICTS.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate - Bedrock Preparation Exception Record",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate - Bedrock Preparation Exception Record",
         "BEDROCK_PREPARATION_EXCEPTION:",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate",
     )
 
     _check_governance_contracts_json_first()
@@ -204,7 +204,7 @@ def main() -> None:
             {
                 "decision": "pass",
                 "validated_paths": [str(p) for p in MIRROR_PATHS] + [str(ROOT / "LAB_VERDICTS.md")] + [str(p) for p in GOVERNANCE_CONTRACT_PATHS],
-                "review_result": "evidence routes final readiness review gate pass",
+                "review_result": "evidence routes closure gate pass",
             },
             indent=2,
         )
