@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Final Readiness Review Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.evidence_routes_final_readiness_review_gate | evidence_routes_final_readiness_review_gate_pass | No | final readiness review artifact pack | Review-only final readiness audit completed; readiness consolidation was revalidated against source routes, blocked history preserved, and no real operator contact or real dry-run/apply/approval execution |
+| lab_simulation.evidence_routes_final_readiness_review_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + final readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: final readiness review revalidated the evidence-routes chain, preserved blocked-history semantics, carried forward residual warnings without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: evidence-routes final readiness review revalidated the readiness-consolidation artifact pack against its source route chain, preserved blocked-history semantics, carried residual warnings forward without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Readiness Consolidation Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
