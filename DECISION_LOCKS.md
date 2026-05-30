@@ -11,15 +11,15 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Consolidation Gate`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_consolidation_gate_pass`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_evidence_route_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Final Review Gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Final Review Gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_final_review_gate_pass`
+- Current status: `ready_for_controlled_apply_dry_run_operator_approval_evidence_route_closure_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Closure Gate`
 - Active next phase class: `review_gate_only`
 - Historical blocked readiness review preserved: `True`
 - Blocked review rewritten: `False`
+- Consolidation gate verified: `True`
 - Response evidence-packaging route closed: `True`
-- Wider operator-approval evidence route consolidated: `True`
 - Dangerous flags verified false: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`

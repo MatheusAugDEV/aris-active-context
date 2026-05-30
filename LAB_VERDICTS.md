@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Final Review Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.operator_approval_evidence_route_final_review_gate | operator_approval_evidence_route_final_review_gate_pass | No | final review artifact pack | Review-only final route review completed; consolidation pack revalidated against source chains, historical blocked review preserved, and no real operator contact or real dry-run/apply/approval execution |
+| lab_simulation.operator_approval_evidence_route_final_review_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + final review artifact pack | BEDROCK_PREPARATION_EXCEPTION: the final review revalidated the broader operator-approval evidence chain, preserved blocked-history semantics, carried forward residual warnings without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: operator-approval evidence-route final review revalidated the consolidation artifact pack against its source chains, preserved blocked-history semantics, carried residual warnings forward without resolving them by narrative, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Closure Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Consolidation Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
