@@ -3,19 +3,19 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
+- `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `readiness_gate`
+- Phase class: `review_gate_only`
 - Planning-only: `false`
 - Review-only: `true`
 - Execution authorization: `false`
-- The correction gate passed by materializing corrected manifest coverage for the evidence-packaging-planning chain only.
+- The readiness review passed by verifying explicit planning-chain coverage in the corrected manifest.
 - The historical blocked readiness review remains blocked evidence and must not be rewritten.
-- Dangerous flags remain false and Bedrock remains non-executable.
 - Roadmap amendment required: `False`
+- Bedrock remains non-executable and product promotion remains blocked.
 
 ## Before Starting the Next Phase
 1. Read `ACTIVE_CONTEXT_STATE.json` first.
 2. Run `python3 scripts/validate_active_context_state.py` and stop on any drift.
-3. Validate that the corrected manifest still preserves synthetic-only, non-authorizing, and incomplete-by-design semantics.
-4. Only then proceed with `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`.
+3. Revalidate the corrected manifest, historical blocked review preservation, and dangerous flags.
+4. Only then proceed with `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate`.

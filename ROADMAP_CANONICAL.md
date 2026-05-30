@@ -1,58 +1,15 @@
-# Roadmap Canonico ARIS V1.2
+# ROADMAP_CANONICAL
 
-## Purpose
-This file is the active roadmap authority for ARIS after active-context canonicalization. It defines the canonical macrostructure, the non-negotiable locks, the invariants, the pre-pilot gaps, and the distinction between active direction, preserved history, and future amendments. Live routing is read from ACTIVE_CONTEXT_STATE.json; this file is roadmap sequence only, not the canonical live state.
+Live routing is read from ACTIVE_CONTEXT_STATE.json. This file remains roadmap sequence only, not the canonical live state.
 
-## Official Phrase
-ARIS nao promete automacao. ARIS prova automacao.
+## Active Amendment State
+- Explicit amendment applied: before any future route can promote this pack, the planning correction readiness review had to verify the corrected manifest coverage explicitly.
+- The amendment remains explicit history; it did not silently rewrite the original blocked readiness review.
+- Roadmap amendment required: `False`
 
-## Canonical Macrostructure
-0. Strategic Reset
-1. Product Loop Demonstravel
-2. Hardening Base H0-H7
-2.5. Lab Real Simulation Pack
-2.6. Tier-1 Runtime Safety Remediation Track
-   - Scope: formalize Tier-1 runtime safety blockers before any operator review escalation, real dry-run, or real apply.
-   - This track is plan-only and does not authorize runtime execution, operator approval, or productization.
-   - The Controlled Apply Dry-Run Harness Planning phase has passed.
-   - The Controlled Apply Dry-Run Harness Readiness Review phase completed with decision `blocked` and remains historical evidence.
-   - The Controlled Apply Dry-Run Harness Planning Correction Gate has passed as planning-only.
-   - The Controlled Apply Dry-Run Harness Correction Readiness Review has passed as review-only.
-   - The Controlled Apply Dry-Run Execution Authorization Planning phase has passed as planning-only.
-   - The Controlled Apply Dry-Run Execution Authorization Planning Readiness Review has passed as review-only.
-   - The Controlled Apply Dry-Run Operator Authorization Packet Planning phase has passed as planning-only.
-   - The Controlled Apply Dry-Run Operator Authorization Packet Readiness Review has passed as review-only.
-   - The Controlled Apply Dry-Run Operator Authorization Packet Final Review Gate has passed as review-only.
-   - The Controlled Apply Dry-Run Operator Approval Request Simulation Planning phase has passed as planning-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Request Simulation Readiness Review has passed as review-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Request Simulation Final Review Gate has passed as review-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Response Simulation Planning phase has passed as planning-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Response Simulation Readiness Review has passed as review-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Response Simulation Final Review Gate has passed as review-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning phase has passed as planning-only and synthetic-only.
-   - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Readiness Review completed with decision `blocked` because the source artifact manifest omitted the required evidence-packaging-planning chain.
-   - The Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Gate has now passed as planning-only and manifest-coverage-only.
-   - Roadmap amendment required: `False`
-   - Explicit amendment applied: before any future route can reach an evidence-packaging final review gate, the active route now requires `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`.
-3. ARIS Infernus Lab FULL
-4. ARIS Final Crisol FULL
-5. Productatization Gate
-6. Primeiro Piloto Controlado
-7. SIP - Sistema Imunologico Permanente
-
-## Current Canonical Position
-Roadmap current-position (derived from `ACTIVE_CONTEXT_STATE.json`):
-- The historical readiness review remains blocked because the original source manifest omitted the evidence-packaging-planning chain.
-- The planning correction gate materialized a corrected manifest and correction matrix without authorizing any real operator or execution behavior.
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
-- Bedrock gate remains non-executable and product promotion remains blocked.
-- H4/H5/Hx not active current route.
-
-## Active vs Historical vs Amendments
-Active direction:
-- `ACTIVE_CONTEXT_STATE.json` is the only canonical live-state file.
-- `ACTIVE_CONTEXT_SCHEMA.json` is the canonical live-state validation contract.
-- `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, and `CONTEXT_INDEX.md` are derived Markdown mirrors, not independent live-state authorities.
-- `ARIS_PHASE_LEDGER.md` is historical ledger only.
-- This file is roadmap sequence only, not the canonical live state.
-- Any future phase insertion here must be treated as an explicit amendment, never as a silent route rewrite.
+## Active Route
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Planning Correction Readiness Review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Response Evidence Packaging Final Review Gate`
+- Active next phase class: `review_gate_only`
+- Bedrock gate executable now: `False`
+- Product promotion allowed: `False`
