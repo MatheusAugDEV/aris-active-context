@@ -11,20 +11,20 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Final Review Gate`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_final_review_gate_pass`
-- Current status: `ready_for_controlled_apply_dry_run_operator_approval_evidence_route_closure_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Closure Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Operator Approval Evidence Route Closure Gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_operator_approval_evidence_route_closure_gate_pass`
+- Current status: `ready_for_controlled_apply_dry_run_evidence_routes_readiness_consolidation_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Readiness Consolidation Gate`
+- Active next phase class: `readiness_gate`
 - Historical blocked readiness review preserved: `True`
 - Blocked review rewritten: `False`
+- Final review gate verified: `True`
 - Consolidation gate verified: `True`
-- Response evidence-packaging route closed: `True`
 - Dangerous flags verified false: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
 - Residual warnings remain carry-forward requirements.
-- Macro-phase remains open; no full Lab Real Simulation Pack closure occurred here.
+- Closure scope is limited to the synthetic operator approval evidence route; no macro-phase closure occurred here.
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
