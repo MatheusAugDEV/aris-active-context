@@ -5,8 +5,8 @@
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning`
-- Approval-capture planning readiness review is complete and remained non-authorizing.
-- The next route is planning-only for a future controlled operator approval-capture gate.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning Readiness Review`
+- Controlled operator approval capture gate planning is complete and remained non-authorizing.
+- The next route is a readiness review because new planning artifacts now exist.
 - Bedrock remains non-executable and product promotion remains blocked.
