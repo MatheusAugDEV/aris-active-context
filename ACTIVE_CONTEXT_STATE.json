@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
-  "active_next_phase_class": "readiness_gate",
+  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate",
+  "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -283,6 +283,11 @@
       "decision": "pass",
       "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
       "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
+      "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -310,17 +315,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
-    "active_next_phase_class": "readiness_gate",
-    "current_status": "ready_for_controlled_apply_dry_run_real_execution_request_readiness_review",
+    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "ready_for_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
+    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_pass"
+    "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_pass"
   },
-  "current_status": "ready_for_controlled_apply_dry_run_real_execution_request_readiness_review",
+  "current_status": "ready_for_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -335,26 +340,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
+    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate",
+    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
+    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate",
+  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
-    "deferred_phase_reason": "Real Execution Request Readiness Review must verify the request plan, operator evidence packet plan, and explicit authorization text contract before any later approval-capture route can be considered.",
+    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate",
+    "deferred_phase_reason": "Real Execution Approval Request Packet Planning Gate must plan the future human approval-request packet while keeping execution and approval capture unauthorized.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -367,16 +372,16 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "Real Execution Request Planning Gate passed without executing anything real.",
-      "The future request shape, operator evidence packet plan, and explicit authorization text contract remain non-authorizing and preserve residual warnings as explicit carry-forward items.",
-      "Real execution remains blocked by explicit future authorization, Bedrock, operator, isolation, rollback, ledger, and drift prerequisites.",
-      "The next route is a readiness review and does not authorize dry-run execution, apply execution, approval capture, Bedrock execution, or product promotion."
+      "Real Execution Request Readiness Review passed without executing anything real.",
+      "The request plan, operator evidence packet plan, and explicit authorization text contract were reviewed as complete, anti-ambiguous, and non-authorizing while preserving residual warnings as explicit carry-forward items.",
+      "Future execution remains blocked by explicit future authorization, Bedrock, operator, isolation, rollback, ledger, and drift prerequisites.",
+      "The next route is approval-request-packet planning only and does not authorize dry-run execution, apply execution, approval capture, Bedrock execution, or product promotion."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review",
-    "phase_class": "readiness_gate",
-    "planning_only": false,
-    "review_only": true,
+    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -416,7 +421,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_pass",
+  "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
