@@ -3,22 +3,22 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate`
-- Route class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Readiness Review`
+- Route class: `readiness_gate`
 - Roadmap amendment required: `False`
 
 ## Primary Artifacts
-- Real execution request planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate.json`
-- Real execution request planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_summary.json`
-- Real execution request plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_request_plan.json`
-- Real execution operator evidence packet plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_operator_evidence_packet_plan.json`
-- Real execution authorization text contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_authorization_text_contract.json`
-- Real execution request blocker matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_blocker_matrix.json`
 - Real execution request readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review.json`
 - Real execution request readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_summary.json`
 - Real execution request readiness review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_matrix.json`
-- Real execution request readiness authorization text review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_authorization_text_review.json`
-- Real execution request readiness operator evidence review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_operator_evidence_review.json`
-- Real execution request readiness warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_warning_register.json`
-- Real execution request readiness next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_next_route_contract.json`
+- Real execution request readiness review next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_readiness_review_next_route_contract.json`
+- Approval request packet planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate.json`
+- Approval request packet planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_summary.json`
+- Approval request packet plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_packet_plan.json`
+- Approval request packet operator view plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_operator_view_plan.json`
+- Approval request packet required evidence matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_required_evidence_matrix.json`
+- Approval request packet authorization phrase contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_authorization_phrase_contract.json`
+- Approval request packet invalid approval patterns: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_invalid_approval_patterns.json`
+- Approval request packet risk warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_risk_warning_register.json`
+- Approval request packet next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_next_route_contract.json`

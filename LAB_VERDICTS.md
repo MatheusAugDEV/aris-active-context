@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_approval_request_packet_planning_gate | real_execution_approval_request_packet_planning_gate_pass | No | approval request packet planning artifact pack | Planning-only packet plan completed; the future operator-facing request content, exact phrase contract, required evidence matrix, and invalid approval patterns remained concrete, non-authorizing, and anti-ambiguous, historical blocked readiness review remained preserved, residual warnings stayed explicit, and no real dry-run/apply/approval execution was authorized |
+| lab_simulation.real_execution_approval_request_packet_planning_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + approval request packet planning artifact pack | BEDROCK_PREPARATION_EXCEPTION: approval-request-packet planning created a deterministic future operator approval packet plan, operator view, required evidence matrix, explicit authorization phrase contract, and invalid approval pattern registry, kept execution and approval closed, kept residual warnings explicit, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a non-executing readiness review. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: approval-request-packet planning created a deterministic future operator approval packet plan, operator view, required evidence matrix, explicit authorization phrase contract, and invalid approval pattern registry, kept execution and approval closed, kept residual warnings explicit, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a non-executing readiness review.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Readiness Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
