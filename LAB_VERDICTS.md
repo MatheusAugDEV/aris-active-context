@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_approval_capture_planning_readiness_review | real_execution_approval_capture_planning_readiness_review_pass | No | approval capture planning artifact pack + readiness review artifacts | Review-only readiness audit confirmed deterministic capture boundaries, anti-inference controls, explicit evidence requirements, and non-authorization semantics while keeping real execution and approval capture closed |
+| lab_simulation.real_execution_approval_capture_planning_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + approval capture planning readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: approval-capture planning readiness review verified artifact completeness, deterministic capture boundaries, explicit anti-inference controls, pre-capture evidence requirements, residual warning carry-forward, and non-authorization semantics, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a future capture-gate planning route. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: approval-capture planning readiness review verified artifact completeness, deterministic capture boundaries, explicit anti-inference controls, pre-capture evidence requirements, residual warning carry-forward, and non-authorization semantics, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a future capture-gate planning route.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

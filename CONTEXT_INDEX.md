@@ -3,9 +3,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review`
-- Route class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning`
+- Route class: `planning_gate`
 
 ## Primary Artifacts
 - Approval request packet final review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate.json`
@@ -16,3 +16,7 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Approval capture planning invalid capture patterns: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_gate_invalid_capture_patterns.json`
 - Approval capture planning evidence requirements: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_gate_evidence_requirements.json`
 - Approval capture planning next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_gate_next_route_contract.json`
+- Approval capture planning readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review.json`
+- Approval capture planning readiness review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review_summary.json`
+- Approval capture planning readiness review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review_matrix.json`
+- Approval capture planning readiness review next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review_next_route_contract.json`
