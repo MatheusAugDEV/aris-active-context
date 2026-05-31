@@ -6,9 +6,9 @@
 - Roadmap amendment required: `False`.
 
 ## Current Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate`
-- Authorization-prerequisites final review is complete and remained non-authorizing.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review`
+- Real-execution-request planning is complete and remained non-authorizing.
 - Historical blocked readiness review remains preserved as evidence.
 - Residual warnings remain classified, carried forward, and non-authorizing.
 - Bedrock remains non-executable and product promotion remains blocked.

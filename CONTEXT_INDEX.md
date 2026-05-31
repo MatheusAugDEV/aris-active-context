@@ -3,21 +3,21 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate`
-- Route class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Readiness Review`
+- Route class: `readiness_gate`
 - Roadmap amendment required: `False`
 
 ## Primary Artifacts
-- Authorization prerequisites consolidation decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate.json`
-- Authorization prerequisites consolidation summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_summary.json`
-- Authorization prerequisites consolidation pack: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_prerequisites_matrix.json`
-- Authorization prerequisites consolidation blocker matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_blocker_matrix.json`
-- Authorization prerequisites consolidation warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_warning_register.json`
-- Authorization prerequisites consolidation next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_next_route_contract.json`
 - Authorization prerequisites final review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate.json`
 - Authorization prerequisites final review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_summary.json`
 - Authorization prerequisites final review review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_review_matrix.json`
 - Authorization prerequisites final review gap register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_gap_register.json`
-- Authorization prerequisites final review warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_warning_register.json`
 - Authorization prerequisites final review next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_next_route_contract.json`
+- Real execution request planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate.json`
+- Real execution request planning summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_summary.json`
+- Real execution request plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_request_plan.json`
+- Real execution operator evidence packet plan: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_operator_evidence_packet_plan.json`
+- Real execution authorization text contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_authorization_text_contract.json`
+- Real execution request blocker matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_blocker_matrix.json`
+- Real execution request next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_request_planning_gate_next_route_contract.json`
