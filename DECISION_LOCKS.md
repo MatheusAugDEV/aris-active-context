@@ -11,19 +11,19 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Readiness Review`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_readiness_review_pass`
-- Current status: `ready_for_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate`
-- Active next phase class: `review_gate_only`
-- Historical blocked readiness review preserved: `True`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate_pass`
+- Current status: `ready_for_controlled_apply_dry_run_real_execution_approval_capture_planning_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate`
+- Active next phase class: `planning_gate`
+- Historical blocked review preserved: `True`
 - Blocked review rewritten: `False`
 - Dangerous flags verified false: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
 - Residual warnings remain carry-forward requirements.
 - The broader Lab Real Simulation Pack macro-phase remains open.
-- The next route is review-only and non-authorizing.
+- The next route is planning-only and non-authorizing.
 - No real apply authorization.
 - No real dry-run execution authorization.
 - No approval execution authorization.
