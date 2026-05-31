@@ -1,5 +1,23 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning Readiness Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_controlled_operator_approval_capture_gate_planning_readiness_review | real_execution_controlled_operator_approval_capture_gate_planning_readiness_review_pass | No | controlled operator approval capture gate planning readiness review artifact pack | Review-only gate audited the planning pack, preserved six-phase-cap discipline, and advanced only to the controlled approval capture gate while execution remained closed |
+| lab_simulation.real_execution_controlled_operator_approval_capture_gate_planning_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness review artifacts | BEDROCK_PREPARATION_EXCEPTION: controlled-operator-approval-capture-gate planning readiness review verified the planning artifact pack as complete, deterministic, anti-ambiguous, anti-inference, non-authorizing, six-phase-cap compliant, and ready for a future controlled approval capture gate, while Bedrock remained non-executable and product promotion remained blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: controlled-operator-approval-capture-gate planning readiness review verified the planning artifact pack as complete, deterministic, anti-ambiguous, anti-inference, non-authorizing, six-phase-cap compliant, and ready for a future controlled approval capture gate, while Bedrock remained non-executable and product promotion remained blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
