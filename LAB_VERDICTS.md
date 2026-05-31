@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Governance Advancement Plan Readiness Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.governance_advancement_plan_readiness_review | governance_advancement_plan_readiness_review_pass | No | governance advancement plan readiness review artifact pack | Review-only governance-advancement plan audit completed; the source plan remained non-authorizing, historical blocked readiness review remained preserved, residual warnings stayed explicit, and no real dry-run/apply/approval execution was authorized |
+| lab_simulation.governance_advancement_plan_readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + governance advancement plan readiness review artifact pack | BEDROCK_PREPARATION_EXCEPTION: governance-advancement plan readiness review verified the reviewed plan as conservative, complete, non-bypassable, and non-authorizing, kept residual warnings explicit, kept Bedrock non-executable, kept product promotion blocked, and advanced only to an authorization-prerequisites consolidation gate. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: governance-advancement plan readiness review verified the reviewed plan as conservative, complete, non-bypassable, and non-authorizing, kept residual warnings explicit, kept Bedrock non-executable, kept product promotion blocked, and advanced only to an authorization-prerequisites consolidation gate.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Consolidation Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Governance Advancement Planning Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
