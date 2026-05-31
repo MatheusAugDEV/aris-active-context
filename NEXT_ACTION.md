@@ -3,19 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate`
+- `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review`
 - Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Phase class: `readiness_gate`
+- Planning-only: `false`
+- Review-only: `true`
 - Execution authorization: `false`
-- The final review gate passed without requesting approval, capturing approval, or authorizing anything real.
-- The next phase may only plan a future approval-capture route; it must not capture approval now.
-- Residual warnings remain carry-forward items, not silently resolved findings.
+- Approval capture planning passed without requesting approval, capturing approval, or authorizing anything real.
+- A readiness review is required because the new capture-planning artifacts need an independent conservative audit.
+- Capture still must not execute anything automatically.
 - Roadmap amendment required: `False`
-
-## Before Starting the Next Phase
-1. Read `ACTIVE_CONTEXT_STATE.json` first.
-2. Run `python3 scripts/validate_active_context_state.py` and stop on any drift.
-3. Preserve blocked-history semantics, residual warnings, explicit phrase rules, invalid approval patterns, evidence-state separation, and all non-authorization boundaries.
-4. Only then proceed with `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate`.

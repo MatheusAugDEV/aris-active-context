@@ -1,5 +1,12 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_approval_capture_planning_gate | real_execution_approval_capture_planning_gate_pass | No | approval capture planning artifact pack | Planning-only capture contract, invalid capture patterns, and pre-capture evidence requirements were created while approval capture and execution remained closed |
+| lab_simulation.real_execution_approval_capture_planning_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + approval capture planning artifacts | BEDROCK_PREPARATION_EXCEPTION: approval-capture planning created a deterministic future capture contract, invalid capture pattern registry, and pre-capture evidence requirements, kept capture separated from planning, kept capture non-executing, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a readiness review. |
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
@@ -1870,3 +1877,7 @@ The full historical ledger remains in `aris-active-context/LAB_VERDICTS.md`.
 | --- | --- | --- | --- | --- |
 | lab.f33y_auth_h_pre_apply_intake_package | lab_validated | No | F33.Y-AUTH-H evidence intake package | Placeholder, schema, manifest, and instructions created; no valid authorization created |
 | f33.governed_local_memory.sqlite_schema_materialization_pre_apply_authorization_intake | intake_ready/contract_required | No | F33.Y-AUTH-H preserved | Next phase recommendation: F33.Y-AUTH-SUBMIT — Schema Materialization Pre-Apply Human Authorization Evidence Submission |
+
+## Approval Capture Planning Follow-On Route
+
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review`

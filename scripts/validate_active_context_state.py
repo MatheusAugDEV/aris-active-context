@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""Anti-corruption validator for ARIS active-context canonical state."""
-
 from __future__ import annotations
 
 import json
 import pathlib
 import re
 from typing import Any
-
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
@@ -105,17 +102,19 @@ def main() -> None:
     _validate_schema(schema)
     _validate_node(schema, state, "ACTIVE_CONTEXT_STATE")
 
-    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate_pass", "unexpected status")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_gate_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_real_execution_approval_capture_planning_gate", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate", "unexpected next phase")
-    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next phase class")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "readiness_gate", "unexpected next phase class")
     _require(state["additional_live_state_sources_allowed"] is False, "additional live state sources must be false")
     _require(state["schema_version"] == "2.1", "schema_version must remain 2.1")
 
-    auth = state["authorization"]
-    for key, value in auth.items():
+    _require(state["next_action"]["planning_only"] is False, "next action planning_only must be false")
+    _require(state["next_action"]["review_only"] is True, "next action review_only must be true")
+
+    for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
             _require(value == "github_active_context_governance_only", "unexpected network scope")
         else:
@@ -137,60 +136,56 @@ def main() -> None:
     )
     _require(state["current_live_route"]["current_status"] == state["current_status"], "cross-field current_status drift detected")
     _require(state["current_live_route"]["status"] == state["status"], "cross-field status drift detected")
-    _require(state["next_action"]["phase_class"] == "planning_gate", "unexpected next_action phase_class")
-    _require(state["next_action"]["planning_only"] is True, "next_action planning_only must be true")
-    _require(state["next_action"]["review_only"] is False, "next_action review_only must be false")
+    _require(state["next_action"]["phase_class"] == "readiness_gate", "unexpected next_action phase_class")
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate_pass",
-        "ready_for_controlled_apply_dry_run_real_execution_approval_capture_planning_gate",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
-        "The next phase remains planning-only and does not capture approval now.",
+        "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_capture_planning_gate_pass",
+        "ready_for_controlled_apply_dry_run_real_execution_approval_capture_planning_readiness_review",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
+        "The next phase is a readiness review because new capture-planning artifacts now exist and require independent review.",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Derived mirror from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
-        "Planning-only: `true`",
-        "Review-only: `false`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
+        "Planning-only: `false`",
+        "Review-only: `true`",
         "Execution authorization: `false`",
         "Roadmap amendment required: `False`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         "current live locks are derived from ACTIVE_CONTEXT_STATE.json",
-        "ACTIVE_CONTEXT_STATE.json is the only canonical live state",
-        "Markdown files are non-authoritative mirrors/docs/history",
-        "The next route is planning-only and non-authorizing.",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
+        "The next route is review-only and non-authorizing.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "artifact routes are derived from ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
-        "Approval request packet final review next-route contract",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
+        "Approval capture planning next-route contract",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "historical ledger only",
         "ACTIVE_CONTEXT_STATE.json",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
     )
     _mirror_contains(
         ROOT / "README.md",
         "`ACTIVE_CONTEXT_STATE.json` is the only canonical live state.",
         "Markdown drift against JSON is a blocking error",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
-        "Roadmap amendment required: `False`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Live routing is read from ACTIVE_CONTEXT_STATE.json",
         "roadmap sequence only, not the canonical live state",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
-        "Roadmap amendment required: `False`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
     )
     _mirror_contains(
         ROOT / "LAB_STATUS.md",
@@ -199,9 +194,9 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "LAB_VERDICTS.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate - Bedrock Preparation Exception Record",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate - Bedrock Preparation Exception Record",
         "BEDROCK_PREPARATION_EXCEPTION:",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Gate",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Capture Planning Readiness Review",
     )
 
     _check_governance_contracts_json_first()
@@ -211,7 +206,7 @@ def main() -> None:
             {
                 "decision": "pass",
                 "validated_paths": [str(p) for p in MIRROR_PATHS] + [str(ROOT / "LAB_VERDICTS.md")] + [str(p) for p in GOVERNANCE_CONTRACT_PATHS],
-                "review_result": "real execution approval request packet final review gate pass",
+                "review_result": "real execution approval capture planning gate pass",
             },
             indent=2,
         )
