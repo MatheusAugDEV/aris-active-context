@@ -11,11 +11,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - No GitHub active-context sync = no canonical PASS.
 - Every ARIS phase/gate/status transition must update GitHub active-context.
 - Every ARIS phase/gate/status transition must commit, push, and verify GitHub active-context.
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Planning Gate`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_planning_gate_pass`
-- Current status: `ready_for_controlled_apply_dry_run_real_execution_approval_request_packet_readiness_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Readiness Review`
-- Active next phase class: `readiness_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Readiness Review`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_approval_request_packet_readiness_review_pass`
+- Current status: `ready_for_controlled_apply_dry_run_real_execution_approval_request_packet_final_review_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Approval Request Packet Final Review Gate`
+- Active next phase class: `review_gate_only`
 - Historical blocked readiness review preserved: `True`
 - Blocked review rewritten: `False`
 - Dangerous flags verified false: `True`
