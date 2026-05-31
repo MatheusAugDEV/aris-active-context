@@ -3,16 +3,21 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Consolidation Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Authorization Prerequisites Final Review Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Request Planning Gate`
+- Route class: `planning_gate`
 - Roadmap amendment required: `False`
 
 ## Primary Artifacts
-- Governance advancement plan readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_governance_advancement_plan_readiness_review.json`
 - Authorization prerequisites consolidation decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate.json`
 - Authorization prerequisites consolidation summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_summary.json`
-- Authorization prerequisites matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_prerequisites_matrix.json`
-- Authorization prerequisites blocker matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_blocker_matrix.json`
-- Authorization prerequisites warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_warning_register.json`
-- Authorization prerequisites next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_next_route_contract.json`
+- Authorization prerequisites consolidation pack: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_prerequisites_matrix.json`
+- Authorization prerequisites consolidation blocker matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_blocker_matrix.json`
+- Authorization prerequisites consolidation warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_warning_register.json`
+- Authorization prerequisites consolidation next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_consolidation_gate_next_route_contract.json`
+- Authorization prerequisites final review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate.json`
+- Authorization prerequisites final review summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_summary.json`
+- Authorization prerequisites final review review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_review_matrix.json`
+- Authorization prerequisites final review gap register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_gap_register.json`
+- Authorization prerequisites final review warning register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_warning_register.json`
+- Authorization prerequisites final review next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_authorization_prerequisites_final_review_gate_next_route_contract.json`
