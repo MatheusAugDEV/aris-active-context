@@ -1,5 +1,25 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.lab_readiness_final_review_gate | lab_readiness_final_review_gate_pass | No | lab readiness final review artifact pack | Review-only lab-readiness final review completed; synthetic evidence-routes closure remained coherent, blocked history was preserved, residual warnings stayed explicit, and no real dry-run/apply/approval execution was authorized |
+| lab_simulation.lab_readiness_final_review_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + lab readiness final review artifact pack | BEDROCK_PREPARATION_EXCEPTION: lab-readiness final review confirmed the synthetic evidence-routes closure is coherent, preserved blocked-history semantics, carried residual warnings forward explicitly, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a non-authorizing governance-planning step. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: lab-readiness final review confirmed the synthetic evidence-routes closure is coherent, preserved blocked-history semantics, carried residual warnings forward explicitly, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a non-authorizing governance-planning step.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- lab_verdict_duplicate_decision: `warning_documentary_duplication_inert_ledger_cleanup_candidate`
+- commit_hash_placeholder_decision: `warning_accepted_carry_forward_git_is_canonical`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Governance Advancement Planning Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

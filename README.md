@@ -6,9 +6,9 @@
 - Roadmap amendment required: `False`.
 
 ## Current Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate`
-- The synthetic evidence-routes chain is closed, but the broader Lab Real Simulation Pack macro-phase remains open.
-- Historical blocked readiness review preserved as evidence.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Governance Advancement Planning Gate`
+- Broader lab readiness above the synthetic evidence-routes chain has been reviewed conservatively.
+- Historical blocked readiness review remains preserved as evidence.
 - Residual warnings remain classified, carried forward, and non-authorizing.
 - Bedrock remains non-executable and product promotion remains blocked.

@@ -8,8 +8,8 @@ Live routing is read from ACTIVE_CONTEXT_STATE.json. This file remains roadmap s
 - Roadmap amendment required: `False`
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Evidence Routes Closure Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Lab Readiness Final Review Gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Governance Advancement Planning Gate`
+- Active next phase class: `planning_gate`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
