@@ -1,5 +1,24 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_controlled_operator_approval_capture_gate | real_execution_controlled_operator_approval_capture_gate_pass | No | controlled operator approval evidence + validation matrix | Manual operator evidence was validated for a future controlled dry-run only; real apply remained closed |
+| lab_simulation.real_execution_controlled_operator_approval_capture_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + approval-capture artifacts | BEDROCK_PREPARATION_EXCEPTION: controlled operator approval evidence was captured from manual human input, validated as current and scoped for a future controlled dry-run only, execution remained separate, real apply remained blocked, and Bedrock remained non-executable. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: controlled operator approval evidence was captured from manual human input, validated as current and scoped for a future controlled dry-run only, execution remained separate, real apply remained blocked, and Bedrock remained non-executable.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- operator_approval_requested_now: `False`
+- operator_approval_captured_now: `False`
+- operator_approval_validated_now: `True`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning Readiness Review - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
