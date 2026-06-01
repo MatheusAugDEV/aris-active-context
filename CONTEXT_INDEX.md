@@ -3,26 +3,44 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Implementation Planning Gate`
+
+- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
 - Route class: `planning_gate`
 
-## Primary Artifacts
-- Previous planning gate decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_decision.json`
-- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_decision.json`
-- Artifact inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_inventory.json`
-- Architecture review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_architecture_review_matrix.json`
-- Scope review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_scope_review_matrix.json`
-- Validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validator_boundary_review_matrix.json`
-- Validation order review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validation_order_review_matrix.json`
-- Rejection flow review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_rejection_flow_review_matrix.json`
-- Artifact resolution review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_resolution_review_matrix.json`
-- Evidence integrity review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_evidence_integrity_review_matrix.json`
-- Execution mode review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_execution_mode_review_matrix.json`
-- Bot taxonomy review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_bot_taxonomy_review_matrix.json`
-- Residual warning review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warning_review_matrix.json`
-- Future validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_future_validator_boundary_review_matrix.json`
-- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_findings_register.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warnings_carry_forward.json`
-- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_next_phase_contract.json`
+## Canonical Files
+
+- Live state: `ACTIVE_CONTEXT_STATE.json`
+- Schema: `ACTIVE_CONTEXT_SCHEMA.json`
+- Validator: `scripts/validate_active_context_state.py`
+- Roadmap authority: `ROADMAP_CANONICAL.md`
+- Current state mirror: `CURRENT_STATE.md`
+- Next action mirror: `NEXT_ACTION.md`
+- Decision locks mirror: `DECISION_LOCKS.md`
+- Ledger/history: `ARIS_PHASE_LEDGER.md`
+- README: `README.md`
+- Bedrock boundary: `BEDROCK_GATE.md`
+- North Pole: `NORTH_POLE.md`
+
+## Active Canonical Roadmap
+
+```text
+Infernus revela.
+Purgatorium corrige.
+Infernus revalida.
+Crisol refina.
+Bedrock decide.
+```
+
+## Historical / Superseded References
+
+- `ARIS_ROADMAP_R0_F120.md` is superseded by `ROADMAP_CANONICAL.md`.
+- `PROJECT_CONTEXT_ARIS.md` is historical context only unless a future gate explicitly reclassifies a block.
+- `LAB_STATUS.md` and `LAB_VERDICTS.md` are historical lab status/verdict ledgers only.
+- Archive files are historical audit trail only.
+- Artifact paths from old phases are reference routes, not current active execution claims.
+
+## Non-Authorization
+
+No runtime/frontend/backend/action-runtime/audio mutation, package installation, dependency change, external API use, product promotion, real apply, real dry-run, pilot, commercial launch, or Bedrock product pass is authorized by this index.
