@@ -3,33 +3,34 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_pass`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass`
 - Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate`
-- Current status: `ready_for_controlled_apply_dry_run_real_execution_controlled_execution`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
-- Active next phase class: `planning_gate`
-- Next phase execution authorization: `True`
-- Real dry-run execution authorized: `False`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
+- Current status: `ready_for_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+- Active next phase class: `review_gate_only`
+- Next phase execution authorization: `False`
+- Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
 - Approval execution authorized: `False`
 - Approval capture validated: `True`
-- Approval capture authorized now: `False`
+- Dry-run executed in latest completed phase: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
 - Schema version: `2.1`
 
-## Controlled Operator Approval Capture Gate Result
-- Explicit operator approval evidence was validated as current, scoped, non-generic, and non-executing.
-- This phase did not execute the dry-run and did not authorize real apply.
-- The next phase is Controlled Execution, which may use the validated evidence as a prerequisite for the scoped real dry-run only.
+## Controlled Execution Result
+- The scoped controlled real dry-run executed against the real workspace artifact chain only.
+- Preflight and postflight snapshots matched, so no forbidden mutation was detected.
+- This phase still did not execute real apply and did not authorize production, secrets, package manager, or external APIs.
 
 ## Canonical Evidence
-- Planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_planning.json`
-- Planning readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_planning_readiness_review.json`
-- This gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
-- This gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_summary.json`
-- Captured approval evidence: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_captured_approval_evidence.json`
-- Approval validation matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_approval_validation_matrix.json`
-- Invalid approval rejection matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_invalid_approval_rejection_matrix.json`
-- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_next_route_contract.json`
+- Phase 3 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
+- This phase decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution.json`
+- This phase summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_summary.json`
+- Execution ledger: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_execution_ledger.json`
+- Preflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_preflight_snapshot.json`
+- Postflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_postflight_snapshot.json`
+- Dry-run result: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_dry_run_result.json`
+- Rollback declaration: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_rollback_not_required_or_not_applicable.json`
+- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_next_route_contract.json`

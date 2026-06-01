@@ -3,16 +3,18 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
-- Route class: `planning_gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+- Route class: `review_gate_only`
 
 ## Primary Artifacts
-- Planning decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_planning.json`
-- Planning readiness review decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_planning_readiness_review.json`
-- This gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
-- This gate summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_summary.json`
-- Captured approval evidence: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_captured_approval_evidence.json`
-- Approval validation matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_approval_validation_matrix.json`
-- Invalid approval rejection matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_invalid_approval_rejection_matrix.json`
-- Controlled operator approval capture gate next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_next_route_contract.json`
+- Phase 3 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
+- Phase 3 captured approval evidence: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_captured_approval_evidence.json`
+- This phase decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution.json`
+- This phase summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_summary.json`
+- Execution ledger: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_execution_ledger.json`
+- Preflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_preflight_snapshot.json`
+- Postflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_postflight_snapshot.json`
+- Dry-run result: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_dry_run_result.json`
+- Rollback declaration: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_rollback_not_required_or_not_applicable.json`
+- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_next_route_contract.json`

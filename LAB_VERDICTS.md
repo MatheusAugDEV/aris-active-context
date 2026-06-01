@@ -1,5 +1,22 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_controlled_execution | real_execution_controlled_execution_pass | No | execution ledger + preflight/postflight snapshots + dry-run result | Controlled Execution ran the scoped real dry-run in read-only mode, recorded matching snapshots, and kept real apply closed |
+| lab_simulation.real_execution_controlled_execution.bedrock_exception | bedrock_preparation_exception | No | active-context + controlled execution artifacts | BEDROCK_PREPARATION_EXCEPTION: controlled execution performed a scoped real dry-run against real workspace artifacts only, recorded preflight and postflight evidence, detected no prohibited mutation, kept real apply blocked, and Bedrock remained non-executable. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: controlled execution performed a scoped real dry-run against real workspace artifacts only, recorded preflight and postflight evidence, detected no prohibited mutation, kept real apply blocked, and Bedrock remained non-executable.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- dry_run_executed_in_latest_completed_phase: `True`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

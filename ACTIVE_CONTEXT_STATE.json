@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-  "active_next_phase_class": "planning_gate",
+  "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+  "active_next_phase_class": "review_gate_only",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -328,6 +328,11 @@
       "decision": "pass",
       "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
       "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+      "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -355,17 +360,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-    "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_controlled_apply_dry_run_real_execution_controlled_execution",
+    "active_next_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+    "active_next_phase_class": "review_gate_only",
+    "current_status": "ready_for_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
-    "next_phase_execution_authorization": true,
+    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+    "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_pass"
+    "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass"
   },
-  "current_status": "ready_for_controlled_apply_dry_run_real_execution_controlled_execution",
+  "current_status": "ready_for_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -380,26 +385,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
+    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning Readiness Review"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate Planning Readiness Review",
+    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
+    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
+  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-    "deferred_phase_reason": "Controlled Execution is the next allowed route after validated operator approval evidence; real apply remains closed.",
+    "deferred_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+    "deferred_phase_reason": "Execution evidence final review is next after the scoped dry-run completes; real apply remains closed.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -410,18 +415,18 @@
   },
   "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
   "next_action": {
-    "execution_authorization": true,
+    "execution_authorization": false,
     "notes": [
-      "Controlled Operator Approval Capture Gate validated explicit operator approval evidence for a future controlled dry-run only.",
-      "This phase still did not execute dry-run or real apply.",
-      "The next route is Controlled Execution, which may use the validated evidence as a prerequisite for the scoped dry-run only.",
+      "Controlled Execution completed the scoped real dry-run over the live workspace artifact chain.",
+      "The dry-run remained read-only and produced preflight, execution ledger, postflight, dry-run result, and rollback declaration artifacts.",
+      "The next route is the Real Dry-Run Evidence Final Review.",
       "Real apply remains explicitly disabled."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-    "phase_class": "planning_gate",
+    "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+    "phase_class": "review_gate_only",
     "planning_only": false,
-    "review_only": false,
+    "review_only": true,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -461,7 +466,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_pass",
+  "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

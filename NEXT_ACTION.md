@@ -3,13 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
+- `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
 - Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
+- Phase class: `review_gate_only`
 - Planning-only: `false`
-- Review-only: `false`
-- Execution authorization: `true`
-- Controlled Operator Approval Capture Gate validated explicit operator approval evidence for the scoped dry-run route only.
-- The next route may execute the controlled real dry-run using that validated evidence as a prerequisite.
+- Review-only: `true`
+- Execution authorization: `false`
+- Controlled Execution already executed the scoped real dry-run and produced the evidence pack.
+- The next route must review this evidence; it must not perform another execution or real apply.
 - Real apply remains disabled.
 - Roadmap amendment required: `False`

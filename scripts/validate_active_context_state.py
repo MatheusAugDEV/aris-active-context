@@ -29,14 +29,14 @@ def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
 
-    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_pass", "unexpected status")
+    _require(state["status"] == "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_real_execution_controlled_execution", "unexpected current status")
-    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution", "unexpected next phase")
-    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next phase class")
+    _require(state["latest_completed_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review", "unexpected current status")
+    _require(state["active_next_phase"] == "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review", "unexpected next phase")
+    _require(state["active_next_phase_class"] == "review_gate_only", "unexpected next phase class")
     _require(state["schema_version"] == "2.1", "unexpected schema version")
-    _require(state["current_live_route"]["next_phase_execution_authorization"] is True, "next phase execution authorization must be true")
+    _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -46,42 +46,42 @@ def main() -> None:
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-        "Approval capture validated: `True`",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+        "Dry-run executed in latest completed phase: `True`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-        "Execution authorization: `true`",
-        "Real apply remains disabled.",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+        "Review-only: `true`",
+        "Execution authorization: `false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "Validated operator approval evidence exists for the scoped future dry-run only.",
         "No real apply authorization.",
+        "No external LLM/API authorization.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
-        "Captured approval evidence",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+        "Execution ledger",
     )
     _mirror_contains(
         ROOT / "README.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate",
         "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
         "Bedrock remains non-executable and product promotion remains blocked.",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
         "Bedrock gate executable now: `False`",
     )
     _mirror_contains(
         ROOT / "LAB_VERDICTS.md",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate - Bedrock Preparation Exception Record",
-        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution - Bedrock Preparation Exception Record",
+        "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
     )
 
     print(
@@ -96,10 +96,9 @@ def main() -> None:
                     str(ROOT / "ARIS_PHASE_LEDGER.md"),
                     str(ROOT / "ROADMAP_CANONICAL.md"),
                     str(ROOT / "README.md"),
-                    str(ROOT / "LAB_STATUS.md"),
                     str(ROOT / "LAB_VERDICTS.md"),
                 ],
-                "review_result": "real execution controlled operator approval capture gate pass",
+                "review_result": "real execution controlled execution pass",
             },
             indent=2,
         )
