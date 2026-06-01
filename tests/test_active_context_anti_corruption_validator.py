@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
@@ -135,6 +135,16 @@ class TestMirrorGuards(unittest.TestCase):
             extra_files={"ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md": corrupted},
         )
         self.assertNotEqual(rc, 0, "stale bot scenario repair phrase must be blocked.\n" + stderr)
+
+    def test_current_state_without_residual_boundary_blocks(self) -> None:
+        state = _load_state()
+        original = (ROOT / "CURRENT_STATE.md").read_text(encoding="utf-8")
+        corrupted = original.replace(
+            "Accepted residual is explicitly prevented from being treated as resolved.",
+            "Residual handling is present.",
+        )
+        rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
+        self.assertNotEqual(rc, 0, "current state without residual boundary must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

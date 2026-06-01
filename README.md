@@ -7,9 +7,9 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
 - Active next phase class: `planning_gate`
 - Infernus FULL remains the active macroblock and stays planning-only until an explicit future execution gate authorizes otherwise.
 
@@ -30,12 +30,13 @@ Bedrock decide.
 - `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md`
+- `ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md`
 
 ## Non-Authorization
 
-- No evidence bundle authorizes execution.
+- No finding record authorizes execution.
 - No bot implementation or execution.
 - No attack or harness execution.
-- No runtime, frontend, backend, action-runtime, or audio mutation.
+- No finding correction or Purgatorium execution.
 - No real dry-run or real apply.
 - Bedrock remains non-executable and product promotion remains blocked.
