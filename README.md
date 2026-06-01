@@ -5,8 +5,8 @@
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Controlled Execution completed a scoped real dry-run over approved workspace evidence only.
-- The next route is the Real Dry-Run Evidence Final Review; real apply remains blocked.
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Real Dry-Run Evidence Final Review completed a conservative review of the phase 4/6 evidence pack only.
+- The next route is the Lab Simulation Closure Gate; real apply remains blocked.
 - Bedrock remains non-executable and product promotion remains blocked.

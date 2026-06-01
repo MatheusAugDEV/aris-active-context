@@ -3,12 +3,12 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 # Decision Locks
 
 ## Current Live Locks
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_pass`
-- Current status: `ready_for_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_pass`
+- Current status: `ready_for_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate`
+- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
 - Active next phase class: `review_gate_only`
-- The scoped real dry-run already executed in the latest completed phase and is now evidence-only for review.
+- The phase 4/6 dry-run evidence pack has already been reviewed and no new execution is authorized now.
 - No real apply authorization.
 - No production authorization.
 - No approval execution authorization now.

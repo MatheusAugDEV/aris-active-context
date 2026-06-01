@@ -1,5 +1,22 @@
 # LAB_VERDICTS
 
+## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.real_execution_real_dry_run_evidence_final_review | real_dry_run_evidence_final_review_pass | No | evidence review matrix + snapshot comparison review + execution ledger review | Review-only gate confirmed the phase 4/6 evidence pack conservatively and advanced only to closure |
+| lab_simulation.real_execution_real_dry_run_evidence_final_review.bedrock_exception | bedrock_preparation_exception | No | active-context + final evidence review artifacts | BEDROCK_PREPARATION_EXCEPTION: the final evidence review confirmed that the scoped real dry-run evidence pack is complete, parseable, non-mutating, non-applying, and still non-executable beyond review, so the route may advance only to a closure gate while Bedrock remains non-executable. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: the final evidence review confirmed that the scoped real dry-run evidence pack is complete, parseable, non-mutating, non-applying, and still non-executable beyond review, so the route may advance only to a closure gate while Bedrock remains non-executable.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- dry_run_evidence_reviewed_in_latest_completed_phase: `True`
+- next phase recommendation: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
