@@ -8,8 +8,8 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
 - Active next phase class: `planning_gate`
 - Execution authorization: `false`
 - Bedrock executable now: `false`

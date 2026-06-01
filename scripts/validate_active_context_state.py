@@ -3,18 +3,17 @@ from __future__ import annotations
 
 import json
 import pathlib
-import re
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
+EXPECTED_STATUS = "aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate"
+EXPECTED_LATEST = "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate"
+EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate"
+EXPECTED_NEXT = "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate"
 EXPECTED_CLASS = "planning_gate"
 EXPECTED_SCHEMA_VERSION = "2.1"
 EXPECTED_ROADMAP_PHRASES = ['Infernus revela.', 'Purgatorium corrige.', 'Infernus revalida.', 'Crisol refina.', 'Bedrock decide.']
@@ -76,8 +75,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -88,19 +87,20 @@ def main() -> None:
     roadmap_required = tuple(EXPECTED_ROADMAP_PHRASES)
     _mirror_contains(ROOT / "ROADMAP_CANONICAL.md", EXPECTED_LATEST, EXPECTED_NEXT, *roadmap_required)
     _mirror_contains(ROOT / "CURRENT_STATE.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_STATUS, EXPECTED_NEXT, *roadmap_required)
-    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `true`", "Execution authorization: `false`")
+    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `true`", "Execution authorization: `false`", *roadmap_required)
     _mirror_contains(ROOT / "DECISION_LOCKS.md", EXPECTED_NEXT, "No bot execution authorization.", "Bedrock remains non-executable")
-    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md", "aris_infernus_lab_full_13_bot_contract_pack.json")
-    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Contract Pack Gate Note")
-    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md")
+    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md", "aris_infernus_lab_full_bot_scenario_interface_contract.json")
+    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Bot Scenario Interface Gate Note", *roadmap_required)
+    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md")
     _mirror_contains(ROOT / "BEDROCK_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Productization remains blocked")
-    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "No bot implementation or execution.")
+    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md", "`ROADMAP_CANONICAL.md` and `BEDROCK_GATE.md` current-route drift were repaired to match the canonical live state.")
+    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "No bot implementation or execution.")
     _mirror_contains(ROOT / "infernus_protocol.md", "NON-CANONICAL_ADVISORY_RESEARCH_ONLY", "advisory input only")
 
     stale_route_lines = (
         "- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`",
-        "- Active next phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`",
-        "Planning-only entry gate now; no execution yet.",
+        "- Active next phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`",
+        "Planning-only bot scenario interface gate next; no execution yet.",
         "Contract Schema Enforcement Implementation Planning Gate",
     )
     for path in [ROOT / "ROADMAP_CANONICAL.md", ROOT / "BEDROCK_GATE.md"]:
@@ -119,7 +119,7 @@ def main() -> None:
             "Bedrock Gate",
             "Productization / Controlled Pilot",
         ],
-        "review_result": "aris infernus lab full 13 bot contract pack planning gate pass"
+        "review_result": "aris infernus lab full bot scenario interface planning gate pass"
     }, indent=2))
 
 

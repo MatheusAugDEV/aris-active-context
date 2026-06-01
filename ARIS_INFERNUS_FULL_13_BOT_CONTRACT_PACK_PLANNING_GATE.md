@@ -29,7 +29,7 @@
 
 ## Drift Repair
 
-- No stale route text required repair.
+- `ROADMAP_CANONICAL.md` and `BEDROCK_GATE.md` current-route drift were repaired to match the canonical live state.
 
 ## Non-Authorization
 

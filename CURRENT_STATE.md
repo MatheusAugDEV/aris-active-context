@@ -4,12 +4,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass`
+- Status: `aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
-- Current status: `ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- Current status: `ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
 - Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
@@ -29,12 +29,12 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Infernus FULL 13-Bot Contract Pack Planning Gate Result
+## Bot Scenario Interface Planning Gate Result
 
-- Deterministic per-bot planning contracts are now locked for the official 13-bot taxonomy.
-- Attack taxonomy, finding taxonomy, severity model, evidence requirements, Purgatorium handoff model, and Bedrock impact signal names remain preserved.
-- `ROADMAP_CANONICAL.md` and `BEDROCK_GATE.md` current-route drift were repaired to match the canonical live state.
-- The next route is `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`.
+- Deterministic scenario interface contracts are now locked for the official 13-bot taxonomy.
+- Oracle boundaries, evidence I/O shapes, and cross-bot interface rules remain planning-only and non-executing.
+- The prior 13-bot contract-pack active-context artifact now consistently records the roadmap and Bedrock route repair.
+- The next route is `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`.
 
 ## Non-Authorization
 

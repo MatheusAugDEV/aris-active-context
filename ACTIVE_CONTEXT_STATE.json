@@ -1,6 +1,6 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
   "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
@@ -118,6 +118,11 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
       "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+      "status": "aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -145,17 +150,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
     "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
+    "status": "aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -171,26 +176,26 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
+    "from_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
-    "transition_type": "bot_contract_pack_planning_gate",
+    "to_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "transition_type": "bot_scenario_interface_planning_gate",
     "verified_via": "local validation, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
-    "deferred_phase_reason": "The 13-bot contract pack planning gate passed; the next planning-only route must define bot scenario interfaces and evidence I/O without implementation or execution.",
+    "deferred_phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
+    "deferred_phase_reason": "The bot scenario interface planning gate passed; the next planning-only route must define evidence bundle schema contracts without implementation or execution.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -204,12 +209,12 @@
     "execution_authorization": false,
     "notes": [
       "The canonical roadmap remains the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
-      "The 13-bot planning contract pack is complete; the next route must define deterministic scenario interfaces without implementing or executing bots.",
-      "ROADMAP_CANONICAL.md and BEDROCK_GATE.md stale route text were repaired to match the canonical live state.",
+      "The bot scenario interface planning gate is complete; the next route must define evidence bundle schema contracts without implementing or executing bots.",
+      "The previous 13-bot contract pack active-context artifact now accurately records roadmap and Bedrock route repair.",
       "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
     "phase_class": "planning_gate",
     "planning_only": true,
     "review_only": false,
@@ -237,7 +242,8 @@
     "ARIS_ROADMAP_R0_F120.md",
     "ROADMAP_AMENDMENT_PROTOCOL.md",
     "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
-    "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md"
+    "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
+    "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -256,7 +262,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass",
+  "status": "aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -274,7 +280,7 @@
     "current_schema_version": "2.1",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the 13-bot contract pack planning gate to the planning-only bot scenario interface gate and repairs stale non-canonical route mirrors in roadmap and boundary documents.",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the bot scenario interface planning gate to the planning-only evidence bundle schema gate while preserving non-execution boundaries and evidence-consistency repair.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

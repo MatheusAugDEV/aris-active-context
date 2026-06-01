@@ -4,9 +4,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
 - Route class: `planning_gate`
 
 ## Canonical Files
@@ -23,14 +23,15 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Entry gate artifact: `ARIS_INFERNUS_FULL_ENTRY_GATE.md`
 - Scope/taxonomy gate artifact: `ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md`
 - 13-bot contract pack artifact: `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md`
+- Bot scenario interface artifact: `ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md`
 - Advisory protocol: `infernus_protocol.md`
 - Bedrock boundary: `BEDROCK_GATE.md`
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md` records the planning-only active-context phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_13_bot_contract_pack.json` defines the deterministic 13-bot planning contract pack in `Project_ARIS`.
-- `artifacts/lab_simulation/aris_infernus_lab_full_13_bot_contract_pack_planning_gate_active_context_drift_check.json` records roadmap and Bedrock route drift repair.
+- `ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md` records the planning-only active-context phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_bot_scenario_interface_contract.json` defines deterministic scenario, input, output, and oracle-boundary contracts in `Project_ARIS`.
+- `artifacts/lab_simulation/aris_infernus_lab_full_bot_scenario_interface_matrix.json` records the per-bot scenario interface matrix.
 
 ## Active Canonical Roadmap
 
