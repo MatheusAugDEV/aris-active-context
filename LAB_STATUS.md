@@ -1,206 +1,30 @@
 # LAB_STATUS
 
-- Current Lab phase: ARIS-ROADMAP-R0
-- Lab status: R0 Governance Foundation completed; governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 45
-- Dangerous flags verified false: True
-- Missing governance artifacts: 0
-- Blocker count: 0
+- classification: `historical_only`
+- active authority: `false`
+- not active roadmap authority: `true`
+- canonical live state: `ACTIVE_CONTEXT_STATE.json`
+- canonical roadmap: `ROADMAP_CANONICAL.md`
 
-# LAB_STATUS
+## Current Canonical Route
 
-- Current Lab phase: ARIS-BEDROCK-C6
-- Lab status: C6 Read-First & Source-of-Truth Compliance Evaluator completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C7 — Evidence Pack Completeness Evaluator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 45
-- Bedrock Executable Engine Charter created: True
-- Phase Package Schema created: True
-- Required artifacts by phase type created: True
-- Dangerous flags schema created: True
-- Valid and invalid phase package examples created: True
-- Next phase contract created: True
-- Artifact Loader & Hash Manifest created: True
-- Decision/Summary Schema Validator created: True
-- Validation result contract created: True
-- Dangerous Flags Evaluator created: True
-- Dangerous flags evaluation result contract created: True
-- Completion Doctrine Evaluator created: True
-- Completion doctrine evaluation result contract created: True
-- Read-First & Source-of-Truth Compliance Evaluator created: True
-- Read-first/source-of-truth evaluation result contract created: True
-- Invalid dangerous flag examples created: True
-- Valid completion example created: True
-- Invalid completion examples created: True
-- Bedrock executable engine implemented now: False
-- Bedrock executable engine declared now: False
-- Lab governance 100 percent verified: True
-- Completion doctrine verified/persisted/carried forward: True
-- Current-state duplicate historical warning phrase found: `True`
-- LAB_VERDICTS structural cleanup candidate deferred: `True`
-- Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`
-- Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
-- F33 resume point: preserved as historical contract
-- F44 interpretation: hardening/maturity of existing Lab
-- Authority lock: preserved
-- Capability taxonomy lock: preserved
-- Historical irregularities: found and warning-only
+- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Active next phase class: `planning_gate`
+- Execution authorization: `false`
+- Bedrock executable now: `false`
+- Product promotion allowed: `false`
 
-- Current Lab phase: ARIS-BEDROCK-C5
-- Lab status: C5 Completion Doctrine Evaluator completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C6 — Read-First & Source-of-Truth Compliance Evaluator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 40
-- Bedrock Executable Engine Charter created: True
-- Phase Package Schema created: True
-- Required artifacts by phase type created: True
-- Dangerous flags schema created: True
-- Valid and invalid phase package examples created: True
-- Next phase contract created: True
-- Artifact Loader & Hash Manifest created: True
-- Decision/Summary Schema Validator created: True
-- Validation result contract created: True
-- Dangerous Flags Evaluator created: True
-- Dangerous flags evaluation result contract created: True
-- Completion Doctrine Evaluator created: True
-- Completion doctrine evaluation result contract created: True
-- Invalid dangerous flag examples created: True
-- Valid completion example created: True
-- Invalid completion examples created: True
-- Bedrock executable engine implemented now: False
-- Bedrock executable engine declared now: False
-- Lab governance 100 percent verified: True
-- Completion doctrine verified/persisted/carried forward: True
-- Current-state duplicate historical warning phrase found: `True`
-- LAB_VERDICTS structural cleanup candidate deferred: `True`
-- Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`
-- Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
-- F33 resume point: preserved as historical contract
-- F44 interpretation: hardening/maturity of existing Lab
-- Authority lock: preserved
-- Capability taxonomy lock: preserved
-- Historical irregularities: found and warning-only
+## Canonical Macrochain
 
-- Current Lab phase: ARIS-BEDROCK-C4
-- Lab status: C4 Dangerous Flags Evaluator completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C5 — Completion Doctrine Evaluator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 35
-- Bedrock Executable Engine Charter created: True
-- Phase Package Schema created: True
-- Required artifacts by phase type created: True
-- Dangerous flags schema created: True
-- Valid and invalid phase package examples created: True
-- Next phase contract created: True
-- Artifact Loader & Hash Manifest created: True
-- Decision/Summary Schema Validator created: True
-- Validation result contract created: True
-- Dangerous Flags Evaluator created: True
-- Dangerous flags evaluation result contract created: True
-- Invalid dangerous flag examples created: True
-- Bedrock executable engine implemented now: False
-- Bedrock executable engine declared now: False
-- Lab governance 100 percent verified: True
-- Completion doctrine verified/persisted/carried forward: True
-- Current-state duplicate historical warning phrase found: `True`
-- LAB_VERDICTS structural cleanup candidate deferred: `True`
-- Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`
-- Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
-- F33 resume point: preserved as historical contract
-- F44 interpretation: hardening/maturity of existing Lab
-- Authority lock: preserved
-- Capability taxonomy lock: preserved
-- Historical irregularities: found and warning-only
+```text
+Infernus revela.
+Purgatorium corrige.
+Infernus revalida.
+Crisol refina.
+Bedrock decide.
+```
 
-- Current Lab phase: ARIS-BEDROCK-C3
-- Lab status: C3 Decision/Summary Schema Validator completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C4 — Dangerous Flags Evaluator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 30
-- Bedrock Executable Engine Charter created: True
-- Phase Package Schema created: True
-- Required artifacts by phase type created: True
-- Dangerous flags schema created: True
-- Valid and invalid phase package examples created: True
-- Next phase contract created: True
-- Artifact Loader & Hash Manifest created: True
-- Decision/Summary Schema Validator created: True
-- Validation result contract created: True
-- Bedrock executable engine implemented now: False
-- Bedrock executable engine declared now: False
-- Lab governance 100 percent verified: True
-- Completion doctrine verified/persisted/carried forward: True
-- Current-state duplicate historical warning phrase found: `True`
-- LAB_VERDICTS structural cleanup candidate deferred: `True`
-- Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`
-- Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
-- F33 resume point: preserved as historical contract
-- F44 interpretation: hardening/maturity of existing Lab
-- Authority lock: preserved
-- Capability taxonomy lock: preserved
-- Historical irregularities: found and warning-only
+## Historical Boundary
 
-- Current Lab phase: ARIS-BEDROCK-C2
-- Lab status: C2 Artifact Loader & Hash Manifest completed; Lab governance verified at 100/100; Bedrock engine remains unimplemented and non-executable
-- F33 status: completed; F33.Z22 preserved as the latest F33 operational closure
-- Bedrock Gate status: declared, not executable yet
-- Bedrock Gate executable now: False
-- Bedrock Gate verdict: PASS
-- Product promotion: not allowed
-- Next Lab phase: ARIS-BEDROCK-C3 — Decision/Summary Schema Validator
-- Lab governance current readiness percent: 100
-- Bedrock executable engine readiness percent: 25
-- Bedrock Executable Engine Charter created: True
-- Phase Package Schema created: True
-- Required artifacts by phase type created: True
-- Dangerous flags schema created: True
-- Valid and invalid phase package examples created: True
-- Next phase contract created: True
-- Artifact Loader & Hash Manifest created: True
-- Allowed roots policy created: True
-- Denied roots policy created: True
-- C1 artifact hash manifest created: True
-- Bedrock executable engine implemented now: False
-- Bedrock executable engine declared now: False
-- Lab governance 100 percent verified: True
-- Lab governance declared 100 percent now: True
-- Completion doctrine verified/persisted/carried forward: True
-- Completion doctrine classification reviewed in B22: True
-- Bedrock Executability Plan created in B23: True
-- Lab governance final closure record created in B23: True
-- Current-state duplicate historical warning phrase found: `True`
-- LAB_VERDICTS structural cleanup candidate deferred: `True`
-- Phase narrative continuity rule verified in PROMPT_CONTRACT.md: `True`
-- Completion Doctrine / 200% Standard verified in PROMPT_CONTRACT.md: `True`
-- F33 resume point: preserved as historical contract
-- F44 interpretation: hardening/maturity of existing Lab
-- Authority lock: preserved
-- Capability taxonomy lock: preserved
-- Historical irregularities: found and warning-only
+Older Lab, R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema status blocks were intentionally collapsed into historical-only status. They remain audit history in git, but this file must not drive active route decisions.
