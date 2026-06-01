@@ -4,6 +4,7 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 - Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
 - Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
 - Route class: `review_gate_only`
 

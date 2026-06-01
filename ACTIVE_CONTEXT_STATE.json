@@ -395,10 +395,10 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution",
+    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review"
   },
   "last_transition": {
     "decision": "pass",

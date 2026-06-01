@@ -124,6 +124,32 @@ class TestLatestCompletedPhaseDrift(unittest.TestCase):
         self.assertNotEqual(rc, 0, "latest_completed_phase drift vs last_transition.to_phase must be blocked.\n" + stderr)
 
 
+class TestHistorySummaryDrift(unittest.TestCase):
+    """history_summary must stay aligned with live route closure continuity."""
+
+    def test_history_summary_latest_execution_phase_drift_blocks(self) -> None:
+        state = _load_state()
+        state["history_summary"]["latest_execution_phase"] = "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Execution"
+        rc, _, stderr = _run_validator_with_state(state)
+        self.assertNotEqual(
+            rc,
+            0,
+            "history_summary.latest_execution_phase drift must be blocked.\n" + stderr,
+        )
+
+    def test_history_summary_previous_execution_phase_drift_blocks(self) -> None:
+        state = _load_state()
+        state["history_summary"]["previous_execution_phase"] = (
+            "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Controlled Operator Approval Capture Gate"
+        )
+        rc, _, stderr = _run_validator_with_state(state)
+        self.assertNotEqual(
+            rc,
+            0,
+            "history_summary.previous_execution_phase drift must be blocked.\n" + stderr,
+        )
+
+
 class TestMissingRequiredTransitionFile(unittest.TestCase):
     """required_files_for_transition listing a file that doesn't exist must block."""
 
@@ -186,14 +212,14 @@ class TestPromptContractWithDivergentReadFirst(unittest.TestCase):
         self.assertNotEqual(rc, 0, "PROMPT_CONTRACT starting with Markdown must be blocked.\n" + stderr)
 
 
-class TestPlanningGateWithPlanningOnlyFalse(unittest.TestCase):
-    """planning_gate with planning_only=false must block."""
+class TestReviewGateWithReviewOnlyFalse(unittest.TestCase):
+    """review_gate_only route with review_only=false must block."""
 
-    def test_planning_gate_planning_only_false_blocks(self) -> None:
+    def test_review_gate_review_only_false_blocks(self) -> None:
         state = _load_state()
-        state["next_action"]["planning_only"] = False
+        state["next_action"]["review_only"] = False
         rc, _, stderr = _run_validator_with_state(state)
-        self.assertNotEqual(rc, 0, "planning_gate with planning_only=false must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "review_gate_only route with review_only=false must be blocked.\n" + stderr)
 
 
 class TestPlanningGateWithRealAuthorizationTrue(unittest.TestCase):

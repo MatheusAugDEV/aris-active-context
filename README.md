@@ -6,6 +6,7 @@
 
 ## Current Route
 - Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
 - Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
 - Lab Simulation is closed as a technical, review-only six-phase route.
 - This closure is not Bedrock readiness, not product promotion, and not production readiness.
