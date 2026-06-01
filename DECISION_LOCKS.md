@@ -4,11 +4,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Current Live Locks
 
-- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Last transition from: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Status: `active_context_macro_roadmap_canonicalization_controlled_apply_pass`
-- Current status: `ready_for_aris_infernus_lab_full_macroblock_entry_gate`
-- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Last transition from: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Status: `aris_infernus_lab_full_macroblock_entry_gate_pass`
+- Current status: `ready_for_aris_infernus_lab_full_scope_and_attack_taxonomy_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
 - Active next phase class: `planning_gate`
 
 ## Roadmap Authority Locks
@@ -20,6 +20,7 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Non-Authorization Locks
 
+- Macroblock entry does not authorize Infernus execution; it only opens planning.
 - No runtime validator implementation authorization now.
 - No runtime validator activation authorization.
 - No real dry-run authorization.

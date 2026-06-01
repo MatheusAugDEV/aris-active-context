@@ -52,7 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Macroblock Entry Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Macroblock Entry Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 

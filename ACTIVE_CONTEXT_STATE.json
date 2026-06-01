@@ -7,11 +7,11 @@
   "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
   "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
   "additional_live_state_sources_allowed": false,
-  "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass",
+  "status": "aris_infernus_lab_full_macroblock_entry_gate_pass",
   "decision": "pass",
-  "latest_completed_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
-  "current_status": "ready_for_aris_infernus_lab_full_macroblock_entry_gate",
-  "active_next_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+  "current_status": "ready_for_aris_infernus_lab_full_scope_and_attack_taxonomy_planning_gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
   "active_next_phase_class": "planning_gate",
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
@@ -20,7 +20,7 @@
     "current_schema_version": "2.1",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition rewrites live routing from stale microphase routing to the macro roadmap canonical chain without changing the schema contract."
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from macrochain canonicalization to the non-executing ARIS Infernus Lab FULL macroblock entry gate without changing the schema contract."
   },
   "anti_corruption_contract": {
     "canonical_read_order": [
@@ -102,6 +102,7 @@
     "CONTEXT_INDEX.md",
     "ARIS_PHASE_LEDGER.md",
     "README.md",
+    "ARIS_INFERNUS_FULL_ENTRY_GATE.md",
     "NORTH_POLE.md",
     "BEDROCK_GATE.md",
     "LAB_STATUS.md",
@@ -117,21 +118,26 @@
       "decision": "pass",
       "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass",
       "repair_type": "roadmap_governance_repair"
+    },
+    {
+      "phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+      "decision": "pass",
+      "status": "aris_infernus_lab_full_macroblock_entry_gate_pass"
     }
   ],
   "current_live_route": {
-    "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass",
+    "status": "aris_infernus_lab_full_macroblock_entry_gate_pass",
     "decision": "pass",
-    "latest_completed_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
-    "current_status": "ready_for_aris_infernus_lab_full_macroblock_entry_gate",
-    "active_next_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+    "current_status": "ready_for_aris_infernus_lab_full_scope_and_attack_taxonomy_planning_gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
     "active_next_phase_class": "planning_gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "h4_h5_hx_active_current_route": false
   },
   "next_action": {
-    "phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+    "phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
     "phase_class": "planning_gate",
     "planning_only": true,
     "status": "ready_for_next_subphase",
@@ -141,8 +147,8 @@
     "notes": [
       "The canonical roadmap is now the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
       "Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema routes are historical or superseded and must not drive live routing.",
-      "The next route is the ARIS Infernus Lab FULL Macroblock Entry Gate, planning-only and non-executing.",
-      "Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, and real dry-run remain blocked."
+      "The macroblock entry gate is complete; the next route defines macro-level scope, attack taxonomy, evidence shape, and future Purgatorium handoff rules without executing Infernus.",
+      "Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, real dry-run, and Bedrock execution remain blocked."
     ]
   },
   "locks": {
@@ -156,8 +162,8 @@
     "stale_live_route_policy": "fail_closed",
     "markdown_mirror_drift_policy": "fail_closed",
     "h4_h5_hx_active_current_route": false,
-    "deferred_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
-    "deferred_phase_reason": "Macro roadmap canonicalization passed; the first active macroblock is ARIS Infernus Lab FULL, entered through a planning-only gate."
+    "deferred_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
+    "deferred_phase_reason": "The Infernus FULL macroblock entry gate passed; the next planning-only route must define scope, attack taxonomy, evidence structure, and future Purgatorium handoff without authorizing execution."
   },
   "authorization": {
     "production_authorized": false,
@@ -222,17 +228,17 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "latest_execution_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
-    "previous_execution_phase": "ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+    "previous_execution_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true
   },
   "last_transition": {
-    "transition_type": "roadmap_macro_canonicalization",
-    "from_phase": "ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review",
-    "to_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
+    "transition_type": "macroblock_entry_gate",
+    "from_phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
+    "to_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
     "decision": "pass",
-    "verified_via": "GitHub connector update_file sequence with post-update fetch and search verification",
+    "verified_via": "local validation, git commit/push, and GitHub main verification",
     "proof_source": "GitHub main"
   },
   "required_update_policy": {

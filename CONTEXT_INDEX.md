@@ -4,9 +4,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Previous execution phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Active next phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
 - Route class: `planning_gate`
 
 ## Canonical Files
@@ -20,6 +20,7 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Decision locks mirror: `DECISION_LOCKS.md`
 - Ledger/history: `ARIS_PHASE_LEDGER.md`
 - README: `README.md`
+- Entry gate artifact: `ARIS_INFERNUS_FULL_ENTRY_GATE.md`
 - Bedrock boundary: `BEDROCK_GATE.md`
 - North Pole: `NORTH_POLE.md`
 
@@ -40,6 +41,10 @@ Bedrock decide.
 - `LAB_STATUS.md` and `LAB_VERDICTS.md` are historical lab status/verdict ledgers only.
 - Archive files are historical audit trail only.
 - Artifact paths from old phases are reference routes, not current active execution claims.
+
+## Current Phase Artifact
+
+- `ARIS_INFERNUS_FULL_ENTRY_GATE.md` defines the non-executing entry contract, discovery taxonomy, evidence requirements, future `Purgatorium FULL` handoff, and Bedrock/productization non-authorization for the active macroblock.
 
 ## Non-Authorization
 

@@ -7,11 +7,11 @@
 
 ## Current Route
 
-- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Previous execution phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Active next phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
 - Active next phase class: `planning_gate`
-- Infernus FULL is the active next macroblock and remains planning-only until an explicit future execution gate authorizes otherwise.
+- Infernus FULL remains the active macroblock and stays planning-only until an explicit future execution gate authorizes otherwise.
 
 ## Canonical Macro Roadmap
 
@@ -26,6 +26,10 @@ Bedrock decide.
 ## Superseded Material
 
 Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema Enforcement routes are historical/superseded and must not be used as active roadmap authority.
+
+## Active Artifact
+
+`ARIS_INFERNUS_FULL_ENTRY_GATE.md` is the current entry contract for the active macroblock. It defines purpose, entry criteria, discovery taxonomy, evidence requirements, Purgatorium handoff, and non-authorization boundaries.
 
 ## Non-Authorization
 
