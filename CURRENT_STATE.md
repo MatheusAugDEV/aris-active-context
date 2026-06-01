@@ -3,13 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `aris_infernus_lab_full_contract_foundation_review_pass`
+- Status: `aris_infernus_lab_full_contract_schema_hardening_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Foundation Review`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Foundation Gate`
-- Current status: `ready_for_aris_infernus_lab_full_contract_schema_hardening_gate`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Hardening Gate`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Hardening Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Contract Foundation Review`
+- Current status: `ready_for_aris_infernus_lab_full_contract_schema_hardening_review`
+- Active next phase: `ARIS Infernus Lab FULL Contract Schema Hardening Review`
+- Active next phase class: `review_gate_only`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
@@ -19,21 +19,24 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Product promotion allowed: `False`
 - Schema version: `2.1`
 
-## Infernus FULL Contract Foundation Review Result
-- The twelve contracts were revalidated as a review-only artifact pack.
-- No bots were implemented or executed.
-- Loop remains before Minos and Minos audits Loop artifacts.
-- Bedrock, product promotion, production, pilot, commercial launch, and runtime activation remain blocked.
+## Infernus FULL Contract Schema Hardening Gate Result
+- The twelve contracts now have an explicit hardening inventory for future schema enforcement.
+- Artifact refs are hardened toward canonical identity, hashing, provenance, producer, timestamp, and execution-mode fields.
+- The official taxonomy, Loop before Minos, Minos audit boundary, official chain, and macro-chain remain preserved.
+- Bedrock, product promotion, production, pilot, commercial launch, runtime activation, dry-run execution, and real apply remain blocked.
 
 ## Canonical Evidence
-- Previous contract foundation gate decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_decision.json`
-- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_decision.json`
-- Contract inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_contract_inventory.json`
-- Contract completeness matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_contract_completeness_matrix.json`
-- Forbidden fields matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_forbidden_fields_matrix.json`
-- Execution mode matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_execution_mode_matrix.json`
-- Bot taxonomy matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_bot_taxonomy_matrix.json`
-- Macro chain matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_macro_chain_matrix.json`
-- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_findings_register.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_residual_warnings_carry_forward.json`
-- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_next_phase_contract.json`
+- Previous contract foundation review decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_decision.json`
+- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_decision.json`
+- Schema hardening inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_schema_hardening_inventory.json`
+- Field type matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_field_type_matrix.json`
+- Enum matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_enum_matrix.json`
+- Cross-field validation matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_cross_field_validation_matrix.json`
+- Rejection criteria matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_rejection_criteria_matrix.json`
+- Forbidden fields matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_forbidden_fields_matrix.json`
+- Artifact-ref hardening contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_artifact_ref_hardening_contract.json`
+- Execution-mode hardening contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_execution_mode_hardening_contract.json`
+- Bot-taxonomy hardening contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_bot_taxonomy_hardening_contract.json`
+- Macro-chain hardening contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_macro_chain_hardening_contract.json`
+- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_residual_warnings_carry_forward.json`
+- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_gate_next_phase_contract.json`

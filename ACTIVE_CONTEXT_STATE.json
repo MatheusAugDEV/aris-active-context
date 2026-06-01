@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
-  "active_next_phase_class": "planning_gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Review",
+  "active_next_phase_class": "review_gate_only",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -368,6 +368,11 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL Contract Foundation Review",
       "status": "aris_infernus_lab_full_contract_foundation_review_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
+      "status": "aris_infernus_lab_full_contract_schema_hardening_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -395,17 +400,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
-    "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_aris_infernus_lab_full_contract_schema_hardening_gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Review",
+    "active_next_phase_class": "review_gate_only",
+    "current_status": "ready_for_aris_infernus_lab_full_contract_schema_hardening_review",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL Contract Foundation Review",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_contract_foundation_review_pass"
+    "status": "aris_infernus_lab_full_contract_schema_hardening_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_contract_schema_hardening_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_contract_schema_hardening_review",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -420,26 +425,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Contract Foundation Review",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Contract Foundation Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL Contract Foundation Review"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Contract Foundation Gate",
+    "from_phase": "ARIS Infernus Lab FULL Contract Foundation Review",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL Contract Foundation Review",
+    "to_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL Contract Foundation Review",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
-    "deferred_phase_reason": "ARIS Infernus Lab FULL Contract Foundation Review passed; the next step is the planning-only Contract Schema Hardening Gate.",
+    "deferred_phase": "ARIS Infernus Lab FULL Contract Schema Hardening Review",
+    "deferred_phase_reason": "ARIS Infernus Lab FULL Contract Schema Hardening Gate passed; the next step is the review-only Contract Schema Hardening Review.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -452,15 +457,15 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ARIS Infernus Lab FULL Contract Foundation Review revalidated the twelve contract artifacts.",
-      "The next phase is the planning-only Contract Schema Hardening Gate.",
+      "ARIS Infernus Lab FULL Contract Schema Hardening Gate produced the deterministic hardening pack for the twelve contracts.",
+      "The next phase is the review-only Contract Schema Hardening Review.",
       "Bedrock, production, product promotion, pilot, commercial launch, runtime activation, dry-run execution, and real apply remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Contract Schema Hardening Gate",
-    "phase_class": "planning_gate",
-    "planning_only": true,
-    "review_only": false,
+    "phase": "ARIS Infernus Lab FULL Contract Schema Hardening Review",
+    "phase_class": "review_gate_only",
+    "planning_only": false,
+    "review_only": true,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -500,7 +505,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_contract_foundation_review_pass",
+  "status": "aris_infernus_lab_full_contract_schema_hardening_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

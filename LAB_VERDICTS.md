@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Contract Schema Hardening Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.contract_schema_hardening_gate | infernus_full_contract_schema_hardening_gate_pass | No | schema hardening inventory + matrices + hardening contracts | The Contract Schema Hardening Gate produced the deterministic hardening pack without implementation or execution |
+| infernus.full.contract_schema_hardening_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + contract schema hardening artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Hardening Gate produced deterministic schema-hardening artifacts for the twelve contracts, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a review-only schema-hardening route. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Hardening Gate produced deterministic schema-hardening artifacts for the twelve contracts, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a review-only schema-hardening route.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Contract Schema Hardening Review`
+
 ## ARIS Infernus Lab FULL Contract Foundation Review - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
