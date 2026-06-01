@@ -3,17 +3,30 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 # Decision Locks
 
 ## Current Live Locks
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Last transition from: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
-- Status: `aris_infernus_lab_full_contract_schema_enforcement_planning_review_pass`
-- Current status: `ready_for_aris_infernus_lab_full_contract_schema_enforcement_implementation_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Implementation Planning Gate`
+
+- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Last transition from: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+- Status: `active_context_macro_roadmap_canonicalization_controlled_apply_pass`
+- Current status: `ready_for_aris_infernus_lab_full_macroblock_entry_gate`
+- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
 - Active next phase class: `planning_gate`
-- Six-phase Lab Simulation route remains closed.
+
+## Roadmap Authority Locks
+
+- `ROADMAP_CANONICAL.md` is the only roadmap authority file.
+- The canonical macrochain is: `Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits`.
+- Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema Enforcement routes are not active authority.
+- Historical files, ledgers, project-context snapshots, and archived notes cannot override the macrochain.
+
+## Non-Authorization Locks
+
 - No runtime validator implementation authorization now.
 - No runtime validator activation authorization.
+- No real dry-run authorization.
 - No real apply authorization.
 - No production authorization.
+- No product promotion authorization.
+- No pilot or commercial launch authorization.
 - No approval execution authorization now.
 - No package-manager execution authorization.
 - No package installation authorization.
