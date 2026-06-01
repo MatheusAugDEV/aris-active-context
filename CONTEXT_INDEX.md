@@ -3,25 +3,26 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Hardening Review`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Implementation Planning Gate`
+- Route class: `planning_gate`
 
 ## Primary Artifacts
-- Previous hardening review decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_hardening_review_decision.json`
-- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_decision.json`
-- Architecture plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_architecture_plan.json`
-- Scope matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_scope_matrix.json`
-- Validator boundary contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_validator_boundary_contract.json`
-- Validation order plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_validation_order_plan.json`
-- Rejection flow plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_rejection_flow_plan.json`
-- Artifact resolution plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_artifact_resolution_plan.json`
-- Evidence integrity plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_evidence_integrity_plan.json`
-- Execution mode enforcement plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_execution_mode_enforcement_plan.json`
-- Bot taxonomy enforcement plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_bot_taxonomy_enforcement_plan.json`
-- Residual warning enforcement plan: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_residual_warning_enforcement_plan.json`
-- Future validator boundary: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_future_validator_boundary.json`
-- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_findings_register.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_residual_warnings_carry_forward.json`
-- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_next_phase_contract.json`
+- Previous planning gate decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_decision.json`
+- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_decision.json`
+- Artifact inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_inventory.json`
+- Architecture review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_architecture_review_matrix.json`
+- Scope review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_scope_review_matrix.json`
+- Validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validator_boundary_review_matrix.json`
+- Validation order review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validation_order_review_matrix.json`
+- Rejection flow review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_rejection_flow_review_matrix.json`
+- Artifact resolution review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_resolution_review_matrix.json`
+- Evidence integrity review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_evidence_integrity_review_matrix.json`
+- Execution mode review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_execution_mode_review_matrix.json`
+- Bot taxonomy review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_bot_taxonomy_review_matrix.json`
+- Residual warning review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warning_review_matrix.json`
+- Future validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_future_validator_boundary_review_matrix.json`
+- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_findings_register.json`
+- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warnings_carry_forward.json`
+- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_next_phase_contract.json`

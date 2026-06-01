@@ -3,14 +3,14 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 # Decision Locks
 
 ## Current Live Locks
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL Contract Schema Hardening Review`
-- Status: `aris_infernus_lab_full_contract_schema_enforcement_planning_gate_pass`
-- Current status: `ready_for_aris_infernus_lab_full_contract_schema_enforcement_planning_review`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+- Last transition from: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
+- Status: `aris_infernus_lab_full_contract_schema_enforcement_planning_review_pass`
+- Current status: `ready_for_aris_infernus_lab_full_contract_schema_enforcement_implementation_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Implementation Planning Gate`
+- Active next phase class: `planning_gate`
 - Six-phase Lab Simulation route remains closed.
-- No runtime validator implementation authorization.
+- No runtime validator implementation authorization now.
 - No runtime validator activation authorization.
 - No real apply authorization.
 - No production authorization.
