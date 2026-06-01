@@ -18,7 +18,7 @@
 
 ## Preflight Evidence Repair
 
-- Previous artifact contradiction already absent at phase start.
+- Previous artifact contradiction repaired: `ROADMAP_CANONICAL.md` and `BEDROCK_GATE.md` current-route drift were repaired to match the canonical live state.
 
 ## Scenario Interface Result
 

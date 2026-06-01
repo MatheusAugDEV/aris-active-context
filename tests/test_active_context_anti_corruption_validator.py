@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
@@ -122,6 +122,19 @@ class TestMirrorGuards(unittest.TestCase):
         corrupted = original.replace("ACTIVE_CONTEXT_STATE.json wins", "ACTIVE_CONTEXT_STATE.json is preferred")
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
         self.assertNotEqual(rc, 0, "mirror without JSON-wins phrase must be blocked.\n" + stderr)
+
+    def test_stale_bot_scenario_repair_phrase_blocks(self) -> None:
+        state = _load_state()
+        original = (ROOT / "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md").read_text(encoding="utf-8")
+        corrupted = original.replace(
+            "Previous artifact contradiction repaired: `ROADMAP_CANONICAL.md` and `BEDROCK_GATE.md` current-route drift were repaired to match the canonical live state.",
+            "Previous artifact contradiction already absent at phase start.",
+        )
+        rc, _, stderr = _run_validator_with_state(
+            state,
+            extra_files={"ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md": corrupted},
+        )
+        self.assertNotEqual(rc, 0, "stale bot scenario repair phrase must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

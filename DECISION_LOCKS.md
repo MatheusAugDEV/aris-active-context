@@ -4,11 +4,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Current Live Locks
 
-- Latest completed phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
-- Status: `aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass`
-- Current status: `ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Status: `aris_infernus_lab_full_evidence_bundle_schema_planning_gate_pass`
+- Current status: `ready_for_aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
 - Active next phase class: `planning_gate`
 
 ## Roadmap Authority Locks
@@ -29,8 +29,8 @@ Bedrock decide.
 
 ## Non-Authorization Locks
 
-- Bot scenario interface planning does not authorize implementation or execution.
-- No bot implementation authorization.
+- Evidence bundle schema planning does not authorize implementation or execution.
+- No evidence bundle authorizes Bedrock.
 - No bot execution authorization.
 - No attack execution authorization.
 - No harness creation or execution authorization.

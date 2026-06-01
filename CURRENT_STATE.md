@@ -4,12 +4,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass`
+- Status: `aris_infernus_lab_full_evidence_bundle_schema_planning_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
-- Current status: `ready_for_aris_infernus_lab_full_evidence_bundle_schema_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
+- Current status: `ready_for_aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
 - Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
@@ -29,15 +29,16 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Bot Scenario Interface Planning Gate Result
+## Evidence Bundle Schema Planning Gate Result
 
-- Deterministic scenario interface contracts are now locked for the official 13-bot taxonomy.
-- Oracle boundaries, evidence I/O shapes, and cross-bot interface rules remain planning-only and non-executing.
-- The prior 13-bot contract-pack active-context artifact now consistently records the roadmap and Bedrock route repair.
-- The next route is `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`.
+- Deterministic evidence bundle and evidence_ref contracts are now locked for the official 13-bot taxonomy.
+- Completeness scoring, Minos verdict packet semantics, and rejection rules remain planning-only and non-executing.
+- The bot scenario interface artifact now correctly records the repaired historical drift truth.
+- The next route is `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`.
 
 ## Non-Authorization
 
+- No evidence bundle authorizes execution.
 - No bot implementation or execution.
 - No attack or harness execution.
 - No runtime, frontend, backend, action-runtime, or audio mutation.
