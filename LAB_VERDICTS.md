@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Contract Schema Hardening Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.contract_schema_hardening_review | infernus_full_contract_schema_hardening_review_pass | No | review matrices + findings register + next phase contract | The Contract Schema Hardening Review revalidated the hardening pack without implementation or execution |
+| infernus.full.contract_schema_hardening_review.bedrock_exception | bedrock_preparation_exception | No | active-context + contract schema hardening review artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Hardening Review revalidated the hardening pack, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a planning-only schema-enforcement route. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Hardening Review revalidated the hardening pack, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a planning-only schema-enforcement route.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
+
 ## ARIS Infernus Lab FULL Contract Schema Hardening Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
