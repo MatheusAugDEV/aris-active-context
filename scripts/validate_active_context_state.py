@@ -10,11 +10,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_macroblock_entry_gate_pass"
+EXPECTED_STATUS = "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL Macroblock Entry Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_scope_and_attack_taxonomy_planning_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate"
+EXPECTED_LATEST = "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate"
+EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_13_bot_contract_pack_planning_gate"
+EXPECTED_NEXT = "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate"
 EXPECTED_CLASS = "planning_gate"
 EXPECTED_SCHEMA_VERSION = "2.1"
 EXPECTED_ROADMAP_PHRASES = [
@@ -102,10 +102,10 @@ def _mirror_excludes(path: pathlib.Path, *phrases: str) -> None:
         _require(phrase not in text, f"{path.name} contains stale active-routing phrase: {phrase}")
 
 
-def _entry_gate_contains(path: pathlib.Path, *phrases: str) -> None:
+def _artifact_contains(path: pathlib.Path, *phrases: str) -> None:
     text = path.read_text(encoding="utf-8")
     for phrase in phrases:
-        _require(phrase in text, f"{path.name} missing entry-gate phrase: {phrase}")
+        _require(phrase in text, f"{path.name} missing artifact phrase: {phrase}")
 
 
 def _value_at_path(data: dict[str, Any], dotted_path: str) -> Any:
@@ -173,8 +173,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status cross-field")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase cross-field")
     _require_paths_match(state, policy["status_must_match_across"], "status cross-field")
-    _require(state["history_summary"]["previous_execution_phase"] == "Active Context Macro Roadmap Canonicalization Controlled Apply", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "Active Context Macro Roadmap Canonicalization Controlled Apply", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Macroblock Entry Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Macroblock Entry Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -187,15 +187,15 @@ def main() -> None:
     _mirror_contains(ROOT / "CURRENT_STATE.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_STATUS, EXPECTED_NEXT, *roadmap_required)
     _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `true`", "Execution authorization: `false`", *roadmap_required)
     _mirror_contains(ROOT / "DECISION_LOCKS.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Old R0/F120", "Bedrock remains non-executable and product promotion remains blocked.")
-    _mirror_contains(ROOT / "CONTEXT_INDEX.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_ENTRY_GATE.md", *roadmap_required)
-    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Entry Gate Note", *roadmap_required)
-    _mirror_contains(ROOT / "README.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_ENTRY_GATE.md", *roadmap_required)
+    _mirror_contains(ROOT / "CONTEXT_INDEX.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md", "infernus_protocol.md", *roadmap_required)
+    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Scope & Taxonomy Gate Note", *roadmap_required)
+    _mirror_contains(ROOT / "README.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md", *roadmap_required)
     _mirror_contains(ROOT / "LAB_STATUS.md", "historical_only", "not active roadmap authority")
     _mirror_contains(ROOT / "LAB_VERDICTS.md", "historical_only", "not active roadmap authority")
     _mirror_contains(ROOT / "ARIS_ROADMAP_R0_F120.md", "not active roadmap authority", "ROADMAP_CANONICAL.md")
     _mirror_contains(ROOT / "PROJECT_CONTEXT_ARIS.md", "historical_only", "not active roadmap authority")
     _mirror_contains(ROOT / "BEDROCK_GATE.md", "Bedrock remains a future maximum decision gate", "Productization remains blocked")
-    _entry_gate_contains(
+    _artifact_contains(
         ROOT / "ARIS_INFERNUS_FULL_ENTRY_GATE.md",
         "ARIS Infernus Lab FULL Macroblock Entry Gate",
         "aris_infernus_lab_full_macroblock_entry_gate_pass",
@@ -213,6 +213,51 @@ def main() -> None:
         "Productization Non-Authorization",
         "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
     )
+    _artifact_contains(
+        ROOT / "ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md",
+        "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
+        "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass",
+        "pass",
+        "ARIS Infernus Lab FULL Macroblock Entry Gate",
+        "infernus_protocol.md",
+        "Attack Taxonomy",
+        "Finding Taxonomy",
+        "Official 13-Bot Discovery Role Mapping",
+        "Historical Function Preservation",
+        "P0 Gap Resolutions",
+        "Severity Model S0-S5",
+        "Evidence Requirements",
+        "Purgatorium Handoff Model",
+        "Bedrock Impact Signals",
+        "Non-Execution Boundary",
+        "Productization Non-Authorization",
+        "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+        "BB-UNRESOLVED-S4",
+        "BB-UNRESOLVED-S5",
+        "BB-NO-REPLAY-EVIDENCE",
+        "BB-NO-HITL-PROOF",
+        "BB-LLM-ONLY-JUDGE",
+        "BB-MISSING-PROVENANCE",
+        "BB-COVERAGE-GAP",
+        "BB-SCHEMA-DRIFT",
+        "BB-FALSE-PASS",
+        "BB-ACCEPTED-RISK-AS-RESOLVED",
+        "BB-PRODUCT-CLAIM-INFLATION",
+        "Quimera",
+        "Dúbio",
+        "Elos",
+        "Taipan",
+        "Labirinto",
+        "Vitium",
+        "Gula",
+        "Apep",
+        "Patrono",
+        "Éfeso",
+        "Abzu",
+        "Loop",
+        "Minos",
+    )
+    _artifact_contains(ROOT / "infernus_protocol.md", "NON-CANONICAL_ADVISORY_RESEARCH_ONLY", "canonicity: advisory input only")
 
     for mirror in [ROOT / "CURRENT_STATE.md", ROOT / "NEXT_ACTION.md", ROOT / "DECISION_LOCKS.md", ROOT / "CONTEXT_INDEX.md", ROOT / "ARIS_PHASE_LEDGER.md", ROOT / "README.md", ROOT / "ROADMAP_CANONICAL.md"]:
         _mirror_excludes(mirror, "Contract Schema Enforcement Implementation Planning Gate", "ARIS-BEDROCK-C7", "R0→F120 — Canonical Governance Roadmap")
@@ -237,13 +282,15 @@ def main() -> None:
             str(ROOT / "ARIS_PHASE_LEDGER.md"),
             str(ROOT / "README.md"),
             str(ROOT / "ARIS_INFERNUS_FULL_ENTRY_GATE.md"),
+            str(ROOT / "ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md"),
+            str(ROOT / "infernus_protocol.md"),
             str(ROOT / "LAB_STATUS.md"),
             str(ROOT / "LAB_VERDICTS.md"),
             str(ROOT / "ARIS_ROADMAP_R0_F120.md"),
             str(ROOT / "PROJECT_CONTEXT_ARIS.md"),
             str(ROOT / "BEDROCK_GATE.md"),
         ],
-        "review_result": "aris infernus lab full macroblock entry gate pass",
+        "review_result": "aris infernus lab full scope attack taxonomy planning gate pass",
     }, indent=2))
 
 

@@ -4,12 +4,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_macroblock_entry_gate_pass`
+- Status: `aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
-- Previous execution phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Current status: `ready_for_aris_infernus_lab_full_scope_and_attack_taxonomy_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Current status: `ready_for_aris_infernus_lab_full_13_bot_contract_pack_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
 - Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
@@ -39,12 +39,12 @@ Bedrock decide.
 6. `Bedrock Gate` — future maximum decision gate.
 7. `Productization / Controlled Pilot` — blocked unless Bedrock explicitly permits.
 
-## Infernus FULL Entry Gate Result
+## Infernus FULL Scope & Attack Taxonomy Planning Gate Result
 
-- The macroblock is now opened cleanly under a non-executing entry contract.
-- Discovery taxonomy and evidence expectations are defined at macro level only.
-- Future findings must flow into `Purgatorium FULL`; this gate does not execute or correct them.
-- The next route is `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`.
+- The Infernus FULL macroblock now has a locked planning taxonomy for attack families, finding classes, discovery-role ownership, severity, evidence shape, and `Purgatorium FULL` handoff.
+- `infernus_protocol.md` was used only as non-canonical advisory input and not as implementation or PASS evidence.
+- Future findings still must flow into `Purgatorium FULL`; this gate does not execute, replay, or correct them.
+- The next route is `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`.
 
 ## Superseded Material
 
@@ -52,4 +52,4 @@ Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema Enforcement mic
 
 ## Non-Authorization
 
-Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, real dry-run, and Bedrock execution remain blocked.
+Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, real dry-run, bot execution, attack execution, and Bedrock execution remain blocked.
