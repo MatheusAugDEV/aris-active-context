@@ -3,13 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `ARIS Infernus Lab FULL Contract Foundation Gate`
+- `ARIS Infernus Lab FULL Contract Foundation Review`
 - Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Phase class: `review_gate_only`
+- Planning-only: `false`
+- Review-only: `true`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Opening Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Readiness Review`
 - Lab Simulation remains closed and must not be reopened as phase 7.
-- Contract Foundation Gate remains planning/design-only unless a future active-context explicitly authorizes more.
+- Contract Foundation Review remains non-implementing and non-executing.
 - Bedrock, production, product promotion, pilot, commercial launch, and real apply remain blocked.

@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Contract Foundation Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.contract_foundation_gate | infernus_full_contract_foundation_gate_pass | No | schema inventory + contract artifacts | The Contract Foundation Gate materialized deterministic non-executing contracts for future Infernus planning |
+| infernus.full.contract_foundation_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + contract foundation artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Foundation Gate created deterministic non-executing contracts for future Infernus planning, kept Bedrock non-executable, kept product promotion blocked, and did not implement or execute bots. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Foundation Gate created deterministic non-executing contracts for future Infernus planning, kept Bedrock non-executable, kept product promotion blocked, and did not implement or execute bots.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Contract Foundation Review`
+
 ## ARIS Infernus Lab FULL Readiness Review - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

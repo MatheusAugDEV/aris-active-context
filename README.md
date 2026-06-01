@@ -5,9 +5,9 @@
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
-- Latest completed phase: `ARIS Infernus Lab FULL Readiness Review`
-- Previous execution phase: `ARIS Infernus Lab FULL Opening Gate`
-- Active next phase: `ARIS Infernus Lab FULL Contract Foundation Gate`
-- Infernus FULL remains a contract route and is still non-executable.
+- Latest completed phase: `ARIS Infernus Lab FULL Contract Foundation Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Readiness Review`
+- Active next phase: `ARIS Infernus Lab FULL Contract Foundation Review`
+- Infernus FULL contract foundation remains non-executable.
 - No bots were implemented or executed.
 - Residual warnings remain carried forward explicitly.
