@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Readiness Review - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.readiness_review | infernus_full_readiness_review_pass | No | artifact inventory + review matrices | The readiness review validated the Opening Gate contract pack without implementing bots or executing the lab |
+| infernus.full.readiness_review.bedrock_exception | bedrock_preparation_exception | No | active-context + readiness review artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Readiness Review validated the Opening Gate contract pack, preserved the official taxonomy and macro-chain, kept Bedrock non-executable, and kept product promotion blocked without implementing or executing bots. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Readiness Review validated the Opening Gate contract pack, preserved the official taxonomy and macro-chain, kept Bedrock non-executable, and kept product promotion blocked without implementing or executing bots.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Contract Foundation Gate`
+
 ## ARIS Infernus Lab FULL Opening Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
