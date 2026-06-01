@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Opening Gate",
-  "active_next_phase_class": "planning_gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Readiness Review",
+  "active_next_phase_class": "readiness_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -348,6 +348,11 @@
       "decision": "pass",
       "phase": "Lab Simulation Closure Post-Review Routing Decision",
       "status": "lab_simulation_closure_post_review_routing_decision_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Opening Gate",
+      "status": "aris_infernus_lab_full_opening_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -375,17 +380,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Opening Gate",
-    "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_aris_infernus_lab_full_opening_gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Readiness Review",
+    "active_next_phase_class": "readiness_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_readiness_review",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Simulation Closure Post-Review Routing Decision",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Opening Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_simulation_closure_post_review_routing_decision_pass"
+    "status": "aris_infernus_lab_full_opening_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_opening_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_readiness_review",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -400,26 +405,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Simulation Closure Post-Review Routing Decision",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Opening Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate"
+    "previous_execution_phase": "Lab Simulation Closure Post-Review Routing Decision"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
+    "from_phase": "Lab Simulation Closure Post-Review Routing Decision",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Simulation Closure Post-Review Routing Decision",
+    "to_phase": "ARIS Infernus Lab FULL Opening Gate",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Simulation Closure Post-Review Routing Decision",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Opening Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Opening Gate",
-    "deferred_phase_reason": "Lab Simulation is closed; the next macro-route is ARIS Infernus Lab FULL Opening Gate as a planning-only gate.",
+    "deferred_phase": "ARIS Infernus Lab FULL Readiness Review",
+    "deferred_phase_reason": "The Infernus FULL opening contract passed; the next step is a readiness review without execution.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -432,16 +437,16 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "Lab Simulation remains closed and no phase 7 was created.",
-      "This routing decision selected ARIS Infernus Lab FULL Opening Gate as the next macro-route.",
-      "The next macro-route remains planning-only and non-executing.",
-      "Bedrock, production, product promotion, and real apply remain blocked."
+      "ARIS Infernus Lab FULL Opening Gate opened the macro-route as planning-only, design-only, and contract-only.",
+      "The official 13-bot taxonomy is locked for the next phase.",
+      "Loop remains before Minos and Minos audits Loop artifacts.",
+      "Bedrock, production, product promotion, pilot, commercial launch, and runtime activation remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Opening Gate",
-    "phase_class": "planning_gate",
-    "planning_only": true,
-    "review_only": false,
+    "phase": "ARIS Infernus Lab FULL Readiness Review",
+    "phase_class": "readiness_gate",
+    "planning_only": false,
+    "review_only": true,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -481,7 +486,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_simulation_closure_post_review_routing_decision_pass",
+  "status": "aris_infernus_lab_full_opening_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

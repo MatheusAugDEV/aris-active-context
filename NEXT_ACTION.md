@@ -3,13 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `ARIS Infernus Lab FULL Opening Gate`
+- `ARIS Infernus Lab FULL Readiness Review`
 - Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Phase class: `readiness_gate`
+- Planning-only: `false`
+- Review-only: `true`
 - Execution authorization: `false`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Previous execution phase: `Lab Simulation Closure Post-Review Routing Decision`
 - Lab Simulation remains closed and must not be reopened as phase 7.
-- The selected next macro-route is ARIS Infernus Lab FULL Opening Gate.
-- Bedrock, production, product promotion, and real apply remain blocked.
+- Infernus FULL is open only as a contract route.
+- Bedrock, production, product promotion, pilot, commercial launch, and real apply remain blocked.

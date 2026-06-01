@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Opening Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.opening_gate | infernus_full_opening_gate_pass | No | scope contract + bot taxonomy contract + macro chain contract | The Opening Gate opened Infernus FULL as a contract route only, without implementing bots or executing lab operations |
+| infernus.full.opening_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + opening gate artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Opening Gate opened the macro-route as planning-only, design-only, and contract-only, kept Bedrock non-executable, kept product promotion blocked, and did not implement or execute bots. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Opening Gate opened the macro-route as planning-only, design-only, and contract-only, kept Bedrock non-executable, kept product promotion blocked, and did not implement or execute bots.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Readiness Review`
+
 ## Lab Simulation Closure Post-Review Routing Decision - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |

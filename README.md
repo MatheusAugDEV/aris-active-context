@@ -5,9 +5,9 @@
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
-- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
-- Lab Simulation remains closed as a technical six-phase route.
-- The next macro-route selection is planning-only and non-executing.
+- Latest completed phase: `ARIS Infernus Lab FULL Opening Gate`
+- Previous execution phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Active next phase: `ARIS Infernus Lab FULL Readiness Review`
+- Infernus FULL is open only as a planning/design/contract route.
+- No bots were implemented or executed.
 - Residual warnings remain carried forward explicitly.

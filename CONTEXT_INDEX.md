@@ -3,17 +3,19 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
-- Route class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Opening Gate`
+- Previous execution phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Active next phase: `ARIS Infernus Lab FULL Readiness Review`
+- Route class: `readiness_gate`
 
 ## Primary Artifacts
-- Closure Gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate.json`
-- Closure Gate next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_next_route_contract.json`
-- This phase decision: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision.json`
-- Routing candidates matrix: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_routing_candidates_matrix.json`
-- Rejected routes matrix: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_rejected_routes_matrix.json`
-- Selected route contract: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_selected_route_contract.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_residual_warnings_carry_forward.json`
-- Next-route contract: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_next_route_contract.json`
+- Previous routing decision: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision.json`
+- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_decision.json`
+- Scope contract: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_scope_contract.json`
+- Official bot taxonomy contract: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_official_bot_taxonomy_contract.json`
+- Macro chain contract: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_macro_chain_contract.json`
+- Forbidden routes matrix: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_forbidden_routes_matrix.json`
+- Bedrock boundary matrix: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_bedrock_boundary_matrix.json`
+- Purgatorium/Crisol boundary matrix: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_purgatorium_crisol_boundary_matrix.json`
+- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_residual_warnings_carry_forward.json`
+- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_opening_gate_next_phase_contract.json`
