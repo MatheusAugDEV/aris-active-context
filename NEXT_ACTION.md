@@ -3,13 +3,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- `Lab Simulation Closure Post-Review Routing Decision`
 - Status: `ready_for_next_subphase`
 - Phase class: `review_gate_only`
 - Planning-only: `false`
 - Review-only: `true`
 - Execution authorization: `false`
-- Real Dry-Run Evidence Final Review already finished the conservative review of the phase 4/6 evidence pack.
-- The next route may only decide closure of the six-phase Lab Simulation route.
-- Real apply remains disabled.
-- Roadmap amendment required: `False`
+- Lab Simulation is closed and must not be reopened as phase 7.
+- Any next route must stay non-executing until a separate canonical gate says otherwise.
+- Bedrock, production, and product promotion remain blocked.

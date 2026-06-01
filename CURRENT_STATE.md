@@ -3,34 +3,35 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_pass`
+- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Current status: `ready_for_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate`
-- Active next phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Current status: `lab_simulation_route_closed_pending_post_review_routing_decision`
+- Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
 - Active next phase class: `review_gate_only`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
 - Approval execution authorized: `False`
-- Dry-run evidence reviewed in latest completed phase: `True`
-- Dry-run executed in previous completed phase: `True`
+- Six-phase route closed: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
 - Schema version: `2.1`
 
-## Real Dry-Run Evidence Final Review Result
-- The phase 4/6 evidence pack was reviewed as complete, parseable, and conservative.
-- This phase did not perform another execution and did not close Lab Simulation yet.
-- The next route is the Lab Simulation Closure Gate only.
+## Lab Simulation Closure Result
+- The six-phase Lab Simulation route is now officially closed as a technical, review-only closure.
+- This closure is not Bedrock readiness, not product promotion, and not production readiness.
+- Residual warnings remain carried forward explicitly and unresolved.
+- The next route is separate and does not reopen Simulation as phase 7.
 
 ## Canonical Evidence
+- Phase 3 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
 - Phase 4 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution.json`
-- This phase decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review.json`
-- This phase summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_summary.json`
-- Evidence review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_evidence_review_matrix.json`
-- Snapshot comparison review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_snapshot_comparison_review.json`
-- Execution ledger review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_execution_ledger_review.json`
-- Rollback declaration review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_rollback_declaration_review.json`
-- Forbidden operations review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_forbidden_operations_review.json`
-- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_next_route_contract.json`
+- Phase 5 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review.json`
+- This phase decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate.json`
+- Closure matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_closure_matrix.json`
+- Phase chain review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_phase_chain_review.json`
+- Evidence bundle index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_evidence_bundle_index.json`
+- Residual warnings register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_residual_warnings_register.json`
+- Post-closure boundaries: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_post_closure_boundaries.json`
+- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_next_route_contract.json`
