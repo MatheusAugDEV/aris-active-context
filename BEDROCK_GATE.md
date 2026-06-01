@@ -8,8 +8,8 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
 - Active next phase class: `planning_gate`
 - Execution authorization: `false`
 - Bedrock executable now: `false`

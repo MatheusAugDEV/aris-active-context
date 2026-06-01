@@ -4,12 +4,12 @@ This file is a historical ledger only. Live routing always comes from `ACTIVE_CO
 
 ## Latest Canonical Transition
 
-- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Status: `aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass`
+- Latest completed phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Status: `aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate_pass`
 - Decision: `pass`
-- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
 - Active next phase class: `planning_gate`
 
 ## Canonical Roadmap Ledger Note
@@ -24,6 +24,6 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Minos Verdict Schema Gate Note
+## Bedrock Boundary Signal Schema Gate Note
 
-`ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate` locked deterministic Minos verdict packets, audit decisions, evidence completeness thresholds, rejection reasons, severity downgrade prevention, false-pass guards, accepted residual enforcement, LLM-as-judge prohibition, and deterministic ruleset hashing without authorizing execution.
+`ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate` locked deterministic Bedrock boundary signal packets, Minos-to-signal mapping, signal severity/blocking semantics, candidate-only policy, and explicit no-Bedrock-authorization-by-signal rules without authorizing execution.

@@ -4,11 +4,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Current Live Locks
 
-- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Status: `aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass`
-- Current status: `ready_for_aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Status: `aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate_pass`
+- Current status: `ready_for_aris_infernus_lab_full_schema_pack_closure_review_gate`
+- Active next phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
 - Active next phase class: `planning_gate`
 
 ## Roadmap Authority Locks
@@ -29,10 +29,10 @@ Bedrock decide.
 
 ## Non-Authorization Locks
 
-- Minos verdict schema planning does not authorize implementation or execution.
-- Accepted residual may not be treated as resolved.
-- Severity downgrade remains blocked by default.
-- No LLM-as-judge verdict authorization.
+- Bedrock boundary signal schema planning does not authorize implementation or execution.
+- Every signal remains candidate-only.
+- No Bedrock authorization by signal.
+- No product promotion authorization.
 - No bot execution authorization.
 - No attack execution authorization.
 - No harness creation or execution authorization.
@@ -41,7 +41,6 @@ Bedrock decide.
 - No real dry-run authorization.
 - No real apply authorization.
 - No production authorization.
-- No product promotion authorization.
 - No pilot or commercial launch authorization.
 - No package installation authorization.
 - No secrets access authorization.

@@ -7,9 +7,9 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
 - Active next phase class: `planning_gate`
 - Infernus FULL remains the active macroblock and stays planning-only until an explicit future execution gate authorizes otherwise.
 
@@ -32,12 +32,13 @@ Bedrock decide.
 - `ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md`
+- `ARIS_INFERNUS_FULL_BEDROCK_BOUNDARY_SIGNAL_SCHEMA_PLANNING_GATE.md`
 
 ## Non-Authorization
 
-- No Minos verdict authorizes execution.
+- No Bedrock boundary signal authorizes execution.
+- No Bedrock PASS or product promotion.
 - No bot implementation or execution.
 - No attack or harness execution.
 - No finding correction or Purgatorium execution.
 - No real dry-run or real apply.
-- Bedrock remains non-executable and product promotion remains blocked.
