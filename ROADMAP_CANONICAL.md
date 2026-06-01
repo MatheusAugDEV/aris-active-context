@@ -24,7 +24,7 @@ Bedrock decide.
 | Order | Macroblock | Status | Function | Authorization |
 | --- | --- | --- | --- | --- |
 | 0 | Tier-1 / Base Operacional | historical/base | Foundational operating base already accumulated; does not dominate active routing. | No production/pilot/commercial authorization. |
-| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Planning-only entry gate now; no execution yet. |
+| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Planning-only bot scenario interface gate next; no execution yet. |
 | 2 | Purgatorium FULL | future macroblock | Correct everything Infernus reveals; classify every finding as fixed, accepted residual, or blocked. | Not active yet. |
 | 3 | Infernus Revalidation | future macroblock | Attack again after Purgatorium; prove fixes are real and expose regressions. | Not active yet. |
 | 4 | ARIS Final Crisol FULL | future macroblock | Final refinement and certification of maturity, evidence, usability, simplicity, safety, and product readiness. | Not active yet. |
@@ -33,8 +33,8 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
 - Active next phase class: `planning_gate`
 - Planning-only: `true`
 - Runtime execution authorized: `false`
@@ -42,21 +42,3 @@ Bedrock decide.
 - Real apply authorized: `false`
 - Product promotion allowed: `false`
 - Bedrock executable now: `false`
-
-## Superseded Roadmap Policy
-
-The following are not active roadmap authority anymore:
-
-- `ARIS_ROADMAP_R0_F120.md`
-- R0/F120 roadmap sequences
-- F21/F33/F120 route framing
-- C6/C14 Bedrock-engine subroadmaps as active direction
-- Lab Simulation microphase routing
-- Contract Schema Enforcement microphase routing
-- Any `next recommended phase` inside historical notes, ledgers, reports, or project-context snapshots
-
-They may exist only as audit history, historical references, or superseded design material. They must not override the macrochain above.
-
-## Non-Authorization
-
-This roadmap does not authorize runtime mutation, frontend/backend/action-runtime/audio mutation, package installation, dependency changes, network use outside GitHub active-context governance, external LLM/API use, real apply, real dry-run execution, customer pilot, commercial launch, product promotion, or Bedrock product pass.

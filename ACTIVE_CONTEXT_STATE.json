@@ -1,28 +1,11 @@
 {
   "active_context_version": "2.0",
-  "schema_version": "2.1",
-  "canonical_repository": "MatheusAugDEV/aris-active-context",
-  "canonical_branch": "main",
-  "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
-  "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
-  "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
-  "additional_live_state_sources_allowed": false,
-  "status": "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass",
-  "decision": "pass",
-  "latest_completed_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-  "current_status": "ready_for_aris_infernus_lab_full_13_bot_contract_pack_planning_gate",
-  "active_next_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
   "active_next_phase_class": "planning_gate",
-  "versioning_contract": {
-    "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
-    "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change.",
-    "current_active_context_version": "2.0",
-    "current_schema_version": "2.1",
-    "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the Infernus FULL entry gate to the planning-only scope and attack taxonomy gate without changing the schema contract."
-  },
+  "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
+    "agent_must_read_json_before_markdown": true,
+    "anti_corruption_contract_file": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
     "canonical_read_order": [
       "1. ACTIVE_CONTEXT_STATE.json",
       "2. ACTIVE_CONTEXT_SCHEMA.json",
@@ -36,12 +19,9 @@
     "json_beats_markdown": true,
     "markdown_conflict_policy": "fail_closed",
     "validator_must_pass_before_any_decision": true,
-    "agent_must_read_json_before_markdown": true,
-    "anti_corruption_contract_file": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
     "violation_response": "report_drift_and_block_decision"
   },
   "artifact_integrity_policy": {
-    "missing_artifact_handling": "fail_closed_unless_classified",
     "allowed_classifications": [
       "active_canonical",
       "external_to_active_context_repo",
@@ -52,21 +32,94 @@
       "missing_expected_blocking"
     ],
     "artifact_routes_existence_check": true,
-    "context_index_classification_required": true,
-    "unclassified_missing_artifact_policy": "fail_closed",
     "classified_artifact_prefixes": {
       "archive/": {
-        "classification": "historical_only",
         "blocking": false,
+        "classification": "historical_only",
         "reason": "Archived roadmap and phase history are audit trail only and never active routing authority."
       },
       "artifacts/": {
-        "classification": "external_to_active_context_repo",
         "blocking": false,
+        "classification": "external_to_active_context_repo",
         "reason": "Phase artifacts may live in the ARIS project workspace; active-context tracks governance state."
       }
-    }
+    },
+    "context_index_classification_required": true,
+    "missing_artifact_handling": "fail_closed_unless_classified",
+    "unclassified_missing_artifact_policy": "fail_closed"
   },
+  "artifact_routes": {
+    "anti_corruption_contract": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
+    "context_index_mirror": "CONTEXT_INDEX.md",
+    "current_state_mirror": "CURRENT_STATE.md",
+    "decision_locks_mirror": "DECISION_LOCKS.md",
+    "next_action_mirror": "NEXT_ACTION.md",
+    "phase_ledger_history": "ARIS_PHASE_LEDGER.md",
+    "readme": "README.md",
+    "roadmap_authority": "ROADMAP_CANONICAL.md",
+    "schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "state_file": "ACTIVE_CONTEXT_STATE.json",
+    "validator_script": "scripts/validate_active_context_state.py"
+  },
+  "authorization": {
+    "approval_execution_authorized": false,
+    "container_image_vm_creation_authorized": false,
+    "debian_harness_execution_authorized": false,
+    "dependency_change_authorized": false,
+    "external_llm_api_authorized": false,
+    "frontend_backend_action_runtime_audio_mutation_authorized": false,
+    "generic_action_runtime_activated": false,
+    "host_filesystem_mutation_authorized": false,
+    "network_authorized_scope": "github_active_context_governance_only",
+    "package_installation_authorized": false,
+    "package_manager_execution_authorized": false,
+    "product_ready": false,
+    "production_authorized": false,
+    "real_apply_authorized": false,
+    "real_dry_run_execution_authorized": false,
+    "runtime_integration_allowed": false,
+    "runtime_refactor_authorized": false,
+    "secrets_access_authorized": false
+  },
+  "canonical_branch": "main",
+  "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+  "canonical_repository": "MatheusAugDEV/aris-active-context",
+  "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+  "canonicality_rules": {
+    "canonical_branch": "main",
+    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+    "canonical_repository": "MatheusAugDEV/aris-active-context",
+    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "github_active_context_is_the_only_canonical_active_context_source": true,
+    "local_checkout_is_non_canonical_until_remote_verified": true,
+    "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state": true,
+    "no_github_sync_no_canonical_pass": true,
+    "no_local_only_update_is_canonical": true,
+    "no_unpushed_commit_is_canonical": true
+  },
+  "completed_phases": [
+    {
+      "decision": "pass",
+      "phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
+      "repair_type": "roadmap_governance_repair",
+      "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
+      "status": "aris_infernus_lab_full_macroblock_entry_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
+      "status": "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+      "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
+    }
+  ],
   "cross_field_consistency_policy": {
     "active_next_phase_must_match_across": [
       "active_next_phase",
@@ -74,6 +127,12 @@
       "next_action.phase",
       "locks.deferred_phase"
     ],
+    "current_status_must_match_across": [
+      "current_status",
+      "current_live_route.current_status"
+    ],
+    "enforcement": "fail_closed",
+    "exception_field": "cross_field_exception_reason",
     "latest_completed_phase_must_match_across": [
       "latest_completed_phase",
       "current_live_route.latest_completed_phase",
@@ -83,13 +142,78 @@
     "status_must_match_across": [
       "status",
       "current_live_route.status"
+    ]
+  },
+  "current_live_route": {
+    "active_next_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate",
+    "decision": "pass",
+    "h4_h5_hx_active_current_route": false,
+    "latest_completed_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+    "next_phase_execution_authorization": false,
+    "operator_approval_packet_review_is_execution_approval": false,
+    "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
+  },
+  "current_status": "ready_for_aris_infernus_lab_full_bot_scenario_interface_planning_gate",
+  "decision": "pass",
+  "drift_signals": {
+    "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
+    "json_state_mismatch": "fail_closed",
+    "ledger_live_route_drift": "fail_closed",
+    "local_vs_github_drift": "fail_closed",
+    "markdown_mirror_drift": "fail_closed"
+  },
+  "history_summary": {
+    "governance_repairs": [
+      "ARIS Active-Context Live-State Normalization and Stale Routing Eradication Gate",
+      "ARIS Active-Context Architecture Refactor Gate",
+      "ARIS Active-Context Anti-Corruption Hardening Gate",
+      "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "current_status_must_match_across": [
-      "current_status",
-      "current_live_route.current_status"
+    "latest_execution_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+    "ledger_mode": "historical_only",
+    "markdown_mirrors_are_non_authoritative": true,
+    "previous_execution_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate"
+  },
+  "last_transition": {
+    "decision": "pass",
+    "from_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
+    "proof_source": "GitHub main",
+    "to_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+    "transition_type": "bot_contract_pack_planning_gate",
+    "verified_via": "local validation, git commit/push, and GitHub main verification"
+  },
+  "latest_completed_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
+  "locks": {
+    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
+    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
+    "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
+    "deferred_phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "deferred_phase_reason": "The 13-bot contract pack planning gate passed; the next planning-only route must define bot scenario interfaces and evidence I/O without implementation or execution.",
+    "every_transition_must_update_commit_push_and_verify_github_active_context": true,
+    "github_active_context_is_the_only_canonical_active_context_source": true,
+    "h4_h5_hx_active_current_route": false,
+    "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
+    "markdown_mirror_drift_policy": "fail_closed",
+    "no_github_active_context_sync_no_canonical_pass": true,
+    "stale_live_route_policy": "fail_closed"
+  },
+  "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
+  "next_action": {
+    "execution_authorization": false,
+    "notes": [
+      "The canonical roadmap remains the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
+      "The 13-bot planning contract pack is complete; the next route must define deterministic scenario interfaces without implementing or executing bots.",
+      "ROADMAP_CANONICAL.md and BEDROCK_GATE.md stale route text were repaired to match the canonical live state.",
+      "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
     ],
-    "enforcement": "fail_closed",
-    "exception_field": "cross_field_exception_reason"
+    "operator_approval_packet_review_is_execution_approval": false,
+    "phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
+    "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -112,147 +236,14 @@
     "PROJECT_CONTEXT_ARIS.md",
     "ARIS_ROADMAP_R0_F120.md",
     "ROADMAP_AMENDMENT_PROTOCOL.md",
-    "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md"
+    "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
+    "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md"
   ],
-  "completed_phases": [
-    {
-      "phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
-      "decision": "pass",
-      "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass",
-      "repair_type": "roadmap_governance_repair"
-    },
-    {
-      "phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
-      "decision": "pass",
-      "status": "aris_infernus_lab_full_macroblock_entry_gate_pass"
-    },
-    {
-      "phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-      "decision": "pass",
-      "status": "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass"
-    }
-  ],
-  "current_live_route": {
-    "status": "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass",
-    "decision": "pass",
-    "latest_completed_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-    "current_status": "ready_for_aris_infernus_lab_full_13_bot_contract_pack_planning_gate",
-    "active_next_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
-    "active_next_phase_class": "planning_gate",
-    "next_phase_execution_authorization": false,
-    "operator_approval_packet_review_is_execution_approval": false,
-    "h4_h5_hx_active_current_route": false
-  },
-  "next_action": {
-    "phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
-    "phase_class": "planning_gate",
-    "planning_only": true,
-    "status": "ready_for_next_subphase",
-    "review_only": false,
-    "execution_authorization": false,
-    "operator_approval_packet_review_is_execution_approval": false,
-    "notes": [
-      "The canonical roadmap is now the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
-      "Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema routes are historical or superseded and must not drive live routing.",
-      "The scope and attack taxonomy planning gate is complete; the next route must define the 13-bot contract pack without implementing or executing bots.",
-      "Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, real dry-run, and Bedrock execution remain blocked."
-    ]
-  },
-  "locks": {
-    "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
-    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
-    "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
-    "github_active_context_is_the_only_canonical_active_context_source": true,
-    "no_github_active_context_sync_no_canonical_pass": true,
-    "every_transition_must_update_commit_push_and_verify_github_active_context": true,
-    "stale_live_route_policy": "fail_closed",
-    "markdown_mirror_drift_policy": "fail_closed",
-    "h4_h5_hx_active_current_route": false,
-    "deferred_phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
-    "deferred_phase_reason": "The Infernus FULL scope and attack taxonomy planning gate passed; the next planning-only route must define per-bot contracts without authorizing implementation or execution."
-  },
-  "authorization": {
-    "production_authorized": false,
-    "product_ready": false,
-    "runtime_integration_allowed": false,
-    "generic_action_runtime_activated": false,
-    "real_apply_authorized": false,
-    "real_dry_run_execution_authorized": false,
-    "approval_execution_authorized": false,
-    "runtime_refactor_authorized": false,
-    "host_filesystem_mutation_authorized": false,
-    "debian_harness_execution_authorized": false,
-    "container_image_vm_creation_authorized": false,
-    "package_manager_execution_authorized": false,
-    "package_installation_authorized": false,
-    "network_authorized_scope": "github_active_context_governance_only",
-    "secrets_access_authorized": false,
-    "external_llm_api_authorized": false,
-    "dependency_change_authorized": false,
-    "frontend_backend_action_runtime_audio_mutation_authorized": false
-  },
-  "canonicality_rules": {
-    "github_active_context_is_the_only_canonical_active_context_source": true,
-    "canonical_repository": "MatheusAugDEV/aris-active-context",
-    "canonical_branch": "main",
-    "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
-    "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
-    "local_checkout_is_non_canonical_until_remote_verified": true,
-    "no_local_only_update_is_canonical": true,
-    "no_unpushed_commit_is_canonical": true,
-    "no_github_sync_no_canonical_pass": true,
-    "markdown_files_are_derived_mirrors_or_history_not_authoritative_live_state": true
-  },
-  "validation_policy": {
-    "json_validation_commands": [
-      "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
-      "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json"
-    ],
-    "required_validator": "scripts/validate_active_context_state.py",
-    "connector_fallback_allowed": true,
-    "markdown_mirror_validation_required": true,
-    "fail_closed_on_mirror_drift": true,
-    "fail_closed_on_live_route_drift": true
-  },
-  "artifact_routes": {
-    "state_file": "ACTIVE_CONTEXT_STATE.json",
-    "schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
-    "validator_script": "scripts/validate_active_context_state.py",
-    "current_state_mirror": "CURRENT_STATE.md",
-    "next_action_mirror": "NEXT_ACTION.md",
-    "decision_locks_mirror": "DECISION_LOCKS.md",
-    "context_index_mirror": "CONTEXT_INDEX.md",
-    "phase_ledger_history": "ARIS_PHASE_LEDGER.md",
-    "roadmap_authority": "ROADMAP_CANONICAL.md",
-    "readme": "README.md",
-    "anti_corruption_contract": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md"
-  },
-  "history_summary": {
-    "governance_repairs": [
-      "ARIS Active-Context Live-State Normalization and Stale Routing Eradication Gate",
-      "ARIS Active-Context Architecture Refactor Gate",
-      "ARIS Active-Context Anti-Corruption Hardening Gate",
-      "Active Context Macro Roadmap Canonicalization Controlled Apply"
-    ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-    "previous_execution_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
-    "ledger_mode": "historical_only",
-    "markdown_mirrors_are_non_authoritative": true
-  },
-  "last_transition": {
-    "transition_type": "scope_attack_taxonomy_planning_gate",
-    "from_phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
-    "to_phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-    "decision": "pass",
-    "verified_via": "local validation, git commit/push, and GitHub main verification",
-    "proof_source": "GitHub main"
-  },
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
-    "markdown_mirror_drift_policy": "fail_closed",
     "ledger_drift_policy": "fail_closed",
     "live_state_source_drift_policy": "fail_closed",
+    "markdown_mirror_drift_policy": "fail_closed",
     "on_any_transition": [
       "update_ACTIVE_CONTEXT_STATE.json",
       "validate_against_ACTIVE_CONTEXT_SCHEMA.json",
@@ -264,11 +255,26 @@
       "verify_GitHub_main"
     ]
   },
-  "drift_signals": {
-    "local_vs_github_drift": "fail_closed",
-    "markdown_mirror_drift": "fail_closed",
-    "ledger_live_route_drift": "fail_closed",
-    "json_state_mismatch": "fail_closed",
-    "connector_fallback_required_if_cli_dns_or_ssh_fails": true
+  "schema_version": "2.1",
+  "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass",
+  "validation_policy": {
+    "connector_fallback_allowed": true,
+    "fail_closed_on_live_route_drift": true,
+    "fail_closed_on_mirror_drift": true,
+    "json_validation_commands": [
+      "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json"
+    ],
+    "markdown_mirror_validation_required": true,
+    "required_validator": "scripts/validate_active_context_state.py"
+  },
+  "versioning_contract": {
+    "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
+    "current_active_context_version": "2.0",
+    "current_schema_version": "2.1",
+    "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
+    "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the 13-bot contract pack planning gate to the planning-only bot scenario interface gate and repairs stale non-canonical route mirrors in roadmap and boundary documents.",
+    "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

@@ -4,17 +4,19 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
 - Status: `ready_for_next_subphase`
 - Phase class: `planning_gate`
 - Planning-only: `true`
 - Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
 
 ## Purpose
 
-Define per-bot planning contracts for the official 13-bot Infernus FULL discovery taxonomy under the canonical roadmap chain:
+Define deterministic scenario interfaces, oracle boundaries, and evidence I/O shapes for the 13-bot planning contracts under the canonical roadmap chain.
+
+## Canonical Roadmap
 
 ```text
 Infernus revela.
@@ -26,4 +28,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may define bot-level contracts, schemas, inputs, outputs, and non-execution boundaries only. It must not implement bots, execute bots, run attacks, mutate runtime/frontend/backend/action-runtime/audio, install dependencies, use secrets, run real dry-run, run real apply, promote product claims, open pilot, or authorize Bedrock execution or product pass.
+The next step may define bot scenario inputs, outputs, interface invariants, and schema-adjacent planning only. It must not implement bots, execute bots, run attacks, create or run harnesses, mutate runtime/frontend/backend/action-runtime/audio, install dependencies, use secrets, run real dry-run, run real apply, or authorize Bedrock or product claims.

@@ -4,9 +4,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
-- Active next phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate`
 - Route class: `planning_gate`
 
 ## Canonical Files
@@ -22,9 +22,15 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - README: `README.md`
 - Entry gate artifact: `ARIS_INFERNUS_FULL_ENTRY_GATE.md`
 - Scope/taxonomy gate artifact: `ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md`
+- 13-bot contract pack artifact: `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md`
 - Advisory protocol: `infernus_protocol.md`
 - Bedrock boundary: `BEDROCK_GATE.md`
-- North Pole: `NORTH_POLE.md`
+
+## Current Phase Artifacts
+
+- `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md` records the planning-only active-context phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_13_bot_contract_pack.json` defines the deterministic 13-bot planning contract pack in `Project_ARIS`.
+- `artifacts/lab_simulation/aris_infernus_lab_full_13_bot_contract_pack_planning_gate_active_context_drift_check.json` records roadmap and Bedrock route drift repair.
 
 ## Active Canonical Roadmap
 
@@ -35,20 +41,3 @@ Infernus revalida.
 Crisol refina.
 Bedrock decide.
 ```
-
-## Historical / Superseded References
-
-- `ARIS_ROADMAP_R0_F120.md` is superseded by `ROADMAP_CANONICAL.md`.
-- `PROJECT_CONTEXT_ARIS.md` is historical context only unless a future gate explicitly reclassifies a block.
-- `LAB_STATUS.md` and `LAB_VERDICTS.md` are historical lab status/verdict ledgers only.
-- Archive files are historical audit trail only.
-- Artifact paths from old phases are reference routes, not current active execution claims.
-
-## Current Phase Artifacts
-
-- `ARIS_INFERNUS_FULL_ENTRY_GATE.md` defines the non-executing entry contract, discovery taxonomy, evidence requirements, future `Purgatorium FULL` handoff, and Bedrock/productization non-authorization for the active macroblock.
-- `ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md` defines the planning-only attack taxonomy, finding taxonomy, 13-bot discovery-role mapping, P0 gap resolutions, future evidence shape, `Purgatorium FULL` handoff fields, and Bedrock impact signal names.
-
-## Non-Authorization
-
-No runtime/frontend/backend/action-runtime/audio mutation, bot execution, attack execution, package installation, dependency change, external API use, product promotion, real apply, real dry-run, pilot, commercial launch, or Bedrock product pass is authorized by this index.
