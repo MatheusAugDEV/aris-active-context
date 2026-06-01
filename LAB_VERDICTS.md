@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| infernus.full.contract_schema_enforcement_planning_gate | infernus_full_contract_schema_enforcement_planning_gate_pass | No | planning pack + findings register + next phase contract | The Contract Schema Enforcement Planning Gate produced a planning-only enforcement pack without implementation or execution |
+| infernus.full.contract_schema_enforcement_planning_gate.bedrock_exception | bedrock_preparation_exception | No | active-context + schema-enforcement planning artifacts | BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate produced a deterministic, planning-only enforcement architecture pack, kept runtime validator implementation inactive, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a review-only planning review route. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate produced a deterministic, planning-only enforcement architecture pack, kept runtime validator implementation inactive, kept Bedrock non-executable, kept product promotion blocked, and advanced only to a review-only planning review route.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+
 ## ARIS Infernus Lab FULL Contract Schema Hardening Review - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
