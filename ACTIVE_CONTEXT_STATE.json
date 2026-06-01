@@ -1,6 +1,6 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
+  "active_next_phase": "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate",
   "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
@@ -133,6 +133,11 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
       "status": "aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
+      "status": "aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -160,17 +165,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate",
     "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_aris_infernus_lab_full_minos_verdict_schema_planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate_pass"
+    "status": "aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_minos_verdict_schema_planning_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -186,26 +191,26 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
+    "from_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
-    "transition_type": "finding_purgatorium_handoff_schema_planning_gate",
+    "to_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
+    "transition_type": "minos_verdict_schema_planning_gate",
     "verified_via": "local validation, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
-    "deferred_phase_reason": "The finding and Purgatorium handoff schema planning gate passed; the next planning-only route must define Minos verdict schema contracts without implementation or execution.",
+    "deferred_phase": "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate",
+    "deferred_phase_reason": "The Minos verdict schema planning gate passed; the next planning-only route must define Bedrock boundary signal candidate contracts without implementation, execution, or Bedrock authorization.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -219,12 +224,12 @@
     "execution_authorization": false,
     "notes": [
       "The canonical roadmap remains the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
-      "The finding and Purgatorium handoff schema planning gate is complete; the next route must define Minos verdict schema contracts without implementing or executing bots.",
-      "Accepted residual is now explicitly separated from resolved in the finding lifecycle and handoff schema contracts.",
+      "The Minos verdict schema planning gate is complete; the next route must define Bedrock boundary signal contracts without implementing Minos or authorizing Bedrock.",
+      "Accepted residual remains explicitly separated from resolved and LLM-as-judge remains prohibited.",
       "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
+    "phase": "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate",
     "phase_class": "planning_gate",
     "planning_only": true,
     "review_only": false,
@@ -255,7 +260,8 @@
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md",
-    "ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md"
+    "ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md",
+    "ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -274,7 +280,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate_pass",
+  "status": "aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -292,7 +298,7 @@
     "current_schema_version": "2.1",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the finding and Purgatorium handoff schema planning gate to the planning-only Minos verdict schema gate while preserving non-execution boundaries and explicit accepted-residual anti-false-resolution rules.",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the finding and Purgatorium handoff schema planning gate to the planning-only Minos verdict schema gate while preserving non-execution boundaries, deterministic audit ruleset hashing, accepted-residual anti-false-resolution rules, and LLM-as-judge prohibition.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

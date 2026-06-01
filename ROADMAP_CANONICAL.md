@@ -24,7 +24,7 @@ Bedrock decide.
 | Order | Macroblock | Status | Function | Authorization |
 | --- | --- | --- | --- | --- |
 | 0 | Tier-1 / Base Operacional | historical/base | Foundational operating base already accumulated; does not dominate active routing. | No production/pilot/commercial authorization. |
-| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Planning-only Minos verdict schema gate next; no execution yet. |
+| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Planning-only Bedrock boundary signal schema gate next; no Bedrock authorization yet. |
 | 2 | Purgatorium FULL | future macroblock | Correct everything Infernus reveals; classify every finding as fixed, accepted residual, or blocked. | Not active yet. |
 | 3 | Infernus Revalidation | future macroblock | Attack again after Purgatorium; prove fixes are real and expose regressions. | Not active yet. |
 | 4 | ARIS Final Crisol FULL | future macroblock | Final refinement and certification of maturity, evidence, usability, simplicity, safety, and product readiness. | Not active yet. |
@@ -33,8 +33,8 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
 - Active next phase class: `planning_gate`
 - Planning-only: `true`
 - Runtime execution authorized: `false`

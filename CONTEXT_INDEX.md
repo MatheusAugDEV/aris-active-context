@@ -4,9 +4,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
 - Route class: `planning_gate`
 
 ## Canonical Files
@@ -25,14 +25,15 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Bot scenario interface artifact: `ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md`
 - Evidence bundle schema artifact: `ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md`
 - Finding & handoff schema artifact: `ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md`
+- Minos verdict schema artifact: `ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md`
 - Advisory protocol: `infernus_protocol.md`
 - Bedrock boundary: `BEDROCK_GATE.md`
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md` records the planning-only active-context phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_finding_purgatorium_handoff_schema_contract.json` defines finding records, lifecycle, residual-risk, owner-routing, retest, and Purgatorium handoff contracts in `Project_ARIS`.
-- `artifacts/lab_simulation/aris_infernus_lab_full_finding_purgatorium_handoff_schema_matrix.json` records the per-bot handoff schema matrix.
+- `ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md` records the planning-only active-context phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_minos_verdict_schema_contract.json` defines verdict packets, audit decisions, evidence completeness thresholds, rejection reasons, anti-false-pass rules, and deterministic ruleset hashing in `Project_ARIS`.
+- `artifacts/lab_simulation/aris_infernus_lab_full_minos_verdict_schema_matrix.json` records the per-bot Minos verdict schema matrix.
 
 ## Active Canonical Roadmap
 

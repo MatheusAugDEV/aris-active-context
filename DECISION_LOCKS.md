@@ -4,11 +4,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Current Live Locks
 
-- Latest completed phase: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate`
-- Status: `aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate_pass`
-- Current status: `ready_for_aris_infernus_lab_full_minos_verdict_schema_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate`
+- Status: `aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass`
+- Current status: `ready_for_aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
 - Active next phase class: `planning_gate`
 
 ## Roadmap Authority Locks
@@ -29,8 +29,10 @@ Bedrock decide.
 
 ## Non-Authorization Locks
 
-- Finding and handoff schema planning does not authorize implementation or execution.
+- Minos verdict schema planning does not authorize implementation or execution.
 - Accepted residual may not be treated as resolved.
+- Severity downgrade remains blocked by default.
+- No LLM-as-judge verdict authorization.
 - No bot execution authorization.
 - No attack execution authorization.
 - No harness creation or execution authorization.
