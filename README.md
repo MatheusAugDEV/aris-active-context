@@ -5,9 +5,9 @@
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Lab Simulation is closed as a technical, review-only six-phase route.
-- This closure is not Bedrock readiness, not product promotion, and not production readiness.
+- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
+- Lab Simulation remains closed as a technical six-phase route.
+- The next macro-route selection is planning-only and non-executing.
 - Residual warnings remain carried forward explicitly.

@@ -3,31 +3,17 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Route class: `review_gate_only`
+- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
+- Route class: `planning_gate`
 
 ## Primary Artifacts
-- Phase 3 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate.json`
-- Phase 3 captured approval evidence: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_operator_approval_capture_gate_captured_approval_evidence.json`
-- Phase 4 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution.json`
-- Phase 4 summary: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_summary.json`
-- Phase 4 execution ledger: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_execution_ledger.json`
-- Phase 4 preflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_preflight_snapshot.json`
-- Phase 4 postflight snapshot: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_postflight_snapshot.json`
-- Phase 4 dry-run result: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_dry_run_result.json`
-- Phase 4 rollback declaration: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_controlled_execution_rollback_not_required_or_not_applicable.json`
-- Phase 5 decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review.json`
-- Phase 5 evidence review matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_evidence_review_matrix.json`
-- Phase 5 snapshot comparison review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_snapshot_comparison_review.json`
-- Phase 5 execution ledger review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_execution_ledger_review.json`
-- Phase 5 rollback declaration review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_rollback_declaration_review.json`
-- Phase 5 forbidden operations review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_real_dry_run_evidence_final_review_forbidden_operations_review.json`
-- This phase decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate.json`
-- Closure matrix: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_closure_matrix.json`
-- Phase chain review: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_phase_chain_review.json`
-- Evidence bundle index: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_evidence_bundle_index.json`
-- Residual warnings register: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_residual_warnings_register.json`
-- Post-closure boundaries: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_post_closure_boundaries.json`
-- Next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_next_route_contract.json`
+- Closure Gate decision: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate.json`
+- Closure Gate next-route contract: `artifacts/lab_simulation/lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_next_route_contract.json`
+- This phase decision: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision.json`
+- Routing candidates matrix: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_routing_candidates_matrix.json`
+- Rejected routes matrix: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_rejected_routes_matrix.json`
+- Selected route contract: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_selected_route_contract.json`
+- Residual warnings carry-forward: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_residual_warnings_carry_forward.json`
+- Next-route contract: `artifacts/lab_simulation/lab_simulation_closure_post_review_routing_decision_next_route_contract.json`

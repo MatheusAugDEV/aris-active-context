@@ -3,13 +3,13 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 # Decision Locks
 
 ## Current Live Locks
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Last transition from: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass`
-- Current status: `lab_simulation_route_closed_pending_post_review_routing_decision`
-- Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Active next phase class: `review_gate_only`
-- Six-phase Lab Simulation route is closed.
+- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Last transition from: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Status: `lab_simulation_closure_post_review_routing_decision_pass`
+- Current status: `ready_for_aris_infernus_lab_full_opening_gate`
+- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
+- Active next phase class: `planning_gate`
+- Six-phase Lab Simulation route remains closed.
 - No real apply authorization.
 - No production authorization.
 - No approval execution authorization now.

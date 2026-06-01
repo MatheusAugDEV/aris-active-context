@@ -2,11 +2,12 @@
 
 This file is a historical ledger only. Live routing always comes from `ACTIVE_CONTEXT_STATE.json`.
 
-- Latest completed phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Last transition from: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Status: `lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass`
+- Latest completed phase: `Lab Simulation Closure Post-Review Routing Decision`
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Last transition from: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Status: `lab_simulation_closure_post_review_routing_decision_pass`
 - Decision: `pass`
-- Active next phase: `Lab Simulation Closure Post-Review Routing Decision`
-- Lab Simulation route closed at exactly six phases with residual warnings carried forward explicitly.
-- Closure did not authorize Bedrock, product promotion, production, or real apply.
+- Active next phase: `ARIS Infernus Lab FULL Opening Gate`
+- Lab Simulation remains closed at six phases.
+- The post-closure routing decision selected the next macro-route without opening execution.
+- Bedrock, product promotion, production, and real apply remained blocked.

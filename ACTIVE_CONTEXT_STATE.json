@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "Lab Simulation Closure Post-Review Routing Decision",
-  "active_next_phase_class": "review_gate_only",
+  "active_next_phase": "ARIS Infernus Lab FULL Opening Gate",
+  "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -343,6 +343,11 @@
       "decision": "pass",
       "phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
       "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "Lab Simulation Closure Post-Review Routing Decision",
+      "status": "lab_simulation_closure_post_review_routing_decision_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -370,17 +375,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "Lab Simulation Closure Post-Review Routing Decision",
-    "active_next_phase_class": "review_gate_only",
-    "current_status": "lab_simulation_route_closed_pending_post_review_routing_decision",
+    "active_next_phase": "ARIS Infernus Lab FULL Opening Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_opening_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
+    "latest_completed_phase": "Lab Simulation Closure Post-Review Routing Decision",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass"
+    "status": "lab_simulation_closure_post_review_routing_decision_pass"
   },
-  "current_status": "lab_simulation_route_closed_pending_post_review_routing_decision",
+  "current_status": "ready_for_aris_infernus_lab_full_opening_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -395,26 +400,26 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate"
     ],
-    "latest_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
+    "latest_execution_phase": "Lab Simulation Closure Post-Review Routing Decision",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review"
+    "previous_execution_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review",
+    "from_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
     "proof_source": "GitHub main",
-    "to_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
+    "to_phase": "Lab Simulation Closure Post-Review Routing Decision",
     "transition_type": "lab_phase_transition",
     "verified_via": "GitHub active-context CLI fetch, push, and remote verification"
   },
-  "latest_completed_phase": "Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate",
+  "latest_completed_phase": "Lab Simulation Closure Post-Review Routing Decision",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "Lab Simulation Closure Post-Review Routing Decision",
-    "deferred_phase_reason": "Lab Simulation route is closed; any next step must be a separate non-executing routing decision.",
+    "deferred_phase": "ARIS Infernus Lab FULL Opening Gate",
+    "deferred_phase_reason": "Lab Simulation is closed; the next macro-route is ARIS Infernus Lab FULL Opening Gate as a planning-only gate.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -427,16 +432,16 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "Lab Simulation Closure Gate officially closed the six-phase route.",
-      "This closure is technical and review-only; it is not Bedrock, product, or production readiness.",
-      "Residual warnings remain carried forward explicitly and unresolved.",
-      "The next route is a separate post-review routing decision."
+      "Lab Simulation remains closed and no phase 7 was created.",
+      "This routing decision selected ARIS Infernus Lab FULL Opening Gate as the next macro-route.",
+      "The next macro-route remains planning-only and non-executing.",
+      "Bedrock, production, product promotion, and real apply remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "Lab Simulation Closure Post-Review Routing Decision",
-    "phase_class": "review_gate_only",
-    "planning_only": false,
-    "review_only": true,
+    "phase": "ARIS Infernus Lab FULL Opening Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -476,7 +481,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "lab_real_simulation_pack_controlled_apply_dry_run_real_execution_lab_simulation_closure_gate_pass",
+  "status": "lab_simulation_closure_post_review_routing_decision_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

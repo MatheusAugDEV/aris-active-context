@@ -3,13 +3,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 ## Current Next Step
-- `Lab Simulation Closure Post-Review Routing Decision`
+- `ARIS Infernus Lab FULL Opening Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `review_gate_only`
-- Planning-only: `false`
-- Review-only: `true`
+- Phase class: `planning_gate`
+- Planning-only: `true`
+- Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Real Dry-Run Evidence Final Review`
-- Lab Simulation is closed and must not be reopened as phase 7.
-- Any next route must stay non-executing until a separate canonical gate says otherwise.
-- Bedrock, production, and product promotion remain blocked.
+- Previous execution phase: `Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate`
+- Lab Simulation remains closed and must not be reopened as phase 7.
+- The selected next macro-route is ARIS Infernus Lab FULL Opening Gate.
+- Bedrock, production, product promotion, and real apply remain blocked.

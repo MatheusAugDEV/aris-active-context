@@ -1,5 +1,21 @@
 # LAB_VERDICTS
 
+## Lab Simulation Closure Post-Review Routing Decision - Bedrock Preparation Exception Record
+
+| Capability | State | Product Promotion | Evidence | Notes |
+| --- | --- | --- | --- | --- |
+| lab_simulation.post_closure_routing_decision | post_closure_routing_decision_pass | No | routing candidates matrix + selected route contract + residual warnings carry-forward | The post-closure routing decision selected ARIS Infernus Lab FULL Opening Gate without opening execution, Bedrock, or product boundaries |
+| lab_simulation.post_closure_routing_decision.bedrock_exception | bedrock_preparation_exception | No | active-context + routing decision artifacts | BEDROCK_PREPARATION_EXCEPTION: the post-closure routing decision selected ARIS Infernus Lab FULL Opening Gate as the next macro-route, kept execution closed, kept Bedrock non-executable, and kept product promotion blocked. |
+
+## Summary State
+
+- bedrock_verdict_or_exception: `BEDROCK_PREPARATION_EXCEPTION: the post-closure routing decision selected ARIS Infernus Lab FULL Opening Gate as the next macro-route, kept execution closed, kept Bedrock non-executable, and kept product promotion blocked.`
+- bedrock_gate_executable_now: `False`
+- product_promotion_allowed_now: `False`
+- real_dry_run_execution_authorized_now: `False`
+- real_apply_authorized_now: `False`
+- next route recommendation: `ARIS Infernus Lab FULL Opening Gate`
+
 ## Lab Real Simulation Pack Controlled Apply Dry-Run Real Execution Lab Simulation Closure Gate - Bedrock Preparation Exception Record
 
 | Capability | State | Product Promotion | Evidence | Notes |
