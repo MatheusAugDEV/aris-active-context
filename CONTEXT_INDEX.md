@@ -3,23 +3,20 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 # Context Index
 
 ## Active Route
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Foundation Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Readiness Review`
-- Active next phase: `ARIS Infernus Lab FULL Contract Foundation Review`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Contract Foundation Review`
+- Previous execution phase: `ARIS Infernus Lab FULL Contract Foundation Gate`
+- Active next phase: `ARIS Infernus Lab FULL Contract Schema Hardening Gate`
+- Route class: `planning_gate`
 
 ## Primary Artifacts
-- Previous readiness review decision: `artifacts/lab_simulation/aris_infernus_lab_full_readiness_review_decision.json`
-- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_decision.json`
-- Schema inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_schema_inventory.json`
-- Run contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_run_contract.json`
-- Scenario contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_scenario_contract.json`
-- Bot contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_bot_contract.json`
-- Finding contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_finding_contract.json`
-- Artifact ref contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_artifact_ref_contract.json`
-- Evidence bundle contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_evidence_bundle_contract.json`
-- State witness contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_state_witness_contract.json`
-- Replay/Rollback contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_replay_rollback_contract.json`
-- Blocker classification contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_blocker_classification_contract.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_residual_warnings_carry_forward.json`
-- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_next_phase_contract.json`
+- Previous contract foundation gate decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_gate_decision.json`
+- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_decision.json`
+- Contract inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_contract_inventory.json`
+- Contract completeness matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_contract_completeness_matrix.json`
+- Forbidden fields matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_forbidden_fields_matrix.json`
+- Execution mode matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_execution_mode_matrix.json`
+- Bot taxonomy matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_bot_taxonomy_matrix.json`
+- Macro chain matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_macro_chain_matrix.json`
+- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_findings_register.json`
+- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_residual_warnings_carry_forward.json`
+- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_foundation_review_next_phase_contract.json`

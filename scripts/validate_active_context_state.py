@@ -50,16 +50,16 @@ def _require_json_first(path: pathlib.Path) -> None:
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
-    _require(state["status"] == "aris_infernus_lab_full_contract_foundation_gate_pass", "unexpected status")
+    _require(state["status"] == "aris_infernus_lab_full_contract_foundation_review_pass", "unexpected status")
     _require(state["decision"] == "pass", "unexpected decision")
-    _require(state["latest_completed_phase"] == "ARIS Infernus Lab FULL Contract Foundation Gate", "unexpected latest completed phase")
-    _require(state["current_status"] == "ready_for_aris_infernus_lab_full_contract_foundation_review", "unexpected current status")
-    _require(state["active_next_phase"] == "ARIS Infernus Lab FULL Contract Foundation Review", "unexpected next route")
-    _require(state["active_next_phase_class"] == "review_gate_only", "unexpected next route class")
+    _require(state["latest_completed_phase"] == "ARIS Infernus Lab FULL Contract Foundation Review", "unexpected latest completed phase")
+    _require(state["current_status"] == "ready_for_aris_infernus_lab_full_contract_schema_hardening_gate", "unexpected current status")
+    _require(state["active_next_phase"] == "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "unexpected next route")
+    _require(state["active_next_phase_class"] == "planning_gate", "unexpected next route class")
     _require(state["schema_version"] == "2.1", "unexpected schema version")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next route execution authorization must be false")
-    _require(state["next_action"]["planning_only"] is False, "next route must not be planning_only")
-    _require(state["next_action"]["review_only"] is True, "next route must be review_only")
+    _require(state["next_action"]["planning_only"] is True, "next route must be planning_only")
+    _require(state["next_action"]["review_only"] is False, "next route must not be review_only")
     _require(state["next_action"]["execution_authorization"] is False, "next route must not authorize execution")
 
     policy = state["cross_field_consistency_policy"]
@@ -67,8 +67,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status cross-field")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase cross-field")
     _require_paths_match(state, policy["status_must_match_across"], "status cross-field")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Readiness Review", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Readiness Review", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Contract Foundation Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Contract Foundation Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -76,18 +76,18 @@ def main() -> None:
         else:
             _require(value is False, f"authorization flag {key} must be false")
 
-    _mirror_contains(ROOT / "CURRENT_STATE.md", "ARIS Infernus Lab FULL Contract Foundation Gate", "ARIS Infernus Lab FULL Contract Foundation Review", "Six-phase route closed: `True`")
-    _mirror_contains(ROOT / "NEXT_ACTION.md", "ARIS Infernus Lab FULL Contract Foundation Review", "Review-only: `true`", "Execution authorization: `false`")
+    _mirror_contains(ROOT / "CURRENT_STATE.md", "ARIS Infernus Lab FULL Contract Foundation Review", "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "Six-phase route closed: `True`")
+    _mirror_contains(ROOT / "NEXT_ACTION.md", "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "Planning-only: `true`", "Execution authorization: `false`")
     _mirror_contains(ROOT / "DECISION_LOCKS.md", "Six-phase Lab Simulation route remains closed.", "Bedrock remains non-executable and product promotion remains blocked.")
-    _mirror_contains(ROOT / "CONTEXT_INDEX.md", "ARIS Infernus Lab FULL Contract Foundation Gate", "ARIS Infernus Lab FULL Contract Foundation Review", "Schema inventory")
-    _mirror_contains(ROOT / "README.md", "ARIS Infernus Lab FULL Contract Foundation Gate", "ARIS Infernus Lab FULL Contract Foundation Review", "Residual warnings remain carried forward explicitly.")
-    _mirror_contains(ROOT / "ROADMAP_CANONICAL.md", "ARIS Infernus Lab FULL Contract Foundation Review", "Contract Foundation Review remains review-only.")
-    _mirror_contains(ROOT / "LAB_VERDICTS.md", "ARIS Infernus Lab FULL Contract Foundation Gate - Bedrock Preparation Exception Record", "ARIS Infernus Lab FULL Contract Foundation Review")
+    _mirror_contains(ROOT / "CONTEXT_INDEX.md", "ARIS Infernus Lab FULL Contract Foundation Review", "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "Contract inventory")
+    _mirror_contains(ROOT / "README.md", "ARIS Infernus Lab FULL Contract Foundation Review", "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "Residual warnings remain carried forward explicitly.")
+    _mirror_contains(ROOT / "ROADMAP_CANONICAL.md", "ARIS Infernus Lab FULL Contract Schema Hardening Gate", "Contract Schema Hardening Gate remains planning-only.")
+    _mirror_contains(ROOT / "LAB_VERDICTS.md", "ARIS Infernus Lab FULL Contract Foundation Review - Bedrock Preparation Exception Record", "ARIS Infernus Lab FULL Contract Schema Hardening Gate")
     _require_json_first(ROOT / "BOOT_PROFILE.md")
     _require_json_first(ROOT / "MANDATORY_READ_FIRST_RULES.md")
     _require_json_first(ROOT / "PROMPT_CONTRACT.md")
 
-    print(json.dumps({"decision": "pass", "validated_paths": [str(ROOT / "CURRENT_STATE.md"), str(ROOT / "NEXT_ACTION.md"), str(ROOT / "DECISION_LOCKS.md"), str(ROOT / "CONTEXT_INDEX.md"), str(ROOT / "ARIS_PHASE_LEDGER.md"), str(ROOT / "ROADMAP_CANONICAL.md"), str(ROOT / "README.md"), str(ROOT / "LAB_VERDICTS.md")], "review_result": "aris infernus lab full contract foundation gate pass"}, indent=2))
+    print(json.dumps({"decision": "pass", "validated_paths": [str(ROOT / "CURRENT_STATE.md"), str(ROOT / "NEXT_ACTION.md"), str(ROOT / "DECISION_LOCKS.md"), str(ROOT / "CONTEXT_INDEX.md"), str(ROOT / "ARIS_PHASE_LEDGER.md"), str(ROOT / "ROADMAP_CANONICAL.md"), str(ROOT / "README.md"), str(ROOT / "LAB_VERDICTS.md")], "review_result": "aris infernus lab full contract foundation review pass"}, indent=2))
 
 
 if __name__ == "__main__":
