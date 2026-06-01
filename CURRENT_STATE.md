@@ -3,42 +3,46 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Current State
 
 ## Live Snapshot
-- Status: `aris_infernus_lab_full_contract_schema_enforcement_planning_review_pass`
+
+- Status: `active_context_macro_roadmap_canonicalization_controlled_apply_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
-- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Gate`
-- Current status: `ready_for_aris_infernus_lab_full_contract_schema_enforcement_implementation_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Implementation Planning Gate`
+- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
+- Previous execution phase: `ARIS Infernus Lab FULL Contract Schema Enforcement Planning Review`
+- Current status: `ready_for_aris_infernus_lab_full_macroblock_entry_gate`
+- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
 - Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
 - Approval execution authorized: `False`
-- Six-phase route closed: `True`
 - Bedrock gate executable now: `False`
 - Product promotion allowed: `False`
 - Schema version: `2.1`
 
-## Infernus FULL Contract Schema Enforcement Planning Review Result
-- The planning pack remained review-complete and non-executable.
-- Runtime validator implementation and activation remained blocked.
-- The next route is implementation planning only and still non-executing.
+## Canonical Roadmap
 
-## Canonical Evidence
-- Previous planning gate decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_gate_decision.json`
-- This phase decision: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_decision.json`
-- Artifact inventory: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_inventory.json`
-- Architecture review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_architecture_review_matrix.json`
-- Scope review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_scope_review_matrix.json`
-- Validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validator_boundary_review_matrix.json`
-- Validation order review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_validation_order_review_matrix.json`
-- Rejection flow review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_rejection_flow_review_matrix.json`
-- Artifact resolution review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_artifact_resolution_review_matrix.json`
-- Evidence integrity review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_evidence_integrity_review_matrix.json`
-- Execution mode review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_execution_mode_review_matrix.json`
-- Bot taxonomy review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_bot_taxonomy_review_matrix.json`
-- Residual warning review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warning_review_matrix.json`
-- Future validator boundary review matrix: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_future_validator_boundary_review_matrix.json`
-- Findings register: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_findings_register.json`
-- Residual warnings carry-forward: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_residual_warnings_carry_forward.json`
-- Next phase contract: `artifacts/lab_simulation/aris_infernus_lab_full_contract_schema_enforcement_planning_review_next_phase_contract.json`
+```text
+Infernus revela.
+Purgatorium corrige.
+Infernus revalida.
+Crisol refina.
+Bedrock decide.
+```
+
+## Current Macro Route
+
+1. `Tier-1 / Base Operacional` — historical/base only.
+2. `ARIS Infernus Lab FULL` — active next macroblock through planning-only entry gate.
+3. `Purgatorium FULL` — future correction macroblock.
+4. `Infernus Revalidation` — future adversarial revalidation macroblock.
+5. `ARIS Final Crisol FULL` — future final refinement/certification macroblock.
+6. `Bedrock Gate` — future maximum decision gate.
+7. `Productization / Controlled Pilot` — blocked unless Bedrock explicitly permits.
+
+## Superseded Material
+
+Old R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema Enforcement microphase routes are historical or superseded. They must not drive live routing.
+
+## Non-Authorization
+
+Runtime, frontend, backend, action-runtime, audio, network, product promotion, pilot, commercial launch, real apply, and real dry-run remain blocked.
