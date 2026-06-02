@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("BenchUX Lab", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
@@ -147,18 +147,18 @@ class TestMirrorGuards(unittest.TestCase):
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
         self.assertNotEqual(rc, 0, "current state without apply boundary record must be blocked.\n" + stderr)
 
-    def test_apply_planning_artifact_without_future_human_approval_phrase_blocks(self) -> None:
+    def test_apply_review_artifact_without_future_human_approval_phrase_blocks(self) -> None:
         state = _load_state()
-        original = (ROOT / "ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_PLANNING_GATE.md").read_text(encoding="utf-8")
+        original = (ROOT / "ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_REVIEW_GATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
             "Human approval collected now: `False`.",
             "Human approval collected now: `True`.",
         )
         rc, _, stderr = _run_validator_with_state(
             state,
-            extra_files={"ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_PLANNING_GATE.md": corrupted},
+            extra_files={"ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_REVIEW_GATE.md": corrupted},
         )
-        self.assertNotEqual(rc, 0, "apply planning artifact without future-only human approval phrase must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "apply review artifact without future-only human approval phrase must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

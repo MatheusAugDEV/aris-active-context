@@ -4,17 +4,17 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
+- `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `review_gate_only`
-- Planning-only: `false`
-- Review-only: `true`
+- Phase class: `planning_gate`
+- Planning-only: `true`
+- Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
 
 ## Purpose
 
-Review the future apply boundary, refusal conditions, proof package, and non-bypassable requirements without authorizing or executing apply and without materializing fixtures.
+Plan the future fixture materialization final authorization packet without authorizing real apply or materializing fixtures.
 
 ## Canonical Roadmap
 
@@ -33,4 +33,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may review the apply boundary only. It must not authorize or execute apply, materialize fixtures, execute scenarios, Bedrock, dry-runs, or authorize product claims.
+The next step may plan the final authorization packet only. It must not authorize real apply, materialize fixtures, execute scenarios, Bedrock, dry-runs, or product claims.
