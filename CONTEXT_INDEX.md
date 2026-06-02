@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
-- Route class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Route class: `review_gate_only`
 
 ## Canonical Files
 
@@ -25,9 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_REVIEW_GATE.md` records the review-only apply phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_apply_review_gate_contract_review.json` records the review criteria, reviewed contract flags, and non-materialization proof.
-- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_apply_review_gate_gap_list.json` records blocking gaps, if any.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_PLANNING_GATE.md` records the planning-only final authorization packet phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_plan.json` records the future-only packet contract, proof refs, evidence refs, and future approval/signoff schemas.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_matrix.json` records the packet matrix, next review route, and non-authorization attestation.
 
 ## Future Planning References
 
