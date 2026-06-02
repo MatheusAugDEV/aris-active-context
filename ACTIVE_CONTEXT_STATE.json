@@ -248,10 +248,11 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The canonical roadmap remains the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
+      "The canonical roadmap is: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUX Lab -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
+      "BenchUX Lab is a future product-reality macroblock only and is not active now.",
       "The fixture materialization planning gate passed; the next route may review path safety, synthetic-only policy, and non-materialization proof only.",
       "No real fixture files were materialized in this phase; fixture_materialization_allowed remains false and future_gate_required remains true.",
-      "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
+      "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, BenchUX execution, productization, and Bedrock execution remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": "ARIS Infernus Lab FULL Fixture Materialization Review Gate",
@@ -282,6 +283,7 @@
     "ARIS_ROADMAP_R0_F120.md",
     "ROADMAP_AMENDMENT_PROTOCOL.md",
     "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
+    "benchux_plan.md",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md",
@@ -327,7 +329,7 @@
     "current_schema_version": "2.1",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the scenario manifest dataset review gate to the fixture materialization review gate while materializing future-only fixture path, format, provenance, redaction, cleanup, rollback, and non-materialization contracts.",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition keeps the live route on fixture materialization review while adding BenchUX Lab as a future roadmap macroblock and product-reality planning reference.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }
