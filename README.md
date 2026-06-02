@@ -19,9 +19,16 @@
 Infernus revela.
 Purgatorium corrige.
 Infernus revalida.
+BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
 ```
+
+## BenchUX Planning Reference
+
+- `benchux_plan.md` records the future `ARIS BenchUX Lab` plan.
+- BenchUX is a future macroblock for product reality, benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness.
+- BenchUX is not active now and does not authorize productization, pilot, commercial readiness, production readiness, real dry-run, real apply, Bedrock execution, or product promotion.
 
 ## Active Artifacts
 
@@ -38,6 +45,10 @@ Bedrock decide.
 - `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md`
 - `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md`
 
+## Future Planning References
+
+- `benchux_plan.md`
+
 ## Non-Authorization
 
 - No fixture materialization planning gate authorizes execution.
@@ -47,3 +58,4 @@ Bedrock decide.
 - No attack or harness execution.
 - No finding correction or Purgatorium execution.
 - No real dry-run or real apply.
+- No BenchUX execution or productization authorization.
