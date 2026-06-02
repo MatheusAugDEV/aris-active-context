@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate`
+- Route class: `planning_gate`
 
 ## Canonical Files
 
@@ -25,9 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_PLANNING_GATE.md` records the planning-only authorization phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_authorization_plan.json` records the future authorization contract, refusal conditions, proof package, and non-bypassable requirements.
-- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_authorization_matrix.json` records the matrix of future checks, kill conditions, and non-authorization attestations.
+- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_REVIEW_GATE.md` records the review-only authorization phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_authorization_review_gate_contract_review.json` records the review criteria, reviewed contract flags, and non-materialization proof.
+- `artifacts/lab_simulation/aris_infernus_lab_full_controlled_fixture_materialization_authorization_review_gate_gap_list.json` records blocking gaps, if any.
 
 ## Future Planning References
 

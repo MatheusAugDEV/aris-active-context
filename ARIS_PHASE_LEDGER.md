@@ -4,13 +4,13 @@ This file is a historical ledger only. Live routing always comes from `ACTIVE_CO
 
 ## Latest Canonical Transition
 
-- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Last transition from: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Status: `aris_infernus_lab_full_controlled_fixture_materialization_authorization_planning_gate_pass`
+- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Status: `aris_infernus_lab_full_controlled_fixture_materialization_authorization_review_gate_pass`
 - Decision: `pass`
-- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
-- Active next phase class: `review_gate_only`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate`
+- Active next phase class: `planning_gate`
 
 ## Canonical Roadmap Ledger Note
 
@@ -33,6 +33,6 @@ Bedrock decide.
 
 This ledger note does not activate BenchUX now and does not authorize productization, pilot, commercial readiness, production readiness, real dry-run, real apply, Bedrock execution, runtime mutation, or product promotion.
 
-## Controlled Fixture Materialization Authorization Planning Gate Note
+## Controlled Fixture Materialization Authorization Review Gate Note
 
-`ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate` defined the future authorization contract, required proof package, refusal conditions, human approval packet, and non-bypassable requirements while keeping authorization and materialization blocked.
+`ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate` verified the future authorization contract, refusal conditions, proof package, and non-bypassable requirements while keeping authorization and materialization blocked.
