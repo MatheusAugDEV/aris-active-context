@@ -19,7 +19,7 @@ Bedrock decide.
 | Order | Macroblock | Status | Function | Authorization |
 | --- | --- | --- | --- | --- |
 | 0 | Tier-1 / Base Operacional | historical/base | Foundational operating base already accumulated; does not dominate active routing. | No production/pilot/commercial authorization. |
-| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Controlled fixture materialization authorization planning gate next; no Bedrock authorization yet. |
+| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Controlled fixture materialization authorization review gate next; no Bedrock authorization yet. |
 | 2 | Purgatorium FULL | future macroblock | Correct everything Infernus reveals; classify every finding as fixed, accepted residual, or blocked. | Not active yet. |
 | 3 | Infernus Revalidation | future macroblock | Validate again after Purgatorium; prove fixes are real and expose regressions. | Not active yet. |
 | 4 | ARIS BenchUX Lab | future macroblock | Validate product reality: market benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness. | Not active yet; does not authorize product direction; produces evidence for Crisol and Bedrock. |
@@ -31,16 +31,15 @@ Bedrock decide.
 
 - `benchux_plan.md` is a future planning reference for `ARIS BenchUX Lab — Product Reality, Interface & Client Experience Validation`.
 - It is not an active route, not an execution gate, and not product authorization.
-- BenchUX expands beyond benchmark and basic UX: it covers competitive differentiation, creation flow, dashboard quality, approval/evidence/rollback UX, reliability experience, visual quality, client reality, and demo readiness.
 - BenchUX findings should feed Crisol refinement and Bedrock product decision.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
-- Active next phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
+- Active next phase class: `review_gate_only`
+- Planning-only: `false`
+- Review-only: `true`
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`

@@ -52,9 +52,10 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Fixture Materialization Review Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
+        self.assertIn("BenchUX Lab", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
 
@@ -136,28 +137,28 @@ class TestMirrorGuards(unittest.TestCase):
         )
         self.assertNotEqual(rc, 0, "minos artifact without llm boundary must be blocked.\n" + stderr)
 
-    def test_current_state_without_synthetic_boundary_record_blocks(self) -> None:
+    def test_current_state_without_authorization_false_record_blocks(self) -> None:
         state = _load_state()
         original = (ROOT / "CURRENT_STATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.",
-            "Synthetic boundary omitted.",
+            "`authorization_granted=false`, `fixture_materialization_allowed=false`, and `future_authorization_gate_required=true` remain locked now.",
+            "Authorization boundary omitted.",
         )
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
-        self.assertNotEqual(rc, 0, "current state without synthetic boundary record must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "current state without authorization false record must be blocked.\n" + stderr)
 
-    def test_fixture_review_artifact_without_review_boundary_phrase_blocks(self) -> None:
+    def test_authorization_planning_artifact_without_future_human_approval_phrase_blocks(self) -> None:
         state = _load_state()
-        original = (ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md").read_text(encoding="utf-8")
+        original = (ROOT / "ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_PLANNING_GATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "The planning gate boundaries remained intact under review.",
-            "Review boundary omitted.",
+            "Human approval collected now: `False`.",
+            "Human approval collected now: `True`.",
         )
         rc, _, stderr = _run_validator_with_state(
             state,
-            extra_files={"ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md": corrupted},
+            extra_files={"ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_PLANNING_GATE.md": corrupted},
         )
-        self.assertNotEqual(rc, 0, "fixture review artifact without review boundary phrase must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "authorization planning artifact without future-only human approval phrase must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

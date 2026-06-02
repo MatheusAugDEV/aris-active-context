@@ -4,13 +4,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_fixture_materialization_review_gate_pass`
+- Status: `aris_infernus_lab_full_controlled_fixture_materialization_authorization_planning_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
-- Current status: `ready_for_aris_infernus_lab_full_controlled_fixture_materialization_authorization_planning_gate`
-- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
+- Current status: `ready_for_aris_infernus_lab_full_controlled_fixture_materialization_authorization_review_gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate`
+- Active next phase class: `review_gate_only`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
@@ -30,18 +30,17 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Fixture Materialization Review Gate Result
+## Controlled Authorization Planning Gate Result
 
-- The fixture materialization planning pack passed review for path safety, synthetic-only boundaries, non-materialization proof, and cleanup/rollback presence.
-- Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.
-- `fixture_materialization_allowed=false` and `future_gate_required=true` remain intact under review.
+- The future-only authorization contract was materialized for any later controlled fixture materialization decision.
+- `authorization_granted=false`, `fixture_materialization_allowed=false`, and `future_authorization_gate_required=true` remain locked now.
+- `human_approval_required_future=true` and `human_approval_collected_now=false` remain explicit.
 - No real fixture files were materialized; the planned fixture root remains absent or file-empty and the proof result remains `no_real_fixture_files_detected`.
-- The next route is `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate` with `planning_gate` semantics.
+- The next route is `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate` with `review_gate_only` semantics.
 
 ## BenchUX Roadmap Note
 
-- `ARIS BenchUX Lab` is now listed as a future macroblock after `Infernus Revalidation` and before `Crisol`.
-- `benchux_plan.md` records the future product-reality plan for benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness.
+- `ARIS BenchUX Lab` remains a future macroblock after `Infernus Revalidation` and before `Crisol`.
 - BenchUX is not active now and does not authorize productization.
 
 ## Non-Authorization
