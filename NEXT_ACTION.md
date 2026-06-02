@@ -4,17 +4,17 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
+- `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
 - Status: `ready_for_next_subphase`
 - Phase class: `planning_gate`
 - Planning-only: `true`
 - Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
 
 ## Purpose
 
-Review the full Infernus Lab FULL schema pack for closure-readiness without authorizing Bedrock or product claims.
+Materialize the scenario manifest and dataset planning layer that binds the reviewed schema pack without authorizing execution, Bedrock, or product claims.
 
 ## Canonical Roadmap
 
@@ -28,4 +28,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may review and consolidate the schema pack only. It must not execute Bedrock, emit Bedrock PASS, implement Minos, execute bots, run attacks, create or run harnesses, correct findings, execute Purgatorium, mutate runtime/frontend/backend/action-runtime/audio, install dependencies, use secrets, run real dry-run, run real apply, or authorize product claims.
+The next step may plan scenario manifest and dataset surfaces only. It must not execute Bedrock, emit Bedrock PASS, execute bots, attacks, harnesses, Purgatorium, replay, real dry-run, real apply, or authorize product claims.

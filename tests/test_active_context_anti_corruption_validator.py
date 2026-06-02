@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Schema Pack Closure Review Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Schema Pack Closure Review Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
@@ -136,15 +136,15 @@ class TestMirrorGuards(unittest.TestCase):
         )
         self.assertNotEqual(rc, 0, "minos artifact without llm boundary must be blocked.\n" + stderr)
 
-    def test_current_state_without_bedrock_signal_boundary_blocks(self) -> None:
+    def test_current_state_without_review_gate_semantics_record_blocks(self) -> None:
         state = _load_state()
         original = (ROOT / "CURRENT_STATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "No signal authorizes Bedrock by itself.",
-            "Signals may authorize Bedrock independently.",
+            "Closure review semantics were resolved as `review_gate_only` before PASS;",
+            "Closure review semantics were accepted without registration.",
         )
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
-        self.assertNotEqual(rc, 0, "current state without bedrock signal boundary must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "current state without review-gate semantics record must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":
