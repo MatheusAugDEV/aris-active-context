@@ -21,6 +21,7 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - Ledger/history: `ARIS_PHASE_LEDGER.md`
 - README: `README.md`
 - Bedrock boundary: `BEDROCK_GATE.md`
+- Future BenchUX plan: `benchux_plan.md`
 
 ## Current Phase Artifacts
 
@@ -29,12 +30,17 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_matrix.json` records the scenario-to-path and policy matrices.
 - `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_planning_gate_summary.json` records the live summary and non-materialization proof result.
 
+## Future Planning References
+
+- `benchux_plan.md` records the future `ARIS BenchUX Lab` plan. It is not an active route and does not authorize productization.
+
 ## Active Canonical Roadmap
 
 ```text
 Infernus revela.
 Purgatorium corrige.
 Infernus revalida.
+BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
 ```
