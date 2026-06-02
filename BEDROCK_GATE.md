@@ -21,6 +21,7 @@
 Infernus revela.
 Purgatorium corrige.
 Infernus revalida.
+BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
 ```
@@ -29,6 +30,14 @@ Bedrock decide.
 
 Bedrock remains a future maximum decision gate.
 
+## BenchUX Boundary
+
+`ARIS BenchUX Lab` is a future product-reality macroblock. It may provide benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo-readiness evidence for Crisol and Bedrock.
+
+BenchUX does not authorize productization, pilot, commercial readiness, production readiness, product promotion, Bedrock execution, real apply, or real dry-run.
+
 ## Productization Boundary
 
 Productization remains blocked until Bedrock explicitly permits it.
+
+Bedrock should not authorize productization unless BenchUX evidence is satisfactory or unresolved BenchUX risks are explicitly accepted as residual product risks.
