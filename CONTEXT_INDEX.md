@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
+- Route class: `planning_gate`
 
 ## Canonical Files
 
@@ -25,9 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md` records the review-only packet validation result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_contract_review.json` records the review criteria, reviewed packet flags, and non-materialization proof.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_gap_list.json` records blocking gaps, if any.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md` records the readiness closure result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_coverage_matrix.json` records the consolidated readiness chain, proof status, and closure criteria.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_gap_list.json` records blocking gaps, if any.
 
 ## Future Planning References
 

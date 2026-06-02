@@ -4,17 +4,17 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
+- `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `review_gate_only`
-- Planning-only: `false`
-- Review-only: `true`
+- Phase class: `planning_gate`
+- Planning-only: `true`
+- Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
 
 ## Purpose
 
-Conservatively close readiness of the fixture materialization route without authorizing final approval, apply, dry-run, fixture materialization, Bedrock, or product claims.
+Plan the explicit operator authorization packet for future fixture materialization without granting real authorization, apply, dry-run, fixture materialization, Bedrock, or product claims.
 
 ## Canonical Roadmap
 
@@ -33,4 +33,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may close readiness only. It must not grant authorization, materialize fixtures, execute scenarios, Bedrock, dry-runs, or product claims.
+The next step may plan the future explicit operator authorization packet only. It must not grant authorization, materialize fixtures, execute scenarios, Bedrock, dry-runs, or product claims.

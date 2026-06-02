@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("BenchUX Lab", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
@@ -137,28 +137,28 @@ class TestMirrorGuards(unittest.TestCase):
         )
         self.assertNotEqual(rc, 0, "minos artifact without llm boundary must be blocked.\n" + stderr)
 
-    def test_current_state_without_authorization_false_record_blocks(self) -> None:
+    def test_current_state_without_readiness_closure_record_blocks(self) -> None:
         state = _load_state()
         original = (ROOT / "CURRENT_STATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "`authorization_packet_actionable=false`, `authorization_granted=false`, `human_approval_collected_now=false`, and `operator_signoff_collected_now=false` remain locked now.",
-            "Final authorization packet boundary omitted.",
+            "`readiness_closure_passed=true`, `readiness_closure_is_not_authorization=true`, and `future_explicit_materialization_gate_required=true` are now explicit.",
+            "Readiness closure boundary omitted.",
         )
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
-        self.assertNotEqual(rc, 0, "current state without final authorization packet record must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "current state without readiness closure record must be blocked.\n" + stderr)
 
-    def test_final_authorization_packet_review_artifact_without_future_human_approval_phrase_blocks(self) -> None:
+    def test_readiness_closure_artifact_without_non_authorization_phrase_blocks(self) -> None:
         state = _load_state()
-        original = (ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md").read_text(encoding="utf-8")
+        original = (ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "Human approval collected now: `False`.",
-            "Human approval collected now: `True`.",
+            "Readiness closure is not authorization: `True`.",
+            "Readiness closure is not authorization: `False`.",
         )
         rc, _, stderr = _run_validator_with_state(
             state,
-            extra_files={"ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md": corrupted},
+            extra_files={"ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md": corrupted},
         )
-        self.assertNotEqual(rc, 0, "final authorization packet review artifact without future-only human approval phrase must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "readiness closure artifact without non-authorization phrase must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":
