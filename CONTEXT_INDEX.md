@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Route class: `planning_gate`
 
 ## Canonical Files
 
@@ -24,10 +24,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md` records the planning-only active-context phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_scenario_manifest_contract.json` records the 13-scenario manifest contract.
-- `artifacts/lab_simulation/aris_infernus_lab_full_scenario_dataset_contract.json` records the synthetic dataset planning contract.
-- `artifacts/lab_simulation/aris_infernus_lab_full_scenario_manifest_dataset_matrix.json` records bot/schema/evidence/verdict/signal/risk mappings.
+- `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md` records the review-only active-context phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_scenario_manifest_dataset_review_gate_coverage_review.json` records minimum review criteria, bot coverage, schema review, and synthetic-only boundaries.
+- `artifacts/lab_simulation/aris_infernus_lab_full_scenario_manifest_dataset_review_gate_gap_list.json` records blocking gaps, if any, plus residual local-change warning.
 
 ## Active Canonical Roadmap
 

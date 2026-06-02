@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Fixture Materialization Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
@@ -136,28 +136,28 @@ class TestMirrorGuards(unittest.TestCase):
         )
         self.assertNotEqual(rc, 0, "minos artifact without llm boundary must be blocked.\n" + stderr)
 
-    def test_current_state_without_warning_resolution_record_blocks(self) -> None:
+    def test_current_state_without_synthetic_boundary_record_blocks(self) -> None:
         state = _load_state()
         original = (ROOT / "CURRENT_STATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "`WRN-VERDICT-REF-NORMALIZATION` and `WRN-SIGNAL-REF-NORMALIZATION` are explicitly resolved by plural ref contracts and per-scenario fields.",
-            "Warning resolution omitted.",
+            "Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.",
+            "Synthetic boundary omitted.",
         )
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
-        self.assertNotEqual(rc, 0, "current state without warning resolution record must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "current state without synthetic boundary record must be blocked.\n" + stderr)
 
-    def test_active_context_artifact_without_signal_resolution_blocks(self) -> None:
+    def test_active_context_artifact_without_review_resolution_blocks(self) -> None:
         state = _load_state()
-        original = (ROOT / "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md").read_text(encoding="utf-8")
+        original = (ROOT / "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "`WRN-SIGNAL-REF-NORMALIZATION`: `resolved` via materialized_contract_surface",
-            "Signal resolution omitted.",
+            "The three prior warnings remain resolved under review.",
+            "Review resolution omitted.",
         )
         rc, _, stderr = _run_validator_with_state(
             state,
-            extra_files={"ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md": corrupted},
+            extra_files={"ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md": corrupted},
         )
-        self.assertNotEqual(rc, 0, "scenario manifest artifact without signal resolution must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "scenario review artifact without review resolution must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

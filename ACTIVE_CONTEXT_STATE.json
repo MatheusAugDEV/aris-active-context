@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
-  "active_next_phase_class": "review_gate_only",
+  "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Planning Gate",
+  "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -153,6 +153,11 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
       "status": "aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
+      "status": "aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -180,17 +185,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
-    "active_next_phase_class": "review_gate_only",
-    "current_status": "ready_for_aris_infernus_lab_full_scenario_manifest_dataset_review_gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Planning Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_planning_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass"
+    "status": "aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_scenario_manifest_dataset_review_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_planning_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -206,26 +211,26 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Schema Pack Closure Review Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Schema Pack Closure Review Gate",
+    "from_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
-    "transition_type": "scenario_manifest_dataset_planning_gate",
+    "to_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
+    "transition_type": "scenario_manifest_dataset_review_gate",
     "verified_via": "local validation, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
-    "deferred_phase_reason": "The scenario manifest dataset planning gate passed; the next review-only route must verify normalized verdict refs, signal refs, coverage targets, and synthetic dataset boundaries without opening execution.",
+    "deferred_phase": "ARIS Infernus Lab FULL Fixture Materialization Planning Gate",
+    "deferred_phase_reason": "The scenario manifest dataset review gate passed; the next planning-only route must define fixture materialization prerequisites without materializing fixtures or opening execution.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -239,15 +244,15 @@
     "execution_authorization": false,
     "notes": [
       "The canonical roadmap remains the macro chain: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
-      "The scenario manifest and synthetic dataset planning gate passed; the next route must review normalization, coverage, and planning-only integrity only.",
-      "The three closure carry-forward warnings were resolved by materializing explicit verdict refs, signal refs, and scenario manifest/dataset planning contracts.",
-      "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
+      "The scenario manifest dataset review gate passed; the next route must plan fixture materialization prerequisites only.",
+      "Normalized verdict refs, normalized signal refs, 13-bot coverage, and synthetic-only dataset boundaries were confirmed under review.",
+      "Runtime, frontend, backend, action-runtime, audio, fixture materialization, bot execution, attack execution, real apply, real dry-run, and Bedrock execution remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
-    "phase_class": "review_gate_only",
-    "planning_only": false,
-    "review_only": true,
+    "phase": "ARIS Infernus Lab FULL Fixture Materialization Planning Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -278,7 +283,8 @@
     "ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BEDROCK_BOUNDARY_SIGNAL_SCHEMA_PLANNING_GATE.md",
-    "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md"
+    "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md",
+    "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -297,7 +303,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass",
+  "status": "aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -315,7 +321,7 @@
     "current_schema_version": "2.1",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the schema pack closure review gate to the scenario manifest dataset review gate while materializing explicit verdict refs, signal refs, and synthetic dataset planning boundaries.",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the scenario manifest dataset planning gate to the fixture materialization planning gate after confirming normalized refs, 13-bot coverage, and synthetic-only dataset boundaries.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

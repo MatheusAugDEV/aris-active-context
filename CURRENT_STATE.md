@@ -4,13 +4,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass`
+- Status: `aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
-- Current status: `ready_for_aris_infernus_lab_full_scenario_manifest_dataset_review_gate`
-- Active next phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
+- Current status: `ready_for_aris_infernus_lab_full_fixture_materialization_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
@@ -29,20 +29,19 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Scenario Manifest Dataset Planning Gate Result
+## Scenario Manifest Dataset Review Gate Result
 
-- The planning-only manifest/dataset layer is now materialized for all 13 official bots.
-- `WRN-VERDICT-REF-NORMALIZATION` and `WRN-SIGNAL-REF-NORMALIZATION` are explicitly resolved by plural ref contracts and per-scenario fields.
-- `WRN-SCENARIO-MANIFEST-DATASET-LAYER-PENDING` is resolved by the new manifest and synthetic dataset contract artifacts.
-- The next route is `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate` with `review_gate_only` semantics.
+- The 13-scenario manifest and synthetic dataset planning pack passed review for normalization, coverage, and synthetic-only boundaries.
+- `verdict_refs` and `signal_refs` remain normalized and non-empty where applicable.
+- Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.
+- The next route is `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`.
 
 ## Non-Authorization
 
-- No schema authorizes execution.
+- No fixture materialization or scenario execution.
 - No Bedrock execution or Bedrock PASS.
 - No bot implementation or execution.
 - No attack or harness execution.
-- No finding correction or Purgatorium execution.
 - No runtime, frontend, backend, action-runtime, or audio mutation.
 - No real dry-run or real apply.
 - No product, pilot, commercial, or production authorization.
