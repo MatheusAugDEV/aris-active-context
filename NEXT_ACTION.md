@@ -22,9 +22,14 @@ Review the future fixture plan, path safety, synthetic-only policy, non-material
 Infernus revela.
 Purgatorium corrige.
 Infernus revalida.
+BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
 ```
+
+## BenchUX Note
+
+`ARIS BenchUX Lab` is a future macroblock only. It is not the active next phase and does not authorize execution or productization.
 
 ## Boundary
 
