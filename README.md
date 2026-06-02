@@ -7,11 +7,11 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
-- Active next phase class: `planning_gate`
-- Infernus FULL remains the active macroblock and stays planning-only until an explicit future execution gate authorizes otherwise.
+- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`
+- Active next phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Active next phase class: `review_gate_only`
+- Infernus FULL remains the active macroblock and stays non-executable until an explicit future execution gate authorizes otherwise.
 
 ## Canonical Macro Roadmap
 
@@ -34,10 +34,11 @@ Bedrock decide.
 - `ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_BEDROCK_BOUNDARY_SIGNAL_SCHEMA_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md`
+- `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md`
 
 ## Non-Authorization
 
-- No schema pack closure review authorizes execution.
+- No scenario manifest dataset planning gate authorizes execution.
 - No Bedrock PASS or product promotion.
 - No bot implementation or execution.
 - No attack or harness execution.

@@ -9,12 +9,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_schema_pack_closure_review_gate_pass"
+EXPECTED_STATUS = "aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL Schema Pack Closure Review Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_scenario_manifest_dataset_planning_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate"
-EXPECTED_CLASS = "planning_gate"
+EXPECTED_LATEST = "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate"
+EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_scenario_manifest_dataset_review_gate"
+EXPECTED_NEXT = "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate"
+EXPECTED_CLASS = "review_gate_only"
 EXPECTED_SCHEMA_VERSION = "2.1"
 EXPECTED_ROADMAP_PHRASES = ['Infernus revela.', 'Purgatorium corrige.', 'Infernus revalida.', 'Crisol refina.', 'Bedrock decide.']
 
@@ -66,8 +66,8 @@ def main() -> None:
     _require(state["active_next_phase_class"] == EXPECTED_CLASS, "unexpected next route class")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next route execution authorization must be false")
-    _require(state["next_action"]["planning_only"] is True, "next route must remain planning-only")
-    _require(state["next_action"]["review_only"] is False, "next route must not become review-only")
+    _require(state["next_action"]["planning_only"] is False, "next route must not remain planning-only")
+    _require(state["next_action"]["review_only"] is True, "next route must become review-only")
     _require(state["next_action"]["execution_authorization"] is False, "next route must not authorize execution")
 
     policy = state["cross_field_consistency_policy"]
@@ -75,8 +75,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Schema Pack Closure Review Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Schema Pack Closure Review Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -86,16 +86,17 @@ def main() -> None:
 
     roadmap_required = tuple(EXPECTED_ROADMAP_PHRASES)
     _mirror_contains(ROOT / "ROADMAP_CANONICAL.md", EXPECTED_LATEST, EXPECTED_NEXT, *roadmap_required)
-    _mirror_contains(ROOT / "CURRENT_STATE.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_STATUS, EXPECTED_NEXT, "Closure review semantics were resolved as `review_gate_only` before PASS;", *roadmap_required)
-    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `true`", "Execution authorization: `false`", *roadmap_required)
-    _mirror_contains(ROOT / "DECISION_LOCKS.md", EXPECTED_NEXT, "resolved as `review_gate_only` before closure", "Bedrock remains non-executable and product promotion remains blocked.")
-    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md", "aris_infernus_lab_full_schema_pack_closure_review_gate_coverage_matrix.json")
-    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Schema Pack Closure Review Gate Note", *roadmap_required)
-    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md")
+    _mirror_contains(ROOT / "CURRENT_STATE.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_STATUS, EXPECTED_NEXT, "The planning-only manifest/dataset layer is now materialized for all 13 official bots.", "WRN-VERDICT-REF-NORMALIZATION", *roadmap_required)
+    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `false`", "Review-only: `true`", "Execution authorization: `false`", *roadmap_required)
+    _mirror_contains(ROOT / "DECISION_LOCKS.md", EXPECTED_NEXT, "WRN-VERDICT-REF-NORMALIZATION", "Bedrock remains non-executable and product promotion remains blocked.")
+    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md", "aris_infernus_lab_full_scenario_manifest_dataset_matrix.json")
+    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Scenario Manifest Dataset Planning Gate Note", *roadmap_required)
+    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md")
     _mirror_contains(ROOT / "BEDROCK_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Productization remains blocked")
     _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md", "No LLM-as-judge verdict authorization.")
     _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_BEDROCK_BOUNDARY_SIGNAL_SCHEMA_PLANNING_GATE.md", "ARIS Infernus Lab FULL Schema Pack Closure Review Gate", "No Bedrock execution or Bedrock PASS.")
-    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Correct semantics: `review_gate_only`")
+    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md", "ARIS Infernus Lab FULL Schema Pack Closure Review Gate", "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate", "Correct semantics: `review_gate_only`")
+    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "WRN-SIGNAL-REF-NORMALIZATION", "No Bedrock execution or Bedrock PASS.")
     _mirror_contains(ROOT / "infernus_protocol.md", "NON-CANONICAL_ADVISORY_RESEARCH_ONLY", "advisory input only")
 
     stale_route_lines = (
@@ -105,7 +106,8 @@ def main() -> None:
         "- Active next phase: `ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate`",
         "- Active next phase: `ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate`",
         "- Active next phase: `ARIS Infernus Lab FULL Schema Pack Closure Review Gate`",
-        "Planning-only Bedrock boundary signal schema gate next; no Bedrock authorization yet.",
+        "- Active next phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`",
+        "Scenario manifest dataset planning gate next; no Bedrock authorization yet.",
         "Contract Schema Enforcement Implementation Planning Gate",
     )
     for path in [ROOT / "ROADMAP_CANONICAL.md", ROOT / "BEDROCK_GATE.md"]:
@@ -124,7 +126,7 @@ def main() -> None:
             "Bedrock Gate",
             "Productization / Controlled Pilot",
         ],
-        "review_result": "aris infernus lab full schema pack closure review gate pass"
+        "review_result": "aris infernus lab full scenario manifest dataset planning gate pass"
     }, indent=2))
 
 
