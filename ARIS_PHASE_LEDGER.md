@@ -4,12 +4,12 @@ This file is a historical ledger only. Live routing always comes from `ACTIVE_CO
 
 ## Latest Canonical Transition
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
-- Last transition from: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
-- Status: `aris_infernus_lab_full_fixture_materialization_final_authorization_packet_planning_gate_pass`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
+- Last transition from: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
+- Status: `aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_pass`
 - Decision: `pass`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
 - Active next phase class: `review_gate_only`
 
 ## Canonical Roadmap Ledger Note
@@ -33,6 +33,6 @@ Bedrock decide.
 
 This ledger note does not activate BenchUX now and does not authorize productization, pilot, commercial readiness, production readiness, real dry-run, real apply, Bedrock execution, runtime mutation, or product promotion.
 
-## Fixture Materialization Final Authorization Packet Planning Gate Note
+## Fixture Materialization Final Authorization Packet Review Gate Note
 
-`ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate` defined the future-only final authorization packet, approval/signoff schemas, validity rules, invalidation rules, and non-bypassability conditions while keeping authorization and materialization blocked.
+`ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate` validated the future-only packet, refusal conditions, required proof package, packet validity/invalidation rules, and non-bypassability requirements while keeping authorization and materialization blocked.

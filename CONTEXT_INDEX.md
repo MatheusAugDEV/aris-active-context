@@ -4,9 +4,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
 - Route class: `review_gate_only`
 
 ## Canonical Files
@@ -25,9 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_PLANNING_GATE.md` records the planning-only final authorization packet phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_plan.json` records the future-only packet contract, proof refs, evidence refs, and future approval/signoff schemas.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_matrix.json` records the packet matrix, next review route, and non-authorization attestation.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md` records the review-only packet validation result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_contract_review.json` records the review criteria, reviewed packet flags, and non-materialization proof.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_gap_list.json` records blocking gaps, if any.
 
 ## Future Planning References
 

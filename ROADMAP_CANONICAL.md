@@ -12,12 +12,6 @@ Infernus revalida.
 BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
-Productization Readiness prepara.
-Client Readiness operacionaliza.
-First Controlled Pilot testa em cliente.
-Pilot Evidence Review julga evidência real.
-SIP mantém saudável.
-Scale Readiness decide escala.
 ```
 
 ## Macro Roadmap
@@ -25,7 +19,7 @@ Scale Readiness decide escala.
 | Order | Macroblock | Status | Function | Authorization |
 | --- | --- | --- | --- | --- |
 | 0 | Tier-1 / Base Operacional | historical/base | Foundational operating base already accumulated; does not dominate active routing. | No production/pilot/commercial authorization. |
-| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Fixture materialization final authorization packet review gate next; no Bedrock authorization yet. |
+| 1 | ARIS Infernus Lab FULL | active next macroblock | Adversarial discovery of failures, false PASS, unsafe automation, runtime/UX/context/ledger/rollback/security/product gaps. | Fixture materialization readiness closure gate next; no Bedrock authorization yet. |
 | 2 | Purgatorium FULL | future macroblock | Correct everything Infernus reveals; classify every finding as fixed, accepted residual, or blocked. | Not active yet. |
 | 3 | Infernus Revalidation | future macroblock | Validate again after Purgatorium; prove fixes are real and expose regressions. | Not active yet. |
 | 4 | ARIS BenchUX Lab | future macroblock | Validate product reality: market benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness. | Not active yet; does not authorize product direction; produces evidence for Crisol and Bedrock. |
@@ -41,8 +35,8 @@ Scale Readiness decide escala.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
 - Active next phase class: `review_gate_only`
 - Planning-only: `false`
 - Review-only: `true`
