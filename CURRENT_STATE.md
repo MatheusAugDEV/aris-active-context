@@ -25,6 +25,7 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 Infernus revela.
 Purgatorium corrige.
 Infernus revalida.
+BenchUX valida produto real.
 Crisol refina.
 Bedrock decide.
 ```
@@ -35,6 +36,12 @@ Bedrock decide.
 - Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.
 - No real fixture files were materialized; the planned fixture root remains absent or file-empty and fixture materialization stays false.
 - The next route is `ARIS Infernus Lab FULL Fixture Materialization Review Gate` with `review_gate_only` semantics.
+
+## BenchUX Roadmap Note
+
+- `ARIS BenchUX Lab` is now listed as a future macroblock after `Infernus Revalidation` and before `Crisol`.
+- `benchux_plan.md` records the future product-reality plan for benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness.
+- BenchUX is not active now and does not authorize productization.
 
 ## Non-Authorization
 
