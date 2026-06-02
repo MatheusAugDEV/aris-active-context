@@ -4,13 +4,13 @@ This file is a historical ledger only. Live routing always comes from `ACTIVE_CO
 
 ## Latest Canonical Transition
 
-- Latest completed phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
-- Last transition from: `ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate`
-- Status: `aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Last transition from: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Status: `aris_infernus_lab_full_fixture_materialization_planning_gate_pass`
 - Decision: `pass`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
-- Active next phase class: `planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
+- Active next phase class: `review_gate_only`
 
 ## Canonical Roadmap Ledger Note
 
@@ -24,6 +24,6 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Scenario Manifest Dataset Review Gate Note
+## Fixture Materialization Planning Gate Note
 
-`ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate` confirmed normalized refs, 13-bot coverage, and synthetic-only dataset boundaries, then advanced only to fixture-materialization planning.
+`ARIS Infernus Lab FULL Fixture Materialization Planning Gate` materialized a future-only fixture plan, kept `fixture_materialization_allowed=false`, required a future gate, and explicitly proved that no real fixture files were created.

@@ -4,17 +4,17 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Phase class: `review_gate_only`
+- Planning-only: `false`
+- Review-only: `true`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
 
 ## Purpose
 
-Plan fixture materialization prerequisites and boundaries without materializing fixtures, opening execution, or weakening synthetic-only constraints.
+Review the future fixture plan, path safety, synthetic-only policy, non-materialization proof, and future-gate requirements before any later materialization discussion.
 
 ## Canonical Roadmap
 
@@ -28,4 +28,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may plan fixture-materialization prerequisites only. It must not materialize fixtures, execute scenarios, Bedrock, dry-runs, or applies, or authorize product claims.
+The next step may review fixture planning artifacts only. It must not materialize fixtures, execute bots, scenarios, attacks, harnesses, Purgatorium, replay, Bedrock, real dry-run, real apply, or authorize product claims.
