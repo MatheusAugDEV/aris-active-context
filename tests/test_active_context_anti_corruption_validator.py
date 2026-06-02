@@ -52,8 +52,8 @@ class TestCanonicalState(unittest.TestCase):
         self.assertEqual(rc, 0, f"Validator should pass.\nSTDOUT: {stdout}\nSTDERR: {stderr}")
         data = json.loads(stdout)
         self.assertEqual(data["decision"], "pass")
-        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Fixture Materialization Planning Gate")
-        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Fixture Materialization Review Gate")
+        self.assertEqual(data["latest_completed_phase"], "ARIS Infernus Lab FULL Fixture Materialization Review Gate")
+        self.assertEqual(data["active_next_phase"], "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate")
         self.assertIn("Purgatorium FULL", data["canonical_roadmap"])
         self.assertIn("Crisol FULL", data["canonical_roadmap"])
 
@@ -146,18 +146,18 @@ class TestMirrorGuards(unittest.TestCase):
         rc, _, stderr = _run_validator_with_state(state, extra_files={"CURRENT_STATE.md": corrupted})
         self.assertNotEqual(rc, 0, "current state without synthetic boundary record must be blocked.\n" + stderr)
 
-    def test_fixture_planning_artifact_without_future_gate_phrase_blocks(self) -> None:
+    def test_fixture_review_artifact_without_review_boundary_phrase_blocks(self) -> None:
         state = _load_state()
-        original = (ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md").read_text(encoding="utf-8")
+        original = (ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md").read_text(encoding="utf-8")
         corrupted = original.replace(
-            "Future gate required: `true`.",
-            "Future gate requirement omitted.",
+            "The planning gate boundaries remained intact under review.",
+            "Review boundary omitted.",
         )
         rc, _, stderr = _run_validator_with_state(
             state,
-            extra_files={"ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md": corrupted},
+            extra_files={"ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md": corrupted},
         )
-        self.assertNotEqual(rc, 0, "fixture planning artifact without future gate phrase must be blocked.\n" + stderr)
+        self.assertNotEqual(rc, 0, "fixture review artifact without review boundary phrase must be blocked.\n" + stderr)
 
 
 if __name__ == "__main__":

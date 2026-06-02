@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Route class: `planning_gate`
 
 ## Canonical Files
 
@@ -25,10 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md` records the planning-only active-context phase result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_plan.json` records the future fixture plan, manifest, and policy pack.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_matrix.json` records the scenario-to-path and policy matrices.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_planning_gate_summary.json` records the live summary and non-materialization proof result.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md` records the review-only active-context phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_review_gate_path_safety.json` records minimum review criteria, path-safety review, and non-materialization proof.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_review_gate_gap_list.json` records blocking gaps, if any, plus residual local-change warning.
 
 ## Future Planning References
 

@@ -4,13 +4,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_fixture_materialization_planning_gate_pass`
+- Status: `aris_infernus_lab_full_fixture_materialization_review_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Current status: `ready_for_aris_infernus_lab_full_fixture_materialization_review_gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Current status: `ready_for_aris_infernus_lab_full_controlled_fixture_materialization_authorization_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
@@ -30,12 +30,13 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Fixture Materialization Planning Gate Result
+## Fixture Materialization Review Gate Result
 
-- The fixture materialization plan, manifest, file format, path policy, hash policy, provenance policy, redaction policy, cleanup plan, and rollback plan are now materialized as planning-only artifacts.
+- The fixture materialization planning pack passed review for path safety, synthetic-only boundaries, non-materialization proof, and cleanup/rollback presence.
 - Synthetic-only boundaries remain explicit: no real secrets, no real customer data, no runtime execution, and fixture materialization stays false.
-- No real fixture files were materialized; the planned fixture root remains absent or file-empty and fixture materialization stays false.
-- The next route is `ARIS Infernus Lab FULL Fixture Materialization Review Gate` with `review_gate_only` semantics.
+- `fixture_materialization_allowed=false` and `future_gate_required=true` remain intact under review.
+- No real fixture files were materialized; the planned fixture root remains absent or file-empty and the proof result remains `no_real_fixture_files_detected`.
+- The next route is `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate` with `planning_gate` semantics.
 
 ## BenchUX Roadmap Note
 

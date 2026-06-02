@@ -7,10 +7,10 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate`
+- Active next phase class: `planning_gate`
 - Infernus FULL remains the active macroblock and stays non-executable until an explicit future execution gate authorizes otherwise.
 
 ## Canonical Macro Roadmap
@@ -44,6 +44,7 @@ Bedrock decide.
 - `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md`
 - `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md`
 - `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md`
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md`
 
 ## Future Planning References
 
@@ -51,7 +52,7 @@ Bedrock decide.
 
 ## Non-Authorization
 
-- No fixture materialization planning gate authorizes execution.
+- No fixture materialization review gate authorizes execution.
 - No real fixture materialization.
 - No Bedrock PASS or product promotion.
 - No bot implementation or execution.
