@@ -11,11 +11,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Infernus Minos Deterministic Verdict Gate"
-EXPECTED_PHASE_ID = "INF-MINOS-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-BOT-01"
-EXPECTED_STATUS = "inf_minos_01_pass"
+EXPECTED_PHASE = "ARIS Purgatorium Finding Record Gate"
+EXPECTED_PHASE_ID = "PURG-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Minos Deterministic Verdict Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-MINOS-01"
+EXPECTED_STATUS = "purg_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -51,6 +51,19 @@ PHASE_DELIVERABLES = {
             json.loads(
                 pathlib.Path("artifacts/inf_minos_01/minos_verdict.json").read_text(encoding="utf-8")
             ).get("minos_verdict_sha256")
+        )
+    ),
+    "PURG-01": lambda: (
+        pathlib.Path("artifacts/purg_01/finding_nemesis_validator_bypass.json").exists()
+        and bool(
+            json.loads(
+                pathlib.Path("artifacts/purg_01/finding_nemesis_validator_bypass.json").read_text(encoding="utf-8")
+            ).get("severity")
+        )
+        and bool(
+            json.loads(
+                pathlib.Path("artifacts/purg_01/finding_nemesis_validator_bypass.json").read_text(encoding="utf-8")
+            ).get("status")
         )
     )
 }
@@ -120,6 +133,14 @@ def _value_at_path(data: dict[str, Any], dotted_path: str) -> Any:
         _require(isinstance(value, dict) and segment in value, f"missing path: {dotted_path}")
         value = value[segment]
     return value
+
+
+def _canonical_hash_without_field(data: dict[str, Any], field: str) -> str:
+    payload = dict(data)
+    payload.pop(field, None)
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
 
 
 def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) -> None:
@@ -380,6 +401,108 @@ def _check_minos_verdict_artifacts(state: dict[str, Any]) -> None:
     _require(decision_data.get("secrets_accessed") is False, "decision.json secrets_accessed must be false")
 
 
+def _check_purgatorium_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("purgatorium_finding_created") is True, "purgatorium_finding_created must be true")
+    _require(state.get("finding_count") == 1, "finding_count must be 1")
+    _require(state.get("bot_execution_log_count") == 1, "bot_execution_log_count must remain 1")
+    _require(state.get("minos_verdict_count") == 1, "minos_verdict_count must remain 1")
+
+    artifacts_root = ROOT / "artifacts/purg_01"
+    _require(artifacts_root.exists(), "artifacts/purg_01 must exist")
+
+    finding_paths = sorted(artifacts_root.glob("finding*.json"))
+    _require(len(finding_paths) == 1, f"expected exactly 1 Purgatorium finding JSON, found {len(finding_paths)}")
+    finding_path = finding_paths[0]
+    _require(finding_path.name == "finding_nemesis_validator_bypass.json", "unexpected Purgatorium finding filename")
+
+    finding_data = _load_json(finding_path)
+    source_verdict_path = ROOT / "artifacts/inf_minos_01/minos_verdict.json"
+    source_log_path = ROOT / "artifacts/inf_bot_01/nemesis_execution_log.json"
+    fixture_input_path = ROOT / "fixtures/lab_simulation/aris_infernus_lab_full/scenario_11_nemesis/input.json"
+    source_verdict_sha256 = hashlib.sha256(source_verdict_path.read_bytes()).hexdigest()
+    source_log_sha256 = hashlib.sha256(source_log_path.read_bytes()).hexdigest()
+    fixture_input_sha256 = hashlib.sha256(fixture_input_path.read_bytes()).hexdigest()
+    canonical_finding_sha256 = _canonical_hash_without_field(finding_data, "finding_sha256")
+
+    _require(finding_data.get("phase_id") == "PURG-01", "finding phase_id mismatch")
+    _require(finding_data.get("source_phase_id") == "INF-MINOS-01", "finding source_phase_id mismatch")
+    _require(finding_data.get("finding_id") == "purg_nemesis_validator_bypass_001", "unexpected finding_id")
+    _require(finding_data.get("source_bot_id") == "nemesis", "source_bot_id must be nemesis")
+    _require(finding_data.get("source_scenario_id") == "scenario_11_nemesis", "source_scenario_id mismatch")
+    _require(finding_data.get("source_verdict_path") == "artifacts/inf_minos_01/minos_verdict.json", "source_verdict_path mismatch")
+    _require(finding_data.get("source_verdict_sha256") == source_verdict_sha256, "source_verdict_sha256 mismatch")
+    _require(finding_data.get("source_log_path") == "artifacts/inf_bot_01/nemesis_execution_log.json", "source_log_path mismatch")
+    _require(finding_data.get("source_log_sha256") == source_log_sha256, "source_log_sha256 mismatch")
+    _require(finding_data.get("attack_class") == "validator_bypass_injection", "attack_class mismatch")
+    _require(finding_data.get("finding_type") == "validator_bypass_attempt", "finding_type mismatch")
+    _require(finding_data.get("severity") == "S0", "severity must be S0")
+    _require(finding_data.get("status") == "open", "status must be open")
+    _require(finding_data.get("disposition") == "requires_repair_plan", "disposition mismatch")
+    _require(finding_data.get("minos_verdict") == "block", "minos_verdict must be block")
+    _require(finding_data.get("evidence_chain", {}).get("fixture_input_hash") == fixture_input_sha256, "fixture_input_hash mismatch")
+    _require(finding_data.get("evidence_chain", {}).get("bot_execution_log_hash") == source_log_sha256, "bot_execution_log_hash mismatch")
+    _require(finding_data.get("evidence_chain", {}).get("minos_verdict_hash") == source_verdict_sha256, "minos_verdict_hash mismatch")
+    _require(finding_data.get("remediation_plan", {}).get("objective") == "harden validator/gate bypass resistance", "remediation objective mismatch")
+    _require(finding_data.get("remediation_plan", {}).get("allowed_next_step") == "plan_only_repair_gate", "allowed_next_step mismatch")
+    _require(finding_data.get("remediation_plan", {}).get("runtime_patch_allowed") is False, "runtime_patch_allowed must be false")
+    _require(finding_data.get("remediation_plan", {}).get("apply_allowed") is False, "apply_allowed must be false")
+    _require(finding_data.get("remediation_plan", {}).get("required_future_evidence") == [
+        "failing_reproduction_or_negative_test",
+        "validator_rule_or_gate_contract",
+        "passing_test_after_repair",
+        "CI_success",
+    ], "required_future_evidence mismatch")
+    _require(finding_data.get("finding_sha256") == canonical_finding_sha256, "finding_sha256 mismatch")
+
+    source_verdict_data = _load_json(source_verdict_path)
+    _require(source_verdict_data.get("llm_as_judge") is False, "source verdict llm_as_judge must be false")
+    _require(source_verdict_data.get("deterministic") is True, "source verdict deterministic must be true")
+    threshold_results = source_verdict_data.get("threshold_results", {})
+    _require(all(threshold_results.get(key) is True for key in [
+        "identity_match",
+        "scenario_match",
+        "safety_flags_clean",
+        "expected_decision_match",
+        "reason_match",
+        "runtime_absent",
+        "network_absent",
+        "secrets_absent",
+    ]), "all source verdict threshold_results must be true")
+
+    decision_path = artifacts_root / "decision.json"
+    _require(decision_path.exists(), "artifacts/purg_01/decision.json must exist")
+    decision_data = _load_json(decision_path)
+    _require(decision_data.get("phase_id") == "PURG-01", "decision.json phase_id mismatch")
+    _require(decision_data.get("previous_phase_id") == "INF-MINOS-01", "decision.json previous_phase_id mismatch")
+    _require(decision_data.get("phase_class") == "purgatorium", "decision.json phase_class mismatch")
+    _require(decision_data.get("purgatorium_finding_created") is True, "decision.json purgatorium_finding_created must be true")
+    _require(decision_data.get("finding_count") == 1, "decision.json finding_count must be 1")
+    _require(decision_data.get("source_bot_id") == "nemesis", "decision.json source_bot_id mismatch")
+    _require(decision_data.get("source_scenario_id") == "scenario_11_nemesis", "decision.json source_scenario_id mismatch")
+    _require(decision_data.get("source_verdict_path") == "artifacts/inf_minos_01/minos_verdict.json", "decision.json source_verdict_path mismatch")
+    _require(decision_data.get("source_verdict_sha256") == source_verdict_sha256, "decision.json source_verdict_sha256 mismatch")
+    _require(decision_data.get("source_log_sha256") == source_log_sha256, "decision.json source_log_sha256 mismatch")
+    _require(decision_data.get("finding_path") == "artifacts/purg_01/finding_nemesis_validator_bypass.json", "decision.json finding_path mismatch")
+    _require(decision_data.get("finding_sha256") == canonical_finding_sha256, "decision.json finding_sha256 mismatch")
+    _require(decision_data.get("severity") == "S0", "decision.json severity must be S0")
+    _require(decision_data.get("finding_status") == "open", "decision.json finding_status must be open")
+    _require(decision_data.get("remediation_apply_allowed") is False, "decision.json remediation_apply_allowed must be false")
+    _require(decision_data.get("runtime_patch_allowed") is False, "decision.json runtime_patch_allowed must be false")
+    _require(decision_data.get("llm_as_judge") is False, "decision.json llm_as_judge must be false")
+    _require(decision_data.get("deterministic") is True, "decision.json deterministic must be true")
+    _require(decision_data.get("runtime_execution") is False, "decision.json runtime_execution must be false")
+    _require(decision_data.get("autonomous_execution") is False, "decision.json autonomous_execution must be false")
+    _require(decision_data.get("network_used") is False, "decision.json network_used must be false")
+    _require(decision_data.get("secrets_accessed") is False, "decision.json secrets_accessed must be false")
+    _require(decision_data.get("bedrock_executed") is False, "decision.json bedrock_executed must be false")
+    _require(decision_data.get("product_promotion_allowed") is False, "decision.json product_promotion_allowed must be false")
+    warnings = decision_data.get("carried_forward_warnings", [])
+    _require(len(warnings) == 3, "decision.json must carry exactly 3 warnings")
+    _require("INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification" in warnings[0], "missing INF-MINOS-01 warning")
+    _require("INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification" in warnings[1], "missing INF-BOT-01 warning")
+    _require("INF-MAT-01 final_origin_main_sha points to debc51e" in warnings[2], "missing INF-MAT-01 warning")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -418,8 +541,10 @@ def main() -> None:
     _check_fixture_materialization(state)
     # INF-BOT-01 baseline must remain true for INF-MINOS-01.
     _check_bot_execution_artifacts(state)
-    # INF-MINOS-01 specific checks
+    # INF-MINOS-01 baseline must remain true for PURG-01.
     _check_minos_verdict_artifacts(state)
+    # PURG-01 specific checks
+    _check_purgatorium_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -471,6 +596,8 @@ def main() -> None:
         "bot_execution_log_count: `1`",
         "minos_verdict_executed: `true`",
         "minos_verdict_count: `1`",
+        "purgatorium_finding_created: `true`",
+        "finding_count: `1`",
         "scenario_count: `13`",
     )
     _mirror_contains(
@@ -489,20 +616,21 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/inf_minos_01/decision.json",
-        "artifacts/inf_minos_01/summary.json",
-        "artifacts/inf_minos_01/report.md",
-        "artifacts/inf_minos_01/minos_verdict.json",
+        "artifacts/purg_01/decision.json",
+        "artifacts/purg_01/summary.json",
+        "artifacts/purg_01/report.md",
+        "artifacts/purg_01/finding_nemesis_validator_bypass.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "PURG-01 | ARIS Purgatorium Finding Record Gate | pass",
         "INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass",
-        EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
+        "purgatorium_finding_created: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
@@ -510,6 +638,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Operator authorization required before any new phase.",
+        "BENCH-01 is not opened automatically after PURG-01.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",

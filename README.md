@@ -7,17 +7,22 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
-- Previous execution phase: `ARIS Infernus Nemesis Synthetic Bot Execution Log Gate`
+- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
+- Previous execution phase: `ARIS Infernus Minos Deterministic Verdict Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - governance_gate_streak: `0` — preserved by INF-BOT-01 capacity gate pass
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
 - bot_execution_executed: `true` (1 deterministic nemesis log on disk)
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk)
+- purgatorium_finding_created: `true` (1 deterministic finding record on disk)
 
 ## Active Artifacts
 
+- `artifacts/purg_01/decision.json`
+- `artifacts/purg_01/summary.json`
+- `artifacts/purg_01/report.md`
+- `artifacts/purg_01/finding_nemesis_validator_bypass.json`
 - `artifacts/inf_minos_01/decision.json`
 - `artifacts/inf_minos_01/summary.json`
 - `artifacts/inf_minos_01/report.md`
@@ -53,6 +58,6 @@ validate_active_context.yml runs on every push and PR to main.
 
 ## Non-Authorization
 
-- No next phase is authorized until explicit manual operator authorization for PURG-01.
-- No further bot execution, Minos execution, runtime mutation, secrets access, Bedrock, or product promotion.
-- Circuit breaker streak reset to 0. Governance gates unblocked but no phase is open.
+- No next phase is authorized until explicit manual operator authorization for BENCH-01.
+- No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion.
+- Circuit breaker streak remains 0. Governance gates are unblocked but no phase is open.

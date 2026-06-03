@@ -11,8 +11,8 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Boundary
 
-INF-MINOS-01 passed. A single deterministic Minos verdict was created from the existing nemesis execution log and resolved to `block`. governance_gate_streak remains 0.
+PURG-01 passed. A single deterministic Purgatorium finding record was created from the existing Minos verdict for nemesis validator bypass and remains `open` with `severity=S0`. governance_gate_streak remains 0.
 
-No next phase is authorized. PURG-01 was not opened automatically.
-No further bot execution, Minos execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
-Any future Purgatorium work still requires explicit operator authorization.
+No next phase is authorized. BENCH-01 was not opened automatically.
+No repair apply, no runtime patch, no further bot execution, no further Minos execution, no runtime mutation, no secrets access, no Bedrock, and no product promotion are authorized.
+Any future BenchUX work still requires explicit operator authorization.

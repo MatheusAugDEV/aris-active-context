@@ -1,0 +1,36 @@
+{
+  "phase_id": "PURG-01",
+  "source_phase_id": "INF-MINOS-01",
+  "finding_id": "purg_nemesis_validator_bypass_001",
+  "source_bot_id": "nemesis",
+  "source_scenario_id": "scenario_11_nemesis",
+  "source_verdict_path": "artifacts/inf_minos_01/minos_verdict.json",
+  "source_verdict_sha256": "ce11c696ea438cedb36862c686e698107f4ccb73ba6d6a78136b36bf0fb96512",
+  "source_log_path": "artifacts/inf_bot_01/nemesis_execution_log.json",
+  "source_log_sha256": "ae11c023e72733e31945014845ff3c171bf3a3a299616fbd5cc73eec5f9cc443",
+  "attack_class": "validator_bypass_injection",
+  "finding_type": "validator_bypass_attempt",
+  "severity": "S0",
+  "status": "open",
+  "disposition": "requires_repair_plan",
+  "minos_verdict": "block",
+  "evidence_chain": {
+    "fixture_input_hash": "c1a4dca4d978f306996d335682e7988c0c89fe1d0665ad1fd6e7b0b75d19b40b",
+    "bot_execution_log_hash": "ae11c023e72733e31945014845ff3c171bf3a3a299616fbd5cc73eec5f9cc443",
+    "minos_verdict_hash": "ce11c696ea438cedb36862c686e698107f4ccb73ba6d6a78136b36bf0fb96512"
+  },
+  "remediation_plan": {
+    "objective": "harden validator/gate bypass resistance",
+    "allowed_next_step": "plan_only_repair_gate",
+    "runtime_patch_allowed": false,
+    "apply_allowed": false,
+    "required_future_evidence": [
+      "failing_reproduction_or_negative_test",
+      "validator_rule_or_gate_contract",
+      "passing_test_after_repair",
+      "CI_success"
+    ]
+  },
+  "created_at": "2026-06-03T00:00:00-03:00",
+  "finding_sha256": "f9a62f68f506f7afd9fac02f9c2186470b22be95e456f200b0b4953e6f5e134b"
+}

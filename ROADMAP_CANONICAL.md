@@ -16,10 +16,11 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
+- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.
+- BENCH-01 is not opened automatically after PURG-01.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`

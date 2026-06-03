@@ -112,3 +112,31 @@ def test_minimum_deliverable_blocks_inf_minos_pass_without_verdict():
                 raise AssertionError("minimum deliverable check should block INF-MINOS-01 without verdict json")
         finally:
             os.chdir(cwd)
+
+
+def test_minimum_deliverable_blocks_purg_pass_without_finding():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "PURG-01",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block PURG-01 without finding json")
+        finally:
+            os.chdir(cwd)

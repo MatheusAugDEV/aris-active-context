@@ -2,21 +2,25 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
+- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
-- `artifacts/inf_minos_01/decision.json`
-- `artifacts/inf_minos_01/summary.json`
-- `artifacts/inf_minos_01/report.md`
-- `artifacts/inf_minos_01/minos_verdict.json`
+- `artifacts/purg_01/decision.json`
+- `artifacts/purg_01/summary.json`
+- `artifacts/purg_01/report.md`
+- `artifacts/purg_01/finding_nemesis_validator_bypass.json`
 - `scripts/validate_active_context_state.py`
 - `tests/test_validate_active_context.py`
 
 ## Prior Phase Artifacts
 
+- `artifacts/inf_minos_01/decision.json`
+- `artifacts/inf_minos_01/summary.json`
+- `artifacts/inf_minos_01/report.md`
+- `artifacts/inf_minos_01/minos_verdict.json`
 - `artifacts/inf_bot_01/decision.json`
 - `artifacts/inf_bot_01/summary.json`
 - `artifacts/inf_bot_01/report.md`

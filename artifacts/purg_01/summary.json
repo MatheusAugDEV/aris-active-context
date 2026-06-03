@@ -1,0 +1,19 @@
+{
+  "phase_id": "PURG-01",
+  "phase_name": "ARIS Purgatorium Finding Record Gate",
+  "decision": "pass",
+  "status": "purg_01_pass",
+  "summary": "PURG-01 reads the existing deterministic Minos verdict for the nemesis validator bypass scenario, materializes one auditable finding record with severity S0 and status open, locks remediation to plan-only with no runtime patch or apply authorization, carries forward the INF-MINOS-01, INF-BOT-01, and INF-MAT-01 SHA warnings, and keeps BENCH-01 closed.",
+  "source_verdict_sha256": "ce11c696ea438cedb36862c686e698107f4ccb73ba6d6a78136b36bf0fb96512",
+  "finding_sha256": "f9a62f68f506f7afd9fac02f9c2186470b22be95e456f200b0b4953e6f5e134b",
+  "severity": "S0",
+  "finding_status": "open",
+  "artifacts_created": [
+    "artifacts/purg_01/finding_nemesis_validator_bypass.json",
+    "artifacts/purg_01/decision.json",
+    "artifacts/purg_01/summary.json",
+    "artifacts/purg_01/report.md"
+  ],
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false
+}

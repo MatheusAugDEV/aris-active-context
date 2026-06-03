@@ -40,3 +40,4 @@ AC-BREAK-05 | ARIS Active-Context Circuit Breaker Gate | pass | 2026-06-03
 INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass | 2026-06-03
 INF-BOT-01 | ARIS Infernus Nemesis Synthetic Bot Execution Log Gate | pass | 2026-06-03
 INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass | 2026-06-03
+PURG-01 | ARIS Purgatorium Finding Record Gate | pass | 2026-06-03

@@ -2,8 +2,8 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 # Decision Locks
 
-- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
-- Status: `inf_minos_01_pass`
+- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
+- Status: `purg_01_pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
 - anti_proliferation_rule_active=true
@@ -13,16 +13,17 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - governance_gate_streak=0
 - No next phase is authorized.
-- No further bot execution, Minos execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
+- No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - bot_execution_executed=true (1 deterministic nemesis log on disk).
 - minos_verdict_executed=true (1 deterministic Minos verdict on disk).
+- purgatorium_finding_created=true (1 deterministic finding on disk).
 - minimum_deliverable enforcement is active for pass decisions that declare a gated deliverable.
 
 ## Circuit Breaker State
 
-governance_gate_streak=0 — reset by INF-MAT-01 capacity gate pass. Governance gates are now
-unblocked (streak < 3), but no governance gate is open. Next phase requires operator authorization.
+governance_gate_streak=0 — preserved by PURG-01 capacity gate pass. Governance gates are now
+unblocked (streak < 3), but no gate is open. Next phase requires operator authorization.
 
 ## Gate cycle lock
 

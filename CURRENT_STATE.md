@@ -2,12 +2,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Current State
 
-- Phase ID: `INF-MINOS-01`
-- Previous phase ID: `INF-BOT-01`
-- Status: `inf_minos_01_pass`
+- Phase ID: `PURG-01`
+- Previous phase ID: `INF-MINOS-01`
+- Status: `purg_01_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
-- Previous execution phase: `ARIS Infernus Nemesis Synthetic Bot Execution Log Gate`
+- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
+- Previous execution phase: `ARIS Infernus Minos Deterministic Verdict Gate`
 - Current status: `awaiting_manual_operator_authorization_for_next_phase`
 - Next phase: `null`
 - next_phase_authorized_by_operator=`false`
@@ -18,7 +18,7 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Gate cycles used: `0`
 - Auto-advance enabled: `true`
 - governance_gate_streak: `0`
-- phase_class: `minos_verdict`
+- phase_class: `purgatorium`
 - fixture_materialization_executed: `true`
 - fixture_count: `65`
 - scenario_count: `13`
@@ -26,7 +26,9 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - bot_execution_log_count: `1`
 - minos_verdict_executed: `true`
 - minos_verdict_count: `1`
+- purgatorium_finding_created: `true`
+- finding_count: `1`
 - Circuit breaker: STABLE — governance_gate_streak remains `0` after this capacity gate pass.
-- One deterministic Minos verdict was created with `verdict=block`.
-- No LLM-as-judge, no real runtime execution, no autonomous execution, and no runtime mutation were authorized.
+- One deterministic Purgatorium finding record was created with `severity=S0` and `status=open`.
+- No LLM-as-judge, no real runtime execution, no autonomous execution, no runtime patch, and no runtime mutation were authorized.
 - Minimum deliverable enforcement is active through the validator and CI.
