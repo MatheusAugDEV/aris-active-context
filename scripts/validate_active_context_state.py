@@ -10,11 +10,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Active-Context Observability & Drift Prevention Gate"
-EXPECTED_PHASE_ID = "AC-OBS-02"
-EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "AC-REPAIR-01"
-EXPECTED_STATUS = "ac_obs_02_pass"
+EXPECTED_PHASE = "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
+EXPECTED_PHASE_ID = "AC-TRANS-03"
+EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Observability & Drift Prevention Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "AC-OBS-02"
+EXPECTED_STATUS = "ac_trans_03_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -119,6 +119,31 @@ def _check_auto_advance(state: dict[str, Any]) -> None:
     _require(not overlap, f"auto_advance phase classes overlap: {sorted(overlap)}")
 
 
+def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
+    next_phase = state.get("next_phase")
+    if next_phase is None:
+        return
+    roadmap_path = ROOT / "ROADMAP_CANONICAL.md"
+    roadmap_text = roadmap_path.read_text(encoding="utf-8")
+    in_table = False
+    found = False
+    for line in roadmap_text.split("\n"):
+        if "## Transition Table" in line:
+            in_table = True
+            continue
+        if not in_table:
+            continue
+        if line.startswith("#"):
+            break
+        if not line.strip().startswith("|"):
+            continue
+        cols = [c.strip() for c in line.split("|")]
+        if len(cols) >= 4 and cols[3] == next_phase:
+            found = True
+            break
+    _require(found, f"BLOCK: next_phase '{next_phase}' not in Transition Table")
+
+
 def _warn_boot_receipt(state: dict[str, Any]) -> None:
     boot = state.get("last_boot_files_read", [])
     if not isinstance(boot, list):
@@ -152,10 +177,9 @@ def main() -> None:
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
-    # Gate TTL enforcement (AC-OBS-02).
     _check_gate_ttl(state)
-    # Auto-advance policy structural validation (AC-OBS-02).
     _check_auto_advance(state)
+    _check_next_phase_in_transition_table(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -214,13 +238,13 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/ac_obs_02/decision.json",
-        "artifacts/ac_obs_02/summary.json",
-        "artifacts/ac_obs_02/report.md",
+        "artifacts/ac_trans_03/decision.json",
+        "artifacts/ac_trans_03/summary.json",
+        "artifacts/ac_trans_03/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "AC-OBS-02 | ARIS Active-Context Observability & Drift Prevention Gate | pass",
+        "AC-TRANS-03 | ARIS Active-Context Transition Engine & Autonomous Loop Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -242,6 +266,7 @@ def main() -> None:
         "Planning e Review do mesmo passo colapsam em UM gate",
         "REGRA DE CICLO DE GATE",
         "REGRA DE AUTO-ADVANCE",
+        "REGRA DE TRANSIÇÃO",
     )
     _mirror_contains(
         ROOT / "PROMPT_CONTRACT.md",
@@ -257,7 +282,6 @@ def main() -> None:
     _require(fixture_assertion_path.read_text(encoding="utf-8") == EXPECTED_FIXTURE_ASSERTION, "unexpected fixture assertion script content")
     _require(workflow_path.read_text(encoding="utf-8") == EXPECTED_WORKFLOW, "unexpected workflow content")
 
-    # Boot read receipt (AC-OBS-02): warn only, never block.
     _warn_boot_receipt(state)
 
     print(json.dumps({

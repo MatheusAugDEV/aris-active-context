@@ -1,15 +1,15 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "AC-OBS-02",
-  "current_phase_id": "AC-OBS-02",
-  "previous_phase_id": "AC-REPAIR-01",
+  "phase_id": "AC-TRANS-03",
+  "current_phase_id": "AC-TRANS-03",
+  "previous_phase_id": "AC-OBS-02",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
   "last_boot_files_read": [],
   "auto_advance": {
     "enabled": true,
-    "allowed_phase_classes": ["governance_repair", "observability"],
+    "allowed_phase_classes": ["governance_repair", "observability", "transition_engine"],
     "blocked_phase_classes": ["fixture_materialization", "bot_execution", "bedrock", "product"],
     "condition": "ci_green_and_validator_pass"
   },
@@ -267,6 +267,12 @@
       "phase": "ARIS Active-Context Observability & Drift Prevention Gate",
       "repair_type": "observability",
       "status": "ac_obs_02_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
+      "repair_type": "transition_engine",
+      "status": "ac_trans_03_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -300,10 +306,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+    "latest_completed_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "ac_obs_02_pass"
+    "status": "ac_trans_03_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -321,28 +327,29 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply",
       "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
-      "ARIS Active-Context Observability & Drift Prevention Gate"
+      "ARIS Active-Context Observability & Drift Prevention Gate",
+      "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
     ],
-    "latest_execution_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+    "latest_execution_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
+    "previous_execution_phase": "ARIS Active-Context Observability & Drift Prevention Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+    "from_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
-    "transition_type": "observability_drift_prevention_gate",
+    "to_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
+    "transition_type": "transition_engine_autonomous_loop_gate",
     "verified_via": "local validation, mirror sync assertion, fixture absence assertion, gate TTL check, CI workflow run, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+  "latest_completed_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-OBS-02 PASS.",
+    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-TRANS-03 PASS.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -355,9 +362,12 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "AC-OBS-02 passed as an observability and drift-prevention hardening gate only.",
-      "Mirror sync enforcement, gate TTL budgeting, auto-advance policy, CI self-verification, and boot read receipt are now active.",
-      "CI validation is enforced through validate-active-context, the mirror sync assertion, and the unauthorized fixture assertion script.",
+      "AC-TRANS-03 passed as the transition engine and autonomous loop gate.",
+      "Transition Table is now canonical in ROADMAP_CANONICAL.md.",
+      "OPERATOR_PREFERENCES.md replaced with autonomous loop handler (TRIGGER 1, TRIGGER 2, REGRA DE ADVANCE_MODE).",
+      "REGRA DE TRANSIÇÃO added to MANDATORY_READ_FIRST_RULES.md.",
+      "Validator updated for AC-TRANS-03 with next_phase Transition Table enforcement.",
+      "Test suite refreshed: test_validate_active_context.py created, stale suite archived.",
       "No next phase is authorized; await explicit manual operator authorization."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
@@ -401,6 +411,11 @@
     "artifacts/ac_obs_02/decision.json",
     "artifacts/ac_obs_02/summary.json",
     "artifacts/ac_obs_02/report.md",
+    "artifacts/ac_trans_03/decision.json",
+    "artifacts/ac_trans_03/summary.json",
+    "artifacts/ac_trans_03/report.md",
+    "tests/test_validate_active_context.py",
+    "archive/tests/test_active_context_anti_corruption_validator.py",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md",
@@ -443,7 +458,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "ac_obs_02_pass",
+  "status": "ac_trans_03_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -463,7 +478,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

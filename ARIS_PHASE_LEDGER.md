@@ -34,3 +34,4 @@ Live routing always comes from `ACTIVE_CONTEXT_STATE.json`; this file never auth
 — | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate | pass | n/a
 AC-REPAIR-01 | ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate | pass | 2026-06-03
 AC-OBS-02 | ARIS Active-Context Observability & Drift Prevention Gate | pass | 2026-06-03
+AC-TRANS-03 | ARIS Active-Context Transition Engine & Autonomous Loop Gate | pass | 2026-06-03

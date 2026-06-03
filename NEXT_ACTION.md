@@ -11,4 +11,4 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Boundary
 
-No next phase is authorized. Auto-advance is armed for governance/observability classes only, gated on `ci_green_and_validator_pass`, but no next governance phase is defined, so routing stays closed. No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes a future phase manually.
+No next phase is authorized. Transition Table is now active: AC-TRANS-03 → INF-MAT-01 (prompt_only). Auto-advance is armed for governance/observability/transition_engine classes, gated on `ci_green_and_validator_pass`, but no next governance phase is defined, so routing stays closed. No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes a future phase manually.

@@ -121,3 +121,11 @@ Before giving a phase prompt or next technical recommendation, the assistant mus
 - avoid treating memory as source-of-truth;
 - keep F51+ advisory-only unless a future gate changes it;
 - keep Bedrock Gate mandatory for future phase/capability advancement.
+
+## REGRA DE TRANSIÇÃO
+next_phase só pode ser derivado da Transition Table do ROADMAP_CANONICAL.md.
+Proibido inferir de: nomes de arquivos, histórico de gates,
+padrão narrativo, qualquer fonte que não seja a Transition Table.
+Se next_phase == null e nenhuma linha bate: PARAR.
+Reportar: "Nenhuma transição definida. Aguardando instrução do operador."
+Modelo não inventa transição. Modelo não consulta padrão anterior.

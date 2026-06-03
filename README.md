@@ -7,13 +7,16 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Active-Context Observability & Drift Prevention Gate`
-- Previous execution phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
+- Latest completed phase: `ARIS Active-Context Transition Engine & Autonomous Loop Gate`
+- Previous execution phase: `ARIS Active-Context Observability & Drift Prevention Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 
 ## Active Artifacts
 
+- `artifacts/ac_trans_03/decision.json`
+- `artifacts/ac_trans_03/summary.json`
+- `artifacts/ac_trans_03/report.md`
 - `artifacts/ac_obs_02/decision.json`
 - `artifacts/ac_obs_02/summary.json`
 - `artifacts/ac_obs_02/report.md`
