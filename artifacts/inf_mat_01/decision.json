@@ -24,8 +24,8 @@
   "no_bedrock": true,
   "origin_main_sha_at_gate_open": "d970786",
   "authorization_commit_sha": "d36a2e3",
-  "ci_run_url": "pending_ci_confirmation",
-  "final_origin_main_sha": "pending_push_confirmation",
+  "ci_run_url": "https://github.com/MatheusAugDEV/aris-active-context/actions/runs/26909219492",
+  "final_origin_main_sha": "debc51e209a739aa10e775d40a780a7c6b89d72b",
   "input_json_hashes": {
     "scenario_01_quimera": "b3dbbe8d86a97a33b607a0ad21fe29f858d2aadadd329a8137931c91aed7aa14",
     "scenario_02_taipan": "fd93f5c6783f3824bb18d78f4a3b71b8ab01f1a29f7dac9980a003def2b02a34",
