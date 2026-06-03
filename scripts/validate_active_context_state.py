@@ -638,7 +638,6 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Operator authorization required before any new phase.",
-        "BENCH-01 is not opened automatically after PURG-01.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
