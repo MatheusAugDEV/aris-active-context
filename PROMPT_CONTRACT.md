@@ -18,13 +18,11 @@ Every future ARIS phase prompt, Codex instruction, phase review, status review, 
 6. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
 7. MANDATORY_READ_FIRST_RULES.md
 8. LAB_OPERATING_CONTRACT.md
-9. LAB_STATUS.md
-10. LAB_VERDICTS.md
-11. CONTEXT_INDEX.md
-12. ARIS_PHASE_LEDGER.md
-13. README.md
-14. OPERATOR_PREFERENCES.md, if present
-15. PROMPT_CONTRACT.md
+9. CONTEXT_INDEX.md
+10. ARIS_PHASE_LEDGER.md
+11. README.md
+12. OPERATOR_PREFERENCES.md, if present
+13. PROMPT_CONTRACT.md
 ```
 
 **Rule**: ACTIVE_CONTEXT_STATE.json is always step 1. No Markdown file may be consulted before the JSON. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
@@ -35,6 +33,20 @@ If a required file is missing, stale, inaccessible, or contradictory, report dri
 
 Toda resposta do revisor abre com SHA resolvido de origin/main lido naquele turno.
 Sem SHA citado: resposta é INVALID por construção.
+
+## POST-COMMIT VERIFICATION (obrigatório em todo gate)
+
+After git push origin main:
+
+1. Run: gh run list --branch main --limit 1 --json status,conclusion,url
+2. Wait for conclusion != "in_progress". Poll every 15s, max 10 attempts.
+3. If conclusion == "success":
+   - If phase_class in auto_advance.allowed_phase_classes: auto-advance.
+   - If phase_class in auto_advance.blocked_phase_classes: STOP, await operator.
+4. If conclusion == "failure": STOP. Report CI output. Do not advance.
+5. Embed Action run URL in decision.json under "ci_run_url".
+
+The model never self-reports PASS. The CI reports PASS.
 
 ## Required structure
 
@@ -63,7 +75,7 @@ PROMPT CODEX — <PHASE> <NAME>
 Nível de raciocínio: alto / sênior / conservador / Bedrock-governed.
 
 Leia primeiro (nesta ordem):
-ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_SCHEMA.json, scripts/validate_active_context_state.py, CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, LAB_VERDICTS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md, PROMPT_CONTRACT.md.
+ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_SCHEMA.json, scripts/validate_active_context_state.py, CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, MANDATORY_READ_FIRST_RULES.md, LAB_OPERATING_CONTRACT.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md, PROMPT_CONTRACT.md.
 
 Use os guards:
 AC-READ, BEDROCK-COMPLETE, NO-REAL-EXEC, NO-BULK, ARTIFACT-ONLY, TESTS-RUNNER-DOCS, ACTIVE-CONTEXT-UPDATE, COMMIT-PUSH-HASH.

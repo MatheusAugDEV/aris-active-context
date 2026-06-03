@@ -1,0 +1,44 @@
+{
+  "phase_id": "AC-OBS-02",
+  "phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+  "phase_class": "observability",
+  "previous_phase_id": "AC-REPAIR-01",
+  "decision": "pass",
+  "gate_opened_at": "2026-06-03",
+  "gate_max_cycles": 3,
+  "gate_cycles_used": 0,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "ci_run_url": "https://github.com/MatheusAugDEV/aris-active-context/actions/workflows/validate_active_context.yml?query=branch%3Amain",
+  "ci_run_url_note": "Pointer to the validate-active-context runs for branch main. The exact run URL and conclusion for the AC-OBS-02 commit are recorded in the operator-facing final report; gate_cycles_used is kept at 0 by closing AC-OBS-02 in a single materialization commit.",
+  "intent": "Structural hardening and residue cleanup only. Zero execution, zero fixture, zero bot, zero runtime mutation.",
+  "changes": [
+    "Created scripts/assert_mirror_sync.py (mirror sync enforcement).",
+    "Added gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used) to schema and state, plus validator enforcement.",
+    "Added auto_advance policy object to schema and state.",
+    "Added last_boot_files_read receipt to state plus validator warn-only check.",
+    "Added previous_phase_id to schema and state.",
+    "Added REGRA DE CICLO DE GATE and REGRA DE AUTO-ADVANCE to MANDATORY_READ_FIRST_RULES.md.",
+    "Added POST-COMMIT VERIFICATION (CI self-verification) to PROMPT_CONTRACT.md.",
+    "Archived LAB_STATUS.md, LAB_VERDICTS.md, PROJECT_CONTEXT_ARIS.md, ARIS_ROADMAP_R0_F120.md under archive/ and pruned them from mandatory read lists.",
+    "Removed CONTEXT_INDEX.md from the BOOT_PROFILE.md mandatory boot order.",
+    "Converted ARIS_PHASE_LEDGER.md to append-only one-line-per-phase format.",
+    "Updated mirrors CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md and the README/ROADMAP/CONTEXT_INDEX route references to AC-OBS-02."
+  ],
+  "authorization": {
+    "real_execution": false,
+    "fixture_materialization": false,
+    "bot_execution": false,
+    "runtime_mutation": false,
+    "network_scope": "github_active_context_governance_only"
+  },
+  "safety_attestation": "No runtime, frontend, audio, action-runtime, provider, network, secret, or dependency mutation was performed. No fixtures were materialized. No next phase was opened, suggested, or named.",
+  "drift_check": "JSON updated first; mirrors regenerated from JSON; validator and mirror-sync assertions enforce consistency; cross-field consistency policy satisfied with all next-phase fields null.",
+  "validations": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool artifacts/ac_obs_02/decision.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 scripts/assert_no_unauthorized_fixtures.py",
+    "python3 scripts/assert_mirror_sync.py"
+  ]
+}

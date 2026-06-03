@@ -4,7 +4,7 @@ This file is the compact mandatory rule layer for every ARIS assistant response,
 
 ARIS-ROADMAP-R0 governance foundation is materialized and does not change the read-first order or authority stack.
 
-If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, **ACTIVE_CONTEXT_STATE.json wins**, followed by this file together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, LAB_OPERATING_CONTRACT.md, LAB_STATUS.md, and LAB_VERDICTS.md.
+If this file conflicts with memory, chat history, commit text, pasted status, or older summaries, **ACTIVE_CONTEXT_STATE.json wins**, followed by this file together with CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, and LAB_OPERATING_CONTRACT.md.
 
 ## Mandatory read-first order
 
@@ -19,14 +19,12 @@ For every ARIS technical decision, phase prompt, Codex instruction, status revie
 6. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
 7. MANDATORY_READ_FIRST_RULES.md      ← this file
 8. LAB_OPERATING_CONTRACT.md
-9. LAB_STATUS.md
-10. LAB_VERDICTS.md
-11. CONTEXT_INDEX.md
-12. ARIS_PHASE_LEDGER.md
-13. README.md
-14. OPERATOR_PREFERENCES.md, if present
-15. PROMPT_CONTRACT.md
-16. North_Pole.md
+9. CONTEXT_INDEX.md
+10. ARIS_PHASE_LEDGER.md
+11. README.md
+12. OPERATOR_PREFERENCES.md, if present
+13. PROMPT_CONTRACT.md
+14. North_Pole.md
 ```
 
 **Rule**: No Markdown file may be read before ACTIVE_CONTEXT_STATE.json. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
@@ -39,9 +37,8 @@ If any file is missing, stale, inaccessible, or contradictory, explicitly report
 - `NEXT_ACTION.md` is the operational next-step authority **after** confirming it matches the JSON.
 - `DECISION_LOCKS.md` is the hard constraint authority.
 - `LAB_OPERATING_CONTRACT.md` is the Lab/Bedrock enforcement authority.
-- `LAB_STATUS.md` is the current Lab state authority.
-- `LAB_VERDICTS.md` is the Lab verdict ledger authority.
 - `ARIS_PHASE_LEDGER.md` is historical evidence, not a replacement for NEXT_ACTION.
+- `LAB_STATUS.md`, `LAB_VERDICTS.md`, `PROJECT_CONTEXT_ARIS.md`, and `ARIS_ROADMAP_R0_F120.md` are archived under `archive/` as historical-only; they are not mandatory reads.
 
 ## Lab and Bedrock rules
 
@@ -77,6 +74,29 @@ Um gate só é válido se mudar pelo menos UM fato canônico verificável:
 Gate que apenas reafirma locks do gate anterior é PROIBIDO.
 Planning e Review do mesmo passo colapsam em UM gate
 com seção "plano" e seção "revisão", veredito único.
+
+## REGRA DE CICLO DE GATE
+
+Cada gate tem orçamento máximo de ciclos definido em gate_max_cycles.
+Codex incrementa gate_cycles_used a cada commit dentro do mesmo gate.
+Ao atingir o limite: validação bloqueia.
+Operador decide fechar, emitir veredito ou estender com justificativa em artifact.
+Modelo não pode estender sozinho.
+
+## REGRA DE AUTO-ADVANCE
+
+Se phase_class está em auto_advance.allowed_phase_classes
+E todas as validações passaram
+E CI está verde (Action URL confirmada via gh run list):
+- Avançar automaticamente para próxima fase de governança
+- Registrar ci_run_url no decision.json
+- Commitar, pushar, reportar SHA
+- Não aguardar confirmação do operador
+
+Se phase_class está em blocked_phase_classes:
+- next_phase: null
+- next_phase_authorized_by_operator: false
+- PARAR e aguardar autorização explícita do operador
 
 ## Prompt and Codex rules
 

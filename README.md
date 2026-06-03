@@ -7,13 +7,16 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
+- Latest completed phase: `ARIS Active-Context Observability & Drift Prevention Gate`
+- Previous execution phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 
 ## Active Artifacts
 
+- `artifacts/ac_obs_02/decision.json`
+- `artifacts/ac_obs_02/summary.json`
+- `artifacts/ac_obs_02/report.md`
 - `artifacts/ac_repair_01/decision.json`
 - `artifacts/ac_repair_01/summary.json`
 - `artifacts/ac_repair_01/report.md`

@@ -1,7 +1,18 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "AC-REPAIR-01",
-  "current_phase_id": "AC-REPAIR-01",
+  "phase_id": "AC-OBS-02",
+  "current_phase_id": "AC-OBS-02",
+  "previous_phase_id": "AC-REPAIR-01",
+  "gate_opened_at": "2026-06-03",
+  "gate_max_cycles": 3,
+  "gate_cycles_used": 0,
+  "last_boot_files_read": [],
+  "auto_advance": {
+    "enabled": true,
+    "allowed_phase_classes": ["governance_repair", "observability"],
+    "blocked_phase_classes": ["fixture_materialization", "bot_execution", "bedrock", "product"],
+    "condition": "ci_green_and_validator_pass"
+  },
   "active_next_phase": null,
   "active_next_phase_class": null,
   "next_phase": null,
@@ -250,6 +261,12 @@
       "phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
       "repair_type": "governance_repair",
       "status": "ac_repair_01_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+      "repair_type": "observability",
+      "status": "ac_obs_02_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -283,10 +300,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+    "latest_completed_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "ac_repair_01_pass"
+    "status": "ac_obs_02_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -303,28 +320,29 @@
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply",
-      "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
+      "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+      "ARIS Active-Context Observability & Drift Prevention Gate"
     ],
-    "latest_execution_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+    "latest_execution_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate"
+    "previous_execution_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
+    "from_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
-    "transition_type": "anti_proliferation_ci_enforcement_repair_gate",
-    "verified_via": "local validation, fixture absence assertion, CI workflow creation, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
+    "transition_type": "observability_drift_prevention_gate",
+    "verified_via": "local validation, mirror sync assertion, fixture absence assertion, gate TTL check, CI workflow run, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+  "latest_completed_phase": "ARIS Active-Context Observability & Drift Prevention Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-REPAIR-01 PASS.",
+    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-OBS-02 PASS.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -337,9 +355,9 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "AC-REPAIR-01 passed as a governance repair only.",
-      "The anti-proliferation rule is now active in the mandatory read-first and prompt contracts.",
-      "CI validation is now enforced through validate-active-context and the unauthorized fixture assertion script.",
+      "AC-OBS-02 passed as an observability and drift-prevention hardening gate only.",
+      "Mirror sync enforcement, gate TTL budgeting, auto-advance policy, CI self-verification, and boot read receipt are now active.",
+      "CI validation is enforced through validate-active-context, the mirror sync assertion, and the unauthorized fixture assertion script.",
       "No next phase is authorized; await explicit manual operator authorization."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
@@ -365,20 +383,24 @@
     "NORTH_POLE.md",
     "BEDROCK_GATE.md",
     "infernus_protocol.md",
-    "LAB_STATUS.md",
-    "LAB_VERDICTS.md",
-    "PROJECT_CONTEXT_ARIS.md",
-    "ARIS_ROADMAP_R0_F120.md",
+    "archive/LAB_STATUS.md",
+    "archive/LAB_VERDICTS.md",
+    "archive/PROJECT_CONTEXT_ARIS.md",
+    "archive/ARIS_ROADMAP_R0_F120.md",
     "ROADMAP_AMENDMENT_PROTOCOL.md",
     "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
     "MANDATORY_READ_FIRST_RULES.md",
     "PROMPT_CONTRACT.md",
     "benchux_plan.md",
     "scripts/assert_no_unauthorized_fixtures.py",
+    "scripts/assert_mirror_sync.py",
     ".github/workflows/validate_active_context.yml",
     "artifacts/ac_repair_01/decision.json",
     "artifacts/ac_repair_01/summary.json",
     "artifacts/ac_repair_01/report.md",
+    "artifacts/ac_obs_02/decision.json",
+    "artifacts/ac_obs_02/summary.json",
+    "artifacts/ac_obs_02/report.md",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md",
@@ -420,8 +442,8 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.2",
-  "status": "ac_repair_01_pass",
+  "schema_version": "2.3",
+  "status": "ac_obs_02_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -436,11 +458,12 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.2",
+    "current_schema_version": "2.3",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

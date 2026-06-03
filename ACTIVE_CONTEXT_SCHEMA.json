@@ -782,9 +782,59 @@
     "schema_version": {
       "enum": [
         "2.1",
-        "2.2"
+        "2.2",
+        "2.3"
       ],
       "type": "string"
+    },
+    "previous_phase_id": {
+      "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
+      "type": "string"
+    },
+    "gate_opened_at": {
+      "type": "string"
+    },
+    "gate_max_cycles": {
+      "type": "integer"
+    },
+    "gate_cycles_used": {
+      "type": "integer"
+    },
+    "last_boot_files_read": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "auto_advance": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "allowed_phase_classes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "blocked_phase_classes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "condition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "allowed_phase_classes",
+        "blocked_phase_classes",
+        "condition"
+      ],
+      "type": "object"
     },
     "status": {
       "type": "string"
@@ -849,6 +899,9 @@
         "schema_2_2_change_summary": {
           "type": "string"
         },
+        "schema_2_3_change_summary": {
+          "type": "string"
+        },
         "schema_version_meaning": {
           "type": "string"
         }
@@ -868,6 +921,12 @@
     "active_context_version",
     "phase_id",
     "current_phase_id",
+    "previous_phase_id",
+    "gate_opened_at",
+    "gate_max_cycles",
+    "gate_cycles_used",
+    "last_boot_files_read",
+    "auto_advance",
     "schema_version",
     "canonical_repository",
     "canonical_branch",
@@ -903,6 +962,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v2.2",
+  "title": "ARIS Active Context Canonical Live State Schema v2.3",
   "type": "object"
 }

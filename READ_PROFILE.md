@@ -13,6 +13,7 @@
 - Keep archive and historical corpus reads off by default.
 - Keep `DECISION_LOCKS.md` authoritative for boundaries and do not let this profile override it.
 - Treat legacy Bedrock, Lab, and roadmap-overlay files as historical audit material unless a later canonical gate explicitly reactivates them.
+- `archive/LAB_STATUS.md`, `archive/LAB_VERDICTS.md`, `archive/PROJECT_CONTEXT_ARIS.md`, and `archive/ARIS_ROADMAP_R0_F120.md` are archived historical-only residue; they are not part of any boot or mandatory read sequence.
 - Keep Product Loop L1.15 as closed evidence and H0 as materialized design-only evidence.
 
 ## Compatibility

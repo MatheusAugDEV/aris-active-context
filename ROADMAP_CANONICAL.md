@@ -16,7 +16,7 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
+- Latest completed phase: `ARIS Active-Context Observability & Drift Prevention Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.

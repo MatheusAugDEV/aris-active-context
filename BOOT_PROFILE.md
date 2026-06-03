@@ -11,10 +11,9 @@ Read in this exact order. Never read a Markdown file before the JSON source.
 4. CURRENT_STATE.md                   ← derived mirror (confirms JSON, does not supersede it)
 5. NEXT_ACTION.md                     ← derived mirror
 6. DECISION_LOCKS.md                  ← derived mirror
-7. CONTEXT_INDEX.md                   ← derived mirror / artifact route index
-8. ROADMAP_CANONICAL.md               ← roadmap sequence authority
-9. ROADMAP_AMENDMENT_PROTOCOL.md      ← before proposing roadmap mutation
-10. ARIS_PHASE_LEDGER.md              ← historical ledger only, after the above
+7. ROADMAP_CANONICAL.md               ← roadmap sequence authority
+8. ROADMAP_AMENDMENT_PROTOCOL.md      ← before proposing roadmap mutation
+9. ARIS_PHASE_LEDGER.md               ← historical ledger only, after the above
 ```
 
 ## Boot Rule
@@ -29,10 +28,11 @@ Read in this exact order. Never read a Markdown file before the JSON source.
 2. Run `scripts/validate_active_context_state.py` — verify no drift.
 3. Check `NEXT_ACTION.md` second — confirm singular next step.
 4. Use `DECISION_LOCKS.md` for authorization boundaries only.
-5. Use `CONTEXT_INDEX.md` to locate supporting evidence without widening the boot.
-6. Use `ROADMAP_CANONICAL.md` for active roadmap semantics.
-7. Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap mutation.
-8. Use `ARIS_PHASE_LEDGER.md` for compact milestone history only after the active files above.
+5. Use `ROADMAP_CANONICAL.md` for active roadmap semantics.
+6. Use `ROADMAP_AMENDMENT_PROTOCOL.md` before proposing roadmap mutation.
+7. Use `ARIS_PHASE_LEDGER.md` for compact milestone history only after the active files above.
+
+`CONTEXT_INDEX.md` is no longer a mandatory boot step. The validator already tracks the required transition files; consult `CONTEXT_INDEX.md` only as an optional artifact-route index when explicitly needed.
 
 ## Authority Stack
 
