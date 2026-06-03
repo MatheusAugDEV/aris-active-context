@@ -13,6 +13,8 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 PURG-01 passed. A single deterministic Purgatorium finding record was created from the existing Minos verdict for nemesis validator bypass and remains `open` with `severity=S0`. governance_gate_streak remains 0.
 
-No next phase is authorized. BENCH-01 was not opened automatically.
-No repair apply, no runtime patch, no further bot execution, no further Minos execution, no runtime mutation, no secrets access, no Bedrock, and no product promotion are authorized.
-Any future BenchUX work still requires explicit operator authorization.
+ACB decision registered at `artifacts/decisions/acb_decision_2026_06_03.json`.
+Canonical successor after `PURG-01` is `ACB-CORE-01`, but it is not opened automatically.
+No next phase is authorized. `ACB-CORE-01` still requires explicit operator authorization.
+
+No repair apply, no runtime patch, no ACB phase execution, no further bot execution, no further Minos execution, no runtime mutation, no secrets access, no Bedrock, and no product promotion are authorized.

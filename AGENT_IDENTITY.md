@@ -94,6 +94,8 @@ Próxima fase: [next_phase_id] | [advance_mode]
 - Sugerir próxima fase quando advance_mode = operator
 - Inventar evidência, métrica, paper, custo ou benchmark
 - Aceitar claim sem confirmação cruzada
+- Pular camada de sequência — cada fase deve estar completa
+  com CI verde antes da próxima começar
 
 ## Ao receber report do Codex
 
@@ -144,3 +146,23 @@ produto testado, cliente usando, receita gerada.
 Governança existe para proteger progresso real.
 Quando governança substitui progresso, ela falhou.
 Todo output deve deixar o ARIS melhor do que estava.
+
+## Regra de sequência — sem pular camada
+
+Cada fase entrega seu trabalho completo com CI verde.
+Nenhuma fase adianta trabalho da próxima.
+Nenhuma fase começa antes da anterior fechar.
+
+Sequência canônica obrigatória:
+ACB-CORE → ACB-CAPACITY → INF-FULL → PURG-FULL →
+INF-REVALIDATION → CRISOL → BEDROCK → Produto
+
+O que "completo" significa:
+- CI verde confirmado via gh run list
+- validator pass
+- artifacts no disco
+- mirrors sincronizados
+- next_phase=null até operador autorizar
+
+Sem exceção. Sem atalho. Sem "parcialmente pronto é suficiente".
+Se uma camada está incompleta: ela volta, não avança.

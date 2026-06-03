@@ -1,0 +1,74 @@
+{
+  "decision_id": "ACB-APPROVED-2026-06-03",
+  "operator": "MatheusAugDEV",
+  "date": "2026-06-03",
+  "decision": "capability_build_approved",
+  "rationale": "7_layers_missing_infernus_full_premature",
+  "layers": [
+    {
+      "name": "tools/MCP",
+      "complexity": "MEDIUM",
+      "estimated_prompts": 4
+    },
+    {
+      "name": "backend",
+      "complexity": "MEDIUM",
+      "estimated_prompts": 3
+    },
+    {
+      "name": "product/pilot boundary",
+      "complexity": "MEDIUM",
+      "estimated_prompts": 3
+    },
+    {
+      "name": "dependency/supply chain",
+      "complexity": "MEDIUM",
+      "estimated_prompts": 3
+    },
+    {
+      "name": "core",
+      "complexity": "LOW",
+      "estimated_prompts": 2
+    },
+    {
+      "name": "runtime top-level",
+      "complexity": "LOW",
+      "estimated_prompts": 2
+    },
+    {
+      "name": "mcp top-level",
+      "complexity": "HIGH",
+      "estimated_prompts": 5
+    }
+  ],
+  "total_estimated_prompts_base": 22,
+  "total_estimated_prompts_with_revisions": 30,
+  "structure": {
+    "ACB-CORE": [
+      "core",
+      "runtime top-level"
+    ],
+    "ACB-CAPACITY": [
+      "tools/MCP",
+      "backend",
+      "product/pilot boundary",
+      "dependency/supply chain",
+      "mcp top-level"
+    ]
+  },
+  "research_required_before_each_block": true,
+  "sequence_rule": "no_layer_skipping",
+  "infernus_full_gate": "after_ACB_complete_CI_green",
+  "canonical_sequence": [
+    "ACB-CORE",
+    "ACB-CAPACITY",
+    "INF-FULL",
+    "PURG-FULL",
+    "INF-REVALIDATION",
+    "CRISOL",
+    "BEDROCK",
+    "PRODUTO"
+  ],
+  "next_phase_after_purg_01": "ACB-CORE-01",
+  "authorized_by_operator": true
+}
