@@ -9,12 +9,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_review_gate_pass"
+EXPECTED_STATUS = "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate"
-EXPECTED_CLASS = "readiness_gate"
+EXPECTED_LATEST = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate"
+EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_approval_planning_gate"
+EXPECTED_NEXT = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate"
+EXPECTED_CLASS = "planning_gate"
 EXPECTED_SCHEMA_VERSION = "2.1"
 
 
@@ -59,7 +59,7 @@ def main() -> None:
     _require(state["active_next_phase_class"] == EXPECTED_CLASS, "unexpected next route class")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next route execution authorization must be false")
-    _require(state["next_action"]["planning_only"] is False, "next route must not remain planning-only")
+    _require(state["next_action"]["planning_only"] is True, "next route must remain planning-only")
     _require(state["next_action"]["review_only"] is False, "next route must not remain review-only")
     _require(state["next_action"]["execution_authorization"] is False, "next route must not authorize execution")
 
@@ -68,8 +68,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -79,57 +79,53 @@ def main() -> None:
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
-        "ACTIVE_CONTEXT_STATE.json wins",
         EXPECTED_STATUS,
         EXPECTED_NEXT,
-        "grant_plan_reviewed=true",
-        "grant_plan_review_passed=true",
-        "grant_delivered_now=false",
-        "grant_requested_now=false",
-        "grant_issued_now=false",
-        "authorization_granted_now=false",
-        "approval_granted_now=false",
-        "No real grant was delivered or issued.",
-        "No real fixture tree or real fixture files were created.",
+        "previous_phase_verified=true",
+        "grant_review_verified=true",
+        "packet_chain_verified=true",
+        "request_chain_verified=true",
+        "grant_chain_verified=true",
+        "readiness_closure_completed=true",
+        "No real grant was delivered, requested, or issued.",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         EXPECTED_NEXT,
-        "Planning-only: `false`",
+        "Planning-only: `true`",
         "Review-only: `false`",
         "Execution authorization: `false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         EXPECTED_NEXT,
-        "grant_plan_reviewed=true",
-        "grant_plan_review_passed=true",
-        "No real grant delivery or real approval is authorized.",
+        "readiness_closure_completed=true",
+        "real_grant_delivered=false",
+        "authorization_granted=false",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md",
-        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_review_gate_decision.json",
-        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_review_matrix.json",
+        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
+        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_decision.json",
+        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_matrix.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         EXPECTED_STATUS,
         EXPECTED_NEXT,
-        "Explicit Operator Authorization Grant Review Gate Note",
+        "Explicit Operator Authorization Readiness Closure Gate Note",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_LATEST,
         EXPECTED_NEXT,
-        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md",
+        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
     )
     _mirror_contains(ROOT / "BEDROCK_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Productization remains blocked")
     _mirror_contains(
-        ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md",
-        "Grant plan reviewed: `True`.",
-        "Grant delivered now: `False`.",
-        "Approval granted now: `False`.",
+        ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
+        "Readiness closure completed: `True`.",
+        "Grant chain verified: `True`.",
         EXPECTED_NEXT,
     )
 
@@ -138,7 +134,7 @@ def main() -> None:
         "status": EXPECTED_STATUS,
         "latest_completed_phase": EXPECTED_LATEST,
         "active_next_phase": EXPECTED_NEXT,
-        "grant_review_result": "pass"
+        "readiness_closure_result": "pass"
     }, indent=2))
 
 

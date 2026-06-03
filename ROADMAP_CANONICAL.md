@@ -16,10 +16,10 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
-- Active next phase class: `readiness_gate`
-- Planning-only: `false`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate`
+- Active next phase class: `planning_gate`
+- Planning-only: `true`
 - Review-only: `false`
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
