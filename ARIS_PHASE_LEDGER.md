@@ -41,4 +41,5 @@ INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass | 2026-06-03
 INF-BOT-01 | ARIS Infernus Nemesis Synthetic Bot Execution Log Gate | pass | 2026-06-03
 INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass | 2026-06-03
 PURG-01 | ARIS Purgatorium Finding Record Gate | pass | 2026-06-03
+ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass | 2026-06-03
 ACB-DECISION | ARIS Capability Build Approved | decision | 2026-06-03

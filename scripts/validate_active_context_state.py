@@ -8,14 +8,15 @@ import sys
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+PROJECT_ROOT = ROOT.parent
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Purgatorium Finding Record Gate"
-EXPECTED_PHASE_ID = "PURG-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Minos Deterministic Verdict Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-MINOS-01"
-EXPECTED_STATUS = "purg_01_pass"
+EXPECTED_PHASE = "ARIS Capability Build Dependency Foundation Gate"
+EXPECTED_PHASE_ID = "ACB-CORE-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Purgatorium Finding Record Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "PURG-01"
+EXPECTED_STATUS = "acb_core_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -27,7 +28,7 @@ GOVERNANCE_CLASSES = {
 CAPACITY_CLASSES = {
     "fixture_materialization", "bot_execution",
     "minos_verdict", "purgatorium", "benchux",
-    "crisol", "bedrock", "product"
+    "crisol", "bedrock", "product", "capability_build"
 }
 
 PHASE_DELIVERABLES = {
@@ -65,6 +66,11 @@ PHASE_DELIVERABLES = {
                 pathlib.Path("artifacts/purg_01/finding_nemesis_validator_bypass.json").read_text(encoding="utf-8")
             ).get("status")
         )
+    ),
+    "ACB-CORE-01": lambda: (
+        (PROJECT_ROOT / "uv.lock").exists()
+        and (PROJECT_ROOT / ".github" / "workflows" / "supply-chain-baseline.yml").exists()
+        and (PROJECT_ROOT / "artifacts" / "acb_core_01" / "sbom.cdx.json").exists()
     )
 }
 
@@ -274,6 +280,76 @@ def _warn_boot_receipt(state: dict[str, Any]) -> None:
         print(f"BLOCK: last_boot_files_read missing: {missing}")
         print("Codex must populate last_boot_files_read before any action.")
         sys.exit(1)
+
+
+def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_core_01"
+    required_paths = [
+        PROJECT_ROOT / "pyproject.toml",
+        PROJECT_ROOT / "uv.lock",
+        PROJECT_ROOT / ".github" / "workflows" / "supply-chain-baseline.yml",
+        PROJECT_ROOT / "scripts" / "run_acb_core_01_supply_chain_validation.py",
+        PROJECT_ROOT / "tests" / "test_acb_core_01_supply_chain.py",
+        artifacts_root / "decision.json",
+        artifacts_root / "summary.json",
+        artifacts_root / "report.md",
+        artifacts_root / "dependency_inventory.json",
+        artifacts_root / "sbom.cdx.json",
+        artifacts_root / "supply_chain_validation.json",
+        artifacts_root / "uv_bootstrap.json",
+    ]
+    for path in required_paths:
+        _require(path.exists(), f"missing ACB-CORE-01 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    decision_data = _load_json(artifacts_root / "decision.json")
+    summary_data = _load_json(artifacts_root / "summary.json")
+    inventory_data = _load_json(artifacts_root / "dependency_inventory.json")
+    sbom_data = _load_json(artifacts_root / "sbom.cdx.json")
+    validation_data = _load_json(artifacts_root / "supply_chain_validation.json")
+    bootstrap_data = _load_json(artifacts_root / "uv_bootstrap.json")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "supply-chain-baseline.yml").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CORE-01", "ACB decision phase_id mismatch")
+    _require(decision_data.get("previous_phase_id") == "PURG-01", "ACB decision previous_phase_id mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB decision must be pass")
+    _require(decision_data.get("status") == "acb_core_01_pass", "ACB decision status mismatch")
+    _require(decision_data.get("phase_class") == "capability_build", "ACB decision phase_class mismatch")
+    _require(decision_data.get("uv_available") is True, "ACB decision uv_available must be true")
+    _require(decision_data.get("uv_bootstrap_created") is True, "ACB decision uv_bootstrap_created must be true")
+    _require(decision_data.get("uv_lock_created_or_verified") is True, "ACB decision uv_lock_created_or_verified must be true")
+    _require(decision_data.get("pip_audit_gate_created_or_verified") is True, "ACB decision pip_audit_gate_created_or_verified must be true")
+    _require(decision_data.get("cyclonedx_sbom_created_or_verified") is True, "ACB decision cyclonedx_sbom_created_or_verified must be true")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB decision pass_criteria_met must be true")
+    _require(decision_data.get("next_phase") is None, "ACB decision next_phase must be null")
+    _require(decision_data.get("next_phase_authorized_by_operator") is False, "ACB decision must not authorize next phase")
+
+    _require(summary_data.get("phase_id") == "ACB-CORE-01", "ACB summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "ACB summary decision must be pass")
+    _require(summary_data.get("status") == "acb_core_01_pass", "ACB summary status mismatch")
+    _require(summary_data.get("pass_criteria_met") is True, "ACB summary pass_criteria_met must be true")
+    _require(summary_data.get("minimum_deliverable_met") is True, "ACB summary minimum_deliverable_met must be true")
+
+    _require(inventory_data.get("uv_available") is True, "ACB inventory uv_available must be true")
+    _require(inventory_data.get("pyproject_present") is True, "ACB inventory pyproject_present must be true")
+    _require(inventory_data.get("lockfile_after") == "uv.lock", "ACB inventory lockfile_after must be uv.lock")
+    _require(inventory_data.get("supply_chain_tools_detected", {}).get("uv_binary") is True, "ACB inventory must record uv binary")
+
+    _require(sbom_data.get("bomFormat") == "CycloneDX", "ACB SBOM bomFormat must be CycloneDX")
+    _require(sbom_data.get("generation_mode") in {"tool_generated", "deterministic_minimal"}, "ACB SBOM generation_mode invalid")
+
+    _require(validation_data.get("uv_lock_exists") is True, "ACB validation uv_lock_exists must be true")
+    _require(validation_data.get("pip_audit_gate_exists") is True, "ACB validation pip_audit_gate_exists must be true")
+    _require(validation_data.get("sbom_exists") is True, "ACB validation sbom_exists must be true")
+    _require(validation_data.get("pass_criteria_met") is True, "ACB validation pass_criteria_met must be true")
+
+    _require(bootstrap_data.get("uv_available_after") is True, "ACB bootstrap uv_available_after must be true")
+    _require(bootstrap_data.get("bootstrap_result") == "success", "ACB bootstrap_result must be success")
+    _require(bool(bootstrap_data.get("uv_version_after")), "ACB bootstrap must record uv version")
+
+    _require("uv lock --check" in workflow_text, "supply-chain workflow must check uv lock freshness")
+    _require("pip-audit" in workflow_text, "supply-chain workflow must include pip-audit gate")
 
 
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
@@ -543,8 +619,10 @@ def main() -> None:
     _check_bot_execution_artifacts(state)
     # INF-MINOS-01 baseline must remain true for PURG-01.
     _check_minos_verdict_artifacts(state)
-    # PURG-01 specific checks
+    # PURG-01 baseline must remain true for ACB-CORE-01.
     _check_purgatorium_artifacts(state)
+    # ACB-CORE-01 specific checks
+    _check_acb_core_01_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -599,12 +677,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
+        "External deliverables registered from `../artifacts/acb_core_01/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
         "Awaiting manual operator authorization.",
         "Execution authorization: `false`",
+        "ACB-CORE-02 remains closed.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -613,24 +693,25 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
+        "ACB-CORE-02 remains closed pending explicit operator authorization.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/purg_01/decision.json",
-        "artifacts/purg_01/summary.json",
-        "artifacts/purg_01/report.md",
-        "artifacts/purg_01/finding_nemesis_validator_bypass.json",
+        "../artifacts/acb_core_01/decision.json",
+        "../artifacts/acb_core_01/summary.json",
+        "../artifacts/acb_core_01/report.md",
+        "../artifacts/acb_core_01/sbom.cdx.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass",
         "PURG-01 | ARIS Purgatorium Finding Record Gate | pass",
-        "INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "purgatorium_finding_created: `true`",
+        "uv_lock_created_or_verified: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
@@ -638,6 +719,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Operator authorization required before any new phase.",
+        "`ACB-CORE-02` is not opened automatically after `ACB-CORE-01`.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -688,6 +770,8 @@ def main() -> None:
         "bot_execution_log_count": state.get("bot_execution_log_count", 0),
         "minos_verdict_executed": state.get("minos_verdict_executed", False),
         "minos_verdict_count": state.get("minos_verdict_count", 0),
+        "uv_lock_exists": (PROJECT_ROOT / "uv.lock").exists(),
+        "acb_core_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_01" / "decision.json").exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

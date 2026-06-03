@@ -2,21 +2,33 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
+- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
-- `artifacts/purg_01/decision.json`
-- `artifacts/purg_01/summary.json`
-- `artifacts/purg_01/report.md`
-- `artifacts/purg_01/finding_nemesis_validator_bypass.json`
+- `../artifacts/acb_core_01/decision.json`
+- `../artifacts/acb_core_01/summary.json`
+- `../artifacts/acb_core_01/report.md`
+- `../artifacts/acb_core_01/dependency_inventory.json`
+- `../artifacts/acb_core_01/sbom.cdx.json`
+- `../artifacts/acb_core_01/supply_chain_validation.json`
+- `../artifacts/acb_core_01/uv_bootstrap.json`
+- `../.github/workflows/supply-chain-baseline.yml`
+- `../scripts/run_acb_core_01_supply_chain_validation.py`
+- `../tests/test_acb_core_01_supply_chain.py`
+- `../pyproject.toml`
+- `../uv.lock`
 - `scripts/validate_active_context_state.py`
 - `tests/test_validate_active_context.py`
 
 ## Prior Phase Artifacts
 
+- `artifacts/purg_01/decision.json`
+- `artifacts/purg_01/summary.json`
+- `artifacts/purg_01/report.md`
+- `artifacts/purg_01/finding_nemesis_validator_bypass.json`
 - `artifacts/inf_minos_01/decision.json`
 - `artifacts/inf_minos_01/summary.json`
 - `artifacts/inf_minos_01/report.md`

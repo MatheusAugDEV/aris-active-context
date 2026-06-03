@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Purgatorium Finding Record Gate`
+- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.
 - ACB decision registered: `artifacts/decisions/acb_decision_2026_06_03.json`
 - ACB execution order registered: `artifacts/decisions/acb_execution_order_2026_06_03.json`
-- Next phase after `PURG-01` is `ACB-CORE-01` only after explicit operator authorization.
-- `ACB-CORE-01` is not opened automatically after `PURG-01`.
+- Next phase after `ACB-CORE-01` is `ACB-CORE-02` only after explicit operator authorization.
+- `ACB-CORE-02` is not opened automatically after `ACB-CORE-01`.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`

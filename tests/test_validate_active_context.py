@@ -43,6 +43,7 @@ def test_minimum_deliverable_blocks_inf_mat_pass_without_real_fixture_dirs():
         cwd = Path.cwd()
         try:
             os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
             try:
                 module._check_minimum_deliverable(
                     {
@@ -71,6 +72,7 @@ def test_minimum_deliverable_blocks_inf_bot_pass_without_log():
         cwd = Path.cwd()
         try:
             os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
             try:
                 module._check_minimum_deliverable(
                     {
@@ -99,6 +101,7 @@ def test_minimum_deliverable_blocks_inf_minos_pass_without_verdict():
         cwd = Path.cwd()
         try:
             os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
             try:
                 module._check_minimum_deliverable(
                     {
@@ -138,5 +141,34 @@ def test_minimum_deliverable_blocks_purg_pass_without_finding():
                 assert exc.code == 1
             else:
                 raise AssertionError("minimum deliverable check should block PURG-01 without finding json")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_blocks_acb_core_01_pass_without_project_deliverables():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "ACB-CORE-01",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block ACB-CORE-01 without project deliverables")
         finally:
             os.chdir(cwd)
