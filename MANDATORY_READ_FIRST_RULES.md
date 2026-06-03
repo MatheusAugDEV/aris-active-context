@@ -67,6 +67,17 @@ If any file is missing, stale, inaccessible, or contradictory, explicitly report
 - F44 is Lab hardening, red-team expansion, benchmark maturity, and audit maturity.
 - F33 is paused under Lab governance, not cancelled.
 
+## REGRA ANTI-PROLIFERAÇÃO DE GATES
+
+Um gate só é válido se mudar pelo menos UM fato canônico verificável:
+- uma flag de autorização inverte (false->true ou true->false), OU
+- um artifact real é criado no disco com hash registrado, OU
+- um teste passa de vermelho/ausente para verde.
+
+Gate que apenas reafirma locks do gate anterior é PROIBIDO.
+Planning e Review do mesmo passo colapsam em UM gate
+com seção "plano" e seção "revisão", veredito único.
+
 ## Prompt and Codex rules
 
 Every Codex prompt must:

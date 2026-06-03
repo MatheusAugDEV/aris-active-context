@@ -31,6 +31,11 @@ Every future ARIS phase prompt, Codex instruction, phase review, status review, 
 
 If a required file is missing, stale, inaccessible, or contradictory, report drift before deciding.
 
+## Reviewer SHA rule
+
+Toda resposta do revisor abre com SHA resolvido de origin/main lido naquele turno.
+Sem SHA citado: resposta é INVALID por construção.
+
 ## Required structure
 
 Future phase prompts should follow this order:
@@ -98,6 +103,17 @@ Atualização final:
 - `TESTS-RUNNER-DOCS`: create/update runner, tests, docs, artifacts, and validations for the phase.
 - `ACTIVE-CONTEXT-UPDATE`: update CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, CONTEXT_INDEX.md, MANDATORY_READ_FIRST_RULES.md if needed, Lab files, and decision files when applicable.
 - `COMMIT-PUSH-HASH`: commit, push, and report final hash.
+
+## REGRA ANTI-PROLIFERAÇÃO DE GATES
+
+Um gate só é válido se mudar pelo menos UM fato canônico verificável:
+- uma flag de autorização inverte (false->true ou true->false), OU
+- um artifact real é criado no disco com hash registrado, OU
+- um teste passa de vermelho/ausente para verde.
+
+Gate que apenas reafirma locks do gate anterior é PROIBIDO.
+Planning e Review do mesmo passo colapsam em UM gate
+com seção "plano" e seção "revisão", veredito único.
 
 ## Legacy named guards
 

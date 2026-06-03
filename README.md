@@ -7,19 +7,21 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
+- Active next phase: `null`
+- Active next phase class: `null`
 
 ## Active Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md`
+- `artifacts/ac_repair_01/decision.json`
+- `artifacts/ac_repair_01/summary.json`
+- `artifacts/ac_repair_01/report.md`
+- `.github/workflows/validate_active_context.yml`
 
 ## Non-Authorization
 
-- No explicit operator authorization readiness closure gate grants execution.
-- No real grant delivery, no real approval, and no real operator contact.
+- No next phase is authorized until explicit manual operator authorization.
+- No real execution, no bot activation, and no runtime mutation.
 - No real fixture materialization.
 - No Bedrock PASS or product promotion.

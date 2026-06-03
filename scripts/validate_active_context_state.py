@@ -9,13 +9,47 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass"
+EXPECTED_PHASE = "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
+EXPECTED_PHASE_ID = "AC-REPAIR-01"
+EXPECTED_STATUS = "ac_repair_01_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_approval_planning_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate"
-EXPECTED_CLASS = "planning_gate"
-EXPECTED_SCHEMA_VERSION = "2.1"
+EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
+EXPECTED_SCHEMA_VERSION = "2.2"
+
+EXPECTED_FIXTURE_ASSERTION = """import json, sys, pathlib
+
+state = json.loads(pathlib.Path("ACTIVE_CONTEXT_STATE.json").read_text())
+fixtures_allowed = state.get("authorization", {}).get("fixture_materialization_allowed", False)
+root = pathlib.Path("fixtures/lab_simulation/aris_infernus_lab_full")
+
+existe = root.exists() and any(root.rglob("*"))
+if existe and not fixtures_allowed:
+    print("BLOCK: fixtures reais existem mas fixture_materialization_allowed=false")
+    sys.exit(1)
+if not existe and fixtures_allowed:
+    print("WARN: materializacao autorizada mas nenhuma fixture criada")
+    sys.exit(0)
+print("OK")
+"""
+
+EXPECTED_WORKFLOW = """name: validate-active-context
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Validar estado canonico
+        run: python scripts/validate_active_context_state.py
+      - name: Provar ausencia de fixture nao-autorizada
+        run: python scripts/assert_no_unauthorized_fixtures.py
+"""
 
 
 def _load_json(path: pathlib.Path) -> Any:
@@ -42,99 +76,136 @@ def _value_at_path(data: dict[str, Any], dotted_path: str) -> Any:
 
 
 def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) -> None:
-    baseline_path = paths[0]
-    baseline_value = _value_at_path(state, baseline_path)
+    baseline_value = _value_at_path(state, paths[0])
     for other_path in paths[1:]:
         _require(_value_at_path(state, other_path) == baseline_value, f"{label} drift")
+
+
+def _require_files_exist(state: dict[str, Any]) -> None:
+    for relative_path in state["required_files_for_transition"]:
+        _require((ROOT / relative_path).exists(), f"missing required transition file: {relative_path}")
 
 
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
+
+    _require(state["phase_id"] == EXPECTED_PHASE_ID, "unexpected phase_id")
+    _require(state["current_phase_id"] == EXPECTED_PHASE_ID, "unexpected current_phase_id")
     _require(state["status"] == EXPECTED_STATUS, "unexpected status")
     _require(state["decision"] == EXPECTED_DECISION, "unexpected decision")
-    _require(state["latest_completed_phase"] == EXPECTED_LATEST, "unexpected latest completed phase")
+    _require(state["latest_completed_phase"] == EXPECTED_PHASE, "unexpected latest completed phase")
     _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
-    _require(state["active_next_phase"] == EXPECTED_NEXT, "unexpected next route")
-    _require(state["active_next_phase_class"] == EXPECTED_CLASS, "unexpected next route class")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
-    _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next route execution authorization must be false")
-    _require(state["next_action"]["planning_only"] is True, "next route must remain planning-only")
-    _require(state["next_action"]["review_only"] is False, "next route must not remain review-only")
-    _require(state["next_action"]["execution_authorization"] is False, "next route must not authorize execution")
+    _require(state["next_phase"] is None, "next_phase must be null")
+    _require(state["active_next_phase"] is None, "active_next_phase must be null")
+    _require(state["active_next_phase_class"] is None, "active_next_phase_class must be null")
+    _require(state["next_phase_authorized_by_operator"] is False, "next phase must not be operator-authorized")
+    _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
+    _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate", "unexpected last transition from phase")
+
+    _require(state["current_live_route"]["active_next_phase"] is None, "current live route next phase must be null")
+    _require(state["current_live_route"]["active_next_phase_class"] is None, "current live route next phase class must be null")
+    _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
+    _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
+
+    _require(state["next_action"]["phase"] is None, "next_action.phase must be null")
+    _require(state["next_action"]["phase_class"] is None, "next_action.phase_class must be null")
+    _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
+    _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
+    _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
+
+    _require(state["locks"]["deferred_phase"] is None, "locks.deferred_phase must be null")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate", "unexpected last transition from phase")
+    _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
             _require(value == "github_active_context_governance_only", "unexpected network scope")
         else:
             _require(value is False, f"authorization flag {key} must be false")
+    _require(state["authorization"].get("fixture_materialization_allowed", False) is False, "fixture materialization must remain unauthorized")
+
+    _require_files_exist(state)
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         EXPECTED_STATUS,
-        EXPECTED_NEXT,
-        "previous_phase_verified=true",
-        "grant_review_verified=true",
-        "packet_chain_verified=true",
-        "request_chain_verified=true",
-        "grant_chain_verified=true",
-        "readiness_closure_completed=true",
-        "No real grant was delivered, requested, or issued.",
+        EXPECTED_PHASE_ID,
+        "Next phase: `null`",
+        "Anti-proliferation rule active: `true`",
+        "CI enforcement active: `true`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        EXPECTED_NEXT,
-        "Planning-only: `true`",
-        "Review-only: `false`",
+        "Next phase: `null`",
+        "Awaiting manual operator authorization.",
         "Execution authorization: `false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        EXPECTED_NEXT,
-        "readiness_closure_completed=true",
-        "real_grant_delivered=false",
-        "authorization_granted=false",
+        EXPECTED_STATUS,
+        "Deferred phase: `null`",
+        "next_phase_authorized_by_operator=false",
+        "No next phase is authorized.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
-        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_decision.json",
-        "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_matrix.json",
+        "artifacts/ac_repair_01/decision.json",
+        "artifacts/ac_repair_01/summary.json",
+        "artifacts/ac_repair_01/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        EXPECTED_PHASE,
         EXPECTED_STATUS,
-        EXPECTED_NEXT,
-        "Explicit Operator Authorization Readiness Closure Gate Note",
+        "No next phase was opened or named.",
     )
     _mirror_contains(
         ROOT / "README.md",
-        EXPECTED_LATEST,
-        EXPECTED_NEXT,
-        "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
+        EXPECTED_PHASE,
+        "Active next phase: `null`",
+        "validate_active_context.yml",
     )
-    _mirror_contains(ROOT / "BEDROCK_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Productization remains blocked")
     _mirror_contains(
-        ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
-        "Readiness closure completed: `True`.",
-        "Grant chain verified: `True`.",
-        EXPECTED_NEXT,
+        ROOT / "ROADMAP_CANONICAL.md",
+        EXPECTED_PHASE,
+        "Active next phase: `null`",
+        "Operator authorization required before any new phase.",
     )
+    _mirror_contains(
+        ROOT / "MANDATORY_READ_FIRST_RULES.md",
+        "REGRA ANTI-PROLIFERAÇÃO DE GATES",
+        "Gate que apenas reafirma locks do gate anterior é PROIBIDO.",
+        "Planning e Review do mesmo passo colapsam em UM gate",
+    )
+    _mirror_contains(
+        ROOT / "PROMPT_CONTRACT.md",
+        "REGRA ANTI-PROLIFERAÇÃO DE GATES",
+        "Toda resposta do revisor abre com SHA resolvido de origin/main lido naquele turno.",
+        "Sem SHA citado: resposta é INVALID por construção.",
+    )
+
+    fixture_assertion_path = ROOT / "scripts/assert_no_unauthorized_fixtures.py"
+    workflow_path = ROOT / ".github/workflows/validate_active_context.yml"
+    _require(fixture_assertion_path.read_text(encoding="utf-8") == EXPECTED_FIXTURE_ASSERTION, "unexpected fixture assertion script content")
+    _require(workflow_path.read_text(encoding="utf-8") == EXPECTED_WORKFLOW, "unexpected workflow content")
 
     print(json.dumps({
         "decision": "pass",
         "status": EXPECTED_STATUS,
-        "latest_completed_phase": EXPECTED_LATEST,
-        "active_next_phase": EXPECTED_NEXT,
-        "readiness_closure_result": "pass"
+        "phase_id": EXPECTED_PHASE_ID,
+        "latest_completed_phase": EXPECTED_PHASE,
+        "next_phase": None,
+        "ci_enforcement_active": True,
+        "anti_proliferation_rule_active": True
     }, indent=2))
 
 

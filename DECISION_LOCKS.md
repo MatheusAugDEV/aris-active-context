@@ -2,15 +2,11 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 # Decision Locks
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
-- Status: `aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate`
-- Active next phase class: `planning_gate`
-- readiness_closure_completed=true
-- real_grant_delivered=false
-- real_grant_requested=false
-- real_grant_issued=false
-- authorization_granted=false
-- approval_granted=false
-- No real operator approval is authorized.
-- Bedrock remains non-executable and product promotion remains blocked.
+- Latest completed phase: `ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate`
+- Status: `ac_repair_01_pass`
+- Deferred phase: `null`
+- next_phase_authorized_by_operator=false
+- anti_proliferation_rule_active=true
+- ci_enforcement_active=true
+- No next phase is authorized.
+- No runtime execution, fixture materialization, bot activity, or runtime mutation is authorized.

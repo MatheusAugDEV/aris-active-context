@@ -2,13 +2,11 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Next Action
 
-- `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate`
-- Status: `ready_for_next_subphase`
-- Phase class: `planning_gate`
-- Planning-only: `true`
-- Review-only: `false`
+- Next phase: `null`
+- Status: `awaiting_manual_operator_authorization`
+- Awaiting manual operator authorization.
 - Execution authorization: `false`
 
 ## Boundary
 
-The next step may only plan a future explicit operator approval route. It does not authorize grant real, approval real, dry-run, apply, materialization, Bedrock, or productization.
+No next phase is authorized. No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes a future phase manually.

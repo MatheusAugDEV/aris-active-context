@@ -1,0 +1,23 @@
+{
+  "phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+  "phase_id": "AC-REPAIR-01",
+  "status": "ac_repair_01_pass",
+  "decision": "pass",
+  "origin_main_sha_read_first": "b297f3d0a50bf8e5c6b1cbca7ca31145ca6c3a0c",
+  "governance_repair_only": true,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "anti_proliferation_rule_active": true,
+  "ci_enforcement_active": true,
+  "real_execution_authorized": false,
+  "real_fixture_materialization_authorized": false,
+  "runtime_mutation_authorized": false,
+  "canonical_fact_changes": [
+    "phase_id registered as AC-REPAIR-01",
+    "next_phase changed to null pending manual operator authorization",
+    "anti_proliferation_rule_active is true",
+    "ci_enforcement_active is true",
+    "validate-active-context workflow created",
+    "assert_no_unauthorized_fixtures.py created"
+  ]
+}

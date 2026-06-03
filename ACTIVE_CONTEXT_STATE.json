@@ -1,7 +1,13 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate",
-  "active_next_phase_class": "planning_gate",
+  "phase_id": "AC-REPAIR-01",
+  "current_phase_id": "AC-REPAIR-01",
+  "active_next_phase": null,
+  "active_next_phase_class": null,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "anti_proliferation_rule_active": true,
+  "ci_enforcement_active": true,
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -238,10 +244,17 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
       "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+      "repair_type": "governance_repair",
+      "status": "ac_repair_01_pass"
     }
   ],
   "cross_field_consistency_policy": {
     "active_next_phase_must_match_across": [
+      "next_phase",
       "active_next_phase",
       "current_live_route.active_next_phase",
       "next_action.phase",
@@ -265,17 +278,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate",
-    "active_next_phase_class": "planning_gate",
-    "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_approval_planning_gate",
+    "active_next_phase": null,
+    "active_next_phase_class": null,
+    "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
+    "latest_completed_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass"
+    "status": "ac_repair_01_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_approval_planning_gate",
+  "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -289,28 +302,29 @@
       "ARIS Active-Context Live-State Normalization and Stale Routing Eradication Gate",
       "ARIS Active-Context Architecture Refactor Gate",
       "ARIS Active-Context Anti-Corruption Hardening Gate",
-      "Active Context Macro Roadmap Canonicalization Controlled Apply"
+      "Active Context Macro Roadmap Canonicalization Controlled Apply",
+      "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
+    "latest_execution_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate",
+    "from_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
-    "transition_type": "fixture_materialization_explicit_operator_authorization_readiness_closure_gate",
-    "verified_via": "local validation, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
+    "transition_type": "anti_proliferation_ci_enforcement_repair_gate",
+    "verified_via": "local validation, fixture absence assertion, CI workflow creation, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
+  "latest_completed_phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate",
-    "deferred_phase_reason": "The explicit operator authorization readiness closure gate passed; the next route may only plan a future explicit operator approval path without real grant, approval, dry-run, apply, or fixture materialization.",
+    "deferred_phase": null,
+    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-REPAIR-01 PASS.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -323,17 +337,17 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The explicit operator authorization readiness closure gate passed.",
-      "The full packet/request/grant chain remains non-authorizing, non-executing, and non-materializing.",
-      "No real grant, approval, dry-run, apply, or fixture materialization occurred.",
-      "The next route is a conservative future explicit operator approval planning gate only."
+      "AC-REPAIR-01 passed as a governance repair only.",
+      "The anti-proliferation rule is now active in the mandatory read-first and prompt contracts.",
+      "CI validation is now enforced through validate-active-context and the unauthorized fixture assertion script.",
+      "No next phase is authorized; await explicit manual operator authorization."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Approval Planning Gate",
-    "phase_class": "planning_gate",
-    "planning_only": true,
+    "phase": null,
+    "phase_class": null,
+    "planning_only": false,
     "review_only": false,
-    "status": "ready_for_next_subphase"
+    "status": "awaiting_manual_operator_authorization"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -357,7 +371,14 @@
     "ARIS_ROADMAP_R0_F120.md",
     "ROADMAP_AMENDMENT_PROTOCOL.md",
     "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
+    "MANDATORY_READ_FIRST_RULES.md",
+    "PROMPT_CONTRACT.md",
     "benchux_plan.md",
+    "scripts/assert_no_unauthorized_fixtures.py",
+    ".github/workflows/validate_active_context.yml",
+    "artifacts/ac_repair_01/decision.json",
+    "artifacts/ac_repair_01/summary.json",
+    "artifacts/ac_repair_01/report.md",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md",
@@ -399,8 +420,8 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass",
+  "schema_version": "2.2",
+  "status": "ac_repair_01_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -415,10 +436,11 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.1",
+    "current_schema_version": "2.2",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
+    "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }
