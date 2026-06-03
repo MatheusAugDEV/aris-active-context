@@ -90,6 +90,7 @@
     "frontend_backend_action_runtime_audio_mutation_authorized": false,
     "generic_action_runtime_activated": false,
     "host_filesystem_mutation_authorized": false,
+    "fixture_materialization_allowed": true,
     "network_authorized_scope": "github_active_context_governance_only",
     "package_installation_authorized": false,
     "package_manager_execution_authorized": false,

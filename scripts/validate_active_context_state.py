@@ -11,11 +11,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Active-Context Circuit Breaker Gate"
-EXPECTED_PHASE_ID = "AC-BREAK-05"
-EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Phase Contract Hardening Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "AC-CONTRACT-04"
-EXPECTED_STATUS = "ac_break_05_pass"
+EXPECTED_PHASE = "ARIS Infernus Full Fixture Materialization Gate"
+EXPECTED_PHASE_ID = "INF-MAT-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Circuit Breaker Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "AC-BREAK-05"
+EXPECTED_STATUS = "inf_mat_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -244,6 +244,30 @@ def _warn_boot_receipt(state: dict[str, Any]) -> None:
         )
 
 
+def _check_fixture_materialization(state: dict[str, Any]) -> None:
+    """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
+    fixture_count = state.get("fixture_count", 0)
+    scenario_count = state.get("scenario_count", 0)
+    _require(fixture_count == 65, f"fixture_count must be 65, got {fixture_count}")
+    _require(scenario_count == 13, f"scenario_count must be 13, got {scenario_count}")
+    _require(state.get("fixture_materialization_executed") is True, "fixture_materialization_executed must be true")
+    _require(state.get("governance_gate_streak") == 0, "governance_gate_streak must be 0 after capacity gate pass")
+
+    root = ROOT / "fixtures/lab_simulation/aris_infernus_lab_full"
+    _require(root.exists(), "fixtures/lab_simulation/aris_infernus_lab_full must exist")
+    dirs = [d for d in root.iterdir() if d.is_dir()]
+    _require(len(dirs) >= 13, f"expected >= 13 scenario dirs, found {len(dirs)}")
+
+    null_hashes = []
+    for ref_path in sorted(root.rglob("evidence_ref.json")):
+        data = json.loads(ref_path.read_text(encoding="utf-8"))
+        if data.get("hash") is None:
+            null_hashes.append(ref_path.parent.name)
+    if null_hashes:
+        print(f"BLOCK: evidence_ref.json with null hash in: {null_hashes}")
+        sys.exit(1)
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -273,10 +297,13 @@ def main() -> None:
     _check_next_phase_in_transition_table(state)
     _check_minimum_deliverable(state)
 
-    # Three-layer circuit breaker (in order)
+    # Three-layer circuit breaker (fixture_materialization not in GOVERNANCE_CLASSES, streak check is a no-op here)
     _check_governance_streak(state)
     sig = _check_gate_signature(state)
     _check_cycle_nudge(state)
+
+    # INF-MAT-01 specific checks
+    _check_fixture_materialization(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -300,12 +327,15 @@ def main() -> None:
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
 
-    for key, value in state["authorization"].items():
+    # Authorization: fixture_materialization_allowed must be true; all others false
+    auth = state["authorization"]
+    for key, value in auth.items():
         if key == "network_authorized_scope":
             _require(value == "github_active_context_governance_only", "unexpected network scope")
+        elif key == "fixture_materialization_allowed":
+            _require(value is True, "fixture_materialization_allowed must be true for INF-MAT-01")
         else:
             _require(value is False, f"authorization flag {key} must be false")
-    _require(state["authorization"].get("fixture_materialization_allowed", False) is False, "fixture materialization must remain unauthorized")
 
     _require_files_exist(state)
 
@@ -319,8 +349,9 @@ def main() -> None:
         "CI enforcement active: `true`",
         "Gate cycles used: `0`",
         "Gate max cycles: `3`",
-        "governance_gate_streak: `4`",
-        "Circuit breaker: ACTIVE",
+        "governance_gate_streak: `0`",
+        "fixture_materialization_executed: `true`",
+        "scenario_count: `13`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
@@ -334,18 +365,17 @@ def main() -> None:
         "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
-        "governance_gate_streak=4",
-        "Next governance gate: BLOCKED",
+        "governance_gate_streak=0",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/ac_break_05/decision.json",
-        "artifacts/ac_break_05/summary.json",
-        "artifacts/ac_break_05/report.md",
+        "artifacts/inf_mat_01/decision.json",
+        "artifacts/inf_mat_01/summary.json",
+        "artifacts/inf_mat_01/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "AC-BREAK-05 | ARIS Active-Context Circuit Breaker Gate | pass",
+        "INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -403,9 +433,12 @@ def main() -> None:
         "gate_cycles_used": state["gate_cycles_used"],
         "governance_gate_streak": state.get("governance_gate_streak", 0),
         "phase_class": state.get("phase_class", ""),
+        "fixture_count": state.get("fixture_count", 0),
+        "scenario_count": state.get("scenario_count", 0),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
-        "anti_proliferation_rule_active": True
+        "anti_proliferation_rule_active": True,
+        "fixture_materialization_executed": state.get("fixture_materialization_executed", False),
     }, indent=2))
 
 
