@@ -1,0 +1,35 @@
+{
+  "phase_id": "AC-BREAK-05",
+  "phase_name": "ARIS Active-Context Circuit Breaker Gate",
+  "decision": "pass",
+  "status": "ac_break_05_pass",
+  "date": "2026-06-03",
+  "canonical_fact_changed": "governance_gate_streak field added to state (value=4); three-layer circuit breaker installed in validator; REGRA DE CIRCUIT BREAKER added to MANDATORY_READ_FIRST_RULES.md",
+  "deliverables": {
+    "scripts/validate_active_context_state.py": "Updated with _check_governance_streak, _check_gate_signature, _check_cycle_nudge, _apply_streak_management",
+    "ACTIVE_CONTEXT_SCHEMA.json": "Added governance_gate_streak (integer, default 0), seen_gate_signatures (array, default []), phase_class (string) to properties and required",
+    "ACTIVE_CONTEXT_STATE.json": "governance_gate_streak=4, seen_gate_signatures=[], phase_class=circuit_breaker, current_phase_id=AC-BREAK-05",
+    "ROADMAP_CANONICAL.md": "Added AC-BREAK-05 row to Transition Table; updated Active Route to AC-BREAK-05",
+    "MANDATORY_READ_FIRST_RULES.md": "Added REGRA DE CIRCUIT BREAKER section",
+    "artifacts/ac_break_05/decision.json": "Gate decision record",
+    "artifacts/ac_break_05/summary.json": "This file",
+    "artifacts/ac_break_05/report.md": "Gate narrative report"
+  },
+  "circuit_breaker_behavior": {
+    "streak_at_gate_close": 4,
+    "governance_gate_blocked_at": 3,
+    "capacity_gate_resets_streak": true,
+    "model_cannot_zero_streak_manually": true,
+    "model_cannot_open_governance_gate_when_streak_gte_3": true
+  },
+  "what_did_not_change": [
+    "No execution authorized",
+    "No fixture materialization",
+    "No bot activation",
+    "No runtime mutation",
+    "No network scope change",
+    "No authorization flag flipped to true"
+  ],
+  "next_phase": null,
+  "next_gate_requirement": "INF-MAT-01 (fixture_materialization) — operator must authorize explicitly"
+}

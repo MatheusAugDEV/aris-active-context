@@ -16,7 +16,7 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Active-Context Phase Contract Hardening Gate`
+- Latest completed phase: `ARIS Active-Context Circuit Breaker Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.
@@ -32,7 +32,9 @@ Bedrock decide.
 |------------------|----------|---------------|-------------------------|---------------|---------------------|
 | AC-REPAIR-01     | pass     | AC-OBS-02     | observability           | auto          | anti_proliferation_rule_active=true in JSON |
 | AC-OBS-02        | pass     | AC-TRANS-03   | transition_engine       | auto          | assert_mirror_sync.py exists and passes |
-| AC-TRANS-03      | pass     | INF-MAT-01    | fixture_materialization | prompt_only   | fixtures/lab_simulation/aris_infernus_lab_full/ exists with min 13 scenario dirs |
+| AC-TRANS-03      | pass     | AC-CONTRACT-04 | contract               | auto          | minimum_deliverable enforcement in validator for all pass transitions |
+| AC-CONTRACT-04   | pass     | AC-BREAK-05   | circuit_breaker         | auto          | governance_gate_streak field in state with validator enforcement |
+| AC-BREAK-05      | pass     | INF-MAT-01    | fixture_materialization | prompt_only   | fixtures/lab_simulation/aris_infernus_lab_full/ with min 13 dirs |
 | INF-MAT-01       | pass     | INF-BOT-01    | bot_execution           | prompt_only   | at least 1 bot execution log with hash in artifacts/ |
 | INF-BOT-01       | pass     | INF-MINOS-01  | minos_verdict           | prompt_only   | minos verdict JSON with deterministic threshold results |
 | INF-MINOS-01     | pass     | PURG-01       | purgatorium             | prompt_only   | at least 1 finding record with severity and status |

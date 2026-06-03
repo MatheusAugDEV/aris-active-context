@@ -1,11 +1,14 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "AC-CONTRACT-04",
-  "current_phase_id": "AC-CONTRACT-04",
-  "previous_phase_id": "AC-TRANS-03",
+  "phase_id": "AC-BREAK-05",
+  "current_phase_id": "AC-BREAK-05",
+  "previous_phase_id": "AC-CONTRACT-04",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
+  "governance_gate_streak": 4,
+  "seen_gate_signatures": [],
+  "phase_class": "circuit_breaker",
   "last_boot_files_read": [],
   "auto_advance": {
     "enabled": true,
@@ -279,6 +282,12 @@
       "phase": "ARIS Active-Context Phase Contract Hardening Gate",
       "repair_type": "contract_hardening",
       "status": "ac_contract_04_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Active-Context Circuit Breaker Gate",
+      "repair_type": "circuit_breaker",
+      "status": "ac_break_05_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -312,10 +321,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Active-Context Phase Contract Hardening Gate",
+    "latest_completed_phase": "ARIS Active-Context Circuit Breaker Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "ac_contract_04_pass"
+    "status": "ac_break_05_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -335,28 +344,29 @@
       "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
       "ARIS Active-Context Observability & Drift Prevention Gate",
       "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
-      "ARIS Active-Context Phase Contract Hardening Gate"
+      "ARIS Active-Context Phase Contract Hardening Gate",
+      "ARIS Active-Context Circuit Breaker Gate"
     ],
-    "latest_execution_phase": "ARIS Active-Context Phase Contract Hardening Gate",
+    "latest_execution_phase": "ARIS Active-Context Circuit Breaker Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
+    "previous_execution_phase": "ARIS Active-Context Phase Contract Hardening Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
+    "from_phase": "ARIS Active-Context Phase Contract Hardening Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Active-Context Phase Contract Hardening Gate",
-    "transition_type": "phase_contract_hardening_gate",
+    "to_phase": "ARIS Active-Context Circuit Breaker Gate",
+    "transition_type": "circuit_breaker_gate",
     "verified_via": "local validation, mirror sync assertion, fixture absence assertion, gate TTL check, CI workflow run, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Active-Context Phase Contract Hardening Gate",
+  "latest_completed_phase": "ARIS Active-Context Circuit Breaker Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. The operator must authorize any future phase manually after AC-CONTRACT-04 PASS.",
+    "deferred_phase_reason": "No next phase is authorized. governance_gate_streak=4 blocks any new governance gate. Only INF-MAT-01 (fixture_materialization) is valid as next gate. Operator must authorize explicitly.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -369,12 +379,13 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "AC-CONTRACT-04 passed as the phase contract hardening gate.",
-      "Transition Table now defines minimum_deliverable for every pass transition.",
-      "REGRA DE ENTREGÁVEL MÍNIMO added to MANDATORY_READ_FIRST_RULES.md.",
-      "Validator updated for AC-CONTRACT-04 with minimum deliverable enforcement for gated pass states.",
-      "test_validate_active_context.py now blocks INF-MAT-01 pass declarations without real fixture dirs.",
-      "No next phase is authorized; await explicit manual operator authorization."
+      "AC-BREAK-05 passed as the circuit breaker gate.",
+      "governance_gate_streak=4: AC-REPAIR-01, AC-OBS-02, AC-TRANS-03, AC-CONTRACT-04 are 4 consecutive governance gates.",
+      "Any new governance gate is immediately blocked by the validator (streak >= 3).",
+      "Only valid next gate: INF-MAT-01 (fixture_materialization class).",
+      "Circuit breaker rule added to MANDATORY_READ_FIRST_RULES.md.",
+      "Streak decrement logic installed in validator: capacity gate pass resets streak to 0.",
+      "No next phase is authorized; await explicit manual operator authorization for INF-MAT-01."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
@@ -423,6 +434,9 @@
     "artifacts/ac_contract_04/decision.json",
     "artifacts/ac_contract_04/summary.json",
     "artifacts/ac_contract_04/report.md",
+    "artifacts/ac_break_05/decision.json",
+    "artifacts/ac_break_05/summary.json",
+    "artifacts/ac_break_05/report.md",
     "tests/test_validate_active_context.py",
     "archive/tests/test_active_context_anti_corruption_validator.py",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
@@ -467,7 +481,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "ac_contract_04_pass",
+  "status": "ac_break_05_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -487,7 +501,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge; adds governance_gate_streak, seen_gate_signatures, and phase_class fields; sets streak=4 to immediately block any new governance gate until a capacity gate passes. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

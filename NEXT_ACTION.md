@@ -11,4 +11,8 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Boundary
 
-No next phase is authorized. Transition Table is now active: AC-TRANS-03 → INF-MAT-01 (prompt_only). Auto-advance is armed for governance/observability/transition_engine classes, gated on `ci_green_and_validator_pass`, but no next governance phase is defined, so routing stays closed. Minimum deliverable enforcement now blocks prompt_only pass declarations that do not materialize the required on-disk capability. No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes a future phase manually.
+No next phase is authorized. governance_gate_streak=4 means the validator immediately blocks any new governance-class gate (streak >= 3 triggers exit(1)). The only valid next gate is **INF-MAT-01** (class: fixture_materialization), which resets the streak to 0 on pass.
+
+No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes INF-MAT-01 explicitly.
+
+The model cannot zero the streak manually. The model cannot open any gate with phase_class in {governance_repair, observability, transition_engine, contract, route}.

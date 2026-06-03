@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import pathlib
 import sys
@@ -10,14 +11,24 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Active-Context Phase Contract Hardening Gate"
-EXPECTED_PHASE_ID = "AC-CONTRACT-04"
-EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "AC-TRANS-03"
-EXPECTED_STATUS = "ac_contract_04_pass"
+EXPECTED_PHASE = "ARIS Active-Context Circuit Breaker Gate"
+EXPECTED_PHASE_ID = "AC-BREAK-05"
+EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Phase Contract Hardening Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "AC-CONTRACT-04"
+EXPECTED_STATUS = "ac_break_05_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
+
+GOVERNANCE_CLASSES = {
+    "governance_repair", "observability",
+    "transition_engine", "contract", "route"
+}
+CAPACITY_CLASSES = {
+    "fixture_materialization", "bot_execution",
+    "minos_verdict", "purgatorium", "benchux",
+    "crisol", "bedrock", "product"
+}
 
 PHASE_DELIVERABLES = {
     "INF-MAT-01": lambda: (
@@ -165,6 +176,60 @@ def _check_minimum_deliverable(state: dict[str, Any]) -> None:
         sys.exit(1)
 
 
+def _check_governance_streak(state: dict[str, Any]) -> None:
+    streak = state.get("governance_gate_streak", 0)
+    phase_class = state.get("phase_class", "")
+    if phase_class not in GOVERNANCE_CLASSES:
+        return
+    if streak >= 3:
+        print("BLOCK: governance_gate_streak >= 3.")
+        print("3 governance gates consecutivos sem capacidade real.")
+        print("Proximo gate obrigatorio: classe de capacidade.")
+        print("Operador deve autorizar explicitamente.")
+        sys.exit(1)
+    if streak == 2:
+        print(f"WARN: governance_gate_streak=2. Proximo gate DEVE ser capacidade.")
+
+
+def _check_gate_signature(state: dict[str, Any]) -> str:
+    phase_class = state.get("phase_class", "")
+    locks = state.get("authorization", {})
+    sig = hashlib.sha256(
+        json.dumps(
+            {"phase_class": phase_class, "locks": locks},
+            sort_keys=True
+        ).encode()
+    ).hexdigest()[:16]
+    seen = state.get("seen_gate_signatures", [])
+    if sig in seen:
+        print(f"BLOCK: gate signature {sig} ja executado anteriormente.")
+        print("Este gate nao produz estado novo. Proibido repetir.")
+        sys.exit(1)
+    return sig
+
+
+def _check_cycle_nudge(state: dict[str, Any]) -> None:
+    cycles = state.get("gate_cycles_used", 0)
+    max_c = state.get("gate_max_cycles", 3)
+    if cycles >= max_c - 1:
+        print(f"WARN: gate_cycles_used={cycles}/{max_c}.")
+        print("Proximo ciclo bloqueia. Emita veredicto terminal agora.")
+
+
+def _apply_streak_management(state: dict[str, Any], sig: str, decision: str) -> None:
+    """Update streak and signature tracking based on phase_class and decision."""
+    phase_class = state.get("phase_class", "")
+    if decision != "pass":
+        return
+    if phase_class in CAPACITY_CLASSES:
+        state["governance_gate_streak"] = 0
+    elif phase_class in GOVERNANCE_CLASSES:
+        state["governance_gate_streak"] = state.get("governance_gate_streak", 0) + 1
+    if "seen_gate_signatures" not in state:
+        state["seen_gate_signatures"] = []
+    state["seen_gate_signatures"].append(sig)
+
+
 def _warn_boot_receipt(state: dict[str, Any]) -> None:
     boot = state.get("last_boot_files_read", [])
     if not isinstance(boot, list):
@@ -198,10 +263,20 @@ def main() -> None:
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
+    # Circuit breaker fields
+    _require("governance_gate_streak" in state, "governance_gate_streak must be present")
+    _require("seen_gate_signatures" in state, "seen_gate_signatures must be present")
+    _require("phase_class" in state, "phase_class must be present")
+
     _check_gate_ttl(state)
     _check_auto_advance(state)
     _check_next_phase_in_transition_table(state)
     _check_minimum_deliverable(state)
+
+    # Three-layer circuit breaker (in order)
+    _check_governance_streak(state)
+    sig = _check_gate_signature(state)
+    _check_cycle_nudge(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -244,6 +319,8 @@ def main() -> None:
         "CI enforcement active: `true`",
         "Gate cycles used: `0`",
         "Gate max cycles: `3`",
+        "governance_gate_streak: `4`",
+        "Circuit breaker: ACTIVE",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
@@ -257,16 +334,18 @@ def main() -> None:
         "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
+        "governance_gate_streak=4",
+        "Next governance gate: BLOCKED",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/ac_contract_04/decision.json",
-        "artifacts/ac_contract_04/summary.json",
-        "artifacts/ac_contract_04/report.md",
+        "artifacts/ac_break_05/decision.json",
+        "artifacts/ac_break_05/summary.json",
+        "artifacts/ac_break_05/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "AC-CONTRACT-04 | ARIS Active-Context Phase Contract Hardening Gate | pass",
+        "AC-BREAK-05 | ARIS Active-Context Circuit Breaker Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -290,6 +369,8 @@ def main() -> None:
         "REGRA DE AUTO-ADVANCE",
         "REGRA DE ENTREGÁVEL MÍNIMO",
         "REGRA DE TRANSIÇÃO",
+        "REGRA DE CIRCUIT BREAKER",
+        "governance_gate_streak",
     )
     _mirror_contains(
         ROOT / "PROMPT_CONTRACT.md",
@@ -307,6 +388,9 @@ def main() -> None:
 
     _warn_boot_receipt(state)
 
+    # Apply streak management (in-memory only — Codex writes back to JSON on next run)
+    _apply_streak_management(state, sig, EXPECTED_DECISION)
+
     print(json.dumps({
         "decision": "pass",
         "status": EXPECTED_STATUS,
@@ -317,6 +401,8 @@ def main() -> None:
         "gate_opened_at": state["gate_opened_at"],
         "gate_max_cycles": state["gate_max_cycles"],
         "gate_cycles_used": state["gate_cycles_used"],
+        "governance_gate_streak": state.get("governance_gate_streak", 0),
+        "phase_class": state.get("phase_class", ""),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True

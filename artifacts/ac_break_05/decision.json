@@ -1,0 +1,32 @@
+{
+  "phase_id": "AC-BREAK-05",
+  "phase_name": "ARIS Active-Context Circuit Breaker Gate",
+  "previous_phase_id": "AC-CONTRACT-04",
+  "decision": "pass",
+  "status": "ac_break_05_pass",
+  "phase_class": "circuit_breaker",
+  "gate_opened_at": "2026-06-03",
+  "gate_max_cycles": 3,
+  "gate_cycles_used": 0,
+  "governance_gate_streak": 4,
+  "governance_gate_streak_sources": [
+    "AC-REPAIR-01 (governance_repair)",
+    "AC-OBS-02 (observability)",
+    "AC-TRANS-03 (transition_engine)",
+    "AC-CONTRACT-04 (contract)"
+  ],
+  "circuit_breaker_installed": true,
+  "next_governance_gate_blocked": true,
+  "only_valid_next_gate": "INF-MAT-01",
+  "only_valid_next_gate_class": "fixture_materialization",
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "seen_gate_signatures": [],
+  "anti_proliferation_rule_active": true,
+  "ci_enforcement_active": true,
+  "no_execution": true,
+  "no_fixture_materialization": true,
+  "no_bot_activation": true,
+  "no_runtime_mutation": true,
+  "origin_main_sha_at_gate_open": "67849c6"
+}

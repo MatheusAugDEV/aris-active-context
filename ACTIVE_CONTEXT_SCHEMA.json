@@ -800,6 +800,23 @@
     "gate_cycles_used": {
       "type": "integer"
     },
+    "governance_gate_streak": {
+      "default": 0,
+      "description": "Count of consecutive governance gates without a capacity gate in between. Resets to 0 on any capacity gate pass. Blocks at 3.",
+      "type": "integer"
+    },
+    "seen_gate_signatures": {
+      "default": [],
+      "description": "List of gate signatures (sha256[:16] of phase_class+locks) already executed. Repeated signature is blocked.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "phase_class": {
+      "description": "Semantic class of the current gate. Determines circuit breaker routing (governance vs capacity).",
+      "type": "string"
+    },
     "last_boot_files_read": {
       "items": {
         "type": "string"
@@ -925,6 +942,9 @@
     "gate_opened_at",
     "gate_max_cycles",
     "gate_cycles_used",
+    "governance_gate_streak",
+    "seen_gate_signatures",
+    "phase_class",
     "last_boot_files_read",
     "auto_advance",
     "schema_version",

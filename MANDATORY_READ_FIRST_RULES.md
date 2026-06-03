@@ -138,3 +138,13 @@ padrão narrativo, qualquer fonte que não seja a Transition Table.
 Se next_phase == null e nenhuma linha bate: PARAR.
 Reportar: "Nenhuma transição definida. Aguardando instrução do operador."
 Modelo não inventa transição. Modelo não consulta padrão anterior.
+
+## REGRA DE CIRCUIT BREAKER
+governance_gate_streak conta gates de governança consecutivos sem
+gate de capacidade real no meio.
+Ao atingir 3: validator bloqueia qualquer novo gate de governança.
+Único desbloqueio: gate de capacidade (fixture, bot, minos, etc).
+Após gate de capacidade passar: streak zera automaticamente.
+Modelo não pode zerar o streak manualmente.
+Modelo não pode criar gate de governança quando streak >= 3.
+Sem exceção. Sem waiver. Sem "correção urgente".
