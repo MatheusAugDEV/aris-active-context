@@ -16,7 +16,7 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Nemesis Synthetic Bot Execution Log Gate`
+- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.

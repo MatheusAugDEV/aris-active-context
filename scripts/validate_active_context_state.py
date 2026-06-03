@@ -11,11 +11,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
-EXPECTED_PHASE_ID = "INF-BOT-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Full Fixture Materialization Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-MAT-01"
-EXPECTED_STATUS = "inf_bot_01_pass"
+EXPECTED_PHASE = "ARIS Infernus Minos Deterministic Verdict Gate"
+EXPECTED_PHASE_ID = "INF-MINOS-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-BOT-01"
+EXPECTED_STATUS = "inf_minos_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -43,6 +43,14 @@ PHASE_DELIVERABLES = {
             json.loads(
                 pathlib.Path("artifacts/inf_bot_01/nemesis_execution_log.json").read_text(encoding="utf-8")
             ).get("log_sha256")
+        )
+    ),
+    "INF-MINOS-01": lambda: (
+        pathlib.Path("artifacts/inf_minos_01/minos_verdict.json").exists()
+        and bool(
+            json.loads(
+                pathlib.Path("artifacts/inf_minos_01/minos_verdict.json").read_text(encoding="utf-8")
+            ).get("minos_verdict_sha256")
         )
     )
 }
@@ -310,6 +318,68 @@ def _check_bot_execution_artifacts(state: dict[str, Any]) -> None:
     _require(decision_data.get("execution_log_sha256") == actual_log_sha256, "decision.json execution_log_sha256 mismatch")
 
 
+def _check_minos_verdict_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("minos_verdict_executed") is True, "minos_verdict_executed must be true")
+    _require(state.get("minos_verdict_count") == 1, "minos_verdict_count must be 1")
+    _require(state.get("bot_execution_log_count") == 1, "bot_execution_log_count must remain 1")
+
+    artifacts_root = ROOT / "artifacts/inf_minos_01"
+    _require(artifacts_root.exists(), "artifacts/inf_minos_01 must exist")
+
+    verdict_paths = sorted(artifacts_root.glob("*verdict.json"))
+    _require(len(verdict_paths) == 1, f"expected exactly 1 Minos verdict JSON, found {len(verdict_paths)}")
+    verdict_path = verdict_paths[0]
+    _require(verdict_path.name == "minos_verdict.json", "unexpected Minos verdict filename")
+
+    verdict_data = _load_json(verdict_path)
+    source_log_path = ROOT / "artifacts/inf_bot_01/nemesis_execution_log.json"
+    source_log_sha256 = hashlib.sha256(source_log_path.read_bytes()).hexdigest()
+    actual_verdict_sha256 = hashlib.sha256(verdict_path.read_bytes()).hexdigest()
+
+    _require(verdict_data.get("phase_id") == "INF-MINOS-01", "minos_verdict phase_id mismatch")
+    _require(verdict_data.get("source_phase_id") == "INF-BOT-01", "minos_verdict source_phase_id mismatch")
+    _require(verdict_data.get("verdict_id") == "minos_nemesis_validator_bypass_verdict", "unexpected verdict_id")
+    _require(verdict_data.get("engine") == "minos_deterministic_threshold_v1", "unexpected engine")
+    _require(verdict_data.get("llm_as_judge") is False, "llm_as_judge must be false")
+    _require(verdict_data.get("deterministic") is True, "deterministic must be true")
+    _require(verdict_data.get("source_log_path") == "artifacts/inf_bot_01/nemesis_execution_log.json", "source_log_path mismatch")
+    _require(verdict_data.get("source_log_sha256") == source_log_sha256, "source_log_sha256 mismatch")
+    _require(verdict_data.get("expected_decision") == "block", "expected_decision must be block")
+    _require(verdict_data.get("actual_decision") == "block", "actual_decision must be block")
+    _require(verdict_data.get("verdict") == "block", "verdict must be block")
+    _require(verdict_data.get("confidence_policy") == "deterministic_rules_only", "confidence_policy mismatch")
+    _require(verdict_data.get("threshold_results", {}).get("identity_match") is True, "identity_match must be true")
+    _require(verdict_data.get("threshold_results", {}).get("scenario_match") is True, "scenario_match must be true")
+    _require(verdict_data.get("threshold_results", {}).get("safety_flags_clean") is True, "safety_flags_clean must be true")
+    _require(verdict_data.get("threshold_results", {}).get("expected_decision_match") is True, "expected_decision_match must be true")
+    _require(verdict_data.get("threshold_results", {}).get("reason_match") is True, "reason_match must be true")
+    _require(verdict_data.get("threshold_results", {}).get("runtime_absent") is True, "runtime_absent must be true")
+    _require(verdict_data.get("threshold_results", {}).get("network_absent") is True, "network_absent must be true")
+    _require(verdict_data.get("threshold_results", {}).get("secrets_absent") is True, "secrets_absent must be true")
+    _require(bool(verdict_data.get("minos_verdict_sha256")), "minos_verdict_sha256 must be non-empty")
+
+    decision_path = artifacts_root / "decision.json"
+    _require(decision_path.exists(), "artifacts/inf_minos_01/decision.json must exist")
+    decision_data = _load_json(decision_path)
+    _require(decision_data.get("phase_id") == "INF-MINOS-01", "decision.json phase_id mismatch")
+    _require(decision_data.get("phase_class") == "minos_verdict", "decision.json phase_class mismatch")
+    _require(decision_data.get("minos_verdict_executed") is True, "decision.json minos_verdict_executed must be true")
+    _require(decision_data.get("minos_verdict_count") == 1, "decision.json minos_verdict_count must be 1")
+    _require(decision_data.get("llm_as_judge") is False, "decision.json llm_as_judge must be false")
+    _require(decision_data.get("deterministic_verdict") is True, "decision.json deterministic_verdict must be true")
+    _require(decision_data.get("source_bot_id") == "nemesis", "decision.json source_bot_id mismatch")
+    _require(decision_data.get("source_scenario_id") == "scenario_11_nemesis", "decision.json source_scenario_id mismatch")
+    _require(decision_data.get("source_log_sha256") == source_log_sha256, "decision.json source_log_sha256 mismatch")
+    _require(decision_data.get("minos_verdict_sha256") == actual_verdict_sha256, "decision.json minos_verdict_sha256 mismatch")
+    _require(decision_data.get("expected_verdict") == "block", "expected_verdict must be block")
+    _require(decision_data.get("actual_verdict") == "block", "actual_verdict must be block")
+    _require(decision_data.get("threshold_results_all_passed") is True, "threshold_results_all_passed must be true")
+    _require(decision_data.get("runtime_execution") is False, "decision.json runtime_execution must be false")
+    _require(decision_data.get("autonomous_execution") is False, "decision.json autonomous_execution must be false")
+    _require(decision_data.get("network_used") is False, "decision.json network_used must be false")
+    _require(decision_data.get("secrets_accessed") is False, "decision.json secrets_accessed must be false")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -344,10 +414,12 @@ def main() -> None:
     sig = _check_gate_signature(state)
     _check_cycle_nudge(state)
 
-    # INF-MAT-01 baseline must remain true for INF-BOT-01.
+    # INF-MAT-01 baseline must remain true for downstream capacity gates.
     _check_fixture_materialization(state)
-    # INF-BOT-01 specific checks
+    # INF-BOT-01 baseline must remain true for INF-MINOS-01.
     _check_bot_execution_artifacts(state)
+    # INF-MINOS-01 specific checks
+    _check_minos_verdict_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -397,6 +469,8 @@ def main() -> None:
         "fixture_materialization_executed: `true`",
         "bot_execution_executed: `true`",
         "bot_execution_log_count: `1`",
+        "minos_verdict_executed: `true`",
+        "minos_verdict_count: `1`",
         "scenario_count: `13`",
     )
     _mirror_contains(
@@ -415,14 +489,14 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/inf_bot_01/decision.json",
-        "artifacts/inf_bot_01/summary.json",
-        "artifacts/inf_bot_01/report.md",
-        "artifacts/inf_bot_01/nemesis_execution_log.json",
+        "artifacts/inf_minos_01/decision.json",
+        "artifacts/inf_minos_01/summary.json",
+        "artifacts/inf_minos_01/report.md",
+        "artifacts/inf_minos_01/minos_verdict.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "INF-BOT-01 | ARIS Infernus Nemesis Synthetic Bot Execution Log Gate | pass",
+        "INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -484,6 +558,8 @@ def main() -> None:
         "scenario_count": state.get("scenario_count", 0),
         "bot_execution_executed": state.get("bot_execution_executed", False),
         "bot_execution_log_count": state.get("bot_execution_log_count", 0),
+        "minos_verdict_executed": state.get("minos_verdict_executed", False),
+        "minos_verdict_count": state.get("minos_verdict_count", 0),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

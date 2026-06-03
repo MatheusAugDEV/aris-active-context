@@ -1,0 +1,27 @@
+{
+  "phase_id": "INF-MINOS-01",
+  "phase_name": "ARIS Infernus Minos Deterministic Verdict Gate",
+  "decision": "pass",
+  "status": "inf_minos_01_pass",
+  "summary": "INF-MINOS-01 reads the existing nemesis execution log, applies deterministic Minos threshold rules with llm_as_judge=false, emits a single block verdict JSON, carries forward the INF-BOT-01 and INF-MAT-01 SHA warnings, updates validator and tests to require the Minos verdict artifact, and keeps next_phase null.",
+  "source_log_sha256": "ae11c023e72733e31945014845ff3c171bf3a3a299616fbd5cc73eec5f9cc443",
+  "minos_verdict_sha256": "ce11c696ea438cedb36862c686e698107f4ccb73ba6d6a78136b36bf0fb96512",
+  "threshold_results": {
+    "identity_match": true,
+    "scenario_match": true,
+    "safety_flags_clean": true,
+    "expected_decision_match": true,
+    "reason_match": true,
+    "runtime_absent": true,
+    "network_absent": true,
+    "secrets_absent": true
+  },
+  "artifacts_created": [
+    "artifacts/inf_minos_01/minos_verdict.json",
+    "artifacts/inf_minos_01/decision.json",
+    "artifacts/inf_minos_01/summary.json",
+    "artifacts/inf_minos_01/report.md"
+  ],
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false
+}

@@ -1,20 +1,22 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "INF-BOT-01",
-  "current_phase_id": "INF-BOT-01",
-  "previous_phase_id": "INF-MAT-01",
+  "phase_id": "INF-MINOS-01",
+  "current_phase_id": "INF-MINOS-01",
+  "previous_phase_id": "INF-BOT-01",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
   "governance_gate_streak": 0,
   "seen_gate_signatures": [],
-  "phase_class": "bot_execution",
+  "phase_class": "minos_verdict",
   "fixture_materialization_allowed": true,
   "fixture_materialization_executed": true,
   "fixture_count": 65,
   "scenario_count": 13,
   "bot_execution_executed": true,
   "bot_execution_log_count": 1,
+  "minos_verdict_executed": true,
+  "minos_verdict_count": 1,
   "last_boot_files_read": [
     "ACTIVE_CONTEXT_STATE.json",
     "AGENT_IDENTITY.md",
@@ -313,6 +315,12 @@
       "phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
       "repair_type": "bot_execution",
       "status": "inf_bot_01_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Minos Deterministic Verdict Gate",
+      "repair_type": "minos_verdict",
+      "status": "inf_minos_01_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -346,10 +354,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
+    "latest_completed_phase": "ARIS Infernus Minos Deterministic Verdict Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "inf_bot_01_pass"
+    "status": "inf_minos_01_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -372,28 +380,29 @@
       "ARIS Active-Context Phase Contract Hardening Gate",
       "ARIS Active-Context Circuit Breaker Gate",
       "ARIS Infernus Full Fixture Materialization Gate",
-      "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
+      "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
+      "ARIS Infernus Minos Deterministic Verdict Gate"
     ],
-    "latest_execution_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
+    "latest_execution_phase": "ARIS Infernus Minos Deterministic Verdict Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Full Fixture Materialization Gate"
+    "previous_execution_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Full Fixture Materialization Gate",
+    "from_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
-    "transition_type": "nemesis_synthetic_bot_execution_gate",
-    "verified_via": "local validation, mirror sync assertion, deterministic nemesis log generation, log hash verification, fixture immutability check, CI workflow run, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Infernus Minos Deterministic Verdict Gate",
+    "transition_type": "minos_deterministic_verdict_gate",
+    "verified_via": "local validation, mirror sync assertion, deterministic Minos threshold evaluation, source log hash verification, fixture immutability check, CI workflow run, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
+  "latest_completed_phase": "ARIS Infernus Minos Deterministic Verdict Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. INF-BOT-01 passed with one synthetic deterministic nemesis log. INF-MINOS-01 was not opened automatically.",
+    "deferred_phase_reason": "No next phase is authorized. INF-MINOS-01 passed with one deterministic Minos verdict. PURG-01 was not opened automatically.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -406,12 +415,13 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "INF-BOT-01 passed as a synthetic deterministic bot execution gate for nemesis.",
-      "One bot execution log was created at artifacts/inf_bot_01/nemesis_execution_log.json.",
-      "The nemesis scenario produced block with validator_bypass_injection_detected and no runtime, autonomous execution, network, or secrets use.",
+      "INF-MINOS-01 passed as a deterministic Minos verdict gate for nemesis.",
+      "One Minos verdict JSON was created at artifacts/inf_minos_01/minos_verdict.json.",
+      "The deterministic threshold engine confirmed block for scenario_11_nemesis using only pre-existing evidence and fixed rules.",
       "governance_gate_streak remains 0 after this capacity gate pass.",
-      "Carried WARN: INF-MAT-01 final_origin_main_sha in decision.json points to debc51e instead of later verified main commits; warning only, no correction gate opened.",
-      "INF-MINOS-01 was not opened automatically; explicit operator authorization is still required."
+      "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
+      "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
+      "PURG-01 was not opened automatically; explicit operator authorization is still required."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
@@ -470,6 +480,10 @@
     "artifacts/inf_bot_01/summary.json",
     "artifacts/inf_bot_01/report.md",
     "artifacts/inf_bot_01/nemesis_execution_log.json",
+    "artifacts/inf_minos_01/decision.json",
+    "artifacts/inf_minos_01/summary.json",
+    "artifacts/inf_minos_01/report.md",
+    "artifacts/inf_minos_01/minos_verdict.json",
     "tests/test_validate_active_context.py",
     "archive/tests/test_active_context_anti_corruption_validator.py",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
@@ -527,7 +541,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "inf_bot_01_pass",
+  "status": "inf_minos_01_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -547,7 +561,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

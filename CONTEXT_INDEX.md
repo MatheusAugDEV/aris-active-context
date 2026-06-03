@@ -2,21 +2,25 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Infernus Nemesis Synthetic Bot Execution Log Gate`
+- Latest completed phase: `ARIS Infernus Minos Deterministic Verdict Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
-- `artifacts/inf_bot_01/decision.json`
-- `artifacts/inf_bot_01/summary.json`
-- `artifacts/inf_bot_01/report.md`
-- `artifacts/inf_bot_01/nemesis_execution_log.json`
+- `artifacts/inf_minos_01/decision.json`
+- `artifacts/inf_minos_01/summary.json`
+- `artifacts/inf_minos_01/report.md`
+- `artifacts/inf_minos_01/minos_verdict.json`
 - `scripts/validate_active_context_state.py`
 - `tests/test_validate_active_context.py`
 
 ## Prior Phase Artifacts
 
+- `artifacts/inf_bot_01/decision.json`
+- `artifacts/inf_bot_01/summary.json`
+- `artifacts/inf_bot_01/report.md`
+- `artifacts/inf_bot_01/nemesis_execution_log.json`
 - `artifacts/inf_mat_01/decision.json`
 - `artifacts/inf_mat_01/summary.json`
 - `artifacts/inf_mat_01/report.md`
