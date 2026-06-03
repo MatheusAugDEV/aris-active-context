@@ -1,0 +1,63 @@
+{
+  "order_id": "ACB-ORDER-2026-06-03",
+  "operator": "MatheusAugDEV",
+  "date": "2026-06-03",
+  "source": "synthesis_consensus_papers_plus_auditor_maximo",
+  "blocks": [
+    {
+      "phase_id": "ACB-CORE-01",
+      "name": "DEPENDENCY",
+      "scope": "uv + uv.lock + pip-audit CI gate + SBOM CycloneDX",
+      "rationale": "zero regressao, maximo impacto, base para todo o resto",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CORE-02",
+      "name": "CORE",
+      "scope": "inventariar API publica, __all__ explicito, Protocols PEP 544",
+      "rationale": "base para refactor seguro de qualquer outra camada",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CAP-01",
+      "name": "BACKEND",
+      "scope": "FastAPI + JWT/API key por tenant + SlowAPI rate limit + health check",
+      "rationale": "independente do runtime, habilita multi-tenant",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CAP-02",
+      "name": "MCP RUNTIME",
+      "scope": "banir STDIO, container isolado network=none, policy engine pre-dispatch, kill-switch, rollback",
+      "rationale": "RCE confirmado via STDIO, tool poisoning ASR 84%, sandbox obrigatorio antes de qualquer tool call",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CAP-03",
+      "name": "RUNTIME TOP-LEVEL",
+      "scope": "consolidar logica de execucao apos MCP estavel, API publica clara",
+      "rationale": "depende de core + MCP estarem estaveis",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CAP-04",
+      "name": "PRODUCT/PILOT BOUNDARY",
+      "scope": "5 gates binarios PASS/FAIL antes de cliente real, workflow lab->staging->piloto executavel",
+      "rationale": "depende de tudo funcionando",
+      "research_done": true
+    },
+    {
+      "phase_id": "ACB-CAP-05",
+      "name": "SUPPLY CHAIN AVANCADO",
+      "scope": "SBOM integridade + assinatura + monitoramento PyPI ranges vulneraveis + AIBOM prototipo",
+      "rationale": "base DEPENDENCY ja feita em ACB-CORE-01, este bloco adiciona integridade e AIBOMs",
+      "research_done": true
+    }
+  ],
+  "critical_gaps": [
+    "Infernus Full nao especificado como framework de teste — deve ser especificado antes de INF-FULL-01",
+    "API publica do ARIS indefinida — snapshot de dir(aris) como baseline no ACB-CORE-02",
+    "MCP SDK Python 2026 nao coberto por papers — validar compatibilidade antes do ACB-CAP-02"
+  ],
+  "infernus_full_precondition": "todos os 7 blocos ACB completos com CI verde + Infernus Full framework especificado"
+}
