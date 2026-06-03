@@ -8,9 +8,9 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
-- Active next phase class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
+- Active next phase class: `review_gate_only`
 - Execution authorization: `false`
 - Bedrock executable now: `false`
 - Product promotion allowed: `false`

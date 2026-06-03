@@ -9,12 +9,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_STATUS = "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_pass"
+EXPECTED_STATUS = "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_LATEST = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate"
-EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate"
-EXPECTED_NEXT = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate"
-EXPECTED_CLASS = "planning_gate"
+EXPECTED_LATEST = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate"
+EXPECTED_CURRENT_STATUS = "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate"
+EXPECTED_NEXT = "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate"
+EXPECTED_CLASS = "review_gate_only"
 EXPECTED_SCHEMA_VERSION = "2.1"
 EXPECTED_ROADMAP_PHRASES = ['Infernus revela.', 'Purgatorium corrige.', 'Infernus revalida.', 'BenchUX valida produto real.', 'Crisol refina.', 'Bedrock decide.']
 
@@ -66,8 +66,8 @@ def main() -> None:
     _require(state["active_next_phase_class"] == EXPECTED_CLASS, "unexpected next route class")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next route execution authorization must be false")
-    _require(state["next_action"]["planning_only"] is True, "next route must remain planning-only")
-    _require(state["next_action"]["review_only"] is False, "next route must not remain review-only")
+    _require(state["next_action"]["planning_only"] is False, "next route must not remain planning-only")
+    _require(state["next_action"]["review_only"] is True, "next route must remain review-only")
     _require(state["next_action"]["execution_authorization"] is False, "next route must not authorize execution")
 
     policy = state["cross_field_consistency_policy"]
@@ -75,8 +75,8 @@ def main() -> None:
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
-    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate", "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate", "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate", "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate", "unexpected last transition from phase")
 
     for key, value in state["authorization"].items():
         if key == "network_authorized_scope":
@@ -91,25 +91,25 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         EXPECTED_STATUS,
         EXPECTED_NEXT,
-        "packet_reviewed=true",
-        "packet_review_passed=true",
-        "packet_actionable=false",
+        "request_status_default=not_requested",
+        "request_delivered_now=false",
+        "real_operator_contacted_now=false",
         "authorization_requested_now=false",
         "authorization_granted_now=false",
         "No real fixture tree or real fixture files were created",
         *roadmap_required,
     )
-    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `true`", "Review-only: `false`", "Execution authorization: `false`", *roadmap_required)
-    _mirror_contains(ROOT / "DECISION_LOCKS.md", EXPECTED_NEXT, "packet_reviewed=true", "authorization_requested_now=false", "Bedrock remains non-executable and product promotion remains blocked.")
-    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_REVIEW_GATE.md", "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_matrix.json")
-    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Explicit Operator Authorization Packet Review Gate Note", *roadmap_required)
-    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_REVIEW_GATE.md")
+    _mirror_contains(ROOT / "NEXT_ACTION.md", "ACTIVE_CONTEXT_STATE.json wins", EXPECTED_NEXT, "Planning-only: `false`", "Review-only: `true`", "Execution authorization: `false`", *roadmap_required)
+    _mirror_contains(ROOT / "DECISION_LOCKS.md", EXPECTED_NEXT, "request_status_default=not_requested", "real_operator_contacted_now=false", "Bedrock remains non-executable and product promotion remains blocked.")
+    _mirror_contains(ROOT / "CONTEXT_INDEX.md", EXPECTED_NEXT, "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_PLANNING_GATE.md", "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_matrix.json")
+    _mirror_contains(ROOT / "ARIS_PHASE_LEDGER.md", EXPECTED_STATUS, EXPECTED_NEXT, "Explicit Operator Authorization Request Planning Gate Note", *roadmap_required)
+    _mirror_contains(ROOT / "README.md", EXPECTED_LATEST, EXPECTED_NEXT, "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_PLANNING_GATE.md")
     _mirror_contains(ROOT / "BEDROCK_GATE.md", EXPECTED_LATEST, EXPECTED_NEXT, "Productization remains blocked")
-    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_REVIEW_GATE.md", "Packet review passed: `True`.", "Authorization requested now: `False`.", "Authorization granted now: `False`.", "Next Recommended Phase", EXPECTED_NEXT)
+    _mirror_contains(ROOT / "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_PLANNING_GATE.md", "Request plan created: `True`.", "Request delivered now: `False`.", "Real operator contacted now: `False`.", "Next Recommended Phase", EXPECTED_NEXT)
 
     stale_route_lines = (
-        "- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`",
-        "Fixture materialization explicit operator authorization packet review gate next; no Bedrock authorization yet.",
+        "- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`",
+        "Fixture materialization explicit operator authorization request planning gate next; no Bedrock authorization yet.",
     )
     for path in [ROOT / "ROADMAP_CANONICAL.md", ROOT / "BEDROCK_GATE.md"]:
         _mirror_excludes(path, *stale_route_lines)
@@ -128,7 +128,7 @@ def main() -> None:
             "Bedrock Gate",
             "Productization / Controlled Pilot",
         ],
-        "review_result": "aris infernus lab full fixture materialization explicit operator authorization packet review gate pass"
+        "review_result": "aris infernus lab full fixture materialization explicit operator authorization request planning gate pass"
     }, indent=2))
 
 
