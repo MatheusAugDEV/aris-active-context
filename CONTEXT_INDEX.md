@@ -2,11 +2,35 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Capability Build Core Public API Baseline Gate`
+- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
+
+- `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`
+- `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`
+- `../artifacts/acb_cap_01/decision.json`
+- `../artifacts/acb_cap_01/summary.json`
+- `../artifacts/acb_cap_01/report.md`
+- `../artifacts/acb_cap_01/research_basis.json`
+- `../artifacts/acb_cap_01/backend_contract.json`
+- `../artifacts/acb_cap_01/auth_matrix.json`
+- `../artifacts/acb_cap_01/rate_limit_report.json`
+- `../artifacts/acb_cap_01/public_api_drift_report.json`
+- `../artifacts/acb_cap_01/import_stability_report.json`
+- `../.github/workflows/backend-baseline.yml`
+- `../scripts/run_acb_cap_01_backend_baseline.py`
+- `../tests/test_acb_cap_01_backend.py`
+- `../src/aris/backend/__init__.py`
+- `../src/aris/backend/app.py`
+- `../src/aris/backend/auth.py`
+- `../src/aris/backend/contracts.py`
+- `../src/aris/backend/rate_limit.py`
+- `scripts/validate_active_context_state.py`
+- `tests/test_validate_active_context.py`
+
+## Prior Phase Artifacts
 
 - `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_02/decision.json`
@@ -21,11 +45,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `../tests/test_acb_core_02_public_api.py`
 - `../src/aris/__init__.py`
 - `../src/aris/contracts.py`
-- `scripts/validate_active_context_state.py`
-- `tests/test_validate_active_context.py`
-
-## Prior Phase Artifacts
-
 - `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_01/decision.json`
 - `../artifacts/acb_core_01/summary.json`

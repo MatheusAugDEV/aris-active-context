@@ -13,12 +13,14 @@ STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_project_evidence_2026_06_03.json"
 ACB_CORE_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_02_project_evidence_2026_06_03.json"
+ACB_CAP_01_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_operator_authorization_2026_06_03.json"
+ACB_CAP_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_project_evidence_2026_06_03.json"
 
-EXPECTED_PHASE = "ARIS Capability Build Core Public API Baseline Gate"
-EXPECTED_PHASE_ID = "ACB-CORE-02"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Dependency Foundation Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CORE-01"
-EXPECTED_STATUS = "acb_core_02_pass"
+EXPECTED_PHASE = "ARIS Capability Build Backend Baseline Gate"
+EXPECTED_PHASE_ID = "ACB-CAP-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Core Public API Baseline Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CORE-02"
+EXPECTED_STATUS = "acb_cap_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -96,6 +98,25 @@ PHASE_DELIVERABLES = {
                 "import_stability_report_exists",
                 "explicit_all_created_or_verified",
                 "protocols_created_or_verified",
+            ]
+        )
+    ),
+    "ACB-CAP-01": lambda: (
+        ACB_CAP_01_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CAP_01_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CAP_01_EVIDENCE_PATH).get("backend_baseline_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CAP_01_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "fastapi_app_exists",
+                "health_check_exists",
+                "ready_check_exists",
+                "jwt_auth_exists",
+                "api_key_auth_exists",
+                "tenant_isolation_exists",
+                "slowapi_rate_limit_exists",
+                "backend_tests_exist",
+                "backend_artifacts_exist",
             ]
         )
     )
@@ -516,6 +537,198 @@ def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
     _require("python -m pip install pytest" in workflow_text, "ACB-CORE-02 workflow must install pytest")
 
 
+def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CAP_01_OPERATOR_AUTH_PATH.exists(), "missing ACB-CAP-01 operator authorization artifact in active-context")
+    _require(ACB_CAP_01_EVIDENCE_PATH.exists(), "missing ACB-CAP-01 evidence artifact in active-context")
+
+    operator_auth = _load_json(ACB_CAP_01_OPERATOR_AUTH_PATH)
+    _require(operator_auth.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 operator authorization phase_id mismatch")
+    _require(operator_auth.get("operator") == "MatheusAugDEV", "ACB-CAP-01 operator authorization operator mismatch")
+    _require(operator_auth.get("authorized") is True, "ACB-CAP-01 operator authorization must be true")
+    _require(operator_auth.get("constraints", {}).get("next_phase_must_remain_null") is True, "ACB-CAP-01 operator authorization must lock next_phase to null")
+    _require(operator_auth.get("constraints", {}).get("server_real_allowed") is False, "ACB-CAP-01 operator authorization must keep server_real_allowed false")
+    _require(operator_auth.get("constraints", {}).get("external_network_test_allowed") is False, "ACB-CAP-01 operator authorization must keep external_network_test_allowed false")
+    _require(operator_auth.get("constraints", {}).get("real_secrets_allowed") is False, "ACB-CAP-01 operator authorization must keep real_secrets_allowed false")
+
+    evidence_data = _load_json(ACB_CAP_01_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CAP-01 evidence repository mismatch")
+    _require(
+        evidence_data.get("project_sha") == "68ca2a07fc0ee1afad22d967619e05f35ccf52b1",
+        "ACB-CAP-01 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("backend_baseline_ci", {}).get("conclusion") == "success",
+        "ACB-CAP-01 evidence backend-baseline CI must be success",
+    )
+    _require(
+        evidence_data.get("backend_baseline_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26920310615",
+        "ACB-CAP-01 evidence backend-baseline CI URL mismatch",
+    )
+    for key in [
+        "fastapi_app_exists",
+        "health_check_exists",
+        "ready_check_exists",
+        "jwt_auth_exists",
+        "api_key_auth_exists",
+        "tenant_isolation_exists",
+        "slowapi_rate_limit_exists",
+        "backend_tests_exist",
+        "backend_artifacts_exist",
+    ]:
+        _require(
+            evidence_data.get("deliverables", {}).get(key) is True,
+            f"ACB-CAP-01 evidence deliverable {key} must be true",
+        )
+    _require(
+        evidence_data.get("local_validation", {}).get("pass_criteria_met") is True,
+        "ACB-CAP-01 evidence pass_criteria_met must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("health_check_passing") is True,
+        "ACB-CAP-01 evidence health_check_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("auth_passing") is True,
+        "ACB-CAP-01 evidence auth_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("rate_limit_passing") is True,
+        "ACB-CAP-01 evidence rate_limit_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("public_api_stable") is True,
+        "ACB-CAP-01 evidence public_api_stable must be true",
+    )
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_cap_01"
+    required_paths = [
+        PROJECT_ROOT / ".github" / "workflows" / "backend-baseline.yml",
+        PROJECT_ROOT / "src" / "aris" / "backend" / "__init__.py",
+        PROJECT_ROOT / "src" / "aris" / "backend" / "app.py",
+        PROJECT_ROOT / "src" / "aris" / "backend" / "auth.py",
+        PROJECT_ROOT / "src" / "aris" / "backend" / "contracts.py",
+        PROJECT_ROOT / "src" / "aris" / "backend" / "rate_limit.py",
+        PROJECT_ROOT / "scripts" / "run_acb_cap_01_backend_baseline.py",
+        PROJECT_ROOT / "tests" / "test_acb_cap_01_backend.py",
+        artifacts_root / "research_basis.json",
+        artifacts_root / "backend_contract.json",
+        artifacts_root / "auth_matrix.json",
+        artifacts_root / "rate_limit_report.json",
+        artifacts_root / "public_api_drift_report.json",
+        artifacts_root / "import_stability_report.json",
+        artifacts_root / "decision.json",
+        artifacts_root / "summary.json",
+        artifacts_root / "report.md",
+    ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CAP-01 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
+
+    decision_data = _load_json(artifacts_root / "decision.json")
+    summary_data = _load_json(artifacts_root / "summary.json")
+    research_data = _load_json(artifacts_root / "research_basis.json")
+    backend_contract = _load_json(artifacts_root / "backend_contract.json")
+    auth_matrix = _load_json(artifacts_root / "auth_matrix.json")
+    rate_limit_report = _load_json(artifacts_root / "rate_limit_report.json")
+    public_api_drift = _load_json(artifacts_root / "public_api_drift_report.json")
+    import_report = _load_json(artifacts_root / "import_stability_report.json")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "backend-baseline.yml").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == "ARIS Capability Build Backend Baseline Gate", "ACB-CAP-01 decision phase_name mismatch")
+    _require(decision_data.get("status") == "acb_cap_01_pass", "ACB-CAP-01 decision status mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB-CAP-01 decision must be pass")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB-CAP-01 decision pass_criteria_met must be true")
+    _require(decision_data.get("minimum_deliverable_met") is True, "ACB-CAP-01 decision minimum_deliverable_met must be true")
+    _require(decision_data.get("fastapi_health_check_passing") is True, "ACB-CAP-01 decision fastapi_health_check_passing must be true")
+    _require(decision_data.get("auth_passing") is True, "ACB-CAP-01 decision auth_passing must be true")
+    _require(decision_data.get("jwt_auth_passing") is True, "ACB-CAP-01 decision jwt_auth_passing must be true")
+    _require(decision_data.get("api_key_auth_passing") is True, "ACB-CAP-01 decision api_key_auth_passing must be true")
+    _require(decision_data.get("tenant_isolation_passing") is True, "ACB-CAP-01 decision tenant_isolation_passing must be true")
+    _require(decision_data.get("slowapi_rate_limit_passing") is True, "ACB-CAP-01 decision slowapi_rate_limit_passing must be true")
+    _require(decision_data.get("network_server_started") is False, "ACB-CAP-01 decision network_server_started must be false")
+    _require(decision_data.get("external_network_used") is False, "ACB-CAP-01 decision external_network_used must be false")
+    _require(decision_data.get("real_secret_used") is False, "ACB-CAP-01 decision real_secret_used must be false")
+    _require(decision_data.get("database_created") is False, "ACB-CAP-01 decision database_created must be false")
+    _require(decision_data.get("runtime_mutation_authorized") is False, "ACB-CAP-01 decision runtime_mutation_authorized must be false")
+    _require(decision_data.get("product_promotion_allowed") is False, "ACB-CAP-01 decision product_promotion_allowed must be false")
+
+    _require(summary_data.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "ACB-CAP-01 summary decision must be pass")
+    _require(summary_data.get("status") == "acb_cap_01_pass", "ACB-CAP-01 summary status mismatch")
+    _require(summary_data.get("pass_criteria_met") is True, "ACB-CAP-01 summary pass_criteria_met must be true")
+    _require(summary_data.get("minimum_deliverable_met") is True, "ACB-CAP-01 summary minimum_deliverable_met must be true")
+    for key in [
+        "fastapi_app_exists",
+        "health_check_exists",
+        "ready_check_exists",
+        "jwt_auth_exists",
+        "api_key_auth_exists",
+        "tenant_isolation_exists",
+        "slowapi_rate_limit_exists",
+        "backend_tests_exist",
+        "backend_artifacts_exist",
+    ]:
+        _require(summary_data.get("deliverables", {}).get(key) is True, f"ACB-CAP-01 summary deliverable {key} must be true")
+
+    _require(research_data.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 research_basis phase_id mismatch")
+    _require(research_data.get("conclusion") == "proceed_with_backend_baseline_only", "ACB-CAP-01 research_basis conclusion mismatch")
+    _require(research_data.get("rejected_pattern") == "uvicorn_runtime_server", "ACB-CAP-01 research_basis rejected_pattern mismatch")
+
+    _require(backend_contract.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 backend_contract phase_id mismatch")
+    _require(backend_contract.get("app_factory") == "create_app(settings: BackendSettings | None = None) -> FastAPI", "ACB-CAP-01 backend_contract app_factory mismatch")
+    _require(backend_contract.get("network_server_started") is False, "ACB-CAP-01 backend_contract network_server_started must be false")
+    _require(backend_contract.get("external_network_used") is False, "ACB-CAP-01 backend_contract external_network_used must be false")
+    _require(backend_contract.get("database_created") is False, "ACB-CAP-01 backend_contract database_created must be false")
+    endpoints = {(item.get("method"), item.get("path")): item for item in backend_contract.get("public_endpoints", [])}
+    _require(("GET", "/healthz") in endpoints, "ACB-CAP-01 backend_contract must expose GET /healthz")
+    _require(("GET", "/readyz") in endpoints, "ACB-CAP-01 backend_contract must expose GET /readyz")
+    _require(("POST", "/api/v1/auth/token") in endpoints, "ACB-CAP-01 backend_contract must expose POST /api/v1/auth/token")
+    _require(("GET", "/api/v1/tenant/me") in endpoints, "ACB-CAP-01 backend_contract must expose GET /api/v1/tenant/me")
+    _require(("GET", "/api/v1/tenant/api-key-check") in endpoints, "ACB-CAP-01 backend_contract must expose GET /api/v1/tenant/api-key-check")
+    _require(endpoints.get(("GET", "/api/v1/rate-limited"), {}).get("rate_limit") == "2/minute", "ACB-CAP-01 backend_contract rate limit mismatch")
+
+    _require(auth_matrix.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 auth_matrix phase_id mismatch")
+    _require(auth_matrix.get("token_issue_status") == 200, "ACB-CAP-01 auth_matrix token_issue_status mismatch")
+    _require(auth_matrix.get("missing_bearer_status") == 401, "ACB-CAP-01 auth_matrix missing_bearer_status mismatch")
+    _require(auth_matrix.get("invalid_api_key_status") == 401, "ACB-CAP-01 auth_matrix invalid_api_key_status mismatch")
+    _require(auth_matrix.get("valid_api_key_status") == 200, "ACB-CAP-01 auth_matrix valid_api_key_status mismatch")
+    _require(auth_matrix.get("cross_tenant_api_key_status") == 403, "ACB-CAP-01 auth_matrix cross_tenant_api_key_status mismatch")
+    _require(auth_matrix.get("valid_jwt_status") == 200, "ACB-CAP-01 auth_matrix valid_jwt_status mismatch")
+    _require(auth_matrix.get("expired_jwt_status") == 401, "ACB-CAP-01 auth_matrix expired_jwt_status mismatch")
+    _require(auth_matrix.get("wrong_tenant_jwt_status") == 403, "ACB-CAP-01 auth_matrix wrong_tenant_jwt_status mismatch")
+    _require(auth_matrix.get("jwt_auth_passing") is True, "ACB-CAP-01 auth_matrix jwt_auth_passing must be true")
+    _require(auth_matrix.get("api_key_auth_passing") is True, "ACB-CAP-01 auth_matrix api_key_auth_passing must be true")
+    _require(auth_matrix.get("tenant_isolation_passing") is True, "ACB-CAP-01 auth_matrix tenant_isolation_passing must be true")
+
+    _require(rate_limit_report.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 rate_limit_report phase_id mismatch")
+    _require(rate_limit_report.get("limit") == "2/minute", "ACB-CAP-01 rate_limit_report limit mismatch")
+    _require(rate_limit_report.get("statuses") == [200, 200, 429], "ACB-CAP-01 rate_limit_report statuses mismatch")
+    _require(rate_limit_report.get("slowapi_rate_limit_passing") is True, "ACB-CAP-01 rate_limit_report slowapi_rate_limit_passing must be true")
+
+    _require(public_api_drift.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 public_api_drift phase_id mismatch")
+    _require(public_api_drift.get("drift_detected") is False, "ACB-CAP-01 public_api_drift drift_detected must be false")
+    _require(public_api_drift.get("public_api_stable") is True, "ACB-CAP-01 public_api_drift public_api_stable must be true")
+
+    _require(import_report.get("phase_id") == "ACB-CAP-01", "ACB-CAP-01 import_report phase_id mismatch")
+    _require(import_report.get("import_smoke_tests_passed") is True, "ACB-CAP-01 import_report import_smoke_tests_passed must be true")
+    _require(import_report.get("public_api_stable") is True, "ACB-CAP-01 import_report public_api_stable must be true")
+    _require(import_report.get("forbidden_runtime_patterns") == [], "ACB-CAP-01 import_report forbidden_runtime_patterns must be empty")
+
+    _require("name: Backend Baseline" in workflow_text, "ACB-CAP-01 workflow must be Backend Baseline")
+    _require("uv sync --frozen" in workflow_text, "ACB-CAP-01 workflow must run uv sync --frozen")
+    _require("uv pip install --python .venv/bin/python pytest" in workflow_text, "ACB-CAP-01 workflow must install pytest via uv pip")
+    _require("scripts/run_acb_cap_01_backend_baseline.py" in workflow_text, "ACB-CAP-01 workflow must validate backend baseline artifacts")
+    _require("tests/test_acb_cap_01_backend.py -v" in workflow_text, "ACB-CAP-01 workflow must run backend tests")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -787,8 +1000,10 @@ def main() -> None:
     _check_purgatorium_artifacts(state)
     # ACB-CORE-01 baseline must remain true for ACB-CORE-02.
     _check_acb_core_01_project_artifacts(state)
-    # ACB-CORE-02 specific checks
+    # ACB-CORE-02 baseline must remain true for ACB-CAP-01.
     _check_acb_core_02_project_artifacts(state)
+    # ACB-CAP-01 specific checks
+    _check_acb_cap_01_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -843,14 +1058,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_core_02/`",
+        "External deliverables registered from `../artifacts/acb_cap_01/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
         "Awaiting manual operator authorization.",
         "Execution authorization: `false`",
-        "ACB-CAP-01 remains closed.",
+        "ACB-CAP-02 remains closed.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -859,28 +1074,28 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "ACB-CAP-01 remains closed pending explicit operator authorization.",
+        "ACB-CAP-02 remains closed pending explicit operator authorization.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json",
-        "../artifacts/acb_core_02/decision.json",
-        "../artifacts/acb_core_02/summary.json",
-        "../artifacts/acb_core_02/report.md",
-        "../artifacts/acb_core_02/public_api_snapshot_after.json",
+        "artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json",
+        "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
+        "../artifacts/acb_cap_01/decision.json",
+        "../artifacts/acb_cap_01/summary.json",
+        "../artifacts/acb_cap_01/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass",
         "ACB-CORE-02 | ARIS Capability Build Core Public API Baseline Gate | pass",
-        "ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "uv_lock_created_or_verified: `true`",
-        "artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json",
-        "explicit_all_created_or_verified: `true`",
+        "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
+        "fastapi_health_check_passing: `true`",
+        "slowapi_rate_limit_passing: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
@@ -888,7 +1103,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Operator authorization required before any new phase.",
-        "`ACB-CAP-01` is not opened automatically after `ACB-CORE-02`.",
+        "`ACB-CAP-02` is not opened automatically after `ACB-CAP-01`.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -942,6 +1157,7 @@ def main() -> None:
         "uv_lock_exists": (PROJECT_ROOT / "uv.lock").exists(),
         "acb_core_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_01" / "decision.json").exists(),
         "acb_core_02_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_02" / "decision.json").exists(),
+        "acb_cap_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_01" / "decision.json").exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

@@ -287,3 +287,79 @@ def test_minimum_deliverable_allows_acb_core_02_with_evidence_artifact_only():
             )
         finally:
             os.chdir(cwd)
+
+
+def test_minimum_deliverable_blocks_acb_cap_01_pass_without_project_deliverables():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_01_EVIDENCE_PATH = Path(tmp) / "missing_evidence.json"
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "ACB-CAP-01",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block ACB-CAP-01 without project deliverables")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_allows_acb_cap_01_with_evidence_artifact_only():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            evidence_path = Path(tmp) / "acb_cap_01_evidence.json"
+            evidence_path.write_text(
+                json.dumps(
+                    {
+                        "project_sha": "68ca2a07fc0ee1afad22d967619e05f35ccf52b1",
+                        "backend_baseline_ci": {"conclusion": "success"},
+                        "deliverables": {
+                            "fastapi_app_exists": True,
+                            "health_check_exists": True,
+                            "ready_check_exists": True,
+                            "jwt_auth_exists": True,
+                            "api_key_auth_exists": True,
+                            "tenant_isolation_exists": True,
+                            "slowapi_rate_limit_exists": True,
+                            "backend_tests_exist": True,
+                            "backend_artifacts_exist": True,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_01_EVIDENCE_PATH = evidence_path
+            module._check_minimum_deliverable(
+                {
+                    "current_phase_id": "ACB-CAP-01",
+                    "decision": "pass",
+                }
+            )
+        finally:
+            os.chdir(cwd)
