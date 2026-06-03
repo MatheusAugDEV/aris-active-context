@@ -6,14 +6,15 @@ Read in this exact order. Never read a Markdown file before the JSON source.
 
 ```
 1. ACTIVE_CONTEXT_STATE.json          ← canonical live state (read this first, always)
-2. ACTIVE_CONTEXT_SCHEMA.json         ← validation contract
-3. scripts/validate_active_context_state.py  ← run before any decision
-4. CURRENT_STATE.md                   ← derived mirror (confirms JSON, does not supersede it)
-5. NEXT_ACTION.md                     ← derived mirror
-6. DECISION_LOCKS.md                  ← derived mirror
-7. ROADMAP_CANONICAL.md               ← roadmap sequence authority
-8. ROADMAP_AMENDMENT_PROTOCOL.md      ← before proposing roadmap mutation
-9. ARIS_PHASE_LEDGER.md               ← historical ledger only, after the above
+2. AGENT_IDENTITY.md                  ← identidade e constituição do orquestrador (leitura obrigatória em todo boot)
+3. ACTIVE_CONTEXT_SCHEMA.json         ← validation contract
+4. scripts/validate_active_context_state.py  ← run before any decision
+5. CURRENT_STATE.md                   ← derived mirror (confirms JSON, does not supersede it)
+6. NEXT_ACTION.md                     ← derived mirror
+7. DECISION_LOCKS.md                  ← derived mirror
+8. ROADMAP_CANONICAL.md               ← roadmap sequence authority
+9. ROADMAP_AMENDMENT_PROTOCOL.md      ← before proposing roadmap mutation
+10. ARIS_PHASE_LEDGER.md              ← historical ledger only, after the above
 ```
 
 ## Boot Rule
