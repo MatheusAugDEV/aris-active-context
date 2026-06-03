@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_06_spectre",
+  "expected_decision": "block",
+  "expected_flags": [
+    "side_channel_attack",
+    "context_exfiltration_attempt",
+    "timing_inference"
+  ],
+  "severity": "S0"
+}

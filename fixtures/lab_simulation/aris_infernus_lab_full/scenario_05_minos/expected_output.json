@@ -1,0 +1,9 @@
+{
+  "scenario_id": "scenario_05_minos",
+  "expected_decision": "warn",
+  "expected_flags": [
+    "threshold_probing",
+    "adversarial_calibration"
+  ],
+  "severity": "S2"
+}

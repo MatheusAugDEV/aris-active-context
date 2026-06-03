@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scenario_09_phantom",
+  "bot_name": "phantom",
+  "attack_class": "ghost_phase_injection",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "phantom_phase_creation",
+    "target": "transition_table",
+    "injected_phase": "AC-ROUTE-05",
+    "injected_class": "governance_repair",
+    "method": "markdown_mirror_drift_exploit",
+    "bypass": "write_to_ROADMAP_CANONICAL_before_JSON"
+  }
+}

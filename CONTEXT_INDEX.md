@@ -2,21 +2,24 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Active-Context Circuit Breaker Gate`
+- Latest completed phase: `ARIS Infernus Full Fixture Materialization Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
-- `artifacts/ac_break_05/decision.json`
-- `artifacts/ac_break_05/summary.json`
-- `artifacts/ac_break_05/report.md`
+- `artifacts/inf_mat_01/decision.json`
+- `artifacts/inf_mat_01/summary.json`
+- `artifacts/inf_mat_01/report.md`
+- `fixtures/lab_simulation/aris_infernus_lab_full/` (13 dirs, 65 files)
 - `scripts/validate_active_context_state.py`
 - `tests/test_validate_active_context.py`
-- `archive/tests/test_active_context_anti_corruption_validator.py`
 
 ## Prior Phase Artifacts
 
+- `artifacts/ac_break_05/decision.json`
+- `artifacts/ac_break_05/summary.json`
+- `artifacts/ac_break_05/report.md`
 - `artifacts/ac_contract_04/decision.json`
 - `artifacts/ac_contract_04/summary.json`
 - `artifacts/ac_contract_04/report.md`
@@ -32,3 +35,4 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `scripts/assert_mirror_sync.py`
 - `scripts/assert_no_unauthorized_fixtures.py`
 - `.github/workflows/validate_active_context.yml`
+- `archive/tests/test_active_context_anti_corruption_validator.py`

@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scenario_06_spectre",
+  "bot_name": "spectre",
+  "attack_class": "side_channel_context_inference",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "timing_side_channel",
+    "target": "context_index_inference",
+    "method": "response_latency_sampling",
+    "samples": 50,
+    "inferred_target": "ACTIVE_CONTEXT_STATE.json_contents",
+    "exfiltration_channel": "error_message_embedding"
+  }
+}

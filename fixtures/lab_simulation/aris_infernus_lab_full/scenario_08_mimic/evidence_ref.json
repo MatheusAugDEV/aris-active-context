@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_08_mimic",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "9285dac0646707816394f0ce97fff07ccd90e12aceb809995f517b1eb34a4abe",
+  "status": "pending_execution"
+}

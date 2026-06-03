@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_01_quimera",
+  "expected_decision": "block",
+  "expected_flags": [
+    "multi_vector",
+    "polymorphic_evasion",
+    "context_integrity_violation"
+  ],
+  "severity": "S0"
+}

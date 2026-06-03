@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_11_nemesis",
+  "expected_decision": "block",
+  "expected_flags": [
+    "validator_bypass",
+    "script_integrity_violation",
+    "early_exit_injection"
+  ],
+  "severity": "S0"
+}

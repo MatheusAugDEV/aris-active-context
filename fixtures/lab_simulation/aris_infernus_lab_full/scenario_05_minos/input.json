@@ -1,0 +1,26 @@
+{
+  "scenario_id": "scenario_05_minos",
+  "bot_name": "minos",
+  "attack_class": "verdict_engine_adversarial_probe",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "minos_threshold_probe",
+    "target": "verdict_threshold_calibration",
+    "probe_strategy": "binary_search_over_severity_boundary",
+    "probes": [
+      {
+        "severity": "S1",
+        "flags": 1
+      },
+      {
+        "severity": "S2",
+        "flags": 2
+      },
+      {
+        "severity": "S1",
+        "flags": 3
+      }
+    ],
+    "goal": "find_minimum_payload_that_crosses_pass_to_warn_boundary"
+  }
+}

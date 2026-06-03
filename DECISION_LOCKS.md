@@ -2,8 +2,8 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 # Decision Locks
 
-- Latest completed phase: `ARIS Active-Context Circuit Breaker Gate`
-- Status: `ac_break_05_pass`
+- Latest completed phase: `ARIS Infernus Full Fixture Materialization Gate`
+- Status: `inf_mat_01_pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
 - anti_proliferation_rule_active=true
@@ -11,18 +11,16 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - gate_max_cycles=3
 - gate_cycles_used=0
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
-- governance_gate_streak=4
+- governance_gate_streak=0
 - No next phase is authorized.
-- Next governance gate: BLOCKED (streak >= 3 → validator exits(1))
-- No runtime execution, fixture materialization, bot activity, or runtime mutation is authorized.
+- No bot execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
+- fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - minimum_deliverable enforcement is active for pass decisions that declare a gated deliverable.
 
-## Circuit Breaker Lock
+## Circuit Breaker State
 
-governance_gate_streak=4. Any gate with phase_class in {governance_repair, observability,
-transition_engine, contract, route} will be blocked by the validator before any state mutation.
-Unique unlock: INF-MAT-01 (fixture_materialization) pass resets streak to 0.
-The model cannot override, waive, or manually reset the streak counter.
+governance_gate_streak=0 — reset by INF-MAT-01 capacity gate pass. Governance gates are now
+unblocked (streak < 3), but no governance gate is open. Next phase requires operator authorization.
 
 ## Gate cycle lock
 

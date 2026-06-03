@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_13_crisol_probe",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "38a28e9398d2a25ddfde934946a95ef4681191542a4af97fcaf112de7e609048",
+  "status": "pending_execution"
+}

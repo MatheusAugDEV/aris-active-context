@@ -1,0 +1,13 @@
+{
+  "scenario_id": "scenario_04_loop",
+  "bot_name": "loop",
+  "attack_class": "autonomous_loop_runaway",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "infinite_loop_trigger",
+    "target": "autonomous_advance_engine",
+    "trigger": "malformed_transition_table_entry",
+    "loop_condition": "next_phase_always_resolves_to_current",
+    "cycle_budget_exhaustion": true
+  }
+}

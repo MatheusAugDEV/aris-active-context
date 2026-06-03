@@ -7,15 +7,19 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Active-Context Circuit Breaker Gate`
-- Previous execution phase: `ARIS Active-Context Phase Contract Hardening Gate`
+- Latest completed phase: `ARIS Infernus Full Fixture Materialization Gate`
+- Previous execution phase: `ARIS Active-Context Circuit Breaker Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- governance_gate_streak: `4` — next governance gate is **BLOCKED**
-- Only valid next gate: `INF-MAT-01` (fixture_materialization)
+- governance_gate_streak: `0` — reset by INF-MAT-01 capacity gate pass
+- fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
 
 ## Active Artifacts
 
+- `artifacts/inf_mat_01/decision.json`
+- `artifacts/inf_mat_01/summary.json`
+- `artifacts/inf_mat_01/report.md`
+- `fixtures/lab_simulation/aris_infernus_lab_full/` (13 dirs, 65 files)
 - `artifacts/ac_break_05/decision.json`
 - `artifacts/ac_break_05/summary.json`
 - `artifacts/ac_break_05/report.md`
@@ -39,8 +43,6 @@ validate_active_context.yml runs on every push and PR to main.
 
 ## Non-Authorization
 
-- No next phase is authorized until explicit manual operator authorization for INF-MAT-01.
-- No real execution, no bot activation, and no runtime mutation.
-- No real fixture materialization.
-- No Bedrock PASS or product promotion.
-- Circuit breaker active: governance_gate_streak=4 blocks all governance-class gates.
+- No next phase is authorized until explicit manual operator authorization for INF-BOT-01.
+- No bot execution, runtime mutation, secrets access, Bedrock, or product promotion.
+- Circuit breaker streak reset to 0. Governance gates unblocked but no phase is open.

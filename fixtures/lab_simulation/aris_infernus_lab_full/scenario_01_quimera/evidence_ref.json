@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_01_quimera",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "b3dbbe8d86a97a33b607a0ad21fe29f858d2aadadd329a8137931c91aed7aa14",
+  "status": "pending_execution"
+}

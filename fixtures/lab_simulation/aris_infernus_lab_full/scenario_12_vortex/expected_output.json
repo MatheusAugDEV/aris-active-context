@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_12_vortex",
+  "expected_decision": "block",
+  "expected_flags": [
+    "context_exhaustion",
+    "json_displacement_attack",
+    "boot_sequence_disruption"
+  ],
+  "severity": "S1"
+}

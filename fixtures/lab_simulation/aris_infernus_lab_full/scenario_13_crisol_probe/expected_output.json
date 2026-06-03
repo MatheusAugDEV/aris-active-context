@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_13_crisol_probe",
+  "expected_decision": "block",
+  "expected_flags": [
+    "premature_bedrock_unlock",
+    "narrative_evidence_only",
+    "missing_artifact"
+  ],
+  "severity": "S1"
+}

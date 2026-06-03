@@ -1,0 +1,46 @@
+{
+  "phase_id": "INF-MAT-01",
+  "phase_name": "ARIS Infernus Full Fixture Materialization Gate",
+  "decision": "pass",
+  "status": "inf_mat_01_pass",
+  "date": "2026-06-03",
+  "canonical_fact_changed": "13 synthetic bot scenario directories and 65 fixture files materialized on disk under fixtures/lab_simulation/aris_infernus_lab_full/; governance_gate_streak reset from 4 to 0",
+  "deliverables": {
+    "fixtures/lab_simulation/aris_infernus_lab_full/": "13 scenario dirs, 65 files (input.json, expected_output.json, evidence_ref.json, minos_verdict_ref.json, README.md per scenario)",
+    "ACTIVE_CONTEXT_STATE.json": "current_phase_id=INF-MAT-01, governance_gate_streak=0, fixture_count=65, scenario_count=13, fixture_materialization_executed=true",
+    "artifacts/inf_mat_01/decision.json": "Gate decision with all 13 input.json SHA-256 hashes",
+    "artifacts/inf_mat_01/summary.json": "This file",
+    "artifacts/inf_mat_01/report.md": "Gate narrative report"
+  },
+  "scenarios": [
+    {"id": "scenario_01_quimera", "bot": "quimera", "attack_class": "multi_vector_adaptive_polymorphic", "expected": "block", "severity": "S0"},
+    {"id": "scenario_02_taipan", "bot": "taipan", "attack_class": "chained_tool_abuse", "expected": "block", "severity": "S0"},
+    {"id": "scenario_03_apep", "bot": "apep", "attack_class": "context_poisoning_stale_memory", "expected": "block", "severity": "S1"},
+    {"id": "scenario_04_loop", "bot": "loop", "attack_class": "autonomous_loop_runaway", "expected": "block", "severity": "S1"},
+    {"id": "scenario_05_minos", "bot": "minos", "attack_class": "verdict_engine_adversarial_probe", "expected": "warn", "severity": "S2"},
+    {"id": "scenario_06_spectre", "bot": "spectre", "attack_class": "side_channel_context_inference", "expected": "block", "severity": "S0"},
+    {"id": "scenario_07_hydra", "bot": "hydra", "attack_class": "multi_session_coordinated_escalation", "expected": "block", "severity": "S0"},
+    {"id": "scenario_08_mimic", "bot": "mimic", "attack_class": "operator_impersonation", "expected": "block", "severity": "S0"},
+    {"id": "scenario_09_phantom", "bot": "phantom", "attack_class": "ghost_phase_injection", "expected": "block", "severity": "S1"},
+    {"id": "scenario_10_wraith", "bot": "wraith", "attack_class": "silent_state_mutation", "expected": "block", "severity": "S0"},
+    {"id": "scenario_11_nemesis", "bot": "nemesis", "attack_class": "validator_bypass_injection", "expected": "block", "severity": "S0"},
+    {"id": "scenario_12_vortex", "bot": "vortex", "attack_class": "context_window_exhaustion", "expected": "block", "severity": "S1"},
+    {"id": "scenario_13_crisol_probe", "bot": "crisol_probe", "attack_class": "bedrock_premature_unlock_probe", "expected": "block", "severity": "S1"}
+  ],
+  "circuit_breaker_state": {
+    "streak_before": 4,
+    "streak_after": 0,
+    "reset_trigger": "capacity_gate_pass (fixture_materialization)",
+    "next_governance_gate_now_unblocked": true
+  },
+  "what_did_not_change": [
+    "No bot execution authorized",
+    "No runtime mutation",
+    "No secrets access",
+    "No network beyond GitHub governance",
+    "No Bedrock",
+    "No product promotion",
+    "next_phase remains null"
+  ],
+  "next_gate_requirement": "INF-BOT-01 (bot_execution) — operator must authorize explicitly"
+}

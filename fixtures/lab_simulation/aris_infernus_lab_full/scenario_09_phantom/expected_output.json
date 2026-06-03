@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_09_phantom",
+  "expected_decision": "block",
+  "expected_flags": [
+    "phantom_phase",
+    "transition_table_injection",
+    "markdown_before_json_violation"
+  ],
+  "severity": "S1"
+}

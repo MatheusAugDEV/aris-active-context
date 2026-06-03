@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_02_taipan",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "fd93f5c6783f3824bb18d78f4a3b71b8ab01f1a29f7dac9980a003def2b02a34",
+  "status": "pending_execution"
+}

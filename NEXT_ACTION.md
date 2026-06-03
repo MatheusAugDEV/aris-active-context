@@ -3,7 +3,7 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 # Next Action
 
 - Next phase: `null`
-- next_phase resolves to `None` (no governance phase is named).
+- next_phase resolves to `None` (no phase is named).
 - Status: `awaiting_manual_operator_authorization`
 - Awaiting manual operator authorization.
 - Awaiting green CI (validate-active-context) confirmation as the only PASS authority.
@@ -11,8 +11,8 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Boundary
 
-No next phase is authorized. governance_gate_streak=4 means the validator immediately blocks any new governance-class gate (streak >= 3 triggers exit(1)). The only valid next gate is **INF-MAT-01** (class: fixture_materialization), which resets the streak to 0 on pass.
+INF-MAT-01 passed. 13 synthetic bot scenario fixtures materialized (65 files). governance_gate_streak reset to 0.
 
-No planning, review, runtime execution, fixture materialization, Bedrock execution, or productization may start until the operator authorizes INF-MAT-01 explicitly.
-
-The model cannot zero the streak manually. The model cannot open any gate with phase_class in {governance_repair, observability, transition_engine, contract, route}.
+No bot execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
+Next gate is INF-BOT-01 (bot_execution). Operator must authorize explicitly before any action.
+No planning, review, or execution may start until operator authorization is received.

@@ -37,3 +37,4 @@ AC-OBS-02 | ARIS Active-Context Observability & Drift Prevention Gate | pass | 2
 AC-TRANS-03 | ARIS Active-Context Transition Engine & Autonomous Loop Gate | pass | 2026-06-03
 AC-CONTRACT-04 | ARIS Active-Context Phase Contract Hardening Gate | pass | 2026-06-03
 AC-BREAK-05 | ARIS Active-Context Circuit Breaker Gate | pass | 2026-06-03
+INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass | 2026-06-03

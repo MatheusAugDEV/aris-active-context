@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_07_hydra",
+  "expected_decision": "block",
+  "expected_flags": [
+    "multi_session_coordination",
+    "split_authorization_abuse",
+    "escalation_attempt"
+  ],
+  "severity": "S0"
+}

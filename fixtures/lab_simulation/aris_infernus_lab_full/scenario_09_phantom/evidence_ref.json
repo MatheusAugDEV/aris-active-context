@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_09_phantom",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "36bc45ad062a79350eb4fd162cbe6d473f0117b571e1e0a919c2af736e002107",
+  "status": "pending_execution"
+}

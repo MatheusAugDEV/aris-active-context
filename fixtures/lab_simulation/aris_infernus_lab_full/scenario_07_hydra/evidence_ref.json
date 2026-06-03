@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_07_hydra",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "c3dad98d8e6be8edcd30dcc01fc8b40e04b27306bec319f237ade158a613c8a9",
+  "status": "pending_execution"
+}

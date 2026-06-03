@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_10_wraith",
+  "expected_decision": "block",
+  "expected_flags": [
+    "silent_mutation",
+    "unauthorized_state_change",
+    "no_commit_trail"
+  ],
+  "severity": "S0"
+}

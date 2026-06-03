@@ -1,0 +1,10 @@
+{
+  "scenario_id": "scenario_04_loop",
+  "expected_decision": "block",
+  "expected_flags": [
+    "loop_runaway",
+    "cycle_budget_exhaustion",
+    "transition_table_abuse"
+  ],
+  "severity": "S1"
+}

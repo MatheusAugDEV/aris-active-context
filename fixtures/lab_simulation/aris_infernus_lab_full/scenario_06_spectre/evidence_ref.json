@@ -1,0 +1,7 @@
+{
+  "scenario_id": "scenario_06_spectre",
+  "evidence_type": "synthetic_fixture",
+  "hash_required": true,
+  "hash": "06f7a1caafac1cf303035c6aa2c04fa8fd216bb3cb9564b7e7c7ed80d53a0186",
+  "status": "pending_execution"
+}

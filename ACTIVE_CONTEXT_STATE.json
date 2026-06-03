@@ -1,14 +1,18 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "AC-BREAK-05",
-  "current_phase_id": "AC-BREAK-05",
-  "previous_phase_id": "AC-CONTRACT-04",
+  "phase_id": "INF-MAT-01",
+  "current_phase_id": "INF-MAT-01",
+  "previous_phase_id": "AC-BREAK-05",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
-  "governance_gate_streak": 4,
+  "governance_gate_streak": 0,
   "seen_gate_signatures": [],
-  "phase_class": "circuit_breaker",
+  "phase_class": "fixture_materialization",
+  "fixture_materialization_allowed": true,
+  "fixture_materialization_executed": true,
+  "fixture_count": 65,
+  "scenario_count": 13,
   "last_boot_files_read": [],
   "auto_advance": {
     "enabled": true,
@@ -87,10 +91,10 @@
     "debian_harness_execution_authorized": false,
     "dependency_change_authorized": false,
     "external_llm_api_authorized": false,
+    "fixture_materialization_allowed": true,
     "frontend_backend_action_runtime_audio_mutation_authorized": false,
     "generic_action_runtime_activated": false,
     "host_filesystem_mutation_authorized": false,
-    "fixture_materialization_allowed": true,
     "network_authorized_scope": "github_active_context_governance_only",
     "package_installation_authorized": false,
     "package_manager_execution_authorized": false,
@@ -289,6 +293,12 @@
       "phase": "ARIS Active-Context Circuit Breaker Gate",
       "repair_type": "circuit_breaker",
       "status": "ac_break_05_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Full Fixture Materialization Gate",
+      "repair_type": "fixture_materialization",
+      "status": "inf_mat_01_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -322,10 +332,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Active-Context Circuit Breaker Gate",
+    "latest_completed_phase": "ARIS Infernus Full Fixture Materialization Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "ac_break_05_pass"
+    "status": "inf_mat_01_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -346,28 +356,29 @@
       "ARIS Active-Context Observability & Drift Prevention Gate",
       "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
       "ARIS Active-Context Phase Contract Hardening Gate",
-      "ARIS Active-Context Circuit Breaker Gate"
+      "ARIS Active-Context Circuit Breaker Gate",
+      "ARIS Infernus Full Fixture Materialization Gate"
     ],
-    "latest_execution_phase": "ARIS Active-Context Circuit Breaker Gate",
+    "latest_execution_phase": "ARIS Infernus Full Fixture Materialization Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Active-Context Phase Contract Hardening Gate"
+    "previous_execution_phase": "ARIS Active-Context Circuit Breaker Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Active-Context Phase Contract Hardening Gate",
+    "from_phase": "ARIS Active-Context Circuit Breaker Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Active-Context Circuit Breaker Gate",
-    "transition_type": "circuit_breaker_gate",
-    "verified_via": "local validation, mirror sync assertion, fixture absence assertion, gate TTL check, CI workflow run, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Infernus Full Fixture Materialization Gate",
+    "transition_type": "fixture_materialization_gate",
+    "verified_via": "local validation, mirror sync assertion, fixture count assertion (65 files / 13 dirs), evidence_ref hash population, CI workflow run, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Active-Context Circuit Breaker Gate",
+  "latest_completed_phase": "ARIS Infernus Full Fixture Materialization Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. governance_gate_streak=4 blocks any new governance gate. Only INF-MAT-01 (fixture_materialization) is valid as next gate. Operator must authorize explicitly.",
+    "deferred_phase_reason": "No next phase is authorized. INF-MAT-01 passed. governance_gate_streak reset to 0. Operator must authorize INF-BOT-01 explicitly.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -380,13 +391,12 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "AC-BREAK-05 passed as the circuit breaker gate.",
-      "governance_gate_streak=4: AC-REPAIR-01, AC-OBS-02, AC-TRANS-03, AC-CONTRACT-04 are 4 consecutive governance gates.",
-      "Any new governance gate is immediately blocked by the validator (streak >= 3).",
-      "Only valid next gate: INF-MAT-01 (fixture_materialization class).",
-      "Circuit breaker rule added to MANDATORY_READ_FIRST_RULES.md.",
-      "Streak decrement logic installed in validator: capacity gate pass resets streak to 0.",
-      "No next phase is authorized; await explicit manual operator authorization for INF-MAT-01."
+      "INF-MAT-01 passed as the first capacity gate.",
+      "13 synthetic bot fixture scenarios materialized on disk (65 files).",
+      "governance_gate_streak reset from 4 to 0 by this capacity gate pass.",
+      "All 13 evidence_ref.json files populated with SHA-256 hashes of input.json.",
+      "No bot execution authorized. No runtime mutation. No secrets access.",
+      "Next gate INF-BOT-01 (bot_execution) requires explicit operator authorization."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
@@ -438,6 +448,9 @@
     "artifacts/ac_break_05/decision.json",
     "artifacts/ac_break_05/summary.json",
     "artifacts/ac_break_05/report.md",
+    "artifacts/inf_mat_01/decision.json",
+    "artifacts/inf_mat_01/summary.json",
+    "artifacts/inf_mat_01/report.md",
     "tests/test_validate_active_context.py",
     "archive/tests/test_active_context_anti_corruption_validator.py",
     "ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md",
@@ -463,7 +476,20 @@
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_REVIEW_GATE.md",
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md",
-    "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md"
+    "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_READINESS_CLOSURE_GATE.md",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_01_quimera/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_02_taipan/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_03_apep/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_04_loop/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_05_minos/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_06_spectre/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_07_hydra/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_08_mimic/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_09_phantom/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_10_wraith/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_11_nemesis/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_12_vortex/input.json",
+    "fixtures/lab_simulation/aris_infernus_lab_full/scenario_13_crisol_probe/input.json"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -482,7 +508,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "ac_break_05_pass",
+  "status": "inf_mat_01_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -502,7 +528,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge; adds governance_gate_streak, seen_gate_signatures, and phase_class fields; sets streak=4 to immediately block any new governance gate until a capacity gate passes. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

@@ -2,12 +2,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Current State
 
-- Phase ID: `AC-BREAK-05`
-- Previous phase ID: `AC-CONTRACT-04`
-- Status: `ac_break_05_pass`
+- Phase ID: `INF-MAT-01`
+- Previous phase ID: `AC-BREAK-05`
+- Status: `inf_mat_01_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Active-Context Circuit Breaker Gate`
-- Previous execution phase: `ARIS Active-Context Phase Contract Hardening Gate`
+- Latest completed phase: `ARIS Infernus Full Fixture Materialization Gate`
+- Previous execution phase: `ARIS Active-Context Circuit Breaker Gate`
 - Current status: `awaiting_manual_operator_authorization_for_next_phase`
 - Next phase: `null`
 - next_phase_authorized_by_operator=`false`
@@ -17,10 +17,11 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Gate max cycles: `3`
 - Gate cycles used: `0`
 - Auto-advance enabled: `true`
-- governance_gate_streak: `4`
-- phase_class: `circuit_breaker`
-- Circuit breaker: ACTIVE — next governance gate is BLOCKED. Only INF-MAT-01 (fixture_materialization) is valid.
-- No next phase was opened, suggested, or named.
-- No runtime execution, no fixture materialization, and no bot/runtime mutation were authorized.
+- governance_gate_streak: `0`
+- phase_class: `fixture_materialization`
+- fixture_materialization_executed: `true`
+- fixture_count: `65`
+- scenario_count: `13`
+- Circuit breaker: RESET — governance_gate_streak reset from 4 to 0 by this capacity gate pass.
+- No runtime execution, no bot activation, and no runtime mutation were authorized.
 - Minimum deliverable enforcement is active through the validator and CI.
-- governance_gate_streak >= 3: validator exits(1) on any governance-class gate attempt.

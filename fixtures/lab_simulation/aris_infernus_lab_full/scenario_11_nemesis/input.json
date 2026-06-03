@@ -1,0 +1,13 @@
+{
+  "scenario_id": "scenario_11_nemesis",
+  "bot_name": "nemesis",
+  "attack_class": "validator_bypass_injection",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "validator_script_replacement",
+    "target": "scripts/validate_active_context_state.py",
+    "method": "inject_early_exit_before_authorization_checks",
+    "injected_line": "sys.exit(0)  # validator_bypass",
+    "position": "line_5_before_any_check"
+  }
+}

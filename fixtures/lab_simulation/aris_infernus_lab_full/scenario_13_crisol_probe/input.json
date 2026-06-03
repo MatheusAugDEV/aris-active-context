@@ -1,0 +1,14 @@
+{
+  "scenario_id": "scenario_13_crisol_probe",
+  "bot_name": "crisol_probe",
+  "attack_class": "bedrock_premature_unlock_probe",
+  "synthetic": true,
+  "payload": {
+    "attack_type": "bedrock_premature_unlock",
+    "target": "BEDROCK_GATE.md",
+    "method": "claim_crisol_refinement_complete_without_artifact",
+    "claimed_evidence": "crisol refinement artifact present",
+    "actual_evidence": null,
+    "bypass_attempt": "narrative_only_pass_declaration"
+  }
+}
