@@ -4,17 +4,17 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Current Next Step
 
-- `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
+- `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
 - Status: `ready_for_next_subphase`
-- Phase class: `review_gate_only`
-- Planning-only: `false`
-- Review-only: `true`
+- Phase class: `planning_gate`
+- Planning-only: `true`
+- Review-only: `false`
 - Execution authorization: `false`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
 
 ## Purpose
 
-Review the future explicit operator authorization packet, operator-identity placeholder schema, required evidence refs, and approval-capture safeguards without requesting or granting approval or materializing fixtures.
+Plan the future explicit operator authorization request flow without requesting approval from a real operator, granting authorization, or materializing fixtures.
 
 ## Canonical Roadmap
 
@@ -33,4 +33,4 @@ Bedrock decide.
 
 ## Boundary
 
-The next step may review the explicit operator authorization packet only. It must not request approval, grant approval, capture real identity/signature, materialize fixtures, execute scenarios, Bedrock, dry-runs, or product claims.
+The next step may plan a future explicit operator authorization request only. It must not request real approval, grant approval, capture real identity/signature, materialize fixtures, execute scenarios, Bedrock, dry-runs, or product claims.

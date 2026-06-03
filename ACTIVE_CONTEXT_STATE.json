@@ -1,7 +1,7 @@
 {
   "active_context_version": "2.0",
-  "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
-  "active_next_phase_class": "review_gate_only",
+  "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate",
+  "active_next_phase_class": "planning_gate",
   "additional_live_state_sources_allowed": false,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
@@ -208,6 +208,11 @@
       "decision": "pass",
       "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
       "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_planning_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
+      "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -235,17 +240,17 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
-    "active_next_phase_class": "review_gate_only",
-    "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate",
+    "active_next_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate",
+    "active_next_phase_class": "planning_gate",
+    "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
+    "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_planning_gate_pass"
+    "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_pass"
   },
-  "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate",
+  "current_status": "ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -261,26 +266,26 @@
       "ARIS Active-Context Anti-Corruption Hardening Gate",
       "Active Context Macro Roadmap Canonicalization Controlled Apply"
     ],
-    "latest_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
+    "latest_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate"
+    "previous_execution_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate",
+    "from_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
-    "transition_type": "fixture_materialization_explicit_operator_authorization_packet_planning_gate",
+    "to_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
+    "transition_type": "fixture_materialization_explicit_operator_authorization_packet_review_gate",
     "verified_via": "local validation, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
+  "latest_completed_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
-    "deferred_phase_reason": "The explicit operator authorization packet planning gate passed; the next review-only route must validate the future packet without requesting/granting authorization or materializing fixtures.",
+    "deferred_phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate",
+    "deferred_phase_reason": "The explicit operator authorization packet review gate passed; the next planning-only route may define a future request flow without requesting/granting approval or materializing fixtures.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -295,18 +300,18 @@
     "notes": [
       "The canonical roadmap is: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUX Lab -> Crisol FULL -> Bedrock Gate -> Productization only if Bedrock permits.",
       "BenchUX Lab is a future product-reality macroblock only and is not active now.",
-      "The explicit operator authorization packet planning gate passed; the next route may review the packet only.",
-      "packet_status_default remains not_requested, operator_authorization_requested_now remains false, and operator_authorization_granted_now remains false.",
-      "operator_identity_placeholder_only remains true, operator_identity_captured_now remains false, and operator_signature_captured_now remains false.",
-      "real_apply_authorized remains false, apply_execution_allowed remains false, and fixture_materialization_allowed remains false.",
-      "No real fixture files were materialized in this phase; planned_fixture_real_file_count_now remains zero and proof_result remains no_real_fixture_files_detected.",
+      "The explicit operator authorization packet review gate passed; the next route may only plan a future request.",
+      "packet_reviewed remains true, packet_review_passed remains true, and packet_actionable remains false.",
+      "authorization_requested_now remains false, authorization_granted_now remains false, operator_identity_captured_now remains false, and operator_signature_captured_now remains false.",
+      "real_apply_authorized remains false, real_dry_run_execution_authorized remains false, apply_execution_allowed remains false, and fixture_materialization_allowed remains false.",
+      "No real fixture tree or real fixture files were created in this phase; planned_fixture_real_file_count_now remains zero and proof_result remains no_real_fixture_files_detected.",
       "Runtime, frontend, backend, action-runtime, audio, bot execution, attack execution, real apply, real dry-run, BenchUX execution, productization, and Bedrock execution remain blocked."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
-    "phase_class": "review_gate_only",
-    "planning_only": false,
-    "review_only": true,
+    "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate",
+    "phase_class": "planning_gate",
+    "planning_only": true,
+    "review_only": false,
     "status": "ready_for_next_subphase"
   },
   "required_files_for_transition": [
@@ -349,7 +354,8 @@
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_PLANNING_GATE.md",
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md",
     "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md",
-    "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_PLANNING_GATE.md"
+    "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_PLANNING_GATE.md",
+    "ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_REVIEW_GATE.md"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -368,7 +374,7 @@
     ]
   },
   "schema_version": "2.1",
-  "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_planning_gate_pass",
+  "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -386,7 +392,7 @@
     "current_schema_version": "2.1",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
-    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the fixture materialization readiness closure gate to the explicit operator authorization packet planning gate after materializing the future-only operator packet contract, placeholder identity schema, evidence requirements, approval safeguards, and non-bypassability constraints, while preserving BenchUX Lab as a future roadmap macroblock.",
+    "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization packet planning gate to the explicit operator authorization packet review gate after re-validating the packet as non-actionable, non-approving, non-executing, and non-materializing while preserving BenchUX Lab as a future roadmap macroblock.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }
