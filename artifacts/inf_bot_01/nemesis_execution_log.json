@@ -1,0 +1,16 @@
+{
+  "bot_id": "nemesis",
+  "scenario_id": "scenario_11_nemesis",
+  "mode": "synthetic_deterministic_execution",
+  "runtime_execution": false,
+  "autonomous_execution": false,
+  "network_used": false,
+  "secrets_accessed": false,
+  "decision": "block",
+  "reason": "validator_bypass_injection_detected",
+  "input_sha256": "c1a4dca4d978f306996d335682e7988c0c89fe1d0665ad1fd6e7b0b75d19b40b",
+  "expected_output_sha256": "a0fb13f305e866d622731233cccab340331f40006c36eadf44cd3ef08657b932",
+  "evidence_ref_sha256": "0cba25cc735dd759602f0c78f676f6fce7791fb31728b512ef6deaca9eae922e",
+  "log_sha256": "309fb1a8bdd2bf47cb77219d951987b8f3ac2a211a556fdad30e700f9477735f",
+  "created_at": "2026-06-03T00:00:00-03:00"
+}

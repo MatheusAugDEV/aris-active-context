@@ -7,15 +7,20 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Full Fixture Materialization Gate`
-- Previous execution phase: `ARIS Active-Context Circuit Breaker Gate`
+- Latest completed phase: `ARIS Infernus Nemesis Synthetic Bot Execution Log Gate`
+- Previous execution phase: `ARIS Infernus Full Fixture Materialization Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- governance_gate_streak: `0` — reset by INF-MAT-01 capacity gate pass
+- governance_gate_streak: `0` — preserved by INF-BOT-01 capacity gate pass
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
+- bot_execution_executed: `true` (1 deterministic nemesis log on disk)
 
 ## Active Artifacts
 
+- `artifacts/inf_bot_01/decision.json`
+- `artifacts/inf_bot_01/summary.json`
+- `artifacts/inf_bot_01/report.md`
+- `artifacts/inf_bot_01/nemesis_execution_log.json`
 - `artifacts/inf_mat_01/decision.json`
 - `artifacts/inf_mat_01/summary.json`
 - `artifacts/inf_mat_01/report.md`
@@ -43,6 +48,6 @@ validate_active_context.yml runs on every push and PR to main.
 
 ## Non-Authorization
 
-- No next phase is authorized until explicit manual operator authorization for INF-BOT-01.
-- No bot execution, runtime mutation, secrets access, Bedrock, or product promotion.
+- No next phase is authorized until explicit manual operator authorization for INF-MINOS-01.
+- No further bot execution, runtime mutation, secrets access, Bedrock, or product promotion.
 - Circuit breaker streak reset to 0. Governance gates unblocked but no phase is open.

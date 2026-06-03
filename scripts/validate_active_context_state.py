@@ -11,11 +11,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Infernus Full Fixture Materialization Gate"
-EXPECTED_PHASE_ID = "INF-MAT-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Circuit Breaker Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "AC-BREAK-05"
-EXPECTED_STATUS = "inf_mat_01_pass"
+EXPECTED_PHASE = "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate"
+EXPECTED_PHASE_ID = "INF-BOT-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Full Fixture Materialization Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-MAT-01"
+EXPECTED_STATUS = "inf_bot_01_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -37,6 +37,14 @@ PHASE_DELIVERABLES = {
             "fixtures/lab_simulation/aris_infernus_lab_full"
         ).iterdir())) >= 13
     ),
+    "INF-BOT-01": lambda: (
+        pathlib.Path("artifacts/inf_bot_01/nemesis_execution_log.json").exists()
+        and bool(
+            json.loads(
+                pathlib.Path("artifacts/inf_bot_01/nemesis_execution_log.json").read_text(encoding="utf-8")
+            ).get("log_sha256")
+        )
+    )
 }
 
 REQUIRED_BOOT_FILES = [
@@ -263,6 +271,45 @@ def _check_fixture_materialization(state: dict[str, Any]) -> None:
         sys.exit(1)
 
 
+def _check_bot_execution_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("bot_execution_executed") is True, "bot_execution_executed must be true")
+    _require(state.get("bot_execution_log_count") == 1, "bot_execution_log_count must be 1")
+
+    artifacts_root = ROOT / "artifacts/inf_bot_01"
+    _require(artifacts_root.exists(), "artifacts/inf_bot_01 must exist")
+
+    log_paths = sorted(artifacts_root.glob("*execution_log.json"))
+    _require(len(log_paths) == 1, f"expected exactly 1 bot execution log, found {len(log_paths)}")
+    log_path = log_paths[0]
+    _require(log_path.name == "nemesis_execution_log.json", "unexpected bot execution log filename")
+
+    log_data = _load_json(log_path)
+    _require(log_data.get("bot_id") == "nemesis", "bot_id must be nemesis")
+    _require(log_data.get("scenario_id") == "scenario_11_nemesis", "scenario_id must be scenario_11_nemesis")
+    _require(log_data.get("mode") == "synthetic_deterministic_execution", "mode must be synthetic_deterministic_execution")
+    _require(log_data.get("runtime_execution") is False, "runtime_execution must be false")
+    _require(log_data.get("autonomous_execution") is False, "autonomous_execution must be false")
+    _require(log_data.get("network_used") is False, "network_used must be false")
+    _require(log_data.get("secrets_accessed") is False, "secrets_accessed must be false")
+    _require(log_data.get("decision") == "block", "bot execution decision must be block")
+    _require(log_data.get("reason") == "validator_bypass_injection_detected", "unexpected bot execution reason")
+    _require(bool(log_data.get("log_sha256")), "log_sha256 must be non-empty")
+    actual_log_sha256 = hashlib.sha256(log_path.read_bytes()).hexdigest()
+
+    decision_path = artifacts_root / "decision.json"
+    _require(decision_path.exists(), "artifacts/inf_bot_01/decision.json must exist")
+    decision_data = _load_json(decision_path)
+    _require(decision_data.get("phase_id") == "INF-BOT-01", "decision.json phase_id mismatch")
+    _require(decision_data.get("phase_class") == "bot_execution", "decision.json phase_class mismatch")
+    _require(decision_data.get("actual_decision") == "block", "decision.json actual_decision must be block")
+    _require(decision_data.get("expected_decision") == "block", "decision.json expected_decision must be block")
+    _require(decision_data.get("runtime_execution") is False, "decision.json runtime_execution must be false")
+    _require(decision_data.get("autonomous_execution") is False, "decision.json autonomous_execution must be false")
+    _require(decision_data.get("network_used") is False, "decision.json network_used must be false")
+    _require(decision_data.get("secrets_accessed") is False, "decision.json secrets_accessed must be false")
+    _require(decision_data.get("execution_log_sha256") == actual_log_sha256, "decision.json execution_log_sha256 mismatch")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -297,8 +344,10 @@ def main() -> None:
     sig = _check_gate_signature(state)
     _check_cycle_nudge(state)
 
-    # INF-MAT-01 specific checks
+    # INF-MAT-01 baseline must remain true for INF-BOT-01.
     _check_fixture_materialization(state)
+    # INF-BOT-01 specific checks
+    _check_bot_execution_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -322,7 +371,7 @@ def main() -> None:
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
 
-    # Authorization: fixture_materialization_allowed must be true; all others false
+    # Authorization: fixture_materialization_allowed remains true; all others false.
     auth = state["authorization"]
     for key, value in auth.items():
         if key == "network_authorized_scope":
@@ -346,6 +395,8 @@ def main() -> None:
         "Gate max cycles: `3`",
         "governance_gate_streak: `0`",
         "fixture_materialization_executed: `true`",
+        "bot_execution_executed: `true`",
+        "bot_execution_log_count: `1`",
         "scenario_count: `13`",
     )
     _mirror_contains(
@@ -364,13 +415,14 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/inf_mat_01/decision.json",
-        "artifacts/inf_mat_01/summary.json",
-        "artifacts/inf_mat_01/report.md",
+        "artifacts/inf_bot_01/decision.json",
+        "artifacts/inf_bot_01/summary.json",
+        "artifacts/inf_bot_01/report.md",
+        "artifacts/inf_bot_01/nemesis_execution_log.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass",
+        "INF-BOT-01 | ARIS Infernus Nemesis Synthetic Bot Execution Log Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -430,6 +482,8 @@ def main() -> None:
         "phase_class": state.get("phase_class", ""),
         "fixture_count": state.get("fixture_count", 0),
         "scenario_count": state.get("scenario_count", 0),
+        "bot_execution_executed": state.get("bot_execution_executed", False),
+        "bot_execution_log_count": state.get("bot_execution_log_count", 0),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,
