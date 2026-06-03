@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
-- Route class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate`
+- Route class: `planning_gate`
 
 ## Canonical Files
 
@@ -25,10 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_PLANNING_GATE.md` records the planning-only request result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate_decision.json` records the planning decision artifact.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_plan.json` records the future request contract.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_matrix.json` records the planning criteria matrix and non-materialization probe.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_REVIEW_GATE.md` records the review-only request review result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate.json` records the review decision artifact.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate_matrix.json` records the review criteria matrix, artifact-name resolution, and non-materialization probe.
 
 ## Future Planning References
 

@@ -4,13 +4,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 ## Live Snapshot
 
-- Status: `aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate_pass`
+- Status: `aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
-- Current status: `ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
-- Active next phase class: `review_gate_only`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate`
+- Current status: `ready_for_aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate`
+- Active next phase class: `planning_gate`
 - Next phase execution authorization: `False`
 - Real dry-run execution authorized now: `False`
 - Real apply authorized: `False`
@@ -30,14 +30,15 @@ Crisol refina.
 Bedrock decide.
 ```
 
-## Explicit Operator Authorization Request Planning Gate Result
+## Explicit Operator Authorization Request Review Gate Result
 
-- The future explicit operator authorization request flow was planned without sending a request.
+- The future explicit operator authorization request plan was reviewed without becoming actionable.
+- `request_reviewed=true`, `request_review_passed=true`, and `request_actionable=false` remain explicit.
 - `request_status_default=not_requested`, `request_delivered_now=false`, and `real_operator_contacted_now=false` remain explicit.
 - `authorization_requested_now=false`, `authorization_granted_now=false`, `operator_identity_captured_now=false`, and `operator_signature_captured_now=false` remain explicit.
 - `real_apply_authorized=false`, `real_dry_run_execution_authorized=false`, `apply_execution_allowed=false`, and `fixture_materialization_allowed=false` remain explicit.
 - No real fixture tree or real fixture files were created; `planned_fixture_real_file_count_now` remains zero and the proof result remains `no_real_fixture_files_detected`.
-- The next route is `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate` with `review_gate_only` semantics.
+- The next route is `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate` with `planning_gate` semantics.
 
 ## BenchUX Roadmap Note
 
@@ -47,8 +48,7 @@ Bedrock decide.
 ## Non-Authorization
 
 - No schema authorizes execution.
-- No request delivery or approval grant.
-- No real operator contact.
+- No real request delivery or approval grant.
 - No real fixture materialization.
 - No Bedrock execution or Bedrock PASS.
 - No bot implementation or execution.
