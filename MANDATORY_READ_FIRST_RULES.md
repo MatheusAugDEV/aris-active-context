@@ -98,6 +98,15 @@ Se phase_class está em blocked_phase_classes:
 - next_phase_authorized_by_operator: false
 - PARAR e aguardar autorização explícita do operador
 
+## REGRA DE ENTREGÁVEL MÍNIMO
+
+Todo gate com decision=pass deve satisfazer o minimum_deliverable
+definido na Transition Table antes de avançar.
+Entregável mínimo é verificado pelo validator no CI.
+Gate que declara pass sem entregável mínimo no disco é BLOQUEADO.
+Documentar que algo não existe não é entregável.
+Prompt_only não isenta o gate de produzir capacidade real via Codex.
+
 ## Prompt and Codex rules
 
 Every Codex prompt must:

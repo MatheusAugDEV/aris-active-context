@@ -4,14 +4,17 @@ state = json.loads(pathlib.Path("ACTIVE_CONTEXT_STATE.json").read_text())
 
 checks = {
     "CURRENT_STATE.md": [
-        ("current_phase", state.get("current_phase", "")),
+        ("current_phase_id", state.get("current_phase_id", "")),
         ("decision", state.get("decision", "")),
     ],
     "NEXT_ACTION.md": [
         ("next_phase", str(state.get("next_phase", "null"))),
     ],
     "DECISION_LOCKS.md": [
-        ("authorization_granted", str(state.get("authorization", {}).get("authorization_granted", False)).lower()),
+        (
+            "next_phase_authorized_by_operator",
+            str(state.get("next_phase_authorized_by_operator", False)).lower(),
+        ),
     ],
 }
 

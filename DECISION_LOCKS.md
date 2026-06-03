@@ -2,8 +2,8 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 # Decision Locks
 
-- Latest completed phase: `ARIS Active-Context Transition Engine & Autonomous Loop Gate`
-- Status: `ac_trans_03_pass`
+- Latest completed phase: `ARIS Active-Context Phase Contract Hardening Gate`
+- Status: `ac_contract_04_pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
 - anti_proliferation_rule_active=true
@@ -13,6 +13,7 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - No next phase is authorized.
 - No runtime execution, fixture materialization, bot activity, or runtime mutation is authorized.
+- minimum_deliverable enforcement is active for pass decisions that declare a gated deliverable.
 
 ## Gate cycle lock
 

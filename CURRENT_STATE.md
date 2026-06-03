@@ -2,12 +2,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Current State
 
-- Phase ID: `AC-TRANS-03`
-- Previous phase ID: `AC-OBS-02`
-- Status: `ac_trans_03_pass`
+- Phase ID: `AC-CONTRACT-04`
+- Previous phase ID: `AC-TRANS-03`
+- Status: `ac_contract_04_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Active-Context Transition Engine & Autonomous Loop Gate`
-- Previous execution phase: `ARIS Active-Context Observability & Drift Prevention Gate`
+- Latest completed phase: `ARIS Active-Context Phase Contract Hardening Gate`
+- Previous execution phase: `ARIS Active-Context Transition Engine & Autonomous Loop Gate`
 - Current status: `awaiting_manual_operator_authorization_for_next_phase`
 - Next phase: `null`
 - next_phase_authorized_by_operator=`false`
@@ -19,3 +19,4 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - Auto-advance enabled: `true`
 - No next phase was opened, suggested, or named.
 - No runtime execution, no fixture materialization, and no bot/runtime mutation were authorized.
+- Minimum deliverable enforcement is active through the validator and CI.

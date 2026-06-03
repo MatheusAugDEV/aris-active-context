@@ -10,14 +10,23 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 
-EXPECTED_PHASE = "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
-EXPECTED_PHASE_ID = "AC-TRANS-03"
-EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Observability & Drift Prevention Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "AC-OBS-02"
-EXPECTED_STATUS = "ac_trans_03_pass"
+EXPECTED_PHASE = "ARIS Active-Context Phase Contract Hardening Gate"
+EXPECTED_PHASE_ID = "AC-CONTRACT-04"
+EXPECTED_PREVIOUS_PHASE = "ARIS Active-Context Transition Engine & Autonomous Loop Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "AC-TRANS-03"
+EXPECTED_STATUS = "ac_contract_04_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
+
+PHASE_DELIVERABLES = {
+    "INF-MAT-01": lambda: (
+        pathlib.Path("fixtures/lab_simulation/aris_infernus_lab_full").exists()
+        and len(list(pathlib.Path(
+            "fixtures/lab_simulation/aris_infernus_lab_full"
+        ).iterdir())) >= 13
+    ),
+}
 
 REQUIRED_BOOT_FILES = [
     "ACTIVE_CONTEXT_STATE.json",
@@ -144,6 +153,18 @@ def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     _require(found, f"BLOCK: next_phase '{next_phase}' not in Transition Table")
 
 
+def _check_minimum_deliverable(state: dict[str, Any]) -> None:
+    phase_id = state.get("current_phase_id", "")
+    decision = state.get("decision", "")
+    if decision != "pass":
+        return
+    if phase_id not in PHASE_DELIVERABLES:
+        return
+    if not PHASE_DELIVERABLES[phase_id]():
+        print(f"BLOCK: {phase_id} declared pass but minimum_deliverable not met")
+        sys.exit(1)
+
+
 def _warn_boot_receipt(state: dict[str, Any]) -> None:
     boot = state.get("last_boot_files_read", [])
     if not isinstance(boot, list):
@@ -180,6 +201,7 @@ def main() -> None:
     _check_gate_ttl(state)
     _check_auto_advance(state)
     _check_next_phase_in_transition_table(state)
+    _check_minimum_deliverable(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -238,13 +260,13 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/ac_trans_03/decision.json",
-        "artifacts/ac_trans_03/summary.json",
-        "artifacts/ac_trans_03/report.md",
+        "artifacts/ac_contract_04/decision.json",
+        "artifacts/ac_contract_04/summary.json",
+        "artifacts/ac_contract_04/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "AC-TRANS-03 | ARIS Active-Context Transition Engine & Autonomous Loop Gate | pass",
+        "AC-CONTRACT-04 | ARIS Active-Context Phase Contract Hardening Gate | pass",
         EXPECTED_PREVIOUS_PHASE_ID,
     )
     _mirror_contains(
@@ -266,6 +288,7 @@ def main() -> None:
         "Planning e Review do mesmo passo colapsam em UM gate",
         "REGRA DE CICLO DE GATE",
         "REGRA DE AUTO-ADVANCE",
+        "REGRA DE ENTREGÁVEL MÍNIMO",
         "REGRA DE TRANSIÇÃO",
     )
     _mirror_contains(
