@@ -4,13 +4,13 @@ This file is a historical ledger only. Live routing always comes from `ACTIVE_CO
 
 ## Latest Canonical Transition
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
-- Last transition from: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
-- Status: `aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_pass`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
+- Last transition from: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
+- Status: `aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_planning_gate_pass`
 - Decision: `pass`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
-- Active next phase class: `planning_gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
+- Active next phase class: `review_gate_only`
 
 ## Canonical Roadmap Ledger Note
 
@@ -33,6 +33,6 @@ Bedrock decide.
 
 This ledger note does not activate BenchUX now and does not authorize productization, pilot, commercial readiness, production readiness, real dry-run, real apply, Bedrock execution, runtime mutation, or product promotion.
 
-## Fixture Materialization Readiness Closure Gate Note
+## Explicit Operator Authorization Packet Planning Gate Note
 
-`ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate` consolidated the full fixture materialization chain, confirmed no real apply or materialization occurred, and kept readiness explicitly non-authorizing.
+`ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate` defined the future-only explicit operator authorization packet, identity placeholders, approval requirements, validity rules, invalidation rules, and non-bypassability conditions while keeping authorization and materialization blocked.

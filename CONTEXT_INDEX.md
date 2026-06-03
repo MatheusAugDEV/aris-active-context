@@ -4,10 +4,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
-- Route class: `planning_gate`
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate`
+- Route class: `review_gate_only`
 
 ## Canonical Files
 
@@ -25,9 +25,9 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md` records the readiness closure result.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_coverage_matrix.json` records the consolidated readiness chain, proof status, and closure criteria.
-- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_gap_list.json` records blocking gaps, if any.
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_PLANNING_GATE.md` records the planning-only explicit operator authorization packet phase result.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_plan.json` records the future-only packet contract, placeholder operator identity schema, and approval-capture safeguards.
+- `artifacts/lab_simulation/aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_matrix.json` records the packet matrix, next review route, and non-authorization attestation.
 
 ## Future Planning References
 
