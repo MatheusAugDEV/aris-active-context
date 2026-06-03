@@ -12,12 +12,13 @@ PROJECT_ROOT = ROOT.parent
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
 ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_project_evidence_2026_06_03.json"
+ACB_CORE_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_02_project_evidence_2026_06_03.json"
 
-EXPECTED_PHASE = "ARIS Capability Build Dependency Foundation Gate"
-EXPECTED_PHASE_ID = "ACB-CORE-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Purgatorium Finding Record Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "PURG-01"
-EXPECTED_STATUS = "acb_core_01_pass"
+EXPECTED_PHASE = "ARIS Capability Build Core Public API Baseline Gate"
+EXPECTED_PHASE_ID = "ACB-CORE-02"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Dependency Foundation Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CORE-01"
+EXPECTED_STATUS = "acb_core_02_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -79,6 +80,22 @@ PHASE_DELIVERABLES = {
                 "pip_audit_gate_exists",
                 "sbom_exists",
                 "uv_bootstrap_exists",
+            ]
+        )
+    ),
+    "ACB-CORE-02": lambda: (
+        ACB_CORE_02_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CORE_02_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CORE_02_EVIDENCE_PATH).get("core_public_api_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CORE_02_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "research_basis_exists",
+                "snapshot_before_exists",
+                "snapshot_after_exists",
+                "import_stability_report_exists",
+                "explicit_all_created_or_verified",
+                "protocols_created_or_verified",
             ]
         )
     )
@@ -391,6 +408,114 @@ def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
     _require("pip-audit" in workflow_text, "supply-chain workflow must include pip-audit gate")
 
 
+def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CORE_02_EVIDENCE_PATH.exists(), "missing ACB-CORE-02 evidence artifact in active-context")
+
+    evidence_data = _load_json(ACB_CORE_02_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CORE-02", "ACB-CORE-02 evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CORE-02 evidence repository mismatch")
+    _require(
+        evidence_data.get("project_sha") == "46910e0fda3fc64a19818ad80f39813227b53922",
+        "ACB-CORE-02 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("core_public_api_ci", {}).get("conclusion") == "success",
+        "ACB-CORE-02 evidence core-public-api CI must be success",
+    )
+    _require(
+        evidence_data.get("core_public_api_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26917991639",
+        "ACB-CORE-02 evidence core-public-api CI URL mismatch",
+    )
+    for key in [
+        "research_basis_exists",
+        "snapshot_before_exists",
+        "snapshot_after_exists",
+        "import_stability_report_exists",
+        "explicit_all_created_or_verified",
+        "protocols_created_or_verified",
+    ]:
+        _require(
+            evidence_data.get("deliverables", {}).get(key) is True,
+            f"ACB-CORE-02 evidence deliverable {key} must be true",
+        )
+    _require(
+        evidence_data.get("local_validation", {}).get("pass_criteria_met") is True,
+        "ACB-CORE-02 evidence pass_criteria_met must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("package_root_detected") == "src/aris",
+        "ACB-CORE-02 evidence package_root_detected mismatch",
+    )
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_core_02"
+    required_paths = [
+        PROJECT_ROOT / "src" / "aris" / "__init__.py",
+        PROJECT_ROOT / "src" / "aris" / "contracts.py",
+        PROJECT_ROOT / ".github" / "workflows" / "core-public-api-baseline.yml",
+        PROJECT_ROOT / "scripts" / "run_acb_core_02_public_api_snapshot.py",
+        PROJECT_ROOT / "tests" / "test_acb_core_02_public_api.py",
+        artifacts_root / "research_basis.json",
+        artifacts_root / "public_api_snapshot_before.json",
+        artifacts_root / "public_api_snapshot_after.json",
+        artifacts_root / "import_stability_report.json",
+        artifacts_root / "decision.json",
+        artifacts_root / "summary.json",
+        artifacts_root / "report.md",
+    ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CORE-02 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
+
+    decision_data = _load_json(artifacts_root / "decision.json")
+    summary_data = _load_json(artifacts_root / "summary.json")
+    snapshot_before = _load_json(artifacts_root / "public_api_snapshot_before.json")
+    snapshot_after = _load_json(artifacts_root / "public_api_snapshot_after.json")
+    report_data = _load_json(artifacts_root / "import_stability_report.json")
+    init_text = (PROJECT_ROOT / "src" / "aris" / "__init__.py").read_text(encoding="utf-8")
+    contracts_text = (PROJECT_ROOT / "src" / "aris" / "contracts.py").read_text(encoding="utf-8")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "core-public-api-baseline.yml").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CORE-02", "ACB-CORE-02 decision phase_id mismatch")
+    _require(decision_data.get("previous_phase_id") == "ACB-CORE-01", "ACB-CORE-02 decision previous_phase_id mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB-CORE-02 decision must be pass")
+    _require(decision_data.get("status") == "acb_core_02_pass", "ACB-CORE-02 decision status mismatch")
+    _require(decision_data.get("phase_class") == "capability_build", "ACB-CORE-02 decision phase_class mismatch")
+    _require(decision_data.get("explicit_all_created_or_verified") is True, "ACB-CORE-02 decision explicit_all_created_or_verified must be true")
+    _require(decision_data.get("protocols_created_or_verified") is True, "ACB-CORE-02 decision protocols_created_or_verified must be true")
+    _require(decision_data.get("import_smoke_tests_passed") is True, "ACB-CORE-02 decision import_smoke_tests_passed must be true")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB-CORE-02 decision pass_criteria_met must be true")
+    _require(decision_data.get("next_phase") is None, "ACB-CORE-02 decision next_phase must be null")
+    _require(decision_data.get("next_phase_authorized_by_operator") is False, "ACB-CORE-02 decision must not authorize next phase")
+
+    _require(summary_data.get("phase_id") == "ACB-CORE-02", "ACB-CORE-02 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "ACB-CORE-02 summary decision must be pass")
+    _require(summary_data.get("status") == "acb_core_02_pass", "ACB-CORE-02 summary status mismatch")
+    _require(summary_data.get("pass_criteria_met") is True, "ACB-CORE-02 summary pass_criteria_met must be true")
+    _require(summary_data.get("minimum_deliverable_met") is True, "ACB-CORE-02 summary minimum_deliverable_met must be true")
+
+    _require(snapshot_before.get("package_root_detected") == "src/aris", "ACB-CORE-02 snapshot_before package_root_detected mismatch")
+    _require(snapshot_after.get("package_root_detected") == "src/aris", "ACB-CORE-02 snapshot_after package_root_detected mismatch")
+    _require(snapshot_before.get("exported_all_symbols") == [], "ACB-CORE-02 snapshot_before exported_all_symbols must be empty")
+    _require(bool(snapshot_after.get("exported_all_symbols")), "ACB-CORE-02 snapshot_after exported_all_symbols must be non-empty")
+    _require("contracts" in snapshot_after.get("exported_all_symbols", []), "ACB-CORE-02 snapshot_after must export contracts")
+    _require("CommandPolicyProtocol" in snapshot_after.get("exported_all_symbols", []), "ACB-CORE-02 snapshot_after must export Protocols")
+
+    _require(report_data.get("import_smoke_tests_executed") is True, "ACB-CORE-02 import report must execute smoke tests")
+    _require(report_data.get("import_smoke_tests_passed") is True, "ACB-CORE-02 import report must pass smoke tests")
+    _require(report_data.get("pass_criteria_met") is True, "ACB-CORE-02 import report pass_criteria_met must be true")
+    _require("contracts" in report_data.get("modules_tested", []), "ACB-CORE-02 import report must test contracts")
+
+    _require("__all__" in init_text, "ACB-CORE-02 root __init__ must define __all__")
+    _require("Protocol" in contracts_text, "ACB-CORE-02 contracts must define Protocols")
+    _require("python -m pip install pytest" in workflow_text, "ACB-CORE-02 workflow must install pytest")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -660,8 +785,10 @@ def main() -> None:
     _check_minos_verdict_artifacts(state)
     # PURG-01 baseline must remain true for ACB-CORE-01.
     _check_purgatorium_artifacts(state)
-    # ACB-CORE-01 specific checks
+    # ACB-CORE-01 baseline must remain true for ACB-CORE-02.
     _check_acb_core_01_project_artifacts(state)
+    # ACB-CORE-02 specific checks
+    _check_acb_core_02_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -716,14 +843,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_core_01/`",
+        "External deliverables registered from `../artifacts/acb_core_02/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
         "Awaiting manual operator authorization.",
         "Execution authorization: `false`",
-        "ACB-CORE-02 remains closed.",
+        "ACB-CAP-01 remains closed.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -732,27 +859,28 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "ACB-CORE-02 remains closed pending explicit operator authorization.",
+        "ACB-CAP-01 remains closed pending explicit operator authorization.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
-        "artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json",
-        "../artifacts/acb_core_01/decision.json",
-        "../artifacts/acb_core_01/summary.json",
-        "../artifacts/acb_core_01/report.md",
-        "../artifacts/acb_core_01/sbom.cdx.json",
+        "artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json",
+        "../artifacts/acb_core_02/decision.json",
+        "../artifacts/acb_core_02/summary.json",
+        "../artifacts/acb_core_02/report.md",
+        "../artifacts/acb_core_02/public_api_snapshot_after.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CORE-02 | ARIS Capability Build Core Public API Baseline Gate | pass",
         "ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass",
-        "PURG-01 | ARIS Purgatorium Finding Record Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "uv_lock_created_or_verified: `true`",
-        "artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json",
+        "artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json",
+        "explicit_all_created_or_verified: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
@@ -760,7 +888,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Operator authorization required before any new phase.",
-        "`ACB-CORE-02` is not opened automatically after `ACB-CORE-01`.",
+        "`ACB-CAP-01` is not opened automatically after `ACB-CORE-02`.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -813,6 +941,7 @@ def main() -> None:
         "minos_verdict_count": state.get("minos_verdict_count", 0),
         "uv_lock_exists": (PROJECT_ROOT / "uv.lock").exists(),
         "acb_core_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_01" / "decision.json").exists(),
+        "acb_core_02_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_02" / "decision.json").exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

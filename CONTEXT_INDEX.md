@@ -2,11 +2,29 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
+- Latest completed phase: `ARIS Capability Build Core Public API Baseline Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
+
+- `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`
+- `../artifacts/acb_core_02/decision.json`
+- `../artifacts/acb_core_02/summary.json`
+- `../artifacts/acb_core_02/report.md`
+- `../artifacts/acb_core_02/research_basis.json`
+- `../artifacts/acb_core_02/public_api_snapshot_before.json`
+- `../artifacts/acb_core_02/public_api_snapshot_after.json`
+- `../artifacts/acb_core_02/import_stability_report.json`
+- `../.github/workflows/core-public-api-baseline.yml`
+- `../scripts/run_acb_core_02_public_api_snapshot.py`
+- `../tests/test_acb_core_02_public_api.py`
+- `../src/aris/__init__.py`
+- `../src/aris/contracts.py`
+- `scripts/validate_active_context_state.py`
+- `tests/test_validate_active_context.py`
+
+## Prior Phase Artifacts
 
 - `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_01/decision.json`
@@ -21,11 +39,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `../tests/test_acb_core_01_supply_chain.py`
 - `../pyproject.toml`
 - `../uv.lock`
-- `scripts/validate_active_context_state.py`
-- `tests/test_validate_active_context.py`
-
-## Prior Phase Artifacts
-
 - `artifacts/purg_01/decision.json`
 - `artifacts/purg_01/summary.json`
 - `artifacts/purg_01/report.md`

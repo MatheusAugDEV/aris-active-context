@@ -7,11 +7,11 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
-- Previous execution phase: `ARIS Purgatorium Finding Record Gate`
+- Latest completed phase: `ARIS Capability Build Core Public API Baseline Gate`
+- Previous execution phase: `ARIS Capability Build Dependency Foundation Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- governance_gate_streak: `0` — preserved by INF-BOT-01 capacity gate pass
+- governance_gate_streak: `0` — preserved by ACB-CORE-02 capability-build pass
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
 - bot_execution_executed: `true` (1 deterministic nemesis log on disk)
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk)
@@ -19,6 +19,9 @@
 - uv_lock_created_or_verified: `true` (`../uv.lock`)
 - pip_audit_gate_created_or_verified: `true` (`../.github/workflows/supply-chain-baseline.yml`)
 - cyclonedx_sbom_created_or_verified: `true` (`../artifacts/acb_core_01/sbom.cdx.json`)
+- explicit_all_created_or_verified: `true` (`../src/aris/__init__.py`)
+- protocols_created_or_verified: `true` (`../src/aris/contracts.py`)
+- import_smoke_tests_passed: `true` (`../artifacts/acb_core_02/import_stability_report.json`)
 
 ## Active Artifacts
 
@@ -26,6 +29,19 @@
 - `artifacts/purg_01/summary.json`
 - `artifacts/purg_01/report.md`
 - `artifacts/purg_01/finding_nemesis_validator_bypass.json`
+- `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`
+- `../artifacts/acb_core_02/decision.json`
+- `../artifacts/acb_core_02/summary.json`
+- `../artifacts/acb_core_02/report.md`
+- `../artifacts/acb_core_02/research_basis.json`
+- `../artifacts/acb_core_02/public_api_snapshot_before.json`
+- `../artifacts/acb_core_02/public_api_snapshot_after.json`
+- `../artifacts/acb_core_02/import_stability_report.json`
+- `../.github/workflows/core-public-api-baseline.yml`
+- `../scripts/run_acb_core_02_public_api_snapshot.py`
+- `../tests/test_acb_core_02_public_api.py`
+- `../src/aris/__init__.py`
+- `../src/aris/contracts.py`
 - `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_01/decision.json`
 - `../artifacts/acb_core_01/summary.json`
@@ -72,6 +88,6 @@ validate_active_context.yml runs on every push and PR to main.
 
 ## Non-Authorization
 
-- No next phase is authorized until explicit manual operator authorization for ACB-CORE-02.
+- No next phase is authorized until explicit manual operator authorization for ACB-CAP-01.
 - No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion.
 - Circuit breaker streak remains 0. Governance gates are unblocked but no phase is open.

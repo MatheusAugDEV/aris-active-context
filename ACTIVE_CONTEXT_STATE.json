@@ -1,8 +1,8 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "ACB-CORE-01",
-  "current_phase_id": "ACB-CORE-01",
-  "previous_phase_id": "PURG-01",
+  "phase_id": "ACB-CORE-02",
+  "current_phase_id": "ACB-CORE-02",
+  "previous_phase_id": "ACB-CORE-01",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
@@ -335,6 +335,12 @@
       "phase": "ARIS Capability Build Dependency Foundation Gate",
       "repair_type": "capability_build",
       "status": "acb_core_01_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Capability Build Core Public API Baseline Gate",
+      "repair_type": "capability_build",
+      "status": "acb_core_02_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -368,10 +374,10 @@
     "current_status": "awaiting_manual_operator_authorization_for_next_phase",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Capability Build Dependency Foundation Gate",
+    "latest_completed_phase": "ARIS Capability Build Core Public API Baseline Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "acb_core_01_pass"
+    "status": "acb_core_02_pass"
   },
   "current_status": "awaiting_manual_operator_authorization_for_next_phase",
   "decision": "pass",
@@ -397,28 +403,29 @@
       "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
       "ARIS Infernus Minos Deterministic Verdict Gate",
       "ARIS Purgatorium Finding Record Gate",
-      "ARIS Capability Build Dependency Foundation Gate"
+      "ARIS Capability Build Dependency Foundation Gate",
+      "ARIS Capability Build Core Public API Baseline Gate"
     ],
-    "latest_execution_phase": "ARIS Capability Build Dependency Foundation Gate",
+    "latest_execution_phase": "ARIS Capability Build Core Public API Baseline Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Purgatorium Finding Record Gate"
+    "previous_execution_phase": "ARIS Capability Build Dependency Foundation Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Purgatorium Finding Record Gate",
+    "from_phase": "ARIS Capability Build Dependency Foundation Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Capability Build Dependency Foundation Gate",
-    "transition_type": "capability_build_dependency_foundation_gate",
-    "verified_via": "local validation, mirror sync assertion, traced uv bootstrap, uv lockfile materialization, SBOM verification, supply-chain workflow verification in Project_ARIS, Project_ARIS main SHA 0e935f41830101c391905611473e52e883d36a26 verification, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Capability Build Core Public API Baseline Gate",
+    "transition_type": "capability_build_core_public_api_baseline_gate",
+    "verified_via": "local validation, mirror sync assertion, root __all__ snapshot verification, Protocol export verification, import smoke tests, core-public-api workflow verification in Project_ARIS, Project_ARIS main SHA 46910e0fda3fc64a19818ad80f39813227b53922 verification, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Capability Build Dependency Foundation Gate",
+  "latest_completed_phase": "ARIS Capability Build Core Public API Baseline Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. ACB-CORE-01 passed with traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence in Project_ARIS main SHA 0e935f41830101c391905611473e52e883d36a26. ACB-CORE-02 was not opened automatically.",
+    "deferred_phase_reason": "No next phase is authorized. ACB-CORE-02 passed with explicit root __all__ snapshot, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence in Project_ARIS main SHA 46910e0fda3fc64a19818ad80f39813227b53922. ACB-CAP-01 was not opened automatically.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -431,15 +438,15 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ACB-CORE-01 passed as a dependency supply-chain baseline repair gate backed by external Project_ARIS artifacts.",
-      "Canonical Project_ARIS verification SHA for this gate is 0e935f41830101c391905611473e52e883d36a26.",
-      "Project_ARIS now contains traced uv bootstrap evidence, a real uv.lock, a pip-audit CI gate, and a deterministic CycloneDX SBOM under artifacts/acb_core_01/.",
+      "ACB-CORE-02 passed as a core public API baseline gate backed by external Project_ARIS artifacts.",
+      "Canonical Project_ARIS verification SHA for this gate is 46910e0fda3fc64a19818ad80f39813227b53922.",
+      "Project_ARIS now contains an explicit root __all__ snapshot, lightweight Protocol exports, dedicated import smoke tests, and a green Core Public API Baseline workflow under artifacts/acb_core_02/.",
       "The prior PURG-01 deterministic finding remains historical evidence; no runtime patch was applied in this gate.",
       "governance_gate_streak remains 0 after this capability-build pass.",
       "Carried WARN: INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 24ac00a7d1ddefedb6c86493aa852fbfcc24a250; warning only, no correction gate opened.",
       "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
       "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
-      "ACB-CORE-02 was not opened automatically; explicit operator authorization is still required."
+      "ACB-CAP-01 was not opened automatically; explicit operator authorization is still required."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
@@ -564,7 +571,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "acb_core_01_pass",
+  "status": "acb_core_02_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -584,7 +591,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

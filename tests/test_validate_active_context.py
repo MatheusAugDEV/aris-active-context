@@ -214,3 +214,76 @@ def test_minimum_deliverable_allows_acb_core_01_with_evidence_artifact_only():
             )
         finally:
             os.chdir(cwd)
+
+
+def test_minimum_deliverable_blocks_acb_core_02_pass_without_project_deliverables():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CORE_02_EVIDENCE_PATH = Path(tmp) / "missing_evidence.json"
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "ACB-CORE-02",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block ACB-CORE-02 without project deliverables")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_allows_acb_core_02_with_evidence_artifact_only():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            evidence_path = Path(tmp) / "acb_core_02_evidence.json"
+            evidence_path.write_text(
+                json.dumps(
+                    {
+                        "project_sha": "46910e0fda3fc64a19818ad80f39813227b53922",
+                        "core_public_api_ci": {"conclusion": "success"},
+                        "deliverables": {
+                            "research_basis_exists": True,
+                            "snapshot_before_exists": True,
+                            "snapshot_after_exists": True,
+                            "import_stability_report_exists": True,
+                            "explicit_all_created_or_verified": True,
+                            "protocols_created_or_verified": True,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CORE_02_EVIDENCE_PATH = evidence_path
+            module._check_minimum_deliverable(
+                {
+                    "current_phase_id": "ACB-CORE-02",
+                    "decision": "pass",
+                }
+            )
+        finally:
+            os.chdir(cwd)

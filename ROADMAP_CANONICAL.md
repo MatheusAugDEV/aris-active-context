@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
+- Latest completed phase: `ARIS Capability Build Core Public API Baseline Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - Operator authorization required before any new phase.
 - ACB decision registered: `artifacts/decisions/acb_decision_2026_06_03.json`
 - ACB execution order registered: `artifacts/decisions/acb_execution_order_2026_06_03.json`
-- Next phase after `ACB-CORE-01` is `ACB-CORE-02` only after explicit operator authorization.
-- `ACB-CORE-02` is not opened automatically after `ACB-CORE-01`.
+- Next phase after `ACB-CORE-02` is `ACB-CAP-01` only after explicit operator authorization.
+- `ACB-CAP-01` is not opened automatically after `ACB-CORE-02`.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`
@@ -55,7 +55,7 @@ Rules:
 ## Lacunas críticas pré-Infernus Full
 
 - Infernus Full não especificado como framework de teste — deve ser especificado antes de INF-FULL-01
-- API pública do ARIS indefinida — snapshot de dir(aris) como baseline no ACB-CORE-02
+- API pública do ARIS agora é definida pelo snapshot de `ACB-CORE-02` — qualquer drift futuro deve ser explicitamente ratificado antes de INF-FULL-01
 - MCP SDK Python 2026 não coberto por papers — validar compatibilidade antes do ACB-CAP-02
 
 ## Transition Table

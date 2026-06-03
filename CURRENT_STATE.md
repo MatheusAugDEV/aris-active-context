@@ -2,12 +2,12 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Current State
 
-- Phase ID: `ACB-CORE-01`
-- Previous phase ID: `PURG-01`
-- Status: `acb_core_01_pass`
+- Phase ID: `ACB-CORE-02`
+- Previous phase ID: `ACB-CORE-01`
+- Status: `acb_core_02_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Capability Build Dependency Foundation Gate`
-- Previous execution phase: `ARIS Purgatorium Finding Record Gate`
+- Latest completed phase: `ARIS Capability Build Core Public API Baseline Gate`
+- Previous execution phase: `ARIS Capability Build Dependency Foundation Gate`
 - Current status: `awaiting_manual_operator_authorization_for_next_phase`
 - Next phase: `null`
 - next_phase_authorized_by_operator=`false`
@@ -29,6 +29,7 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - purgatorium_finding_created: `true`
 - finding_count: `1`
 - Circuit breaker: STABLE — governance_gate_streak remains `0` after this capability-build pass.
-- External deliverables registered from `../artifacts/acb_core_01/` and canonically mirrored by `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`.
+- External deliverables registered from `../artifacts/acb_core_02/` and canonically mirrored by `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`.
+- Root public API baseline exported symbols: `actions`, `app`, `config`, `contracts`, `voice`, `CommandPolicyProtocol`, `MemoryBackendProtocol`, `PromptBuilderProtocol`, `ResponseRuntimeProtocol`.
 - No LLM-as-judge, no real runtime execution, no autonomous execution, no runtime patch, and no runtime mutation were authorized.
 - Minimum deliverable enforcement is active through the validator and CI.

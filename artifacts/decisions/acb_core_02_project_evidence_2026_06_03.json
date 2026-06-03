@@ -1,0 +1,58 @@
+{
+  "artifact_id": "acb_core_02_project_evidence_2026_06_03",
+  "phase_id": "ACB-CORE-02",
+  "phase_name": "ARIS Capability Build Core Public API Baseline Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "46910e0fda3fc64a19818ad80f39813227b53922",
+  "source_active_context_sha_before": "bdbd7364a51ee40ea6bb55ff3464d140d5790a01",
+  "core_public_api_ci": {
+    "name": "Core Public API Baseline",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26917991639",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "research_basis_exists": true,
+    "snapshot_before_exists": true,
+    "snapshot_after_exists": true,
+    "import_stability_report_exists": true,
+    "explicit_all_created_or_verified": true,
+    "protocols_created_or_verified": true
+  },
+  "external_paths": [
+    "../src/aris/__init__.py",
+    "../src/aris/contracts.py",
+    "../.github/workflows/core-public-api-baseline.yml",
+    "../scripts/run_acb_core_02_public_api_snapshot.py",
+    "../tests/test_acb_core_02_public_api.py",
+    "../artifacts/acb_core_02/research_basis.json",
+    "../artifacts/acb_core_02/public_api_snapshot_before.json",
+    "../artifacts/acb_core_02/public_api_snapshot_after.json",
+    "../artifacts/acb_core_02/import_stability_report.json",
+    "../artifacts/acb_core_02/decision.json",
+    "../artifacts/acb_core_02/summary.json",
+    "../artifacts/acb_core_02/report.md"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "package_root_detected": "src/aris",
+    "runner_command": "PYTHONPATH=src .venv/bin/python scripts/run_acb_core_02_public_api_snapshot.py",
+    "pytest_command": "PYTHONPATH=src .venv/bin/python -m pytest tests/test_acb_core_02_public_api.py -v",
+    "uv_lock_check_command": "UV_CACHE_DIR=/tmp/uv-cache .venv/bin/uv lock --check",
+    "public_symbols_after": [
+      "actions",
+      "app",
+      "config",
+      "contracts",
+      "voice",
+      "CommandPolicyProtocol",
+      "MemoryBackendProtocol",
+      "PromptBuilderProtocol",
+      "ResponseRuntimeProtocol"
+    ]
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CORE-02 when the active-context CI runs without direct access to the Project_ARIS workspace.",
+    "The stabilized root public API remains intentionally narrow; non-exported packages stay recorded as public_api_gaps rather than being promoted implicitly.",
+    "Legacy repo-wide CI and Run Tests failures remain outside ACB-CORE-02 scope; the dedicated core-public-api workflow is the relevant gate for this phase."
+  ]
+}
