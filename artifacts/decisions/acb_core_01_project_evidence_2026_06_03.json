@@ -1,0 +1,48 @@
+{
+  "artifact_id": "acb_core_01_project_evidence_2026_06_03",
+  "phase_id": "ACB-CORE-01",
+  "phase_name": "ARIS Capability Build Dependency Foundation Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "0e935f41830101c391905611473e52e883d36a26",
+  "source_active_context_sha_before": "126bcb82d29c75910c72507fe5ec8ad00f2de1f6",
+  "supply_chain_ci": {
+    "name": "Supply Chain Baseline",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26916868686",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "uv_lock_exists": true,
+    "pip_audit_gate_exists": true,
+    "sbom_exists": true,
+    "pyproject_exists": true,
+    "validation_runner_exists": true,
+    "test_exists": true,
+    "uv_bootstrap_exists": true
+  },
+  "external_paths": [
+    "../pyproject.toml",
+    "../uv.lock",
+    "../.github/workflows/supply-chain-baseline.yml",
+    "../scripts/run_acb_core_01_supply_chain_validation.py",
+    "../tests/test_acb_core_01_supply_chain.py",
+    "../artifacts/acb_core_01/decision.json",
+    "../artifacts/acb_core_01/summary.json",
+    "../artifacts/acb_core_01/report.md",
+    "../artifacts/acb_core_01/dependency_inventory.json",
+    "../artifacts/acb_core_01/sbom.cdx.json",
+    "../artifacts/acb_core_01/supply_chain_validation.json",
+    "../artifacts/acb_core_01/uv_bootstrap.json"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "uv_version": "0.11.18",
+    "runner_command": "python3 scripts/run_acb_core_01_supply_chain_validation.py",
+    "pytest_command": ".venv/bin/python -m pytest tests/test_acb_core_01_supply_chain.py -v",
+    "uv_lock_check_command": "UV_CACHE_DIR=/tmp/uv-cache .venv/bin/uv lock --check"
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CORE-01 when the active-context CI runs without direct access to the Project_ARIS workspace.",
+    "Local repair verification confirmed traced uv bootstrap, real uv.lock, pip-audit CI gate, and deterministic CycloneDX SBOM before the active-context live route advanced.",
+    "Legacy Project_ARIS CI remains outside ACB-CORE-01 scope and is reported separately."
+  ]
+}

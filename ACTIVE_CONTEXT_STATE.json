@@ -476,6 +476,7 @@
     "scripts/assert_no_unauthorized_fixtures.py",
     "scripts/assert_mirror_sync.py",
     ".github/workflows/validate_active_context.yml",
+    "artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json",
     "../pyproject.toml",
     "../uv.lock",
     "../.github/workflows/supply-chain-baseline.yml",

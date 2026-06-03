@@ -26,6 +26,7 @@
 - `artifacts/purg_01/summary.json`
 - `artifacts/purg_01/report.md`
 - `artifacts/purg_01/finding_nemesis_validator_bypass.json`
+- `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_01/decision.json`
 - `../artifacts/acb_core_01/summary.json`
 - `../artifacts/acb_core_01/report.md`

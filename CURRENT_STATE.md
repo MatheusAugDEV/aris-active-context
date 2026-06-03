@@ -29,6 +29,6 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - purgatorium_finding_created: `true`
 - finding_count: `1`
 - Circuit breaker: STABLE — governance_gate_streak remains `0` after this capability-build pass.
-- External deliverables registered from `../artifacts/acb_core_01/` with traced `uv` bootstrap, real `uv.lock`, pip-audit CI gate, and CycloneDX SBOM.
+- External deliverables registered from `../artifacts/acb_core_01/` and canonically mirrored by `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`.
 - No LLM-as-judge, no real runtime execution, no autonomous execution, no runtime patch, and no runtime mutation were authorized.
 - Minimum deliverable enforcement is active through the validator and CI.

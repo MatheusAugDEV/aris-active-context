@@ -11,6 +11,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PROJECT_ROOT = ROOT.parent
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
+ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_project_evidence_2026_06_03.json"
 
 EXPECTED_PHASE = "ARIS Capability Build Dependency Foundation Gate"
 EXPECTED_PHASE_ID = "ACB-CORE-01"
@@ -68,9 +69,18 @@ PHASE_DELIVERABLES = {
         )
     ),
     "ACB-CORE-01": lambda: (
-        (PROJECT_ROOT / "uv.lock").exists()
-        and (PROJECT_ROOT / ".github" / "workflows" / "supply-chain-baseline.yml").exists()
-        and (PROJECT_ROOT / "artifacts" / "acb_core_01" / "sbom.cdx.json").exists()
+        ACB_CORE_01_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CORE_01_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CORE_01_EVIDENCE_PATH).get("supply_chain_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CORE_01_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "uv_lock_exists",
+                "pip_audit_gate_exists",
+                "sbom_exists",
+                "uv_bootstrap_exists",
+            ]
+        )
     )
 }
 
@@ -284,6 +294,30 @@ def _warn_boot_receipt(state: dict[str, Any]) -> None:
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
     _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CORE_01_EVIDENCE_PATH.exists(), "missing ACB-CORE-01 evidence artifact in active-context")
+
+    evidence_data = _load_json(ACB_CORE_01_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CORE-01", "ACB evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB evidence repository mismatch")
+    _require(evidence_data.get("project_sha") == "0e935f41830101c391905611473e52e883d36a26", "ACB evidence project_sha mismatch")
+    _require(evidence_data.get("supply_chain_ci", {}).get("conclusion") == "success", "ACB evidence supply-chain CI must be success")
+    _require(
+        evidence_data.get("supply_chain_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26916868686",
+        "ACB evidence supply-chain CI URL mismatch",
+    )
+    for key in [
+        "uv_lock_exists",
+        "pip_audit_gate_exists",
+        "sbom_exists",
+        "pyproject_exists",
+        "validation_runner_exists",
+        "test_exists",
+        "uv_bootstrap_exists",
+    ]:
+        _require(evidence_data.get("deliverables", {}).get(key) is True, f"ACB evidence deliverable {key} must be true")
+    _require(evidence_data.get("local_validation", {}).get("pass_criteria_met") is True, "ACB evidence pass_criteria_met must be true")
+    _require(evidence_data.get("local_validation", {}).get("uv_version") == "0.11.18", "ACB evidence uv_version mismatch")
 
     artifacts_root = PROJECT_ROOT / "artifacts" / "acb_core_01"
     required_paths = [
@@ -300,8 +334,13 @@ def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
         artifacts_root / "supply_chain_validation.json",
         artifacts_root / "uv_bootstrap.json",
     ]
-    for path in required_paths:
-        _require(path.exists(), f"missing ACB-CORE-01 project artifact: {path.relative_to(PROJECT_ROOT)}")
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CORE-01 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
 
     decision_data = _load_json(artifacts_root / "decision.json")
     summary_data = _load_json(artifacts_root / "summary.json")
@@ -697,6 +736,7 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
+        "artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json",
         "../artifacts/acb_core_01/decision.json",
         "../artifacts/acb_core_01/summary.json",
         "../artifacts/acb_core_01/report.md",
@@ -712,6 +752,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "uv_lock_created_or_verified: `true`",
+        "artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json",
         "validate_active_context.yml",
     )
     _mirror_contains(

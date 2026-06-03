@@ -159,6 +159,7 @@ def test_minimum_deliverable_blocks_acb_core_01_pass_without_project_deliverable
         try:
             os.chdir(tmp)
             module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CORE_01_EVIDENCE_PATH = Path(tmp) / "missing_evidence.json"
             try:
                 module._check_minimum_deliverable(
                     {
@@ -170,5 +171,46 @@ def test_minimum_deliverable_blocks_acb_core_01_pass_without_project_deliverable
                 assert exc.code == 1
             else:
                 raise AssertionError("minimum deliverable check should block ACB-CORE-01 without project deliverables")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_allows_acb_core_01_with_evidence_artifact_only():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            evidence_path = Path(tmp) / "acb_core_01_evidence.json"
+            evidence_path.write_text(
+                json.dumps(
+                    {
+                        "project_sha": "0e935f41830101c391905611473e52e883d36a26",
+                        "supply_chain_ci": {"conclusion": "success"},
+                        "deliverables": {
+                            "uv_lock_exists": True,
+                            "pip_audit_gate_exists": True,
+                            "sbom_exists": True,
+                            "uv_bootstrap_exists": True,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CORE_01_EVIDENCE_PATH = evidence_path
+            module._check_minimum_deliverable(
+                {
+                    "current_phase_id": "ACB-CORE-01",
+                    "decision": "pass",
+                }
+            )
         finally:
             os.chdir(cwd)
