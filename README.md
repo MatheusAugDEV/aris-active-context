@@ -7,69 +7,19 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate`
-- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate`
-- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate`
-- Active next phase class: `review_gate_only`
-- Infernus FULL remains the active macroblock and stays non-executable until an explicit future execution gate authorizes otherwise.
-
-## Canonical Macro Roadmap
-
-```text
-Infernus revela.
-Purgatorium corrige.
-Infernus revalida.
-BenchUX valida produto real.
-Crisol refina.
-Bedrock decide.
-```
-
-## BenchUX Planning Reference
-
-- `benchux_plan.md` records the future `ARIS BenchUX Lab` plan.
-- BenchUX is a future macroblock for product reality, benchmark, interface, dashboard, creation experience, client experience, reliability, visual quality, and demo readiness.
-- BenchUX is not active now and does not authorize productization, pilot, commercial readiness, production readiness, real dry-run, real apply, Bedrock execution, or product promotion.
+- Latest completed phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate`
+- Previous execution phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate`
+- Active next phase: `ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate`
+- Active next phase class: `readiness_gate`
 
 ## Active Artifacts
 
-- `ARIS_INFERNUS_FULL_ENTRY_GATE.md`
-- `ARIS_INFERNUS_FULL_SCOPE_ATTACK_TAXONOMY_GATE.md`
-- `ARIS_INFERNUS_FULL_13_BOT_CONTRACT_PACK_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_BOT_SCENARIO_INTERFACE_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_EVIDENCE_BUNDLE_SCHEMA_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_FINDING_PURGATORIUM_HANDOFF_SCHEMA_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_MINOS_VERDICT_SCHEMA_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_BEDROCK_BOUNDARY_SIGNAL_SCHEMA_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_SCHEMA_PACK_CLOSURE_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_SCENARIO_MANIFEST_DATASET_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_AUTHORIZATION_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_CONTROLLED_FIXTURE_MATERIALIZATION_APPLY_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_FINAL_AUTHORIZATION_PACKET_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_READINESS_CLOSURE_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_PACKET_REVIEW_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_PLANNING_GATE.md`
-- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_REQUEST_REVIEW_GATE.md`
 - `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_PLANNING_GATE.md`
-
-## Future Planning References
-
-- `benchux_plan.md`
+- `ARIS_INFERNUS_FULL_FIXTURE_MATERIALIZATION_EXPLICIT_OPERATOR_AUTHORIZATION_GRANT_REVIEW_GATE.md`
 
 ## Non-Authorization
 
-- No explicit operator authorization grant planning gate grants execution.
-- No real request delivery, no real grant delivery, and no real operator contact.
+- No explicit operator authorization grant review gate grants execution.
+- No real grant delivery, no real grant issuance, and no real approval.
 - No real fixture materialization.
 - No Bedrock PASS or product promotion.
-- No bot implementation or execution.
-- No attack or harness execution.
-- No finding correction or Purgatorium execution.
-- No real dry-run or real apply.
-- No BenchUX execution or productization authorization.
