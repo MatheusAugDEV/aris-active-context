@@ -41,7 +41,7 @@ PHASE_DELIVERABLES = {
 
 REQUIRED_BOOT_FILES = [
     "ACTIVE_CONTEXT_STATE.json",
-    "ACTIVE_CONTEXT_SCHEMA.json",
+    "AGENT_IDENTITY.md",
     "ROADMAP_CANONICAL.md",
     "MANDATORY_READ_FIRST_RULES.md",
     "DECISION_LOCKS.md",
@@ -231,17 +231,12 @@ def _apply_streak_management(state: dict[str, Any], sig: str, decision: str) -> 
 
 
 def _warn_boot_receipt(state: dict[str, Any]) -> None:
-    boot = state.get("last_boot_files_read", [])
-    if not isinstance(boot, list):
-        print("WARN: last_boot_files_read is not a list", file=sys.stderr)
-        return
-    missing = [name for name in REQUIRED_BOOT_FILES if name not in boot]
+    boot_files = state.get("last_boot_files_read", [])
+    missing = [f for f in REQUIRED_BOOT_FILES if f not in boot_files]
     if missing:
-        print(
-            "WARN: last_boot_files_read is missing required boot files: " + ", ".join(missing)
-            + " (Codex populates this; warning only, not blocking).",
-            file=sys.stderr,
-        )
+        print(f"BLOCK: last_boot_files_read missing: {missing}")
+        print("Codex must populate last_boot_files_read before any action.")
+        sys.exit(1)
 
 
 def _check_fixture_materialization(state: dict[str, Any]) -> None:

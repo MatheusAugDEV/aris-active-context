@@ -13,7 +13,13 @@
   "fixture_materialization_executed": true,
   "fixture_count": 65,
   "scenario_count": 13,
-  "last_boot_files_read": [],
+  "last_boot_files_read": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "AGENT_IDENTITY.md",
+    "ROADMAP_CANONICAL.md",
+    "MANDATORY_READ_FIRST_RULES.md",
+    "DECISION_LOCKS.md"
+  ],
   "auto_advance": {
     "enabled": true,
     "allowed_phase_classes": ["governance_repair", "observability", "transition_engine"],
