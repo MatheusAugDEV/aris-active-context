@@ -8,11 +8,11 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Capability Build Runtime Top-Level Public API Gate`
-- Previous execution phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
+- Latest completed phase: `ARIS Capability Build Product/Pilot Boundary Gate`
+- Previous execution phase: `ARIS Capability Build Runtime Top-Level Public API Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- governance_gate_streak: `0` — preserved by ACB-CAP-03 capability-build pass
+- governance_gate_streak: `0` — preserved by ACB-CAP-04 capability-build pass
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
 - bot_execution_executed: `true` (1 deterministic nemesis log on disk)
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk)
@@ -20,31 +20,31 @@
 - uv_lock_created_or_verified: `true` (`../uv.lock`)
 - pip_audit_gate_created_or_verified: `true` (`../.github/workflows/supply-chain-baseline.yml`)
 - cyclonedx_sbom_created_or_verified: `true` (`../artifacts/acb_core_01/sbom.cdx.json`)
-- runtime_public_api_documented: `true` (`../artifacts/acb_cap_03/runtime_public_api.md`)
-- runtime_public_api_importable: `true` (`../artifacts/acb_cap_03/decision.json`)
-- runtime_modes_enforced: `true` (`../artifacts/acb_cap_03/decision.json`)
-- policy_pre_dispatch_passing: `true` (`../artifacts/acb_cap_03/decision.json`)
-- kill_switch_passing: `true` (`../artifacts/acb_cap_03/decision.json`)
-- rollback_contract_passing: `true` (`../artifacts/acb_cap_03/decision.json`)
+- pilot_gates_defined: `true` (`../artifacts/acb_cap_04/decision.json`)
+- five_binary_gates_defined: `true` (`../artifacts/acb_cap_04/decision.json`)
+- pilot_allowed_now: `false` (`../artifacts/acb_cap_04/decision.json`)
+- production_authorized: `false` (`../artifacts/acb_cap_04/decision.json`)
+- product_promotion_allowed: `false` (`../artifacts/acb_cap_04/decision.json`)
 
 ## Active Artifacts
 
-- `artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json`
-- `../artifacts/acb_cap_03/decision.json`
-- `../artifacts/acb_cap_03/summary.json`
-- `../artifacts/acb_cap_03/report.md`
-- `../artifacts/acb_cap_03/research_basis.json`
-- `../artifacts/acb_cap_03/runtime_public_api.md`
-- `../artifacts/acb_cap_03/runtime_public_api_contract.json`
-- `../artifacts/acb_cap_03/runtime_facade_contract.json`
-- `../artifacts/acb_cap_03/runtime_mode_matrix.json`
-- `../artifacts/acb_cap_03/runtime_policy_bridge_matrix.json`
-- `../artifacts/acb_cap_03/runtime_audit_report.json`
-- `../artifacts/acb_cap_03/public_api_snapshot_before.json`
-- `../artifacts/acb_cap_03/public_api_snapshot_after.json`
-- `../artifacts/acb_cap_03/public_api_change_report.json`
-- `../artifacts/acb_cap_03/import_stability_report.json`
-- `../.github/workflows/runtime-public-api.yml`
+- `artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json`
+- `../artifacts/acb_cap_04/decision.json`
+- `../artifacts/acb_cap_04/summary.json`
+- `../artifacts/acb_cap_04/report.md`
+- `../artifacts/acb_cap_04/research_basis.json`
+- `../artifacts/acb_cap_04/product_pilot_boundary_contract.json`
+- `../artifacts/acb_cap_04/pilot_gate_registry.json`
+- `../artifacts/acb_cap_04/five_gate_decision_matrix.json`
+- `../artifacts/acb_cap_04/lab_to_staging_to_pilot_workflow.json`
+- `../artifacts/acb_cap_04/pilot_scope_contract.json`
+- `../artifacts/acb_cap_04/evidence_bundle_contract.json`
+- `../artifacts/acb_cap_04/pilot_runbook_contract.md`
+- `../artifacts/acb_cap_04/pilot_risk_matrix.json`
+- `../artifacts/acb_cap_04/non_authorization_statement.json`
+- `../artifacts/acb_cap_04/import_stability_report.json`
+- `../artifacts/acb_cap_04/public_api_drift_report.json`
+- `../.github/workflows/product-pilot-boundary.yml`
 - `.github/workflows/validate_active_context.yml`
 
 ## CI
@@ -59,6 +59,6 @@ validate_active_context.yml runs on every push and PR to main.
 
 ## Non-Authorization
 
-- No next phase is opened automatically by this preference; `ACB-CAP-04` remains unopened in JSON until a future canonical state transition is recorded.
+- No next phase is opened automatically by this preference; `ACB-CAP-05` remains unopened in JSON until a future canonical state transition is recorded.
 - No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion.
 - Circuit breaker streak remains 0. Governance gates are unblocked but no phase is open.

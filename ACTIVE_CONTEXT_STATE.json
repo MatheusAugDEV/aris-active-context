@@ -1,8 +1,8 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "ACB-CAP-03",
-  "current_phase_id": "ACB-CAP-03",
-  "previous_phase_id": "ACB-CAP-02",
+  "phase_id": "ACB-CAP-04",
+  "current_phase_id": "ACB-CAP-04",
+  "previous_phase_id": "ACB-CAP-03",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
@@ -376,6 +376,12 @@
       "phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
       "repair_type": "capability_build",
       "status": "acb_cap_03_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+      "repair_type": "capability_build",
+      "status": "acb_cap_04_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -409,10 +415,10 @@
     "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
+    "latest_completed_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "acb_cap_03_pass"
+    "status": "acb_cap_04_pass"
   },
   "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
   "decision": "pass",
@@ -442,28 +448,29 @@
       "ARIS Capability Build Core Public API Baseline Gate",
       "ARIS Capability Build Backend Baseline Gate",
         "ARIS Capability Build MCP Runtime Sandbox Gate",
-        "ARIS Capability Build Runtime Top-Level Public API Gate"
+        "ARIS Capability Build Runtime Top-Level Public API Gate",
+        "ARIS Capability Build Product/Pilot Boundary Gate"
       ],
-    "latest_execution_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
+    "latest_execution_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Capability Build MCP Runtime Sandbox Gate"
+    "previous_execution_phase": "ARIS Capability Build Runtime Top-Level Public API Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
+    "from_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
-    "transition_type": "capability_build_runtime_public_api_gate",
-    "verified_via": "local validation, mirror sync assertion, deterministic runtime public API artifact validation, import smoke verification, runtime facade verification, runtime mode enforcement verification, policy-bridge verification, audit-hash stability verification, public API drift ratification, forbidden-pattern grep verification, Runtime Public API workflow verification in Project_ARIS, Project_ARIS main SHA b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e verification, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+    "transition_type": "capability_build_product_pilot_boundary_gate",
+    "verified_via": "local validation, mirror sync assertion, deterministic product-pilot boundary artifact validation, five-binary-gate verification, workflow blocking verification, pilot scope verification, evidence-bundle verification, runbook verification, risk-matrix verification, public API drift ratification, forbidden-pattern grep verification, Product Pilot Boundary workflow verification in Project_ARIS, Project_ARIS main SHA b6044982c31e0861b481605c40bef673b249f351 verification, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
+  "latest_completed_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-03 passed with deterministic runtime public API evidence, dedicated Runtime Public API CI success in Project_ARIS main SHA b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e, and prompt-only continuity rules preserved in the active-context. ACB-CAP-04 remains unopened until a future canonical state transition is recorded.",
+    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-04 passed with deterministic product-pilot boundary evidence, dedicated Product Pilot Boundary CI success in Project_ARIS main SHA b6044982c31e0861b481605c40bef673b249f351, and prompt-only continuity rules preserved in the active-context. ACB-CAP-05 remains unopened until a future canonical state transition is recorded.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -476,15 +483,15 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ACB-CAP-03 passed as a deterministic runtime top-level public API gate backed by external Project_ARIS artifacts and a green Runtime Public API workflow.",
-      "Canonical Project_ARIS verification SHA for this gate is b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e.",
-      "Project_ARIS now contains an isolated src/aris/runtime package, documented aris.runtime public API, deterministic RuntimeFacade behavior, runtime mode enforcement, policy-bridge checks, audit hashing, and dedicated runtime public API tests under artifacts/acb_cap_03/.",
-      "The prior ACB-CAP-02 MCP runtime sandbox baseline remains locked and stable; root aris.__all__ was preserved exactly and runtime surfaced only as a submodule.",
+      "ACB-CAP-04 passed as a deterministic product-pilot boundary gate backed by external Project_ARIS artifacts and a green Product Pilot Boundary workflow.",
+      "Canonical Project_ARIS verification SHA for this gate is b6044982c31e0861b481605c40bef673b249f351.",
+      "Project_ARIS now contains an isolated src/aris/product_boundary package, exactly five binary gates, a lab->staging->pilot workflow contract, a conservative pilot scope contract, an evidence bundle contract, a pilot runbook contract, and a pilot risk matrix under artifacts/acb_cap_04/.",
+      "The prior ACB-CAP-03 runtime public API baseline remains locked and stable; no root API drift was introduced by this gate.",
       "governance_gate_streak remains 0 after this capability-build pass.",
       "Carried WARN: INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 24ac00a7d1ddefedb6c86493aa852fbfcc24a250; warning only, no correction gate opened.",
       "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
       "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
-      "A canonical Codex result for this PASS gate can justify direct prompt emission for prompt-only successor ACB-CAP-04 without any ritual phrase, but next_phase remains null until a future canonical state transition is recorded."
+      "A canonical Codex result for this PASS gate can justify direct prompt emission for prompt-only successor ACB-CAP-05 without any ritual phrase, but next_phase remains null until a future canonical state transition is recorded."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
@@ -528,6 +535,7 @@
     "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json",
+    "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
     "artifacts/ac_repair_01/decision.json",
     "artifacts/ac_repair_01/summary.json",
     "artifacts/ac_repair_01/report.md",
@@ -615,7 +623,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "acb_cap_03_pass",
+  "status": "acb_cap_04_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

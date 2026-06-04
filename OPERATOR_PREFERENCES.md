@@ -35,5 +35,5 @@ This preference cannot override:
 ## Non-authorization consequences
 
 - next_phase remains `null` after a phase closes unless an explicit state transition is canonically recorded.
-- `ACB-CAP-04` or any later phase is not auto-opened by this preference alone.
+- `ACB-CAP-05` or any later phase is not auto-opened by this preference alone.
 - `advance_mode=operator` still requires explicit operator authorization.

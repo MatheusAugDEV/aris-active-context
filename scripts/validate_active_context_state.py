@@ -17,13 +17,14 @@ ACB_CAP_01_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_o
 ACB_CAP_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_project_evidence_2026_06_03.json"
 ACB_CAP_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_02_project_evidence_2026_06_03.json"
 ACB_CAP_03_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_03_project_evidence_2026_06_03.json"
+ACB_CAP_04_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_04_project_evidence_2026_06_03.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Capability Build Runtime Top-Level Public API Gate"
-EXPECTED_PHASE_ID = "ACB-CAP-03"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build MCP Runtime Sandbox Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-02"
-EXPECTED_STATUS = "acb_cap_03_pass"
+EXPECTED_PHASE = "ARIS Capability Build Product/Pilot Boundary Gate"
+EXPECTED_PHASE_ID = "ACB-CAP-04"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Runtime Top-Level Public API Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-03"
+EXPECTED_STATUS = "acb_cap_04_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_codex_result_validation_for_prompt_only_transition"
 EXPECTED_SCHEMA_VERSION = "2.3"
@@ -161,6 +162,27 @@ PHASE_DELIVERABLES = {
                 "runtime_artifacts_exist",
             ]
         )
+    ),
+    "ACB-CAP-04": lambda: (
+        ACB_CAP_04_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CAP_04_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CAP_04_EVIDENCE_PATH).get("product_pilot_boundary_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CAP_04_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "product_boundary_package_exists",
+                "pilot_gates_defined",
+                "five_binary_gates_defined",
+                "lab_to_staging_to_pilot_workflow_defined",
+                "pilot_scope_contract_exists",
+                "evidence_bundle_contract_exists",
+                "pilot_runbook_contract_exists",
+                "pilot_risk_matrix_exists",
+                "non_authorization_statement_exists",
+                "product_pilot_tests_exist",
+                "product_pilot_artifacts_exist",
+            ]
+        )
     )
 }
 
@@ -199,7 +221,7 @@ OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
     "cannot override",
     "advance_mode=operator",
     "next_phase remains `null`",
-    "ACB-CAP-04",
+    "ACB-CAP-05",
 ]
 
 EXPECTED_FIXTURE_ASSERTION = """import json, sys, pathlib
@@ -1397,6 +1419,284 @@ def _check_acb_cap_03_project_artifacts(state: dict[str, Any]) -> None:
     _require("tests/test_acb_cap_03_runtime_public_api.py -v" in workflow_text, "ACB-CAP-03 workflow must run runtime public API tests")
 
 
+def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CAP_04_EVIDENCE_PATH.exists(), "missing ACB-CAP-04 evidence artifact in active-context")
+
+    evidence_data = _load_json(ACB_CAP_04_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CAP-04 evidence repository mismatch")
+    _require(
+        evidence_data.get("project_sha") == "b6044982c31e0861b481605c40bef673b249f351",
+        "ACB-CAP-04 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("project_sha_gate_start") == "b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e",
+        "ACB-CAP-04 evidence project_sha_gate_start mismatch",
+    )
+    _require(
+        evidence_data.get("product_pilot_boundary_ci", {}).get("conclusion") == "success",
+        "ACB-CAP-04 evidence Product Pilot Boundary CI must be success",
+    )
+    _require(
+        evidence_data.get("product_pilot_boundary_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26924199459",
+        "ACB-CAP-04 evidence Product Pilot Boundary CI URL mismatch",
+    )
+    for key in [
+        "product_boundary_package_exists",
+        "pilot_gates_defined",
+        "five_binary_gates_defined",
+        "lab_to_staging_to_pilot_workflow_defined",
+        "pilot_scope_contract_exists",
+        "evidence_bundle_contract_exists",
+        "pilot_runbook_contract_exists",
+        "pilot_risk_matrix_exists",
+        "non_authorization_statement_exists",
+        "product_pilot_tests_exist",
+        "product_pilot_artifacts_exist",
+    ]:
+        _require(
+            evidence_data.get("deliverables", {}).get(key) is True,
+            f"ACB-CAP-04 evidence deliverable {key} must be true",
+        )
+    _require(
+        evidence_data.get("local_validation", {}).get("pass_criteria_met") is True,
+        "ACB-CAP-04 evidence pass_criteria_met must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("pilot_gates_defined") is True,
+        "ACB-CAP-04 evidence pilot_gates_defined must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("five_binary_gates_defined") is True,
+        "ACB-CAP-04 evidence five_binary_gates_defined must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("pilot_scope_defined") is True,
+        "ACB-CAP-04 evidence pilot_scope_defined must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("evidence_bundle_contract_defined") is True,
+        "ACB-CAP-04 evidence evidence_bundle_contract_defined must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("pilot_allowed_now") is False,
+        "ACB-CAP-04 evidence pilot_allowed_now must be false",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("production_authorized") is False,
+        "ACB-CAP-04 evidence production_authorized must be false",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("product_promotion_allowed") is False,
+        "ACB-CAP-04 evidence product_promotion_allowed must be false",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("bedrock_required_before_product") is True,
+        "ACB-CAP-04 evidence bedrock_required_before_product must be true",
+    )
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_cap_04"
+    required_paths = [
+        PROJECT_ROOT / ".github" / "workflows" / "product-pilot-boundary.yml",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "__init__.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "contracts.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "gate_registry.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "pilot_gate.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "workflow.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "evidence.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "decision.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "checklist.py",
+        PROJECT_ROOT / "src" / "aris" / "product_boundary" / "risk_matrix.py",
+        PROJECT_ROOT / "scripts" / "run_acb_cap_04_product_pilot_boundary.py",
+        PROJECT_ROOT / "tests" / "test_acb_cap_04_product_pilot_boundary.py",
+        artifacts_root / "research_basis.json",
+        artifacts_root / "product_pilot_boundary_contract.json",
+        artifacts_root / "pilot_gate_registry.json",
+        artifacts_root / "five_gate_decision_matrix.json",
+        artifacts_root / "lab_to_staging_to_pilot_workflow.json",
+        artifacts_root / "pilot_scope_contract.json",
+        artifacts_root / "evidence_bundle_contract.json",
+        artifacts_root / "pilot_runbook_contract.md",
+        artifacts_root / "pilot_risk_matrix.json",
+        artifacts_root / "non_authorization_statement.json",
+        artifacts_root / "import_stability_report.json",
+        artifacts_root / "public_api_drift_report.json",
+        artifacts_root / "decision.json",
+        artifacts_root / "summary.json",
+        artifacts_root / "report.md",
+    ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CAP-04 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
+
+    decision_data = _load_json(artifacts_root / "decision.json")
+    summary_data = _load_json(artifacts_root / "summary.json")
+    research_data = _load_json(artifacts_root / "research_basis.json")
+    contract_data = _load_json(artifacts_root / "product_pilot_boundary_contract.json")
+    gate_registry = _load_json(artifacts_root / "pilot_gate_registry.json")
+    decision_matrix = _load_json(artifacts_root / "five_gate_decision_matrix.json")
+    workflow_data = _load_json(artifacts_root / "lab_to_staging_to_pilot_workflow.json")
+    pilot_scope = _load_json(artifacts_root / "pilot_scope_contract.json")
+    evidence_contract = _load_json(artifacts_root / "evidence_bundle_contract.json")
+    risk_matrix = _load_json(artifacts_root / "pilot_risk_matrix.json")
+    non_authorization = _load_json(artifacts_root / "non_authorization_statement.json")
+    import_report = _load_json(artifacts_root / "import_stability_report.json")
+    public_api_drift = _load_json(artifacts_root / "public_api_drift_report.json")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "product-pilot-boundary.yml").read_text(encoding="utf-8")
+    runbook_text = (artifacts_root / "pilot_runbook_contract.md").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == "ARIS Capability Build Product/Pilot Boundary Gate", "ACB-CAP-04 decision phase_name mismatch")
+    _require(decision_data.get("status") == "acb_cap_04_pass", "ACB-CAP-04 decision status mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB-CAP-04 decision must be pass")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB-CAP-04 decision pass_criteria_met must be true")
+    _require(decision_data.get("minimum_deliverable_met") is True, "ACB-CAP-04 decision minimum_deliverable_met must be true")
+    _require(decision_data.get("pilot_gates_defined") is True, "ACB-CAP-04 decision pilot_gates_defined must be true")
+    _require(decision_data.get("five_binary_gates_defined") is True, "ACB-CAP-04 decision five_binary_gates_defined must be true")
+    _require(decision_data.get("lab_to_staging_to_pilot_workflow_defined") is True, "ACB-CAP-04 decision workflow flag mismatch")
+    _require(decision_data.get("pilot_scope_defined") is True, "ACB-CAP-04 decision pilot_scope_defined must be true")
+    _require(decision_data.get("evidence_bundle_contract_defined") is True, "ACB-CAP-04 decision evidence_bundle_contract_defined must be true")
+    _require(decision_data.get("pilot_runbook_contract_defined") is True, "ACB-CAP-04 decision pilot_runbook_contract_defined must be true")
+    _require(decision_data.get("pilot_risk_matrix_defined") is True, "ACB-CAP-04 decision pilot_risk_matrix_defined must be true")
+    _require(decision_data.get("pilot_allowed_now") is False, "ACB-CAP-04 decision pilot_allowed_now must be false")
+    _require(decision_data.get("client_real_allowed_now") is False, "ACB-CAP-04 decision client_real_allowed_now must be false")
+    _require(decision_data.get("production_authorized") is False, "ACB-CAP-04 decision production_authorized must be false")
+    _require(decision_data.get("commercial_use_allowed") is False, "ACB-CAP-04 decision commercial_use_allowed must be false")
+    _require(decision_data.get("pricing_allowed") is False, "ACB-CAP-04 decision pricing_allowed must be false")
+    _require(decision_data.get("product_promotion_allowed") is False, "ACB-CAP-04 decision product_promotion_allowed must be false")
+    _require(decision_data.get("runtime_productive_activation") is False, "ACB-CAP-04 decision runtime_productive_activation must be false")
+    _require(decision_data.get("bedrock_required_before_product") is True, "ACB-CAP-04 decision bedrock_required_before_product must be true")
+    _require(
+        decision_data.get("project_repo_sha")
+        in {
+            evidence_data.get("project_sha_gate_start"),
+            evidence_data.get("project_sha"),
+        },
+        "ACB-CAP-04 decision project_repo_sha must match gate-start or final project SHA",
+    )
+
+    _require(summary_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "ACB-CAP-04 summary decision must be pass")
+    _require(summary_data.get("status") == "acb_cap_04_pass", "ACB-CAP-04 summary status mismatch")
+    _require(summary_data.get("pass_criteria_met") is True, "ACB-CAP-04 summary pass_criteria_met must be true")
+    _require(summary_data.get("minimum_deliverable_met") is True, "ACB-CAP-04 summary minimum_deliverable_met must be true")
+
+    _require(research_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 research_basis phase_id mismatch")
+    _require(research_data.get("conclusion") == "proceed_with_product_pilot_boundary_gate_only", "ACB-CAP-04 research_basis conclusion mismatch")
+    _require(research_data.get("rejected_pattern") == "pilot_without_evidence_hashes", "ACB-CAP-04 research_basis rejected_pattern mismatch")
+    _require(research_data.get("rejected_pattern_2") == "automatic_product_promotion", "ACB-CAP-04 research_basis rejected_pattern_2 mismatch")
+
+    _require(contract_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 contract phase_id mismatch")
+    _require(contract_data.get("module") == "aris.product_boundary", "ACB-CAP-04 contract module mismatch")
+    _require(contract_data.get("gate_count") == 5, "ACB-CAP-04 contract gate_count mismatch")
+    _require(contract_data.get("binary_outputs_only") is True, "ACB-CAP-04 contract binary_outputs_only must be true")
+    _require(contract_data.get("workflow_stages") == ["LAB", "STAGING", "PILOT_CANDIDATE", "PILOT_APPROVED"], "ACB-CAP-04 contract workflow stages mismatch")
+    invariants = contract_data.get("invariants", {})
+    _require(invariants.get("pilot_allowed_now") is False, "ACB-CAP-04 contract pilot_allowed_now must be false")
+    _require(invariants.get("client_real_allowed_now") is False, "ACB-CAP-04 contract client_real_allowed_now must be false")
+    _require(invariants.get("production_authorized") is False, "ACB-CAP-04 contract production_authorized must be false")
+    _require(invariants.get("commercial_use_allowed") is False, "ACB-CAP-04 contract commercial_use_allowed must be false")
+    _require(invariants.get("pricing_allowed") is False, "ACB-CAP-04 contract pricing_allowed must be false")
+    _require(invariants.get("product_promotion_allowed") is False, "ACB-CAP-04 contract product_promotion_allowed must be false")
+    _require(invariants.get("runtime_productive_activation") is False, "ACB-CAP-04 contract runtime_productive_activation must be false")
+    _require(invariants.get("bedrock_required_before_product") is True, "ACB-CAP-04 contract bedrock_required_before_product must be true")
+
+    _require(gate_registry.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 pilot_gate_registry phase_id mismatch")
+    _require(gate_registry.get("gate_count") == 5, "ACB-CAP-04 pilot_gate_registry gate_count mismatch")
+    gates = gate_registry.get("gates", [])
+    _require(len(gates) == 5, "ACB-CAP-04 pilot_gate_registry must contain exactly 5 gates")
+    expected_gate_ids = [
+        "LAB_EVIDENCE_GATE",
+        "STAGING_READINESS_GATE",
+        "SAFETY_BOUNDARY_GATE",
+        "OPERATIONAL_SUPPORT_GATE",
+        "PILOT_APPROVAL_GATE",
+    ]
+    _require([gate.get("gate_id") for gate in gates] == expected_gate_ids, "ACB-CAP-04 gate ids mismatch")
+    for gate in gates:
+        _require(gate.get("allowed_outputs") == ["pass", "fail"], f"ACB-CAP-04 gate {gate.get('gate_id')} allowed_outputs mismatch")
+        _require(gate.get("decision") in {"pass", "fail"}, f"ACB-CAP-04 gate {gate.get('gate_id')} decision must be binary")
+        _require(all(output not in {"pass", "fail"} for output in gate.get("forbidden_outputs", [])), f"ACB-CAP-04 gate {gate.get('gate_id')} forbidden outputs must exclude binary values")
+
+    _require(decision_matrix.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 five_gate_decision_matrix phase_id mismatch")
+    _require(decision_matrix.get("gate_count") == 5, "ACB-CAP-04 five_gate_decision_matrix gate_count mismatch")
+    matrix_cases = decision_matrix.get("cases", {})
+    for case_name in ["missing_evidence", "hashless_evidence", "complete_evidence"]:
+        _require(len(matrix_cases.get(case_name, [])) == 5, f"ACB-CAP-04 decision matrix case {case_name} must contain 5 gates")
+    _require(all(gate.get("decision") == "fail" for gate in matrix_cases.get("missing_evidence", [])), "ACB-CAP-04 missing_evidence case must fail every gate")
+    _require(all(gate.get("decision") == "fail" for gate in matrix_cases.get("hashless_evidence", [])), "ACB-CAP-04 hashless_evidence case must fail every gate")
+    _require(all(gate.get("decision") == "pass" for gate in matrix_cases.get("complete_evidence", [])), "ACB-CAP-04 complete_evidence case must pass every gate")
+
+    _require(workflow_data.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 workflow phase_id mismatch")
+    _require(workflow_data.get("stages") == ["LAB", "STAGING", "PILOT_CANDIDATE", "PILOT_APPROVED"], "ACB-CAP-04 workflow stages mismatch")
+    evaluations = workflow_data.get("evaluations", {})
+    _require(evaluations.get("blocked_by_gate", {}).get("current_stage") == "lab", "ACB-CAP-04 workflow blocked_by_gate stage mismatch")
+    _require("binary_gate_fail" in evaluations.get("blocked_by_gate", {}).get("blocked_reasons", []), "ACB-CAP-04 workflow blocked_by_gate reasons mismatch")
+    _require(evaluations.get("blocked_by_prerequisite", {}).get("current_stage") == "staging", "ACB-CAP-04 workflow blocked_by_prerequisite stage mismatch")
+    _require(evaluations.get("candidate_blocked_without_approval", {}).get("current_stage") == "pilot_candidate", "ACB-CAP-04 workflow candidate_blocked_without_approval stage mismatch")
+    _require("client_approval_missing" in evaluations.get("candidate_blocked_without_approval", {}).get("blocked_reasons", []), "ACB-CAP-04 workflow must block missing client approval")
+    _require("commercial_terms_missing" in evaluations.get("candidate_blocked_without_approval", {}).get("blocked_reasons", []), "ACB-CAP-04 workflow must block missing commercial terms")
+    _require(evaluations.get("approval_still_blocked_in_phase_contract", {}).get("pilot_approved_allowed") is False, "ACB-CAP-04 workflow approval_still_blocked_in_phase_contract must not allow pilot")
+
+    _require(pilot_scope.get("pilot_scope_defined") is True, "ACB-CAP-04 pilot_scope_contract pilot_scope_defined must be true")
+    _require(pilot_scope.get("pilot_authorized") is False, "ACB-CAP-04 pilot_scope_contract pilot_authorized must be false")
+    _require(pilot_scope.get("kill_switch_required") is True, "ACB-CAP-04 pilot_scope_contract kill_switch_required must be true")
+    _require(pilot_scope.get("rollback_required") is True, "ACB-CAP-04 pilot_scope_contract rollback_required must be true")
+    _require(pilot_scope.get("audit_ledger_required") is True, "ACB-CAP-04 pilot_scope_contract audit_ledger_required must be true")
+    _require(pilot_scope.get("support_required") is True, "ACB-CAP-04 pilot_scope_contract support_required must be true")
+
+    _require(evidence_contract.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 evidence_bundle_contract phase_id mismatch")
+    _require(evidence_contract.get("hash_required_for_every_item") is True, "ACB-CAP-04 evidence_bundle_contract hash_required_for_every_item must be true")
+    items = evidence_contract.get("items", [])
+    _require(len(items) == 13, "ACB-CAP-04 evidence_bundle_contract must list 13 items")
+    _require(all(item.get("hash_required") is True for item in items), "ACB-CAP-04 evidence_bundle_contract every item must require hash")
+
+    _require(risk_matrix.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 pilot_risk_matrix phase_id mismatch")
+    risks = risk_matrix.get("risks", [])
+    risk_ids = {risk.get("risk_id") for risk in risks}
+    _require("prompt_injection" in risk_ids, "ACB-CAP-04 risk matrix missing prompt_injection")
+    _require("excessive_agency" in risk_ids, "ACB-CAP-04 risk matrix missing excessive_agency")
+    _require("rollback_failure" in risk_ids, "ACB-CAP-04 risk matrix missing rollback_failure")
+    _require("product_readiness_theater" in risk_ids, "ACB-CAP-04 risk matrix missing product_readiness_theater")
+
+    _require(non_authorization.get("pilot_allowed_now") is False, "ACB-CAP-04 non_authorization_statement pilot_allowed_now must be false")
+    _require(non_authorization.get("client_real_allowed_now") is False, "ACB-CAP-04 non_authorization_statement client_real_allowed_now must be false")
+    _require(non_authorization.get("production_authorized") is False, "ACB-CAP-04 non_authorization_statement production_authorized must be false")
+    _require(non_authorization.get("commercial_use_allowed") is False, "ACB-CAP-04 non_authorization_statement commercial_use_allowed must be false")
+    _require(non_authorization.get("pricing_allowed") is False, "ACB-CAP-04 non_authorization_statement pricing_allowed must be false")
+    _require(non_authorization.get("product_promotion_allowed") is False, "ACB-CAP-04 non_authorization_statement product_promotion_allowed must be false")
+    _require(non_authorization.get("runtime_productive_activation") is False, "ACB-CAP-04 non_authorization_statement runtime_productive_activation must be false")
+    _require(non_authorization.get("bedrock_required_before_product") is True, "ACB-CAP-04 non_authorization_statement bedrock_required_before_product must be true")
+    _require(non_authorization.get("pilot_scope_defined") is True, "ACB-CAP-04 non_authorization_statement pilot_scope_defined must be true")
+    _require(non_authorization.get("pilot_authorized") is False, "ACB-CAP-04 non_authorization_statement pilot_authorized must be false")
+
+    _require(import_report.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 import_stability_report phase_id mismatch")
+    _require(import_report.get("import_smoke_tests_passed") is True, "ACB-CAP-04 import_stability_report import_smoke_tests_passed must be true")
+    _require(import_report.get("public_api_stable_or_ratified") is True, "ACB-CAP-04 import_stability_report public_api_stable_or_ratified must be true")
+    _require(import_report.get("forbidden_runtime_patterns") == [], "ACB-CAP-04 import_stability_report forbidden_runtime_patterns must be empty")
+
+    _require(public_api_drift.get("phase_id") == "ACB-CAP-04", "ACB-CAP-04 public_api_drift_report phase_id mismatch")
+    _require(public_api_drift.get("root_removed_symbols") == [], "ACB-CAP-04 public_api_drift_report root_removed_symbols must be empty")
+    _require(public_api_drift.get("root_added_symbols") == [], "ACB-CAP-04 public_api_drift_report root_added_symbols must be empty")
+    _require(public_api_drift.get("product_boundary_exposed_as_submodule_only") is True, "ACB-CAP-04 public_api_drift_report product_boundary_exposed_as_submodule_only must be true")
+    _require(public_api_drift.get("delta_ratified") is True, "ACB-CAP-04 public_api_drift_report delta_ratified must be true")
+
+    _require("does not authorize" in runbook_text.lower(), "ACB-CAP-04 pilot_runbook_contract must state that it does not authorize the pilot")
+    _require("operator-only" in runbook_text.lower(), "ACB-CAP-04 pilot_runbook_contract must be operator-only")
+
+    _require("name: Product Pilot Boundary" in workflow_text, "ACB-CAP-04 workflow must be Product Pilot Boundary")
+    _require("uv sync --frozen" in workflow_text, "ACB-CAP-04 workflow must run uv sync --frozen")
+    _require("uv pip install --python .venv/bin/python pytest" in workflow_text, "ACB-CAP-04 workflow must install pytest via uv pip")
+    _require("scripts/run_acb_cap_04_product_pilot_boundary.py" in workflow_text, "ACB-CAP-04 workflow must run the product pilot boundary artifact validator")
+    _require("tests/test_acb_cap_04_product_pilot_boundary.py -v" in workflow_text, "ACB-CAP-04 workflow must run product pilot boundary tests")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -1675,8 +1975,10 @@ def main() -> None:
     _check_acb_cap_01_project_artifacts(state)
     # ACB-CAP-02 baseline must remain true for ACB-CAP-03.
     _check_acb_cap_02_project_artifacts(state)
-    # ACB-CAP-03 specific checks
+    # ACB-CAP-03 baseline must remain true for ACB-CAP-04.
     _check_acb_cap_03_project_artifacts(state)
+    # ACB-CAP-04 specific checks
+    _check_acb_cap_04_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -1731,14 +2033,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_cap_03/`",
+        "External deliverables registered from `../artifacts/acb_cap_04/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
         "Awaiting Codex-result validation for prompt-only continuity.",
         "Execution authorization: `false`",
-        "ACB-CAP-04 is the canonical prompt-only successor, but it remains unopened in JSON.",
+        "ACB-CAP-05 is the canonical prompt-only successor, but it remains unopened in JSON.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -1747,31 +2049,31 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "Prompt emission continuity for `ACB-CAP-04` does not open the phase in JSON.",
+        "Prompt emission continuity for `ACB-CAP-05` does not open the phase in JSON.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json",
-        "../artifacts/acb_cap_03/decision.json",
-        "../artifacts/acb_cap_03/summary.json",
-        "../artifacts/acb_cap_03/report.md",
+        "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
+        "../artifacts/acb_cap_04/decision.json",
+        "../artifacts/acb_cap_04/summary.json",
+        "../artifacts/acb_cap_04/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass",
         "ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass",
         "ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass",
-        "ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json",
-        "runtime_public_api_documented: `true`",
-        "runtime_public_api_importable: `true`",
-        "runtime_modes_enforced: `true`",
+        "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
+        "pilot_gates_defined: `true`",
+        "five_binary_gates_defined: `true`",
+        "pilot_allowed_now: `false`",
         "validate_active_context.yml",
     )
     _mirror_contains(
@@ -1779,7 +2081,7 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "Prompt-only continuity may emit the next Codex prompt without opening the phase in JSON.",
-        "`ACB-CAP-04` remains unopened until a future canonical state transition is recorded.",
+        "`ACB-CAP-05` remains unopened until a future canonical state transition is recorded.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",

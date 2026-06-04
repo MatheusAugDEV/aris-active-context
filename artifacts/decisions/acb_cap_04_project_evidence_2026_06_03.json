@@ -1,0 +1,72 @@
+{
+  "artifact_id": "acb_cap_04_project_evidence_2026_06_03",
+  "phase_id": "ACB-CAP-04",
+  "phase_name": "ARIS Capability Build Product/Pilot Boundary Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "b6044982c31e0861b481605c40bef673b249f351",
+  "project_sha_gate_start": "b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e",
+  "source_active_context_sha_before": "f42d3b36ac9581fb1760bee6651cbb0cb2c9c27d",
+  "product_pilot_boundary_ci": {
+    "name": "Product Pilot Boundary",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26924199459",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "product_boundary_package_exists": true,
+    "pilot_gates_defined": true,
+    "five_binary_gates_defined": true,
+    "lab_to_staging_to_pilot_workflow_defined": true,
+    "pilot_scope_contract_exists": true,
+    "evidence_bundle_contract_exists": true,
+    "pilot_runbook_contract_exists": true,
+    "pilot_risk_matrix_exists": true,
+    "non_authorization_statement_exists": true,
+    "product_pilot_tests_exist": true,
+    "product_pilot_artifacts_exist": true
+  },
+  "external_paths": [
+    "../.github/workflows/product-pilot-boundary.yml",
+    "../src/aris/product_boundary/__init__.py",
+    "../src/aris/product_boundary/contracts.py",
+    "../src/aris/product_boundary/gate_registry.py",
+    "../src/aris/product_boundary/pilot_gate.py",
+    "../src/aris/product_boundary/workflow.py",
+    "../src/aris/product_boundary/evidence.py",
+    "../src/aris/product_boundary/decision.py",
+    "../src/aris/product_boundary/checklist.py",
+    "../src/aris/product_boundary/risk_matrix.py",
+    "../scripts/run_acb_cap_04_product_pilot_boundary.py",
+    "../tests/test_acb_cap_04_product_pilot_boundary.py",
+    "../artifacts/acb_cap_04/research_basis.json",
+    "../artifacts/acb_cap_04/product_pilot_boundary_contract.json",
+    "../artifacts/acb_cap_04/pilot_gate_registry.json",
+    "../artifacts/acb_cap_04/five_gate_decision_matrix.json",
+    "../artifacts/acb_cap_04/lab_to_staging_to_pilot_workflow.json",
+    "../artifacts/acb_cap_04/pilot_scope_contract.json",
+    "../artifacts/acb_cap_04/evidence_bundle_contract.json",
+    "../artifacts/acb_cap_04/pilot_runbook_contract.md",
+    "../artifacts/acb_cap_04/pilot_risk_matrix.json",
+    "../artifacts/acb_cap_04/non_authorization_statement.json",
+    "../artifacts/acb_cap_04/import_stability_report.json",
+    "../artifacts/acb_cap_04/public_api_drift_report.json",
+    "../artifacts/acb_cap_04/decision.json",
+    "../artifacts/acb_cap_04/summary.json",
+    "../artifacts/acb_cap_04/report.md"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "pilot_gates_defined": true,
+    "five_binary_gates_defined": true,
+    "pilot_scope_defined": true,
+    "evidence_bundle_contract_defined": true,
+    "pilot_allowed_now": false,
+    "production_authorized": false,
+    "product_promotion_allowed": false,
+    "bedrock_required_before_product": true
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CAP-04 when active-context CI runs without direct access to the Project_ARIS workspace.",
+    "Project_ARIS artifacts were generated before the final phase commit, so ../artifacts/acb_cap_04/decision.json records the gate-start SHA while this mirror records the final pushed Project_ARIS SHA.",
+    "Legacy repo-wide CI remains outside ACB-CAP-04 scope; the dedicated Product Pilot Boundary workflow is the relevant gate for this phase."
+  ]
+}
