@@ -15,6 +15,7 @@ ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_proj
 ACB_CORE_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_02_project_evidence_2026_06_03.json"
 ACB_CAP_01_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_operator_authorization_2026_06_03.json"
 ACB_CAP_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_project_evidence_2026_06_03.json"
+OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
 EXPECTED_PHASE = "ARIS Capability Build Backend Baseline Gate"
 EXPECTED_PHASE_ID = "ACB-CAP-01"
@@ -125,9 +126,37 @@ PHASE_DELIVERABLES = {
 REQUIRED_BOOT_FILES = [
     "ACTIVE_CONTEXT_STATE.json",
     "AGENT_IDENTITY.md",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "scripts/validate_active_context_state.py",
     "ROADMAP_CANONICAL.md",
     "MANDATORY_READ_FIRST_RULES.md",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
     "DECISION_LOCKS.md",
+    "OPERATOR_PREFERENCES.md",
+]
+
+EXPECTED_PRIORITY_READ_ORDER = [
+    "1. ACTIVE_CONTEXT_STATE.json",
+    "2. AGENT_IDENTITY.md",
+    "3. ACTIVE_CONTEXT_SCHEMA.json",
+    "4. scripts/validate_active_context_state.py",
+    "5. ROADMAP_CANONICAL.md",
+    "6. MANDATORY_READ_FIRST_RULES.md",
+    "7. CURRENT_STATE.md",
+    "8. NEXT_ACTION.md",
+    "9. DECISION_LOCKS.md",
+    "10. OPERATOR_PREFERENCES.md",
+]
+
+OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
+    "must not ask for confirmation just to send the next Codex prompt",
+    "advance_mode=prompt_only",
+    "ACTIVE_CONTEXT_STATE.json",
+    "cannot override",
+    "advance_mode=operator",
+    "next_phase remains `null`",
+    "ACB-CAP-02",
 ]
 
 EXPECTED_FIXTURE_ASSERTION = """import json, sys, pathlib
@@ -173,6 +202,14 @@ def _load_json(path: pathlib.Path) -> Any:
 def _require(condition: bool, message: str) -> None:
     if not condition:
         raise SystemExit(message)
+
+
+def _ordered_positions(items: list[str], required: list[str], label: str) -> list[int]:
+    missing = [item for item in required if item not in items]
+    _require(not missing, f"{label} missing required entries: {missing}")
+    positions = [items.index(item) for item in required]
+    _require(positions == sorted(positions), f"{label} has out-of-order entries for required list")
+    return positions
 
 
 def _mirror_contains(path: pathlib.Path, *phrases: str) -> None:
@@ -228,6 +265,23 @@ def _check_auto_advance(state: dict[str, Any]) -> None:
     _require(isinstance(auto.get("condition"), str) and auto["condition"] != "", "auto_advance.condition must be a non-empty string")
     overlap = set(auto["allowed_phase_classes"]) & set(auto["blocked_phase_classes"])
     _require(not overlap, f"auto_advance phase classes overlap: {sorted(overlap)}")
+
+
+def _preference_allows_direct_prompt(
+    *,
+    advance_mode: str,
+    previous_phase_pass: bool,
+    ci_green: bool,
+    validator_green: bool,
+    manual_authorization_required: bool,
+) -> bool:
+    return (
+        advance_mode == "prompt_only"
+        and previous_phase_pass
+        and ci_green
+        and validator_green
+        and not manual_authorization_required
+    )
 
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
@@ -328,6 +382,66 @@ def _warn_boot_receipt(state: dict[str, Any]) -> None:
         print(f"BLOCK: last_boot_files_read missing: {missing}")
         print("Codex must populate last_boot_files_read before any action.")
         sys.exit(1)
+    try:
+        _ordered_positions(boot_files, REQUIRED_BOOT_FILES, "last_boot_files_read")
+    except SystemExit as exc:
+        print(f"BLOCK: {exc}")
+        print("Codex must preserve the mandatory read-first order in last_boot_files_read.")
+        sys.exit(1)
+
+
+def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
+    _require(OPERATOR_PREFERENCES_PATH.exists(), "missing OPERATOR_PREFERENCES.md")
+
+    priority_read_order = state.get("anti_corruption_contract", {}).get("canonical_read_order", [])
+    _require(
+        priority_read_order[: len(EXPECTED_PRIORITY_READ_ORDER)] == EXPECTED_PRIORITY_READ_ORDER,
+        "canonical_read_order does not match expected operator-priority read order",
+    )
+    _require(
+        "OPERATOR_PREFERENCES.md" in state.get("required_files_for_transition", []),
+        "required_files_for_transition must include OPERATOR_PREFERENCES.md",
+    )
+
+    text = OPERATOR_PREFERENCES_PATH.read_text(encoding="utf-8")
+    for phrase in OPERATOR_PREFERENCE_REQUIRED_PHRASES:
+        _require(phrase in text, f"OPERATOR_PREFERENCES.md missing required phrase: {phrase}")
+
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="prompt_only",
+            previous_phase_pass=True,
+            ci_green=True,
+            validator_green=True,
+            manual_authorization_required=False,
+        ) is True,
+        "prompt_only direct-prompt preference logic must allow clean prompt emission",
+    )
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="operator",
+            previous_phase_pass=True,
+            ci_green=True,
+            validator_green=True,
+            manual_authorization_required=False,
+        ) is False,
+        "operator advance_mode must never be authorized by prompt preference",
+    )
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="prompt_only",
+            previous_phase_pass=True,
+            ci_green=True,
+            validator_green=True,
+            manual_authorization_required=True,
+        ) is False,
+        "manual authorization lock must override prompt emission preference",
+    )
+    _require(state.get("next_phase") is None, "operator preference must not auto-open next_phase")
+    _require(
+        state.get("next_phase_authorized_by_operator") is False,
+        "operator preference must not self-authorize next phase",
+    )
 
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
@@ -984,6 +1098,7 @@ def main() -> None:
     _check_auto_advance(state)
     _check_next_phase_in_transition_table(state)
     _check_minimum_deliverable(state)
+    _check_operator_preferences_contract(state)
 
     # Three-layer circuit breaker (fixture_materialization not in GOVERNANCE_CLASSES, streak check is a no-op here)
     _check_governance_streak(state)
@@ -1078,6 +1193,7 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
+        "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json",
         "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
         "../artifacts/acb_cap_01/decision.json",
@@ -1093,6 +1209,7 @@ def main() -> None:
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
+        "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
         "fastapi_health_check_passing: `true`",
         "slowapi_rate_limit_passing: `true`",
@@ -1116,6 +1233,8 @@ def main() -> None:
         "REGRA DE TRANSIÇÃO",
         "REGRA DE CIRCUIT BREAKER",
         "governance_gate_streak",
+        "REGRA DE PREFERÊNCIA DO OPERADOR",
+        "OPERATOR_PREFERENCES.md",
     )
     _mirror_contains(
         ROOT / "PROMPT_CONTRACT.md",

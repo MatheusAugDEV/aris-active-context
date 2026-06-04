@@ -363,3 +363,88 @@ def test_minimum_deliverable_allows_acb_cap_01_with_evidence_artifact_only():
             )
         finally:
             os.chdir(cwd)
+
+
+def test_boot_receipt_blocks_when_operator_preferences_missing():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    try:
+        module._warn_boot_receipt(
+            {
+                "last_boot_files_read": [
+                    "ACTIVE_CONTEXT_STATE.json",
+                    "AGENT_IDENTITY.md",
+                    "ACTIVE_CONTEXT_SCHEMA.json",
+                    "scripts/validate_active_context_state.py",
+                    "ROADMAP_CANONICAL.md",
+                    "MANDATORY_READ_FIRST_RULES.md",
+                    "CURRENT_STATE.md",
+                    "NEXT_ACTION.md",
+                    "DECISION_LOCKS.md",
+                ]
+            }
+        )
+    except SystemExit as exc:
+        assert exc.code == 1
+    else:
+        raise AssertionError("boot receipt should block when OPERATOR_PREFERENCES.md is missing")
+
+
+def test_prompt_preference_allows_clean_prompt_only_transition():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    assert module._preference_allows_direct_prompt(
+        advance_mode="prompt_only",
+        previous_phase_pass=True,
+        ci_green=True,
+        validator_green=True,
+        manual_authorization_required=False,
+    ) is True
+
+
+def test_prompt_preference_does_not_override_operator_transition():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    assert module._preference_allows_direct_prompt(
+        advance_mode="operator",
+        previous_phase_pass=True,
+        ci_green=True,
+        validator_green=True,
+        manual_authorization_required=False,
+    ) is False
+
+
+def test_prompt_preference_does_not_override_manual_lock():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    assert module._preference_allows_direct_prompt(
+        advance_mode="prompt_only",
+        previous_phase_pass=True,
+        ci_green=True,
+        validator_green=True,
+        manual_authorization_required=True,
+    ) is False

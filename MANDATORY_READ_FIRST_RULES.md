@@ -15,17 +15,18 @@ For every ARIS technical decision, phase prompt, Codex instruction, status revie
 2. AGENT_IDENTITY.md                  ← identidade e constituição do orquestrador. Leitura obrigatória em todo boot. Vence comportamento padrão do modelo.
 3. ACTIVE_CONTEXT_SCHEMA.json         ← validation contract
 4. scripts/validate_active_context_state.py  ← run; if fails, report drift and stop
-5. CURRENT_STATE.md                   ← derived mirror
-6. NEXT_ACTION.md                     ← derived mirror
-7. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
-8. MANDATORY_READ_FIRST_RULES.md      ← this file
-9. LAB_OPERATING_CONTRACT.md
-10. CONTEXT_INDEX.md
-11. ARIS_PHASE_LEDGER.md
-12. README.md
-13. OPERATOR_PREFERENCES.md, if present
+5. ROADMAP_CANONICAL.md               ← Transition Table authority
+6. MANDATORY_READ_FIRST_RULES.md      ← this file
+7. CURRENT_STATE.md                   ← derived mirror
+8. NEXT_ACTION.md                     ← derived mirror
+9. DECISION_LOCKS.md                  ← derived mirror / authorization boundary
+10. OPERATOR_PREFERENCES.md           ← high-priority prompt emission preference; never overrides JSON/schema/locks
+11. CONTEXT_INDEX.md
+12. ARIS_PHASE_LEDGER.md
+13. README.md
 14. PROMPT_CONTRACT.md
-15. North_Pole.md
+15. LAB_OPERATING_CONTRACT.md
+16. North_Pole.md
 ```
 
 **Rule**: No Markdown file may be read before ACTIVE_CONTEXT_STATE.json. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
@@ -107,6 +108,20 @@ Entregável mínimo é verificado pelo validator no CI.
 Gate que declara pass sem entregável mínimo no disco é BLOQUEADO.
 Documentar que algo não existe não é entregável.
 Prompt_only não isenta o gate de produzir capacidade real via Codex.
+
+## REGRA DE PREFERÊNCIA DO OPERADOR
+
+Se a Transition Table define a próxima fase com `advance_mode=prompt_only`,
+o gate anterior está canonically PASS, CI/validator estão verdes, e não existe
+lock explícito exigindo autorização manual para aquela transição exata:
+- o assistente entrega diretamente o próximo prompt do Codex
+- o assistente não pede confirmação apenas para emitir esse prompt
+
+Esta preferência não autoriza produção, Bedrock, piloto, runtime execution,
+real secrets, external network, nem qualquer fase com `advance_mode=operator`.
+Esta preferência não pode sobrescrever `ACTIVE_CONTEXT_STATE.json`,
+`ACTIVE_CONTEXT_SCHEMA.json`, `scripts/validate_active_context_state.py`,
+`ROADMAP_CANONICAL.md`, `DECISION_LOCKS.md`, nem locks de autorização manual.
 
 ## Prompt and Codex rules
 

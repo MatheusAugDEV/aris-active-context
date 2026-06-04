@@ -3,6 +3,7 @@
 - `ACTIVE_CONTEXT_STATE.json` is the only canonical live state.
 - `ACTIVE_CONTEXT_SCHEMA.json` is the canonical validation contract.
 - `ROADMAP_CANONICAL.md` is the canonical roadmap authority.
+- `OPERATOR_PREFERENCES.md` is a priority-read prompt emission preference layer and never overrides JSON, schema, validator, Transition Table, or explicit safety locks.
 - Markdown drift against JSON is a blocking error.
 
 ## Current Route
@@ -92,6 +93,11 @@
 ## CI
 
 validate_active_context.yml runs on every push and PR to main.
+
+## Prompt Emission Preference
+
+- When the Transition Table says `advance_mode=prompt_only`, the previous phase is canonically PASS, CI/validator evidence is green, and no explicit manual/operator lock exists for that exact transition, the assistant should directly emit the next Codex prompt without asking for confirmation just to emit it.
+- This preference does not open the next phase in JSON, does not change `next_phase`, and does not bypass `advance_mode=operator`.
 
 ## Non-Authorization
 

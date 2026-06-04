@@ -8,6 +8,7 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 ## Current Phase Artifacts
 
+- `OPERATOR_PREFERENCES.md`
 - `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`
 - `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_cap_01/decision.json`

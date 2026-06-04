@@ -22,9 +22,14 @@
   "last_boot_files_read": [
     "ACTIVE_CONTEXT_STATE.json",
     "AGENT_IDENTITY.md",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "scripts/validate_active_context_state.py",
     "ROADMAP_CANONICAL.md",
     "MANDATORY_READ_FIRST_RULES.md",
-    "DECISION_LOCKS.md"
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "DECISION_LOCKS.md",
+    "OPERATOR_PREFERENCES.md"
   ],
   "auto_advance": {
     "enabled": true,
@@ -44,13 +49,22 @@
     "anti_corruption_contract_file": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
     "canonical_read_order": [
       "1. ACTIVE_CONTEXT_STATE.json",
-      "2. ACTIVE_CONTEXT_SCHEMA.json",
-      "3. scripts/validate_active_context_state.py",
-      "4. ROADMAP_CANONICAL.md",
-      "5. Markdown mirrors: CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, README.md",
-      "6. North Pole when roadmap direction is discussed: NORTH_POLE.md",
-      "7. Bedrock boundary when product/promotion/gate decision is discussed: BEDROCK_GATE.md",
-      "8. Historical files only when explicitly needed; old roadmap files are not active authority"
+      "2. AGENT_IDENTITY.md",
+      "3. ACTIVE_CONTEXT_SCHEMA.json",
+      "4. scripts/validate_active_context_state.py",
+      "5. ROADMAP_CANONICAL.md",
+      "6. MANDATORY_READ_FIRST_RULES.md",
+      "7. CURRENT_STATE.md",
+      "8. NEXT_ACTION.md",
+      "9. DECISION_LOCKS.md",
+      "10. OPERATOR_PREFERENCES.md",
+      "11. CONTEXT_INDEX.md",
+      "12. ARIS_PHASE_LEDGER.md",
+      "13. README.md",
+      "14. PROMPT_CONTRACT.md",
+      "15. North Pole when roadmap direction is discussed: NORTH_POLE.md",
+      "16. Bedrock boundary when product/promotion/gate decision is discussed: BEDROCK_GATE.md",
+      "17. Historical files only when explicitly needed; old roadmap files are not active authority"
     ],
     "json_beats_markdown": true,
     "markdown_conflict_policy": "fail_closed",
@@ -470,6 +484,7 @@
     "CURRENT_STATE.md",
     "NEXT_ACTION.md",
     "DECISION_LOCKS.md",
+    "OPERATOR_PREFERENCES.md",
     "CONTEXT_INDEX.md",
     "ARIS_PHASE_LEDGER.md",
     "README.md",
@@ -601,7 +616,7 @@
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. OPERATOR_PREFERENCES.md is elevated into the priority read path immediately after DECISION_LOCKS, but remains subordinate to ACTIVE_CONTEXT_STATE.json, the schema, validator, Transition Table, and explicit operator/manual authorization locks. Schema structure unchanged at 2.3.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }
