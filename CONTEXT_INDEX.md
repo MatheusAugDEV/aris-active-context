@@ -2,13 +2,44 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
+- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
 - `OPERATOR_PREFERENCES.md`
+- `artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json`
+- `../artifacts/acb_cap_02/decision.json`
+- `../artifacts/acb_cap_02/summary.json`
+- `../artifacts/acb_cap_02/report.md`
+- `../artifacts/acb_cap_02/research_basis.json`
+- `../artifacts/acb_cap_02/mcp_runtime_contract.json`
+- `../artifacts/acb_cap_02/transport_policy_matrix.json`
+- `../artifacts/acb_cap_02/sandbox_spec.json`
+- `../artifacts/acb_cap_02/policy_decision_matrix.json`
+- `../artifacts/acb_cap_02/kill_switch_matrix.json`
+- `../artifacts/acb_cap_02/rollback_contract.json`
+- `../artifacts/acb_cap_02/audit_event_sample.json`
+- `../artifacts/acb_cap_02/import_stability_report.json`
+- `../artifacts/acb_cap_02/public_api_drift_report.json`
+- `../.github/workflows/mcp-runtime-sandbox.yml`
+- `../scripts/run_acb_cap_02_mcp_runtime_sandbox.py`
+- `../tests/test_acb_cap_02_mcp_runtime_sandbox.py`
+- `../src/aris/mcp_runtime/__init__.py`
+- `../src/aris/mcp_runtime/contracts.py`
+- `../src/aris/mcp_runtime/transport_policy.py`
+- `../src/aris/mcp_runtime/sandbox_spec.py`
+- `../src/aris/mcp_runtime/policy_engine.py`
+- `../src/aris/mcp_runtime/dispatcher.py`
+- `../src/aris/mcp_runtime/kill_switch.py`
+- `../src/aris/mcp_runtime/rollback.py`
+- `../src/aris/mcp_runtime/audit.py`
+- `scripts/validate_active_context_state.py`
+- `tests/test_validate_active_context.py`
+
+## Prior Phase Artifacts
+
 - `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`
 - `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_cap_01/decision.json`
@@ -28,11 +59,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `../src/aris/backend/auth.py`
 - `../src/aris/backend/contracts.py`
 - `../src/aris/backend/rate_limit.py`
-- `scripts/validate_active_context_state.py`
-- `tests/test_validate_active_context.py`
-
-## Prior Phase Artifacts
-
 - `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_02/decision.json`
 - `../artifacts/acb_core_02/summary.json`

@@ -2,13 +2,13 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 
 # Current State
 
-- Phase ID: `ACB-CAP-01`
-- Previous phase ID: `ACB-CORE-02`
-- Status: `acb_cap_01_pass`
+- Phase ID: `ACB-CAP-02`
+- Previous phase ID: `ACB-CAP-01`
+- Status: `acb_cap_02_pass`
 - Decision: `pass`
-- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
-- Previous execution phase: `ARIS Capability Build Core Public API Baseline Gate`
-- Current status: `awaiting_manual_operator_authorization_for_next_phase`
+- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
+- Previous execution phase: `ARIS Capability Build Backend Baseline Gate`
+- Current status: `awaiting_codex_result_validation_for_prompt_only_transition`
 - Next phase: `null`
 - next_phase_authorized_by_operator=`false`
 - Anti-proliferation rule active: `true`
@@ -29,8 +29,8 @@ Derived mirror from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIV
 - purgatorium_finding_created: `true`
 - finding_count: `1`
 - Circuit breaker: STABLE — governance_gate_streak remains `0` after this capability-build pass.
-- External deliverables registered from `../artifacts/acb_cap_01/` and canonically mirrored by `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`.
-- Explicit operator authorization recorded at `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`.
-- Backend baseline deliverables verified: FastAPI app factory, `/healthz`, `/readyz`, tenant JWT/API-key auth, and SlowAPI `2/minute` protection.
-- No LLM-as-judge, no real runtime execution, no autonomous execution, no runtime patch, and no runtime mutation were authorized.
+- External deliverables registered from `../artifacts/acb_cap_02/` and canonically mirrored by `artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json`.
+- MCP runtime sandbox deliverables verified: isolated `src/aris/mcp_runtime/`, stdio transport ban, streamable HTTP transport contract, deterministic sandbox runner, pre-dispatch policy checks, kill-switch handling, rollback readiness, and audit hashing.
+- Prompt-only continuity is now governed by validated Codex-result handling; `next_phase` still remains `null`.
+- No real network execution, no server startup, no real tool execution, no runtime patch, and no runtime mutation were authorized.
 - Minimum deliverable enforcement is active through the validator and CI.

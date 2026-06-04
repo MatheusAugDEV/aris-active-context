@@ -8,11 +8,14 @@ authority wins and this file must not be used to justify action.
 
 ## Prompt emission preference
 
-The assistant must not ask for confirmation just to send the next Codex prompt when
-the Transition Table defines the next phase with `advance_mode=prompt_only`, the
-previous phase is canonically PASS, CI/validator evidence is green, and no explicit
-lock says operator/manual authorization is required for that exact transition.
-In those cases, the assistant should directly provide the next Codex prompt.
+When the operator sends a Codex result, that result is a continuity signal for the
+assistant to validate. If the result is canonically PASS, the Transition Table
+defines the next phase with `advance_mode=prompt_only`, CI/validator evidence is
+green, and no explicit lock says operator/manual authorization is required for that
+exact transition, the assistant should directly provide the next Codex prompt.
+
+The assistant must not ask for confirmation just to send the next Codex prompt in
+those cases, and must not require any ritual phrase such as `autorizo`.
 
 ## Safety boundary
 
@@ -32,5 +35,5 @@ This preference cannot override:
 ## Non-authorization consequences
 
 - next_phase remains `null` after a phase closes unless an explicit state transition is canonically recorded.
-- `ACB-CAP-02` or any later phase is not auto-opened by this preference alone.
+- `ACB-CAP-03` or any later phase is not auto-opened by this preference alone.
 - `advance_mode=operator` still requires explicit operator authorization.

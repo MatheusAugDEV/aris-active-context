@@ -8,11 +8,11 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
-- Previous execution phase: `ARIS Capability Build Core Public API Baseline Gate`
+- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
+- Previous execution phase: `ARIS Capability Build Backend Baseline Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- governance_gate_streak: `0` — preserved by ACB-CAP-01 capability-build pass
+- governance_gate_streak: `0` — preserved by ACB-CAP-02 capability-build pass
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
 - bot_execution_executed: `true` (1 deterministic nemesis log on disk)
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk)
@@ -20,10 +20,11 @@
 - uv_lock_created_or_verified: `true` (`../uv.lock`)
 - pip_audit_gate_created_or_verified: `true` (`../.github/workflows/supply-chain-baseline.yml`)
 - cyclonedx_sbom_created_or_verified: `true` (`../artifacts/acb_core_01/sbom.cdx.json`)
-- fastapi_health_check_passing: `true` (`../artifacts/acb_cap_01/decision.json`)
-- jwt_auth_passing: `true` (`../artifacts/acb_cap_01/auth_matrix.json`)
-- api_key_auth_passing: `true` (`../artifacts/acb_cap_01/auth_matrix.json`)
-- slowapi_rate_limit_passing: `true` (`../artifacts/acb_cap_01/rate_limit_report.json`)
+- mcp_sandbox_running: `true` (`../artifacts/acb_cap_02/decision.json`)
+- stdio_banned: `true` (`../artifacts/acb_cap_02/decision.json`)
+- policy_pre_dispatch_passing: `true` (`../artifacts/acb_cap_02/decision.json`)
+- kill_switch_passing: `true` (`../artifacts/acb_cap_02/decision.json`)
+- rollback_contract_passing: `true` (`../artifacts/acb_cap_02/decision.json`)
 
 ## Active Artifacts
 
@@ -31,25 +32,32 @@
 - `artifacts/purg_01/summary.json`
 - `artifacts/purg_01/report.md`
 - `artifacts/purg_01/finding_nemesis_validator_bypass.json`
-- `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`
-- `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`
-- `../artifacts/acb_cap_01/decision.json`
-- `../artifacts/acb_cap_01/summary.json`
-- `../artifacts/acb_cap_01/report.md`
-- `../artifacts/acb_cap_01/research_basis.json`
-- `../artifacts/acb_cap_01/backend_contract.json`
-- `../artifacts/acb_cap_01/auth_matrix.json`
-- `../artifacts/acb_cap_01/rate_limit_report.json`
-- `../artifacts/acb_cap_01/public_api_drift_report.json`
-- `../artifacts/acb_cap_01/import_stability_report.json`
-- `../.github/workflows/backend-baseline.yml`
-- `../scripts/run_acb_cap_01_backend_baseline.py`
-- `../tests/test_acb_cap_01_backend.py`
-- `../src/aris/backend/__init__.py`
-- `../src/aris/backend/app.py`
-- `../src/aris/backend/auth.py`
-- `../src/aris/backend/contracts.py`
-- `../src/aris/backend/rate_limit.py`
+- `artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json`
+- `../artifacts/acb_cap_02/decision.json`
+- `../artifacts/acb_cap_02/summary.json`
+- `../artifacts/acb_cap_02/report.md`
+- `../artifacts/acb_cap_02/research_basis.json`
+- `../artifacts/acb_cap_02/mcp_runtime_contract.json`
+- `../artifacts/acb_cap_02/transport_policy_matrix.json`
+- `../artifacts/acb_cap_02/sandbox_spec.json`
+- `../artifacts/acb_cap_02/policy_decision_matrix.json`
+- `../artifacts/acb_cap_02/kill_switch_matrix.json`
+- `../artifacts/acb_cap_02/rollback_contract.json`
+- `../artifacts/acb_cap_02/audit_event_sample.json`
+- `../artifacts/acb_cap_02/import_stability_report.json`
+- `../artifacts/acb_cap_02/public_api_drift_report.json`
+- `../.github/workflows/mcp-runtime-sandbox.yml`
+- `../scripts/run_acb_cap_02_mcp_runtime_sandbox.py`
+- `../tests/test_acb_cap_02_mcp_runtime_sandbox.py`
+- `../src/aris/mcp_runtime/__init__.py`
+- `../src/aris/mcp_runtime/contracts.py`
+- `../src/aris/mcp_runtime/transport_policy.py`
+- `../src/aris/mcp_runtime/sandbox_spec.py`
+- `../src/aris/mcp_runtime/policy_engine.py`
+- `../src/aris/mcp_runtime/dispatcher.py`
+- `../src/aris/mcp_runtime/kill_switch.py`
+- `../src/aris/mcp_runtime/rollback.py`
+- `../src/aris/mcp_runtime/audit.py`
 - `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
 - `../artifacts/acb_core_01/decision.json`
 - `../artifacts/acb_core_01/summary.json`
@@ -97,10 +105,11 @@ validate_active_context.yml runs on every push and PR to main.
 ## Prompt Emission Preference
 
 - When the Transition Table says `advance_mode=prompt_only`, the previous phase is canonically PASS, CI/validator evidence is green, and no explicit manual/operator lock exists for that exact transition, the assistant should directly emit the next Codex prompt without asking for confirmation just to emit it.
+- When the operator sends a Codex result for a canonically PASS gate, the assistant may use that result as the continuity signal to validate and directly emit the next `prompt_only` Codex prompt; no ritual phrase such as `autorizo` is required.
 - This preference does not open the next phase in JSON, does not change `next_phase`, and does not bypass `advance_mode=operator`.
 
 ## Non-Authorization
 
-- No next phase is authorized until explicit manual operator authorization for ACB-CAP-02.
+- No next phase is opened automatically by this preference; `ACB-CAP-03` remains unopened in JSON until a future canonical state transition is recorded.
 - No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion.
 - Circuit breaker streak remains 0. Governance gates are unblocked but no phase is open.

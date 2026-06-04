@@ -365,6 +365,82 @@ def test_minimum_deliverable_allows_acb_cap_01_with_evidence_artifact_only():
             os.chdir(cwd)
 
 
+def test_minimum_deliverable_blocks_acb_cap_02_pass_without_project_deliverables():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_02_EVIDENCE_PATH = Path(tmp) / "missing_evidence.json"
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "ACB-CAP-02",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block ACB-CAP-02 without project deliverables")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_allows_acb_cap_02_with_evidence_artifact_only():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            evidence_path = Path(tmp) / "acb_cap_02_evidence.json"
+            evidence_path.write_text(
+                json.dumps(
+                    {
+                        "project_sha": "b2fdc3c994342a42a84823fa15615c931f1bc00e",
+                        "mcp_runtime_sandbox_ci": {"conclusion": "success"},
+                        "deliverables": {
+                            "mcp_runtime_package_exists": True,
+                            "stdio_ban_exists": True,
+                            "sandbox_spec_exists": True,
+                            "policy_pre_dispatch_exists": True,
+                            "kill_switch_exists": True,
+                            "rollback_contract_exists": True,
+                            "audit_event_exists": True,
+                            "mcp_runtime_tests_exist": True,
+                            "mcp_runtime_artifacts_exist": True,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_02_EVIDENCE_PATH = evidence_path
+            module._check_minimum_deliverable(
+                {
+                    "current_phase_id": "ACB-CAP-02",
+                    "decision": "pass",
+                }
+            )
+        finally:
+            os.chdir(cwd)
+
+
 def test_boot_receipt_blocks_when_operator_preferences_missing():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
@@ -447,4 +523,47 @@ def test_prompt_preference_does_not_override_manual_lock():
         ci_green=True,
         validator_green=True,
         manual_authorization_required=True,
+    ) is False
+
+
+def test_prompt_preference_requires_previous_phase_pass():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    assert module._preference_allows_direct_prompt(
+        advance_mode="prompt_only",
+        previous_phase_pass=False,
+        ci_green=True,
+        validator_green=True,
+        manual_authorization_required=False,
+    ) is False
+
+
+def test_prompt_preference_requires_green_ci_and_validator():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    assert module._preference_allows_direct_prompt(
+        advance_mode="prompt_only",
+        previous_phase_pass=True,
+        ci_green=False,
+        validator_green=True,
+        manual_authorization_required=False,
+    ) is False
+    assert module._preference_allows_direct_prompt(
+        advance_mode="prompt_only",
+        previous_phase_pass=True,
+        ci_green=True,
+        validator_green=False,
+        manual_authorization_required=False,
     ) is False

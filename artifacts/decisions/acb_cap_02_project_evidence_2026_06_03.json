@@ -1,0 +1,72 @@
+{
+  "artifact_id": "acb_cap_02_project_evidence_2026_06_03",
+  "phase_id": "ACB-CAP-02",
+  "phase_name": "ARIS Capability Build MCP Runtime Sandbox Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "b2fdc3c994342a42a84823fa15615c931f1bc00e",
+  "project_sha_gate_start": "68ca2a07fc0ee1afad22d967619e05f35ccf52b1",
+  "source_active_context_sha_before": "82e779673fce21e482dd20ba4c7eed57b31f3254",
+  "mcp_runtime_sandbox_ci": {
+    "name": "MCP Runtime Sandbox",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26922186509",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "mcp_runtime_package_exists": true,
+    "stdio_ban_exists": true,
+    "sandbox_spec_exists": true,
+    "policy_pre_dispatch_exists": true,
+    "kill_switch_exists": true,
+    "rollback_contract_exists": true,
+    "audit_event_exists": true,
+    "mcp_runtime_tests_exist": true,
+    "mcp_runtime_artifacts_exist": true
+  },
+  "external_paths": [
+    "../.github/workflows/mcp-runtime-sandbox.yml",
+    "../src/aris/mcp_runtime/__init__.py",
+    "../src/aris/mcp_runtime/contracts.py",
+    "../src/aris/mcp_runtime/transport_policy.py",
+    "../src/aris/mcp_runtime/sandbox_spec.py",
+    "../src/aris/mcp_runtime/policy_engine.py",
+    "../src/aris/mcp_runtime/dispatcher.py",
+    "../src/aris/mcp_runtime/kill_switch.py",
+    "../src/aris/mcp_runtime/rollback.py",
+    "../src/aris/mcp_runtime/audit.py",
+    "../scripts/run_acb_cap_02_mcp_runtime_sandbox.py",
+    "../tests/test_acb_cap_02_mcp_runtime_sandbox.py",
+    "../artifacts/acb_cap_02/research_basis.json",
+    "../artifacts/acb_cap_02/mcp_runtime_contract.json",
+    "../artifacts/acb_cap_02/transport_policy_matrix.json",
+    "../artifacts/acb_cap_02/sandbox_spec.json",
+    "../artifacts/acb_cap_02/policy_decision_matrix.json",
+    "../artifacts/acb_cap_02/kill_switch_matrix.json",
+    "../artifacts/acb_cap_02/rollback_contract.json",
+    "../artifacts/acb_cap_02/audit_event_sample.json",
+    "../artifacts/acb_cap_02/import_stability_report.json",
+    "../artifacts/acb_cap_02/public_api_drift_report.json",
+    "../artifacts/acb_cap_02/decision.json",
+    "../artifacts/acb_cap_02/summary.json",
+    "../artifacts/acb_cap_02/report.md"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "mcp_sandbox_running": true,
+    "stdio_banned": true,
+    "policy_pre_dispatch_passing": true,
+    "kill_switch_passing": true,
+    "rollback_contract_passing": true,
+    "network_none_enforced": true,
+    "public_api_stable": true,
+    "audit_event_sha256": "beaf64cf5cef60ce0a724d8dcd163ff6e4e8290eb89252a4510a20851b69f486",
+    "runner_command": "PYTHONPATH=src .venv/bin/python scripts/run_acb_cap_02_mcp_runtime_sandbox.py",
+    "pytest_command": "PYTHONPATH=src .venv/bin/python -m pytest tests/test_acb_cap_02_mcp_runtime_sandbox.py -v",
+    "uv_lock_check_command": "UV_CACHE_DIR=/tmp/uv-cache .venv/bin/uv lock --check",
+    "forbidden_pattern_check": "grep -RInE \"subprocess\\\\.Popen|stdin|stdout|uvicorn\\\\.run|requests\\\\.|httpx\\\\.get|httpx\\\\.post|sqlite3|CREATE TABLE|CREATE VIRTUAL TABLE|os\\\\.environ|\\\\.env|BEDROCK|product_promotion_allowed.*true|production_authorized.*true|runtime_integration_allowed.*true\" src/aris/mcp_runtime tests/test_acb_cap_02_mcp_runtime_sandbox.py artifacts/acb_cap_02"
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CAP-02 when active-context CI runs without direct access to the Project_ARIS workspace.",
+    "Project_ARIS artifacts were generated before the final phase commit, so ../artifacts/acb_cap_02/decision.json records the gate-start SHA while this mirror records the final pushed Project_ARIS SHA.",
+    "Legacy repo-wide CI and Run Tests remain outside ACB-CAP-02 scope; the dedicated MCP Runtime Sandbox workflow is the relevant gate for this phase."
+  ]
+}

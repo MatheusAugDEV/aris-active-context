@@ -111,11 +111,15 @@ Prompt_only não isenta o gate de produzir capacidade real via Codex.
 
 ## REGRA DE PREFERÊNCIA DO OPERADOR
 
+Quando o operador envia um resultado do Codex, esse resultado funciona como sinal
+de continuidade operacional a ser validado pelo assistente.
+
 Se a Transition Table define a próxima fase com `advance_mode=prompt_only`,
 o gate anterior está canonically PASS, CI/validator estão verdes, e não existe
 lock explícito exigindo autorização manual para aquela transição exata:
 - o assistente entrega diretamente o próximo prompt do Codex
 - o assistente não pede confirmação apenas para emitir esse prompt
+- o assistente não exige frase ritual como `autorizo`
 
 Esta preferência não autoriza produção, Bedrock, piloto, runtime execution,
 real secrets, external network, nem qualquer fase com `advance_mode=operator`.

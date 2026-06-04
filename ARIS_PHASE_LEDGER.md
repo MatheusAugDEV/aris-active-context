@@ -45,3 +45,4 @@ ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass | 2026-06-
 ACB-CORE-02 | ARIS Capability Build Core Public API Baseline Gate | pass | 2026-06-03
 ACB-DECISION | ARIS Capability Build Approved | decision | 2026-06-03
 ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass | 2026-06-03
+ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass | 2026-06-03

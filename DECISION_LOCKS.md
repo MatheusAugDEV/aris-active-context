@@ -2,8 +2,8 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 # Decision Locks
 
-- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
-- Status: `acb_cap_01_pass`
+- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
+- Status: `acb_cap_02_pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
 - anti_proliferation_rule_active=true
@@ -13,7 +13,7 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - governance_gate_streak=0
 - No next phase is authorized.
-- ACB-CAP-02 remains closed pending explicit operator authorization.
+- Prompt emission continuity for `ACB-CAP-03` does not open the phase in JSON.
 - No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - bot_execution_executed=true (1 deterministic nemesis log on disk).
@@ -23,8 +23,8 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 
 ## Circuit Breaker State
 
-governance_gate_streak=0 — preserved by ACB-CAP-01 capability-build pass. Governance gates are now
-unblocked (streak < 3), but no gate is open. Next phase requires operator authorization.
+governance_gate_streak=0 — preserved by ACB-CAP-02 capability-build pass. Governance gates are now
+unblocked (streak < 3), but no gate is open. Prompt-only continuity may emit the next Codex prompt without mutating JSON.
 
 ## Gate cycle lock
 

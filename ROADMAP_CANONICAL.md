@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Capability Build Backend Baseline Gate`
+- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- Operator authorization required before any new phase.
+- Prompt-only continuity may emit the next Codex prompt without opening the phase in JSON.
 - ACB decision registered: `artifacts/decisions/acb_decision_2026_06_03.json`
 - ACB execution order registered: `artifacts/decisions/acb_execution_order_2026_06_03.json`
-- Next phase after `ACB-CAP-01` is `ACB-CAP-02` only after explicit operator authorization.
-- `ACB-CAP-02` is not opened automatically after `ACB-CAP-01`.
+- Canonical successor after `ACB-CAP-02` is `ACB-CAP-03` under `prompt_only` once the prior PASS remains canonical and CI/validator evidence is green.
+- `ACB-CAP-03` remains unopened until a future canonical state transition is recorded.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`
@@ -50,7 +50,7 @@ Rules:
 - Advanced research with Auditor Máximo standard precedes each ACB block.
 - No layer skipping.
 - Infernus Full starts only after ACB complete and CI green.
-- `next_phase` remains `null` until explicit operator authorization.
+- `next_phase` remains `null` until an explicit canonical state transition is recorded.
 
 ## Lacunas críticas pré-Infernus Full
 

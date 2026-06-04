@@ -1,8 +1,8 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "ACB-CAP-01",
-  "current_phase_id": "ACB-CAP-01",
-  "previous_phase_id": "ACB-CORE-02",
+  "phase_id": "ACB-CAP-02",
+  "current_phase_id": "ACB-CAP-02",
+  "previous_phase_id": "ACB-CAP-01",
   "gate_opened_at": "2026-06-03",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
@@ -361,6 +361,12 @@
       "phase": "ARIS Capability Build Backend Baseline Gate",
       "repair_type": "capability_build",
       "status": "acb_cap_01_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
+      "repair_type": "capability_build",
+      "status": "acb_cap_02_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -391,15 +397,15 @@
   "current_live_route": {
     "active_next_phase": null,
     "active_next_phase_class": null,
-    "current_status": "awaiting_manual_operator_authorization_for_next_phase",
+    "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Capability Build Backend Baseline Gate",
+    "latest_completed_phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "acb_cap_01_pass"
+    "status": "acb_cap_02_pass"
   },
-  "current_status": "awaiting_manual_operator_authorization_for_next_phase",
+  "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -425,28 +431,29 @@
       "ARIS Purgatorium Finding Record Gate",
       "ARIS Capability Build Dependency Foundation Gate",
       "ARIS Capability Build Core Public API Baseline Gate",
-      "ARIS Capability Build Backend Baseline Gate"
+      "ARIS Capability Build Backend Baseline Gate",
+      "ARIS Capability Build MCP Runtime Sandbox Gate"
     ],
-    "latest_execution_phase": "ARIS Capability Build Backend Baseline Gate",
+    "latest_execution_phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Capability Build Core Public API Baseline Gate"
+    "previous_execution_phase": "ARIS Capability Build Backend Baseline Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Capability Build Core Public API Baseline Gate",
+    "from_phase": "ARIS Capability Build Backend Baseline Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Capability Build Backend Baseline Gate",
-    "transition_type": "capability_build_backend_baseline_gate",
-    "verified_via": "local validation, mirror sync assertion, FastAPI health and readiness verification, deterministic tenant auth verification, SlowAPI rate-limit verification, backend import stability verification, backend-baseline workflow verification in Project_ARIS, Project_ARIS main SHA 68ca2a07fc0ee1afad22d967619e05f35ccf52b1 verification, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
+    "transition_type": "capability_build_mcp_runtime_sandbox_gate",
+    "verified_via": "local validation, mirror sync assertion, deterministic MCP runtime artifact validation, transport-policy ban verification, sandbox-spec verification, pre-dispatch policy verification, kill-switch verification, rollback-contract verification, forbidden-pattern grep verification, MCP Runtime Sandbox workflow verification in Project_ARIS, Project_ARIS main SHA b2fdc3c994342a42a84823fa15615c931f1bc00e verification, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Capability Build Backend Baseline Gate",
+  "latest_completed_phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized. ACB-CAP-01 passed with explicit operator authorization, deterministic FastAPI backend evidence, tenant auth checks, rate-limit checks, and dedicated backend-baseline CI evidence in Project_ARIS main SHA 68ca2a07fc0ee1afad22d967619e05f35ccf52b1. ACB-CAP-02 was not opened automatically.",
+    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-02 passed with deterministic MCP runtime sandbox evidence, dedicated MCP Runtime Sandbox CI success in Project_ARIS main SHA b2fdc3c994342a42a84823fa15615c931f1bc00e, and prompt-only continuity rules corrected in the active-context. ACB-CAP-03 remains unopened until a future canonical state transition is recorded.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -459,22 +466,22 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ACB-CAP-01 passed as a backend baseline gate backed by explicit operator authorization and external Project_ARIS artifacts.",
-      "Canonical Project_ARIS verification SHA for this gate is 68ca2a07fc0ee1afad22d967619e05f35ccf52b1.",
-      "Project_ARIS now contains an isolated backend package, deterministic tenant JWT/API-key auth checks, SlowAPI rate limiting, dedicated backend smoke tests, and a green Backend Baseline workflow under artifacts/acb_cap_01/.",
-      "The prior ACB-CORE-02 public API baseline remains locked and stable; no root API drift was introduced by this gate.",
+      "ACB-CAP-02 passed as a deterministic MCP runtime sandbox gate backed by external Project_ARIS artifacts and a green MCP Runtime Sandbox workflow.",
+      "Canonical Project_ARIS verification SHA for this gate is b2fdc3c994342a42a84823fa15615c931f1bc00e.",
+      "Project_ARIS now contains an isolated src/aris/mcp_runtime package, deterministic stdio transport ban enforcement, streamable_http contract checks, sandbox runner checks, pre-dispatch policy evaluation, kill-switch handling, rollback readiness, and dedicated MCP runtime sandbox tests under artifacts/acb_cap_02/.",
+      "The prior ACB-CAP-01 backend baseline remains locked and stable; no root API drift was introduced by this gate.",
       "governance_gate_streak remains 0 after this capability-build pass.",
       "Carried WARN: INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 24ac00a7d1ddefedb6c86493aa852fbfcc24a250; warning only, no correction gate opened.",
       "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
       "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
-      "ACB-CAP-02 was not opened automatically; explicit operator authorization is still required."
+      "A canonical Codex result for this PASS gate can justify direct prompt emission for prompt-only successor ACB-CAP-03 without any ritual phrase, but next_phase remains null until a future canonical state transition is recorded."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
     "phase_class": null,
     "planning_only": false,
     "review_only": false,
-    "status": "awaiting_manual_operator_authorization"
+    "status": "awaiting_codex_result_validation"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -509,6 +516,7 @@
     "artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json",
     "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
+    "artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json",
     "artifacts/ac_repair_01/decision.json",
     "artifacts/ac_repair_01/summary.json",
     "artifacts/ac_repair_01/report.md",
@@ -596,7 +604,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "acb_cap_01_pass",
+  "status": "acb_cap_02_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,

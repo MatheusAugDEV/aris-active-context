@@ -15,15 +15,16 @@ ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_proj
 ACB_CORE_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_02_project_evidence_2026_06_03.json"
 ACB_CAP_01_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_operator_authorization_2026_06_03.json"
 ACB_CAP_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_project_evidence_2026_06_03.json"
+ACB_CAP_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_02_project_evidence_2026_06_03.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Capability Build Backend Baseline Gate"
-EXPECTED_PHASE_ID = "ACB-CAP-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Core Public API Baseline Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CORE-02"
-EXPECTED_STATUS = "acb_cap_01_pass"
+EXPECTED_PHASE = "ARIS Capability Build MCP Runtime Sandbox Gate"
+EXPECTED_PHASE_ID = "ACB-CAP-02"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Backend Baseline Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-01"
+EXPECTED_STATUS = "acb_cap_02_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "awaiting_manual_operator_authorization_for_next_phase"
+EXPECTED_CURRENT_STATUS = "awaiting_codex_result_validation_for_prompt_only_transition"
 EXPECTED_SCHEMA_VERSION = "2.3"
 
 GOVERNANCE_CLASSES = {
@@ -120,6 +121,25 @@ PHASE_DELIVERABLES = {
                 "backend_artifacts_exist",
             ]
         )
+    ),
+    "ACB-CAP-02": lambda: (
+        ACB_CAP_02_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CAP_02_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CAP_02_EVIDENCE_PATH).get("mcp_runtime_sandbox_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CAP_02_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "mcp_runtime_package_exists",
+                "stdio_ban_exists",
+                "sandbox_spec_exists",
+                "policy_pre_dispatch_exists",
+                "kill_switch_exists",
+                "rollback_contract_exists",
+                "audit_event_exists",
+                "mcp_runtime_tests_exist",
+                "mcp_runtime_artifacts_exist",
+            ]
+        )
     )
 }
 
@@ -150,13 +170,15 @@ EXPECTED_PRIORITY_READ_ORDER = [
 ]
 
 OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
+    "operator sends a Codex result",
+    "ritual phrase",
     "must not ask for confirmation just to send the next Codex prompt",
     "advance_mode=prompt_only",
     "ACTIVE_CONTEXT_STATE.json",
     "cannot override",
     "advance_mode=operator",
     "next_phase remains `null`",
-    "ACB-CAP-02",
+    "ACB-CAP-03",
 ]
 
 EXPECTED_FIXTURE_ASSERTION = """import json, sys, pathlib
@@ -437,11 +459,51 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         ) is False,
         "manual authorization lock must override prompt emission preference",
     )
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="prompt_only",
+            previous_phase_pass=False,
+            ci_green=True,
+            validator_green=True,
+            manual_authorization_required=False,
+        ) is False,
+        "prompt emission preference must not bypass canonical pass requirement",
+    )
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="prompt_only",
+            previous_phase_pass=True,
+            ci_green=False,
+            validator_green=True,
+            manual_authorization_required=False,
+        ) is False,
+        "prompt emission preference must not bypass green CI requirement",
+    )
+    _require(
+        _preference_allows_direct_prompt(
+            advance_mode="prompt_only",
+            previous_phase_pass=True,
+            ci_green=True,
+            validator_green=False,
+            manual_authorization_required=False,
+        ) is False,
+        "prompt emission preference must not bypass green validator requirement",
+    )
     _require(state.get("next_phase") is None, "operator preference must not auto-open next_phase")
     _require(
         state.get("next_phase_authorized_by_operator") is False,
         "operator preference must not self-authorize next phase",
     )
+    auth = state.get("authorization", {})
+    for key in [
+        "production_authorized",
+        "product_ready",
+        "real_apply_authorized",
+        "runtime_integration_allowed",
+        "secrets_access_authorized",
+        "external_llm_api_authorized",
+    ]:
+        _require(auth.get(key) is False, f"operator preference must not override safety lock: {key}")
 
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
@@ -843,6 +905,224 @@ def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
     _require("tests/test_acb_cap_01_backend.py -v" in workflow_text, "ACB-CAP-01 workflow must run backend tests")
 
 
+def _check_acb_cap_02_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CAP_02_EVIDENCE_PATH.exists(), "missing ACB-CAP-02 evidence artifact in active-context")
+
+    evidence_data = _load_json(ACB_CAP_02_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CAP-02 evidence repository mismatch")
+    _require(
+        evidence_data.get("project_sha") == "b2fdc3c994342a42a84823fa15615c931f1bc00e",
+        "ACB-CAP-02 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("project_sha_gate_start") == "68ca2a07fc0ee1afad22d967619e05f35ccf52b1",
+        "ACB-CAP-02 evidence project_sha_gate_start mismatch",
+    )
+    _require(
+        evidence_data.get("mcp_runtime_sandbox_ci", {}).get("conclusion") == "success",
+        "ACB-CAP-02 evidence MCP Runtime Sandbox CI must be success",
+    )
+    _require(
+        evidence_data.get("mcp_runtime_sandbox_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26922186509",
+        "ACB-CAP-02 evidence MCP Runtime Sandbox CI URL mismatch",
+    )
+    for key in [
+        "mcp_runtime_package_exists",
+        "stdio_ban_exists",
+        "sandbox_spec_exists",
+        "policy_pre_dispatch_exists",
+        "kill_switch_exists",
+        "rollback_contract_exists",
+        "audit_event_exists",
+        "mcp_runtime_tests_exist",
+        "mcp_runtime_artifacts_exist",
+    ]:
+        _require(
+            evidence_data.get("deliverables", {}).get(key) is True,
+            f"ACB-CAP-02 evidence deliverable {key} must be true",
+        )
+    _require(
+        evidence_data.get("local_validation", {}).get("pass_criteria_met") is True,
+        "ACB-CAP-02 evidence pass_criteria_met must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("mcp_sandbox_running") is True,
+        "ACB-CAP-02 evidence mcp_sandbox_running must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("stdio_banned") is True,
+        "ACB-CAP-02 evidence stdio_banned must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("policy_pre_dispatch_passing") is True,
+        "ACB-CAP-02 evidence policy_pre_dispatch_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("kill_switch_passing") is True,
+        "ACB-CAP-02 evidence kill_switch_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("rollback_contract_passing") is True,
+        "ACB-CAP-02 evidence rollback_contract_passing must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("network_none_enforced") is True,
+        "ACB-CAP-02 evidence network_none_enforced must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("public_api_stable") is True,
+        "ACB-CAP-02 evidence public_api_stable must be true",
+    )
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_cap_02"
+    required_paths = [
+        PROJECT_ROOT / ".github" / "workflows" / "mcp-runtime-sandbox.yml",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "__init__.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "contracts.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "transport_policy.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "sandbox_spec.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "policy_engine.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "dispatcher.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "kill_switch.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "rollback.py",
+        PROJECT_ROOT / "src" / "aris" / "mcp_runtime" / "audit.py",
+        PROJECT_ROOT / "scripts" / "run_acb_cap_02_mcp_runtime_sandbox.py",
+        PROJECT_ROOT / "tests" / "test_acb_cap_02_mcp_runtime_sandbox.py",
+        artifacts_root / "research_basis.json",
+        artifacts_root / "mcp_runtime_contract.json",
+        artifacts_root / "transport_policy_matrix.json",
+        artifacts_root / "sandbox_spec.json",
+        artifacts_root / "policy_decision_matrix.json",
+        artifacts_root / "kill_switch_matrix.json",
+        artifacts_root / "rollback_contract.json",
+        artifacts_root / "audit_event_sample.json",
+        artifacts_root / "import_stability_report.json",
+        artifacts_root / "public_api_drift_report.json",
+        artifacts_root / "decision.json",
+        artifacts_root / "summary.json",
+        artifacts_root / "report.md",
+    ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CAP-02 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
+
+    decision_data = _load_json(artifacts_root / "decision.json")
+    summary_data = _load_json(artifacts_root / "summary.json")
+    research_data = _load_json(artifacts_root / "research_basis.json")
+    contract_data = _load_json(artifacts_root / "mcp_runtime_contract.json")
+    transport_matrix = _load_json(artifacts_root / "transport_policy_matrix.json")
+    sandbox_spec = _load_json(artifacts_root / "sandbox_spec.json")
+    policy_matrix = _load_json(artifacts_root / "policy_decision_matrix.json")
+    kill_switch_matrix = _load_json(artifacts_root / "kill_switch_matrix.json")
+    rollback_contract = _load_json(artifacts_root / "rollback_contract.json")
+    audit_event = _load_json(artifacts_root / "audit_event_sample.json")
+    import_report = _load_json(artifacts_root / "import_stability_report.json")
+    public_api_drift = _load_json(artifacts_root / "public_api_drift_report.json")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "mcp-runtime-sandbox.yml").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == "ARIS Capability Build MCP Runtime Sandbox Gate", "ACB-CAP-02 decision phase_name mismatch")
+    _require(decision_data.get("status") == "acb_cap_02_pass", "ACB-CAP-02 decision status mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB-CAP-02 decision must be pass")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB-CAP-02 decision pass_criteria_met must be true")
+    _require(decision_data.get("minimum_deliverable_met") is True, "ACB-CAP-02 decision minimum_deliverable_met must be true")
+    _require(decision_data.get("mcp_sandbox_running") is True, "ACB-CAP-02 decision mcp_sandbox_running must be true")
+    _require(decision_data.get("stdio_banned") is True, "ACB-CAP-02 decision stdio_banned must be true")
+    _require(decision_data.get("policy_pre_dispatch_passing") is True, "ACB-CAP-02 decision policy_pre_dispatch_passing must be true")
+    _require(decision_data.get("kill_switch_passing") is True, "ACB-CAP-02 decision kill_switch_passing must be true")
+    _require(decision_data.get("rollback_contract_passing") is True, "ACB-CAP-02 decision rollback_contract_passing must be true")
+    _require(decision_data.get("network_none_enforced") is True, "ACB-CAP-02 decision network_none_enforced must be true")
+    _require(decision_data.get("external_network_used") is False, "ACB-CAP-02 decision external_network_used must be false")
+    _require(decision_data.get("server_real_started") is False, "ACB-CAP-02 decision server_real_started must be false")
+    _require(decision_data.get("subprocess_stdio_started") is False, "ACB-CAP-02 decision subprocess_stdio_started must be false")
+    _require(decision_data.get("real_tool_execution_used") is False, "ACB-CAP-02 decision real_tool_execution_used must be false")
+    _require(decision_data.get("secrets_accessed") is False, "ACB-CAP-02 decision secrets_accessed must be false")
+    _require(decision_data.get("database_created") is False, "ACB-CAP-02 decision database_created must be false")
+    _require(decision_data.get("runtime_productive_mutation") is False, "ACB-CAP-02 decision runtime_productive_mutation must be false")
+    _require(decision_data.get("product_promotion_allowed") is False, "ACB-CAP-02 decision product_promotion_allowed must be false")
+    _require(
+        decision_data.get("project_repo_sha")
+        in {
+            evidence_data.get("project_sha_gate_start"),
+            evidence_data.get("project_sha"),
+        },
+        "ACB-CAP-02 decision project_repo_sha must match gate-start or final project SHA",
+    )
+
+    _require(summary_data.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "ACB-CAP-02 summary decision must be pass")
+    _require(summary_data.get("status") == "acb_cap_02_pass", "ACB-CAP-02 summary status mismatch")
+    _require(summary_data.get("pass_criteria_met") is True, "ACB-CAP-02 summary pass_criteria_met must be true")
+    _require(summary_data.get("minimum_deliverable_met") is True, "ACB-CAP-02 summary minimum_deliverable_met must be true")
+
+    _require(research_data.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 research_basis phase_id mismatch")
+    _require(research_data.get("conclusion") == "proceed_with_mcp_runtime_sandbox_gate_only", "ACB-CAP-02 research_basis conclusion mismatch")
+    _require(research_data.get("rejected_pattern") == "stdio_transport_runtime", "ACB-CAP-02 research_basis rejected_pattern mismatch")
+
+    _require(contract_data.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 contract phase_id mismatch")
+    _require(contract_data.get("allowed_transport") == "streamable_http", "ACB-CAP-02 allowed_transport mismatch")
+    _require(contract_data.get("banned_transport") == "stdio", "ACB-CAP-02 banned_transport mismatch")
+    _require(contract_data.get("mcp_sandbox_running") is True, "ACB-CAP-02 contract mcp_sandbox_running must be true")
+    _require(contract_data.get("server_real_started") is False, "ACB-CAP-02 contract server_real_started must be false")
+    _require(contract_data.get("external_network_used") is False, "ACB-CAP-02 contract external_network_used must be false")
+    _require(contract_data.get("real_tool_execution_used") is False, "ACB-CAP-02 contract real_tool_execution_used must be false")
+    _require(contract_data.get("subprocess_stdio_started") is False, "ACB-CAP-02 contract subprocess_stdio_started must be false")
+
+    transport_cases = {item.get("name"): item for item in transport_matrix.get("cases", [])}
+    _require(transport_cases.get("stdio_blocked", {}).get("decision") == "block", "ACB-CAP-02 stdio transport must be blocked")
+    _require("stdio_transport_banned" in transport_cases.get("stdio_blocked", {}).get("reasons", []), "ACB-CAP-02 stdio transport block reason mismatch")
+    _require(transport_cases.get("streamable_http_allowed", {}).get("decision") == "allow", "ACB-CAP-02 streamable_http transport must be allowed")
+
+    spec = sandbox_spec.get("spec", {})
+    _require(spec.get("network_mode") == "none", "ACB-CAP-02 sandbox network_mode mismatch")
+    _require(spec.get("filesystem_mode") == "read_only", "ACB-CAP-02 sandbox filesystem_mode mismatch")
+    _require(spec.get("allow_write_paths") == [], "ACB-CAP-02 sandbox allow_write_paths must be empty")
+    _require(spec.get("secrets_mount_allowed") is False, "ACB-CAP-02 sandbox secrets_mount_allowed must be false")
+    _require(spec.get("process_secret_read_allowed") is False, "ACB-CAP-02 sandbox process_secret_read_allowed must be false")
+    _require(spec.get("egress_allowed") is False, "ACB-CAP-02 sandbox egress_allowed must be false")
+    _require(spec.get("host_mount_allowed") is False, "ACB-CAP-02 sandbox host_mount_allowed must be false")
+    _require(sandbox_spec.get("runner_running") is True, "ACB-CAP-02 sandbox runner_running must be true")
+
+    _require(policy_matrix.get("cases", {}).get("allowed_streamable_http", {}).get("decision") == "allow", "ACB-CAP-02 policy matrix allow case mismatch")
+    _require(policy_matrix.get("cases", {}).get("stdio_blocked", {}).get("decision") == "block", "ACB-CAP-02 policy matrix stdio case mismatch")
+    _require(policy_matrix.get("cases", {}).get("missing_rollback", {}).get("rollback_ready") is False, "ACB-CAP-02 policy matrix missing_rollback rollback_ready must be false")
+    _require(policy_matrix.get("cases", {}).get("side_effect_with_rollback", {}).get("rollback_ready") is True, "ACB-CAP-02 policy matrix rollback-ready case mismatch")
+
+    _require(kill_switch_matrix.get("cases", {}).get("global_disabled", {}).get("executed") is False, "ACB-CAP-02 kill switch global_disabled must not execute")
+    _require(kill_switch_matrix.get("cases", {}).get("emergency_stop", {}).get("executed") is False, "ACB-CAP-02 kill switch emergency_stop must not execute")
+
+    _require(rollback_contract.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 rollback_contract phase_id mismatch")
+    _require(rollback_contract.get("missing_rollback_plan", {}).get("rollback_ready") is False, "ACB-CAP-02 rollback missing plan readiness mismatch")
+    _require(rollback_contract.get("rollback_plan_ready", {}).get("rollback_ready") is True, "ACB-CAP-02 rollback ready case mismatch")
+
+    _require(audit_event.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 audit_event phase_id mismatch")
+    _require(audit_event.get("policy_decision") == "allow", "ACB-CAP-02 audit_event policy_decision mismatch")
+    _require(bool(audit_event.get("audit_event_sha256")), "ACB-CAP-02 audit_event_sha256 must be non-empty")
+
+    _require(import_report.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 import_report phase_id mismatch")
+    _require(import_report.get("import_smoke_tests_passed") is True, "ACB-CAP-02 import_report import_smoke_tests_passed must be true")
+    _require(import_report.get("public_api_stable") is True, "ACB-CAP-02 import_report public_api_stable must be true")
+    _require(import_report.get("forbidden_runtime_patterns") == [], "ACB-CAP-02 import_report forbidden_runtime_patterns must be empty")
+
+    _require(public_api_drift.get("phase_id") == "ACB-CAP-02", "ACB-CAP-02 public_api_drift phase_id mismatch")
+    _require(public_api_drift.get("drift_detected") is False, "ACB-CAP-02 public_api_drift drift_detected must be false")
+    _require(public_api_drift.get("public_api_stable") is True, "ACB-CAP-02 public_api_drift public_api_stable must be true")
+
+    _require("name: MCP Runtime Sandbox" in workflow_text, "ACB-CAP-02 workflow must be MCP Runtime Sandbox")
+    _require("uv sync --frozen" in workflow_text, "ACB-CAP-02 workflow must run uv sync --frozen")
+    _require("uv pip install --python .venv/bin/python pytest" in workflow_text, "ACB-CAP-02 workflow must install pytest via uv pip")
+    _require("scripts/run_acb_cap_02_mcp_runtime_sandbox.py" in workflow_text, "ACB-CAP-02 workflow must run the sandbox artifact validator")
+    _require("tests/test_acb_cap_02_mcp_runtime_sandbox.py -v" in workflow_text, "ACB-CAP-02 workflow must run MCP runtime sandbox tests")
+    _require("uv lock --check" in workflow_text, "ACB-CAP-02 workflow must check uv lock freshness")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -1117,8 +1397,10 @@ def main() -> None:
     _check_acb_core_01_project_artifacts(state)
     # ACB-CORE-02 baseline must remain true for ACB-CAP-01.
     _check_acb_core_02_project_artifacts(state)
-    # ACB-CAP-01 specific checks
+    # ACB-CAP-01 baseline must remain true for ACB-CAP-02.
     _check_acb_cap_01_project_artifacts(state)
+    # ACB-CAP-02 specific checks
+    _check_acb_cap_02_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -1173,14 +1455,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_cap_01/`",
+        "External deliverables registered from `../artifacts/acb_cap_02/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
-        "Awaiting manual operator authorization.",
+        "Awaiting Codex-result validation for prompt-only continuity.",
         "Execution authorization: `false`",
-        "ACB-CAP-02 remains closed.",
+        "ACB-CAP-03 is the canonical prompt-only successor, but it remains unopened in JSON.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -1189,19 +1471,19 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "ACB-CAP-02 remains closed pending explicit operator authorization.",
+        "Prompt emission continuity for `ACB-CAP-03` does not open the phase in JSON.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json",
-        "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
-        "../artifacts/acb_cap_01/decision.json",
-        "../artifacts/acb_cap_01/summary.json",
-        "../artifacts/acb_cap_01/report.md",
+        "artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json",
+        "../artifacts/acb_cap_02/decision.json",
+        "../artifacts/acb_cap_02/summary.json",
+        "../artifacts/acb_cap_02/report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass",
         "ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass",
         "ACB-CORE-02 | ARIS Capability Build Core Public API Baseline Gate | pass",
     )
@@ -1210,17 +1492,17 @@ def main() -> None:
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json",
-        "fastapi_health_check_passing: `true`",
-        "slowapi_rate_limit_passing: `true`",
+        "artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json",
+        "mcp_sandbox_running: `true`",
+        "stdio_banned: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "Operator authorization required before any new phase.",
-        "`ACB-CAP-02` is not opened automatically after `ACB-CAP-01`.",
+        "Prompt-only continuity may emit the next Codex prompt without opening the phase in JSON.",
+        "`ACB-CAP-03` remains unopened until a future canonical state transition is recorded.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
