@@ -2,13 +2,45 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Capability Build MCP Runtime Sandbox Gate`
+- Latest completed phase: `ARIS Capability Build Runtime Top-Level Public API Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
 - `OPERATOR_PREFERENCES.md`
+- `artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json`
+- `../artifacts/acb_cap_03/decision.json`
+- `../artifacts/acb_cap_03/summary.json`
+- `../artifacts/acb_cap_03/report.md`
+- `../artifacts/acb_cap_03/research_basis.json`
+- `../artifacts/acb_cap_03/runtime_public_api.md`
+- `../artifacts/acb_cap_03/runtime_public_api_contract.json`
+- `../artifacts/acb_cap_03/runtime_facade_contract.json`
+- `../artifacts/acb_cap_03/runtime_mode_matrix.json`
+- `../artifacts/acb_cap_03/runtime_policy_bridge_matrix.json`
+- `../artifacts/acb_cap_03/runtime_audit_report.json`
+- `../artifacts/acb_cap_03/public_api_snapshot_before.json`
+- `../artifacts/acb_cap_03/public_api_snapshot_after.json`
+- `../artifacts/acb_cap_03/public_api_change_report.json`
+- `../artifacts/acb_cap_03/import_stability_report.json`
+- `../.github/workflows/runtime-public-api.yml`
+- `../scripts/run_acb_cap_03_runtime_public_api.py`
+- `../tests/test_acb_cap_03_runtime_public_api.py`
+- `../src/aris/runtime/__init__.py`
+- `../src/aris/runtime/contracts.py`
+- `../src/aris/runtime/facade.py`
+- `../src/aris/runtime/execution_plan.py`
+- `../src/aris/runtime/request.py`
+- `../src/aris/runtime/response.py`
+- `../src/aris/runtime/policy_bridge.py`
+- `../src/aris/runtime/audit_bridge.py`
+- `../src/aris/runtime/public_api.py`
+- `scripts/validate_active_context_state.py`
+- `tests/test_validate_active_context.py`
+
+## Prior Phase Artifacts
+
 - `artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json`
 - `../artifacts/acb_cap_02/decision.json`
 - `../artifacts/acb_cap_02/summary.json`
@@ -35,56 +67,10 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `../src/aris/mcp_runtime/kill_switch.py`
 - `../src/aris/mcp_runtime/rollback.py`
 - `../src/aris/mcp_runtime/audit.py`
-- `scripts/validate_active_context_state.py`
-- `tests/test_validate_active_context.py`
-
-## Prior Phase Artifacts
-
 - `artifacts/decisions/acb_cap_01_operator_authorization_2026_06_03.json`
 - `artifacts/decisions/acb_cap_01_project_evidence_2026_06_03.json`
-- `../artifacts/acb_cap_01/decision.json`
-- `../artifacts/acb_cap_01/summary.json`
-- `../artifacts/acb_cap_01/report.md`
-- `../artifacts/acb_cap_01/research_basis.json`
-- `../artifacts/acb_cap_01/backend_contract.json`
-- `../artifacts/acb_cap_01/auth_matrix.json`
-- `../artifacts/acb_cap_01/rate_limit_report.json`
-- `../artifacts/acb_cap_01/public_api_drift_report.json`
-- `../artifacts/acb_cap_01/import_stability_report.json`
-- `../.github/workflows/backend-baseline.yml`
-- `../scripts/run_acb_cap_01_backend_baseline.py`
-- `../tests/test_acb_cap_01_backend.py`
-- `../src/aris/backend/__init__.py`
-- `../src/aris/backend/app.py`
-- `../src/aris/backend/auth.py`
-- `../src/aris/backend/contracts.py`
-- `../src/aris/backend/rate_limit.py`
 - `artifacts/decisions/acb_core_02_project_evidence_2026_06_03.json`
-- `../artifacts/acb_core_02/decision.json`
-- `../artifacts/acb_core_02/summary.json`
-- `../artifacts/acb_core_02/report.md`
-- `../artifacts/acb_core_02/research_basis.json`
-- `../artifacts/acb_core_02/public_api_snapshot_before.json`
-- `../artifacts/acb_core_02/public_api_snapshot_after.json`
-- `../artifacts/acb_core_02/import_stability_report.json`
-- `../.github/workflows/core-public-api-baseline.yml`
-- `../scripts/run_acb_core_02_public_api_snapshot.py`
-- `../tests/test_acb_core_02_public_api.py`
-- `../src/aris/__init__.py`
-- `../src/aris/contracts.py`
 - `artifacts/decisions/acb_core_01_project_evidence_2026_06_03.json`
-- `../artifacts/acb_core_01/decision.json`
-- `../artifacts/acb_core_01/summary.json`
-- `../artifacts/acb_core_01/report.md`
-- `../artifacts/acb_core_01/dependency_inventory.json`
-- `../artifacts/acb_core_01/sbom.cdx.json`
-- `../artifacts/acb_core_01/supply_chain_validation.json`
-- `../artifacts/acb_core_01/uv_bootstrap.json`
-- `../.github/workflows/supply-chain-baseline.yml`
-- `../scripts/run_acb_core_01_supply_chain_validation.py`
-- `../tests/test_acb_core_01_supply_chain.py`
-- `../pyproject.toml`
-- `../uv.lock`
 - `artifacts/purg_01/decision.json`
 - `artifacts/purg_01/summary.json`
 - `artifacts/purg_01/report.md`
@@ -101,21 +87,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `artifacts/inf_mat_01/summary.json`
 - `artifacts/inf_mat_01/report.md`
 - `fixtures/lab_simulation/aris_infernus_lab_full/` (13 dirs, 65 files)
-- `artifacts/ac_break_05/decision.json`
-- `artifacts/ac_break_05/summary.json`
-- `artifacts/ac_break_05/report.md`
-- `artifacts/ac_contract_04/decision.json`
-- `artifacts/ac_contract_04/summary.json`
-- `artifacts/ac_contract_04/report.md`
-- `artifacts/ac_obs_02/decision.json`
-- `artifacts/ac_obs_02/summary.json`
-- `artifacts/ac_obs_02/report.md`
-- `artifacts/ac_trans_03/decision.json`
-- `artifacts/ac_trans_03/summary.json`
-- `artifacts/ac_trans_03/report.md`
-- `artifacts/ac_repair_01/decision.json`
-- `artifacts/ac_repair_01/summary.json`
-- `artifacts/ac_repair_01/report.md`
 - `scripts/assert_mirror_sync.py`
 - `scripts/assert_no_unauthorized_fixtures.py`
 - `.github/workflows/validate_active_context.yml`

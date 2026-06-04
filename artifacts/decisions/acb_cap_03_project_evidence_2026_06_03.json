@@ -1,0 +1,72 @@
+{
+  "artifact_id": "acb_cap_03_project_evidence_2026_06_03",
+  "phase_id": "ACB-CAP-03",
+  "phase_name": "ARIS Capability Build Runtime Top-Level Public API Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "b1d175f8b0d1105a9d05f6ddcab082c71d6f6b3e",
+  "project_sha_gate_start": "b2fdc3c994342a42a84823fa15615c931f1bc00e",
+  "source_active_context_sha_before": "da2dd26eb6c680132b2545fa8c470ec74898a9c3",
+  "runtime_public_api_ci": {
+    "name": "Runtime Public API",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/26923273196",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "runtime_package_exists": true,
+    "runtime_public_api_documented": true,
+    "runtime_public_api_contract_exists": true,
+    "runtime_facade_exists": true,
+    "runtime_modes_enforced": true,
+    "runtime_policy_bridge_exists": true,
+    "runtime_audit_hashing_exists": true,
+    "public_api_drift_ratified": true,
+    "runtime_tests_exist": true,
+    "runtime_artifacts_exist": true
+  },
+  "external_paths": [
+    "../.github/workflows/runtime-public-api.yml",
+    "../src/aris/runtime/__init__.py",
+    "../src/aris/runtime/contracts.py",
+    "../src/aris/runtime/facade.py",
+    "../src/aris/runtime/execution_plan.py",
+    "../src/aris/runtime/request.py",
+    "../src/aris/runtime/response.py",
+    "../src/aris/runtime/policy_bridge.py",
+    "../src/aris/runtime/audit_bridge.py",
+    "../src/aris/runtime/public_api.py",
+    "../scripts/run_acb_cap_03_runtime_public_api.py",
+    "../tests/test_acb_cap_03_runtime_public_api.py",
+    "../artifacts/acb_cap_03/research_basis.json",
+    "../artifacts/acb_cap_03/runtime_public_api.md",
+    "../artifacts/acb_cap_03/runtime_public_api_contract.json",
+    "../artifacts/acb_cap_03/runtime_facade_contract.json",
+    "../artifacts/acb_cap_03/runtime_mode_matrix.json",
+    "../artifacts/acb_cap_03/runtime_policy_bridge_matrix.json",
+    "../artifacts/acb_cap_03/runtime_audit_report.json",
+    "../artifacts/acb_cap_03/public_api_snapshot_before.json",
+    "../artifacts/acb_cap_03/public_api_snapshot_after.json",
+    "../artifacts/acb_cap_03/public_api_change_report.json",
+    "../artifacts/acb_cap_03/import_stability_report.json",
+    "../artifacts/acb_cap_03/decision.json",
+    "../artifacts/acb_cap_03/summary.json",
+    "../artifacts/acb_cap_03/report.md"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "runtime_public_api_importable": true,
+    "runtime_facade_passing": true,
+    "runtime_policy_bridge_passing": true,
+    "runtime_audit_hashing_passing": true,
+    "public_api_stable_or_ratified": true,
+    "audit_event_sha256": "d1d8364c194b4e90eec7daaf8a21f3b6d985944c313a30a5fe3a1cf0fece3383",
+    "runner_command": "PYTHONPATH=src .venv/bin/python scripts/run_acb_cap_03_runtime_public_api.py",
+    "pytest_command": "PYTHONPATH=src .venv/bin/python -m pytest tests/test_acb_cap_03_runtime_public_api.py -v",
+    "uv_lock_check_command": "UV_CACHE_DIR=/tmp/uv-cache .venv/bin/uv lock --check",
+    "forbidden_pattern_check": "grep -RInE \"subprocess\\\\.Popen|uvicorn\\\\.run|requests\\\\.|httpx\\\\.get|httpx\\\\.post|sqlite3|CREATE TABLE|CREATE VIRTUAL TABLE|os\\\\.environ|\\\\.env|BEDROCK|product_promotion_allowed.*true|production_authorized.*true|runtime_integration_allowed.*true|generic_action_runtime_activated.*true|real_apply_authorized.*true\" src/aris/runtime tests/test_acb_cap_03_runtime_public_api.py artifacts/acb_cap_03"
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CAP-03 when active-context CI runs without direct access to the Project_ARIS workspace.",
+    "Project_ARIS artifacts were generated before the final phase commit, so ../artifacts/acb_cap_03/decision.json records the gate-start SHA while this mirror records the final pushed Project_ARIS SHA.",
+    "Legacy repo-wide CI remains outside ACB-CAP-03 scope; the dedicated Runtime Public API workflow is the relevant gate for this phase."
+  ]
+}
