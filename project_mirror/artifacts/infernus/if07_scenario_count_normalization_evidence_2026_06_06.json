@@ -1,0 +1,23 @@
+{
+  "artifact_id": "if07_scenario_count_normalization_evidence_2026_06_06",
+  "phase_id": "INF-FULL-05",
+  "scenario_count": 13,
+  "fixture_scenario_count": 13,
+  "current_phase_planned_scenario_count": 16,
+  "current_phase_planned_bot_count": 16,
+  "current_phase_mutation_family_count": 10,
+  "current_phase_oracle_count": 9,
+  "interpretation": {
+    "scenario_count": "scenario_count=13 is the historical metric for already materialized fixtures.",
+    "fixture_scenario_count": "fixture_scenario_count=13 is the same historical fixture domain.",
+    "current_phase_planned_scenario_count": "current_phase_planned_scenario_count=16 comes from the IF-05 planning packet.",
+    "current_phase_planned_bot_count": "current_phase_planned_bot_count=16 comes from the IF-05 planning packet.",
+    "conflict": "These fields do not conflict and none of them authorize bot execution."
+  },
+  "if06_naming_drift": {
+    "field_name": "ready_for_inf_full_05_dry_run_evidence_simulation",
+    "classification": "historical_naming_drift",
+    "interpreted_as_execution_authorization": false,
+    "reason": "The field is preserved as readiness wording from IF-06 and does not authorize real dry-run or any execution."
+  }
+}

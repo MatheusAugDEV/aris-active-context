@@ -1,0 +1,92 @@
+{
+  "artifact_id": "if07_validator_evidence_2026_06_06",
+  "phase_id": "INF-FULL-05",
+  "commands": {
+    "project_json_tool": [
+      {
+        "command": "python3 -m json.tool artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m json.tool artifacts/infernus/if07_no_execution_attestation_2026_06_06.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m json.tool artifacts/infernus/if07_scenario_count_normalization_evidence_2026_06_06.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m json.tool artifacts/infernus/if07_validator_evidence_2026_06_06.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m json.tool artifacts/infernus/inf_full_05_pre_execution_review_summary_2026_06_06.json",
+        "result": "pass"
+      }
+    ],
+    "py_compile": [
+      {
+        "command": "python3 -m py_compile aris-active-context/scripts/validate_active_context_state.py aris-active-context/tests/test_validate_active_context.py",
+        "result": "pass"
+      }
+    ],
+    "unittest": [
+      {
+        "command": "python3 -m pytest tests/test_validate_active_context.py -q",
+        "result": "pass",
+        "details": "29 passed"
+      }
+    ],
+    "active_context_validator": [
+      {
+        "command": "python3 -m json.tool aris-active-context/ACTIVE_CONTEXT_STATE.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 -m json.tool aris-active-context/ACTIVE_CONTEXT_SCHEMA.json",
+        "result": "pass"
+      },
+      {
+        "command": "python3 aris-active-context/scripts/validate_active_context_state.py",
+        "result": "pass"
+      },
+      {
+        "command": "python3 aris-active-context/scripts/assert_mirror_sync.py",
+        "result": "pass"
+      }
+    ],
+    "safety_grep": [
+      {
+        "command": "grep -R \"bot_execution_authorized.: true|runtime_execution_authorized.: true|real_dry_run_authorized.: true|real_apply_authorized.: true|product_promotion_authorized.: true|pilot_authorized.: true|bedrock_authorized.: true|secrets_access_authorized.: true|dependency_mutation_authorized.: true\" -n artifacts/infernus docs/infernus_full || true",
+        "result": "pass",
+        "matches": 0
+      }
+    ],
+    "git_diff_checks": [
+      {
+        "command": "git diff --name-only",
+        "result": "pass_with_preexisting_workspace_noise",
+        "details": "Global workspace already contained many unrelated modified and deleted paths before INF-FULL-05 work."
+      },
+      {
+        "command": "git diff --stat",
+        "result": "pass_with_preexisting_workspace_noise",
+        "details": "Stat output confirms large unrelated preexisting drift outside the INF-FULL-05 scoped files."
+      }
+    ]
+  },
+  "python_files_changed": true,
+  "new_tests_required": true,
+  "reason": "active-context validator and its focused test were updated to advance the canonical gate from INF-FULL-04 to INF-FULL-05 without authorizing execution.",
+  "ci_reference": {
+    "source": "CI_GREEN_CONFIRMED prior to INF-FULL-05 opening",
+    "project_aris_head_before": "dcedffed590ce47d6251cd284a6d431a97fe08e2",
+    "project_aris_origin_main_before": "dcedffed590ce47d6251cd284a6d431a97fe08e2",
+    "active_context_head_before": "ef95a5f8610f02c6c51d5fcb4d59920bd37cf0ef",
+    "active_context_origin_main_before": "ef95a5f8610f02c6c51d5fcb4d59920bd37cf0ef",
+    "project_aris_head_after": null,
+    "project_aris_origin_main_after": null,
+    "active_context_head_after": "e00c992c9cf649705445ce51450dcb7b0a51d1c4",
+    "active_context_origin_main_after": "e00c992c9cf649705445ce51450dcb7b0a51d1c4"
+  }
+}

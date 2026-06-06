@@ -5,6 +5,7 @@
 - `docs/infernus_full/infernus_full_canonroadmap.md`
 - `docs/infernus_full/inf_full_03_opening_2026_06_06.md`
 - `docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md`
+- `docs/infernus_full/inf_full_05_pre_execution_review_2026_06_06.md`
 
 This document is the active technical direction for Infernus FULL roadmap planning. It does not authorize execution.
 
@@ -32,6 +33,12 @@ This document is the active technical direction for Infernus FULL roadmap planni
 - `artifacts/infernus/if06_kill_switch_policy.json`
 - `artifacts/infernus/inf_full_04_decision_2026_06_06.json`
 - `artifacts/infernus/inf_full_04_summary_2026_06_06.json`
+- `artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json`
+- `artifacts/infernus/if07_no_execution_attestation_2026_06_06.json`
+- `artifacts/infernus/if07_scenario_count_normalization_evidence_2026_06_06.json`
+- `artifacts/infernus/if07_validator_evidence_2026_06_06.json`
+- `artifacts/infernus/inf_full_05_pre_execution_review_summary_2026_06_06.json`
+- `artifacts/infernus/inf_full_05_pre_execution_review_report_2026_06_06.md`
 
 ## Historical documents
 
