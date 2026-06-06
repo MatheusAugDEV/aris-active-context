@@ -1,3 +1,21 @@
+## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate Lock
+
+- Latest completed phase: `ARIS Infernus FULL Excludent Quarantine Gate`
+- Status: `inf_full_06_excludent_quarantine_gate_pass`
+- Decision: `pass`
+- Phase: `INF-FULL-06`
+- excludent_created=true
+- excludent_policy_created=true
+- excludent_read_by_default_allowed=false
+- only_canonroadmap_visible_as_active=true
+- active_canonical_infernus_roadmap=docs/infernus_full/infernus_full_canonroadmap.md
+- f21_route_used=false
+- f21_route_classification=excludent_or_historical_residual_route_noise
+- governance_gate_streak=0
+- current_phase_bots_executed=false.
+- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
+- Next phase (deferred, null): awaiting operator instruction for IF-08 authorization gate.
+
 ## INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate Lock
 
 - Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`

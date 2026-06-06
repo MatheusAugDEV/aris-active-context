@@ -159,6 +159,18 @@ Se next_phase == null e nenhuma linha bate: PARAR.
 Reportar: "Nenhuma transição definida. Aguardando instrução do operador."
 Modelo não inventa transição. Modelo não consulta padrão anterior.
 
+## EXCLUDENT RULE
+
+Files under `excludent/` are excluded from default reading.
+No assistant, Codex prompt, validator, context pack, roadmap decision, or active-context
+decision may use `excludent/` as an authority source.
+`excludent/` can only be inspected by explicit operator forensic request.
+
+- `excludent/` = excluded_from_context
+- read_by_default = false
+- authority = none
+- use = forensic_only
+
 ## REGRA DE CIRCUIT BREAKER
 governance_gate_streak conta gates de governança consecutivos sem
 gate de capacidade real no meio.

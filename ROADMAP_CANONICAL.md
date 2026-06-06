@@ -18,8 +18,8 @@ Bedrock decide.
 
 - Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
 - Active next phase: `INF-FULL-06`
-- Active next phase class: `infernus_full_execution_authorization`
-- INF-FULL-05 remains the latest completed gate while `INF-FULL-06` is materialized as the prompt-only IF-08 authorization gate.
+- Active next phase class: `infernus_full_excludent_cleanup`
+- INF-FULL-06 is the active phase: Excludent Quarantine Gate (excludent/ created, old roadmaps moved, policy enforced).
 - Standing operator authorization is recorded only for pre-execution Infernus FULL gates while execution locks remain false.
 - The saved Infernus canonroadmap defined `IF-08 — Attack Waves Execution` as the next technical block after `IF-07`, and this is now materialized canonically as `INF-FULL-06`.
 - `INF-FULL-06` is an authorization gate only. It does not execute waves, bots, or runtime.
@@ -56,6 +56,7 @@ Bedrock decide.
 | INF-FULL-03 | pass | INF-FULL-04 | infernus_full | prompt_only | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
 | INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
 | INF-FULL-05 | pass | INF-FULL-06 | infernus_full_execution_authorization | prompt_only | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
+| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | prompt_only | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

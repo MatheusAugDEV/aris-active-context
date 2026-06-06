@@ -1,8 +1,14 @@
-## INF-FULL-05 Next Action
-- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
-- Status: `inf_full_05_pre_execution_review_gate_pass`
+## INF-FULL-06 Next Action — Excludent Quarantine Gate
+- Latest completed phase: `ARIS Infernus FULL Excludent Quarantine Gate`
+- Status: `inf_full_06_excludent_quarantine_gate_pass`
 - Next phase: `INF-FULL-06`
-- Mapped block: `IF-08 — Attack Waves Execution Authorization Gate`
+- next_phase: `None` (terminal state; awaiting operator instruction for IF-08 authorization)
+- Phase: `INF-FULL-06`
+- Gate: `excludent_quarantine_gate`
 - advance_mode: `prompt_only`
 - execution_authorization: `false`
-- This phase prepares IF-08 authorization and does not execute waves.
+- excludent_created: `true`
+- excludent_policy_created: `true`
+- only_canonroadmap_visible_as_active: `true`
+- This gate created excludent/ and moved old Infernus roadmaps. Does not execute waves.
+- Next: IF-08 authorization gate materialization (prompt-only, no execution).

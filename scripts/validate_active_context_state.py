@@ -34,17 +34,17 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Infernus FULL Pre-Execution Review Gate"
-EXPECTED_PHASE_ID = "INF-FULL-05"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-04"
-EXPECTED_STATUS = "inf_full_05_pre_execution_review_gate_pass"
+EXPECTED_PHASE = "ARIS Infernus FULL Excludent Quarantine Gate"
+EXPECTED_PHASE_ID = "INF-FULL-06"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Pre-Execution Review Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-05"
+EXPECTED_STATUS = "inf_full_06_excludent_quarantine_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "inf_full_05_pre_execution_review_closed_no_execution"
-EXPECTED_SCHEMA_VERSION = "2.9"
-EXPECTED_NEXT_PHASE_ID = "INF-FULL-06"
-EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution_authorization"
-EXPECTED_NEXT_ACTION_STATUS = "if08_authorization_gate_ready_prompt_only"
+EXPECTED_CURRENT_STATUS = "inf_full_06_excludent_quarantine_gate_pass"
+EXPECTED_SCHEMA_VERSION = "2.10"
+EXPECTED_NEXT_PHASE_ID = None
+EXPECTED_NEXT_PHASE_CLASS = None
+EXPECTED_NEXT_ACTION_STATUS = "inf_full_06_excludent_quarantine_gate_pass"
 ROUTE_SYNC_SOURCE_PHASE_ID = "INF-FULL-04"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_ID = "INF-FULL-05"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_CLASS = "review_gate_only"
@@ -2814,7 +2814,7 @@ def _check_inf_full_05_project_artifacts(state: dict[str, Any]) -> None:
 
     _require(decision_data.get("phase_id") == "INF-FULL-05", "IF07 decision phase_id mismatch")
     _require(decision_data.get("phase_name") == INF_FULL_05_DECISION_PHASE_NAME, "IF07 decision phase_name mismatch")
-    _require(decision_data.get("status") == EXPECTED_STATUS, "IF07 decision status mismatch")
+    _require(decision_data.get("status") == "inf_full_05_pre_execution_review_gate_pass", "IF07 decision status mismatch")
     _require(decision_data.get("decision") == EXPECTED_DECISION, "IF07 decision decision mismatch")
     _require(decision_data.get("review_only") is True, "IF07 decision review_only must be true")
     _require(decision_data.get("pre_execution_only") is True, "IF07 decision pre_execution_only must be true")
@@ -2872,7 +2872,7 @@ def _check_inf_full_05_project_artifacts(state: dict[str, Any]) -> None:
 
     _require(summary_data.get("phase_id") == "INF-FULL-05", "INF-FULL-05 summary phase_id mismatch")
     _require(summary_data.get("decision") == EXPECTED_DECISION, "INF-FULL-05 summary decision mismatch")
-    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-05 summary status mismatch")
+    _require(summary_data.get("status") == "inf_full_05_pre_execution_review_gate_pass", "INF-FULL-05 summary status mismatch")
     _require(summary_data.get("minimum_deliverable_satisfied") is True, "INF-FULL-05 summary minimum deliverable mismatch")
     _require(summary_data.get("next_phase") is None, "INF-FULL-05 summary next_phase must be null")
 
@@ -2913,13 +2913,13 @@ def _check_inf_full_06_if08_authorization_artifacts(state: dict[str, Any]) -> No
     _require(decision_data.get("mapped_infernus_block_name") == "Attack Waves Execution", "IF08 authorization block_name mismatch")
     _require(decision_data.get("decision") == "pass", "IF08 authorization decision must be pass")
     _require(decision_data.get("status") == "inf_full_06_if08_authorization_gate_pass", "IF08 authorization status mismatch")
-    _require(decision_data.get("source_phase_id") == EXPECTED_PHASE_ID, "IF08 authorization source_phase_id mismatch")
-    _require(decision_data.get("source_status") == EXPECTED_STATUS, "IF08 authorization source_status mismatch")
+    _require(decision_data.get("source_phase_id") == "INF-FULL-05", "IF08 authorization source_phase_id mismatch")
+    _require(decision_data.get("source_status") == "inf_full_05_pre_execution_review_gate_pass", "IF08 authorization source_status mismatch")
     _require(decision_data.get("source_next_phase_before") is None, "IF08 authorization source_next_phase_before must be null")
     _require(decision_data.get("canonroadmap_successor_confirmed") is True, "IF08 authorization canonroadmap_successor_confirmed must be true")
     _require(decision_data.get("canonroadmap_successor_block_id") == "IF-08", "IF08 authorization canonroadmap successor mismatch")
     _require(decision_data.get("transition_table_row_added") is True, "IF08 authorization transition_table_row_added must be true")
-    _require(decision_data.get("next_phase_after") == EXPECTED_NEXT_PHASE_ID, "IF08 authorization next_phase_after mismatch")
+    _require(decision_data.get("next_phase_after") == "INF-FULL-06", "IF08 authorization next_phase_after mismatch")
     _require(decision_data.get("advance_mode_after") == "prompt_only", "IF08 authorization advance_mode_after mismatch")
     _require(decision_data.get("operator_authorization_required_for_execution") is True, "IF08 authorization operator authorization flag mismatch")
     _require(decision_data.get("if08_executed") is False, "IF08 authorization if08_executed must be false")
@@ -2948,8 +2948,8 @@ def _check_inf_full_06_if08_authorization_artifacts(state: dict[str, Any]) -> No
     route_rejection = successor_data.get("route_rejection", {})
     authorization_now = successor_data.get("authorization_now", {})
     _require(successor_data.get("phase_id") == "INF-FULL-06", "IF08 successor matrix phase_id mismatch")
-    _require(successor_data.get("source_phase_id") == EXPECTED_PHASE_ID, "IF08 successor matrix source_phase_id mismatch")
-    _require(successor_data.get("source_status") == EXPECTED_STATUS, "IF08 successor matrix source_status mismatch")
+    _require(successor_data.get("source_phase_id") == "INF-FULL-05", "IF08 successor matrix source_phase_id mismatch")
+    _require(successor_data.get("source_status") == "inf_full_05_pre_execution_review_gate_pass", "IF08 successor matrix source_status mismatch")
     _require(successor_data.get("source_next_phase_before") is None, "IF08 successor matrix source_next_phase_before must be null")
     _require(successor_data.get("canonroadmap_source_path") == "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md", "IF08 successor matrix source path mismatch")
     _require(successor_validation.get("next_block_id") == "IF-08", "IF08 successor block mismatch")
@@ -2962,9 +2962,9 @@ def _check_inf_full_06_if08_authorization_artifacts(state: dict[str, Any]) -> No
     _require(successor_validation.get("bot_execution_allowed") == "only_if_authorized", "IF08 successor bot_execution_allowed mismatch")
     _require(successor_validation.get("bedrock_allowed") is False, "IF08 successor bedrock_allowed must be false")
     _require(successor_validation.get("product_allowed") is False, "IF08 successor product_allowed must be false")
-    _require(transition_materialization.get("current_phase_id") == EXPECTED_PHASE_ID, "IF08 transition materialization current_phase_id mismatch")
-    _require(transition_materialization.get("next_phase_id") == EXPECTED_NEXT_PHASE_ID, "IF08 transition materialization next_phase_id mismatch")
-    _require(transition_materialization.get("next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "IF08 transition materialization next_phase_class mismatch")
+    _require(transition_materialization.get("current_phase_id") == "INF-FULL-05", "IF08 transition materialization current_phase_id mismatch")
+    _require(transition_materialization.get("next_phase_id") == "INF-FULL-06", "IF08 transition materialization next_phase_id mismatch")
+    _require(transition_materialization.get("next_phase_class") == "infernus_full_execution_authorization", "IF08 transition materialization next_phase_class mismatch")
     _require(transition_materialization.get("advance_mode") == "prompt_only", "IF08 transition materialization advance_mode mismatch")
     _require(route_rejection.get("f21_route_used") is False, "IF08 route rejection f21_route_used must be false")
     _require(route_rejection.get("f21_route_classification") == "historical_residual_route_noise", "IF08 route rejection classification mismatch")
@@ -2997,9 +2997,9 @@ def _check_inf_full_06_if08_authorization_artifacts(state: dict[str, Any]) -> No
     _require(summary_data.get("phase_id") == "INF-FULL-06", "IF08 summary phase_id mismatch")
     _require(summary_data.get("decision") == "pass", "IF08 summary decision mismatch")
     _require(summary_data.get("status") == "inf_full_06_if08_authorization_gate_pass", "IF08 summary status mismatch")
-    _require(summary_data.get("source_phase_id") == EXPECTED_PHASE_ID, "IF08 summary source_phase_id mismatch")
+    _require(summary_data.get("source_phase_id") == "INF-FULL-05", "IF08 summary source_phase_id mismatch")
     _require(summary_data.get("mapped_infernus_block_id") == "IF-08", "IF08 summary block_id mismatch")
-    _require(summary_data.get("next_phase_after") == EXPECTED_NEXT_PHASE_ID, "IF08 summary next_phase_after mismatch")
+    _require(summary_data.get("next_phase_after") == "INF-FULL-06", "IF08 summary next_phase_after mismatch")
     _require(summary_data.get("advance_mode_after") == "prompt_only", "IF08 summary advance_mode_after mismatch")
     _require(summary_data.get("active_context_updated") is True, "IF08 summary active_context_updated must be true")
     _require(summary_data.get("markdown_mirrors_updated") is True, "IF08 summary markdown_mirrors_updated must be true")
@@ -3023,6 +3023,60 @@ def _check_inf_full_06_if08_authorization_artifacts(state: dict[str, Any]) -> No
         "## Next Action",
     ]:
         _require(phrase in report_text, f"IF08 authorization report missing phrase: {phrase}")
+
+
+def _check_inf_full_06_excludent_quarantine_artifacts(state: dict[str, Any]) -> None:
+    """INF-FULL-06: verify excludent quarantine gate artifacts."""
+    base = ROOT.parent / "artifacts" / "infernus"
+    decision_path = base / "inf_full_06_excludent_quarantine_decision_2026_06_06.json"
+    inventory_path = base / "inf_full_06_excludent_inventory_2026_06_06.json"
+    manifest_path = base / "inf_full_06_excludent_move_manifest_2026_06_06.json"
+    summary_path = base / "inf_full_06_excludent_quarantine_summary_2026_06_06.json"
+    report_path = base / "inf_full_06_excludent_quarantine_report_2026_06_06.md"
+
+    _require(decision_path.exists(), f"excludent quarantine decision artifact missing: {decision_path}")
+    _require(inventory_path.exists(), f"excludent quarantine inventory artifact missing: {inventory_path}")
+    _require(manifest_path.exists(), f"excludent quarantine manifest artifact missing: {manifest_path}")
+    _require(summary_path.exists(), f"excludent quarantine summary artifact missing: {summary_path}")
+    _require(report_path.exists(), f"excludent quarantine report artifact missing: {report_path}")
+
+    decision_data = _load_json(decision_path)
+    _require(decision_data.get("phase_id") == "INF-FULL-06", "excludent decision phase_id mismatch")
+    _require(decision_data.get("decision") == "pass", "excludent decision must be pass")
+    _require(decision_data.get("status") == "inf_full_06_excludent_quarantine_gate_pass", "excludent decision status mismatch")
+    _require(decision_data.get("excludent_created") is True, "excludent_created must be true")
+    _require(decision_data.get("excludent_policy_created") is True, "excludent_policy_created must be true")
+    _require(decision_data.get("excludent_read_by_default_allowed") is False, "excludent_read_by_default_allowed must be false")
+    for key in [
+        "if08_execution_authorized",
+        "waves_execution_authorized",
+        "bot_execution_authorized",
+        "runtime_execution_authorized",
+        "real_dry_run_authorized",
+        "real_apply_authorized",
+        "product_promotion_authorized",
+        "pilot_authorized",
+        "bedrock_authorized",
+        "secrets_access_authorized",
+        "dependency_mutation_authorized",
+    ]:
+        _require(decision_data.get(key) is False, f"excludent decision {key} must be false")
+
+    manifest_data = _load_json(manifest_path)
+    _require(manifest_data.get("active_canonical_roadmap", {}).get("path") == "docs/infernus_full/infernus_full_canonroadmap.md", "manifest active_canonical_roadmap path mismatch")
+    _require(len(manifest_data.get("moved_to_excludent", [])) >= 2, "manifest must record at least 2 files moved to excludent")
+    _require(manifest_data.get("delete_policy") == "physical_delete_not_allowed_without_hash_manifest", "manifest delete policy mismatch")
+
+    # Verify excludent dir exists in active-context
+    excludent_dir = ROOT / "excludent"
+    _require(excludent_dir.exists(), "excludent/ directory must exist in active-context repo")
+    excludent_policy = ROOT / "EXCLUDENT_POLICY.md"
+    _require(excludent_policy.exists(), "EXCLUDENT_POLICY.md must exist in active-context repo")
+
+    # Verify MANDATORY_READ_FIRST_RULES.md has excludent rule
+    mandatory_rules = (ROOT / "MANDATORY_READ_FIRST_RULES.md").read_text(encoding="utf-8")
+    _require("EXCLUDENT RULE" in mandatory_rules, "MANDATORY_READ_FIRST_RULES.md must contain EXCLUDENT RULE")
+    _require("excluded_from_context" in mandatory_rules, "MANDATORY_READ_FIRST_RULES.md must contain excluded_from_context")
 
 
 def _check_scenario_count_resolution(state: dict[str, Any]) -> None:
@@ -3276,9 +3330,9 @@ def main() -> None:
     _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
-    _require(state["next_phase"] == EXPECTED_NEXT_PHASE_ID, "next_phase mismatch")
-    _require(state["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "active_next_phase mismatch")
-    _require(state["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class mismatch")
+    _require(state["next_phase"] is None, "next_phase must be null for terminal INF-FULL-06 excludent gate")
+    _require(state["active_next_phase"] is None, "active_next_phase must be null for terminal INF-FULL-06 excludent gate")
+    _require(state["active_next_phase_class"] is None, "active_next_phase_class must be null for terminal INF-FULL-06 excludent gate")
     _require(state["next_phase_authorized_by_operator"] is False, "next phase must not be operator-authorized")
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
@@ -3333,8 +3387,10 @@ def main() -> None:
     _check_inf_full_route_sync_artifacts(state)
     # INF-FULL-05 pre-execution review checks
     _check_inf_full_05_project_artifacts(state)
-    # INF-FULL-06 IF-08 authorization route checks
+    # INF-FULL-06 IF-08 authorization route checks (historical baseline — artifacts produced in INF-FULL-05)
     _check_inf_full_06_if08_authorization_artifacts(state)
+    # INF-FULL-06 excludent quarantine gate checks
+    _check_inf_full_06_excludent_quarantine_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
 
@@ -3344,19 +3400,19 @@ def main() -> None:
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
 
-    _require(state["current_live_route"]["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "current live route next phase mismatch")
-    _require(state["current_live_route"]["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "current live route next phase class mismatch")
+    _require(state["current_live_route"]["active_next_phase"] is None, "current live route next phase must be null for terminal excludent gate")
+    _require(state["current_live_route"]["active_next_phase_class"] is None, "current live route next phase class must be null for terminal excludent gate")
     _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
 
-    _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
-    _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
+    _require(state["next_action"]["phase"] == EXPECTED_PHASE_ID, "next_action.phase mismatch")
+    _require(state["next_action"]["phase_class"] == "infernus_full_excludent_cleanup", "next_action.phase_class mismatch")
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
 
-    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase mismatch")
+    _require(state["locks"]["deferred_phase"] is None, "locks.deferred_phase must be null for terminal excludent gate")
     _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected previous execution phase")
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
@@ -3376,49 +3432,38 @@ def main() -> None:
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "ACTIVE_CONTEXT_STATE.json wins",
-        EXPECTED_STATUS,
-        EXPECTED_PHASE_ID,
+        "inf_full_06_excludent_quarantine_gate_pass",
+        "INF-FULL-06",
         "Next phase: `INF-FULL-06`",
-        "Active next phase class: `infernus_full_execution_authorization`",
-        "baseline_freeze_planned: `true`",
-        "baseline_freeze_applied: `false`",
+        "Active next phase class: `infernus_full_excludent_cleanup`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
-        "Gate cycles used: `0`",
-        "Gate max cycles: `3`",
         "governance_gate_streak: `0`",
         "fixture_materialization_executed: `true`",
         "bot_execution_executed: `true`",
         "current_phase_bots_executed: `false`",
-        "bot_execution_log_count: `1`",
-        "minos_verdict_executed: `true`",
-        "minos_verdict_count: `1`",
-        "purgatorium_finding_created: `true`",
-        "finding_count: `1`",
-        "scenario_count: `13`",
-        "current_phase_planned_scenario_count: `16`",
-        "current_phase_planned_bot_count: `16`",
-        "`ROADMAP_CANONICAL.md` now materializes `INF-FULL-05 -> INF-FULL-06` as a prompt-only authorization route.",
+        "excludent_created: `true`",
+        "excludent_policy_created: `true`",
+        "only_canonroadmap_visible_as_active: `true`",
         "Execution remains unauthorized in this state.",
-        "External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `INF-FULL-06`",
-        "Mapped block: `IF-08 — Attack Waves Execution Authorization Gate`",
         "advance_mode: `prompt_only`",
         "execution_authorization: `false`",
-        "This phase prepares IF-08 authorization and does not execute waves.",
+        "excludent_quarantine_gate",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        EXPECTED_STATUS,
-        "Deferred phase: `INF-FULL-06`",
-        "next_phase_authorized_by_operator=false",
-        "INF-FULL-05 is review-only and closes the pre-execution packet without authorizing execution.",
-        "`INF-FULL-06` is active only as an IF-08 authorization gate. No wave, bot, or runtime execution is authorized.",
+        "inf_full_06_excludent_quarantine_gate_pass",
+        "INF-FULL-06",
+        "excludent_created=true",
+        "excludent_policy_created=true",
+        "only_canonroadmap_visible_as_active=true",
         "governance_gate_streak=0",
         "current_phase_bots_executed=false.",
+        "excludent_or_historical_residual_route_noise",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
@@ -3429,11 +3474,13 @@ def main() -> None:
         "../artifacts/infernus/if06_harness_readiness_decision.json",
         "../artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json",
         "artifacts/inf_full_route_sync_04_to_05/decision.json",
-        "artifacts/inf_full_06_if08_authorization/decision.json",
-        "artifacts/inf_full_06_if08_authorization/successor_validation_matrix.json",
+        "excludent/",
+        "excluded_from_context",
+        "read_by_default = false",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "INF-FULL-06 | ARIS Infernus FULL Excludent Quarantine Gate | pass",
         "INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass",
         "INF-FULL-04 | ARIS Infernus FULL Scenario Pack & Harness Readiness Gate | pass",
         "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
@@ -3441,20 +3488,17 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        EXPECTED_PHASE,
-        "Active next phase: `INF-FULL-06`",
-        "Active next phase class: `infernus_full_execution_authorization`",
-        "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
-        "baseline_freeze_planned: `true`",
-        "baseline_freeze_applied: `false`",
-        "validate_active_context.yml",
+        "INF-FULL-06",
+        "Active phase: `INF-FULL-06`",
+        "infernus_full_excludent_cleanup",
+        "excludent/",
+        "EXCLUDENT_POLICY.md",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        EXPECTED_PHASE,
         "Active next phase: `INF-FULL-06`",
-        "INF-FULL-05 remains the latest completed gate while `INF-FULL-06` is materialized as the prompt-only IF-08 authorization gate.",
+        "infernus_full_excludent_cleanup",
+        "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | prompt_only |",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_execution_authorization | prompt_only |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only |",
     )

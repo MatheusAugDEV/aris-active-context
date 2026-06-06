@@ -1,3 +1,15 @@
+## INF-FULL-06 | ARIS Infernus FULL Excludent Quarantine Gate | pass
+- status: `inf_full_06_excludent_quarantine_gate_pass`
+- previous_phase_id: `INF-FULL-05`
+- current_status: `inf_full_06_excludent_quarantine_gate_pass`
+- next_phase: `null`
+- excludent_created: `true`
+- excludent_policy_created: `true`
+- only_canonroadmap_visible_as_active: `true`
+- files_moved_to_excludent_count: `2`
+- f21_route_classification: `excludent_or_historical_residual_route_noise`
+- no_execution_authorization_preserved: `true`
+
 ## INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass
 - status: `inf_full_05_pre_execution_review_gate_pass`
 - previous_phase_id: `INF-FULL-04`

@@ -1,3 +1,11 @@
+# INF-FULL-06 — Excludent Quarantine Gate
+- Active phase: `INF-FULL-06`
+- Active phase class: `infernus_full_excludent_cleanup`
+- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate` (INF-FULL-05)
+- Active canonical Infernus roadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- `excludent/` exists and is NOT read by default. See [EXCLUDENT_POLICY.md](EXCLUDENT_POLICY.md).
+- All execution locks remain false. No bot/wave/runtime/apply/product/Bedrock authorized.
+
 # INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate
 - Active next phase: `INF-FULL-06`
 - Active next phase class: `infernus_full_execution_authorization`

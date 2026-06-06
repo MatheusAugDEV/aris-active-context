@@ -822,7 +822,8 @@
                 "2.6",
                 "2.7",
                 "2.8",
-                "2.9"
+                "2.9",
+                "2.10"
             ],
             "type": "string"
         },
@@ -1049,6 +1050,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v2.9",
+    "title": "ARIS Active Context Canonical Live State Schema v2.10",
     "type": "object"
 }

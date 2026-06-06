@@ -1,13 +1,13 @@
-## INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate
+## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate
 - ACTIVE_CONTEXT_STATE.json wins.
-- latest_completed_phase: `ARIS Infernus FULL Pre-Execution Review Gate`
-- status: `inf_full_05_pre_execution_review_gate_pass`
+- latest_completed_phase: `ARIS Infernus FULL Excludent Quarantine Gate`
+- status: `inf_full_06_excludent_quarantine_gate_pass`
 - decision: `pass`
-- phase_id: `INF-FULL-05`
-- previous_phase_id: `INF-FULL-04`
-- current_status: `inf_full_05_pre_execution_review_closed_no_execution`
+- phase_id: `INF-FULL-06`
+- previous_phase_id: `INF-FULL-05`
+- current_status: `inf_full_06_excludent_quarantine_gate_pass`
 - Next phase: `INF-FULL-06`
-- Active next phase class: `infernus_full_execution_authorization`
+- Active next phase class: `infernus_full_excludent_cleanup`
 - next_phase_authorized_by_operator: `false`
 - baseline_freeze_planned: `true`
 - baseline_freeze_applied: `false`
@@ -30,8 +30,13 @@
 - current_phase_planned_bot_count: `16`
 - current_phase_mutation_family_count: `10`
 - current_phase_oracle_count: `9`
-- `IF-08 — Attack Waves Execution` is validated as the next technical block in `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`.
-- `ROADMAP_CANONICAL.md` now materializes `INF-FULL-05 -> INF-FULL-06` as a prompt-only authorization route.
+- excludent_created: `true`
+- excludent_policy_created: `true`
+- excludent_read_by_default_allowed: `false`
+- only_canonroadmap_visible_as_active: `true`
+- active_canonical_infernus_roadmap: `docs/infernus_full/infernus_full_canonroadmap.md`
+- files_moved_to_excludent: `infernus_full_roadmap_v1.md, infernus_full_execution_spec.md`
+- f21_route_classification: `excludent_or_historical_residual_route_noise`
 - Execution remains unauthorized in this state.
 - External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`.
 

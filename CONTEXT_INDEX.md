@@ -48,6 +48,15 @@ This reference is review-only and does not authorize acceptance runner work.
 
 # CONTEXT_INDEX
 
+## Excludent zone (INF-FULL-06)
+
+- `excludent/` = excluded_from_context
+- read_by_default = false
+- authority = none
+- use = forensic_only
+- Policy: [EXCLUDENT_POLICY.md](EXCLUDENT_POLICY.md)
+- Active canonical Infernus roadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+
 ## Live pointers
 - [CURRENT_STATE.md](CURRENT_STATE.md)
 - [NEXT_ACTION.md](NEXT_ACTION.md)
