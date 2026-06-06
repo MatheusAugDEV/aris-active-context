@@ -16,13 +16,13 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
-- Active next phase: `INF-FULL-05`
-- Active next phase class: `review_gate_only`
-- INF-FULL-04 completed as a planning-only scenario pack and harness readiness package.
+- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
+- Active next phase: `null`
+- Active next phase class: `null`
+- INF-FULL-05 closes the pre-execution review packet and leaves no active successor until a new row exists.
 - Standing operator authorization is recorded only for pre-execution Infernus FULL gates while execution locks remain false.
-- The saved Infernus canonroadmap defines `IF-07 — Pre-Execution Review Gate` as the immediate pre-execution successor; it is canonically materialized here as `INF-FULL-05`.
-- `advance_mode=prompt_only` applies to `INF-FULL-05`; prompt emission is allowed without a new operator ritual while execution flags remain false.
+- The saved Infernus canonroadmap defined `IF-07 — Pre-Execution Review Gate` as the immediate pre-execution successor and that mapping is now closed canonically as `INF-FULL-05`.
+- No successor is emitted after `INF-FULL-05` unless a new explicit Transition Table row is added.
 - `scenario_count=13` remains the historical fixture scenario count; the IF-05 packet separately plans 16 scenarios across 16 bots.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
 - Runtime execution authorized: `false`

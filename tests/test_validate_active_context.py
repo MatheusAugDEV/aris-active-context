@@ -820,11 +820,13 @@ def test_transition_table_contains_inf_full_04_prompt_only_successor():
 def test_state_separates_historical_and_planned_scenario_counts():
     state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
 
+    assert state["current_phase_id"] == "INF-FULL-05"
     assert state["scenario_count"] == 13
     assert state["fixture_scenario_count"] == 13
     assert state["current_phase_planned_scenario_count"] == 16
     assert state["current_phase_planned_bot_count"] == 16
     assert state["current_phase_mutation_family_count"] == 10
     assert state["current_phase_oracle_count"] == 9
-    assert state["next_phase"] == "INF-FULL-05"
+    assert state["next_phase"] is None
+    assert state["active_next_phase"] is None
     assert state["next_phase_authorized_by_operator"] is False

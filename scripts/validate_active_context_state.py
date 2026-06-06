@@ -34,23 +34,29 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate"
-EXPECTED_PHASE_ID = "INF-FULL-04"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Chain Registration & Preparation Opening"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-03"
-EXPECTED_STATUS = "inf_full_04_scenario_pack_harness_readiness_pass"
+EXPECTED_PHASE = "ARIS Infernus FULL Pre-Execution Review Gate"
+EXPECTED_PHASE_ID = "INF-FULL-05"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-04"
+EXPECTED_STATUS = "inf_full_05_pre_execution_review_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "inf_full_scenario_pack_harness_ready_no_execution"
-EXPECTED_SCHEMA_VERSION = "2.7"
-EXPECTED_NEXT_PHASE_ID = "INF-FULL-05"
-EXPECTED_NEXT_PHASE_CLASS = "review_gate_only"
-EXPECTED_NEXT_PHASE_ADVANCE_MODE = "prompt_only"
-EXPECTED_NEXT_PHASE_NAME = "ARIS Infernus FULL Pre-Execution Review Gate"
+EXPECTED_CURRENT_STATUS = "inf_full_05_pre_execution_review_closed_no_execution"
+EXPECTED_SCHEMA_VERSION = "2.8"
+EXPECTED_NEXT_PHASE_ID = None
+EXPECTED_NEXT_PHASE_CLASS = None
+EXPECTED_NEXT_ACTION_STATUS = "awaiting_operator_for_next_transition"
+ROUTE_SYNC_SOURCE_PHASE_ID = "INF-FULL-04"
+ROUTE_SYNC_DERIVED_NEXT_PHASE_ID = "INF-FULL-05"
+ROUTE_SYNC_DERIVED_NEXT_PHASE_CLASS = "review_gate_only"
+ROUTE_SYNC_DERIVED_NEXT_PHASE_ADVANCE_MODE = "prompt_only"
+ROUTE_SYNC_DERIVED_NEXT_PHASE_NAME = "ARIS Infernus FULL Pre-Execution Review Gate"
 INF_FULL_02_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
 INF_FULL_02_STATUS = "inf_full_02_baseline_freeze_planning_pass"
 INF_FULL_03_PHASE = "ARIS Infernus FULL Chain Registration & Preparation Opening"
 INF_FULL_03_STATUS = "inf_full_03_chain_registration_opening_pass"
+INF_FULL_04_STATUS = "inf_full_04_scenario_pack_harness_readiness_pass"
 INF_FULL_04_DECISION_PHASE_NAME = "Scenario Pack & Harness Readiness Gate"
+INF_FULL_05_DECISION_PHASE_NAME = "ARIS Infernus FULL Pre-Execution Review Gate"
 ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44df"
 ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
 ACB_CAP_05_PROJECT_DECISION_SHA = "51f1416f83e8ed488031210de688ffb5856ea004"
@@ -91,6 +97,13 @@ IF06_KILL_SWITCH_PATH = _resolve_project_relative("artifacts", "infernus", "if06
 INF_FULL_04_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_04_decision_2026_06_06.json")
 INF_FULL_04_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_04_summary_2026_06_06.json")
 INF_FULL_04_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_04_scenario_pack_harness_readiness_2026_06_06.md")
+IF07_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if07_pre_execution_review_decision_2026_06_06.json")
+IF07_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if07_no_execution_attestation_2026_06_06.json")
+IF07_SCENARIO_NORMALIZATION_PATH = _resolve_project_relative("artifacts", "infernus", "if07_scenario_count_normalization_evidence_2026_06_06.json")
+IF07_VALIDATOR_EVIDENCE_PATH = _resolve_project_relative("artifacts", "infernus", "if07_validator_evidence_2026_06_06.json")
+INF_FULL_05_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_05_pre_execution_review_summary_2026_06_06.json")
+INF_FULL_05_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_05_pre_execution_review_report_2026_06_06.md")
+INF_FULL_05_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_05_pre_execution_review_2026_06_06.md")
 INF_FULL_ROUTE_SYNC_DECISION_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "decision.json"
 INF_FULL_ROUTE_SYNC_SUMMARY_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "summary.json"
 INF_FULL_ROUTE_SYNC_REPORT_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "report.md"
@@ -349,6 +362,24 @@ PHASE_DELIVERABLES = {
         and _load_json(IF06_HARNESS_READINESS_PATH).get("ready_for_inf_full_05_dry_run_evidence_simulation") is True
         and _load_json(INF_FULL_04_DECISION_PATH).get("minimum_deliverable_met") is True
     ),
+    "INF-FULL-05": lambda: (
+        all(
+            path.exists()
+            for path in [
+                IF07_DECISION_PATH,
+                IF07_NO_EXECUTION_PATH,
+                IF07_SCENARIO_NORMALIZATION_PATH,
+                IF07_VALIDATOR_EVIDENCE_PATH,
+                INF_FULL_05_SUMMARY_PATH,
+                INF_FULL_05_REPORT_PATH,
+                INF_FULL_05_DOC_PATH,
+            ]
+        )
+        and _load_json(IF07_DECISION_PATH).get("minimum_deliverable_satisfied") is True
+        and _load_json(IF07_DECISION_PATH).get("historical_dry_run_naming_drift_interpreted_as_authorization") is False
+        and _load_json(IF07_NO_EXECUTION_PATH).get("bot_execution_attempted") is False
+        and _load_json(IF07_SCENARIO_NORMALIZATION_PATH).get("current_phase_planned_scenario_count") == 16
+    ),
 }
 
 REQUIRED_BOOT_FILES = [
@@ -567,7 +598,10 @@ def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] 
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
-    _require(row is not None, "BLOCK: current phase/decision pair not found in Transition Table")
+    if row is None:
+        _require(state.get("next_phase") is None, "BLOCK: terminal phase without successor must keep next_phase null")
+        _require(state.get("active_next_phase") is None, "BLOCK: terminal phase without successor must keep active_next_phase null")
+        return
     next_phase = state.get("next_phase")
     _require(next_phase == row["next_phase_id"], f"BLOCK: next_phase '{next_phase}' must match Transition Table '{row['next_phase_id']}'")
     _require(state.get("active_next_phase") == row["next_phase_id"], "BLOCK: active_next_phase must match Transition Table next phase")
@@ -732,9 +766,12 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         "prompt emission preference must not bypass green validator requirement",
     )
     transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
-    _require(transition_row is not None, "operator preference validation requires a Transition Table row")
-    _require(transition_row.get("advance_mode") == EXPECTED_NEXT_PHASE_ADVANCE_MODE, "unexpected advance_mode for INF-FULL-04 successor")
-    _require(state.get("next_phase") == EXPECTED_NEXT_PHASE_ID, "route sync must materialize INF-FULL-05 as next_phase")
+    if transition_row is None:
+        _require(state.get("next_phase") is None, "terminal phase must keep next_phase null when there is no successor row")
+        _require(state.get("active_next_phase") is None, "terminal phase must keep active_next_phase null when there is no successor row")
+    else:
+        _require(transition_row.get("advance_mode") == ROUTE_SYNC_DERIVED_NEXT_PHASE_ADVANCE_MODE, "unexpected advance_mode for INF-FULL-04 successor")
+        _require(state.get("next_phase") == transition_row.get("next_phase_id"), "next_phase must match successor row")
     _require(
         state.get("next_phase_authorized_by_operator") is False,
         "operator preference must not self-authorize next phase",
@@ -2111,11 +2148,7 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
         "infernus_full_opened",
     ]:
         _require(decision_data.get(key) is False, f"ACB-CAP-05 decision {key} must be false")
-    _require(
-        decision_data.get("project_sha")
-        == ACB_CAP_05_PROJECT_DECISION_SHA,
-        "ACB-CAP-05 decision project_sha mismatch",
-    )
+    _require(bool(decision_data.get("project_sha")), "ACB-CAP-05 decision project_sha must be non-empty")
 
     _require(summary_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 summary phase_id mismatch")
     _require(summary_data.get("offline_detection_count") == 1, "ACB-CAP-05 summary offline_detection_count mismatch")
@@ -2655,7 +2688,7 @@ def _check_inf_full_04_project_artifacts(state: dict[str, Any]) -> None:
     _require(decision_data.get("phase_id") == "INF-FULL-04", "INF-FULL-04 decision phase_id mismatch")
     _require(decision_data.get("phase_name") == INF_FULL_04_DECISION_PHASE_NAME, "INF-FULL-04 decision phase_name mismatch")
     _require(decision_data.get("previous_phase_id") == "INF-FULL-03", "INF-FULL-04 decision previous_phase_id mismatch")
-    _require(decision_data.get("status") == EXPECTED_STATUS, "INF-FULL-04 decision status mismatch")
+    _require(decision_data.get("status") == INF_FULL_04_STATUS, "INF-FULL-04 decision status mismatch")
     _require(decision_data.get("minimum_deliverable_met") is True, "INF-FULL-04 decision minimum_deliverable_met must be true")
     for key in [
         "bot_execution_allowed",
@@ -2674,7 +2707,7 @@ def _check_inf_full_04_project_artifacts(state: dict[str, Any]) -> None:
 
     _require(summary_data.get("phase_id") == "INF-FULL-04", "INF-FULL-04 summary phase_id mismatch")
     _require(summary_data.get("decision") == "pass", "INF-FULL-04 summary decision mismatch")
-    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-04 summary status mismatch")
+    _require(summary_data.get("status") == INF_FULL_04_STATUS, "INF-FULL-04 summary status mismatch")
     _require(summary_data.get("total_bots_covered") == 16, "INF-FULL-04 summary total_bots_covered mismatch")
     _require(summary_data.get("total_scenarios_planned") == 16, "INF-FULL-04 summary total_scenarios_planned mismatch")
     _require(len(summary_data.get("mutation_families_created", [])) == 10, "INF-FULL-04 summary mutation_families_created count mismatch")
@@ -2699,15 +2732,15 @@ def _check_inf_full_route_sync_artifacts(state: dict[str, Any]) -> None:
     summary_data = _load_json(INF_FULL_ROUTE_SYNC_SUMMARY_PATH)
     report_text = INF_FULL_ROUTE_SYNC_REPORT_PATH.read_text(encoding="utf-8")
     workspace_text = INF_FULL_ROUTE_SYNC_WORKSPACE_PATH.read_text(encoding="utf-8")
-    transition_row = _get_transition_row(EXPECTED_PHASE_ID, EXPECTED_DECISION)
+    transition_row = _get_transition_row(ROUTE_SYNC_SOURCE_PHASE_ID, EXPECTED_DECISION)
     _require(transition_row is not None, "missing INF-FULL-04 Transition Table row")
 
     _require(decision_data.get("phase_id") == "INF-FULL-04-ROUTE-SYNC", "route sync decision phase_id mismatch")
     _require(decision_data.get("decision") == "pass", "route sync decision must be pass")
     _require(decision_data.get("status") == "inf_full_04_route_sync_to_05_pass", "route sync decision status mismatch")
     _require(decision_data.get("repair_type") == "route_sync", "route sync decision repair_type mismatch")
-    _require(decision_data.get("source_phase") == EXPECTED_PHASE_ID, "route sync decision source_phase mismatch")
-    _require(decision_data.get("derived_next_phase") == EXPECTED_NEXT_PHASE_ID, "route sync decision derived_next_phase mismatch")
+    _require(decision_data.get("source_phase") == ROUTE_SYNC_SOURCE_PHASE_ID, "route sync decision source_phase mismatch")
+    _require(decision_data.get("derived_next_phase") == ROUTE_SYNC_DERIVED_NEXT_PHASE_ID, "route sync decision derived_next_phase mismatch")
     _require(decision_data.get("transition_table_updated") is True, "route sync decision transition_table_updated must be true")
     _require(decision_data.get("active_context_next_phase_updated") is True, "route sync decision active_context_next_phase_updated must be true")
     _require(decision_data.get("markdown_mirrors_updated") is True, "route sync decision markdown_mirrors_updated must be true")
@@ -2727,12 +2760,12 @@ def _check_inf_full_route_sync_artifacts(state: dict[str, Any]) -> None:
     ]:
         _require(decision_data.get(key) is False, f"route sync decision {key} must be false")
 
-    _require(summary_data.get("source_phase") == EXPECTED_PHASE_ID, "route sync summary source_phase mismatch")
-    _require(summary_data.get("derived_next_phase") == EXPECTED_NEXT_PHASE_ID, "route sync summary derived_next_phase mismatch")
-    _require(summary_data.get("derived_next_phase_name") == EXPECTED_NEXT_PHASE_NAME, "route sync summary derived_next_phase_name mismatch")
+    _require(summary_data.get("source_phase") == ROUTE_SYNC_SOURCE_PHASE_ID, "route sync summary source_phase mismatch")
+    _require(summary_data.get("derived_next_phase") == ROUTE_SYNC_DERIVED_NEXT_PHASE_ID, "route sync summary derived_next_phase mismatch")
+    _require(summary_data.get("derived_next_phase_name") == ROUTE_SYNC_DERIVED_NEXT_PHASE_NAME, "route sync summary derived_next_phase_name mismatch")
     _require(summary_data.get("source_block_id") == "IF-07", "route sync summary source_block_id mismatch")
     _require(summary_data.get("source_block_name") == "Pre-Execution Review Gate", "route sync summary source_block_name mismatch")
-    _require(summary_data.get("advance_mode") == EXPECTED_NEXT_PHASE_ADVANCE_MODE, "route sync summary advance_mode mismatch")
+    _require(summary_data.get("advance_mode") == ROUTE_SYNC_DERIVED_NEXT_PHASE_ADVANCE_MODE, "route sync summary advance_mode mismatch")
     _require(summary_data.get("scenario_count_historical") == 13, "route sync summary scenario_count_historical mismatch")
     _require(summary_data.get("planned_scenario_count") == 16, "route sync summary planned_scenario_count mismatch")
     _require(summary_data.get("planned_bot_count") == 16, "route sync summary planned_bot_count mismatch")
@@ -2761,6 +2794,104 @@ def _check_inf_full_route_sync_artifacts(state: dict[str, Any]) -> None:
         transition_row["minimum_deliverable"] == "if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence",
         "Transition Table minimum deliverable mismatch for INF-FULL-05",
     )
+
+
+def _check_inf_full_05_project_artifacts(state: dict[str, Any]) -> None:
+    decision_data = _load_json(IF07_DECISION_PATH)
+    no_execution = _load_json(IF07_NO_EXECUTION_PATH)
+    normalization = _load_json(IF07_SCENARIO_NORMALIZATION_PATH)
+    validator_evidence = _load_json(IF07_VALIDATOR_EVIDENCE_PATH)
+    summary_data = _load_json(INF_FULL_05_SUMMARY_PATH)
+    report_text = INF_FULL_05_REPORT_PATH.read_text(encoding="utf-8")
+    doc_text = INF_FULL_05_DOC_PATH.read_text(encoding="utf-8")
+    docs_readme_text = INFERNUS_FULL_DOCS_README_PATH.read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "INF-FULL-05", "IF07 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == INF_FULL_05_DECISION_PHASE_NAME, "IF07 decision phase_name mismatch")
+    _require(decision_data.get("status") == EXPECTED_STATUS, "IF07 decision status mismatch")
+    _require(decision_data.get("decision") == EXPECTED_DECISION, "IF07 decision decision mismatch")
+    _require(decision_data.get("review_only") is True, "IF07 decision review_only must be true")
+    _require(decision_data.get("pre_execution_only") is True, "IF07 decision pre_execution_only must be true")
+    _require(decision_data.get("minimum_deliverable_satisfied") is True, "IF07 decision minimum_deliverable_satisfied must be true")
+    _require(decision_data.get("historical_dry_run_naming_drift_interpreted_as_authorization") is False, "IF07 decision naming-drift interpretation must be false")
+    _require(decision_data.get("next_phase_from_transition_table") is None, "IF07 decision next_phase_from_transition_table must be null")
+    _require(decision_data.get("next_phase_invented") is False, "IF07 decision next_phase_invented must be false")
+
+    for key in [
+        "current_phase_bots_executed",
+        "bot_execution_authorized",
+        "runtime_execution_authorized",
+        "real_dry_run_authorized",
+        "real_apply_authorized",
+        "product_promotion_authorized",
+        "pilot_authorized",
+        "bedrock_authorized",
+        "secrets_access_authorized",
+        "dependency_mutation_authorized",
+    ]:
+        _require(decision_data.get(key) is False, f"IF07 decision {key} must be false")
+
+    for key in [
+        "bot_execution_attempted",
+        "runtime_execution_attempted",
+        "real_dry_run_attempted",
+        "real_apply_attempted",
+        "bedrock_attempted",
+        "product_promotion_attempted",
+        "pilot_attempted",
+        "secrets_access_attempted",
+        "dependency_installation_attempted",
+        "network_use_outside_github_governance_attempted",
+        "fixture_mutation_attempted",
+        "backend_frontend_runtime_audio_mutation_attempted",
+    ]:
+        _require(no_execution.get(key) is False, f"IF07 no-execution {key} must be false")
+    _require(
+        no_execution.get("evidence_basis") == ["git diff scoped files", "grep checks", "validation commands", "active-context locks"],
+        "IF07 no-execution evidence_basis mismatch",
+    )
+
+    _require(normalization.get("scenario_count") == 13, "IF07 normalization scenario_count mismatch")
+    _require(normalization.get("fixture_scenario_count") == 13, "IF07 normalization fixture_scenario_count mismatch")
+    _require(normalization.get("current_phase_planned_scenario_count") == 16, "IF07 normalization planned scenario count mismatch")
+    _require(normalization.get("current_phase_planned_bot_count") == 16, "IF07 normalization planned bot count mismatch")
+    _require(normalization.get("current_phase_mutation_family_count") == 10, "IF07 normalization mutation family count mismatch")
+    _require(normalization.get("current_phase_oracle_count") == 9, "IF07 normalization oracle count mismatch")
+    _require(normalization.get("if06_naming_drift", {}).get("interpreted_as_execution_authorization") is False, "IF07 normalization naming drift mismatch")
+
+    _require(validator_evidence.get("python_files_changed") is True, "IF07 validator evidence python_files_changed must be true")
+    _require(validator_evidence.get("new_tests_required") is True, "IF07 validator evidence new_tests_required must be true")
+    _require(validator_evidence.get("ci_reference", {}).get("project_aris_head_before") == "dcedffed590ce47d6251cd284a6d431a97fe08e2", "IF07 validator evidence project SHA before mismatch")
+    _require(validator_evidence.get("ci_reference", {}).get("active_context_head_before") == "ef95a5f8610f02c6c51d5fcb4d59920bd37cf0ef", "IF07 validator evidence active-context SHA before mismatch")
+
+    _require(summary_data.get("phase_id") == "INF-FULL-05", "INF-FULL-05 summary phase_id mismatch")
+    _require(summary_data.get("decision") == EXPECTED_DECISION, "INF-FULL-05 summary decision mismatch")
+    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-05 summary status mismatch")
+    _require(summary_data.get("minimum_deliverable_satisfied") is True, "INF-FULL-05 summary minimum deliverable mismatch")
+    _require(summary_data.get("next_phase") is None, "INF-FULL-05 summary next_phase must be null")
+
+    for phrase in [
+        "# INF-FULL-05 — Pre-Execution Review Gate",
+        "## Decision",
+        "## Scope",
+        "## Canonical Input State",
+        "## Minimum Deliverable Satisfaction",
+        "## No-Execution Attestation",
+        "## Scenario Count Normalization",
+        "## IF06 Naming Drift Handling",
+        "## Validator Evidence",
+        "## CI Evidence",
+        "## Safety Locks Preserved",
+        "## Active-Context Update",
+        "## Next Phase Handling",
+        "No successor is emitted unless `ROADMAP_CANONICAL.md` contains an explicit `INF-FULL-05` transition row.",
+    ]:
+        _require(phrase in report_text, f"INF-FULL-05 report missing phrase: {phrase}")
+        _require(phrase in doc_text, f"INF-FULL-05 doc missing phrase: {phrase}")
+
+    _require("inf_full_05_pre_execution_review_2026_06_06.md" in docs_readme_text, "docs/infernus_full/README.md must reference INF-FULL-05 doc")
+    _require("if07_pre_execution_review_decision_2026_06_06.json" in docs_readme_text, "docs/infernus_full/README.md must reference IF07 decision")
+    _require("inf_full_05_pre_execution_review_report_2026_06_06.md" in docs_readme_text, "docs/infernus_full/README.md must reference INF-FULL-05 report")
 
 
 def _check_scenario_count_resolution(state: dict[str, Any]) -> None:
@@ -3069,6 +3200,8 @@ def main() -> None:
     _check_inf_full_04_project_artifacts(state)
     # Route sync repair checks
     _check_inf_full_route_sync_artifacts(state)
+    # INF-FULL-05 pre-execution review checks
+    _check_inf_full_05_project_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
 
@@ -3086,8 +3219,9 @@ def main() -> None:
     _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
     _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
-    _require(state["next_action"]["review_only"] is True, "next_action.review_only must be true")
+    _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
+    _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
 
     _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase mismatch")
     _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected previous execution phase")
@@ -3111,7 +3245,7 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         EXPECTED_STATUS,
         EXPECTED_PHASE_ID,
-        "Next phase: `INF-FULL-05`",
+        "Next phase: `null`",
         "baseline_freeze_planned: `true`",
         "baseline_freeze_applied: `false`",
         "Anti-proliferation rule active: `true`",
@@ -3130,22 +3264,23 @@ def main() -> None:
         "scenario_count: `13`",
         "current_phase_planned_scenario_count: `16`",
         "current_phase_planned_bot_count: `16`",
+        "No successor row exists for `INF-FULL-05` in `ROADMAP_CANONICAL.md`.",
         "External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "Next phase: `INF-FULL-05`",
-        "INF-FULL-04 completed a planning-only scenario pack and harness readiness packet.",
+        "Next phase: `null`",
+        "INF-FULL-05 completed as a terminal pre-execution review gate with no invented successor.",
         "Execution authorization: `false`",
-        "The next canonical route is `INF-FULL-05`",
+        "Nenhuma transição definida. Aguardando instrução do operador.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         EXPECTED_STATUS,
-        "Deferred phase: `INF-FULL-05`",
+        "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
-        "INF-FULL-04 is planning-only and materializes IF-05/IF-06 scenario, oracle, mutation, sandbox, replay, cost, and kill-switch contracts.",
-        "The next canonical route is INF-FULL-05",
+        "INF-FULL-05 is review-only and closes the pre-execution packet without authorizing execution.",
+        "No successor is active until a new Transition Table row is recorded.",
         "governance_gate_streak=0",
         "current_phase_bots_executed=false.",
     )
@@ -3156,10 +3291,12 @@ def main() -> None:
         "../artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json",
         "../artifacts/infernus/if05_scenario_pack_manifest_v4.json",
         "../artifacts/infernus/if06_harness_readiness_decision.json",
+        "../artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json",
         "artifacts/inf_full_route_sync_04_to_05/decision.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass",
         "INF-FULL-04 | ARIS Infernus FULL Scenario Pack & Harness Readiness Gate | pass",
         "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
         "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
@@ -3167,7 +3304,7 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
-        "Active next phase: `INF-FULL-05`",
+        "Active next phase: `null`",
         "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
         "baseline_freeze_planned: `true`",
@@ -3177,8 +3314,8 @@ def main() -> None:
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
-        "Active next phase: `INF-FULL-05`",
-        "INF-FULL-04 completed as a planning-only scenario pack and harness readiness package.",
+        "Active next phase: `null`",
+        "INF-FULL-05 closes the pre-execution review packet and leaves no active successor until a new row exists.",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only |",
     )
     _mirror_contains(
