@@ -41,14 +41,15 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "inf_full_07_if08_authorization_closed_no_execution"
-EXPECTED_SCHEMA_VERSION = "2.11"
-EXPECTED_NEXT_PHASE_ID = None
-EXPECTED_NEXT_PHASE_CLASS = None
+EXPECTED_SCHEMA_VERSION = "2.12"
+EXPECTED_NEXT_PHASE_ID = "IF-08"
+EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
 EXPECTED_NEXT_ACTION_STATUS = "inf_full_07_if08_authorization_closed_no_execution"
 ROUTE_SYNC_SOURCE_PHASE_ID = "INF-FULL-04"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_ID = "INF-FULL-05"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_CLASS = "review_gate_only"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_ADVANCE_MODE = "prompt_only"
+EXPECTED_CURRENT_SUCCESSOR_ADVANCE_MODE = "canonroadmap"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_NAME = "ARIS Infernus FULL Pre-Execution Review Gate"
 INF_FULL_02_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
 INF_FULL_02_STATUS = "inf_full_02_baseline_freeze_planning_pass"
@@ -121,6 +122,7 @@ CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_ru
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
 CI_TERMINAL_REPORTING_RULE_REPORT_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "report.md"
+INFERNUS_STANDING_AUTHORIZATION_PATH = ROOT / "INFERNUS_STANDING_AUTHORIZATION.md"
 INF_FULL_ROUTE_SYNC_DECISION_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "decision.json"
 INF_FULL_ROUTE_SYNC_SUMMARY_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "summary.json"
 INF_FULL_ROUTE_SYNC_REPORT_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "report.md"
@@ -684,6 +686,10 @@ def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     next_phase = state.get("next_phase")
     _require(next_phase == row["next_phase_id"], f"BLOCK: next_phase '{next_phase}' must match Transition Table '{row['next_phase_id']}'")
     _require(state.get("active_next_phase") == row["next_phase_id"], "BLOCK: active_next_phase must match Transition Table next phase")
+    _require(
+        state.get("active_next_phase_class") == row["next_phase_class"],
+        "BLOCK: active_next_phase_class must match Transition Table next phase class",
+    )
 
 
 def _check_minimum_deliverable(state: dict[str, Any]) -> None:
@@ -849,11 +855,18 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         _require(state.get("next_phase") is None, "terminal phase must keep next_phase null when there is no successor row")
         _require(state.get("active_next_phase") is None, "terminal phase must keep active_next_phase null when there is no successor row")
     else:
-        _require(transition_row.get("advance_mode") == ROUTE_SYNC_DERIVED_NEXT_PHASE_ADVANCE_MODE, "unexpected advance_mode for current infernus successor")
+        _require(
+            transition_row.get("advance_mode") == EXPECTED_CURRENT_SUCCESSOR_ADVANCE_MODE,
+            "unexpected advance_mode for current infernus successor",
+        )
         _require(state.get("next_phase") == transition_row.get("next_phase_id"), "next_phase must match successor row")
+        _require(
+            state.get("active_next_phase_class") == transition_row.get("next_phase_class"),
+            "active_next_phase_class must match successor row",
+        )
     _require(
-        state.get("next_phase_authorized_by_operator") is False,
-        "operator preference must not self-authorize next phase",
+        state.get("next_phase_authorized_by_operator") is True,
+        "standing authorization must mark next phase as operator-authorized via canonroadmap approval",
     )
     auth = state.get("authorization", {})
     for key in [
@@ -3164,7 +3177,7 @@ def _check_inf_full_07_if08_authorization_artifacts(state: dict[str, Any]) -> No
         inf_full_06_row["next_phase_class"] == "infernus_full_execution_authorization",
         "INF-FULL-06 row next_phase_class mismatch",
     )
-    _require(inf_full_06_row["advance_mode"] == "prompt_only", "INF-FULL-06 row advance_mode mismatch")
+    _require(inf_full_06_row["advance_mode"] == "canonroadmap", "INF-FULL-06 row advance_mode mismatch")
 
     _require(no_execution.get("phase_id") == "INF-FULL-07", "IF08 no-execution phase_id mismatch")
     for key in [
@@ -3539,10 +3552,10 @@ def main() -> None:
     _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
-    _require(state["next_phase"] is None, "next_phase must be null for terminal INF-FULL-07 authorization gate")
-    _require(state["active_next_phase"] is None, "active_next_phase must be null for terminal INF-FULL-07 authorization gate")
-    _require(state["active_next_phase_class"] is None, "active_next_phase_class must be null for terminal INF-FULL-07 authorization gate")
-    _require(state["next_phase_authorized_by_operator"] is False, "next phase must not be operator-authorized")
+    _require(state["next_phase"] == EXPECTED_NEXT_PHASE_ID, "next_phase must declare IF-08 as standing-authorized successor")
+    _require(state["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "active_next_phase must declare IF-08 as standing-authorized successor")
+    _require(state["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class must declare infernus_full_execution")
+    _require(state["next_phase_authorized_by_operator"] is True, "next phase must be operator-authorized through standing canonroadmap approval")
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
@@ -3610,8 +3623,8 @@ def main() -> None:
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
     _require_paths_match(state, policy["status_must_match_across"], "status")
 
-    _require(state["current_live_route"]["active_next_phase"] is None, "current live route next phase must be null for terminal authorization gate")
-    _require(state["current_live_route"]["active_next_phase_class"] is None, "current live route next phase class must be null for terminal authorization gate")
+    _require(state["current_live_route"]["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "current live route next phase must be IF-08")
+    _require(state["current_live_route"]["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "current live route next phase class mismatch")
     _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
 
@@ -3622,7 +3635,11 @@ def main() -> None:
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
 
-    _require(state["locks"]["deferred_phase"] is None, "locks.deferred_phase must be null for terminal authorization gate")
+    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to IF-08")
+    _require(
+        "standing authorization" in state["locks"]["deferred_phase_reason"].lower(),
+        "locks.deferred_phase_reason must mention standing authorization",
+    )
     _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected previous execution phase")
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
@@ -3638,14 +3655,17 @@ def main() -> None:
             _require(value is False, f"authorization flag {key} must be false")
 
     _require_files_exist(state)
+    _require(INFERNUS_STANDING_AUTHORIZATION_PATH.exists(), "missing INFERNUS_STANDING_AUTHORIZATION.md")
 
     _mirror_contains(
         ROOT / "CURRENT_STATE.md",
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "Next phase: `null`",
-        "Active next phase class: `null`",
+        "Next phase: `IF-08`",
+        "Active next phase class: `infernus_full_execution`",
+        "next_phase_authorized_by_operator: `true`",
+        "standing_authorization: `canonroadmap aprovado pelo operador",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
@@ -3656,14 +3676,17 @@ def main() -> None:
         "excludent_policy_created: `true`",
         "only_canonroadmap_visible_as_active: `true`",
         "transition_duplicate_resolved: `true`",
-        "Execution remains unauthorized in this state.",
+        "Proximo passo: IF-08",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 concluida.",
-        "advance_mode: `prompt_only`",
-        "execution_authorization: `false`",
-        "Next phase: `null`",
+        "INF-FULL-07 — IF-08 é a Próxima Fase",
+        "next_phase: IF-08",
+        "active_next_phase_class: infernus_full_execution",
+        "next_phase_authorized_by_operator: true",
+        "standing_authorization: canonroadmap aprovado pelo operador",
+        "Execute o primeiro passo de IF-08.",
+        "IF-08 waves: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -3677,12 +3700,20 @@ def main() -> None:
         "excludent_or_historical_residual_route_noise",
         "IF-08 execution = false",
         "waves execution = false",
+        "active_next_phase=IF-08",
+        "active_next_phase_class=infernus_full_execution",
+        "next_phase_authorized_by_operator=true",
+        "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/inf_full_07_if08_authorization/decision.json",
         "artifacts/inf_full_07_if08_authorization/validator_evidence.json",
+        "next_phase: `IF-08`",
+        "active_next_phase_class: `infernus_full_execution`",
+        "next_phase_authorized_by_operator: `true`",
+        "INFERNUS_STANDING_AUTHORIZATION.md",
         "excludent/",
         "excluded_from_context",
         "read_by_default = false",
@@ -3690,6 +3721,9 @@ def main() -> None:
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
         "INF-FULL-07 | IF-08 Attack Waves Execution Authorization Gate Materialization | pass",
+        "next_phase: `IF-08`",
+        "active_next_phase_class: `infernus_full_execution`",
+        "next_phase_authorized_by_operator: `true`",
         "INF-FULL-06 | ARIS Infernus FULL Excludent Quarantine Gate | pass",
         "INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass",
         "INF-FULL-04 | ARIS Infernus FULL Scenario Pack & Harness Readiness Gate | pass",
@@ -3699,21 +3733,29 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "Active next phase: `null`",
+        "Active next phase: `IF-08`",
+        "active_next_phase_class: `infernus_full_execution`",
+        "next_phase_authorized_by_operator: `true`",
+        "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 execution: `false`",
         "excludent/",
         "EXCLUDENT_POLICY.md",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Active next phase: `null`",
-        "Active next phase class: `null`",
-        "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | prompt_only |",
-        "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | prompt_only |",
-        "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only |",
+        "Active next phase: IF-08",
+        "Active next phase class: infernus_full_execution",
+        "Standing authorization: canonroadmap approved by operator",
+        "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
+        "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
+        "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
+        "| INF-FULL-07 | pass | IF-08 | infernus_full_execution | canonroadmap |",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
+        "REGRA ZERO: Canonroadmap é Standing Authorization para Infernus",
+        "NÃO pergunte ao operador se pode avançar.",
+        "INFERNUS_STANDING_AUTHORIZATION.md",
         "REGRA ANTI-PROLIFERAÇÃO DE GATES",
         "Gate que apenas reafirma locks do gate anterior é PROIBIDO.",
         "Planning e Review do mesmo passo colapsam em UM gate",

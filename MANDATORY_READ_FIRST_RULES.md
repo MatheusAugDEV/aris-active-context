@@ -1,5 +1,24 @@
 # MANDATORY_READ_FIRST_RULES
 
+REGRA ZERO: Canonroadmap é Standing Authorization para Infernus
+Esta regra tem precedência sobre qualquer outra.
+O operador aprovou o infernus_full_canonroadmap.md.
+Para todas as fases infernus_full e infernus_full_execution:
+
+Leia o canonroadmap.
+Execute o próximo passo definido nele.
+NÃO pergunte ao operador se pode avançar.
+NÃO aguarde autorização de fase.
+Autorização de fase já foi dada ao aprovar o canonroadmap.
+
+O que ainda requer comando explícito do operador:
+
+Execução real de waves contra sistema real.
+real_apply em qualquer contexto.
+Produto, piloto, Bedrock.
+
+Ver: INFERNUS_STANDING_AUTHORIZATION.md
+
 This file is the compact mandatory rule layer for every ARIS assistant response, Codex prompt, phase review, phase status, roadmap decision, and active-context update.
 
 ARIS-ROADMAP-R0 governance foundation is materialized and does not change the read-first order or authority stack.
@@ -32,6 +51,11 @@ For every ARIS technical decision, phase prompt, Codex instruction, status revie
 **Rule**: No Markdown file may be read before ACTIVE_CONTEXT_STATE.json. A Markdown file that contradicts the JSON must be reported as drift and must not be trusted.
 
 If any file is missing, stale, inaccessible, or contradictory, explicitly report the drift before deciding.
+
+For `infernus_full` and `infernus_full_execution` routes, the standing-authorization extension is mandatory after the default read-first order:
+- `EXCLUDENT_POLICY.md`
+- `INFERNUS_STANDING_AUTHORIZATION.md`
+- `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 
 ## Fundamental ARIS rules
 

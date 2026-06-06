@@ -852,7 +852,7 @@ def test_prompt_preference_requires_green_ci_and_validator():
     ) is False
 
 
-def test_transition_table_contains_inf_full_06_prompt_only_successor():
+def test_transition_table_contains_inf_full_07_canonroadmap_successor():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
         Path("scripts/validate_active_context_state.py"),
@@ -861,11 +861,11 @@ def test_transition_table_contains_inf_full_06_prompt_only_successor():
     assert spec.loader is not None
     spec.loader.exec_module(module)
 
-    row = module._get_transition_row("INF-FULL-06", "pass")
+    row = module._get_transition_row("INF-FULL-07", "pass")
     assert row is not None
-    assert row["next_phase_id"] == "INF-FULL-07"
-    assert row["advance_mode"] == "prompt_only"
-    assert row["next_phase_class"] == "infernus_full_execution_authorization"
+    assert row["next_phase_id"] == "IF-08"
+    assert row["advance_mode"] == "canonroadmap"
+    assert row["next_phase_class"] == "infernus_full_execution"
 
 
 def test_state_separates_historical_and_planned_scenario_counts():
@@ -878,8 +878,8 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["current_phase_planned_bot_count"] == 16
     assert state["current_phase_mutation_family_count"] == 10
     assert state["current_phase_oracle_count"] == 9
-    assert state["next_phase"] is None
-    assert state["active_next_phase"] is None
-    assert state["active_next_phase_class"] is None
-    assert state["next_phase_authorized_by_operator"] is False
+    assert state["next_phase"] == "IF-08"
+    assert state["active_next_phase"] == "IF-08"
+    assert state["active_next_phase_class"] == "infernus_full_execution"
+    assert state["next_phase_authorized_by_operator"] is True
     assert state["current_status"] == "inf_full_07_if08_authorization_closed_no_execution"

@@ -16,21 +16,17 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
-- Active next phase: `null`
-- Active next phase class: `null`
-- `INF-FULL-07` is closed as an authorization-gate materialization only. It does not execute IF-08, waves, bots, or runtime.
-- Standing operator authorization is recorded only for pre-execution Infernus FULL gates while execution locks remain false.
-- The saved Infernus canonroadmap defines `IF-08 — Attack Waves Execution` as the next technical block after `IF-07`, and this is now mapped canonically by `INF-FULL-07` without execution.
-- The old duplicate row `INF-FULL-05 -> INF-FULL-06 | infernus_full_execution_authorization` is superseded and removed from the active Transition Table.
-- `excludent/` remains excluded_from_context with `read_by_default=false`, `authority=none`, `forensic_only`.
-- `scenario_count=13` remains the historical fixture scenario count; the IF-05 packet separately plans 16 scenarios across 16 bots.
-- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- Runtime execution authorized: `false`
-- Real dry-run execution authorized: `false`
-- Real apply authorized: `false`
-- Product promotion allowed: `false`
-- Bedrock executable now: `false`
+Latest completed phase: IF-08 Attack Waves Execution Authorization Gate Materialization
+Active next phase: IF-08
+Active next phase class: infernus_full_execution
+Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
+next_phase_authorized_by_operator: true
+Execution (waves, bots, runtime, apply): false — requires operator execution command
+excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
+
+Standing Authorization Policy
+The operator approved infernus_full_canonroadmap.md. That approval is standing authorization for all Infernus FULL phases. The system reads the canonroadmap and executes the next step after each gate pass. No per-phase operator authorization gate is required.
+Exception: execution of waves against real system, real apply, product promotion, Bedrock require explicit operator execution command.
 
 ## Transition Table
 
@@ -52,12 +48,13 @@ Bedrock decide.
 | ACB-CAP-03 | pass | ACB-CAP-04 | capability_build | prompt_only | runtime public API documented |
 | ACB-CAP-04 | pass | ACB-CAP-05 | capability_build | prompt_only | pilot gates defined |
 | ACB-CAP-05 | pass | INF-FULL-01 | infernus_full | operator | all ACB complete + Infernus spec exists |
-| INF-FULL-01 | pass | INF-FULL-02 | infernus_full | operator | scope charter decision + scope matrix + module scope manifest + charter markdown |
-| INF-FULL-02 | pass | INF-FULL-03 | infernus_full | operator | infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
-| INF-FULL-03 | pass | INF-FULL-04 | infernus_full | prompt_only | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
-| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
-| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | prompt_only | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
-| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | prompt_only | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
+| INF-FULL-01 | pass | INF-FULL-02 | infernus_full | canonroadmap | scope charter decision + scope matrix + module scope manifest + charter markdown |
+| INF-FULL-02 | pass | INF-FULL-03 | infernus_full | canonroadmap | infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
+| INF-FULL-03 | pass | INF-FULL-04 | infernus_full | canonroadmap | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
+| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
+| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
+| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
+| INF-FULL-07 | pass | IF-08 | infernus_full_execution | canonroadmap | canonroadmap standing authorization — no operator gate required before execution command |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

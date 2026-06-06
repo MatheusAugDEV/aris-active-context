@@ -1,27 +1,29 @@
-# Next Action
+INF-FULL-07 — IF-08 é a Próxima Fase
 
-- current_phase: `INF-FULL-07`
-- active_next_phase: `null`
-- Next phase: `null`
-- next_phase: `None`
-- next_phase_authorized_by_operator: `false`
-- advance_mode: `prompt_only`
-- execution_authorization: `false`
-- excludent_read_by_default_allowed: `false`
-- only_canonroadmap_visible_as_active: `true`
-- status: `inf_full_07_if08_authorization_closed_no_execution`
+current_phase: INF-FULL-07
+status: inf_full_07_if08_authorization_gate_pass
+decision: pass
+next_phase: IF-08
+active_next_phase: IF-08
+active_next_phase_class: infernus_full_execution
+next_phase_authorized_by_operator: true
+standing_authorization: canonroadmap aprovado pelo operador
+execution_authorized: false
 
-## Notes
-
-- INF-FULL-07 concluida.
-- IF-08 foi validado como proximo bloco tecnico.
-- IF-08 nao foi executado.
-- Nenhuma wave foi executada.
-- Nenhum bot foi executado.
-- Nenhum runtime foi iniciado.
-- governance_gate_streak: `0`
-- No explicit successor row exists after INF-FULL-07.
-- Awaiting explicit operator instruction. Do NOT proceed autonomously.
-- Do NOT request authorization for already-completed phases.
-- Do NOT gate on CI for phases that are already closed.
-- If operator gives no instruction, next_phase remains null.
+O que fazer agora
+Leia project_mirror/docs/infernus_full/infernus_full_canonroadmap.md.
+Identifique o que IF-08 — Attack Waves Execution requer.
+Execute o primeiro passo de IF-08.
+NÃO pergunte ao operador.
+NÃO aguarde autorização.
+Única coisa que requer comando do operador
+Antes de executar waves reais contra o sistema: informe o operador e aguarde o comando de execução.
+Tudo que é preparação, fixtures, artifacts, planejamento: execute.
+Locks de execução real
+IF-08 waves: false — aguardando comando de execução
+runtime: false
+real apply: false
+produto: false
+Bedrock: false
+secrets: false
+Esses locks não precisam ser reconfirmados. Estão no JSON. Não os mencione a cada ciclo.

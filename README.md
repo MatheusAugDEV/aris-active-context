@@ -14,22 +14,22 @@
 
 - phase_id: `INF-FULL-07`
 - latest_completed_phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
-- active_next_phase: `null`
-- Active next phase: `null`
-- active_next_phase_class: `null`
+- active_next_phase: `IF-08`
+- Active next phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
 - current_status: `inf_full_07_if08_authorization_closed_no_execution`
 - IF-08 execution: `false`
 - Waves execution: `false`
 - All execution locks: `false`
-- next_phase_authorized_by_operator: `false`
+- next_phase_authorized_by_operator: `true`
+- standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
 
 ## What This Means
 
 INF-FULL-07 is closed. IF-08 authorization gate was materialized WITHOUT execution.
 No bot, wave, runtime, apply, product, pilot, Bedrock, or secret is authorized.
-The system is awaiting explicit operator instruction for the next phase.
-If the operator gives no instruction, next_phase remains null.
-Do NOT proceed autonomously. Do NOT request authorizations for already-completed phases.
+The system advances through Infernus FULL by canonroadmap standing authorization.
+Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
 
 ## Boot Read Order
 

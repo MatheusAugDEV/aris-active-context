@@ -2,7 +2,9 @@
 - status: `inf_full_07_if08_authorization_gate_pass`
 - previous_phase_id: `INF-FULL-06`
 - current_status: `inf_full_07_if08_authorization_closed_no_execution`
-- next_phase: `null`
+- next_phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
+- next_phase_authorized_by_operator: `true`
 - mapped_infernus_block: `IF-08`
 - transition_duplicate_resolved: `true`
 - excludent_policy_enforced: `true`

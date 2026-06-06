@@ -18,7 +18,11 @@
 - governance_gate_streak=0
 - current_phase_bots_executed=false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
-- Next phase (deferred, null): no explicit successor after INF-FULL-07; aguardando operador.
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+- Next phase (deferred, IF-08): canonroadmap standing authorization active; no per-phase operator gate required before execution command.
 
 ## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate Lock
 

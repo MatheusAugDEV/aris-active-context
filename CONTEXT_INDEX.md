@@ -3,7 +3,10 @@
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
 - current_status: `inf_full_07_if08_authorization_closed_no_execution`
-- next_phase: `null`
+- next_phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
+- next_phase_authorized_by_operator: `true`
+- standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
@@ -14,6 +17,7 @@ Referências ativas desta fase:
 - `artifacts/inf_full_07_if08_authorization/summary.json`
 - `artifacts/inf_full_07_if08_authorization/report.md`
 - `artifacts/inf_full_07_if08_authorization/validator_evidence.json`
+- `INFERNUS_STANDING_AUTHORIZATION.md`
 - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 - `EXCLUDENT_POLICY.md`
 - `OPERATOR_PREFERENCES.md`
