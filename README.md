@@ -1,22 +1,13 @@
-# INF-FULL-06 — Excludent Quarantine Gate
-- Active phase: `INF-FULL-06`
-- Active phase class: `infernus_full_excludent_cleanup`
-- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate` (INF-FULL-05)
+# INF-FULL-07 — IF-08 Authorization Gate Materialization
+- Latest completed phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- Active next phase: `null`
+- Active next phase class: `null`
 - Active canonical Infernus roadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
-- `excludent/` exists and is NOT read by default. See [EXCLUDENT_POLICY.md](EXCLUDENT_POLICY.md).
+- `excludent/` remains excluded_from_context and is NOT read by default. See [EXCLUDENT_POLICY.md](EXCLUDENT_POLICY.md).
+- `IF-08 — Attack Waves Execution` remains future-mapped only.
+- IF-08 execution: `false`
+- Waves execution: `false`
 - All execution locks remain false. No bot/wave/runtime/apply/product/Bedrock authorized.
-
-# INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate
-- Active next phase: `INF-FULL-06`
-- Active next phase class: `infernus_full_execution_authorization`
-- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
-- baseline_freeze_planned: `true`
-- baseline_freeze_applied: `false`
-- `IF-08 — Attack Waves Execution` is validated as the next technical block from the saved infernus_full_canonroadmap.
-- `INF-FULL-06` is an authorization gate only and does not execute waves.
-- OPERATOR_PREFERENCES.md remains advisory-only beneath JSON/schema/validator/Transition Table authority.
-- artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json remains part of the audited dependency chain.
-- validate_active_context.yml remains the canonical CI validation workflow.
 
 # F21-CTX-BEDROCK-R38 - Bedrock Gate Remaining Scope Inventory
 - latest_completed_phase: `F21-CTX-BEDROCK-R38 - Bedrock Gate Remaining Scope Inventory`

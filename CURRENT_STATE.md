@@ -1,13 +1,13 @@
-## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate
+## INF-FULL-07 — IF-08 Attack Waves Execution Authorization Gate Materialization
 - ACTIVE_CONTEXT_STATE.json wins.
-- latest_completed_phase: `ARIS Infernus FULL Excludent Quarantine Gate`
-- status: `inf_full_06_excludent_quarantine_gate_pass`
+- latest_completed_phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- status: `inf_full_07_if08_authorization_gate_pass`
 - decision: `pass`
-- phase_id: `INF-FULL-06`
-- previous_phase_id: `INF-FULL-05`
-- current_status: `inf_full_06_excludent_quarantine_gate_pass`
-- Next phase: `INF-FULL-06`
-- Active next phase class: `infernus_full_excludent_cleanup`
+- phase_id: `INF-FULL-07`
+- previous_phase_id: `INF-FULL-06`
+- current_status: `inf_full_07_if08_authorization_closed_no_execution`
+- Next phase: `null`
+- Active next phase class: `null`
 - next_phase_authorized_by_operator: `false`
 - baseline_freeze_planned: `true`
 - baseline_freeze_applied: `false`
@@ -34,11 +34,14 @@
 - excludent_policy_created: `true`
 - excludent_read_by_default_allowed: `false`
 - only_canonroadmap_visible_as_active: `true`
-- active_canonical_infernus_roadmap: `docs/infernus_full/infernus_full_canonroadmap.md`
-- files_moved_to_excludent: `infernus_full_roadmap_v1.md, infernus_full_execution_spec.md`
-- f21_route_classification: `excludent_or_historical_residual_route_noise`
+- active_canonical_infernus_roadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- transition_duplicate_resolved: `true`
+- old_duplicate_row_classification: `superseded_by_inf_full_06_to_inf_full_07_authorization_route`
+- if08_next_technical_block_validated: `true`
+- IF-08 executed: `false`
+- Waves executed: `[]`
 - Execution remains unauthorized in this state.
-- External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`.
+- F21 remains historical/excludent route noise and does not define the active route.
 
 ## Historical Residual Route Noise — F21-A52
 - Latest completed phase: `F33.Y-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`

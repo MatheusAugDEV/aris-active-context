@@ -1,3 +1,25 @@
+## INF-FULL-07 — IF-08 Attack Waves Execution Authorization Gate Materialization Lock
+
+- Latest completed phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- Status: `inf_full_07_if08_authorization_gate_pass`
+- Decision: `pass`
+- Phase: `INF-FULL-07`
+- transition_duplicate_resolved=true
+- old_duplicate_row_classification=superseded_by_inf_full_06_to_inf_full_07_authorization_route
+- canonical_successor=IF-08
+- excludent_created=true
+- excludent_policy_created=true
+- excludent_read_by_default_allowed=false
+- only_canonroadmap_visible_as_active=true
+- f21_route_used=false
+- f21_route_classification=excludent_or_historical_residual_route_noise
+- IF-08 execution = false
+- waves execution = false
+- governance_gate_streak=0
+- current_phase_bots_executed=false.
+- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
+- Next phase (deferred, null): no explicit successor after INF-FULL-07; aguardando operador.
+
 ## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate Lock
 
 - Latest completed phase: `ARIS Infernus FULL Excludent Quarantine Gate`
@@ -14,21 +36,8 @@
 - governance_gate_streak=0
 - current_phase_bots_executed=false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
-- Next phase (deferred, null): awaiting operator instruction for IF-08 authorization gate.
-
-## INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate Lock
-
-- Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
-- Status: `inf_full_05_pre_execution_review_gate_pass`
-- Decision: `pass`
-- Deferred phase: `INF-FULL-06`
-- next_phase_authorized_by_operator=false
-- INF-FULL-05 is review-only and closes the pre-execution packet without authorizing execution.
-- `INF-FULL-06` is active only as an IF-08 authorization gate. No wave, bot, or runtime execution is authorized.
-- `IF-08 — Attack Waves Execution` is validated by the saved canonroadmap and materialized only after the explicit Transition Table row.
-- governance_gate_streak=0
-- current_phase_bots_executed=false.
-- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
+- IF-08 execution = false
+- waves execution = false
 
 ## Historical Residual Route Noise — F21-A52 Review Lock
 

@@ -1,25 +1,20 @@
-## INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate References
-- status: `inf_full_05_pre_execution_review_gate_pass`
-- phase_id: `INF-FULL-05`
-- next_phase: `INF-FULL-06`
-- current_status: `inf_full_05_pre_execution_review_closed_no_execution`
-- active_next_phase: `INF-FULL-06`
-- if08_successor_validated: `true`
+## INF-FULL-07 — IF-08 Authorization References
+- status: `inf_full_07_if08_authorization_gate_pass`
+- phase_id: `INF-FULL-07`
+- next_phase: `null`
+- current_status: `inf_full_07_if08_authorization_closed_no_execution`
 - execution_authorization: `false`
 - references:
   - `OPERATOR_PREFERENCES.md`
-  - `artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json`
-  - `../artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json`
-  - `../artifacts/infernus/if05_scenario_pack_manifest_v4.json`
-  - `../artifacts/infernus/if06_harness_readiness_decision.json`
-  - `../artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json`
   - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
-  - `artifacts/inf_full_route_sync_04_to_05/decision.json`
-  - `artifacts/inf_full_06_if08_authorization/decision.json`
-  - `artifacts/inf_full_06_if08_authorization/successor_validation_matrix.json`
-  - `artifacts/inf_full_06_if08_authorization/no_execution_attestation.json`
-  - `artifacts/inf_full_06_if08_authorization/summary.json`
-  - `artifacts/inf_full_06_if08_authorization/report.md`
+  - `EXCLUDENT_POLICY.md`
+  - `artifacts/inf_full_07_if08_authorization/decision.json`
+  - `artifacts/inf_full_07_if08_authorization/successor_validation_matrix.json`
+  - `artifacts/inf_full_07_if08_authorization/no_execution_attestation.json`
+  - `artifacts/inf_full_07_if08_authorization/validator_evidence.json`
+  - `artifacts/inf_full_07_if08_authorization/summary.json`
+  - `artifacts/inf_full_07_if08_authorization/report.md`
+  - `../artifacts/infernus/inf_full_06_excludent_quarantine_decision_2026_06_06.json`
 
 ## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate References
 - phase_id: `F21-A52`
@@ -48,7 +43,7 @@ This reference is review-only and does not authorize acceptance runner work.
 
 # CONTEXT_INDEX
 
-## Excludent zone (INF-FULL-06)
+## Excludent zone (INF-FULL-06 preserved in INF-FULL-07)
 
 - `excludent/` = excluded_from_context
 - read_by_default = false
@@ -154,6 +149,8 @@ This reference is review-only and does not authorize acceptance runner work.
 
 ## Notes
 - This index is compact and intentionally excludes stale repeated blocks.
+- F21 = historical/excludent route noise and never defines the active Infernus route.
+- `artifacts/inf_full_06_if08_authorization/` is historical_only after duplicate-route reconciliation.
 - F21-CTX-D5 materialized the boot/read profiles and did not modify protected sources.
 - `HANDOFF_RESPONSE_POLICY.md` is present and defines compact handoff behavior; it is policy-only and not implementation authority.
 - `MODEL_REASONING_POLICY.md` is live, advisory-only, and non-authoritative for implementation.

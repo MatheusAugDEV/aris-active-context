@@ -802,7 +802,7 @@ def test_prompt_preference_requires_green_ci_and_validator():
     ) is False
 
 
-def test_transition_table_contains_inf_full_05_prompt_only_successor():
+def test_transition_table_contains_inf_full_06_prompt_only_successor():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
         Path("scripts/validate_active_context_state.py"),
@@ -811,16 +811,17 @@ def test_transition_table_contains_inf_full_05_prompt_only_successor():
     assert spec.loader is not None
     spec.loader.exec_module(module)
 
-    row = module._get_transition_row("INF-FULL-05", "pass")
+    row = module._get_transition_row("INF-FULL-06", "pass")
     assert row is not None
-    assert row["next_phase_id"] == "INF-FULL-06"
+    assert row["next_phase_id"] == "INF-FULL-07"
     assert row["advance_mode"] == "prompt_only"
+    assert row["next_phase_class"] == "infernus_full_execution_authorization"
 
 
 def test_state_separates_historical_and_planned_scenario_counts():
     state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
 
-    assert state["current_phase_id"] == "INF-FULL-06"
+    assert state["current_phase_id"] == "INF-FULL-07"
     assert state["scenario_count"] == 13
     assert state["fixture_scenario_count"] == 13
     assert state["current_phase_planned_scenario_count"] == 16
@@ -831,3 +832,4 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] is None
     assert state["active_next_phase_class"] is None
     assert state["next_phase_authorized_by_operator"] is False
+    assert state["current_status"] == "inf_full_07_if08_authorization_closed_no_execution"

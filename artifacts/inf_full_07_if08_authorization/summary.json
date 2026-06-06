@@ -1,0 +1,14 @@
+{
+  "phase_id": "INF-FULL-07",
+  "decision": "pass",
+  "status": "inf_full_07_if08_authorization_gate_pass",
+  "source_phase_id": "INF-FULL-06",
+  "mapped_infernus_block": "IF-08",
+  "transition_duplicate_resolved": true,
+  "active_context_updated": true,
+  "markdown_mirrors_updated": true,
+  "execution_authorization": false,
+  "next_phase_after": null,
+  "advance_mode_after": null,
+  "network_fetch_unavailable": true
+}

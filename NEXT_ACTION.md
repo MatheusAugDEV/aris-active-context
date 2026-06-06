@@ -1,14 +1,19 @@
-## INF-FULL-06 Next Action — Excludent Quarantine Gate
-- Latest completed phase: `ARIS Infernus FULL Excludent Quarantine Gate`
-- Status: `inf_full_06_excludent_quarantine_gate_pass`
-- Next phase: `INF-FULL-06`
-- next_phase: `None` (terminal state; awaiting operator instruction for IF-08 authorization)
-- Phase: `INF-FULL-06`
-- Gate: `excludent_quarantine_gate`
+## INF-FULL-07 Next Action — IF-08 Authorization Gate Materialization Closed
+- Latest completed phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- Status: `inf_full_07_if08_authorization_gate_pass`
+- Current status: `inf_full_07_if08_authorization_closed_no_execution`
+- Phase: `INF-FULL-07`
+- Gate: `if08_authorization_gate_materialization`
 - advance_mode: `prompt_only`
 - execution_authorization: `false`
-- excludent_created: `true`
-- excludent_policy_created: `true`
+- excludent_read_by_default_allowed: `false`
 - only_canonroadmap_visible_as_active: `true`
-- This gate created excludent/ and moved old Infernus roadmaps. Does not execute waves.
-- Next: IF-08 authorization gate materialization (prompt-only, no execution).
+- INF-FULL-07 concluida.
+- IF-08 foi validado como proximo bloco tecnico.
+- IF-08 nao foi executado.
+- Nenhuma wave foi executada.
+- Nenhum bot foi executado.
+- Nenhum runtime foi iniciado.
+- Next phase: `null`
+- next_phase: `None`
+- Proximo passo: `null`, aguardando operador.
