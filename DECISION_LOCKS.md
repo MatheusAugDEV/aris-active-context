@@ -20,6 +20,12 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - minos_verdict_executed=true (1 deterministic Minos verdict on disk).
 - purgatorium_finding_created=true (1 deterministic finding on disk).
 - minimum_deliverable enforcement is active for pass decisions that declare a gated deliverable.
+- Product Loop Demonstrável remains preserved as closed historical evidence; superseded by ACB execution.
+- Core Priority Invariants remain registered as historical governance locks; superseded by ACB execution.
+- WARN não destrava avanço crítico remains canonical governance policy; superseded by ACB execution.
+- removed_from_active_direction remains the status of the old automatic F21/Bedrock/Context continuation; superseded by ACB execution.
+- Productatization Gate remains future-gated and unopened; superseded by ACB execution.
+- SIP remains future-gated and unopened; superseded by ACB execution.
 
 ## Circuit Breaker State
 
