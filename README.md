@@ -10,10 +10,14 @@
 
 - Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
 - Previous execution phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
-- Active next phase: `null`
-- Active next phase class: `null`
+- Active next phase: `INF-FULL-05`
+- Active next phase class: `review_gate_only`
 - governance_gate_streak: `0`
 - fixture_materialization_executed: `true` (65 files / 13 scenarios on disk)
+- current_phase_planned_scenario_count: `16`
+- current_phase_planned_bot_count: `16`
+- current_phase_mutation_family_count: `10`
+- current_phase_oracle_count: `9`
 - bot_execution_executed: `true` (1 deterministic nemesis log on disk, historical only)
 - current_phase_bots_executed: `false`
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk, historical only)
@@ -53,11 +57,15 @@
 - `../artifacts/infernus/inf_full_04_summary_2026_06_06.json`
 - `../docs/infernus_full/infernus_full_canonroadmap.md`
 - `../docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md`
+- `artifacts/inf_full_route_sync_04_to_05/decision.json`
+- `artifacts/inf_full_route_sync_04_to_05/summary.json`
+- `artifacts/inf_full_route_sync_04_to_05/report.md`
 - `validate_active_context.yml`
 
 ## Non-Authorization
 
 - INF-FULL-04 is planning-only and opens only the scenario pack and harness readiness contract set.
 - Standing operator authorization applies only to pre-execution Infernus FULL gates with locks preserved.
+- INF-FULL-05 is now canonically defined as the prompt-only successor, mapped from `IF-07 — Pre-Execution Review Gate`.
+- `scenario_count=13` remains historical fixture inventory and does not conflict with the IF-05 planning packet of 16 scenarios across 16 bots.
 - No bot execution, runtime start, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- No canonical successor is defined after `INF-FULL-04`; no next phase is opened automatically.

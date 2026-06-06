@@ -1,0 +1,26 @@
+BEFORE: Project_ARIS git status --short
+- preexisting dirty state preserved
+- contained many unrelated `M`, `??`, and `D` entries outside this task
+- included preexisting deleted files under `artifacts/f21/` and `docs/fase10/`, `docs/fase11/`, `docs/fase12/`
+- no unrelated files were reverted
+
+BEFORE: aris-active-context git status --short
+ M BEDROCK_GATE.md
+ M BOOT_PROFILE.md
+ M READ_PROFILE.md
+?? LAB_STATUS.md
+?? PROJECT_CONTEXT_ARIS.md
+
+AFTER: Project_ARIS git status --short
+- preexisting dirty state preserved
+- if the active-context submodule commit changes, the main repo reflects it as a gitlink modification only
+- unrelated deleted files remain untouched
+
+AFTER: aris-active-context git status --short
+- route-sync task files staged or modified under active-context only
+- preexisting unrelated dirty files still preserved:
+  M BEDROCK_GATE.md
+  M BOOT_PROFILE.md
+  M READ_PROFILE.md
+  ?? LAB_STATUS.md
+  ?? PROJECT_CONTEXT_ARIS.md

@@ -29,7 +29,13 @@
 - product_promotion_allowed: `False`
 - pilot_authorized: `False`
 - bedrock_executed: `False`
-- next_real_action: `Record an explicit successor transition before any dry-run evidence simulation or execution proposal`
+- next_real_action: `Emit the INF-FULL-05 prompt for the pre-execution review gate once validator/CI are green`
+- route_sync_artifact: `artifacts/inf_full_route_sync_04_to_05/decision.json`
+- fixture_scenario_count: `13`
+- current_phase_planned_scenario_count: `16`
+- current_phase_planned_bot_count: `16`
+- current_phase_mutation_family_count: `10`
+- current_phase_oracle_count: `9`
 
 This ledger entry records a planning-only scenario pack and harness readiness package. No bots are executed and no runtime is started.
 

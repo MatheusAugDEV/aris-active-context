@@ -3,8 +3,9 @@
 - Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
 - Status: `inf_full_04_scenario_pack_harness_readiness_pass`
 - Decision: `pass`
-- Deferred phase: `null`
+- Deferred phase: `INF-FULL-05`
 - next_phase_authorized_by_operator=false
+- advance_mode=prompt_only
 - anti_proliferation_rule_active=true
 - ci_enforcement_active=true
 - gate_max_cycles=3
@@ -15,10 +16,14 @@
 - baseline_freeze_planned=true.
 - baseline_freeze_applied=false.
 - Standing operator authorization is limited to pre-execution Infernus FULL gates.
-- No next phase is authorized.
-- No canonical successor is defined after INF-FULL-04 in the Transition Table.
+- The next canonical route is INF-FULL-05, mapped from `IF-07 — Pre-Execution Review Gate`.
+- Prompt emission for INF-FULL-05 is allowed without new ritual authorization because the Transition Table is prompt_only and execution flags remain false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, dependency mutation, or external network execution is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
+- current_phase_planned_scenario_count=16 (IF-05 planning packet only).
+- current_phase_planned_bot_count=16.
+- current_phase_mutation_family_count=10.
+- current_phase_oracle_count=9.
 - bot_execution_executed=true (1 deterministic nemesis log on disk, historical only).
 - current_phase_bots_executed=false.
 - minos_verdict_executed=true (1 deterministic Minos verdict on disk, historical only).

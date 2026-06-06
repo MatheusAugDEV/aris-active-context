@@ -50,7 +50,8 @@
 - current_phase_id: `INF-FULL-04`
 - status: `inf_full_04_scenario_pack_harness_readiness_pass`
 - current_status: `inf_full_scenario_pack_harness_ready_no_execution`
-- active_next_phase: `null`
+- active_next_phase: `INF-FULL-05`
+- active_next_phase_class: `review_gate_only`
 - next_phase_authorized_by_operator: `false`
 
 ## INF-FULL-04 packet
@@ -78,4 +79,11 @@
 ## Notes
 - Standing operator authorization is valid only for pre-execution Infernus FULL gates with locks preserved.
 - Planned bots, scenarios, oracle mappings, mutation families, and harness controls remain non-executable artifacts.
-- No canonical successor is defined after `INF-FULL-04`; `next_phase` remains `null`.
+- The immediate successor is `INF-FULL-05`, mapped from `IF-07 — Pre-Execution Review Gate` in the saved canonroadmap.
+- `scenario_count=13` is historical fixture inventory; IF-05 separately plans 16 scenarios across 16 bots.
+
+## Route sync artifacts
+- `artifacts/inf_full_route_sync_04_to_05/decision.json`
+- `artifacts/inf_full_route_sync_04_to_05/summary.json`
+- `artifacts/inf_full_route_sync_04_to_05/report.md`
+- `artifacts/inf_full_route_sync_04_to_05/workspace_hygiene_snapshot.txt`

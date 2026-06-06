@@ -800,3 +800,31 @@ def test_prompt_preference_requires_green_ci_and_validator():
         validator_green=False,
         manual_authorization_required=False,
     ) is False
+
+
+def test_transition_table_contains_inf_full_04_prompt_only_successor():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    row = module._get_transition_row("INF-FULL-04", "pass")
+    assert row is not None
+    assert row["next_phase_id"] == "INF-FULL-05"
+    assert row["advance_mode"] == "prompt_only"
+
+
+def test_state_separates_historical_and_planned_scenario_counts():
+    state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+
+    assert state["scenario_count"] == 13
+    assert state["fixture_scenario_count"] == 13
+    assert state["current_phase_planned_scenario_count"] == 16
+    assert state["current_phase_planned_bot_count"] == 16
+    assert state["current_phase_mutation_family_count"] == 10
+    assert state["current_phase_oracle_count"] == 9
+    assert state["next_phase"] == "INF-FULL-05"
+    assert state["next_phase_authorized_by_operator"] is False

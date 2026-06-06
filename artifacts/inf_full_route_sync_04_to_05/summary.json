@@ -1,0 +1,23 @@
+{
+  "artifact_id": "inf_full_route_sync_04_to_05_summary",
+  "source_phase": "INF-FULL-04",
+  "source_phase_name": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
+  "derived_next_phase": "INF-FULL-05",
+  "derived_next_phase_name": "ARIS Infernus FULL Pre-Execution Review Gate",
+  "source_block_id": "IF-07",
+  "source_block_name": "Pre-Execution Review Gate",
+  "advance_mode": "prompt_only",
+  "transition_table_row_materialized": true,
+  "standing_authorization_scope": "infernus_full_pre_execution_gated_sequence",
+  "execution_authorization": false,
+  "scenario_count_historical": 13,
+  "planned_scenario_count": 16,
+  "planned_bot_count": 16,
+  "mutation_family_count": 10,
+  "oracle_count": 9,
+  "route_sync_fix_applied": true,
+  "naming_drift_notes": [
+    "The saved canonroadmap explicitly defines IF-07 Pre-Execution Review Gate as the next pre-execution block.",
+    "The IF06 artifact field ready_for_inf_full_05_dry_run_evidence_simulation is preserved as historical naming drift and does not authorize dry-run execution."
+  ]
+}

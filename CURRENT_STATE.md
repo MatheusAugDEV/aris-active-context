@@ -6,9 +6,11 @@ ACTIVE_CONTEXT_STATE.json wins
 - status: `inf_full_04_scenario_pack_harness_readiness_pass`
 - decision: `pass`
 - current_status: `inf_full_scenario_pack_harness_ready_no_execution`
-- next_phase: `null`
-- Next phase: `null`
-- active_next_phase: `null`
+- next_phase: `INF-FULL-05`
+- Next phase: `INF-FULL-05`
+- active_next_phase: `INF-FULL-05`
+- active_next_phase_class: `review_gate_only`
+- advance_mode: `prompt_only`
 - next_phase_authorized_by_operator: `false`
 - baseline_freeze_planned: `true`
 - baseline_freeze_applied: `false`
@@ -26,8 +28,15 @@ ACTIVE_CONTEXT_STATE.json wins
 - purgatorium_finding_created: `true`
 - finding_count: `1`
 - scenario_count: `13`
+- fixture_scenario_count: `13`
+- current_phase_planned_scenario_count: `16`
+- current_phase_planned_bot_count: `16`
+- current_phase_mutation_family_count: `10`
+- current_phase_oracle_count: `9`
 - External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`
 
 This mirror reflects a planning-only scenario pack and harness readiness package.
 Standing operator authorization is recorded only for pre-execution Infernus FULL gates.
+The saved canonroadmap defines `IF-07 — Pre-Execution Review Gate` as the immediate successor and it is canonically materialized as `INF-FULL-05`.
+`scenario_count=13` remains the historical fixture metric; the IF-05 packet separately plans 16 scenarios across 16 bots.
 No bots are executed and no runtime is started in this phase.
