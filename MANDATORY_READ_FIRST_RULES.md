@@ -100,6 +100,38 @@ Se phase_class está em blocked_phase_classes:
 - next_phase_authorized_by_operator: false
 - PARAR e aguardar autorização explícita do operador
 
+## CI TERMINAL-STATE REPORTING RULE
+
+Codex must not emit `Status final`, `Decision: pass`, or `CI_GREEN_CONFIRMED`
+while any relevant workflow is still `queued`, `waiting`, `requested`, or `in_progress`.
+
+After any commit/push, Codex must classify remote CI as one of exactly three states:
+
+1. `CI_GREEN_CONFIRMED`
+   - every relevant workflow is terminal;
+   - every required conclusion is `success`;
+   - final report may be emitted.
+
+2. `CI_FAILED`
+   - at least one relevant workflow is terminal with `failure`, `cancelled`,
+     `timed_out`, `action_required`, or another non-success conclusion;
+   - final repair handoff must include failed workflow URL, failed job, root cause,
+     and relevant log excerpt.
+
+3. `CI_PENDING`
+   - at least one relevant workflow is still `queued`, `waiting`, `requested`,
+     or `in_progress`;
+   - no final decision may be emitted;
+   - no next prompt may be requested;
+   - no phase may advance;
+   - Codex must wait, poll, or report interim pending state only.
+
+A report containing `in_progress` workflows is not a final report.
+It must be labeled `CI_PENDING`.
+
+Chat text, local validation, local tests, or partial green workflows do not override
+this rule.
+
 ## REGRA DE ENTREGÁVEL MÍNIMO
 
 Todo gate com decision=pass deve satisfazer o minimum_deliverable

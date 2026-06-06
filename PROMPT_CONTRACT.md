@@ -48,6 +48,19 @@ After git push origin main:
 
 The model never self-reports PASS. The CI reports PASS.
 
+## Required CI output discipline
+
+Every final Codex report after push must include terminal CI state.
+
+Forbidden final combinations:
+- `Decision: pass` + any workflow `in_progress`
+- `Status final` + any workflow `queued`
+- `CI_GREEN_CONFIRMED` + missing required workflow
+- next phase request while required workflows are not terminal
+
+Allowed interim report:
+`CI_PENDING`, with list of still-running workflows and URLs.
+
 ## Required structure
 
 Future phase prompts should follow this order:

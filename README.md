@@ -3,6 +3,7 @@
 - Active next phase: `null`
 - Active next phase class: `null`
 - Active canonical Infernus roadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- Terminal CI reporting rule active: `true` (`CI_GREEN_CONFIRMED | CI_FAILED | CI_PENDING` only)
 - `excludent/` remains excluded_from_context and is NOT read by default. See [EXCLUDENT_POLICY.md](EXCLUDENT_POLICY.md).
 - `IF-08 — Attack Waves Execution` remains future-mapped only.
 - IF-08 execution: `false`

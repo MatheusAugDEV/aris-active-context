@@ -4,8 +4,14 @@
 - next_phase: `null`
 - current_status: `inf_full_07_if08_authorization_closed_no_execution`
 - execution_authorization: `false`
+- ci_terminal_reporting_rule_active: `true`
 - references:
   - `OPERATOR_PREFERENCES.md`
+  - `MANDATORY_READ_FIRST_RULES.md`
+  - `PROMPT_CONTRACT.md`
+  - `artifacts/ci_terminal_reporting_rule/decision.json`
+  - `artifacts/ci_terminal_reporting_rule/summary.json`
+  - `artifacts/ci_terminal_reporting_rule/report.md`
   - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
   - `EXCLUDENT_POLICY.md`
   - `artifacts/inf_full_07_if08_authorization/decision.json`

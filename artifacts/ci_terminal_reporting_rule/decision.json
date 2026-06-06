@@ -1,0 +1,26 @@
+{
+  "artifact_id": "ci_terminal_reporting_rule",
+  "decision": "pass",
+  "status": "ci_terminal_reporting_rule_materialized",
+  "rule_name": "CI Terminal-State Reporting Rule",
+  "final_report_allowed_with_pending_ci": false,
+  "ci_green_confirmed_requires_all_terminal_success": true,
+  "ci_failed_requires_terminal_failure_evidence": true,
+  "ci_pending_is_interim_only": true,
+  "phase_advance_allowed_with_pending_ci": false,
+  "next_prompt_allowed_with_pending_ci": false,
+  "local_validation_overrides_remote_ci": false,
+  "safety": {
+    "if08_execution_authorized": false,
+    "waves_execution_authorized": false,
+    "bot_execution_authorized": false,
+    "runtime_execution_authorized": false,
+    "real_dry_run_authorized": false,
+    "real_apply_authorized": false,
+    "product_promotion_authorized": false,
+    "pilot_authorized": false,
+    "bedrock_authorized": false,
+    "secrets_access_authorized": false,
+    "dependency_mutation_authorized": false
+  }
+}

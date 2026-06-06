@@ -117,6 +117,10 @@ INF_FULL_07_IF08_NO_EXECUTION_PATH = INF_FULL_07_IF08_AUTH_ROOT / "no_execution_
 INF_FULL_07_IF08_VALIDATOR_EVIDENCE_PATH = INF_FULL_07_IF08_AUTH_ROOT / "validator_evidence.json"
 INF_FULL_07_IF08_SUMMARY_PATH = INF_FULL_07_IF08_AUTH_ROOT / "summary.json"
 INF_FULL_07_IF08_REPORT_PATH = INF_FULL_07_IF08_AUTH_ROOT / "report.md"
+CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
+CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
+CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
+CI_TERMINAL_REPORTING_RULE_REPORT_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "report.md"
 INF_FULL_ROUTE_SYNC_DECISION_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "decision.json"
 INF_FULL_ROUTE_SYNC_SUMMARY_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "summary.json"
 INF_FULL_ROUTE_SYNC_REPORT_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "report.md"
@@ -593,6 +597,28 @@ def _preference_allows_direct_prompt(
     )
 
 
+def classify_ci_terminal_state(workflows: list[dict[str, Any]]) -> str:
+    if not workflows:
+        raise ValueError("at least one workflow is required")
+
+    pending_statuses = {"queued", "waiting", "requested", "in_progress"}
+    failed_conclusions = {"failure", "cancelled", "timed_out", "action_required", "startup_failure", "stale"}
+
+    for workflow in workflows:
+        status = workflow.get("status")
+        conclusion = workflow.get("conclusion")
+        if status in pending_statuses:
+            return "CI_PENDING"
+        if status != "completed":
+            return "CI_PENDING"
+        if conclusion in failed_conclusions:
+            return "CI_FAILED"
+        if conclusion != "success":
+            return "CI_FAILED"
+
+    return "CI_GREEN_CONFIRMED"
+
+
 def _parse_transition_table() -> list[dict[str, str]]:
     roadmap_text = (ROOT / "ROADMAP_CANONICAL.md").read_text(encoding="utf-8")
     rows: list[dict[str, str]] = []
@@ -820,6 +846,88 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         "external_llm_api_authorized",
     ]:
         _require(auth.get(key) is False, f"operator preference must not override safety lock: {key}")
+
+
+def _check_ci_terminal_reporting_rule() -> None:
+    for path in [
+        CI_TERMINAL_REPORTING_RULE_DECISION_PATH,
+        CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH,
+        CI_TERMINAL_REPORTING_RULE_REPORT_PATH,
+    ]:
+        _require(path.exists(), f"missing CI terminal reporting rule artifact: {path}")
+
+    decision_data = _load_json(CI_TERMINAL_REPORTING_RULE_DECISION_PATH)
+    summary_data = _load_json(CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH)
+
+    _require(decision_data.get("artifact_id") == "ci_terminal_reporting_rule", "CI rule artifact_id mismatch")
+    _require(decision_data.get("decision") == "pass", "CI rule decision must be pass")
+    _require(
+        decision_data.get("status") == "ci_terminal_reporting_rule_materialized",
+        "CI rule status mismatch",
+    )
+    _require(decision_data.get("final_report_allowed_with_pending_ci") is False, "CI rule pending-final flag mismatch")
+    _require(
+        decision_data.get("ci_green_confirmed_requires_all_terminal_success") is True,
+        "CI rule green-confirmed requirement mismatch",
+    )
+    _require(
+        decision_data.get("ci_failed_requires_terminal_failure_evidence") is True,
+        "CI rule failed-evidence requirement mismatch",
+    )
+    _require(decision_data.get("ci_pending_is_interim_only") is True, "CI rule pending-interim flag mismatch")
+    _require(
+        decision_data.get("phase_advance_allowed_with_pending_ci") is False,
+        "CI rule must block phase advance with pending CI",
+    )
+    _require(
+        decision_data.get("next_prompt_allowed_with_pending_ci") is False,
+        "CI rule must block next prompt with pending CI",
+    )
+    _require(
+        decision_data.get("local_validation_overrides_remote_ci") is False,
+        "CI rule must forbid local override of remote CI",
+    )
+    _require(
+        summary_data.get("terminal_states") == ["CI_GREEN_CONFIRMED", "CI_FAILED", "CI_PENDING"],
+        "CI rule summary terminal states mismatch",
+    )
+
+    _mirror_contains(
+        ROOT / "MANDATORY_READ_FIRST_RULES.md",
+        "## CI TERMINAL-STATE REPORTING RULE",
+        "CI_GREEN_CONFIRMED",
+        "CI_FAILED",
+        "CI_PENDING",
+    )
+    _mirror_contains(
+        ROOT / "PROMPT_CONTRACT.md",
+        "## Required CI output discipline",
+        "Decision: pass",
+        "CI_PENDING",
+    )
+    _mirror_contains(
+        ROOT / "AGENT_IDENTITY.md",
+        "Pending CI means CI_PENDING, not PASS.",
+    )
+
+    _require(
+        classify_ci_terminal_state(
+            [{"status": "completed", "conclusion": "success"}]
+        ) == "CI_GREEN_CONFIRMED",
+        "CI terminal-state classifier must allow all-success terminal green",
+    )
+    _require(
+        classify_ci_terminal_state(
+            [{"status": "in_progress", "conclusion": ""}]
+        ) == "CI_PENDING",
+        "CI terminal-state classifier must keep in-progress reports pending",
+    )
+    _require(
+        classify_ci_terminal_state(
+            [{"status": "completed", "conclusion": "failure"}]
+        ) == "CI_FAILED",
+        "CI terminal-state classifier must fail terminal failures",
+    )
 
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
@@ -3429,6 +3537,7 @@ def main() -> None:
     _check_next_phase_in_transition_table(state)
     _check_minimum_deliverable(state)
     _check_operator_preferences_contract(state)
+    _check_ci_terminal_reporting_rule()
 
     # Three-layer circuit breaker (fixture_materialization not in GOVERNANCE_CLASSES, streak check is a no-op here)
     _check_governance_streak(state)

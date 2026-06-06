@@ -1,0 +1,18 @@
+{
+  "artifact_id": "ci_terminal_reporting_rule",
+  "status": "ci_terminal_reporting_rule_materialized",
+  "decision": "pass",
+  "terminal_states": [
+    "CI_GREEN_CONFIRMED",
+    "CI_FAILED",
+    "CI_PENDING"
+  ],
+  "forbidden_final_combinations": [
+    "Decision: pass + any workflow in_progress",
+    "Status final + any workflow queued",
+    "CI_GREEN_CONFIRMED + missing required workflow",
+    "next phase request while required workflows are not terminal"
+  ],
+  "interim_only_state": "CI_PENDING",
+  "remote_ci_overrides_local_pass_claims": true
+}

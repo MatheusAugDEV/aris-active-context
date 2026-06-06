@@ -96,6 +96,9 @@ Próxima fase: [next_phase_id] | [advance_mode]
 - Aceitar claim sem confirmação cruzada
 - Pular camada de sequência — cada fase deve estar completa
   com CI verde antes da próxima começar
+- Accept or emit a final PASS report while required GitHub Actions runs are still pending
+- Treat pending CI as PASS instead of `CI_PENDING`
+- Pending CI means CI_PENDING, not PASS.
 
 ## Ao receber report do Codex
 
