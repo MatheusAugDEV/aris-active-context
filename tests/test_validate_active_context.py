@@ -596,6 +596,84 @@ def test_minimum_deliverable_allows_acb_cap_04_with_evidence_artifact_only():
             os.chdir(cwd)
 
 
+def test_minimum_deliverable_blocks_acb_cap_05_pass_without_project_deliverables():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_05_EVIDENCE_PATH = Path(tmp) / "missing_evidence.json"
+            try:
+                module._check_minimum_deliverable(
+                    {
+                        "current_phase_id": "ACB-CAP-05",
+                        "decision": "pass",
+                    }
+                )
+            except SystemExit as exc:
+                assert exc.code == 1
+            else:
+                raise AssertionError("minimum deliverable check should block ACB-CAP-05 without project deliverables")
+        finally:
+            os.chdir(cwd)
+
+
+def test_minimum_deliverable_allows_acb_cap_05_with_evidence_artifact_only():
+    spec = importlib.util.spec_from_file_location(
+        "validate_active_context_state",
+        Path("scripts/validate_active_context_state.py"),
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cwd = Path.cwd()
+        try:
+            os.chdir(tmp)
+            evidence_path = Path(tmp) / "acb_cap_05_evidence.json"
+            evidence_path.write_text(
+                json.dumps(
+                    {
+                        "project_sha": "973d49a24d58d4166acb95b40611be409c5d44df",
+                        "advanced_supply_chain_ci": {"conclusion": "success"},
+                        "deliverables": {
+                            "supply_chain_package_exists": True,
+                            "sbom_integrity_checker_exists": True,
+                            "sbom_integrity_report_exists": True,
+                            "attestation_envelope_exists": True,
+                            "offline_signature_test_verification_exists": True,
+                            "pypi_vulnerability_range_monitor_exists": True,
+                            "pypi_vulnerability_range_scan_exists": True,
+                            "aibom_prototype_exists": True,
+                            "infernus_full_spec_exists": True,
+                            "advanced_supply_chain_tests_exist": True,
+                            "advanced_supply_chain_artifacts_exist": True
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            module.PROJECT_ROOT = Path(tmp)
+            module.ACB_CAP_05_EVIDENCE_PATH = evidence_path
+            module._check_minimum_deliverable(
+                {
+                    "current_phase_id": "ACB-CAP-05",
+                    "decision": "pass",
+                }
+            )
+        finally:
+            os.chdir(cwd)
+
+
 def test_boot_receipt_blocks_when_operator_preferences_missing():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",

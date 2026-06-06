@@ -48,3 +48,4 @@ ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass | 2026-06-03
 ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass | 2026-06-03
 ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass | 2026-06-03
 ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass | 2026-06-03
+ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass | 2026-06-05

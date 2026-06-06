@@ -18,15 +18,16 @@ ACB_CAP_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_projec
 ACB_CAP_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_02_project_evidence_2026_06_03.json"
 ACB_CAP_03_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_03_project_evidence_2026_06_03.json"
 ACB_CAP_04_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_04_project_evidence_2026_06_03.json"
+ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_evidence_2026_06_05.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Capability Build Product/Pilot Boundary Gate"
-EXPECTED_PHASE_ID = "ACB-CAP-04"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Runtime Top-Level Public API Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-03"
-EXPECTED_STATUS = "acb_cap_04_pass"
+EXPECTED_PHASE = "ARIS Capability Build Advanced Supply Chain Gate"
+EXPECTED_PHASE_ID = "ACB-CAP-05"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Product/Pilot Boundary Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-04"
+EXPECTED_STATUS = "acb_cap_05_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "awaiting_codex_result_validation_for_prompt_only_transition"
+EXPECTED_CURRENT_STATUS = "awaiting_operator_for_infernus_full_entry"
 EXPECTED_SCHEMA_VERSION = "2.3"
 
 GOVERNANCE_CLASSES = {
@@ -181,6 +182,27 @@ PHASE_DELIVERABLES = {
                 "non_authorization_statement_exists",
                 "product_pilot_tests_exist",
                 "product_pilot_artifacts_exist",
+            ]
+        )
+    ),
+    "ACB-CAP-05": lambda: (
+        ACB_CAP_05_EVIDENCE_PATH.exists()
+        and bool(_load_json(ACB_CAP_05_EVIDENCE_PATH).get("project_sha"))
+        and _load_json(ACB_CAP_05_EVIDENCE_PATH).get("advanced_supply_chain_ci", {}).get("conclusion") == "success"
+        and all(
+            _load_json(ACB_CAP_05_EVIDENCE_PATH).get("deliverables", {}).get(key) is True
+            for key in [
+                "supply_chain_package_exists",
+                "sbom_integrity_checker_exists",
+                "sbom_integrity_report_exists",
+                "attestation_envelope_exists",
+                "offline_signature_test_verification_exists",
+                "pypi_vulnerability_range_monitor_exists",
+                "pypi_vulnerability_range_scan_exists",
+                "aibom_prototype_exists",
+                "infernus_full_spec_exists",
+                "advanced_supply_chain_tests_exist",
+                "advanced_supply_chain_artifacts_exist",
             ]
         )
     )
@@ -1697,6 +1719,209 @@ def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
     _require("tests/test_acb_cap_04_product_pilot_boundary.py -v" in workflow_text, "ACB-CAP-04 workflow must run product pilot boundary tests")
 
 
+def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(ACB_CAP_05_EVIDENCE_PATH.exists(), "missing ACB-CAP-05 evidence artifact in active-context")
+
+    evidence_data = _load_json(ACB_CAP_05_EVIDENCE_PATH)
+    _require(evidence_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 evidence phase_id mismatch")
+    _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CAP-05 evidence repository mismatch")
+    _require(
+        evidence_data.get("project_sha") == "973d49a24d58d4166acb95b40611be409c5d44df",
+        "ACB-CAP-05 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("project_sha_gate_start") == "b6044982c31e0861b481605c40bef673b249f351",
+        "ACB-CAP-05 evidence project_sha_gate_start mismatch",
+    )
+    _require(
+        evidence_data.get("advanced_supply_chain_ci", {}).get("conclusion") == "success",
+        "ACB-CAP-05 evidence Advanced Supply Chain CI must be success",
+    )
+    _require(
+        evidence_data.get("advanced_supply_chain_ci", {}).get("url")
+        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320",
+        "ACB-CAP-05 evidence Advanced Supply Chain CI URL mismatch",
+    )
+    for key in [
+        "supply_chain_package_exists",
+        "sbom_integrity_checker_exists",
+        "sbom_integrity_report_exists",
+        "attestation_envelope_exists",
+        "offline_signature_test_verification_exists",
+        "pypi_vulnerability_range_monitor_exists",
+        "pypi_vulnerability_range_scan_exists",
+        "aibom_prototype_exists",
+        "infernus_full_spec_exists",
+        "advanced_supply_chain_tests_exist",
+        "advanced_supply_chain_artifacts_exist",
+    ]:
+        _require(
+            evidence_data.get("deliverables", {}).get(key) is True,
+            f"ACB-CAP-05 evidence deliverable {key} must be true",
+        )
+    _require(
+        evidence_data.get("local_validation", {}).get("pass_criteria_met") is True,
+        "ACB-CAP-05 evidence pass_criteria_met must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("sbom_validation_passed") is True,
+        "ACB-CAP-05 evidence sbom_validation_passed must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("attestation_verified") is True,
+        "ACB-CAP-05 evidence attestation_verified must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("tamper_rejection_verified") is True,
+        "ACB-CAP-05 evidence tamper_rejection_verified must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("infernus_spec_linked") is True,
+        "ACB-CAP-05 evidence infernus_spec_linked must be true",
+    )
+    _require(
+        evidence_data.get("local_validation", {}).get("bot_coverage_complete") is True,
+        "ACB-CAP-05 evidence bot_coverage_complete must be true",
+    )
+    for key in [
+        "network_attempted",
+        "external_pypi_query_attempted",
+        "sigstore_runtime_used",
+        "pypi_upload_attempted",
+        "secret_access_attempted",
+        "production_signature_claimed",
+        "product_promotion_allowed",
+        "bedrock_executed",
+        "pilot_authorized",
+    ]:
+        _require(
+            evidence_data.get("safety", {}).get(key) is False,
+            f"ACB-CAP-05 evidence safety flag {key} must be false",
+        )
+
+    artifacts_root = PROJECT_ROOT / "artifacts" / "acb_cap_05"
+    required_paths = [
+        PROJECT_ROOT / ".github" / "workflows" / "advanced_supply_chain.yml",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "__init__.py",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "sbom_integrity.py",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "attestation_envelope.py",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "pypi_vulnerability_range_monitor.py",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "aibom_prototype.py",
+        PROJECT_ROOT / "src" / "aris" / "supply_chain" / "advanced_supply_chain_gate.py",
+        PROJECT_ROOT / "scripts" / "run_acb_cap_05_advanced_supply_chain_gate.py",
+        PROJECT_ROOT / "tests" / "test_acb_cap_05_advanced_supply_chain_gate.py",
+        PROJECT_ROOT / "docs" / "infernus_full" / "infernus_full_execution_spec.md",
+        artifacts_root / "sbom_integrity_report.json",
+        artifacts_root / "attestation_envelope.json",
+        artifacts_root / "pypi_vulnerability_range_scan.json",
+        artifacts_root / "aibom_prototype.json",
+        artifacts_root / "infernus_full_spec_linkage.json",
+        artifacts_root / "advanced_supply_chain_decision.json",
+        artifacts_root / "advanced_supply_chain_summary.json",
+        artifacts_root / "advanced_supply_chain_report.md",
+        artifacts_root / "pypi_vulnerability_ranges_fixture.json",
+    ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if external_project_available:
+        for path in required_paths:
+            _require(path.exists(), f"missing ACB-CAP-05 project artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    if not external_project_available:
+        return
+
+    decision_data = _load_json(artifacts_root / "advanced_supply_chain_decision.json")
+    summary_data = _load_json(artifacts_root / "advanced_supply_chain_summary.json")
+    sbom_report = _load_json(artifacts_root / "sbom_integrity_report.json")
+    attestation_envelope = _load_json(artifacts_root / "attestation_envelope.json")
+    vulnerability_scan = _load_json(artifacts_root / "pypi_vulnerability_range_scan.json")
+    aibom_prototype = _load_json(artifacts_root / "aibom_prototype.json")
+    spec_linkage = _load_json(artifacts_root / "infernus_full_spec_linkage.json")
+    workflow_text = (PROJECT_ROOT / ".github" / "workflows" / "advanced_supply_chain.yml").read_text(encoding="utf-8")
+    spec_text = (PROJECT_ROOT / "docs" / "infernus_full" / "infernus_full_execution_spec.md").read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == "ARIS Capability Build Advanced Supply Chain Gate", "ACB-CAP-05 decision phase_name mismatch")
+    _require(decision_data.get("status") == "acb_cap_05_pass", "ACB-CAP-05 decision status mismatch")
+    _require(decision_data.get("decision") == "pass", "ACB-CAP-05 decision must be pass")
+    _require(decision_data.get("pass_criteria_met") is True, "ACB-CAP-05 decision pass_criteria_met must be true")
+    _require(decision_data.get("sbom_validation_passed") is True, "ACB-CAP-05 decision sbom_validation_passed must be true")
+    _require(decision_data.get("attestation_verified") is True, "ACB-CAP-05 decision attestation_verified must be true")
+    _require(decision_data.get("tamper_rejection_verified") is True, "ACB-CAP-05 decision tamper_rejection_verified must be true")
+    _require(decision_data.get("infernus_spec_linked") is True, "ACB-CAP-05 decision infernus_spec_linked must be true")
+    _require(decision_data.get("forbidden_import_findings") == [], "ACB-CAP-05 decision forbidden_import_findings must be empty")
+    for key in [
+        "network_attempted",
+        "external_pypi_query_attempted",
+        "sigstore_runtime_used",
+        "pypi_upload_attempted",
+        "secret_access_attempted",
+        "production_signature_claimed",
+        "product_promotion_allowed",
+        "pilot_authorized",
+        "bedrock_executed",
+        "infernus_full_opened",
+    ]:
+        _require(decision_data.get(key) is False, f"ACB-CAP-05 decision {key} must be false")
+    _require(
+        decision_data.get("project_sha")
+        in {
+            evidence_data.get("project_sha"),
+            evidence_data.get("project_sha_artifact_materialization"),
+        },
+        "ACB-CAP-05 decision project_sha mismatch",
+    )
+
+    _require(summary_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 summary phase_id mismatch")
+    _require(summary_data.get("offline_detection_count") == 1, "ACB-CAP-05 summary offline_detection_count mismatch")
+    _require(summary_data.get("offline_unknown_count") == 13, "ACB-CAP-05 summary offline_unknown_count mismatch")
+    _require(summary_data.get("forbidden_import_findings") == [], "ACB-CAP-05 summary forbidden_import_findings must be empty")
+    _require(summary_data.get("tamper_rejection_verified") is True, "ACB-CAP-05 summary tamper_rejection_verified must be true")
+
+    _require(sbom_report.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 sbom_integrity_report phase_id mismatch")
+    _require(sbom_report.get("validation_passed") is True, "ACB-CAP-05 sbom_integrity_report validation_passed must be true")
+    _require(sbom_report.get("complete_sbom_claimed") is False, "ACB-CAP-05 sbom_integrity_report complete_sbom_claimed must be false")
+    _require(sbom_report.get("component_count") == 16, "ACB-CAP-05 sbom_integrity_report component_count mismatch")
+
+    _require(attestation_envelope.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 attestation_envelope phase_id mismatch")
+    _require(attestation_envelope.get("signature_mode") == "offline_test_hmac_not_production_signature", "ACB-CAP-05 attestation signature_mode mismatch")
+    _require(attestation_envelope.get("production_signature_claimed") is False, "ACB-CAP-05 attestation production_signature_claimed must be false")
+    _require(attestation_envelope.get("sigstore_runtime_used") is False, "ACB-CAP-05 attestation sigstore_runtime_used must be false")
+    _require(attestation_envelope.get("pypi_upload_used") is False, "ACB-CAP-05 attestation pypi_upload_used must be false")
+    _require(attestation_envelope.get("trusted_publishing_used") is False, "ACB-CAP-05 attestation trusted_publishing_used must be false")
+
+    _require(vulnerability_scan.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 vulnerability scan phase_id mismatch")
+    _require(vulnerability_scan.get("external_monitoring_allowed") is False, "ACB-CAP-05 vulnerability scan external_monitoring_allowed must be false")
+    _require(len(vulnerability_scan.get("detected_by_offline_fixture", [])) == 1, "ACB-CAP-05 vulnerability scan must detect exactly 1 offline advisory")
+    _require(len(vulnerability_scan.get("unknown_due_to_no_external_network", [])) == 13, "ACB-CAP-05 vulnerability scan unknown count mismatch")
+
+    _require(aibom_prototype.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 aibom_prototype phase_id mismatch")
+    _require(aibom_prototype.get("completeness") == "prototype_partial", "ACB-CAP-05 aibom_prototype completeness mismatch")
+    _require(aibom_prototype.get("production_claim") is False, "ACB-CAP-05 aibom_prototype production_claim must be false")
+    _require(aibom_prototype.get("spdx_conformance_claimed") is False, "ACB-CAP-05 aibom_prototype spdx_conformance_claimed must be false")
+    _require(aibom_prototype.get("cyclonedx_conformance_claimed") is False, "ACB-CAP-05 aibom_prototype cyclonedx_conformance_claimed must be false")
+
+    _require(spec_linkage.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 infernus_full_spec_linkage phase_id mismatch")
+    _require(spec_linkage.get("all_required_sections_present") is True, "ACB-CAP-05 infernus_full_spec_linkage all_required_sections_present must be true")
+    _require(spec_linkage.get("documented_bot_count") == 13, "ACB-CAP-05 infernus_full_spec_linkage documented_bot_count mismatch")
+    _require(spec_linkage.get("bot_coverage_complete") is True, "ACB-CAP-05 infernus_full_spec_linkage bot_coverage_complete must be true")
+    _require(spec_linkage.get("operator_only_open_gate") is True, "ACB-CAP-05 infernus_full_spec_linkage operator_only_open_gate must be true")
+    _require(spec_linkage.get("product_or_pilot_authorized") is False, "ACB-CAP-05 infernus_full_spec_linkage product_or_pilot_authorized must be false")
+
+    _require("name: Advanced Supply Chain" in workflow_text, "ACB-CAP-05 workflow must be Advanced Supply Chain")
+    _require("python -m py_compile" in workflow_text, "ACB-CAP-05 workflow must run py_compile")
+    _require("python -m unittest tests.test_acb_cap_05_advanced_supply_chain_gate -q" in workflow_text, "ACB-CAP-05 workflow must run focused unittest")
+    _require("python scripts/run_acb_cap_05_advanced_supply_chain_gate.py" in workflow_text, "ACB-CAP-05 workflow must run the advanced supply chain runner")
+    _require("python -m json.tool artifacts/acb_cap_05/advanced_supply_chain_decision.json" in workflow_text, "ACB-CAP-05 workflow must validate generated JSON artifacts")
+
+    _require("## 13 Bots" in spec_text, "ACB-CAP-05 infernus spec must include 13 bots section")
+    _require(
+        "operator explicitly opens" in spec_text.lower() or "explicit operator authorization" in spec_text.lower(),
+        "ACB-CAP-05 infernus spec must be operator-gated",
+    )
+    _require("must not authorize product rollout" in spec_text.lower(), "ACB-CAP-05 infernus spec must prohibit product rollout")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -1977,8 +2202,10 @@ def main() -> None:
     _check_acb_cap_02_project_artifacts(state)
     # ACB-CAP-03 baseline must remain true for ACB-CAP-04.
     _check_acb_cap_03_project_artifacts(state)
-    # ACB-CAP-04 specific checks
+    # ACB-CAP-04 baseline must remain true for ACB-CAP-05.
     _check_acb_cap_04_project_artifacts(state)
+    # ACB-CAP-05 specific checks
+    _check_acb_cap_05_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -2033,14 +2260,14 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_cap_04/`",
+        "External deliverables registered from `../artifacts/acb_cap_05/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
-        "Awaiting Codex-result validation for prompt-only continuity.",
+        "Awaiting operator authorization for INF-FULL-01 entry.",
         "Execution authorization: `false`",
-        "ACB-CAP-05 is the canonical prompt-only successor, but it remains unopened in JSON.",
+        "INF-FULL-01 is the canonical successor, but it remains operator-only and unopened in JSON.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -2049,39 +2276,39 @@ def main() -> None:
         "next_phase_authorized_by_operator=false",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "Prompt emission continuity for `ACB-CAP-05` does not open the phase in JSON.",
+        "INF-FULL-01 remains operator-only and is not opened in JSON.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
-        "../artifacts/acb_cap_04/decision.json",
-        "../artifacts/acb_cap_04/summary.json",
-        "../artifacts/acb_cap_04/report.md",
+        "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+        "../artifacts/acb_cap_05/advanced_supply_chain_decision.json",
+        "../artifacts/acb_cap_05/advanced_supply_chain_summary.json",
+        "../artifacts/acb_cap_05/advanced_supply_chain_report.md",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
         "ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass",
         "ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass",
-        "ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
-        "pilot_gates_defined: `true`",
-        "five_binary_gates_defined: `true`",
-        "pilot_allowed_now: `false`",
+        "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+        "sbom_validation_passed: `true`",
+        "attestation_verified: `true`",
+        "production_signature_claimed: `false`",
         "validate_active_context.yml",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "Prompt-only continuity may emit the next Codex prompt without opening the phase in JSON.",
-        "`ACB-CAP-05` remains unopened until a future canonical state transition is recorded.",
+        "INF-FULL-01 remains operator-only and unopened until the operator explicitly opens it.",
+        "Canonical successor after `ACB-CAP-05` is `INF-FULL-01` under `operator` mode.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -2138,6 +2365,7 @@ def main() -> None:
         "acb_core_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_01" / "decision.json").exists(),
         "acb_core_02_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_02" / "decision.json").exists(),
         "acb_cap_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_01" / "decision.json").exists(),
+        "acb_cap_05_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_05" / "advanced_supply_chain_decision.json").exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

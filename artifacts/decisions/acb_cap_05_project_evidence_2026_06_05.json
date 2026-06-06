@@ -1,0 +1,76 @@
+{
+  "artifact_id": "acb_cap_05_project_evidence_2026_06_05",
+  "phase_id": "ACB-CAP-05",
+  "phase_name": "ARIS Capability Build Advanced Supply Chain Gate",
+  "project_repository": "MatheusAugDEV/Project-A.R.I.S",
+  "project_sha": "973d49a24d58d4166acb95b40611be409c5d44df",
+  "project_sha_artifact_materialization": "a90f35d071389d52ee78eb6fd62cbb7da2910393",
+  "project_sha_gate_start": "b6044982c31e0861b481605c40bef673b249f351",
+  "source_active_context_sha_before": "c845b0d08fff250cab6ac26c9ba8befddb37c1bd",
+  "advanced_supply_chain_ci": {
+    "name": "Advanced Supply Chain",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320",
+    "conclusion": "success"
+  },
+  "deliverables": {
+    "supply_chain_package_exists": true,
+    "sbom_integrity_checker_exists": true,
+    "sbom_integrity_report_exists": true,
+    "attestation_envelope_exists": true,
+    "offline_signature_test_verification_exists": true,
+    "pypi_vulnerability_range_monitor_exists": true,
+    "pypi_vulnerability_range_scan_exists": true,
+    "aibom_prototype_exists": true,
+    "infernus_full_spec_exists": true,
+    "advanced_supply_chain_tests_exist": true,
+    "advanced_supply_chain_artifacts_exist": true
+  },
+  "external_paths": [
+    "../.github/workflows/advanced_supply_chain.yml",
+    "../src/aris/supply_chain/__init__.py",
+    "../src/aris/supply_chain/sbom_integrity.py",
+    "../src/aris/supply_chain/attestation_envelope.py",
+    "../src/aris/supply_chain/pypi_vulnerability_range_monitor.py",
+    "../src/aris/supply_chain/aibom_prototype.py",
+    "../src/aris/supply_chain/advanced_supply_chain_gate.py",
+    "../scripts/run_acb_cap_05_advanced_supply_chain_gate.py",
+    "../tests/test_acb_cap_05_advanced_supply_chain_gate.py",
+    "../docs/infernus_full/infernus_full_execution_spec.md",
+    "../artifacts/acb_cap_05/sbom_integrity_report.json",
+    "../artifacts/acb_cap_05/attestation_envelope.json",
+    "../artifacts/acb_cap_05/pypi_vulnerability_range_scan.json",
+    "../artifacts/acb_cap_05/aibom_prototype.json",
+    "../artifacts/acb_cap_05/infernus_full_spec_linkage.json",
+    "../artifacts/acb_cap_05/advanced_supply_chain_decision.json",
+    "../artifacts/acb_cap_05/advanced_supply_chain_summary.json",
+    "../artifacts/acb_cap_05/advanced_supply_chain_report.md",
+    "../artifacts/acb_cap_05/pypi_vulnerability_ranges_fixture.json"
+  ],
+  "local_validation": {
+    "pass_criteria_met": true,
+    "sbom_validation_passed": true,
+    "attestation_verified": true,
+    "tamper_rejection_verified": true,
+    "offline_vulnerability_detection_count": 1,
+    "offline_unknown_count": 13,
+    "infernus_spec_linked": true,
+    "bot_coverage_complete": true
+  },
+  "safety": {
+    "network_attempted": false,
+    "external_pypi_query_attempted": false,
+    "sigstore_runtime_used": false,
+    "pypi_upload_attempted": false,
+    "secret_access_attempted": false,
+    "production_signature_claimed": false,
+    "product_promotion_allowed": false,
+    "bedrock_executed": false,
+    "pilot_authorized": false
+  },
+  "notes": [
+    "This artifact is the canonical active-context evidence mirror for ACB-CAP-05 when active-context CI runs without direct access to the Project_ARIS workspace.",
+    "Project_ARIS artifacts were generated before the final CI fallback commit, so ../artifacts/acb_cap_05/advanced_supply_chain_decision.json records the artifact-materialization SHA while this mirror records the final pushed Project_ARIS SHA.",
+    "The dedicated Advanced Supply Chain workflow succeeded for the final Project_ARIS SHA after a CI-only fixture fallback fix for the missing aris-active-context checkout in GitHub Actions.",
+    "The repo-wide CI workflow remains outside ACB-CAP-05 scope and was still red at the time this evidence was recorded."
+  ]
+}

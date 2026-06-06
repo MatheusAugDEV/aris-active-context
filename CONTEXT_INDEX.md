@@ -2,13 +2,38 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 
 # Context Index
 
-- Latest completed phase: `ARIS Capability Build Product/Pilot Boundary Gate`
+- Latest completed phase: `ARIS Capability Build Advanced Supply Chain Gate`
 - Active next phase: `null`
 - Route class: `null`
 
 ## Current Phase Artifacts
 
 - `OPERATOR_PREFERENCES.md`
+- `artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json`
+- `../artifacts/acb_cap_05/advanced_supply_chain_decision.json`
+- `../artifacts/acb_cap_05/advanced_supply_chain_summary.json`
+- `../artifacts/acb_cap_05/advanced_supply_chain_report.md`
+- `../artifacts/acb_cap_05/sbom_integrity_report.json`
+- `../artifacts/acb_cap_05/attestation_envelope.json`
+- `../artifacts/acb_cap_05/pypi_vulnerability_range_scan.json`
+- `../artifacts/acb_cap_05/aibom_prototype.json`
+- `../artifacts/acb_cap_05/infernus_full_spec_linkage.json`
+- `../artifacts/acb_cap_05/pypi_vulnerability_ranges_fixture.json`
+- `../docs/infernus_full/infernus_full_execution_spec.md`
+- `../.github/workflows/advanced_supply_chain.yml`
+- `../scripts/run_acb_cap_05_advanced_supply_chain_gate.py`
+- `../tests/test_acb_cap_05_advanced_supply_chain_gate.py`
+- `../src/aris/supply_chain/__init__.py`
+- `../src/aris/supply_chain/sbom_integrity.py`
+- `../src/aris/supply_chain/attestation_envelope.py`
+- `../src/aris/supply_chain/pypi_vulnerability_range_monitor.py`
+- `../src/aris/supply_chain/aibom_prototype.py`
+- `../src/aris/supply_chain/advanced_supply_chain_gate.py`
+- `scripts/validate_active_context_state.py`
+- `tests/test_validate_active_context.py`
+
+## Prior Phase Artifacts
+
 - `artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json`
 - `../artifacts/acb_cap_04/decision.json`
 - `../artifacts/acb_cap_04/summary.json`
@@ -25,23 +50,6 @@ artifact routes are derived from ACTIVE_CONTEXT_STATE.json. If this file conflic
 - `../artifacts/acb_cap_04/non_authorization_statement.json`
 - `../artifacts/acb_cap_04/import_stability_report.json`
 - `../artifacts/acb_cap_04/public_api_drift_report.json`
-- `../.github/workflows/product-pilot-boundary.yml`
-- `../scripts/run_acb_cap_04_product_pilot_boundary.py`
-- `../tests/test_acb_cap_04_product_pilot_boundary.py`
-- `../src/aris/product_boundary/__init__.py`
-- `../src/aris/product_boundary/contracts.py`
-- `../src/aris/product_boundary/gate_registry.py`
-- `../src/aris/product_boundary/pilot_gate.py`
-- `../src/aris/product_boundary/workflow.py`
-- `../src/aris/product_boundary/evidence.py`
-- `../src/aris/product_boundary/decision.py`
-- `../src/aris/product_boundary/checklist.py`
-- `../src/aris/product_boundary/risk_matrix.py`
-- `scripts/validate_active_context_state.py`
-- `tests/test_validate_active_context.py`
-
-## Prior Phase Artifacts
-
 - `artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json`
 - `../artifacts/acb_cap_03/decision.json`
 - `../artifacts/acb_cap_03/summary.json`

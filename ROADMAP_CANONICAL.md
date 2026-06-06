@@ -16,14 +16,16 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Capability Build Product/Pilot Boundary Gate`
+- Latest completed phase: `ARIS Capability Build Advanced Supply Chain Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- Prompt-only continuity may emit the next Codex prompt without opening the phase in JSON.
+- Prompt emission continuity does not open `INF-FULL-01`; the successor remains operator-only.
 - ACB decision registered: `artifacts/decisions/acb_decision_2026_06_03.json`
 - ACB execution order registered: `artifacts/decisions/acb_execution_order_2026_06_03.json`
-- Canonical successor after `ACB-CAP-04` is `ACB-CAP-05` under `prompt_only` once the prior PASS remains canonical and CI/validator evidence is green.
-- `ACB-CAP-05` remains unopened until a future canonical state transition is recorded.
+- Canonical successor after `ACB-CAP-05` is `INF-FULL-01` under `operator` once the prior PASS remains canonical and CI/validator evidence is green.
+- Canonical successor after `ACB-CAP-05` is `INF-FULL-01` under `operator` mode.
+- `INF-FULL-01` remains operator-only and unopened until the operator explicitly opens it.
+- INF-FULL-01 remains operator-only and unopened until the operator explicitly opens it.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`

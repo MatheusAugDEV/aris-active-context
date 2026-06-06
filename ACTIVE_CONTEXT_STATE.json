@@ -1,9 +1,9 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "ACB-CAP-04",
-  "current_phase_id": "ACB-CAP-04",
-  "previous_phase_id": "ACB-CAP-03",
-  "gate_opened_at": "2026-06-03",
+  "phase_id": "ACB-CAP-05",
+  "current_phase_id": "ACB-CAP-05",
+  "previous_phase_id": "ACB-CAP-04",
+  "gate_opened_at": "2026-06-05",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
   "governance_gate_streak": 0,
@@ -382,6 +382,12 @@
       "phase": "ARIS Capability Build Product/Pilot Boundary Gate",
       "repair_type": "capability_build",
       "status": "acb_cap_04_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Capability Build Advanced Supply Chain Gate",
+      "repair_type": "capability_build",
+      "status": "acb_cap_05_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -412,15 +418,15 @@
   "current_live_route": {
     "active_next_phase": null,
     "active_next_phase_class": null,
-    "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
+    "current_status": "awaiting_operator_for_infernus_full_entry",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+    "latest_completed_phase": "ARIS Capability Build Advanced Supply Chain Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "acb_cap_04_pass"
+    "status": "acb_cap_05_pass"
   },
-  "current_status": "awaiting_codex_result_validation_for_prompt_only_transition",
+  "current_status": "awaiting_operator_for_infernus_full_entry",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -446,31 +452,32 @@
       "ARIS Purgatorium Finding Record Gate",
       "ARIS Capability Build Dependency Foundation Gate",
       "ARIS Capability Build Core Public API Baseline Gate",
-      "ARIS Capability Build Backend Baseline Gate",
+        "ARIS Capability Build Backend Baseline Gate",
         "ARIS Capability Build MCP Runtime Sandbox Gate",
         "ARIS Capability Build Runtime Top-Level Public API Gate",
-        "ARIS Capability Build Product/Pilot Boundary Gate"
+        "ARIS Capability Build Product/Pilot Boundary Gate",
+        "ARIS Capability Build Advanced Supply Chain Gate"
       ],
-    "latest_execution_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+    "latest_execution_phase": "ARIS Capability Build Advanced Supply Chain Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Capability Build Runtime Top-Level Public API Gate"
+    "previous_execution_phase": "ARIS Capability Build Product/Pilot Boundary Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
+    "from_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
-    "transition_type": "capability_build_product_pilot_boundary_gate",
-    "verified_via": "local validation, mirror sync assertion, deterministic product-pilot boundary artifact validation, five-binary-gate verification, workflow blocking verification, pilot scope verification, evidence-bundle verification, runbook verification, risk-matrix verification, public API drift ratification, forbidden-pattern grep verification, Product Pilot Boundary workflow verification in Project_ARIS, Project_ARIS main SHA b6044982c31e0861b481605c40bef673b249f351 verification, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Capability Build Advanced Supply Chain Gate",
+    "transition_type": "capability_build_advanced_supply_chain_gate",
+    "verified_via": "local py_compile validation, focused unittest success, offline runner success, json.tool validation, defensive grep classification, Advanced Supply Chain workflow success in Project_ARIS, Project_ARIS main SHA 973d49a24d58d4166acb95b40611be409c5d44df verification, git commit/push, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+  "latest_completed_phase": "ARIS Capability Build Advanced Supply Chain Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-04 passed with deterministic product-pilot boundary evidence, dedicated Product Pilot Boundary CI success in Project_ARIS main SHA b6044982c31e0861b481605c40bef673b249f351, and prompt-only continuity rules preserved in the active-context. ACB-CAP-05 remains unopened until a future canonical state transition is recorded.",
+    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-05 passed with deterministic offline supply-chain evidence, dedicated Advanced Supply Chain CI success in Project_ARIS main SHA 973d49a24d58d4166acb95b40611be409c5d44df, and the canonical successor INF-FULL-01 remains operator-only and unopened in JSON.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -483,22 +490,24 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ACB-CAP-04 passed as a deterministic product-pilot boundary gate backed by external Project_ARIS artifacts and a green Product Pilot Boundary workflow.",
-      "Canonical Project_ARIS verification SHA for this gate is b6044982c31e0861b481605c40bef673b249f351.",
-      "Project_ARIS now contains an isolated src/aris/product_boundary package, exactly five binary gates, a lab->staging->pilot workflow contract, a conservative pilot scope contract, an evidence bundle contract, a pilot runbook contract, and a pilot risk matrix under artifacts/acb_cap_04/.",
-      "The prior ACB-CAP-03 runtime public API baseline remains locked and stable; no root API drift was introduced by this gate.",
+      "ACB-CAP-05 passed as a deterministic offline advanced supply-chain gate backed by external Project_ARIS artifacts and a green Advanced Supply Chain workflow.",
+      "Canonical Project_ARIS verification SHA for this gate is 973d49a24d58d4166acb95b40611be409c5d44df.",
+      "Project_ARIS now contains an isolated src/aris/supply_chain package, SBOM integrity validation, an offline HMAC attestation envelope, an offline PyPI vulnerable-range monitor fixture, an AIBOM prototype, and an INF-FULL-01 execution spec under docs/infernus_full/.",
+      "The prior ACB-CAP-04 product/pilot boundary baseline remains locked and stable; ACB-CAP-05 did not authorize product, pilot, Bedrock, runtime mutation, external network, or secrets.",
       "governance_gate_streak remains 0 after this capability-build pass.",
+      "Dedicated workflow success URL: https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320.",
+      "WARN: the repo-wide CI workflow on the same SHA remained red outside ACB-CAP-05 scope; the dedicated Advanced Supply Chain workflow is the canonical gate for this phase.",
       "Carried WARN: INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 24ac00a7d1ddefedb6c86493aa852fbfcc24a250; warning only, no correction gate opened.",
       "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
       "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
-      "A canonical Codex result for this PASS gate can justify direct prompt emission for prompt-only successor ACB-CAP-05 without any ritual phrase, but next_phase remains null until a future canonical state transition is recorded."
+      "INF-FULL-01 is the canonical successor, but it remains operator-only and unopened in JSON after ACB-CAP-05."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
     "phase_class": null,
     "planning_only": false,
     "review_only": false,
-    "status": "awaiting_codex_result_validation"
+    "status": "awaiting_operator_for_infernus_full_entry"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -536,6 +545,7 @@
     "artifacts/decisions/acb_cap_02_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
+    "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
     "artifacts/ac_repair_01/decision.json",
     "artifacts/ac_repair_01/summary.json",
     "artifacts/ac_repair_01/report.md",
@@ -623,7 +633,7 @@
     ]
   },
   "schema_version": "2.3",
-  "status": "acb_cap_04_pass",
+  "status": "acb_cap_05_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
