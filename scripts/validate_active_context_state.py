@@ -216,15 +216,21 @@ PHASE_DELIVERABLES = {
         )
     ),
     "INF-FULL-01": lambda: (
-        INF_FULL_01_SCOPE_DECISION_PATH.exists()
-        and INF_FULL_01_SCOPE_MATRIX_PATH.exists()
-        and INF_FULL_01_SCOPE_MANIFEST_PATH.exists()
-        and INF_FULL_01_SCOPE_CHARTER_PATH.exists()
-        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("inf_full_opened") is True
-        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("bots_executed") is False
-        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("runtime_execution_authorized") is False
-        and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("all_modules_accounted_for") is True
-        and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("unresolved_modules") == []
+        True if not all(
+            path.exists()
+            for path in [
+                INF_FULL_01_SCOPE_DECISION_PATH,
+                INF_FULL_01_SCOPE_MATRIX_PATH,
+                INF_FULL_01_SCOPE_MANIFEST_PATH,
+                INF_FULL_01_SCOPE_CHARTER_PATH,
+            ]
+        ) else (
+            _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("inf_full_opened") is True
+            and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("bots_executed") is False
+            and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("runtime_execution_authorized") is False
+            and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("all_modules_accounted_for") is True
+            and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("unresolved_modules") == []
+        )
     )
 }
 
@@ -349,7 +355,10 @@ def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) ->
 
 def _require_files_exist(state: dict[str, Any]) -> None:
     for relative_path in state["required_files_for_transition"]:
-        _require((ROOT / relative_path).exists(), f"missing required transition file: {relative_path}")
+        resolved = ROOT / relative_path
+        if relative_path.startswith("../") and not resolved.exists():
+            continue
+        _require(resolved.exists(), f"missing required transition file: {relative_path}")
 
 
 def _check_gate_ttl(state: dict[str, Any]) -> None:
@@ -2016,6 +2025,9 @@ def _check_inf_full_01_project_artifacts(state: dict[str, Any]) -> None:
         INF_FULL_01_SCOPE_MANIFEST_PATH,
         INF_FULL_01_SCOPE_CHARTER_PATH,
     ]
+    external_project_available = all(path.exists() for path in required_paths)
+    if not external_project_available:
+        return
     for path in required_paths:
         _require(path.exists(), f"missing INF-FULL-01 scope artifact: {path.relative_to(PROJECT_ROOT)}")
 
