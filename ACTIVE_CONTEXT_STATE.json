@@ -1,19 +1,20 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "ACB-CAP-05",
-  "current_phase_id": "ACB-CAP-05",
-  "previous_phase_id": "ACB-CAP-04",
-  "gate_opened_at": "2026-06-05",
+  "phase_id": "INF-FULL-01",
+  "current_phase_id": "INF-FULL-01",
+  "previous_phase_id": "ACB-CAP-05",
+  "gate_opened_at": "2026-06-06",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
   "governance_gate_streak": 0,
   "seen_gate_signatures": [],
-  "phase_class": "capability_build",
+  "phase_class": "infernus_full",
   "fixture_materialization_allowed": true,
   "fixture_materialization_executed": true,
   "fixture_count": 65,
   "scenario_count": 13,
   "bot_execution_executed": true,
+  "current_phase_bots_executed": false,
   "bot_execution_log_count": 1,
   "minos_verdict_executed": true,
   "minos_verdict_count": 1,
@@ -37,7 +38,7 @@
   "auto_advance": {
     "enabled": true,
     "allowed_phase_classes": ["governance_repair", "observability", "transition_engine"],
-    "blocked_phase_classes": ["fixture_materialization", "bot_execution", "bedrock", "product"],
+    "blocked_phase_classes": ["fixture_materialization", "bot_execution", "bedrock", "product", "infernus_full"],
     "condition": "ci_green_and_validator_pass"
   },
   "active_next_phase": null,
@@ -388,6 +389,12 @@
       "phase": "ARIS Capability Build Advanced Supply Chain Gate",
       "repair_type": "capability_build",
       "status": "acb_cap_05_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus Full Scope Charter Gate",
+      "repair_type": "infernus_full",
+      "status": "inf_full_01_scope_charter_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -418,15 +425,15 @@
   "current_live_route": {
     "active_next_phase": null,
     "active_next_phase_class": null,
-    "current_status": "awaiting_operator_for_infernus_full_entry",
+    "current_status": "inf_full_scope_charter_opened_no_execution",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Capability Build Advanced Supply Chain Gate",
+    "latest_completed_phase": "ARIS Infernus Full Scope Charter Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "acb_cap_05_pass"
+    "status": "inf_full_01_scope_charter_pass"
   },
-  "current_status": "awaiting_operator_for_infernus_full_entry",
+  "current_status": "inf_full_scope_charter_opened_no_execution",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -456,28 +463,29 @@
         "ARIS Capability Build MCP Runtime Sandbox Gate",
         "ARIS Capability Build Runtime Top-Level Public API Gate",
         "ARIS Capability Build Product/Pilot Boundary Gate",
-        "ARIS Capability Build Advanced Supply Chain Gate"
+        "ARIS Capability Build Advanced Supply Chain Gate",
+        "ARIS Infernus Full Scope Charter Gate"
       ],
-    "latest_execution_phase": "ARIS Capability Build Advanced Supply Chain Gate",
+    "latest_execution_phase": "ARIS Infernus Full Scope Charter Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Capability Build Product/Pilot Boundary Gate"
+    "previous_execution_phase": "ARIS Capability Build Advanced Supply Chain Gate"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Capability Build Product/Pilot Boundary Gate",
+    "from_phase": "ARIS Capability Build Advanced Supply Chain Gate",
     "proof_source": "GitHub main",
-    "to_phase": "ARIS Capability Build Advanced Supply Chain Gate",
-    "transition_type": "capability_build_advanced_supply_chain_gate",
-    "verified_via": "local py_compile validation, focused unittest success, offline runner success, json.tool validation, defensive grep classification, Advanced Supply Chain workflow success in Project_ARIS, Project_ARIS main SHA 973d49a24d58d4166acb95b40611be409c5d44df verification, git commit/push, and GitHub main verification"
+    "to_phase": "ARIS Infernus Full Scope Charter Gate",
+    "transition_type": "infernus_full_scope_charter_gate",
+    "verified_via": "operator-authorized INF-FULL-01 scope charter opening, Project_ARIS main SHA fa118d7594eebea7cc6f0df08b3940c0dcf0ab93 verification, active-context validator pass, mirror sync pass, scope artifacts materialized, and GitHub main verification"
   },
-  "latest_completed_phase": "ARIS Capability Build Advanced Supply Chain Gate",
+  "latest_completed_phase": "ARIS Infernus Full Scope Charter Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "No next phase is authorized in JSON. ACB-CAP-05 passed with deterministic offline supply-chain evidence, dedicated Advanced Supply Chain CI success in Project_ARIS main SHA 973d49a24d58d4166acb95b40611be409c5d44df, and the canonical successor INF-FULL-01 remains operator-only and unopened in JSON.",
+    "deferred_phase_reason": "No next phase is authorized in JSON. INF-FULL-01 is opened only as an operator-authorized scope charter with no bot execution, no runtime execution, and no product, pilot, Bedrock, or secret authorization. The next recommended gate is INF-FULL-02 Baseline Freeze Planning, but it remains unopened in JSON.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -490,24 +498,23 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "ACB-CAP-05 passed as a deterministic offline advanced supply-chain gate backed by external Project_ARIS artifacts and a green Advanced Supply Chain workflow.",
-      "Canonical Project_ARIS verification SHA for this gate is 973d49a24d58d4166acb95b40611be409c5d44df.",
-      "Project_ARIS now contains an isolated src/aris/supply_chain package, SBOM integrity validation, an offline HMAC attestation envelope, an offline PyPI vulnerable-range monitor fixture, an AIBOM prototype, and an INF-FULL-01 execution spec under docs/infernus_full/.",
-      "The prior ACB-CAP-04 product/pilot boundary baseline remains locked and stable; ACB-CAP-05 did not authorize product, pilot, Bedrock, runtime mutation, external network, or secrets.",
-      "governance_gate_streak remains 0 after this capability-build pass.",
-      "Dedicated workflow success URL: https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320.",
-      "WARN: the repo-wide CI workflow on the same SHA remained red outside ACB-CAP-05 scope; the dedicated Advanced Supply Chain workflow is the canonical gate for this phase.",
-      "Carried WARN: INF-MINOS-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 24ac00a7d1ddefedb6c86493aa852fbfcc24a250; warning only, no correction gate opened.",
-      "Carried WARN: INF-BOT-01 decision.json kept final_origin_main_sha as pending_post_push_verification while final reported SHA was 0db6fda2de4663894c69328cd3c53161a848d0ca; warning only, no correction gate opened.",
-      "Carried historical WARN: INF-MAT-01 final_origin_main_sha points to debc51e instead of later verified main commits.",
-      "INF-FULL-01 is the canonical successor, but it remains operator-only and unopened in JSON after ACB-CAP-05."
+      "INF-FULL-01 is now opened as an operator-authorized scope charter only.",
+      "Project_ARIS scope artifacts were materialized under artifacts/infernus and docs/infernus_full with all modules accounted for.",
+      "The anti-loop rule is now canonical for this phase: uncertain modules enter the initial Infernus scope to avoid false negatives.",
+      "No bots are executed in this phase.",
+      "No runtime is started in this phase.",
+      "No product, pilot, Bedrock, secret access, package installation, or external network execution is authorized.",
+      "diagnostics and packaging remain out of the initial attack wave but require baseline hashes.",
+      "The next recommended gate is INF-FULL-02 Baseline Freeze Planning.",
+      "next_phase remains null until a separate explicit gate transition is recorded.",
+      "governance_gate_streak remains 0."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": null,
     "phase_class": null,
     "planning_only": false,
     "review_only": false,
-    "status": "awaiting_operator_for_infernus_full_entry"
+    "status": "inf_full_scope_charter_opened_no_execution"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -546,6 +553,10 @@
     "artifacts/decisions/acb_cap_03_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_04_project_evidence_2026_06_03.json",
     "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+    "../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
+    "../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+    "../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+    "../docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md",
     "artifacts/ac_repair_01/decision.json",
     "artifacts/ac_repair_01/summary.json",
     "artifacts/ac_repair_01/report.md",
@@ -632,8 +643,8 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.3",
-  "status": "acb_cap_05_pass",
+  "schema_version": "2.4",
+  "status": "inf_full_01_scope_charter_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -648,12 +659,13 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.3",
+    "current_schema_version": "2.4",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
     "schema_2_2_change_summary": "AC-REPAIR-01 activates anti-proliferation governance, requires reviewer SHA disclosure, adds CI fixture absence enforcement, and moves the canonical live route to a null next-phase state pending manual operator authorization.",
-    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSIÇÃO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. OPERATOR_PREFERENCES.md is elevated into the priority read path immediately after DECISION_LOCKS, but remains subordinate to ACTIVE_CONTEXT_STATE.json, the schema, validator, Transition Table, and explicit operator/manual authorization locks. Schema structure unchanged at 2.3.",
+    "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSICAO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. OPERATOR_PREFERENCES.md is elevated into the priority read path immediately after DECISION_LOCKS, but remains subordinate to ACTIVE_CONTEXT_STATE.json, the schema, validator, Transition Table, and explicit operator/manual authorization locks.",
+    "schema_2_4_change_summary": "INF-FULL-01 opens as an operator-authorized scope charter only. The validator now enforces a scope-charter decision artifact, a scope matrix, a module scope manifest, and a charter markdown in Project_ARIS; it also requires all modules to be accounted for, unresolved_modules to remain empty, inf_full_opened=true, and all execution/product/pilot/Bedrock flags to remain false. current_phase_bots_executed is added because bot_execution_executed is historical-only.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

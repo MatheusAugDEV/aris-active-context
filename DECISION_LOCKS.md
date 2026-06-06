@@ -1,9 +1,8 @@
-current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conflicts with ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_STATE.json wins.
+## INF-FULL-01 — ARIS Infernus Full Scope Charter Gate Lock
 
-# Decision Locks
-
-- Latest completed phase: `ARIS Capability Build Advanced Supply Chain Gate`
-- Status: `acb_cap_05_pass`
+- Latest completed phase: `ARIS Infernus Full Scope Charter Gate`
+- Status: `inf_full_01_scope_charter_pass`
+- Decision: `pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
 - anti_proliferation_rule_active=true
@@ -12,26 +11,20 @@ current live locks are derived from ACTIVE_CONTEXT_STATE.json. If this file conf
 - gate_cycles_used=0
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - governance_gate_streak=0
+- INF-FULL-01 is opened in JSON as a scope charter only.
 - No next phase is authorized.
-- INF-FULL-01 remains operator-only and is not opened in JSON.
-- No repair apply, runtime patch, further bot execution, further Minos execution, runtime mutation, secrets access, Bedrock, or product promotion is authorized.
+- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, or external network execution is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
-- bot_execution_executed=true (1 deterministic nemesis log on disk).
-- minos_verdict_executed=true (1 deterministic Minos verdict on disk).
-- purgatorium_finding_created=true (1 deterministic finding on disk).
-- minimum_deliverable enforcement is active for pass decisions that declare a gated deliverable.
-- Product Loop Demonstrável remains preserved as closed historical evidence; superseded by ACB execution.
-- Core Priority Invariants remain registered as historical governance locks; superseded by ACB execution.
-- WARN não destrava avanço crítico remains canonical governance policy; superseded by ACB execution.
-- removed_from_active_direction remains the status of the old automatic F21/Bedrock/Context continuation; superseded by ACB execution.
-- Productatization Gate remains future-gated and unopened; superseded by ACB execution.
-- SIP remains future-gated and unopened; superseded by ACB execution.
+- bot_execution_executed=true (1 deterministic nemesis log on disk, historical only).
+- current_phase_bots_executed=false.
+- minos_verdict_executed=true (1 deterministic Minos verdict on disk, historical only).
+- purgatorium_finding_created=true (1 deterministic finding on disk, historical only).
+- diagnostics and packaging remain quarantine hash-only modules until baseline freeze is recorded.
 
 ## Circuit Breaker State
 
-governance_gate_streak=0 — preserved by ACB-CAP-05 capability-build pass. Governance gates are now
-unblocked (streak < 3), but no gate is open. ACB-CAP-05 is closed, and INF-FULL-01 still requires explicit operator entry.
+governance_gate_streak=0 — preserved by the prior capability-build pass and carried into the scope-charter opening.
 
 ## Gate cycle lock
 
-The gate cycle budget is `gate_max_cycles`. `gate_cycles_used` increments on every commit that does not change `current_phase_id`. When the budget is exhausted the validator blocks; only the operator may close, issue a terminal verdict, or extend with a justification recorded in an artifact. The model may not extend on its own.
+The gate cycle budget is `gate_max_cycles`. `gate_cycles_used` increments on every commit that does not change `current_phase_id`. When the budget is exhausted the validator blocks; only the operator may close, issue a terminal verdict, or extend with a justification recorded in an artifact.

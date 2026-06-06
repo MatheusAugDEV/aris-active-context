@@ -22,18 +22,22 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Capability Build Advanced Supply Chain Gate"
-EXPECTED_PHASE_ID = "ACB-CAP-05"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Product/Pilot Boundary Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-04"
-EXPECTED_STATUS = "acb_cap_05_pass"
+EXPECTED_PHASE = "ARIS Infernus Full Scope Charter Gate"
+EXPECTED_PHASE_ID = "INF-FULL-01"
+EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Advanced Supply Chain Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-05"
+EXPECTED_STATUS = "inf_full_01_scope_charter_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "awaiting_operator_for_infernus_full_entry"
-EXPECTED_SCHEMA_VERSION = "2.3"
+EXPECTED_CURRENT_STATUS = "inf_full_scope_charter_opened_no_execution"
+EXPECTED_SCHEMA_VERSION = "2.4"
 ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44df"
 ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
 ACB_CAP_05_PROJECT_DECISION_SHA = "51f1416f83e8ed488031210de688ffb5856ea004"
 ACB_CAP_05_ADVANCED_SUPPLY_CHAIN_CI_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325"
+INF_FULL_01_SCOPE_DECISION_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_scope_charter_decision_2026_06_06.json"
+INF_FULL_01_SCOPE_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_scope_matrix_2026_06_06.json"
+INF_FULL_01_SCOPE_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_module_scope_manifest_2026_06_06.json"
+INF_FULL_01_SCOPE_CHARTER_PATH = PROJECT_ROOT / "docs" / "infernus_full" / "inf_full_01_scope_charter_2026_06_06.md"
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
@@ -210,6 +214,17 @@ PHASE_DELIVERABLES = {
                 "advanced_supply_chain_artifacts_exist",
             ]
         )
+    ),
+    "INF-FULL-01": lambda: (
+        INF_FULL_01_SCOPE_DECISION_PATH.exists()
+        and INF_FULL_01_SCOPE_MATRIX_PATH.exists()
+        and INF_FULL_01_SCOPE_MANIFEST_PATH.exists()
+        and INF_FULL_01_SCOPE_CHARTER_PATH.exists()
+        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("inf_full_opened") is True
+        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("bots_executed") is False
+        and _load_json(INF_FULL_01_SCOPE_DECISION_PATH).get("runtime_execution_authorized") is False
+        and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("all_modules_accounted_for") is True
+        and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("unresolved_modules") == []
     )
 }
 
@@ -577,7 +592,7 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
 
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CORE_01_EVIDENCE_PATH.exists(), "missing ACB-CORE-01 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CORE_01_EVIDENCE_PATH)
@@ -676,7 +691,7 @@ def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CORE_02_EVIDENCE_PATH.exists(), "missing ACB-CORE-02 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CORE_02_EVIDENCE_PATH)
@@ -784,7 +799,7 @@ def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_01_OPERATOR_AUTH_PATH.exists(), "missing ACB-CAP-01 operator authorization artifact in active-context")
     _require(ACB_CAP_01_EVIDENCE_PATH.exists(), "missing ACB-CAP-01 evidence artifact in active-context")
 
@@ -976,7 +991,7 @@ def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_02_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_02_EVIDENCE_PATH.exists(), "missing ACB-CAP-02 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_02_EVIDENCE_PATH)
@@ -1194,7 +1209,7 @@ def _check_acb_cap_02_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_03_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_03_EVIDENCE_PATH.exists(), "missing ACB-CAP-03 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_03_EVIDENCE_PATH)
@@ -1447,7 +1462,7 @@ def _check_acb_cap_03_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_04_EVIDENCE_PATH.exists(), "missing ACB-CAP-04 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_04_EVIDENCE_PATH)
@@ -1725,7 +1740,7 @@ def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_05_EVIDENCE_PATH.exists(), "missing ACB-CAP-05 evidence artifact in active-context")
     _require(ACB_CAP_05_RESYNC_PATH.exists(), "missing ACB-CAP-05 resync artifact in active-context")
 
@@ -1992,6 +2007,191 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
     _require("must not authorize product rollout" in spec_text.lower(), "ACB-CAP-05 infernus spec must prohibit product rollout")
 
 
+def _check_inf_full_01_project_artifacts(state: dict[str, Any]) -> None:
+    _require(state.get("phase_class") == "infernus_full", "phase_class must be infernus_full")
+
+    required_paths = [
+        INF_FULL_01_SCOPE_DECISION_PATH,
+        INF_FULL_01_SCOPE_MATRIX_PATH,
+        INF_FULL_01_SCOPE_MANIFEST_PATH,
+        INF_FULL_01_SCOPE_CHARTER_PATH,
+    ]
+    for path in required_paths:
+        _require(path.exists(), f"missing INF-FULL-01 scope artifact: {path.relative_to(PROJECT_ROOT)}")
+
+    decision_data = _load_json(INF_FULL_01_SCOPE_DECISION_PATH)
+    matrix_data = _load_json(INF_FULL_01_SCOPE_MATRIX_PATH)
+    manifest_data = _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH)
+    charter_text = INF_FULL_01_SCOPE_CHARTER_PATH.read_text(encoding="utf-8")
+
+    _require(
+        decision_data == {
+            "artifact_id": "inf_full_01_scope_charter_decision_2026_06_06",
+            "phase_id": "INF-FULL-01",
+            "phase_name": "ARIS Infernus Full Scope Charter Gate",
+            "artifact_type": "operator_authorized_scope_charter",
+            "decision": "pass",
+            "status": "inf_full_01_scope_charter_pass",
+            "operator_authorized": True,
+            "authorization_scope": "open_inf_full_01_scope_charter_only",
+            "bots_executed": False,
+            "runtime_execution_authorized": False,
+            "product_promotion_allowed": False,
+            "pilot_authorized": False,
+            "bedrock_executed": False,
+            "secret_access_authorized": False,
+            "network_execution_authorized": False,
+            "initial_scope_rule": "uncertain_modules_included_to_avoid_false_negative",
+            "safe_to_execute_bots_now": False,
+            "next_execution_requires_separate_gate": True,
+            "scope_counts": {
+                "acb_core": 5,
+                "ativo_critico": 5,
+                "incerto_included": 16,
+                "secondary": 13,
+                "quarantine_with_hash": 2,
+            },
+            "inf_full_opened": True,
+            "next_phase": None,
+            "next_phase_authorized_by_operator": False,
+        },
+        "INF-FULL-01 scope decision artifact mismatch",
+    )
+
+    expected_bucket_map = {
+        "backend": "acb_core",
+        "mcp_runtime": "acb_core",
+        "runtime": "acb_core",
+        "product_boundary": "acb_core",
+        "supply_chain": "acb_core",
+        "actions": "ativo_critico",
+        "app": "ativo_critico",
+        "config": "ativo_critico",
+        "logging": "ativo_critico",
+        "security": "ativo_critico",
+        "action_runtime": "incerto_included",
+        "action_runtime_contracts": "incerto_included",
+        "audio": "incerto_included",
+        "bedrock": "incerto_included",
+        "capabilities": "incerto_included",
+        "context": "incerto_included",
+        "evaluation": "incerto_included",
+        "intelligence": "incerto_included",
+        "knowledge": "incerto_included",
+        "lab": "incerto_included",
+        "memory": "incerto_included",
+        "persona": "incerto_included",
+        "response": "incerto_included",
+        "turn": "incerto_included",
+        "ui": "incerto_included",
+        "voice": "incerto_included",
+        "cockpit": "secondary",
+        "hardening_base": "secondary",
+        "intents": "secondary",
+        "lab_simulation": "secondary",
+        "learning": "secondary",
+        "model_gateway": "secondary",
+        "product_loop": "secondary",
+        "research": "secondary",
+        "response_quality": "secondary",
+        "rich_output": "secondary",
+        "roadmap": "secondary",
+        "sandbox": "secondary",
+        "understanding": "secondary",
+        "diagnostics": "quarantine_with_hash",
+        "packaging": "quarantine_with_hash",
+    }
+
+    matrix_modules = matrix_data.get("modules", [])
+    _require(matrix_data.get("artifact_id") == "inf_full_01_scope_matrix_2026_06_06", "INF-FULL-01 scope matrix artifact_id mismatch")
+    _require(matrix_data.get("phase_id") == "INF-FULL-01", "INF-FULL-01 scope matrix phase_id mismatch")
+    _require(
+        matrix_data.get("scope_rule") == "uncertain_modules_included_to_avoid_false_negative",
+        "INF-FULL-01 scope matrix scope_rule mismatch",
+    )
+    _require(len(matrix_modules) == len(expected_bucket_map), "INF-FULL-01 scope matrix module count mismatch")
+
+    seen_modules = set()
+    for item in matrix_modules:
+        module = item.get("module")
+        bucket = item.get("bucket")
+        _require(module in expected_bucket_map, f"unexpected module in INF-FULL-01 scope matrix: {module}")
+        _require(bucket == expected_bucket_map[module], f"bucket mismatch for module {module}")
+        _require(isinstance(item.get("reason"), str) and item["reason"], f"missing reason for module {module}")
+        _require(isinstance(item.get("risk_if_excluded"), str) and item["risk_if_excluded"], f"missing risk_if_excluded for module {module}")
+        _require(isinstance(item.get("source_diagnostic_status"), str) and item["source_diagnostic_status"], f"missing source_diagnostic_status for module {module}")
+        if bucket in {"acb_core", "ativo_critico", "incerto_included"}:
+            _require(item.get("include_in_initial_infernus_scope") is True, f"{module} must be in initial scope")
+            _require(item.get("attack_required") is True, f"{module} must require attack coverage")
+            _require(item.get("include_in_secondary_scope") is False, f"{module} must not be marked as secondary")
+            _require(item.get("baseline_hash_required") is True, f"{module} must require baseline hash")
+        elif bucket == "secondary":
+            _require(item.get("include_in_initial_infernus_scope") is False, f"{module} must not be in initial scope")
+            _require(item.get("include_in_secondary_scope") is True, f"{module} must be in secondary scope")
+            _require(item.get("attack_required") is False, f"{module} must not require initial attack")
+            _require(item.get("baseline_hash_required") is True, f"{module} must require baseline hash")
+        else:
+            _require(item.get("include_in_initial_infernus_scope") is False, f"{module} must not be in initial scope")
+            _require(item.get("include_in_secondary_scope") is False, f"{module} must not be in secondary scope")
+            _require(item.get("attack_required") is False, f"{module} must not require initial attack")
+            _require(item.get("baseline_hash_required") is True, f"{module} must require baseline hash")
+        seen_modules.add(module)
+    _require(seen_modules == set(expected_bucket_map), "INF-FULL-01 scope matrix module set mismatch")
+
+    _require(
+        manifest_data == {
+            "artifact_id": "inf_full_01_module_scope_manifest_2026_06_06",
+            "phase_id": "INF-FULL-01",
+            "initial_attack_scope_modules": [
+                "backend", "mcp_runtime", "runtime", "product_boundary", "supply_chain",
+                "actions", "app", "config", "logging", "security",
+                "action_runtime", "action_runtime_contracts", "audio", "bedrock", "capabilities",
+                "context", "evaluation", "intelligence", "knowledge", "lab", "memory",
+                "persona", "response", "turn", "ui", "voice",
+            ],
+            "secondary_scope_modules": [
+                "cockpit", "hardening_base", "intents", "lab_simulation", "learning",
+                "model_gateway", "product_loop", "research", "response_quality",
+                "rich_output", "roadmap", "sandbox", "understanding",
+            ],
+            "quarantine_hash_only_modules": [
+                "diagnostics", "packaging",
+            ],
+            "all_modules_accounted_for": True,
+            "unresolved_modules": [],
+            "false_negative_policy": "include_uncertain_modules_in_initial_scope",
+            "baseline_freeze_requirements": {
+                "all_scoped_modules_require_hashes": True,
+                "quarantine_modules_require_hashes": True,
+                "baseline_freeze_must_precede_attack_waves": True,
+            },
+            "handoff_policy": {
+                "next_gate": "INF-FULL-02 Baseline Freeze Planning",
+                "bots_executed": False,
+                "runtime_execution_authorized": False,
+                "operator_reauthorization_required_for_execution": True,
+            },
+            "bots_executed": False,
+            "runtime_execution_authorized": False,
+        },
+        "INF-FULL-01 scope manifest mismatch",
+    )
+
+    for phrase in [
+        "# INF-FULL-01 Scope Charter",
+        "PASS — INF-FULL-01 scope charter is opened by operator authorization.",
+        "This opens scope/charter only.",
+        "No bots are executed.",
+        "No runtime is started.",
+        "Uncertain included:",
+        "diagnostics, packaging.",
+        "INF-FULL-02 must be Baseline Freeze Planning.",
+    ]:
+        _require(phrase in charter_text, f"INF-FULL-01 scope charter missing phrase: {phrase}")
+
+    _require(state.get("current_phase_bots_executed") is False, "current_phase_bots_executed must be false")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -2231,6 +2431,7 @@ def main() -> None:
     _require(state["latest_completed_phase"] == EXPECTED_PHASE, "unexpected latest completed phase")
     _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
+    _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
     _require(state["next_phase"] is None, "next_phase must be null")
     _require(state["active_next_phase"] is None, "active_next_phase must be null")
     _require(state["active_next_phase_class"] is None, "active_next_phase_class must be null")
@@ -2276,6 +2477,8 @@ def main() -> None:
     _check_acb_cap_04_project_artifacts(state)
     # ACB-CAP-05 specific checks
     _check_acb_cap_05_project_artifacts(state)
+    # INF-FULL-01 scope-charter specific checks
+    _check_inf_full_01_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -2317,6 +2520,7 @@ def main() -> None:
         EXPECTED_STATUS,
         EXPECTED_PHASE_ID,
         "Next phase: `null`",
+        "inf_full_01_opened: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "Gate cycles used: `0`",
@@ -2324,43 +2528,45 @@ def main() -> None:
         "governance_gate_streak: `0`",
         "fixture_materialization_executed: `true`",
         "bot_execution_executed: `true`",
+        "current_phase_bots_executed: `false`",
         "bot_execution_log_count: `1`",
         "minos_verdict_executed: `true`",
         "minos_verdict_count: `1`",
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/acb_cap_05/`",
+        "External deliverables registered from `../artifacts/infernus/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
-        "Awaiting operator authorization for INF-FULL-01 entry.",
+        "INF-FULL-01 is opened as scope/charter only by explicit operator authorization.",
         "Execution authorization: `false`",
-        "INF-FULL-01 is the canonical successor, but it remains operator-only and unopened in JSON.",
+        "Prepare `INF-FULL-02 Baseline Freeze Planning` as the next recommended gate.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         EXPECTED_STATUS,
         "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
+        "INF-FULL-01 is opened in JSON as a scope charter only.",
         "No next phase is authorized.",
         "governance_gate_streak=0",
-        "INF-FULL-01 remains operator-only and is not opened in JSON.",
+        "current_phase_bots_executed=false.",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
-        "../artifacts/acb_cap_05/advanced_supply_chain_decision.json",
-        "../artifacts/acb_cap_05/advanced_supply_chain_summary.json",
-        "../artifacts/acb_cap_05/advanced_supply_chain_report.md",
+        "../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
+        "../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+        "../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
         "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
         "ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass",
-        "ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
@@ -2371,14 +2577,15 @@ def main() -> None:
         "sbom_validation_passed: `true`",
         "attestation_verified: `true`",
         "production_signature_claimed: `false`",
+        "inf_full_opened: `true`",
         "validate_active_context.yml",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "INF-FULL-01 remains operator-only and unopened until the operator explicitly opens it.",
-        "Canonical successor after `ACB-CAP-05` is `INF-FULL-01` under `operator` mode.",
+        "INF-FULL-01 is opened as a scope charter only.",
+        "`INF-FULL-02 Baseline Freeze Planning` is the expected successor, but it remains unopened until an explicit canonical transition is recorded.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -2428,6 +2635,7 @@ def main() -> None:
         "fixture_count": state.get("fixture_count", 0),
         "scenario_count": state.get("scenario_count", 0),
         "bot_execution_executed": state.get("bot_execution_executed", False),
+        "current_phase_bots_executed": state.get("current_phase_bots_executed", False),
         "bot_execution_log_count": state.get("bot_execution_log_count", 0),
         "minos_verdict_executed": state.get("minos_verdict_executed", False),
         "minos_verdict_count": state.get("minos_verdict_count", 0),
@@ -2436,6 +2644,7 @@ def main() -> None:
         "acb_core_02_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_core_02" / "decision.json").exists(),
         "acb_cap_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_01" / "decision.json").exists(),
         "acb_cap_05_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_05" / "advanced_supply_chain_decision.json").exists(),
+        "inf_full_01_scope_artifacts_exist": INF_FULL_01_SCOPE_DECISION_PATH.exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

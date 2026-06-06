@@ -484,6 +484,9 @@
     "current_status": {
       "type": "string"
     },
+    "current_phase_bots_executed": {
+      "type": "boolean"
+    },
     "current_phase_id": {
       "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
       "type": "string"
@@ -783,7 +786,8 @@
       "enum": [
         "2.1",
         "2.2",
-        "2.3"
+        "2.3",
+        "2.4"
       ],
       "type": "string"
     },
@@ -960,6 +964,7 @@
     "decision",
     "latest_completed_phase",
     "current_status",
+    "current_phase_bots_executed",
     "next_phase",
     "next_phase_authorized_by_operator",
     "active_next_phase",
@@ -982,6 +987,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v2.3",
+  "title": "ARIS Active Context Canonical Live State Schema v2.4",
   "type": "object"
 }

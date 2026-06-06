@@ -1,51 +1,26 @@
-# ARIS Phase Ledger
+## Infernus and ACB ledger snapshot
+- INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass
+- ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass
+- ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass
+- ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass
 
-Append-only historical ledger. One line per phase: `PHASE_ID | phase name | decision | date`.
-Live routing always comes from `ACTIVE_CONTEXT_STATE.json`; this file never authorizes routing.
-`—` in the ID column marks pre-ID historical milestone phases; `n/a` marks undated historical entries.
+# ARIS_PHASE_LEDGER
 
-— | Active Context Macro Roadmap Canonicalization Controlled Apply | pass | n/a
-— | ARIS Infernus Lab FULL Macroblock Entry Gate | pass | n/a
-— | ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Schema Pack Closure Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate | pass | n/a
-— | ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate | pass | n/a
-AC-REPAIR-01 | ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate | pass | 2026-06-03
-AC-OBS-02 | ARIS Active-Context Observability & Drift Prevention Gate | pass | 2026-06-03
-AC-TRANS-03 | ARIS Active-Context Transition Engine & Autonomous Loop Gate | pass | 2026-06-03
-AC-CONTRACT-04 | ARIS Active-Context Phase Contract Hardening Gate | pass | 2026-06-03
-AC-BREAK-05 | ARIS Active-Context Circuit Breaker Gate | pass | 2026-06-03
-INF-MAT-01 | ARIS Infernus Full Fixture Materialization Gate | pass | 2026-06-03
-INF-BOT-01 | ARIS Infernus Nemesis Synthetic Bot Execution Log Gate | pass | 2026-06-03
-INF-MINOS-01 | ARIS Infernus Minos Deterministic Verdict Gate | pass | 2026-06-03
-PURG-01 | ARIS Purgatorium Finding Record Gate | pass | 2026-06-03
-ACB-CORE-01 | ARIS Capability Build Dependency Foundation Gate | pass | 2026-06-03
-ACB-CORE-02 | ARIS Capability Build Core Public API Baseline Gate | pass | 2026-06-03
-ACB-DECISION | ARIS Capability Build Approved | decision | 2026-06-03
-ACB-CAP-01 | ARIS Capability Build Backend Baseline Gate | pass | 2026-06-03
-ACB-CAP-02 | ARIS Capability Build MCP Runtime Sandbox Gate | pass | 2026-06-03
-ACB-CAP-03 | ARIS Capability Build Runtime Top-Level Public API Gate | pass | 2026-06-03
-ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass | 2026-06-03
-ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass | 2026-06-05
+## INF-FULL-01 - ARIS Infernus Full Scope Charter Gate
+- latest_completed_phase: `ARIS Infernus Full Scope Charter Gate`
+- phase_id: `INF-FULL-01`
+- status: `inf_full_01_scope_charter_pass`
+- decision: `pass`
+- previous_phase_id: `ACB-CAP-05`
+- operator_authorized: `True`
+- inf_full_opened: `True`
+- bots_executed: `False`
+- runtime_execution_authorized: `False`
+- product_promotion_allowed: `False`
+- pilot_authorized: `False`
+- bedrock_executed: `False`
+- all_modules_accounted_for: `True`
+- unresolved_modules: `[]`
+- next_real_action: `INF-FULL-02 Baseline Freeze Planning`
+
+This ledger entry records a scope-charter opening only. No bots are executed and no runtime is started.
