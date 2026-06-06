@@ -22,13 +22,13 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Infernus Full Scope Charter Gate"
-EXPECTED_PHASE_ID = "INF-FULL-01"
-EXPECTED_PREVIOUS_PHASE = "ARIS Capability Build Advanced Supply Chain Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "ACB-CAP-05"
-EXPECTED_STATUS = "inf_full_01_scope_charter_pass"
+EXPECTED_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
+EXPECTED_PHASE_ID = "INF-FULL-02"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Full Scope Charter Gate"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-01"
+EXPECTED_STATUS = "inf_full_02_baseline_freeze_planning_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "inf_full_scope_charter_opened_no_execution"
+EXPECTED_CURRENT_STATUS = "inf_full_baseline_freeze_planned_no_execution"
 EXPECTED_SCHEMA_VERSION = "2.4"
 ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44df"
 ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
@@ -38,6 +38,11 @@ INF_FULL_01_SCOPE_DECISION_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf
 INF_FULL_01_SCOPE_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_scope_matrix_2026_06_06.json"
 INF_FULL_01_SCOPE_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_module_scope_manifest_2026_06_06.json"
 INF_FULL_01_SCOPE_CHARTER_PATH = PROJECT_ROOT / "docs" / "infernus_full" / "inf_full_01_scope_charter_2026_06_06.md"
+INF_FULL_02_DECISION_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_planning_decision_2026_06_06.json"
+INF_FULL_02_INVENTORY_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_inventory_2026_06_06.json"
+INF_FULL_02_HASH_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json"
+INF_FULL_02_SUMMARY_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_summary_2026_06_06.json"
+INF_FULL_02_PLANNING_DOC_PATH = PROJECT_ROOT / "docs" / "infernus_full" / "inf_full_02_baseline_freeze_planning_2026_06_06.md"
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
@@ -231,6 +236,22 @@ PHASE_DELIVERABLES = {
             and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("all_modules_accounted_for") is True
             and _load_json(INF_FULL_01_SCOPE_MANIFEST_PATH).get("unresolved_modules") == []
         )
+    ),
+    "INF-FULL-02": lambda: (
+        all(
+            path.exists()
+            for path in [
+                INF_FULL_02_DECISION_PATH,
+                INF_FULL_02_INVENTORY_PATH,
+                INF_FULL_02_HASH_MANIFEST_PATH,
+                INF_FULL_02_SUMMARY_PATH,
+                INF_FULL_02_PLANNING_DOC_PATH,
+            ]
+        )
+        and _load_json(INF_FULL_02_DECISION_PATH).get("minimum_deliverable_met") is True
+        and _load_json(INF_FULL_02_DECISION_PATH).get("baseline_freeze_planned") is True
+        and _load_json(INF_FULL_02_DECISION_PATH).get("baseline_freeze_applied") is False
+        and _load_json(INF_FULL_02_SUMMARY_PATH).get("question_6_next_phase_after_inf_full_02", {}).get("canonical_next_phase") is None
     )
 }
 
@@ -245,6 +266,11 @@ REQUIRED_BOOT_FILES = [
     "NEXT_ACTION.md",
     "DECISION_LOCKS.md",
     "OPERATOR_PREFERENCES.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "README.md",
+    "PROMPT_CONTRACT.md",
+    "LAB_OPERATING_CONTRACT.md",
 ]
 
 EXPECTED_PRIORITY_READ_ORDER = [
@@ -258,6 +284,11 @@ EXPECTED_PRIORITY_READ_ORDER = [
     "8. NEXT_ACTION.md",
     "9. DECISION_LOCKS.md",
     "10. OPERATOR_PREFERENCES.md",
+    "11. CONTEXT_INDEX.md",
+    "12. ARIS_PHASE_LEDGER.md",
+    "13. README.md",
+    "14. PROMPT_CONTRACT.md",
+    "15. LAB_OPERATING_CONTRACT.md",
 ]
 
 OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
@@ -299,11 +330,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: MatheusAugDEV/Project-A.R.I.S
+          ref: main
+          path: Project_ARIS
+      - uses: actions/checkout@v4
+        with:
+          path: Project_ARIS/aris-active-context
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Validar estado canonico
+        working-directory: Project_ARIS/aris-active-context
         run: python scripts/validate_active_context_state.py
       - name: Provar ausencia de fixture nao-autorizada
+        working-directory: Project_ARIS/aris-active-context
         run: python scripts/assert_no_unauthorized_fixtures.py
 """
 
@@ -2204,6 +2244,87 @@ def _check_inf_full_01_project_artifacts(state: dict[str, Any]) -> None:
     _require(state.get("current_phase_bots_executed") is False, "current_phase_bots_executed must be false")
 
 
+def _check_inf_full_02_project_artifacts(state: dict[str, Any]) -> None:
+    decision_data = _load_json(INF_FULL_02_DECISION_PATH)
+    inventory_data = _load_json(INF_FULL_02_INVENTORY_PATH)
+    hash_manifest = _load_json(INF_FULL_02_HASH_MANIFEST_PATH)
+    summary_data = _load_json(INF_FULL_02_SUMMARY_PATH)
+    planning_text = INF_FULL_02_PLANNING_DOC_PATH.read_text(encoding="utf-8")
+
+    _require(decision_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == EXPECTED_PHASE, "INF-FULL-02 decision phase_name mismatch")
+    _require(decision_data.get("previous_phase_id") == "INF-FULL-01", "INF-FULL-02 previous_phase_id mismatch")
+    _require(decision_data.get("decision") == "pass", "INF-FULL-02 decision must be pass")
+    _require(decision_data.get("status") == EXPECTED_STATUS, "INF-FULL-02 decision status mismatch")
+    _require(decision_data.get("operator_authorization_source") == "chat_operator_said_vamos_continuar_2026_06_06", "INF-FULL-02 operator authorization source mismatch")
+    _require(decision_data.get("baseline_freeze_planned") is True, "INF-FULL-02 baseline_freeze_planned must be true")
+    _require(decision_data.get("baseline_freeze_applied") is False, "INF-FULL-02 baseline_freeze_applied must be false")
+    _require(decision_data.get("bot_execution_allowed") is False, "INF-FULL-02 bot_execution_allowed must be false")
+    _require(decision_data.get("bot_execution_executed") is False, "INF-FULL-02 bot_execution_executed must be false")
+    _require(decision_data.get("runtime_execution_authorized") is False, "INF-FULL-02 runtime_execution_authorized must be false")
+    _require(decision_data.get("product_ready") is False, "INF-FULL-02 product_ready must be false")
+    _require(decision_data.get("bedrock_execution_authorized") is False, "INF-FULL-02 bedrock_execution_authorized must be false")
+    _require(decision_data.get("external_network_authorized") is False, "INF-FULL-02 external_network_authorized must be false")
+    _require(decision_data.get("secrets_access_authorized") is False, "INF-FULL-02 secrets_access_authorized must be false")
+    _require(decision_data.get("minimum_deliverable_met") is True, "INF-FULL-02 minimum_deliverable_met must be true")
+    _require(decision_data.get("next_phase") is None, "INF-FULL-02 next_phase must be null")
+    _require(decision_data.get("next_phase_authorized_by_operator") is False, "INF-FULL-02 next_phase_authorized_by_operator must be false")
+
+    _require(inventory_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 inventory phase_id mismatch")
+    _require(inventory_data.get("phase_name") == EXPECTED_PHASE, "INF-FULL-02 inventory phase_name mismatch")
+    _require(inventory_data.get("classification_labels") == [
+        "active_baseline_candidate",
+        "historical_only",
+        "quarantine_hash_only",
+        "excluded_with_reason",
+        "missing_expected_blocking",
+    ], "INF-FULL-02 classification labels mismatch")
+    _require(len(inventory_data.get("module_inventory", [])) == 41, "INF-FULL-02 module inventory count mismatch")
+    quarantine = {
+        item.get("module")
+        for item in inventory_data.get("module_inventory", [])
+        if item.get("classification") == "quarantine_hash_only"
+    }
+    _require(quarantine == {"diagnostics", "packaging"}, "INF-FULL-02 quarantine module set mismatch")
+    _require(len(inventory_data.get("scenario_inventory", [])) == 13, "INF-FULL-02 scenario inventory count mismatch")
+    _require(inventory_data.get("inventory_counts", {}).get("historical_only") == 3, "INF-FULL-02 historical count mismatch")
+    _require(inventory_data.get("blocking_inventory", [{}])[0].get("classification") == "missing_expected_blocking", "INF-FULL-02 blocking inventory mismatch")
+
+    _require(hash_manifest.get("phase_id") == "INF-FULL-02", "INF-FULL-02 hash manifest phase_id mismatch")
+    _require(hash_manifest.get("hash_algorithm") == "sha256", "INF-FULL-02 hash algorithm mismatch")
+    _require(hash_manifest.get("directory_hash_algorithm") == 'sha256(sorted("relative_path:file_sha256"))', "INF-FULL-02 directory hash algorithm mismatch")
+    ref_paths = {entry.get("path") for entry in hash_manifest.get("reference_hashes", [])}
+    for required_path in [
+        "aris-active-context/ACTIVE_CONTEXT_STATE.json",
+        "aris-active-context/ROADMAP_CANONICAL.md",
+        "artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json",
+        "artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json",
+        "artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json",
+        "docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md",
+        "aris-active-context/artifacts/inf_bot_01/nemesis_execution_log.json",
+        "aris-active-context/artifacts/inf_minos_01/minos_verdict.json",
+        "aris-active-context/artifacts/purg_01/finding_nemesis_validator_bypass.json",
+        "src/aris/diagnostics",
+        "src/aris/packaging",
+    ]:
+        _require(required_path in ref_paths, f"INF-FULL-02 hash manifest missing path: {required_path}")
+    _require(len(hash_manifest.get("reference_hashes", [])) >= 60, "INF-FULL-02 hash manifest is too small")
+
+    _require(summary_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "INF-FULL-02 summary decision mismatch")
+    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-02 summary status mismatch")
+    _require(summary_data.get("question_6_next_phase_after_inf_full_02", {}).get("canonical_next_phase") is None, "INF-FULL-02 summary canonical_next_phase must be null")
+
+    for phrase in [
+        "baseline_freeze_planned: `true`",
+        "baseline_freeze_applied: `false`",
+        "No canonical successor is currently defined for INF-FULL-02 in ROADMAP_CANONICAL.md.",
+        "Historical-only reference set:",
+        "Quarantine hash-only modules:",
+    ]:
+        _require(phrase in planning_text, f"INF-FULL-02 planning doc missing phrase: {phrase}")
+
+
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
     """INF-MAT-01 specific: verify fixture count and evidence_ref hashes."""
     fixture_count = state.get("fixture_count", 0)
@@ -2491,6 +2612,8 @@ def main() -> None:
     _check_acb_cap_05_project_artifacts(state)
     # INF-FULL-01 scope-charter specific checks
     _check_inf_full_01_project_artifacts(state)
+    # INF-FULL-02 baseline freeze planning checks
+    _check_inf_full_02_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -2532,7 +2655,8 @@ def main() -> None:
         EXPECTED_STATUS,
         EXPECTED_PHASE_ID,
         "Next phase: `null`",
-        "inf_full_01_opened: `true`",
+        "baseline_freeze_planned: `true`",
+        "baseline_freeze_applied: `false`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "Gate cycles used: `0`",
@@ -2547,21 +2671,21 @@ def main() -> None:
         "purgatorium_finding_created: `true`",
         "finding_count: `1`",
         "scenario_count: `13`",
-        "External deliverables registered from `../artifacts/infernus/`",
+        "External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
-        "INF-FULL-01 is opened as scope/charter only by explicit operator authorization.",
+        "INF-FULL-02 completed a planning-only baseline freeze packet.",
         "Execution authorization: `false`",
-        "Prepare `INF-FULL-02 Baseline Freeze Planning` as the next recommended gate.",
+        "No canonical successor is currently defined after `INF-FULL-02` in `ROADMAP_CANONICAL.md`.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         EXPECTED_STATUS,
         "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
-        "INF-FULL-01 is opened in JSON as a scope charter only.",
+        "INF-FULL-02 is planning-only and does not apply a baseline freeze.",
         "No next phase is authorized.",
         "governance_gate_streak=0",
         "current_phase_bots_executed=false.",
@@ -2570,15 +2694,15 @@ def main() -> None:
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
-        "../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
-        "../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
-        "../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+        "../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json",
+        "../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json",
+        "../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "INF-FULL-02 | ARIS Infernus FULL Baseline Freeze Planning | pass",
         "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
         "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
-        "ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
@@ -2586,18 +2710,16 @@ def main() -> None:
         "Active next phase: `null`",
         "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
-        "sbom_validation_passed: `true`",
-        "attestation_verified: `true`",
-        "production_signature_claimed: `false`",
-        "inf_full_opened: `true`",
+        "baseline_freeze_planned: `true`",
+        "baseline_freeze_applied: `false`",
         "validate_active_context.yml",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "INF-FULL-01 is opened as a scope charter only.",
-        "`INF-FULL-02 Baseline Freeze Planning` is the expected successor, but it remains unopened until an explicit canonical transition is recorded.",
+        "INF-FULL-02 completed as a planning-only baseline freeze package.",
+        "No canonical successor is currently defined after `INF-FULL-02` in the Transition Table.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",

@@ -16,11 +16,12 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus Full Scope Charter Gate`
+- Latest completed phase: `ARIS Infernus FULL Baseline Freeze Planning`
 - Active next phase: `null`
 - Active next phase class: `null`
-- INF-FULL-01 is opened as a scope charter only.
-- `INF-FULL-02 Baseline Freeze Planning` is the expected successor, but it remains unopened until an explicit canonical transition is recorded.
+- INF-FULL-02 completed as a planning-only baseline freeze package.
+- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
+- No canonical successor is currently defined after `INF-FULL-02` in the Transition Table.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`

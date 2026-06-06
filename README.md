@@ -8,8 +8,8 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus Full Scope Charter Gate`
-- Previous execution phase: `ARIS Capability Build Advanced Supply Chain Gate`
+- Latest completed phase: `ARIS Infernus FULL Baseline Freeze Planning`
+- Previous execution phase: `ARIS Infernus Full Scope Charter Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
 - governance_gate_streak: `0`
@@ -18,10 +18,8 @@
 - current_phase_bots_executed: `false`
 - minos_verdict_executed: `true` (1 deterministic Minos verdict on disk, historical only)
 - purgatorium_finding_created: `true` (1 deterministic finding record on disk, historical only)
-- sbom_validation_passed: `true` (`../artifacts/acb_cap_05/advanced_supply_chain_decision.json`)
-- attestation_verified: `true` (`../artifacts/acb_cap_05/advanced_supply_chain_decision.json`)
-- production_signature_claimed: `false` (`../artifacts/acb_cap_05/advanced_supply_chain_decision.json`)
-- inf_full_opened: `true`
+- baseline_freeze_planned: `true`
+- baseline_freeze_applied: `false`
 - runtime_execution_authorized: `false`
 - product_promotion_allowed: `false`
 - pilot_authorized: `false`
@@ -33,11 +31,16 @@
 - `../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json`
 - `../docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
+- `../docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`
 - `validate_active_context.yml`
 
 ## Non-Authorization
 
-- INF-FULL-01 is open only as a scope charter.
+- INF-FULL-02 is planning-only and does not apply a baseline freeze.
 - No bot execution, runtime start, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- `INF-FULL-02 Baseline Freeze Planning` is the next recommended gate, but no next phase is opened automatically.
+- No canonical successor is defined after `INF-FULL-02`; no next phase is opened automatically.

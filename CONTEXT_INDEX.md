@@ -1,11 +1,15 @@
-## INF-FULL-01 — Scope Charter Reference Index
+## INF-FULL-02 — Baseline Freeze Reference Index
 - [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
 - `artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json`
 - `../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json`
 - `../docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
-- `../docs/infernus_full/infernus_full_roadmap_v1.md`
+- `../docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`
 - `.github/workflows/validate_active_context.yml`
 
 # CONTEXT_INDEX
@@ -20,20 +24,29 @@
 - [OPERATOR_PREFERENCES.md](OPERATOR_PREFERENCES.md)
 
 ## Current route
-- latest_completed_phase: `ARIS Infernus Full Scope Charter Gate`
-- current_phase_id: `INF-FULL-01`
-- status: `inf_full_01_scope_charter_pass`
-- current_status: `inf_full_scope_charter_opened_no_execution`
+- latest_completed_phase: `ARIS Infernus FULL Baseline Freeze Planning`
+- current_phase_id: `INF-FULL-02`
+- status: `inf_full_02_baseline_freeze_planning_pass`
+- current_status: `inf_full_baseline_freeze_planned_no_execution`
 - active_next_phase: `null`
 - next_phase_authorized_by_operator: `false`
 
-## Scope artifacts
+## Baseline freeze packet
+- `../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json`
+- `../artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json`
+- `../docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`
+
+## Locked baseline inputs
+- `artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json`
 - `../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json`
 - `../docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
 
 ## Notes
-- All modules are accounted for in the scope manifest.
+- Scoped module trees are baseline candidates.
 - `diagnostics` and `packaging` are quarantine hash-only modules.
-- `INF-FULL-02 Baseline Freeze Planning` is the next recommended gate, but it is not opened in JSON.
+- Historical bot execution, Minos verdict, and Purgatorium finding artifacts are reference-only.
+- No canonical successor is defined after `INF-FULL-02`; `next_phase` remains `null`.
