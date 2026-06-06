@@ -1,0 +1,94 @@
+{
+  "artifact_id": "acb_cap_05_project_sha_resync_2026_06_06",
+  "phase_id": "ACB-CAP-05",
+  "repair_type": "project_sha_evidence_resync",
+  "decision": "pass",
+  "root_cause": "ACB-CAP-05 decision project_sha mismatch",
+  "previous_project_sha": "973d49a24d58d4166acb95b40611be409c5d44df",
+  "new_project_sha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+  "project_decision_artifact_sha": "51f1416f83e8ed488031210de688ffb5856ea004",
+  "diff_classification": "ACB_VALIDATION_ONLY",
+  "files_changed_between_project_shas": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/tests.yml",
+    "aris-active-context",
+    "artifacts/acb_core_01/sbom.cdx.json",
+    "requirements.txt",
+    "scripts/aris_active_context_update_common.py",
+    "scripts/check_phase_completion_materialization.py",
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "src/aris/hardening_base/hardening_base_h0_phase_design_brief.py",
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py",
+    "tests/test_aris_context_p21_artifact_reference_only_controlled_apply_authorization_package.py",
+    "tests/test_aris_context_p22_artifact_reference_only_controlled_apply_authorization_package_review_gate.py",
+    "tests/test_aris_context_p23_artifact_reference_only_controlled_apply_human_authorization_request_gate.py",
+    "tests/test_f33z_pre2_execution_brief_compact_prompt_workflow.py",
+    "tests/test_f33z_pre3_phase_scaffold_automation_gate.py",
+    "tests/test_f33z_pre4_active_context_update_automation_gate.py",
+    "tests/test_f33z_pre5_final_report_commit_hash_automation_gate.py"
+  ],
+  "acb_workflows_verified": [
+    {
+      "name": "Advanced Supply Chain",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325"
+    },
+    {
+      "name": "Supply Chain Baseline",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210341"
+    },
+    {
+      "name": "Core Public API Baseline",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210321"
+    },
+    {
+      "name": "Backend Baseline",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210346"
+    },
+    {
+      "name": "MCP Runtime Sandbox",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210355"
+    },
+    {
+      "name": "Runtime Public API",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210344"
+    },
+    {
+      "name": "Product Pilot Boundary",
+      "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210350"
+    }
+  ],
+  "generic_ci_warns": [
+    "Project_ARIS repo-wide CI and Run Tests remain red due legacy pre-ACB coverage and are not the canonical ACB-CAP-05 gate."
+  ],
+  "safety": {
+    "inf_full_opened": false,
+    "next_phase_authorized_by_operator": false,
+    "runtime_mutation_authorized": false,
+    "product_promotion_allowed": false,
+    "pilot_authorized": false,
+    "bedrock_executed": false,
+    "secret_access_attempted": false
+  }
+}

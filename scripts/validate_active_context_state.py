@@ -19,6 +19,7 @@ ACB_CAP_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_02_projec
 ACB_CAP_03_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_03_project_evidence_2026_06_03.json"
 ACB_CAP_04_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_04_project_evidence_2026_06_03.json"
 ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_evidence_2026_06_05.json"
+ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
 EXPECTED_PHASE = "ARIS Capability Build Advanced Supply Chain Gate"
@@ -29,6 +30,10 @@ EXPECTED_STATUS = "acb_cap_05_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "awaiting_operator_for_infernus_full_entry"
 EXPECTED_SCHEMA_VERSION = "2.3"
+ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44df"
+ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
+ACB_CAP_05_PROJECT_DECISION_SHA = "51f1416f83e8ed488031210de688ffb5856ea004"
+ACB_CAP_05_ADVANCED_SUPPLY_CHAIN_CI_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325"
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
@@ -1722,13 +1727,19 @@ def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
 def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
     _require(state.get("phase_class") == "capability_build", "phase_class must be capability_build")
     _require(ACB_CAP_05_EVIDENCE_PATH.exists(), "missing ACB-CAP-05 evidence artifact in active-context")
+    _require(ACB_CAP_05_RESYNC_PATH.exists(), "missing ACB-CAP-05 resync artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_05_EVIDENCE_PATH)
+    resync_data = _load_json(ACB_CAP_05_RESYNC_PATH)
     _require(evidence_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 evidence phase_id mismatch")
     _require(evidence_data.get("project_repository") == "MatheusAugDEV/Project-A.R.I.S", "ACB-CAP-05 evidence repository mismatch")
     _require(
-        evidence_data.get("project_sha") == "973d49a24d58d4166acb95b40611be409c5d44df",
+        evidence_data.get("project_sha") == ACB_CAP_05_RESYNC_NEW_PROJECT_SHA,
         "ACB-CAP-05 evidence project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("project_sha_before_resync") == ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA,
+        "ACB-CAP-05 evidence project_sha_before_resync mismatch",
     )
     _require(
         evidence_data.get("project_sha_gate_start") == "b6044982c31e0861b481605c40bef673b249f351",
@@ -1740,8 +1751,70 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
     )
     _require(
         evidence_data.get("advanced_supply_chain_ci", {}).get("url")
-        == "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320",
+        == ACB_CAP_05_ADVANCED_SUPPLY_CHAIN_CI_URL,
         "ACB-CAP-05 evidence Advanced Supply Chain CI URL mismatch",
+    )
+    _require(resync_data.get("artifact_id") == "acb_cap_05_project_sha_resync_2026_06_06", "ACB-CAP-05 resync artifact_id mismatch")
+    _require(resync_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 resync phase_id mismatch")
+    _require(resync_data.get("repair_type") == "project_sha_evidence_resync", "ACB-CAP-05 resync repair_type mismatch")
+    _require(resync_data.get("decision") == "pass", "ACB-CAP-05 resync decision mismatch")
+    _require(resync_data.get("root_cause") == "ACB-CAP-05 decision project_sha mismatch", "ACB-CAP-05 resync root_cause mismatch")
+    _require(resync_data.get("previous_project_sha") == ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA, "ACB-CAP-05 resync previous_project_sha mismatch")
+    _require(resync_data.get("new_project_sha") == ACB_CAP_05_RESYNC_NEW_PROJECT_SHA, "ACB-CAP-05 resync new_project_sha mismatch")
+    _require(resync_data.get("project_decision_artifact_sha") == ACB_CAP_05_PROJECT_DECISION_SHA, "ACB-CAP-05 resync project_decision_artifact_sha mismatch")
+    _require(resync_data.get("diff_classification") == "ACB_VALIDATION_ONLY", "ACB-CAP-05 resync diff_classification mismatch")
+    for key in [
+        "inf_full_opened",
+        "next_phase_authorized_by_operator",
+        "runtime_mutation_authorized",
+        "product_promotion_allowed",
+        "pilot_authorized",
+        "bedrock_executed",
+        "secret_access_attempted",
+    ]:
+        _require(
+            resync_data.get("safety", {}).get(key) is False,
+            f"ACB-CAP-05 resync safety flag {key} must be false",
+        )
+    _require(
+        evidence_data.get("resync", {}).get("reason") == "ACB-CAP-05 decision project_sha mismatch",
+        "ACB-CAP-05 evidence resync reason mismatch",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("previous_project_sha") == ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA,
+        "ACB-CAP-05 evidence resync previous_project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("new_project_sha") == ACB_CAP_05_RESYNC_NEW_PROJECT_SHA,
+        "ACB-CAP-05 evidence resync new_project_sha mismatch",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("project_decision_artifact_sha") == ACB_CAP_05_PROJECT_DECISION_SHA,
+        "ACB-CAP-05 evidence resync project_decision_artifact_sha mismatch",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("operator_authorization_changed") is False,
+        "ACB-CAP-05 evidence resync operator_authorization_changed must be false",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("inf_full_opened") is False,
+        "ACB-CAP-05 evidence resync inf_full_opened must be false",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("product_promotion_allowed") is False,
+        "ACB-CAP-05 evidence resync product_promotion_allowed must be false",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("pilot_authorized") is False,
+        "ACB-CAP-05 evidence resync pilot_authorized must be false",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("bedrock_executed") is False,
+        "ACB-CAP-05 evidence resync bedrock_executed must be false",
+    )
+    _require(
+        evidence_data.get("resync", {}).get("runtime_mutation_authorized") is False,
+        "ACB-CAP-05 evidence resync runtime_mutation_authorized must be false",
     )
     for key in [
         "supply_chain_package_exists",
@@ -1865,23 +1938,20 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
         _require(decision_data.get(key) is False, f"ACB-CAP-05 decision {key} must be false")
     _require(
         decision_data.get("project_sha")
-        in {
-            evidence_data.get("project_sha"),
-            evidence_data.get("project_sha_artifact_materialization"),
-        },
+        == ACB_CAP_05_PROJECT_DECISION_SHA,
         "ACB-CAP-05 decision project_sha mismatch",
     )
 
     _require(summary_data.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 summary phase_id mismatch")
     _require(summary_data.get("offline_detection_count") == 1, "ACB-CAP-05 summary offline_detection_count mismatch")
-    _require(summary_data.get("offline_unknown_count") == 13, "ACB-CAP-05 summary offline_unknown_count mismatch")
+    _require(summary_data.get("offline_unknown_count") == 15, "ACB-CAP-05 summary offline_unknown_count mismatch")
     _require(summary_data.get("forbidden_import_findings") == [], "ACB-CAP-05 summary forbidden_import_findings must be empty")
     _require(summary_data.get("tamper_rejection_verified") is True, "ACB-CAP-05 summary tamper_rejection_verified must be true")
 
     _require(sbom_report.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 sbom_integrity_report phase_id mismatch")
     _require(sbom_report.get("validation_passed") is True, "ACB-CAP-05 sbom_integrity_report validation_passed must be true")
     _require(sbom_report.get("complete_sbom_claimed") is False, "ACB-CAP-05 sbom_integrity_report complete_sbom_claimed must be false")
-    _require(sbom_report.get("component_count") == 16, "ACB-CAP-05 sbom_integrity_report component_count mismatch")
+    _require(sbom_report.get("component_count") == 18, "ACB-CAP-05 sbom_integrity_report component_count mismatch")
 
     _require(attestation_envelope.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 attestation_envelope phase_id mismatch")
     _require(attestation_envelope.get("signature_mode") == "offline_test_hmac_not_production_signature", "ACB-CAP-05 attestation signature_mode mismatch")
@@ -1893,7 +1963,7 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
     _require(vulnerability_scan.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 vulnerability scan phase_id mismatch")
     _require(vulnerability_scan.get("external_monitoring_allowed") is False, "ACB-CAP-05 vulnerability scan external_monitoring_allowed must be false")
     _require(len(vulnerability_scan.get("detected_by_offline_fixture", [])) == 1, "ACB-CAP-05 vulnerability scan must detect exactly 1 offline advisory")
-    _require(len(vulnerability_scan.get("unknown_due_to_no_external_network", [])) == 13, "ACB-CAP-05 vulnerability scan unknown count mismatch")
+    _require(len(vulnerability_scan.get("unknown_due_to_no_external_network", [])) == 15, "ACB-CAP-05 vulnerability scan unknown count mismatch")
 
     _require(aibom_prototype.get("phase_id") == "ACB-CAP-05", "ACB-CAP-05 aibom_prototype phase_id mismatch")
     _require(aibom_prototype.get("completeness") == "prototype_partial", "ACB-CAP-05 aibom_prototype completeness mismatch")

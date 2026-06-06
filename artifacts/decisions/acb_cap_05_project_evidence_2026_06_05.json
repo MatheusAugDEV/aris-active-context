@@ -3,13 +3,14 @@
   "phase_id": "ACB-CAP-05",
   "phase_name": "ARIS Capability Build Advanced Supply Chain Gate",
   "project_repository": "MatheusAugDEV/Project-A.R.I.S",
-  "project_sha": "973d49a24d58d4166acb95b40611be409c5d44df",
+  "project_sha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+  "project_sha_before_resync": "973d49a24d58d4166acb95b40611be409c5d44df",
   "project_sha_artifact_materialization": "a90f35d071389d52ee78eb6fd62cbb7da2910393",
   "project_sha_gate_start": "b6044982c31e0861b481605c40bef673b249f351",
   "source_active_context_sha_before": "c845b0d08fff250cab6ac26c9ba8befddb37c1bd",
   "advanced_supply_chain_ci": {
     "name": "Advanced Supply Chain",
-    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27049458320",
+    "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325",
     "conclusion": "success"
   },
   "deliverables": {
@@ -52,7 +53,7 @@
     "attestation_verified": true,
     "tamper_rejection_verified": true,
     "offline_vulnerability_detection_count": 1,
-    "offline_unknown_count": 13,
+        "offline_unknown_count": 15,
     "infernus_spec_linked": true,
     "bot_coverage_complete": true
   },
@@ -67,10 +68,78 @@
     "bedrock_executed": false,
     "pilot_authorized": false
   },
+  "resync": {
+    "resync_id": "acb_cap_05_project_sha_resync_2026_06_06",
+    "resync_date": "2026-06-06",
+    "reason": "ACB-CAP-05 decision project_sha mismatch",
+    "previous_project_sha": "973d49a24d58d4166acb95b40611be409c5d44df",
+    "new_project_sha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+    "project_decision_artifact_sha": "51f1416f83e8ed488031210de688ffb5856ea004",
+    "diff_classification": "ACB_VALIDATION_ONLY",
+    "acb_workflows_verified": [
+      {
+        "name": "Advanced Supply Chain",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325"
+      },
+      {
+        "name": "Supply Chain Baseline",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210341"
+      },
+      {
+        "name": "Core Public API Baseline",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210321"
+      },
+      {
+        "name": "Backend Baseline",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210346"
+      },
+      {
+        "name": "MCP Runtime Sandbox",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210355"
+      },
+      {
+        "name": "Runtime Public API",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210344"
+      },
+      {
+        "name": "Product Pilot Boundary",
+        "headSha": "fa8546f35ae826f8cc254d51b77ba1ea704d0a27",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210350"
+      }
+    ],
+    "generic_ci_warn_carried": true,
+    "inf_full_opened": false,
+    "operator_authorization_changed": false,
+    "product_promotion_allowed": false,
+    "pilot_authorized": false,
+    "bedrock_executed": false,
+    "runtime_mutation_authorized": false
+  },
   "notes": [
     "This artifact is the canonical active-context evidence mirror for ACB-CAP-05 when active-context CI runs without direct access to the Project_ARIS workspace.",
-    "Project_ARIS artifacts were generated before the final CI fallback commit, so ../artifacts/acb_cap_05/advanced_supply_chain_decision.json records the artifact-materialization SHA while this mirror records the final pushed Project_ARIS SHA.",
-    "The dedicated Advanced Supply Chain workflow succeeded for the final Project_ARIS SHA after a CI-only fixture fallback fix for the missing aris-active-context checkout in GitHub Actions.",
+    "Project_ARIS advanced after the original ACB-CAP-05 evidence capture through validation-only CI, workflow, SBOM, and stale-test assertion repairs while keeping runtime/product boundaries unchanged.",
+    "../artifacts/acb_cap_05/advanced_supply_chain_decision.json currently records the post-ACB validation SHA 51f1416f83e8ed488031210de688ffb5856ea004 while this mirror now records the current validated Project_ARIS HEAD fa8546f35ae826f8cc254d51b77ba1ea704d0a27.",
+    "The dedicated Advanced Supply Chain workflow succeeded for the current Project_ARIS SHA after the later validation-only fixes.",
     "The repo-wide CI workflow remains outside ACB-CAP-05 scope and was still red at the time this evidence was recorded."
   ]
 }
