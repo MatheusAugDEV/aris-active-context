@@ -1,0 +1,51 @@
+{
+  "artifact_id": "inf_full_02_baseline_freeze_summary_2026_06_06",
+  "phase_id": "INF-FULL-02",
+  "phase_name": "ARIS Infernus FULL Baseline Freeze Planning",
+  "decision": "pass",
+  "status": "inf_full_02_baseline_freeze_planning_pass",
+  "question_1_frozen_baseline": {
+    "answer": "The frozen reference baseline is the observed Project_ARIS code tree subset defined by INF-FULL-01 plus the 13 materialized fixture scenarios, anchored to the observed project and active-context repository heads.",
+    "project_repository_head_observed": "9e6194d9a97dfc4040bc3abffba61ec2136c1e5b",
+    "active_context_repository_head_observed": "c922967bd8e23c8e35b3c3316f2cface4de66a60",
+    "baseline_freeze_applied": false
+  },
+  "question_2_baseline_artifacts": [
+    "aris-active-context/artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+    "artifacts/acb_cap_05/advanced_supply_chain_decision.json",
+    "artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
+    "artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+    "artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+    "docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md",
+    "src/aris/<scoped module trees>",
+    "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/<scenario dirs>"
+  ],
+  "question_3_historical_only": [
+    "aris-active-context/artifacts/inf_bot_01/nemesis_execution_log.json",
+    "aris-active-context/artifacts/inf_minos_01/minos_verdict.json",
+    "aris-active-context/artifacts/purg_01/finding_nemesis_validator_bypass.json"
+  ],
+  "question_4_hash_references": {
+    "artifact_hash_mode": "file_sha256",
+    "module_hash_mode": "directory_tree_sha256",
+    "fixture_hash_mode": "directory_tree_sha256",
+    "hash_manifest_path": "artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json"
+  },
+  "question_5_prohibited_until_review": [
+    "bot execution",
+    "runtime start",
+    "real dry-run execution",
+    "real apply execution",
+    "Purgatorium expansion based on new evidence",
+    "product promotion or pilot authorization",
+    "Bedrock execution",
+    "secrets access",
+    "external network execution",
+    "treating historical bot/minos/purg artifacts as current execution"
+  ],
+  "question_6_next_phase_after_inf_full_02": {
+    "canonical_next_phase": null,
+    "reason": "No successor row exists for INF-FULL-02 in ROADMAP_CANONICAL.md, so next_phase remains null.",
+    "advisory_only_candidate": "F5 Bot Materialization from docs/infernus_full/infernus_full_roadmap_v1.md"
+  }
+}

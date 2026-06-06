@@ -9,8 +9,20 @@ from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PROJECT_ROOT = ROOT.parent
+PROJECT_MIRROR_ROOT = ROOT / "project_mirror"
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
+
+
+def _resolve_project_relative(*parts: str) -> pathlib.Path:
+    relative = pathlib.Path(*parts)
+    for base in (PROJECT_ROOT, PROJECT_MIRROR_ROOT):
+        candidate = base / relative
+        if candidate.exists():
+            return candidate
+    return PROJECT_ROOT / relative
+
+
 ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_project_evidence_2026_06_03.json"
 ACB_CORE_02_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_02_project_evidence_2026_06_03.json"
 ACB_CAP_01_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_01_operator_authorization_2026_06_03.json"
@@ -34,15 +46,15 @@ ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44
 ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
 ACB_CAP_05_PROJECT_DECISION_SHA = "51f1416f83e8ed488031210de688ffb5856ea004"
 ACB_CAP_05_ADVANCED_SUPPLY_CHAIN_CI_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27052210325"
-INF_FULL_01_SCOPE_DECISION_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_scope_charter_decision_2026_06_06.json"
-INF_FULL_01_SCOPE_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_scope_matrix_2026_06_06.json"
-INF_FULL_01_SCOPE_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_01_module_scope_manifest_2026_06_06.json"
-INF_FULL_01_SCOPE_CHARTER_PATH = PROJECT_ROOT / "docs" / "infernus_full" / "inf_full_01_scope_charter_2026_06_06.md"
-INF_FULL_02_DECISION_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_planning_decision_2026_06_06.json"
-INF_FULL_02_INVENTORY_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_inventory_2026_06_06.json"
-INF_FULL_02_HASH_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json"
-INF_FULL_02_SUMMARY_PATH = PROJECT_ROOT / "artifacts" / "infernus" / "inf_full_02_baseline_freeze_summary_2026_06_06.json"
-INF_FULL_02_PLANNING_DOC_PATH = PROJECT_ROOT / "docs" / "infernus_full" / "inf_full_02_baseline_freeze_planning_2026_06_06.md"
+INF_FULL_01_SCOPE_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_01_scope_charter_decision_2026_06_06.json")
+INF_FULL_01_SCOPE_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_01_scope_matrix_2026_06_06.json")
+INF_FULL_01_SCOPE_MANIFEST_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_01_module_scope_manifest_2026_06_06.json")
+INF_FULL_01_SCOPE_CHARTER_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_01_scope_charter_2026_06_06.md")
+INF_FULL_02_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_planning_decision_2026_06_06.json")
+INF_FULL_02_INVENTORY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_inventory_2026_06_06.json")
+INF_FULL_02_HASH_MANIFEST_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json")
+INF_FULL_02_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_summary_2026_06_06.json")
+INF_FULL_02_PLANNING_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_02_baseline_freeze_planning_2026_06_06.md")
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
@@ -330,20 +342,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: MatheusAugDEV/Project-A.R.I.S
-          ref: main
-          path: Project_ARIS
-      - uses: actions/checkout@v4
-        with:
-          path: Project_ARIS/aris-active-context
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Validar estado canonico
-        working-directory: Project_ARIS/aris-active-context
         run: python scripts/validate_active_context_state.py
       - name: Provar ausencia de fixture nao-autorizada
-        working-directory: Project_ARIS/aris-active-context
         run: python scripts/assert_no_unauthorized_fixtures.py
 """
 

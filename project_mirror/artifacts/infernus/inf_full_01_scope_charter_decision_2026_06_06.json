@@ -1,0 +1,30 @@
+{
+  "artifact_id": "inf_full_01_scope_charter_decision_2026_06_06",
+  "phase_id": "INF-FULL-01",
+  "phase_name": "ARIS Infernus Full Scope Charter Gate",
+  "artifact_type": "operator_authorized_scope_charter",
+  "decision": "pass",
+  "status": "inf_full_01_scope_charter_pass",
+  "operator_authorized": true,
+  "authorization_scope": "open_inf_full_01_scope_charter_only",
+  "bots_executed": false,
+  "runtime_execution_authorized": false,
+  "product_promotion_allowed": false,
+  "pilot_authorized": false,
+  "bedrock_executed": false,
+  "secret_access_authorized": false,
+  "network_execution_authorized": false,
+  "initial_scope_rule": "uncertain_modules_included_to_avoid_false_negative",
+  "safe_to_execute_bots_now": false,
+  "next_execution_requires_separate_gate": true,
+  "scope_counts": {
+    "acb_core": 5,
+    "ativo_critico": 5,
+    "incerto_included": 16,
+    "secondary": 13,
+    "quarantine_with_hash": 2
+  },
+  "inf_full_opened": true,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false
+}

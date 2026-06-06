@@ -1,0 +1,428 @@
+{
+  "artifact_id": "inf_full_02_baseline_freeze_hash_manifest_2026_06_06",
+  "phase_id": "INF-FULL-02",
+  "phase_name": "ARIS Infernus FULL Baseline Freeze Planning",
+  "generated_at": "2026-06-06",
+  "hash_algorithm": "sha256",
+  "directory_hash_algorithm": "sha256(sorted(\"relative_path:file_sha256\"))",
+  "repository_heads_observed": {
+    "project_repository_head": "9e6194d9a97dfc4040bc3abffba61ec2136c1e5b",
+    "active_context_repository_head": "c922967bd8e23c8e35b3c3316f2cface4de66a60"
+  },
+  "reference_hashes": [
+    {
+      "path": "aris-active-context/ACTIVE_CONTEXT_STATE.json",
+      "hash_kind": "file_sha256",
+      "sha256": "d32baec7d02db96583e4b7f0cd377dddce236b248a94d4e4140514a7d7e83867",
+      "bytes": 34369
+    },
+    {
+      "path": "aris-active-context/ROADMAP_CANONICAL.md",
+      "hash_kind": "file_sha256",
+      "sha256": "cdfcbfea619d6d9123b5ee09429ba15b5658be2761b255a97418c06c66769bb0",
+      "bytes": 3446
+    },
+    {
+      "path": "aris-active-context/artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+      "hash_kind": "file_sha256",
+      "sha256": "a2b51033381d22b5c95187b3afe8cc015e5ec2bf2c76b2ff5a1ab82b6c9a5a56",
+      "bytes": 6705
+    },
+    {
+      "path": "artifacts/acb_cap_05/advanced_supply_chain_decision.json",
+      "hash_kind": "file_sha256",
+      "sha256": "36d0220d8ec522b2ac305b42481f134502741ae04a7adad56fffd78648c97054",
+      "bytes": 1313
+    },
+    {
+      "path": "artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "7b5c4d6a236da70495ca69710a2783fe9afb67afecf99ba8af450d5b2a0c023a",
+      "bytes": 1021
+    },
+    {
+      "path": "artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "860553a40122651c9542744d5b69e5264d7e5c85cb79f12d7996f9cdbc60e092",
+      "bytes": 19025
+    },
+    {
+      "path": "artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "9717823fccfa7f5568e5f5366bd336f46ad98ead1595f5122773cbab098b7508",
+      "bytes": 1525
+    },
+    {
+      "path": "docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md",
+      "hash_kind": "file_sha256",
+      "sha256": "01d4f9ec00bc7a0fc50c6b2a2aba2c25103872bc94b9694f77d86ffe8835eef6",
+      "bytes": 1231
+    },
+    {
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "429ecff55e2628d344481a31f143c0340da97aa1438057082e4243585e018ddd",
+      "bytes": 3077
+    },
+    {
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "f7b81c50f2434f91f823bd053d4201f7caa959e15546f06ea91b588d61ecab02",
+      "bytes": 24642
+    },
+    {
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json",
+      "hash_kind": "file_sha256",
+      "sha256": "282495b2eca9b9b19314a8a2daa46130194d6fd5b02ddc57c22e07261ba20f03",
+      "bytes": 2584
+    },
+    {
+      "path": "docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md",
+      "hash_kind": "file_sha256",
+      "sha256": "cd2b60ac4aedc58b39af0f86f4576225c4b65d10f50f8b41a42222132155c950",
+      "bytes": 3182
+    },
+    {
+      "path": "aris-active-context/artifacts/inf_bot_01/nemesis_execution_log.json",
+      "hash_kind": "file_sha256",
+      "sha256": "ae11c023e72733e31945014845ff3c171bf3a3a299616fbd5cc73eec5f9cc443",
+      "bytes": 708
+    },
+    {
+      "path": "aris-active-context/artifacts/inf_minos_01/minos_verdict.json",
+      "hash_kind": "file_sha256",
+      "sha256": "ce11c696ea438cedb36862c686e698107f4ccb73ba6d6a78136b36bf0fb96512",
+      "bytes": 925
+    },
+    {
+      "path": "aris-active-context/artifacts/purg_01/finding_nemesis_validator_bypass.json",
+      "hash_kind": "file_sha256",
+      "sha256": "7b02aa6cf2bd833e70361cbb7da55eeaccb1c33dc15b87872b295a608d0eba41",
+      "bytes": 1556
+    },
+    {
+      "path": "src/aris/backend",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "0540e765300e138ee730e7d1fcb75bb75904e28928d84e8a324d0929e566fb90",
+      "file_count": 10
+    },
+    {
+      "path": "src/aris/mcp_runtime",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "c4656f25eb61a769fe2a6ab9dc2cd8bd6ce3b8eb7e9487e04934fe8f5700c77f",
+      "file_count": 18
+    },
+    {
+      "path": "src/aris/runtime",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "7dff3e549e6b785487188c944e784d851283beb095c81df4bdfbe5df5f57a113",
+      "file_count": 14
+    },
+    {
+      "path": "src/aris/product_boundary",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "691e25ce14d17bf9b1154e0feb1f73c2ce4123281945f0726e1493b68d98cdcb",
+      "file_count": 18
+    },
+    {
+      "path": "src/aris/supply_chain",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "9d8545976fd738229ecdefe221e1d25101e0bca4c608b1e520e1ee085fb0aae5",
+      "file_count": 12
+    },
+    {
+      "path": "src/aris/actions",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "c60e94927db8caf8a98b01a3de98c678006b5bf34d73368897e6899ed3cdddf4",
+      "file_count": 38
+    },
+    {
+      "path": "src/aris/app",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "eb8604d0923690c0815661bcebb4d2efe9b6564dabc6fb6c0c72df63dfc6b24b",
+      "file_count": 10
+    },
+    {
+      "path": "src/aris/config",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "97f65571658d5ce2961af768df2c1dae8a08774b6e766435b056e404ba258399",
+      "file_count": 6
+    },
+    {
+      "path": "src/aris/logging",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "bc9b868980aafcc33e48a294a03360d4c571989ad153d18f07573edb37e6272f",
+      "file_count": 4
+    },
+    {
+      "path": "src/aris/security",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "a40701c51f84eace8d5247a417f5886c2d7abf774f10c07d97463267beb10f88",
+      "file_count": 9
+    },
+    {
+      "path": "src/aris/action_runtime",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "e70cc135c034c7c8f430b5fef8f266bca879b758500700185d6d93fad49d400c",
+      "file_count": 33
+    },
+    {
+      "path": "src/aris/action_runtime_contracts",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "d1dd5702c0f692431a84c6ca1bceb333278bf918695e654ad65280b8d0d65096",
+      "file_count": 136
+    },
+    {
+      "path": "src/aris/audio",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "97b1f9155aac708f051ea288ac627722d31ee78d9c77e9af1c232100e1df1dd9",
+      "file_count": 153
+    },
+    {
+      "path": "src/aris/bedrock",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "a208dc85eb6d9444a603b67c62cf2ba91925917cc007549585d91fac5ba543e8",
+      "file_count": 86
+    },
+    {
+      "path": "src/aris/capabilities",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "ac5537c38e83f64f2820867f7381680fa80b216c19f02107727995ce20551cb3",
+      "file_count": 16
+    },
+    {
+      "path": "src/aris/context",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "90ca9653991ead53ed8ee053346e1b0635fe5795b6a0a12a2fd34ebd83eef35d",
+      "file_count": 536
+    },
+    {
+      "path": "src/aris/evaluation",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "850cd779aeb509a6fc99ddeba2640998972e28b8a93daed7c51aa2fa0f2df7e9",
+      "file_count": 22
+    },
+    {
+      "path": "src/aris/intelligence",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "2fe828de247650fcdf23823550981d53b81c50f731e41d5d7fb16d1b99a91c4c",
+      "file_count": 28
+    },
+    {
+      "path": "src/aris/knowledge",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "933236abb56e065720e4f21d89d7e86b8da92fa8ed7879546ed98101c482d5a1",
+      "file_count": 18
+    },
+    {
+      "path": "src/aris/lab",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "a8044117941b34de339d9ed6d6b373c11674156d8ece657806049b1728b04715",
+      "file_count": 238
+    },
+    {
+      "path": "src/aris/memory",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "efa273155a38f50fe15a8cb57bd3b1a28119b6b50fd644c01b46aa4b90557d0c",
+      "file_count": 45
+    },
+    {
+      "path": "src/aris/persona",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "58c89f83cceedb8c2a2dc6db31aeb20fc1ed024b8522cb46444d95162fb5f09e",
+      "file_count": 4
+    },
+    {
+      "path": "src/aris/response",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "ca7160ffc2ea9a9ffebe231b35e86b2a9c169078c426ba618ae41373c8c78e4d",
+      "file_count": 141
+    },
+    {
+      "path": "src/aris/turn",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "fa9c2168bcaf82de0d1326df9ab792ee2b522ac40e1ca24bb63bb17c51220131",
+      "file_count": 62
+    },
+    {
+      "path": "src/aris/ui",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "5f4b0e0ad0b0e7d1dffbeff99217dcf170fcf524999c7923f8b848ee3393197a",
+      "file_count": 14
+    },
+    {
+      "path": "src/aris/voice",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "04b88abd01f0b4a8607f3a769cc9b98bedf995e9d3ea2d8876fe8a675994deba",
+      "file_count": 26
+    },
+    {
+      "path": "src/aris/cockpit",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "62aede25f3ba61e27321039e76e950d5ab71e093f62562c68c9a1aa4e961152c",
+      "file_count": 15
+    },
+    {
+      "path": "src/aris/hardening_base",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "2ac0dabdc2e51e6a40f706b0bef3884d4a943abaf1f014b1287cf5bfbbd327d0",
+      "file_count": 20
+    },
+    {
+      "path": "src/aris/intents",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "5a838b54b83143ce6218d1ca2d8de5939d6191c0cd7ce8213ccfb462a8cc0f24",
+      "file_count": 6
+    },
+    {
+      "path": "src/aris/lab_simulation",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "c847fbc6fc2809cd8e9e762d2d3556fa57d9787d44434ac9d361c3bda7690ed1",
+      "file_count": 192
+    },
+    {
+      "path": "src/aris/learning",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "fca3e55599069b3a53ab0fd12e23a7bfce5303d271decfd88d147eff2febe53b",
+      "file_count": 16
+    },
+    {
+      "path": "src/aris/model_gateway",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "b01657d932e0590a7e9f2bf68407c354d7cf459666f2d97c4aa7d3e56fefe03f",
+      "file_count": 3
+    },
+    {
+      "path": "src/aris/product_loop",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "f27eb0b4301f11e3f80ff8fa0e02823d6c33e5d34003d2376d5be6f3c521915a",
+      "file_count": 32
+    },
+    {
+      "path": "src/aris/research",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "c563ad8f6d9fe6a36711354a95630d11d6cc587451cce41b81a519cbf78a11c0",
+      "file_count": 4
+    },
+    {
+      "path": "src/aris/response_quality",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "d9c6501b468092a70675078c2d0937a62f5fb4d5437ec9ddbd022fa16ffed979",
+      "file_count": 21
+    },
+    {
+      "path": "src/aris/rich_output",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "11bcc8eef13edb7c9946b341800f34822f920c6e81f783f96e1f8ba57f874d89",
+      "file_count": 2
+    },
+    {
+      "path": "src/aris/roadmap",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "0114e04f230d60206dd39015ac727233f23e5fbd6db9cdd9f6e63bd3740bc8b3",
+      "file_count": 14
+    },
+    {
+      "path": "src/aris/sandbox",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "4b7a6e08ad588ab4df063b4a12cdcf8a596e33d479856a44783584257d0b14a6",
+      "file_count": 3
+    },
+    {
+      "path": "src/aris/understanding",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "1f7d47113b2bda0fbb66dbfb57150fc73b58b288058d01c893bdfc61829bf005",
+      "file_count": 38
+    },
+    {
+      "path": "src/aris/diagnostics",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "4c8322df4c2c9672c4a425e36c05da3b42ca27d650e8e887dc68535f2737428d",
+      "file_count": 21
+    },
+    {
+      "path": "src/aris/packaging",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "af03553148b4b075d0f9c8678c93f46fbab446f8f2118d87fb1989c4396733bf",
+      "file_count": 2
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_01_quimera",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "09fa3172a278f08cfaa99ce8a631d0478c32fdd53912836e176313e30b384d75",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_02_taipan",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "e8c14cca9a6a87e1a85a29817bbd5b55b17240e89e94742691c89c6c6b09e520",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_03_apep",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "a52e90d6811c2b0f9532cc11991386eeaf1e25efca6c561b58fee668c8c49dad",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_04_loop",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "ccfc709b9da43132d3f3c4970951bf984854da3002c50f788e66a5d938f9a290",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_05_minos",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "2f0a70ff4655d9ee6b5f4a8677fabe9d9c2c90033fda831afabd14cfa5874b15",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_06_spectre",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "6438fa1f81d2160e9a96664949d7bb025827e33ebcee0084e26ad3ca354bb69a",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_07_hydra",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "1ab685b9ef4b8e928c2d3edc42ed2be14aa4b61bcddbe7c08b9b9942af7a0dc8",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_08_mimic",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "89dcaa16a39784992d562ab312d628ae4169bde6e2d6c9953a88ac759df777bf",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_09_phantom",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "1d85934134577511242000ac734d3479b47b04d4ecaa9e470ccd1c266a179f7c",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_10_wraith",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "924517831ff16216acd81351008d909f56c59d72d54ba1fc95925e43559c3a87",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_11_nemesis",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "2cf1819d5e5852cba32ad2ff879d6c3953a3e895fcc145a19c384d594b4b1bb8",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_12_vortex",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "a11355d4b9474188362a2c3892634a2519cece96d2947ae3d0407569a96d327a",
+      "file_count": 5
+    },
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_13_crisol_probe",
+      "hash_kind": "directory_tree_sha256",
+      "sha256": "d46561de445c4fd329648bc6d2698f88341c57ffc9e9ac7805ccbcfd84906146",
+      "file_count": 5
+    }
+  ]
+}

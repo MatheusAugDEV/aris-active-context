@@ -1,0 +1,69 @@
+{
+  "artifact_id": "inf_full_02_baseline_freeze_planning_decision_2026_06_06",
+  "phase_id": "INF-FULL-02",
+  "phase_name": "ARIS Infernus FULL Baseline Freeze Planning",
+  "previous_phase_id": "INF-FULL-01",
+  "decision": "pass",
+  "status": "inf_full_02_baseline_freeze_planning_pass",
+  "operator_authorization_source": "chat_operator_said_vamos_continuar_2026_06_06",
+  "baseline_freeze_planned": true,
+  "baseline_freeze_applied": false,
+  "bot_execution_allowed": false,
+  "bot_execution_executed": false,
+  "runtime_execution_authorized": false,
+  "product_ready": false,
+  "bedrock_execution_authorized": false,
+  "external_network_authorized": false,
+  "secrets_access_authorized": false,
+  "minimum_deliverable_met": true,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "frozen_baseline_definition": {
+    "project_repository_head_observed": "9e6194d9a97dfc4040bc3abffba61ec2136c1e5b",
+    "active_context_repository_head_observed": "c922967bd8e23c8e35b3c3316f2cface4de66a60",
+    "scope_manifest_artifact": "artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+    "scope_matrix_artifact": "artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+    "charter_artifact": "docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md",
+    "baseline_subjects": "scoped src/aris module trees + 13 fixture scenarios + historical evidence frozen as reference-only"
+  },
+  "historical_only_contract": {
+    "bot_execution_log_paths": [
+      "aris-active-context/artifacts/inf_bot_01/nemesis_execution_log.json"
+    ],
+    "minos_verdict_paths": [
+      "aris-active-context/artifacts/inf_minos_01/minos_verdict.json"
+    ],
+    "purgatorium_finding_paths": [
+      "aris-active-context/artifacts/purg_01/finding_nemesis_validator_bypass.json"
+    ],
+    "re_execution_authorized": false
+  },
+  "hash_reference_contract": {
+    "module_hash_mode": "directory_tree_sha256",
+    "fixture_hash_mode": "directory_tree_sha256",
+    "artifact_hash_mode": "file_sha256",
+    "hash_manifest_path": "artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json"
+  },
+  "prohibited_until_baseline_freeze_review": [
+    "bot execution",
+    "runtime start",
+    "real dry-run execution",
+    "real apply execution",
+    "new Purgatorium expansion",
+    "product promotion or pilot authorization",
+    "Bedrock execution",
+    "secrets access",
+    "external network execution",
+    "using historical evidence as if it were current-phase execution"
+  ],
+  "canonical_successor_assessment": {
+    "next_phase_defined_in_transition_table": false,
+    "canonical_successor": null,
+    "advisory_note": "No successor row exists for INF-FULL-02 in ROADMAP_CANONICAL.md. F5 Bot Materialization appears in docs/infernus_full/infernus_full_roadmap_v1.md but remains advisory-only until the Transition Table is amended."
+  },
+  "observed_workspace_constraints": {
+    "project_repository_dirty": true,
+    "active_context_repository_dirty": true,
+    "baseline_freeze_planning_uses_hashes_instead_of_clean_tree_claims": true
+  }
+}

@@ -9,18 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: MatheusAugDEV/Project-A.R.I.S
-          ref: main
-          path: Project_ARIS
-      - uses: actions/checkout@v4
-        with:
-          path: Project_ARIS/aris-active-context
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Validar estado canonico
-        working-directory: Project_ARIS/aris-active-context
         run: python scripts/validate_active_context_state.py
       - name: Provar ausencia de fixture nao-autorizada
-        working-directory: Project_ARIS/aris-active-context
         run: python scripts/assert_no_unauthorized_fixtures.py

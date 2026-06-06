@@ -1,0 +1,67 @@
+{
+  "artifact_id": "inf_full_01_module_scope_manifest_2026_06_06",
+  "phase_id": "INF-FULL-01",
+  "initial_attack_scope_modules": [
+    "backend",
+    "mcp_runtime",
+    "runtime",
+    "product_boundary",
+    "supply_chain",
+    "actions",
+    "app",
+    "config",
+    "logging",
+    "security",
+    "action_runtime",
+    "action_runtime_contracts",
+    "audio",
+    "bedrock",
+    "capabilities",
+    "context",
+    "evaluation",
+    "intelligence",
+    "knowledge",
+    "lab",
+    "memory",
+    "persona",
+    "response",
+    "turn",
+    "ui",
+    "voice"
+  ],
+  "secondary_scope_modules": [
+    "cockpit",
+    "hardening_base",
+    "intents",
+    "lab_simulation",
+    "learning",
+    "model_gateway",
+    "product_loop",
+    "research",
+    "response_quality",
+    "rich_output",
+    "roadmap",
+    "sandbox",
+    "understanding"
+  ],
+  "quarantine_hash_only_modules": [
+    "diagnostics",
+    "packaging"
+  ],
+  "all_modules_accounted_for": true,
+  "unresolved_modules": [],
+  "false_negative_policy": "include_uncertain_modules_in_initial_scope",
+  "baseline_freeze_requirements": {
+    "all_scoped_modules_require_hashes": true,
+    "quarantine_modules_require_hashes": true,
+    "baseline_freeze_must_precede_attack_waves": true
+  },
+  "handoff_policy": {
+    "next_gate": "INF-FULL-02 Baseline Freeze Planning",
+    "bots_executed": false,
+    "runtime_execution_authorized": false,
+    "operator_reauthorization_required_for_execution": true
+  },
+  "bots_executed": false,
+  "runtime_execution_authorized": false
+}

@@ -1,0 +1,609 @@
+{
+  "artifact_id": "inf_full_02_baseline_freeze_inventory_2026_06_06",
+  "phase_id": "INF-FULL-02",
+  "phase_name": "ARIS Infernus FULL Baseline Freeze Planning",
+  "generated_at": "2026-06-06",
+  "classification_labels": [
+    "active_baseline_candidate",
+    "historical_only",
+    "quarantine_hash_only",
+    "excluded_with_reason",
+    "missing_expected_blocking"
+  ],
+  "baseline_artifacts": [
+    {
+      "artifact_id": "acb_cap_05_project_evidence",
+      "path": "aris-active-context/artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Capability baseline provenance that immediately precedes INF-FULL-01."
+    },
+    {
+      "artifact_id": "advanced_supply_chain_decision",
+      "path": "artifacts/acb_cap_05/advanced_supply_chain_decision.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Project-side ACB-CAP-05 decision anchors the pre-Infernus FULL baseline."
+    },
+    {
+      "artifact_id": "inf_full_01_scope_charter_decision",
+      "path": "artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Authoritative scope opening decision for the frozen baseline."
+    },
+    {
+      "artifact_id": "inf_full_01_scope_matrix",
+      "path": "artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Defines which module buckets belong to the frozen baseline."
+    },
+    {
+      "artifact_id": "inf_full_01_module_scope_manifest",
+      "path": "artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Canonical module inventory for the freeze set."
+    },
+    {
+      "artifact_id": "inf_full_01_scope_charter_markdown",
+      "path": "docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md",
+      "classification": "active_baseline_candidate",
+      "reason": "Human-readable charter mirror for the frozen scope."
+    },
+    {
+      "artifact_id": "inf_full_02_baseline_freeze_planning_decision",
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Current phase planning decision artifact."
+    },
+    {
+      "artifact_id": "inf_full_02_baseline_freeze_inventory",
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Current phase inventory artifact."
+    },
+    {
+      "artifact_id": "inf_full_02_baseline_freeze_summary",
+      "path": "artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json",
+      "classification": "active_baseline_candidate",
+      "reason": "Current phase summary artifact."
+    },
+    {
+      "artifact_id": "inf_full_02_baseline_freeze_planning_markdown",
+      "path": "docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md",
+      "classification": "active_baseline_candidate",
+      "reason": "Current phase planning markdown."
+    }
+  ],
+  "module_inventory": [
+    {
+      "module": "backend",
+      "path": "src/aris/backend",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "mcp_runtime",
+      "path": "src/aris/mcp_runtime",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "runtime",
+      "path": "src/aris/runtime",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "product_boundary",
+      "path": "src/aris/product_boundary",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "supply_chain",
+      "path": "src/aris/supply_chain",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "actions",
+      "path": "src/aris/actions",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "app",
+      "path": "src/aris/app",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "config",
+      "path": "src/aris/config",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "logging",
+      "path": "src/aris/logging",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "security",
+      "path": "src/aris/security",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "action_runtime",
+      "path": "src/aris/action_runtime",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "action_runtime_contracts",
+      "path": "src/aris/action_runtime_contracts",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "audio",
+      "path": "src/aris/audio",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "bedrock",
+      "path": "src/aris/bedrock",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "capabilities",
+      "path": "src/aris/capabilities",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "context",
+      "path": "src/aris/context",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "evaluation",
+      "path": "src/aris/evaluation",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "intelligence",
+      "path": "src/aris/intelligence",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "knowledge",
+      "path": "src/aris/knowledge",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "lab",
+      "path": "src/aris/lab",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "memory",
+      "path": "src/aris/memory",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "persona",
+      "path": "src/aris/persona",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "response",
+      "path": "src/aris/response",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "turn",
+      "path": "src/aris/turn",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "ui",
+      "path": "src/aris/ui",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "voice",
+      "path": "src/aris/voice",
+      "scope_bucket": "initial_attack_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "In-scope module tree must be frozen before any new Infernus execution."
+    },
+    {
+      "module": "cockpit",
+      "path": "src/aris/cockpit",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "hardening_base",
+      "path": "src/aris/hardening_base",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "intents",
+      "path": "src/aris/intents",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "lab_simulation",
+      "path": "src/aris/lab_simulation",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "learning",
+      "path": "src/aris/learning",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "model_gateway",
+      "path": "src/aris/model_gateway",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "product_loop",
+      "path": "src/aris/product_loop",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "research",
+      "path": "src/aris/research",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "response_quality",
+      "path": "src/aris/response_quality",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "rich_output",
+      "path": "src/aris/rich_output",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "roadmap",
+      "path": "src/aris/roadmap",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "sandbox",
+      "path": "src/aris/sandbox",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "understanding",
+      "path": "src/aris/understanding",
+      "scope_bucket": "secondary_scope",
+      "classification": "active_baseline_candidate",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Secondary module tree still belongs to the frozen reference set."
+    },
+    {
+      "module": "diagnostics",
+      "path": "src/aris/diagnostics",
+      "scope_bucket": "quarantine_hash_only",
+      "classification": "quarantine_hash_only",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Module remains out of the initial attack wave but must keep a frozen hash lineage."
+    },
+    {
+      "module": "packaging",
+      "path": "src/aris/packaging",
+      "scope_bucket": "quarantine_hash_only",
+      "classification": "quarantine_hash_only",
+      "exists": true,
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Module remains out of the initial attack wave but must keep a frozen hash lineage."
+    }
+  ],
+  "fixture_inventory": [
+    {
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full",
+      "classification": "active_baseline_candidate",
+      "scenario_count": 13,
+      "fixture_file_count": 65,
+      "reason": "Materialized fixture dataset is part of the frozen reference set."
+    }
+  ],
+  "scenario_inventory": [
+    {
+      "scenario_id": "scenario_01_quimera",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_01_quimera",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_02_taipan",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_02_taipan",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_03_apep",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_03_apep",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_04_loop",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_04_loop",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_05_minos",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_05_minos",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_06_spectre",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_06_spectre",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_07_hydra",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_07_hydra",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_08_mimic",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_08_mimic",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_09_phantom",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_09_phantom",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_10_wraith",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_10_wraith",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_11_nemesis",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_11_nemesis",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_12_vortex",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_12_vortex",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    },
+    {
+      "scenario_id": "scenario_13_crisol_probe",
+      "path": "aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full/scenario_13_crisol_probe",
+      "classification": "active_baseline_candidate",
+      "hash_reference_mode": "directory_tree_sha256",
+      "reason": "Materialized fixture scenario is part of the frozen reference dataset."
+    }
+  ],
+  "historical_only_inventory": [
+    {
+      "item_id": "historical_bot_execution_log",
+      "path": "aris-active-context/artifacts/inf_bot_01/nemesis_execution_log.json",
+      "classification": "historical_only",
+      "reason": "Historical deterministic evidence only; current phase executed no bots."
+    },
+    {
+      "item_id": "historical_minos_verdict",
+      "path": "aris-active-context/artifacts/inf_minos_01/minos_verdict.json",
+      "classification": "historical_only",
+      "reason": "Historical deterministic evidence only; current phase executed no Minos review."
+    },
+    {
+      "item_id": "historical_purgatorium_finding",
+      "path": "aris-active-context/artifacts/purg_01/finding_nemesis_validator_bypass.json",
+      "classification": "historical_only",
+      "reason": "Historical deterministic evidence only; current phase created no new finding."
+    }
+  ],
+  "excluded_inventory": [
+    {
+      "item_id": "src_aris___pycache__",
+      "path": "src/aris/__pycache__",
+      "classification": "excluded_with_reason",
+      "reason": "Bytecode cache is non-canonical and must not enter the frozen baseline."
+    },
+    {
+      "item_id": "infernus_full_roadmap_v1_advisory",
+      "path": "docs/infernus_full/infernus_full_roadmap_v1.md",
+      "classification": "excluded_with_reason",
+      "reason": "Advisory roadmap reference; not canonical transition authority."
+    },
+    {
+      "item_id": "infernus_full_execution_spec_advisory",
+      "path": "docs/infernus_full/infernus_full_execution_spec.md",
+      "classification": "excluded_with_reason",
+      "reason": "Execution-spec reference is informative but not part of the frozen authoritative baseline set."
+    },
+    {
+      "item_id": "legacy_infernus_planning_jsons",
+      "path": "artifacts/infernus/infernus_full_roadmap_decision_2026_06_06.json",
+      "classification": "excluded_with_reason",
+      "reason": "Older planning references remain informative but are not authoritative baseline inputs for INF-FULL-02."
+    }
+  ],
+  "blocking_inventory": [
+    {
+      "item_id": "post_inf_full_02_transition_row",
+      "path": "aris-active-context/ROADMAP_CANONICAL.md",
+      "classification": "missing_expected_blocking",
+      "reason": "The Transition Table does not yet define a canonical successor row for INF-FULL-02."
+    }
+  ],
+  "inventory_counts": {
+    "active_baseline_candidate": 63,
+    "historical_only": 3,
+    "quarantine_hash_only": 2,
+    "excluded_with_reason": 4,
+    "missing_expected_blocking": 1
+  }
+}
