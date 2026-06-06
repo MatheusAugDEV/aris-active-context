@@ -1,0 +1,49 @@
+{
+  "artifact_id": "if06_cost_quota_manifest_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "future_simulation_cost_quota_manifest",
+  "decision": "pass",
+  "planning_only": true,
+  "global_defaults": {
+    "max_tokens_per_scenario": 12000,
+    "max_wall_time_seconds": 90,
+    "max_tool_calls": 12,
+    "max_retry_count": 1,
+    "max_cost_units": 12
+  },
+  "per_bot_limits": {
+    "Quimera": {"max_tokens_per_scenario": 12000, "max_wall_time_seconds": 75, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 10},
+    "Dubio": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 70, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "Elos": {"max_tokens_per_scenario": 11000, "max_wall_time_seconds": 80, "max_tool_calls": 10, "max_retry_count": 1, "max_cost_units": 10},
+    "Taipan": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 70, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "Labirinto": {"max_tokens_per_scenario": 12000, "max_wall_time_seconds": 85, "max_tool_calls": 9, "max_retry_count": 1, "max_cost_units": 10},
+    "Vitium": {"max_tokens_per_scenario": 9000, "max_wall_time_seconds": 60, "max_tool_calls": 7, "max_retry_count": 1, "max_cost_units": 8},
+    "Gula": {"max_tokens_per_scenario": 6000, "max_wall_time_seconds": 45, "max_tool_calls": 5, "max_retry_count": 0, "max_cost_units": 6},
+    "Apep": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 75, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "Patrono": {"max_tokens_per_scenario": 9000, "max_wall_time_seconds": 65, "max_tool_calls": 7, "max_retry_count": 1, "max_cost_units": 8},
+    "Efeso": {"max_tokens_per_scenario": 11000, "max_wall_time_seconds": 80, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "Abzu": {"max_tokens_per_scenario": 8000, "max_wall_time_seconds": 60, "max_tool_calls": 6, "max_retry_count": 1, "max_cost_units": 8},
+    "Loop": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 75, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "Minos": {"max_tokens_per_scenario": 7000, "max_wall_time_seconds": 55, "max_tool_calls": 5, "max_retry_count": 0, "max_cost_units": 6},
+    "Quiron": {"max_tokens_per_scenario": 8000, "max_wall_time_seconds": 60, "max_tool_calls": 6, "max_retry_count": 1, "max_cost_units": 7},
+    "Gorgona": {"max_tokens_per_scenario": 9000, "max_wall_time_seconds": 65, "max_tool_calls": 7, "max_retry_count": 1, "max_cost_units": 8},
+    "Sirene": {"max_tokens_per_scenario": 4000, "max_wall_time_seconds": 30, "max_tool_calls": 3, "max_retry_count": 0, "max_cost_units": 4}
+  },
+  "per_wave_limits": {
+    "W-1": {"max_tokens_per_scenario": 7000, "max_wall_time_seconds": 45, "max_tool_calls": 5, "max_retry_count": 0, "max_cost_units": 5},
+    "W0": {"max_tokens_per_scenario": 9000, "max_wall_time_seconds": 60, "max_tool_calls": 6, "max_retry_count": 1, "max_cost_units": 7},
+    "W0.5": {"max_tokens_per_scenario": 8000, "max_wall_time_seconds": 55, "max_tool_calls": 6, "max_retry_count": 1, "max_cost_units": 6},
+    "W1": {"max_tokens_per_scenario": 11000, "max_wall_time_seconds": 75, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 9},
+    "W2": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 70, "max_tool_calls": 8, "max_retry_count": 1, "max_cost_units": 8},
+    "W3": {"max_tokens_per_scenario": 9000, "max_wall_time_seconds": 65, "max_tool_calls": 7, "max_retry_count": 1, "max_cost_units": 8},
+    "W4": {"max_tokens_per_scenario": 10000, "max_wall_time_seconds": 80, "max_tool_calls": 9, "max_retry_count": 1, "max_cost_units": 9},
+    "W5": {"max_tokens_per_scenario": 12000, "max_wall_time_seconds": 90, "max_tool_calls": 10, "max_retry_count": 1, "max_cost_units": 10},
+    "W6": {"max_tokens_per_scenario": 7000, "max_wall_time_seconds": 50, "max_tool_calls": 5, "max_retry_count": 0, "max_cost_units": 5}
+  },
+  "kill_switch_thresholds": {
+    "cost_exhaustion_ratio": 1.0,
+    "wall_time_ratio": 1.0,
+    "tool_call_ratio": 1.0,
+    "retry_limit_ratio": 1.0
+  }
+}

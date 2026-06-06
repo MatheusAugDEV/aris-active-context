@@ -1,0 +1,59 @@
+{
+  "artifact_id": "if06_sandbox_contract_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "future_simulation_sandbox_contract",
+  "decision": "pass",
+  "planning_only": true,
+  "filesystem_allowed_roots": [
+    "/home/matheus/ARIS/Project_ARIS/aris-active-context",
+    "/home/matheus/ARIS/Project_ARIS/artifacts/infernus",
+    "/home/matheus/ARIS/Project_ARIS/docs/infernus_full",
+    "/tmp"
+  ],
+  "network_policy": {
+    "mode": "deny_by_default",
+    "allowed_scope": "github_active_context_governance_only",
+    "execution_now": false
+  },
+  "process_policy": {
+    "runtime_start_allowed": false,
+    "bot_process_spawn_allowed": false,
+    "shell_escape_allowed": false,
+    "mcp_runtime_activation_allowed": false
+  },
+  "secret_access_policy": {
+    "allowed": false,
+    "sources_blocked": [
+      "environment variables",
+      "secret files",
+      "vaults",
+      "external connectors"
+    ]
+  },
+  "artifact_write_roots": [
+    "/home/matheus/ARIS/Project_ARIS/artifacts/infernus",
+    "/home/matheus/ARIS/Project_ARIS/docs/infernus_full",
+    "/home/matheus/ARIS/Project_ARIS/aris-active-context"
+  ],
+  "forbidden_paths": [
+    "/home/matheus/.ssh",
+    "/home/matheus/.aws",
+    "/home/matheus/.config",
+    "/etc",
+    "/var",
+    "/proc",
+    "/sys"
+  ],
+  "escape_to_host_blocker": {
+    "required": true,
+    "host_mount_escape_allowed": false,
+    "container_breakout_allowed": false
+  },
+  "evidence_logging_requirement": {
+    "required": true,
+    "hash_chain_required": true,
+    "stdout_capture_required": true,
+    "policy_decision_logging_required": true
+  },
+  "blast_radius": "planning_contract_only_no_real_side_effects"
+}

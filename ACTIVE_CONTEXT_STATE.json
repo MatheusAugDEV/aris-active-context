@@ -1,8 +1,8 @@
 {
   "active_context_version": "2.0",
-  "phase_id": "INF-FULL-03",
-  "current_phase_id": "INF-FULL-03",
-  "previous_phase_id": "INF-FULL-02",
+  "phase_id": "INF-FULL-04",
+  "current_phase_id": "INF-FULL-04",
+  "previous_phase_id": "INF-FULL-03",
   "gate_opened_at": "2026-06-06",
   "gate_max_cycles": 3,
   "gate_cycles_used": 0,
@@ -420,6 +420,12 @@
       "phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
       "repair_type": "infernus_full",
       "status": "inf_full_03_chain_registration_opening_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
+      "repair_type": "infernus_full",
+      "status": "inf_full_04_scenario_pack_harness_readiness_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -450,15 +456,15 @@
   "current_live_route": {
     "active_next_phase": null,
     "active_next_phase_class": null,
-    "current_status": "inf_full_chain_registered_preparation_open_no_execution",
+    "current_status": "inf_full_scenario_pack_harness_ready_no_execution",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+    "latest_completed_phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
-    "status": "inf_full_03_chain_registration_opening_pass"
+    "status": "inf_full_04_scenario_pack_harness_readiness_pass"
   },
-  "current_status": "inf_full_chain_registered_preparation_open_no_execution",
+  "current_status": "inf_full_scenario_pack_harness_ready_no_execution",
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -490,28 +496,29 @@
       "ARIS Capability Build Product/Pilot Boundary Gate",
       "ARIS Capability Build Advanced Supply Chain Gate",
       "ARIS Infernus FULL Baseline Freeze Planning",
-      "ARIS Infernus FULL Chain Registration & Preparation Opening"
+      "ARIS Infernus FULL Chain Registration & Preparation Opening",
+      "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate"
     ],
-    "latest_execution_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+    "latest_execution_phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus FULL Baseline Freeze Planning"
+    "previous_execution_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus FULL Baseline Freeze Planning",
-    "proof_source": "local_disk_and_operator_authorization",
-    "to_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
-    "transition_type": "infernus_full_chain_registration_opening",
-    "verified_via": "operator authorization recorded as ok_autorizo_td_infernus_full, canon roadmap successor materialized into ROADMAP_CANONICAL.md, INF-FULL-03 minimum deliverables created, no bot or runtime execution performed, validator pass required"
+    "from_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+    "proof_source": "local_disk_and_standing_operator_authorization",
+    "to_phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
+    "transition_type": "infernus_full_scenario_pack_harness_readiness",
+    "verified_via": "standing pre-execution operator authorization recorded, ROADMAP_CANONICAL.md now contains INF-FULL-03 to INF-FULL-04 prompt_only transition, IF-05 and IF-06 deliverables were created, no bot or runtime execution was performed, validator pass required"
   },
-  "latest_completed_phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+  "latest_completed_phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": null,
-    "deferred_phase_reason": "INF-FULL-03 completed as a planning-only chain registration and preparation opening package. Bot execution, runtime execution, product promotion, pilot, Bedrock, secrets, dependency changes, and real apply remain forbidden. No canonical successor row exists for INF-FULL-03 in ROADMAP_CANONICAL.md, so next_phase remains null until a later explicit roadmap transition is recorded.",
+    "deferred_phase_reason": "INF-FULL-04 completed as a planning-only scenario pack and harness readiness package. Standing authorization applies only to future pre-execution Infernus FULL gates while bot execution, runtime execution, product promotion, pilot, Bedrock, secrets, dependency changes, and real apply remain forbidden. No canonical successor row exists for INF-FULL-04 in ROADMAP_CANONICAL.md, so next_phase remains null until a later explicit roadmap transition is recorded.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -524,14 +531,14 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "INF-FULL-03 produced a planning-only chain registration and preparation opening packet.",
-      "The full planned Infernus chain is registered from the canon roadmap, but only INF-FULL-03 is opened canonically here.",
-      "The baseline freeze package from INF-FULL-02 remains a dependency and historical bot, Minos, and Purgatorium artifacts remain reference-only.",
-      "Contract-pack deliverables if00 through if04 are materialized and remain non-executable planning artifacts.",
+      "INF-FULL-04 produced a planning-only scenario pack and harness readiness packet.",
+      "Standing operator authorization is recorded only for pre-execution Infernus FULL gates and does not authorize execution.",
+      "The baseline freeze package from INF-FULL-02 and the chain-registration packet from INF-FULL-03 remain dependencies and historical bot, Minos, and Purgatorium artifacts remain reference-only.",
+      "Contract-pack deliverables if05 and if06 are materialized and remain non-executable planning artifacts.",
       "No bots are executed in this phase.",
       "No runtime is started in this phase.",
       "No product, pilot, Bedrock, secret access, package installation, dependency mutation, or external network execution is authorized.",
-      "No canonical successor is defined after INF-FULL-03 in ROADMAP_CANONICAL.md.",
+      "No canonical successor is defined after INF-FULL-04 in ROADMAP_CANONICAL.md.",
       "next_phase remains null until a separate explicit roadmap transition is recorded.",
       "governance_gate_streak remains 0."
     ],
@@ -540,7 +547,7 @@
     "phase_class": null,
     "planning_only": false,
     "review_only": false,
-    "status": "inf_full_chain_registered_preparation_open_no_execution"
+    "status": "inf_full_scenario_pack_harness_ready_no_execution"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -671,6 +678,19 @@
     "../artifacts/infernus/inf_full_03_opening_decision_2026_06_06.json",
     "../artifacts/infernus/inf_full_03_opening_summary_2026_06_06.json",
     "../docs/infernus_full/inf_full_03_opening_2026_06_06.md",
+    "../artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json",
+    "../artifacts/infernus/if05_scenario_pack_manifest_v4.json",
+    "../artifacts/infernus/if05_controls_design_v4.json",
+    "../artifacts/infernus/if05_scenario_oracle_mapping_v4.json",
+    "../artifacts/infernus/if05_mutation_family_registry_v4.json",
+    "../artifacts/infernus/if06_harness_readiness_decision.json",
+    "../artifacts/infernus/if06_sandbox_contract.json",
+    "../artifacts/infernus/if06_cost_quota_manifest.json",
+    "../artifacts/infernus/if06_replay_policy.json",
+    "../artifacts/infernus/if06_kill_switch_policy.json",
+    "../artifacts/infernus/inf_full_04_decision_2026_06_06.json",
+    "../artifacts/infernus/inf_full_04_summary_2026_06_06.json",
+    "../docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md",
     "../docs/infernus_full/README.md"
   ],
   "required_update_policy": {
@@ -689,8 +709,8 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.5",
-  "status": "inf_full_03_chain_registration_opening_pass",
+  "schema_version": "2.6",
+  "status": "inf_full_04_scenario_pack_harness_readiness_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
     "fail_closed_on_live_route_drift": true,
@@ -705,7 +725,7 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.5",
+    "current_schema_version": "2.6",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
@@ -713,6 +733,7 @@
     "schema_2_3_change_summary": "AC-OBS-02 adds gate TTL fields (gate_opened_at, gate_max_cycles, gate_cycles_used), an auto_advance policy object, a previous_phase_id field, and a last_boot_files_read receipt; it adds mirror sync enforcement and boot-receipt warnings to the validator. No execution, fixture, bot, or runtime authorization is granted. AC-TRANS-03 installs the Transition Table, autonomous loop handler, REGRA DE TRANSICAO, updates the validator with Transition Table enforcement, refreshes the test suite, and advances state to AC-TRANS-03. AC-CONTRACT-04 adds minimum_deliverable to every transition row, adds validator enforcement for gated deliverables, and blocks prompt_only pass declarations that lack real on-disk capability. AC-BREAK-05 installs three-layer circuit breaker: governance_gate_streak counter, gate signature deduplication, and cycle nudge. INF-MAT-01 materializes 13 synthetic bot fixture scenarios (65 files) on disk, resets governance_gate_streak to 0, and confirms fixture_materialization_allowed=true. INF-BOT-01 records one deterministic nemesis execution log with block verdict and enforces bot log safety fields in the validator. INF-MINOS-01 records one deterministic Minos verdict JSON derived from the nemesis execution log, enforces threshold_results, and keeps PURG-01 closed. PURG-01 creates one deterministic Purgatorium finding record from the existing Minos verdict, enforces a finding deliverable with severity/status and remediation locks, and keeps BENCH-01 closed. ACB-CORE-01 advances the live route only after traced uv bootstrap, uv.lock, pip-audit CI gate, and CycloneDX SBOM evidence exist in Project_ARIS. ACB-CORE-02 advances the live route only after explicit root __all__ baseline artifacts, Protocol exports, import smoke tests, and dedicated core-public-api CI evidence exist in Project_ARIS. OPERATOR_PREFERENCES.md is elevated into the priority read path immediately after DECISION_LOCKS, but remains subordinate to ACTIVE_CONTEXT_STATE.json, the schema, validator, Transition Table, and explicit operator/manual authorization locks.",
     "schema_2_4_change_summary": "INF-FULL-01 opens as an operator-authorized scope charter only. The validator now enforces a scope-charter decision artifact, a scope matrix, a module scope manifest, and a charter markdown in Project_ARIS; it also requires all modules to be accounted for, unresolved_modules to remain empty, inf_full_opened=true, and all execution/product/pilot/Bedrock flags to remain false. current_phase_bots_executed is added because bot_execution_executed is historical-only. INF-FULL-02 advances the live route to a planning-only baseline freeze package, requires decision/inventory/hash-manifest/summary markdown deliverables, freezes scoped module and scenario references by hash, marks historical bot/minos/purg artifacts as reference-only, and keeps next_phase null because no Transition Table successor row exists yet.",
     "schema_2_5_change_summary": "INF-FULL-03 materializes the canon-roadmap successor after explicit operator authorization. The Transition Table now includes INF-FULL-02 -> INF-FULL-03, the validator enforces if00-if04 minimum deliverables plus INF-FULL-03 opening decision/summary markdown artifacts, and the live route advances to a planning-only chain registration and preparation opening package while keeping all bot/runtime/product/Bedrock/secret/dependency execution flags false and next_phase null because no successor row exists after INF-FULL-03.",
+    "schema_2_6_change_summary": "INF-FULL-04 consumes the standing pre-execution operator authorization for the Infernus FULL gated sequence. The Transition Table now includes INF-FULL-03 -> INF-FULL-04 as prompt_only, the validator enforces the standing authorization policy plus IF-05 and IF-06 deliverables, and the live route advances to a planning-only scenario pack and harness readiness package while keeping all bot/runtime/product/Bedrock/secret/dependency execution flags false and next_phase null because no successor row exists after INF-FULL-04.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

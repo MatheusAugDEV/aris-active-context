@@ -1,0 +1,51 @@
+{
+  "artifact_id": "if06_kill_switch_policy_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "future_simulation_kill_switch_policy",
+  "decision": "pass",
+  "planning_only": true,
+  "triggers": [
+    {
+      "trigger_id": "KS-COST",
+      "condition": "cost exhaustion",
+      "immediate_action": "stop scenario, seal evidence, emit cost_guard_breach",
+      "escalation": "cost_guard_breach"
+    },
+    {
+      "trigger_id": "KS-ESCAPE",
+      "condition": "runtime escape attempt",
+      "immediate_action": "hard stop, revoke sandbox write path, mark sandbox_escape_attempt",
+      "escalation": "sandbox_escape_attempt"
+    },
+    {
+      "trigger_id": "KS-SECRET",
+      "condition": "secret access attempt",
+      "immediate_action": "hard stop and classify as secret_boundary_violation",
+      "escalation": "secret_boundary_violation"
+    },
+    {
+      "trigger_id": "KS-NET",
+      "condition": "network attempt outside governance scope",
+      "immediate_action": "deny egress and mark network_policy_breach",
+      "escalation": "network_policy_breach"
+    },
+    {
+      "trigger_id": "KS-TAMPER",
+      "condition": "artifact tampering detected",
+      "immediate_action": "freeze custody chain and classify evidence_tamper_detected",
+      "escalation": "evidence_tamper_detected"
+    },
+    {
+      "trigger_id": "KS-LOOP",
+      "condition": "infinite loop or retry saturation",
+      "immediate_action": "abort run and preserve last deterministic checkpoint",
+      "escalation": "retry_or_loop_saturation"
+    },
+    {
+      "trigger_id": "KS-TIMEOUT",
+      "condition": "scenario timeout",
+      "immediate_action": "abort scenario and mark timeout_containment",
+      "escalation": "timeout_containment"
+    }
+  ]
+}

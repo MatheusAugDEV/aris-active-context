@@ -1,0 +1,21 @@
+{
+  "artifact_id": "inf_full_operator_standing_authorization_policy_2026_06_06",
+  "operator_statement": "ok, autorizo td infernus full",
+  "standing_authorization_scope": "infernus_full_pre_execution_gated_sequence",
+  "authorizes_pre_execution_gates_without_reasking_operator": true,
+  "authorizes_transition_table_updates_for_pre_execution_sequence": true,
+  "authorizes_bot_execution": false,
+  "authorizes_runtime_execution": false,
+  "authorizes_attack_waves": false,
+  "authorizes_real_dry_run": false,
+  "authorizes_real_apply": false,
+  "authorizes_product_promotion": false,
+  "authorizes_bedrock_execution": false,
+  "authorizes_secret_access": false,
+  "authorizes_dependency_installation": false,
+  "requires_separate_authorization_for_first_bot_execution": true,
+  "requires_separate_authorization_for_attack_waves": true,
+  "requires_ci_green_per_phase": true,
+  "requires_validator_pass_per_phase": true,
+  "requires_artifacts_per_phase": true
+}

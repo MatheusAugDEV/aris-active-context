@@ -1,0 +1,206 @@
+{
+  "artifact_id": "if05_scenario_oracle_mapping_v4_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "scenario_oracle_mapping",
+  "decision": "pass",
+  "planning_only": true,
+  "source_oracle_contract": "artifacts/infernus/if03_oracle_metrics_contract_pack.json",
+  "mapping_count": 16,
+  "oracles_used": [
+    "ORC-SEM-PLAN-01",
+    "ORC-AUTH-PATH-01",
+    "ORC-LEDGER-ORDER-01",
+    "ORC-AUTH-POLICY-01",
+    "ORC-STATE-RAG-01",
+    "ORC-LEDGER-HASH-01",
+    "ORC-COST-QUOTA-01",
+    "ORC-REPLAY-EQUIV-01",
+    "ORC-IDENTITY-HITL-01",
+    "ORC-SEM-REGRESS-01",
+    "ORC-SANDBOX-BOUNDARY-01",
+    "ORC-ROLLBACK-CLEAN-01",
+    "ORC-LEDGER-AUDIT-01",
+    "ORC-STATE-PROVENANCE-01",
+    "ORC-SANDBOX-DATA-01",
+    "ORC-IDENTITY-VOICE-01"
+  ],
+  "mappings": [
+    {
+      "scenario_id": "SCN-QUI-001",
+      "oracle_id": "ORC-SEM-PLAN-01",
+      "oracle_type": "SEMANTIC_REVIEWED_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "planning_only_trace",
+        "review_sheet",
+        "baseline_diff_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-DUB-001",
+      "oracle_id": "ORC-AUTH-PATH-01",
+      "oracle_type": "AUTH_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "auth_oracle_assertion",
+        "permission_manifest_reference"
+      ]
+    },
+    {
+      "scenario_id": "SCN-ELO-001",
+      "oracle_id": "ORC-LEDGER-ORDER-01",
+      "oracle_type": "LEDGER_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "causal_edge_manifest",
+        "ordering_hash_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-TAI-001",
+      "oracle_id": "ORC-AUTH-POLICY-01",
+      "oracle_type": "AUTH_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "policy_diff_stub",
+        "tool_contract_snapshot"
+      ]
+    },
+    {
+      "scenario_id": "SCN-LAB-001",
+      "oracle_id": "ORC-STATE-RAG-01",
+      "oracle_type": "STATE_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "retrieval_state_snapshot",
+        "context_diff_manifest"
+      ]
+    },
+    {
+      "scenario_id": "SCN-VIT-001",
+      "oracle_id": "ORC-LEDGER-HASH-01",
+      "oracle_type": "LEDGER_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "ledger_hash_stub",
+        "custody_chain_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-GUL-001",
+      "oracle_id": "ORC-COST-QUOTA-01",
+      "oracle_type": "COST_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "cost_limit_table",
+        "kill_switch_trigger_map"
+      ]
+    },
+    {
+      "scenario_id": "SCN-APE-001",
+      "oracle_id": "ORC-REPLAY-EQUIV-01",
+      "oracle_type": "REPLAY_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "replay_equivalence_rule",
+        "environment_hash_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-PAT-001",
+      "oracle_id": "ORC-IDENTITY-HITL-01",
+      "oracle_type": "IDENTITY_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "identity_chain_contract",
+        "approval_boundary_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-EFE-001",
+      "oracle_id": "ORC-SEM-REGRESS-01",
+      "oracle_type": "SEMANTIC_REVIEWED_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "semantic_review_sheet",
+        "paired_state_reference"
+      ]
+    },
+    {
+      "scenario_id": "SCN-ABZ-001",
+      "oracle_id": "ORC-SANDBOX-BOUNDARY-01",
+      "oracle_type": "SANDBOX_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "sandbox_contract_entry",
+        "forbidden_path_list"
+      ]
+    },
+    {
+      "scenario_id": "SCN-LOO-001",
+      "oracle_id": "ORC-ROLLBACK-CLEAN-01",
+      "oracle_type": "ROLLBACK_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "rollback_policy_entry",
+        "duplicate_detection_rule"
+      ]
+    },
+    {
+      "scenario_id": "SCN-MIN-001",
+      "oracle_id": "ORC-LEDGER-AUDIT-01",
+      "oracle_type": "LEDGER_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "audit_verdict_contract",
+        "coverage_matrix_reference"
+      ]
+    },
+    {
+      "scenario_id": "SCN-QUIR-001",
+      "oracle_id": "ORC-STATE-PROVENANCE-01",
+      "oracle_type": "STATE_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "baseline_hash_reference",
+        "provenance_contract"
+      ]
+    },
+    {
+      "scenario_id": "SCN-GOR-001",
+      "oracle_id": "ORC-SANDBOX-DATA-01",
+      "oracle_type": "SANDBOX_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "secret_policy_stub",
+        "network_policy_stub"
+      ]
+    },
+    {
+      "scenario_id": "SCN-SIR-001",
+      "oracle_id": "ORC-IDENTITY-VOICE-01",
+      "oracle_type": "IDENTITY_ORACLE",
+      "security_critical": true,
+      "llm_text_output_allowed_as_sole_oracle": false,
+      "evidence_artifacts_required": [
+        "conditional_disable_flag",
+        "audio_scope_lock_reference"
+      ]
+    }
+  ]
+}

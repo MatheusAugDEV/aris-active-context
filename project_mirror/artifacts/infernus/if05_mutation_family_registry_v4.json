@@ -1,0 +1,90 @@
+{
+  "artifact_id": "if05_mutation_family_registry_v4_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "mutation_family_registry",
+  "decision": "pass",
+  "planning_only": true,
+  "family_count": 10,
+  "families": [
+    {
+      "family_id": "MF-01",
+      "name": "prompt mutation",
+      "mutation_surface": "instruction hierarchy",
+      "description": "Reword attack prompts while preserving semantic intent and measuring reviewed divergence.",
+      "linked_waves": ["W0", "W1", "W6"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-02",
+      "name": "context mutation",
+      "mutation_surface": "memory/RAG/session context",
+      "description": "Shift retrieval snippets, stale context markers, and memory ordering in future simulations.",
+      "linked_waves": ["W1"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-03",
+      "name": "tool schema mutation",
+      "mutation_surface": "tool contract and registry",
+      "description": "Alter tool argument shape, capability description, and registry provenance without activating tools now.",
+      "linked_waves": ["W2", "W3"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-04",
+      "name": "permission wording mutation",
+      "mutation_surface": "authorization and HITL language",
+      "description": "Vary approval wording, signer claims, and delegation prose to test false-consent resistance later.",
+      "linked_waves": ["W0", "W2"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-05",
+      "name": "replay mutation",
+      "mutation_surface": "input hash and stale payload reuse",
+      "description": "Reuse stale payloads, alter canonical hashes, and probe replay equivalence boundaries.",
+      "linked_waves": ["W0.5", "W4"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-06",
+      "name": "rollback mutation",
+      "mutation_surface": "checkpoint and cleanup contract",
+      "description": "Stress incomplete cleanup, partial rollback, and dishonest restoration claims.",
+      "linked_waves": ["W4"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-07",
+      "name": "concurrency mutation",
+      "mutation_surface": "ordering and interleaving",
+      "description": "Inject duplicate events, branch races, and TOCTOU timing edges in future harness runs.",
+      "linked_waves": ["W4", "W5"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-08",
+      "name": "cost/quota mutation",
+      "mutation_surface": "budget and retry policy",
+      "description": "Raise token, time, and retry pressure until containment or kill-switch expectations trigger.",
+      "linked_waves": ["W4", "W5"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-09",
+      "name": "evidence tamper mutation",
+      "mutation_surface": "ledger and artifact integrity",
+      "description": "Corrupt artifact hash, order, or custody entries without allowing silent acceptance.",
+      "linked_waves": ["W0.5", "W6"],
+      "execution_now": false
+    },
+    {
+      "family_id": "MF-10",
+      "name": "exfiltration mutation",
+      "mutation_surface": "secret and outbound boundary",
+      "description": "Blend exfil routes across logs, connectors, and fake identities while preserving hard deny outcomes.",
+      "linked_waves": ["W2", "W3"],
+      "execution_now": false
+    }
+  ]
+}

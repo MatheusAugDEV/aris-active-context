@@ -16,12 +16,13 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
+- Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
 - Active next phase: `null`
 - Active next phase class: `null`
-- INF-FULL-03 completed as a planning-only chain registration and preparation opening package.
+- INF-FULL-04 completed as a planning-only scenario pack and harness readiness package.
+- Standing operator authorization is recorded only for pre-execution Infernus FULL gates while execution locks remain false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- No canonical successor is currently defined after `INF-FULL-03` in the Transition Table.
+- No canonical successor is currently defined after `INF-FULL-04` in the Transition Table.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`
@@ -50,6 +51,7 @@ Bedrock decide.
 | ACB-CAP-05 | pass | INF-FULL-01 | infernus_full | operator | all ACB complete + Infernus spec exists |
 | INF-FULL-01 | pass | INF-FULL-02 | infernus_full | operator | scope charter decision + scope matrix + module scope manifest + charter markdown |
 | INF-FULL-02 | pass | INF-FULL-03 | infernus_full | operator | infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
+| INF-FULL-03 | pass | INF-FULL-04 | infernus_full | prompt_only | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

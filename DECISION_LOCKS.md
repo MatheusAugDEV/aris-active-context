@@ -1,7 +1,7 @@
-## INF-FULL-03 — ARIS Infernus FULL Chain Registration & Preparation Opening Lock
+## INF-FULL-04 — ARIS Infernus FULL Scenario Pack & Harness Readiness Gate Lock
 
-- Latest completed phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
-- Status: `inf_full_03_chain_registration_opening_pass`
+- Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
+- Status: `inf_full_04_scenario_pack_harness_readiness_pass`
 - Decision: `pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
@@ -11,11 +11,12 @@
 - gate_cycles_used=0
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - governance_gate_streak=0
-- INF-FULL-03 is planning-only and registers the full Infernus chain plus the if00-if04 contract pack.
+- INF-FULL-04 is planning-only and materializes IF-05/IF-06 scenario, oracle, mutation, sandbox, replay, cost, and kill-switch contracts.
 - baseline_freeze_planned=true.
 - baseline_freeze_applied=false.
+- Standing operator authorization is limited to pre-execution Infernus FULL gates.
 - No next phase is authorized.
-- No canonical successor is defined after INF-FULL-03 in the Transition Table.
+- No canonical successor is defined after INF-FULL-04 in the Transition Table.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, dependency mutation, or external network execution is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - bot_execution_executed=true (1 deterministic nemesis log on disk, historical only).

@@ -8,8 +8,8 @@
 
 ## Current Route
 
-- Latest completed phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
-- Previous execution phase: `ARIS Infernus FULL Baseline Freeze Planning`
+- Latest completed phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
+- Previous execution phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
 - Active next phase: `null`
 - Active next phase class: `null`
 - governance_gate_streak: `0`
@@ -28,15 +28,10 @@
 ## Active Artifacts
 
 - `artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json`
+- `../artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json`
 - `../artifacts/infernus/inf_full_01_scope_charter_decision_2026_06_06.json`
-- `../artifacts/infernus/inf_full_01_scope_matrix_2026_06_06.json`
-- `../artifacts/infernus/inf_full_01_module_scope_manifest_2026_06_06.json`
 - `../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json`
-- `../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json`
-- `../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json`
-- `../artifacts/infernus/inf_full_02_baseline_freeze_summary_2026_06_06.json`
 - `../artifacts/infernus/inf_full_03_opening_decision_2026_06_06.json`
-- `../artifacts/infernus/inf_full_03_opening_summary_2026_06_06.json`
 - `../artifacts/infernus/if00_transition_candidate.json`
 - `../artifacts/infernus/if00_lab_hermeticity_baseline.json`
 - `../artifacts/infernus/if01_research_evidence_ledger.jsonl`
@@ -45,14 +40,24 @@
 - `../artifacts/infernus/if03_oracle_metrics_contract_pack.json`
 - `../artifacts/infernus/if04_bot_contract_pack_v4.json`
 - `../artifacts/infernus/if04_permission_manifest_v4.json`
+- `../artifacts/infernus/if05_scenario_pack_manifest_v4.json`
+- `../artifacts/infernus/if05_controls_design_v4.json`
+- `../artifacts/infernus/if05_scenario_oracle_mapping_v4.json`
+- `../artifacts/infernus/if05_mutation_family_registry_v4.json`
+- `../artifacts/infernus/if06_harness_readiness_decision.json`
+- `../artifacts/infernus/if06_sandbox_contract.json`
+- `../artifacts/infernus/if06_cost_quota_manifest.json`
+- `../artifacts/infernus/if06_replay_policy.json`
+- `../artifacts/infernus/if06_kill_switch_policy.json`
+- `../artifacts/infernus/inf_full_04_decision_2026_06_06.json`
+- `../artifacts/infernus/inf_full_04_summary_2026_06_06.json`
 - `../docs/infernus_full/infernus_full_canonroadmap.md`
-- `../docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
-- `../docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`
-- `../docs/infernus_full/inf_full_03_opening_2026_06_06.md`
+- `../docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md`
 - `validate_active_context.yml`
 
 ## Non-Authorization
 
-- INF-FULL-03 is planning-only and opens only the chain registration and contract pack.
+- INF-FULL-04 is planning-only and opens only the scenario pack and harness readiness contract set.
+- Standing operator authorization applies only to pre-execution Infernus FULL gates with locks preserved.
 - No bot execution, runtime start, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- No canonical successor is defined after `INF-FULL-03`; no next phase is opened automatically.
+- No canonical successor is defined after `INF-FULL-04`; no next phase is opened automatically.

@@ -1,11 +1,11 @@
-## INF-FULL-03 — ARIS Infernus FULL Chain Registration & Preparation Opening
+## INF-FULL-04 — ARIS Infernus FULL Scenario Pack & Harness Readiness Gate
 ACTIVE_CONTEXT_STATE.json wins
-- current_phase_id: `INF-FULL-03`
-- previous_phase_id: `INF-FULL-02`
-- latest_completed_phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
-- status: `inf_full_03_chain_registration_opening_pass`
+- current_phase_id: `INF-FULL-04`
+- previous_phase_id: `INF-FULL-03`
+- latest_completed_phase: `ARIS Infernus FULL Scenario Pack & Harness Readiness Gate`
+- status: `inf_full_04_scenario_pack_harness_readiness_pass`
 - decision: `pass`
-- current_status: `inf_full_chain_registered_preparation_open_no_execution`
+- current_status: `inf_full_scenario_pack_harness_ready_no_execution`
 - next_phase: `null`
 - Next phase: `null`
 - active_next_phase: `null`
@@ -28,6 +28,6 @@ ACTIVE_CONTEXT_STATE.json wins
 - scenario_count: `13`
 - External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`
 
-This mirror reflects a planning-only chain registration and preparation opening package.
+This mirror reflects a planning-only scenario pack and harness readiness package.
+Standing operator authorization is recorded only for pre-execution Infernus FULL gates.
 No bots are executed and no runtime is started in this phase.
-Historical bot, Minos, and Purgatorium artifacts remain reference-only. INF-FULL-03 materializes if00-if04 contract-pack deliverables without opening execution.

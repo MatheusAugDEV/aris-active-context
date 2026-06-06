@@ -4,11 +4,13 @@
 
 - `docs/infernus_full/infernus_full_canonroadmap.md`
 - `docs/infernus_full/inf_full_03_opening_2026_06_06.md`
+- `docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md`
 
 This document is the active technical direction for Infernus FULL roadmap planning. It does not authorize execution.
 
 ## Active preparation packet
 
+- `artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json`
 - `artifacts/infernus/inf_full_03_opening_decision_2026_06_06.json`
 - `artifacts/infernus/inf_full_03_opening_summary_2026_06_06.json`
 - `artifacts/infernus/if00_transition_candidate.json`
@@ -19,6 +21,17 @@ This document is the active technical direction for Infernus FULL roadmap planni
 - `artifacts/infernus/if03_oracle_metrics_contract_pack.json`
 - `artifacts/infernus/if04_bot_contract_pack_v4.json`
 - `artifacts/infernus/if04_permission_manifest_v4.json`
+- `artifacts/infernus/if05_scenario_pack_manifest_v4.json`
+- `artifacts/infernus/if05_controls_design_v4.json`
+- `artifacts/infernus/if05_scenario_oracle_mapping_v4.json`
+- `artifacts/infernus/if05_mutation_family_registry_v4.json`
+- `artifacts/infernus/if06_harness_readiness_decision.json`
+- `artifacts/infernus/if06_sandbox_contract.json`
+- `artifacts/infernus/if06_cost_quota_manifest.json`
+- `artifacts/infernus/if06_replay_policy.json`
+- `artifacts/infernus/if06_kill_switch_policy.json`
+- `artifacts/infernus/inf_full_04_decision_2026_06_06.json`
+- `artifacts/infernus/inf_full_04_summary_2026_06_06.json`
 
 ## Historical documents
 

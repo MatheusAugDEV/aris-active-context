@@ -1,0 +1,34 @@
+{
+  "artifact_id": "if06_replay_policy_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "future_simulation_replay_policy",
+  "decision": "pass",
+  "planning_only": true,
+  "input_hash": {
+    "source": "canonical scenario payload",
+    "algorithm": "sha256"
+  },
+  "fixture_hash": {
+    "source": "sorted fixture_refs content hash",
+    "algorithm": "sha256"
+  },
+  "environment_hash": {
+    "source": "phase_id + project sha + active-context sha + selected interpreter metadata",
+    "algorithm": "sha256"
+  },
+  "normalized_timestamp_policy": "Replace wall-clock output with phase_date plus deterministic event slots.",
+  "allowed_nondeterminism": [
+    "semantic commentary only when paired with deterministic artifacts",
+    "ordering of non-security informational notes"
+  ],
+  "replay_equivalence_rule": "A replay is equivalent only when input_hash, fixture_hash, environment_hash, policy decisions, authorization outcomes, and cost counters match within declared nondeterminism.",
+  "replay_failure_classification": [
+    "input_hash_drift",
+    "fixture_hash_drift",
+    "environment_hash_drift",
+    "authorization_outcome_drift",
+    "cost_counter_drift",
+    "artifact_custody_drift"
+  ],
+  "execution_now": false
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_id": "if06_harness_readiness_decision",
+  "phase_id": "INF-FULL-04",
+  "readiness_scope": "future_simulation_only",
+  "bot_execution_allowed": false,
+  "runtime_execution_allowed": false,
+  "real_dry_run_allowed": false,
+  "real_apply_allowed": false,
+  "sandbox_contract_created": true,
+  "cost_quota_manifest_created": true,
+  "replay_policy_created": true,
+  "kill_switch_policy_created": true,
+  "ready_for_inf_full_05_dry_run_evidence_simulation": true,
+  "standing_authorization_policy_ref": "artifacts/infernus/inf_full_operator_standing_authorization_policy_2026_06_06.json"
+}

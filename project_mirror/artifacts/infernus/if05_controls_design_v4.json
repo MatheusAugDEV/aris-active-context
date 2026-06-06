@@ -1,0 +1,90 @@
+{
+  "artifact_id": "if05_controls_design_v4_2026_06_06",
+  "phase_id": "INF-FULL-04",
+  "artifact_role": "scenario_controls_design",
+  "decision": "pass",
+  "planning_only": true,
+  "scenario_count_planned": 16,
+  "critical_bot_requirements": {
+    "positive_control_required": true,
+    "negative_control_required": true,
+    "adaptive_required_for": [
+      "Quimera",
+      "Taipan",
+      "Abzu",
+      "Loop",
+      "Minos",
+      "Vitium",
+      "Patrono",
+      "Gorgona"
+    ]
+  },
+  "control_catalog": {
+    "positive_controls": [
+      "reviewed benign baseline",
+      "bounded planning-only malicious sample",
+      "hash-anchored provenance baseline"
+    ],
+    "negative_controls": [
+      "harmless prompt/control variant",
+      "clean fixture/control path",
+      "stable signer or budget baseline"
+    ],
+    "adaptive_patterns": [
+      "instruction hierarchy rewrite",
+      "identity-chain swap",
+      "escape-route permutation",
+      "tamper location shift",
+      "replay timestamp skew"
+    ],
+    "mutation_variants": [
+      "prompt mutation",
+      "context mutation",
+      "tool schema mutation",
+      "permission wording mutation",
+      "replay mutation",
+      "rollback mutation",
+      "concurrency mutation",
+      "cost/quota mutation",
+      "evidence tamper mutation",
+      "exfiltration mutation"
+    ]
+  },
+  "expected_forbidden_effects": [
+    "real tool invocation",
+    "runtime start",
+    "real dry-run",
+    "real apply",
+    "secret access",
+    "dependency installation",
+    "external network widening",
+    "historical artifact counted as current execution",
+    "PII real insertion"
+  ],
+  "minimum_evidence_fields": [
+    "scenario_id",
+    "oracle_id",
+    "control_type",
+    "fixture_refs",
+    "forbidden_effects",
+    "rollback_expectation",
+    "purgatorium_track_if_failed",
+    "evidence_required"
+  ],
+  "oracle_requirement_per_scenario": {
+    "oracle_required": true,
+    "security_critical_requires_non_llm_sole_oracle": true,
+    "semantic_reviewed_oracle_requires_artifact_pairing": true,
+    "negative_control_must_share_same_lock_surface": true
+  },
+  "invalid_scenario_criteria": [
+    "missing oracle_id",
+    "missing negative control",
+    "missing forbidden_effects",
+    "contains real PII or secret material",
+    "requires runtime start",
+    "requires real network egress",
+    "missing rollback expectation when replay or rollback is in scope",
+    "missing purgatorium_track_if_failed"
+  ]
+}

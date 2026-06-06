@@ -788,7 +788,8 @@
                 "2.2",
                 "2.3",
                 "2.4",
-                "2.5"
+                "2.5",
+                "2.6"
             ],
             "type": "string"
         },
@@ -924,6 +925,15 @@
         "schema_2_3_change_summary": {
           "type": "string"
         },
+        "schema_2_4_change_summary": {
+          "type": "string"
+        },
+        "schema_2_5_change_summary": {
+          "type": "string"
+        },
+        "schema_2_6_change_summary": {
+          "type": "string"
+        },
         "schema_version_meaning": {
           "type": "string"
         }
@@ -988,6 +998,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v2.5",
+    "title": "ARIS Active Context Canonical Live State Schema v2.6",
     "type": "object"
 }

@@ -17,10 +17,19 @@ exact transition, the assistant should directly provide the next Codex prompt.
 The assistant must not ask for confirmation just to send the next Codex prompt in
 those cases, and must not require any ritual phrase such as `autorizo`.
 
+When the operator has already explicitly authorized a gated chain, the assistant and
+Codex must not ask for repeated confirmation for the next pre-execution gates in that
+same chain. They should advance with prompt emission, Transition Table updates, and
+phase patches while execution locks remain false.
+
 ## Safety boundary
 
 This preference does not authorize production, Bedrock, pilot, runtime execution,
 real secrets, external network, or any phase whose `advance_mode=operator`.
+
+It also does not authorize bot execution, runtime start, Bedrock execution, product
+promotion, secret access, dependency installation, real dry-run, or real apply for a
+pre-execution gated chain. Those still require separate explicit authorization.
 
 This preference cannot override:
 - `ACTIVE_CONTEXT_STATE.json`
