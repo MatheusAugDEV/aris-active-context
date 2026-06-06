@@ -1,0 +1,63 @@
+{
+  "artifact_id": "infernus_full_canonroadmap_supersession_2026_06_06",
+  "phase_id": "INF-FULL-02",
+  "status": "infernus_full_canonroadmap_persisted_without_deletion",
+  "decision": "pass",
+  "new_active_roadmap_document": "docs/infernus_full/infernus_full_canonroadmap.md",
+  "new_active_roadmap_sha256": "a730fb59001f37dc5cf6457460d7c5f26bdc903656f7bd667a3c7d92257f0022",
+  "physical_deletion_performed": false,
+  "execution_authorized": false,
+  "bot_execution_authorized": false,
+  "runtime_authorized": false,
+  "bedrock_authorized": false,
+  "product_authorized": false,
+  "next_phase_changed": false,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "historical_documents_preserved": true,
+  "superseded_documents": [
+    {
+      "path": "docs/infernus_full/infernus_full_roadmap_v1.md",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Legacy roadmap draft preserved for audit/history."
+    },
+    {
+      "path": "docs/infernus_full/infernus_full_execution_spec.md",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Earlier execution-planning document preserved for audit/history."
+    },
+    {
+      "path": "artifacts/infernus/infernus_full_roadmap_decision_2026_06_06.json",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Historical roadmap decision artifact preserved as evidence."
+    },
+    {
+      "path": "artifacts/infernus/infernus_full_bot_matrix_v1.json",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Historical bot planning matrix preserved as evidence."
+    },
+    {
+      "path": "artifacts/infernus/infernus_full_wave_plan_v1.json",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Historical wave planning artifact preserved as evidence."
+    },
+    {
+      "path": "artifacts/infernus/infernus_full_source_validation_matrix_v1.json",
+      "classification": "historical_only",
+      "superseded_by": "docs/infernus_full/infernus_full_canonroadmap.md",
+      "physical_delete_allowed": false,
+      "reason": "Historical source-validation planning artifact preserved as evidence."
+    }
+  ],
+  "notes": "Old Infernus roadmap/planning documents are preserved as historical evidence and classified as superseded or historical_only. The canon roadmap is active technical direction only and does not authorize execution."
+}

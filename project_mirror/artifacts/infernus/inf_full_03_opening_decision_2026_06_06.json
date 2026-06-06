@@ -1,0 +1,52 @@
+{
+  "artifact_id": "inf_full_03_opening_decision_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "phase_name": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+  "previous_phase_id": "INF-FULL-02",
+  "decision": "pass",
+  "status": "inf_full_03_chain_registration_opening_pass",
+  "operator_authorization_source": "chat_operator_said_ok_autorizo_td_infernus_full_2026_06_06",
+  "full_infernus_chain_registered": true,
+  "canon_roadmap_persisted": true,
+  "baseline_freeze_dependency_satisfied": true,
+  "minimum_deliverable_met": true,
+  "bot_execution_allowed": false,
+  "bot_execution_executed": false,
+  "runtime_execution_authorized": false,
+  "product_ready": false,
+  "bedrock_execution_authorized": false,
+  "external_network_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "next_phase": null,
+  "next_phase_authorized_by_operator": false,
+  "registered_chain_stages": [
+    "F1 Research Synthesis",
+    "F2 Design Lock",
+    "F3 Charter",
+    "F4 Baseline Freeze",
+    "F5 Bot Materialization",
+    "F6 Scenario Packs",
+    "F7 Attack Waves",
+    "F8 Evidence Bundle",
+    "F9 Vuln Register",
+    "F10 Remediation Tracks / Purgatorium Handoff",
+    "F11 Minos Final Verdict"
+  ],
+  "minimum_deliverable_artifacts": [
+    "docs/infernus_full/infernus_full_canonroadmap.md",
+    "artifacts/infernus/if00_transition_candidate.json",
+    "artifacts/infernus/if00_lab_hermeticity_baseline.json",
+    "artifacts/infernus/if01_research_evidence_ledger.jsonl",
+    "artifacts/infernus/if02_threat_ontology_v4.json",
+    "artifacts/infernus/if02_coverage_matrix_v4.csv",
+    "artifacts/infernus/if03_oracle_metrics_contract_pack.json",
+    "artifacts/infernus/if04_bot_contract_pack_v4.json",
+    "artifacts/infernus/if04_permission_manifest_v4.json"
+  ],
+  "notes": [
+    "INF-FULL-03 is a preparation-only opening phase.",
+    "It records the full planned chain and normalizes the contract pack required before any bot materialization or execution phase is proposed.",
+    "No canonical successor is opened automatically after INF-FULL-03."
+  ]
+}

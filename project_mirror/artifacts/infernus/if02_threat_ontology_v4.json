@@ -1,0 +1,68 @@
+{
+  "artifact_id": "if02_threat_ontology_v4_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "artifact_role": "minimum_deliverable_threat_ontology",
+  "ontology_version": "v4",
+  "decision": "pass",
+  "planning_only": true,
+  "threat_families": [
+    {
+      "threat_id": "TH-01",
+      "name": "prompt_and_goal_control",
+      "risk_themes": ["prompt_injection", "goal_hijack", "indirect_injection", "ambiguity"],
+      "seed_bots": ["Quimera", "Dubio"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json", "artifacts/infernus/if01_research_evidence_ledger.jsonl"]
+    },
+    {
+      "threat_id": "TH-02",
+      "name": "authorization_and_hitl_bypass",
+      "risk_themes": ["false_approval", "false_consent", "hitl_bypass", "trust_exploitation"],
+      "seed_bots": ["Patrono", "Taipan", "Dubio"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json"]
+    },
+    {
+      "threat_id": "TH-03",
+      "name": "context_memory_and_retrieval_poisoning",
+      "risk_themes": ["context_poisoning", "rag_poisoning", "session_drift", "memory_poisoning", "behavioral_drift"],
+      "seed_bots": ["Labirinto", "Efeso"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json"]
+    },
+    {
+      "threat_id": "TH-04",
+      "name": "workflow_replay_and_concurrency_integrity",
+      "risk_themes": ["handoff_integrity", "workflow_ordering", "replay", "rollback", "race_condition", "duplicate_actions"],
+      "seed_bots": ["Elos", "Loop", "Apep"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json", "artifacts/infernus/infernus_full_wave_plan_v1.json"]
+    },
+    {
+      "threat_id": "TH-05",
+      "name": "sandbox_data_and_secret_boundaries",
+      "risk_themes": ["sandbox_escape", "rce", "secret_boundary", "filesystem_escape", "data_exfiltration", "cross_tenant"],
+      "seed_bots": ["Abzu", "Gorgona"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json"]
+    },
+    {
+      "threat_id": "TH-06",
+      "name": "provenance_and_audit_integrity",
+      "risk_themes": ["ledger_tamper", "custody_break", "anti_theater", "evidence_audit", "provenance", "sbom"],
+      "seed_bots": ["Vitium", "Minos", "Quiron"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json", "artifacts/infernus/infernus_full_source_validation_matrix_v1.json"]
+    },
+    {
+      "threat_id": "TH-07",
+      "name": "resource_and_resilience_abuse",
+      "risk_themes": ["resource_exhaustion", "denial_of_wallet", "quota_abuse", "infra_chaos"],
+      "seed_bots": ["Gula", "Vitium"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json"]
+    },
+    {
+      "threat_id": "TH-08",
+      "name": "conditional_voice_surface",
+      "risk_themes": ["voice_prompt_injection", "transcription_drift", "voice_identity_spoofing"],
+      "seed_bots": ["Sirene"],
+      "seed_sources": ["artifacts/infernus/infernus_full_bot_matrix_v1.json"],
+      "conditional_activation": "audio_scope_explicitly_authorized"
+    }
+  ],
+  "execution_authorized": false
+}

@@ -1,10 +1,30 @@
 ## Infernus and ACB ledger snapshot
+- INF-FULL-03 | ARIS Infernus FULL Chain Registration & Preparation Opening | pass
 - INF-FULL-02 | ARIS Infernus FULL Baseline Freeze Planning | pass
 - INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass
 - ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass
 - ACB-CAP-04 | ARIS Capability Build Product/Pilot Boundary Gate | pass
 
 # ARIS_PHASE_LEDGER
+
+## INF-FULL-03 - ARIS Infernus FULL Chain Registration & Preparation Opening
+- latest_completed_phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
+- phase_id: `INF-FULL-03`
+- status: `inf_full_03_chain_registration_opening_pass`
+- decision: `pass`
+- previous_phase_id: `INF-FULL-02`
+- operator_authorized: `True`
+- full_infernus_chain_registered: `True`
+- baseline_freeze_planned: `True`
+- baseline_freeze_applied: `False`
+- bots_executed: `False`
+- runtime_execution_authorized: `False`
+- product_promotion_allowed: `False`
+- pilot_authorized: `False`
+- bedrock_executed: `False`
+- next_real_action: `Review the INF-FULL-03 contract pack and record an explicit successor transition before any bot materialization or execution`
+
+This ledger entry records a planning-only chain registration and preparation opening package. No bots are executed and no runtime is started.
 
 ## INF-FULL-02 - ARIS Infernus FULL Baseline Freeze Planning
 - latest_completed_phase: `ARIS Infernus FULL Baseline Freeze Planning`

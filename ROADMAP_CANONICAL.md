@@ -16,12 +16,12 @@ Bedrock decide.
 
 ## Active Route
 
-- Latest completed phase: `ARIS Infernus FULL Baseline Freeze Planning`
+- Latest completed phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
 - Active next phase: `null`
 - Active next phase class: `null`
-- INF-FULL-02 completed as a planning-only baseline freeze package.
+- INF-FULL-03 completed as a planning-only chain registration and preparation opening package.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
-- No canonical successor is currently defined after `INF-FULL-02` in the Transition Table.
+- No canonical successor is currently defined after `INF-FULL-03` in the Transition Table.
 - Runtime execution authorized: `false`
 - Real dry-run execution authorized: `false`
 - Real apply authorized: `false`
@@ -49,6 +49,7 @@ Bedrock decide.
 | ACB-CAP-04 | pass | ACB-CAP-05 | capability_build | prompt_only | pilot gates defined |
 | ACB-CAP-05 | pass | INF-FULL-01 | infernus_full | operator | all ACB complete + Infernus spec exists |
 | INF-FULL-01 | pass | INF-FULL-02 | infernus_full | operator | scope charter decision + scope matrix + module scope manifest + charter markdown |
+| INF-FULL-02 | pass | INF-FULL-03 | infernus_full | operator | infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

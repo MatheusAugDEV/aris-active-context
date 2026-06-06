@@ -1,0 +1,33 @@
+{
+  "artifact_id": "inf_full_03_opening_summary_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "phase_name": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+  "decision": "pass",
+  "status": "inf_full_03_chain_registration_opening_pass",
+  "operator_authorization_interpretation": {
+    "full_chain_registered": true,
+    "inf_full_03_opened": true,
+    "bot_execution_authorized_now": false,
+    "runtime_authorized_now": false,
+    "product_or_bedrock_authorized_now": false
+  },
+  "deliverable_groups": {
+    "transition": ["artifacts/infernus/if00_transition_candidate.json"],
+    "hermeticity": ["artifacts/infernus/if00_lab_hermeticity_baseline.json"],
+    "evidence_ledger": ["artifacts/infernus/if01_research_evidence_ledger.jsonl"],
+    "threat_model": [
+      "artifacts/infernus/if02_threat_ontology_v4.json",
+      "artifacts/infernus/if02_coverage_matrix_v4.csv"
+    ],
+    "contracts": [
+      "artifacts/infernus/if03_oracle_metrics_contract_pack.json",
+      "artifacts/infernus/if04_bot_contract_pack_v4.json",
+      "artifacts/infernus/if04_permission_manifest_v4.json"
+    ]
+  },
+  "next_phase_after_inf_full_03": {
+    "canonical_next_phase": null,
+    "reason": "No successor row is opened after INF-FULL-03 in ROADMAP_CANONICAL.md.",
+    "operator_reauthorization_required_for_any_execution_phase": true
+  }
+}

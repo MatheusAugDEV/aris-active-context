@@ -1,0 +1,41 @@
+{
+  "artifact_id": "if00_transition_candidate_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "phase_name": "ARIS Infernus FULL Chain Registration & Preparation Opening",
+  "artifact_role": "minimum_deliverable_transition_candidate",
+  "source_document": "docs/infernus_full/infernus_full_canonroadmap.md",
+  "operator_authorization_source": "chat_operator_said_ok_autorizo_td_infernus_full_2026_06_06",
+  "current_phase_id": "INF-FULL-02",
+  "current_phase_status": "inf_full_02_baseline_freeze_planning_pass",
+  "decision": "pass",
+  "candidate_transition": {
+    "from_phase_id": "INF-FULL-02",
+    "from_decision": "pass",
+    "to_phase_id": "INF-FULL-03",
+    "to_phase_class": "infernus_full",
+    "advance_mode": "operator"
+  },
+  "minimum_deliverables": [
+    "docs/infernus_full/infernus_full_canonroadmap.md",
+    "artifacts/infernus/if00_transition_candidate.json",
+    "artifacts/infernus/if00_lab_hermeticity_baseline.json",
+    "artifacts/infernus/if01_research_evidence_ledger.jsonl",
+    "artifacts/infernus/if02_threat_ontology_v4.json",
+    "artifacts/infernus/if02_coverage_matrix_v4.csv",
+    "artifacts/infernus/if03_oracle_metrics_contract_pack.json",
+    "artifacts/infernus/if04_bot_contract_pack_v4.json",
+    "artifacts/infernus/if04_permission_manifest_v4.json"
+  ],
+  "execution_authorized": false,
+  "bot_execution_authorized": false,
+  "runtime_authorized": false,
+  "bedrock_authorized": false,
+  "product_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "external_network_authorized": false,
+  "notes": [
+    "This artifact registers the operator-authorized canonical transition candidate from INF-FULL-02 to INF-FULL-03.",
+    "It does not authorize bot execution, runtime start, product, pilot, Bedrock, secrets, dependency installation, or real apply."
+  ]
+}

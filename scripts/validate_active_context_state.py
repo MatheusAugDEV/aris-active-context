@@ -34,14 +34,16 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
-EXPECTED_PHASE_ID = "INF-FULL-02"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus Full Scope Charter Gate"
-EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-01"
-EXPECTED_STATUS = "inf_full_02_baseline_freeze_planning_pass"
+EXPECTED_PHASE = "ARIS Infernus FULL Chain Registration & Preparation Opening"
+EXPECTED_PHASE_ID = "INF-FULL-03"
+EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
+EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-02"
+EXPECTED_STATUS = "inf_full_03_chain_registration_opening_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "inf_full_baseline_freeze_planned_no_execution"
-EXPECTED_SCHEMA_VERSION = "2.4"
+EXPECTED_CURRENT_STATUS = "inf_full_chain_registered_preparation_open_no_execution"
+EXPECTED_SCHEMA_VERSION = "2.5"
+INF_FULL_02_PHASE = "ARIS Infernus FULL Baseline Freeze Planning"
+INF_FULL_02_STATUS = "inf_full_02_baseline_freeze_planning_pass"
 ACB_CAP_05_RESYNC_PREVIOUS_PROJECT_SHA = "973d49a24d58d4166acb95b40611be409c5d44df"
 ACB_CAP_05_RESYNC_NEW_PROJECT_SHA = "fa8546f35ae826f8cc254d51b77ba1ea704d0a27"
 ACB_CAP_05_PROJECT_DECISION_SHA = "51f1416f83e8ed488031210de688ffb5856ea004"
@@ -55,6 +57,20 @@ INF_FULL_02_INVENTORY_PATH = _resolve_project_relative("artifacts", "infernus", 
 INF_FULL_02_HASH_MANIFEST_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json")
 INF_FULL_02_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_02_baseline_freeze_summary_2026_06_06.json")
 INF_FULL_02_PLANNING_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_02_baseline_freeze_planning_2026_06_06.md")
+INFERNUS_FULL_CANONROADMAP_PATH = _resolve_project_relative("docs", "infernus_full", "infernus_full_canonroadmap.md")
+INFERNUS_FULL_SUPERSESSION_PATH = _resolve_project_relative("artifacts", "infernus", "infernus_full_canonroadmap_supersession_2026_06_06.json")
+INF_FULL_03_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_03_opening_decision_2026_06_06.json")
+INF_FULL_03_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "inf_full_03_opening_summary_2026_06_06.json")
+INF_FULL_03_OPENING_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "inf_full_03_opening_2026_06_06.md")
+INFERNUS_FULL_DOCS_README_PATH = _resolve_project_relative("docs", "infernus_full", "README.md")
+IF00_TRANSITION_CANDIDATE_PATH = _resolve_project_relative("artifacts", "infernus", "if00_transition_candidate.json")
+IF00_HERMETICITY_PATH = _resolve_project_relative("artifacts", "infernus", "if00_lab_hermeticity_baseline.json")
+IF01_LEDGER_PATH = _resolve_project_relative("artifacts", "infernus", "if01_research_evidence_ledger.jsonl")
+IF02_ONTOLOGY_PATH = _resolve_project_relative("artifacts", "infernus", "if02_threat_ontology_v4.json")
+IF02_COVERAGE_PATH = _resolve_project_relative("artifacts", "infernus", "if02_coverage_matrix_v4.csv")
+IF03_ORACLE_PACK_PATH = _resolve_project_relative("artifacts", "infernus", "if03_oracle_metrics_contract_pack.json")
+IF04_BOT_PACK_PATH = _resolve_project_relative("artifacts", "infernus", "if04_bot_contract_pack_v4.json")
+IF04_PERMISSION_PATH = _resolve_project_relative("artifacts", "infernus", "if04_permission_manifest_v4.json")
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
@@ -264,7 +280,27 @@ PHASE_DELIVERABLES = {
         and _load_json(INF_FULL_02_DECISION_PATH).get("baseline_freeze_planned") is True
         and _load_json(INF_FULL_02_DECISION_PATH).get("baseline_freeze_applied") is False
         and _load_json(INF_FULL_02_SUMMARY_PATH).get("question_6_next_phase_after_inf_full_02", {}).get("canonical_next_phase") is None
-    )
+    ),
+    "INF-FULL-03": lambda: (
+        all(
+            path.exists()
+            for path in [
+                INFERNUS_FULL_CANONROADMAP_PATH,
+                IF00_TRANSITION_CANDIDATE_PATH,
+                IF00_HERMETICITY_PATH,
+                IF01_LEDGER_PATH,
+                IF02_ONTOLOGY_PATH,
+                IF02_COVERAGE_PATH,
+                IF03_ORACLE_PACK_PATH,
+                IF04_BOT_PACK_PATH,
+                IF04_PERMISSION_PATH,
+            ]
+        )
+        and _load_json(IF00_TRANSITION_CANDIDATE_PATH).get("candidate_transition", {}).get("to_phase_id") == "INF-FULL-03"
+        and _load_json(IF00_HERMETICITY_PATH).get("hermeticity_contract", {}).get("bots_may_run") is False
+        and _load_json(IF03_ORACLE_PACK_PATH).get("planning_only") is True
+        and _load_json(IF04_PERMISSION_PATH).get("capability_guards", {}).get("bot_execution_allowed") is False
+    ),
 }
 
 REQUIRED_BOOT_FILES = [
@@ -2255,10 +2291,10 @@ def _check_inf_full_02_project_artifacts(state: dict[str, Any]) -> None:
     planning_text = INF_FULL_02_PLANNING_DOC_PATH.read_text(encoding="utf-8")
 
     _require(decision_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 decision phase_id mismatch")
-    _require(decision_data.get("phase_name") == EXPECTED_PHASE, "INF-FULL-02 decision phase_name mismatch")
+    _require(decision_data.get("phase_name") == INF_FULL_02_PHASE, "INF-FULL-02 decision phase_name mismatch")
     _require(decision_data.get("previous_phase_id") == "INF-FULL-01", "INF-FULL-02 previous_phase_id mismatch")
     _require(decision_data.get("decision") == "pass", "INF-FULL-02 decision must be pass")
-    _require(decision_data.get("status") == EXPECTED_STATUS, "INF-FULL-02 decision status mismatch")
+    _require(decision_data.get("status") == INF_FULL_02_STATUS, "INF-FULL-02 decision status mismatch")
     _require(decision_data.get("operator_authorization_source") == "chat_operator_said_vamos_continuar_2026_06_06", "INF-FULL-02 operator authorization source mismatch")
     _require(decision_data.get("baseline_freeze_planned") is True, "INF-FULL-02 baseline_freeze_planned must be true")
     _require(decision_data.get("baseline_freeze_applied") is False, "INF-FULL-02 baseline_freeze_applied must be false")
@@ -2274,7 +2310,7 @@ def _check_inf_full_02_project_artifacts(state: dict[str, Any]) -> None:
     _require(decision_data.get("next_phase_authorized_by_operator") is False, "INF-FULL-02 next_phase_authorized_by_operator must be false")
 
     _require(inventory_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 inventory phase_id mismatch")
-    _require(inventory_data.get("phase_name") == EXPECTED_PHASE, "INF-FULL-02 inventory phase_name mismatch")
+    _require(inventory_data.get("phase_name") == INF_FULL_02_PHASE, "INF-FULL-02 inventory phase_name mismatch")
     _require(inventory_data.get("classification_labels") == [
         "active_baseline_candidate",
         "historical_only",
@@ -2315,7 +2351,7 @@ def _check_inf_full_02_project_artifacts(state: dict[str, Any]) -> None:
 
     _require(summary_data.get("phase_id") == "INF-FULL-02", "INF-FULL-02 summary phase_id mismatch")
     _require(summary_data.get("decision") == "pass", "INF-FULL-02 summary decision mismatch")
-    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-02 summary status mismatch")
+    _require(summary_data.get("status") == INF_FULL_02_STATUS, "INF-FULL-02 summary status mismatch")
     _require(summary_data.get("question_6_next_phase_after_inf_full_02", {}).get("canonical_next_phase") is None, "INF-FULL-02 summary canonical_next_phase must be null")
 
     for phrase in [
@@ -2326,6 +2362,125 @@ def _check_inf_full_02_project_artifacts(state: dict[str, Any]) -> None:
         "Quarantine hash-only modules:",
     ]:
         _require(phrase in planning_text, f"INF-FULL-02 planning doc missing phrase: {phrase}")
+
+
+def _check_inf_full_03_project_artifacts(state: dict[str, Any]) -> None:
+    decision_data = _load_json(INF_FULL_03_DECISION_PATH)
+    summary_data = _load_json(INF_FULL_03_SUMMARY_PATH)
+    transition_data = _load_json(IF00_TRANSITION_CANDIDATE_PATH)
+    hermeticity_data = _load_json(IF00_HERMETICITY_PATH)
+    ontology_data = _load_json(IF02_ONTOLOGY_PATH)
+    oracle_data = _load_json(IF03_ORACLE_PACK_PATH)
+    bot_pack_data = _load_json(IF04_BOT_PACK_PATH)
+    permission_data = _load_json(IF04_PERMISSION_PATH)
+    docs_readme_text = INFERNUS_FULL_DOCS_README_PATH.read_text(encoding="utf-8")
+    opening_text = INF_FULL_03_OPENING_DOC_PATH.read_text(encoding="utf-8")
+    canonroadmap_text = INFERNUS_FULL_CANONROADMAP_PATH.read_text(encoding="utf-8")
+    ledger_lines = [line for line in IF01_LEDGER_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
+    coverage_lines = [line for line in IF02_COVERAGE_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+    _require(decision_data.get("phase_id") == "INF-FULL-03", "INF-FULL-03 decision phase_id mismatch")
+    _require(decision_data.get("phase_name") == EXPECTED_PHASE, "INF-FULL-03 decision phase_name mismatch")
+    _require(decision_data.get("previous_phase_id") == "INF-FULL-02", "INF-FULL-03 decision previous_phase_id mismatch")
+    _require(decision_data.get("decision") == "pass", "INF-FULL-03 decision must be pass")
+    _require(decision_data.get("status") == EXPECTED_STATUS, "INF-FULL-03 decision status mismatch")
+    _require(decision_data.get("operator_authorization_source") == "chat_operator_said_ok_autorizo_td_infernus_full_2026_06_06", "INF-FULL-03 operator authorization source mismatch")
+    _require(decision_data.get("full_infernus_chain_registered") is True, "INF-FULL-03 full_infernus_chain_registered must be true")
+    _require(decision_data.get("canon_roadmap_persisted") is True, "INF-FULL-03 canon_roadmap_persisted must be true")
+    _require(decision_data.get("baseline_freeze_dependency_satisfied") is True, "INF-FULL-03 baseline_freeze_dependency_satisfied must be true")
+    _require(decision_data.get("minimum_deliverable_met") is True, "INF-FULL-03 minimum_deliverable_met must be true")
+    _require(decision_data.get("bot_execution_allowed") is False, "INF-FULL-03 bot_execution_allowed must be false")
+    _require(decision_data.get("bot_execution_executed") is False, "INF-FULL-03 bot_execution_executed must be false")
+    _require(decision_data.get("runtime_execution_authorized") is False, "INF-FULL-03 runtime_execution_authorized must be false")
+    _require(decision_data.get("product_ready") is False, "INF-FULL-03 product_ready must be false")
+    _require(decision_data.get("bedrock_execution_authorized") is False, "INF-FULL-03 bedrock_execution_authorized must be false")
+    _require(decision_data.get("external_network_authorized") is False, "INF-FULL-03 external_network_authorized must be false")
+    _require(decision_data.get("secrets_access_authorized") is False, "INF-FULL-03 secrets_access_authorized must be false")
+    _require(decision_data.get("dependency_change_authorized") is False, "INF-FULL-03 dependency_change_authorized must be false")
+    _require(decision_data.get("next_phase") is None, "INF-FULL-03 next_phase must be null")
+    _require(decision_data.get("next_phase_authorized_by_operator") is False, "INF-FULL-03 next_phase_authorized_by_operator must be false")
+    _require(len(decision_data.get("registered_chain_stages", [])) == 11, "INF-FULL-03 registered_chain_stages count mismatch")
+
+    _require(summary_data.get("phase_id") == "INF-FULL-03", "INF-FULL-03 summary phase_id mismatch")
+    _require(summary_data.get("decision") == "pass", "INF-FULL-03 summary decision mismatch")
+    _require(summary_data.get("status") == EXPECTED_STATUS, "INF-FULL-03 summary status mismatch")
+    _require(summary_data.get("operator_authorization_interpretation", {}).get("full_chain_registered") is True, "INF-FULL-03 summary must mark full_chain_registered")
+    _require(summary_data.get("operator_authorization_interpretation", {}).get("inf_full_03_opened") is True, "INF-FULL-03 summary must mark inf_full_03_opened")
+    _require(summary_data.get("operator_authorization_interpretation", {}).get("bot_execution_authorized_now") is False, "INF-FULL-03 summary bot_execution_authorized_now must be false")
+    _require(summary_data.get("next_phase_after_inf_full_03", {}).get("canonical_next_phase") is None, "INF-FULL-03 summary canonical_next_phase must be null")
+
+    _require(transition_data.get("phase_id") == "INF-FULL-03", "if00 transition candidate phase_id mismatch")
+    _require(transition_data.get("candidate_transition", {}).get("from_phase_id") == "INF-FULL-02", "if00 transition candidate from_phase_id mismatch")
+    _require(transition_data.get("candidate_transition", {}).get("to_phase_id") == "INF-FULL-03", "if00 transition candidate to_phase_id mismatch")
+    _require(transition_data.get("candidate_transition", {}).get("advance_mode") == "operator", "if00 transition candidate advance_mode mismatch")
+    _require(transition_data.get("bot_execution_authorized") is False, "if00 transition candidate bot_execution_authorized must be false")
+    _require(transition_data.get("runtime_authorized") is False, "if00 transition candidate runtime_authorized must be false")
+
+    _require(hermeticity_data.get("phase_id") == "INF-FULL-03", "if00 hermeticity phase_id mismatch")
+    _require(hermeticity_data.get("decision") == "pass", "if00 hermeticity decision mismatch")
+    _require(hermeticity_data.get("hermeticity_contract", {}).get("lab_runtime_started") is False, "if00 hermeticity lab_runtime_started must be false")
+    _require(hermeticity_data.get("hermeticity_contract", {}).get("bots_may_run") is False, "if00 hermeticity bots_may_run must be false")
+    _require(hermeticity_data.get("baseline_freeze_dependency", {}).get("baseline_freeze_planned") is True, "if00 hermeticity baseline_freeze_planned must be true")
+    _require(hermeticity_data.get("baseline_freeze_dependency", {}).get("baseline_freeze_applied") is False, "if00 hermeticity baseline_freeze_applied must be false")
+
+    _require(len(ledger_lines) >= 5, "if01 evidence ledger must contain at least 5 claims")
+    _require(all(json.loads(line).get("accepted_for_inf_full_03") is True for line in ledger_lines), "if01 evidence ledger claims must all be accepted_for_inf_full_03")
+    _require(any(json.loads(line).get("topic") == "transition_candidate" for line in ledger_lines), "if01 evidence ledger must contain transition_candidate")
+
+    _require(ontology_data.get("phase_id") == "INF-FULL-03", "if02 ontology phase_id mismatch")
+    _require(ontology_data.get("ontology_version") == "v4", "if02 ontology version mismatch")
+    _require(ontology_data.get("planning_only") is True, "if02 ontology planning_only must be true")
+    _require(len(ontology_data.get("threat_families", [])) == 8, "if02 ontology threat family count mismatch")
+
+    _require(len(coverage_lines) >= 2, "if02 coverage matrix must contain header and rows")
+    _require(coverage_lines[0] == "threat_id,threat_name,seed_bots,seed_artifacts,evidence_required,inf_full_03_status", "if02 coverage matrix header mismatch")
+    _require(any("conditional_planning_only" in line for line in coverage_lines[1:]), "if02 coverage matrix must include conditional_planning_only row")
+
+    _require(oracle_data.get("phase_id") == "INF-FULL-03", "if03 oracle pack phase_id mismatch")
+    _require(oracle_data.get("planning_only") is True, "if03 oracle pack planning_only must be true")
+    _require(oracle_data.get("global_oracle_rules", {}).get("deterministic_oracles_required") is True, "if03 oracle pack deterministic_oracles_required must be true")
+    _require(len(oracle_data.get("metrics_contracts", [])) >= 7, "if03 oracle pack metrics_contracts count mismatch")
+
+    _require(bot_pack_data.get("phase_id") == "INF-FULL-03", "if04 bot pack phase_id mismatch")
+    _require(bot_pack_data.get("planning_only") is True, "if04 bot pack planning_only must be true")
+    _require(bot_pack_data.get("bot_count_canonical") == 15, "if04 bot pack bot_count_canonical mismatch")
+    _require(bot_pack_data.get("bot_count_conditional") == 1, "if04 bot pack bot_count_conditional mismatch")
+    _require(any(bot.get("name") == "Minos" and bot.get("contract_status") == "registered_as_auditor_only" for bot in bot_pack_data.get("bots", [])), "if04 bot pack must register Minos as auditor only")
+
+    _require(permission_data.get("phase_id") == "INF-FULL-03", "if04 permission manifest phase_id mismatch")
+    _require(permission_data.get("planning_only") is True, "if04 permission manifest planning_only must be true")
+    _require(permission_data.get("capability_guards", {}).get("bot_execution_allowed") is False, "if04 permission manifest bot_execution_allowed must be false")
+    _require(permission_data.get("capability_guards", {}).get("runtime_execution_allowed") is False, "if04 permission manifest runtime_execution_allowed must be false")
+    _require("execute bots" in permission_data.get("forbidden_capabilities", []), "if04 permission manifest must forbid bot execution")
+
+    for phrase in [
+        "# INF-FULL-03 Chain Registration & Preparation Opening",
+        "Decision: `pass`",
+        "The full planned chain is recorded as:",
+        "Only `INF-FULL-03` is opened canonically here.",
+        "No bot execution.",
+        "No runtime start.",
+        "No Bedrock execution.",
+    ]:
+        _require(phrase in opening_text, f"INF-FULL-03 opening doc missing phrase: {phrase}")
+
+    for phrase in [
+        "INF-FULL-02 | pass",
+        "→ INF-FULL-03 | infernus_full | operator",
+        "if00_transition_candidate.json",
+        "if04_permission_manifest_v4.json",
+        "## INF-FULL-03 não deve incluir",
+        "- execution;",
+        "- Bedrock;",
+        "- product;",
+        "- secrets;",
+        "- package install;",
+    ]:
+        _require(phrase in canonroadmap_text, f"infernus_full_canonroadmap.md missing phrase: {phrase}")
+
+    _require(INFERNUS_FULL_SUPERSESSION_PATH.exists(), "missing infernus_full canonroadmap supersession artifact")
+    _require("docs/infernus_full/infernus_full_canonroadmap.md" in docs_readme_text, "docs/infernus_full/README.md must point to infernus_full_canonroadmap.md")
+    _require("inf_full_03_opening_2026_06_06.md" in docs_readme_text, "docs/infernus_full/README.md must reference INF-FULL-03 opening doc")
 
 
 def _check_fixture_materialization(state: dict[str, Any]) -> None:
@@ -2617,6 +2772,8 @@ def main() -> None:
     _check_inf_full_01_project_artifacts(state)
     # INF-FULL-02 baseline freeze planning checks
     _check_inf_full_02_project_artifacts(state)
+    # INF-FULL-03 chain registration opening checks
+    _check_inf_full_03_project_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -2679,16 +2836,16 @@ def main() -> None:
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
         "Next phase: `null`",
-        "INF-FULL-02 completed a planning-only baseline freeze packet.",
+        "INF-FULL-03 completed a planning-only chain registration and preparation opening packet.",
         "Execution authorization: `false`",
-        "No canonical successor is currently defined after `INF-FULL-02` in `ROADMAP_CANONICAL.md`.",
+        "No canonical successor is currently defined after `INF-FULL-03` in `ROADMAP_CANONICAL.md`.",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
         EXPECTED_STATUS,
         "Deferred phase: `null`",
         "next_phase_authorized_by_operator=false",
-        "INF-FULL-02 is planning-only and does not apply a baseline freeze.",
+        "INF-FULL-03 is planning-only and registers the full Infernus chain plus the if00-if04 contract pack.",
         "No next phase is authorized.",
         "governance_gate_streak=0",
         "current_phase_bots_executed=false.",
@@ -2697,13 +2854,13 @@ def main() -> None:
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json",
-        "../artifacts/infernus/inf_full_02_baseline_freeze_planning_decision_2026_06_06.json",
-        "../artifacts/infernus/inf_full_02_baseline_freeze_inventory_2026_06_06.json",
-        "../artifacts/infernus/inf_full_02_baseline_freeze_hash_manifest_2026_06_06.json",
+        "../artifacts/infernus/inf_full_03_opening_decision_2026_06_06.json",
+        "../artifacts/infernus/if00_transition_candidate.json",
+        "../artifacts/infernus/if04_permission_manifest_v4.json",
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "INF-FULL-02 | ARIS Infernus FULL Baseline Freeze Planning | pass",
+        "INF-FULL-03 | ARIS Infernus FULL Chain Registration & Preparation Opening | pass",
         "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
         "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
     )
@@ -2721,8 +2878,8 @@ def main() -> None:
         ROOT / "ROADMAP_CANONICAL.md",
         EXPECTED_PHASE,
         "Active next phase: `null`",
-        "INF-FULL-02 completed as a planning-only baseline freeze package.",
-        "No canonical successor is currently defined after `INF-FULL-02` in the Transition Table.",
+        "INF-FULL-03 completed as a planning-only chain registration and preparation opening package.",
+        "No canonical successor is currently defined after `INF-FULL-03` in the Transition Table.",
     )
     _mirror_contains(
         ROOT / "MANDATORY_READ_FIRST_RULES.md",
@@ -2782,6 +2939,7 @@ def main() -> None:
         "acb_cap_01_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_01" / "decision.json").exists(),
         "acb_cap_05_artifacts_exist": (PROJECT_ROOT / "artifacts" / "acb_cap_05" / "advanced_supply_chain_decision.json").exists(),
         "inf_full_01_scope_artifacts_exist": INF_FULL_01_SCOPE_DECISION_PATH.exists(),
+        "inf_full_03_artifacts_exist": INF_FULL_03_DECISION_PATH.exists(),
         "auto_advance_enabled": state["auto_advance"]["enabled"],
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,

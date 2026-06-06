@@ -1,0 +1,42 @@
+{
+  "artifact_id": "if00_lab_hermeticity_baseline_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "artifact_role": "minimum_deliverable_lab_hermeticity",
+  "decision": "pass",
+  "baseline_scope": "planning_only_infernus_full",
+  "operator_authorization_source": "chat_operator_said_ok_autorizo_td_infernus_full_2026_06_06",
+  "allowed_inputs": [
+    "existing scoped src/aris trees frozen by INF-FULL-02",
+    "existing 13 fixture scenarios under aris-active-context/fixtures/lab_simulation/aris_infernus_lab_full",
+    "existing planning artifacts under artifacts/infernus/",
+    "existing active-context governance files"
+  ],
+  "forbidden_actions": [
+    "bot execution",
+    "runtime start",
+    "real dry-run",
+    "real apply",
+    "product or pilot authorization",
+    "Bedrock execution",
+    "secrets access",
+    "package installation",
+    "external network execution outside github_active_context_governance_only"
+  ],
+  "hermeticity_contract": {
+    "lab_runtime_started": false,
+    "bots_may_run": false,
+    "network_scope": "github_active_context_governance_only",
+    "secrets_access_allowed": false,
+    "dependency_changes_allowed": false,
+    "filesystem_mutation_scope": [
+      "docs/infernus_full/",
+      "artifacts/infernus/",
+      "aris-active-context/"
+    ]
+  },
+  "baseline_freeze_dependency": {
+    "baseline_freeze_planned": true,
+    "baseline_freeze_applied": false,
+    "historical_execution_artifacts_remain_reference_only": true
+  }
+}

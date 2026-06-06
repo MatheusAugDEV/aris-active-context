@@ -1,7 +1,7 @@
-## INF-FULL-02 — ARIS Infernus FULL Baseline Freeze Planning Lock
+## INF-FULL-03 — ARIS Infernus FULL Chain Registration & Preparation Opening Lock
 
-- Latest completed phase: `ARIS Infernus FULL Baseline Freeze Planning`
-- Status: `inf_full_02_baseline_freeze_planning_pass`
+- Latest completed phase: `ARIS Infernus FULL Chain Registration & Preparation Opening`
+- Status: `inf_full_03_chain_registration_opening_pass`
 - Decision: `pass`
 - Deferred phase: `null`
 - next_phase_authorized_by_operator=false
@@ -11,12 +11,12 @@
 - gate_cycles_used=0
 - auto_advance.enabled=true (governance/observability/transition_engine only, condition=ci_green_and_validator_pass)
 - governance_gate_streak=0
-- INF-FULL-02 is planning-only and does not apply a baseline freeze.
+- INF-FULL-03 is planning-only and registers the full Infernus chain plus the if00-if04 contract pack.
 - baseline_freeze_planned=true.
 - baseline_freeze_applied=false.
 - No next phase is authorized.
-- No canonical successor is defined after INF-FULL-02 in the Transition Table.
-- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, or external network execution is authorized.
+- No canonical successor is defined after INF-FULL-03 in the Transition Table.
+- No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, dependency mutation, or external network execution is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - bot_execution_executed=true (1 deterministic nemesis log on disk, historical only).
 - current_phase_bots_executed=false.

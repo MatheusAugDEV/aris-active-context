@@ -1,0 +1,63 @@
+{
+  "artifact_id": "if03_oracle_metrics_contract_pack_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "artifact_role": "minimum_deliverable_oracle_metrics_contract",
+  "decision": "pass",
+  "planning_only": true,
+  "source_artifacts": [
+    "artifacts/infernus/infernus_full_bot_matrix_v1.json",
+    "artifacts/infernus/infernus_full_wave_plan_v1.json",
+    "artifacts/infernus/if02_coverage_matrix_v4.csv"
+  ],
+  "global_oracle_rules": {
+    "deterministic_oracles_required": true,
+    "minos_only_audits_never_attacks": true,
+    "historical_artifacts_cannot_count_as_current_execution": true,
+    "finding_invalid_stops_next_wave": true
+  },
+  "metrics_contracts": [
+    {
+      "metric_id": "uar_critical",
+      "target": "0%",
+      "applies_to": ["TH-01", "TH-02"],
+      "source_wave_ids": ["W0", "W2", "W5"]
+    },
+    {
+      "metric_id": "par",
+      "target": "100%",
+      "applies_to": ["TH-02"],
+      "source_wave_ids": ["W2"]
+    },
+    {
+      "metric_id": "rrs",
+      "target": "100%",
+      "applies_to": ["TH-03"],
+      "source_wave_ids": ["W1"]
+    },
+    {
+      "metric_id": "rollback_verification",
+      "target": "100%",
+      "applies_to": ["TH-04"],
+      "source_wave_ids": ["W4"]
+    },
+    {
+      "metric_id": "sandbox_escape",
+      "target": "0%",
+      "applies_to": ["TH-05"],
+      "source_wave_ids": ["W3"]
+    },
+    {
+      "metric_id": "ped",
+      "target": "100%",
+      "applies_to": ["TH-06"],
+      "source_wave_ids": ["W0.5", "W3"]
+    },
+    {
+      "metric_id": "degraded_mode_safe",
+      "target": "true",
+      "applies_to": ["TH-07"],
+      "source_wave_ids": ["W4", "W5"]
+    }
+  ],
+  "execution_authorized": false
+}

@@ -1,0 +1,28 @@
+# Infernus FULL Docs Index
+
+## Active roadmap authority
+
+- `docs/infernus_full/infernus_full_canonroadmap.md`
+- `docs/infernus_full/inf_full_03_opening_2026_06_06.md`
+
+This document is the active technical direction for Infernus FULL roadmap planning. It does not authorize execution.
+
+## Active preparation packet
+
+- `artifacts/infernus/inf_full_03_opening_decision_2026_06_06.json`
+- `artifacts/infernus/inf_full_03_opening_summary_2026_06_06.json`
+- `artifacts/infernus/if00_transition_candidate.json`
+- `artifacts/infernus/if00_lab_hermeticity_baseline.json`
+- `artifacts/infernus/if01_research_evidence_ledger.jsonl`
+- `artifacts/infernus/if02_threat_ontology_v4.json`
+- `artifacts/infernus/if02_coverage_matrix_v4.csv`
+- `artifacts/infernus/if03_oracle_metrics_contract_pack.json`
+- `artifacts/infernus/if04_bot_contract_pack_v4.json`
+- `artifacts/infernus/if04_permission_manifest_v4.json`
+
+## Historical documents
+
+- `docs/infernus_full/infernus_full_roadmap_v1.md`
+- `docs/infernus_full/infernus_full_execution_spec.md`
+- `docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
+- `docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`

@@ -1,0 +1,29 @@
+{
+  "artifact_id": "if04_bot_contract_pack_v4_2026_06_06",
+  "phase_id": "INF-FULL-03",
+  "artifact_role": "minimum_deliverable_bot_contract_pack",
+  "decision": "pass",
+  "planning_only": true,
+  "source_artifact": "artifacts/infernus/infernus_full_bot_matrix_v1.json",
+  "bot_count_canonical": 15,
+  "bot_count_conditional": 1,
+  "bots": [
+    {"name": "Quimera", "contract_status": "registered", "waves": ["W0", "W5"], "oracle_type": "deterministic_prompt_contract"},
+    {"name": "Dubio", "contract_status": "registered", "waves": ["W0", "W2"], "oracle_type": "authorization_path_assertions"},
+    {"name": "Elos", "contract_status": "registered", "waves": ["W4", "W5"], "oracle_type": "event_sequence_oracle"},
+    {"name": "Taipan", "contract_status": "registered", "waves": ["W0", "W2"], "oracle_type": "policy_enforcement_oracle"},
+    {"name": "Labirinto", "contract_status": "registered", "waves": ["W1", "W5"], "oracle_type": "retrieval_consistency_oracle"},
+    {"name": "Vitium", "contract_status": "registered", "waves": ["W0.5", "W3"], "oracle_type": "tamper_detection_oracle"},
+    {"name": "Gula", "contract_status": "registered", "waves": ["W4", "W5"], "oracle_type": "quota_boundary_oracle"},
+    {"name": "Apep", "contract_status": "registered", "waves": ["W0", "W4"], "oracle_type": "ordering_invariant_oracle"},
+    {"name": "Patrono", "contract_status": "registered", "waves": ["W0", "W2"], "oracle_type": "human_gate_oracle"},
+    {"name": "Efeso", "contract_status": "registered", "waves": ["W1", "W5"], "oracle_type": "trajectory_regression_oracle"},
+    {"name": "Abzu", "contract_status": "registered", "waves": ["W3"], "oracle_type": "sandbox_boundary_oracle"},
+    {"name": "Loop", "contract_status": "registered", "waves": ["W0", "W4"], "oracle_type": "replay_rollback_oracle"},
+    {"name": "Minos", "contract_status": "registered_as_auditor_only", "waves": ["W0.5", "W5"], "oracle_type": "audit_verdict_oracle"},
+    {"name": "Quiron", "contract_status": "registered", "waves": ["W0.5", "W3"], "oracle_type": "provenance_integrity_oracle"},
+    {"name": "Gorgona", "contract_status": "registered", "waves": ["W2", "W3"], "oracle_type": "data_boundary_oracle"},
+    {"name": "Sirene", "contract_status": "conditional_registered_only", "waves": ["W3"], "oracle_type": "audio_boundary_oracle"}
+  ],
+  "execution_authorized": false
+}

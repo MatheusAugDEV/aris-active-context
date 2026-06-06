@@ -1,0 +1,9 @@
+threat_id,threat_name,seed_bots,seed_artifacts,evidence_required,inf_full_03_status
+TH-01,prompt_and_goal_control,"Quimera;Dubio","infernus_full_bot_matrix_v1.json;if01_research_evidence_ledger.jsonl","deterministic_prompt_contract;authorization_path_assertions",planned_only
+TH-02,authorization_and_hitl_bypass,"Patrono;Taipan;Dubio","infernus_full_bot_matrix_v1.json","human_gate_oracle;policy_enforcement_oracle",planned_only
+TH-03,context_memory_and_retrieval_poisoning,"Labirinto;Efeso","infernus_full_bot_matrix_v1.json","retrieval_consistency_oracle;trajectory_regression_oracle",planned_only
+TH-04,workflow_replay_and_concurrency_integrity,"Elos;Loop;Apep","infernus_full_bot_matrix_v1.json;infernus_full_wave_plan_v1.json","event_sequence_oracle;replay_rollback_oracle;ordering_invariant_oracle",planned_only
+TH-05,sandbox_data_and_secret_boundaries,"Abzu;Gorgona","infernus_full_bot_matrix_v1.json","sandbox_boundary_oracle;data_boundary_oracle",planned_only
+TH-06,provenance_and_audit_integrity,"Vitium;Minos;Quiron","infernus_full_bot_matrix_v1.json;infernus_full_source_validation_matrix_v1.json","tamper_detection_oracle;audit_verdict_oracle;provenance_integrity_oracle",planned_only
+TH-07,resource_and_resilience_abuse,"Gula;Vitium","infernus_full_bot_matrix_v1.json","quota_boundary_oracle;degraded_mode_safety_traces",planned_only
+TH-08,conditional_voice_surface,"Sirene","infernus_full_bot_matrix_v1.json","audio_boundary_oracle",conditional_planning_only

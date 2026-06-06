@@ -782,15 +782,16 @@
       ],
       "type": "object"
     },
-    "schema_version": {
-      "enum": [
-        "2.1",
-        "2.2",
-        "2.3",
-        "2.4"
-      ],
-      "type": "string"
-    },
+        "schema_version": {
+            "enum": [
+                "2.1",
+                "2.2",
+                "2.3",
+                "2.4",
+                "2.5"
+            ],
+            "type": "string"
+        },
     "previous_phase_id": {
       "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
       "type": "string"
@@ -987,6 +988,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v2.4",
-  "type": "object"
+    "title": "ARIS Active Context Canonical Live State Schema v2.5",
+    "type": "object"
 }
