@@ -31,11 +31,11 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_phase_mutation_family_count"], 10)
         self.assertEqual(state["current_phase_oracle_count"], 9)
 
-    def test_next_phase_is_prompt_only_without_execution_authorization(self):
+    def test_next_phase_is_null_terminal_state_without_execution_authorization(self):
         state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["next_phase"], "INF-FULL-05")
-        self.assertEqual(state["active_next_phase"], "INF-FULL-05")
-        self.assertEqual(state["active_next_phase_class"], "review_gate_only")
+        self.assertIsNone(state["next_phase"])
+        self.assertIsNone(state["active_next_phase"])
+        self.assertIsNone(state["active_next_phase_class"])
         self.assertFalse(state["next_phase_authorized_by_operator"])
         self.assertFalse(state["authorization"]["real_dry_run_execution_authorized"])
         self.assertFalse(state["authorization"]["real_apply_authorized"])

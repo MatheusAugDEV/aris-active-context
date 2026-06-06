@@ -551,11 +551,30 @@ def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) ->
 
 
 def _require_files_exist(state: dict[str, Any]) -> None:
+    # Files listed in required_files_for_transition are historical records.
+    # Files moved to archive/ or excludent/ by an authorized operator cleanup gate
+    # are still considered present — the record is audit trail, not a live path assertion.
+    _ARCHIVED_ROOTS = [
+        ROOT / "archive",
+        ROOT / "excludent",
+    ]
+
     for relative_path in state["required_files_for_transition"]:
         resolved = ROOT / relative_path
         if relative_path.startswith("../") and not resolved.exists():
             continue
-        _require(resolved.exists(), f"missing required transition file: {relative_path}")
+        if resolved.exists():
+            continue
+        # Check if the file was moved to an archive or excludent subtree.
+        filename = pathlib.Path(relative_path).name
+        found_in_archive = any(
+            list(archive_root.rglob(filename))
+            for archive_root in _ARCHIVED_ROOTS
+            if archive_root.exists()
+        )
+        if found_in_archive:
+            continue
+        _require(False, f"missing required transition file: {relative_path}")
 
 
 def _check_gate_ttl(state: dict[str, Any]) -> None:

@@ -1,30 +1,9 @@
 # LAB_STATUS
 
-- classification: `historical_only`
-- active authority: `false`
-- not active roadmap authority: `true`
-- canonical live state: `ACTIVE_CONTEXT_STATE.json`
-- canonical roadmap: `ROADMAP_CANONICAL.md`
-
-## Current Canonical Route
-
-- Latest completed phase: `Active Context Macro Roadmap Canonicalization Controlled Apply`
-- Active next phase: `ARIS Infernus Lab FULL Macroblock Entry Gate`
-- Active next phase class: `planning_gate`
-- Execution authorization: `false`
-- Bedrock executable now: `false`
-- Product promotion allowed: `false`
-
-## Canonical Macrochain
-
-```text
-Infernus revela.
-Purgatorium corrige.
-Infernus revalida.
-Crisol refina.
-Bedrock decide.
-```
-
-## Historical Boundary
-
-Older Lab, R0/F120, F21/F33/C6/C14, Lab Simulation, and Contract Schema status blocks were intentionally collapsed into historical-only status. They remain audit history in git, but this file must not drive active route decisions.
+- Current Lab phase: F33.Y-AUTH-SUBMIT-HOLD
+- Lab status: f33y_auth_submit_hold_real_human_authorization_candidate_ready_for_review; source_phase_checked=False; source_recovery_package_verified=False; authorization_path_checked=True; authorization_state=valid_human_submission_candidate; final_authorization_statement_found=True; operator_submission_found=True; operator_submission_validated=True; ready_for_review=True; ready_for_real_execution=False
+- Bedrock Gate status: hold gate materialized for real human submission only
+- Product promotion: not allowed
+- Next principal phase: `F33.Y-AUTH-R — Schema Materialization Pre-Apply Human Authorization Review Gate`
+- F33 resume point: preserved
+- F44 interpretation: hardening/maturity of existing Lab
