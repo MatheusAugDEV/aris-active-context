@@ -6,6 +6,16 @@ If this file conflicts with `ACTIVE_CONTEXT_STATE.json`, `ACTIVE_CONTEXT_SCHEMA.
 Table, or any explicit lock/manual authorization requirement, the higher canonical
 authority wins and this file must not be used to justify action.
 
+## SCOPE DISCIPLINE — Regras para Codex e ChatGPT
+
+- O Codex não deve sair do escopo explícito do prompt. Se o prompt diz X, faça X e nada mais.
+- Não solicite autorização para coisas que não estão no escopo do prompt atual.
+- Não confirme locks que já estão confirmados na fase atual. INF-FULL-07 tem todos os locks de execução como `false` — isso não precisa ser reconfirmado a cada ciclo.
+- Não peça autorização para produto, piloto, Bedrock, runtime, bots ou waves. Esses locks são permanentes até instrução explícita do operador que muda o estado.
+- Não referencie F21, F32, F33 em nenhum contexto de ação futura. São ruído histórico.
+- O `next_phase=null` significa aguardar. Não avance autonomamente.
+- CI em progress só bloqueia se o CI pertence à fase ATUAL. CI de fases anteriores não bloqueia o loop.
+
 ## Prompt emission preference
 
 When the operator sends a Codex result, that result is a continuity signal for the

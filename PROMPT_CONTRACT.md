@@ -272,3 +272,13 @@ Compact prompts must preserve:
 
 Use this file as the stable meta-contract.
 Use docs/runbooks/codex_compact_prompt_template.md as the prompt skeleton for new phases when available.
+
+## Regras de Scope para Prompts Codex
+
+- O prompt define o escopo. Codex executa o escopo. Nada além.
+- Prompts não devem pedir confirmação de locks globais já estabelecidos no active-context.
+- Prompts devem ser explícitos sobre o que é PERMITIDO, não apenas sobre o que é proibido.
+- Locks de execução (IF-08, waves, bots, runtime, produto, piloto, Bedrock, secrets) são permanentes até instrução explícita do operador que atualiza `ACTIVE_CONTEXT_STATE.json`.
+- Um prompt de CI repair é diferente de um prompt de fase. CI repair não avança fase.
+- Se o CI falhou por path antigo movido para excludent, corrija o path no script. Não restaure o arquivo.
+- Resultados de CI de fases anteriores não são bloqueantes para o estado atual.
