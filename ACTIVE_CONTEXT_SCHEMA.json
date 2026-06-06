@@ -23,6 +23,7 @@
         "readiness_gate",
         "normalization_gate",
         "governance_repair_gate",
+        "infernus_full_execution_authorization",
         "history_only",
         null
       ],
@@ -444,6 +445,7 @@
             "readiness_gate",
             "normalization_gate",
             "governance_repair_gate",
+            "infernus_full_execution_authorization",
             "history_only",
             null
           ],
@@ -722,6 +724,7 @@
             "readiness_gate",
             "normalization_gate",
             "governance_repair_gate",
+            "infernus_full_execution_authorization",
             "history_only",
             null
           ],
@@ -817,7 +820,9 @@
                 "2.4",
                 "2.5",
                 "2.6",
-                "2.7"
+                "2.7",
+                "2.8",
+                "2.9"
             ],
             "type": "string"
         },
@@ -962,12 +967,18 @@
         "schema_2_6_change_summary": {
           "type": "string"
         },
-        "schema_2_7_change_summary": {
-          "type": "string"
-        },
-        "schema_version_meaning": {
-          "type": "string"
-        }
+                "schema_2_7_change_summary": {
+                    "type": "string"
+                },
+                "schema_2_8_change_summary": {
+                    "type": "string"
+                },
+                "schema_2_9_change_summary": {
+                    "type": "string"
+                },
+                "schema_version_meaning": {
+                    "type": "string"
+                }
       },
       "required": [
         "active_context_version_meaning",
@@ -1038,6 +1049,6 @@
     "required_update_policy",
     "drift_signals"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v2.7",
+    "title": "ARIS Active Context Canonical Live State Schema v2.9",
     "type": "object"
 }

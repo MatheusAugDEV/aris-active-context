@@ -3,20 +3,21 @@
 - Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
 - Status: `inf_full_05_pre_execution_review_gate_pass`
 - Decision: `pass`
-- Deferred phase: `null`
+- Deferred phase: `INF-FULL-06`
 - next_phase_authorized_by_operator=false
 - INF-FULL-05 is review-only and closes the pre-execution packet without authorizing execution.
-- No successor is active until a new Transition Table row is recorded.
+- `INF-FULL-06` is active only as an IF-08 authorization gate. No wave, bot, or runtime execution is authorized.
+- `IF-08 — Attack Waves Execution` is validated by the saved canonroadmap and materialized only after the explicit Transition Table row.
 - governance_gate_streak=0
 - current_phase_bots_executed=false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, dependency mutation, or real apply is authorized.
 
-## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate Review Lock
+## Historical Residual Route Noise — F21-A52 Review Lock
 
 - Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
 - status: `lean_minimal_acceptance_runner_plan_warn`
 - decision: `warn`
-- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- Historical residual next gate reference: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
 - minimal_acceptance_runner_plan_created: `True`
 - acceptance_runner_implementation_allowed_next: `True`
 - acceptance_runner_allowed_now: `False`
@@ -34,12 +35,12 @@
 - product_promotion_allowed: `False`
 - future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
 
-This review lock does not authorize acceptance runner implementation or product promotion.
+This review lock is historical_residual_route_noise and does not define the current active route.
 
 - Latest completed phase: `F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate`
 - status: `lean_minimal_acceptance_runner_plan_warn`
 - decision: `warn`
-- Next operational gate remains `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- Historical residual next gate reference: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
 - minimal_acceptance_runner_plan_created: `True`
 - acceptance_runner_implementation_allowed_next: `True`
 - acceptance_runner_allowed_now: `False`
@@ -57,7 +58,7 @@ This review lock does not authorize acceptance runner implementation or product 
 - product_promotion_allowed: `False`
 - future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
 
-This review lock does not authorize acceptance runner implementation or product promotion.
+This review lock is historical_residual_route_noise and does not define the current active route.
 
 # BEDROCK_GATE_REMAINING_SCOPE_INVENTORY
 - lock_id: `BEDROCK_GATE_REMAINING_SCOPE_INVENTORY`

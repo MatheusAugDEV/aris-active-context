@@ -1,0 +1,17 @@
+{
+  "phase_id": "INF-FULL-06",
+  "decision": "pass",
+  "status": "inf_full_06_if08_authorization_gate_pass",
+  "source_phase_id": "INF-FULL-05",
+  "mapped_infernus_block_id": "IF-08",
+  "mapped_infernus_block_name": "Attack Waves Execution",
+  "next_phase_after": "INF-FULL-06",
+  "advance_mode_after": "prompt_only",
+  "active_context_updated": true,
+  "markdown_mirrors_updated": true,
+  "transition_table_row_added": true,
+  "successor_validation_complete": true,
+  "execution_authorization": false,
+  "waves_execution_authorization": false,
+  "f21_route_classification": "historical_residual_route_noise"
+}

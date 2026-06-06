@@ -40,7 +40,8 @@
     "ARIS_PHASE_LEDGER.md",
     "README.md",
     "PROMPT_CONTRACT.md",
-    "LAB_OPERATING_CONTRACT.md"
+    "LAB_OPERATING_CONTRACT.md",
+    "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md"
   ],
   "auto_advance": {
     "enabled": true,
@@ -58,9 +59,9 @@
     ],
     "condition": "ci_green_and_validator_pass"
   },
-  "active_next_phase": null,
-  "active_next_phase_class": null,
-  "next_phase": null,
+  "active_next_phase": "INF-FULL-06",
+  "active_next_phase_class": "infernus_full_execution_authorization",
+  "next_phase": "INF-FULL-06",
   "next_phase_authorized_by_operator": false,
   "anti_proliferation_rule_active": true,
   "ci_enforcement_active": true,
@@ -86,7 +87,8 @@
       "15. LAB_OPERATING_CONTRACT.md",
       "16. North Pole when roadmap direction is discussed: NORTH_POLE.md",
       "17. Bedrock boundary when product/promotion/gate decision is discussed: BEDROCK_GATE.md",
-      "18. Historical files only when explicitly needed; old roadmap files are not active authority"
+      "18. Historical files only when explicitly needed; old roadmap files are not active authority",
+      "19. Saved Infernus successor source when execution-route derivation is discussed: project_mirror/docs/infernus_full/infernus_full_canonroadmap.md"
     ],
     "json_beats_markdown": true,
     "markdown_conflict_policy": "fail_closed",
@@ -465,8 +467,8 @@
     ]
   },
   "current_live_route": {
-    "active_next_phase": null,
-    "active_next_phase_class": null,
+    "active_next_phase": "INF-FULL-06",
+    "active_next_phase_class": "infernus_full_execution_authorization",
     "current_status": "inf_full_05_pre_execution_review_closed_no_execution",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
@@ -522,15 +524,15 @@
     "proof_source": "local_disk_ci_green_confirmation_and_active_context_validator",
     "to_phase": "ARIS Infernus FULL Pre-Execution Review Gate",
     "transition_type": "infernus_full_pre_execution_review_gate",
-    "verified_via": "IF07 decision, no-execution attestation, scenario-count normalization evidence, validator evidence, and active-context validator were materialized without bot or runtime execution; no successor row exists after INF-FULL-05"
+    "verified_via": "IF07 decision, no-execution attestation, scenario-count normalization evidence, validator evidence, and active-context validator were materialized without bot or runtime execution; IF-08 successor authorization remains a separate non-executing route package."
   },
   "latest_completed_phase": "ARIS Infernus FULL Pre-Execution Review Gate",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-    "deferred_phase": null,
-    "deferred_phase_reason": "INF-FULL-05 closes the pre-execution review gate. No successor row exists for INF-FULL-05 in ROADMAP_CANONICAL.md, so next_phase remains null until explicit operator instruction and canonical transition materialize a new row.",
+    "deferred_phase": "INF-FULL-06",
+    "deferred_phase_reason": "INF-FULL-05 remains the latest completed gate. The saved infernus_full_canonroadmap validates IF-08 as the next technical block, and ROADMAP_CANONICAL.md now materializes INF-FULL-05 -> INF-FULL-06 as a prompt-only authorization gate. This does not authorize execution.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -548,19 +550,20 @@
       "Historical bot, Minos, and Purgatorium artifacts remain reference-only.",
       "The IF06 field ready_for_inf_full_05_dry_run_evidence_simulation is treated as historical naming drift and does not authorize dry-run execution.",
       "scenario_count=13 remains the historical fixture scenario count, while current_phase_planned_scenario_count=16 reflects the IF-05 planning packet.",
+      "The saved infernus_full_canonroadmap validates IF-08 Attack Waves Execution as the next technical block, but execution remains forbidden now.",
+      "F21-A53 references are historical_residual_route_noise and not the active route.",
       "No bots are executed in this phase.",
       "No runtime is started in this phase.",
       "No product, pilot, Bedrock, secret access, package installation, dependency mutation, or external network execution is authorized.",
-      "No successor row exists for INF-FULL-05 in ROADMAP_CANONICAL.md.",
-      "Nenhuma transição definida. Aguardando instrução do operador.",
+      "INF-FULL-06 is the next prompt-only authorization gate and does not execute waves.",
       "governance_gate_streak remains 0."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": null,
-    "phase_class": null,
+    "phase": "INF-FULL-06",
+    "phase_class": "infernus_full_execution_authorization",
     "planning_only": false,
     "review_only": false,
-    "status": "awaiting_operator_for_next_transition"
+    "status": "if08_authorization_gate_ready_prompt_only"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -712,10 +715,16 @@
     "../artifacts/infernus/inf_full_05_pre_execution_review_report_2026_06_06.md",
     "../docs/infernus_full/inf_full_05_pre_execution_review_2026_06_06.md",
     "../docs/infernus_full/README.md",
+    "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
     "artifacts/inf_full_route_sync_04_to_05/decision.json",
     "artifacts/inf_full_route_sync_04_to_05/summary.json",
     "artifacts/inf_full_route_sync_04_to_05/report.md",
-    "artifacts/inf_full_route_sync_04_to_05/workspace_hygiene_snapshot.txt"
+    "artifacts/inf_full_route_sync_04_to_05/workspace_hygiene_snapshot.txt",
+    "artifacts/inf_full_06_if08_authorization/decision.json",
+    "artifacts/inf_full_06_if08_authorization/successor_validation_matrix.json",
+    "artifacts/inf_full_06_if08_authorization/no_execution_attestation.json",
+    "artifacts/inf_full_06_if08_authorization/summary.json",
+    "artifacts/inf_full_06_if08_authorization/report.md"
   ],
   "required_update_policy": {
     "current_route_must_be_written_in_json_first": true,
@@ -733,7 +742,7 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.8",
+  "schema_version": "2.9",
   "status": "inf_full_05_pre_execution_review_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
@@ -749,7 +758,7 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.8",
+    "current_schema_version": "2.9",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
@@ -760,6 +769,7 @@
     "schema_2_6_change_summary": "INF-FULL-04 consumes the standing pre-execution operator authorization for the Infernus FULL gated sequence. The Transition Table now includes INF-FULL-03 -> INF-FULL-04 as prompt_only, the validator enforces the standing authorization policy plus IF-05 and IF-06 deliverables, and the live route advances to a planning-only scenario pack and harness readiness package while keeping all bot/runtime/product/Bedrock/secret/dependency execution flags false and next_phase null because no successor row exists after INF-FULL-04.",
     "schema_2_7_change_summary": "INF-FULL route sync repair materializes the saved canonroadmap successor after INF-FULL-04 without opening execution. The Transition Table now includes INF-FULL-04 -> INF-FULL-05 as prompt_only and maps the saved IF-07 Pre-Execution Review Gate into the canonical INF-FULL sequence. The validator now allows a non-null prompt-only next_phase for infernus_full when a Transition Table row exists and standing pre-execution authorization remains execution-false. Scenario ambiguity is normalized by preserving scenario_count=13 as historical fixture count while adding explicit current-phase planned counts for scenarios, bots, mutation families, and oracle families.",
     "schema_2_8_change_summary": "INF-FULL-05 closes the pre-execution review gate after IF07 deliverables are materialized. The validator now enforces the IF07 decision, no-execution attestation, scenario-count normalization evidence, and validator evidence artifacts, and it allows infernus_full to end in a terminal null-next-phase state when no explicit INF-FULL-05 successor row exists in the Transition Table.",
+    "schema_2_9_change_summary": "INF-FULL-05 now materializes the explicit IF-08 successor route without authorizing execution. The Transition Table includes INF-FULL-05 -> INF-FULL-06 as prompt_only, active_next_phase and next_phase advance to INF-FULL-06 with active_next_phase_class=infernus_full_execution_authorization, and the validator enforces an IF-08 authorization package consisting of decision, successor validation matrix, no-execution attestation, summary, and report artifacts while preserving all execution, bot, runtime, Bedrock, product, secrets, dependency, dry-run, and apply locks as false.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

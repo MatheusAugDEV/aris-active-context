@@ -1,0 +1,39 @@
+{
+  "phase_id": "INF-FULL-06",
+  "source_phase_id": "INF-FULL-05",
+  "source_status": "inf_full_05_pre_execution_review_gate_pass",
+  "source_next_phase_before": null,
+  "canonroadmap_source_path": "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+  "canonical_successor_validation": {
+    "if07_block_closed": true,
+    "next_block_id": "IF-08",
+    "next_block_name": "Attack Waves Execution",
+    "zone": "execution_future",
+    "type": "EXECUTION",
+    "operator_authorization_required": true,
+    "transition_table_entry_required": true,
+    "runtime_allowed": "only_if_authorized",
+    "bot_execution_allowed": "only_if_authorized",
+    "bedrock_allowed": false,
+    "product_allowed": false
+  },
+  "transition_table_materialization": {
+    "current_phase_id": "INF-FULL-05",
+    "decision": "pass",
+    "next_phase_id": "INF-FULL-06",
+    "next_phase_class": "infernus_full_execution_authorization",
+    "advance_mode": "prompt_only",
+    "minimum_deliverable": "IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence"
+  },
+  "route_rejection": {
+    "f21_route_used": false,
+    "f21_route_classification": "historical_residual_route_noise",
+    "non_transition_table_inference_used": false
+  },
+  "authorization_now": {
+    "if08_execution_authorized": false,
+    "waves_execution_authorized": false,
+    "bot_execution_authorized": false,
+    "runtime_execution_authorized": false
+  }
+}

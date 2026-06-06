@@ -6,7 +6,8 @@
 - phase_id: `INF-FULL-05`
 - previous_phase_id: `INF-FULL-04`
 - current_status: `inf_full_05_pre_execution_review_closed_no_execution`
-- Next phase: `null`
+- Next phase: `INF-FULL-06`
+- Active next phase class: `infernus_full_execution_authorization`
 - next_phase_authorized_by_operator: `false`
 - baseline_freeze_planned: `true`
 - baseline_freeze_applied: `false`
@@ -29,10 +30,12 @@
 - current_phase_planned_bot_count: `16`
 - current_phase_mutation_family_count: `10`
 - current_phase_oracle_count: `9`
-- No successor row exists for `INF-FULL-05` in `ROADMAP_CANONICAL.md`.
+- `IF-08 — Attack Waves Execution` is validated as the next technical block in `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`.
+- `ROADMAP_CANONICAL.md` now materializes `INF-FULL-05 -> INF-FULL-06` as a prompt-only authorization route.
+- Execution remains unauthorized in this state.
 - External deliverables registered from `../artifacts/infernus/` and `../docs/infernus_full/`.
 
-## F21-A52 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Planning Gate
+## Historical Residual Route Noise — F21-A52
 - Latest completed phase: `F33.Y-AUTH-SUBMIT-HOLD — Await Real Human Authorization Submission`
 - status: `lean_minimal_acceptance_runner_plan_warn`
 - decision: `warn`
@@ -55,8 +58,8 @@
 - product_promotion_allowed: `False`
 - future_acceptance_runner_path: `scripts/run_lean_phase_acceptance_v0_1.py`
 - future_acceptance_runner_name: `Lean Phase Acceptance Runner v0.1`
-- next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
-- next_recommended_phase: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate`
+- next_real_action: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate` (`historical_residual_route_noise`, not current active route)
+- next_recommended_phase: `F21-A53 — ARIS Lean Development Protocol v0.1 Minimal Acceptance Runner Implementation Gate` (`historical_residual_route_noise`, not current active route)
 - lean_output_v0_1_recorded: `True`
 - machine_result_hash: `sha256:799203d82b869403418080d3dfb711e6e886097616ac48cdb16d1e3507acf80a`
 - summary_hash: `sha256:7709c0e1134da14babfc49ab809ce0a8104ae4012187d53631c3a89b2ad48fa2`
@@ -64,9 +67,7 @@
 - next_prompt_seed_hash: `sha256:dfeb17499c0ad26397e1d796b1b7ff63ffcebecf2f7d2ad0e51257587c5ad27a`
 - plan_hash: `sha256:8befe1234757c9d36059afed8f1d806abd5cf6306b2ea88d036c699a459f0ce7`
 
-This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
-
-This phase plans the Lean v0.1 minimal acceptance runner and does not implement it yet.
+This block is historical residual route noise and does not define the current active route.
 
 # CURRENT_STATE
 

@@ -1,0 +1,15 @@
+{
+  "phase_id": "INF-FULL-06",
+  "if08_execution_attempted": false,
+  "waves_execution_attempted": false,
+  "bot_execution_attempted": false,
+  "runtime_execution_attempted": false,
+  "real_dry_run_attempted": false,
+  "real_apply_attempted": false,
+  "bedrock_attempted": false,
+  "product_promotion_attempted": false,
+  "pilot_attempted": false,
+  "secrets_access_attempted": false,
+  "dependency_installation_attempted": false,
+  "network_use_outside_github_governance_attempted": false
+}

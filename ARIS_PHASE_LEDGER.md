@@ -2,11 +2,14 @@
 - status: `inf_full_05_pre_execution_review_gate_pass`
 - previous_phase_id: `INF-FULL-04`
 - current_status: `inf_full_05_pre_execution_review_closed_no_execution`
-- next_phase: `null`
-- no_successor_defined_until_transition_table_changes: `true`
+- next_phase: `INF-FULL-06`
+- active_next_phase_class: `infernus_full_execution_authorization`
+- if08_successor_validated: `true`
+- no_execution_authorization_preserved: `true`
 - no_execution_attestation_created: `true`
 - scenario_count_normalization_evidence_created: `true`
 - validator_evidence_created: `true`
+- if08_authorization_package_created: `true`
 
 ## INF-FULL-04 | ARIS Infernus FULL Scenario Pack & Harness Readiness Gate | pass
 - status: `inf_full_04_scenario_pack_harness_readiness_pass`

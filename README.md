@@ -1,9 +1,11 @@
 # INF-FULL-05 — ARIS Infernus FULL Pre-Execution Review Gate
-- Active next phase: `null`
-- Active next phase class: `null`
+- Active next phase: `INF-FULL-06`
+- Active next phase class: `infernus_full_execution_authorization`
 - Latest completed phase: `ARIS Infernus FULL Pre-Execution Review Gate`
 - baseline_freeze_planned: `true`
 - baseline_freeze_applied: `false`
+- `IF-08 — Attack Waves Execution` is validated as the next technical block from the saved infernus_full_canonroadmap.
+- `INF-FULL-06` is an authorization gate only and does not execute waves.
 - OPERATOR_PREFERENCES.md remains advisory-only beneath JSON/schema/validator/Transition Table authority.
 - artifacts/decisions/acb_cap_05_project_evidence_2026_06_05.json remains part of the audited dependency chain.
 - validate_active_context.yml remains the canonical CI validation workflow.
@@ -154,13 +156,18 @@
 - `artifacts/inf_full_route_sync_04_to_05/decision.json`
 - `artifacts/inf_full_route_sync_04_to_05/summary.json`
 - `artifacts/inf_full_route_sync_04_to_05/report.md`
+- `artifacts/inf_full_06_if08_authorization/decision.json`
+- `artifacts/inf_full_06_if08_authorization/successor_validation_matrix.json`
+- `artifacts/inf_full_06_if08_authorization/no_execution_attestation.json`
+- `artifacts/inf_full_06_if08_authorization/summary.json`
+- `artifacts/inf_full_06_if08_authorization/report.md`
 - `validate_active_context.yml`
 
 ## Non-Authorization
 
 - INF-FULL-04 is planning-only and opens only the scenario pack and harness readiness contract set.
 - Standing operator authorization applies only to pre-execution Infernus FULL gates with locks preserved.
-- INF-FULL-05 is closed as a pre-execution review gate and no successor is active until a new Transition Table row exists.
+- INF-FULL-05 is closed as a pre-execution review gate and `INF-FULL-06` is active only as a prompt-only authorization successor.
 - `scenario_count=13` remains historical fixture inventory and does not conflict with the IF-05 planning packet of 16 scenarios across 16 bots.
 - No bot execution, runtime start, product promotion, pilot authorization, Bedrock execution, or secret access is authorized.
 
