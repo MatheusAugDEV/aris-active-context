@@ -282,3 +282,4 @@ Use docs/runbooks/codex_compact_prompt_template.md as the prompt skeleton for ne
 - Um prompt de CI repair é diferente de um prompt de fase. CI repair não avança fase.
 - Se o CI falhou por path antigo movido para excludent, corrija o path no script. Não restaure o arquivo.
 - Resultados de CI de fases anteriores não são bloqueantes para o estado atual.
+- `CI POLLING` é obrigatório em todo prompt que inclua push para `origin/main`. A regra está em `OPERATOR_PREFERENCES.md` seção `SCOPE DISCIPLINE`. Todo prompt herda essa regra automaticamente e não precisa repeti-la individualmente. O Codex deve aplicá-la mesmo que o prompt individual não a mencione explicitamente.

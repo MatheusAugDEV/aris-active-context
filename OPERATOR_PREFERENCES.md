@@ -16,6 +16,19 @@ authority wins and this file must not be used to justify action.
 - O `next_phase=null` significa aguardar. Não avance autonomamente.
 - CI em progress só bloqueia se o CI pertence à fase ATUAL. CI de fases anteriores não bloqueia o loop.
 
+### CI POLLING — REGRA PERMANENTE
+
+Após qualquer push, não emita relatório final até o CI estar terminal. Execute:
+
+Passo 1 — aguarde 30 segundos após o push.
+Passo 2 — execute: `gh run list --limit 20`
+Passo 3 — se qualquer workflow estiver `queued`, `waiting`, `requested` ou `in_progress`: aguarde 60 segundos e repita o Passo 2. Sem limite de iterações.
+Passo 4 — somente quando todos os workflows estiverem em status terminal: classifique como `CI_GREEN_CONFIRMED` (todos `success`) ou `CI_FAILED` (qualquer `failure`).
+
+Nunca emita relatório com CI pendente. Nunca entregue resultado pela metade. O relatório só existe quando o CI é terminal.
+
+Se `CI_FAILED`: identifique o erro com `gh run view --log-failed`, repare, faça novo push, reinicie o polling do Passo 1.
+
 ## Prompt emission preference
 
 When the operator sends a Codex result, that result is a continuity signal for the

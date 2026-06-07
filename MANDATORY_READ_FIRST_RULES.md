@@ -156,6 +156,10 @@ It must be labeled `CI_PENDING`.
 Chat text, local validation, local tests, or partial green workflows do not override
 this rule.
 
+## REGRA: CI polling obrigatório após push
+
+Todo push para `origin/main` requer polling de CI até status terminal antes de qualquer relatório final. A regra completa está em `OPERATOR_PREFERENCES.md`. Esta regra é permanente e se aplica a todo prompt sem exceção.
+
 ## REGRA DE ENTREGÁVEL MÍNIMO
 
 Todo gate com decision=pass deve satisfazer o minimum_deliverable
