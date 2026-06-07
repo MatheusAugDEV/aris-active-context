@@ -17,6 +17,9 @@ Referências ativas desta fase:
 - `artifacts/inf_full_07_if08_authorization/summary.json`
 - `artifacts/inf_full_07_if08_authorization/report.md`
 - `artifacts/inf_full_07_if08_authorization/validator_evidence.json`
+- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_decision_2026_06_06.json`
+- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_summary_2026_06_06.json`
+- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_report_2026_06_06.md`
 - `INFERNUS_STANDING_AUTHORIZATION.md`
 - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 - `EXCLUDENT_POLICY.md`
@@ -87,6 +90,7 @@ Referências ativas desta fase:
 - F21, F32, F33 = ruído histórico. Não definem rota ativa. Não leia como autoridade.
 - `archive/` = trilha de auditoria. Nunca autoridade de roteamento.
 - `excludent/` = excluído do contexto. Não leia por padrão.
+- IF-08 synthetic isolated waves inherit standing authorization after preflight pass; hard-lock exceptions remain explicit.
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.

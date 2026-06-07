@@ -1,3 +1,18 @@
+## INF-FULL-07 | IF-08 Synthetic Wave Standing Authorization Policy Repair | pass
+- status: `if08_synthetic_wave_standing_authorization_policy_repair_pass`
+- decision: `pass`
+- source_current_phase_id: `INF-FULL-07`
+- current_status: `inf_full_07_if08_authorization_closed_no_execution`
+- next_phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
+- next_phase_authorized_by_operator: `true`
+- w0_explicitly_authorized: `true`
+- per_wave_synthetic_permission_prompt_removed: `true`
+- synthetic_if08_wave_standing_authorization_active: `true`
+- hard_locks_preserved: `true`
+- next_action_after_repair: `IF-08 W0 Controlled Plan-Only Execution`
+- requires_new_operator_phrase_after_repair: `false`
+
 ## INF-FULL-07 | IF-08 Attack Waves Execution Authorization Gate Materialization | pass
 - status: `inf_full_07_if08_authorization_gate_pass`
 - previous_phase_id: `INF-FULL-06`

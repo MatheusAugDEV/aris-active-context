@@ -24,9 +24,13 @@
 - transition_duplicate_resolved: `true`
 - all_execution_locks: `false`
 - Execution remains unauthorized in this state.
+- IF-08 synthetic isolated standing authorization: `active`
+- W0 explicit operator authorization recorded for the next plan-only synthetic isolated step: `true`
+- repeated per-wave ritual permission prompt: `removed`
 
 ## What This Means
 
 INF-FULL-07 is closed. IF-08 authorization gate was materialized WITHOUT execution.
 No bot, wave, runtime, apply, product, pilot, Bedrock, or secret is authorized.
 Proximo passo: IF-08 — Attack Waves Execution. Leia o canonroadmap e execute. Sem autorizacao adicional necessaria.
+W0 Controlled Plan-Only Execution is the next operational step after this policy repair, and it does not require a new operator phrase while remaining synthetic isolated lab only.

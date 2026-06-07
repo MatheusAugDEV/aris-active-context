@@ -16,6 +16,31 @@ authority wins and this file must not be used to justify action.
 - O `next_phase=null` significa aguardar. Não avance autonomamente.
 - CI em progress só bloqueia se o CI pertence à fase ATUAL. CI de fases anteriores não bloqueia o loop.
 
+## IF-08 Synthetic Wave Standing Authorization
+
+For IF-08, synthetic isolated lab waves defined by the approved Infernus canonroadmap do not require a new per-wave operator permission prompt after their preflight/readiness gates pass.
+
+The operator has explicitly authorized W0 and has instructed the system to stop requesting repeated permissions for synthetic IF-08 waves.
+
+The assistant and Codex must not ask for ritual authorization before each synthetic isolated IF-08 wave when:
+- the wave is listed in the approved canonroadmap;
+- the wave preflight/readiness gate passed;
+- all required contracts, oracles, controls, evidence outputs and stop conditions are present;
+- CI is terminal green;
+- no hard lock is violated;
+- scope remains synthetic isolated lab only.
+
+This standing authorization does not authorize:
+- production or staging real systems;
+- real_apply;
+- product/pilot promotion;
+- Bedrock final gate;
+- secrets access;
+- external network;
+- dependency/package-manager mutation;
+- irreversible real-world actions;
+- any wave or action outside the approved canonroadmap.
+
 ### CI POLLING — REGRA PERMANENTE
 
 Após qualquer push, não emita relatório final até o CI estar terminal. Execute:

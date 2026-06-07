@@ -1,0 +1,22 @@
+{
+  "artifact_id": "if08_synthetic_wave_standing_authorization_policy_repair_summary_2026_06_06",
+  "phase_id": "IF-08-SYNTHETIC-WAVE-STANDING-AUTHORIZATION-POLICY-REPAIR",
+  "decision": "pass",
+  "status": "if08_synthetic_wave_standing_authorization_policy_repair_pass",
+  "w0_explicitly_authorized": true,
+  "per_wave_synthetic_permission_prompt_removed": true,
+  "synthetic_if08_wave_standing_authorization_active": true,
+  "hard_locks_preserved": true,
+  "next_action_after_repair": "IF-08 W0 Controlled Plan-Only Execution",
+  "requires_new_operator_phrase_after_repair": false,
+  "hard_lock_exceptions": [
+    "production_or_staging_real_systems",
+    "real_apply",
+    "product_or_pilot",
+    "bedrock",
+    "secrets",
+    "external_network",
+    "dependency_or_package_manager_mutation",
+    "irreversible_action_outside_lab"
+  ]
+}

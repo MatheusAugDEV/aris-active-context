@@ -24,6 +24,18 @@
 - Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
 - Next phase (deferred, IF-08): canonroadmap standing authorization active; no per-phase operator gate required before execution command.
 
+### IF-08 synthetic isolated wave standing authorization
+
+- synthetic_isolated_if08_wave_standing_authorization=true
+- repeated_per_wave_operator_phrase_required=false
+- w0_explicit_operator_authorization_recorded=true
+- synthetic_wave_execution_scope=synthetic_isolated_lab_only
+- synthetic_wave_preconditions=preflight_pass_and_ci_green_and_contracts_present_and_no_hard_lock_violation
+- Hard locks remain separate from synthetic wave standing authorization.
+- `IF-08 execution = false` and `waves execution = false` still block unauthorized real execution.
+- No new ritual permission prompt is required for W0 or later synthetic isolated IF-08 waves once their preflight/readiness gates pass.
+- Hard-lock exceptions still require explicit operator command: production/staging real, real_apply, product/pilot, Bedrock, secrets, external network, dependency/package-manager mutation, or irreversible action outside the lab.
+
 ## INF-FULL-06 — ARIS Infernus FULL Excludent Quarantine Gate Lock
 
 - Latest completed phase: `ARIS Infernus FULL Excludent Quarantine Gate`

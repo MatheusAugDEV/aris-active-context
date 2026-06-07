@@ -19,6 +19,12 @@ Produto, piloto, Bedrock.
 
 Ver: INFERNUS_STANDING_AUTHORIZATION.md
 
+## IF-08 Synthetic Wave Standing Authorization
+
+IF-08 synthetic isolated waves do not require repeated operator permission after preflight pass; hard-lock exceptions remain.
+The operator explicitly authorized W0 and instructed the system to stop asking ritual per-wave permission for synthetic isolated IF-08 execution inside the lab.
+This rule does not weaken CI polling, JSON source-of-truth precedence, or hard locks for production/staging real, real_apply, product/pilot, Bedrock, secrets, external network, or dependency/package-manager mutation.
+
 This file is the compact mandatory rule layer for every ARIS assistant response, Codex prompt, phase review, phase status, roadmap decision, and active-context update.
 
 ARIS-ROADMAP-R0 governance foundation is materialized and does not change the read-first order or authority stack.

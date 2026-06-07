@@ -29,6 +29,7 @@
 INF-FULL-07 is closed. IF-08 authorization gate was materialized WITHOUT execution.
 No bot, wave, runtime, apply, product, pilot, Bedrock, or secret is authorized.
 The system advances through Infernus FULL by canonroadmap standing authorization.
+Synthetic isolated IF-08 waves do not require repeated per-wave ritual permission after preflight pass; W0 explicit authorization is recorded by the standing-authorization policy repair.
 Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
 
 ## Boot Read Order
