@@ -3562,6 +3562,20 @@ def _check_purgatorium_artifacts(state: dict[str, Any]) -> None:
 
 def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None:
     for path in (
+        ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH,
+        ACTIVE_CONTEXT_SYNC_RULE_SUMMARY_PATH,
+        ACTIVE_CONTEXT_SYNC_RULE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W0.5 active-context sync artifact: {path}")
+
+    active_sync_decision = _load_json(ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH)
+    _require(active_sync_decision.get("phase_id") == "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE", "active-context sync decision phase_id mismatch")
+    _require(active_sync_decision.get("decision") == "pass", "active-context sync decision must be pass")
+    _require(active_sync_decision.get("status") == "if08_w05_active_context_sync_rule_pass", "active-context sync decision status mismatch")
+    _require(active_sync_decision.get("active_context_sync_applied") is True, "active-context sync decision must mark sync applied")
+    _require(active_sync_decision.get("permanent_active_update_rule_installed") is True, "active-context sync decision must mark permanent rule installed")
+
+    external_project_paths = (
         IF08_W05_ALIAS_DECISION_PATH,
         IF08_W05_ALIAS_OVERLAY_PATH,
         IF08_W05_ALIAS_GAP_MATRIX_PATH,
@@ -3573,16 +3587,17 @@ def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None
         IF08_W05_PROJECT_SYNC_REPORT_PATH,
         IF08_W05_PROJECT_SYNC_CI_MATRIX_PATH,
         IF08_W05_PROJECT_SYNC_NO_EXECUTION_PATH,
-        ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH,
-        ACTIVE_CONTEXT_SYNC_RULE_SUMMARY_PATH,
-        ACTIVE_CONTEXT_SYNC_RULE_REPORT_PATH,
-    ):
-        _require(path.exists(), f"missing IF08 W0.5 active-context sync artifact: {path}")
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        _require(active_sync_decision.get("source_reported_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "standalone active-context validation still requires recorded source project sha")
+        _require(active_sync_decision.get("source_reported_phase_status") == EXPECTED_LATEST_COMPLETED_STATUS, "standalone active-context validation still requires recorded source project status")
+        return
 
     alias_decision = _load_json(IF08_W05_ALIAS_DECISION_PATH)
     _require(alias_decision.get("decision") == "pass", "IF08 W0.5 alias decision must be pass")
     _require(alias_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "IF08 W0.5 alias decision status mismatch")
-    _require(alias_decision.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias next action mismatch")
+    _require(alias_decision.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias decision next action mismatch")
     _require(alias_decision.get("wave_executed") is False, "IF08 W0.5 alias decision must keep wave_executed=false")
     _require(alias_decision.get("bot_executed") is False, "IF08 W0.5 alias decision must keep bot_executed=false")
 
@@ -3617,13 +3632,6 @@ def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None
         "dependency_or_package_manager_used",
     ):
         _require(no_execution.get(key) is False, f"project sync decision no_execution.{key} must be false")
-
-    active_sync_decision = _load_json(ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH)
-    _require(active_sync_decision.get("phase_id") == "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE", "active-context sync decision phase_id mismatch")
-    _require(active_sync_decision.get("decision") == "pass", "active-context sync decision must be pass")
-    _require(active_sync_decision.get("status") == "if08_w05_active_context_sync_rule_pass", "active-context sync decision status mismatch")
-    _require(active_sync_decision.get("active_context_sync_applied") is True, "active-context sync decision must mark sync applied")
-    _require(active_sync_decision.get("permanent_active_update_rule_installed") is True, "active-context sync decision must mark permanent rule installed")
 
 
 def main() -> None:
