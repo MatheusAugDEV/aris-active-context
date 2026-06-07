@@ -2,19 +2,31 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w1_context_memory_rag_preflight_readiness_pass`
-- latest_completed_phase: `IF-08 W1 Context/Memory/RAG Preflight Readiness`
-- latest_completed_status: `if08_w1_context_memory_rag_preflight_readiness_pass`
+- current_status: `if08_w1_context_memory_rag_controlled_execution_pass`
+- latest_completed_phase: `IF-08 W1 Context/Memory/RAG Controlled Execution`
+- latest_completed_status: `if08_w1_context_memory_rag_controlled_execution_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness: `true`
+- active_context_remote_main_reflects_if08_w1_context_memory_rag_controlled_execution: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
+- `artifacts/if08_w1_context_memory_rag_controlled_execution/decision.json`
+- `artifacts/if08_w1_context_memory_rag_controlled_execution/summary.json`
+- `artifacts/if08_w1_context_memory_rag_controlled_execution/report.md`
+- `artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json`
+- `artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_summary_2026_06_07.json`
+- `artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_report_2026_06_07.md`
+- `artifacts/infernus/if08_w1_context_integrity_detection_matrix_2026_06_07.json`
+- `artifacts/infernus/if08_w1_context_oracle_results_2026_06_07.json`
+- `artifacts/infernus/if08_w1_execution_ledger_2026_06_07.jsonl`
+- `artifacts/infernus/if08_w1_evidence_bundle_manifest_2026_06_07.json`
+- `artifacts/infernus/if08_w1_no_real_execution_attestation_2026_06_07.json`
+- `docs/infernus_full/if08_w1_context_memory_rag_controlled_execution_2026_06_07.md`
 - `artifacts/if08_w1_context_memory_rag_preflight_readiness/decision.json`
 - `artifacts/if08_w1_context_memory_rag_preflight_readiness/summary.json`
 - `artifacts/if08_w1_context_memory_rag_preflight_readiness/report.md`
@@ -113,4 +125,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The W1 preflight readiness packet is canonical; a future prompt may execute W1 controlled execution, but this sync did not execute W1.
+- The W1 controlled execution packet is canonical; the next canonical step is the W1 post-sync review and no real execution surface is authorized.

@@ -34,21 +34,27 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W1 Context/Memory/RAG Preflight Readiness"
+EXPECTED_PHASE = "IF-08 W1 Context/Memory/RAG Controlled Execution"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W1 Context/Memory/RAG Preflight Readiness"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w1_context_memory_rag_preflight_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w1_context_memory_rag_controlled_execution_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w1_context_memory_rag_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w1_context_memory_rag_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w1_context_memory_rag_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w1_context_memory_rag_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "1d0f51584e082d1f3f7c270df89d567a96066711"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w1_context_memory_rag_controlled_execution"
+EXPECTED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w1_context_memory_rag_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27100836572"
+IF08_W1_PREFLIGHT_PHASE = "IF-08 W1 Context/Memory/RAG Preflight Readiness"
+IF08_W1_PREFLIGHT_STATUS = "if08_w1_context_memory_rag_preflight_readiness_pass"
+IF08_W1_PREFLIGHT_PROJECT_SHA = "9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d"
+IF08_W1_PREFLIGHT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W1_PREFLIGHT_NEXT_RECOMMENDED_STEP = "execute_if08_w1_context_memory_rag_controlled_execution"
 IF08_W05_POST_SYNC_PHASE = "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision"
 IF08_W05_POST_SYNC_STATUS = "if08_w05_post_sync_review_pass"
 IF08_W05_POST_SYNC_PROJECT_SHA = "6b8dc72edc168402700c63cca076bf533bd3b65a"
@@ -200,6 +206,19 @@ IF08_W1_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w1_context_memory_rag_prefli
 IF08_W1_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W1_PREFLIGHT_ROOT / "decision.json"
 IF08_W1_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W1_PREFLIGHT_ROOT / "summary.json"
 IF08_W1_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W1_PREFLIGHT_ROOT / "report.md"
+IF08_W1_CONTROLLED_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json")
+IF08_W1_CONTROLLED_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_controlled_execution_summary_2026_06_07.json")
+IF08_W1_CONTROLLED_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_controlled_execution_report_2026_06_07.md")
+IF08_W1_CONTROLLED_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_integrity_detection_matrix_2026_06_07.json")
+IF08_W1_CONTROLLED_ORACLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_oracle_results_2026_06_07.json")
+IF08_W1_CONTROLLED_LEDGER_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_execution_ledger_2026_06_07.jsonl")
+IF08_W1_CONTROLLED_BUNDLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_evidence_bundle_manifest_2026_06_07.json")
+IF08_W1_CONTROLLED_NO_REAL_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_no_real_execution_attestation_2026_06_07.json")
+IF08_W1_CONTROLLED_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w1_context_memory_rag_controlled_execution_2026_06_07.md")
+IF08_W1_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w1_context_memory_rag_controlled_execution"
+IF08_W1_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W1_CONTROLLED_ROOT / "decision.json"
+IF08_W1_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W1_CONTROLLED_ROOT / "summary.json"
+IF08_W1_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W1_CONTROLLED_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -593,6 +612,14 @@ jobs:
 
 def _load_json(path: pathlib.Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _load_jsonl(path: pathlib.Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            rows.append(json.loads(line))
+    return rows
 
 
 def _require(condition: bool, message: str) -> None:
@@ -4072,6 +4099,180 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
         _require(no_execution.get(key) is False, f"project post-sync no_execution.{key} must be false")
 
 
+def _check_if08_w1_controlled_execution_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W1_CONTROLLED_ACTIVE_DECISION_PATH,
+        IF08_W1_CONTROLLED_ACTIVE_SUMMARY_PATH,
+        IF08_W1_CONTROLLED_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W1 controlled execution active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W1_CONTROLLED_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "active W1 controlled decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W1 controlled decision must be pass")
+    _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 controlled decision status mismatch")
+    _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active W1 controlled decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active W1 controlled decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == EXPECTED_PROJECT_CI_RUN_URL, "active W1 controlled decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W1 controlled decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W1 controlled decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W1 controlled decision must mark sync applied")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W1 controlled decision must preserve permanent rule")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w1_context_memory_rag_controlled_execution") is True, "active W1 controlled decision must confirm remote reflection")
+    _require(active_decision.get("latest_completed_phase_after_sync") == EXPECTED_PHASE, "active W1 controlled decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 controlled decision latest status mismatch")
+    _require(active_decision.get("context_integrity_violations_expected") == 10, "active W1 controlled decision expected violations must be 10")
+    _require(active_decision.get("context_integrity_violations_blocked") == 10, "active W1 controlled decision blocked violations must be 10")
+    _require(active_decision.get("cir_observed") == 1.0, "active W1 controlled decision cir_observed must be 1.0")
+    _require(active_decision.get("w1_execution_performed") is True, "active W1 controlled decision must record execution performed")
+    _require(active_decision.get("wave_executed") == "true_synthetic_isolated_lab_only", "active W1 controlled decision wave_executed mismatch")
+    _require(active_decision.get("bot_executed") == "true_synthetic_isolated_lab_only", "active W1 controlled decision bot_executed mismatch")
+    _require(active_decision.get("w1_execution_allowed") is False, "active W1 controlled decision must keep w1_execution_allowed false")
+    _require(active_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active W1 controlled decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(active_outcome.get(key) is False, f"active W1 controlled decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W1_CONTROLLED_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "active W1 controlled summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W1 controlled summary must be pass")
+    _require(active_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 controlled summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == EXPECTED_PHASE, "active W1 controlled summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 controlled summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active W1 controlled summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active W1 controlled summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == EXPECTED_PROJECT_CI_RUN_URL, "active W1 controlled summary ci url mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active W1 controlled summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w1_context_memory_rag_controlled_execution") is True, "active W1 controlled summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W1 controlled summary must preserve permanent rule")
+    _require(active_summary.get("context_integrity_violations_expected") == 10, "active W1 controlled summary expected violations must be 10")
+    _require(active_summary.get("context_integrity_violations_blocked") == 10, "active W1 controlled summary blocked violations must be 10")
+    _require(active_summary.get("cir_observed") == 1.0, "active W1 controlled summary cir_observed must be 1.0")
+    _require(active_summary.get("w1_execution_performed") is True, "active W1 controlled summary must record execution performed")
+    _require(active_summary.get("wave_executed") == "true_synthetic_isolated_lab_only", "active W1 controlled summary wave_executed mismatch")
+    _require(active_summary.get("bot_executed") == "true_synthetic_isolated_lab_only", "active W1 controlled summary bot_executed mismatch")
+    _require(active_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active W1 controlled summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W1_CONTROLLED_ACTIVE_REPORT_PATH,
+        "IF-08 W1 Context/Memory/RAG Controlled Execution",
+        EXPECTED_LATEST_COMPLETED_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w1_context_memory_rag_controlled_execution: `true`",
+        "w1_execution_performed: `true_synthetic_isolated_lab_only`",
+        "next_recommended_step: `post_sync_review_if08_w1_context_memory_rag_controlled_execution`",
+    )
+
+    external_project_paths = (
+        IF08_W1_CONTROLLED_DECISION_PATH,
+        IF08_W1_CONTROLLED_SUMMARY_PATH,
+        IF08_W1_CONTROLLED_REPORT_PATH,
+        IF08_W1_CONTROLLED_MATRIX_PATH,
+        IF08_W1_CONTROLLED_ORACLE_PATH,
+        IF08_W1_CONTROLLED_LEDGER_PATH,
+        IF08_W1_CONTROLLED_BUNDLE_PATH,
+        IF08_W1_CONTROLLED_NO_REAL_EXECUTION_PATH,
+        IF08_W1_CONTROLLED_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W1_CONTROLLED_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W1 controlled decision must be pass")
+    _require(decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project W1 controlled decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W1_PREFLIGHT_PHASE, "project W1 controlled decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W1_PREFLIGHT_STATUS, "project W1 controlled decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF08_W1_PREFLIGHT_PROJECT_SHA, "project W1 controlled decision source project sha mismatch")
+    _require(decision.get("source_ci_state") == IF08_W1_PREFLIGHT_CI_STATE, "project W1 controlled decision source ci state mismatch")
+    _require(decision.get("w1_wave", {}).get("wave_id") == "W1", "project W1 controlled decision wave_id mismatch")
+    _require(decision.get("context_integrity_violations_expected") == 10, "project W1 controlled decision expected violations must be 10")
+    _require(decision.get("context_integrity_violations_blocked") == 10, "project W1 controlled decision blocked violations must be 10")
+    _require(decision.get("cir_required") == 1.0, "project W1 controlled decision cir_required must be 1.0")
+    _require(decision.get("cir_observed") == 1.0, "project W1 controlled decision cir_observed must be 1.0")
+    _require(decision.get("undetected_context_integrity_violations") == [], "project W1 controlled decision undetected violations must be empty")
+    _require(decision.get("detection_matrix_created") is True, "project W1 controlled decision must create detection matrix")
+    _require(decision.get("oracle_results_created") is True, "project W1 controlled decision must create oracle results")
+    _require(decision.get("execution_ledger_created") is True, "project W1 controlled decision must create execution ledger")
+    _require(decision.get("evidence_bundle_manifest_created") is True, "project W1 controlled decision must create evidence manifest")
+    _require(decision.get("no_real_execution_attestation_created") is True, "project W1 controlled decision must create no real execution attestation")
+    _require(decision.get("runtime_executed") is False, "project W1 controlled decision runtime_executed must be false")
+    _require(decision.get("real_apply_executed") is False, "project W1 controlled decision real_apply_executed must be false")
+    _require(decision.get("product_or_bedrock_executed") is False, "project W1 controlled decision product_or_bedrock_executed must be false")
+    _require(decision.get("secrets_accessed") is False, "project W1 controlled decision secrets_accessed must be false")
+    _require(decision.get("mcp_activated") is False, "project W1 controlled decision mcp_activated must be false")
+    _require(decision.get("rag_ingestion_executed") is False, "project W1 controlled decision rag_ingestion_executed must be false")
+    _require(decision.get("memory_write_executed") is False, "project W1 controlled decision memory_write_executed must be false")
+    _require(decision.get("external_network_used_except_github_governance") is False, "project W1 controlled decision external_network_used_except_github_governance must be false")
+    _require(decision.get("dependency_or_package_manager_used") is False, "project W1 controlled decision dependency_or_package_manager_used must be false")
+    _require(decision.get("next_recommended_step") == "sync_if08_w1_context_memory_rag_controlled_execution_into_active_context", "project W1 controlled decision next step mismatch")
+    _require(decision.get("blocking_findings") == [], "project W1 controlled decision blocking_findings must be empty")
+
+    summary = _load_json(IF08_W1_CONTROLLED_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project W1 controlled summary must be pass")
+    _require(summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project W1 controlled summary status mismatch")
+    _require(summary.get("source_phase") == IF08_W1_PREFLIGHT_PHASE, "project W1 controlled summary source phase mismatch")
+    _require(summary.get("source_status") == IF08_W1_PREFLIGHT_STATUS, "project W1 controlled summary source status mismatch")
+    _require(summary.get("project_commit_sha") == IF08_W1_PREFLIGHT_PROJECT_SHA, "project W1 controlled summary project sha mismatch")
+    _require(summary.get("project_ci_state") == IF08_W1_PREFLIGHT_CI_STATE, "project W1 controlled summary ci state mismatch")
+    _require(summary.get("context_integrity_violations_expected") == 10, "project W1 controlled summary expected violations must be 10")
+    _require(summary.get("context_integrity_violations_blocked") == 10, "project W1 controlled summary blocked violations must be 10")
+    _require(summary.get("cir_required") == 1.0, "project W1 controlled summary cir_required must be 1.0")
+    _require(summary.get("cir_observed") == 1.0, "project W1 controlled summary cir_observed must be 1.0")
+    _require(summary.get("undetected_context_integrity_violations") == [], "project W1 controlled summary undetected violations must be empty")
+    _require(summary.get("next_recommended_step") == "sync_if08_w1_context_memory_rag_controlled_execution_into_active_context", "project W1 controlled summary next step mismatch")
+
+    matrix = _load_json(IF08_W1_CONTROLLED_MATRIX_PATH)
+    _require(matrix.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled matrix phase_id mismatch")
+    _require(matrix.get("wave_id") == "W1", "project W1 controlled matrix wave_id mismatch")
+    _require(matrix.get("context_integrity_violations_expected") == 10, "project W1 controlled matrix expected violations must be 10")
+    _require(matrix.get("context_integrity_violations_blocked") == 10, "project W1 controlled matrix blocked violations must be 10")
+    _require(matrix.get("cir_observed") == 1.0, "project W1 controlled matrix cir_observed must be 1.0")
+    _require(len(matrix.get("scenarios", [])) == 10, "project W1 controlled matrix must contain 10 scenarios")
+    _require(all(row.get("blocked") is True for row in matrix.get("scenarios", [])), "project W1 controlled matrix must block every scenario")
+
+    oracle = _load_json(IF08_W1_CONTROLLED_ORACLE_PATH)
+    _require(oracle.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled oracle phase_id mismatch")
+    _require(len(oracle.get("oracles", [])) == 10, "project W1 controlled oracle must contain 10 rows")
+
+    ledger = _load_jsonl(IF08_W1_CONTROLLED_LEDGER_PATH)
+    _require(ledger[0].get("event_type") == "phase_start", "project W1 controlled ledger must start with phase_start")
+    _require(ledger[-1].get("event_type") == "phase_verdict", "project W1 controlled ledger must end with phase_verdict")
+    _require(ledger[-1].get("cir_observed") == 1.0, "project W1 controlled ledger cir_observed must be 1.0")
+
+    bundle = _load_json(IF08_W1_CONTROLLED_BUNDLE_PATH)
+    _require(bundle.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled bundle phase_id mismatch")
+    _require(bundle.get("entry_count") == len(bundle.get("entries", [])), "project W1 controlled bundle entry_count mismatch")
+    _require(bundle.get("entry_count", 0) >= 8, "project W1 controlled bundle must contain at least 8 entries")
+
+    no_real_execution = _load_json(IF08_W1_CONTROLLED_NO_REAL_EXECUTION_PATH)
+    _require(no_real_execution.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-CONTROLLED-EXECUTION", "project W1 controlled no real execution phase_id mismatch")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+    ):
+        _require(no_real_execution.get(key) is False, f"project W1 controlled no real execution {key} must be false")
+
+
 def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W1_PREFLIGHT_ACTIVE_DECISION_PATH,
@@ -4083,16 +4284,16 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     active_decision = _load_json(IF08_W1_PREFLIGHT_ACTIVE_DECISION_PATH)
     _require(active_decision.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-PREFLIGHT-READINESS", "active W1 preflight decision phase_id mismatch")
     _require(active_decision.get("decision") == "pass", "active W1 preflight decision must be pass")
-    _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 preflight decision status mismatch")
-    _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active W1 preflight decision project sha mismatch")
-    _require(active_decision.get("source_project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active W1 preflight decision ci state mismatch")
+    _require(active_decision.get("status") == IF08_W1_PREFLIGHT_STATUS, "active W1 preflight decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W1_PREFLIGHT_PROJECT_SHA, "active W1 preflight decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W1_PREFLIGHT_CI_STATE, "active W1 preflight decision ci state mismatch")
     _require(active_decision.get("project_origin_main_sha_verified") is True, "active W1 preflight decision must verify origin/main sha")
     _require(active_decision.get("project_ci_green_confirmed") is True, "active W1 preflight decision must confirm green CI")
     _require(active_decision.get("active_context_sync_applied") is True, "active W1 preflight decision must mark sync applied")
     _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W1 preflight decision must preserve permanent rule")
     _require(active_decision.get("active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness") is True, "active W1 preflight decision must confirm remote reflection")
-    _require(active_decision.get("latest_completed_phase_after_sync") == EXPECTED_PHASE, "active W1 preflight decision latest phase mismatch")
-    _require(active_decision.get("latest_completed_status_after_sync") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 preflight decision latest status mismatch")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W1_PREFLIGHT_PHASE, "active W1 preflight decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W1_PREFLIGHT_STATUS, "active W1 preflight decision latest status mismatch")
     _require(active_decision.get("w1_preflight_readiness") is True, "active W1 preflight decision must keep readiness true")
     _require(active_decision.get("readiness_coverage") == 1.0, "active W1 preflight decision readiness_coverage must be 1.0")
     _require(active_decision.get("required_preflight_checks") == 10, "active W1 preflight decision required_preflight_checks must be 10")
@@ -4100,7 +4301,7 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     _require(active_decision.get("future_cir_required") == 1.0, "active W1 preflight decision future_cir_required must be 1.0")
     _require(active_decision.get("w1_execution_performed") is False, "active W1 preflight decision must keep w1_execution_performed false")
     _require(active_decision.get("w1_execution_allowed") is False, "active W1 preflight decision must keep w1_execution_allowed false")
-    _require(active_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active W1 preflight decision next step mismatch")
+    _require(active_decision.get("next_recommended_step") == IF08_W1_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W1 preflight decision next step mismatch")
     active_outcome = active_decision.get("execution_outcome", {})
     for key in (
         "runtime_executed",
@@ -4118,11 +4319,11 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     active_summary = _load_json(IF08_W1_PREFLIGHT_ACTIVE_SUMMARY_PATH)
     _require(active_summary.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-PREFLIGHT-READINESS", "active W1 preflight summary phase_id mismatch")
     _require(active_summary.get("decision") == "pass", "active W1 preflight summary must be pass")
-    _require(active_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 preflight summary status mismatch")
-    _require(active_summary.get("latest_completed_phase") == EXPECTED_PHASE, "active W1 preflight summary latest phase mismatch")
-    _require(active_summary.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS, "active W1 preflight summary latest status mismatch")
-    _require(active_summary.get("project_commit_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active W1 preflight summary project sha mismatch")
-    _require(active_summary.get("project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active W1 preflight summary ci state mismatch")
+    _require(active_summary.get("status") == IF08_W1_PREFLIGHT_STATUS, "active W1 preflight summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W1_PREFLIGHT_PHASE, "active W1 preflight summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W1_PREFLIGHT_STATUS, "active W1 preflight summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W1_PREFLIGHT_PROJECT_SHA, "active W1 preflight summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W1_PREFLIGHT_CI_STATE, "active W1 preflight summary ci state mismatch")
     _require(active_summary.get("active_context_sync_applied") is True, "active W1 preflight summary must mark sync applied")
     _require(active_summary.get("active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness") is True, "active W1 preflight summary must confirm remote reflection")
     _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W1 preflight summary must preserve permanent rule")
@@ -4132,12 +4333,12 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     _require(active_summary.get("ready_preflight_checks") == 10, "active W1 preflight summary ready_preflight_checks must be 10")
     _require(active_summary.get("future_cir_required") == 1.0, "active W1 preflight summary future_cir_required must be 1.0")
     _require(active_summary.get("w1_execution_allowed") is False, "active W1 preflight summary must keep execution disallowed")
-    _require(active_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active W1 preflight summary next step mismatch")
+    _require(active_summary.get("next_recommended_step") == IF08_W1_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W1 preflight summary next step mismatch")
 
     _mirror_contains(
         IF08_W1_PREFLIGHT_ACTIVE_REPORT_PATH,
         "IF-08 W1 Context/Memory/RAG Preflight Readiness",
-        EXPECTED_LATEST_COMPLETED_PROJECT_SHA,
+        IF08_W1_PREFLIGHT_PROJECT_SHA,
         "CI_GREEN_CONFIRMED",
         "active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness: `true`",
         "next_recommended_step: `execute_if08_w1_context_memory_rag_controlled_execution`",
@@ -4160,7 +4361,7 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     decision = _load_json(IF08_W1_PREFLIGHT_DECISION_PATH)
     _require(decision.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-PREFLIGHT-READINESS", "project W1 preflight decision phase_id mismatch")
     _require(decision.get("decision") == "pass", "project W1 preflight decision must be pass")
-    _require(decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project W1 preflight decision status mismatch")
+    _require(decision.get("status") == IF08_W1_PREFLIGHT_STATUS, "project W1 preflight decision status mismatch")
     _require(decision.get("source_phase") == IF08_W05_POST_SYNC_PHASE, "project W1 preflight decision source phase mismatch")
     _require(decision.get("source_status") == IF08_W05_POST_SYNC_STATUS, "project W1 preflight decision source status mismatch")
     _require(decision.get("source_project_sha") == IF08_W05_POST_SYNC_PROJECT_SHA, "project W1 preflight decision source project sha mismatch")
@@ -4185,12 +4386,12 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     _require(decision.get("dependency_or_package_manager_used") is False, "project W1 preflight decision dependency_or_package_manager_used must be false")
     _require(decision.get("external_network_used_except_github_governance") is False, "project W1 preflight decision external_network_used_except_github_governance must be false")
     _require(decision.get("blocking_findings") == [], "project W1 preflight decision blocking_findings must be empty")
-    _require(decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project W1 preflight decision next step mismatch")
+    _require(decision.get("next_recommended_step") == IF08_W1_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W1 preflight decision next step mismatch")
 
     summary = _load_json(IF08_W1_PREFLIGHT_SUMMARY_PATH)
     _require(summary.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-PREFLIGHT-READINESS", "project W1 preflight summary phase_id mismatch")
     _require(summary.get("decision") == "pass", "project W1 preflight summary must be pass")
-    _require(summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project W1 preflight summary status mismatch")
+    _require(summary.get("status") == IF08_W1_PREFLIGHT_STATUS, "project W1 preflight summary status mismatch")
     _require(summary.get("source_phase") == IF08_W05_POST_SYNC_PHASE, "project W1 preflight summary source phase mismatch")
     _require(summary.get("source_status") == IF08_W05_POST_SYNC_STATUS, "project W1 preflight summary source status mismatch")
     _require(summary.get("project_commit_sha") == IF08_W05_POST_SYNC_PROJECT_SHA, "project W1 preflight summary source project sha mismatch")
@@ -4201,7 +4402,7 @@ def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     _require(summary.get("required_preflight_checks") == 10, "project W1 preflight summary required_preflight_checks must be 10")
     _require(summary.get("ready_preflight_checks") == 10, "project W1 preflight summary ready_preflight_checks must be 10")
     _require(summary.get("future_cir_required") == 1.0, "project W1 preflight summary future_cir_required must be 1.0")
-    _require(summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project W1 preflight summary next step mismatch")
+    _require(summary.get("next_recommended_step") == IF08_W1_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W1 preflight summary next step mismatch")
 
     attack_surface = _load_json(IF08_W1_PREFLIGHT_ATTACK_SURFACE_PATH)
     _require(attack_surface.get("phase_id") == "IF-08-W1-CONTEXT-MEMORY-RAG-PREFLIGHT-READINESS", "project W1 preflight attack surface phase_id mismatch")
@@ -4329,6 +4530,8 @@ def main() -> None:
     _check_if08_w05_controlled_execution_artifacts(state)
     # IF08 W0.5 post-sync review checks
     _check_if08_w05_post_sync_review_artifacts(state)
+    # IF08 W1 controlled execution checks
+    _check_if08_w1_controlled_execution_artifacts(state)
     # IF08 W1 context/memory/RAG preflight readiness checks
     _check_if08_w1_preflight_readiness_artifacts(state)
     # IF08 W0.5 preflight rerun checks
@@ -4354,6 +4557,25 @@ def main() -> None:
     _require(state["next_action"]["review_only"] is True, "next_action.review_only must be true")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
+    _require(state["latest_completed_no_execution"]["w1_execution_performed"] is True, "latest_completed_no_execution.w1_execution_performed must be true")
+    _require(state["latest_completed_no_execution"]["wave_executed"] == "true_synthetic_isolated_lab_only", "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] == "true_synthetic_isolated_lab_only", "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["w1_execution_allowed"] is False, "latest_completed_no_execution.w1_execution_allowed must be false")
+    _require(state["latest_completed_no_execution"]["cir_observed"] == 1.0, "latest_completed_no_execution.cir_observed must be 1.0")
+    _require(state["latest_completed_no_execution"]["context_integrity_violations_expected"] == 10, "latest_completed_no_execution.expected violations must be 10")
+    _require(state["latest_completed_no_execution"]["context_integrity_violations_blocked"] == 10, "latest_completed_no_execution.blocked violations must be 10")
+    _require(state["latest_completed_no_execution"]["undetected_context_integrity_violations"] == [], "latest_completed_no_execution.undetected violations must be empty")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
     _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to IF-08")
     _require(
@@ -4383,52 +4605,54 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W1 Context/Memory/RAG Preflight Readiness`",
-        "latest_completed_status: `if08_w1_context_memory_rag_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W1 Context/Memory/RAG Controlled Execution`",
+        "latest_completed_status: `if08_w1_context_memory_rag_controlled_execution_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_CONTEXT_MEMORY_RAG_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_CONTEXT_MEMORY_RAG_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d`",
+        "latest_completed_project_commit_sha: `1d0f51584e082d1f3f7c270df89d567a96066711`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `execute_if08_w1_context_memory_rag_controlled_execution`",
+        "next_recommended_step: `post_sync_review_if08_w1_context_memory_rag_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W1 Context/Memory/RAG Preflight Readiness Sincronizado",
+        "INF-FULL-07 — IF-08 W1 Context/Memory/RAG Controlled Execution Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w1_context_memory_rag_preflight_readiness_pass",
-        "Não reexecutar o preflight W1 nesta fase.",
-        "Não considere este sync como execucao de W1.",
-        "O proximo prompt pode executar `W1 | Context/memory/RAG` em modo synthetic isolated controlled execution.",
-        "O proximo passo recomendado neste estado e `execute_if08_w1_context_memory_rag_controlled_execution`.",
+        "latest_completed_status: if08_w1_context_memory_rag_controlled_execution_pass",
+        "Não reexecutar a execução controlada W1 nesta fase.",
+        "Este sync já registra `CIR=1.0` com `10/10` violações de integridade de contexto bloqueadas.",
+        "O proximo prompt deve executar o post-sync review canônico de W1.",
+        "O proximo passo recomendado neste estado e `post_sync_review_if08_w1_context_memory_rag_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w1_context_memory_rag_preflight_readiness_pass",
-        "Latest completed phase: `IF-08 W1 Context/Memory/RAG Preflight Readiness`",
-        "latest_completed_status=if08_w1_context_memory_rag_preflight_readiness_pass",
-        "active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness=true",
+        "if08_w1_context_memory_rag_controlled_execution_pass",
+        "Latest completed phase: `IF-08 W1 Context/Memory/RAG Controlled Execution`",
+        "latest_completed_status=if08_w1_context_memory_rag_controlled_execution_pass",
+        "active_context_remote_main_reflects_if08_w1_context_memory_rag_controlled_execution=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "execute_if08_w1_context_memory_rag_controlled_execution",
+        "post_sync_review_if08_w1_context_memory_rag_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w1_context_memory_rag_controlled_execution/decision.json",
+        "artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w1_context_integrity_detection_matrix_2026_06_07.json",
+        "docs/infernus_full/if08_w1_context_memory_rag_controlled_execution_2026_06_07.md",
         "artifacts/if08_w1_context_memory_rag_preflight_readiness/decision.json",
         "artifacts/infernus/if08_w1_context_memory_rag_preflight_readiness_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w1_context_attack_surface_matrix_2026_06_07.json",
-        "docs/infernus_full/if08_w1_context_memory_rag_preflight_readiness_2026_06_07.md",
         "artifacts/if08_w05_controlled_execution/decision.json",
         "artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json",
@@ -4442,10 +4666,11 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "IF-08 W1 Context/Memory/RAG Controlled Execution | pass",
+        "if08_w1_context_memory_rag_controlled_execution_pass",
+        "project_commit_sha: `1d0f51584e082d1f3f7c270df89d567a96066711`",
+        "next_recommended_step: `post_sync_review_if08_w1_context_memory_rag_controlled_execution`",
         "IF-08 W1 Context/Memory/RAG Preflight Readiness | pass",
-        "if08_w1_context_memory_rag_preflight_readiness_pass",
-        "project_commit_sha: `9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d`",
-        "next_recommended_step: `execute_if08_w1_context_memory_rag_controlled_execution`",
         "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution | pass",
         "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
         "next_phase: `IF-08`",
@@ -4460,24 +4685,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W1 Context/Memory/RAG Preflight Readiness`",
-        "latest_completed_status: `if08_w1_context_memory_rag_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W1 Context/Memory/RAG Controlled Execution`",
+        "latest_completed_status: `if08_w1_context_memory_rag_controlled_execution_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_CONTEXT_MEMORY_RAG_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_CONTEXT_MEMORY_RAG_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W1 Context/Memory/RAG Preflight Readiness",
+        "Latest completed phase: IF-08 W1 Context/Memory/RAG Controlled Execution",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W1 preflight readiness is canonical; this sync records readiness coverage only and does not claim W1 execution.",
+        "W1 controlled execution is canonical; this sync records synthetic isolated execution with CIR=1.0 and the next step is the W1 post-sync review.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

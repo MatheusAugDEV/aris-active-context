@@ -502,31 +502,39 @@
   "current_live_route": {
     "active_next_phase": "IF-08",
     "active_next_phase_class": "infernus_full_execution",
-    "current_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
+    "current_status": "if08_w1_context_memory_rag_controlled_execution_pass",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness",
-    "latest_completed_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
+    "latest_completed_phase": "IF-08 W1 Context/Memory/RAG Controlled Execution",
+    "latest_completed_status": "if08_w1_context_memory_rag_controlled_execution_pass",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "status": "inf_full_07_if08_authorization_gate_pass"
   },
-  "current_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
+  "current_status": "if08_w1_context_memory_rag_controlled_execution_pass",
   "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-  "latest_completed_next_recommended_step": "execute_if08_w1_context_memory_rag_controlled_execution",
+  "latest_completed_next_recommended_step": "post_sync_review_if08_w1_context_memory_rag_controlled_execution",
   "latest_completed_no_execution": {
-    "w1_execution_performed": false,
+    "w05_executed": false,
+    "wave_executed": "true_synthetic_isolated_lab_only",
+    "bot_executed": "true_synthetic_isolated_lab_only",
+    "w1_execution_performed": true,
     "w1_execution_allowed": false,
     "runtime_executed": false,
+    "real_apply_executed": false,
     "product_bedrock_real_apply_secrets_executed": false,
     "external_network_used_except_github_governance": false,
     "dependency_or_package_manager_used": false,
     "mcp_activated": false,
     "rag_ingestion_executed": false,
-    "memory_write_executed": false
+    "memory_write_executed": false,
+    "cir_observed": 1.0,
+    "context_integrity_violations_expected": 10,
+    "context_integrity_violations_blocked": 10,
+    "undetected_context_integrity_violations": []
   },
-  "latest_completed_project_commit_sha": "9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d",
-  "latest_completed_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
+  "latest_completed_project_commit_sha": "1d0f51584e082d1f3f7c270df89d567a96066711",
+  "latest_completed_status": "if08_w1_context_memory_rag_controlled_execution_pass",
   "permanent_active_update_rule_installed": true,
   "decision": "pass",
   "drift_signals": {
@@ -564,28 +572,28 @@
       "ARIS Infernus FULL Pre-Execution Review Gate",
       "IF08_W05 Active-Context Canonical Sync Repair & Permanent Active Update Rule"
     ],
-    "latest_execution_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness",
-    "latest_execution_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
+    "latest_execution_phase": "IF-08 W1 Context/Memory/RAG Controlled Execution",
+    "latest_execution_status": "if08_w1_context_memory_rag_controlled_execution_pass",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision"
+    "previous_execution_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision",
-    "proof_source": "project_origin_main_sha_9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d_verified_with_terminal_green_ci_then_active_context_remote_main_synced_and_verified",
-    "to_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness",
-    "to_status": "if08_w1_context_memory_rag_preflight_readiness_pass",
-    "transition_type": "active_context_w1_preflight_readiness_sync",
-    "verified_via": "Project repo origin/main matched 9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d, all IF-08 W1 preflight readiness workflows were terminal green, readiness_coverage remained 1.0 with 10 of 10 checks ready, no W1 execution occurred, and active-context mirrors were updated coherently before any future W1 controlled execution prompt."
+    "from_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness",
+    "proof_source": "project_origin_main_sha_1d0f51584e082d1f3f7c270df89d567a96066711_verified_with_terminal_green_ci_then_active_context_remote_main_synced_and_verified",
+    "to_phase": "IF-08 W1 Context/Memory/RAG Controlled Execution",
+    "to_status": "if08_w1_context_memory_rag_controlled_execution_pass",
+    "transition_type": "active_context_w1_controlled_execution_sync",
+    "verified_via": "Project repo origin/main matched 1d0f51584e082d1f3f7c270df89d567a96066711, the IF-08 W1 controlled execution CI run 27100836572 was terminal green, CIR remained 1.0 with 10 of 10 context integrity violations blocked, no runtime, apply, product, secrets, MCP, RAG ingestion, or memory write was activated, and active-context mirrors were updated coherently before the post-sync review step."
   },
-  "latest_completed_phase": "IF-08 W1 Context/Memory/RAG Preflight Readiness",
+  "latest_completed_phase": "IF-08 W1 Context/Memory/RAG Controlled Execution",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": "IF-08",
-    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W1 Context/Memory/RAG Preflight Readiness. W1 preflight readiness is canonically verified with readiness_coverage=1.0 and 10/10 checks ready, the next recommended step is execute_if08_w1_context_memory_rag_controlled_execution, and this phase still kept W1 execution false. Real execution surfaces (runtime, apply, product, Bedrock) remain false until explicitly authorized.",
+    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W1 Context/Memory/RAG Controlled Execution. W1 synthetic isolated controlled execution is canonically verified with cir_observed=1.0 and 10 of 10 context integrity violations blocked, the next recommended step is post_sync_review_if08_w1_context_memory_rag_controlled_execution, and all real execution surfaces (runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write) remain false until explicitly authorized.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -598,20 +606,20 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The Project repo IF-08 W1 context/memory/RAG preflight readiness result was verified on origin/main with terminal green CI.",
-      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W1 preflight readiness closure.",
-      "The latest completed operational packet is IF-08 W1 Context/Memory/RAG Preflight Readiness.",
-      "W1 preflight readiness is canonically verified with readiness_coverage=1.0 and 10 of 10 required checks ready.",
-      "This phase did not execute W1; W1 execution_performed remained false and execution_allowed remained false inside the preflight packet.",
-      "The next prompt may execute IF-08 W1 Context/memory/RAG controlled execution in synthetic isolated mode.",
-      "Real execution surfaces (runtime, apply, product, Bedrock) remain false until explicitly authorized."
+      "The Project repo IF-08 W1 context/memory/RAG controlled execution result was verified on origin/main with terminal green CI.",
+      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W1 controlled execution closure.",
+      "The latest completed operational packet is IF-08 W1 Context/Memory/RAG Controlled Execution.",
+      "W1 controlled execution is canonically verified with cir_observed=1.0 and 10 of 10 context integrity violations blocked.",
+      "This phase executed W1 only in synthetic isolated lab mode; wave_executed and bot_executed are true_synthetic_isolated_lab_only while runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, and memory write remained false.",
+      "The next prompt should execute the canonical post-sync review for IF-08 W1 controlled execution.",
+      "Real execution surfaces remain false until explicitly authorized."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": "IF-08",
     "phase_class": "infernus_full_execution",
     "planning_only": false,
     "review_only": true,
-    "status": "if08_w1_context_memory_rag_preflight_readiness_pass"
+    "status": "if08_w1_context_memory_rag_controlled_execution_pass"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
