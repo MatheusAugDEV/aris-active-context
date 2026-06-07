@@ -13,25 +13,25 @@
 ## Current Phase
 
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
-- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
-- latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`
+- latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`
+- latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`
+- latest_completed_project_commit_sha: `93b4ee5c6aa96869ef426331c51e5f3df76e2812`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
 - active_next_phase: `IF-08`
 - Active next phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
-- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- current_status: `if08_w05_preflight_readiness_rerun_pass`
 - IF-08 execution: `false`
 - Waves execution: `false`
 - All execution locks: `false`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_PREFLIGHT_READINESS_RERUN: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF08_W05 Minos Mechanical Alias Normalization`.
+INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF08_W05 Preflight Readiness Rerun`.
 No bot, wave, runtime, apply, product, pilot, Bedrock, or secret was executed in this sync.
 No PASS, next prompt, or handoff is canonical unless `MatheusAugDEV/aris-active-context/main` reflects the same result already verified in Project repo.
 Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.

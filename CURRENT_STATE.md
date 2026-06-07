@@ -2,21 +2,21 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
-- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`
+- latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- current_status: `if08_w05_preflight_readiness_rerun_pass`
 - decision: `pass`
-- latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`
+- latest_completed_project_commit_sha: `93b4ee5c6aa96869ef426331c51e5f3df76e2812`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `rerun_if08_w05_preflight_readiness`
+- next_recommended_step: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_PREFLIGHT_READINESS_RERUN: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
@@ -32,7 +32,7 @@
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, but the latest verified operational packet is `IF08_W05 Minos Mechanical Alias Normalization`.
+INF-FULL-07 remains the canonical current phase, but the latest verified operational packet is `IF08_W05 Preflight Readiness Rerun`.
 The Project repo result was verified on `origin/main` with terminal green CI and the active-context remote `main` was synchronised before any new prompt.
 No bot, wave, runtime, apply, product, pilot, Bedrock, or secret was executed in this sync.
-Próximo passo recomendado: `rerun_if08_w05_preflight_readiness`.
+Próximo passo recomendado: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`.

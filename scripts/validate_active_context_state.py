@@ -34,21 +34,25 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF08_W05 Minos Mechanical Alias Normalization"
+EXPECTED_PHASE = "IF08_W05 Preflight Readiness Rerun"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 Attack Waves Execution Authorization Gate Materialization"
+EXPECTED_PREVIOUS_PHASE = "IF08_W05 Minos Mechanical Alias Normalization"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+EXPECTED_CURRENT_STATUS = "if08_w05_preflight_readiness_rerun_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "f05ff031a95625da4d09c1c8bb648cc81ed3a97f"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w05_preflight_readiness_rerun_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w05_preflight_readiness_rerun_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "93b4ee5c6aa96869ef426331c51e5f3df76e2812"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "rerun_if08_w05_preflight_readiness"
+EXPECTED_NEXT_RECOMMENDED_STEP = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
+IF08_W05_SYNC_SOURCE_PHASE = "IF08_W05 Minos Mechanical Alias Normalization"
+IF08_W05_SYNC_SOURCE_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+IF08_W05_SYNC_SOURCE_PROJECT_SHA = "f05ff031a95625da4d09c1c8bb648cc81ed3a97f"
+IF08_W05_SYNC_NEXT_RECOMMENDED_STEP = "rerun_if08_w05_preflight_readiness"
 ROUTE_SYNC_SOURCE_PHASE_ID = "INF-FULL-04"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_ID = "INF-FULL-05"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_CLASS = "review_gate_only"
@@ -137,6 +141,16 @@ ACTIVE_CONTEXT_SYNC_RULE_ROOT = ROOT / "artifacts" / "active_context_sync_rule"
 ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "decision.json"
 ACTIVE_CONTEXT_SYNC_RULE_SUMMARY_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "summary.json"
 ACTIVE_CONTEXT_SYNC_RULE_REPORT_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "report.md"
+IF08_W05_RERUN_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_preflight_readiness_rerun_decision_2026_06_07.json")
+IF08_W05_RERUN_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_preflight_readiness_rerun_summary_2026_06_07.json")
+IF08_W05_RERUN_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_preflight_readiness_rerun_report_2026_06_07.md")
+IF08_W05_RERUN_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_preflight_readiness_rerun_matrix_2026_06_07.json")
+IF08_W05_RERUN_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_preflight_readiness_rerun_no_execution_attestation_2026_06_07.json")
+IF08_W05_RERUN_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w05_preflight_readiness_rerun_2026_06_07.md")
+IF08_W05_RERUN_ROOT = ROOT / "artifacts" / "if08_w05_preflight_readiness_rerun"
+IF08_W05_RERUN_ACTIVE_DECISION_PATH = IF08_W05_RERUN_ROOT / "decision.json"
+IF08_W05_RERUN_ACTIVE_SUMMARY_PATH = IF08_W05_RERUN_ROOT / "summary.json"
+IF08_W05_RERUN_ACTIVE_REPORT_PATH = IF08_W05_RERUN_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -3590,34 +3604,34 @@ def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None
     )
     external_available = all(path.exists() for path in external_project_paths)
     if not external_available:
-        _require(active_sync_decision.get("source_reported_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "standalone active-context validation still requires recorded source project sha")
-        _require(active_sync_decision.get("source_reported_phase_status") == EXPECTED_LATEST_COMPLETED_STATUS, "standalone active-context validation still requires recorded source project status")
+        _require(active_sync_decision.get("source_reported_project_sha") == IF08_W05_SYNC_SOURCE_PROJECT_SHA, "standalone active-context validation still requires recorded source project sha")
+        _require(active_sync_decision.get("source_reported_phase_status") == IF08_W05_SYNC_SOURCE_STATUS, "standalone active-context validation still requires recorded source project status")
         return
 
     alias_decision = _load_json(IF08_W05_ALIAS_DECISION_PATH)
     _require(alias_decision.get("decision") == "pass", "IF08 W0.5 alias decision must be pass")
-    _require(alias_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "IF08 W0.5 alias decision status mismatch")
-    _require(alias_decision.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias decision next action mismatch")
+    _require(alias_decision.get("status") == IF08_W05_SYNC_SOURCE_STATUS, "IF08 W0.5 alias decision status mismatch")
+    _require(alias_decision.get("required_next_action") == IF08_W05_SYNC_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias decision next action mismatch")
     _require(alias_decision.get("wave_executed") is False, "IF08 W0.5 alias decision must keep wave_executed=false")
     _require(alias_decision.get("bot_executed") is False, "IF08 W0.5 alias decision must keep bot_executed=false")
 
     alias_summary = _load_json(IF08_W05_ALIAS_SUMMARY_PATH)
-    _require(alias_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "IF08 W0.5 alias summary status mismatch")
-    _require(alias_summary.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias summary next action mismatch")
+    _require(alias_summary.get("status") == IF08_W05_SYNC_SOURCE_STATUS, "IF08 W0.5 alias summary status mismatch")
+    _require(alias_summary.get("required_next_action") == IF08_W05_SYNC_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias summary next action mismatch")
     _require(alias_summary.get("alias_scope_missing_w05_resolved") is True, "IF08 W0.5 alias summary must resolve W0.5 scope gap")
 
     sync_decision = _load_json(IF08_W05_PROJECT_SYNC_DECISION_PATH)
     _require(sync_decision.get("phase_id") == "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE", "project sync decision phase_id mismatch")
     _require(sync_decision.get("decision") == "pass", "project sync decision must be pass")
     _require(sync_decision.get("status") == "if08_w05_active_context_sync_rule_pass", "project sync decision status mismatch")
-    _require(sync_decision.get("source_reported_phase_status") == EXPECTED_LATEST_COMPLETED_STATUS, "project sync decision source status mismatch")
-    _require(sync_decision.get("source_reported_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "project sync decision project sha mismatch")
+    _require(sync_decision.get("source_reported_phase_status") == IF08_W05_SYNC_SOURCE_STATUS, "project sync decision source status mismatch")
+    _require(sync_decision.get("source_reported_project_sha") == IF08_W05_SYNC_SOURCE_PROJECT_SHA, "project sync decision project sha mismatch")
     _require(sync_decision.get("project_origin_main_sha_verified") is True, "project sync decision must verify origin/main sha")
     _require(sync_decision.get("project_ci_green_confirmed") is True, "project sync decision must confirm green CI")
     _require(sync_decision.get("active_context_sync_required") is True, "project sync decision must mark sync required")
     _require(sync_decision.get("active_context_sync_applied") is True, "project sync decision must mark sync applied")
     _require(sync_decision.get("validator_enforces_or_documents_active_sync_rule") is True, "project sync decision must record validator/docs enforcement")
-    _require(sync_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project sync decision next step mismatch")
+    _require(sync_decision.get("next_recommended_step") == IF08_W05_SYNC_NEXT_RECOMMENDED_STEP, "project sync decision next step mismatch")
 
     no_execution = sync_decision.get("no_execution", {})
     for key in (
@@ -3632,6 +3646,87 @@ def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None
         "dependency_or_package_manager_used",
     ):
         _require(no_execution.get(key) is False, f"project sync decision no_execution.{key} must be false")
+
+
+def _check_if08_w05_preflight_rerun_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W05_RERUN_ACTIVE_DECISION_PATH,
+        IF08_W05_RERUN_ACTIVE_SUMMARY_PATH,
+        IF08_W05_RERUN_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W0.5 preflight rerun active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W05_RERUN_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF08_W05_PREFLIGHT_READINESS_RERUN", "active rerun decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active rerun decision must be pass")
+    _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active rerun decision status mismatch")
+    _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active rerun decision project sha mismatch")
+    _require(active_decision.get("source_latest_completed_phase") == IF08_W05_SYNC_SOURCE_PHASE, "active rerun decision source phase mismatch")
+    _require(active_decision.get("source_latest_completed_status") == IF08_W05_SYNC_SOURCE_STATUS, "active rerun decision source status mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active rerun decision must verify project origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active rerun decision must confirm project green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active rerun decision must mark sync applied")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active rerun decision must preserve permanent rule")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun") is True, "active rerun decision must confirm remote reflection")
+    _require(active_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active rerun decision next step mismatch")
+    no_execution = active_decision.get("no_execution", {})
+    for key in (
+        "wave_executed",
+        "bot_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+    ):
+        _require(no_execution.get(key) is False, f"active rerun decision no_execution.{key} must be false")
+
+    external_project_paths = (
+        IF08_W05_RERUN_DECISION_PATH,
+        IF08_W05_RERUN_SUMMARY_PATH,
+        IF08_W05_RERUN_REPORT_PATH,
+        IF08_W05_RERUN_MATRIX_PATH,
+        IF08_W05_RERUN_NO_EXECUTION_PATH,
+        IF08_W05_RERUN_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "standalone rerun validation still requires recorded project sha")
+        _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "standalone rerun validation still requires recorded rerun status")
+        return
+
+    rerun_decision = _load_json(IF08_W05_RERUN_DECISION_PATH)
+    _require(rerun_decision.get("phase_id") == "IF08_W05_PREFLIGHT_READINESS_RERUN", "project rerun decision phase_id mismatch")
+    _require(rerun_decision.get("decision") == "pass", "project rerun decision must be pass")
+    _require(rerun_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project rerun decision status mismatch")
+    _require(rerun_decision.get("source_latest_completed_phase") == IF08_W05_SYNC_SOURCE_PHASE, "project rerun decision source phase mismatch")
+    _require(rerun_decision.get("source_latest_completed_status") == IF08_W05_SYNC_SOURCE_STATUS, "project rerun decision source status mismatch")
+    _require(rerun_decision.get("source_project_sha") == IF08_W05_SYNC_SOURCE_PROJECT_SHA, "project rerun decision source project sha mismatch")
+    _require(rerun_decision.get("ready_for_next_recommended_step") is True, "project rerun decision must be ready for next step")
+    _require(rerun_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project rerun decision next step mismatch")
+    active_update = rerun_decision.get("active_context_update", {})
+    _require(active_update.get("required") is True, "project rerun decision active_context_update.required must be true")
+    _require(active_update.get("applied") is True, "project rerun decision active_context_update.applied must be true")
+    _require(active_update.get("remote_main_verified") is True, "project rerun decision active_context_update.remote_main_verified must be true")
+
+    rerun_summary = _load_json(IF08_W05_RERUN_SUMMARY_PATH)
+    _require(rerun_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project rerun summary status mismatch")
+    _require(rerun_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project rerun summary next step mismatch")
+    _require(rerun_summary.get("unresolved_mismatch_count") == 0, "project rerun summary unresolved mismatch count must be zero")
+
+    rerun_no_execution = _load_json(IF08_W05_RERUN_NO_EXECUTION_PATH)
+    for key in (
+        "wave_executed",
+        "bot_executed",
+        "runtime_executed",
+        "product_or_bedrock_executed",
+        "real_apply_executed",
+        "secrets_accessed",
+        "dependency_or_package_manager_used",
+        "external_network_used_except_github_governance",
+    ):
+        _require(rerun_no_execution.get(key) is False, f"project rerun no_execution.{key} must be false")
 
 
 def main() -> None:
@@ -3717,6 +3812,8 @@ def main() -> None:
     _check_inf_full_07_if08_authorization_artifacts(state)
     # IF08 W0.5 active-context sync rule checks
     _check_if08_w05_active_context_sync_artifacts(state)
+    # IF08 W0.5 preflight rerun checks
+    _check_if08_w05_preflight_rerun_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
 
@@ -3767,49 +3864,49 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`",
-        "latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`",
+        "latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`",
+        "latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_PREFLIGHT_READINESS_RERUN: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`",
+        "latest_completed_project_commit_sha: `93b4ee5c6aa96869ef426331c51e5f3df76e2812`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `rerun_if08_w05_preflight_readiness`",
+        "next_recommended_step: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF08_W05 Sync Confirmado",
+        "INF-FULL-07 — IF08_W05 Preflight Readiness Rerun Confirmado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w05_minos_mechanical_alias_normalization_packet_ready",
-        "rerun_if08_w05_preflight_readiness",
-        "Não executar rerun_if08_w05_preflight_readiness nesta fase.",
-        "Execute o primeiro passo de IF-08.",
+        "latest_completed_status: if08_w05_preflight_readiness_rerun_pass",
+        "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
+        "Não executar IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution nesta fase.",
+        "Prepare o próximo passo controlado de IF-08 somente no prompt correto.",
         "IF-08 waves: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w05_active_context_sync_rule_pass",
-        "Latest completed phase: `IF08_W05 Minos Mechanical Alias Normalization`",
-        "latest_completed_status=if08_w05_minos_mechanical_alias_normalization_packet_ready",
-        "active_context_remote_main_reflects_if08_w05=true",
+        "if08_w05_preflight_readiness_rerun_pass",
+        "Latest completed phase: `IF08_W05 Preflight Readiness Rerun`",
+        "latest_completed_status=if08_w05_preflight_readiness_rerun_pass",
+        "active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 execution = false",
         "waves execution = false",
-        "rerun_if08_w05_preflight_readiness",
+        "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/active_context_sync_rule/decision.json",
-        "artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json",
+        "artifacts/if08_w05_preflight_readiness_rerun/decision.json",
+        "artifacts/infernus/if08_w05_preflight_readiness_rerun_decision_2026_06_07.json",
         "artifacts/infernus/if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
@@ -3821,9 +3918,9 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "IF08_W05 Active-Context Canonical Sync Repair | pass",
-        "if08_w05_minos_mechanical_alias_normalization_packet_ready",
-        "rerun_if08_w05_preflight_readiness",
+        "IF08_W05 Preflight Readiness Rerun | pass",
+        "if08_w05_preflight_readiness_rerun_pass",
+        "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -3836,14 +3933,14 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`",
-        "latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`",
+        "latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`",
+        "latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_PREFLIGHT_READINESS_RERUN: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(

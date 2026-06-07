@@ -462,6 +462,12 @@
       "phase": "IF08_W05 Minos Mechanical Alias Normalization",
       "repair_type": "infernus_full_execution",
       "status": "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+    },
+    {
+      "decision": "pass",
+      "phase": "IF08_W05 Preflight Readiness Rerun",
+      "repair_type": "infernus_full_execution",
+      "status": "if08_w05_preflight_readiness_rerun_pass"
     }
   ],
   "cross_field_consistency_policy": {
@@ -496,18 +502,18 @@
   "current_live_route": {
     "active_next_phase": "IF-08",
     "active_next_phase_class": "infernus_full_execution",
-    "current_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+    "current_status": "if08_w05_preflight_readiness_rerun_pass",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
-    "latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+    "latest_completed_phase": "IF08_W05 Preflight Readiness Rerun",
+    "latest_completed_status": "if08_w05_preflight_readiness_rerun_pass",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "status": "inf_full_07_if08_authorization_gate_pass"
   },
-  "current_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "current_status": "if08_w05_preflight_readiness_rerun_pass",
   "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-  "latest_completed_next_recommended_step": "rerun_if08_w05_preflight_readiness",
+  "latest_completed_next_recommended_step": "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
   "latest_completed_no_execution": {
     "w05_executed": false,
     "wave_executed": false,
@@ -517,8 +523,8 @@
     "external_network_used_except_github_governance": false,
     "dependency_or_package_manager_used": false
   },
-  "latest_completed_project_commit_sha": "f05ff031a95625da4d09c1c8bb648cc81ed3a97f",
-  "latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "latest_completed_project_commit_sha": "93b4ee5c6aa96869ef426331c51e5f3df76e2812",
+  "latest_completed_status": "if08_w05_preflight_readiness_rerun_pass",
   "permanent_active_update_rule_installed": true,
   "decision": "pass",
   "drift_signals": {
@@ -556,28 +562,28 @@
       "ARIS Infernus FULL Pre-Execution Review Gate",
       "IF08_W05 Active-Context Canonical Sync Repair & Permanent Active Update Rule"
     ],
-    "latest_execution_phase": "IF08_W05 Minos Mechanical Alias Normalization",
-    "latest_execution_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+    "latest_execution_phase": "IF08_W05 Preflight Readiness Rerun",
+    "latest_execution_status": "if08_w05_preflight_readiness_rerun_pass",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization"
+    "previous_execution_phase": "IF08_W05 Minos Mechanical Alias Normalization"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
-    "proof_source": "project_origin_main_sha_f05ff031a95625da4d09c1c8bb648cc81ed3a97f_verified_with_terminal_green_ci_then_active_context_remote_main_synced_and_verified",
-    "to_phase": "IF08_W05 Minos Mechanical Alias Normalization",
-    "to_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
-    "transition_type": "active_context_canonical_sync_repair",
-    "verified_via": "Project repo origin/main matched f05ff031a95625da4d09c1c8bb648cc81ed3a97f, all W0.5 alias-normalization workflows were terminal green, required W0.5 artifacts existed on disk, latest_completed_phase mirrors were updated coherently, and the permanent active-context update rule was installed before any next prompt."
+    "from_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+    "proof_source": "project_origin_main_sha_93b4ee5c6aa96869ef426331c51e5f3df76e2812_verified_with_terminal_green_ci_then_active_context_remote_main_synced_and_verified",
+    "to_phase": "IF08_W05 Preflight Readiness Rerun",
+    "to_status": "if08_w05_preflight_readiness_rerun_pass",
+    "transition_type": "active_context_canonical_sync_rerun",
+    "verified_via": "Project repo origin/main matched 93b4ee5c6aa96869ef426331c51e5f3df76e2812, all IF08_W05 preflight-rerun workflows were terminal green, required rerun artifacts existed on disk, no_execution remained false across the packet, and active-context mirrors were updated coherently before any next prompt."
   },
-  "latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+  "latest_completed_phase": "IF08_W05 Preflight Readiness Rerun",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": "IF-08",
-    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF08_W05 Minos Mechanical Alias Normalization. The next recommended step is rerun_if08_w05_preflight_readiness. Execution (waves, runtime, apply) remains false until operator issues execution command.",
+    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF08_W05 Preflight Readiness Rerun. The next recommended step is IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution. Execution (waves, runtime, apply) remains false until operator issues execution command.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -590,11 +596,12 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The Project repo IF08_W05 alias-normalization result was verified on origin/main with terminal green CI.",
+      "The Project repo IF08_W05 preflight-readiness rerun result was verified on origin/main with terminal green CI.",
       "aris-active-context/main was synchronised before any next prompt or canonical PASS claim.",
-      "The latest completed operational packet is IF08_W05 Minos Mechanical Alias Normalization.",
-      "The next recommended step is rerun_if08_w05_preflight_readiness.",
-      "Do not execute rerun_if08_w05_preflight_readiness in this sync repair.",
+      "The latest completed operational packet is IF08_W05 Preflight Readiness Rerun.",
+      "The next recommended step is IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution.",
+      "No new ritual operator phrase is required for preparing the next synthetic isolated W0.5 step.",
+      "Do not execute IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution in this rerun recording.",
       "Execution (waves, bots, runtime, apply, product, Bedrock) remains false until operator issues execution command."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
@@ -602,7 +609,7 @@
     "phase_class": "infernus_full_execution",
     "planning_only": false,
     "review_only": true,
-    "status": "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+    "status": "if08_w05_preflight_readiness_rerun_pass"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",

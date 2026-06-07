@@ -882,11 +882,11 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] == "IF-08"
     assert state["active_next_phase_class"] == "infernus_full_execution"
     assert state["next_phase_authorized_by_operator"] is True
-    assert state["current_status"] == "if08_w05_minos_mechanical_alias_normalization_packet_ready"
-    assert state["latest_completed_phase"] == "IF08_W05 Minos Mechanical Alias Normalization"
-    assert state["latest_completed_status"] == "if08_w05_minos_mechanical_alias_normalization_packet_ready"
-    assert state["latest_completed_project_commit_sha"] == "f05ff031a95625da4d09c1c8bb648cc81ed3a97f"
+    assert state["current_status"] == "if08_w05_preflight_readiness_rerun_pass"
+    assert state["latest_completed_phase"] == "IF08_W05 Preflight Readiness Rerun"
+    assert state["latest_completed_status"] == "if08_w05_preflight_readiness_rerun_pass"
+    assert state["latest_completed_project_commit_sha"] == "93b4ee5c6aa96869ef426331c51e5f3df76e2812"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
-    assert state["latest_completed_next_recommended_step"] == "rerun_if08_w05_preflight_readiness"
+    assert state["latest_completed_next_recommended_step"] == "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
     assert state["active_context_remote_main_reflects_latest_phase"] is True
     assert state["permanent_active_update_rule_installed"] is True

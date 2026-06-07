@@ -1,0 +1,28 @@
+{
+  "phase_id": "IF08_W05_PREFLIGHT_READINESS_RERUN",
+  "decision": "pass",
+  "status": "if08_w05_preflight_readiness_rerun_pass",
+  "source_latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+  "source_latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "source_project_sha": "93b4ee5c6aa96869ef426331c51e5f3df76e2812",
+  "source_project_ci_state": "CI_GREEN_CONFIRMED",
+  "project_origin_main_sha_verified": true,
+  "project_ci_green_confirmed": true,
+  "active_context_pre_sync_sha": "fea7554729cdfe5e0eb00b4237a0193f3275c5c9",
+  "active_context_pre_sync_phase_id": "INF-FULL-07",
+  "active_context_pre_sync_current_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "active_context_sync_applied": true,
+  "permanent_active_update_rule_installed": true,
+  "active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun": true,
+  "next_recommended_step": "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
+  "no_execution": {
+    "wave_executed": false,
+    "bot_executed": false,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "product_or_bedrock_executed": false,
+    "secrets_accessed": false,
+    "external_network_used_except_github_governance": false,
+    "dependency_or_package_manager_used": false
+  }
+}

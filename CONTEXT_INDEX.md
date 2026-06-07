@@ -2,30 +2,31 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
-- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
-- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- current_status: `if08_w05_preflight_readiness_rerun_pass`
+- latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`
+- latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w05: `true`
+- active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
-- `artifacts/active_context_sync_rule/decision.json`
-- `artifacts/active_context_sync_rule/summary.json`
-- `artifacts/active_context_sync_rule/report.md`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_summary_2026_06_07.json`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_report_2026_06_07.md`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_ci_matrix_2026_06_07.json`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_no_execution_attestation_2026_06_07.json`
+- `artifacts/if08_w05_preflight_readiness_rerun/decision.json`
+- `artifacts/if08_w05_preflight_readiness_rerun/summary.json`
+- `artifacts/if08_w05_preflight_readiness_rerun/report.md`
+- `artifacts/infernus/if08_w05_preflight_readiness_rerun_decision_2026_06_07.json`
+- `artifacts/infernus/if08_w05_preflight_readiness_rerun_summary_2026_06_07.json`
+- `artifacts/infernus/if08_w05_preflight_readiness_rerun_report_2026_06_07.md`
+- `artifacts/infernus/if08_w05_preflight_readiness_rerun_matrix_2026_06_07.json`
+- `artifacts/infernus/if08_w05_preflight_readiness_rerun_no_execution_attestation_2026_06_07.json`
+- `docs/infernus_full/if08_w05_preflight_readiness_rerun_2026_06_07.md`
 - `artifacts/infernus/if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json`
 - `artifacts/infernus/if08_w05_minos_mechanical_alias_summary_2026_06_06.json`
-- `docs/infernus_full/if08_w05_minos_mechanical_alias_normalization_2026_06_06.md`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json`
 - `INFERNUS_STANDING_AUTHORIZATION.md`
 - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 - `EXCLUDENT_POLICY.md`
