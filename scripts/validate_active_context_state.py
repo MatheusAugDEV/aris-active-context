@@ -34,28 +34,34 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision"
+EXPECTED_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W1 Context/Memory/RAG Controlled Execution"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w1_post_sync_review_w2_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w1_post_sync_review_w2_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w1_post_sync_review_w2_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "5bb8b08373aca54cf30d5451ff7655c00bee2cf7"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "d19642cb83d996cefaf57bb2c71ed17195035103"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if08_w2_auth_hitl_identity_exfil_preflight_readiness"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27101363788"
+EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102062488"
 IF08_W1_CONTROLLED_PHASE = "IF-08 W1 Context/Memory/RAG Controlled Execution"
 IF08_W1_CONTROLLED_STATUS = "if08_w1_context_memory_rag_controlled_execution_pass"
 IF08_W1_CONTROLLED_PROJECT_SHA = "1d0f51584e082d1f3f7c270df89d567a96066711"
 IF08_W1_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
 IF08_W1_CONTROLLED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w1_context_memory_rag_controlled_execution"
 IF08_W1_CONTROLLED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27100836572"
+IF08_W2_PREFLIGHT_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness"
+IF08_W2_PREFLIGHT_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
+IF08_W2_PREFLIGHT_PROJECT_SHA = "d19642cb83d996cefaf57bb2c71ed17195035103"
+IF08_W2_PREFLIGHT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W2_PREFLIGHT_NEXT_RECOMMENDED_STEP = "execute_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+IF08_W2_PREFLIGHT_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102062488"
 IF08_W1_POST_SYNC_PHASE = "IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision"
 IF08_W1_POST_SYNC_STATUS = "if08_w1_post_sync_review_w2_readiness_pass"
 IF08_W1_POST_SYNC_PROJECT_SHA = "5bb8b08373aca54cf30d5451ff7655c00bee2cf7"
@@ -241,6 +247,19 @@ IF08_W1_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w1_post_sync_review"
 IF08_W1_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W1_POST_SYNC_ROOT / "decision.json"
 IF08_W1_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W1_POST_SYNC_ROOT / "summary.json"
 IF08_W1_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W1_POST_SYNC_ROOT / "report.md"
+IF08_W2_PREFLIGHT_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_preflight_readiness_decision_2026_06_07.json")
+IF08_W2_PREFLIGHT_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_preflight_readiness_summary_2026_06_07.json")
+IF08_W2_PREFLIGHT_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_preflight_readiness_report_2026_06_07.md")
+IF08_W2_PREFLIGHT_ATTACK_SURFACE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_attack_surface_matrix_2026_06_07.json")
+IF08_W2_PREFLIGHT_ORACLE_CONTRACT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_oracle_contract_2026_06_07.json")
+IF08_W2_PREFLIGHT_FIXTURE_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_fixture_readiness_matrix_2026_06_07.json")
+IF08_W2_PREFLIGHT_STOP_CONDITION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_stop_condition_matrix_2026_06_07.json")
+IF08_W2_PREFLIGHT_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_no_execution_attestation_2026_06_07.json")
+IF08_W2_PREFLIGHT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w2_auth_hitl_identity_exfil_preflight_readiness_2026_06_07.md")
+IF08_W2_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w2_auth_hitl_identity_exfil_preflight_readiness"
+IF08_W2_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W2_PREFLIGHT_ROOT / "decision.json"
+IF08_W2_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W2_PREFLIGHT_ROOT / "summary.json"
+IF08_W2_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W2_PREFLIGHT_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -4486,6 +4505,197 @@ def _check_if08_w1_post_sync_review_artifacts(state: dict[str, Any]) -> None:
         _require(no_execution.get(key) is False, f"project W1 post-sync no_execution.{key} must be false")
 
 
+def _check_if08_w2_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W2_PREFLIGHT_ACTIVE_DECISION_PATH,
+        IF08_W2_PREFLIGHT_ACTIVE_SUMMARY_PATH,
+        IF08_W2_PREFLIGHT_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W2 preflight active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W2_PREFLIGHT_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "active W2 preflight decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W2 preflight decision must be pass")
+    _require(active_decision.get("status") == IF08_W2_PREFLIGHT_STATUS, "active W2 preflight decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W2_PREFLIGHT_PROJECT_SHA, "active W2 preflight decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W2_PREFLIGHT_CI_STATE, "active W2 preflight decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W2_PREFLIGHT_PROJECT_CI_RUN_URL, "active W2 preflight decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W2 preflight decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W2 preflight decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W2 preflight decision must mark sync applied")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W2 preflight decision must preserve permanent rule")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness") is True, "active W2 preflight decision must confirm remote reflection")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W2_PREFLIGHT_PHASE, "active W2 preflight decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W2_PREFLIGHT_STATUS, "active W2 preflight decision latest status mismatch")
+    _require(active_decision.get("w2_preflight_readiness") is True, "active W2 preflight decision must keep readiness true")
+    _require(active_decision.get("readiness_coverage") == 1.0, "active W2 preflight decision readiness_coverage must be 1.0")
+    _require(active_decision.get("required_preflight_checks") == 12, "active W2 preflight decision required_preflight_checks must be 12")
+    _require(active_decision.get("ready_preflight_checks") == 12, "active W2 preflight decision ready_preflight_checks must be 12")
+    _require(active_decision.get("future_far_required") == 0, "active W2 preflight decision future_far_required must be 0")
+    _require(active_decision.get("future_ctl_required") == 0, "active W2 preflight decision future_ctl_required must be 0")
+    _require(active_decision.get("w2_execution_performed") is False, "active W2 preflight decision must keep w2_execution_performed false")
+    _require(active_decision.get("w2_execution_allowed") is False, "active W2 preflight decision must keep w2_execution_allowed false")
+    _require(active_decision.get("next_recommended_step") == IF08_W2_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W2 preflight decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(active_outcome.get(key) is False, f"active W2 preflight decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W2_PREFLIGHT_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "active W2 preflight summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W2 preflight summary must be pass")
+    _require(active_summary.get("status") == IF08_W2_PREFLIGHT_STATUS, "active W2 preflight summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W2_PREFLIGHT_PHASE, "active W2 preflight summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W2_PREFLIGHT_STATUS, "active W2 preflight summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W2_PREFLIGHT_PROJECT_SHA, "active W2 preflight summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W2_PREFLIGHT_CI_STATE, "active W2 preflight summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W2_PREFLIGHT_PROJECT_CI_RUN_URL, "active W2 preflight summary ci url mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active W2 preflight summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness") is True, "active W2 preflight summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W2 preflight summary must preserve permanent rule")
+    _require(active_summary.get("w2_preflight_readiness") is True, "active W2 preflight summary must keep readiness true")
+    _require(active_summary.get("readiness_coverage") == 1.0, "active W2 preflight summary readiness_coverage must be 1.0")
+    _require(active_summary.get("required_preflight_checks") == 12, "active W2 preflight summary required_preflight_checks must be 12")
+    _require(active_summary.get("ready_preflight_checks") == 12, "active W2 preflight summary ready_preflight_checks must be 12")
+    _require(active_summary.get("future_far_required") == 0, "active W2 preflight summary future_far_required must be 0")
+    _require(active_summary.get("future_ctl_required") == 0, "active W2 preflight summary future_ctl_required must be 0")
+    _require(active_summary.get("w2_execution_allowed") is False, "active W2 preflight summary must keep execution disallowed")
+    _require(active_summary.get("next_recommended_step") == IF08_W2_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W2 preflight summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W2_PREFLIGHT_ACTIVE_REPORT_PATH,
+        "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness",
+        IF08_W2_PREFLIGHT_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness: `true`",
+        "ready_preflight_checks: `12/12`",
+        "next_recommended_step: `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
+    )
+
+    external_project_paths = (
+        IF08_W2_PREFLIGHT_DECISION_PATH,
+        IF08_W2_PREFLIGHT_SUMMARY_PATH,
+        IF08_W2_PREFLIGHT_REPORT_PATH,
+        IF08_W2_PREFLIGHT_ATTACK_SURFACE_PATH,
+        IF08_W2_PREFLIGHT_ORACLE_CONTRACT_PATH,
+        IF08_W2_PREFLIGHT_FIXTURE_MATRIX_PATH,
+        IF08_W2_PREFLIGHT_STOP_CONDITION_PATH,
+        IF08_W2_PREFLIGHT_NO_EXECUTION_PATH,
+        IF08_W2_PREFLIGHT_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W2_PREFLIGHT_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W2 preflight decision must be pass")
+    _require(decision.get("status") == IF08_W2_PREFLIGHT_STATUS, "project W2 preflight decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W1_POST_SYNC_PHASE, "project W2 preflight decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W1_POST_SYNC_STATUS, "project W2 preflight decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF08_W1_POST_SYNC_PROJECT_SHA, "project W2 preflight decision source project sha mismatch")
+    _require(decision.get("w2_wave", {}).get("wave_id") == "W2", "project W2 preflight decision wave_id mismatch")
+    _require(decision.get("w2_wave", {}).get("wave_name") == "Auth/HITL/identity/exfil", "project W2 preflight decision wave_name mismatch")
+    _require(decision.get("w2_preflight_readiness") is True, "project W2 preflight decision must keep readiness true")
+    _require(decision.get("readiness_coverage") == 1.0, "project W2 preflight decision readiness_coverage must be 1.0")
+    _require(decision.get("required_preflight_checks") == 12, "project W2 preflight decision required_preflight_checks must be 12")
+    _require(decision.get("ready_preflight_checks") == 12, "project W2 preflight decision ready_preflight_checks must be 12")
+    _require(decision.get("future_far_required") == 0, "project W2 preflight decision future_far_required must be 0")
+    _require(decision.get("future_ctl_required") == 0, "project W2 preflight decision future_ctl_required must be 0")
+    _require(decision.get("attack_surface_matrix_created") is True, "project W2 preflight decision must create attack surface matrix")
+    _require(decision.get("oracle_contract_created") is True, "project W2 preflight decision must create oracle contract")
+    _require(decision.get("fixture_readiness_matrix_created") is True, "project W2 preflight decision must create fixture matrix")
+    _require(decision.get("stop_condition_matrix_created") is True, "project W2 preflight decision must create stop condition matrix")
+    _require(decision.get("no_execution_attestation_created") is True, "project W2 preflight decision must create no_execution attestation")
+    _require(decision.get("w2_execution_performed") is False, "project W2 preflight decision w2_execution_performed must be false")
+    _require(decision.get("w2_execution_allowed") is False, "project W2 preflight decision w2_execution_allowed must be false")
+    _require(decision.get("runtime_executed") is False, "project W2 preflight decision runtime_executed must be false")
+    _require(decision.get("real_apply_executed") is False, "project W2 preflight decision real_apply_executed must be false")
+    _require(decision.get("product_or_bedrock_executed") is False, "project W2 preflight decision product_or_bedrock_executed must be false")
+    _require(decision.get("secrets_accessed") is False, "project W2 preflight decision secrets_accessed must be false")
+    _require(decision.get("dependency_or_package_manager_used") is False, "project W2 preflight decision dependency_or_package_manager_used must be false")
+    _require(decision.get("external_network_used_except_github_governance") is False, "project W2 preflight decision external_network_used_except_github_governance must be false")
+    _require(decision.get("blocking_findings") == [], "project W2 preflight decision blocking_findings must be empty")
+    _require(decision.get("next_recommended_step") == IF08_W2_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W2 preflight decision next step mismatch")
+    _require(len(decision.get("w2_bots", [])) == 4, "project W2 preflight decision must list 4 W2 bots")
+
+    summary = _load_json(IF08_W2_PREFLIGHT_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project W2 preflight summary must be pass")
+    _require(summary.get("status") == IF08_W2_PREFLIGHT_STATUS, "project W2 preflight summary status mismatch")
+    _require(summary.get("source_phase") == IF08_W1_POST_SYNC_PHASE, "project W2 preflight summary source phase mismatch")
+    _require(summary.get("source_status") == IF08_W1_POST_SYNC_STATUS, "project W2 preflight summary source status mismatch")
+    _require(summary.get("project_commit_sha") == IF08_W1_POST_SYNC_PROJECT_SHA, "project W2 preflight summary source project sha mismatch")
+    _require(summary.get("w2_wave_id") == "W2", "project W2 preflight summary wave_id mismatch")
+    _require(summary.get("w2_wave_name") == "Auth/HITL/identity/exfil", "project W2 preflight summary wave_name mismatch")
+    _require(summary.get("w2_preflight_readiness") is True, "project W2 preflight summary must keep readiness true")
+    _require(summary.get("readiness_coverage") == 1.0, "project W2 preflight summary readiness_coverage must be 1.0")
+    _require(summary.get("required_preflight_checks") == 12, "project W2 preflight summary required_preflight_checks must be 12")
+    _require(summary.get("ready_preflight_checks") == 12, "project W2 preflight summary ready_preflight_checks must be 12")
+    _require(summary.get("future_far_required") == 0, "project W2 preflight summary future_far_required must be 0")
+    _require(summary.get("future_ctl_required") == 0, "project W2 preflight summary future_ctl_required must be 0")
+    _require(summary.get("next_recommended_step") == IF08_W2_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W2 preflight summary next step mismatch")
+    _require(len(summary.get("w2_bots", [])) == 4, "project W2 preflight summary must list 4 W2 bots")
+
+    attack_surface = _load_json(IF08_W2_PREFLIGHT_ATTACK_SURFACE_PATH)
+    _require(attack_surface.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight attack surface phase_id mismatch")
+    _require(attack_surface.get("wave_id") == "W2", "project W2 preflight attack surface wave_id mismatch")
+    _require(attack_surface.get("future_far_required") == 0, "project W2 preflight attack surface future_far_required must be 0")
+    _require(attack_surface.get("future_ctl_required") == 0, "project W2 preflight attack surface future_ctl_required must be 0")
+    _require(len(attack_surface.get("attack_vectors", [])) == 10, "project W2 preflight attack surface must contain 10 vectors")
+
+    oracle_contract = _load_json(IF08_W2_PREFLIGHT_ORACLE_CONTRACT_PATH)
+    _require(oracle_contract.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight oracle contract phase_id mismatch")
+    _require(oracle_contract.get("future_far_required") == 0, "project W2 preflight oracle contract future_far_required must be 0")
+    _require(oracle_contract.get("future_ctl_required") == 0, "project W2 preflight oracle contract future_ctl_required must be 0")
+    _require(oracle_contract.get("source_priority_stack_preserved") is True, "project W2 preflight oracle contract must preserve source priority stack")
+    _require(len(oracle_contract.get("future_oracles", [])) == 10, "project W2 preflight oracle contract must contain 10 future oracles")
+    _require(oracle_contract.get("forbidden_execution_surfaces", {}).get("runtime_execution_allowed") is False, "project W2 preflight oracle contract runtime_execution_allowed must be false")
+    _require(oracle_contract.get("forbidden_execution_surfaces", {}).get("mcp_runtime_activation_allowed") is False, "project W2 preflight oracle contract mcp_runtime_activation_allowed must be false")
+    _require(oracle_contract.get("forbidden_execution_surfaces", {}).get("memory_write_allowed") is False, "project W2 preflight oracle contract memory_write_allowed must be false")
+
+    fixture_matrix = _load_json(IF08_W2_PREFLIGHT_FIXTURE_MATRIX_PATH)
+    _require(fixture_matrix.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight fixture matrix phase_id mismatch")
+    _require(fixture_matrix.get("wave_id") == "W2", "project W2 preflight fixture matrix wave_id mismatch")
+    _require(fixture_matrix.get("all_fixture_definitions_ready") is True, "project W2 preflight fixture matrix must be ready")
+    _require(fixture_matrix.get("execution_materialized_now") is False, "project W2 preflight fixture matrix execution_materialized_now must be false")
+    _require(len(fixture_matrix.get("bots", [])) == 4, "project W2 preflight fixture matrix must contain 4 bot rows")
+    _require(all(row.get("preflight_definition_ready") is True for row in fixture_matrix.get("bots", [])), "project W2 preflight fixture matrix must keep every bot ready")
+
+    stop_conditions = _load_json(IF08_W2_PREFLIGHT_STOP_CONDITION_PATH)
+    _require(stop_conditions.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight stop condition phase_id mismatch")
+    _require(stop_conditions.get("all_stop_conditions_defined") is True, "project W2 preflight stop conditions must all be defined")
+    _require(len(stop_conditions.get("rows", [])) == 10, "project W2 preflight stop conditions must contain 10 rows")
+    _require(all(row.get("hard_stop") is True for row in stop_conditions.get("rows", [])), "project W2 preflight stop conditions must mark every row as hard_stop")
+    _require(all(row.get("execution_now") is False for row in stop_conditions.get("rows", [])), "project W2 preflight stop conditions must keep execution_now false")
+
+    no_execution = _load_json(IF08_W2_PREFLIGHT_NO_EXECUTION_PATH)
+    _require(no_execution.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-PREFLIGHT-READINESS", "project W2 preflight no_execution phase_id mismatch")
+    _require(no_execution.get("w2_execution_performed") is False, "project W2 preflight no_execution must keep execution false")
+    _require(no_execution.get("w2_execution_allowed") is False, "project W2 preflight no_execution must keep execution disallowed")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "dependency_or_package_manager_used",
+        "external_network_used_except_github_governance",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(no_execution.get(key) is False, f"project W2 preflight no_execution.{key} must be false")
+
+
 def _check_if08_w1_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W1_PREFLIGHT_ACTIVE_DECISION_PATH,
@@ -4747,6 +4957,8 @@ def main() -> None:
     _check_if08_w1_controlled_execution_artifacts(state)
     # IF08 W1 post-sync review checks
     _check_if08_w1_post_sync_review_artifacts(state)
+    # IF08 W2 auth/HITL/identity/exfil preflight readiness checks
+    _check_if08_w2_preflight_readiness_artifacts(state)
     # IF08 W1 context/memory/RAG preflight readiness checks
     _check_if08_w1_preflight_readiness_artifacts(state)
     # IF08 W0.5 preflight rerun checks
@@ -4776,20 +4988,14 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
     _require(state["latest_completed_no_execution"]["w1_execution_allowed"] is False, "latest_completed_no_execution.w1_execution_allowed must be false")
-    _require(state["latest_completed_no_execution"]["cir_observed"] == 1.0, "latest_completed_no_execution.cir_observed must be 1.0")
-    _require(state["latest_completed_no_execution"]["context_integrity_violations_expected"] == 10, "latest_completed_no_execution.expected violations must be 10")
-    _require(state["latest_completed_no_execution"]["context_integrity_violations_blocked"] == 10, "latest_completed_no_execution.blocked violations must be 10")
-    _require(state["latest_completed_no_execution"]["undetected_context_integrity_violations"] == [], "latest_completed_no_execution.undetected violations must be empty")
-    _require(state["latest_completed_no_execution"]["w1_controlled_execution_verified"] is True, "latest_completed_no_execution.w1_controlled_execution_verified must be true")
-    _require(state["latest_completed_no_execution"]["w1_synthetic_isolated_only"] is True, "latest_completed_no_execution.w1_synthetic_isolated_only must be true")
-    _require(state["latest_completed_no_execution"]["w2_preparation_allowed_next"] is True, "latest_completed_no_execution.w2_preparation_allowed_next must be true")
+    _require(state["latest_completed_no_execution"]["w2_preflight_readiness"] is True, "latest_completed_no_execution.w2_preflight_readiness must be true")
     _require(state["latest_completed_no_execution"]["w2_execution_performed"] is False, "latest_completed_no_execution.w2_execution_performed must be false")
     _require(state["latest_completed_no_execution"]["w2_execution_allowed"] is False, "latest_completed_no_execution.w2_execution_allowed must be false")
     _require(state["latest_completed_no_execution"]["future_far_required"] == 0, "latest_completed_no_execution.future_far_required must be 0")
     _require(state["latest_completed_no_execution"]["future_ctl_required"] == 0, "latest_completed_no_execution.future_ctl_required must be 0")
     _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
-    _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 8, "latest_completed_no_execution.required_preflight_checks must be 8")
-    _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 8, "latest_completed_no_execution.ready_preflight_checks must be 8")
+    _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 12, "latest_completed_no_execution.required_preflight_checks must be 12")
+    _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 12, "latest_completed_no_execution.ready_preflight_checks must be 12")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -4830,52 +5036,53 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision`",
-        "latest_completed_status: `if08_w1_post_sync_review_w2_readiness_pass`",
+        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
+        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_POST_SYNC_REVIEW: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_PREFLIGHT: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `5bb8b08373aca54cf30d5451ff7655c00bee2cf7`",
+        "latest_completed_project_commit_sha: `d19642cb83d996cefaf57bb2c71ed17195035103`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `prepare_if08_w2_auth_hitl_identity_exfil_preflight_readiness`",
+        "next_recommended_step: `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W1 Post-Sync Review & W2 Readiness Sincronizado",
+        "INF-FULL-07 — IF-08 W2 Preflight Readiness Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w1_post_sync_review_w2_readiness_pass",
-        "Não reexecutar o post-sync review W1 nesta fase.",
-        "Este sync já registra W1 canônico verificado com `CIR=1.0` e W2 apenas `ready_for_preparation`.",
-        "O proximo prompt deve preparar o preflight readiness canônico da W2.",
-        "O proximo passo recomendado neste estado e `prepare_if08_w2_auth_hitl_identity_exfil_preflight_readiness`.",
+        "latest_completed_status: if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
+        "Não reexecutar o preflight W2 nesta fase.",
+        "Este sync já registra W2 preflight readiness em `1.0`, com `12/12` checks prontos, `FAR=0` e `CTL=0` como gates futuros.",
+        "O proximo prompt pode executar a controlled execution canônica da W2 em escopo sintético isolado de laboratório.",
+        "O proximo passo recomendado neste estado e `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w1_post_sync_review_w2_readiness_pass",
-        "Latest completed phase: `IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision`",
-        "latest_completed_status=if08_w1_post_sync_review_w2_readiness_pass",
-        "active_context_remote_main_reflects_if08_w1_post_sync_review=true",
+        "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
+        "Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
+        "latest_completed_status=if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
+        "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "prepare_if08_w2_auth_hitl_identity_exfil_preflight_readiness",
+        "execute_if08_w2_auth_hitl_identity_exfil_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/if08_w1_post_sync_review/decision.json",
-        "artifacts/infernus/if08_w1_post_sync_review_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w2_readiness_matrix_2026_06_07.json",
-        "docs/infernus_full/if08_w1_post_sync_review_2026_06_07.md",
+        "artifacts/if08_w2_auth_hitl_identity_exfil_preflight_readiness/decision.json",
+        "artifacts/infernus/if08_w2_auth_hitl_identity_exfil_preflight_readiness_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w2_auth_attack_surface_matrix_2026_06_07.json",
+        "artifacts/infernus/if08_w2_stop_condition_matrix_2026_06_07.json",
+        "docs/infernus_full/if08_w2_auth_hitl_identity_exfil_preflight_readiness_2026_06_07.md",
         "artifacts/if08_w1_context_memory_rag_controlled_execution/decision.json",
         "artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w1_context_integrity_detection_matrix_2026_06_07.json",
@@ -4895,10 +5102,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision | pass",
-        "if08_w1_post_sync_review_w2_readiness_pass",
-        "project_commit_sha: `5bb8b08373aca54cf30d5451ff7655c00bee2cf7`",
-        "next_recommended_step: `prepare_if08_w2_auth_hitl_identity_exfil_preflight_readiness`",
+        "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness | pass",
+        "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
+        "project_commit_sha: `d19642cb83d996cefaf57bb2c71ed17195035103`",
+        "next_recommended_step: `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
         "IF-08 W1 Context/Memory/RAG Controlled Execution | pass",
         "if08_w1_context_memory_rag_controlled_execution_pass",
         "project_commit_sha: `1d0f51584e082d1f3f7c270df89d567a96066711`",
@@ -4918,24 +5125,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision`",
-        "latest_completed_status: `if08_w1_post_sync_review_w2_readiness_pass`",
+        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
+        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W1_POST_SYNC_REVIEW: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_PREFLIGHT: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision",
+        "Latest completed phase: IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W1 post-sync review is canonical; this sync records W2 readiness-only with readiness_coverage=1.0 and the next step is W2 preflight readiness preparation.",
+        "W2 preflight readiness is canonical; this sync records readiness_coverage=1.0 with 12 of 12 checks ready, future FAR=0, future CTL=0, and the next step is W2 controlled execution.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
