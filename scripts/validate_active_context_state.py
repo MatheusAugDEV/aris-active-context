@@ -34,21 +34,26 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
+EXPECTED_PHASE = "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF08_W05 Preflight Readiness Rerun"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_pass"
+EXPECTED_CURRENT_STATUS = "if08_w05_post_sync_review_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "9ad30a803ffe2227551bdbe2856633eef1165047"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w05_post_sync_review_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w05_post_sync_review_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6b8dc72edc168402700c63cca076bf533bd3b65a"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "defer_next_if08_wave_prompt_until_post_sync_review"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if08_w1_context_memory_rag_preflight_readiness"
+IF08_W05_CONTROLLED_PHASE = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
+IF08_W05_CONTROLLED_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_pass"
+IF08_W05_CONTROLLED_PROJECT_SHA = "9ad30a803ffe2227551bdbe2856633eef1165047"
+IF08_W05_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W05_CONTROLLED_NEXT_RECOMMENDED_STEP = "defer_next_if08_wave_prompt_until_post_sync_review"
 IF08_W05_RERUN_PHASE = "IF08_W05 Preflight Readiness Rerun"
 IF08_W05_RERUN_STATUS = "if08_w05_preflight_readiness_rerun_pass"
 IF08_W05_RERUN_PROJECT_SHA = "93b4ee5c6aa96869ef426331c51e5f3df76e2812"
@@ -168,6 +173,16 @@ IF08_W05_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w05_controlled_execution"
 IF08_W05_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W05_CONTROLLED_ROOT / "decision.json"
 IF08_W05_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W05_CONTROLLED_ROOT / "summary.json"
 IF08_W05_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W05_CONTROLLED_ROOT / "report.md"
+IF08_W05_POST_SYNC_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_decision_2026_06_07.json")
+IF08_W05_POST_SYNC_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_summary_2026_06_07.json")
+IF08_W05_POST_SYNC_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_report_2026_06_07.md")
+IF08_W1_READINESS_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_readiness_matrix_2026_06_07.json")
+IF08_W05_POST_SYNC_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_no_execution_attestation_2026_06_07.json")
+IF08_W05_POST_SYNC_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w05_post_sync_review_2026_06_07.md")
+IF08_W05_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w05_post_sync_review"
+IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W05_POST_SYNC_ROOT / "decision.json"
+IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W05_POST_SYNC_ROOT / "summary.json"
+IF08_W05_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W05_POST_SYNC_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -3757,22 +3772,22 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     active_decision = _load_json(IF08_W05_CONTROLLED_ACTIVE_DECISION_PATH)
     _require(active_decision.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "active controlled decision phase_id mismatch")
     _require(active_decision.get("decision") == "pass", "active controlled decision must be pass")
-    _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active controlled decision status mismatch")
-    _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active controlled decision project sha mismatch")
-    _require(active_decision.get("source_project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active controlled decision ci state mismatch")
+    _require(active_decision.get("status") == IF08_W05_CONTROLLED_STATUS, "active controlled decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "active controlled decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "active controlled decision ci state mismatch")
     _require(active_decision.get("project_origin_main_sha_verified") is True, "active controlled decision must verify origin/main sha")
     _require(active_decision.get("project_ci_green_confirmed") is True, "active controlled decision must confirm green CI")
     _require(active_decision.get("active_context_sync_applied") is True, "active controlled decision must mark sync applied")
     _require(active_decision.get("permanent_active_update_rule_installed") is True, "active controlled decision must preserve permanent rule")
     _require(active_decision.get("active_context_remote_main_reflects_if08_w05_controlled_execution") is True, "active controlled decision must confirm remote reflection")
-    _require(active_decision.get("latest_completed_phase_after_sync") == EXPECTED_PHASE, "active controlled decision latest phase mismatch")
-    _require(active_decision.get("latest_completed_status_after_sync") == EXPECTED_LATEST_COMPLETED_STATUS, "active controlled decision latest status mismatch")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W05_CONTROLLED_PHASE, "active controlled decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W05_CONTROLLED_STATUS, "active controlled decision latest status mismatch")
     _require(active_decision.get("tamper_attempts_expected") == 4, "active controlled decision tamper_attempts_expected must be 4")
     _require(active_decision.get("tamper_attempts_detected") == 4, "active controlled decision tamper_attempts_detected must be 4")
     _require(active_decision.get("ter_result") == 1.0, "active controlled decision ter_result must be 1.0")
     _require(active_decision.get("synthetic_isolated_lab_only") is True, "active controlled decision must be synthetic isolated lab only")
     _require(active_decision.get("bedrock_preparation_exception") is True, "active controlled decision must mark bedrock exception")
-    _require(active_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active controlled decision next step mismatch")
+    _require(active_decision.get("next_recommended_step") == IF08_W05_CONTROLLED_NEXT_RECOMMENDED_STEP, "active controlled decision next step mismatch")
     active_outcome = active_decision.get("execution_outcome", {})
     for key in ("w05_executed", "wave_executed", "bot_executed"):
         _require(active_outcome.get(key) is True, f"active controlled decision execution_outcome.{key} must be true")
@@ -3789,23 +3804,23 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     active_summary = _load_json(IF08_W05_CONTROLLED_ACTIVE_SUMMARY_PATH)
     _require(active_summary.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "active controlled summary phase_id mismatch")
     _require(active_summary.get("decision") == "pass", "active controlled summary must be pass")
-    _require(active_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active controlled summary status mismatch")
-    _require(active_summary.get("latest_completed_phase") == EXPECTED_PHASE, "active controlled summary latest phase mismatch")
-    _require(active_summary.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS, "active controlled summary latest status mismatch")
-    _require(active_summary.get("project_commit_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active controlled summary project sha mismatch")
-    _require(active_summary.get("project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active controlled summary ci state mismatch")
+    _require(active_summary.get("status") == IF08_W05_CONTROLLED_STATUS, "active controlled summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W05_CONTROLLED_PHASE, "active controlled summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W05_CONTROLLED_STATUS, "active controlled summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "active controlled summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "active controlled summary ci state mismatch")
     _require(active_summary.get("active_context_sync_applied") is True, "active controlled summary must mark sync applied")
     _require(active_summary.get("active_context_remote_main_reflects_if08_w05_controlled_execution") is True, "active controlled summary must confirm remote reflection")
     _require(active_summary.get("permanent_active_update_rule_installed") is True, "active controlled summary must preserve permanent rule")
     _require(active_summary.get("tamper_attempts_expected") == 4, "active controlled summary tamper_attempts_expected must be 4")
     _require(active_summary.get("tamper_attempts_detected") == 4, "active controlled summary tamper_attempts_detected must be 4")
     _require(active_summary.get("ter_result") == 1.0, "active controlled summary ter_result must be 1.0")
-    _require(active_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active controlled summary next step mismatch")
+    _require(active_summary.get("next_recommended_step") == IF08_W05_CONTROLLED_NEXT_RECOMMENDED_STEP, "active controlled summary next step mismatch")
 
     _mirror_contains(
         IF08_W05_CONTROLLED_ACTIVE_REPORT_PATH,
         "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
-        EXPECTED_LATEST_COMPLETED_PROJECT_SHA,
+        IF08_W05_CONTROLLED_PROJECT_SHA,
         "CI_GREEN_CONFIRMED",
         "active_context_remote_main_reflects_if08_w05_controlled_execution: `true`",
         "next_recommended_step: `defer_next_if08_wave_prompt_until_post_sync_review`",
@@ -3829,7 +3844,7 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     decision = _load_json(IF08_W05_CONTROLLED_DECISION_PATH)
     _require(decision.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "project controlled decision phase_id mismatch")
     _require(decision.get("decision") == "pass", "project controlled decision must be pass")
-    _require(decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project controlled decision status mismatch")
+    _require(decision.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled decision status mismatch")
     _require(decision.get("wave_id") == "W0.5", "project controlled decision wave_id mismatch")
     _require(decision.get("wave_name") == "Ledger/evidence integrity", "project controlled decision wave_name mismatch")
     _require(decision.get("execution_scope") == "synthetic_isolated_lab_only", "project controlled decision execution_scope mismatch")
@@ -3850,7 +3865,7 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     summary = _load_json(IF08_W05_CONTROLLED_SUMMARY_PATH)
     _require(summary.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "project controlled summary phase_id mismatch")
     _require(summary.get("decision") == "pass", "project controlled summary must be pass")
-    _require(summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project controlled summary status mismatch")
+    _require(summary.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled summary status mismatch")
     _require(summary.get("tamper_attempts_expected") == 4, "project controlled summary tamper_attempts_expected must be 4")
     _require(summary.get("tamper_attempts_detected") == 4, "project controlled summary tamper_attempts_detected must be 4")
     _require(summary.get("ter_result") == 1.0, "project controlled summary ter_result must be 1.0")
@@ -3883,7 +3898,161 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     ledger_lines = [line for line in IF08_W05_CONTROLLED_LEDGER_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
     _require(len(ledger_lines) > 0, "project controlled execution ledger must not be empty")
     ledger_entry = json.loads(ledger_lines[-1])
-    _require(ledger_entry.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project controlled execution ledger status mismatch")
+    _require(ledger_entry.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled execution ledger status mismatch")
+
+
+def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH,
+        IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH,
+        IF08_W05_POST_SYNC_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W0.5 post-sync review active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "active post-sync decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active post-sync decision must be pass")
+    _require(active_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active post-sync decision status mismatch")
+    _require(active_decision.get("source_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active post-sync decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active post-sync decision ci state mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active post-sync decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active post-sync decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active post-sync decision must mark sync applied")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active post-sync decision must preserve permanent rule")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w05_post_sync_review") is True, "active post-sync decision must confirm remote reflection")
+    _require(active_decision.get("latest_completed_phase_after_sync") == EXPECTED_PHASE, "active post-sync decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == EXPECTED_LATEST_COMPLETED_STATUS, "active post-sync decision latest status mismatch")
+    _require(active_decision.get("w05_ter") == 1.0, "active post-sync decision w05_ter must be 1.0")
+    _require(active_decision.get("w05_tamper_attempts_expected") == 4, "active post-sync decision tamper_attempts_expected must be 4")
+    _require(active_decision.get("w05_tamper_attempts_detected") == 4, "active post-sync decision tamper_attempts_detected must be 4")
+    _require(active_decision.get("w1_readiness_state") == "ready_for_preparation", "active post-sync decision readiness state mismatch")
+    _require(active_decision.get("w1_preparation_allowed_next") is True, "active post-sync decision must allow next preparation")
+    _require(active_decision.get("w1_execution_performed") is False, "active post-sync decision must keep w1_execution_performed false")
+    _require(active_decision.get("w1_execution_allowed") is False, "active post-sync decision must keep w1_execution_allowed false")
+    _require(active_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active post-sync decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    _require(active_outcome.get("w05_executed") is True, "active post-sync decision execution_outcome.w05_executed must be true")
+    _require(active_outcome.get("w1_execution_performed") is False, "active post-sync decision execution_outcome.w1_execution_performed must be false")
+    _require(active_outcome.get("w1_execution_allowed") is False, "active post-sync decision execution_outcome.w1_execution_allowed must be false")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+    ):
+        _require(active_outcome.get(key) is False, f"active post-sync decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "active post-sync summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active post-sync summary must be pass")
+    _require(active_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "active post-sync summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == EXPECTED_PHASE, "active post-sync summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS, "active post-sync summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "active post-sync summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == EXPECTED_LATEST_COMPLETED_CI_STATE, "active post-sync summary ci state mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active post-sync summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w05_post_sync_review") is True, "active post-sync summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active post-sync summary must preserve permanent rule")
+    _require(active_summary.get("w05_ter") == 1.0, "active post-sync summary w05_ter must be 1.0")
+    _require(active_summary.get("w05_tamper_attempts_expected") == 4, "active post-sync summary tamper_attempts_expected must be 4")
+    _require(active_summary.get("w05_tamper_attempts_detected") == 4, "active post-sync summary tamper_attempts_detected must be 4")
+    _require(active_summary.get("w1_readiness_state") == "ready_for_preparation", "active post-sync summary readiness state mismatch")
+    _require(active_summary.get("w1_preparation_allowed_next") is True, "active post-sync summary must allow next preparation")
+    _require(active_summary.get("w1_execution_allowed") is False, "active post-sync summary must keep execution disallowed")
+    _require(active_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "active post-sync summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W05_POST_SYNC_ACTIVE_REPORT_PATH,
+        "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision",
+        EXPECTED_LATEST_COMPLETED_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w05_post_sync_review: `true`",
+        "next_recommended_step: `prepare_if08_w1_context_memory_rag_preflight_readiness`",
+    )
+
+    external_project_paths = (
+        IF08_W05_POST_SYNC_DECISION_PATH,
+        IF08_W05_POST_SYNC_SUMMARY_PATH,
+        IF08_W05_POST_SYNC_REPORT_PATH,
+        IF08_W1_READINESS_MATRIX_PATH,
+        IF08_W05_POST_SYNC_NO_EXECUTION_PATH,
+        IF08_W05_POST_SYNC_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W05_POST_SYNC_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project post-sync decision must be pass")
+    _require(decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project post-sync decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync decision source project sha mismatch")
+    _require(decision.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync decision source ci state mismatch")
+    _require(decision.get("w05_ter") == 1.0, "project post-sync decision w05_ter must be 1.0")
+    _require(decision.get("w05_tamper_attempts_expected") == 4, "project post-sync decision tamper_attempts_expected must be 4")
+    _require(decision.get("w05_tamper_attempts_detected") == 4, "project post-sync decision tamper_attempts_detected must be 4")
+    _require(decision.get("w05_canonical_sync_verified") is True, "project post-sync decision must verify canonical sync")
+    _require(decision.get("w1_execution_performed") is False, "project post-sync decision w1_execution_performed must be false")
+    _require(decision.get("w1_preparation_allowed_next") is True, "project post-sync decision must allow next preparation")
+    _require(decision.get("w1_execution_allowed") is False, "project post-sync decision w1_execution_allowed must be false")
+    _require(decision.get("runtime_executed") is False, "project post-sync decision runtime_executed must be false")
+    _require(decision.get("real_apply_executed") is False, "project post-sync decision real_apply_executed must be false")
+    _require(decision.get("product_or_bedrock_executed") is False, "project post-sync decision product_or_bedrock_executed must be false")
+    _require(decision.get("secrets_accessed") is False, "project post-sync decision secrets_accessed must be false")
+    _require(decision.get("dependency_or_package_manager_used") is False, "project post-sync decision dependency_or_package_manager_used must be false")
+    _require(decision.get("external_network_used_except_github_governance") is False, "project post-sync decision external_network_used_except_github_governance must be false")
+    _require(decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project post-sync decision next step mismatch")
+    _require(decision.get("blocking_findings") == [], "project post-sync decision blocking_findings must be empty")
+
+    summary = _load_json(IF08_W05_POST_SYNC_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project post-sync summary must be pass")
+    _require(summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project post-sync summary status mismatch")
+    _require(summary.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync summary source phase mismatch")
+    _require(summary.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync summary source status mismatch")
+    _require(summary.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync summary source project sha mismatch")
+    _require(summary.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync summary source ci state mismatch")
+    _require(summary.get("w05_ter") == 1.0, "project post-sync summary w05_ter must be 1.0")
+    _require(summary.get("w05_tamper_attempts_expected") == 4, "project post-sync summary tamper_attempts_expected must be 4")
+    _require(summary.get("w05_tamper_attempts_detected") == 4, "project post-sync summary tamper_attempts_detected must be 4")
+    _require(summary.get("w05_canonical_sync_verified") is True, "project post-sync summary must verify canonical sync")
+    _require(summary.get("w1_readiness_state") == "ready_for_preparation", "project post-sync summary readiness state mismatch")
+    _require(summary.get("w1_preparation_allowed_next") is True, "project post-sync summary must allow next preparation")
+    _require(summary.get("w1_execution_allowed") is False, "project post-sync summary execution allowed must remain false")
+    _require(summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project post-sync summary next step mismatch")
+
+    readiness = _load_json(IF08_W1_READINESS_MATRIX_PATH)
+    _require(readiness.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project w1 readiness phase_id mismatch")
+    _require(readiness.get("wave_id") == "W1", "project w1 readiness wave_id mismatch")
+    _require(readiness.get("wave_name") == "Context/memory/RAG", "project w1 readiness wave_name mismatch")
+    _require(readiness.get("readiness_state") == "ready_for_preparation", "project w1 readiness state mismatch")
+    _require(readiness.get("w1_execution_performed") is False, "project w1 readiness must keep execution false")
+    _require(readiness.get("w1_preparation_allowed_next") is True, "project w1 readiness must allow next preparation")
+    _require(readiness.get("w1_execution_allowed") is False, "project w1 readiness must keep execution disallowed")
+    _require(readiness.get("w1_execution_artifacts_unchanged") is True, "project w1 readiness must keep historical artifacts unchanged")
+
+    no_execution = _load_json(IF08_W05_POST_SYNC_NO_EXECUTION_PATH)
+    _require(no_execution.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync no_execution phase_id mismatch")
+    _require(no_execution.get("decision") == "pass", "project post-sync no_execution must be pass")
+    _require(no_execution.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "project post-sync no_execution status mismatch")
+    _require(no_execution.get("w1_execution_performed") is False, "project post-sync no_execution must keep execution false")
+    _require(no_execution.get("w1_execution_allowed") is False, "project post-sync no_execution must keep execution disallowed")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "dependency_or_package_manager_used",
+        "external_network_used_except_github_governance",
+        "active_context_state_mutated",
+        "git_commit_attempted",
+        "git_push_attempted",
+    ):
+        _require(no_execution.get(key) is False, f"project post-sync no_execution.{key} must be false")
 
 
 def main() -> None:
@@ -3971,6 +4140,8 @@ def main() -> None:
     _check_if08_w05_active_context_sync_artifacts(state)
     # IF08 W0.5 controlled execution checks
     _check_if08_w05_controlled_execution_artifacts(state)
+    # IF08 W0.5 post-sync review checks
+    _check_if08_w05_post_sync_review_artifacts(state)
     # IF08 W0.5 preflight rerun checks
     _check_if08_w05_preflight_rerun_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
@@ -3998,7 +4169,7 @@ def main() -> None:
     _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to IF-08")
     _require(
         EXPECTED_NEXT_RECOMMENDED_STEP in state["locks"]["deferred_phase_reason"],
-        "locks.deferred_phase_reason must mention the deferred post-sync review next step",
+        "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected previous execution phase")
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
@@ -4023,8 +4194,8 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`",
-        "latest_completed_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`",
+        "latest_completed_phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`",
+        "latest_completed_status: `if08_w05_post_sync_review_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -4033,42 +4204,45 @@ def main() -> None:
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `9ad30a803ffe2227551bdbe2856633eef1165047`",
+        "latest_completed_project_commit_sha: `6b8dc72edc168402700c63cca076bf533bd3b65a`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `defer_next_if08_wave_prompt_until_post_sync_review`",
+        "next_recommended_step: `prepare_if08_w1_context_memory_rag_preflight_readiness`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution Sincronizado",
+        "INF-FULL-07 — IF-08 W0.5 Post-Sync Review & W1 Readiness Decision Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "Não reexecutar W0.5 nesta fase de sync repair.",
-        "Não emitir W1 nem qualquer nova wave neste sync repair.",
-        "O próximo passo recomendado neste estado é `defer_next_if08_wave_prompt_until_post_sync_review`.",
+        "latest_completed_status: if08_w05_post_sync_review_pass",
+        "Não reexecutar W0.5 nesta fase de post-sync review.",
+        "Não executar W1 nesta fase.",
+        "O próximo prompt pode preparar `W1 | Context/memory/RAG` em modo preflight/readiness, sem execução.",
+        "O próximo passo recomendado neste estado é `prepare_if08_w1_context_memory_rag_preflight_readiness`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "Latest completed phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`",
-        "latest_completed_status=if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "active_context_remote_main_reflects_if08_w05_controlled_execution=true",
+        "if08_w05_post_sync_review_pass",
+        "Latest completed phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`",
+        "latest_completed_status=if08_w05_post_sync_review_pass",
+        "active_context_remote_main_reflects_if08_w05_post_sync_review=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "defer_next_if08_wave_prompt_until_post_sync_review",
+        "prepare_if08_w1_context_memory_rag_preflight_readiness",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w05_post_sync_review/decision.json",
+        "artifacts/infernus/if08_w05_post_sync_review_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w1_readiness_matrix_2026_06_07.json",
+        "docs/infernus_full/if08_w05_post_sync_review_2026_06_07.md",
         "artifacts/if08_w05_controlled_execution/decision.json",
         "artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json",
-        "artifacts/if08_w05_preflight_readiness_rerun/decision.json",
-        "artifacts/infernus/if08_w05_preflight_readiness_rerun_decision_2026_06_07.json",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -4079,12 +4253,12 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision | pass",
+        "if08_w05_post_sync_review_pass",
+        "project_commit_sha: `6b8dc72edc168402700c63cca076bf533bd3b65a`",
+        "next_recommended_step: `prepare_if08_w1_context_memory_rag_preflight_readiness`",
         "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution | pass",
         "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "project_commit_sha: `9ad30a803ffe2227551bdbe2856633eef1165047`",
-        "next_recommended_step: `defer_next_if08_wave_prompt_until_post_sync_review`",
-        "IF08_W05 Preflight Readiness Rerun | pass",
-        "if08_w05_preflight_readiness_rerun_pass",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -4097,24 +4271,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`",
-        "latest_completed_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`",
+        "latest_completed_phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`",
+        "latest_completed_status: `if08_w05_post_sync_review_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_CONTROLLED_EXECUTION: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_POST_SYNC_REVIEW: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
+        "Latest completed phase: IF-08 W0.5 Post-Sync Review & W1 Readiness Decision",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "Synthetic isolated W0.5 execution is canonically recorded and does not auto-authorize W1 or later waves.",
+        "Synthetic isolated W0.5 execution remains canonical; this post-sync review only allows W1 preparation in a future prompt and does not auto-authorize W1 execution.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

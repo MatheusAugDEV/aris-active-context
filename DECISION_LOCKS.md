@@ -1,3 +1,31 @@
+## IF08_W05 Post-Sync Review & W1 Readiness Lock
+
+- Latest completed phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`
+- status: `if08_w05_post_sync_review_pass`
+- latest_completed_status=if08_w05_post_sync_review_pass
+- active_context_remote_main_reflects_if08_w05_post_sync_review=true
+- permanent_active_update_rule_installed=true
+- project_commit_sha=6b8dc72edc168402700c63cca076bf533bd3b65a
+- project_ci_state=CI_GREEN_CONFIRMED
+- next_recommended_step=prepare_if08_w1_context_memory_rag_preflight_readiness
+- w05_ter=1.0
+- tamper_attempts_expected=4
+- tamper_attempts_detected=4
+- w1_preparation_allowed_next=true
+- w1_execution_performed=false
+- w1_execution_allowed=false
+- runtime_executed=false
+- product_bedrock_real_apply_secrets_executed=false
+- external_network_used_except_github_governance=false
+- dependency_or_package_manager_used=false
+- Canonical W0.5 evidence remains verified; this phase only opens W1 preparation in a future prompt.
+- IF-08 real execution = false
+- future waves real execution = false
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+
 ## IF08_W05 Controlled Execution Canonical Sync Lock
 
 - Latest completed phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`

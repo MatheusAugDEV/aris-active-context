@@ -13,26 +13,26 @@
 ## Current Phase
 
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`
-- latest_completed_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`
-- latest_completed_project_commit_sha: `9ad30a803ffe2227551bdbe2856633eef1165047`
+- latest_completed_phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`
+- latest_completed_status: `if08_w05_post_sync_review_pass`
+- latest_completed_project_commit_sha: `6b8dc72edc168402700c63cca076bf533bd3b65a`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
 - active_next_phase: `IF-08`
 - Active next phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
-- current_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`
+- current_status: `if08_w05_post_sync_review_pass`
 - IF-08 real execution: `false`
 - Synthetic isolated W0.5 execution: `true`
 - All execution locks: `false`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_CONTROLLED_EXECUTION: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05_POST_SYNC_REVIEW: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`.
-The synthetic isolated W0.5 result is canonical with `TER=1.0`; no W1 or later wave was emitted in this sync repair.
+INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`.
+The synthetic isolated W0.5 result remains canonical with `TER=1.0`; this review only allows W1 preparation in a future prompt and does not authorize W1 execution.
 No PASS, next prompt, or handoff is canonical unless `MatheusAugDEV/aris-active-context/main` reflects the same result already verified in Project repo.
 Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
 
