@@ -2,31 +2,32 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w05_preflight_readiness_rerun_pass`
-- latest_completed_phase: `IF08_W05 Preflight Readiness Rerun`
-- latest_completed_status: `if08_w05_preflight_readiness_rerun_pass`
+- current_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`
+- latest_completed_phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`
+- latest_completed_status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun: `true`
+- active_context_remote_main_reflects_if08_w05_controlled_execution: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
+- `artifacts/if08_w05_controlled_execution/decision.json`
+- `artifacts/if08_w05_controlled_execution/summary.json`
+- `artifacts/if08_w05_controlled_execution/report.md`
+- `artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json`
+- `artifacts/infernus/if08_w05_detection_matrix_2026_06_07.json`
+- `artifacts/infernus/if08_w05_hash_chain_manifest_2026_06_07.json`
+- `artifacts/infernus/if08_w05_custody_chain_2026_06_07.jsonl`
+- `artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json`
+- `artifacts/infernus/if08_w05_execution_ledger_2026_06_07.jsonl`
+- `artifacts/infernus/if08_w05_summary_2026_06_07.json`
+- `docs/infernus_full/if08_w05_controlled_execution_2026_06_07.md`
 - `artifacts/if08_w05_preflight_readiness_rerun/decision.json`
-- `artifacts/if08_w05_preflight_readiness_rerun/summary.json`
-- `artifacts/if08_w05_preflight_readiness_rerun/report.md`
 - `artifacts/infernus/if08_w05_preflight_readiness_rerun_decision_2026_06_07.json`
-- `artifacts/infernus/if08_w05_preflight_readiness_rerun_summary_2026_06_07.json`
-- `artifacts/infernus/if08_w05_preflight_readiness_rerun_report_2026_06_07.md`
-- `artifacts/infernus/if08_w05_preflight_readiness_rerun_matrix_2026_06_07.json`
-- `artifacts/infernus/if08_w05_preflight_readiness_rerun_no_execution_attestation_2026_06_07.json`
-- `docs/infernus_full/if08_w05_preflight_readiness_rerun_2026_06_07.md`
-- `artifacts/infernus/if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json`
-- `artifacts/infernus/if08_w05_minos_mechanical_alias_summary_2026_06_06.json`
-- `artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json`
 - `INFERNUS_STANDING_AUTHORIZATION.md`
 - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 - `EXCLUDENT_POLICY.md`
@@ -101,4 +102,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- O próximo gate pode revisar o boot profile e não deve integrar com runtime.
+- The W0.5 controlled execution is canonical; no W1 or later wave prompt was emitted in this sync repair.

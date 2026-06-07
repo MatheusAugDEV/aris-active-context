@@ -1,23 +1,26 @@
-## IF08_W05 Preflight Readiness Rerun Lock
+## IF08_W05 Controlled Execution Canonical Sync Lock
 
-- Latest completed phase: `IF08_W05 Preflight Readiness Rerun`
-- status: `if08_w05_preflight_readiness_rerun_pass`
-- latest_completed_status=if08_w05_preflight_readiness_rerun_pass
-- active_context_remote_main_reflects_if08_w05_preflight_readiness_rerun=true
+- Latest completed phase: `IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution`
+- status: `if08_w05_controlled_ledger_evidence_integrity_execution_pass`
+- latest_completed_status=if08_w05_controlled_ledger_evidence_integrity_execution_pass
+- active_context_remote_main_reflects_if08_w05_controlled_execution=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=93b4ee5c6aa96869ef426331c51e5f3df76e2812
+- project_commit_sha=9ad30a803ffe2227551bdbe2856633eef1165047
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution
-- w05_executed=false
-- wave_executed=false
-- bot_executed=false
+- next_recommended_step=defer_next_if08_wave_prompt_until_post_sync_review
+- tamper_attempts_expected=4
+- tamper_attempts_detected=4
+- ter_result=1.0
+- w05_executed=true
+- wave_executed=true_synthetic_isolated_lab_only
+- bot_executed=true_synthetic_isolated_lab_only
 - runtime_executed=false
 - product_bedrock_real_apply_secrets_executed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- No canonical PASS or next prompt exists unless `MatheusAugDEV/aris-active-context/main` reflects the same final phase result as Project repo.
-- IF-08 execution = false
-- waves execution = false
+- No canonical next-wave prompt was emitted in this sync repair.
+- IF-08 real execution = false
+- future waves real execution = false
 - active_next_phase=IF-08
 - active_next_phase_class=infernus_full_execution
 - next_phase_authorized_by_operator=true
@@ -59,6 +62,7 @@
 - synthetic_wave_preconditions=preflight_pass_and_ci_green_and_contracts_present_and_no_hard_lock_violation
 - Hard locks remain separate from synthetic wave standing authorization.
 - `IF-08 execution = false` and `waves execution = false` still block unauthorized real execution.
+- Canonical W0.5 synthetic isolated execution is now recorded and does not auto-authorize W1 or later waves.
 - No new ritual permission prompt is required for W0 or later synthetic isolated IF-08 waves once their preflight/readiness gates pass.
 - Hard-lock exceptions still require explicit operator command: production/staging real, real_apply, product/pilot, Bedrock, secrets, external network, dependency/package-manager mutation, or irreversible action outside the lab.
 

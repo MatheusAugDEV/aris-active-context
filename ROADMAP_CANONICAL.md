@@ -16,12 +16,13 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 Attack Waves Execution Authorization Gate Materialization
+Latest completed phase: IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
-Execution (waves, bots, runtime, apply): false — requires operator execution command
+Real execution (waves against real systems, runtime, apply): false — requires operator execution command
+Synthetic isolated W0.5 execution is canonically recorded and does not auto-authorize W1 or later waves.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
