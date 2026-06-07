@@ -36,17 +36,26 @@ Sem SHA citado: resposta é INVALID por construção.
 
 ## POST-COMMIT VERIFICATION (obrigatório em todo gate)
 
-After git push origin main:
+After `git push origin main`:
 
-1. Run: gh run list --branch main --limit 1 --json status,conclusion,url
-2. Wait for conclusion != "in_progress". Poll every 15s, max 10 attempts.
-3. If conclusion == "success":
-   - If phase_class in auto_advance.allowed_phase_classes: auto-advance.
-   - If phase_class in auto_advance.blocked_phase_classes: STOP, await operator.
-4. If conclusion == "failure": STOP. Report CI output. Do not advance.
-5. Embed Action run URL in decision.json under "ci_run_url".
+1. Wait 30 seconds.
+2. Run:
+   `gh run list --limit 20`
+3. If any relevant workflow for the current commit/push is `queued`, `waiting`, `requested`, or `in_progress`, wait 60 seconds and repeat step 2.
+4. Continue polling until every relevant workflow for the current commit/push is terminal.
+5. If every relevant workflow conclusion is `success`, classify:
+   `CI_GREEN_CONFIRMED`
+6. If any relevant workflow conclusion is `failure`, `cancelled`, `timed_out`, `action_required`, or any non-success terminal conclusion, classify:
+   `CI_FAILED`
+7. If `CI_FAILED`, run:
+   `gh run view --log-failed`
+   Then report failed workflow, failed job, root cause, and relevant log excerpt before any repair.
+8. Embed Action run URL(s) in the decision artifact when the phase writes decision artifacts.
 
 The model never self-reports PASS. The CI reports PASS.
+`CI_PENDING` is an interim state only; it is not a valid final report.
+No final report may be emitted before terminal CI.
+No prompt, phase, or local instruction may reduce this polling requirement.
 
 ## Required CI output discipline
 
