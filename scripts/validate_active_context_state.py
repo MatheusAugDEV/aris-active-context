@@ -34,17 +34,21 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 Attack Waves Execution Authorization Gate Materialization"
+EXPECTED_PHASE = "IF08_W05 Minos Mechanical Alias Normalization"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "ARIS Infernus FULL Excludent Quarantine Gate"
+EXPECTED_PREVIOUS_PHASE = "IF-08 Attack Waves Execution Authorization Gate Materialization"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "inf_full_07_if08_authorization_closed_no_execution"
-EXPECTED_SCHEMA_VERSION = "2.12"
+EXPECTED_CURRENT_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "inf_full_07_if08_authorization_closed_no_execution"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "f05ff031a95625da4d09c1c8bb648cc81ed3a97f"
+EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
+EXPECTED_NEXT_RECOMMENDED_STEP = "rerun_if08_w05_preflight_readiness"
 ROUTE_SYNC_SOURCE_PHASE_ID = "INF-FULL-04"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_ID = "INF-FULL-05"
 ROUTE_SYNC_DERIVED_NEXT_PHASE_CLASS = "review_gate_only"
@@ -118,6 +122,21 @@ INF_FULL_07_IF08_NO_EXECUTION_PATH = INF_FULL_07_IF08_AUTH_ROOT / "no_execution_
 INF_FULL_07_IF08_VALIDATOR_EVIDENCE_PATH = INF_FULL_07_IF08_AUTH_ROOT / "validator_evidence.json"
 INF_FULL_07_IF08_SUMMARY_PATH = INF_FULL_07_IF08_AUTH_ROOT / "summary.json"
 INF_FULL_07_IF08_REPORT_PATH = INF_FULL_07_IF08_AUTH_ROOT / "report.md"
+IF08_W05_ALIAS_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json")
+IF08_W05_ALIAS_OVERLAY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_minos_mechanical_alias_overlay_2026_06_06.json")
+IF08_W05_ALIAS_GAP_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_minos_mechanical_alias_gap_resolution_matrix_2026_06_06.json")
+IF08_W05_ALIAS_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_minos_mechanical_alias_no_execution_attestation_2026_06_06.json")
+IF08_W05_ALIAS_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_minos_mechanical_alias_summary_2026_06_06.json")
+IF08_W05_ALIAS_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w05_minos_mechanical_alias_normalization_2026_06_06.md")
+IF08_W05_PROJECT_SYNC_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_active_context_sync_rule_decision_2026_06_07.json")
+IF08_W05_PROJECT_SYNC_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_active_context_sync_rule_summary_2026_06_07.json")
+IF08_W05_PROJECT_SYNC_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_active_context_sync_rule_report_2026_06_07.md")
+IF08_W05_PROJECT_SYNC_CI_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_active_context_sync_rule_ci_matrix_2026_06_07.json")
+IF08_W05_PROJECT_SYNC_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_active_context_sync_rule_no_execution_attestation_2026_06_07.json")
+ACTIVE_CONTEXT_SYNC_RULE_ROOT = ROOT / "artifacts" / "active_context_sync_rule"
+ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "decision.json"
+ACTIVE_CONTEXT_SYNC_RULE_SUMMARY_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "summary.json"
+ACTIVE_CONTEXT_SYNC_RULE_REPORT_PATH = ACTIVE_CONTEXT_SYNC_RULE_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -435,6 +454,7 @@ REQUIRED_BOOT_FILES = [
     "PROMPT_CONTRACT.md",
     "LAB_OPERATING_CONTRACT.md",
     "EXCLUDENT_POLICY.md",
+    "INFERNUS_STANDING_AUTHORIZATION.md",
     "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
 ]
 
@@ -455,7 +475,8 @@ EXPECTED_PRIORITY_READ_ORDER = [
     "14. PROMPT_CONTRACT.md",
     "15. LAB_OPERATING_CONTRACT.md",
     "16. EXCLUDENT_POLICY.md",
-    "17. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+    "17. INFERNUS_STANDING_AUTHORIZATION.md",
+    "18. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
 ]
 
 OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
@@ -3539,6 +3560,72 @@ def _check_purgatorium_artifacts(state: dict[str, Any]) -> None:
     _require("INF-MAT-01 final_origin_main_sha points to debc51e" in warnings[2], "missing INF-MAT-01 warning")
 
 
+def _check_if08_w05_active_context_sync_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W05_ALIAS_DECISION_PATH,
+        IF08_W05_ALIAS_OVERLAY_PATH,
+        IF08_W05_ALIAS_GAP_MATRIX_PATH,
+        IF08_W05_ALIAS_NO_EXECUTION_PATH,
+        IF08_W05_ALIAS_SUMMARY_PATH,
+        IF08_W05_ALIAS_DOC_PATH,
+        IF08_W05_PROJECT_SYNC_DECISION_PATH,
+        IF08_W05_PROJECT_SYNC_SUMMARY_PATH,
+        IF08_W05_PROJECT_SYNC_REPORT_PATH,
+        IF08_W05_PROJECT_SYNC_CI_MATRIX_PATH,
+        IF08_W05_PROJECT_SYNC_NO_EXECUTION_PATH,
+        ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH,
+        ACTIVE_CONTEXT_SYNC_RULE_SUMMARY_PATH,
+        ACTIVE_CONTEXT_SYNC_RULE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W0.5 active-context sync artifact: {path}")
+
+    alias_decision = _load_json(IF08_W05_ALIAS_DECISION_PATH)
+    _require(alias_decision.get("decision") == "pass", "IF08 W0.5 alias decision must be pass")
+    _require(alias_decision.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "IF08 W0.5 alias decision status mismatch")
+    _require(alias_decision.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias next action mismatch")
+    _require(alias_decision.get("wave_executed") is False, "IF08 W0.5 alias decision must keep wave_executed=false")
+    _require(alias_decision.get("bot_executed") is False, "IF08 W0.5 alias decision must keep bot_executed=false")
+
+    alias_summary = _load_json(IF08_W05_ALIAS_SUMMARY_PATH)
+    _require(alias_summary.get("status") == EXPECTED_LATEST_COMPLETED_STATUS, "IF08 W0.5 alias summary status mismatch")
+    _require(alias_summary.get("required_next_action") == EXPECTED_NEXT_RECOMMENDED_STEP, "IF08 W0.5 alias summary next action mismatch")
+    _require(alias_summary.get("alias_scope_missing_w05_resolved") is True, "IF08 W0.5 alias summary must resolve W0.5 scope gap")
+
+    sync_decision = _load_json(IF08_W05_PROJECT_SYNC_DECISION_PATH)
+    _require(sync_decision.get("phase_id") == "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE", "project sync decision phase_id mismatch")
+    _require(sync_decision.get("decision") == "pass", "project sync decision must be pass")
+    _require(sync_decision.get("status") == "if08_w05_active_context_sync_rule_pass", "project sync decision status mismatch")
+    _require(sync_decision.get("source_reported_phase_status") == EXPECTED_LATEST_COMPLETED_STATUS, "project sync decision source status mismatch")
+    _require(sync_decision.get("source_reported_project_sha") == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "project sync decision project sha mismatch")
+    _require(sync_decision.get("project_origin_main_sha_verified") is True, "project sync decision must verify origin/main sha")
+    _require(sync_decision.get("project_ci_green_confirmed") is True, "project sync decision must confirm green CI")
+    _require(sync_decision.get("active_context_sync_required") is True, "project sync decision must mark sync required")
+    _require(sync_decision.get("active_context_sync_applied") is True, "project sync decision must mark sync applied")
+    _require(sync_decision.get("validator_enforces_or_documents_active_sync_rule") is True, "project sync decision must record validator/docs enforcement")
+    _require(sync_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "project sync decision next step mismatch")
+
+    no_execution = sync_decision.get("no_execution", {})
+    for key in (
+        "rerun_if08_w05_preflight_readiness_executed",
+        "wave_executed",
+        "bot_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+    ):
+        _require(no_execution.get(key) is False, f"project sync decision no_execution.{key} must be false")
+
+    active_sync_decision = _load_json(ACTIVE_CONTEXT_SYNC_RULE_DECISION_PATH)
+    _require(active_sync_decision.get("phase_id") == "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE", "active-context sync decision phase_id mismatch")
+    _require(active_sync_decision.get("decision") == "pass", "active-context sync decision must be pass")
+    _require(active_sync_decision.get("status") == "if08_w05_active_context_sync_rule_pass", "active-context sync decision status mismatch")
+    _require(active_sync_decision.get("active_context_sync_applied") is True, "active-context sync decision must mark sync applied")
+    _require(active_sync_decision.get("permanent_active_update_rule_installed") is True, "active-context sync decision must mark permanent rule installed")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -3549,8 +3636,14 @@ def main() -> None:
     _require(state["status"] == EXPECTED_STATUS, "unexpected status")
     _require(state["decision"] == EXPECTED_DECISION, "unexpected decision")
     _require(state["latest_completed_phase"] == EXPECTED_PHASE, "unexpected latest completed phase")
+    _require(state["latest_completed_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected latest completed status")
     _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
     _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
+    _require(state["latest_completed_project_commit_sha"] == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "unexpected latest completed project sha")
+    _require(state["latest_completed_ci_state"] == EXPECTED_LATEST_COMPLETED_CI_STATE, "unexpected latest completed ci state")
+    _require(state["latest_completed_next_recommended_step"] == EXPECTED_NEXT_RECOMMENDED_STEP, "unexpected latest completed next step")
+    _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
+    _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
     _require(state["next_phase"] == EXPECTED_NEXT_PHASE_ID, "next_phase must declare IF-08 as standing-authorized successor")
     _require(state["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "active_next_phase must declare IF-08 as standing-authorized successor")
@@ -3614,6 +3707,8 @@ def main() -> None:
     _check_inf_full_06_excludent_quarantine_artifacts(state)
     # INF-FULL-07 IF-08 authorization materialization checks
     _check_inf_full_07_if08_authorization_artifacts(state)
+    # IF08 W0.5 active-context sync rule checks
+    _check_if08_w05_active_context_sync_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
 
@@ -3621,6 +3716,7 @@ def main() -> None:
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
     _require_paths_match(state, policy["current_status_must_match_across"], "current_status")
     _require_paths_match(state, policy["latest_completed_phase_must_match_across"], "latest_completed_phase")
+    _require_paths_match(state, policy["latest_completed_status_must_match_across"], "latest_completed_status")
     _require_paths_match(state, policy["status_must_match_across"], "status")
 
     _require(state["current_live_route"]["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "current live route next phase must be IF-08")
@@ -3628,21 +3724,22 @@ def main() -> None:
     _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
 
-    _require(state["next_action"]["phase"] == EXPECTED_PHASE_ID, "next_action.phase mismatch")
-    _require(state["next_action"]["phase_class"] == "infernus_full_execution_authorization", "next_action.phase_class mismatch")
+    _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
+    _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
-    _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
+    _require(state["next_action"]["review_only"] is True, "next_action.review_only must be true")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
 
     _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to IF-08")
     _require(
-        "standing authorization" in state["locks"]["deferred_phase_reason"].lower(),
-        "locks.deferred_phase_reason must mention standing authorization",
+        EXPECTED_NEXT_RECOMMENDED_STEP in state["locks"]["deferred_phase_reason"],
+        "locks.deferred_phase_reason must mention the rerun_if08_w05_preflight_readiness next step",
     )
     _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected previous execution phase")
     _require(state["last_transition"]["from_phase"] == EXPECTED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
+    _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
 
     # Authorization: fixture_materialization_allowed remains true; all others false.
     auth = state["authorization"]
@@ -3662,54 +3759,50 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
+        "latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`",
+        "latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "standing_authorization: `canonroadmap aprovado pelo operador",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`",
+        "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "fixture_materialization_executed: `true`",
-        "bot_execution_executed: `true`",
-        "current_phase_bots_executed: `false`",
-        "excludent_created: `true`",
-        "excludent_policy_created: `true`",
-        "only_canonroadmap_visible_as_active: `true`",
-        "transition_duplicate_resolved: `true`",
-        "Proximo passo: IF-08",
+        "latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`",
+        "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
+        "next_recommended_step: `rerun_if08_w05_preflight_readiness`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 é a Próxima Fase",
+        "INF-FULL-07 — IF08_W05 Sync Confirmado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "standing_authorization: canonroadmap aprovado pelo operador",
+        "latest_completed_status: if08_w05_minos_mechanical_alias_normalization_packet_ready",
+        "rerun_if08_w05_preflight_readiness",
+        "Não executar rerun_if08_w05_preflight_readiness nesta fase.",
         "Execute o primeiro passo de IF-08.",
         "IF-08 waves: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "inf_full_07_if08_authorization_gate_pass",
-        "INF-FULL-07",
-        "transition_duplicate_resolved=true",
-        "old_duplicate_row_classification=superseded_by_inf_full_06_to_inf_full_07_authorization_route",
-        "excludent_read_by_default_allowed=false",
-        "governance_gate_streak=0",
-        "current_phase_bots_executed=false.",
-        "excludent_or_historical_residual_route_noise",
+        "if08_w05_active_context_sync_rule_pass",
+        "Latest completed phase: `IF08_W05 Minos Mechanical Alias Normalization`",
+        "latest_completed_status=if08_w05_minos_mechanical_alias_normalization_packet_ready",
+        "active_context_remote_main_reflects_if08_w05=true",
+        "permanent_active_update_rule_installed=true",
         "IF-08 execution = false",
         "waves execution = false",
-        "active_next_phase=IF-08",
-        "active_next_phase_class=infernus_full_execution",
-        "next_phase_authorized_by_operator=true",
+        "rerun_if08_w05_preflight_readiness",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/inf_full_07_if08_authorization/decision.json",
-        "artifacts/inf_full_07_if08_authorization/validator_evidence.json",
+        "artifacts/active_context_sync_rule/decision.json",
+        "artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -3720,7 +3813,9 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "INF-FULL-07 | IF-08 Attack Waves Execution Authorization Gate Materialization | pass",
+        "IF08_W05 Active-Context Canonical Sync Repair | pass",
+        "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+        "rerun_if08_w05_preflight_readiness",
         "next_phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -3733,13 +3828,15 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
+        "latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`",
+        "latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 execution: `false`",
-        "excludent/",
-        "EXCLUDENT_POLICY.md",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`",
+        "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
@@ -3767,6 +3864,7 @@ def main() -> None:
         "governance_gate_streak",
         "REGRA DE PREFERÊNCIA DO OPERADOR",
         "OPERATOR_PREFERENCES.md",
+        "REGRA PERMANENTE — ACTIVE-CONTEXT UPDATE REQUIRED AFTER EVERY PHASE",
     )
     _mirror_contains(
         ROOT / "PROMPT_CONTRACT.md",
@@ -3775,6 +3873,7 @@ def main() -> None:
         "Sem SHA citado: resposta é INVALID por construção.",
         "POST-COMMIT VERIFICATION",
         "The model never self-reports PASS. The CI reports PASS.",
+        "Every Codex prompt that can produce a phase result must require active-context update as a blocking deliverable.",
     )
 
     fixture_assertion_path = ROOT / "scripts/assert_no_unauthorized_fixtures.py"
@@ -3793,6 +3892,7 @@ def main() -> None:
         "phase_id": EXPECTED_PHASE_ID,
         "previous_phase_id": EXPECTED_PREVIOUS_PHASE_ID,
         "latest_completed_phase": EXPECTED_PHASE,
+        "latest_completed_status": EXPECTED_LATEST_COMPLETED_STATUS,
         "next_phase": EXPECTED_NEXT_PHASE_ID,
         "gate_opened_at": state["gate_opened_at"],
         "gate_max_cycles": state["gate_max_cycles"],

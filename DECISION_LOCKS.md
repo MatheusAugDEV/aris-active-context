@@ -1,3 +1,28 @@
+## IF08_W05 Active-Context Canonical Sync Repair Lock
+
+- Latest completed phase: `IF08_W05 Minos Mechanical Alias Normalization`
+- status: `if08_w05_active_context_sync_rule_pass`
+- latest_completed_status=if08_w05_minos_mechanical_alias_normalization_packet_ready
+- active_context_remote_main_reflects_if08_w05=true
+- permanent_active_update_rule_installed=true
+- project_commit_sha=f05ff031a95625da4d09c1c8bb648cc81ed3a97f
+- project_ci_state=CI_GREEN_CONFIRMED
+- next_recommended_step=rerun_if08_w05_preflight_readiness
+- w05_executed=false
+- wave_executed=false
+- bot_executed=false
+- runtime_executed=false
+- product_bedrock_real_apply_secrets_executed=false
+- external_network_used_except_github_governance=false
+- dependency_or_package_manager_used=false
+- No canonical PASS or next prompt exists unless `MatheusAugDEV/aris-active-context/main` reflects the same final phase result as Project repo.
+- IF-08 execution = false
+- waves execution = false
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+
 ## INF-FULL-07 — IF-08 Attack Waves Execution Authorization Gate Materialization Lock
 
 - Latest completed phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`

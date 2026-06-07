@@ -413,6 +413,13 @@
           "minItems": 2,
           "type": "array"
         },
+        "latest_completed_status_must_match_across": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
         "status_must_match_across": {
           "items": {
             "type": "string"
@@ -424,6 +431,7 @@
       "required": [
         "active_next_phase_must_match_across",
         "latest_completed_phase_must_match_across",
+        "latest_completed_status_must_match_across",
         "status_must_match_across",
         "current_status_must_match_across",
         "enforcement"
@@ -474,6 +482,9 @@
         "latest_completed_phase": {
           "type": "string"
         },
+        "latest_completed_status": {
+          "type": "string"
+        },
         "next_phase_execution_authorization": {
           "type": "boolean"
         },
@@ -488,6 +499,7 @@
         "status",
         "decision",
         "latest_completed_phase",
+        "latest_completed_status",
         "current_status",
         "active_next_phase",
         "active_next_phase_class",
@@ -499,6 +511,9 @@
     },
     "current_status": {
       "type": "string"
+    },
+    "active_context_remote_main_reflects_latest_phase": {
+      "type": "boolean"
     },
     "current_phase_bots_executed": {
       "type": "boolean"
@@ -526,6 +541,54 @@
         "blocked",
         "warn"
       ],
+      "type": "string"
+    },
+    "latest_completed_ci_state": {
+      "type": "string"
+    },
+    "latest_completed_next_recommended_step": {
+      "type": "string"
+    },
+    "latest_completed_no_execution": {
+      "additionalProperties": false,
+      "properties": {
+        "bot_executed": {
+          "type": "boolean"
+        },
+        "dependency_or_package_manager_used": {
+          "type": "boolean"
+        },
+        "external_network_used_except_github_governance": {
+          "type": "boolean"
+        },
+        "product_bedrock_real_apply_secrets_executed": {
+          "type": "boolean"
+        },
+        "runtime_executed": {
+          "type": "boolean"
+        },
+        "w05_executed": {
+          "type": "boolean"
+        },
+        "wave_executed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "w05_executed",
+        "wave_executed",
+        "bot_executed",
+        "runtime_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used"
+      ],
+      "type": "object"
+    },
+    "latest_completed_project_commit_sha": {
+      "type": "string"
+    },
+    "latest_completed_status": {
       "type": "string"
     },
     "drift_signals": {
@@ -569,6 +632,9 @@
         "latest_execution_phase": {
           "type": "string"
         },
+        "latest_execution_status": {
+          "type": "string"
+        },
         "ledger_mode": {
           "type": "string"
         },
@@ -583,6 +649,7 @@
       "required": [
         "governance_repairs",
         "latest_execution_phase",
+        "latest_execution_status",
         "previous_execution_phase",
         "ledger_mode",
         "markdown_mirrors_are_non_authoritative"
@@ -610,6 +677,9 @@
         "to_phase": {
           "type": "string"
         },
+        "to_status": {
+          "type": "string"
+        },
         "transition_type": {
           "type": "string"
         },
@@ -621,6 +691,7 @@
         "transition_type",
         "from_phase",
         "to_phase",
+        "to_status",
         "decision",
         "verified_via",
         "proof_source"
@@ -629,6 +700,9 @@
     },
     "latest_completed_phase": {
       "type": "string"
+    },
+    "permanent_active_update_rule_installed": {
+      "type": "boolean"
     },
     "locks": {
       "additionalProperties": false,
@@ -815,6 +889,9 @@
       ],
       "type": "object"
     },
+    "schema_2_13_change_summary": {
+      "type": "string"
+    },
         "schema_version": {
             "enum": [
                 "2.1",
@@ -828,7 +905,8 @@
                 "2.9",
                 "2.10",
                 "2.11",
-                "2.12"
+                "2.12",
+                "2.13"
             ],
             "type": "string"
         },
@@ -988,7 +1066,10 @@
                 "schema_2_11_change_summary": {
                     "type": "string"
                 },
-                "schema_2_12_change_summary": {
+        "schema_2_12_change_summary": {
+                    "type": "string"
+                },
+                "schema_2_13_change_summary": {
                     "type": "string"
                 },
                 "schema_version_meaning": {
@@ -1039,8 +1120,15 @@
     "ci_enforcement_active",
     "status",
     "decision",
+    "latest_completed_status",
+    "latest_completed_project_commit_sha",
+    "latest_completed_ci_state",
+    "latest_completed_next_recommended_step",
+    "latest_completed_no_execution",
     "latest_completed_phase",
     "current_status",
+    "active_context_remote_main_reflects_latest_phase",
+    "permanent_active_update_rule_installed",
     "current_phase_bots_executed",
     "next_phase",
     "next_phase_authorized_by_operator",
@@ -1062,8 +1150,9 @@
     "history_summary",
     "last_transition",
     "required_update_policy",
-    "drift_signals"
+    "drift_signals",
+    "schema_2_13_change_summary"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v2.12",
+    "title": "ARIS Active Context Canonical Live State Schema v2.13",
     "type": "object"
 }

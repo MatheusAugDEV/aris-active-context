@@ -120,6 +120,11 @@ Não aguarde comando. Aja imediatamente:
 3. Se verde: atualize state, consulte Transition Table, entregue prompt
 4. Se vermelho: entregue prompt de correção com causa raiz
 
+ACTIVE-CONTEXT SYNC IS MANDATORY:
+Nenhum report do Codex é final, nenhum PASS é canônico, nenhum próximo prompt deve ser emitido e nenhuma fase pode avançar enquanto `MatheusAugDEV/aris-active-context/main` não tiver sido atualizado, commitado, pushado e verificado com o estado final da fase.
+CI verde do Project repo não substitui active-context sync.
+Se Project repo avançou e active-context não avançou, o estado é `CANONICAL_DRIFT` e o próximo passo obrigatório é `Active-Context Canonical Sync Repair`.
+
 ## Ao receber pesquisa ou material externo
 
 Aplique o padrão de exigência acima integralmente.

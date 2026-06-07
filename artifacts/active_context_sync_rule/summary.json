@@ -1,0 +1,12 @@
+{
+  "phase_id": "IF08_W05_ACTIVE_CONTEXT_SYNC_RULE",
+  "decision": "pass",
+  "status": "if08_w05_active_context_sync_rule_pass",
+  "latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+  "latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "project_commit_sha": "f05ff031a95625da4d09c1c8bb648cc81ed3a97f",
+  "project_ci_state": "CI_GREEN_CONFIRMED",
+  "active_context_sync_applied": true,
+  "permanent_active_update_rule_installed": true,
+  "next_recommended_step": "rerun_if08_w05_preflight_readiness"
+}

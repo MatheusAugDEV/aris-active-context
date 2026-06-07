@@ -54,6 +54,14 @@ Nunca emita relatório com CI pendente. Nunca entregue resultado pela metade. O 
 
 Se `CI_FAILED`: identifique o erro com `gh run view --log-failed`, repare, faça novo push, reinicie o polling do Passo 1.
 
+### ACTIVE-CONTEXT REMOTE SYNC — REGRA PERMANENTE
+
+When the operator sends a Codex result, the assistant/Codex must first verify whether `MatheusAugDEV/aris-active-context` `main` reflects that result.
+
+If Project repo advanced and active-context remote `main` did not advance with the same final phase state, the result is `CANONICAL_DRIFT`.
+
+Before any next phase prompt, PASS handoff, or canonical closure, the assistant/Codex must emit or execute an `Active-Context Canonical Sync Repair`.
+
 ## Prompt emission preference
 
 When the operator sends a Codex result, that result is a continuity signal for the

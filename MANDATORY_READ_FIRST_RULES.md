@@ -246,3 +246,7 @@ Após gate de capacidade passar: streak zera automaticamente.
 Modelo não pode zerar o streak manualmente.
 Modelo não pode criar gate de governança quando streak >= 3.
 Sem exceção. Sem waiver. Sem "correção urgente".
+
+## REGRA PERMANENTE — ACTIVE-CONTEXT UPDATE REQUIRED AFTER EVERY PHASE
+Toda fase/gate/status que altere qualquer fato canônico do ARIS deve atualizar `ACTIVE_CONTEXT_STATE.json` primeiro, depois mirrors derivados, rodar validator, commit, push e verificar GitHub `main`.
+Sem active-context remoto atualizado: não existe PASS canônico.

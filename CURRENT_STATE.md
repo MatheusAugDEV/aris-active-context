@@ -2,35 +2,37 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
+- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `inf_full_07_if08_authorization_closed_no_execution`
+- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
 - decision: `pass`
+- latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`
+- latest_completed_ci_state: `CI_GREEN_CONFIRMED`
+- next_recommended_step: `rerun_if08_w05_preflight_readiness`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`
+- PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
 - CI enforcement active: `true`
-- fixture_materialization_executed: `true` (65 files / 13 scenarios on disk, historical)
-- bot_execution_executed: `true` (1 deterministic nemesis log on disk, historical only)
-- current_phase_bots_executed: `false`
-- excludent_created: `true`
-- excludent_policy_created: `true`
-- only_canonroadmap_visible_as_active: `true`
-- transition_duplicate_resolved: `true`
-- all_execution_locks: `false`
+- w05_executed: `false`
+- wave_executed: `false`
+- bot_executed: `false`
+- runtime_executed: `false`
+- product_bedrock_real_apply_secrets_executed: `false`
+- external_network_used_except_github_governance: `false`
+- dependency_or_package_manager_used: `false`
 - Execution remains unauthorized in this state.
-- IF-08 synthetic isolated standing authorization: `active`
-- W0 explicit operator authorization recorded for the next plan-only synthetic isolated step: `true`
-- repeated per-wave ritual permission prompt: `removed`
 
 ## What This Means
 
-INF-FULL-07 is closed. IF-08 authorization gate was materialized WITHOUT execution.
-No bot, wave, runtime, apply, product, pilot, Bedrock, or secret is authorized.
-Proximo passo: IF-08 — Attack Waves Execution. Leia o canonroadmap e execute. Sem autorizacao adicional necessaria.
-W0 Controlled Plan-Only Execution is the next operational step after this policy repair, and it does not require a new operator phrase while remaining synthetic isolated lab only.
+INF-FULL-07 remains the canonical current phase, but the latest verified operational packet is `IF08_W05 Minos Mechanical Alias Normalization`.
+The Project repo result was verified on `origin/main` with terminal green CI and the active-context remote `main` was synchronised before any new prompt.
+No bot, wave, runtime, apply, product, pilot, Bedrock, or secret was executed in this sync.
+Próximo passo recomendado: `rerun_if08_w05_preflight_readiness`.

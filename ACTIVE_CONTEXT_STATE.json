@@ -42,6 +42,7 @@
     "PROMPT_CONTRACT.md",
     "LAB_OPERATING_CONTRACT.md",
     "EXCLUDENT_POLICY.md",
+    "INFERNUS_STANDING_AUTHORIZATION.md",
     "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md"
   ],
   "auto_advance": {
@@ -67,6 +68,7 @@
   "anti_proliferation_rule_active": true,
   "ci_enforcement_active": true,
   "additional_live_state_sources_allowed": false,
+  "active_context_remote_main_reflects_latest_phase": true,
   "anti_corruption_contract": {
     "agent_must_read_json_before_markdown": true,
     "anti_corruption_contract_file": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
@@ -87,10 +89,11 @@
       "14. PROMPT_CONTRACT.md",
       "15. LAB_OPERATING_CONTRACT.md",
       "16. EXCLUDENT_POLICY.md",
-      "17. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
-      "18. North Pole when roadmap direction is discussed: NORTH_POLE.md",
-      "19. Bedrock boundary when product/promotion/gate decision is discussed: BEDROCK_GATE.md",
-      "20. Historical files only when explicitly needed; old roadmap files are not active authority"
+      "17. INFERNUS_STANDING_AUTHORIZATION.md",
+      "18. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+      "19. North Pole when roadmap direction is discussed: NORTH_POLE.md",
+      "20. Bedrock boundary when product/promotion/gate decision is discussed: BEDROCK_GATE.md",
+      "21. Historical files only when explicitly needed; old roadmap files are not active authority"
     ],
     "json_beats_markdown": true,
     "markdown_conflict_policy": "fail_closed",
@@ -453,6 +456,12 @@
       "phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
       "repair_type": "infernus_full",
       "status": "inf_full_07_if08_authorization_gate_pass"
+    },
+    {
+      "decision": "pass",
+      "phase": "IF08_W05 Minos Mechanical Alias Normalization",
+      "repair_type": "infernus_full_execution",
+      "status": "if08_w05_minos_mechanical_alias_normalization_packet_ready"
     }
   ],
   "cross_field_consistency_policy": {
@@ -473,6 +482,12 @@
       "history_summary.latest_execution_phase",
       "last_transition.to_phase"
     ],
+    "latest_completed_status_must_match_across": [
+      "latest_completed_status",
+      "current_live_route.latest_completed_status",
+      "history_summary.latest_execution_status",
+      "last_transition.to_status"
+    ],
     "status_must_match_across": [
       "status",
       "current_live_route.status"
@@ -481,15 +496,30 @@
   "current_live_route": {
     "active_next_phase": "IF-08",
     "active_next_phase_class": "infernus_full_execution",
-    "current_status": "inf_full_07_if08_authorization_closed_no_execution",
+    "current_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
+    "latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+    "latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "status": "inf_full_07_if08_authorization_gate_pass"
   },
-  "current_status": "inf_full_07_if08_authorization_closed_no_execution",
+  "current_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
+  "latest_completed_next_recommended_step": "rerun_if08_w05_preflight_readiness",
+  "latest_completed_no_execution": {
+    "w05_executed": false,
+    "wave_executed": false,
+    "bot_executed": false,
+    "runtime_executed": false,
+    "product_bedrock_real_apply_secrets_executed": false,
+    "external_network_used_except_github_governance": false,
+    "dependency_or_package_manager_used": false
+  },
+  "latest_completed_project_commit_sha": "f05ff031a95625da4d09c1c8bb648cc81ed3a97f",
+  "latest_completed_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+  "permanent_active_update_rule_installed": true,
   "decision": "pass",
   "drift_signals": {
     "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
@@ -523,28 +553,31 @@
       "ARIS Infernus FULL Baseline Freeze Planning",
       "ARIS Infernus FULL Chain Registration & Preparation Opening",
       "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
-      "ARIS Infernus FULL Pre-Execution Review Gate"
+      "ARIS Infernus FULL Pre-Execution Review Gate",
+      "IF08_W05 Active-Context Canonical Sync Repair & Permanent Active Update Rule"
     ],
-    "latest_execution_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
+    "latest_execution_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+    "latest_execution_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "ARIS Infernus FULL Excludent Quarantine Gate"
+    "previous_execution_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "ARIS Infernus FULL Excludent Quarantine Gate",
-    "proof_source": "local_disk_validator_and_canonroadmap_authority_with_network_fetch_unavailable",
-    "to_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
-    "transition_type": "infernus_full_execution_authorization_gate_materialization",
-    "verified_via": "Transition Table duplicate resolved to a single active INF-FULL-05 -> INF-FULL-06 excludent route, INF-FULL-06 -> INF-FULL-07 materialized as prompt-only authorization gate, EXCLUDENT_POLICY.md preserved read_by_default=false, infernus_full_canonroadmap.md confirmed IF-08 as next technical block, validator passes, and no IF-08, wave, bot, or runtime execution was authorized."
+    "from_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
+    "proof_source": "project_origin_main_sha_f05ff031a95625da4d09c1c8bb648cc81ed3a97f_verified_with_terminal_green_ci_then_active_context_remote_main_synced_and_verified",
+    "to_phase": "IF08_W05 Minos Mechanical Alias Normalization",
+    "to_status": "if08_w05_minos_mechanical_alias_normalization_packet_ready",
+    "transition_type": "active_context_canonical_sync_repair",
+    "verified_via": "Project repo origin/main matched f05ff031a95625da4d09c1c8bb648cc81ed3a97f, all W0.5 alias-normalization workflows were terminal green, required W0.5 artifacts existed on disk, latest_completed_phase mirrors were updated coherently, and the permanent active-context update rule was installed before any next prompt."
   },
-  "latest_completed_phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
+  "latest_completed_phase": "IF08_W05 Minos Mechanical Alias Normalization",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": "IF-08",
-    "deferred_phase_reason": "IF-08 is the next phase per the canonroadmap. The operator approved the canonroadmap as standing authorization. No per-phase operator gate required. Execution (waves, runtime, apply) remains false until operator issues execution command.",
+    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF08_W05 Minos Mechanical Alias Normalization. The next recommended step is rerun_if08_w05_preflight_readiness. Execution (waves, runtime, apply) remains false until operator issues execution command.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -557,19 +590,19 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "INF-FULL-07 authorization gate is closed.",
-      "IF-08 is the next phase per the canonroadmap standing authorization.",
-      "The operator approved the canonroadmap. No additional authorization needed to advance to IF-08.",
-      "Execution (waves, bots, runtime, apply, product, Bedrock) remains false until operator issues execution command.",
-      "governance_gate_streak: 0.",
-      "Read infernus_full_canonroadmap.md and execute the next step. Do not ask. Do not wait."
+      "The Project repo IF08_W05 alias-normalization result was verified on origin/main with terminal green CI.",
+      "aris-active-context/main was synchronised before any next prompt or canonical PASS claim.",
+      "The latest completed operational packet is IF08_W05 Minos Mechanical Alias Normalization.",
+      "The next recommended step is rerun_if08_w05_preflight_readiness.",
+      "Do not execute rerun_if08_w05_preflight_readiness in this sync repair.",
+      "Execution (waves, bots, runtime, apply, product, Bedrock) remains false until operator issues execution command."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
-    "phase": "INF-FULL-07",
-    "phase_class": "infernus_full_execution_authorization",
+    "phase": "IF-08",
+    "phase_class": "infernus_full_execution",
     "planning_only": false,
-    "review_only": false,
-    "status": "inf_full_07_if08_authorization_closed_no_execution"
+    "review_only": true,
+    "status": "if08_w05_minos_mechanical_alias_normalization_packet_ready"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",
@@ -758,7 +791,8 @@
       "verify_GitHub_main"
     ]
   },
-  "schema_version": "2.12",
+  "schema_2_13_change_summary": "Adds latest-completed execution status and no-execution sync evidence, plus a permanent active-context remote-main sync rule after every canonical phase result.",
+  "schema_version": "2.13",
   "status": "inf_full_07_if08_authorization_gate_pass",
   "validation_policy": {
     "connector_fallback_allowed": true,
@@ -774,7 +808,7 @@
   "versioning_contract": {
     "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
     "current_active_context_version": "2.0",
-    "current_schema_version": "2.11",
+    "current_schema_version": "2.13",
     "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
     "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
     "schema_2_1_change_summary": "Structural schema remains valid. This transition advances the live route from the explicit operator authorization grant review gate to the explicit operator authorization readiness closure gate after consolidating the packet/request/grant chain as future-only, non-authorizing, non-executing, and non-materializing.",
@@ -789,6 +823,7 @@
     "schema_2_10_change_summary": "INF-FULL-06 creates the excludent/ structural layer as the logical exclusion zone. EXCLUDENT_POLICY.md is materialized in both repos, old Infernus roadmaps (infernus_full_roadmap_v1.md, infernus_full_execution_spec.md) are moved to excludent/infernus/roadmaps/ with SHA manifest, MANDATORY_READ_FIRST_RULES.md gains the EXCLUDENT RULE, CONTEXT_INDEX.md registers excludent=excluded_from_context, and only infernus_full_canonroadmap.md remains visible as active roadmap authority. No execution, bot, runtime, Bedrock, product, secrets, or dependency mutation is authorized.",
     "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
     "schema_2_12_change_summary": "INF-FULL-07 declares IF-08 as next phase with standing authorization from canonroadmap approval. next_phase and active_next_phase advance from null to IF-08. next_phase_authorized_by_operator=true because the canonroadmap is the operator standing authorization. Execution locks remain false. The system does not need per-phase operator authorization for infernus_full phases - canonroadmap approval is sufficient.",
+    "schema_2_13_change_summary": "Adds latest-completed execution status tracking, explicit no-execution sync evidence, and the permanent rule that active-context remote main must reflect every canonical phase result before PASS or next-prompt emission.",
     "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change."
   }
 }

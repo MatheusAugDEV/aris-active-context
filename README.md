@@ -13,23 +13,27 @@
 ## Current Phase
 
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 Attack Waves Execution Authorization Gate Materialization`
+- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
+- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- latest_completed_project_commit_sha: `f05ff031a95625da4d09c1c8bb648cc81ed3a97f`
+- latest_completed_ci_state: `CI_GREEN_CONFIRMED`
 - active_next_phase: `IF-08`
 - Active next phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
-- current_status: `inf_full_07_if08_authorization_closed_no_execution`
+- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
 - IF-08 execution: `false`
 - Waves execution: `false`
 - All execution locks: `false`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W05: `true`
+- PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 
 ## What This Means
 
-INF-FULL-07 is closed. IF-08 authorization gate was materialized WITHOUT execution.
-No bot, wave, runtime, apply, product, pilot, Bedrock, or secret is authorized.
-The system advances through Infernus FULL by canonroadmap standing authorization.
-Synthetic isolated IF-08 waves do not require repeated per-wave ritual permission after preflight pass; W0 explicit authorization is recorded by the standing-authorization policy repair.
+INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF08_W05 Minos Mechanical Alias Normalization`.
+No bot, wave, runtime, apply, product, pilot, Bedrock, or secret was executed in this sync.
+No PASS, next prompt, or handoff is canonical unless `MatheusAugDEV/aris-active-context/main` reflects the same result already verified in Project repo.
 Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
 
 ## Boot Read Order
@@ -50,7 +54,8 @@ Do NOT execute real waves, real apply, product promotion, or Bedrock without exp
 14. PROMPT_CONTRACT.md
 15. LAB_OPERATING_CONTRACT.md
 16. EXCLUDENT_POLICY.md
-17. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md
+17. INFERNUS_STANDING_AUTHORIZATION.md
+18. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md
 
 ## Do NOT read
 

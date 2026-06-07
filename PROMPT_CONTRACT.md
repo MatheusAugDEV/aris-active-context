@@ -292,3 +292,5 @@ Use docs/runbooks/codex_compact_prompt_template.md as the prompt skeleton for ne
 - Se o CI falhou por path antigo movido para excludent, corrija o path no script. Não restaure o arquivo.
 - Resultados de CI de fases anteriores não são bloqueantes para o estado atual.
 - `CI POLLING` é obrigatório em todo prompt que inclua push para `origin/main`. A regra está em `OPERATOR_PREFERENCES.md` seção `SCOPE DISCIPLINE`. Todo prompt herda essa regra automaticamente e não precisa repeti-la individualmente. O Codex deve aplicá-la mesmo que o prompt individual não a mencione explicitamente.
+- Every Codex prompt that can produce a phase result must require active-context update as a blocking deliverable. Final report must include both Project repo SHA and active-context repo SHA verified on `origin/main`.
+- If Project repo result exists but `aris-active-context/main` does not reflect it yet, the prompt must block on `Active-Context Canonical Sync Repair` before any next phase prompt or canonical PASS claim.

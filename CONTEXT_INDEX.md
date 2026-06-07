@@ -2,24 +2,30 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `inf_full_07_if08_authorization_closed_no_execution`
+- current_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
+- latest_completed_phase: `IF08_W05 Minos Mechanical Alias Normalization`
+- latest_completed_status: `if08_w05_minos_mechanical_alias_normalization_packet_ready`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
+- active_context_remote_main_reflects_if08_w05: `true`
+- permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
-- `artifacts/inf_full_07_if08_authorization/decision.json`
-- `artifacts/inf_full_07_if08_authorization/successor_validation_matrix.json`
-- `artifacts/inf_full_07_if08_authorization/no_execution_attestation.json`
-- `artifacts/inf_full_07_if08_authorization/summary.json`
-- `artifacts/inf_full_07_if08_authorization/report.md`
-- `artifacts/inf_full_07_if08_authorization/validator_evidence.json`
-- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_decision_2026_06_06.json`
-- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_summary_2026_06_06.json`
-- `artifacts/infernus/if08_synthetic_wave_standing_authorization_policy_repair_report_2026_06_06.md`
+- `artifacts/active_context_sync_rule/decision.json`
+- `artifacts/active_context_sync_rule/summary.json`
+- `artifacts/active_context_sync_rule/report.md`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_decision_2026_06_07.json`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_summary_2026_06_07.json`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_report_2026_06_07.md`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_ci_matrix_2026_06_07.json`
+- `artifacts/infernus/if08_w05_active_context_sync_rule_no_execution_attestation_2026_06_07.json`
+- `artifacts/infernus/if08_w05_minos_mechanical_alias_normalization_decision_2026_06_06.json`
+- `artifacts/infernus/if08_w05_minos_mechanical_alias_summary_2026_06_06.json`
+- `docs/infernus_full/if08_w05_minos_mechanical_alias_normalization_2026_06_06.md`
 - `INFERNUS_STANDING_AUTHORIZATION.md`
 - `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
 - `EXCLUDENT_POLICY.md`
