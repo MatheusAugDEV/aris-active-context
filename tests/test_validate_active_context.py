@@ -882,11 +882,11 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] == "IF-08"
     assert state["active_next_phase_class"] == "infernus_full_execution"
     assert state["next_phase_authorized_by_operator"] is True
-    assert state["current_status"] == "if08_w05_post_sync_review_pass"
-    assert state["latest_completed_phase"] == "IF-08 W0.5 Post-Sync Review & W1 Readiness Decision"
-    assert state["latest_completed_status"] == "if08_w05_post_sync_review_pass"
-    assert state["latest_completed_project_commit_sha"] == "6b8dc72edc168402700c63cca076bf533bd3b65a"
+    assert state["current_status"] == "if08_w1_context_memory_rag_preflight_readiness_pass"
+    assert state["latest_completed_phase"] == "IF-08 W1 Context/Memory/RAG Preflight Readiness"
+    assert state["latest_completed_status"] == "if08_w1_context_memory_rag_preflight_readiness_pass"
+    assert state["latest_completed_project_commit_sha"] == "9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
-    assert state["latest_completed_next_recommended_step"] == "prepare_if08_w1_context_memory_rag_preflight_readiness"
+    assert state["latest_completed_next_recommended_step"] == "execute_if08_w1_context_memory_rag_controlled_execution"
     assert state["active_context_remote_main_reflects_latest_phase"] is True
     assert state["permanent_active_update_rule_installed"] is True

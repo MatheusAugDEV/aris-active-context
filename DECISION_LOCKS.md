@@ -1,24 +1,24 @@
-## IF08_W05 Post-Sync Review & W1 Readiness Lock
+## IF08_W1 Context/Memory/RAG Preflight Readiness Lock
 
-- Latest completed phase: `IF-08 W0.5 Post-Sync Review & W1 Readiness Decision`
-- status: `if08_w05_post_sync_review_pass`
-- latest_completed_status=if08_w05_post_sync_review_pass
-- active_context_remote_main_reflects_if08_w05_post_sync_review=true
+- Latest completed phase: `IF-08 W1 Context/Memory/RAG Preflight Readiness`
+- status: `if08_w1_context_memory_rag_preflight_readiness_pass`
+- latest_completed_status=if08_w1_context_memory_rag_preflight_readiness_pass
+- active_context_remote_main_reflects_if08_w1_context_memory_rag_preflight_readiness=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=6b8dc72edc168402700c63cca076bf533bd3b65a
+- project_commit_sha=9542ae6d041a2d7ed0f6d29c07145ea9cd490b5d
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_if08_w1_context_memory_rag_preflight_readiness
-- w05_ter=1.0
-- tamper_attempts_expected=4
-- tamper_attempts_detected=4
-- w1_preparation_allowed_next=true
+- next_recommended_step=execute_if08_w1_context_memory_rag_controlled_execution
+- readiness_coverage=1.0
+- ready_preflight_checks=10
+- required_preflight_checks=10
+- w1_preflight_readiness=true
 - w1_execution_performed=false
 - w1_execution_allowed=false
 - runtime_executed=false
 - product_bedrock_real_apply_secrets_executed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- Canonical W0.5 evidence remains verified; this phase only opens W1 preparation in a future prompt.
+- Canonical W1 preflight readiness remains verified; this phase does not claim W1 execution.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08
