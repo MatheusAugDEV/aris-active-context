@@ -16,13 +16,13 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness
+Latest completed phase: IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
-W2 preflight readiness is canonical; this sync records readiness_coverage=1.0 with 12 of 12 checks ready, future FAR=0, future CTL=0, and the next step is W2 controlled execution.
+W2 controlled execution is canonical; this sync records FAR=0, CTL=0, 12 of 12 attack attempts blocked, and the next step is W2 post-sync review.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

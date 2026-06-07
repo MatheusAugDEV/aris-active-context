@@ -13,26 +13,27 @@
 ## Current Phase
 
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`
-- latest_completed_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`
-- latest_completed_project_commit_sha: `d19642cb83d996cefaf57bb2c71ed17195035103`
+- latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`
+- latest_completed_status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`
+- latest_completed_project_commit_sha: `3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
 - active_next_phase: `IF-08`
 - Active next phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
-- current_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`
+- current_status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`
 - IF-08 real execution: `false`
 - W2 preflight readiness: `true`
+- W2 controlled execution: `true_synthetic_isolated_lab_only`
 - All execution locks: `false`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_PREFLIGHT: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_CONTROLLED_EXECUTION: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`.
-The W2 preflight packet remains canonical with `readiness_coverage=1.0`, `required_preflight_checks=12`, `ready_preflight_checks=12`, `future_far_required=0`, and `future_ctl_required=0`; this sync does not authorize W2 real execution or any other real execution surface.
+INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`.
+The W2 controlled packet remains canonical with `attack_attempts_blocked=12/12`, `far_observed=0`, `ctl_observed=0`, and `w2_execution_performed=true_synthetic_isolated_lab_only`; this sync does not authorize W2 real execution or any other real execution surface.
 No PASS, next prompt, or handoff is canonical unless `MatheusAugDEV/aris-active-context/main` reflects the same result already verified in Project repo.
 Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
 

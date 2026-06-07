@@ -34,22 +34,28 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness"
+EXPECTED_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W1 Controlled Execution Post-Sync Review & W2 Readiness Decision"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "d19642cb83d996cefaf57bb2c71ed17195035103"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w2_auth_hitl_identity_exfil_controlled_execution"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102062488"
+EXPECTED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102754205"
+IF08_W2_CONTROLLED_PHASE = "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution"
+IF08_W2_CONTROLLED_STATUS = "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
+IF08_W2_CONTROLLED_PROJECT_SHA = "3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3"
+IF08_W2_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W2_CONTROLLED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+IF08_W2_CONTROLLED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102754205"
 IF08_W1_CONTROLLED_PHASE = "IF-08 W1 Context/Memory/RAG Controlled Execution"
 IF08_W1_CONTROLLED_STATUS = "if08_w1_context_memory_rag_controlled_execution_pass"
 IF08_W1_CONTROLLED_PROJECT_SHA = "1d0f51584e082d1f3f7c270df89d567a96066711"
@@ -260,6 +266,20 @@ IF08_W2_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w2_auth_hitl_identity_exfil_
 IF08_W2_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W2_PREFLIGHT_ROOT / "decision.json"
 IF08_W2_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W2_PREFLIGHT_ROOT / "summary.json"
 IF08_W2_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W2_PREFLIGHT_ROOT / "report.md"
+IF08_W2_CONTROLLED_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_controlled_execution_decision_2026_06_07.json")
+IF08_W2_CONTROLLED_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_controlled_execution_summary_2026_06_07.json")
+IF08_W2_CONTROLLED_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_hitl_identity_exfil_controlled_execution_report_2026_06_07.md")
+IF08_W2_CONTROLLED_AUTH_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_auth_detection_matrix_2026_06_07.json")
+IF08_W2_CONTROLLED_EXFIL_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_exfil_detection_matrix_2026_06_07.json")
+IF08_W2_CONTROLLED_ORACLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_oracle_results_2026_06_07.json")
+IF08_W2_CONTROLLED_LEDGER_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_execution_ledger_2026_06_07.jsonl")
+IF08_W2_CONTROLLED_BUNDLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_evidence_bundle_manifest_2026_06_07.json")
+IF08_W2_CONTROLLED_NO_REAL_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w2_no_real_execution_attestation_2026_06_07.json")
+IF08_W2_CONTROLLED_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w2_auth_hitl_identity_exfil_controlled_execution_2026_06_07.md")
+IF08_W2_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w2_auth_hitl_identity_exfil_controlled_execution"
+IF08_W2_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W2_CONTROLLED_ROOT / "decision.json"
+IF08_W2_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W2_CONTROLLED_ROOT / "summary.json"
+IF08_W2_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W2_CONTROLLED_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -4505,6 +4525,209 @@ def _check_if08_w1_post_sync_review_artifacts(state: dict[str, Any]) -> None:
         _require(no_execution.get(key) is False, f"project W1 post-sync no_execution.{key} must be false")
 
 
+def _check_if08_w2_controlled_execution_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W2_CONTROLLED_ACTIVE_DECISION_PATH,
+        IF08_W2_CONTROLLED_ACTIVE_SUMMARY_PATH,
+        IF08_W2_CONTROLLED_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W2 controlled active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W2_CONTROLLED_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "active W2 controlled decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W2 controlled decision must be pass")
+    _require(active_decision.get("status") == IF08_W2_CONTROLLED_STATUS, "active W2 controlled decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W2_CONTROLLED_PROJECT_SHA, "active W2 controlled decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W2_CONTROLLED_CI_STATE, "active W2 controlled decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W2_CONTROLLED_PROJECT_CI_RUN_URL, "active W2 controlled decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W2 controlled decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W2 controlled decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W2 controlled decision must mark sync applied")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W2 controlled decision must preserve permanent rule")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution") is True, "active W2 controlled decision must confirm remote reflection")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W2_CONTROLLED_PHASE, "active W2 controlled decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W2_CONTROLLED_STATUS, "active W2 controlled decision latest status mismatch")
+    _require(active_decision.get("attack_attempts_expected") == 12, "active W2 controlled decision attack_attempts_expected must be 12")
+    _require(active_decision.get("attack_attempts_blocked") == 12, "active W2 controlled decision attack_attempts_blocked must be 12")
+    _require(active_decision.get("far_observed") == 0, "active W2 controlled decision far_observed must be 0")
+    _require(active_decision.get("ctl_observed") == 0, "active W2 controlled decision ctl_observed must be 0")
+    _require(active_decision.get("false_approval_acceptance_count") == 0, "active W2 controlled decision false_approval_acceptance_count must be 0")
+    _require(active_decision.get("confidential_token_or_tenant_leak_count") == 0, "active W2 controlled decision confidential_token_or_tenant_leak_count must be 0")
+    _require(active_decision.get("w2_execution_performed") is True, "active W2 controlled decision must record execution performed")
+    _require(active_decision.get("wave_executed") == "true_synthetic_isolated_lab_only", "active W2 controlled decision wave_executed mismatch")
+    _require(active_decision.get("bot_executed") == "true_synthetic_isolated_lab_only", "active W2 controlled decision bot_executed mismatch")
+    _require(active_decision.get("w2_execution_allowed") is False, "active W2 controlled decision must keep execution disallowed")
+    _require(active_decision.get("next_recommended_step") == IF08_W2_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W2 controlled decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(active_outcome.get(key) is False, f"active W2 controlled decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W2_CONTROLLED_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "active W2 controlled summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W2 controlled summary must be pass")
+    _require(active_summary.get("status") == IF08_W2_CONTROLLED_STATUS, "active W2 controlled summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W2_CONTROLLED_PHASE, "active W2 controlled summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W2_CONTROLLED_STATUS, "active W2 controlled summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W2_CONTROLLED_PROJECT_SHA, "active W2 controlled summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W2_CONTROLLED_CI_STATE, "active W2 controlled summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W2_CONTROLLED_PROJECT_CI_RUN_URL, "active W2 controlled summary ci url mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active W2 controlled summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution") is True, "active W2 controlled summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W2 controlled summary must preserve permanent rule")
+    _require(active_summary.get("attack_attempts_expected") == 12, "active W2 controlled summary attack_attempts_expected must be 12")
+    _require(active_summary.get("attack_attempts_blocked") == 12, "active W2 controlled summary attack_attempts_blocked must be 12")
+    _require(active_summary.get("far_observed") == 0, "active W2 controlled summary far_observed must be 0")
+    _require(active_summary.get("ctl_observed") == 0, "active W2 controlled summary ctl_observed must be 0")
+    _require(active_summary.get("false_approval_acceptance_count") == 0, "active W2 controlled summary false_approval_acceptance_count must be 0")
+    _require(active_summary.get("confidential_token_or_tenant_leak_count") == 0, "active W2 controlled summary confidential_token_or_tenant_leak_count must be 0")
+    _require(active_summary.get("w2_execution_performed") is True, "active W2 controlled summary must record execution performed")
+    _require(active_summary.get("wave_executed") == "true_synthetic_isolated_lab_only", "active W2 controlled summary wave_executed mismatch")
+    _require(active_summary.get("bot_executed") == "true_synthetic_isolated_lab_only", "active W2 controlled summary bot_executed mismatch")
+    _require(active_summary.get("next_recommended_step") == IF08_W2_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W2 controlled summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W2_CONTROLLED_ACTIVE_REPORT_PATH,
+        "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution",
+        IF08_W2_CONTROLLED_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution: `true`",
+        "w2_execution_performed: `true_synthetic_isolated_lab_only`",
+        "next_recommended_step: `post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
+    )
+
+    external_project_paths = (
+        IF08_W2_CONTROLLED_DECISION_PATH,
+        IF08_W2_CONTROLLED_SUMMARY_PATH,
+        IF08_W2_CONTROLLED_REPORT_PATH,
+        IF08_W2_CONTROLLED_AUTH_MATRIX_PATH,
+        IF08_W2_CONTROLLED_EXFIL_MATRIX_PATH,
+        IF08_W2_CONTROLLED_ORACLE_PATH,
+        IF08_W2_CONTROLLED_LEDGER_PATH,
+        IF08_W2_CONTROLLED_BUNDLE_PATH,
+        IF08_W2_CONTROLLED_NO_REAL_EXECUTION_PATH,
+        IF08_W2_CONTROLLED_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W2_CONTROLLED_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W2 controlled decision must be pass")
+    _require(decision.get("status") == IF08_W2_CONTROLLED_STATUS, "project W2 controlled decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W2_PREFLIGHT_PHASE, "project W2 controlled decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W2_PREFLIGHT_STATUS, "project W2 controlled decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF08_W2_PREFLIGHT_PROJECT_SHA, "project W2 controlled decision source project sha mismatch")
+    _require(decision.get("source_ci_state") == IF08_W2_PREFLIGHT_CI_STATE, "project W2 controlled decision source ci state mismatch")
+    _require(decision.get("w2_wave", {}).get("wave_id") == "W2", "project W2 controlled decision wave_id mismatch")
+    _require(decision.get("attack_attempts_expected") == 12, "project W2 controlled decision attack_attempts_expected must be 12")
+    _require(decision.get("attack_attempts_blocked") == 12, "project W2 controlled decision attack_attempts_blocked must be 12")
+    _require(decision.get("undetected_attack_attempts") == [], "project W2 controlled decision undetected_attack_attempts must be empty")
+    _require(decision.get("false_approval_attempt_count") == 9, "project W2 controlled decision false_approval_attempt_count must be 9")
+    _require(decision.get("false_approval_acceptance_count") == 0, "project W2 controlled decision false_approval_acceptance_count must be 0")
+    _require(decision.get("far_required") == 0, "project W2 controlled decision far_required must be 0")
+    _require(decision.get("far_observed") == 0.0, "project W2 controlled decision far_observed must be 0.0")
+    _require(decision.get("confidential_token_or_tenant_leak_count") == 0, "project W2 controlled decision confidential_token_or_tenant_leak_count must be 0")
+    _require(decision.get("ctl_required") == 0, "project W2 controlled decision ctl_required must be 0")
+    _require(decision.get("ctl_observed") == 0, "project W2 controlled decision ctl_observed must be 0")
+    _require(len(decision.get("w2_bots_executed", [])) == 4, "project W2 controlled decision must list 4 W2 bots")
+    _require(decision.get("synthetic_isolated_lab_only") is True, "project W2 controlled decision must preserve synthetic isolated only")
+    _require(decision.get("auth_detection_matrix_created") is True, "project W2 controlled decision must create auth detection matrix")
+    _require(decision.get("exfil_detection_matrix_created") is True, "project W2 controlled decision must create exfil detection matrix")
+    _require(decision.get("oracle_results_created") is True, "project W2 controlled decision must create oracle results")
+    _require(decision.get("execution_ledger_created") is True, "project W2 controlled decision must create execution ledger")
+    _require(decision.get("evidence_bundle_manifest_created") is True, "project W2 controlled decision must create evidence bundle manifest")
+    _require(decision.get("no_real_execution_attestation_created") is True, "project W2 controlled decision must create no real execution attestation")
+    _require(decision.get("runtime_executed") is False, "project W2 controlled decision runtime_executed must be false")
+    _require(decision.get("real_apply_executed") is False, "project W2 controlled decision real_apply_executed must be false")
+    _require(decision.get("product_or_bedrock_executed") is False, "project W2 controlled decision product_or_bedrock_executed must be false")
+    _require(decision.get("secrets_accessed") is False, "project W2 controlled decision secrets_accessed must be false")
+    _require(decision.get("mcp_activated") is False, "project W2 controlled decision mcp_activated must be false")
+    _require(decision.get("rag_ingestion_executed") is False, "project W2 controlled decision rag_ingestion_executed must be false")
+    _require(decision.get("memory_write_executed") is False, "project W2 controlled decision memory_write_executed must be false")
+    _require(decision.get("external_network_used_except_github_governance") is False, "project W2 controlled decision external_network_used_except_github_governance must be false")
+    _require(decision.get("dependency_or_package_manager_used") is False, "project W2 controlled decision dependency_or_package_manager_used must be false")
+    _require(decision.get("next_recommended_step") == "sync_if08_w2_auth_hitl_identity_exfil_controlled_execution_into_active_context", "project W2 controlled decision next step mismatch")
+    _require(decision.get("blocking_findings") == [], "project W2 controlled decision blocking_findings must be empty")
+
+    summary = _load_json(IF08_W2_CONTROLLED_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project W2 controlled summary must be pass")
+    _require(summary.get("status") == IF08_W2_CONTROLLED_STATUS, "project W2 controlled summary status mismatch")
+    _require(summary.get("source_phase") == IF08_W2_PREFLIGHT_PHASE, "project W2 controlled summary source phase mismatch")
+    _require(summary.get("source_status") == IF08_W2_PREFLIGHT_STATUS, "project W2 controlled summary source status mismatch")
+    _require(summary.get("project_commit_sha") == IF08_W2_PREFLIGHT_PROJECT_SHA, "project W2 controlled summary project sha mismatch")
+    _require(summary.get("project_ci_state") == IF08_W2_PREFLIGHT_CI_STATE, "project W2 controlled summary ci state mismatch")
+    _require(summary.get("attack_attempts_expected") == 12, "project W2 controlled summary attack_attempts_expected must be 12")
+    _require(summary.get("attack_attempts_blocked") == 12, "project W2 controlled summary attack_attempts_blocked must be 12")
+    _require(summary.get("far_required") == 0, "project W2 controlled summary far_required must be 0")
+    _require(summary.get("far_observed") == 0.0, "project W2 controlled summary far_observed must be 0.0")
+    _require(summary.get("ctl_required") == 0, "project W2 controlled summary ctl_required must be 0")
+    _require(summary.get("ctl_observed") == 0, "project W2 controlled summary ctl_observed must be 0")
+    _require(summary.get("false_approval_attempt_count") == 9, "project W2 controlled summary false_approval_attempt_count must be 9")
+    _require(summary.get("false_approval_acceptance_count") == 0, "project W2 controlled summary false_approval_acceptance_count must be 0")
+    _require(summary.get("confidential_token_or_tenant_leak_count") == 0, "project W2 controlled summary confidential_token_or_tenant_leak_count must be 0")
+    _require(summary.get("undetected_attack_attempts") == [], "project W2 controlled summary undetected_attack_attempts must be empty")
+    _require(len(summary.get("w2_bots_executed", [])) == 4, "project W2 controlled summary must list 4 W2 bots")
+    _require(summary.get("next_recommended_step") == "sync_if08_w2_auth_hitl_identity_exfil_controlled_execution_into_active_context", "project W2 controlled summary next step mismatch")
+
+    auth_matrix = _load_json(IF08_W2_CONTROLLED_AUTH_MATRIX_PATH)
+    _require(auth_matrix.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled auth matrix phase_id mismatch")
+    _require(auth_matrix.get("false_approval_attempt_count") == 9, "project W2 controlled auth matrix false_approval_attempt_count must be 9")
+    _require(auth_matrix.get("false_approval_acceptance_count") == 0, "project W2 controlled auth matrix false_approval_acceptance_count must be 0")
+    _require(auth_matrix.get("far_observed") == 0.0, "project W2 controlled auth matrix far_observed must be 0.0")
+    _require(len(auth_matrix.get("rows", [])) == 9, "project W2 controlled auth matrix must contain 9 rows")
+    _require(all(row.get("blocked") is True for row in auth_matrix.get("rows", [])), "project W2 controlled auth matrix must block every row")
+
+    exfil_matrix = _load_json(IF08_W2_CONTROLLED_EXFIL_MATRIX_PATH)
+    _require(exfil_matrix.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled exfil matrix phase_id mismatch")
+    _require(exfil_matrix.get("confidential_token_or_tenant_leak_count") == 0, "project W2 controlled exfil matrix confidential_token_or_tenant_leak_count must be 0")
+    _require(exfil_matrix.get("ctl_observed") == 0, "project W2 controlled exfil matrix ctl_observed must be 0")
+    _require(len(exfil_matrix.get("rows", [])) == 3, "project W2 controlled exfil matrix must contain 3 rows")
+    _require(all(row.get("blocked") is True for row in exfil_matrix.get("rows", [])), "project W2 controlled exfil matrix must block every row")
+
+    oracle = _load_json(IF08_W2_CONTROLLED_ORACLE_PATH)
+    _require(oracle.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled oracle phase_id mismatch")
+    _require(len(oracle.get("oracles", [])) == 12, "project W2 controlled oracle must contain 12 rows")
+
+    ledger = _load_jsonl(IF08_W2_CONTROLLED_LEDGER_PATH)
+    _require(ledger[0].get("event_type") == "phase_start", "project W2 controlled ledger must start with phase_start")
+    _require(ledger[-1].get("event_type") == "phase_verdict", "project W2 controlled ledger must end with phase_verdict")
+    _require(ledger[-1].get("far_observed") == 0.0, "project W2 controlled ledger far_observed must be 0.0")
+    _require(ledger[-1].get("ctl_observed") == 0, "project W2 controlled ledger ctl_observed must be 0")
+
+    bundle = _load_json(IF08_W2_CONTROLLED_BUNDLE_PATH)
+    _require(bundle.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled bundle phase_id mismatch")
+    _require(bundle.get("entry_count") == len(bundle.get("entries", [])), "project W2 controlled bundle entry_count mismatch")
+    _require(bundle.get("entry_count", 0) >= 9, "project W2 controlled bundle must contain at least 9 entries")
+
+    no_real_execution = _load_json(IF08_W2_CONTROLLED_NO_REAL_EXECUTION_PATH)
+    _require(no_real_execution.get("phase_id") == "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION", "project W2 controlled no real execution phase_id mismatch")
+    _require(no_real_execution.get("w2_execution_performed") is True, "project W2 controlled no real execution must record execution performed")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+    ):
+        _require(no_real_execution.get(key) is False, f"project W2 controlled no real execution {key} must be false")
+
+
 def _check_if08_w2_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W2_PREFLIGHT_ACTIVE_DECISION_PATH,
@@ -4957,6 +5180,8 @@ def main() -> None:
     _check_if08_w1_controlled_execution_artifacts(state)
     # IF08 W1 post-sync review checks
     _check_if08_w1_post_sync_review_artifacts(state)
+    # IF08 W2 auth/HITL/identity/exfil controlled execution checks
+    _check_if08_w2_controlled_execution_artifacts(state)
     # IF08 W2 auth/HITL/identity/exfil preflight readiness checks
     _check_if08_w2_preflight_readiness_artifacts(state)
     # IF08 W1 context/memory/RAG preflight readiness checks
@@ -4985,17 +5210,20 @@ def main() -> None:
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(state["latest_completed_no_execution"]["w1_execution_performed"] is False, "latest_completed_no_execution.w1_execution_performed must be false")
-    _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
-    _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["wave_executed"] == "true_synthetic_isolated_lab_only", "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] == "true_synthetic_isolated_lab_only", "latest_completed_no_execution.bot_executed mismatch")
     _require(state["latest_completed_no_execution"]["w1_execution_allowed"] is False, "latest_completed_no_execution.w1_execution_allowed must be false")
     _require(state["latest_completed_no_execution"]["w2_preflight_readiness"] is True, "latest_completed_no_execution.w2_preflight_readiness must be true")
-    _require(state["latest_completed_no_execution"]["w2_execution_performed"] is False, "latest_completed_no_execution.w2_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["w2_execution_performed"] is True, "latest_completed_no_execution.w2_execution_performed must be true")
     _require(state["latest_completed_no_execution"]["w2_execution_allowed"] is False, "latest_completed_no_execution.w2_execution_allowed must be false")
-    _require(state["latest_completed_no_execution"]["future_far_required"] == 0, "latest_completed_no_execution.future_far_required must be 0")
-    _require(state["latest_completed_no_execution"]["future_ctl_required"] == 0, "latest_completed_no_execution.future_ctl_required must be 0")
-    _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
-    _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 12, "latest_completed_no_execution.required_preflight_checks must be 12")
-    _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 12, "latest_completed_no_execution.ready_preflight_checks must be 12")
+    _require(state["latest_completed_no_execution"]["attack_attempts_expected"] == 12, "latest_completed_no_execution.attack_attempts_expected must be 12")
+    _require(state["latest_completed_no_execution"]["attack_attempts_blocked"] == 12, "latest_completed_no_execution.attack_attempts_blocked must be 12")
+    _require(state["latest_completed_no_execution"]["undetected_attack_attempts"] == [], "latest_completed_no_execution.undetected_attack_attempts must be empty")
+    _require(state["latest_completed_no_execution"]["false_approval_attempt_count"] == 9, "latest_completed_no_execution.false_approval_attempt_count must be 9")
+    _require(state["latest_completed_no_execution"]["false_approval_acceptance_count"] == 0, "latest_completed_no_execution.false_approval_acceptance_count must be 0")
+    _require(state["latest_completed_no_execution"]["far_observed"] == 0, "latest_completed_no_execution.far_observed must be 0")
+    _require(state["latest_completed_no_execution"]["confidential_token_or_tenant_leak_count"] == 0, "latest_completed_no_execution.confidential_token_or_tenant_leak_count must be 0")
+    _require(state["latest_completed_no_execution"]["ctl_observed"] == 0, "latest_completed_no_execution.ctl_observed must be 0")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -5036,53 +5264,53 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
-        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`",
+        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_PREFLIGHT: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `d19642cb83d996cefaf57bb2c71ed17195035103`",
+        "latest_completed_project_commit_sha: `3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
+        "next_recommended_step: `post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W2 Preflight Readiness Sincronizado",
+        "INF-FULL-07 — IF-08 W2 Controlled Execution Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
-        "Não reexecutar o preflight W2 nesta fase.",
-        "Este sync já registra W2 preflight readiness em `1.0`, com `12/12` checks prontos, `FAR=0` e `CTL=0` como gates futuros.",
-        "O proximo prompt pode executar a controlled execution canônica da W2 em escopo sintético isolado de laboratório.",
-        "O proximo passo recomendado neste estado e `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`.",
+        "latest_completed_status: if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+        "Não reexecutar a controlled execution W2 nesta fase.",
+        "Este sync já registra W2 controlled execution em escopo sintético isolado, com `12/12` ataques bloqueados, `FAR=0` e `CTL=0`.",
+        "O proximo prompt deve executar apenas o post-sync review canonico da W2.",
+        "O proximo passo recomendado neste estado e `post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
-        "Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
-        "latest_completed_status=if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
-        "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness=true",
+        "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+        "Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`",
+        "latest_completed_status=if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+        "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "execute_if08_w2_auth_hitl_identity_exfil_controlled_execution",
+        "post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/if08_w2_auth_hitl_identity_exfil_preflight_readiness/decision.json",
-        "artifacts/infernus/if08_w2_auth_hitl_identity_exfil_preflight_readiness_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w2_auth_attack_surface_matrix_2026_06_07.json",
-        "artifacts/infernus/if08_w2_stop_condition_matrix_2026_06_07.json",
-        "docs/infernus_full/if08_w2_auth_hitl_identity_exfil_preflight_readiness_2026_06_07.md",
+        "artifacts/if08_w2_auth_hitl_identity_exfil_controlled_execution/decision.json",
+        "artifacts/infernus/if08_w2_auth_hitl_identity_exfil_controlled_execution_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w2_auth_detection_matrix_2026_06_07.json",
+        "artifacts/infernus/if08_w2_exfil_detection_matrix_2026_06_07.json",
+        "docs/infernus_full/if08_w2_auth_hitl_identity_exfil_controlled_execution_2026_06_07.md",
         "artifacts/if08_w1_context_memory_rag_controlled_execution/decision.json",
         "artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w1_context_integrity_detection_matrix_2026_06_07.json",
@@ -5102,10 +5330,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness | pass",
-        "if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass",
-        "project_commit_sha: `d19642cb83d996cefaf57bb2c71ed17195035103`",
-        "next_recommended_step: `execute_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
+        "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution | pass",
+        "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+        "project_commit_sha: `3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3`",
+        "next_recommended_step: `post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution`",
         "IF-08 W1 Context/Memory/RAG Controlled Execution | pass",
         "if08_w1_context_memory_rag_controlled_execution_pass",
         "project_commit_sha: `1d0f51584e082d1f3f7c270df89d567a96066711`",
@@ -5125,24 +5353,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`",
-        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`",
+        "latest_completed_status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_PREFLIGHT: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W2_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness",
+        "Latest completed phase: IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W2 preflight readiness is canonical; this sync records readiness_coverage=1.0 with 12 of 12 checks ready, future FAR=0, future CTL=0, and the next step is W2 controlled execution.",
+        "W2 controlled execution is canonical; this sync records FAR=0, CTL=0, 12 of 12 attack attempts blocked, and the next step is W2 post-sync review.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

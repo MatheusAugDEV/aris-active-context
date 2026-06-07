@@ -1,0 +1,23 @@
+{
+  "phase_id": "IF-08-W2-AUTH-HITL-IDENTITY-EXFIL-CONTROLLED-EXECUTION",
+  "decision": "pass",
+  "status": "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+  "latest_completed_phase": "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution",
+  "latest_completed_status": "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass",
+  "project_commit_sha": "3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3",
+  "project_ci_state": "CI_GREEN_CONFIRMED",
+  "project_ci_run_url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27102754205",
+  "active_context_sync_applied": true,
+  "active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution": true,
+  "permanent_active_update_rule_installed": true,
+  "attack_attempts_expected": 12,
+  "attack_attempts_blocked": 12,
+  "far_observed": 0,
+  "ctl_observed": 0,
+  "false_approval_acceptance_count": 0,
+  "confidential_token_or_tenant_leak_count": 0,
+  "w2_execution_performed": true,
+  "wave_executed": "true_synthetic_isolated_lab_only",
+  "bot_executed": "true_synthetic_isolated_lab_only",
+  "next_recommended_step": "post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+}

@@ -1,20 +1,23 @@
-## IF08_W2 Auth/HITL/Identity/Exfil Preflight Readiness Lock
+## IF08_W2 Auth/HITL/Identity/Exfil Controlled Execution Lock
 
-- Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Preflight Readiness`
-- status: `if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass`
-- latest_completed_status=if08_w2_auth_hitl_identity_exfil_preflight_readiness_pass
-- active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_preflight_readiness=true
+- Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`
+- status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`
+- latest_completed_status=if08_w2_auth_hitl_identity_exfil_controlled_execution_pass
+- active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=d19642cb83d996cefaf57bb2c71ed17195035103
+- project_commit_sha=3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=execute_if08_w2_auth_hitl_identity_exfil_controlled_execution
+- next_recommended_step=post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution
 - w2_preflight_readiness=true
-- readiness_coverage=1.0
-- required_preflight_checks=12
-- ready_preflight_checks=12
-- future_far_required=0
-- future_ctl_required=0
-- w2_execution_performed=false
+- attack_attempts_expected=12
+- attack_attempts_blocked=12
+- false_approval_acceptance_count=0
+- far_observed=0
+- confidential_token_or_tenant_leak_count=0
+- ctl_observed=0
+- w2_execution_performed=true_synthetic_isolated_lab_only
+- wave_executed=true_synthetic_isolated_lab_only
+- bot_executed=true_synthetic_isolated_lab_only
 - w2_execution_allowed=false
 - runtime_executed=false
 - real_apply_executed=false
@@ -24,7 +27,7 @@
 - memory_write_executed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- Canonical W2 preflight readiness is verified; this sync does not claim W2 execution and does not authorize any real execution surface.
+- Canonical W2 controlled execution is verified; this sync records only synthetic isolated lab execution and does not authorize any real execution surface.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08
