@@ -508,33 +508,26 @@
   "current_live_route": {
     "active_next_phase": "IF-08",
     "active_next_phase_class": "infernus_full_execution",
-    "current_status": "if08_w3_post_sync_review_w4_readiness_pass",
+    "current_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
-    "latest_completed_status": "if08_w3_post_sync_review_w4_readiness_pass",
+    "latest_completed_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
+    "latest_completed_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "status": "inf_full_07_if08_authorization_gate_pass",
-    "latest_completed_project_commit_sha": "aa22631ec8612646aa76fdd03ed15c3513f8ec93",
+    "latest_completed_project_commit_sha": "2785b06e7a73b10675d30ed870fda7959e2e866a",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness"
+    "latest_completed_next_recommended_step": "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
   },
-  "current_status": "if08_w3_post_sync_review_w4_readiness_pass",
+  "current_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
   "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-  "latest_completed_next_recommended_step": "prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness",
+  "latest_completed_next_recommended_step": "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
   "latest_completed_no_execution": {
     "w05_executed": false,
     "wave_executed": false,
     "bot_executed": false,
-    "w3_controlled_execution_verified": true,
-    "w3_ser_observed": 0,
-    "w3_rca_observed": 1.0,
-    "w3_attack_attempts_expected": 13,
-    "w3_attack_attempts_blocked": 13,
-    "w3_undetected_runtime_sandbox_attacks": [],
-    "w3_synthetic_isolated_only": true,
-    "w4_preparation_allowed_next": true,
+    "w4_preflight_readiness": true,
     "w4_execution_performed": false,
     "w4_execution_allowed": false,
     "future_rhr_required": 1.0,
@@ -553,10 +546,12 @@
     "memory_write_executed": false,
     "socket_opened": false,
     "shell_executed": false,
-    "filesystem_escape_performed": false
+    "filesystem_escape_performed": false,
+    "real_cost_spent": false,
+    "real_quota_consumed": false
   },
-  "latest_completed_project_commit_sha": "aa22631ec8612646aa76fdd03ed15c3513f8ec93",
-  "latest_completed_status": "if08_w3_post_sync_review_w4_readiness_pass",
+  "latest_completed_project_commit_sha": "2785b06e7a73b10675d30ed870fda7959e2e866a",
+  "latest_completed_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
   "permanent_active_update_rule_installed": true,
   "decision": "pass",
   "drift_signals": {
@@ -594,28 +589,28 @@
       "ARIS Infernus FULL Pre-Execution Review Gate",
       "IF08_W05 Active-Context Canonical Sync Repair & Permanent Active Update Rule"
     ],
-    "latest_execution_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
-    "latest_execution_status": "if08_w3_post_sync_review_w4_readiness_pass",
+    "latest_execution_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
+    "latest_execution_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution"
+    "previous_execution_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution",
-    "proof_source": "project_origin_main_sha_aa22631ec8612646aa76fdd03ed15c3513f8ec93_verified_with_terminal_green_ci_run_27114468159_then_active_context_remote_main_synced_and_verified",
-    "to_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
-    "to_status": "if08_w3_post_sync_review_w4_readiness_pass",
-    "transition_type": "active_context_w3_post_sync_review_sync",
-    "verified_via": "Project repo origin/main matched aa22631ec8612646aa76fdd03ed15c3513f8ec93, the IF-08 W3 post-sync review CI run 27114468159 was terminal green, W3 canonical sync stayed verified with SER=0, RCA=1.0, attack_attempts_blocked=13/13, sandbox_escape_count=0, runtime_containment_checks_passed=13/13, W4 readiness closed as ready_for_preparation with readiness_coverage=1.0, and all runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, and non-GitHub network surfaces remained false before active-context mirrors were updated."
+    "from_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
+    "proof_source": "project_origin_main_sha_2785b06e7a73b10675d30ed870fda7959e2e866a_verified_with_terminal_green_ci_run_27116116919_then_active_context_remote_main_synced_and_verified",
+    "to_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
+    "to_status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
+    "transition_type": "active_context_w4_preflight_readiness_sync",
+    "verified_via": "Project repo origin/main matched 2785b06e7a73b10675d30ed870fda7959e2e866a, the IF-08 W4 preflight readiness CI run 27116116919 was terminal green, readiness_coverage closed at 1.0 with required_preflight_checks=12 and ready_preflight_checks=12, all W4 preflight artifacts were materialized, and runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, real cost, real quota, and non-GitHub network surfaces remained false before active-context mirrors were updated."
   },
-  "latest_completed_phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
+  "latest_completed_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": "IF-08",
-    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision. W3 canonical sync remains verified with SER=0, RCA=1.0, attack_attempts_blocked=13/13, sandbox_escape_count=0, runtime_containment_checks_passed=13/13, W4 preparation is allowed next with readiness_coverage=1.0, and the next recommended step is prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness. All runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, and non-GitHub external network surfaces remain false until explicitly authorized.",
+    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness. W4 preflight readiness passed with readiness_coverage=1.0, required_preflight_checks=12, ready_preflight_checks=12, w4_execution_performed=false, w4_execution_allowed=false, future_rhr_required=1.0, future_ddr_required=1.0, future_cer_required=1.0, and the next recommended step is execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution. All runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, non-GitHub external network, real cost, and real quota surfaces remain false until explicitly authorized.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -628,12 +623,12 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The Project repo IF-08 W3 post-sync review result was verified on origin/main with terminal green CI.",
-      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W3 post-sync review closure.",
-      "The latest completed operational packet is IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision.",
-      "This phase did not execute W4 and only verified W3 canonical sync with SER=0, RCA=1.0, attack_attempts_blocked=13/13, sandbox_escape_count=0, and runtime_containment_checks_passed=13/13.",
-      "W4 is now ready for preparation only; runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, and non-GitHub external network remained false.",
-      "The next prompt may execute IF-08 W4 replay/rollback/concurrency/cost preflight readiness only.",
+      "The Project repo IF-08 W4 preflight readiness result was verified on origin/main with terminal green CI.",
+      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W4 preflight readiness closure.",
+      "The latest completed operational packet is IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness.",
+      "This phase did not execute W4 and only verified preflight readiness with readiness_coverage=1.0, required_preflight_checks=12, and ready_preflight_checks=12.",
+      "W4 controlled execution remains synthetic-lab-only for a future prompt; runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, non-GitHub external network, real cost, and real quota remained false.",
+      "The next prompt may execute IF-08 W4 replay/rollback/concurrency/cost controlled execution in synthetic isolated lab only.",
       "Real execution surfaces remain false until explicitly authorized."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
@@ -641,7 +636,7 @@
     "phase_class": "infernus_full_execution",
     "planning_only": true,
     "review_only": false,
-    "status": "if08_w3_post_sync_review_w4_readiness_pass"
+    "status": "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",

@@ -1,20 +1,14 @@
-## IF08_W3 Post-Sync Review & W4 Readiness Lock
+## IF08_W4 Preflight Readiness Lock
 
-- Latest completed phase: `IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision`
-- status: `if08_w3_post_sync_review_w4_readiness_pass`
-- latest_completed_status=if08_w3_post_sync_review_w4_readiness_pass
-- active_context_remote_main_reflects_if08_w3_post_sync_review=true
+- Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`
+- status: `if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass`
+- latest_completed_status=if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass
+- active_context_remote_main_reflects_if08_w4_preflight_readiness=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=aa22631ec8612646aa76fdd03ed15c3513f8ec93
+- project_commit_sha=2785b06e7a73b10675d30ed870fda7959e2e866a
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness
-- w3_canonical_sync_verified=true
-- w3_ser_observed=0
-- w3_rca_observed=1.0
-- w3_attack_attempts_expected=13
-- w3_attack_attempts_blocked=13
-- w4_readiness_state=ready_for_preparation
-- w4_preparation_allowed_next=true
+- next_recommended_step=execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution
+- w4_preflight_readiness=true
 - w4_execution_performed=false
 - w4_execution_allowed=false
 - future_rhr_required=1.0
@@ -32,7 +26,9 @@
 - filesystem_escape_performed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- Canonical W3 post-sync review is verified; this sync allows only future W4 preflight readiness and does not execute W4.
+- real_cost_spent=false
+- real_quota_consumed=false
+- Canonical W4 preflight readiness is verified; this sync allows only future W4 controlled execution and does not execute W4.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08

@@ -34,22 +34,28 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision"
+EXPECTED_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w3_post_sync_review_w4_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w3_post_sync_review_w4_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w3_post_sync_review_w4_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "aa22631ec8612646aa76fdd03ed15c3513f8ec93"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27114468159"
+EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27116116919"
+IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
+IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
+IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
+IF08_W4_PREFLIGHT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W4_PREFLIGHT_NEXT_RECOMMENDED_STEP = "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+IF08_W4_PREFLIGHT_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27116116919"
 IF08_W3_POST_SYNC_PHASE = "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision"
 IF08_W3_POST_SYNC_STATUS = "if08_w3_post_sync_review_w4_readiness_pass"
 IF08_W3_POST_SYNC_PROJECT_SHA = "aa22631ec8612646aa76fdd03ed15c3513f8ec93"
@@ -353,6 +359,21 @@ IF08_W3_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w3_post_sync_review"
 IF08_W3_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W3_POST_SYNC_ROOT / "decision.json"
 IF08_W3_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W3_POST_SYNC_ROOT / "summary.json"
 IF08_W3_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W3_POST_SYNC_ROOT / "report.md"
+IF08_W4_PREFLIGHT_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_decision_2026_06_07.json")
+IF08_W4_PREFLIGHT_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_summary_2026_06_07.json")
+IF08_W4_PREFLIGHT_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_report_2026_06_07.md")
+IF08_W4_PREFLIGHT_ATTACK_SURFACE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_attack_surface_matrix_2026_06_07.json")
+IF08_W4_PREFLIGHT_ROLLBACK_ORACLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_rollback_oracle_contract_2026_06_07.json")
+IF08_W4_PREFLIGHT_CONCURRENCY_ORACLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_concurrency_oracle_contract_2026_06_07.json")
+IF08_W4_PREFLIGHT_COST_ORACLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_cost_quota_oracle_contract_2026_06_07.json")
+IF08_W4_PREFLIGHT_FIXTURE_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_fixture_readiness_matrix_2026_06_07.json")
+IF08_W4_PREFLIGHT_STOP_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_stop_condition_matrix_2026_06_07.json")
+IF08_W4_PREFLIGHT_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_no_execution_attestation_2026_06_07.json")
+IF08_W4_PREFLIGHT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_2026_06_07.md")
+IF08_W4_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w4_replay_rollback_concurrency_cost_preflight_readiness"
+IF08_W4_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W4_PREFLIGHT_ROOT / "decision.json"
+IF08_W4_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W4_PREFLIGHT_ROOT / "summary.json"
+IF08_W4_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W4_PREFLIGHT_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -5247,6 +5268,203 @@ def _check_if08_w3_post_sync_review_artifacts(state: dict[str, Any]) -> None:
         _require(no_execution.get(key) is False, f"project W3 post-sync no_execution.{key} must be false")
 
 
+def _check_if08_w4_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W4_PREFLIGHT_ACTIVE_DECISION_PATH,
+        IF08_W4_PREFLIGHT_ACTIVE_SUMMARY_PATH,
+        IF08_W4_PREFLIGHT_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W4 preflight active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W4_PREFLIGHT_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W4-PREFLIGHT-READINESS", "active W4 preflight decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W4 preflight decision must be pass")
+    _require(active_decision.get("status") == IF08_W4_PREFLIGHT_STATUS, "active W4 preflight decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W4_PREFLIGHT_PROJECT_SHA, "active W4 preflight decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W4_PREFLIGHT_CI_STATE, "active W4 preflight decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W4_PREFLIGHT_PROJECT_CI_RUN_URL, "active W4 preflight decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W4 preflight decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W4 preflight decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W4 preflight decision must mark sync applied")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w4_preflight_readiness") is True, "active W4 preflight decision must confirm remote reflection")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W4 preflight decision must preserve permanent rule")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W4_PREFLIGHT_PHASE, "active W4 preflight decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W4_PREFLIGHT_STATUS, "active W4 preflight decision latest status mismatch")
+    _require(active_decision.get("w4_preflight_readiness") is True, "active W4 preflight decision must mark readiness true")
+    _require(active_decision.get("w4_execution_performed") is False, "active W4 preflight decision w4_execution_performed must be false")
+    _require(active_decision.get("w4_execution_allowed") is False, "active W4 preflight decision w4_execution_allowed must be false")
+    _require(active_decision.get("future_rhr_required") == 1.0, "active W4 preflight decision future_rhr_required must be 1.0")
+    _require(active_decision.get("future_ddr_required") == 1.0, "active W4 preflight decision future_ddr_required must be 1.0")
+    _require(active_decision.get("future_cer_required") == 1.0, "active W4 preflight decision future_cer_required must be 1.0")
+    _require(active_decision.get("readiness_coverage") == 1.0, "active W4 preflight decision readiness_coverage must be 1.0")
+    _require(active_decision.get("required_preflight_checks") == 12, "active W4 preflight decision required_preflight_checks must be 12")
+    _require(active_decision.get("ready_preflight_checks") == 12, "active W4 preflight decision ready_preflight_checks must be 12")
+    _require(active_decision.get("next_recommended_step") == IF08_W4_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W4 preflight decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(active_outcome.get(key) is False, f"active W4 preflight decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W4_PREFLIGHT_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W4-PREFLIGHT-READINESS", "active W4 preflight summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W4 preflight summary must be pass")
+    _require(active_summary.get("status") == IF08_W4_PREFLIGHT_STATUS, "active W4 preflight summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W4_PREFLIGHT_PHASE, "active W4 preflight summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W4_PREFLIGHT_STATUS, "active W4 preflight summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W4_PREFLIGHT_PROJECT_SHA, "active W4 preflight summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W4_PREFLIGHT_CI_STATE, "active W4 preflight summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W4_PREFLIGHT_PROJECT_CI_RUN_URL, "active W4 preflight summary ci url mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active W4 preflight summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w4_preflight_readiness") is True, "active W4 preflight summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W4 preflight summary must preserve permanent rule")
+    _require(active_summary.get("w4_preflight_readiness") is True, "active W4 preflight summary readiness mismatch")
+    _require(active_summary.get("w4_execution_performed") is False, "active W4 preflight summary must keep execution false")
+    _require(active_summary.get("w4_execution_allowed") is False, "active W4 preflight summary must keep execution disallowed")
+    _require(active_summary.get("future_rhr_required") == 1.0, "active W4 preflight summary future_rhr_required must be 1.0")
+    _require(active_summary.get("future_ddr_required") == 1.0, "active W4 preflight summary future_ddr_required must be 1.0")
+    _require(active_summary.get("future_cer_required") == 1.0, "active W4 preflight summary future_cer_required must be 1.0")
+    _require(active_summary.get("readiness_coverage") == 1.0, "active W4 preflight summary readiness_coverage must be 1.0")
+    _require(active_summary.get("required_preflight_checks") == 12, "active W4 preflight summary required_preflight_checks must be 12")
+    _require(active_summary.get("ready_preflight_checks") == 12, "active W4 preflight summary ready_preflight_checks must be 12")
+    _require(active_summary.get("next_recommended_step") == IF08_W4_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W4 preflight summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W4_PREFLIGHT_ACTIVE_REPORT_PATH,
+        "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
+        IF08_W4_PREFLIGHT_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w4_preflight_readiness: `true`",
+        "w4_preflight_readiness: `true`",
+        "next_recommended_step: `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
+    )
+
+    external_project_paths = (
+        IF08_W4_PREFLIGHT_DECISION_PATH,
+        IF08_W4_PREFLIGHT_SUMMARY_PATH,
+        IF08_W4_PREFLIGHT_REPORT_PATH,
+        IF08_W4_PREFLIGHT_ATTACK_SURFACE_PATH,
+        IF08_W4_PREFLIGHT_ROLLBACK_ORACLE_PATH,
+        IF08_W4_PREFLIGHT_CONCURRENCY_ORACLE_PATH,
+        IF08_W4_PREFLIGHT_COST_ORACLE_PATH,
+        IF08_W4_PREFLIGHT_FIXTURE_MATRIX_PATH,
+        IF08_W4_PREFLIGHT_STOP_MATRIX_PATH,
+        IF08_W4_PREFLIGHT_NO_EXECUTION_PATH,
+        IF08_W4_PREFLIGHT_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W4_PREFLIGHT_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-PREFLIGHT-READINESS", "project W4 preflight decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W4 preflight decision must be pass")
+    _require(decision.get("status") == IF08_W4_PREFLIGHT_STATUS, "project W4 preflight decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W3_POST_SYNC_PHASE, "project W4 preflight decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W3_POST_SYNC_STATUS, "project W4 preflight decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF08_W3_POST_SYNC_PROJECT_SHA, "project W4 preflight decision source project sha mismatch")
+    _require(decision.get("source_ci_state") == IF08_W3_POST_SYNC_CI_STATE, "project W4 preflight decision source ci state mismatch")
+    _require(decision.get("w4_preflight_readiness") is True, "project W4 preflight decision must mark readiness true")
+    _require(decision.get("w4_execution_performed") is False, "project W4 preflight decision must keep execution false")
+    _require(decision.get("w4_execution_allowed") is False, "project W4 preflight decision must keep execution disallowed")
+    _require(decision.get("future_rhr_required") == 1.0, "project W4 preflight decision future_rhr_required must be 1.0")
+    _require(decision.get("future_ddr_required") == 1.0, "project W4 preflight decision future_ddr_required must be 1.0")
+    _require(decision.get("future_cer_required") == 1.0, "project W4 preflight decision future_cer_required must be 1.0")
+    _require(decision.get("readiness_coverage") == 1.0, "project W4 preflight decision readiness_coverage must be 1.0")
+    _require(decision.get("required_preflight_checks") == 12, "project W4 preflight decision required_preflight_checks must be 12")
+    _require(decision.get("ready_preflight_checks") == 12, "project W4 preflight decision ready_preflight_checks must be 12")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(decision.get(key) is False, f"project W4 preflight decision {key} must be false")
+    _require(decision.get("next_recommended_step") == IF08_W4_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W4 preflight decision next step mismatch")
+    _require(decision.get("blocking_findings") == [], "project W4 preflight decision blocking_findings must be empty")
+
+    summary = _load_json(IF08_W4_PREFLIGHT_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-PREFLIGHT-READINESS", "project W4 preflight summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project W4 preflight summary must be pass")
+    _require(summary.get("status") == IF08_W4_PREFLIGHT_STATUS, "project W4 preflight summary status mismatch")
+    _require(summary.get("source_phase") == IF08_W3_POST_SYNC_PHASE, "project W4 preflight summary source phase mismatch")
+    _require(summary.get("source_status") == IF08_W3_POST_SYNC_STATUS, "project W4 preflight summary source status mismatch")
+    _require(summary.get("source_project_sha") == IF08_W3_POST_SYNC_PROJECT_SHA, "project W4 preflight summary source project sha mismatch")
+    _require(summary.get("source_ci_state") == IF08_W3_POST_SYNC_CI_STATE, "project W4 preflight summary source ci state mismatch")
+    _require(summary.get("w4_preflight_readiness") is True, "project W4 preflight summary must mark readiness true")
+    _require(summary.get("future_rhr_required") == 1.0, "project W4 preflight summary future_rhr_required must be 1.0")
+    _require(summary.get("future_ddr_required") == 1.0, "project W4 preflight summary future_ddr_required must be 1.0")
+    _require(summary.get("future_cer_required") == 1.0, "project W4 preflight summary future_cer_required must be 1.0")
+    _require(summary.get("readiness_coverage") == 1.0, "project W4 preflight summary readiness_coverage must be 1.0")
+    _require(summary.get("required_preflight_checks") == 12, "project W4 preflight summary required_preflight_checks must be 12")
+    _require(summary.get("ready_preflight_checks") == 12, "project W4 preflight summary ready_preflight_checks must be 12")
+    _require(summary.get("next_recommended_step") == IF08_W4_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W4 preflight summary next step mismatch")
+
+    attack_surface = _load_json(IF08_W4_PREFLIGHT_ATTACK_SURFACE_PATH)
+    _require(attack_surface.get("wave_id") == "W4", "project W4 preflight attack surface wave_id mismatch")
+    _require(attack_surface.get("wave_name") == "Replay/rollback/concurrency/cost", "project W4 preflight attack surface wave_name mismatch")
+    _require(len(attack_surface.get("attack_vectors", [])) == 12, "project W4 preflight attack vector count mismatch")
+
+    rollback_oracle = _load_json(IF08_W4_PREFLIGHT_ROLLBACK_ORACLE_PATH)
+    concurrency_oracle = _load_json(IF08_W4_PREFLIGHT_CONCURRENCY_ORACLE_PATH)
+    cost_oracle = _load_json(IF08_W4_PREFLIGHT_COST_ORACLE_PATH)
+    _require(rollback_oracle.get("metric_required") == 1.0, "project W4 preflight rollback oracle metric mismatch")
+    _require(concurrency_oracle.get("metric_required") == 1.0, "project W4 preflight concurrency oracle metric mismatch")
+    _require(cost_oracle.get("metric_required") == 1.0, "project W4 preflight cost oracle metric mismatch")
+
+    fixture_matrix = _load_json(IF08_W4_PREFLIGHT_FIXTURE_MATRIX_PATH)
+    _require(fixture_matrix.get("all_fixture_definitions_ready") is True, "project W4 preflight fixture readiness mismatch")
+    _require(fixture_matrix.get("execution_materialized_now") is False, "project W4 preflight fixture execution must remain false")
+
+    stop_matrix = _load_json(IF08_W4_PREFLIGHT_STOP_MATRIX_PATH)
+    _require(stop_matrix.get("all_stop_conditions_defined") is True, "project W4 preflight stop conditions mismatch")
+    _require(len(stop_matrix.get("rows", [])) == 12, "project W4 preflight stop row count mismatch")
+
+    no_execution = _load_json(IF08_W4_PREFLIGHT_NO_EXECUTION_PATH)
+    _require(no_execution.get("w4_execution_performed") is False, "project W4 preflight no_execution must keep execution false")
+    _require(no_execution.get("w4_execution_allowed") is False, "project W4 preflight no_execution must keep execution disallowed")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(no_execution.get(key) is False, f"project W4 preflight no_execution.{key} must be false")
+
+
 def _check_if08_w2_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W2_POST_SYNC_ACTIVE_DECISION_PATH,
@@ -6096,6 +6314,8 @@ def main() -> None:
     _check_if08_w2_controlled_execution_artifacts(state)
     # IF08 W2 post-sync review checks
     _check_if08_w2_post_sync_review_artifacts(state)
+    # IF08 W4 replay/rollback/concurrency/cost preflight readiness checks
+    _check_if08_w4_preflight_readiness_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -6131,14 +6351,7 @@ def main() -> None:
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["w3_controlled_execution_verified"] is True, "latest_completed_no_execution.w3_controlled_execution_verified must be true")
-    _require(state["latest_completed_no_execution"]["w3_ser_observed"] == 0, "latest_completed_no_execution.w3_ser_observed must be 0")
-    _require(state["latest_completed_no_execution"]["w3_rca_observed"] == 1.0, "latest_completed_no_execution.w3_rca_observed must be 1.0")
-    _require(state["latest_completed_no_execution"]["w3_attack_attempts_expected"] == 13, "latest_completed_no_execution.w3_attack_attempts_expected must be 13")
-    _require(state["latest_completed_no_execution"]["w3_attack_attempts_blocked"] == 13, "latest_completed_no_execution.w3_attack_attempts_blocked must be 13")
-    _require(state["latest_completed_no_execution"]["w3_undetected_runtime_sandbox_attacks"] == [], "latest_completed_no_execution.w3_undetected_runtime_sandbox_attacks must be empty")
-    _require(state["latest_completed_no_execution"]["w3_synthetic_isolated_only"] is True, "latest_completed_no_execution.w3_synthetic_isolated_only must be true")
-    _require(state["latest_completed_no_execution"]["w4_preparation_allowed_next"] is True, "latest_completed_no_execution.w4_preparation_allowed_next must be true")
+    _require(state["latest_completed_no_execution"]["w4_preflight_readiness"] is True, "latest_completed_no_execution.w4_preflight_readiness must be true")
     _require(state["latest_completed_no_execution"]["w4_execution_performed"] is False, "latest_completed_no_execution.w4_execution_performed must be false")
     _require(state["latest_completed_no_execution"]["w4_execution_allowed"] is False, "latest_completed_no_execution.w4_execution_allowed must be false")
     _require(state["latest_completed_no_execution"]["future_rhr_required"] == 1.0, "latest_completed_no_execution.future_rhr_required must be 1.0")
@@ -6159,6 +6372,8 @@ def main() -> None:
         "socket_opened",
         "shell_executed",
         "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
     ):
         _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
@@ -6190,51 +6405,58 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision`",
-        "latest_completed_status: `if08_w3_post_sync_review_w4_readiness_pass`",
+        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
+        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W3_POST_SYNC_REVIEW: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_PREFLIGHT_READINESS: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `aa22631ec8612646aa76fdd03ed15c3513f8ec93`",
+        "latest_completed_project_commit_sha: `2785b06e7a73b10675d30ed870fda7959e2e866a`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness`",
+        "next_recommended_step: `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W3 Post-Sync Review Sincronizado",
+        "INF-FULL-07 — IF-08 W4 Preflight Readiness Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w3_post_sync_review_w4_readiness_pass",
-        "Este sync ja registra a decisao de readiness da W4 com `w4_preparation_allowed_next=true`, `w4_execution_performed=false`, `w4_execution_allowed=false` e `readiness_coverage=1.0`.",
-        "O proximo prompt pode executar apenas o preflight readiness canonico da W4.",
-        "O proximo passo recomendado neste estado e `prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness`.",
+        "latest_completed_status: if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
+        "Este sync ja registra o packet canonico de preflight da W4 com `w4_preflight_readiness=true`, `w4_execution_performed=false`, `w4_execution_allowed=false`, `future_rhr_required=1.0`, `future_ddr_required=1.0`, `future_cer_required=1.0` e `readiness_coverage=1.0`.",
+        "O proximo prompt pode executar apenas o controlled execution canonico da W4 em laboratorio sintetico isolado.",
+        "O proximo passo recomendado neste estado e `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w3_post_sync_review_w4_readiness_pass",
-        "Latest completed phase: `IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision`",
-        "latest_completed_status=if08_w3_post_sync_review_w4_readiness_pass",
-        "active_context_remote_main_reflects_if08_w3_post_sync_review=true",
+        "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
+        "Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
+        "latest_completed_status=if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
+        "active_context_remote_main_reflects_if08_w4_preflight_readiness=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness",
+        "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w4_replay_rollback_concurrency_cost_preflight_readiness/decision.json",
+        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_preflight_readiness_decision_2026_06_07.json",
+        "artifacts/infernus/if08_w4_replay_attack_surface_matrix_2026_06_07.json",
+        "artifacts/infernus/if08_w4_rollback_oracle_contract_2026_06_07.json",
+        "artifacts/infernus/if08_w4_concurrency_oracle_contract_2026_06_07.json",
+        "artifacts/infernus/if08_w4_cost_quota_oracle_contract_2026_06_07.json",
+        "artifacts/infernus/if08_w4_no_execution_attestation_2026_06_07.json",
+        "docs/infernus_full/if08_w4_replay_rollback_concurrency_cost_preflight_readiness_2026_06_07.md",
         "artifacts/if08_w3_post_sync_review/decision.json",
         "artifacts/infernus/if08_w3_post_sync_review_decision_2026_06_07.json",
         "artifacts/infernus/if08_w4_readiness_matrix_2026_06_07.json",
-        "docs/infernus_full/if08_w3_post_sync_review_2026_06_07.md",
         "artifacts/if08_w3_runtime_tool_mcp_sandbox_controlled_execution/decision.json",
         "artifacts/infernus/if08_w3_runtime_tool_mcp_sandbox_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w3_runtime_sandbox_detection_matrix_2026_06_07.json",
@@ -6259,10 +6481,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision | pass",
-        "if08_w3_post_sync_review_w4_readiness_pass",
-        "project_commit_sha: `aa22631ec8612646aa76fdd03ed15c3513f8ec93`",
-        "next_recommended_step: `prepare_if08_w4_replay_rollback_concurrency_cost_preflight_readiness`",
+        "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness | pass",
+        "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
+        "project_commit_sha: `2785b06e7a73b10675d30ed870fda7959e2e866a`",
+        "next_recommended_step: `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
         "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution | pass",
         "if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass",
         "project_commit_sha: `598dd5c8d98e8c9f89f9123e10efedf50871079b`",
@@ -6286,24 +6508,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision`",
-        "latest_completed_status: `if08_w3_post_sync_review_w4_readiness_pass`",
+        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
+        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W3_POST_SYNC_REVIEW: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_PREFLIGHT_READINESS: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
+        "Latest completed phase: IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W3 post-sync review is canonical; this sync records w4_preparation_allowed_next=true, w4_execution_performed=false, w4_execution_allowed=false, readiness_coverage=1.0, and the next step is W4 preflight readiness.",
+        "W4 preflight readiness is canonical; this sync records w4_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is W4 controlled execution in synthetic isolated lab only.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
