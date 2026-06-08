@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W6 Final Audit Preflight Readiness
+Latest completed phase: IF-08 W6 Final Audit Controlled Execution
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-W5 post-sync review remains verified as the previous canonical phase, and W6 preflight is canonical as pass; this sync preserves previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision, w5_post_sync_review_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, readiness_coverage=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, execution_scope=preflight_readiness_only, w6_readiness_state=ready_for_controlled_execution, w6_execution_performed=false, w6_execution_allowed=false, future_ttr_required=0, future_har_required=1.0, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is execute_if08_w6_final_audit_controlled_execution.
+W6 controlled execution is canonical as pass; this sync preserves previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness, source_preflight_status=if08_w6_final_audit_preflight_readiness_pass, source_project_sha_drift_recorded=true with primary-ref verification, execution_scope=synthetic_isolated_lab_only, w6_execution_performed=true, w6_real_execution_performed=false, ttr_observed=0, har_observed=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, anti_theater_review_passed=true, evidence_units_complete=true, stop_conditions_respected=true, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if09_evidence_bundle_vulnerability_register.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

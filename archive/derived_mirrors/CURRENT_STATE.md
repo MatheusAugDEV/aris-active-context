@@ -2,15 +2,15 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W6 Final Audit Preflight Readiness`
-- latest_completed_status: `if08_w6_final_audit_preflight_readiness_pass`
+- latest_completed_phase: `IF-08 W6 Final Audit Controlled Execution`
+- latest_completed_status: `if08_w6_final_audit_controlled_execution_pass`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w6_final_audit_preflight_readiness_pass`
+- current_status: `if08_w6_final_audit_controlled_execution_pass`
 - decision: `pass`
-- latest_completed_project_commit_sha: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`
+- latest_completed_project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `execute_if08_w6_final_audit_controlled_execution`
+- next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
@@ -21,15 +21,19 @@
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
 - CI enforcement active: `true`
-- previous_phase_verified: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`
-- previous_status_verified: `if08_w5_post_sync_review_w6_readiness_pass`
-- source_project_sha_verified_by_packet: `e9dfae63206523f26fce5df907945952c7351ad5`
-- source_active_context_sha_verified_by_packet: `fabb8b29bedf0222975f54e1c8e496fd72336689`
+- previous_phase_verified: `IF-08 W6 Final Audit Preflight Readiness`
+- previous_status_verified: `if08_w6_final_audit_preflight_readiness_pass`
+- source_project_sha_verified_by_packet: `0358de95fd78c41fad2e257fec399d85e74193ce`
+- source_active_context_sha_verified_by_packet: `36f4891c33d6a81eae74df1cfa5d3717cd6b4bc5`
+- source_project_sha_recorded_in_active_context: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`
+- source_project_sha_drift_recorded: `true`
+- source_project_sha_drift_resolved_via_primary_refs: `true`
 - w5_post_sync_review_verified: `true`
 - W5 metrics verified: `true`
 - w5_artifacts_complete: `true`
 - w5_safety_attestation_verified: `true`
 - w6_preflight_readiness: `true`
+- preflight_readiness_verified: `true`
 - executor_bot_count: `14`
 - synthetic_domain_count: `7`
 - critical_coverage_cells_total: `12`
@@ -41,7 +45,11 @@
 - business_scenarios_total: `14`
 - business_scenarios_blocked_or_detected: `14`
 - sirene_oracle_mode: `synthetic_transcript_only`
-- execution_scope: `preflight_readiness_only`
+- execution_scope: `synthetic_isolated_lab_only`
+- ttr_required: `0`
+- ttr_observed: `0`
+- har_required: `1.0`
+- har_observed: `1.0`
 - future_ttr_required: `0`
 - future_har_required: `1.0`
 - minos_mechanical_required: `true`
@@ -52,10 +60,12 @@
 - ttr_har_threshold_contract_created: `true`
 - stop_condition_matrix_created: `true`
 - no_execution_attestation_created: `true`
-- w6_readiness_state: `ready_for_controlled_execution`
-- w6_preparation_allowed_next: `true`
-- w6_execution_performed: `false`
+- w6_readiness_state: `completed_synthetic_controlled_execution`
+- w6_preparation_allowed_next: `false`
+- w6_execution_performed: `true`
 - w6_execution_allowed: `false`
+- w6_real_execution_performed: `false`
+- anti_theater_review_passed: `true`
 - real_audio_capture_allowed: `false`
 - real_stt_tts_allowed: `false`
 - microphone_access_allowed: `false`
@@ -73,10 +83,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- W6 preflight readiness is canonically pass; the next canonical step is W6 final audit controlled execution prompting only.
+- W6 controlled execution is canonically pass; the next canonical step is `prepare_if09_evidence_bundle_vulnerability_register`.
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-08 W6 Final Audit Preflight Readiness`.
-The Project repo result was verified on `origin/main` with terminal green CI; the preflight packet preserved `previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`, `w5_post_sync_review_verified=true`, `w5_metrics_verified=true`, `w5_artifacts_complete=true`, `w5_safety_attestation_verified=true`, `critical_coverage_cells_passed=12/12`, `critical_coverage_completion=1.0`, `business_scenarios_blocked_or_detected=14`, `sirene_oracle_mode=synthetic_transcript_only`, `w6_readiness_state=ready_for_controlled_execution`, `future_ttr_required=0`, `future_har_required=1.0`, and kept all real/runtime/network/secret/cost/quota surfaces false.
-The next prompt may target only `execute_if08_w6_final_audit_controlled_execution`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-08 W6 Final Audit Controlled Execution`.
+The Project repo result was verified on `origin/main` with terminal green CI; the controlled execution packet preserved `previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness`, `source_preflight_status=if08_w6_final_audit_preflight_readiness_pass`, `source_project_sha_drift_recorded=true` with primary-ref resolution, `critical_coverage_cells_passed=12/12`, `critical_coverage_completion=1.0`, `business_scenarios_blocked_or_detected=14`, `ttr_observed=0`, `har_observed=1.0`, `minos_mechanical_readiness=true`, `minos_semantic_readiness=true`, `anti_theater_review_passed=true`, and kept all real/runtime/network/secret/cost/quota surfaces false.
+The next prompt may target only `prepare_if09_evidence_bundle_vulnerability_register`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.

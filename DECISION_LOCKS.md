@@ -1,23 +1,27 @@
-## IF-08 W6 Final Audit Preflight Readiness Lock
+## IF-08 W6 Final Audit Controlled Execution Lock
 
-- Latest completed phase: `IF-08 W6 Final Audit Preflight Readiness`
-- status: `if08_w6_final_audit_preflight_readiness_pass`
-- latest_completed_status=if08_w6_final_audit_preflight_readiness_pass
-- active_context_remote_main_reflects_if08_w6_final_audit_preflight_readiness=true
+- Latest completed phase: `IF-08 W6 Final Audit Controlled Execution`
+- status: `if08_w6_final_audit_controlled_execution_pass`
+- latest_completed_status=if08_w6_final_audit_controlled_execution_pass
+- active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=0358de95c7fb80d06871a20ae46b8fbc3174c5d7
+- project_commit_sha=eae468c79687474de086c984b55a3f7ff47d73f7
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=execute_if08_w6_final_audit_controlled_execution
-- source_project_sha_verified_by_packet=e9dfae63206523f26fce5df907945952c7351ad5
-- source_active_context_sha_verified_by_packet=fabb8b29bedf0222975f54e1c8e496fd72336689
-- previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision
-- previous_status_verified=if08_w5_post_sync_review_w6_readiness_pass
+- next_recommended_step=prepare_if09_evidence_bundle_vulnerability_register
+- source_project_sha_verified_by_packet=0358de95fd78c41fad2e257fec399d85e74193ce
+- source_active_context_sha_verified_by_packet=36f4891c33d6a81eae74df1cfa5d3717cd6b4bc5
+- source_project_sha_recorded_in_active_context=0358de95c7fb80d06871a20ae46b8fbc3174c5d7
+- source_project_sha_drift_recorded=true
+- source_project_sha_drift_resolved_via_primary_refs=true
+- previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness
+- previous_status_verified=if08_w6_final_audit_preflight_readiness_pass
 - w5_post_sync_review_verified=true
 - w5_metrics_verified=true
 - w5_artifacts_complete=true
 - w5_safety_attestation_verified=true
 - w6_preflight_readiness=true
-- execution_scope=preflight_readiness_only
+- preflight_readiness_verified=true
+- execution_scope=synthetic_isolated_lab_only
 - readiness_coverage=1.0
 - required_preflight_checks=10
 - ready_preflight_checks=10
@@ -27,6 +31,10 @@
 - business_scenarios_total=14
 - business_scenarios_blocked_or_detected=14
 - sirene_oracle_mode=synthetic_transcript_only
+- ttr_required=0
+- ttr_observed=0
+- har_required=1.0
+- har_observed=1.0
 - future_ttr_required=0
 - future_har_required=1.0
 - minos_mechanical_required=true
@@ -34,13 +42,15 @@
 - minos_mechanical_readiness=true
 - minos_semantic_readiness=true
 - anti_theater_review_required=true
+- anti_theater_review_passed=true
 - ttr_har_threshold_contract_created=true
 - stop_condition_matrix_created=true
 - no_execution_attestation_created=true
-- w6_readiness_state=ready_for_controlled_execution
-- w6_preparation_allowed_next=true
-- w6_execution_performed=false
+- w6_readiness_state=completed_synthetic_controlled_execution
+- w6_preparation_allowed_next=false
+- w6_execution_performed=true
 - w6_execution_allowed=false
+- w6_real_execution_performed=false
 - real_audio_capture_allowed=false
 - real_stt_tts_allowed=false
 - microphone_access_allowed=false
@@ -58,7 +68,7 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical W6 preflight readiness is verified; this sync records only the preflight decision and allows only future W6 controlled execution prompting without authorizing any real execution surface.
+- Canonical W6 controlled execution is verified; this sync records the synthetic isolated execution result, keeps every real surface locked, and routes canonically to IF-09 preparation.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08

@@ -35,22 +35,22 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
-EXPECTED_PHASE = "IF-08 W6 Final Audit Preflight Readiness"
+EXPECTED_PHASE = "IF-08 W6 Final Audit Controlled Execution"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w6_final_audit_preflight_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w6_final_audit_controlled_execution_pass"
 EXPECTED_SCHEMA_VERSION = "3.1"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w6_final_audit_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w6_final_audit_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "0358de95c7fb80d06871a20ae46b8fbc3174c5d7"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w6_final_audit_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w6_final_audit_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "eae468c79687474de086c984b55a3f7ff47d73f7"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w6_final_audit_controlled_execution"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27171819900"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if09_evidence_bundle_vulnerability_register"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27173423800"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -476,6 +476,28 @@ IF08_W6_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w6_final_audit_preflight_rea
 IF08_W6_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W6_PREFLIGHT_ROOT / "decision.json"
 IF08_W6_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W6_PREFLIGHT_ROOT / "summary.json"
 IF08_W6_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W6_PREFLIGHT_ROOT / "report.md"
+IF08_W6_CONTROLLED_PHASE = "IF-08 W6 Final Audit Controlled Execution"
+IF08_W6_CONTROLLED_STATUS = "if08_w6_final_audit_controlled_execution_pass"
+IF08_W6_CONTROLLED_PROJECT_SHA = "eae468c79687474de086c984b55a3f7ff47d73f7"
+IF08_W6_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W6_CONTROLLED_NEXT_RECOMMENDED_STEP = "prepare_if09_evidence_bundle_vulnerability_register"
+IF08_W6_CONTROLLED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27173423800"
+IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA = "0358de95fd78c41fad2e257fec399d85e74193ce"
+IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA = "36f4891c33d6a81eae74df1cfa5d3717cd6b4bc5"
+IF08_W6_CONTROLLED_RECORDED_DRIFT_SHA = "0358de95c7fb80d06871a20ae46b8fbc3174c5d7"
+IF08_W6_CONTROLLED_PREVIOUS_PHASE = "IF-08 W6 Final Audit Preflight Readiness"
+IF08_W6_CONTROLLED_PREVIOUS_STATUS = "if08_w6_final_audit_preflight_readiness_pass"
+IF08_W6_CONTROLLED_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_decision.json")
+IF08_W6_CONTROLLED_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_summary.json")
+IF08_W6_CONTROLLED_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_report.md")
+IF08_W6_CONTROLLED_EVIDENCE_BUNDLE_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_evidence_bundle.json")
+IF08_W6_CONTROLLED_MINOS_VERDICT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_minos_verdict.json")
+IF08_W6_CONTROLLED_SAFETY_ATTESTATION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_controlled_execution_safety_attestation.json")
+IF08_W6_CONTROLLED_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w6_final_audit_controlled_execution.md")
+IF08_W6_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w6_final_audit_controlled_execution"
+IF08_W6_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W6_CONTROLLED_ROOT / "decision.json"
+IF08_W6_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W6_CONTROLLED_ROOT / "summary.json"
+IF08_W6_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W6_CONTROLLED_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -7505,6 +7527,213 @@ def _check_if08_w6_final_audit_preflight_artifacts(state: dict[str, Any]) -> Non
     )
 
 
+def _check_if08_w6_final_audit_controlled_execution_artifacts(state: dict[str, Any]) -> None:
+    _require(IF08_W6_CONTROLLED_ACTIVE_DECISION_PATH.exists(), "missing active IF08 W6 controlled decision artifact")
+    _require(IF08_W6_CONTROLLED_ACTIVE_SUMMARY_PATH.exists(), "missing active IF08 W6 controlled summary artifact")
+    _require(IF08_W6_CONTROLLED_ACTIVE_REPORT_PATH.exists(), "missing active IF08 W6 controlled report artifact")
+
+    active_decision = _load_json(IF08_W6_CONTROLLED_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W6-FINAL-AUDIT-CONTROLLED-EXECUTION", "active W6 controlled decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W6 controlled decision must be pass")
+    _require(active_decision.get("status") == IF08_W6_CONTROLLED_STATUS, "active W6 controlled decision status mismatch")
+    _require(active_decision.get("project_commit_sha") == IF08_W6_CONTROLLED_PROJECT_SHA, "active W6 controlled decision project sha mismatch")
+    _require(active_decision.get("project_ci_state") == IF08_W6_CONTROLLED_CI_STATE, "active W6 controlled decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W6_CONTROLLED_PROJECT_CI_RUN_URL, "active W6 controlled decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W6 controlled decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W6 controlled decision must confirm green CI")
+    _require(active_decision.get("active_context_pre_sync_phase_id") == EXPECTED_PHASE_ID, "active W6 controlled decision pre-sync phase id mismatch")
+    _require(active_decision.get("active_context_pre_sync_current_status") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "active W6 controlled decision pre-sync status mismatch")
+    _require(active_decision.get("active_context_pre_sync_sha") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "active W6 controlled decision pre-sync sha mismatch")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W6 controlled decision must mark sync applied")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution") is True, "active W6 controlled decision must confirm remote reflection")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W6 controlled decision must preserve permanent rule")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W6_CONTROLLED_PHASE, "active W6 controlled decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W6_CONTROLLED_STATUS, "active W6 controlled decision latest status mismatch")
+    _require(active_decision.get("previous_phase_verified") == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "active W6 controlled decision previous phase mismatch")
+    _require(active_decision.get("previous_status_verified") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "active W6 controlled decision previous status mismatch")
+    _require(active_decision.get("source_preflight_status") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "active W6 controlled decision source preflight status mismatch")
+    _require(active_decision.get("source_project_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "active W6 controlled decision source project sha mismatch")
+    _require(active_decision.get("source_active_context_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "active W6 controlled decision source active-context sha mismatch")
+    _require(active_decision.get("source_project_sha_recorded_in_active_context") == IF08_W6_CONTROLLED_RECORDED_DRIFT_SHA, "active W6 controlled decision recorded drift sha mismatch")
+    _require(active_decision.get("source_project_sha_drift_recorded") is True, "active W6 controlled decision must record drift")
+    _require(active_decision.get("source_project_sha_drift_resolved_via_primary_refs") is True, "active W6 controlled decision must resolve drift via primary refs")
+    _require(active_decision.get("w6_canonical_sync_verified") is True, "active W6 controlled decision must verify canonical sync")
+    _require(active_decision.get("execution_scope") == "synthetic_isolated_lab_only", "active W6 controlled decision execution_scope mismatch")
+    _require(active_decision.get("w6_preflight_readiness") is True, "active W6 controlled decision must verify W6 preflight readiness")
+    _require(active_decision.get("preflight_readiness_verified") is True, "active W6 controlled decision must preserve preflight verification")
+    _require(active_decision.get("w6_execution_performed") is True, "active W6 controlled decision must record execution performed")
+    _require(active_decision.get("w6_execution_allowed") is False, "active W6 controlled decision must keep execution disallowed")
+    _require(active_decision.get("w6_real_execution_performed") is False, "active W6 controlled decision must keep real execution false")
+    _require(active_decision.get("ttr_required") == 0, "active W6 controlled decision ttr_required must be 0")
+    _require(active_decision.get("ttr_observed") == 0, "active W6 controlled decision ttr_observed must be 0")
+    _require(active_decision.get("har_required") == 1.0, "active W6 controlled decision har_required must be 1.0")
+    _require(active_decision.get("har_observed") == 1.0, "active W6 controlled decision har_observed must be 1.0")
+    _require(active_decision.get("minos_mechanical_readiness") is True, "active W6 controlled decision minos_mechanical_readiness must be true")
+    _require(active_decision.get("minos_semantic_readiness") is True, "active W6 controlled decision minos_semantic_readiness must be true")
+    _require(active_decision.get("anti_theater_review_passed") is True, "active W6 controlled decision anti_theater_review_passed must be true")
+    _require(active_decision.get("critical_coverage_cells_total") == 12, "active W6 controlled decision critical_coverage_cells_total must be 12")
+    _require(active_decision.get("critical_coverage_cells_passed") == 12, "active W6 controlled decision critical_coverage_cells_passed must be 12")
+    _require(active_decision.get("critical_coverage_completion") == 1.0, "active W6 controlled decision critical_coverage_completion must be 1.0")
+    _require(active_decision.get("business_scenarios_total") == 14, "active W6 controlled decision business_scenarios_total must be 14")
+    _require(active_decision.get("business_scenarios_passed") == 14, "active W6 controlled decision business_scenarios_passed must be 14")
+    _require(active_decision.get("business_scenarios_blocked_or_detected") == 14, "active W6 controlled decision business_scenarios_blocked_or_detected must be 14")
+    _require(active_decision.get("evidence_units_complete") is True, "active W6 controlled decision evidence_units_complete must be true")
+    _require(active_decision.get("stop_conditions_respected") is True, "active W6 controlled decision stop_conditions_respected must be true")
+    _require(active_decision.get("next_recommended_step") == IF08_W6_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W6 controlled decision next step mismatch")
+    for key in (
+        "real_audio_capture_allowed",
+        "real_stt_tts_allowed",
+        "microphone_access_allowed",
+        "voice_clone_or_impersonation_allowed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(active_decision.get(key) is False, f"active W6 controlled decision {key} must be false")
+
+    active_summary = _load_json(IF08_W6_CONTROLLED_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W6-FINAL-AUDIT-CONTROLLED-EXECUTION", "active W6 controlled summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W6 controlled summary must be pass")
+    _require(active_summary.get("status") == IF08_W6_CONTROLLED_STATUS, "active W6 controlled summary status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W6_CONTROLLED_PROJECT_SHA, "active W6 controlled summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W6_CONTROLLED_CI_STATE, "active W6 controlled summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W6_CONTROLLED_PROJECT_CI_RUN_URL, "active W6 controlled summary ci url mismatch")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution") is True, "active W6 controlled summary must confirm remote reflection")
+    _require(active_summary.get("previous_phase_verified") == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "active W6 controlled summary previous phase mismatch")
+    _require(active_summary.get("previous_status_verified") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "active W6 controlled summary previous status mismatch")
+    _require(active_summary.get("source_preflight_status") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "active W6 controlled summary source preflight status mismatch")
+    _require(active_summary.get("source_project_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "active W6 controlled summary source project sha mismatch")
+    _require(active_summary.get("source_active_context_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "active W6 controlled summary source active-context sha mismatch")
+    _require(active_summary.get("source_project_sha_drift_recorded") is True, "active W6 controlled summary must record drift")
+    _require(active_summary.get("execution_scope") == "synthetic_isolated_lab_only", "active W6 controlled summary execution_scope mismatch")
+    _require(active_summary.get("w6_preflight_readiness") is True, "active W6 controlled summary must verify W6 preflight readiness")
+    _require(active_summary.get("preflight_readiness_verified") is True, "active W6 controlled summary must preserve preflight verification")
+    _require(active_summary.get("w6_execution_performed") is True, "active W6 controlled summary must record execution performed")
+    _require(active_summary.get("w6_execution_allowed") is False, "active W6 controlled summary must keep execution disallowed")
+    _require(active_summary.get("w6_real_execution_performed") is False, "active W6 controlled summary must keep real execution false")
+    _require(active_summary.get("ttr_observed") == 0, "active W6 controlled summary ttr_observed must be 0")
+    _require(active_summary.get("har_observed") == 1.0, "active W6 controlled summary har_observed must be 1.0")
+    _require(active_summary.get("minos_mechanical_readiness") is True, "active W6 controlled summary minos_mechanical_readiness must be true")
+    _require(active_summary.get("minos_semantic_readiness") is True, "active W6 controlled summary minos_semantic_readiness must be true")
+    _require(active_summary.get("anti_theater_review_passed") is True, "active W6 controlled summary anti_theater_review_passed must be true")
+    _require(active_summary.get("critical_coverage_completion") == 1.0, "active W6 controlled summary critical_coverage_completion must be 1.0")
+    _require(active_summary.get("evidence_units_complete") is True, "active W6 controlled summary evidence_units_complete must be true")
+    _require(active_summary.get("stop_conditions_respected") is True, "active W6 controlled summary stop_conditions_respected must be true")
+    _require(active_summary.get("next_recommended_step") == IF08_W6_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W6 controlled summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W6_CONTROLLED_ACTIVE_REPORT_PATH,
+        "IF-08 W6 Final Audit Controlled Execution Sync",
+        "if08_w6_final_audit_controlled_execution_pass",
+        "project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
+        "source_project_sha_drift_recorded: `true`",
+        "execution_scope: `synthetic_isolated_lab_only`",
+        "ttr_observed: `0`",
+        "har_observed: `1.0`",
+        "anti_theater_review_passed: `true`",
+        "next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`",
+    )
+
+    external_project_paths = (
+        IF08_W6_CONTROLLED_DECISION_PATH,
+        IF08_W6_CONTROLLED_SUMMARY_PATH,
+        IF08_W6_CONTROLLED_REPORT_PATH,
+        IF08_W6_CONTROLLED_EVIDENCE_BUNDLE_PATH,
+        IF08_W6_CONTROLLED_MINOS_VERDICT_PATH,
+        IF08_W6_CONTROLLED_SAFETY_ATTESTATION_PATH,
+        IF08_W6_CONTROLLED_DOC_PATH,
+    )
+    if not all(path.exists() for path in external_project_paths):
+        return
+
+    decision = _load_json(IF08_W6_CONTROLLED_DECISION_PATH)
+    _require(decision.get("phase") == IF08_W6_CONTROLLED_PHASE, "project W6 controlled decision phase mismatch")
+    _require(decision.get("phase_id") == "IF-08-W6-FINAL-AUDIT-CONTROLLED-EXECUTION", "project W6 controlled decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W6 controlled decision must be pass")
+    _require(decision.get("status") == IF08_W6_CONTROLLED_STATUS, "project W6 controlled decision status mismatch")
+    _require(decision.get("source_preflight_status") == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "project W6 controlled decision source preflight status mismatch")
+    _require(decision.get("source_project_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "project W6 controlled decision source project sha mismatch")
+    _require(decision.get("source_active_context_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "project W6 controlled decision source active-context sha mismatch")
+    _require(decision.get("source_project_sha_recorded_in_active_context") == IF08_W6_CONTROLLED_RECORDED_DRIFT_SHA, "project W6 controlled decision recorded drift sha mismatch")
+    _require(decision.get("source_project_sha_drift_recorded") is True, "project W6 controlled decision must record drift")
+    _require(decision.get("execution_scope") == "synthetic_isolated_lab_only", "project W6 controlled decision execution_scope mismatch")
+    _require(decision.get("w6_execution_performed") == "true_synthetic_isolated_lab_only", "project W6 controlled decision execution marker mismatch")
+    _require(decision.get("w6_real_execution_performed") is False, "project W6 controlled decision must keep real execution false")
+    _require(decision.get("ttr_required") == 0, "project W6 controlled decision ttr_required must be 0")
+    _require(decision.get("ttr_observed") == 0, "project W6 controlled decision ttr_observed must be 0")
+    _require(decision.get("har_required") == 1.0, "project W6 controlled decision har_required must be 1.0")
+    _require(decision.get("har_observed") == 1.0, "project W6 controlled decision har_observed must be 1.0")
+    _require(decision.get("minos_mechanical_readiness") is True, "project W6 controlled decision minos_mechanical_readiness must be true")
+    _require(decision.get("minos_semantic_readiness") is True, "project W6 controlled decision minos_semantic_readiness must be true")
+    _require(decision.get("anti_theater_review_passed") is True, "project W6 controlled decision anti_theater_review_passed must be true")
+    _require(decision.get("evidence_units_complete") is True, "project W6 controlled decision evidence_units_complete must be true")
+    _require(decision.get("stop_conditions_respected") is True, "project W6 controlled decision stop_conditions_respected must be true")
+    _require(decision.get("blocking_findings") == [], "project W6 controlled decision blocking_findings must be empty")
+    _require(decision.get("next_recommended_step") == "post_sync_review_if08_w6_final_audit_controlled_execution", "project W6 controlled decision next step mismatch")
+
+    summary = _load_json(IF08_W6_CONTROLLED_SUMMARY_PATH)
+    _require(summary.get("phase") == IF08_W6_CONTROLLED_PHASE, "project W6 controlled summary phase mismatch")
+    _require(summary.get("status") == IF08_W6_CONTROLLED_STATUS, "project W6 controlled summary status mismatch")
+    _require(summary.get("source_project_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "project W6 controlled summary source project sha mismatch")
+    _require(summary.get("source_active_context_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "project W6 controlled summary source active-context sha mismatch")
+    _require(summary.get("source_project_sha_drift_recorded") is True, "project W6 controlled summary must record drift")
+    _require(summary.get("execution_scope") == "synthetic_isolated_lab_only", "project W6 controlled summary execution_scope mismatch")
+    _require(summary.get("w6_execution_performed") == "true_synthetic_isolated_lab_only", "project W6 controlled summary execution marker mismatch")
+    _require(summary.get("ttr_observed") == 0, "project W6 controlled summary ttr_observed must be 0")
+    _require(summary.get("har_observed") == 1.0, "project W6 controlled summary har_observed must be 1.0")
+    _require(summary.get("anti_theater_review_passed") is True, "project W6 controlled summary anti_theater_review_passed must be true")
+    _require(summary.get("next_recommended_step") == "post_sync_review_if08_w6_final_audit_controlled_execution", "project W6 controlled summary next step mismatch")
+
+    evidence_bundle = _load_json(IF08_W6_CONTROLLED_EVIDENCE_BUNDLE_PATH)
+    _require(evidence_bundle.get("phase") == IF08_W6_CONTROLLED_PHASE, "project W6 controlled evidence bundle phase mismatch")
+    _require(evidence_bundle.get("status") == IF08_W6_CONTROLLED_STATUS, "project W6 controlled evidence bundle status mismatch")
+    _require(evidence_bundle.get("source_project_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "project W6 controlled evidence bundle source project sha mismatch")
+    _require(evidence_bundle.get("source_active_context_sha_verified_by_packet") == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "project W6 controlled evidence bundle source active-context sha mismatch")
+    _require(evidence_bundle.get("source_project_sha_drift_recorded") is True, "project W6 controlled evidence bundle must record drift")
+    _require(evidence_bundle.get("evidence_units_complete") is True, "project W6 controlled evidence bundle evidence_units_complete must be true")
+    _require(evidence_bundle.get("stop_conditions_respected") is True, "project W6 controlled evidence bundle stop_conditions_respected must be true")
+    _require(len(evidence_bundle.get("material_output_hashes", {})) == 6, "project W6 controlled evidence bundle hash count mismatch")
+
+    minos = _load_json(IF08_W6_CONTROLLED_MINOS_VERDICT_PATH)
+    _require(minos.get("phase") == IF08_W6_CONTROLLED_PHASE, "project W6 controlled minos phase mismatch")
+    _require(minos.get("status") == IF08_W6_CONTROLLED_STATUS, "project W6 controlled minos status mismatch")
+    _require(minos.get("ttr_observed") == 0, "project W6 controlled minos ttr_observed must be 0")
+    _require(minos.get("har_observed") == 1.0, "project W6 controlled minos har_observed must be 1.0")
+    _require(minos.get("anti_theater_review_passed") is True, "project W6 controlled minos anti_theater_review_passed must be true")
+
+    safety = _load_json(IF08_W6_CONTROLLED_SAFETY_ATTESTATION_PATH)
+    _require(safety.get("phase") == IF08_W6_CONTROLLED_PHASE, "project W6 controlled safety phase mismatch")
+    _require(safety.get("status") == IF08_W6_CONTROLLED_STATUS, "project W6 controlled safety status mismatch")
+    _require(safety.get("preserved_hard_locks") is True, "project W6 controlled safety must preserve hard locks")
+    _require(len(safety.get("artifact_hashes", {})) == 5, "project W6 controlled safety artifact hash count mismatch")
+
+    _mirror_contains(
+        IF08_W6_CONTROLLED_REPORT_PATH,
+        "IF-08 W6 Final Audit Controlled Execution",
+        "Status: if08_w6_final_audit_controlled_execution_pass",
+        "Execution scope: synthetic_isolated_lab_only",
+        "TTR required/observed: 0/0",
+        "HAR required/observed: 1.0/1.0",
+        "Next recommended step: post_sync_review_if08_w6_final_audit_controlled_execution",
+    )
+    _mirror_contains(
+        IF08_W6_CONTROLLED_DOC_PATH,
+        "IF-08 W6 Final Audit Controlled Execution",
+        "decision: pass",
+        "next_recommended_step: post_sync_review_if08_w6_final_audit_controlled_execution",
+    )
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -7610,8 +7839,8 @@ def main() -> None:
     _check_if08_w5_business_chaos_controlled_execution_artifacts(state)
     # IF08 W5 post-sync review and W6 readiness checks
     _check_if08_w5_post_sync_review_artifacts(state)
-    # IF08 W6 final audit preflight readiness checks
-    _check_if08_w6_final_audit_preflight_artifacts(state)
+    # IF08 W6 final audit controlled execution checks
+    _check_if08_w6_final_audit_controlled_execution_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -7645,26 +7874,31 @@ def main() -> None:
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
-    _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
-    _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
     _require(state["latest_completed_no_execution"]["w5_post_sync_review_verified"] is True, "latest_completed_no_execution.w5_post_sync_review_verified must be true")
     _require(state["latest_completed_no_execution"]["w5_metrics_verified"] is True, "latest_completed_no_execution.w5_metrics_verified must be true")
     _require(state["latest_completed_no_execution"]["w5_artifacts_complete"] is True, "latest_completed_no_execution.w5_artifacts_complete must be true")
     _require(state["latest_completed_no_execution"]["w5_safety_attestation_verified"] is True, "latest_completed_no_execution.w5_safety_attestation_verified must be true")
     _require(state["latest_completed_no_execution"]["w6_preflight_readiness"] is True, "latest_completed_no_execution.w6_preflight_readiness must be true")
+    _require(state["latest_completed_no_execution"]["preflight_readiness_verified"] is True, "latest_completed_no_execution.preflight_readiness_verified must be true")
     _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
     _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 10, "latest_completed_no_execution.required_preflight_checks must be 10")
     _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 10, "latest_completed_no_execution.ready_preflight_checks must be 10")
-    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W6_PREFLIGHT_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF08_W6_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_preflight_status"] == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "latest_completed_no_execution.source_preflight_status mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_recorded_in_active_context"] == IF08_W6_CONTROLLED_RECORDED_DRIFT_SHA, "latest_completed_no_execution.source_project_sha_recorded_in_active_context mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_drift_recorded"] is True, "latest_completed_no_execution.source_project_sha_drift_recorded must be true")
+    _require(state["latest_completed_no_execution"]["source_project_sha_drift_resolved_via_primary_refs"] is True, "latest_completed_no_execution.source_project_sha_drift_resolved_via_primary_refs must be true")
     _require(state["latest_completed_no_execution"]["executor_bot_count"] == 14, "latest_completed_no_execution.executor_bot_count must be 14")
     _require(state["latest_completed_no_execution"]["synthetic_domain_count"] == 7, "latest_completed_no_execution.synthetic_domain_count must be 7")
     _require(state["latest_completed_no_execution"]["critical_coverage_cells_total"] == 12, "latest_completed_no_execution.critical_coverage_cells_total must be 12")
     _require(state["latest_completed_no_execution"]["critical_coverage_cells_passed"] == 12, "latest_completed_no_execution.critical_coverage_cells_passed must be 12")
     _require(state["latest_completed_no_execution"]["critical_coverage_completion"] == 1.0, "latest_completed_no_execution.critical_coverage_completion must be 1.0")
     _require(state["latest_completed_no_execution"]["future_critical_coverage_required"] == 1.0, "latest_completed_no_execution.future_critical_coverage_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["previous_phase_verified"] == IF08_W6_PREFLIGHT_PREVIOUS_PHASE, "latest_completed_no_execution.previous_phase_verified mismatch")
-    _require(state["latest_completed_no_execution"]["previous_status_verified"] == IF08_W6_PREFLIGHT_PREVIOUS_STATUS, "latest_completed_no_execution.previous_status_verified mismatch")
+    _require(state["latest_completed_no_execution"]["previous_phase_verified"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "latest_completed_no_execution.previous_phase_verified mismatch")
+    _require(state["latest_completed_no_execution"]["previous_status_verified"] == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "latest_completed_no_execution.previous_status_verified mismatch")
     _require(state["latest_completed_no_execution"]["business_scenarios_total"] == 14, "latest_completed_no_execution.business_scenarios_total must be 14")
     _require(state["latest_completed_no_execution"]["business_scenarios_passed"] == 14, "latest_completed_no_execution.business_scenarios_passed must be 14")
     _require(state["latest_completed_no_execution"]["business_scenarios_blocked_or_detected"] == 14, "latest_completed_no_execution.business_scenarios_blocked_or_detected must be 14")
@@ -7673,11 +7907,16 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
     _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
     _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "preflight_readiness_only", "latest_completed_no_execution.execution_scope must be preflight_readiness_only")
-    _require(state["latest_completed_no_execution"]["w6_readiness_state"] == "ready_for_controlled_execution", "latest_completed_no_execution.w6_readiness_state mismatch")
-    _require(state["latest_completed_no_execution"]["w6_preparation_allowed_next"] is True, "latest_completed_no_execution.w6_preparation_allowed_next must be true")
-    _require(state["latest_completed_no_execution"]["w6_execution_performed"] is False, "latest_completed_no_execution.w6_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "synthetic_isolated_lab_only", "latest_completed_no_execution.execution_scope must be synthetic_isolated_lab_only")
+    _require(state["latest_completed_no_execution"]["w6_readiness_state"] == "completed_synthetic_controlled_execution", "latest_completed_no_execution.w6_readiness_state mismatch")
+    _require(state["latest_completed_no_execution"]["w6_preparation_allowed_next"] is False, "latest_completed_no_execution.w6_preparation_allowed_next must be false")
+    _require(state["latest_completed_no_execution"]["w6_execution_performed"] is True, "latest_completed_no_execution.w6_execution_performed must be true")
     _require(state["latest_completed_no_execution"]["w6_execution_allowed"] is False, "latest_completed_no_execution.w6_execution_allowed must be false")
+    _require(state["latest_completed_no_execution"]["w6_real_execution_performed"] is False, "latest_completed_no_execution.w6_real_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["ttr_required"] == 0, "latest_completed_no_execution.ttr_required must be 0")
+    _require(state["latest_completed_no_execution"]["ttr_observed"] == 0, "latest_completed_no_execution.ttr_observed must be 0")
+    _require(state["latest_completed_no_execution"]["har_required"] == 1.0, "latest_completed_no_execution.har_required must be 1.0")
+    _require(state["latest_completed_no_execution"]["har_observed"] == 1.0, "latest_completed_no_execution.har_observed must be 1.0")
     _require(state["latest_completed_no_execution"]["future_ttr_required"] == 0, "latest_completed_no_execution.future_ttr_required must be 0")
     _require(state["latest_completed_no_execution"]["future_har_required"] == 1.0, "latest_completed_no_execution.future_har_required must be 1.0")
     _require(state["latest_completed_no_execution"]["minos_mechanical_required"] is True, "latest_completed_no_execution.minos_mechanical_required must be true")
@@ -7685,6 +7924,7 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["minos_mechanical_readiness"] is True, "latest_completed_no_execution.minos_mechanical_readiness must be true")
     _require(state["latest_completed_no_execution"]["minos_semantic_readiness"] is True, "latest_completed_no_execution.minos_semantic_readiness must be true")
     _require(state["latest_completed_no_execution"]["anti_theater_review_required"] is True, "latest_completed_no_execution.anti_theater_review_required must be true")
+    _require(state["latest_completed_no_execution"]["anti_theater_review_passed"] is True, "latest_completed_no_execution.anti_theater_review_passed must be true")
     _require(state["latest_completed_no_execution"]["ttr_har_threshold_contract_created"] is True, "latest_completed_no_execution.ttr_har_threshold_contract_created must be true")
     _require(state["latest_completed_no_execution"]["stop_condition_matrix_created"] is True, "latest_completed_no_execution.stop_condition_matrix_created must be true")
     _require(state["latest_completed_no_execution"]["no_execution_attestation_created"] is True, "latest_completed_no_execution.no_execution_attestation_created must be true")
@@ -7713,8 +7953,8 @@ def main() -> None:
         "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["previous_execution_phase"] == IF08_W6_PREFLIGHT_PREVIOUS_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF08_W6_PREFLIGHT_PREVIOUS_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -7737,8 +7977,8 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W6 Final Audit Preflight Readiness`",
-        "latest_completed_status: `if08_w6_final_audit_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W6 Final Audit Controlled Execution`",
+        "latest_completed_status: `if08_w6_final_audit_controlled_execution_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
@@ -7747,37 +7987,43 @@ def main() -> None:
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`",
+        "latest_completed_project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `execute_if08_w6_final_audit_controlled_execution`",
+        "next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W6 Final Audit Preflight Readiness Sync Sincronizado",
+        "INF-FULL-07 — IF-08 W6 Final Audit Controlled Execution Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w6_final_audit_preflight_readiness_pass",
-        "Este sync ja registra o packet canonico de W6 preflight com `previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`, `w5_post_sync_review_verified=true`, `w5_metrics_verified=true`, `w5_artifacts_complete=true`, `w5_safety_attestation_verified=true`, `readiness_coverage=1.0`, `execution_scope=preflight_readiness_only`, `w6_readiness_state=ready_for_controlled_execution`, `w6_preparation_allowed_next=true`, `w6_execution_performed=false`, `w6_execution_allowed=false`, `future_ttr_required=0` e `future_har_required=1.0`.",
-        "O proximo prompt pode executar apenas `execute_if08_w6_final_audit_controlled_execution` dentro do escopo canonico aprovado.",
-        "O proximo passo recomendado neste estado e `execute_if08_w6_final_audit_controlled_execution`.",
+        "latest_completed_status: if08_w6_final_audit_controlled_execution_pass",
+        "Este sync ja registra o packet canonico de W6 controlled execution com `previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness`, `source_preflight_status=if08_w6_final_audit_preflight_readiness_pass`, `source_project_sha_drift_recorded=true`, `execution_scope=synthetic_isolated_lab_only`, `w6_execution_performed=true`, `w6_real_execution_performed=false`, `ttr_observed=0`, `har_observed=1.0`, `minos_mechanical_readiness=true`, `minos_semantic_readiness=true`, `anti_theater_review_passed=true`, `evidence_units_complete=true` e `stop_conditions_respected=true`.",
+        "O proximo prompt pode preparar apenas `prepare_if09_evidence_bundle_vulnerability_register` dentro do escopo canonico aprovado.",
+        "O proximo passo recomendado neste estado e `prepare_if09_evidence_bundle_vulnerability_register`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w6_final_audit_preflight_readiness_pass",
-        "Latest completed phase: `IF-08 W6 Final Audit Preflight Readiness`",
-        "latest_completed_status=if08_w6_final_audit_preflight_readiness_pass",
-        "active_context_remote_main_reflects_if08_w6_final_audit_preflight_readiness=true",
+        "if08_w6_final_audit_controlled_execution_pass",
+        "Latest completed phase: `IF-08 W6 Final Audit Controlled Execution`",
+        "latest_completed_status=if08_w6_final_audit_controlled_execution_pass",
+        "active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "execute_if08_w6_final_audit_controlled_execution",
+        "prepare_if09_evidence_bundle_vulnerability_register",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w6_final_audit_controlled_execution/decision.json",
+        "artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json",
+        "artifacts/infernus/if08_w6_final_audit_controlled_execution_evidence_bundle.json",
+        "artifacts/infernus/if08_w6_final_audit_controlled_execution_minos_verdict.json",
+        "artifacts/infernus/if08_w6_final_audit_controlled_execution_safety_attestation.json",
+        "docs/infernus_full/if08_w6_final_audit_controlled_execution.md",
         "artifacts/if08_w6_final_audit_preflight_readiness/decision.json",
         "artifacts/infernus/if08_w6_final_audit_preflight_readiness_decision_2026_06_08.json",
         "artifacts/infernus/if08_w6_minos_mechanical_readiness_matrix_2026_06_08.json",
@@ -7831,6 +8077,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
+        "IF-08 W6 Final Audit Controlled Execution | pass",
+        "if08_w6_final_audit_controlled_execution_pass",
+        "project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
+        "next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`",
         "IF-08 W6 Final Audit Preflight Readiness | pass",
         "if08_w6_final_audit_preflight_readiness_pass",
         "project_commit_sha: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`",
@@ -7890,12 +8140,12 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W6 Final Audit Preflight Readiness",
+        "Latest completed phase: IF-08 W6 Final Audit Controlled Execution",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W5 post-sync review remains verified as the previous canonical phase, and W6 preflight is canonical as pass; this sync preserves previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision, w5_post_sync_review_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, readiness_coverage=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, execution_scope=preflight_readiness_only, w6_readiness_state=ready_for_controlled_execution, w6_execution_performed=false, w6_execution_allowed=false, future_ttr_required=0, future_har_required=1.0, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is execute_if08_w6_final_audit_controlled_execution.",
+        "W6 controlled execution is canonical as pass; this sync preserves previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness, source_preflight_status=if08_w6_final_audit_preflight_readiness_pass, source_project_sha_drift_recorded=true with primary-ref verification, execution_scope=synthetic_isolated_lab_only, w6_execution_performed=true, w6_real_execution_performed=false, ttr_observed=0, har_observed=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, anti_theater_review_passed=true, evidence_units_complete=true, stop_conditions_respected=true, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if09_evidence_bundle_vulnerability_register.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
