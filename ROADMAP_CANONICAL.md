@@ -16,13 +16,13 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W2 Controlled Execution Post-Sync Review & W3 Readiness Decision
+Latest completed phase: IF-08 W3 Runtime/Tool/MCP/Sandbox Preflight Readiness
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
-W2 post-sync review is canonical; this sync records W2 canonical sync verified, FAR=0, CTL=0, W3 preparation allowed next, and the next step is W3 preflight readiness.
+W3 preflight readiness is canonical; this sync records readiness_coverage=1.0, future_SER=0, future_RCA=1.0, Sirene conditionality explicit, and the next step is W3 controlled execution.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
