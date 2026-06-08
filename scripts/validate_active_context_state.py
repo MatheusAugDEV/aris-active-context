@@ -34,22 +34,22 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
+EXPECTED_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
+EXPECTED_CURRENT_STATUS = "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "c65888a2f587c35b4e38b16b50b917233bac8fa3"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27116116919"
+EXPECTED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27156460042"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -374,6 +374,23 @@ IF08_W4_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w4_replay_rollback_concurren
 IF08_W4_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W4_PREFLIGHT_ROOT / "decision.json"
 IF08_W4_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W4_PREFLIGHT_ROOT / "summary.json"
 IF08_W4_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W4_PREFLIGHT_ROOT / "report.md"
+IF08_W4_CONTROLLED_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
+IF08_W4_CONTROLLED_STATUS = "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass"
+IF08_W4_CONTROLLED_PROJECT_SHA = "c65888a2f587c35b4e38b16b50b917233bac8fa3"
+IF08_W4_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W4_CONTROLLED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+IF08_W4_CONTROLLED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27156460042"
+IF08_W4_CONTROLLED_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_controlled_execution_decision_2026_06_08.json")
+IF08_W4_CONTROLLED_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_controlled_execution_summary_2026_06_08.json")
+IF08_W4_CONTROLLED_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_controlled_execution_report_2026_06_08.md")
+IF08_W4_CONTROLLED_LOG_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_controlled_execution_log_2026_06_08.jsonl")
+IF08_W4_CONTROLLED_METRICS_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_metrics_2026_06_08.json")
+IF08_W4_CONTROLLED_SAFETY_ATTESTATION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w4_replay_rollback_concurrency_cost_safety_attestation_2026_06_08.json")
+IF08_W4_CONTROLLED_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w4_replay_rollback_concurrency_cost_controlled_execution_2026_06_08.md")
+IF08_W4_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+IF08_W4_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W4_CONTROLLED_ROOT / "decision.json"
+IF08_W4_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W4_CONTROLLED_ROOT / "summary.json"
+IF08_W4_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W4_CONTROLLED_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -5465,6 +5482,253 @@ def _check_if08_w4_preflight_readiness_artifacts(state: dict[str, Any]) -> None:
         _require(no_execution.get(key) is False, f"project W4 preflight no_execution.{key} must be false")
 
 
+def _check_if08_w4_controlled_execution_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF08_W4_CONTROLLED_ACTIVE_DECISION_PATH,
+        IF08_W4_CONTROLLED_ACTIVE_SUMMARY_PATH,
+        IF08_W4_CONTROLLED_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF08 W4 controlled active-context artifact: {path}")
+
+    active_decision = _load_json(IF08_W4_CONTROLLED_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W4-CONTROLLED-EXECUTION", "active W4 controlled decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W4 controlled decision must be pass")
+    _require(active_decision.get("status") == IF08_W4_CONTROLLED_STATUS, "active W4 controlled decision status mismatch")
+    _require(active_decision.get("source_project_sha") == IF08_W4_CONTROLLED_PROJECT_SHA, "active W4 controlled decision project sha mismatch")
+    _require(active_decision.get("source_project_ci_state") == IF08_W4_CONTROLLED_CI_STATE, "active W4 controlled decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W4_CONTROLLED_PROJECT_CI_RUN_URL, "active W4 controlled decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W4 controlled decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W4 controlled decision must confirm green CI")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W4 controlled decision must mark sync applied")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w4_controlled_execution") is True, "active W4 controlled decision must confirm remote reflection")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W4 controlled decision must preserve permanent rule")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W4_CONTROLLED_PHASE, "active W4 controlled decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W4_CONTROLLED_STATUS, "active W4 controlled decision latest status mismatch")
+    _require(active_decision.get("w4_preflight_readiness") is True, "active W4 controlled decision must keep readiness true")
+    _require(active_decision.get("w4_execution_performed") is True, "active W4 controlled decision must record execution performed")
+    _require(active_decision.get("w4_execution_allowed") is False, "active W4 controlled decision must keep execution disallowed")
+    _require(active_decision.get("future_rhr_required") == 1.0, "active W4 controlled decision future_rhr_required must be 1.0")
+    _require(active_decision.get("future_ddr_required") == 1.0, "active W4 controlled decision future_ddr_required must be 1.0")
+    _require(active_decision.get("future_cer_required") == 1.0, "active W4 controlled decision future_cer_required must be 1.0")
+    _require(active_decision.get("readiness_coverage") == 1.0, "active W4 controlled decision readiness_coverage must be 1.0")
+    _require(active_decision.get("synthetic_attack_cases_total") == 14, "active W4 controlled decision synthetic_attack_cases_total must be 14")
+    _require(active_decision.get("synthetic_attack_cases_passed") == 14, "active W4 controlled decision synthetic_attack_cases_passed must be 14")
+    _require(active_decision.get("synthetic_attack_cases_blocked_or_detected") == 14, "active W4 controlled decision synthetic_attack_cases_blocked_or_detected must be 14")
+    _require(active_decision.get("rollback_honesty_checks_required") == 6, "active W4 controlled decision rollback_honesty_checks_required must be 6")
+    _require(active_decision.get("rollback_honesty_checks_passed") == 6, "active W4 controlled decision rollback_honesty_checks_passed must be 6")
+    _require(active_decision.get("duplicate_detection_checks_required") == 5, "active W4 controlled decision duplicate_detection_checks_required must be 5")
+    _require(active_decision.get("duplicate_detection_checks_passed") == 5, "active W4 controlled decision duplicate_detection_checks_passed must be 5")
+    _require(active_decision.get("cost_enforcement_checks_required") == 3, "active W4 controlled decision cost_enforcement_checks_required must be 3")
+    _require(active_decision.get("cost_enforcement_checks_passed") == 3, "active W4 controlled decision cost_enforcement_checks_passed must be 3")
+    _require(active_decision.get("rhr_observed") == 1.0, "active W4 controlled decision rhr_observed must be 1.0")
+    _require(active_decision.get("ddr_observed") == 1.0, "active W4 controlled decision ddr_observed must be 1.0")
+    _require(active_decision.get("cer_observed") == 1.0, "active W4 controlled decision cer_observed must be 1.0")
+    _require(active_decision.get("next_recommended_step") == IF08_W4_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W4 controlled decision next step mismatch")
+    active_outcome = active_decision.get("execution_outcome", {})
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(active_outcome.get(key) is False, f"active W4 controlled decision execution_outcome.{key} must be false")
+
+    active_summary = _load_json(IF08_W4_CONTROLLED_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W4-CONTROLLED-EXECUTION", "active W4 controlled summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W4 controlled summary must be pass")
+    _require(active_summary.get("status") == IF08_W4_CONTROLLED_STATUS, "active W4 controlled summary status mismatch")
+    _require(active_summary.get("latest_completed_phase") == IF08_W4_CONTROLLED_PHASE, "active W4 controlled summary latest phase mismatch")
+    _require(active_summary.get("latest_completed_status") == IF08_W4_CONTROLLED_STATUS, "active W4 controlled summary latest status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W4_CONTROLLED_PROJECT_SHA, "active W4 controlled summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W4_CONTROLLED_CI_STATE, "active W4 controlled summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W4_CONTROLLED_PROJECT_CI_RUN_URL, "active W4 controlled summary ci url mismatch")
+    _require(active_summary.get("active_context_sync_applied") is True, "active W4 controlled summary must mark sync applied")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w4_controlled_execution") is True, "active W4 controlled summary must confirm remote reflection")
+    _require(active_summary.get("permanent_active_update_rule_installed") is True, "active W4 controlled summary must preserve permanent rule")
+    _require(active_summary.get("w4_preflight_readiness") is True, "active W4 controlled summary readiness mismatch")
+    _require(active_summary.get("w4_execution_performed") is True, "active W4 controlled summary must record execution performed")
+    _require(active_summary.get("w4_execution_allowed") is False, "active W4 controlled summary must keep execution disallowed")
+    _require(active_summary.get("synthetic_attack_cases_total") == 14, "active W4 controlled summary synthetic_attack_cases_total must be 14")
+    _require(active_summary.get("synthetic_attack_cases_passed") == 14, "active W4 controlled summary synthetic_attack_cases_passed must be 14")
+    _require(active_summary.get("synthetic_attack_cases_blocked_or_detected") == 14, "active W4 controlled summary synthetic_attack_cases_blocked_or_detected must be 14")
+    _require(active_summary.get("rollback_honesty_checks_required") == 6, "active W4 controlled summary rollback_honesty_checks_required must be 6")
+    _require(active_summary.get("rollback_honesty_checks_passed") == 6, "active W4 controlled summary rollback_honesty_checks_passed must be 6")
+    _require(active_summary.get("duplicate_detection_checks_required") == 5, "active W4 controlled summary duplicate_detection_checks_required must be 5")
+    _require(active_summary.get("duplicate_detection_checks_passed") == 5, "active W4 controlled summary duplicate_detection_checks_passed must be 5")
+    _require(active_summary.get("cost_enforcement_checks_required") == 3, "active W4 controlled summary cost_enforcement_checks_required must be 3")
+    _require(active_summary.get("cost_enforcement_checks_passed") == 3, "active W4 controlled summary cost_enforcement_checks_passed must be 3")
+    _require(active_summary.get("rhr_observed") == 1.0, "active W4 controlled summary rhr_observed must be 1.0")
+    _require(active_summary.get("ddr_observed") == 1.0, "active W4 controlled summary ddr_observed must be 1.0")
+    _require(active_summary.get("cer_observed") == 1.0, "active W4 controlled summary cer_observed must be 1.0")
+    _require(active_summary.get("next_recommended_step") == IF08_W4_CONTROLLED_NEXT_RECOMMENDED_STEP, "active W4 controlled summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W4_CONTROLLED_ACTIVE_REPORT_PATH,
+        "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+        IF08_W4_CONTROLLED_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w4_controlled_execution: `true`",
+        "w4_execution_performed: `true`",
+        "synthetic_attack_cases_total: `14`",
+        "rollback_honesty_checks: `6/6`",
+        "duplicate_detection_checks: `5/5`",
+        "cost_enforcement_checks: `3/3`",
+        "next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
+    )
+
+    external_project_paths = (
+        IF08_W4_CONTROLLED_DECISION_PATH,
+        IF08_W4_CONTROLLED_SUMMARY_PATH,
+        IF08_W4_CONTROLLED_REPORT_PATH,
+        IF08_W4_CONTROLLED_LOG_PATH,
+        IF08_W4_CONTROLLED_METRICS_PATH,
+        IF08_W4_CONTROLLED_SAFETY_ATTESTATION_PATH,
+        IF08_W4_CONTROLLED_DOC_PATH,
+    )
+    external_available = all(path.exists() for path in external_project_paths)
+    if not external_available:
+        return
+
+    decision = _load_json(IF08_W4_CONTROLLED_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-CONTROLLED-EXECUTION", "project W4 controlled decision phase_id mismatch")
+    _require(decision.get("phase_name") == IF08_W4_CONTROLLED_PHASE, "project W4 controlled decision phase_name mismatch")
+    _require(decision.get("decision") == "pass", "project W4 controlled decision must be pass")
+    _require(decision.get("status") == IF08_W4_CONTROLLED_STATUS, "project W4 controlled decision status mismatch")
+    _require(decision.get("source_phase") == IF08_W4_PREFLIGHT_PHASE, "project W4 controlled decision source phase mismatch")
+    _require(decision.get("source_status") == IF08_W4_PREFLIGHT_STATUS, "project W4 controlled decision source status mismatch")
+    _require(decision.get("source_ci_state") == IF08_W4_PREFLIGHT_CI_STATE, "project W4 controlled decision source ci state mismatch")
+    _require(decision.get("input_project_commit_sha") == IF08_W4_PREFLIGHT_PROJECT_SHA, "project W4 controlled decision input project sha mismatch")
+    _require(decision.get("execution_scope") == "synthetic_isolated_lab_only", "project W4 controlled decision execution_scope mismatch")
+    _require(decision.get("w4_execution_performed") is True, "project W4 controlled decision must record execution performed")
+    _require(decision.get("wave_executed") == "W4", "project W4 controlled decision wave_executed mismatch")
+    _require(decision.get("bot_executed") is True, "project W4 controlled decision bot_executed must be true")
+    _require(len(decision.get("bots_executed", [])) == 4, "project W4 controlled decision must list 4 bots")
+    _require(decision.get("synthetic_attack_cases_total") == 14, "project W4 controlled decision synthetic_attack_cases_total must be 14")
+    _require(decision.get("synthetic_attack_cases_passed") == 14, "project W4 controlled decision synthetic_attack_cases_passed must be 14")
+    _require(decision.get("synthetic_attack_cases_blocked_or_detected") == 14, "project W4 controlled decision synthetic_attack_cases_blocked_or_detected must be 14")
+    _require(decision.get("rollback_honesty_checks_required") == 6, "project W4 controlled decision rollback_honesty_checks_required must be 6")
+    _require(decision.get("rollback_honesty_checks_passed") == 6, "project W4 controlled decision rollback_honesty_checks_passed must be 6")
+    _require(decision.get("duplicate_detection_checks_required") == 5, "project W4 controlled decision duplicate_detection_checks_required must be 5")
+    _require(decision.get("duplicate_detection_checks_passed") == 5, "project W4 controlled decision duplicate_detection_checks_passed must be 5")
+    _require(decision.get("cost_enforcement_checks_required") == 3, "project W4 controlled decision cost_enforcement_checks_required must be 3")
+    _require(decision.get("cost_enforcement_checks_passed") == 3, "project W4 controlled decision cost_enforcement_checks_passed must be 3")
+    _require(decision.get("rhr_observed") == 1.0, "project W4 controlled decision rhr_observed must be 1.0")
+    _require(decision.get("ddr_observed") == 1.0, "project W4 controlled decision ddr_observed must be 1.0")
+    _require(decision.get("cer_observed") == 1.0, "project W4 controlled decision cer_observed must be 1.0")
+    _require(decision.get("findings_created_count") == 0, "project W4 controlled decision findings_created_count must be 0")
+    _require(decision.get("finding_candidates") == [], "project W4 controlled decision finding_candidates must be empty")
+    _require(decision.get("next_recommended_step") == IF08_W4_CONTROLLED_NEXT_RECOMMENDED_STEP, "project W4 controlled decision next step mismatch")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "filesystem_escape_performed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(decision.get(key) is False, f"project W4 controlled decision {key} must be false")
+
+    summary = _load_json(IF08_W4_CONTROLLED_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-CONTROLLED-EXECUTION", "project W4 controlled summary phase_id mismatch")
+    _require(summary.get("phase_name") == IF08_W4_CONTROLLED_PHASE, "project W4 controlled summary phase_name mismatch")
+    _require(summary.get("decision") == "pass", "project W4 controlled summary must be pass")
+    _require(summary.get("status") == IF08_W4_CONTROLLED_STATUS, "project W4 controlled summary status mismatch")
+    _require(summary.get("input_project_commit_sha") == IF08_W4_PREFLIGHT_PROJECT_SHA, "project W4 controlled summary input project sha mismatch")
+    _require(summary.get("execution_scope") == "synthetic_isolated_lab_only", "project W4 controlled summary execution_scope mismatch")
+    _require(summary.get("wave_executed") == "W4", "project W4 controlled summary wave_executed mismatch")
+    _require(len(summary.get("bots_executed", [])) == 4, "project W4 controlled summary must list 4 bots")
+    _require(summary.get("synthetic_attack_cases_total") == 14, "project W4 controlled summary synthetic_attack_cases_total must be 14")
+    _require(summary.get("synthetic_attack_cases_passed") == 14, "project W4 controlled summary synthetic_attack_cases_passed must be 14")
+    _require(summary.get("synthetic_attack_cases_blocked_or_detected") == 14, "project W4 controlled summary synthetic_attack_cases_blocked_or_detected must be 14")
+    _require(summary.get("rollback_honesty_checks_required") == 6, "project W4 controlled summary rollback_honesty_checks_required must be 6")
+    _require(summary.get("rollback_honesty_checks_passed") == 6, "project W4 controlled summary rollback_honesty_checks_passed must be 6")
+    _require(summary.get("duplicate_detection_checks_required") == 5, "project W4 controlled summary duplicate_detection_checks_required must be 5")
+    _require(summary.get("duplicate_detection_checks_passed") == 5, "project W4 controlled summary duplicate_detection_checks_passed must be 5")
+    _require(summary.get("cost_enforcement_checks_required") == 3, "project W4 controlled summary cost_enforcement_checks_required must be 3")
+    _require(summary.get("cost_enforcement_checks_passed") == 3, "project W4 controlled summary cost_enforcement_checks_passed must be 3")
+    _require(summary.get("rhr_observed") == 1.0, "project W4 controlled summary rhr_observed must be 1.0")
+    _require(summary.get("ddr_observed") == 1.0, "project W4 controlled summary ddr_observed must be 1.0")
+    _require(summary.get("cer_observed") == 1.0, "project W4 controlled summary cer_observed must be 1.0")
+    _require(summary.get("next_recommended_step") == IF08_W4_CONTROLLED_NEXT_RECOMMENDED_STEP, "project W4 controlled summary next step mismatch")
+
+    metrics = _load_json(IF08_W4_CONTROLLED_METRICS_PATH)
+    _require(metrics.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-CONTROLLED-EXECUTION", "project W4 metrics phase_id mismatch")
+    _require(metrics.get("wave_id") == "W4", "project W4 metrics wave_id mismatch")
+    _require(metrics.get("wave_name") == "Replay/rollback/concurrency/cost", "project W4 metrics wave_name mismatch")
+    _require(metrics.get("cost_enforcement_checks_required") == 3, "project W4 metrics cost_enforcement_checks_required must be 3")
+    _require(metrics.get("cost_enforcement_checks_passed") == 3, "project W4 metrics cost_enforcement_checks_passed must be 3")
+    _require(metrics.get("cer_observed") == 1.0, "project W4 metrics cer_observed must be 1.0")
+    _require(metrics.get("real_cost_spent") is False, "project W4 metrics real_cost_spent must be false")
+    _require(metrics.get("real_quota_consumed") is False, "project W4 metrics real_quota_consumed must be false")
+    _require(len(metrics.get("rows", [])) == 3, "project W4 metrics must contain 3 rows")
+    _require(all(row.get("scenario_passed") is True for row in metrics.get("rows", [])), "project W4 metrics rows must all pass")
+    _require(all(row.get("blocked_or_detected") is True for row in metrics.get("rows", [])), "project W4 metrics rows must all block or detect")
+
+    log_rows = _load_jsonl(IF08_W4_CONTROLLED_LOG_PATH)
+    _require(log_rows[0].get("event_type") == "phase_start", "project W4 log must start with phase_start")
+    _require(log_rows[-1].get("event_type") == "phase_verdict", "project W4 log must end with phase_verdict")
+    _require(len(log_rows) == 16, "project W4 log must contain 16 rows")
+    scenario_rows = [row for row in log_rows if row.get("event_type") == "scenario_result"]
+    _require(len(scenario_rows) == 14, "project W4 log must contain 14 scenario_result rows")
+    _require(all(row.get("blocked_or_detected") is True for row in scenario_rows), "project W4 log scenario_result rows must all block or detect")
+    _require(log_rows[-1].get("rhr_observed") == 1.0, "project W4 log rhr_observed must be 1.0")
+    _require(log_rows[-1].get("ddr_observed") == 1.0, "project W4 log ddr_observed must be 1.0")
+    _require(log_rows[-1].get("cer_observed") == 1.0, "project W4 log cer_observed must be 1.0")
+
+    safety = _load_json(IF08_W4_CONTROLLED_SAFETY_ATTESTATION_PATH)
+    _require(safety.get("phase_id") == "IF-08-W4-REPLAY-ROLLBACK-CONCURRENCY-COST-CONTROLLED-EXECUTION", "project W4 safety attestation phase_id mismatch")
+    _require(safety.get("execution_scope") == "synthetic_isolated_lab_only", "project W4 safety attestation execution_scope mismatch")
+    _require(safety.get("deterministic_output_contract") is True, "project W4 safety attestation deterministic_output_contract must be true")
+    _require(len(safety.get("json_outputs_expected", [])) == 4, "project W4 safety attestation json_outputs_expected must contain 4 entries")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "filesystem_escape_performed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(safety.get(key) is False, f"project W4 safety attestation {key} must be false")
+
+    _mirror_contains(
+        IF08_W4_CONTROLLED_REPORT_PATH,
+        "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+        "execution_scope: `synthetic_isolated_lab_only`",
+        "synthetic_attack_cases_total: `14`",
+        "rollback_honesty_checks: `6/6`",
+        "duplicate_detection_checks: `5/5`",
+        "cost_enforcement_checks: `3/3`",
+        "next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
+    )
+    _mirror_contains(
+        IF08_W4_CONTROLLED_DOC_PATH,
+        "execution_scope=synthetic_isolated_lab_only",
+        "w4_execution_performed=true",
+        "RHR=1.0, DDR=1.0, CER=1.0",
+        "denial_of_wallet_attack",
+    )
+
+
 def _check_if08_w2_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W2_POST_SYNC_ACTIVE_DECISION_PATH,
@@ -6316,6 +6580,8 @@ def main() -> None:
     _check_if08_w2_post_sync_review_artifacts(state)
     # IF08 W4 replay/rollback/concurrency/cost preflight readiness checks
     _check_if08_w4_preflight_readiness_artifacts(state)
+    # IF08 W4 replay/rollback/concurrency/cost controlled execution checks
+    _check_if08_w4_controlled_execution_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -6345,14 +6611,14 @@ def main() -> None:
 
     _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
     _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
-    _require(state["next_action"]["planning_only"] is True, "next_action.planning_only must be true")
-    _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
+    _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
+    _require(state["next_action"]["review_only"] is True, "next_action.review_only must be true")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
-    _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
-    _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
     _require(state["latest_completed_no_execution"]["w4_preflight_readiness"] is True, "latest_completed_no_execution.w4_preflight_readiness must be true")
-    _require(state["latest_completed_no_execution"]["w4_execution_performed"] is False, "latest_completed_no_execution.w4_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["w4_execution_performed"] is True, "latest_completed_no_execution.w4_execution_performed must be true")
     _require(state["latest_completed_no_execution"]["w4_execution_allowed"] is False, "latest_completed_no_execution.w4_execution_allowed must be false")
     _require(state["latest_completed_no_execution"]["future_rhr_required"] == 1.0, "latest_completed_no_execution.future_rhr_required must be 1.0")
     _require(state["latest_completed_no_execution"]["future_ddr_required"] == 1.0, "latest_completed_no_execution.future_ddr_required must be 1.0")
@@ -6360,6 +6626,19 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
     _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 12, "latest_completed_no_execution.required_preflight_checks must be 12")
     _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 12, "latest_completed_no_execution.ready_preflight_checks must be 12")
+    _require(state["latest_completed_no_execution"]["synthetic_attack_cases_total"] == 14, "latest_completed_no_execution.synthetic_attack_cases_total must be 14")
+    _require(state["latest_completed_no_execution"]["synthetic_attack_cases_passed"] == 14, "latest_completed_no_execution.synthetic_attack_cases_passed must be 14")
+    _require(state["latest_completed_no_execution"]["synthetic_attack_cases_blocked_or_detected"] == 14, "latest_completed_no_execution.synthetic_attack_cases_blocked_or_detected must be 14")
+    _require(state["latest_completed_no_execution"]["rollback_honesty_checks_required"] == 6, "latest_completed_no_execution.rollback_honesty_checks_required must be 6")
+    _require(state["latest_completed_no_execution"]["rollback_honesty_checks_passed"] == 6, "latest_completed_no_execution.rollback_honesty_checks_passed must be 6")
+    _require(state["latest_completed_no_execution"]["duplicate_detection_checks_required"] == 5, "latest_completed_no_execution.duplicate_detection_checks_required must be 5")
+    _require(state["latest_completed_no_execution"]["duplicate_detection_checks_passed"] == 5, "latest_completed_no_execution.duplicate_detection_checks_passed must be 5")
+    _require(state["latest_completed_no_execution"]["cost_enforcement_checks_required"] == 3, "latest_completed_no_execution.cost_enforcement_checks_required must be 3")
+    _require(state["latest_completed_no_execution"]["cost_enforcement_checks_passed"] == 3, "latest_completed_no_execution.cost_enforcement_checks_passed must be 3")
+    _require(state["latest_completed_no_execution"]["rhr_observed"] == 1.0, "latest_completed_no_execution.rhr_observed must be 1.0")
+    _require(state["latest_completed_no_execution"]["ddr_observed"] == 1.0, "latest_completed_no_execution.ddr_observed must be 1.0")
+    _require(state["latest_completed_no_execution"]["cer_observed"] == 1.0, "latest_completed_no_execution.cer_observed must be 1.0")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "synthetic_isolated_lab_only", "latest_completed_no_execution.execution_scope must be synthetic_isolated_lab_only")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -6405,55 +6684,52 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
-        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`",
+        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `2785b06e7a73b10675d30ed870fda7959e2e866a`",
+        "latest_completed_project_commit_sha: `c65888a2f587c35b4e38b16b50b917233bac8fa3`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
+        "next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W4 Preflight Readiness Sincronizado",
+        "INF-FULL-07 — IF-08 W4 Controlled Execution Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
-        "Este sync ja registra o packet canonico de preflight da W4 com `w4_preflight_readiness=true`, `w4_execution_performed=false`, `w4_execution_allowed=false`, `future_rhr_required=1.0`, `future_ddr_required=1.0`, `future_cer_required=1.0` e `readiness_coverage=1.0`.",
-        "O proximo prompt pode executar apenas o controlled execution canonico da W4 em laboratorio sintetico isolado.",
-        "O proximo passo recomendado neste estado e `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`.",
+        "latest_completed_status: if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+        "Este sync ja registra o packet canonico de controlled execution da W4 com `w4_preflight_readiness=true`, `w4_execution_performed=true`, `w4_execution_allowed=false`, `future_rhr_required=1.0`, `future_ddr_required=1.0`, `future_cer_required=1.0`, `rollback_honesty_checks=6/6`, `duplicate_detection_checks=5/5`, `cost_enforcement_checks=3/3` e `RHR=DDR=CER=1.0`.",
+        "O proximo prompt deve executar apenas o post-sync review canonico da W4.",
+        "O proximo passo recomendado neste estado e `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
-        "Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
-        "latest_completed_status=if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
-        "active_context_remote_main_reflects_if08_w4_preflight_readiness=true",
+        "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+        "Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`",
+        "latest_completed_status=if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+        "active_context_remote_main_reflects_if08_w4_controlled_execution=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
+        "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
-        "artifacts/if08_w4_replay_rollback_concurrency_cost_preflight_readiness/decision.json",
-        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_preflight_readiness_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w4_replay_attack_surface_matrix_2026_06_07.json",
-        "artifacts/infernus/if08_w4_rollback_oracle_contract_2026_06_07.json",
-        "artifacts/infernus/if08_w4_concurrency_oracle_contract_2026_06_07.json",
-        "artifacts/infernus/if08_w4_cost_quota_oracle_contract_2026_06_07.json",
-        "artifacts/infernus/if08_w4_no_execution_attestation_2026_06_07.json",
-        "docs/infernus_full/if08_w4_replay_rollback_concurrency_cost_preflight_readiness_2026_06_07.md",
+        "artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/decision.json",
+        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_controlled_execution_decision_2026_06_08.json",
+        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_metrics_2026_06_08.json",
+        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_safety_attestation_2026_06_08.json",
+        "docs/infernus_full/if08_w4_replay_rollback_concurrency_cost_controlled_execution_2026_06_08.md",
         "artifacts/if08_w3_post_sync_review/decision.json",
         "artifacts/infernus/if08_w3_post_sync_review_decision_2026_06_07.json",
         "artifacts/infernus/if08_w4_readiness_matrix_2026_06_07.json",
@@ -6481,10 +6757,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
-        "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness | pass",
-        "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass",
-        "project_commit_sha: `2785b06e7a73b10675d30ed870fda7959e2e866a`",
-        "next_recommended_step: `execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
+        "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution | pass",
+        "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+        "project_commit_sha: `c65888a2f587c35b4e38b16b50b917233bac8fa3`",
+        "next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
         "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution | pass",
         "if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass",
         "project_commit_sha: `598dd5c8d98e8c9f89f9123e10efedf50871079b`",
@@ -6508,24 +6784,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`",
-        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass`",
+        "latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`",
+        "latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_CONTROLLED_EXECUTION: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
+        "Latest completed phase: IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W4 preflight readiness is canonical; this sync records w4_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is W4 controlled execution in synthetic isolated lab only.",
+        "W4 controlled execution is canonical; this sync records w4_execution_allowed=false, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, RHR=DDR=CER=1.0, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is W4 post-sync review.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

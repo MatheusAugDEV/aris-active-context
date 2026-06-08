@@ -1,0 +1,25 @@
+{
+  "repair_type": "active_context_validator_sync_repair",
+  "does_not_advance_phase": true,
+  "latest_completed_phase_preserved": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+  "next_recommended_step_preserved": "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
+  "validator_expectations_updated_to": {
+    "latest_completed_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+    "latest_completed_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+    "latest_completed_project_commit_sha": "c65888a2f587c35b4e38b16b50b917233bac8fa3",
+    "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
+    "latest_completed_next_recommended_step": "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+  },
+  "controlled_execution_metrics_validated": {
+    "synthetic_attack_cases_total": 14,
+    "rollback_honesty_checks": "6/6",
+    "duplicate_detection_checks": "5/5",
+    "cost_enforcement_checks": "3/3",
+    "rhr_observed": 1.0,
+    "ddr_observed": 1.0,
+    "cer_observed": 1.0,
+    "w4_execution_performed": true,
+    "execution_scope": "synthetic_isolated_lab_only"
+  },
+  "safety_locks_preserved_false": true
+}

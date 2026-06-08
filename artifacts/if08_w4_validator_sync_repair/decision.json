@@ -1,0 +1,32 @@
+{
+  "repair_type": "active_context_validator_sync_repair",
+  "decision": "pass",
+  "status": "if08_w4_validator_sync_repair_applied",
+  "does_not_advance_phase": true,
+  "latest_completed_phase_preserved": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+  "latest_completed_status_preserved": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+  "latest_completed_project_commit_sha_preserved": "c65888a2f587c35b4e38b16b50b917233bac8fa3",
+  "latest_completed_ci_state_preserved": "CI_GREEN_CONFIRMED",
+  "next_recommended_step_preserved": "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
+  "validator_target": "scripts/validate_active_context_state.py",
+  "validator_sync_scope": [
+    "expected latest completed phase/status/project sha/ci state/next recommended step",
+    "if08_w4 controlled execution metrics and safety envelope",
+    "markdown mirror assertions for current canonical state"
+  ],
+  "forbidden_flags_preserved_false": [
+    "runtime_executed",
+    "real_apply_executed",
+    "product_bedrock_real_apply_secrets_executed",
+    "external_network_used_except_github_governance",
+    "dependency_or_package_manager_used",
+    "mcp_activated",
+    "rag_ingestion_executed",
+    "memory_write_executed",
+    "socket_opened",
+    "shell_executed",
+    "filesystem_escape_performed",
+    "real_cost_spent",
+    "real_quota_consumed"
+  ]
+}
