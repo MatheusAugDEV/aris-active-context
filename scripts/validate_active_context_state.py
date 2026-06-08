@@ -32,7 +32,8 @@ ACB_CAP_03_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_03_projec
 ACB_CAP_04_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_04_project_evidence_2026_06_03.json"
 ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_evidence_2026_06_05.json"
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
-OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
+OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
+ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
 EXPECTED_PHASE = "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision"
 EXPECTED_PHASE_ID = "INF-FULL-07"
@@ -754,44 +755,32 @@ PHASE_DELIVERABLES = {
 
 REQUIRED_BOOT_FILES = [
     "ACTIVE_CONTEXT_STATE.json",
-    "AGENT_IDENTITY.md",
-    "ACTIVE_CONTEXT_SCHEMA.json",
-    "scripts/validate_active_context_state.py",
-    "ROADMAP_CANONICAL.md",
-    "MANDATORY_READ_FIRST_RULES.md",
-    "CURRENT_STATE.md",
-    "NEXT_ACTION.md",
-    "DECISION_LOCKS.md",
-    "OPERATOR_PREFERENCES.md",
-    "CONTEXT_INDEX.md",
-    "ARIS_PHASE_LEDGER.md",
-    "README.md",
-    "PROMPT_CONTRACT.md",
-    "LAB_OPERATING_CONTRACT.md",
-    "EXCLUDENT_POLICY.md",
-    "INFERNUS_STANDING_AUTHORIZATION.md",
-    "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+    "ARIS_BOOT.md",
 ]
 
 EXPECTED_PRIORITY_READ_ORDER = [
     "1. ACTIVE_CONTEXT_STATE.json",
-    "2. AGENT_IDENTITY.md",
-    "3. ACTIVE_CONTEXT_SCHEMA.json",
-    "4. scripts/validate_active_context_state.py",
-    "5. ROADMAP_CANONICAL.md",
-    "6. MANDATORY_READ_FIRST_RULES.md",
-    "7. CURRENT_STATE.md",
-    "8. NEXT_ACTION.md",
-    "9. DECISION_LOCKS.md",
-    "10. OPERATOR_PREFERENCES.md",
-    "11. CONTEXT_INDEX.md",
-    "12. ARIS_PHASE_LEDGER.md",
-    "13. README.md",
-    "14. PROMPT_CONTRACT.md",
-    "15. LAB_OPERATING_CONTRACT.md",
-    "16. EXCLUDENT_POLICY.md",
-    "17. INFERNUS_STANDING_AUTHORIZATION.md",
-    "18. project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+    "2. ARIS_BOOT.md",
+    "3. ROADMAP_CANONICAL.md (sob demanda — transição de fase)",
+    "4. DECISION_LOCKS.md (sob demanda — verificação de locks)",
+    "5. LAB_OPERATING_CONTRACT.md (sob demanda — lab/Bedrock)",
+    "6. INFERNUS_STANDING_AUTHORIZATION.md (sob demanda — fases Infernus)",
+    "7. EXCLUDENT_POLICY.md (sob demanda — excludent/)",
+    "8. BEDROCK_GATE.md (sob demanda — produto/Bedrock)",
+]
+
+BOOT_FILE_SUPERSEDED = [
+    "AGENT_IDENTITY.md",
+    "MANDATORY_READ_FIRST_RULES.md",
+    "OPERATOR_PREFERENCES.md",
+    "PROMPT_CONTRACT.md",
+    "BOOT_PROFILE.md",
+    "READ_PROFILE.md",
+    "NORTH_POLE.md",
+    "HANDOFF_RESPONSE_POLICY.md",
+    "MODEL_REASONING_POLICY.md",
+    "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
+    "ROADMAP_AMENDMENT_PROTOCOL.md",
 ]
 
 OPERATOR_PREFERENCE_REQUIRED_PHRASES = [
@@ -897,30 +886,10 @@ def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) ->
 
 
 def _require_files_exist(state: dict[str, Any]) -> None:
-    # Files listed in required_files_for_transition are historical records.
-    # Files moved to archive/ or excludent/ by an authorized operator cleanup gate
-    # are still considered present — the record is audit trail, not a live path assertion.
-    _ARCHIVED_ROOTS = [
-        ROOT / "archive",
-        ROOT / "excludent",
-    ]
-
-    for relative_path in state["required_files_for_transition"]:
-        resolved = ROOT / relative_path
-        if relative_path.startswith("../") and not resolved.exists():
-            continue
-        if resolved.exists():
-            continue
-        # Check if the file was moved to an archive or excludent subtree.
-        filename = pathlib.Path(relative_path).name
-        found_in_archive = any(
-            list(archive_root.rglob(filename))
-            for archive_root in _ARCHIVED_ROOTS
-            if archive_root.exists()
-        )
-        if found_in_archive:
-            continue
-        _require(False, f"missing required transition file: {relative_path}")
+    # required_files_for_transition was removed in the active-context compaction refactor.
+    # Layer 0 boot files (ACTIVE_CONTEXT_STATE.json + ARIS_BOOT.md) are verified in _warn_boot_receipt.
+    # Layer 1 reference files are verified individually where relevant.
+    pass
 
 
 def _check_gate_ttl(state: dict[str, Any]) -> None:
@@ -1103,36 +1072,39 @@ def _apply_streak_management(state: dict[str, Any], sig: str, decision: str) -> 
 
 
 def _warn_boot_receipt(state: dict[str, Any]) -> None:
+    # Check ARIS_BOOT.md exists in root — blocking
+    _require(ARIS_BOOT_PATH.exists(), "ARIS_BOOT.md ausente da raiz")
+
     boot_files = state.get("last_boot_files_read", [])
-    missing = [f for f in REQUIRED_BOOT_FILES if f not in boot_files]
-    if missing:
-        print(f"BLOCK: last_boot_files_read missing: {missing}")
-        print("Codex must populate last_boot_files_read before any action.")
+    # Verify boot order: [0] must be ACTIVE_CONTEXT_STATE.json, [1] must be ARIS_BOOT.md
+    if len(boot_files) < 2 or boot_files[0] != "ACTIVE_CONTEXT_STATE.json" or boot_files[1] != "ARIS_BOOT.md":
+        print(f"BLOCK: boot order incorreto em last_boot_files_read: {boot_files[:2]}")
+        print("Expected: ['ACTIVE_CONTEXT_STATE.json', 'ARIS_BOOT.md']")
         sys.exit(1)
-    try:
-        _ordered_positions(boot_files, REQUIRED_BOOT_FILES, "last_boot_files_read")
-    except SystemExit as exc:
-        print(f"BLOCK: {exc}")
-        print("Codex must preserve the mandatory read-first order in last_boot_files_read.")
-        sys.exit(1)
+
+    # WARN (non-blocking): check superseded files are not in root
+    for fname in BOOT_FILE_SUPERSEDED:
+        if (ROOT / fname).exists():
+            print(f"WARN: Arquivo superseded ainda presente na raiz: {fname}. Mover para archive/superseded/")
+
+    # WARN (non-blocking): check archive subdirs exist
+    for subdir in ["superseded", "gate_history", "derived_mirrors"]:
+        if not (ROOT / "archive" / subdir).is_dir():
+            print(f"WARN: archive/{subdir}/ não existe como diretório")
 
 
 def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
-    _require(OPERATOR_PREFERENCES_PATH.exists(), "missing OPERATOR_PREFERENCES.md")
-
     priority_read_order = state.get("anti_corruption_contract", {}).get("canonical_read_order", [])
     _require(
         priority_read_order[: len(EXPECTED_PRIORITY_READ_ORDER)] == EXPECTED_PRIORITY_READ_ORDER,
         "canonical_read_order does not match expected operator-priority read order",
     )
-    _require(
-        "OPERATOR_PREFERENCES.md" in state.get("required_files_for_transition", []),
-        "required_files_for_transition must include OPERATOR_PREFERENCES.md",
-    )
 
-    text = OPERATOR_PREFERENCES_PATH.read_text(encoding="utf-8")
-    for phrase in OPERATOR_PREFERENCE_REQUIRED_PHRASES:
-        _require(phrase in text, f"OPERATOR_PREFERENCES.md missing required phrase: {phrase}")
+    anti_corruption_contract_file = state.get("anti_corruption_contract", {}).get("anti_corruption_contract_file", "")
+    _require(
+        anti_corruption_contract_file == "ARIS_BOOT.md",
+        f"anti_corruption_contract_file must be 'ARIS_BOOT.md', got: {anti_corruption_contract_file!r}",
+    )
 
     _require(
         _preference_allows_direct_prompt(
@@ -1269,21 +1241,10 @@ def _check_ci_terminal_reporting_rule() -> None:
     )
 
     _mirror_contains(
-        ROOT / "MANDATORY_READ_FIRST_RULES.md",
-        "## CI TERMINAL-STATE REPORTING RULE",
+        ROOT / "ARIS_BOOT.md",
         "CI_GREEN_CONFIRMED",
         "CI_FAILED",
         "CI_PENDING",
-    )
-    _mirror_contains(
-        ROOT / "PROMPT_CONTRACT.md",
-        "## Required CI output discipline",
-        "Decision: pass",
-        "CI_PENDING",
-    )
-    _mirror_contains(
-        ROOT / "AGENT_IDENTITY.md",
-        "Pending CI means CI_PENDING, not PASS.",
     )
 
     _require(
@@ -3639,10 +3600,10 @@ def _check_inf_full_06_excludent_quarantine_artifacts(state: dict[str, Any]) -> 
     excludent_policy = ROOT / "EXCLUDENT_POLICY.md"
     _require(excludent_policy.exists(), "EXCLUDENT_POLICY.md must exist in active-context repo")
 
-    # Verify MANDATORY_READ_FIRST_RULES.md has excludent rule
-    mandatory_rules = (ROOT / "MANDATORY_READ_FIRST_RULES.md").read_text(encoding="utf-8")
-    _require("EXCLUDENT RULE" in mandatory_rules, "MANDATORY_READ_FIRST_RULES.md must contain EXCLUDENT RULE")
-    _require("excluded_from_context" in mandatory_rules, "MANDATORY_READ_FIRST_RULES.md must contain excluded_from_context")
+    # Verify ARIS_BOOT.md has excludent rule (MANDATORY_READ_FIRST_RULES.md superseded by ARIS_BOOT.md)
+    aris_boot = (ROOT / "ARIS_BOOT.md").read_text(encoding="utf-8")
+    _require("excludent" in aris_boot, "ARIS_BOOT.md must contain excludent rule")
+    _require("excluded_from_context" in aris_boot or "Arquivos em excludent/" in aris_boot, "ARIS_BOOT.md must describe excludent policy")
 
 
 def _check_scenario_count_resolution(state: dict[str, Any]) -> None:
@@ -7510,7 +7471,7 @@ def main() -> None:
     _require(INFERNUS_STANDING_AUTHORIZATION_PATH.exists(), "missing INFERNUS_STANDING_AUTHORIZATION.md")
 
     _mirror_contains(
-        ROOT / "CURRENT_STATE.md",
+        ROOT / "archive" / "derived_mirrors" / "CURRENT_STATE.md",
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
@@ -7529,7 +7490,7 @@ def main() -> None:
         "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
     )
     _mirror_contains(
-        ROOT / "NEXT_ACTION.md",
+        ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
         "INF-FULL-07 — IF-08 W5 Post-Sync Review & W6 Readiness Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
@@ -7553,7 +7514,7 @@ def main() -> None:
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
-        ROOT / "CONTEXT_INDEX.md",
+        ROOT / "archive" / "derived_mirrors" / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/if08_w5_post_sync_review/decision.json",
         "artifacts/infernus/if08_w5_post_sync_review_decision_2026_06_08.json",
@@ -7607,7 +7568,7 @@ def main() -> None:
         "read_by_default = false",
     )
     _mirror_contains(
-        ROOT / "ARIS_PHASE_LEDGER.md",
+        ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
         "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision | pass",
         "if08_w5_post_sync_review_w6_readiness_pass",
         "project_commit_sha: `e9dfae63206523f26fce5df907945952c7351ad5`",
@@ -7655,15 +7616,11 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`",
-        "latest_completed_status: `if08_w5_post_sync_review_w6_readiness_pass`",
-        "Active next phase: `IF-08`",
-        "active_next_phase_class: `infernus_full_execution`",
-        "next_phase_authorized_by_operator: `true`",
+        "ACTIVE_CONTEXT_STATE.json",
+        "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_POST_SYNC_REVIEW: `true`",
-        "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
+        "inf_full_07_if08_authorization_gate_pass",
+        "Todos execution_locks: false",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
@@ -7679,25 +7636,17 @@ def main() -> None:
         "| INF-FULL-07 | pass | IF-08 | infernus_full_execution | canonroadmap |",
     )
     _mirror_contains(
-        ROOT / "MANDATORY_READ_FIRST_RULES.md",
-        "REGRA ZERO: Canonroadmap é Standing Authorization para Infernus",
-        "NÃO pergunte ao operador se pode avançar.",
+        ROOT / "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "REGRA ANTI-PROLIFERAÇÃO DE GATES",
-        "Gate que apenas reafirma locks do gate anterior é PROIBIDO.",
-        "Planning e Review do mesmo passo colapsam em UM gate",
-        "REGRA DE CICLO DE GATE",
-        "REGRA DE AUTO-ADVANCE",
-        "REGRA DE ENTREGÁVEL MÍNIMO",
-        "REGRA DE TRANSIÇÃO",
-        "REGRA DE CIRCUIT BREAKER",
+        "Gate que só reafirma locks do gate anterior: PROIBIDO.",
         "governance_gate_streak",
-        "REGRA DE PREFERÊNCIA DO OPERADOR",
-        "OPERATOR_PREFERENCES.md",
-        "REGRA PERMANENTE — ACTIVE-CONTEXT UPDATE REQUIRED AFTER EVERY PHASE",
+        "Nunca emita relatório final com CI pendente.",
+        "Nenhum PASS é canônico enquanto aris-active-context/main não refletir",
+        "Resposta sem SHA no topo = INVALID",
+        "PASS só existe: CI terminal green + validator pass + artifact no disco",
     )
     _mirror_contains(
-        ROOT / "PROMPT_CONTRACT.md",
+        ROOT / "archive" / "superseded" / "PROMPT_CONTRACT.md",
         "REGRA ANTI-PROLIFERAÇÃO DE GATES",
         "Toda resposta do revisor abre com SHA resolvido de origin/main lido naquele turno.",
         "Sem SHA citado: resposta é INVALID por construção.",

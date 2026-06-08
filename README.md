@@ -1,45 +1,65 @@
-# ARIS Active Context
+# aris-active-context
 
-## Canonical State
+Memória externa do GPT/Codex para o projeto ARIS entre sessões.
 
-- `ACTIVE_CONTEXT_STATE.json` is the only canonical live state.
-- `ACTIVE_CONTEXT_SCHEMA.json` is the canonical validation contract.
-- `ROADMAP_CANONICAL.md` is the canonical roadmap authority.
-- `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` is the canonical Infernus FULL roadmap.
-- `OPERATOR_PREFERENCES.md` is a priority-read prompt emission preference layer and never overrides JSON, schema, validator, Transition Table, or explicit safety locks.
-- Markdown drift against JSON is a blocking error.
-- `excludent/` remains excluded_from_context and is NOT read by default. See EXCLUDENT_POLICY.md.
+## Propósito
 
-## Current Phase
+Este repositório responde três perguntas:
+1. Onde estamos?        → ACTIVE_CONTEXT_STATE.json
+2. O que fazemos agora? → ACTIVE_CONTEXT_STATE.json > next_phase
+3. Quais são as regras? → ARIS_BOOT.md
 
-- phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`
-- latest_completed_status: `if08_w5_post_sync_review_w6_readiness_pass`
-- latest_completed_project_commit_sha: `e9dfae63206523f26fce5df907945952c7351ad5`
-- latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- active_next_phase: `IF-08`
-- Active next phase: `IF-08`
-- active_next_phase_class: `infernus_full_execution`
-- current_status: `if08_w5_post_sync_review_w6_readiness_pass`
-- IF-08 real execution: `false`
-- previous_phase_verified: `IF-08 W5 Business Chaos Controlled Execution`
-- W5 canonical sync verified: `true`
-- W5 metrics verified: `true`
-- W5 artifacts complete: `true`
-- W5 safety attestation verified: `true`
-- W6 readiness state: `ready_for_preparation`
-- W6 preparation allowed next: `true`
-- W6 execution performed: `false`
-- W6 execution allowed: `false`
-- All execution locks: `false`
-- next_phase_authorized_by_operator: `true`
-- standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_POST_SYNC_REVIEW: `true`
-- PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
+## Boot obrigatório (nesta ordem)
 
-## What This Means
+1. `ACTIVE_CONTEXT_STATE.json` — estado canônico e fonte de verdade
+2. `ARIS_BOOT.md` — identidade, regras, padrões de prompt
 
-INF-FULL-07 remains the canonical current phase, while the latest verified operational packet is `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`.
-The W5 post-sync review packet is canonical as `pass` with `previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution`, `w5_canonical_sync_verified=true`, `w5_metrics_verified=true`, `w5_artifacts_complete=true`, `w5_safety_attestation_verified=true`, `critical_coverage_cells_passed=12/12`, `critical_coverage_completion=1.0`, `business_scenarios_blocked_or_detected=14`, `sirene_oracle_mode=synthetic_transcript_only`, `w6_readiness_state=ready_for_preparation`, `future_ttr_required=0`, `future_har_required=1.0`, `w6_execution_performed=false`, and `w6_execution_allowed=false`; this sync does not authorize any real execution surface.
-No PASS, next prompt, or handoff is canonical unless `MatheusAugDEV/aris-active-context/main` reflects the same result already verified in Project repo.
-Do NOT execute real waves, real apply, product promotion, or Bedrock without explicit operator execution command.
+## Referência sob demanda
+
+| Arquivo | Quando ler |
+|---|---|
+| `ROADMAP_CANONICAL.md` | Ao mudar fase (Transition Table) |
+| `DECISION_LOCKS.md` | Ao questionar locks de execução |
+| `LAB_OPERATING_CONTRACT.md` | Ao tocar lab ou Bedrock |
+| `INFERNUS_STANDING_AUTHORIZATION.md` | Fases infernus_full |
+| `EXCLUDENT_POLICY.md` | Ao tocar excludent/ |
+| `BEDROCK_GATE.md` | Ao abordar produto ou Bedrock |
+
+## Estrutura do repositório
+
+```
+raiz/
+  ACTIVE_CONTEXT_STATE.json        ← fonte de verdade
+  ACTIVE_CONTEXT_SCHEMA.json       ← contrato de validação
+  ARIS_BOOT.md                     ← boot obrigatório
+  ROADMAP_CANONICAL.md             ← Transition Table
+  DECISION_LOCKS.md                ← locks de autorização
+  LAB_OPERATING_CONTRACT.md        ← regras lab/Bedrock
+  INFERNUS_STANDING_AUTHORIZATION.md
+  EXCLUDENT_POLICY.md
+  BEDROCK_GATE.md
+  scripts/                         ← validate_active_context_state.py
+  artifacts/                       ← evidence chain
+  project_mirror/                  ← espelho do projeto principal
+  excludent/                       ← quarentena (nunca lido por padrão)
+  archive/                         ← histórico (nunca lido por padrão)
+    gate_history/                  ← gates fechados
+    superseded/                    ← arquivos absorvidos pelo ARIS_BOOT.md
+    derived_mirrors/               ← mirrors e planos históricos
+  fixtures/                        ← cenários do lab
+  tests/
+  .github/workflows/               ← CI
+```
+
+## Regra de ouro
+
+Markdown que contradiz o JSON = drift. O JSON vence sempre.
+PASS só existe com: CI terminal green + validator pass + artifact no disco.
+Resposta sem SHA no topo = INVALID.
+
+## Estado canônico atual
+
+phase_id: INF-FULL-07
+status: inf_full_07_if08_authorization_gate_pass
+next_phase: null — aguardando instrução do operador
+Todos execution_locks: false
