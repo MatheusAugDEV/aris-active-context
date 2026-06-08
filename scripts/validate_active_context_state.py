@@ -34,22 +34,22 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W5 Business Chaos Preflight Readiness"
+EXPECTED_PHASE = "IF-08 W5 Business Chaos Preflight Gap Repair"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w5_business_chaos_preflight_readiness_blocked"
+EXPECTED_CURRENT_STATUS = "if08_w5_business_chaos_preflight_gap_repair_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w5_business_chaos_preflight_readiness_blocked"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w5_business_chaos_preflight_readiness_blocked"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w5_business_chaos_preflight_gap_repair_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w5_business_chaos_preflight_gap_repair_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "0c9921503418da9883bcc9288178bd3f05e0cd8c"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "repair_if08_w5_business_chaos_preflight_gaps"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27161532908"
+EXPECTED_NEXT_RECOMMENDED_STEP = "execute_if08_w5_business_chaos_controlled_execution"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27163825209"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -407,25 +407,26 @@ IF08_W4_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w4_post_sync_review"
 IF08_W4_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W4_POST_SYNC_ROOT / "decision.json"
 IF08_W4_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W4_POST_SYNC_ROOT / "summary.json"
 IF08_W4_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W4_POST_SYNC_ROOT / "report.md"
-IF08_W5_PREFLIGHT_PHASE = "IF-08 W5 Business Chaos Preflight Readiness"
-IF08_W5_PREFLIGHT_STATUS = "if08_w5_business_chaos_preflight_readiness_blocked"
-IF08_W5_PREFLIGHT_PROJECT_SHA = "108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c"
+IF08_W5_PREFLIGHT_PHASE = "IF-08 W5 Business Chaos Preflight Gap Repair"
+IF08_W5_PREFLIGHT_STATUS = "if08_w5_business_chaos_preflight_gap_repair_pass"
+IF08_W5_PREFLIGHT_PROJECT_SHA = "0c9921503418da9883bcc9288178bd3f05e0cd8c"
 IF08_W5_PREFLIGHT_CI_STATE = "CI_GREEN_CONFIRMED"
-IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP = "repair_if08_w5_business_chaos_preflight_gaps"
-IF08_W5_PREFLIGHT_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27161532908"
-IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA = "d575b6f3c37c1ba411a2a0266efb9d04957234c0"
-IF08_W5_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA = "8475e6eb026ca08afc8c6364e9658f1de1860d07"
-IF08_W5_PREFLIGHT_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_readiness_decision_2026_06_08.json")
-IF08_W5_PREFLIGHT_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_readiness_summary_2026_06_08.json")
-IF08_W5_PREFLIGHT_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_readiness_report_2026_06_08.md")
-IF08_W5_PREFLIGHT_DOMAIN_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_domain_matrix_2026_06_08.json")
-IF08_W5_PREFLIGHT_BOT_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_bot_readiness_matrix_2026_06_08.json")
-IF08_W5_PREFLIGHT_COVERAGE_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_critical_coverage_matrix_2026_06_08.json")
-IF08_W5_PREFLIGHT_ORACLE_CONTRACT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_oracle_readiness_contract_2026_06_08.json")
-IF08_W5_PREFLIGHT_STOP_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_stop_condition_matrix_2026_06_08.json")
-IF08_W5_PREFLIGHT_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_no_execution_attestation_2026_06_08.json")
-IF08_W5_PREFLIGHT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w5_business_chaos_preflight_readiness_2026_06_08.md")
-IF08_W5_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w5_business_chaos_preflight_readiness"
+IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP = "execute_if08_w5_business_chaos_controlled_execution"
+IF08_W5_PREFLIGHT_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27163825209"
+IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA = "108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c"
+IF08_W5_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA = "18e2886832387aa393f35013e894ca1bbf415330"
+IF08_W5_PREFLIGHT_PREVIOUS_PHASE = "IF-08 W5 Business Chaos Preflight Readiness"
+IF08_W5_PREFLIGHT_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_gap_repair_decision_2026_06_08.json")
+IF08_W5_PREFLIGHT_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_gap_repair_summary_2026_06_08.json")
+IF08_W5_PREFLIGHT_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_business_chaos_preflight_gap_repair_report_2026_06_08.md")
+IF08_W5_PREFLIGHT_DOMAIN_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_sirene_oracle_readiness_contract_2026_06_08.json")
+IF08_W5_PREFLIGHT_BOT_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_sirene_synthetic_transcript_fixture_matrix_2026_06_08.json")
+IF08_W5_PREFLIGHT_COVERAGE_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_critical_coverage_repair_matrix_2026_06_08.json")
+IF08_W5_PREFLIGHT_ORACLE_CONTRACT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_sirene_oracle_readiness_contract_2026_06_08.json")
+IF08_W5_PREFLIGHT_STOP_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_sirene_synthetic_transcript_fixture_matrix_2026_06_08.json")
+IF08_W5_PREFLIGHT_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_gap_repair_no_execution_attestation_2026_06_08.json")
+IF08_W5_PREFLIGHT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w5_business_chaos_preflight_gap_repair_2026_06_08.md")
+IF08_W5_PREFLIGHT_ROOT = ROOT / "artifacts" / "if08_w5_business_chaos_preflight_gap_repair"
 IF08_W5_PREFLIGHT_ACTIVE_DECISION_PATH = IF08_W5_PREFLIGHT_ROOT / "decision.json"
 IF08_W5_PREFLIGHT_ACTIVE_SUMMARY_PATH = IF08_W5_PREFLIGHT_ROOT / "summary.json"
 IF08_W5_PREFLIGHT_ACTIVE_REPORT_PATH = IF08_W5_PREFLIGHT_ROOT / "report.md"
@@ -6784,32 +6785,42 @@ def _check_if08_w5_business_chaos_preflight_readiness_artifacts(state: dict[str,
     _require(IF08_W5_PREFLIGHT_ACTIVE_REPORT_PATH.exists(), "missing active IF08 W5 preflight report artifact")
 
     active_decision = _load_json(IF08_W5_PREFLIGHT_ACTIVE_DECISION_PATH)
-    _require(active_decision.get("phase_id") == "IF-08-W5-BUSINESS-CHAOS-PREFLIGHT-READINESS", "active W5 preflight decision phase_id mismatch")
-    _require(active_decision.get("decision") == "blocked", "active W5 preflight decision must be blocked")
+    _require(active_decision.get("phase_id") == "IF-08-W5-BUSINESS-CHAOS-PREFLIGHT-GAP-REPAIR", "active W5 gap repair decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W5 gap repair decision must be pass")
     _require(active_decision.get("status") == IF08_W5_PREFLIGHT_STATUS, "active W5 preflight decision status mismatch")
     _require(active_decision.get("project_commit_sha") == IF08_W5_PREFLIGHT_PROJECT_SHA, "active W5 preflight decision project sha mismatch")
     _require(active_decision.get("project_ci_state") == IF08_W5_PREFLIGHT_CI_STATE, "active W5 preflight decision ci state mismatch")
     _require(active_decision.get("project_ci_run_url") == IF08_W5_PREFLIGHT_PROJECT_CI_RUN_URL, "active W5 preflight decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W5 gap repair decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W5 gap repair decision must confirm green CI")
     _require(active_decision.get("active_context_sync_applied") is True, "active W5 preflight decision must mark sync applied")
-    _require(active_decision.get("active_context_remote_main_reflects_if08_w5_business_chaos_preflight_readiness") is True, "active W5 preflight decision must confirm remote reflection")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w5_business_chaos_preflight_gap_repair") is True, "active W5 gap repair decision must confirm remote reflection")
     _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W5_PREFLIGHT_PHASE, "active W5 preflight decision latest phase mismatch")
     _require(active_decision.get("latest_completed_status_after_sync") == IF08_W5_PREFLIGHT_STATUS, "active W5 preflight decision latest status mismatch")
+    _require(active_decision.get("previous_blocked_phase") == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "active W5 gap repair decision previous phase mismatch")
     _require(active_decision.get("source_project_sha_verified_by_packet") == IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA, "active W5 preflight decision source project sha mismatch")
     _require(active_decision.get("source_active_context_sha_verified_by_packet") == IF08_W5_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA, "active W5 preflight decision source active-context sha mismatch")
-    _require(active_decision.get("w5_preflight_readiness") is False, "active W5 preflight decision must keep readiness false")
-    _require(active_decision.get("w5_readiness_state") == "blocked", "active W5 preflight decision readiness state mismatch")
-    _require(active_decision.get("w5_preparation_allowed_next") is False, "active W5 preflight decision must keep preparation disallowed")
+    _require(active_decision.get("repaired_blocker_id") == "sirene_conditional_or_deferred_with_reason", "active W5 gap repair decision repaired_blocker_id mismatch")
+    _require(active_decision.get("repaired_critical_cell") == "W5-CRIT-012", "active W5 gap repair decision repaired_critical_cell mismatch")
+    _require(active_decision.get("sirene_oracle_mode") == "synthetic_transcript_only", "active W5 gap repair decision sirene_oracle_mode mismatch")
+    _require(active_decision.get("sirene_w5_readiness_state") == "ready", "active W5 gap repair decision sirene_w5_readiness_state mismatch")
+    _require(active_decision.get("sirene_oracle_readiness_created") is True, "active W5 gap repair decision must create readiness")
+    _require(active_decision.get("real_audio_capture_allowed") is False, "active W5 gap repair decision real_audio_capture_allowed must be false")
+    _require(active_decision.get("real_stt_tts_allowed") is False, "active W5 gap repair decision real_stt_tts_allowed must be false")
+    _require(active_decision.get("microphone_access_allowed") is False, "active W5 gap repair decision microphone_access_allowed must be false")
+    _require(active_decision.get("voice_clone_or_impersonation_allowed") is False, "active W5 gap repair decision voice_clone_or_impersonation_allowed must be false")
+    _require(active_decision.get("w5_preflight_readiness") is True, "active W5 gap repair decision must set readiness true")
+    _require(active_decision.get("w5_readiness_state") == "ready_for_controlled_execution_preparation", "active W5 gap repair decision readiness state mismatch")
+    _require(active_decision.get("w5_preparation_allowed_next") is True, "active W5 gap repair decision must allow next preparation")
     _require(active_decision.get("w5_execution_performed") is False, "active W5 preflight decision must keep execution false")
     _require(active_decision.get("w5_execution_allowed") is False, "active W5 preflight decision must keep execution disallowed")
     _require(active_decision.get("eligible_executor_bot_count") == 13, "active W5 preflight decision eligible_executor_bot_count must be 13")
     _require(active_decision.get("conditional_or_deferred_bot_count") == 1, "active W5 preflight decision conditional_or_deferred_bot_count must be 1")
     _require(active_decision.get("synthetic_domain_count") == 7, "active W5 preflight decision synthetic_domain_count must be 7")
     _require(active_decision.get("critical_coverage_cells_total") == 12, "active W5 preflight decision critical_coverage_cells_total must be 12")
-    _require(active_decision.get("critical_coverage_cells_ready") == 11, "active W5 preflight decision critical_coverage_cells_ready must be 11")
-    _require(active_decision.get("readiness_coverage") == 0.916667, "active W5 preflight decision readiness_coverage must be 0.916667")
+    _require(active_decision.get("critical_coverage_cells_ready") == 12, "active W5 preflight decision critical_coverage_cells_ready must be 12")
+    _require(active_decision.get("readiness_coverage") == 1.0, "active W5 preflight decision readiness_coverage must be 1.0")
     _require(active_decision.get("future_critical_coverage_required") == 1.0, "active W5 preflight decision future_critical_coverage_required must be 1.0")
-    _require(active_decision.get("blocker_id") == "sirene_conditional_or_deferred_with_reason", "active W5 preflight decision blocker_id mismatch")
-    _require(active_decision.get("blocker_reason") == "Sirene lacks sufficient active oracle/readiness for W5 critical coverage", "active W5 preflight decision blocker_reason mismatch")
     _require(active_decision.get("next_recommended_step") == IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W5 preflight decision next step mismatch")
     for key in (
         "runtime_executed",
@@ -6829,22 +6840,30 @@ def _check_if08_w5_business_chaos_preflight_readiness_artifacts(state: dict[str,
         _require(active_decision.get(key) is False, f"active W5 preflight decision {key} must be false")
 
     active_summary = _load_json(IF08_W5_PREFLIGHT_ACTIVE_SUMMARY_PATH)
-    _require(active_summary.get("decision") == "blocked", "active W5 preflight summary must be blocked")
+    _require(active_summary.get("phase_id") == "IF-08-W5-BUSINESS-CHAOS-PREFLIGHT-GAP-REPAIR", "active W5 gap repair summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W5 preflight summary must be pass")
     _require(active_summary.get("status") == IF08_W5_PREFLIGHT_STATUS, "active W5 preflight summary status mismatch")
     _require(active_summary.get("project_commit_sha") == IF08_W5_PREFLIGHT_PROJECT_SHA, "active W5 preflight summary project sha mismatch")
     _require(active_summary.get("project_ci_state") == IF08_W5_PREFLIGHT_CI_STATE, "active W5 preflight summary ci state mismatch")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w5_business_chaos_preflight_gap_repair") is True, "active W5 gap repair summary must confirm remote reflection")
+    _require(active_summary.get("previous_blocked_phase") == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "active W5 gap repair summary previous phase mismatch")
+    _require(active_summary.get("repaired_blocker_id") == "sirene_conditional_or_deferred_with_reason", "active W5 gap repair summary repaired_blocker_id mismatch")
+    _require(active_summary.get("repaired_critical_cell") == "W5-CRIT-012", "active W5 gap repair summary repaired_critical_cell mismatch")
+    _require(active_summary.get("critical_coverage_cells_ready") == 12, "active W5 gap repair summary critical_coverage_cells_ready must be 12")
+    _require(active_summary.get("readiness_coverage") == 1.0, "active W5 gap repair summary readiness_coverage must be 1.0")
     _require(active_summary.get("next_recommended_step") == IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP, "active W5 preflight summary next step mismatch")
 
     _mirror_contains(
         IF08_W5_PREFLIGHT_ACTIVE_REPORT_PATH,
-        "IF-08 W5 Business Chaos Preflight Readiness",
-        "project_commit_sha: `108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c`",
-        "w5_preflight_readiness: `false`",
-        "w5_readiness_state: `blocked`",
-        "critical_coverage_cells_ready: `11`",
-        "readiness_coverage: `0.916667`",
-        "blocker_id: `sirene_conditional_or_deferred_with_reason`",
-        "repair_if08_w5_business_chaos_preflight_gaps",
+        "IF-08 W5 Business Chaos Preflight Gap Repair",
+        "project_commit_sha: `0c9921503418da9883bcc9288178bd3f05e0cd8c`",
+        "previous_blocked_phase: `IF-08 W5 Business Chaos Preflight Readiness`",
+        "repaired_critical_cell: `W5-CRIT-012`",
+        "w5_preflight_readiness: `true`",
+        "w5_readiness_state: `ready_for_controlled_execution_preparation`",
+        "critical_coverage_cells_ready: `12`",
+        "readiness_coverage: `1.0`",
+        "execute_if08_w5_business_chaos_controlled_execution",
     )
 
     external_project_paths = (
@@ -6863,28 +6882,27 @@ def _check_if08_w5_business_chaos_preflight_readiness_artifacts(state: dict[str,
         return
 
     decision = _load_json(IF08_W5_PREFLIGHT_DECISION_PATH)
-    _require(decision.get("phase_id") == "IF-08-W5-BUSINESS-CHAOS-PREFLIGHT-READINESS", "project W5 preflight decision phase_id mismatch")
-    _require(decision.get("phase_name") == IF08_W5_PREFLIGHT_PHASE, "project W5 preflight decision phase_name mismatch")
-    _require(decision.get("decision") == "blocked", "project W5 preflight decision must be blocked")
+    _require(decision.get("phase_id") == "IF-08-W5-BUSINESS-CHAOS-PREFLIGHT-GAP-REPAIR", "project W5 gap repair decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W5 gap repair decision must be pass")
     _require(decision.get("status") == IF08_W5_PREFLIGHT_STATUS, "project W5 preflight decision status mismatch")
     _require(decision.get("source_active_context_sha") == IF08_W5_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA, "project W5 preflight decision source active-context sha mismatch")
     _require(decision.get("source_project_sha") == IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA, "project W5 preflight decision source project sha mismatch")
-    _require(decision.get("source_project_ci_state") == IF08_W5_PREFLIGHT_CI_STATE, "project W5 preflight decision source ci state mismatch")
-    _require(decision.get("previous_phase_verified") == IF08_W4_POST_SYNC_PHASE, "project W5 preflight decision previous phase mismatch")
-    _require(decision.get("w4_metrics_verified") is True, "project W5 preflight decision must preserve W4 metrics verification")
-    _require(decision.get("w5_preflight_readiness") is False, "project W5 preflight decision must keep readiness false")
+    _require(decision.get("previous_phase_verified") == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "project W5 gap repair decision previous phase mismatch")
+    _require(decision.get("previous_status_verified") == "if08_w5_business_chaos_preflight_readiness_blocked", "project W5 gap repair decision previous status mismatch")
+    _require(decision.get("repaired_blocker_id") == "sirene_conditional_or_deferred_with_reason", "project W5 gap repair decision repaired_blocker_id mismatch")
+    _require(decision.get("sirene_oracle_readiness_created") is True, "project W5 gap repair decision must create readiness")
+    _require(decision.get("sirene_w5_readiness_state") == "ready", "project W5 gap repair decision sirene_w5_readiness_state mismatch")
+    _require(decision.get("sirene_oracle_mode") == "synthetic_transcript_only", "project W5 gap repair decision sirene_oracle_mode mismatch")
+    _require(decision.get("w5_preflight_readiness") is True, "project W5 gap repair decision must set readiness true")
     _require(decision.get("w5_execution_performed") is False, "project W5 preflight decision must keep execution false")
     _require(decision.get("w5_execution_allowed") is False, "project W5 preflight decision must keep execution disallowed")
-    _require(decision.get("eligible_executor_bot_count") == 13, "project W5 preflight decision eligible_executor_bot_count must be 13")
-    _require(decision.get("conditional_or_deferred_bot_count") == 1, "project W5 preflight decision conditional_or_deferred_bot_count must be 1")
-    _require(decision.get("synthetic_domain_count") == 7, "project W5 preflight decision synthetic_domain_count must be 7")
     _require(decision.get("critical_coverage_cells_total") == 12, "project W5 preflight decision critical_coverage_cells_total must be 12")
-    _require(decision.get("critical_coverage_cells_ready") == 11, "project W5 preflight decision critical_coverage_cells_ready must be 11")
-    _require(decision.get("readiness_coverage") == 0.916667, "project W5 preflight decision readiness_coverage must be 0.916667")
+    _require(decision.get("critical_coverage_cells_ready") == 12, "project W5 preflight decision critical_coverage_cells_ready must be 12")
+    _require(decision.get("readiness_coverage") == 1.0, "project W5 preflight decision readiness_coverage must be 1.0")
     _require(decision.get("future_critical_coverage_required") == 1.0, "project W5 preflight decision future_critical_coverage_required must be 1.0")
     _require(decision.get("next_recommended_step") == IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W5 preflight decision next step mismatch")
-    _require(decision.get("blocking_findings") == ["sirene_audio_oracle_gap", "w5_critical_coverage_below_required_threshold"], "project W5 preflight decision blocking_findings mismatch")
-    _require(decision.get("invalid_findings") == [], "project W5 preflight decision invalid_findings must be empty")
+    _require(decision.get("blocking_findings") == [], "project W5 gap repair decision blocking_findings must be empty")
+    _require(decision.get("invalid_findings") == [], "project W5 gap repair decision invalid_findings must be empty")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -6903,53 +6921,55 @@ def _check_if08_w5_business_chaos_preflight_readiness_artifacts(state: dict[str,
         _require(decision.get(key) is False, f"project W5 preflight decision {key} must be false")
 
     summary = _load_json(IF08_W5_PREFLIGHT_SUMMARY_PATH)
-    _require(summary.get("decision") == "blocked", "project W5 preflight summary must be blocked")
+    _require(summary.get("decision") == "pass", "project W5 preflight summary must be pass")
     _require(summary.get("status") == IF08_W5_PREFLIGHT_STATUS, "project W5 preflight summary status mismatch")
     _require(summary.get("source_project_sha") == IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA, "project W5 preflight summary source project sha mismatch")
     _require(summary.get("source_active_context_sha") == IF08_W5_PREFLIGHT_SOURCE_ACTIVE_CONTEXT_SHA, "project W5 preflight summary source active-context sha mismatch")
-    _require(summary.get("readiness_coverage") == 0.916667, "project W5 preflight summary readiness_coverage must be 0.916667")
+    _require(summary.get("previous_phase_verified") == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "project W5 gap repair summary previous phase mismatch")
+    _require(summary.get("repaired_blocker_id") == "sirene_conditional_or_deferred_with_reason", "project W5 gap repair summary repaired_blocker_id mismatch")
+    _require(summary.get("critical_coverage_cells_ready") == 12, "project W5 gap repair summary critical_coverage_cells_ready must be 12")
+    _require(summary.get("readiness_coverage") == 1.0, "project W5 preflight summary readiness_coverage must be 1.0")
     _require(summary.get("next_recommended_step") == IF08_W5_PREFLIGHT_NEXT_RECOMMENDED_STEP, "project W5 preflight summary next step mismatch")
 
     domain_matrix = _load_json(IF08_W5_PREFLIGHT_DOMAIN_MATRIX_PATH)
-    _require(domain_matrix.get("wave_id") == "W5", "project W5 domain matrix wave_id mismatch")
-    _require(domain_matrix.get("synthetic_domain_count") == 7, "project W5 domain matrix synthetic_domain_count must be 7")
-    _require(domain_matrix.get("all_domains_have_scenario_family") is True, "project W5 domain matrix must cover every domain")
+    _require(domain_matrix.get("phase_name") == IF08_W5_PREFLIGHT_PHASE, "project W5 oracle readiness contract phase_name mismatch")
+    _require(domain_matrix.get("repaired_blocker_id") == "sirene_conditional_or_deferred_with_reason", "project W5 oracle readiness contract repaired_blocker_id mismatch")
+    _require(domain_matrix.get("sirene_oracle_readiness_created") is True, "project W5 oracle readiness contract must create readiness")
+    _require(domain_matrix.get("sirene_oracle_mode") == "synthetic_transcript_only", "project W5 oracle readiness contract sirene_oracle_mode mismatch")
 
     bot_matrix = _load_json(IF08_W5_PREFLIGHT_BOT_MATRIX_PATH)
-    _require(bot_matrix.get("eligible_executor_bot_count") == 13, "project W5 bot matrix eligible_executor_bot_count must be 13")
-    _require(bot_matrix.get("conditional_or_deferred_bot_count") == 1, "project W5 bot matrix conditional_or_deferred_bot_count must be 1")
-    _require(bot_matrix.get("minos_excluded_from_executor_list") is True, "project W5 bot matrix must exclude Minos")
-    _require(bot_matrix.get("all_eligible_bots_mapped_or_deferred") is True, "project W5 bot matrix must map or defer every eligible bot")
+    _require(bot_matrix.get("phase_name") == IF08_W5_PREFLIGHT_PHASE, "project W5 synthetic transcript matrix phase_name mismatch")
+    _require(bot_matrix.get("sirene_oracle_mode") == "synthetic_transcript_only", "project W5 synthetic transcript matrix sirene_oracle_mode mismatch")
+    _require(bot_matrix.get("synthetic_transcript_fixture_count") == 6, "project W5 synthetic transcript matrix fixture count must be 6")
+    _require(len(bot_matrix.get("rows", [])) == 6, "project W5 synthetic transcript matrix rows must be 6")
 
     coverage = _load_json(IF08_W5_PREFLIGHT_COVERAGE_MATRIX_PATH)
     _require(coverage.get("critical_coverage_cells_total") == 12, "project W5 coverage matrix total mismatch")
-    _require(coverage.get("critical_coverage_cells_ready") == 11, "project W5 coverage matrix ready mismatch")
-    _require(coverage.get("readiness_coverage") == 0.916667, "project W5 coverage matrix readiness mismatch")
-    deferred_rows = [row for row in coverage.get("critical_coverage_cells", []) if row.get("coverage_status") != "ready"]
-    _require(len(deferred_rows) == 1, "project W5 coverage matrix must contain exactly one deferred cell")
-    _require(deferred_rows[0].get("primary_bot") == "Sirene", "project W5 coverage deferred cell must belong to Sirene")
+    _require(coverage.get("critical_coverage_cells_ready_after") == 12, "project W5 coverage repair matrix ready_after mismatch")
+    _require(coverage.get("readiness_coverage_after") == 1.0, "project W5 coverage repair matrix readiness mismatch")
+    _require(coverage.get("source_critical_cell", {}).get("cell_id") == "W5-CRIT-012", "project W5 coverage repair matrix source cell mismatch")
 
     no_execution = _load_json(IF08_W5_PREFLIGHT_NO_EXECUTION_PATH)
     _require(no_execution.get("status") == IF08_W5_PREFLIGHT_STATUS, "project W5 no_execution status mismatch")
-    _require(no_execution.get("decision") == "blocked", "project W5 no_execution decision mismatch")
+    _require(no_execution.get("decision") == "pass", "project W5 no_execution decision mismatch")
     _require(no_execution.get("w5_execution_performed") is False, "project W5 no_execution must keep execution false")
     _require(no_execution.get("w5_execution_allowed") is False, "project W5 no_execution must keep execution disallowed")
 
     _mirror_contains(
         IF08_W5_PREFLIGHT_REPORT_PATH,
-        "IF-08 W5 Business Chaos Preflight Readiness",
-        "Decision: blocked",
-        "Status: if08_w5_business_chaos_preflight_readiness_blocked",
-        "Critical coverage: 11/12",
-        "Readiness coverage: 0.916667",
-        "sirene_audio_oracle_gap",
-        "repair_if08_w5_business_chaos_preflight_gaps",
+        "IF-08 W5 Business Chaos Preflight Gap Repair",
+        "Decision: pass",
+        "Status: if08_w5_business_chaos_preflight_gap_repair_pass",
+        "Critical coverage: 12/12",
+        "Readiness coverage: 1.0",
+        "W5-CRIT-012",
+        "execute_if08_w5_business_chaos_controlled_execution",
     )
     _mirror_contains(
         IF08_W5_PREFLIGHT_DOC_PATH,
-        "IF-08 W5 Business Chaos Preflight Readiness",
-        "Decision: blocked",
-        "repair_if08_w5_business_chaos_preflight_gaps",
+        "IF-08 W5 Business Chaos Preflight Gap Repair",
+        "decision: pass",
+        "execute_if08_w5_business_chaos_controlled_execution",
     )
 
 
@@ -7085,14 +7105,14 @@ def main() -> None:
 
     _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
     _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
-    _require(state["next_action"]["planning_only"] is True, "next_action.planning_only must be true")
+    _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["w5_preflight_readiness"] is False, "latest_completed_no_execution.w5_preflight_readiness must be false")
-    _require(state["latest_completed_no_execution"]["readiness_coverage"] == 0.916667, "latest_completed_no_execution.readiness_coverage must be 0.916667")
+    _require(state["latest_completed_no_execution"]["w5_preflight_readiness"] is True, "latest_completed_no_execution.w5_preflight_readiness must be true")
+    _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
     _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 12, "latest_completed_no_execution.required_preflight_checks must be 12")
     _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 12, "latest_completed_no_execution.ready_preflight_checks must be 12")
     _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W5_PREFLIGHT_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
@@ -7101,15 +7121,23 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["conditional_or_deferred_bot_count"] == 1, "latest_completed_no_execution.conditional_or_deferred_bot_count must be 1")
     _require(state["latest_completed_no_execution"]["synthetic_domain_count"] == 7, "latest_completed_no_execution.synthetic_domain_count must be 7")
     _require(state["latest_completed_no_execution"]["critical_coverage_cells_total"] == 12, "latest_completed_no_execution.critical_coverage_cells_total must be 12")
-    _require(state["latest_completed_no_execution"]["critical_coverage_cells_ready"] == 11, "latest_completed_no_execution.critical_coverage_cells_ready must be 11")
+    _require(state["latest_completed_no_execution"]["critical_coverage_cells_ready"] == 12, "latest_completed_no_execution.critical_coverage_cells_ready must be 12")
     _require(state["latest_completed_no_execution"]["future_critical_coverage_required"] == 1.0, "latest_completed_no_execution.future_critical_coverage_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "preflight_readiness_only", "latest_completed_no_execution.execution_scope must be preflight_readiness_only")
-    _require(state["latest_completed_no_execution"]["w5_readiness_state"] == "blocked", "latest_completed_no_execution.w5_readiness_state must be blocked")
-    _require(state["latest_completed_no_execution"]["w5_preparation_allowed_next"] is False, "latest_completed_no_execution.w5_preparation_allowed_next must be false")
+    _require(state["latest_completed_no_execution"]["previous_blocked_phase"] == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "latest_completed_no_execution.previous_blocked_phase mismatch")
+    _require(state["latest_completed_no_execution"]["repaired_blocker_id"] == "sirene_conditional_or_deferred_with_reason", "latest_completed_no_execution.repaired_blocker_id mismatch")
+    _require(state["latest_completed_no_execution"]["repaired_critical_cell"] == "W5-CRIT-012", "latest_completed_no_execution.repaired_critical_cell mismatch")
+    _require(state["latest_completed_no_execution"]["sirene_oracle_mode"] == "synthetic_transcript_only", "latest_completed_no_execution.sirene_oracle_mode mismatch")
+    _require(state["latest_completed_no_execution"]["sirene_w5_readiness_state"] == "ready", "latest_completed_no_execution.sirene_w5_readiness_state mismatch")
+    _require(state["latest_completed_no_execution"]["sirene_oracle_readiness_created"] is True, "latest_completed_no_execution.sirene_oracle_readiness_created must be true")
+    _require(state["latest_completed_no_execution"]["real_audio_capture_allowed"] is False, "latest_completed_no_execution.real_audio_capture_allowed must be false")
+    _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
+    _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
+    _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "preflight_gap_repair_only", "latest_completed_no_execution.execution_scope must be preflight_gap_repair_only")
+    _require(state["latest_completed_no_execution"]["w5_readiness_state"] == "ready_for_controlled_execution_preparation", "latest_completed_no_execution.w5_readiness_state must be ready_for_controlled_execution_preparation")
+    _require(state["latest_completed_no_execution"]["w5_preparation_allowed_next"] is True, "latest_completed_no_execution.w5_preparation_allowed_next must be true")
     _require(state["latest_completed_no_execution"]["w5_execution_performed"] is False, "latest_completed_no_execution.w5_execution_performed must be false")
     _require(state["latest_completed_no_execution"]["w5_execution_allowed"] is False, "latest_completed_no_execution.w5_execution_allowed must be false")
-    _require(state["latest_completed_no_execution"]["blocker_id"] == "sirene_conditional_or_deferred_with_reason", "latest_completed_no_execution.blocker_id mismatch")
-    _require(state["latest_completed_no_execution"]["blocker_reason"] == "Sirene lacks sufficient active oracle/readiness for W5 critical coverage", "latest_completed_no_execution.blocker_reason mismatch")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -7134,11 +7162,11 @@ def main() -> None:
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
     _require(state["history_summary"]["latest_execution_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected latest execution status")
-    _require(state["history_summary"]["previous_execution_phase"] == IF08_W4_POST_SYNC_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF08_W4_POST_SYNC_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF08_W5_PREFLIGHT_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
-    _require(state["last_transition"]["decision"] == "blocked", "unexpected last transition decision")
+    _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
 
     # Authorization: fixture_materialization_allowed remains true; all others false.
     auth = state["authorization"]
@@ -7158,56 +7186,56 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W5 Business Chaos Preflight Readiness`",
-        "latest_completed_status: `if08_w5_business_chaos_preflight_readiness_blocked`",
+        "latest_completed_phase: `IF-08 W5 Business Chaos Preflight Gap Repair`",
+        "latest_completed_status: `if08_w5_business_chaos_preflight_gap_repair_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_BUSINESS_CHAOS_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_BUSINESS_CHAOS_PREFLIGHT_GAP_REPAIR: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c`",
+        "latest_completed_project_commit_sha: `0c9921503418da9883bcc9288178bd3f05e0cd8c`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `repair_if08_w5_business_chaos_preflight_gaps`",
+        "next_recommended_step: `execute_if08_w5_business_chaos_controlled_execution`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W5 Preflight Block Sync Sincronizado",
+        "INF-FULL-07 — IF-08 W5 Gap Repair Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w5_business_chaos_preflight_readiness_blocked",
-        "Este sync ja registra o packet canonico de W5 preflight bloqueada com `w5_preflight_readiness=false`, `w5_readiness_state=blocked`, `w5_preparation_allowed_next=false`, `w5_execution_performed=false`, `w5_execution_allowed=false`, `eligible_executor_bot_count=13`, `conditional_or_deferred_bot_count=1`, `synthetic_domain_count=7`, `critical_coverage_cells_total=12`, `critical_coverage_cells_ready=11` e `readiness_coverage=0.916667`.",
-        "O proximo prompt deve reparar apenas os gaps canonicos da W5 business chaos preflight.",
-        "O proximo passo recomendado neste estado e `repair_if08_w5_business_chaos_preflight_gaps`.",
+        "latest_completed_status: if08_w5_business_chaos_preflight_gap_repair_pass",
+        "Este sync ja registra o packet canonico de W5 gap repair com `previous_blocked_phase=IF-08 W5 Business Chaos Preflight Readiness`, `repaired_blocker_id=sirene_conditional_or_deferred_with_reason`, `repaired_critical_cell=W5-CRIT-012`, `sirene_oracle_mode=synthetic_transcript_only`, `sirene_w5_readiness_state=ready`, `sirene_oracle_readiness_created=true`, `w5_preflight_readiness=true`, `w5_readiness_state=ready_for_controlled_execution_preparation`, `w5_preparation_allowed_next=true`, `w5_execution_performed=false`, `w5_execution_allowed=false`, `critical_coverage_cells_total=12`, `critical_coverage_cells_ready=12` e `readiness_coverage=1.0`.",
+        "O proximo prompt pode preparar apenas `execute_if08_w5_business_chaos_controlled_execution` dentro do escopo sintetico isolado aprovado.",
+        "O proximo passo recomendado neste estado e `execute_if08_w5_business_chaos_controlled_execution`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w5_business_chaos_preflight_readiness_blocked",
-        "Latest completed phase: `IF-08 W5 Business Chaos Preflight Readiness`",
-        "latest_completed_status=if08_w5_business_chaos_preflight_readiness_blocked",
-        "active_context_remote_main_reflects_if08_w5_business_chaos_preflight_readiness=true",
+        "if08_w5_business_chaos_preflight_gap_repair_pass",
+        "Latest completed phase: `IF-08 W5 Business Chaos Preflight Gap Repair`",
+        "latest_completed_status=if08_w5_business_chaos_preflight_gap_repair_pass",
+        "active_context_remote_main_reflects_if08_w5_business_chaos_preflight_gap_repair=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "repair_if08_w5_business_chaos_preflight_gaps",
+        "execute_if08_w5_business_chaos_controlled_execution",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w5_business_chaos_preflight_gap_repair/decision.json",
+        "artifacts/infernus/if08_w5_business_chaos_preflight_gap_repair_decision_2026_06_08.json",
+        "artifacts/infernus/if08_w5_sirene_oracle_readiness_contract_2026_06_08.json",
+        "artifacts/infernus/if08_w5_sirene_synthetic_transcript_fixture_matrix_2026_06_08.json",
+        "artifacts/infernus/if08_w5_critical_coverage_repair_matrix_2026_06_08.json",
+        "artifacts/infernus/if08_w5_gap_repair_no_execution_attestation_2026_06_08.json",
+        "docs/infernus_full/if08_w5_business_chaos_preflight_gap_repair_2026_06_08.md",
         "artifacts/if08_w5_business_chaos_preflight_readiness/decision.json",
         "artifacts/infernus/if08_w5_business_chaos_preflight_readiness_decision_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_domain_matrix_2026_06_08.json",
-        "artifacts/infernus/if08_w5_bot_readiness_matrix_2026_06_08.json",
-        "artifacts/infernus/if08_w5_critical_coverage_matrix_2026_06_08.json",
-        "artifacts/infernus/if08_w5_oracle_readiness_contract_2026_06_08.json",
-        "artifacts/infernus/if08_w5_stop_condition_matrix_2026_06_08.json",
-        "artifacts/infernus/if08_w5_no_execution_attestation_2026_06_08.json",
-        "docs/infernus_full/if08_w5_business_chaos_preflight_readiness_2026_06_08.md",
         "artifacts/if08_w4_post_sync_review/decision.json",
         "artifacts/infernus/if08_w4_post_sync_review_decision_2026_06_08.json",
         "artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/decision.json",
@@ -7242,6 +7270,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "IF-08 W5 Business Chaos Preflight Gap Repair | pass",
+        "if08_w5_business_chaos_preflight_gap_repair_pass",
+        "project_commit_sha: `0c9921503418da9883bcc9288178bd3f05e0cd8c`",
+        "next_recommended_step: `execute_if08_w5_business_chaos_controlled_execution`",
         "IF-08 W5 Business Chaos Preflight Readiness | blocked",
         "if08_w5_business_chaos_preflight_readiness_blocked",
         "project_commit_sha: `108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c`",
@@ -7277,24 +7309,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W5 Business Chaos Preflight Readiness`",
-        "latest_completed_status: `if08_w5_business_chaos_preflight_readiness_blocked`",
+        "latest_completed_phase: `IF-08 W5 Business Chaos Preflight Gap Repair`",
+        "latest_completed_status: `if08_w5_business_chaos_preflight_gap_repair_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_BUSINESS_CHAOS_PREFLIGHT_READINESS: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_BUSINESS_CHAOS_PREFLIGHT_GAP_REPAIR: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W5 Business Chaos Preflight Readiness",
+        "Latest completed phase: IF-08 W5 Business Chaos Preflight Gap Repair",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W5 business chaos preflight readiness is canonical as blocked; this sync records w5_preflight_readiness=false, w5_readiness_state=blocked, w5_preparation_allowed_next=false, eligible_executor_bot_count=13, conditional_or_deferred_bot_count=1, synthetic_domain_count=7, critical_coverage_cells_ready=11 of 12, readiness_coverage=0.916667, blocker_id=sirene_conditional_or_deferred_with_reason, w5_execution_performed=false, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is repair_if08_w5_business_chaos_preflight_gaps.",
+        "W5 business chaos preflight gap repair is canonical as pass; this sync preserves previous_blocked_phase=IF-08 W5 Business Chaos Preflight Readiness, repaired_blocker_id=sirene_conditional_or_deferred_with_reason, repaired_critical_cell=W5-CRIT-012, sirene_oracle_mode=synthetic_transcript_only, sirene_w5_readiness_state=ready, critical_coverage_cells_ready=12 of 12, readiness_coverage=1.0, w5_preflight_readiness=true, w5_readiness_state=ready_for_controlled_execution_preparation, w5_execution_performed=false, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is execute_if08_w5_business_chaos_controlled_execution.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

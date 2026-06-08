@@ -2,19 +2,30 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w5_business_chaos_preflight_readiness_blocked`
-- latest_completed_phase: `IF-08 W5 Business Chaos Preflight Readiness`
-- latest_completed_status: `if08_w5_business_chaos_preflight_readiness_blocked`
+- current_status: `if08_w5_business_chaos_preflight_gap_repair_pass`
+- latest_completed_phase: `IF-08 W5 Business Chaos Preflight Gap Repair`
+- latest_completed_status: `if08_w5_business_chaos_preflight_gap_repair_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w5_business_chaos_preflight_readiness: `true`
+- active_context_remote_main_reflects_if08_w5_business_chaos_preflight_gap_repair: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
+- `artifacts/if08_w5_business_chaos_preflight_gap_repair/decision.json`
+- `artifacts/if08_w5_business_chaos_preflight_gap_repair/summary.json`
+- `artifacts/if08_w5_business_chaos_preflight_gap_repair/report.md`
+- `artifacts/infernus/if08_w5_business_chaos_preflight_gap_repair_decision_2026_06_08.json`
+- `artifacts/infernus/if08_w5_business_chaos_preflight_gap_repair_summary_2026_06_08.json`
+- `artifacts/infernus/if08_w5_business_chaos_preflight_gap_repair_report_2026_06_08.md`
+- `artifacts/infernus/if08_w5_sirene_oracle_readiness_contract_2026_06_08.json`
+- `artifacts/infernus/if08_w5_sirene_synthetic_transcript_fixture_matrix_2026_06_08.json`
+- `artifacts/infernus/if08_w5_critical_coverage_repair_matrix_2026_06_08.json`
+- `artifacts/infernus/if08_w5_gap_repair_no_execution_attestation_2026_06_08.json`
+- `docs/infernus_full/if08_w5_business_chaos_preflight_gap_repair_2026_06_08.md`
 - `artifacts/if08_w5_business_chaos_preflight_readiness/decision.json`
 - `artifacts/if08_w5_business_chaos_preflight_readiness/summary.json`
 - `artifacts/if08_w5_business_chaos_preflight_readiness/report.md`
@@ -150,4 +161,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The W5 business chaos preflight packet is canonical as blocked; the next canonical step is W5 preflight gap repair only and no real execution surface is authorized.
+- The W5 business chaos preflight gap repair packet is canonical as pass; the next canonical step is W5 controlled execution preparation only and no real execution surface is authorized.
