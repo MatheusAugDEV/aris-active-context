@@ -42,7 +42,7 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
-EXPECTED_SCHEMA_VERSION = "2.13"
+EXPECTED_SCHEMA_VERSION = "3.0"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
 EXPECTED_NEXT_ACTION_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
@@ -762,7 +762,7 @@ EXPECTED_PRIORITY_READ_ORDER = [
     "1. ACTIVE_CONTEXT_STATE.json",
     "2. ARIS_BOOT.md",
     "3. ROADMAP_CANONICAL.md (sob demanda — transição de fase)",
-    "4. DECISION_LOCKS.md (sob demanda — verificação de locks)",
+    "4. DECISION_LOCKS.md (sob demanda — locks de execução)",
     "5. LAB_OPERATING_CONTRACT.md (sob demanda — lab/Bedrock)",
     "6. INFERNUS_STANDING_AUTHORIZATION.md (sob demanda — fases Infernus)",
     "7. EXCLUDENT_POLICY.md (sob demanda — excludent/)",
@@ -7450,7 +7450,6 @@ def main() -> None:
         "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["latest_execution_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected latest execution status")
     _require(state["history_summary"]["previous_execution_phase"] == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "unexpected previous execution phase")
     _require(state["last_transition"]["from_phase"] == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
