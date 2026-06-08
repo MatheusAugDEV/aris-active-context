@@ -1,3 +1,48 @@
+## IF08_W4 Controlled Execution Lock
+
+- Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`
+- status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`
+- latest_completed_status=if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass
+- active_context_remote_main_reflects_if08_w4_controlled_execution=true
+- permanent_active_update_rule_installed=true
+- project_commit_sha=c65888a2f587c35b4e38b16b50b917233bac8fa3
+- project_ci_state=CI_GREEN_CONFIRMED
+- next_recommended_step=post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution
+- w4_preflight_readiness=true
+- w4_execution_performed=true
+- w4_execution_allowed=false
+- future_rhr_required=1.0
+- future_ddr_required=1.0
+- future_cer_required=1.0
+- readiness_coverage=1.0
+- synthetic_attack_cases_total=14
+- rollback_honesty_checks=6/6
+- duplicate_detection_checks=5/5
+- cost_enforcement_checks=3/3
+- rhr_observed=1.0
+- ddr_observed=1.0
+- cer_observed=1.0
+- runtime_executed=false
+- real_apply_executed=false
+- product_bedrock_real_apply_secrets_executed=false
+- mcp_activated=false
+- rag_ingestion_executed=false
+- memory_write_executed=false
+- socket_opened=false
+- shell_executed=false
+- filesystem_escape_performed=false
+- external_network_used_except_github_governance=false
+- dependency_or_package_manager_used=false
+- real_cost_spent=false
+- real_quota_consumed=false
+- Canonical W4 controlled execution is verified; this sync allows only the future W4 post-sync review and does not authorize any real execution surface.
+- IF-08 real execution = false
+- future waves real execution = false
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+
 ## IF08_W4 Preflight Readiness Lock
 
 - Latest completed phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness`
