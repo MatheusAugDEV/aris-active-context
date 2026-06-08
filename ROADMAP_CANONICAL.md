@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W5 Business Chaos Controlled Execution
+Latest completed phase: IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-W5 business chaos controlled execution is canonical as pass; this sync preserves execution_scope=synthetic_isolated_lab_only, w5_preflight_readiness_verified=true, w5_gap_repair_verified=true, executor_bot_count=14, synthetic_domain_count=7, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, w5_execution_performed=true, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is post_sync_review_if08_w5_business_chaos_controlled_execution.
+W5 business chaos controlled execution remains verified as the previous canonical execution packet, and the W5 post-sync review is canonical as pass; this sync preserves previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution, w5_canonical_sync_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, execution_scope=post_sync_review_only, w6_readiness_state=ready_for_preparation, w6_execution_performed=false, w6_execution_allowed=false, future_ttr_required=0, future_har_required=1.0, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if08_w6_final_audit_preflight_readiness.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

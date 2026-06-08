@@ -34,22 +34,22 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "OPERATOR_PREFERENCES.md"
 
-EXPECTED_PHASE = "IF-08 W5 Business Chaos Controlled Execution"
+EXPECTED_PHASE = "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w5_business_chaos_controlled_execution_pass"
+EXPECTED_CURRENT_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
 EXPECTED_SCHEMA_VERSION = "2.13"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w5_business_chaos_controlled_execution_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w5_business_chaos_controlled_execution_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "5eb32158153bc5ff3db87d33c3c625f5b0df80fa"
+EXPECTED_NEXT_ACTION_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "e9dfae63206523f26fce5df907945952c7351ad5"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "post_sync_review_if08_w5_business_chaos_controlled_execution"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27165976764"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if08_w6_final_audit_preflight_readiness"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27167943439"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -432,6 +432,26 @@ IF08_W5_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w5_business_chaos_controlle
 IF08_W5_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W5_CONTROLLED_ROOT / "decision.json"
 IF08_W5_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W5_CONTROLLED_ROOT / "summary.json"
 IF08_W5_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W5_CONTROLLED_ROOT / "report.md"
+IF08_W5_POST_SYNC_PHASE = "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision"
+IF08_W5_POST_SYNC_STATUS = "if08_w5_post_sync_review_w6_readiness_pass"
+IF08_W5_POST_SYNC_PROJECT_SHA = "e9dfae63206523f26fce5df907945952c7351ad5"
+IF08_W5_POST_SYNC_CI_STATE = "CI_GREEN_CONFIRMED"
+IF08_W5_POST_SYNC_NEXT_RECOMMENDED_STEP = "prepare_if08_w6_final_audit_preflight_readiness"
+IF08_W5_POST_SYNC_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27167943439"
+IF08_W5_POST_SYNC_SOURCE_PROJECT_SHA = "5eb32158153bc5ff3db87d33c3c625f5b0df80fa"
+IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA = "a89f90c691965a104c99964f3b256d08758605af"
+IF08_W5_POST_SYNC_PREVIOUS_PHASE = "IF-08 W5 Business Chaos Controlled Execution"
+IF08_W5_POST_SYNC_PREVIOUS_STATUS = "if08_w5_business_chaos_controlled_execution_pass"
+IF08_W5_POST_SYNC_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_post_sync_review_decision_2026_06_08.json")
+IF08_W5_POST_SYNC_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_post_sync_review_summary_2026_06_08.json")
+IF08_W5_POST_SYNC_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_post_sync_review_report_2026_06_08.md")
+IF08_W6_READINESS_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w6_final_audit_readiness_matrix_2026_06_08.json")
+IF08_W5_POST_SYNC_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w5_post_sync_no_execution_attestation_2026_06_08.json")
+IF08_W5_POST_SYNC_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w5_post_sync_review_2026_06_08.md")
+IF08_W5_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w5_post_sync_review"
+IF08_W5_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W5_POST_SYNC_ROOT / "decision.json"
+IF08_W5_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W5_POST_SYNC_ROOT / "summary.json"
+IF08_W5_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W5_POST_SYNC_ROOT / "report.md"
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -6982,6 +7002,293 @@ def _check_if08_w5_business_chaos_controlled_execution_artifacts(state: dict[str
     )
 
 
+def _check_if08_w5_post_sync_review_artifacts(state: dict[str, Any]) -> None:
+    _require(IF08_W5_POST_SYNC_ACTIVE_DECISION_PATH.exists(), "missing active IF08 W5 post-sync decision artifact")
+    _require(IF08_W5_POST_SYNC_ACTIVE_SUMMARY_PATH.exists(), "missing active IF08 W5 post-sync summary artifact")
+    _require(IF08_W5_POST_SYNC_ACTIVE_REPORT_PATH.exists(), "missing active IF08 W5 post-sync report artifact")
+
+    active_decision = _load_json(IF08_W5_POST_SYNC_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "active W5 post-sync decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active W5 post-sync decision must be pass")
+    _require(active_decision.get("status") == IF08_W5_POST_SYNC_STATUS, "active W5 post-sync decision status mismatch")
+    _require(active_decision.get("project_commit_sha") == IF08_W5_POST_SYNC_PROJECT_SHA, "active W5 post-sync decision project sha mismatch")
+    _require(active_decision.get("project_ci_state") == IF08_W5_POST_SYNC_CI_STATE, "active W5 post-sync decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF08_W5_POST_SYNC_PROJECT_CI_RUN_URL, "active W5 post-sync decision ci url mismatch")
+    _require(active_decision.get("project_origin_main_sha_verified") is True, "active W5 post-sync decision must verify origin/main sha")
+    _require(active_decision.get("project_ci_green_confirmed") is True, "active W5 post-sync decision must confirm green CI")
+    _require(active_decision.get("active_context_pre_sync_phase_id") == EXPECTED_PHASE_ID, "active W5 post-sync decision pre-sync phase id mismatch")
+    _require(active_decision.get("active_context_pre_sync_current_status") == IF08_W5_CONTROLLED_STATUS, "active W5 post-sync decision pre-sync status mismatch")
+    _require(active_decision.get("active_context_pre_sync_sha") == IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA, "active W5 post-sync decision pre-sync sha mismatch")
+    _require(active_decision.get("active_context_sync_applied") is True, "active W5 post-sync decision must mark sync applied")
+    _require(active_decision.get("active_context_remote_main_reflects_if08_w5_post_sync_review") is True, "active W5 post-sync decision must confirm remote reflection")
+    _require(active_decision.get("permanent_active_update_rule_installed") is True, "active W5 post-sync decision must preserve permanent rule")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF08_W5_POST_SYNC_PHASE, "active W5 post-sync decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF08_W5_POST_SYNC_STATUS, "active W5 post-sync decision latest status mismatch")
+    _require(active_decision.get("previous_phase_verified") == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "active W5 post-sync decision previous phase mismatch")
+    _require(active_decision.get("previous_status_verified") == IF08_W5_POST_SYNC_PREVIOUS_STATUS, "active W5 post-sync decision previous status mismatch")
+    _require(active_decision.get("source_project_sha_verified_by_packet") == IF08_W5_POST_SYNC_SOURCE_PROJECT_SHA, "active W5 post-sync decision source project sha mismatch")
+    _require(active_decision.get("source_active_context_sha_verified_by_packet") == IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA, "active W5 post-sync decision source active-context sha mismatch")
+    _require(active_decision.get("w5_canonical_sync_verified") is True, "active W5 post-sync decision must verify W5 canonical sync")
+    _require(active_decision.get("w5_metrics_verified") is True, "active W5 post-sync decision must verify W5 metrics")
+    _require(active_decision.get("w5_artifacts_complete") is True, "active W5 post-sync decision must verify W5 artifacts")
+    _require(active_decision.get("w5_safety_attestation_verified") is True, "active W5 post-sync decision must verify W5 safety attestation")
+    _require(active_decision.get("critical_coverage_cells_total") == 12, "active W5 post-sync decision critical_coverage_cells_total must be 12")
+    _require(active_decision.get("critical_coverage_cells_passed") == 12, "active W5 post-sync decision critical_coverage_cells_passed must be 12")
+    _require(active_decision.get("critical_coverage_completion") == 1.0, "active W5 post-sync decision critical_coverage_completion must be 1.0")
+    _require(active_decision.get("business_scenarios_total") == 14, "active W5 post-sync decision business_scenarios_total must be 14")
+    _require(active_decision.get("business_scenarios_passed") == 14, "active W5 post-sync decision business_scenarios_passed must be 14")
+    _require(active_decision.get("business_scenarios_blocked_or_detected") == 14, "active W5 post-sync decision business_scenarios_blocked_or_detected must be 14")
+    _require(active_decision.get("sirene_oracle_mode") == "synthetic_transcript_only", "active W5 post-sync decision sirene_oracle_mode mismatch")
+    _require(active_decision.get("execution_scope") == "post_sync_review_only", "active W5 post-sync decision execution_scope mismatch")
+    _require(active_decision.get("w6_readiness_state") == "ready_for_preparation", "active W5 post-sync decision readiness state mismatch")
+    _require(active_decision.get("w6_preparation_allowed_next") is True, "active W5 post-sync decision must allow W6 preparation")
+    _require(active_decision.get("w6_execution_performed") is False, "active W5 post-sync decision must keep W6 execution false")
+    _require(active_decision.get("w6_execution_allowed") is False, "active W5 post-sync decision must keep W6 execution disallowed")
+    _require(active_decision.get("future_ttr_required") == 0, "active W5 post-sync decision future_ttr_required must be 0")
+    _require(active_decision.get("future_har_required") == 1.0, "active W5 post-sync decision future_har_required must be 1.0")
+    _require(active_decision.get("minos_mechanical_required") is True, "active W5 post-sync decision minos_mechanical_required must be true")
+    _require(active_decision.get("minos_semantic_required") is True, "active W5 post-sync decision minos_semantic_required must be true")
+    _require(active_decision.get("anti_theater_review_required") is True, "active W5 post-sync decision anti_theater_review_required must be true")
+    _require(active_decision.get("next_recommended_step") == IF08_W5_POST_SYNC_NEXT_RECOMMENDED_STEP, "active W5 post-sync decision next step mismatch")
+    for key in (
+        "real_audio_capture_allowed",
+        "real_stt_tts_allowed",
+        "microphone_access_allowed",
+        "voice_clone_or_impersonation_allowed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(active_decision.get(key) is False, f"active W5 post-sync decision {key} must be false")
+
+    active_summary = _load_json(IF08_W5_POST_SYNC_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "active W5 post-sync summary phase_id mismatch")
+    _require(active_summary.get("decision") == "pass", "active W5 post-sync summary must be pass")
+    _require(active_summary.get("status") == IF08_W5_POST_SYNC_STATUS, "active W5 post-sync summary status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF08_W5_POST_SYNC_PROJECT_SHA, "active W5 post-sync summary project sha mismatch")
+    _require(active_summary.get("project_ci_state") == IF08_W5_POST_SYNC_CI_STATE, "active W5 post-sync summary ci state mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF08_W5_POST_SYNC_PROJECT_CI_RUN_URL, "active W5 post-sync summary ci url mismatch")
+    _require(active_summary.get("active_context_remote_main_reflects_if08_w5_post_sync_review") is True, "active W5 post-sync summary must confirm remote reflection")
+    _require(active_summary.get("previous_phase_verified") == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "active W5 post-sync summary previous phase mismatch")
+    _require(active_summary.get("previous_status_verified") == IF08_W5_POST_SYNC_PREVIOUS_STATUS, "active W5 post-sync summary previous status mismatch")
+    _require(active_summary.get("w5_canonical_sync_verified") is True, "active W5 post-sync summary must verify W5 canonical sync")
+    _require(active_summary.get("w5_metrics_verified") is True, "active W5 post-sync summary must verify W5 metrics")
+    _require(active_summary.get("w5_artifacts_complete") is True, "active W5 post-sync summary must verify W5 artifacts")
+    _require(active_summary.get("w5_safety_attestation_verified") is True, "active W5 post-sync summary must verify W5 safety attestation")
+    _require(active_summary.get("critical_coverage_cells_total") == 12, "active W5 post-sync summary critical_coverage_cells_total must be 12")
+    _require(active_summary.get("critical_coverage_cells_passed") == 12, "active W5 post-sync summary critical_coverage_cells_passed must be 12")
+    _require(active_summary.get("critical_coverage_completion") == 1.0, "active W5 post-sync summary critical_coverage_completion must be 1.0")
+    _require(active_summary.get("business_scenarios_total") == 14, "active W5 post-sync summary business_scenarios_total must be 14")
+    _require(active_summary.get("business_scenarios_blocked_or_detected") == 14, "active W5 post-sync summary business_scenarios_blocked_or_detected must be 14")
+    _require(active_summary.get("sirene_oracle_mode") == "synthetic_transcript_only", "active W5 post-sync summary sirene_oracle_mode mismatch")
+    _require(active_summary.get("execution_scope") == "post_sync_review_only", "active W5 post-sync summary execution_scope mismatch")
+    _require(active_summary.get("w6_readiness_state") == "ready_for_preparation", "active W5 post-sync summary readiness state mismatch")
+    _require(active_summary.get("w6_preparation_allowed_next") is True, "active W5 post-sync summary must allow W6 preparation")
+    _require(active_summary.get("w6_execution_performed") is False, "active W5 post-sync summary must keep W6 execution false")
+    _require(active_summary.get("w6_execution_allowed") is False, "active W5 post-sync summary must keep W6 execution disallowed")
+    _require(active_summary.get("future_ttr_required") == 0, "active W5 post-sync summary future_ttr_required must be 0")
+    _require(active_summary.get("future_har_required") == 1.0, "active W5 post-sync summary future_har_required must be 1.0")
+    _require(active_summary.get("minos_mechanical_required") is True, "active W5 post-sync summary minos_mechanical_required must be true")
+    _require(active_summary.get("minos_semantic_required") is True, "active W5 post-sync summary minos_semantic_required must be true")
+    _require(active_summary.get("anti_theater_review_required") is True, "active W5 post-sync summary anti_theater_review_required must be true")
+    _require(active_summary.get("next_recommended_step") == IF08_W5_POST_SYNC_NEXT_RECOMMENDED_STEP, "active W5 post-sync summary next step mismatch")
+
+    _mirror_contains(
+        IF08_W5_POST_SYNC_ACTIVE_REPORT_PATH,
+        "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision",
+        IF08_W5_POST_SYNC_PROJECT_SHA,
+        "CI_GREEN_CONFIRMED",
+        "active_context_remote_main_reflects_if08_w5_post_sync_review: `true`",
+        "previous_phase_verified: `IF-08 W5 Business Chaos Controlled Execution`",
+        "w5_canonical_sync_verified: `true`",
+        "critical_coverage_cells_passed: `12`",
+        "business_scenarios_blocked_or_detected: `14`",
+        "execution_scope: `post_sync_review_only`",
+        "w6_readiness_state: `ready_for_preparation`",
+        "future_ttr_required: `0`",
+        "future_har_required: `1.0`",
+        "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
+    )
+
+    external_project_paths = (
+        IF08_W5_POST_SYNC_DECISION_PATH,
+        IF08_W5_POST_SYNC_SUMMARY_PATH,
+        IF08_W5_POST_SYNC_REPORT_PATH,
+        IF08_W6_READINESS_MATRIX_PATH,
+        IF08_W5_POST_SYNC_NO_EXECUTION_PATH,
+        IF08_W5_POST_SYNC_DOC_PATH,
+    )
+    if not all(path.exists() for path in external_project_paths):
+        return
+
+    decision = _load_json(IF08_W5_POST_SYNC_DECISION_PATH)
+    _require(decision.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "project W5 post-sync decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "project W5 post-sync decision must be pass")
+    _require(decision.get("status") == IF08_W5_POST_SYNC_STATUS, "project W5 post-sync decision status mismatch")
+    _require(decision.get("source_active_context_sha") == IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA, "project W5 post-sync decision source active-context sha mismatch")
+    _require(decision.get("source_project_sha") == IF08_W5_POST_SYNC_SOURCE_PROJECT_SHA, "project W5 post-sync decision source project sha mismatch")
+    _require(decision.get("previous_phase_verified") == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "project W5 post-sync decision previous phase mismatch")
+    _require(decision.get("previous_status_verified") == IF08_W5_POST_SYNC_PREVIOUS_STATUS, "project W5 post-sync decision previous status mismatch")
+    _require(decision.get("w5_canonical_sync_verified") is True, "project W5 post-sync decision must verify W5 canonical sync")
+    _require(decision.get("w5_metrics_verified") is True, "project W5 post-sync decision must verify W5 metrics")
+    _require(decision.get("w5_artifacts_complete") is True, "project W5 post-sync decision must verify W5 artifacts")
+    _require(decision.get("w5_safety_attestation_verified") is True, "project W5 post-sync decision must verify W5 safety attestation")
+    _require(decision.get("critical_coverage_cells_total") == 12, "project W5 post-sync decision critical_coverage_cells_total must be 12")
+    _require(decision.get("critical_coverage_cells_passed") == 12, "project W5 post-sync decision critical_coverage_cells_passed must be 12")
+    _require(decision.get("critical_coverage_completion") == 1.0, "project W5 post-sync decision critical_coverage_completion must be 1.0")
+    _require(decision.get("business_scenarios_total") == 14, "project W5 post-sync decision business_scenarios_total must be 14")
+    _require(decision.get("business_scenarios_blocked_or_detected") == 14, "project W5 post-sync decision business_scenarios_blocked_or_detected must be 14")
+    _require(decision.get("sirene_oracle_mode") == "synthetic_transcript_only", "project W5 post-sync decision sirene_oracle_mode mismatch")
+    _require(decision.get("w6_readiness_state") == "ready_for_preparation", "project W5 post-sync decision readiness state mismatch")
+    _require(decision.get("w6_preparation_allowed_next") is True, "project W5 post-sync decision must allow W6 preparation")
+    _require(decision.get("w6_execution_performed") is False, "project W5 post-sync decision must keep W6 execution false")
+    _require(decision.get("w6_execution_allowed") is False, "project W5 post-sync decision must keep W6 execution disallowed")
+    _require(decision.get("future_ttr_required") == 0, "project W5 post-sync decision future_ttr_required must be 0")
+    _require(decision.get("future_har_required") == 1.0, "project W5 post-sync decision future_har_required must be 1.0")
+    _require(decision.get("minos_mechanical_required") is True, "project W5 post-sync decision minos_mechanical_required must be true")
+    _require(decision.get("minos_semantic_required") is True, "project W5 post-sync decision minos_semantic_required must be true")
+    _require(decision.get("anti_theater_review_required") is True, "project W5 post-sync decision anti_theater_review_required must be true")
+    _require(decision.get("execution_scope") == "post_sync_review_only", "project W5 post-sync decision execution_scope mismatch")
+    _require(decision.get("next_recommended_step") == IF08_W5_POST_SYNC_NEXT_RECOMMENDED_STEP, "project W5 post-sync decision next step mismatch")
+    _require(decision.get("blocking_findings") == [], "project W5 post-sync decision blocking_findings must be empty")
+    _require(decision.get("invalid_findings") == [], "project W5 post-sync decision invalid_findings must be empty")
+    for key in (
+        "real_audio_capture_allowed",
+        "real_stt_tts_allowed",
+        "microphone_access_allowed",
+        "voice_clone_or_impersonation_allowed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(decision.get(key) is False, f"project W5 post-sync decision {key} must be false")
+
+    summary = _load_json(IF08_W5_POST_SYNC_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "project W5 post-sync summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "project W5 post-sync summary must be pass")
+    _require(summary.get("status") == IF08_W5_POST_SYNC_STATUS, "project W5 post-sync summary status mismatch")
+    _require(summary.get("source_project_sha") == IF08_W5_POST_SYNC_SOURCE_PROJECT_SHA, "project W5 post-sync summary source project sha mismatch")
+    _require(summary.get("source_active_context_sha") == IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA, "project W5 post-sync summary source active-context sha mismatch")
+    _require(summary.get("w5_canonical_sync_verified") is True, "project W5 post-sync summary must verify W5 canonical sync")
+    _require(summary.get("w5_metrics_verified") is True, "project W5 post-sync summary must verify W5 metrics")
+    _require(summary.get("w5_artifacts_complete") is True, "project W5 post-sync summary must verify W5 artifacts")
+    _require(summary.get("w5_safety_attestation_verified") is True, "project W5 post-sync summary must verify W5 safety attestation")
+    _require(summary.get("critical_coverage_cells_total") == 12, "project W5 post-sync summary critical_coverage_cells_total must be 12")
+    _require(summary.get("critical_coverage_cells_passed") == 12, "project W5 post-sync summary critical_coverage_cells_passed must be 12")
+    _require(summary.get("critical_coverage_completion") == 1.0, "project W5 post-sync summary critical_coverage_completion must be 1.0")
+    _require(summary.get("business_scenarios_total") == 14, "project W5 post-sync summary business_scenarios_total must be 14")
+    _require(summary.get("business_scenarios_blocked_or_detected") == 14, "project W5 post-sync summary business_scenarios_blocked_or_detected must be 14")
+    _require(summary.get("sirene_oracle_mode") == "synthetic_transcript_only", "project W5 post-sync summary sirene_oracle_mode mismatch")
+    _require(summary.get("w6_readiness_state") == "ready_for_preparation", "project W5 post-sync summary readiness state mismatch")
+    _require(summary.get("w6_preparation_allowed_next") is True, "project W5 post-sync summary must allow W6 preparation")
+    _require(summary.get("w6_execution_performed") is False, "project W5 post-sync summary must keep W6 execution false")
+    _require(summary.get("w6_execution_allowed") is False, "project W5 post-sync summary must keep W6 execution disallowed")
+    _require(summary.get("future_ttr_required") == 0, "project W5 post-sync summary future_ttr_required must be 0")
+    _require(summary.get("future_har_required") == 1.0, "project W5 post-sync summary future_har_required must be 1.0")
+    _require(summary.get("minos_mechanical_required") is True, "project W5 post-sync summary minos_mechanical_required must be true")
+    _require(summary.get("minos_semantic_required") is True, "project W5 post-sync summary minos_semantic_required must be true")
+    _require(summary.get("anti_theater_review_required") is True, "project W5 post-sync summary anti_theater_review_required must be true")
+    _require(summary.get("execution_scope") == "post_sync_review_only", "project W5 post-sync summary execution_scope mismatch")
+    _require(summary.get("next_recommended_step") == IF08_W5_POST_SYNC_NEXT_RECOMMENDED_STEP, "project W5 post-sync summary next step mismatch")
+
+    readiness = _load_json(IF08_W6_READINESS_MATRIX_PATH)
+    _require(readiness.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "project W6 readiness phase_id mismatch")
+    _require(readiness.get("wave_id") == "W6", "project W6 readiness wave_id mismatch")
+    _require(readiness.get("wave_name") == "Final audit", "project W6 readiness wave_name mismatch")
+    _require(readiness.get("wave_objective") == "anti-theater final", "project W6 readiness objective mismatch")
+    _require(readiness.get("readiness_state") == "ready_for_preparation", "project W6 readiness state mismatch")
+    _require(readiness.get("w6_preparation_allowed_next") is True, "project W6 readiness must allow preparation")
+    _require(readiness.get("w6_execution_performed") is False, "project W6 readiness must keep execution false")
+    _require(readiness.get("w6_execution_allowed") is False, "project W6 readiness must keep execution disallowed")
+    _require(readiness.get("future_ttr_required") == 0, "project W6 readiness future_ttr_required must be 0")
+    _require(readiness.get("future_har_required") == 1.0, "project W6 readiness future_har_required must be 1.0")
+    _require(readiness.get("minos_mechanical_required") is True, "project W6 readiness minos_mechanical_required must be true")
+    _require(readiness.get("minos_semantic_required") is True, "project W6 readiness minos_semantic_required must be true")
+    _require(readiness.get("anti_theater_review_required") is True, "project W6 readiness anti_theater_review_required must be true")
+    checks = {item.get("check_id"): item.get("passed") for item in readiness.get("checks", [])}
+    for key in (
+        "w5_controlled_execution_pass_canonical",
+        "w5_active_context_sync_verified",
+        "w5_artifacts_exist_and_parse",
+        "w5_safety_locks_preserved",
+        "w5_coverage_complete",
+        "w5_evidence_units_complete",
+        "w5_stop_conditions_respected",
+        "minos_mechanical_contract_or_requirement_declared",
+        "minos_semantic_contract_or_requirement_declared",
+        "future_ttr_and_har_declared",
+        "w6_execution_flags_false",
+    ):
+        _require(checks.get(key) is True, f"project W6 readiness check {key} must be true")
+
+    no_execution = _load_json(IF08_W5_POST_SYNC_NO_EXECUTION_PATH)
+    _require(no_execution.get("phase_id") == "IF-08-W5-POST-SYNC-REVIEW", "project W5 post-sync no_execution phase_id mismatch")
+    _require(no_execution.get("decision") == "pass", "project W5 post-sync no_execution must be pass")
+    _require(no_execution.get("status") == IF08_W5_POST_SYNC_STATUS, "project W5 post-sync no_execution status mismatch")
+    _require(no_execution.get("execution_scope") == "post_sync_review_only", "project W5 post-sync no_execution execution_scope mismatch")
+    _require(no_execution.get("w6_execution_performed") is False, "project W5 post-sync no_execution must keep W6 execution false")
+    _require(no_execution.get("w6_execution_allowed") is False, "project W5 post-sync no_execution must keep W6 execution disallowed")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+    ):
+        _require(no_execution.get(key) is False, f"project W5 post-sync no_execution.{key} must be false")
+
+    _mirror_contains(
+        IF08_W5_POST_SYNC_REPORT_PATH,
+        "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision",
+        "Decision: pass",
+        "Status: if08_w5_post_sync_review_w6_readiness_pass",
+        "source_active_context_sha: `a89f90c691965a104c99964f3b256d08758605af`",
+        "source_project_sha: `5eb32158153bc5ff3db87d33c3c625f5b0df80fa`",
+        "W5 canonical sync verified: `true`",
+        "Critical coverage: `12/12`",
+        "Business scenarios blocked or detected: `14`",
+        "W6 readiness state: `ready_for_preparation`",
+        "future_ttr_required: `0`",
+        "future_har_required: `1.0`",
+        "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
+    )
+    _mirror_contains(
+        IF08_W5_POST_SYNC_DOC_PATH,
+        "IF-08 W5 Post-Sync Review",
+        "decision: pass",
+        "w6_readiness_state: ready_for_preparation",
+        "next_recommended_step: prepare_if08_w6_final_audit_preflight_readiness",
+    )
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -7085,6 +7392,8 @@ def main() -> None:
     _check_if08_w4_post_sync_review_artifacts(state)
     # IF08 W5 business chaos controlled execution sync checks
     _check_if08_w5_business_chaos_controlled_execution_artifacts(state)
+    # IF08 W5 post-sync review and W6 readiness checks
+    _check_if08_w5_post_sync_review_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -7118,23 +7427,25 @@ def main() -> None:
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
-    _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
-    _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["w5_preflight_readiness"] is True, "latest_completed_no_execution.w5_preflight_readiness must be true")
-    _require(state["latest_completed_no_execution"]["w5_gap_repair_verified"] is True, "latest_completed_no_execution.w5_gap_repair_verified must be true")
+    _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["w5_canonical_sync_verified"] is True, "latest_completed_no_execution.w5_canonical_sync_verified must be true")
+    _require(state["latest_completed_no_execution"]["w5_metrics_verified"] is True, "latest_completed_no_execution.w5_metrics_verified must be true")
+    _require(state["latest_completed_no_execution"]["w5_artifacts_complete"] is True, "latest_completed_no_execution.w5_artifacts_complete must be true")
+    _require(state["latest_completed_no_execution"]["w5_safety_attestation_verified"] is True, "latest_completed_no_execution.w5_safety_attestation_verified must be true")
     _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
     _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 12, "latest_completed_no_execution.required_preflight_checks must be 12")
     _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 12, "latest_completed_no_execution.ready_preflight_checks must be 12")
-    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W5_CONTROLLED_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF08_W5_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W5_POST_SYNC_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF08_W5_POST_SYNC_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
     _require(state["latest_completed_no_execution"]["executor_bot_count"] == 14, "latest_completed_no_execution.executor_bot_count must be 14")
     _require(state["latest_completed_no_execution"]["synthetic_domain_count"] == 7, "latest_completed_no_execution.synthetic_domain_count must be 7")
     _require(state["latest_completed_no_execution"]["critical_coverage_cells_total"] == 12, "latest_completed_no_execution.critical_coverage_cells_total must be 12")
     _require(state["latest_completed_no_execution"]["critical_coverage_cells_passed"] == 12, "latest_completed_no_execution.critical_coverage_cells_passed must be 12")
     _require(state["latest_completed_no_execution"]["critical_coverage_completion"] == 1.0, "latest_completed_no_execution.critical_coverage_completion must be 1.0")
     _require(state["latest_completed_no_execution"]["future_critical_coverage_required"] == 1.0, "latest_completed_no_execution.future_critical_coverage_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["previous_phase_verified"] == IF08_W5_CONTROLLED_PREVIOUS_PHASE, "latest_completed_no_execution.previous_phase_verified mismatch")
-    _require(state["latest_completed_no_execution"]["previous_status_verified"] == IF08_W5_CONTROLLED_PREVIOUS_STATUS, "latest_completed_no_execution.previous_status_verified mismatch")
+    _require(state["latest_completed_no_execution"]["previous_phase_verified"] == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "latest_completed_no_execution.previous_phase_verified mismatch")
+    _require(state["latest_completed_no_execution"]["previous_status_verified"] == IF08_W5_POST_SYNC_PREVIOUS_STATUS, "latest_completed_no_execution.previous_status_verified mismatch")
     _require(state["latest_completed_no_execution"]["business_scenarios_total"] == 14, "latest_completed_no_execution.business_scenarios_total must be 14")
     _require(state["latest_completed_no_execution"]["business_scenarios_passed"] == 14, "latest_completed_no_execution.business_scenarios_passed must be 14")
     _require(state["latest_completed_no_execution"]["business_scenarios_blocked_or_detected"] == 14, "latest_completed_no_execution.business_scenarios_blocked_or_detected must be 14")
@@ -7143,11 +7454,16 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
     _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
     _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "synthetic_isolated_lab_only", "latest_completed_no_execution.execution_scope must be synthetic_isolated_lab_only")
-    _require(state["latest_completed_no_execution"]["w5_readiness_state"] == "controlled_execution_complete_pending_post_sync_review", "latest_completed_no_execution.w5_readiness_state mismatch")
-    _require(state["latest_completed_no_execution"]["w5_preparation_allowed_next"] is False, "latest_completed_no_execution.w5_preparation_allowed_next must be false")
-    _require(state["latest_completed_no_execution"]["w5_execution_performed"] is True, "latest_completed_no_execution.w5_execution_performed must be true")
-    _require(state["latest_completed_no_execution"]["w5_execution_allowed"] is False, "latest_completed_no_execution.w5_execution_allowed must be false")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "post_sync_review_only", "latest_completed_no_execution.execution_scope must be post_sync_review_only")
+    _require(state["latest_completed_no_execution"]["w6_readiness_state"] == "ready_for_preparation", "latest_completed_no_execution.w6_readiness_state mismatch")
+    _require(state["latest_completed_no_execution"]["w6_preparation_allowed_next"] is True, "latest_completed_no_execution.w6_preparation_allowed_next must be true")
+    _require(state["latest_completed_no_execution"]["w6_execution_performed"] is False, "latest_completed_no_execution.w6_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["w6_execution_allowed"] is False, "latest_completed_no_execution.w6_execution_allowed must be false")
+    _require(state["latest_completed_no_execution"]["future_ttr_required"] == 0, "latest_completed_no_execution.future_ttr_required must be 0")
+    _require(state["latest_completed_no_execution"]["future_har_required"] == 1.0, "latest_completed_no_execution.future_har_required must be 1.0")
+    _require(state["latest_completed_no_execution"]["minos_mechanical_required"] is True, "latest_completed_no_execution.minos_mechanical_required must be true")
+    _require(state["latest_completed_no_execution"]["minos_semantic_required"] is True, "latest_completed_no_execution.minos_semantic_required must be true")
+    _require(state["latest_completed_no_execution"]["anti_theater_review_required"] is True, "latest_completed_no_execution.anti_theater_review_required must be true")
     _require(state["latest_completed_no_execution"]["evidence_units_complete"] is True, "latest_completed_no_execution.evidence_units_complete must be true")
     _require(state["latest_completed_no_execution"]["stop_conditions_respected"] is True, "latest_completed_no_execution.stop_conditions_respected must be true")
     for key in (
@@ -7174,8 +7490,8 @@ def main() -> None:
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
     _require(state["history_summary"]["latest_execution_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected latest execution status")
-    _require(state["history_summary"]["previous_execution_phase"] == IF08_W5_CONTROLLED_PREVIOUS_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF08_W5_CONTROLLED_PREVIOUS_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF08_W5_POST_SYNC_PREVIOUS_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -7198,47 +7514,52 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W5 Business Chaos Controlled Execution`",
-        "latest_completed_status: `if08_w5_business_chaos_controlled_execution_pass`",
+        "latest_completed_phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`",
+        "latest_completed_status: `if08_w5_post_sync_review_w6_readiness_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "W5 gap repair verified: `true`",
+        "W5 metrics verified: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `5eb32158153bc5ff3db87d33c3c625f5b0df80fa`",
+        "latest_completed_project_commit_sha: `e9dfae63206523f26fce5df907945952c7351ad5`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `post_sync_review_if08_w5_business_chaos_controlled_execution`",
+        "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
     )
     _mirror_contains(
         ROOT / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W5 Controlled Execution Sync Sincronizado",
+        "INF-FULL-07 — IF-08 W5 Post-Sync Review & W6 Readiness Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w5_business_chaos_controlled_execution_pass",
-        "Este sync ja registra o packet canonico de W5 controlled execution com `execution_scope=synthetic_isolated_lab_only`, `w5_preflight_readiness_verified=true`, `w5_gap_repair_verified=true`, `w5_execution_performed=true`, `w5_execution_allowed=false`, `executor_bot_count=14`, `synthetic_domain_count=7`, `critical_coverage_cells_passed=12`, `critical_coverage_completion=1.0`, `business_scenarios_total=14`, `business_scenarios_blocked_or_detected=14` e `sirene_oracle_mode=synthetic_transcript_only`.",
-        "O proximo prompt pode preparar apenas `post_sync_review_if08_w5_business_chaos_controlled_execution` dentro do escopo de revisão canônica aprovado.",
-        "O proximo passo recomendado neste estado e `post_sync_review_if08_w5_business_chaos_controlled_execution`.",
+        "latest_completed_status: if08_w5_post_sync_review_w6_readiness_pass",
+        "Este sync ja registra o packet canonico de W5 post-sync review com `previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution`, `w5_canonical_sync_verified=true`, `w5_metrics_verified=true`, `w5_artifacts_complete=true`, `w5_safety_attestation_verified=true`, `critical_coverage_cells_passed=12`, `critical_coverage_completion=1.0`, `business_scenarios_total=14`, `business_scenarios_blocked_or_detected=14`, `sirene_oracle_mode=synthetic_transcript_only`, `execution_scope=post_sync_review_only`, `w6_readiness_state=ready_for_preparation`, `w6_preparation_allowed_next=true`, `w6_execution_performed=false`, `w6_execution_allowed=false`, `future_ttr_required=0` e `future_har_required=1.0`.",
+        "O proximo prompt pode preparar apenas `prepare_if08_w6_final_audit_preflight_readiness` dentro do escopo de preparação canônica aprovado.",
+        "O proximo passo recomendado neste estado e `prepare_if08_w6_final_audit_preflight_readiness`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w5_business_chaos_controlled_execution_pass",
-        "Latest completed phase: `IF-08 W5 Business Chaos Controlled Execution`",
-        "latest_completed_status=if08_w5_business_chaos_controlled_execution_pass",
-        "active_context_remote_main_reflects_if08_w5_business_chaos_controlled_execution=true",
+        "if08_w5_post_sync_review_w6_readiness_pass",
+        "Latest completed phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`",
+        "latest_completed_status=if08_w5_post_sync_review_w6_readiness_pass",
+        "active_context_remote_main_reflects_if08_w5_post_sync_review=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "post_sync_review_if08_w5_business_chaos_controlled_execution",
+        "prepare_if08_w6_final_audit_preflight_readiness",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if08_w5_post_sync_review/decision.json",
+        "artifacts/infernus/if08_w5_post_sync_review_decision_2026_06_08.json",
+        "artifacts/infernus/if08_w6_final_audit_readiness_matrix_2026_06_08.json",
+        "artifacts/infernus/if08_w5_post_sync_no_execution_attestation_2026_06_08.json",
+        "docs/infernus_full/if08_w5_post_sync_review_2026_06_08.md",
         "artifacts/if08_w5_business_chaos_controlled_execution/decision.json",
         "artifacts/infernus/if08_w5_business_chaos_controlled_execution_decision_2026_06_08.json",
         "artifacts/infernus/if08_w5_business_chaos_controlled_execution_ledger_2026_06_08.jsonl",
@@ -7287,6 +7608,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ARIS_PHASE_LEDGER.md",
+        "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision | pass",
+        "if08_w5_post_sync_review_w6_readiness_pass",
+        "project_commit_sha: `e9dfae63206523f26fce5df907945952c7351ad5`",
+        "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
         "IF-08 W5 Business Chaos Controlled Execution | pass",
         "if08_w5_business_chaos_controlled_execution_pass",
         "project_commit_sha: `5eb32158153bc5ff3db87d33c3c625f5b0df80fa`",
@@ -7330,24 +7655,24 @@ def main() -> None:
     _mirror_contains(
         ROOT / "README.md",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W5 Business Chaos Controlled Execution`",
-        "latest_completed_status: `if08_w5_business_chaos_controlled_execution_pass`",
+        "latest_completed_phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`",
+        "latest_completed_status: `if08_w5_post_sync_review_w6_readiness_pass`",
         "Active next phase: `IF-08`",
         "active_next_phase_class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "IF-08 real execution: `false`",
-        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_BUSINESS_CHAOS_CONTROLLED_EXECUTION: `true`",
+        "ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W5_POST_SYNC_REVIEW: `true`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W5 Business Chaos Controlled Execution",
+        "Latest completed phase: IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W5 business chaos controlled execution is canonical as pass; this sync preserves execution_scope=synthetic_isolated_lab_only, w5_preflight_readiness_verified=true, w5_gap_repair_verified=true, executor_bot_count=14, synthetic_domain_count=7, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, w5_execution_performed=true, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is post_sync_review_if08_w5_business_chaos_controlled_execution.",
+        "W5 business chaos controlled execution remains verified as the previous canonical execution packet, and the W5 post-sync review is canonical as pass; this sync preserves previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution, w5_canonical_sync_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, execution_scope=post_sync_review_only, w6_readiness_state=ready_for_preparation, w6_execution_performed=false, w6_execution_allowed=false, future_ttr_required=0, future_har_required=1.0, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if08_w6_final_audit_preflight_readiness.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
