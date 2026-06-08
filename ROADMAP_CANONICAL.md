@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W5 Business Chaos Preflight Gap Repair
+Latest completed phase: IF-08 W5 Business Chaos Controlled Execution
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-W5 business chaos preflight gap repair is canonical as pass; this sync preserves previous_blocked_phase=IF-08 W5 Business Chaos Preflight Readiness, repaired_blocker_id=sirene_conditional_or_deferred_with_reason, repaired_critical_cell=W5-CRIT-012, sirene_oracle_mode=synthetic_transcript_only, sirene_w5_readiness_state=ready, critical_coverage_cells_ready=12 of 12, readiness_coverage=1.0, w5_preflight_readiness=true, w5_readiness_state=ready_for_controlled_execution_preparation, w5_execution_performed=false, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is execute_if08_w5_business_chaos_controlled_execution.
+W5 business chaos controlled execution is canonical as pass; this sync preserves execution_scope=synthetic_isolated_lab_only, w5_preflight_readiness_verified=true, w5_gap_repair_verified=true, executor_bot_count=14, synthetic_domain_count=7, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, w5_execution_performed=true, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is post_sync_review_if08_w5_business_chaos_controlled_execution.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
