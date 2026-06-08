@@ -2,19 +2,28 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`
-- latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`
-- latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`
+- current_status: `if08_w4_post_sync_review_w5_readiness_pass`
+- latest_completed_phase: `IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision`
+- latest_completed_status: `if08_w4_post_sync_review_w5_readiness_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w4_controlled_execution: `true`
+- active_context_remote_main_reflects_if08_w4_post_sync_review: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
 Referências ativas desta fase:
 
+- `artifacts/if08_w4_post_sync_review/decision.json`
+- `artifacts/if08_w4_post_sync_review/summary.json`
+- `artifacts/if08_w4_post_sync_review/report.md`
+- `artifacts/infernus/if08_w4_post_sync_review_decision_2026_06_08.json`
+- `artifacts/infernus/if08_w4_post_sync_review_summary_2026_06_08.json`
+- `artifacts/infernus/if08_w4_post_sync_review_report_2026_06_08.md`
+- `artifacts/infernus/if08_w5_readiness_matrix_2026_06_08.json`
+- `artifacts/infernus/if08_w4_post_sync_no_execution_attestation_2026_06_08.json`
+- `docs/infernus_full/if08_w4_post_sync_review_2026_06_08.md`
 - `artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/decision.json`
 - `artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/summary.json`
 - `artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/report.md`
@@ -128,4 +137,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The W4 controlled execution packet is canonical; the next canonical step is W4 post-sync review and no real execution surface is authorized.
+- The W4 post-sync review packet is canonical; the next canonical step is W5 business chaos preflight readiness preparation and no real execution surface is authorized.

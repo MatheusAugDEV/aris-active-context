@@ -2,21 +2,21 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`
-- latest_completed_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`
+- latest_completed_phase: `IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision`
+- latest_completed_status: `if08_w4_post_sync_review_w5_readiness_pass`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass`
+- current_status: `if08_w4_post_sync_review_w5_readiness_pass`
 - decision: `pass`
-- latest_completed_project_commit_sha: `c65888a2f587c35b4e38b16b50b917233bac8fa3`
+- latest_completed_project_commit_sha: `d575b6f3c37c1ba411a2a0266efb9d04957234c0`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`
+- next_recommended_step: `prepare_if08_w5_business_chaos_preflight_readiness`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_CONTROLLED_EXECUTION: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF08_W4_POST_SYNC_REVIEW: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
@@ -35,6 +35,11 @@
 - rhr_observed: `1.0`
 - ddr_observed: `1.0`
 - cer_observed: `1.0`
+- w5_readiness_state: `ready_for_preparation`
+- w5_preparation_allowed_next: `true`
+- w5_execution_performed: `false`
+- w5_execution_allowed: `false`
+- execution_scope: `synthetic_isolated_lab_only`
 - runtime_executed: `false`
 - real_apply_executed: `false`
 - product_bedrock_real_apply_secrets_executed: `false`
@@ -48,11 +53,11 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- W4 controlled execution is complete in synthetic isolated lab only; the next canonical step is the W4 post-sync review.
+- W4 post-sync review is complete; the next canonical step is W5 business chaos preflight readiness preparation only.
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution`.
-The Project repo result was verified on `origin/main` with terminal green CI; W4 controlled execution closed in synthetic isolated lab only with `synthetic_attack_cases_total=14`, `rollback_honesty_checks=6/6`, `duplicate_detection_checks=5/5`, `cost_enforcement_checks=3/3`, and `RHR=DDR=CER=1.0`, while runtime, real_apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, non-GitHub external network, real cost, and real quota surfaces remained false.
-The next prompt should perform only the canonical W4 post-sync review; no real execution surface is authorized.
-Próximo passo recomendado: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`.
+INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision`.
+The Project repo result was verified on `origin/main` with terminal green CI; the W4 post-sync review preserved the controlled execution closure in synthetic isolated lab only with `synthetic_attack_cases_total=14`, `rollback_honesty_checks=6/6`, `duplicate_detection_checks=5/5`, `cost_enforcement_checks=3/3`, and `RHR=DDR=CER=1.0`, while `w5_readiness_state=ready_for_preparation`, `w5_preparation_allowed_next=true`, `w5_execution_performed=false`, and `w5_execution_allowed=false`.
+The next prompt should prepare only the canonical W5 business chaos preflight readiness packet; no real execution surface is authorized.
+Próximo passo recomendado: `prepare_if08_w5_business_chaos_preflight_readiness`.

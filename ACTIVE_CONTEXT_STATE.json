@@ -508,21 +508,21 @@
   "current_live_route": {
     "active_next_phase": "IF-08",
     "active_next_phase_class": "infernus_full_execution",
-    "current_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+    "current_status": "if08_w4_post_sync_review_w5_readiness_pass",
     "decision": "pass",
     "h4_h5_hx_active_current_route": false,
-    "latest_completed_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
-    "latest_completed_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+    "latest_completed_phase": "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision",
+    "latest_completed_status": "if08_w4_post_sync_review_w5_readiness_pass",
     "next_phase_execution_authorization": false,
     "operator_approval_packet_review_is_execution_approval": false,
     "status": "inf_full_07_if08_authorization_gate_pass",
-    "latest_completed_project_commit_sha": "c65888a2f587c35b4e38b16b50b917233bac8fa3",
+    "latest_completed_project_commit_sha": "d575b6f3c37c1ba411a2a0266efb9d04957234c0",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+    "latest_completed_next_recommended_step": "prepare_if08_w5_business_chaos_preflight_readiness"
   },
-  "current_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+  "current_status": "if08_w4_post_sync_review_w5_readiness_pass",
   "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-  "latest_completed_next_recommended_step": "post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution",
+  "latest_completed_next_recommended_step": "prepare_if08_w5_business_chaos_preflight_readiness",
   "latest_completed_no_execution": {
     "w05_executed": false,
     "wave_executed": true,
@@ -549,6 +549,10 @@
     "synthetic_attack_cases_passed": 14,
     "synthetic_attack_cases_blocked_or_detected": 14,
     "execution_scope": "synthetic_isolated_lab_only",
+    "w5_readiness_state": "ready_for_preparation",
+    "w5_preparation_allowed_next": true,
+    "w5_execution_performed": false,
+    "w5_execution_allowed": false,
     "runtime_executed": false,
     "real_apply_executed": false,
     "product_bedrock_real_apply_secrets_executed": false,
@@ -563,8 +567,8 @@
     "real_cost_spent": false,
     "real_quota_consumed": false
   },
-  "latest_completed_project_commit_sha": "c65888a2f587c35b4e38b16b50b917233bac8fa3",
-  "latest_completed_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+  "latest_completed_project_commit_sha": "d575b6f3c37c1ba411a2a0266efb9d04957234c0",
+  "latest_completed_status": "if08_w4_post_sync_review_w5_readiness_pass",
   "permanent_active_update_rule_installed": true,
   "decision": "pass",
   "drift_signals": {
@@ -602,28 +606,28 @@
       "ARIS Infernus FULL Pre-Execution Review Gate",
       "IF08_W05 Active-Context Canonical Sync Repair & Permanent Active Update Rule"
     ],
-    "latest_execution_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
-    "latest_execution_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
+    "latest_execution_phase": "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision",
+    "latest_execution_status": "if08_w4_post_sync_review_w5_readiness_pass",
     "ledger_mode": "historical_only",
     "markdown_mirrors_are_non_authoritative": true,
-    "previous_execution_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
+    "previous_execution_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
   },
   "last_transition": {
     "decision": "pass",
-    "from_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness",
-    "proof_source": "project_origin_main_sha_c65888a2f587c35b4e38b16b50b917233bac8fa3_verified_with_terminal_green_ci_run_27156460042_then_active_context_remote_main_synced_and_verified",
-    "to_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
-    "to_status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
-    "transition_type": "active_context_w4_controlled_execution_sync",
-    "verified_via": "Project repo origin/main matched c65888a2f587c35b4e38b16b50b917233bac8fa3, the IF-08 W4 controlled execution CI run 27156460042 was terminal green, synthetic_attack_cases_total closed at 14 with rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0 while runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, real cost, real quota, and non-GitHub network surfaces remained false before active-context mirrors were updated."
+    "from_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+    "proof_source": "project_origin_main_sha_d575b6f3c37c1ba411a2a0266efb9d04957234c0_verified_with_terminal_green_ci_run_27159174070_then_active_context_remote_main_synced_and_verified",
+    "to_phase": "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision",
+    "to_status": "if08_w4_post_sync_review_w5_readiness_pass",
+    "transition_type": "active_context_w4_post_sync_review_sync",
+    "verified_via": "Project repo origin/main matched d575b6f3c37c1ba411a2a0266efb9d04957234c0, the IF-08 W4 post-sync review CI run 27159174070 was terminal green, W4 closure metrics remained synthetic_attack_cases_total=14 with rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0, W5 readiness resolved to ready_for_preparation with w5_preparation_allowed_next=true, w5_execution_performed=false, and w5_execution_allowed=false, and runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, real cost, real quota, and non-GitHub network surfaces remained false before active-context mirrors were updated."
   },
-  "latest_completed_phase": "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution",
+  "latest_completed_phase": "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision",
   "locks": {
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
     "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
     "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
     "deferred_phase": "IF-08",
-    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution. W4 controlled execution passed in synthetic isolated lab only with synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, RHR=1.0, DDR=1.0, CER=1.0, w4_execution_performed=true, w4_execution_allowed=false, and the next recommended step is post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution. All runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, non-GitHub external network, real cost, and real quota surfaces remain false until explicitly authorized.",
+    "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision. The W4 post-sync review preserved the controlled execution closure with synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, RHR=1.0, DDR=1.0, CER=1.0, w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, w5_readiness_state=ready_for_preparation, w5_preparation_allowed_next=true, w5_execution_performed=false, w5_execution_allowed=false, and the next recommended step is prepare_if08_w5_business_chaos_preflight_readiness. All runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, non-GitHub external network, real cost, and real quota surfaces remain false until explicitly authorized.",
     "every_transition_must_update_commit_push_and_verify_github_active_context": true,
     "github_active_context_is_the_only_canonical_active_context_source": true,
     "h4_h5_hx_active_current_route": false,
@@ -636,20 +640,21 @@
   "next_action": {
     "execution_authorization": false,
     "notes": [
-      "The Project repo IF-08 W4 controlled execution result was verified on origin/main with terminal green CI.",
-      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W4 controlled execution closure.",
-      "The latest completed operational packet is IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution.",
-      "This phase executed W4 only in synthetic isolated lab, with synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
+      "The Project repo IF-08 W4 post-sync review result was verified on origin/main with terminal green CI.",
+      "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the W4 controlled execution post-sync review and W5 readiness decision.",
+      "The latest completed operational packet is IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision.",
+      "This phase preserved the W4 controlled execution closure in synthetic isolated lab only with synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
+      "W5 is ready_for_preparation, w5_preparation_allowed_next=true, w5_execution_performed=false, and w5_execution_allowed=false.",
       "Runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, non-GitHub external network, real cost, and real quota remained false.",
-      "The next prompt should perform the canonical post-sync review for IF-08 W4 replay/rollback/concurrency/cost controlled execution.",
+      "The next prompt should prepare IF-08 W5 business chaos preflight readiness only.",
       "Real execution surfaces remain false until explicitly authorized."
     ],
     "operator_approval_packet_review_is_execution_approval": false,
     "phase": "IF-08",
     "phase_class": "infernus_full_execution",
-    "planning_only": false,
-    "review_only": true,
-    "status": "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass"
+    "planning_only": true,
+    "review_only": false,
+    "status": "if08_w4_post_sync_review_w5_readiness_pass"
   },
   "required_files_for_transition": [
     "ACTIVE_CONTEXT_STATE.json",

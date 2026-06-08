@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution
+Latest completed phase: IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
-W4 controlled execution is canonical; this sync records w4_preflight_readiness=true, future_rhr_required=1.0, future_ddr_required=1.0, future_cer_required=1.0, readiness_coverage=1.0, and w4_execution_performed=true in synthetic isolated lab only.
-W4 controlled execution is canonical; this sync records w4_execution_allowed=false, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, RHR=DDR=CER=1.0, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is W4 post-sync review.
+W4 post-sync review is canonical; this sync preserves w4_preflight_readiness=true, w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0 from the controlled execution closure.
+W4 post-sync review is canonical; this sync records w5_readiness_state=ready_for_preparation, w5_preparation_allowed_next=true, w5_execution_performed=false, w5_execution_allowed=false, all runtime/apply/network/secret/cost/quota surfaces false, and the next step is W5 business chaos preflight readiness preparation.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
