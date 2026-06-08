@@ -1,22 +1,26 @@
-## IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Lock
+## IF-08 W6 Final Audit Preflight Readiness Lock
 
-- Latest completed phase: `IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision`
-- status: `if08_w5_post_sync_review_w6_readiness_pass`
-- latest_completed_status=if08_w5_post_sync_review_w6_readiness_pass
-- active_context_remote_main_reflects_if08_w5_post_sync_review=true
+- Latest completed phase: `IF-08 W6 Final Audit Preflight Readiness`
+- status: `if08_w6_final_audit_preflight_readiness_pass`
+- latest_completed_status=if08_w6_final_audit_preflight_readiness_pass
+- active_context_remote_main_reflects_if08_w6_final_audit_preflight_readiness=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=e9dfae63206523f26fce5df907945952c7351ad5
+- project_commit_sha=0358de95c7fb80d06871a20ae46b8fbc3174c5d7
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_if08_w6_final_audit_preflight_readiness
-- source_project_sha_verified_by_packet=5eb32158153bc5ff3db87d33c3c625f5b0df80fa
-- source_active_context_sha_verified_by_packet=a89f90c691965a104c99964f3b256d08758605af
-- previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution
-- previous_status_verified=if08_w5_business_chaos_controlled_execution_pass
-- w5_canonical_sync_verified=true
+- next_recommended_step=execute_if08_w6_final_audit_controlled_execution
+- source_project_sha_verified_by_packet=e9dfae63206523f26fce5df907945952c7351ad5
+- source_active_context_sha_verified_by_packet=fabb8b29bedf0222975f54e1c8e496fd72336689
+- previous_phase_verified=IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision
+- previous_status_verified=if08_w5_post_sync_review_w6_readiness_pass
+- w5_post_sync_review_verified=true
 - w5_metrics_verified=true
 - w5_artifacts_complete=true
 - w5_safety_attestation_verified=true
-- execution_scope=post_sync_review_only
+- w6_preflight_readiness=true
+- execution_scope=preflight_readiness_only
+- readiness_coverage=1.0
+- required_preflight_checks=10
+- ready_preflight_checks=10
 - critical_coverage_cells_total=12
 - critical_coverage_cells_passed=12
 - critical_coverage_completion=1.0
@@ -27,8 +31,13 @@
 - future_har_required=1.0
 - minos_mechanical_required=true
 - minos_semantic_required=true
+- minos_mechanical_readiness=true
+- minos_semantic_readiness=true
 - anti_theater_review_required=true
-- w6_readiness_state=ready_for_preparation
+- ttr_har_threshold_contract_created=true
+- stop_condition_matrix_created=true
+- no_execution_attestation_created=true
+- w6_readiness_state=ready_for_controlled_execution
 - w6_preparation_allowed_next=true
 - w6_execution_performed=false
 - w6_execution_allowed=false
@@ -49,7 +58,7 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical W5 post-sync review is verified; this sync records only the readiness decision and allows only future W6 final audit preflight readiness preparation without authorizing any real execution surface.
+- Canonical W6 preflight readiness is verified; this sync records only the preflight decision and allows only future W6 controlled execution prompting without authorizing any real execution surface.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08
