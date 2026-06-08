@@ -31,14 +31,14 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_phase_mutation_family_count"], 10)
         self.assertEqual(state["current_phase_oracle_count"], 9)
 
-    def test_current_route_tracks_if08_w4_post_sync_review_sync(self):
+    def test_current_route_tracks_if08_w5_blocked_preflight_sync(self):
         state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["latest_completed_phase"], "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision")
-        self.assertEqual(state["latest_completed_status"], "if08_w4_post_sync_review_w5_readiness_pass")
-        self.assertEqual(state["latest_completed_project_commit_sha"], "d575b6f3c37c1ba411a2a0266efb9d04957234c0")
+        self.assertEqual(state["latest_completed_phase"], "IF-08 W5 Business Chaos Preflight Readiness")
+        self.assertEqual(state["latest_completed_status"], "if08_w5_business_chaos_preflight_readiness_blocked")
+        self.assertEqual(state["latest_completed_project_commit_sha"], "108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "prepare_if08_w5_business_chaos_preflight_readiness",
+            "repair_if08_w5_business_chaos_preflight_gaps",
         )
         self.assertEqual(state["next_phase"], "IF-08")
         self.assertEqual(state["active_next_phase"], "IF-08")
@@ -46,15 +46,26 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertTrue(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
-        self.assertTrue(state["latest_completed_no_execution"]["wave_executed"])
-        self.assertTrue(state["latest_completed_no_execution"]["bot_executed"])
-        self.assertTrue(state["latest_completed_no_execution"]["w4_execution_performed"])
-        self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "synthetic_isolated_lab_only")
-        self.assertEqual(state["latest_completed_no_execution"]["synthetic_attack_cases_total"], 14)
-        self.assertEqual(state["latest_completed_no_execution"]["w5_readiness_state"], "ready_for_preparation")
-        self.assertTrue(state["latest_completed_no_execution"]["w5_preparation_allowed_next"])
+        self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
+        self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
+        self.assertFalse(state["latest_completed_no_execution"]["w5_preflight_readiness"])
+        self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "preflight_readiness_only")
+        self.assertEqual(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"], "d575b6f3c37c1ba411a2a0266efb9d04957234c0")
+        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"], "8475e6eb026ca08afc8c6364e9658f1de1860d07")
+        self.assertEqual(state["latest_completed_no_execution"]["w5_readiness_state"], "blocked")
+        self.assertFalse(state["latest_completed_no_execution"]["w5_preparation_allowed_next"])
         self.assertFalse(state["latest_completed_no_execution"]["w5_execution_performed"])
         self.assertFalse(state["latest_completed_no_execution"]["w5_execution_allowed"])
+        self.assertEqual(state["latest_completed_no_execution"]["eligible_executor_bot_count"], 13)
+        self.assertEqual(state["latest_completed_no_execution"]["conditional_or_deferred_bot_count"], 1)
+        self.assertEqual(state["latest_completed_no_execution"]["synthetic_domain_count"], 7)
+        self.assertEqual(state["latest_completed_no_execution"]["critical_coverage_cells_total"], 12)
+        self.assertEqual(state["latest_completed_no_execution"]["critical_coverage_cells_ready"], 11)
+        self.assertEqual(state["latest_completed_no_execution"]["readiness_coverage"], 0.916667)
+        self.assertEqual(
+            state["latest_completed_no_execution"]["blocker_reason"],
+            "Sirene lacks sufficient active oracle/readiness for W5 critical coverage",
+        )
         self.assertFalse(state["authorization"]["real_dry_run_execution_authorized"])
         self.assertFalse(state["authorization"]["real_apply_authorized"])
         self.assertFalse(state["authorization"]["runtime_integration_allowed"])
