@@ -157,305 +157,20 @@
         "no_local_only_update_is_canonical": true,
         "no_unpushed_commit_is_canonical": true
     },
-    "completed_phases": [
-        {
-            "decision": "pass",
-            "phase": "Active Context Macro Roadmap Canonicalization Controlled Apply",
-            "repair_type": "roadmap_governance_repair",
-            "status": "active_context_macro_roadmap_canonicalization_controlled_apply_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Macroblock Entry Gate",
-            "status": "aris_infernus_lab_full_macroblock_entry_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Scope & Attack Taxonomy Planning Gate",
-            "status": "aris_infernus_lab_full_scope_attack_taxonomy_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL 13-Bot Contract Pack Planning Gate",
-            "status": "aris_infernus_lab_full_13_bot_contract_pack_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Bot Scenario Interface Planning Gate",
-            "status": "aris_infernus_lab_full_bot_scenario_interface_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Evidence Bundle Schema Planning Gate",
-            "status": "aris_infernus_lab_full_evidence_bundle_schema_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Finding & Purgatorium Handoff Schema Planning Gate",
-            "status": "aris_infernus_lab_full_finding_purgatorium_handoff_schema_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Minos Verdict Schema Planning Gate",
-            "status": "aris_infernus_lab_full_minos_verdict_schema_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Bedrock Boundary Signal Schema Planning Gate",
-            "status": "aris_infernus_lab_full_bedrock_boundary_signal_schema_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Schema Pack Closure Review Gate",
-            "status": "aris_infernus_lab_full_schema_pack_closure_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Planning Gate",
-            "status": "aris_infernus_lab_full_scenario_manifest_dataset_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Scenario Manifest Dataset Review Gate",
-            "status": "aris_infernus_lab_full_scenario_manifest_dataset_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Planning Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Review Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Planning Gate",
-            "status": "aris_infernus_lab_full_controlled_fixture_materialization_authorization_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Controlled Fixture Materialization Authorization Review Gate",
-            "status": "aris_infernus_lab_full_controlled_fixture_materialization_authorization_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Planning Gate",
-            "status": "aris_infernus_lab_full_controlled_fixture_materialization_apply_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Controlled Fixture Materialization Apply Review Gate",
-            "status": "aris_infernus_lab_full_controlled_fixture_materialization_apply_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Planning Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_final_authorization_packet_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Final Authorization Packet Review Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_final_authorization_packet_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Readiness Closure Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_readiness_closure_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Planning Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Packet Review Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_packet_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Planning Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Request Review Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_request_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Planning Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_planning_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Grant Review Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_grant_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Lab FULL Fixture Materialization Explicit Operator Authorization Readiness Closure Gate",
-            "status": "aris_infernus_lab_full_fixture_materialization_explicit_operator_authorization_readiness_closure_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Active-Context Anti-Proliferation & CI Enforcement Repair Gate",
-            "repair_type": "governance_repair",
-            "status": "ac_repair_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Active-Context Observability & Drift Prevention Gate",
-            "repair_type": "observability",
-            "status": "ac_obs_02_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
-            "repair_type": "transition_engine",
-            "status": "ac_trans_03_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Active-Context Phase Contract Hardening Gate",
-            "repair_type": "contract_hardening",
-            "status": "ac_contract_04_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Active-Context Circuit Breaker Gate",
-            "repair_type": "circuit_breaker",
-            "status": "ac_break_05_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Full Fixture Materialization Gate",
-            "repair_type": "fixture_materialization",
-            "status": "inf_mat_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Nemesis Synthetic Bot Execution Log Gate",
-            "repair_type": "bot_execution",
-            "status": "inf_bot_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Minos Deterministic Verdict Gate",
-            "repair_type": "minos_verdict",
-            "status": "inf_minos_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Purgatorium Finding Record Gate",
-            "repair_type": "purgatorium",
-            "status": "purg_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Dependency Foundation Gate",
-            "repair_type": "capability_build",
-            "status": "acb_core_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Core Public API Baseline Gate",
-            "repair_type": "capability_build",
-            "status": "acb_core_02_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Backend Baseline Gate",
-            "repair_type": "capability_build",
-            "status": "acb_cap_01_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build MCP Runtime Sandbox Gate",
-            "repair_type": "capability_build",
-            "status": "acb_cap_02_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Runtime Top-Level Public API Gate",
-            "repair_type": "capability_build",
-            "status": "acb_cap_03_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Product/Pilot Boundary Gate",
-            "repair_type": "capability_build",
-            "status": "acb_cap_04_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Capability Build Advanced Supply Chain Gate",
-            "repair_type": "capability_build",
-            "status": "acb_cap_05_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus Full Scope Charter Gate",
-            "repair_type": "infernus_full",
-            "status": "inf_full_01_scope_charter_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus FULL Baseline Freeze Planning",
-            "repair_type": "infernus_full",
-            "status": "inf_full_02_baseline_freeze_planning_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus FULL Chain Registration & Preparation Opening",
-            "repair_type": "infernus_full",
-            "status": "inf_full_03_chain_registration_opening_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus FULL Scenario Pack & Harness Readiness Gate",
-            "repair_type": "infernus_full",
-            "status": "inf_full_04_scenario_pack_harness_readiness_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus FULL Pre-Execution Review Gate",
-            "repair_type": "infernus_full",
-            "status": "inf_full_05_pre_execution_review_gate_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "ARIS Infernus FULL Excludent Quarantine Gate",
-            "repair_type": "infernus_full",
-            "status": "inf_full_06_excludent_quarantine_gate_pass"
-        },
-        {
-            "decision": "pass",
+    "completed_phases": {
+        "latest": {
             "phase": "IF-08 Attack Waves Execution Authorization Gate Materialization",
-            "repair_type": "infernus_full",
+            "decision": "pass",
             "status": "inf_full_07_if08_authorization_gate_pass"
         },
-        {
+        "latest_capability": {
+            "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
-            "phase": "IF08_W05 Minos Mechanical Alias Normalization",
-            "repair_type": "infernus_full_execution",
-            "status": "if08_w05_minos_mechanical_alias_normalization_packet_ready"
+            "status": "acb_cap_05_pass"
         },
-        {
-            "decision": "pass",
-            "phase": "IF08_W05 Preflight Readiness Rerun",
-            "repair_type": "infernus_full_execution",
-            "status": "if08_w05_preflight_readiness_rerun_pass"
-        },
-        {
-            "decision": "pass",
-            "phase": "IF-08 W3 Controlled Execution Post-Sync Review & W4 Readiness Decision",
-            "repair_type": "infernus_full_execution",
-            "status": "if08_w3_post_sync_review_w4_readiness_pass"
-        }
-    ],
+        "total_phases_completed": 54,
+        "full_history": "archive/derived_mirrors/completed_phases_history.json"
+    },
     "cross_field_consistency_policy": {
         "active_next_phase_must_match_across": [
             "next_phase",
@@ -583,7 +298,7 @@
         "to_phase": "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision",
         "to_status": "if08_w5_post_sync_review_w6_readiness_pass",
         "transition_type": "active_context_w5_post_sync_review_sync",
-        "verified_via": "Project repo origin/main matched e9dfae63206523f26fce5df907945952c7351ad5, the IF-08 W5 post-sync review CI run 27167943439 was terminal green, the post-sync review packet preserved previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution, previous_status_verified=if08_w5_business_chaos_controlled_execution_pass, w5_canonical_sync_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, w6_readiness_state=ready_for_preparation, future_ttr_required=0, future_har_required=1.0, and runtime, shell, socket, filesystem escape, MCP, RAG, memory write, secrets, real cost, real quota, and non-GitHub network surfaces remained false before active-context mirrors were updated."
+        "verified_via": "Transition Table + canonroadmap. No execution authorized."
     },
     "latest_completed_phase": "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision",
     "locks": {
@@ -591,7 +306,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "IF-08",
-        "deferred_phase_reason": "IF-08 remains the next phase per the canonroadmap. Active-context remote main now reflects IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision as pass. The post-sync review packet preserved previous_phase_verified=IF-08 W5 Business Chaos Controlled Execution, previous_status_verified=if08_w5_business_chaos_controlled_execution_pass, w5_canonical_sync_verified=true, w5_metrics_verified=true, w5_artifacts_complete=true, w5_safety_attestation_verified=true, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, business_scenarios_total=14, business_scenarios_blocked_or_detected=14, sirene_oracle_mode=synthetic_transcript_only, w6_readiness_state=ready_for_preparation, w6_execution_performed=false, w6_execution_allowed=false, future_ttr_required=0, future_har_required=1.0, minos_mechanical_required=true, minos_semantic_required=true, anti_theater_review_required=true, and the next recommended step is prepare_if08_w6_final_audit_preflight_readiness. All runtime, apply, product, Bedrock, secrets, MCP, RAG ingestion, memory write, shell, socket, filesystem escape, non-GitHub external network, real cost, and real quota surfaces remain false until explicitly authorized.",
+        "deferred_phase_reason": "INF-FULL-07 closed without execution. next_phase=null pending operator. Next step: prepare_if08_w6_final_audit_preflight_readiness.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -603,17 +318,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": [
-            "The Project repo IF-08 W5 post-sync review result was verified on origin/main with terminal green CI.",
-            "aris-active-context/main was synchronised after the Project repo reached terminal green CI and now reflects the pass packet for IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision.",
-            "The latest completed operational packet is IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision.",
-            "This phase executed only in post_sync_review_only scope and preserved W5 canonical metrics with executor_bot_count=14, synthetic_domain_count=7, critical_coverage_cells_passed=12 of 12, critical_coverage_completion=1.0, and business_scenarios_blocked_or_detected=14.",
-            "No real audio, STT/TTS, microphone, runtime, MCP, RAG, memory write, secrets, non-GitHub external network, real cost, or real quota surface was enabled.",
-            "W6 remains preparation-only, so w6_readiness_state=ready_for_preparation, w6_preparation_allowed_next=true, w6_execution_performed=false, and w6_execution_allowed=false.",
-            "The previous canonical phase was IF-08 W5 Business Chaos Controlled Execution and its source-of-truth SHAs remain preserved in the post-sync review packet.",
-            "The next prompt should prepare only IF-08 W6 final audit preflight readiness.",
-            "Real execution authorization remains false."
-        ],
+        "notes": "INF-FULL-07 closed. IF-08 not executed. next_phase=null. Aguardando operador.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "IF-08",
         "phase_class": "infernus_full_execution",
@@ -635,7 +340,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.0",
+    "schema_version": "3.1",
     "status": "inf_full_07_if08_authorization_gate_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -651,11 +356,12 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.0",
+        "current_schema_version": "3.1",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
         "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change.",
-        "schema_3_0_change_summary": "Compaction refactor: ARIS_BOOT.md replaces 11 boot files, required_files_for_transition removed, versioning history archived to archive/derived_mirrors/versioning_history.md, governance_repairs list archived, artifact_routes updated to new structure. JSON target ≤200 lines."
+        "schema_3_0_change_summary": "Compaction refactor: ARIS_BOOT.md replaces 11 boot files, required_files_for_transition removed, versioning history archived to archive/derived_mirrors/versioning_history.md, governance_repairs list archived, artifact_routes updated to new structure. JSON target ≤200 lines.",
+        "schema_3_1_change_summary": "Final compaction: completed_phases archived to completed_phases_history.json and replaced by compact summary object, narrative fields in next_action/last_transition/locks compacted to single-line strings."
     }
 }
