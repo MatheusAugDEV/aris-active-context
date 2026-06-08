@@ -882,11 +882,11 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] == "IF-08"
     assert state["active_next_phase_class"] == "infernus_full_execution"
     assert state["next_phase_authorized_by_operator"] is True
-    assert state["current_status"] == "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
-    assert state["latest_completed_phase"] == "IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution"
-    assert state["latest_completed_status"] == "if08_w2_auth_hitl_identity_exfil_controlled_execution_pass"
-    assert state["latest_completed_project_commit_sha"] == "3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3"
+    assert state["current_status"] == "if08_w2_post_sync_review_w3_readiness_pass"
+    assert state["latest_completed_phase"] == "IF-08 W2 Controlled Execution Post-Sync Review & W3 Readiness Decision"
+    assert state["latest_completed_status"] == "if08_w2_post_sync_review_w3_readiness_pass"
+    assert state["latest_completed_project_commit_sha"] == "86d1ddba94c73bf78151da13b9e1dd0eaa07feb0"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
-    assert state["latest_completed_next_recommended_step"] == "post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution"
+    assert state["latest_completed_next_recommended_step"] == "prepare_if08_w3_runtime_tool_mcp_sandbox_preflight_readiness"
     assert state["active_context_remote_main_reflects_latest_phase"] is True
     assert state["permanent_active_update_rule_installed"] is True

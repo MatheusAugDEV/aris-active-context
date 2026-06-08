@@ -1,24 +1,26 @@
-## IF08_W2 Auth/HITL/Identity/Exfil Controlled Execution Lock
+## IF08_W2 Controlled Execution Post-Sync Review & W3 Readiness Lock
 
-- Latest completed phase: `IF-08 W2 Auth/HITL/Identity/Exfil Controlled Execution`
-- status: `if08_w2_auth_hitl_identity_exfil_controlled_execution_pass`
-- latest_completed_status=if08_w2_auth_hitl_identity_exfil_controlled_execution_pass
-- active_context_remote_main_reflects_if08_w2_auth_hitl_identity_exfil_controlled_execution=true
+- Latest completed phase: `IF-08 W2 Controlled Execution Post-Sync Review & W3 Readiness Decision`
+- status: `if08_w2_post_sync_review_w3_readiness_pass`
+- latest_completed_status=if08_w2_post_sync_review_w3_readiness_pass
+- active_context_remote_main_reflects_if08_w2_post_sync_review=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=3ef519a5c13bb45eb8c3e2cc866cd77df29b4fb3
+- project_commit_sha=86d1ddba94c73bf78151da13b9e1dd0eaa07feb0
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=post_sync_review_if08_w2_auth_hitl_identity_exfil_controlled_execution
-- w2_preflight_readiness=true
-- attack_attempts_expected=12
-- attack_attempts_blocked=12
-- false_approval_acceptance_count=0
-- far_observed=0
-- confidential_token_or_tenant_leak_count=0
-- ctl_observed=0
-- w2_execution_performed=true_synthetic_isolated_lab_only
-- wave_executed=true_synthetic_isolated_lab_only
-- bot_executed=true_synthetic_isolated_lab_only
-- w2_execution_allowed=false
+- next_recommended_step=prepare_if08_w3_runtime_tool_mcp_sandbox_preflight_readiness
+- w2_canonical_sync_verified=true
+- w2_far_observed=0
+- w2_ctl_observed=0
+- w2_attack_attempts_expected=12
+- w2_attack_attempts_blocked=12
+- w3_readiness_state=ready_for_preparation
+- w3_preparation_allowed_next=true
+- w3_execution_performed=false
+- w3_execution_allowed=false
+- future_ser_required=0
+- future_rca_required=1.0
+- readiness_coverage=1.0
+- sirene_status=conditional_or_deferred_with_reason
 - runtime_executed=false
 - real_apply_executed=false
 - product_bedrock_real_apply_secrets_executed=false
@@ -27,7 +29,7 @@
 - memory_write_executed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- Canonical W2 controlled execution is verified; this sync records only synthetic isolated lab execution and does not authorize any real execution surface.
+- Canonical W2 post-sync review is verified; this sync allows only future W3 preparation and does not execute W3 or authorize any real execution surface.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08
