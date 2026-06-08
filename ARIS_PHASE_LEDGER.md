@@ -1,22 +1,23 @@
-## IF-08 W3 Runtime/Tool/MCP/Sandbox Preflight Readiness | pass
-- status: `if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass`
+## IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution | pass
+- status: `if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass`
 - decision: `pass`
 - source_current_phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W3 Runtime/Tool/MCP/Sandbox Preflight Readiness`
-- latest_completed_status: `if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass`
-- project_commit_sha: `d9406a4507ce78d2512101963b76e2836b6ee712`
+- latest_completed_phase: `IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution`
+- latest_completed_status: `if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass`
+- project_commit_sha: `598dd5c8d98e8c9f89f9123e10efedf50871079b`
 - project_ci_state: `CI_GREEN_CONFIRMED`
-- project_ci_run_url: `https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27112660289`
-- active_context_remote_main_reflects_if08_w3_runtime_tool_mcp_sandbox_preflight_readiness: `true`
+- project_ci_run_url: `https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27113309069`
+- active_context_remote_main_reflects_if08_w3_runtime_tool_mcp_sandbox_controlled_execution: `true`
 - permanent_active_update_rule_installed: `true`
 - w3_preflight_readiness: `true`
-- readiness_coverage: `1.0`
-- required_preflight_checks: `13`
-- ready_preflight_checks: `13`
-- future_ser_required: `0`
-- future_rca_required: `1.0`
+- attack_attempts_expected: `13`
+- attack_attempts_blocked: `13`
+- ser_observed: `0`
+- rca_observed: `1.0`
+- sandbox_escape_count: `0`
+- runtime_containment_checks: `13/13`
 - sirene_status: `conditional_or_deferred_with_reason`
-- w3_execution_performed: `false`
+- w3_execution_performed: `true_synthetic_isolated_lab_only`
 - w3_execution_allowed: `false`
 - runtime_executed: `false`
 - real_apply_executed: `false`
@@ -24,12 +25,15 @@
 - mcp_activated: `false`
 - rag_ingestion_executed: `false`
 - memory_write_executed: `false`
+- socket_opened: `false`
+- shell_executed: `false`
+- filesystem_escape_performed: `false`
 - external_network_used_except_github_governance: `false`
 - dependency_or_package_manager_used: `false`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `execute_if08_w3_runtime_tool_mcp_sandbox_controlled_execution`
+- next_recommended_step: `post_sync_review_if08_w3_runtime_tool_mcp_sandbox_controlled_execution`
 
 ## IF-08 W2 Controlled Execution Post-Sync Review & W3 Readiness Decision | pass
 - status: `if08_w2_post_sync_review_w3_readiness_pass`

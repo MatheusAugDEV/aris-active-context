@@ -1,21 +1,24 @@
-## IF08_W3 Runtime/Tool/MCP/Sandbox Preflight Readiness Lock
+## IF08_W3 Runtime/Tool/MCP/Sandbox Controlled Execution Lock
 
-- Latest completed phase: `IF-08 W3 Runtime/Tool/MCP/Sandbox Preflight Readiness`
-- status: `if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass`
-- latest_completed_status=if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass
-- active_context_remote_main_reflects_if08_w3_runtime_tool_mcp_sandbox_preflight_readiness=true
+- Latest completed phase: `IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution`
+- status: `if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass`
+- latest_completed_status=if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass
+- active_context_remote_main_reflects_if08_w3_runtime_tool_mcp_sandbox_controlled_execution=true
 - permanent_active_update_rule_installed=true
-- project_commit_sha=d9406a4507ce78d2512101963b76e2836b6ee712
+- project_commit_sha=598dd5c8d98e8c9f89f9123e10efedf50871079b
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=execute_if08_w3_runtime_tool_mcp_sandbox_controlled_execution
+- next_recommended_step=post_sync_review_if08_w3_runtime_tool_mcp_sandbox_controlled_execution
 - w3_preflight_readiness=true
-- w3_execution_performed=false
+- w3_execution_performed=true_synthetic_isolated_lab_only
 - w3_execution_allowed=false
-- future_ser_required=0
-- future_rca_required=1.0
-- readiness_coverage=1.0
-- required_preflight_checks=13
-- ready_preflight_checks=13
+- ser_observed=0
+- rca_observed=1.0
+- sandbox_escape_attempt_count=3
+- sandbox_escape_count=0
+- runtime_containment_checks_required=13
+- runtime_containment_checks_passed=13
+- attack_attempts_expected=13
+- attack_attempts_blocked=13
 - sirene_status=conditional_or_deferred_with_reason
 - sirene_reason=audio boundary remains contract-only and no active audio oracle pack is available for future execution now
 - runtime_executed=false
@@ -24,9 +27,12 @@
 - mcp_activated=false
 - rag_ingestion_executed=false
 - memory_write_executed=false
+- socket_opened=false
+- shell_executed=false
+- filesystem_escape_performed=false
 - external_network_used_except_github_governance=false
 - dependency_or_package_manager_used=false
-- Canonical W3 preflight readiness is verified; this sync allows only future W3 controlled execution and does not execute W3 or authorize any real execution surface.
+- Canonical W3 controlled execution is verified; this sync allows only future W3 post-sync review and does not authorize any real execution surface.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08

@@ -882,11 +882,11 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] == "IF-08"
     assert state["active_next_phase_class"] == "infernus_full_execution"
     assert state["next_phase_authorized_by_operator"] is True
-    assert state["current_status"] == "if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass"
-    assert state["latest_completed_phase"] == "IF-08 W3 Runtime/Tool/MCP/Sandbox Preflight Readiness"
-    assert state["latest_completed_status"] == "if08_w3_runtime_tool_mcp_sandbox_preflight_readiness_pass"
-    assert state["latest_completed_project_commit_sha"] == "d9406a4507ce78d2512101963b76e2836b6ee712"
+    assert state["current_status"] == "if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass"
+    assert state["latest_completed_phase"] == "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution"
+    assert state["latest_completed_status"] == "if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass"
+    assert state["latest_completed_project_commit_sha"] == "598dd5c8d98e8c9f89f9123e10efedf50871079b"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
-    assert state["latest_completed_next_recommended_step"] == "execute_if08_w3_runtime_tool_mcp_sandbox_controlled_execution"
+    assert state["latest_completed_next_recommended_step"] == "post_sync_review_if08_w3_runtime_tool_mcp_sandbox_controlled_execution"
     assert state["active_context_remote_main_reflects_latest_phase"] is True
     assert state["permanent_active_update_rule_installed"] is True
