@@ -1,0 +1,9 @@
+{
+  "phase_id": "PURG-00-OPERATOR-REVIEW-PACKET",
+  "decision": "pass",
+  "status": "purg00_operator_review_packet_pass",
+  "does_not_advance_phase": true,
+  "purg00_opened": false,
+  "purg00_executed": false,
+  "next_recommended_step": "request_operator_authorization_for_purg00_route_admission"
+}

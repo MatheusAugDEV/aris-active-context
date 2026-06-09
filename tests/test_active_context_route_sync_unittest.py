@@ -41,7 +41,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "prepare_purg00_route_admission_or_operator_review",
+            "request_operator_authorization_for_purg00_route_admission",
         )
         self.assertEqual(state["next_phase"], "PURG-PRE")
         self.assertEqual(state["active_next_phase"], "PURG-PRE")
@@ -49,7 +49,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
-        self.assertEqual(state["status"], "purg_pre_canonical_authority_execution_pass")
+        self.assertEqual(state["status"], "purg00_operator_review_packet_pass")
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -225,6 +225,13 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_pre_no_purg00_attestation.json").exists())
         module._check_purg_pre_authority_execution_artifacts(state)
 
+    def test_purg00_operator_review_packet_artifacts_validate(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_operator_review_packet_decision.json").exists())
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_not_opened_attestation.json").exists())
+        module._check_purg00_operator_review_packet_artifacts(state)
+
     def test_route_admission_validator_requires_decision_artifact(self):
         module = self._load_validator_module()
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
@@ -345,6 +352,67 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
                     module._check_purg_pre_authority_execution_artifacts(state)
             finally:
                 module.PURG_PRE_HANDOFF_SOURCE_REFERENCE_MATRIX_PATH = original
+
+    def test_purg00_operator_review_validator_requires_decision_artifact(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original = module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH
+            try:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = missing
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_operator_review_packet_artifacts(state)
+            finally:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = original
+
+    def test_purg00_operator_review_validator_rejects_purg00_opened(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            attestation = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_not_opened_attestation.json").read_text(encoding="utf-8"))
+            attestation["purg00_opened"] = True
+            temp_path = Path(tmpdir) / "attestation.json"
+            temp_path.write_text(json.dumps(attestation), encoding="utf-8")
+            original = module.PURG00_NOT_OPENED_ATTESTATION_PATH
+            try:
+                module.PURG00_NOT_OPENED_ATTESTATION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_operator_review_packet_artifacts(state)
+            finally:
+                module.PURG00_NOT_OPENED_ATTESTATION_PATH = original
+
+    def test_purg00_operator_review_validator_rejects_candidate_promotion(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_operator_review_packet_decision.json").read_text(encoding="utf-8"))
+            decision["candidate_promoted"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH
+            try:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_operator_review_packet_artifacts(state)
+            finally:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = original
+
+    def test_purg00_operator_review_validator_rejects_invalid_finding_remediation(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_operator_review_packet_decision.json").read_text(encoding="utf-8"))
+            decision["invalid_finding_remediated"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH
+            try:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_operator_review_packet_artifacts(state)
+            finally:
+                module.PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH = original
 
 
 if __name__ == "__main__":

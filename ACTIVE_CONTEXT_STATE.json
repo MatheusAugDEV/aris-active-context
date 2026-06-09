@@ -210,14 +210,14 @@
         "latest_completed_status": "if11_minos_final_verdict_closure_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "purg_pre_canonical_authority_execution_pass",
+        "status": "purg00_operator_review_packet_pass",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "prepare_purg00_route_admission_or_operator_review"
+        "latest_completed_next_recommended_step": "request_operator_authorization_for_purg00_route_admission"
     },
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "prepare_purg00_route_admission_or_operator_review",
+    "latest_completed_next_recommended_step": "request_operator_authorization_for_purg00_route_admission",
     "latest_completed_no_execution": {
         "w05_executed": false,
         "wave_executed": false,
@@ -321,7 +321,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "PURG-PRE",
-        "deferred_phase_reason": "PURG-PRE authority/materialization was verified against the admitted live route, the active Purgatorium roadmap, and the IF09/IF10/IF11 handoff packet; PURG-00 remains unopened and no real execution surface is authorized. Next step: prepare_purg00_route_admission_or_operator_review.",
+        "deferred_phase_reason": "PURG-00 operator review packet was prepared against the preserved PURG-PRE live route, the active Purgatorium roadmap, and the IF09/IF10/IF11 handoff packet; PURG-00 remains unopened, route admission is still required, and no real execution surface is authorized. Next step: request_operator_authorization_for_purg00_route_admission.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -333,7 +333,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-PRE authority/materialization verified. Next step may prepare PURG-00 route admission/operator review only; do not open PURG-00 without Transition Table/schema/validator/operator admission. No finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network is authorized.",
+        "notes": "PURG-00 operator review packet prepared. PURG-00 remains unopened. Next step requires explicit operator authorization for route admission; no finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network is authorized.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "PURG-PRE",
         "phase_class": "purgatorium_full_authority_materialization",
@@ -356,7 +356,7 @@
         ]
     },
     "schema_version": "3.2",
-    "status": "purg_pre_canonical_authority_execution_pass",
+    "status": "purg00_operator_review_packet_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,

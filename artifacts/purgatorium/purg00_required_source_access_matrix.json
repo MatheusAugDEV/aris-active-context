@@ -1,0 +1,33 @@
+{
+  "required_for_future_purg00": [
+    {
+      "source": "ACTIVE_CONTEXT_STATE.json",
+      "required": true,
+      "purpose": "live state authority"
+    },
+    {
+      "source": "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+      "required": true,
+      "purpose": "Purgatorium doctrine and phase contract"
+    },
+    {
+      "source": "IF09 evidence bundle/root manifest",
+      "required": true,
+      "known_hash": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+      "purpose": "finding and evidence source"
+    },
+    {
+      "source": "IF10 purgatorium handoff graph",
+      "required": true,
+      "known_hash": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+      "purpose": "finding detail, root cause candidates, remediation track, regression/revalidation plan"
+    },
+    {
+      "source": "IF11 closure packet",
+      "required": true,
+      "purpose": "Minos final verdict and closure boundary"
+    }
+  ],
+  "future_blocker_if_missing": "DATA_GAP_BLOCKED",
+  "purg00_must_not_infer_missing_graph_details": true
+}

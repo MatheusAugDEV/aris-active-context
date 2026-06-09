@@ -35,9 +35,21 @@
 - purg_pre_execution_status: `purg_pre_canonical_authority_execution_pass`
 - purg_pre_executed: `true`
 - purg_00_opened: `false`
+- purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`
+- purg00_opened: `false`
+- purg00_executed: `false`
 - purg_pre_execution_decision: `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`
 - purg_pre_execution_summary: `artifacts/purgatorium/purg_pre_canonical_authority_execution_summary.json`
 - purg_pre_execution_report: `artifacts/purgatorium/purg_pre_canonical_authority_execution_report.md`
+- purg00_operator_review_packet_decision: `artifacts/purgatorium/purg00_operator_review_packet_decision.json`
+- purg00_operator_review_packet_summary: `artifacts/purgatorium/purg00_operator_review_packet_summary.json`
+- purg00_operator_review_packet_report: `artifacts/purgatorium/purg00_operator_review_packet_report.md`
+- purg00_route_admission_schema_gap_matrix: `artifacts/purgatorium/purg00_route_admission_schema_gap_matrix.json`
+- purg00_route_admission_validator_gap_matrix: `artifacts/purgatorium/purg00_route_admission_validator_gap_matrix.json`
+- purg00_route_admission_future_patch_plan: `artifacts/purgatorium/purg00_route_admission_future_patch_plan.md`
+- purg00_route_admission_no_real_execution_attestation: `artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation.json`
+- purg00_required_source_access_matrix: `artifacts/purgatorium/purg00_required_source_access_matrix.json`
+- purg00_not_opened_attestation: `artifacts/purgatorium/purg00_not_opened_attestation.json`
 - previous_live_next_phase: `IF-08`
 - route_admission_decision: `artifacts/purgatorium/purg_pre_route_admission_decision.json`
 - route_admission_summary: `artifacts/purgatorium/purg_pre_route_admission_summary.json`
@@ -57,7 +69,7 @@
 - next_phase: `PURG-PRE`
 - active_next_phase_class: `purgatorium_full_authority_materialization`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `prepare_purg00_route_admission_or_operator_review`
+- next_recommended_step: `request_operator_authorization_for_purg00_route_admission`
 
 ## IF-10 Purgatorium Handoff Graph | pass
 - status: `if10_purgatorium_handoff_graph_pass`

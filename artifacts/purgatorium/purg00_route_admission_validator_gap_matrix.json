@@ -1,0 +1,15 @@
+{
+  "current_validator_enforces": "PURG-PRE remains the live route after authority execution",
+  "requested_transition": "PURG-PRE -> PURG-00",
+  "validator_accepts_requested_transition": false,
+  "required_validator_change": "Add explicit PURG-00 route-admission artifact validation and route-consistency rules.",
+  "risk_if_changed": "Changing validator without source access guarantees can open PURG-00 without full IF10 graph details.",
+  "tests_required_before_acceptance": [
+    "validate ACTIVE_CONTEXT_STATE.json",
+    "validate ACTIVE_CONTEXT_SCHEMA.json",
+    "validate no-real-exec attestation",
+    "validate PURG-00 not opened in review packet",
+    "validate IF09-FIND-002 not promoted",
+    "validate IF09-FIND-003 not remediated"
+  ]
+}

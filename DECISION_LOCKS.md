@@ -1,19 +1,20 @@
-## PURG-PRE Canonical Authority Execution Lock
+## PURG-00 Operator Review Packet Lock
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
-- status: `purg_pre_canonical_authority_execution_pass`
+- status: `purg00_operator_review_packet_pass`
 - latest_completed_status=if11_minos_final_verdict_closure_pass
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure=true
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_purg00_route_admission_or_operator_review
+- next_recommended_step=request_operator_authorization_for_purg00_route_admission
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
 - live_route_opened=true
 - route_admission_decision_status=purg_pre_route_admission_pass
 - purg_pre_execution_status=purg_pre_canonical_authority_execution_pass
+- purg00_operator_review_packet_prepared=true
 - previous_live_next_phase=IF-08
 - previous_live_next_phase_class=infernus_full_execution
 - new_live_next_phase=PURG-PRE
@@ -21,11 +22,21 @@
 - purg_pre_executed=true
 - does_not_open_purg_00=true
 - purg_00_opened=false
+- purg00_opened=false
+- purg00_executed=false
+- purg00_pass_declared=false
 - purg_00_pass_declared=false
 - finding_fix_executed=false
 - candidate_promoted=false
 - invalid_finding_remediated=false
 - future_purg00_admission_candidate_created=true
+- future_purg00_route_admission_still_required=true
+- requested_next_phase_candidate=PURG-00
+- requested_next_phase_class_candidate=purgatorium_full_intake
+- schema_gap_matrix_created=true
+- validator_gap_matrix_created=true
+- future_patch_plan_created=true
+- required_source_access_matrix_created=true
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
@@ -64,9 +75,11 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical IF11 closure is verified; this sync executes only PURG-PRE authority/materialization verification, preserves latest completed phase/status as IF11, leaves operator cosignature pending review, keeps PURG-00 unopened, and does not authorize any real execution surface.
+- Canonical IF11 closure is verified; this sync prepares only the PURG-00 operator review packet, preserves the PURG-PRE live route plus latest completed phase/status as IF11, leaves operator cosignature pending review, keeps PURG-00 unopened, and does not authorize any real execution surface.
 - PURG-PRE authority execution = true
 - PURG-PRE real execution = false
+- PURG-00 operator review packet = true
+- PURG-00 real execution = false
 - future waves real execution = false
 - active_next_phase=PURG-PRE
 - active_next_phase_class=purgatorium_full_authority_materialization

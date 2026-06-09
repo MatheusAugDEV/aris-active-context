@@ -1,7 +1,7 @@
 # INF-FULL-07 — Estado Atual
 
 - phase_id: `INF-FULL-07`
-- status: `purg_pre_canonical_authority_execution_pass`
+- status: `purg00_operator_review_packet_pass`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
@@ -66,6 +66,15 @@ Referências ativas desta fase:
 - `artifacts/purgatorium/purg_pre_no_purg00_attestation.json`
 - `artifacts/purgatorium/purg_pre_no_real_execution_attestation_v2.json`
 - `artifacts/purgatorium/purg_pre_future_purg00_admission_candidate.json`
+- `artifacts/purgatorium/purg00_operator_review_packet_decision.json`
+- `artifacts/purgatorium/purg00_operator_review_packet_summary.json`
+- `artifacts/purgatorium/purg00_operator_review_packet_report.md`
+- `artifacts/purgatorium/purg00_route_admission_schema_gap_matrix.json`
+- `artifacts/purgatorium/purg00_route_admission_validator_gap_matrix.json`
+- `artifacts/purgatorium/purg00_route_admission_future_patch_plan.md`
+- `artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation.json`
+- `artifacts/purgatorium/purg00_required_source_access_matrix.json`
+- `artifacts/purgatorium/purg00_not_opened_attestation.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/decision.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/summary.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/report.md`
@@ -208,6 +217,7 @@ Referências ativas desta fase:
 - `use` = `forensic_only`
 - Política: `EXCLUDENT_POLICY.md`
 - Roadmap técnico ativo pós-Infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- PURG-00 operator review packet prepared with live route preserved as `PURG-PRE`; next step: `request_operator_authorization_for_purg00_route_admission`
 - Infernus canonroadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` = stub superseded, sem autoridade ativa
 - Cópia forense do Infernus canonroadmap: `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
 
@@ -264,4 +274,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The IF11 minos final verdict closure packet remains canonical as pass; PURG-PRE authority/materialization is now verified and the next canonical step is prepare_purg00_route_admission_or_operator_review with no real execution surface authorized.
+- The IF11 minos final verdict closure packet remains canonical as pass; the PURG-00 operator review packet is now prepared with PURG-PRE preserved as the live route, and the next canonical step is request_operator_authorization_for_purg00_route_admission with no real execution surface authorized.
