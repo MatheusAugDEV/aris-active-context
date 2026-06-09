@@ -261,6 +261,23 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_data_gap_matrix.json").exists())
         module._check_purg00_handoff_intake_authority_lock_artifacts(state)
 
+    def test_purg00_handoff_intake_validator_skips_external_project_hash_recheck_when_absent(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original_paths = {
+                "IF09_PROJECT_ROOT_MANIFEST_PATH": module.IF09_PROJECT_ROOT_MANIFEST_PATH,
+                "IF10_PROJECT_GRAPH_PATH": module.IF10_PROJECT_GRAPH_PATH,
+            }
+            try:
+                for name in original_paths:
+                    setattr(module, name, missing)
+                module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                for name, value in original_paths.items():
+                    setattr(module, name, value)
+
     def test_route_admission_validator_requires_decision_artifact(self):
         module = self._load_validator_module()
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))

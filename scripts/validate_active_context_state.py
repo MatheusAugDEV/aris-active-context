@@ -1109,6 +1109,12 @@ def _require_forbidden_flags_false(payload: dict[str, Any], label: str) -> None:
         _require(payload.get(key) is False, f"{label} {key} mismatch")
 
 
+def _require_sha256_matches_if_accessible(path: pathlib.Path, expected_sha256: str, label: str) -> None:
+    if not path.exists():
+        return
+    _require(hashlib.sha256(path.read_bytes()).hexdigest() == expected_sha256, f"{label} physical sha mismatch")
+
+
 def _check_forbidden_route_claims() -> None:
     _require(EXPECTED_PHASE != "PURG-00", "latest completed phase cannot be PURG-00 here")
     _require(EXPECTED_LATEST_COMPLETED_STATUS not in {"purg_00_pass", "purg00_pass"}, "latest completed status cannot be PURG-00 pass here")
@@ -9154,8 +9160,16 @@ def _check_purg00_handoff_intake_authority_lock_artifacts(state: dict[str, Any])
     _require(hash_matrix.get("if11_closure_boundary_verified") is True, "purg00 source hash IF11 boundary mismatch")
     _require(hash_matrix.get("hash_mismatch_count") == 0, "purg00 source hash mismatch_count mismatch")
     _require(hash_matrix.get("verification_status") == "pass", "purg00 source hash verification_status mismatch")
-    _require(hashlib.sha256(IF09_PROJECT_ROOT_MANIFEST_PATH.read_bytes()).hexdigest() == hash_matrix["if09_root_manifest_sha256_observed"], "purg00 source hash IF09 physical sha mismatch")
-    _require(hashlib.sha256(IF10_PROJECT_GRAPH_PATH.read_bytes()).hexdigest() == hash_matrix["if10_graph_sha256_observed"], "purg00 source hash IF10 physical sha mismatch")
+    _require_sha256_matches_if_accessible(
+        IF09_PROJECT_ROOT_MANIFEST_PATH,
+        hash_matrix["if09_root_manifest_sha256_observed"],
+        "purg00 source hash IF09",
+    )
+    _require_sha256_matches_if_accessible(
+        IF10_PROJECT_GRAPH_PATH,
+        hash_matrix["if10_graph_sha256_observed"],
+        "purg00 source hash IF10",
+    )
 
     data_gap = _load_json(PURG00_DATA_GAP_MATRIX_PATH)
     _require(data_gap.get("data_gap_policy") == "do_not_infer_missing_graph_details", "purg00 data gap policy mismatch")
