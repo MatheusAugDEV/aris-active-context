@@ -1,24 +1,31 @@
-## PURG-PRE Route Admission Lock
+## PURG-PRE Canonical Authority Execution Lock
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
-- status: `purg_pre_route_admission_pass`
+- status: `purg_pre_canonical_authority_execution_pass`
 - latest_completed_status=if11_minos_final_verdict_closure_pass
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure=true
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=execute_purg_pre_canonical_authority_materialization
+- next_recommended_step=prepare_purg00_route_admission_or_operator_review
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
 - live_route_opened=true
 - route_admission_decision_status=purg_pre_route_admission_pass
+- purg_pre_execution_status=purg_pre_canonical_authority_execution_pass
 - previous_live_next_phase=IF-08
 - previous_live_next_phase_class=infernus_full_execution
 - new_live_next_phase=PURG-PRE
 - new_live_next_phase_class=purgatorium_full_authority_materialization
-- does_not_execute_purg_pre=true
+- purg_pre_executed=true
 - does_not_open_purg_00=true
+- purg_00_opened=false
+- purg_00_pass_declared=false
+- finding_fix_executed=false
+- candidate_promoted=false
+- invalid_finding_remediated=false
+- future_purg00_admission_candidate_created=true
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
@@ -57,8 +64,9 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical IF11 closure is verified; this sync opens the PURG-PRE live route only, preserves latest completed phase/status as IF11, leaves operator cosignature pending review, does not execute PURG-PRE, does not open PURG-00, and does not authorize any real execution surface.
-- PURG-PRE execution = false
+- Canonical IF11 closure is verified; this sync executes only PURG-PRE authority/materialization verification, preserves latest completed phase/status as IF11, leaves operator cosignature pending review, keeps PURG-00 unopened, and does not authorize any real execution surface.
+- PURG-PRE authority execution = true
+- PURG-PRE real execution = false
 - future waves real execution = false
 - active_next_phase=PURG-PRE
 - active_next_phase_class=purgatorium_full_authority_materialization

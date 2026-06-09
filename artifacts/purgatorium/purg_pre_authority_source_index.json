@@ -1,0 +1,20 @@
+{
+  "active_context_state": "ACTIVE_CONTEXT_STATE.json",
+  "purgatorium_roadmap": "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+  "route_admission_decision": "artifacts/purgatorium/purg_pre_route_admission_decision.json",
+  "operator_review_packet": "artifacts/purgatorium/purg_operator_review_packet_decision.json",
+  "if09_root_manifest_sha256": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+  "if10_graph_sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+  "validated_handoff_ids": [
+    "IF09-FIND-001"
+  ],
+  "contextual_candidate_ids": [
+    "IF09-FIND-002"
+  ],
+  "excluded_invalid_ids": [
+    "IF09-FIND-003"
+  ],
+  "supporting_observation_ids": [
+    "IF09-OBS-001"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "phase_id": "PURG-PRE-CANONICAL-AUTHORITY-EXECUTION",
+  "status": "purg_pre_canonical_authority_execution_pass",
+  "purg_00_opened": false,
+  "purg_00_pass_declared": false,
+  "finding_fix_executed": false,
+  "candidate_promoted": false,
+  "invalid_finding_remediated": false
+}

@@ -1,7 +1,7 @@
 # INF-FULL-07 — Estado Atual
 
 - phase_id: `INF-FULL-07`
-- status: `purg_pre_route_admission_pass`
+- status: `purg_pre_canonical_authority_execution_pass`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
@@ -58,6 +58,14 @@ Referências ativas desta fase:
 - `artifacts/purgatorium/purg_pre_route_admission_live_route_mutation_manifest.json`
 - `artifacts/purgatorium/purg_pre_route_admission_no_real_execution_attestation.json`
 - `artifacts/purgatorium/purg_pre_route_admission_rollback_plan.md`
+- `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`
+- `artifacts/purgatorium/purg_pre_canonical_authority_execution_summary.json`
+- `artifacts/purgatorium/purg_pre_canonical_authority_execution_report.md`
+- `artifacts/purgatorium/purg_pre_authority_source_index.json`
+- `artifacts/purgatorium/purg_pre_handoff_source_reference_matrix.json`
+- `artifacts/purgatorium/purg_pre_no_purg00_attestation.json`
+- `artifacts/purgatorium/purg_pre_no_real_execution_attestation_v2.json`
+- `artifacts/purgatorium/purg_pre_future_purg00_admission_candidate.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/decision.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/summary.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/report.md`
@@ -256,4 +264,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The IF11 minos final verdict closure packet remains canonical as pass; the PURG-PRE live route is now admitted and the next canonical step is execute_purg_pre_canonical_authority_materialization with no real execution surface authorized.
+- The IF11 minos final verdict closure packet remains canonical as pass; PURG-PRE authority/materialization is now verified and the next canonical step is prepare_purg00_route_admission_or_operator_review with no real execution surface authorized.

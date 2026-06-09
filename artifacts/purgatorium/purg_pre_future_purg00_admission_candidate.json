@@ -1,0 +1,11 @@
+{
+  "candidate_phase": "PURG-00",
+  "candidate_phase_class": "purgatorium_full_intake",
+  "status": "candidate_only_not_opened",
+  "requires_transition_table_row": true,
+  "requires_operator_authorization": true,
+  "requires_schema_validator_admission": true,
+  "requires_no_real_execution_attestation": true,
+  "purg_00_opened_now": false,
+  "reason": "PURG-PRE verified authority/materialization only. PURG-00 intake requires separate route admission."
+}

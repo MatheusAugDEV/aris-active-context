@@ -1,0 +1,21 @@
+{
+  "if09_references_verified": true,
+  "if10_references_verified": true,
+  "if11_references_verified": true,
+  "if09_root_manifest_sha256": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+  "if10_graph_sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+  "validated_handoff_ids": [
+    "IF09-FIND-001"
+  ],
+  "contextual_candidate_ids": [
+    "IF09-FIND-002"
+  ],
+  "excluded_invalid_ids": [
+    "IF09-FIND-003"
+  ],
+  "supporting_observation_ids": [
+    "IF09-OBS-001"
+  ],
+  "candidate_promoted": false,
+  "invalid_finding_remediated": false
+}

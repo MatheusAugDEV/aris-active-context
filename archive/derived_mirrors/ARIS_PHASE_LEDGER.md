@@ -32,6 +32,12 @@
 - purg_pre_route_opening_candidate_created: `true`
 - live_route_opened: `true`
 - live_route_opened_by: `purg_pre_route_admission_pass`
+- purg_pre_execution_status: `purg_pre_canonical_authority_execution_pass`
+- purg_pre_executed: `true`
+- purg_00_opened: `false`
+- purg_pre_execution_decision: `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`
+- purg_pre_execution_summary: `artifacts/purgatorium/purg_pre_canonical_authority_execution_summary.json`
+- purg_pre_execution_report: `artifacts/purgatorium/purg_pre_canonical_authority_execution_report.md`
 - previous_live_next_phase: `IF-08`
 - route_admission_decision: `artifacts/purgatorium/purg_pre_route_admission_decision.json`
 - route_admission_summary: `artifacts/purgatorium/purg_pre_route_admission_summary.json`
@@ -51,7 +57,7 @@
 - next_phase: `PURG-PRE`
 - active_next_phase_class: `purgatorium_full_authority_materialization`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `execute_purg_pre_canonical_authority_materialization`
+- next_recommended_step: `prepare_purg00_route_admission_or_operator_review`
 
 ## IF-10 Purgatorium Handoff Graph | pass
 - status: `if10_purgatorium_handoff_graph_pass`
