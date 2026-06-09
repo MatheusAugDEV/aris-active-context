@@ -171,7 +171,9 @@ Referências ativas desta fase:
 - `artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json`
 - `artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json`
 - `INFERNUS_STANDING_AUTHORIZATION.md`
-- `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` — stub superseded, sem autoridade ativa
+- `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` — cópia forense
 - `EXCLUDENT_POLICY.md`
 - `OPERATOR_PREFERENCES.md`
 - `MANDATORY_READ_FIRST_RULES.md`
@@ -189,7 +191,9 @@ Referências ativas desta fase:
 - `authority` = `none`
 - `use` = `forensic_only`
 - Política: `EXCLUDENT_POLICY.md`
-- Roadmap canônico ativo do Infernus: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- Roadmap técnico ativo pós-Infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- Infernus canonroadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` = stub superseded, sem autoridade ativa
+- Cópia forense do Infernus canonroadmap: `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
 
 ## Live Pointers
 

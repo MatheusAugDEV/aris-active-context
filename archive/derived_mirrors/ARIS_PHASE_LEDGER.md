@@ -27,6 +27,10 @@
 - permanent_active_update_rule_installed: `true`
 - execution_scope: `artifact_only_final_verdict_closure`
 - macro_transition_preserved: `true`
+- technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- infernus_canonroadmap_status: `superseded_excludent_forensic_only`
+- purg_pre_route_opening_candidate_created: `true`
+- live_route_opened: `false`
 - runtime_executed: `false`
 - real_apply_executed: `false`
 - product_bedrock_real_apply_secrets_executed: `false`

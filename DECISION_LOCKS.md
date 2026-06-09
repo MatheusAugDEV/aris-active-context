@@ -8,6 +8,11 @@
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
 - next_recommended_step=prepare_purgatorium_handoff_or_operator_review
+- technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
+- infernus_canonroadmap_status=superseded_excludent_forensic_only
+- purg_pre_route_opening_candidate_created=true
+- live_route_opened=false
+- live_route_preserved_due_schema_validator_fail_closed=true
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
 - source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701
@@ -45,7 +50,7 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical IF11 closure is verified; this sync records only the governance-layer final verdict and closure packet, preserves the macro IF-08 route contract, leaves operator cosignature pending review, and does not authorize any real execution surface.
+- Canonical IF11 closure is verified; this sync records only the governance-layer final verdict and closure packet, supersedes the Infernus canonroadmap into excludent/forensic-only status, materializes the Purgatorium canonroadmap as active technical direction post-Infernus, preserves the macro IF-08 route contract while PURG-PRE remains candidate-only, leaves operator cosignature pending review, and does not authorize any real execution surface.
 - IF-08 real execution = false
 - future waves real execution = false
 - active_next_phase=IF-08
@@ -716,7 +721,7 @@
 - excludent_policy_created=true
 - excludent_read_by_default_allowed=false
 - only_canonroadmap_visible_as_active=true
-- active_canonical_infernus_roadmap=docs/infernus_full/infernus_full_canonroadmap.md
+- historical_active_canonical_infernus_roadmap_at_inf_full_06=docs/infernus_full/infernus_full_canonroadmap.md
 - f21_route_used=false
 - f21_route_classification=excludent_or_historical_residual_route_noise
 - governance_gate_streak=0

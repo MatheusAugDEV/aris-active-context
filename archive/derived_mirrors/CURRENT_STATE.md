@@ -14,6 +14,10 @@
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
+- technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- infernus_canonroadmap_status: `superseded_excludent_forensic_only`
+- purg_pre_route_opening_candidate_created: `true`
+- live_route_opened: `false`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
 - ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF11_MINOS_FINAL_VERDICT_CLOSURE: `true`
@@ -57,10 +61,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- IF11 minos final verdict closure is canonically pass; the next canonical step is `prepare_purgatorium_handoff_or_operator_review`.
+- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap is now `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, the Infernus canonroadmap is superseded/excludent/forensic-only, and the next canonical step remains `prepare_purgatorium_handoff_or_operator_review`.
 
 ## What This Means
 
 INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-11 Minos Final Verdict + Closure`.
-The Project repo result was verified on `origin/main` with terminal green CI; the IF11 packet preserved the IF10 causal handoff lineage, recorded minos mechanical and semantic pass plus anti-theater pass, left operator cosignature in `pending_operator_review`, marked closure as `closed_with_purgatorium_handoff_ready`, preserved the macro route unchanged, and kept all real/runtime/network/secret/cost/quota/audio surfaces false.
+The post-Infernus technical direction document is now `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; the former `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` was superseded, copied into `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` for forensic retention, and replaced by a non-authoritative stub. The live route was not mutated because the current schema/validator contract still fail-closes on `INF-FULL-07 -> IF-08`.
 The next prompt may target only `prepare_purgatorium_handoff_or_operator_review`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.

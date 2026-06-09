@@ -3,11 +3,11 @@ import json, sys, pathlib
 state = json.loads(pathlib.Path("ACTIVE_CONTEXT_STATE.json").read_text())
 
 checks = {
-    "CURRENT_STATE.md": [
+    "archive/derived_mirrors/CURRENT_STATE.md": [
         ("current_phase_id", state.get("current_phase_id", "")),
         ("decision", state.get("decision", "")),
     ],
-    "NEXT_ACTION.md": [
+    "archive/derived_mirrors/NEXT_ACTION.md": [
         ("next_phase", str(state.get("next_phase", "null"))),
     ],
     "DECISION_LOCKS.md": [

@@ -65,4 +65,5 @@ latest_completed_phase: IF-11 Minos Final Verdict + Closure
 latest_completed_status: if11_minos_final_verdict_closure_pass
 next_phase: IF-08
 next_recommended_step: prepare_purgatorium_handoff_or_operator_review
+technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false

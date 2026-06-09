@@ -2,12 +2,12 @@
 
 ## Active roadmap authority
 
-- `docs/infernus_full/infernus_full_canonroadmap.md`
-- `docs/infernus_full/inf_full_03_opening_2026_06_06.md`
-- `docs/infernus_full/inf_full_04_scenario_pack_harness_readiness_2026_06_06.md`
-- `docs/infernus_full/inf_full_05_pre_execution_review_2026_06_06.md`
+No file in this directory is active post-Infernus roadmap authority anymore.
 
-This document is the active technical direction for Infernus FULL roadmap planning. It does not authorize execution.
+- `docs/infernus_full/infernus_full_canonroadmap.md` = superseded stub only
+- active post-Infernus technical roadmap = `docs/purgatorium_full/purgatorium_roadmapcanon.md`
+
+Infernus phase documents in this directory remain historical evidence only. They do not authorize execution.
 
 ## Active preparation packet
 

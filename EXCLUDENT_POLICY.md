@@ -45,10 +45,13 @@ Only forensic audit by explicit operator request.
 
 Any automatic or default reading.
 
-## Active canonical Infernus roadmap
+## Post-IF11 supersession
 
-The only active Infernus roadmap is:
-`project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
-(mirror of: `docs/infernus_full/infernus_full_canonroadmap.md` in Project_ARIS)
+After IF-11, `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` is no longer active direction.
+It must be treated as superseded stub only, with forensic content retained under:
+`excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
 
-Created: 2026-06-06 | Phase: INF-FULL-06 | Gate: Excludent Quarantine Gate
+The active post-Infernus technical roadmap document is:
+`project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+
+This supersession changes document authority only. It does not open live route, does not authorize execution, and does not override `ACTIVE_CONTEXT_STATE.json` or `ROADMAP_CANONICAL.md`.

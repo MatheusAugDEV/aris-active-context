@@ -8,8 +8,10 @@ Files that are excludent in Project_ARIS are also excludent here.
 
 NOT readable by default. Forensic audit only, by explicit operator request.
 
-## Active canonical Infernus roadmap
+## Post-IF11 roadmap supersession
 
-`project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+The active post-Infernus technical roadmap is:
+`project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 
-Created: 2026-06-06 | Phase: INF-FULL-06
+The former Infernus canonroadmap is superseded and forensic-only:
+`excludent/infernus/roadmaps/infernus_full_canonroadmap.md`

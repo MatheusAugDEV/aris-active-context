@@ -1,0 +1,30 @@
+# PURG-PRE Canonical Authority Materialization
+
+- decision: `pass`
+- status: `purg_pre_canonical_authority_materialization_pass`
+- does_not_advance_phase: `true`
+- latest_completed_phase_preserved: `IF-11 Minos Final Verdict + Closure`
+- live_route_opened: `false`
+- route_opening_candidate_created: `true`
+- live_route_preserved_next_phase: `IF-08`
+- live_route_preserved_next_phase_class: `infernus_full_execution`
+- technical_direction_active_document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
+- infernus_superseded_stub: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md`
+- infernus_forensic_copy: `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
+- schema_allows_purg_pre_live_route: `false`
+- validator_allows_purg_pre_live_route: `false`
+- fail_closed_reason: `ACTIVE_CONTEXT_SCHEMA.json` e `scripts/validate_active_context_state.py` ainda preservam a rota viva `INF-FULL-07 -> IF-08`
+- next_recommended_step_preserved: `prepare_purgatorium_handoff_or_operator_review`
+- runtime_executed: `false`
+- real_apply_executed: `false`
+- product_bedrock_real_apply_secrets_executed: `false`
+- external_network_used_except_github_governance: `false`
+- dependency_or_package_manager_used: `false`
+- mcp_activated: `false`
+- rag_ingestion_executed: `false`
+- memory_write_executed: `false`
+- socket_opened: `false`
+- shell_executed: `false`
+- filesystem_escape_performed: `false`
+- real_cost_spent: `false`
+- real_quota_consumed: `false`

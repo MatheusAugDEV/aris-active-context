@@ -321,7 +321,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "IF-08",
-        "deferred_phase_reason": "INF-FULL-07 remains closed; IF11 minos final verdict closure is canonical pass. Next step: prepare_purgatorium_handoff_or_operator_review.",
+        "deferred_phase_reason": "INF-FULL-07 remains closed; IF11 minos final verdict closure is canonical pass. Infernus canonroadmap is superseded/excludent, post-Infernus technical direction now lives in project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md, and the PURG-PRE route opening remains candidate-only while schema/validator stay fail-closed on IF-08. Next step: prepare_purgatorium_handoff_or_operator_review.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -333,7 +333,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "INF-FULL-07 remains closed. IF11 minos final verdict closure is canonical pass. Next step is prepare_purgatorium_handoff_or_operator_review. Macro route remained preserved, operator cosignature is still pending review, no real execution surface was activated, and no new real execution is authorized.",
+        "notes": "INF-FULL-07 remains closed. IF11 minos final verdict closure is canonical pass. The Infernus canonroadmap is now superseded and forensic-only in excludent/, the active post-Infernus technical direction document is project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md, and a PURG-PRE route opening candidate was materialized without mutating the live route because schema/validator still fail-closed on IF-08. Next step is prepare_purgatorium_handoff_or_operator_review. Macro route remained preserved, operator cosignature is still pending review, no real execution surface was activated, and no new real execution is authorized.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "IF-08",
         "phase_class": "infernus_full_execution",

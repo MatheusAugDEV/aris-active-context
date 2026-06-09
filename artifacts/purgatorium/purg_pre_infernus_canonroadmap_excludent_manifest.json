@@ -1,0 +1,20 @@
+{
+  "manifest_id": "purg_pre_infernus_canonroadmap_excludent_manifest",
+  "decision": "pass",
+  "source_path_before_stub": "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+  "source_sha256_before_stub": "a730fb59001f37dc5cf6457460d7c5f26bdc903656f7bd667a3c7d92257f0022",
+  "source_blob_sha_before_stub": "a2c0f7d72800c7ccc35ac49a1583731600857777",
+  "destination_forensic_path": "excludent/infernus/roadmaps/infernus_full_canonroadmap.md",
+  "destination_forensic_sha256": "f17487852100810fcf09eaff84e02200273ccede073a0bf2fbf651730f90e993",
+  "destination_forensic_blob_sha": "374fb88c4c64a862d158d01fa494187ad4295a01",
+  "retained_stub_path": "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+  "retained_stub_sha256": "d45e4fa0f31c48d1f3d2602f109c35b5edc86b2acafb1583dd19e67e63ba6a0c",
+  "retained_stub_blob_sha": "391708eb34d2a1fbebd713bf68178567ca6a9614",
+  "classification": "excluded_from_context",
+  "read_by_default": false,
+  "authority": "none",
+  "use": "forensic_only",
+  "superseded_by": "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+  "physical_delete_allowed": "false_without_archive_artifact",
+  "reason": "Infernus canonroadmap is no longer the active technical direction after IF-11; forensic retention is preserved without leaving authority active on the original path."
+}

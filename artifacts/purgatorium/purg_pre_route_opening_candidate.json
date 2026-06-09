@@ -1,0 +1,16 @@
+{
+  "phase_id": "PURG-PRE",
+  "decision": "pass",
+  "status": "route_opening_candidate_created",
+  "requested_next_phase": "PURG-PRE",
+  "requested_next_phase_class": "purgatorium_full_authority_materialization",
+  "requested_next_step": "execute_purg_pre_canonical_authority_materialization",
+  "live_route_opened": false,
+  "schema_allows_live_route_mutation": false,
+  "validator_allows_live_route_mutation": false,
+  "preserved_live_next_phase": "IF-08",
+  "preserved_live_next_phase_class": "infernus_full_execution",
+  "preserved_latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
+  "preserved_latest_completed_status": "if11_minos_final_verdict_closure_pass",
+  "reason": "Candidate recorded only. The current schema/validator contract does not admit PURG-PRE as live route yet."
+}

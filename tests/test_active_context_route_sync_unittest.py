@@ -180,6 +180,13 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
                 for name, value in original_paths.items():
                     setattr(module, name, value)
 
+    def test_purg_pre_authority_materialization_artifacts_validate(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT / "project_mirror" / "docs" / "purgatorium_full" / "purgatorium_roadmapcanon.md").exists())
+        self.assertTrue((ROOT / "excludent" / "infernus" / "roadmaps" / "infernus_full_canonroadmap.md").exists())
+        module._check_purg_pre_canonical_authority_materialization_artifacts(state)
+
 
 if __name__ == "__main__":
     unittest.main()

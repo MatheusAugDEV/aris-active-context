@@ -1,0 +1,15 @@
+{
+  "phase_id": "PURG-PRE-CANONICAL-AUTHORITY-MATERIALIZATION",
+  "decision": "pass",
+  "status": "purg_pre_canonical_authority_materialization_pass",
+  "does_not_advance_phase": true,
+  "latest_completed_phase_preserved": "IF-11 Minos Final Verdict + Closure",
+  "route_opening_candidate_created": true,
+  "live_route_opened": false,
+  "live_route_preserved_next_phase": "IF-08",
+  "technical_direction_active_document": "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+  "forensic_infernus_copy_path": "excludent/infernus/roadmaps/infernus_full_canonroadmap.md",
+  "superseded_infernus_stub_path": "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+  "hard_locks_preserved": true,
+  "next_recommended_step_preserved": "prepare_purgatorium_handoff_or_operator_review"
+}
