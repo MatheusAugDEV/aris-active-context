@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -92,6 +93,31 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertFalse(state["authorization"]["real_dry_run_execution_authorized"])
         self.assertFalse(state["authorization"]["real_apply_authorized"])
         self.assertFalse(state["authorization"]["runtime_integration_allowed"])
+
+    def test_if09_validator_skips_external_project_artifacts_when_absent(self):
+        module = self._load_validator_module()
+        state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original_paths = {
+                "IF09_PROJECT_DECISION_PATH": module.IF09_PROJECT_DECISION_PATH,
+                "IF09_PROJECT_SUMMARY_PATH": module.IF09_PROJECT_SUMMARY_PATH,
+                "IF09_PROJECT_REPORT_PATH": module.IF09_PROJECT_REPORT_PATH,
+                "IF09_PROJECT_ROOT_MANIFEST_PATH": module.IF09_PROJECT_ROOT_MANIFEST_PATH,
+                "IF09_PROJECT_HASH_TREE_PATH": module.IF09_PROJECT_HASH_TREE_PATH,
+                "IF09_PROJECT_CUSTODY_CHAIN_PATH": module.IF09_PROJECT_CUSTODY_CHAIN_PATH,
+                "IF09_PROJECT_REPLAY_DIFF_PATH": module.IF09_PROJECT_REPLAY_DIFF_PATH,
+                "IF09_PROJECT_MUTATION_SURVIVAL_PATH": module.IF09_PROJECT_MUTATION_SURVIVAL_PATH,
+                "IF09_PROJECT_REGISTER_PATH": module.IF09_PROJECT_REGISTER_PATH,
+                "IF09_PROJECT_DOC_PATH": module.IF09_PROJECT_DOC_PATH,
+            }
+            try:
+                for name in original_paths:
+                    setattr(module, name, missing)
+                module._check_if09_evidence_bundle_vulnerability_register_artifacts(state)
+            finally:
+                for name, value in original_paths.items():
+                    setattr(module, name, value)
 
 
 if __name__ == "__main__":

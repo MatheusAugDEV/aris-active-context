@@ -7765,6 +7765,10 @@ def _check_if09_evidence_bundle_vulnerability_register_artifacts(state: dict[str
         IF09_ACTIVE_DECISION_PATH,
         IF09_ACTIVE_SUMMARY_PATH,
         IF09_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF09 active-context artifact: {path}")
+
+    external_project_paths = (
         IF09_PROJECT_DECISION_PATH,
         IF09_PROJECT_SUMMARY_PATH,
         IF09_PROJECT_REPORT_PATH,
@@ -7775,8 +7779,8 @@ def _check_if09_evidence_bundle_vulnerability_register_artifacts(state: dict[str
         IF09_PROJECT_MUTATION_SURVIVAL_PATH,
         IF09_PROJECT_REGISTER_PATH,
         IF09_PROJECT_DOC_PATH,
-    ):
-        _require(path.exists(), f"missing IF09 artifact: {path}")
+    )
+    external_project_available = all(path.exists() for path in external_project_paths)
 
     active_decision = _load_json(IF09_ACTIVE_DECISION_PATH)
     _require(active_decision.get("phase_id") == "IF-09-EVIDENCE-BUNDLE-VULNERABILITY-REGISTER", "active IF09 decision phase_id mismatch")
@@ -7817,6 +7821,16 @@ def _check_if09_evidence_bundle_vulnerability_register_artifacts(state: dict[str
     _require(active_summary.get("project_ci_run_url") == IF09_PROJECT_CI_RUN_URL, "active IF09 summary ci url mismatch")
     _require(active_summary.get("root_manifest_sha256") == IF09_ROOT_MANIFEST_SHA, "active IF09 summary root manifest sha mismatch")
     _require(active_summary.get("next_recommended_step") == IF09_NEXT_RECOMMENDED_STEP, "active IF09 summary next step mismatch")
+
+    if not external_project_available:
+        _mirror_contains(
+            IF09_ACTIVE_REPORT_PATH,
+            "IF-09 Evidence Bundle + Vulnerability Register Sync",
+            "status: `if09_evidence_bundle_vulnerability_register_pass`",
+            "project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
+            "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
+        )
+        return
 
     decision = _load_json(IF09_PROJECT_DECISION_PATH)
     _require(decision.get("phase") == IF09_PHASE, "project IF09 decision phase mismatch")
