@@ -58,9 +58,9 @@
         ],
         "condition": "ci_green_and_validator_pass"
     },
-    "active_next_phase": "IF-08",
-    "active_next_phase_class": "infernus_full_execution",
-    "next_phase": "IF-08",
+    "active_next_phase": "PURG-PRE",
+    "active_next_phase_class": "purgatorium_full_authority_materialization",
+    "next_phase": "PURG-PRE",
     "next_phase_authorized_by_operator": true,
     "anti_proliferation_rule_active": true,
     "ci_enforcement_active": true,
@@ -201,8 +201,8 @@
         ]
     },
     "current_live_route": {
-        "active_next_phase": "IF-08",
-        "active_next_phase_class": "infernus_full_execution",
+        "active_next_phase": "PURG-PRE",
+        "active_next_phase_class": "purgatorium_full_authority_materialization",
         "current_status": "if11_minos_final_verdict_closure_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
@@ -210,14 +210,14 @@
         "latest_completed_status": "if11_minos_final_verdict_closure_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "inf_full_07_if08_authorization_gate_pass",
+        "status": "purg_pre_route_admission_pass",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "prepare_purgatorium_handoff_or_operator_review"
+        "latest_completed_next_recommended_step": "execute_purg_pre_canonical_authority_materialization"
     },
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "prepare_purgatorium_handoff_or_operator_review",
+    "latest_completed_next_recommended_step": "execute_purg_pre_canonical_authority_materialization",
     "latest_completed_no_execution": {
         "w05_executed": false,
         "wave_executed": false,
@@ -320,8 +320,8 @@
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-        "deferred_phase": "IF-08",
-        "deferred_phase_reason": "INF-FULL-07 remains closed; IF11 minos final verdict closure is canonical pass. Infernus canonroadmap is superseded/excludent, post-Infernus technical direction now lives in project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md, and the PURG-PRE route opening remains candidate-only while schema/validator stay fail-closed on IF-08. Next step: prepare_purgatorium_handoff_or_operator_review.",
+        "deferred_phase": "PURG-PRE",
+        "deferred_phase_reason": "Route admission opened PURG-PRE as the next live route after IF11 and the operator-reviewed Purgatorium handoff packet; no real execution surface is authorized. Next step: execute_purg_pre_canonical_authority_materialization.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -333,10 +333,10 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "INF-FULL-07 remains closed. IF11 minos final verdict closure is canonical pass. The Infernus canonroadmap is now superseded and forensic-only in excludent/, the active post-Infernus technical direction document is project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md, and a PURG-PRE route opening candidate was materialized without mutating the live route because schema/validator still fail-closed on IF-08. Next step is prepare_purgatorium_handoff_or_operator_review. Macro route remained preserved, operator cosignature is still pending review, no real execution surface was activated, and no new real execution is authorized.",
+        "notes": "PURG-PRE route admitted by operator-authorized route admission after IF11 closure, the operator-reviewed Purgatorium handoff packet, and lockstep schema/validator/Transition Table sync. Execute only PURG-PRE authority/materialization verification next; no PURG-00, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network is authorized.",
         "operator_approval_packet_review_is_execution_approval": false,
-        "phase": "IF-08",
-        "phase_class": "infernus_full_execution",
+        "phase": "PURG-PRE",
+        "phase_class": "purgatorium_full_authority_materialization",
         "planning_only": false,
         "review_only": false,
         "status": "if11_minos_final_verdict_closure_pass"
@@ -355,8 +355,8 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.1",
-    "status": "inf_full_07_if08_authorization_gate_pass",
+    "schema_version": "3.2",
+    "status": "purg_pre_route_admission_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -371,12 +371,13 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.1",
+        "current_schema_version": "3.2",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
         "schema_version_meaning": "Version of ACTIVE_CONTEXT_SCHEMA.json validation contract. Incremented when the schema structure, field set, or validation rules change.",
         "schema_3_0_change_summary": "Compaction refactor: ARIS_BOOT.md replaces 11 boot files, required_files_for_transition removed, versioning history archived to archive/derived_mirrors/versioning_history.md, governance_repairs list archived, artifact_routes updated to new structure. JSON target ≤200 lines.",
-        "schema_3_1_change_summary": "Final compaction: completed_phases archived to completed_phases_history.json and replaced by compact summary object, narrative fields in next_action/last_transition/locks compacted to single-line strings."
+        "schema_3_1_change_summary": "Final compaction: completed_phases archived to completed_phases_history.json and replaced by compact summary object, narrative fields in next_action/last_transition/locks compacted to single-line strings.",
+        "schema_3_2_change_summary": "Route admission for PURG-PRE: allow purgatorium_full_authority_materialization as a live-route phase class after IF11 closure and operator-reviewed route-admission artifact pack, while preserving all real execution/product/Bedrock/secrets/apply locks false."
     }
 }

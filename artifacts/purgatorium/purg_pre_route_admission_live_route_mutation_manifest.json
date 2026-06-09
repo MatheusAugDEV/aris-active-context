@@ -1,0 +1,11 @@
+{
+  "previous_live_next_phase": "IF-08",
+  "previous_live_next_phase_class": "infernus_full_execution",
+  "new_live_next_phase": "PURG-PRE",
+  "new_live_next_phase_class": "purgatorium_full_authority_materialization",
+  "latest_completed_phase_preserved": "IF-11 Minos Final Verdict + Closure",
+  "latest_completed_status_preserved": "if11_minos_final_verdict_closure_pass",
+  "next_recommended_step_after_mutation": "execute_purg_pre_canonical_authority_materialization",
+  "current_live_route_next_phase_execution_authorization": false,
+  "next_action_execution_authorization": false
+}

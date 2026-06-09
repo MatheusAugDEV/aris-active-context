@@ -25,6 +25,7 @@
         "governance_repair_gate",
         "infernus_full_execution_authorization",
         "infernus_full_execution",
+        "purgatorium_full_authority_materialization",
         "history_only",
         null
       ],
@@ -456,6 +457,7 @@
             "governance_repair_gate",
             "infernus_full_execution_authorization",
             "infernus_full_execution",
+            "purgatorium_full_authority_materialization",
             "history_only",
             null
           ],
@@ -802,6 +804,7 @@
             "governance_repair_gate",
             "infernus_full_execution_authorization",
             "infernus_full_execution",
+            "purgatorium_full_authority_materialization",
             "history_only",
             null
           ],
@@ -906,7 +909,9 @@
                 "2.10",
                 "2.11",
                 "2.12",
-                "2.13"
+                "2.13",
+                "3.1",
+                "3.2"
             ],
             "type": "string"
         },
@@ -1072,6 +1077,9 @@
                 "schema_2_13_change_summary": {
                     "type": "string"
                 },
+                "schema_3_2_change_summary": {
+                    "type": "string"
+                },
                 "schema_version_meaning": {
                     "type": "string"
                 }
@@ -1153,6 +1161,6 @@
     "drift_signals",
     "schema_2_13_change_summary"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v2.13",
+    "title": "ARIS Active Context Canonical Live State Schema v3.2",
     "type": "object"
 }

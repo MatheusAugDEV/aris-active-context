@@ -1,0 +1,14 @@
+{
+  "old_schema_version": "3.1",
+  "new_schema_version": "3.2",
+  "admitted_phase_class": "purgatorium_full_authority_materialization",
+  "patched_fields": [
+    "properties.active_next_phase_class.enum",
+    "properties.current_live_route.properties.active_next_phase_class.enum",
+    "properties.next_action.properties.phase_class.enum",
+    "properties.schema_version.enum",
+    "properties.versioning_contract.properties.schema_3_2_change_summary",
+    "title"
+  ],
+  "schema_patch_applied": true
+}

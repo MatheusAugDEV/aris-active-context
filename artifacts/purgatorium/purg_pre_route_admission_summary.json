@@ -1,0 +1,12 @@
+{
+  "phase_id": "PURG-PRE-ROUTE-ADMISSION",
+  "decision": "pass",
+  "status": "purg_pre_route_admission_pass",
+  "live_route_opened": true,
+  "previous_live_next_phase": "IF-08",
+  "new_live_next_phase": "PURG-PRE",
+  "new_live_next_phase_class": "purgatorium_full_authority_materialization",
+  "future_next_step": "execute_purg_pre_canonical_authority_materialization",
+  "does_not_execute_purg_pre": true,
+  "does_not_open_purg_00": true
+}

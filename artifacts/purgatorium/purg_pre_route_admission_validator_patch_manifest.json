@@ -1,0 +1,15 @@
+{
+  "previous_expected_next_phase": "IF-08",
+  "previous_expected_next_phase_class": "infernus_full_execution",
+  "new_expected_next_phase": "PURG-PRE",
+  "new_expected_next_phase_class": "purgatorium_full_authority_materialization",
+  "required_artifacts": [
+    "purg_pre_route_admission_decision.json",
+    "purg_pre_route_admission_summary.json",
+    "purg_pre_route_admission_no_real_execution_attestation.json",
+    "purg_operator_review_packet_decision.json",
+    "purg_route_admission_schema_gap_matrix.json",
+    "purg_route_admission_validator_gap_matrix.json"
+  ],
+  "validator_patch_applied": true
+}

@@ -41,14 +41,15 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "prepare_purgatorium_handoff_or_operator_review",
+            "execute_purg_pre_canonical_authority_materialization",
         )
-        self.assertEqual(state["next_phase"], "IF-08")
-        self.assertEqual(state["active_next_phase"], "IF-08")
-        self.assertEqual(state["active_next_phase_class"], "infernus_full_execution")
+        self.assertEqual(state["next_phase"], "PURG-PRE")
+        self.assertEqual(state["active_next_phase"], "PURG-PRE")
+        self.assertEqual(state["active_next_phase_class"], "purgatorium_full_authority_materialization")
         self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
+        self.assertEqual(state["status"], "purg_pre_route_admission_pass")
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -101,6 +102,21 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertFalse(state["authorization"]["real_dry_run_execution_authorized"])
         self.assertFalse(state["authorization"]["real_apply_authorized"])
         self.assertFalse(state["authorization"]["runtime_integration_allowed"])
+
+    def test_schema_allows_purgatorium_route_class(self):
+        schema = json.loads((ROOT / "ACTIVE_CONTEXT_SCHEMA.json").read_text(encoding="utf-8"))
+        self.assertIn(
+            "purgatorium_full_authority_materialization",
+            schema["properties"]["active_next_phase_class"]["enum"],
+        )
+        self.assertIn(
+            "purgatorium_full_authority_materialization",
+            schema["properties"]["current_live_route"]["properties"]["active_next_phase_class"]["enum"],
+        )
+        self.assertIn(
+            "purgatorium_full_authority_materialization",
+            schema["properties"]["next_action"]["properties"]["phase_class"]["enum"],
+        )
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()
@@ -194,6 +210,73 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_route_admission_schema_gap_matrix.json").exists())
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_route_admission_validator_gap_matrix.json").exists())
         module._check_purg_operator_review_packet_artifacts(state)
+
+    def test_purg_pre_route_admission_artifacts_validate(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_pre_route_admission_decision.json").exists())
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_pre_route_admission_no_real_execution_attestation.json").exists())
+        module._check_purg_pre_route_admission_artifacts(state)
+
+    def test_route_admission_validator_requires_decision_artifact(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original = module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH
+            try:
+                module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH = missing
+                with self.assertRaises(SystemExit):
+                    module._check_purg_pre_route_admission_artifacts(state)
+            finally:
+                module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH = original
+
+    def test_route_admission_validator_rejects_forbidden_flag(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg_pre_route_admission_decision.json").read_text(encoding="utf-8"))
+            decision["runtime_executed"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH
+            try:
+                module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg_pre_route_admission_artifacts(state)
+            finally:
+                module.PURG_PRE_ROUTE_ADMISSION_DECISION_PATH = original
+
+    def test_route_admission_validator_rejects_bedrock_or_product_ready(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            attestation = json.loads((ROOT / "artifacts" / "purgatorium" / "purg_pre_route_admission_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+            attestation["bedrock_ready"] = True
+            temp_path = Path(tmpdir) / "attestation.json"
+            temp_path.write_text(json.dumps(attestation), encoding="utf-8")
+            original = module.PURG_PRE_ROUTE_ADMISSION_NO_REAL_EXECUTION_PATH
+            try:
+                module.PURG_PRE_ROUTE_ADMISSION_NO_REAL_EXECUTION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg_pre_route_admission_artifacts(state)
+            finally:
+                module.PURG_PRE_ROUTE_ADMISSION_NO_REAL_EXECUTION_PATH = original
+
+    def test_route_admission_validator_rejects_purg_00_pass_claim(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            report = (ROOT / "artifacts" / "purgatorium" / "purg_pre_route_admission_report.md").read_text(encoding="utf-8")
+            temp_path = Path(tmpdir) / "report.md"
+            temp_path.write_text(report + "\nPURG-00 | pass\n", encoding="utf-8")
+            original = module.PURG_PRE_ROUTE_ADMISSION_REPORT_PATH
+            try:
+                module.PURG_PRE_ROUTE_ADMISSION_REPORT_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg_pre_route_admission_artifacts(state)
+            finally:
+                module.PURG_PRE_ROUTE_ADMISSION_REPORT_PATH = original
 
 
 if __name__ == "__main__":

@@ -17,18 +17,21 @@ Bedrock decide.
 ## Active Route
 
 Latest completed phase: IF-11 Minos Final Verdict + Closure
-Active next phase: IF-08
-Active next phase class: infernus_full_execution
+Active next phase: PURG-PRE
+Active next phase class: purgatorium_full_authority_materialization
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 Infernus canonroadmap status: superseded/excludent/forensic-only with stub retained at `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` and forensic copy at `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
 PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`
-Live route preservation: `ACTIVE_CONTEXT_STATE.json`, schema and validator still fail-closed on `INF-FULL-07 -> IF-08`, so `PURG-PRE` is not declared open in live state yet.
+Live route opened by: `purg_pre_route_admission_pass`
+Live route admission artifacts: `artifacts/purgatorium/purg_pre_route_admission_decision.json`, `artifacts/purgatorium/purg_pre_route_admission_summary.json`, `artifacts/purgatorium/purg_pre_route_admission_no_real_execution_attestation.json`
+Previous live route preserved historically before admission: `IF-08` / `infernus_full_execution`
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
+Product/Bedrock/real_apply/secrets/runtime real: false
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
 IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
-IF11 minos final verdict closure is canonical as pass; this sync preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. Post-IF11 technical authority has moved to `purgatorium_roadmapcanon.md`, while the live route remains unchanged until a validated PURG-PRE route opening is admitted. The next step is prepare_purgatorium_handoff_or_operator_review.
+IF11 minos final verdict closure is canonical as pass; this route-admission sync preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. Post-IF11 technical authority remains `purgatorium_roadmapcanon.md`; the live route is now `PURG-PRE` by operator-authorized route admission only, without executing PURG-PRE or opening PURG-00. The next step is execute_purg_pre_canonical_authority_materialization.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
@@ -61,7 +64,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
 | INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
 | INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
-| INF-FULL-07 | pass | IF-08 | infernus_full_execution | canonroadmap | live route preserved fail-closed; see artifacts/purgatorium/purg_pre_route_opening_candidate.json before any PURG-PRE mutation |
+| INF-FULL-07 | pass | PURG-PRE | purgatorium_full_authority_materialization | operator | purg_pre_route_admission_decision.json + operator review packet + schema/validator admission + no-real-exec attestation |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

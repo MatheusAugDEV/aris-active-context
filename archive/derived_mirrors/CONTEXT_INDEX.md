@@ -1,12 +1,12 @@
 # INF-FULL-07 — Estado Atual
 
 - phase_id: `INF-FULL-07`
-- status: `inf_full_07_if08_authorization_gate_pass`
+- status: `purg_pre_route_admission_pass`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
-- next_phase: `IF-08`
-- active_next_phase_class: `infernus_full_execution`
+- next_phase: `PURG-PRE`
+- active_next_phase_class: `purgatorium_full_authority_materialization`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure: `true`
@@ -50,6 +50,14 @@ Referências ativas desta fase:
 - `artifacts/if11_minos_final_verdict_closure/decision.json`
 - `artifacts/if11_minos_final_verdict_closure/summary.json`
 - `artifacts/if11_minos_final_verdict_closure/report.md`
+- `artifacts/purgatorium/purg_pre_route_admission_decision.json`
+- `artifacts/purgatorium/purg_pre_route_admission_summary.json`
+- `artifacts/purgatorium/purg_pre_route_admission_report.md`
+- `artifacts/purgatorium/purg_pre_route_admission_schema_patch_manifest.json`
+- `artifacts/purgatorium/purg_pre_route_admission_validator_patch_manifest.json`
+- `artifacts/purgatorium/purg_pre_route_admission_live_route_mutation_manifest.json`
+- `artifacts/purgatorium/purg_pre_route_admission_no_real_execution_attestation.json`
+- `artifacts/purgatorium/purg_pre_route_admission_rollback_plan.md`
 - `artifacts/infernus/if11_minos_final_verdict_closure/decision.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/summary.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/report.md`
@@ -248,4 +256,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The IF11 minos final verdict closure packet is canonical as pass; the next canonical step is prepare_purgatorium_handoff_or_operator_review and no real execution surface is authorized.
+- The IF11 minos final verdict closure packet remains canonical as pass; the PURG-PRE live route is now admitted and the next canonical step is execute_purg_pre_canonical_authority_materialization with no real execution surface authorized.

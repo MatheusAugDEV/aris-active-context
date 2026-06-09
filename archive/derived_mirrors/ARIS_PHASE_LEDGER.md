@@ -30,7 +30,12 @@
 - technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 - infernus_canonroadmap_status: `superseded_excludent_forensic_only`
 - purg_pre_route_opening_candidate_created: `true`
-- live_route_opened: `false`
+- live_route_opened: `true`
+- live_route_opened_by: `purg_pre_route_admission_pass`
+- previous_live_next_phase: `IF-08`
+- route_admission_decision: `artifacts/purgatorium/purg_pre_route_admission_decision.json`
+- route_admission_summary: `artifacts/purgatorium/purg_pre_route_admission_summary.json`
+- route_admission_report: `artifacts/purgatorium/purg_pre_route_admission_report.md`
 - runtime_executed: `false`
 - real_apply_executed: `false`
 - product_bedrock_real_apply_secrets_executed: `false`
@@ -43,10 +48,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- next_phase: `IF-08`
-- active_next_phase_class: `infernus_full_execution`
+- next_phase: `PURG-PRE`
+- active_next_phase_class: `purgatorium_full_authority_materialization`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`
+- next_recommended_step: `execute_purg_pre_canonical_authority_materialization`
 
 ## IF-10 Purgatorium Handoff Graph | pass
 - status: `if10_purgatorium_handoff_graph_pass`

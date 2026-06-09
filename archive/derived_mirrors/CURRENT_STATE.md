@@ -5,19 +5,21 @@
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
 - previous_phase_id: `INF-FULL-06`
-- status: `inf_full_07_if08_authorization_gate_pass`
+- status: `purg_pre_route_admission_pass`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - decision: `pass`
 - latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`
-- active_next_phase: `IF-08`
-- Next phase: `IF-08`
-- Active next phase class: `infernus_full_execution`
+- next_recommended_step: `execute_purg_pre_canonical_authority_materialization`
+- active_next_phase: `PURG-PRE`
+- Next phase: `PURG-PRE`
+- Active next phase class: `purgatorium_full_authority_materialization`
 - technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 - infernus_canonroadmap_status: `superseded_excludent_forensic_only`
 - purg_pre_route_opening_candidate_created: `true`
-- live_route_opened: `false`
+- live_route_opened: `true`
+- previous_live_next_phase: `IF-08`
+- live_route_opened_by: `purg_pre_route_admission_pass`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
 - ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF11_MINOS_FINAL_VERDICT_CLOSURE: `true`
@@ -61,10 +63,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap is now `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, the Infernus canonroadmap is superseded/excludent/forensic-only, and the next canonical step remains `prepare_purgatorium_handoff_or_operator_review`.
+- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, `PURG-PRE` is now the admitted live route by operator-authorized route admission, and the next canonical step is `execute_purg_pre_canonical_authority_materialization`.
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-11 Minos Final Verdict + Closure`.
-The post-Infernus technical direction document is now `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; the former `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` was superseded, copied into `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` for forensic retention, and replaced by a non-authoritative stub. The live route was not mutated because the current schema/validator contract still fail-closes on `INF-FULL-07 -> IF-08`.
-The next prompt may target only `prepare_purgatorium_handoff_or_operator_review`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+INF-FULL-07 remains the canonical current phase, and the latest verified operational packet remains `IF-11 Minos Final Verdict + Closure`.
+The post-Infernus technical direction document remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; the former `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` stays superseded, copied into `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` for forensic retention, and replaced by a non-authoritative stub. The live route is now `PURG-PRE` because schema, validator, Transition Table, JSON, mirrors, and route-admission artifacts were updated in lockstep.
+The next prompt may target only `execute_purg_pre_canonical_authority_materialization`; no PURG-00, finding fix, real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
