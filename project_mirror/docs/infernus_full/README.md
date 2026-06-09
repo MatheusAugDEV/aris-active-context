@@ -46,3 +46,4 @@ Infernus phase documents in this directory remain historical evidence only. They
 - `docs/infernus_full/infernus_full_execution_spec.md`
 - `docs/infernus_full/inf_full_01_scope_charter_2026_06_06.md`
 - `docs/infernus_full/inf_full_02_baseline_freeze_planning_2026_06_06.md`
+- `docs/infernus_full/inf_full_03_opening_2026_06_06.md`
