@@ -178,6 +178,44 @@ Atualização final:
 - Relatório com: SHA project repo + SHA active-context + CI_GREEN_CONFIRMED
 ```
 
+### Cabeçalho obrigatório antes de cada prompt
+
+Todo prompt Codex deve ser precedido por um bloco de contexto
+com exatamente esta estrutura:
+
+```
+---
+Fase: [NOME DA FASE]
+O que é: [1 linha — definição da fase]
+O que faz: [1-3 linhas — o que será executado]
+O que não faz: [1-3 linhas — o que está explicitamente fora de escopo]
+Por que importa: [1 linha — justificativa canônica]
+---
+```
+
+Esse bloco é obrigatório. Não é opcional. Não pode ser omitido
+mesmo que a fase pareça óbvia. Serve para que o operador confirme
+escopo antes de colar no Codex.
+
+### Modelo obrigatório para o Codex
+
+- Fases de capacidade real (bot execution, fixture, minos, waves,
+  harness, audit): codex-1 com reasoning=high
+- Gates de governança simples (sync, repair, mirror update):
+  codex-1 com reasoning=medium
+- Nunca usar modelo diferente sem instrução explícita do operador.
+- Declarar o modelo no topo do prompt:
+  "Modelo: codex-1 | reasoning=high" ou "reasoning=medium"
+
+### Prompt curto e cirúrgico — regra de ouro
+
+- Se o conteúdo estável já está no ARIS_BOOT.md: não repetir.
+- Proibido reescrever blocos de proibição completos no prompt —
+  use o guard alias (ex: NO-REAL-EXEC).
+- Prompt longo só para: novo subsistema, primeira implementação
+  de padrão novo, recovery de alto risco, bloqueadores não resolvidos.
+- Todo o resto: curto e cirúrgico.
+
 ### Regras de tamanho e modelo
 - Default: curto, cirúrgico, copy/paste-ready.
 - Modelo Codex: codex-1 (reasoning=high) para fases de capacidade real;
