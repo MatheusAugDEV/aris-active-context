@@ -589,6 +589,13 @@ PURG_PRE_REPORT_PATH = PURG_PRE_ROOT / "purg_pre_canonical_authority_materializa
 PURG_PRE_NO_REAL_EXECUTION_PATH = PURG_PRE_ROOT / "purg_pre_no_real_execution_attestation.json"
 PURG_PRE_EXCLUDENT_MANIFEST_PATH = PURG_PRE_ROOT / "purg_pre_infernus_canonroadmap_excludent_manifest.json"
 PURG_PRE_ROUTE_OPENING_CANDIDATE_PATH = PURG_PRE_ROOT / "purg_pre_route_opening_candidate.json"
+PURG_OPERATOR_REVIEW_DECISION_PATH = PURG_PRE_ROOT / "purg_operator_review_packet_decision.json"
+PURG_OPERATOR_REVIEW_SUMMARY_PATH = PURG_PRE_ROOT / "purg_operator_review_packet_summary.json"
+PURG_OPERATOR_REVIEW_REPORT_PATH = PURG_PRE_ROOT / "purg_operator_review_packet_report.md"
+PURG_OPERATOR_REVIEW_SCHEMA_GAP_PATH = PURG_PRE_ROOT / "purg_route_admission_schema_gap_matrix.json"
+PURG_OPERATOR_REVIEW_VALIDATOR_GAP_PATH = PURG_PRE_ROOT / "purg_route_admission_validator_gap_matrix.json"
+PURG_OPERATOR_REVIEW_FUTURE_PATCH_PLAN_PATH = PURG_PRE_ROOT / "purg_route_admission_future_patch_plan.md"
+PURG_OPERATOR_REVIEW_NO_REAL_EXECUTION_PATH = PURG_PRE_ROOT / "purg_route_admission_no_real_execution_attestation.json"
 PURGATORIUM_ROADMAP_PATH = ROOT / "project_mirror" / "docs" / "purgatorium_full" / "purgatorium_roadmapcanon.md"
 INFERNUS_CANONROADMAP_STUB_PATH = ROOT / "project_mirror" / "docs" / "infernus_full" / "infernus_full_canonroadmap.md"
 INFERNUS_CANONROADMAP_FORENSIC_PATH = ROOT / "excludent" / "infernus" / "roadmaps" / "infernus_full_canonroadmap.md"
@@ -8322,6 +8329,107 @@ def _check_purg_pre_canonical_authority_materialization_artifacts(state: dict[st
     )
 
 
+def _check_purg_operator_review_packet_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        PURG_OPERATOR_REVIEW_DECISION_PATH,
+        PURG_OPERATOR_REVIEW_SUMMARY_PATH,
+        PURG_OPERATOR_REVIEW_REPORT_PATH,
+        PURG_OPERATOR_REVIEW_SCHEMA_GAP_PATH,
+        PURG_OPERATOR_REVIEW_VALIDATOR_GAP_PATH,
+        PURG_OPERATOR_REVIEW_FUTURE_PATCH_PLAN_PATH,
+        PURG_OPERATOR_REVIEW_NO_REAL_EXECUTION_PATH,
+    ):
+        _require(path.exists(), f"missing PURG operator review artifact: {path}")
+
+    decision = _load_json(PURG_OPERATOR_REVIEW_DECISION_PATH)
+    _require(decision.get("phase_id") == "PURG-OPERATOR-REVIEW-PACKET", "purg operator review decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "purg operator review decision must be pass")
+    _require(decision.get("status") == "purg_operator_review_packet_pass", "purg operator review decision status mismatch")
+    _require(decision.get("does_not_advance_phase") is True, "purg operator review must not advance phase")
+    _require(decision.get("live_route_opened") is False, "purg operator review must not open live route")
+    _require(decision.get("live_route_preserved_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg operator review preserved next phase mismatch")
+    _require(decision.get("live_route_preserved_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg operator review preserved next phase class mismatch")
+    _require(decision.get("technical_direction_active_document") == "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md", "purg operator review active roadmap mismatch")
+    _require(decision.get("route_opening_candidate_source") == "artifacts/purgatorium/purg_pre_route_opening_candidate.json", "purg operator review candidate source mismatch")
+    _require(decision.get("schema_gap_matrix_created") is True, "purg operator review schema gap flag mismatch")
+    _require(decision.get("validator_gap_matrix_created") is True, "purg operator review validator gap flag mismatch")
+    _require(decision.get("future_patch_plan_created") is True, "purg operator review future patch flag mismatch")
+    _require(decision.get("operator_review_packet_created") is True, "purg operator review packet flag mismatch")
+    _require(decision.get("runtime_executed") is False, "purg operator review runtime_executed mismatch")
+    _require(decision.get("real_apply_executed") is False, "purg operator review real_apply_executed mismatch")
+    _require(decision.get("product_bedrock_real_apply_secrets_executed") is False, "purg operator review real surface mismatch")
+
+    summary = _load_json(PURG_OPERATOR_REVIEW_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "PURG-OPERATOR-REVIEW-PACKET", "purg operator review summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "purg operator review summary decision mismatch")
+    _require(summary.get("status") == "purg_operator_review_packet_pass", "purg operator review summary status mismatch")
+    _require(summary.get("live_route_opened") is False, "purg operator review summary live route mismatch")
+    _require(summary.get("future_patch_plan_created") is True, "purg operator review summary future patch flag mismatch")
+
+    schema_gap = _load_json(PURG_OPERATOR_REVIEW_SCHEMA_GAP_PATH)
+    _require(schema_gap.get("requested_phase") == "PURG-PRE", "purg schema gap requested_phase mismatch")
+    _require(schema_gap.get("requested_phase_class") == "purgatorium_full_authority_materialization", "purg schema gap requested_phase_class mismatch")
+    _require(schema_gap.get("current_schema_accepts_phase") is False, "purg schema gap current_schema_accepts_phase mismatch")
+    _require(schema_gap.get("current_schema_accepts_phase_class") is False, "purg schema gap current_schema_accepts_phase_class mismatch")
+    _require(schema_gap.get("operator_decision_required") is True, "purg schema gap operator_decision_required mismatch")
+    _require("active_next_phase_class" in schema_gap.get("required_schema_change", ""), "purg schema gap required_schema_change mismatch")
+
+    validator_gap = _load_json(PURG_OPERATOR_REVIEW_VALIDATOR_GAP_PATH)
+    _require(validator_gap.get("current_validator_enforces") == "INF-FULL-07 -> IF-08", "purg validator gap current enforcement mismatch")
+    _require(validator_gap.get("requested_transition") == "INF-FULL-07 -> PURG-PRE", "purg validator gap requested transition mismatch")
+    _require(validator_gap.get("validator_accepts_requested_transition") is False, "purg validator gap acceptance mismatch")
+    _require("EXPECTED_NEXT_PHASE_ID" in validator_gap.get("required_validator_change", ""), "purg validator gap required change mismatch")
+    _require(isinstance(validator_gap.get("tests_required_before_acceptance"), list), "purg validator gap tests list missing")
+    _require("tests/test_active_context_route_sync_unittest.py::test_purg_operator_review_packet_artifacts_validate" in validator_gap.get("tests_required_before_acceptance", []), "purg validator gap tests list mismatch")
+
+    no_real_execution = _load_json(PURG_OPERATOR_REVIEW_NO_REAL_EXECUTION_PATH)
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "external_network_used_except_github_governance",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "socket_opened",
+        "shell_executed",
+        "filesystem_escape_performed",
+        "real_cost_spent",
+        "real_quota_consumed",
+        "real_audio_capture_allowed",
+        "real_stt_tts_allowed",
+        "microphone_access_allowed",
+        "voice_clone_or_impersonation_allowed",
+    ):
+        _require(no_real_execution.get(key) is False, f"purg operator review no_real_execution {key} mismatch")
+
+    _mirror_contains(
+        PURG_OPERATOR_REVIEW_REPORT_PATH,
+        "VERDICT",
+        "PASS",
+        "WHAT CHANGED IN PURG-PRE",
+        "WHY LIVE ROUTE IS NOT OPEN",
+        "WHAT WOULD BE REQUIRED TO OPEN PURG-PRE LATER",
+        "SAFETY LOCKS",
+        "DO NOT DO YET",
+        "JSON > roadmap.",
+        "all hard locks remain false",
+    )
+    _mirror_contains(
+        PURG_OPERATOR_REVIEW_FUTURE_PATCH_PLAN_PATH,
+        "PATCH PLAN ONLY - DO NOT APPLY IN THIS PHASE",
+        "1. schema enum change needed",
+        "2. validator transition rule change needed",
+        "3. ROADMAP_CANONICAL Transition Table row needed",
+        "4. ACTIVE_CONTEXT_STATE live route mutation needed",
+        "5. mirror sync needed",
+        "6. tests needed",
+        "7. CI green required",
+        "8. rollback plan",
+    )
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -8437,6 +8545,8 @@ def main() -> None:
     _check_if11_minos_final_verdict_closure_artifacts(state)
     # PURG-PRE canonical authority materialization checks
     _check_purg_pre_canonical_authority_materialization_artifacts(state)
+    # PURG operator review packet checks
+    _check_purg_operator_review_packet_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks

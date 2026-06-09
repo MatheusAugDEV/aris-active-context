@@ -1,0 +1,11 @@
+{
+  "requested_phase": "PURG-PRE",
+  "requested_phase_class": "purgatorium_full_authority_materialization",
+  "current_schema_accepts_phase": false,
+  "current_schema_accepts_phase_class": false,
+  "current_schema_accepts_full_live_route_mutation": false,
+  "phase_field_literal_note": "The next_phase field is typed as string|null, but the full live-route mutation remains rejected because phase-class and route-contract fields do not admit the requested class.",
+  "required_schema_change": "Add purgatorium_full_authority_materialization to the enum of properties.active_next_phase_class, properties.current_live_route.properties.active_next_phase_class, and properties.next_action.properties.phase_class, then version the schema change explicitly.",
+  "risk_if_changed": "Changing the schema without a matching validator, Transition Table, and active-context sync path can create false PASS conditions or drift between JSON, mirrors, and route policy.",
+  "operator_decision_required": true
+}

@@ -187,6 +187,14 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue((ROOT / "excludent" / "infernus" / "roadmaps" / "infernus_full_canonroadmap.md").exists())
         module._check_purg_pre_canonical_authority_materialization_artifacts(state)
 
+    def test_purg_operator_review_packet_artifacts_validate(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_operator_review_packet_decision.json").exists())
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_route_admission_schema_gap_matrix.json").exists())
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg_route_admission_validator_gap_matrix.json").exists())
+        module._check_purg_operator_review_packet_artifacts(state)
+
 
 if __name__ == "__main__":
     unittest.main()
