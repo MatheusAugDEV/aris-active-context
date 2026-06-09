@@ -1,0 +1,46 @@
+# IF-11 Minos Final Verdict + Closure Sync
+
+- decision: `pass`
+- status: `if11_minos_final_verdict_closure_pass`
+- project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+- project_ci_state: `CI_GREEN_CONFIRMED`
+- project_ci_run_url: `https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351`
+- active_context_remote_main_reflects_if11_minos_final_verdict_closure: `true`
+- source_phase_verified: `IF-10 Purgatorium Handoff Graph`
+- source_status_verified: `if10_purgatorium_handoff_graph_pass`
+- source_project_sha_verified_by_packet: `57106d9780af7a807bd58ea6039af3a7b1b23701`
+- source_active_context_sync_sha_verified_by_packet: `7755a1506e6981d3f1c5b3534c7217112a12b960`
+- source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`
+- source_graph_sha256: `c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`
+- validated_handoff_ids: `['IF09-FIND-001']`
+- contextual_candidate_ids: `['IF09-FIND-002']`
+- excluded_invalid_ids: `['IF09-FIND-003']`
+- supporting_observation_ids: `['IF09-OBS-001']`
+- minos_mechanical_verdict: `pass`
+- minos_semantic_verdict: `pass`
+- anti_theater_verdict: `pass`
+- operator_cosignature_status: `pending_operator_review`
+- infernus_closure_status: `closed_with_purgatorium_handoff_ready`
+- purgatorium_handoff_ready: `true`
+- macro_transition_preserved: `true`
+- current_phase_id_preserved: `INF-FULL-07`
+- active_next_phase_preserved: `IF-08`
+- active_next_phase_class_preserved: `infernus_full_execution`
+- runtime_executed: `false`
+- real_apply_executed: `false`
+- product_bedrock_real_apply_secrets_executed: `false`
+- external_network_used_except_github_governance: `false`
+- dependency_or_package_manager_used: `false`
+- mcp_activated: `false`
+- rag_ingestion_executed: `false`
+- memory_write_executed: `false`
+- socket_opened: `false`
+- shell_executed: `false`
+- filesystem_escape_performed: `false`
+- real_cost_spent: `false`
+- real_quota_consumed: `false`
+- real_audio_capture_allowed: `false`
+- real_stt_tts_allowed: `false`
+- microphone_access_allowed: `false`
+- voice_clone_or_impersonation_allowed: `false`
+- next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`

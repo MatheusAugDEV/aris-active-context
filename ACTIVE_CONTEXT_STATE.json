@@ -159,16 +159,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "IF-10 Purgatorium Handoff Graph",
+            "phase": "IF-11 Minos Final Verdict + Closure",
             "decision": "pass",
-            "status": "if10_purgatorium_handoff_graph_pass"
+            "status": "if11_minos_final_verdict_closure_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 55,
+        "total_phases_completed": 56,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -203,38 +203,42 @@
     "current_live_route": {
         "active_next_phase": "IF-08",
         "active_next_phase_class": "infernus_full_execution",
-        "current_status": "if10_purgatorium_handoff_graph_pass",
+        "current_status": "if11_minos_final_verdict_closure_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "IF-10 Purgatorium Handoff Graph",
-        "latest_completed_status": "if10_purgatorium_handoff_graph_pass",
+        "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
+        "latest_completed_status": "if11_minos_final_verdict_closure_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
         "status": "inf_full_07_if08_authorization_gate_pass",
-        "latest_completed_project_commit_sha": "57106d9780af7a807bd58ea6039af3a7b1b23701",
+        "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "prepare_if11_minos_final_verdict_closure"
+        "latest_completed_next_recommended_step": "prepare_purgatorium_handoff_or_operator_review"
     },
-    "current_status": "if10_purgatorium_handoff_graph_pass",
+    "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "prepare_if11_minos_final_verdict_closure",
+    "latest_completed_next_recommended_step": "prepare_purgatorium_handoff_or_operator_review",
     "latest_completed_no_execution": {
         "w05_executed": false,
-        "wave_executed": true,
-        "bot_executed": true,
-        "source_phase_verified": "IF-09 Evidence Bundle + Vulnerability Register",
-        "source_status_verified": "if09_evidence_bundle_vulnerability_register_pass",
-        "source_project_sha_verified_by_packet": "38b16edadce15ce8f2049bb3de8538bb921e344e",
-        "source_active_context_sha_verified_by_packet": "767138de3fb2b0484fca6be25657e08c21107574",
-        "if10_materialization_performed": true,
-        "purgatorium_handoff_graph_v4_materialized": true,
-        "root_cause_candidates_created": true,
-        "remediation_tracks_created": true,
-        "regression_test_plan_created": true,
-        "revalidation_wave_plan_created": true,
-        "handoff_manifest_created": true,
+        "wave_executed": false,
+        "bot_executed": false,
+        "source_phase_verified": "IF-10 Purgatorium Handoff Graph",
+        "source_status_verified": "if10_purgatorium_handoff_graph_pass",
+        "source_project_sha_verified_by_packet": "57106d9780af7a807bd58ea6039af3a7b1b23701",
+        "source_active_context_pre_sync_sha_verified_by_packet": "767138de3fb2b0484fca6be25657e08c21107574",
+        "source_active_context_sync_sha_verified_by_packet": "7755a1506e6981d3f1c5b3534c7217112a12b960",
+        "if11_materialization_performed": true,
+        "minos_mechanical_report_created": true,
+        "minos_semantic_report_created": true,
+        "operator_cosignature_created": true,
+        "anti_theater_meta_audit_created": true,
+        "infernus_closure_created": true,
+        "closure_manifest_created": true,
+        "final_evidence_index_created": true,
+        "purgatorium_readiness_summary_created": true,
+        "next_phase_boundary_created": true,
         "source_root_manifest_sha256": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
-        "source_root_manifest_reference_verified": true,
+        "source_graph_sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
         "validated_handoff_ids": [
             "IF09-FIND-001"
         ],
@@ -247,44 +251,25 @@
         "supporting_observation_ids": [
             "IF09-OBS-001"
         ],
-        "reproduction_unit_reference": "IF09-REPRO-001",
-        "replay_unit_reference": "IF09-REPLAY-001",
-        "mutation_unit_reference": "IF09-MUT-001",
-        "graph_node_count": 9,
-        "graph_edge_count": 8,
-        "node_type_counts": {
-            "finding": 1,
-            "affected_layer": 1,
-            "threat_class": 1,
-            "root_cause_candidate": 1,
-            "evidence_unit": 2,
-            "remediation_track": 1,
-            "regression_test": 1,
-            "revalidation_wave": 1
-        },
-        "edge_type_counts": {
-            "affects": 1,
-            "exploited_by": 1,
-            "caused_by": 1,
-            "reproduced_by": 2,
-            "requires_fix": 1,
-            "requires_regression_test": 1,
-            "requires_revalidation": 1
-        },
-        "duplicate_node_ids_count": 0,
-        "duplicate_edge_ids_count": 0,
-        "dangling_edges_count": 0,
-        "handoff_ids_missing_tracks_count": 0,
-        "invalid_findings_with_remediation_count": 0,
-        "candidate_findings_promoted_without_evidence_count": 0,
-        "graph_integrity_verified": true,
+        "minos_mechanical_verdict": "pass",
+        "minos_semantic_verdict": "pass",
+        "anti_theater_verdict": "pass",
+        "operator_cosignature_status": "pending_operator_review",
+        "infernus_closure_status": "closed_with_purgatorium_handoff_ready",
+        "purgatorium_handoff_ready": true,
+        "bedrock_ready": false,
+        "product_ready": false,
+        "real_execution_authorized": false,
         "macro_transition_preserved": true,
         "current_phase_id_preserved": "INF-FULL-07",
         "active_next_phase_preserved": "IF-08",
         "active_next_phase_class_preserved": "infernus_full_execution",
-        "execution_scope": "artifact_only_causal_handoff_materialization",
-        "w6_execution_performed": true,
-        "w6_real_execution_performed": false,
+        "execution_scope": "artifact_only_final_verdict_closure",
+        "blocking_findings_count": 0,
+        "warnings": [
+            "operator_cosignature_pending_review_not_execution_authorization",
+            "purgatorium_handoff_ready_does_not_mean_finding_resolved"
+        ],
         "real_audio_capture_allowed": false,
         "real_stt_tts_allowed": false,
         "microphone_access_allowed": false,
@@ -303,8 +288,8 @@
         "real_cost_spent": false,
         "real_quota_consumed": false
     },
-    "latest_completed_project_commit_sha": "57106d9780af7a807bd58ea6039af3a7b1b23701",
-    "latest_completed_status": "if10_purgatorium_handoff_graph_pass",
+    "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+    "latest_completed_status": "if11_minos_final_verdict_closure_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -315,28 +300,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "IF-10 Purgatorium Handoff Graph",
+        "latest_execution_phase": "IF-11 Minos Final Verdict + Closure",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "IF-09 Evidence Bundle + Vulnerability Register",
-        "latest_execution_status": "if10_purgatorium_handoff_graph_pass"
+        "previous_execution_phase": "IF-10 Purgatorium Handoff Graph",
+        "latest_execution_status": "if11_minos_final_verdict_closure_pass"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "IF-09 Evidence Bundle + Vulnerability Register",
-        "proof_source": "project_origin_main_sha_57106d9780af7a807bd58ea6039af3a7b1b23701_verified_with_terminal_green_ci_run_27176578203_and_if10_graph_sha_c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1_from_if09_root_manifest_sha_3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660_without_macro_route_mutation",
-        "to_phase": "IF-10 Purgatorium Handoff Graph",
-        "to_status": "if10_purgatorium_handoff_graph_pass",
-        "transition_type": "active_context_if10_purgatorium_handoff_graph_sync",
-        "verified_via": "canonroadmap IF-10 causal handoff materialization + project IF10 handoff graph packet + terminal green CI. Macro route preserved and no real execution surface activated."
+        "from_phase": "IF-10 Purgatorium Handoff Graph",
+        "proof_source": "project_origin_main_sha_6312302ea45b72ddc310b2b33f56245be65b99dc_verified_with_terminal_green_ci_run_27177997351_and_if11_closure_status_closed_with_purgatorium_handoff_ready_from_if10_graph_sha_c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1_without_macro_route_mutation",
+        "to_phase": "IF-11 Minos Final Verdict + Closure",
+        "to_status": "if11_minos_final_verdict_closure_pass",
+        "transition_type": "active_context_if11_minos_final_verdict_closure_sync",
+        "verified_via": "canonroadmap IF-11 final verdict closure + project IF11 closure packet + terminal green CI. Macro route preserved, operator cosignature remains pending review, and no real execution surface activated."
     },
-    "latest_completed_phase": "IF-10 Purgatorium Handoff Graph",
+    "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "IF-08",
-        "deferred_phase_reason": "INF-FULL-07 remains closed; IF10 purgatorium handoff graph is canonical pass. Next step: prepare_if11_minos_final_verdict_closure.",
+        "deferred_phase_reason": "INF-FULL-07 remains closed; IF11 minos final verdict closure is canonical pass. Next step: prepare_purgatorium_handoff_or_operator_review.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -348,13 +333,13 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "INF-FULL-07 remains closed. IF10 purgatorium handoff graph is canonical pass. Next step is prepare_if11_minos_final_verdict_closure. Macro route remained preserved, no real execution surface was activated, and no new real execution is authorized.",
+        "notes": "INF-FULL-07 remains closed. IF11 minos final verdict closure is canonical pass. Next step is prepare_purgatorium_handoff_or_operator_review. Macro route remained preserved, operator cosignature is still pending review, no real execution surface was activated, and no new real execution is authorized.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "IF-08",
         "phase_class": "infernus_full_execution",
         "planning_only": false,
         "review_only": false,
-        "status": "if10_purgatorium_handoff_graph_pass"
+        "status": "if11_minos_final_verdict_closure_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,

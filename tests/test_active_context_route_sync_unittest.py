@@ -34,14 +34,14 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_phase_mutation_family_count"], 10)
         self.assertEqual(state["current_phase_oracle_count"], 9)
 
-    def test_current_route_tracks_if10_purgatorium_handoff_graph_sync(self):
+    def test_current_route_tracks_if11_minos_final_verdict_closure_sync(self):
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["latest_completed_phase"], "IF-10 Purgatorium Handoff Graph")
-        self.assertEqual(state["latest_completed_status"], "if10_purgatorium_handoff_graph_pass")
-        self.assertEqual(state["latest_completed_project_commit_sha"], "57106d9780af7a807bd58ea6039af3a7b1b23701")
+        self.assertEqual(state["latest_completed_phase"], "IF-11 Minos Final Verdict + Closure")
+        self.assertEqual(state["latest_completed_status"], "if11_minos_final_verdict_closure_pass")
+        self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "prepare_if11_minos_final_verdict_closure",
+            "prepare_purgatorium_handoff_or_operator_review",
         )
         self.assertEqual(state["next_phase"], "IF-08")
         self.assertEqual(state["active_next_phase"], "IF-08")
@@ -49,46 +49,51 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
-        self.assertTrue(state["latest_completed_no_execution"]["wave_executed"])
-        self.assertTrue(state["latest_completed_no_execution"]["bot_executed"])
-        self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_causal_handoff_materialization")
-        self.assertEqual(state["latest_completed_no_execution"]["source_phase_verified"], "IF-09 Evidence Bundle + Vulnerability Register")
-        self.assertEqual(state["latest_completed_no_execution"]["source_status_verified"], "if09_evidence_bundle_vulnerability_register_pass")
-        self.assertEqual(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"], "38b16edadce15ce8f2049bb3de8538bb921e344e")
-        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"], "767138de3fb2b0484fca6be25657e08c21107574")
-        self.assertTrue(state["latest_completed_no_execution"]["if10_materialization_performed"])
-        self.assertTrue(state["latest_completed_no_execution"]["purgatorium_handoff_graph_v4_materialized"])
-        self.assertTrue(state["latest_completed_no_execution"]["root_cause_candidates_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["remediation_tracks_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["regression_test_plan_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["revalidation_wave_plan_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["handoff_manifest_created"])
+        self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
+        self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
+        self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
+        self.assertEqual(state["latest_completed_no_execution"]["source_phase_verified"], "IF-10 Purgatorium Handoff Graph")
+        self.assertEqual(state["latest_completed_no_execution"]["source_status_verified"], "if10_purgatorium_handoff_graph_pass")
+        self.assertEqual(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"], "57106d9780af7a807bd58ea6039af3a7b1b23701")
+        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_pre_sync_sha_verified_by_packet"], "767138de3fb2b0484fca6be25657e08c21107574")
+        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_sync_sha_verified_by_packet"], "7755a1506e6981d3f1c5b3534c7217112a12b960")
+        self.assertTrue(state["latest_completed_no_execution"]["if11_materialization_performed"])
+        self.assertTrue(state["latest_completed_no_execution"]["minos_mechanical_report_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["minos_semantic_report_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["operator_cosignature_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["anti_theater_meta_audit_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["infernus_closure_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["closure_manifest_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["final_evidence_index_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["purgatorium_readiness_summary_created"])
+        self.assertTrue(state["latest_completed_no_execution"]["next_phase_boundary_created"])
         self.assertEqual(state["latest_completed_no_execution"]["source_root_manifest_sha256"], "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660")
-        self.assertTrue(state["latest_completed_no_execution"]["source_root_manifest_reference_verified"])
+        self.assertEqual(state["latest_completed_no_execution"]["source_graph_sha256"], "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1")
         self.assertEqual(state["latest_completed_no_execution"]["validated_handoff_ids"], ["IF09-FIND-001"])
         self.assertEqual(state["latest_completed_no_execution"]["contextual_candidate_ids"], ["IF09-FIND-002"])
         self.assertEqual(state["latest_completed_no_execution"]["excluded_invalid_ids"], ["IF09-FIND-003"])
         self.assertEqual(state["latest_completed_no_execution"]["supporting_observation_ids"], ["IF09-OBS-001"])
-        self.assertEqual(state["latest_completed_no_execution"]["reproduction_unit_reference"], "IF09-REPRO-001")
-        self.assertEqual(state["latest_completed_no_execution"]["replay_unit_reference"], "IF09-REPLAY-001")
-        self.assertEqual(state["latest_completed_no_execution"]["mutation_unit_reference"], "IF09-MUT-001")
-        self.assertEqual(state["latest_completed_no_execution"]["graph_node_count"], 9)
-        self.assertEqual(state["latest_completed_no_execution"]["graph_edge_count"], 8)
-        self.assertEqual(state["latest_completed_no_execution"]["node_type_counts"]["finding"], 1)
-        self.assertEqual(state["latest_completed_no_execution"]["edge_type_counts"]["reproduced_by"], 2)
-        self.assertEqual(state["latest_completed_no_execution"]["duplicate_node_ids_count"], 0)
-        self.assertEqual(state["latest_completed_no_execution"]["duplicate_edge_ids_count"], 0)
-        self.assertEqual(state["latest_completed_no_execution"]["dangling_edges_count"], 0)
-        self.assertEqual(state["latest_completed_no_execution"]["handoff_ids_missing_tracks_count"], 0)
-        self.assertEqual(state["latest_completed_no_execution"]["invalid_findings_with_remediation_count"], 0)
-        self.assertEqual(state["latest_completed_no_execution"]["candidate_findings_promoted_without_evidence_count"], 0)
-        self.assertTrue(state["latest_completed_no_execution"]["graph_integrity_verified"])
+        self.assertEqual(state["latest_completed_no_execution"]["minos_mechanical_verdict"], "pass")
+        self.assertEqual(state["latest_completed_no_execution"]["minos_semantic_verdict"], "pass")
+        self.assertEqual(state["latest_completed_no_execution"]["anti_theater_verdict"], "pass")
+        self.assertEqual(state["latest_completed_no_execution"]["operator_cosignature_status"], "pending_operator_review")
+        self.assertEqual(state["latest_completed_no_execution"]["infernus_closure_status"], "closed_with_purgatorium_handoff_ready")
+        self.assertTrue(state["latest_completed_no_execution"]["purgatorium_handoff_ready"])
+        self.assertFalse(state["latest_completed_no_execution"]["bedrock_ready"])
+        self.assertFalse(state["latest_completed_no_execution"]["product_ready"])
+        self.assertFalse(state["latest_completed_no_execution"]["real_execution_authorized"])
         self.assertTrue(state["latest_completed_no_execution"]["macro_transition_preserved"])
         self.assertEqual(state["latest_completed_no_execution"]["current_phase_id_preserved"], "INF-FULL-07")
         self.assertEqual(state["latest_completed_no_execution"]["active_next_phase_preserved"], "IF-08")
         self.assertEqual(state["latest_completed_no_execution"]["active_next_phase_class_preserved"], "infernus_full_execution")
-        self.assertTrue(state["latest_completed_no_execution"]["w6_execution_performed"])
-        self.assertFalse(state["latest_completed_no_execution"]["w6_real_execution_performed"])
+        self.assertEqual(
+            state["latest_completed_no_execution"]["warnings"],
+            [
+                "operator_cosignature_pending_review_not_execution_authorization",
+                "purgatorium_handoff_ready_does_not_mean_finding_resolved",
+            ],
+        )
+        self.assertEqual(state["latest_completed_no_execution"]["blocking_findings_count"], 0)
         self.assertFalse(state["latest_completed_no_execution"]["real_audio_capture_allowed"])
         self.assertFalse(state["latest_completed_no_execution"]["real_stt_tts_allowed"])
         self.assertFalse(state["latest_completed_no_execution"]["microphone_access_allowed"])
@@ -143,6 +148,34 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
                 for name in original_paths:
                     setattr(module, name, missing)
                 module._check_if10_purgatorium_handoff_graph_artifacts(state)
+            finally:
+                for name, value in original_paths.items():
+                    setattr(module, name, value)
+
+    def test_if11_validator_skips_external_project_artifacts_when_absent(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original_paths = {
+                "IF11_PROJECT_DECISION_PATH": module.IF11_PROJECT_DECISION_PATH,
+                "IF11_PROJECT_SUMMARY_PATH": module.IF11_PROJECT_SUMMARY_PATH,
+                "IF11_PROJECT_REPORT_PATH": module.IF11_PROJECT_REPORT_PATH,
+                "IF11_PROJECT_MECHANICAL_PATH": module.IF11_PROJECT_MECHANICAL_PATH,
+                "IF11_PROJECT_SEMANTIC_PATH": module.IF11_PROJECT_SEMANTIC_PATH,
+                "IF11_PROJECT_OPERATOR_COSIGNATURE_PATH": module.IF11_PROJECT_OPERATOR_COSIGNATURE_PATH,
+                "IF11_PROJECT_ANTI_THEATER_PATH": module.IF11_PROJECT_ANTI_THEATER_PATH,
+                "IF11_PROJECT_CLOSURE_PATH": module.IF11_PROJECT_CLOSURE_PATH,
+                "IF11_PROJECT_MANIFEST_PATH": module.IF11_PROJECT_MANIFEST_PATH,
+                "IF11_PROJECT_FINAL_EVIDENCE_PATH": module.IF11_PROJECT_FINAL_EVIDENCE_PATH,
+                "IF11_PROJECT_READINESS_PATH": module.IF11_PROJECT_READINESS_PATH,
+                "IF11_PROJECT_BOUNDARY_PATH": module.IF11_PROJECT_BOUNDARY_PATH,
+                "IF11_PROJECT_DOC_PATH": module.IF11_PROJECT_DOC_PATH,
+            }
+            try:
+                for name in original_paths:
+                    setattr(module, name, missing)
+                module._check_if11_minos_final_verdict_closure_artifacts(state)
             finally:
                 for name, value in original_paths.items():
                     setattr(module, name, value)

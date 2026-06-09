@@ -61,8 +61,8 @@ Resposta sem SHA no topo = INVALID.
 
 phase_id: INF-FULL-07
 status: inf_full_07_if08_authorization_gate_pass
-latest_completed_phase: IF-10 Purgatorium Handoff Graph
-latest_completed_status: if10_purgatorium_handoff_graph_pass
+latest_completed_phase: IF-11 Minos Final Verdict + Closure
+latest_completed_status: if11_minos_final_verdict_closure_pass
 next_phase: IF-08
-next_recommended_step: prepare_if11_minos_final_verdict_closure
+next_recommended_step: prepare_purgatorium_handoff_or_operator_review
 Todos execution_locks: false

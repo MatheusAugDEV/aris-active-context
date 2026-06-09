@@ -35,22 +35,22 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
-EXPECTED_PHASE = "IF-10 Purgatorium Handoff Graph"
+EXPECTED_PHASE = "IF-11 Minos Final Verdict + Closure"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W6 Final Audit Controlled Execution"
+EXPECTED_PREVIOUS_PHASE = "IF-10 Purgatorium Handoff Graph"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if10_purgatorium_handoff_graph_pass"
+EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_SCHEMA_VERSION = "3.1"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if10_purgatorium_handoff_graph_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if10_purgatorium_handoff_graph_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "57106d9780af7a807bd58ea6039af3a7b1b23701"
+EXPECTED_NEXT_ACTION_STATUS = "if11_minos_final_verdict_closure_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if11_minos_final_verdict_closure"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27176578203"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_purgatorium_handoff_or_operator_review"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -551,6 +551,37 @@ IF10_PROJECT_REGRESSION_PATH = IF10_PROJECT_ROOT / "regression_test_plan.json"
 IF10_PROJECT_REVALIDATION_PATH = IF10_PROJECT_ROOT / "revalidation_wave_plan.json"
 IF10_PROJECT_HANDOFF_MANIFEST_PATH = IF10_PROJECT_ROOT / "handoff_manifest.json"
 IF10_PROJECT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if10_purgatorium_handoff_graph.md")
+IF11_PHASE = "IF-11 Minos Final Verdict + Closure"
+IF11_STATUS = "if11_minos_final_verdict_closure_pass"
+IF11_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
+IF11_PROJECT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF11_NEXT_RECOMMENDED_STEP = "prepare_purgatorium_handoff_or_operator_review"
+IF11_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351"
+IF11_SOURCE_PHASE = "IF-10 Purgatorium Handoff Graph"
+IF11_SOURCE_STATUS = "if10_purgatorium_handoff_graph_pass"
+IF11_SOURCE_PROJECT_SHA = "57106d9780af7a807bd58ea6039af3a7b1b23701"
+IF11_SOURCE_ACTIVE_CONTEXT_PRE_SYNC_SHA = "767138de3fb2b0484fca6be25657e08c21107574"
+IF11_SOURCE_ACTIVE_CONTEXT_SYNC_SHA = "7755a1506e6981d3f1c5b3534c7217112a12b960"
+IF11_SOURCE_ROOT_MANIFEST_SHA = "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660"
+IF11_SOURCE_GRAPH_SHA = "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1"
+IF11_ROOT = ROOT / "artifacts" / "if11_minos_final_verdict_closure"
+IF11_ACTIVE_DECISION_PATH = IF11_ROOT / "decision.json"
+IF11_ACTIVE_SUMMARY_PATH = IF11_ROOT / "summary.json"
+IF11_ACTIVE_REPORT_PATH = IF11_ROOT / "report.md"
+IF11_PROJECT_ROOT = _resolve_project_relative("artifacts", "infernus", "if11_minos_final_verdict_closure")
+IF11_PROJECT_DECISION_PATH = IF11_PROJECT_ROOT / "decision.json"
+IF11_PROJECT_SUMMARY_PATH = IF11_PROJECT_ROOT / "summary.json"
+IF11_PROJECT_REPORT_PATH = IF11_PROJECT_ROOT / "report.md"
+IF11_PROJECT_MECHANICAL_PATH = IF11_PROJECT_ROOT / "minos_mechanical_report_v4.json"
+IF11_PROJECT_SEMANTIC_PATH = IF11_PROJECT_ROOT / "minos_semantic_report_v4.md"
+IF11_PROJECT_OPERATOR_COSIGNATURE_PATH = IF11_PROJECT_ROOT / "operator_cosignature.json"
+IF11_PROJECT_ANTI_THEATER_PATH = IF11_PROJECT_ROOT / "anti_theater_meta_audit_v4.json"
+IF11_PROJECT_CLOSURE_PATH = IF11_PROJECT_ROOT / "infernus_closure_v4.json"
+IF11_PROJECT_MANIFEST_PATH = IF11_PROJECT_ROOT / "closure_manifest.json"
+IF11_PROJECT_FINAL_EVIDENCE_PATH = IF11_PROJECT_ROOT / "final_evidence_index.json"
+IF11_PROJECT_READINESS_PATH = IF11_PROJECT_ROOT / "purgatorium_readiness_summary.json"
+IF11_PROJECT_BOUNDARY_PATH = IF11_PROJECT_ROOT / "next_phase_boundary.json"
+IF11_PROJECT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if11_minos_final_verdict_closure.md")
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -8021,6 +8052,151 @@ def _check_if10_purgatorium_handoff_graph_artifacts(state: dict[str, Any]) -> No
     _require(handoff_manifest.get("handoff_required_ids") == ["IF09-FIND-001"], "project IF10 handoff manifest ids mismatch")
 
 
+def _check_if11_minos_final_verdict_closure_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF11_ACTIVE_DECISION_PATH,
+        IF11_ACTIVE_SUMMARY_PATH,
+        IF11_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF11 active-context artifact: {path}")
+
+    external_project_paths = (
+        IF11_PROJECT_DECISION_PATH,
+        IF11_PROJECT_SUMMARY_PATH,
+        IF11_PROJECT_REPORT_PATH,
+        IF11_PROJECT_MECHANICAL_PATH,
+        IF11_PROJECT_SEMANTIC_PATH,
+        IF11_PROJECT_OPERATOR_COSIGNATURE_PATH,
+        IF11_PROJECT_ANTI_THEATER_PATH,
+        IF11_PROJECT_CLOSURE_PATH,
+        IF11_PROJECT_MANIFEST_PATH,
+        IF11_PROJECT_FINAL_EVIDENCE_PATH,
+        IF11_PROJECT_READINESS_PATH,
+        IF11_PROJECT_BOUNDARY_PATH,
+        IF11_PROJECT_DOC_PATH,
+    )
+    external_project_available = all(path.exists() for path in external_project_paths)
+
+    active_decision = _load_json(IF11_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-11-MINOS-FINAL-VERDICT-CLOSURE", "active IF11 decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active IF11 decision must be pass")
+    _require(active_decision.get("status") == IF11_STATUS, "active IF11 decision status mismatch")
+    _require(active_decision.get("project_commit_sha") == IF11_PROJECT_SHA, "active IF11 decision project sha mismatch")
+    _require(active_decision.get("project_ci_state") == IF11_PROJECT_CI_STATE, "active IF11 decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF11_PROJECT_CI_RUN_URL, "active IF11 decision ci url mismatch")
+    _require(active_decision.get("active_context_pre_sync_phase_id") == EXPECTED_PHASE_ID, "active IF11 decision pre-sync phase mismatch")
+    _require(active_decision.get("active_context_pre_sync_current_status") == IF11_SOURCE_STATUS, "active IF11 decision pre-sync status mismatch")
+    _require(active_decision.get("active_context_pre_sync_sha") == IF11_SOURCE_ACTIVE_CONTEXT_SYNC_SHA, "active IF11 decision pre-sync sha mismatch")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF11_PHASE, "active IF11 decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF11_STATUS, "active IF11 decision latest status mismatch")
+    _require(active_decision.get("source_phase_verified") == IF11_SOURCE_PHASE, "active IF11 decision source phase mismatch")
+    _require(active_decision.get("source_status_verified") == IF11_SOURCE_STATUS, "active IF11 decision source status mismatch")
+    _require(active_decision.get("source_project_sha_verified_by_packet") == IF11_SOURCE_PROJECT_SHA, "active IF11 decision source project sha mismatch")
+    _require(active_decision.get("source_active_context_pre_sync_sha_verified_by_packet") == IF11_SOURCE_ACTIVE_CONTEXT_PRE_SYNC_SHA, "active IF11 decision source pre-sync sha mismatch")
+    _require(active_decision.get("source_active_context_sync_sha_verified_by_packet") == IF11_SOURCE_ACTIVE_CONTEXT_SYNC_SHA, "active IF11 decision source sync sha mismatch")
+    _require(active_decision.get("source_root_manifest_sha256") == IF11_SOURCE_ROOT_MANIFEST_SHA, "active IF11 decision source root manifest sha mismatch")
+    _require(active_decision.get("source_graph_sha256") == IF11_SOURCE_GRAPH_SHA, "active IF11 decision source graph sha mismatch")
+    _require(active_decision.get("validated_handoff_ids") == ["IF09-FIND-001"], "active IF11 decision handoff ids mismatch")
+    _require(active_decision.get("contextual_candidate_ids") == ["IF09-FIND-002"], "active IF11 decision contextual candidate ids mismatch")
+    _require(active_decision.get("excluded_invalid_ids") == ["IF09-FIND-003"], "active IF11 decision excluded invalid ids mismatch")
+    _require(active_decision.get("supporting_observation_ids") == ["IF09-OBS-001"], "active IF11 decision supporting observation ids mismatch")
+    _require(active_decision.get("minos_mechanical_verdict") == "pass", "active IF11 decision mechanical verdict mismatch")
+    _require(active_decision.get("minos_semantic_verdict") == "pass", "active IF11 decision semantic verdict mismatch")
+    _require(active_decision.get("anti_theater_verdict") == "pass", "active IF11 decision anti-theater verdict mismatch")
+    _require(active_decision.get("operator_cosignature_status") == "pending_operator_review", "active IF11 decision cosignature mismatch")
+    _require(active_decision.get("infernus_closure_status") == "closed_with_purgatorium_handoff_ready", "active IF11 decision closure status mismatch")
+    _require(active_decision.get("purgatorium_handoff_ready") is True, "active IF11 decision handoff readiness mismatch")
+    _require(active_decision.get("real_execution_authorized") is False, "active IF11 decision real_execution_authorized mismatch")
+    _require(active_decision.get("next_recommended_step") == IF11_NEXT_RECOMMENDED_STEP, "active IF11 decision next step mismatch")
+
+    active_summary = _load_json(IF11_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("status") == IF11_STATUS, "active IF11 summary status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF11_PROJECT_SHA, "active IF11 summary project sha mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF11_PROJECT_CI_RUN_URL, "active IF11 summary ci url mismatch")
+    _require(active_summary.get("source_root_manifest_sha256") == IF11_SOURCE_ROOT_MANIFEST_SHA, "active IF11 summary source root manifest sha mismatch")
+    _require(active_summary.get("source_graph_sha256") == IF11_SOURCE_GRAPH_SHA, "active IF11 summary source graph sha mismatch")
+    _require(active_summary.get("validated_handoff_ids") == ["IF09-FIND-001"], "active IF11 summary handoff ids mismatch")
+    _require(active_summary.get("minos_mechanical_verdict") == "pass", "active IF11 summary mechanical verdict mismatch")
+    _require(active_summary.get("minos_semantic_verdict") == "pass", "active IF11 summary semantic verdict mismatch")
+    _require(active_summary.get("anti_theater_verdict") == "pass", "active IF11 summary anti-theater verdict mismatch")
+    _require(active_summary.get("operator_cosignature_status") == "pending_operator_review", "active IF11 summary cosignature mismatch")
+    _require(active_summary.get("infernus_closure_status") == "closed_with_purgatorium_handoff_ready", "active IF11 summary closure status mismatch")
+    _require(active_summary.get("purgatorium_handoff_ready") is True, "active IF11 summary handoff readiness mismatch")
+    _require(active_summary.get("next_recommended_step") == IF11_NEXT_RECOMMENDED_STEP, "active IF11 summary next step mismatch")
+
+    _mirror_contains(
+        IF11_ACTIVE_REPORT_PATH,
+        "IF-11 Minos Final Verdict + Closure Sync",
+        "status: `if11_minos_final_verdict_closure_pass`",
+        "project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
+        "next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`",
+    )
+
+    if not external_project_available:
+        return
+
+    decision = _load_json(IF11_PROJECT_DECISION_PATH)
+    _require(decision.get("phase") == IF11_PHASE, "project IF11 decision phase mismatch")
+    _require(decision.get("status") == IF11_STATUS, "project IF11 decision status mismatch")
+    _require(decision.get("source_phase") == IF11_SOURCE_PHASE, "project IF11 decision source phase mismatch")
+    _require(decision.get("source_status") == IF11_SOURCE_STATUS, "project IF11 decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF11_SOURCE_PROJECT_SHA, "project IF11 decision source project sha mismatch")
+    _require(decision.get("source_active_context_pre_sync_sha") == IF11_SOURCE_ACTIVE_CONTEXT_PRE_SYNC_SHA, "project IF11 decision source pre-sync sha mismatch")
+    _require(decision.get("source_active_context_sync_sha") == IF11_SOURCE_ACTIVE_CONTEXT_SYNC_SHA, "project IF11 decision source sync sha mismatch")
+    _require(decision.get("source_root_manifest_sha256") == IF11_SOURCE_ROOT_MANIFEST_SHA, "project IF11 decision source root manifest sha mismatch")
+    _require(decision.get("source_graph_sha256") == IF11_SOURCE_GRAPH_SHA, "project IF11 decision source graph sha mismatch")
+    _require(decision.get("validated_handoff_ids") == ["IF09-FIND-001"], "project IF11 decision handoff ids mismatch")
+    _require(decision.get("minos_mechanical_verdict") == "pass", "project IF11 decision mechanical verdict mismatch")
+    _require(decision.get("minos_semantic_verdict") == "pass", "project IF11 decision semantic verdict mismatch")
+    _require(decision.get("anti_theater_verdict") == "pass", "project IF11 decision anti-theater verdict mismatch")
+    _require(decision.get("operator_cosignature_status") == "pending_operator_review", "project IF11 decision cosignature mismatch")
+    _require(decision.get("infernus_closure_status") == "closed_with_purgatorium_handoff_ready", "project IF11 decision closure status mismatch")
+    _require(decision.get("purgatorium_handoff_ready") is True, "project IF11 decision handoff readiness mismatch")
+    _require(decision.get("real_execution_authorized") is False, "project IF11 decision real execution authorization mismatch")
+    _require(decision.get("next_recommended_step") == IF11_NEXT_RECOMMENDED_STEP, "project IF11 decision next step mismatch")
+
+    summary = _load_json(IF11_PROJECT_SUMMARY_PATH)
+    _require(summary.get("status") == IF11_STATUS, "project IF11 summary status mismatch")
+    _require(summary.get("source_phase") == IF11_SOURCE_PHASE, "project IF11 summary source phase mismatch")
+    _require(summary.get("source_status") == IF11_SOURCE_STATUS, "project IF11 summary source status mismatch")
+    _require(summary.get("source_project_sha") == IF11_SOURCE_PROJECT_SHA, "project IF11 summary source project sha mismatch")
+    _require(summary.get("source_root_manifest_sha256") == IF11_SOURCE_ROOT_MANIFEST_SHA, "project IF11 summary source root manifest sha mismatch")
+    _require(summary.get("source_graph_sha256") == IF11_SOURCE_GRAPH_SHA, "project IF11 summary source graph sha mismatch")
+    _require(summary.get("minos_mechanical_verdict") == "pass", "project IF11 summary mechanical verdict mismatch")
+    _require(summary.get("minos_semantic_verdict") == "pass", "project IF11 summary semantic verdict mismatch")
+    _require(summary.get("anti_theater_verdict") == "pass", "project IF11 summary anti-theater verdict mismatch")
+    _require(summary.get("operator_cosignature_status") == "pending_operator_review", "project IF11 summary cosignature mismatch")
+    _require(summary.get("infernus_closure_status") == "closed_with_purgatorium_handoff_ready", "project IF11 summary closure status mismatch")
+    _require(summary.get("purgatorium_handoff_ready") is True, "project IF11 summary handoff readiness mismatch")
+
+    cosignature = _load_json(IF11_PROJECT_OPERATOR_COSIGNATURE_PATH)
+    _require(cosignature.get("operator_cosignature_status") == "pending_operator_review", "project IF11 cosignature status mismatch")
+    _require(cosignature.get("operator_execution_authorization") is False, "project IF11 cosignature execution authorization mismatch")
+    _require(cosignature.get("product_authorization") is False, "project IF11 cosignature product authorization mismatch")
+    _require(cosignature.get("bedrock_authorization") is False, "project IF11 cosignature bedrock authorization mismatch")
+
+    closure = _load_json(IF11_PROJECT_CLOSURE_PATH)
+    _require(closure.get("closure_status") == "closed_with_purgatorium_handoff_ready", "project IF11 closure status mismatch")
+    _require(closure.get("minos_mechanical_verdict") == "pass", "project IF11 closure mechanical verdict mismatch")
+    _require(closure.get("minos_semantic_verdict") == "pass", "project IF11 closure semantic verdict mismatch")
+    _require(closure.get("anti_theater_verdict") == "pass", "project IF11 closure anti-theater verdict mismatch")
+    _require(closure.get("operator_cosignature_status") == "pending_operator_review", "project IF11 closure cosignature mismatch")
+    _require(closure.get("purgatorium_handoff_ready") is True, "project IF11 closure readiness mismatch")
+    _require(closure.get("real_execution_authorized") is False, "project IF11 closure execution authorization mismatch")
+    _require(closure.get("next_recommended_step") == IF11_NEXT_RECOMMENDED_STEP, "project IF11 closure next step mismatch")
+
+    readiness = _load_json(IF11_PROJECT_READINESS_PATH)
+    _require(readiness.get("purgatorium_handoff_ready") is True, "project IF11 readiness mismatch")
+    _require(readiness.get("correction_implemented") is False, "project IF11 readiness correction mismatch")
+    _require(readiness.get("finding_resolved") is False, "project IF11 readiness finding resolution mismatch")
+
+    boundary = _load_json(IF11_PROJECT_BOUNDARY_PATH)
+    _require(boundary.get("next_recommended_step") == IF11_NEXT_RECOMMENDED_STEP, "project IF11 boundary next step mismatch")
+    _require(boundary.get("real_execution_authorized") is False, "project IF11 boundary execution authorization mismatch")
+    _require(boundary.get("bedrock_ready") is False, "project IF11 boundary bedrock readiness mismatch")
+    _require(boundary.get("product_ready") is False, "project IF11 boundary product readiness mismatch")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -8132,6 +8308,8 @@ def main() -> None:
     _check_if09_evidence_bundle_vulnerability_register_artifacts(state)
     # IF10 purgatorium handoff graph checks
     _check_if10_purgatorium_handoff_graph_artifacts(state)
+    # IF11 minos final verdict closure checks
+    _check_if11_minos_final_verdict_closure_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -8165,64 +8343,38 @@ def main() -> None:
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
-    _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
-    _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF10_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
-    _require(state["latest_completed_no_execution"]["source_status_verified"] == IF10_SOURCE_STATUS, "latest_completed_no_execution.source_status_verified mismatch")
-    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF10_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF10_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["if10_materialization_performed"] is True, "latest_completed_no_execution.if10_materialization_performed mismatch")
-    _require(state["latest_completed_no_execution"]["purgatorium_handoff_graph_v4_materialized"] is True, "latest_completed_no_execution.purgatorium_handoff_graph_v4_materialized mismatch")
-    _require(state["latest_completed_no_execution"]["root_cause_candidates_created"] is True, "latest_completed_no_execution.root_cause_candidates_created mismatch")
-    _require(state["latest_completed_no_execution"]["remediation_tracks_created"] is True, "latest_completed_no_execution.remediation_tracks_created mismatch")
-    _require(state["latest_completed_no_execution"]["regression_test_plan_created"] is True, "latest_completed_no_execution.regression_test_plan_created mismatch")
-    _require(state["latest_completed_no_execution"]["revalidation_wave_plan_created"] is True, "latest_completed_no_execution.revalidation_wave_plan_created mismatch")
-    _require(state["latest_completed_no_execution"]["handoff_manifest_created"] is True, "latest_completed_no_execution.handoff_manifest_created mismatch")
-    _require(state["latest_completed_no_execution"]["source_root_manifest_sha256"] == IF10_SOURCE_ROOT_MANIFEST_SHA, "latest_completed_no_execution.source_root_manifest_sha256 mismatch")
-    _require(state["latest_completed_no_execution"]["source_root_manifest_reference_verified"] is True, "latest_completed_no_execution.source_root_manifest_reference_verified mismatch")
+    _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
+    _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
+    _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF11_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_status_verified"] == IF11_SOURCE_STATUS, "latest_completed_no_execution.source_status_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF11_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_pre_sync_sha_verified_by_packet"] == IF11_SOURCE_ACTIVE_CONTEXT_PRE_SYNC_SHA, "latest_completed_no_execution.source_active_context_pre_sync_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_sync_sha_verified_by_packet"] == IF11_SOURCE_ACTIVE_CONTEXT_SYNC_SHA, "latest_completed_no_execution.source_active_context_sync_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["if11_materialization_performed"] is True, "latest_completed_no_execution.if11_materialization_performed mismatch")
+    _require(state["latest_completed_no_execution"]["minos_mechanical_report_created"] is True, "latest_completed_no_execution.minos_mechanical_report_created mismatch")
+    _require(state["latest_completed_no_execution"]["minos_semantic_report_created"] is True, "latest_completed_no_execution.minos_semantic_report_created mismatch")
+    _require(state["latest_completed_no_execution"]["operator_cosignature_created"] is True, "latest_completed_no_execution.operator_cosignature_created mismatch")
+    _require(state["latest_completed_no_execution"]["anti_theater_meta_audit_created"] is True, "latest_completed_no_execution.anti_theater_meta_audit_created mismatch")
+    _require(state["latest_completed_no_execution"]["infernus_closure_created"] is True, "latest_completed_no_execution.infernus_closure_created mismatch")
+    _require(state["latest_completed_no_execution"]["closure_manifest_created"] is True, "latest_completed_no_execution.closure_manifest_created mismatch")
+    _require(state["latest_completed_no_execution"]["final_evidence_index_created"] is True, "latest_completed_no_execution.final_evidence_index_created mismatch")
+    _require(state["latest_completed_no_execution"]["purgatorium_readiness_summary_created"] is True, "latest_completed_no_execution.purgatorium_readiness_summary_created mismatch")
+    _require(state["latest_completed_no_execution"]["next_phase_boundary_created"] is True, "latest_completed_no_execution.next_phase_boundary_created mismatch")
+    _require(state["latest_completed_no_execution"]["source_root_manifest_sha256"] == IF11_SOURCE_ROOT_MANIFEST_SHA, "latest_completed_no_execution.source_root_manifest_sha256 mismatch")
+    _require(state["latest_completed_no_execution"]["source_graph_sha256"] == IF11_SOURCE_GRAPH_SHA, "latest_completed_no_execution.source_graph_sha256 mismatch")
     _require(state["latest_completed_no_execution"]["validated_handoff_ids"] == ["IF09-FIND-001"], "latest_completed_no_execution.validated_handoff_ids mismatch")
     _require(state["latest_completed_no_execution"]["contextual_candidate_ids"] == ["IF09-FIND-002"], "latest_completed_no_execution.contextual_candidate_ids mismatch")
     _require(state["latest_completed_no_execution"]["excluded_invalid_ids"] == ["IF09-FIND-003"], "latest_completed_no_execution.excluded_invalid_ids mismatch")
     _require(state["latest_completed_no_execution"]["supporting_observation_ids"] == ["IF09-OBS-001"], "latest_completed_no_execution.supporting_observation_ids mismatch")
-    _require(state["latest_completed_no_execution"]["reproduction_unit_reference"] == "IF09-REPRO-001", "latest_completed_no_execution.reproduction_unit_reference mismatch")
-    _require(state["latest_completed_no_execution"]["replay_unit_reference"] == "IF09-REPLAY-001", "latest_completed_no_execution.replay_unit_reference mismatch")
-    _require(state["latest_completed_no_execution"]["mutation_unit_reference"] == "IF09-MUT-001", "latest_completed_no_execution.mutation_unit_reference mismatch")
-    _require(state["latest_completed_no_execution"]["graph_node_count"] == 9, "latest_completed_no_execution.graph_node_count mismatch")
-    _require(state["latest_completed_no_execution"]["graph_edge_count"] == 8, "latest_completed_no_execution.graph_edge_count mismatch")
-    _require(
-        state["latest_completed_no_execution"]["node_type_counts"]
-        == {
-            "finding": 1,
-            "affected_layer": 1,
-            "threat_class": 1,
-            "root_cause_candidate": 1,
-            "evidence_unit": 2,
-            "remediation_track": 1,
-            "regression_test": 1,
-            "revalidation_wave": 1,
-        },
-        "latest_completed_no_execution.node_type_counts mismatch",
-    )
-    _require(
-        state["latest_completed_no_execution"]["edge_type_counts"]
-        == {
-            "affects": 1,
-            "exploited_by": 1,
-            "caused_by": 1,
-            "reproduced_by": 2,
-            "requires_fix": 1,
-            "requires_regression_test": 1,
-            "requires_revalidation": 1,
-        },
-        "latest_completed_no_execution.edge_type_counts mismatch",
-    )
-    _require(state["latest_completed_no_execution"]["duplicate_node_ids_count"] == 0, "latest_completed_no_execution.duplicate_node_ids_count mismatch")
-    _require(state["latest_completed_no_execution"]["duplicate_edge_ids_count"] == 0, "latest_completed_no_execution.duplicate_edge_ids_count mismatch")
-    _require(state["latest_completed_no_execution"]["dangling_edges_count"] == 0, "latest_completed_no_execution.dangling_edges_count mismatch")
-    _require(state["latest_completed_no_execution"]["handoff_ids_missing_tracks_count"] == 0, "latest_completed_no_execution.handoff_ids_missing_tracks_count mismatch")
-    _require(state["latest_completed_no_execution"]["invalid_findings_with_remediation_count"] == 0, "latest_completed_no_execution.invalid_findings_with_remediation_count mismatch")
-    _require(state["latest_completed_no_execution"]["candidate_findings_promoted_without_evidence_count"] == 0, "latest_completed_no_execution.candidate_findings_promoted_without_evidence_count mismatch")
-    _require(state["latest_completed_no_execution"]["graph_integrity_verified"] is True, "latest_completed_no_execution.graph_integrity_verified mismatch")
+    _require(state["latest_completed_no_execution"]["minos_mechanical_verdict"] == "pass", "latest_completed_no_execution.minos_mechanical_verdict mismatch")
+    _require(state["latest_completed_no_execution"]["minos_semantic_verdict"] == "pass", "latest_completed_no_execution.minos_semantic_verdict mismatch")
+    _require(state["latest_completed_no_execution"]["anti_theater_verdict"] == "pass", "latest_completed_no_execution.anti_theater_verdict mismatch")
+    _require(state["latest_completed_no_execution"]["operator_cosignature_status"] == "pending_operator_review", "latest_completed_no_execution.operator_cosignature_status mismatch")
+    _require(state["latest_completed_no_execution"]["infernus_closure_status"] == "closed_with_purgatorium_handoff_ready", "latest_completed_no_execution.infernus_closure_status mismatch")
+    _require(state["latest_completed_no_execution"]["purgatorium_handoff_ready"] is True, "latest_completed_no_execution.purgatorium_handoff_ready mismatch")
+    _require(state["latest_completed_no_execution"]["bedrock_ready"] is False, "latest_completed_no_execution.bedrock_ready mismatch")
+    _require(state["latest_completed_no_execution"]["product_ready"] is False, "latest_completed_no_execution.product_ready mismatch")
+    _require(state["latest_completed_no_execution"]["real_execution_authorized"] is False, "latest_completed_no_execution.real_execution_authorized mismatch")
     _require(state["latest_completed_no_execution"]["macro_transition_preserved"] is True, "latest_completed_no_execution.macro_transition_preserved mismatch")
     _require(state["latest_completed_no_execution"]["current_phase_id_preserved"] == EXPECTED_PHASE_ID, "latest_completed_no_execution.current_phase_id_preserved mismatch")
     _require(state["latest_completed_no_execution"]["active_next_phase_preserved"] == EXPECTED_NEXT_PHASE_ID, "latest_completed_no_execution.active_next_phase_preserved mismatch")
@@ -8231,9 +8383,16 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
     _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
     _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "artifact_only_causal_handoff_materialization", "latest_completed_no_execution.execution_scope mismatch")
-    _require(state["latest_completed_no_execution"]["w6_execution_performed"] is True, "latest_completed_no_execution.w6_execution_performed must be true")
-    _require(state["latest_completed_no_execution"]["w6_real_execution_performed"] is False, "latest_completed_no_execution.w6_real_execution_performed must be false")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "artifact_only_final_verdict_closure", "latest_completed_no_execution.execution_scope mismatch")
+    _require(state["latest_completed_no_execution"]["blocking_findings_count"] == 0, "latest_completed_no_execution.blocking_findings_count mismatch")
+    _require(
+        state["latest_completed_no_execution"]["warnings"]
+        == [
+            "operator_cosignature_pending_review_not_execution_authorization",
+            "purgatorium_handoff_ready_does_not_mean_finding_resolved",
+        ],
+        "latest_completed_no_execution.warnings mismatch",
+    )
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -8257,8 +8416,8 @@ def main() -> None:
         "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["previous_execution_phase"] == IF10_SOURCE_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF10_SOURCE_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF11_SOURCE_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF11_SOURCE_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -8281,45 +8440,46 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-10 Purgatorium Handoff Graph`",
-        "latest_completed_status: `if10_purgatorium_handoff_graph_pass`",
+        "latest_completed_phase: `IF-11 Minos Final Verdict + Closure`",
+        "latest_completed_status: `if11_minos_final_verdict_closure_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
         "source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
-        "graph_node_count: `9`",
-        "graph_edge_count: `8`",
-        "execution_scope: `artifact_only_causal_handoff_materialization`",
+        "source_graph_sha256: `c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`",
+        "operator_cosignature_status: `pending_operator_review`",
+        "purgatorium_handoff_ready: `true`",
+        "execution_scope: `artifact_only_final_verdict_closure`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
+        "latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `prepare_if11_minos_final_verdict_closure`",
+        "next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-10 Purgatorium Handoff Graph Sync Sincronizado",
+        "INF-FULL-07 — IF-11 Minos Final Verdict + Closure Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if10_purgatorium_handoff_graph_pass",
-        "Este sync ja registra o packet canonico de IF10 com `source_phase_verified=IF-09 Evidence Bundle + Vulnerability Register`, `source_status_verified=if09_evidence_bundle_vulnerability_register_pass`, `source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `validated_handoff_ids=['IF09-FIND-001']`, `contextual_candidate_ids=['IF09-FIND-002']`, `excluded_invalid_ids=['IF09-FIND-003']`, `supporting_observation_ids=['IF09-OBS-001']`, `graph_node_count=9`, `graph_edge_count=8`, `reproduction_unit_reference=IF09-REPRO-001`, `replay_unit_reference=IF09-REPLAY-001`, `mutation_unit_reference=IF09-MUT-001` e `macro_transition_preserved=true`.",
-        "O proximo prompt pode preparar apenas `prepare_if11_minos_final_verdict_closure` dentro do escopo canonico aprovado.",
-        "O proximo passo recomendado neste estado e `prepare_if11_minos_final_verdict_closure`.",
+        "latest_completed_status: if11_minos_final_verdict_closure_pass",
+        "Este sync ja registra o packet canonico de IF11 com `source_phase_verified=IF-10 Purgatorium Handoff Graph`, `source_status_verified=if10_purgatorium_handoff_graph_pass`, `source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`, `validated_handoff_ids=['IF09-FIND-001']`, `contextual_candidate_ids=['IF09-FIND-002']`, `excluded_invalid_ids=['IF09-FIND-003']`, `supporting_observation_ids=['IF09-OBS-001']`, `minos_mechanical_verdict=pass`, `minos_semantic_verdict=pass`, `anti_theater_verdict=pass`, `operator_cosignature_status=pending_operator_review`, `infernus_closure_status=closed_with_purgatorium_handoff_ready`, `purgatorium_handoff_ready=true` e `macro_transition_preserved=true`.",
+        "O proximo prompt pode preparar apenas `prepare_purgatorium_handoff_or_operator_review` dentro do escopo canonico aprovado.",
+        "O proximo passo recomendado neste estado e `prepare_purgatorium_handoff_or_operator_review`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if10_purgatorium_handoff_graph_pass",
-        "Latest completed phase: `IF-10 Purgatorium Handoff Graph`",
-        "latest_completed_status=if10_purgatorium_handoff_graph_pass",
-        "active_context_remote_main_reflects_if10_purgatorium_handoff_graph=true",
+        "if11_minos_final_verdict_closure_pass",
+        "Latest completed phase: `IF-11 Minos Final Verdict + Closure`",
+        "latest_completed_status=if11_minos_final_verdict_closure_pass",
+        "active_context_remote_main_reflects_if11_minos_final_verdict_closure=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "prepare_if11_minos_final_verdict_closure",
+        "prepare_purgatorium_handoff_or_operator_review",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
@@ -8327,6 +8487,7 @@ def main() -> None:
         "OPERATOR_PREFERENCES.md",
         "artifacts/if09_evidence_bundle_vulnerability_register/decision.json",
         "artifacts/if10_purgatorium_handoff_graph/decision.json",
+        "artifacts/if11_minos_final_verdict_closure/decision.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/hash_tree.json",
@@ -8343,6 +8504,10 @@ def main() -> None:
         "artifacts/infernus/if10_purgatorium_handoff_graph/revalidation_wave_plan.json",
         "artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
         "docs/infernus_full/if10_purgatorium_handoff_graph.md",
+        "artifacts/infernus/if11_minos_final_verdict_closure/decision.json",
+        "artifacts/infernus/if11_minos_final_verdict_closure/minos_mechanical_report_v4.json",
+        "artifacts/infernus/if11_minos_final_verdict_closure/infernus_closure_v4.json",
+        "docs/infernus_full/if11_minos_final_verdict_closure.md",
         "artifacts/if08_w6_final_audit_controlled_execution/decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_evidence_bundle.json",
@@ -8402,6 +8567,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
+        "IF-11 Minos Final Verdict + Closure | pass",
+        "if11_minos_final_verdict_closure_pass",
+        "project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
+        "next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`",
         "IF-10 Purgatorium Handoff Graph | pass",
         "if10_purgatorium_handoff_graph_pass",
         "project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
@@ -8469,19 +8638,19 @@ def main() -> None:
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "inf_full_07_if08_authorization_gate_pass",
-        "latest_completed_phase: IF-10 Purgatorium Handoff Graph",
+        "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
         "Todos execution_locks: false",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-10 Purgatorium Handoff Graph",
+        "Latest completed phase: IF-11 Minos Final Verdict + Closure",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
-        "IF09 evidence bundle and vulnerability register remain the canonical source packet for this sync with source_project_sha_verified_by_packet=38b16edadce15ce8f2049bb3de8538bb921e344e, source_active_context_sha_verified_by_packet=767138de3fb2b0484fca6be25657e08c21107574, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF10 purgatorium handoff graph is canonical as pass; this sync preserves node_count=9, edge_count=8, root_manifest_reference_verified=true, reproduction_unit_reference=IF09-REPRO-001, replay_unit_reference=IF09-REPLAY-001, mutation_unit_reference=IF09-MUT-001, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if11_minos_final_verdict_closure.",
+        "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
+        "IF11 minos final verdict closure is canonical as pass; this sync preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_purgatorium_handoff_or_operator_review.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

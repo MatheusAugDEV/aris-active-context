@@ -2,14 +2,14 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if10_purgatorium_handoff_graph_pass`
-- latest_completed_phase: `IF-10 Purgatorium Handoff Graph`
-- latest_completed_status: `if10_purgatorium_handoff_graph_pass`
+- current_status: `if11_minos_final_verdict_closure_pass`
+- latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
+- latest_completed_status: `if11_minos_final_verdict_closure_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if10_purgatorium_handoff_graph: `true`
+- active_context_remote_main_reflects_if11_minos_final_verdict_closure: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
@@ -47,6 +47,22 @@ Referências ativas desta fase:
 - `artifacts/infernus/if10_purgatorium_handoff_graph/revalidation_wave_plan.json`
 - `artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json`
 - `docs/infernus_full/if10_purgatorium_handoff_graph.md`
+- `artifacts/if11_minos_final_verdict_closure/decision.json`
+- `artifacts/if11_minos_final_verdict_closure/summary.json`
+- `artifacts/if11_minos_final_verdict_closure/report.md`
+- `artifacts/infernus/if11_minos_final_verdict_closure/decision.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/summary.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/report.md`
+- `artifacts/infernus/if11_minos_final_verdict_closure/minos_mechanical_report_v4.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/minos_semantic_report_v4.md`
+- `artifacts/infernus/if11_minos_final_verdict_closure/operator_cosignature.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/anti_theater_meta_audit_v4.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/infernus_closure_v4.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/closure_manifest.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/final_evidence_index.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/purgatorium_readiness_summary.json`
+- `artifacts/infernus/if11_minos_final_verdict_closure/next_phase_boundary.json`
+- `docs/infernus_full/if11_minos_final_verdict_closure.md`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_summary.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_report.md`
@@ -228,4 +244,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The IF10 purgatorium handoff graph packet is canonical as pass; the next canonical step is prepare_if11_minos_final_verdict_closure and no real execution surface is authorized.
+- The IF11 minos final verdict closure packet is canonical as pass; the next canonical step is prepare_purgatorium_handoff_or_operator_review and no real execution surface is authorized.

@@ -16,15 +16,15 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-10 Purgatorium Handoff Graph
+Latest completed phase: IF-11 Minos Final Verdict + Closure
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-IF09 evidence bundle and vulnerability register remain the canonical source packet for this sync with source_project_sha_verified_by_packet=38b16edadce15ce8f2049bb3de8538bb921e344e, source_active_context_sha_verified_by_packet=767138de3fb2b0484fca6be25657e08c21107574, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
-IF10 purgatorium handoff graph is canonical as pass; this sync preserves node_count=9, edge_count=8, root_manifest_reference_verified=true, reproduction_unit_reference=IF09-REPRO-001, replay_unit_reference=IF09-REPLAY-001, mutation_unit_reference=IF09-MUT-001, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if11_minos_final_verdict_closure.
+IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
+IF11 minos final verdict closure is canonical as pass; this sync preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_purgatorium_handoff_or_operator_review.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

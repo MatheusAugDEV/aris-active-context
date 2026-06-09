@@ -2,40 +2,44 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-10 Purgatorium Handoff Graph`
-- latest_completed_status: `if10_purgatorium_handoff_graph_pass`
+- latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
+- latest_completed_status: `if11_minos_final_verdict_closure_pass`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if10_purgatorium_handoff_graph_pass`
+- current_status: `if11_minos_final_verdict_closure_pass`
 - decision: `pass`
-- latest_completed_project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`
+- latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `prepare_if11_minos_final_verdict_closure`
+- next_recommended_step: `prepare_purgatorium_handoff_or_operator_review`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
-- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF10_PURGATORIUM_HANDOFF_GRAPH: `true`
+- ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF11_MINOS_FINAL_VERDICT_CLOSURE: `true`
 - PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
 - CI enforcement active: `true`
-- source_phase_verified: `IF-09 Evidence Bundle + Vulnerability Register`
-- source_status_verified: `if09_evidence_bundle_vulnerability_register_pass`
-- source_project_sha_verified_by_packet: `38b16edadce15ce8f2049bb3de8538bb921e344e`
-- source_active_context_sha_verified_by_packet: `767138de3fb2b0484fca6be25657e08c21107574`
+- source_phase_verified: `IF-10 Purgatorium Handoff Graph`
+- source_status_verified: `if10_purgatorium_handoff_graph_pass`
+- source_project_sha_verified_by_packet: `57106d9780af7a807bd58ea6039af3a7b1b23701`
+- source_active_context_sync_sha_verified_by_packet: `7755a1506e6981d3f1c5b3534c7217112a12b960`
 - source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`
+- source_graph_sha256: `c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`
 - validated_handoff_ids: `['IF09-FIND-001']`
 - contextual_candidate_ids: `['IF09-FIND-002']`
 - excluded_invalid_ids: `['IF09-FIND-003']`
 - supporting_observation_ids: `['IF09-OBS-001']`
-- graph_node_count: `9`
-- graph_edge_count: `8`
-- execution_scope: `artifact_only_causal_handoff_materialization`
+- minos_mechanical_verdict: `pass`
+- minos_semantic_verdict: `pass`
+- anti_theater_verdict: `pass`
+- operator_cosignature_status: `pending_operator_review`
+- infernus_closure_status: `closed_with_purgatorium_handoff_ready`
+- purgatorium_handoff_ready: `true`
+- execution_scope: `artifact_only_final_verdict_closure`
 - macro_transition_preserved: `true`
-- w6_execution_performed: `true`
-- w6_real_execution_performed: `false`
+- real_execution_authorized: `false`
 - real_audio_capture_allowed: `false`
 - real_stt_tts_allowed: `false`
 - microphone_access_allowed: `false`
@@ -53,10 +57,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- IF10 purgatorium handoff graph is canonically pass; the next canonical step is `prepare_if11_minos_final_verdict_closure`.
+- IF11 minos final verdict closure is canonically pass; the next canonical step is `prepare_purgatorium_handoff_or_operator_review`.
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-10 Purgatorium Handoff Graph`.
-The Project repo result was verified on `origin/main` with terminal green CI; the IF10 packet converted the IF09 validated finding into a deterministic causal handoff graph with one remediation track, one regression test, one revalidation wave, nine nodes, eight edges, preserved the macro route unchanged, and kept all real/runtime/network/secret/cost/quota/audio surfaces false.
-The next prompt may target only `prepare_if11_minos_final_verdict_closure`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-11 Minos Final Verdict + Closure`.
+The Project repo result was verified on `origin/main` with terminal green CI; the IF11 packet preserved the IF10 causal handoff lineage, recorded minos mechanical and semantic pass plus anti-theater pass, left operator cosignature in `pending_operator_review`, marked closure as `closed_with_purgatorium_handoff_ready`, preserved the macro route unchanged, and kept all real/runtime/network/secret/cost/quota/audio surfaces false.
+The next prompt may target only `prepare_purgatorium_handoff_or_operator_review`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
