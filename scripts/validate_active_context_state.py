@@ -39,19 +39,21 @@ EXPECTED_PHASE = "IF-11 Minos Final Verdict + Closure"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-10 Purgatorium Handoff Graph"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
-EXPECTED_STATUS = "purg00_operator_review_packet_pass"
+EXPECTED_STATUS = "purg00_route_admission_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.2"
-EXPECTED_NEXT_PHASE_ID = "PURG-PRE"
-EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_authority_materialization"
+EXPECTED_SCHEMA_VERSION = "3.3"
+EXPECTED_NEXT_PHASE_ID = "PURG-00"
+EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
+PURG_PRE_LIVE_ROUTE_PHASE_ID = "PURG-PRE"
+PURG_PRE_LIVE_ROUTE_PHASE_CLASS = "purgatorium_full_authority_materialization"
 HISTORICAL_PRESERVED_NEXT_PHASE_ID = "IF-08"
 HISTORICAL_PRESERVED_NEXT_PHASE_CLASS = "infernus_full_execution"
 EXPECTED_NEXT_ACTION_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg00_route_admission"
+EXPECTED_NEXT_RECOMMENDED_STEP = "execute_purg00_handoff_intake_authority_lock"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
 PURG00_OPERATOR_REVIEW_PACKET_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg00_route_admission"
 EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351"
@@ -60,6 +62,9 @@ PURG_PRE_ROUTE_ADMISSION_OPERATOR_SOURCE = "chat_operator_pode_comecar_2026_06_0
 PURG_PRE_AUTHORITY_EXECUTION_STATUS = "purg_pre_canonical_authority_execution_pass"
 PURG_PRE_AUTHORITY_EXECUTION_NEXT_RECOMMENDED_STEP = "prepare_purg00_route_admission_or_operator_review"
 PURG00_OPERATOR_REVIEW_PACKET_STATUS = "purg00_operator_review_packet_pass"
+PURG00_ROUTE_ADMISSION_STATUS = "purg00_route_admission_pass"
+PURG00_ROUTE_ADMISSION_OPERATOR_SOURCE = "chat_operator_pode_comecar_purg00_route_admission_2026_06_09"
+PURG00_ROUTE_ADMISSION_NEXT_STEP = "execute_purg00_handoff_intake_authority_lock"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -630,6 +635,15 @@ PURG00_ROUTE_ADMISSION_FUTURE_PATCH_PLAN_PATH = PURG_PRE_ROOT / "purg00_route_ad
 PURG00_ROUTE_ADMISSION_NO_REAL_EXECUTION_PATH = PURG_PRE_ROOT / "purg00_route_admission_no_real_execution_attestation.json"
 PURG00_REQUIRED_SOURCE_ACCESS_MATRIX_PATH = PURG_PRE_ROOT / "purg00_required_source_access_matrix.json"
 PURG00_NOT_OPENED_ATTESTATION_PATH = PURG_PRE_ROOT / "purg00_not_opened_attestation.json"
+PURG00_ROUTE_ADMISSION_DECISION_PATH = PURG_PRE_ROOT / "purg00_route_admission_decision.json"
+PURG00_ROUTE_ADMISSION_SUMMARY_PATH = PURG_PRE_ROOT / "purg00_route_admission_summary.json"
+PURG00_ROUTE_ADMISSION_REPORT_PATH = PURG_PRE_ROOT / "purg00_route_admission_report.md"
+PURG00_ROUTE_ADMISSION_SCHEMA_PATCH_MANIFEST_PATH = PURG_PRE_ROOT / "purg00_route_admission_schema_patch_manifest.json"
+PURG00_ROUTE_ADMISSION_VALIDATOR_PATCH_MANIFEST_PATH = PURG_PRE_ROOT / "purg00_route_admission_validator_patch_manifest.json"
+PURG00_ROUTE_ADMISSION_LIVE_ROUTE_MUTATION_MANIFEST_PATH = PURG_PRE_ROOT / "purg00_route_admission_live_route_mutation_manifest.json"
+PURG00_ROUTE_ADMISSION_NO_REAL_EXECUTION_V2_PATH = PURG_PRE_ROOT / "purg00_route_admission_no_real_execution_attestation_v2.json"
+PURG00_ROUTE_ADMISSION_ROLLBACK_PLAN_PATH = PURG_PRE_ROOT / "purg00_route_admission_rollback_plan.md"
+PURG00_INTAKE_DECISION_PATH = PURG_PRE_ROOT / "purg00_intake_decision.json"
 PURGATORIUM_ROADMAP_PATH = ROOT / "project_mirror" / "docs" / "purgatorium_full" / "purgatorium_roadmapcanon.md"
 INFERNUS_CANONROADMAP_STUB_PATH = ROOT / "project_mirror" / "docs" / "infernus_full" / "infernus_full_canonroadmap.md"
 INFERNUS_CANONROADMAP_FORENSIC_PATH = ROOT / "excludent" / "infernus" / "roadmaps" / "infernus_full_canonroadmap.md"
@@ -1070,9 +1084,8 @@ def _require_forbidden_flags_false(payload: dict[str, Any], label: str) -> None:
 
 
 def _check_forbidden_route_claims() -> None:
-    _require(EXPECTED_NEXT_PHASE_ID != "PURG-00", "live route must never admit PURG-00 here")
     _require(EXPECTED_PHASE != "PURG-00", "latest completed phase cannot be PURG-00 here")
-    _require(EXPECTED_LATEST_COMPLETED_STATUS != "purg_00_pass", "latest completed status cannot be PURG-00 pass here")
+    _require(EXPECTED_LATEST_COMPLETED_STATUS not in {"purg_00_pass", "purg00_pass"}, "latest completed status cannot be PURG-00 pass here")
 
 
 def _value_at_path(data: dict[str, Any], dotted_path: str) -> Any:
@@ -1204,6 +1217,9 @@ def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] 
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
+    if state.get("status") == PURG00_ROUTE_ADMISSION_STATUS:
+        row = _get_transition_row(PURG_PRE_LIVE_ROUTE_PHASE_ID, "pass")
+        _require(row is not None, "BLOCK: PURG-PRE route successor must exist in Transition Table")
     if row is None:
         _require(state.get("next_phase") is None, "BLOCK: terminal phase without successor must keep next_phase null")
         _require(state.get("active_next_phase") is None, "BLOCK: terminal phase without successor must keep active_next_phase null")
@@ -1379,6 +1395,8 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         "prompt emission preference must not bypass green validator requirement",
     )
     transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
+    if state.get("status") == PURG00_ROUTE_ADMISSION_STATUS:
+        transition_row = _get_transition_row(PURG_PRE_LIVE_ROUTE_PHASE_ID, "pass")
     if transition_row is None:
         _require(state.get("next_phase") is None, "terminal phase must keep next_phase null when there is no successor row")
         _require(state.get("active_next_phase") is None, "terminal phase must keep active_next_phase null when there is no successor row")
@@ -8520,8 +8538,8 @@ def _check_purg_pre_route_admission_artifacts(state: dict[str, Any]) -> None:
     _require(decision.get("latest_completed_status_preserved") == IF11_STATUS, "route admission preserved status mismatch")
     _require(decision.get("previous_live_next_phase") == HISTORICAL_PRESERVED_NEXT_PHASE_ID, "route admission previous next phase mismatch")
     _require(decision.get("previous_live_next_phase_class") == HISTORICAL_PRESERVED_NEXT_PHASE_CLASS, "route admission previous next phase class mismatch")
-    _require(decision.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "route admission new next phase mismatch")
-    _require(decision.get("new_live_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "route admission new next phase class mismatch")
+    _require(decision.get("new_live_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "route admission new next phase mismatch")
+    _require(decision.get("new_live_next_phase_class") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "route admission new next phase class mismatch")
     _require(decision.get("live_route_opened") is True, "route admission must open live route")
     _require(decision.get("technical_direction_active_document") == "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md", "route admission active roadmap mismatch")
     _require(decision.get("operator_review_packet_source") == "artifacts/purgatorium/purg_operator_review_packet_decision.json", "route admission operator review packet mismatch")
@@ -8541,26 +8559,26 @@ def _check_purg_pre_route_admission_artifacts(state: dict[str, Any]) -> None:
     _require(summary.get("decision") == "pass", "route admission summary decision mismatch")
     _require(summary.get("status") == PURG_PRE_ROUTE_ADMISSION_STATUS, "route admission summary status mismatch")
     _require(summary.get("live_route_opened") is True, "route admission summary live route mismatch")
-    _require(summary.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "route admission summary next phase mismatch")
+    _require(summary.get("new_live_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "route admission summary next phase mismatch")
     _require(summary.get("future_next_step") == ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP, "route admission summary next step mismatch")
 
     schema_manifest = _load_json(PURG_PRE_ROUTE_ADMISSION_SCHEMA_PATCH_MANIFEST_PATH)
     _require(schema_manifest.get("old_schema_version") == "3.1", "route admission schema manifest old version mismatch")
-    _require(schema_manifest.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "route admission schema manifest new version mismatch")
-    _require(schema_manifest.get("admitted_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "route admission schema manifest phase class mismatch")
+    _require(schema_manifest.get("new_schema_version") == "3.2", "route admission schema manifest new version mismatch")
+    _require(schema_manifest.get("admitted_phase_class") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "route admission schema manifest phase class mismatch")
     _require(schema_manifest.get("schema_patch_applied") is True, "route admission schema manifest applied mismatch")
 
     validator_manifest = _load_json(PURG_PRE_ROUTE_ADMISSION_VALIDATOR_PATCH_MANIFEST_PATH)
     _require(validator_manifest.get("previous_expected_next_phase") == HISTORICAL_PRESERVED_NEXT_PHASE_ID, "route admission validator manifest previous next phase mismatch")
-    _require(validator_manifest.get("new_expected_next_phase") == EXPECTED_NEXT_PHASE_ID, "route admission validator manifest new next phase mismatch")
-    _require(validator_manifest.get("new_expected_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "route admission validator manifest new next phase class mismatch")
+    _require(validator_manifest.get("new_expected_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "route admission validator manifest new next phase mismatch")
+    _require(validator_manifest.get("new_expected_next_phase_class") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "route admission validator manifest new next phase class mismatch")
     _require(validator_manifest.get("validator_patch_applied") is True, "route admission validator manifest applied mismatch")
     _require("purg_pre_route_admission_decision.json" in validator_manifest.get("required_artifacts", []), "route admission validator manifest required_artifacts mismatch")
 
     live_route_manifest = _load_json(PURG_PRE_ROUTE_ADMISSION_LIVE_ROUTE_MUTATION_MANIFEST_PATH)
     _require(live_route_manifest.get("previous_live_next_phase") == HISTORICAL_PRESERVED_NEXT_PHASE_ID, "route admission live route manifest previous next phase mismatch")
-    _require(live_route_manifest.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "route admission live route manifest new next phase mismatch")
-    _require(live_route_manifest.get("new_live_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "route admission live route manifest next phase class mismatch")
+    _require(live_route_manifest.get("new_live_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "route admission live route manifest new next phase mismatch")
+    _require(live_route_manifest.get("new_live_next_phase_class") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "route admission live route manifest next phase class mismatch")
     _require(live_route_manifest.get("latest_completed_phase_preserved") == IF11_PHASE, "route admission live route manifest preserved phase mismatch")
     _require(live_route_manifest.get("next_recommended_step_after_mutation") == ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP, "route admission live route manifest next step mismatch")
 
@@ -8626,8 +8644,8 @@ def _check_purg_pre_authority_execution_artifacts(state: dict[str, Any]) -> None
     _require(decision.get("decision") == "pass", "authority execution decision must be pass")
     _require(decision.get("status") == PURG_PRE_AUTHORITY_EXECUTION_STATUS, "authority execution decision status mismatch")
     _require(decision.get("route_admission_source") == "artifacts/purgatorium/purg_pre_route_admission_decision.json", "authority execution route_admission_source mismatch")
-    _require(decision.get("active_next_phase_verified") == EXPECTED_NEXT_PHASE_ID, "authority execution active_next_phase_verified mismatch")
-    _require(decision.get("active_next_phase_class_verified") == EXPECTED_NEXT_PHASE_CLASS, "authority execution active_next_phase_class_verified mismatch")
+    _require(decision.get("active_next_phase_verified") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "authority execution active_next_phase_verified mismatch")
+    _require(decision.get("active_next_phase_class_verified") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "authority execution active_next_phase_class_verified mismatch")
     _require(decision.get("technical_direction_active_document") == "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md", "authority execution roadmap mismatch")
     _require(decision.get("infernus_canonroadmap_status_verified") == "superseded_excludent_forensic_only", "authority execution infernus status mismatch")
     _require(decision.get("if09_if10_if11_handoff_references_verified") is True, "authority execution handoff references mismatch")
@@ -8692,7 +8710,6 @@ def _check_purg_pre_authority_execution_artifacts(state: dict[str, Any]) -> None
     _require(future_candidate.get("requires_no_real_execution_attestation") is True, "authority future candidate requires_no_real_execution_attestation mismatch")
     _require(future_candidate.get("purg_00_opened_now") is False, "authority future candidate purg_00_opened_now mismatch")
     _require("separate route admission" in future_candidate.get("reason", ""), "authority future candidate reason mismatch")
-    _require(_get_transition_row("PURG-PRE", "pass") is None, "authority future candidate must not have a PURG-PRE transition row yet")
 
     _mirror_contains(
         PURG_PRE_AUTHORITY_EXECUTION_REPORT_PATH,
@@ -8880,8 +8897,6 @@ def _check_purg00_operator_review_packet_artifacts(state: dict[str, Any]) -> Non
         "5. Mutate ACTIVE_CONTEXT_STATE.json only in a dedicated route-admission phase.",
         "10. Rollback restores PURG-PRE as live route.",
     )
-    _require(_get_transition_row("PURG-PRE", "pass") is None, "purg00 review packet must not add PURG-PRE transition row")
-
     purg00_review_text = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (
@@ -8897,6 +8912,133 @@ def _check_purg00_operator_review_packet_artifacts(state: dict[str, Any]) -> Non
     _require("\"purg00_opened\": true" not in purg00_review_text, "purg00 operator review must not open PURG-00")
     _require("\"purg_00_opened\": true" not in purg00_review_text, "purg00 operator review must not open PURG-00 via legacy key")
     _require("PURG-00 | pass" not in purg00_review_text, "purg00 operator review must not declare PURG-00 pass")
+
+
+def _check_purg00_route_admission_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        PURG00_ROUTE_ADMISSION_DECISION_PATH,
+        PURG00_ROUTE_ADMISSION_SUMMARY_PATH,
+        PURG00_ROUTE_ADMISSION_REPORT_PATH,
+        PURG00_ROUTE_ADMISSION_SCHEMA_PATCH_MANIFEST_PATH,
+        PURG00_ROUTE_ADMISSION_VALIDATOR_PATCH_MANIFEST_PATH,
+        PURG00_ROUTE_ADMISSION_LIVE_ROUTE_MUTATION_MANIFEST_PATH,
+        PURG00_ROUTE_ADMISSION_NO_REAL_EXECUTION_V2_PATH,
+        PURG00_ROUTE_ADMISSION_ROLLBACK_PLAN_PATH,
+    ):
+        _require(path.exists(), f"missing PURG-00 route admission artifact: {path}")
+
+    decision = _load_json(PURG00_ROUTE_ADMISSION_DECISION_PATH)
+    _require(decision.get("phase_id") == "PURG-00-ROUTE-ADMISSION", "purg00 route admission decision phase_id mismatch")
+    _require(decision.get("decision") == "pass", "purg00 route admission decision must be pass")
+    _require(decision.get("status") == PURG00_ROUTE_ADMISSION_STATUS, "purg00 route admission decision status mismatch")
+    _require(decision.get("does_not_execute_purg00") is True, "purg00 route admission does_not_execute_purg00 mismatch")
+    _require(decision.get("does_not_execute_intake") is True, "purg00 route admission does_not_execute_intake mismatch")
+    _require(decision.get("operator_authorization_source") == PURG00_ROUTE_ADMISSION_OPERATOR_SOURCE, "purg00 route admission operator authorization mismatch")
+    _require(decision.get("previous_live_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "purg00 route admission previous_live_next_phase mismatch")
+    _require(decision.get("previous_live_next_phase_class") == PURG_PRE_LIVE_ROUTE_PHASE_CLASS, "purg00 route admission previous_live_next_phase_class mismatch")
+    _require(decision.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route admission new_live_next_phase mismatch")
+    _require(decision.get("new_live_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route admission new_live_next_phase_class mismatch")
+    _require(decision.get("live_route_opened") is True, "purg00 route admission live_route_opened mismatch")
+    _require(decision.get("purg00_opened") is True, "purg00 route admission purg00_opened mismatch")
+    _require(decision.get("purg00_executed") is False, "purg00 route admission purg00_executed mismatch")
+    _require(decision.get("purg00_intake_executed") is False, "purg00 route admission purg00_intake_executed mismatch")
+    _require(decision.get("purg00_pass_declared") is False, "purg00 route admission purg00_pass_declared mismatch")
+    _require(decision.get("technical_direction_active_document") == "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md", "purg00 route admission roadmap mismatch")
+    _require(decision.get("operator_review_packet_source") == "artifacts/purgatorium/purg00_operator_review_packet_decision.json", "purg00 route admission operator review packet mismatch")
+    _require(decision.get("required_source_access_matrix_source") == "artifacts/purgatorium/purg00_required_source_access_matrix.json", "purg00 route admission required source access matrix mismatch")
+    _require(decision.get("schema_patch_applied") is True, "purg00 route admission schema_patch_applied mismatch")
+    _require(decision.get("validator_patch_applied") is True, "purg00 route admission validator_patch_applied mismatch")
+    _require(decision.get("transition_table_patch_applied") is True, "purg00 route admission transition_table_patch_applied mismatch")
+    _require(decision.get("active_context_live_route_mutation_applied") is True, "purg00 route admission active_context_live_route_mutation_applied mismatch")
+    _require(decision.get("mirrors_updated") is True, "purg00 route admission mirrors_updated mismatch")
+    _require(decision.get("tests_updated") is True, "purg00 route admission tests_updated mismatch")
+    _require(decision.get("future_next_step") == PURG00_ROUTE_ADMISSION_NEXT_STEP, "purg00 route admission future_next_step mismatch")
+    _require(decision.get("finding_fix_executed") is False, "purg00 route admission finding_fix_executed mismatch")
+    _require(decision.get("candidate_promoted") is False, "purg00 route admission candidate_promoted mismatch")
+    _require(decision.get("invalid_finding_remediated") is False, "purg00 route admission invalid_finding_remediated mismatch")
+    _require(decision.get("bedrock_ready") is False, "purg00 route admission bedrock_ready mismatch")
+    _require(decision.get("product_ready") is False, "purg00 route admission product_ready mismatch")
+    _require_forbidden_flags_false(decision, "purg00 route admission decision")
+
+    summary = _load_json(PURG00_ROUTE_ADMISSION_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "PURG-00-ROUTE-ADMISSION", "purg00 route admission summary phase_id mismatch")
+    _require(summary.get("decision") == "pass", "purg00 route admission summary decision mismatch")
+    _require(summary.get("status") == PURG00_ROUTE_ADMISSION_STATUS, "purg00 route admission summary status mismatch")
+    _require(summary.get("live_route_opened") is True, "purg00 route admission summary live_route_opened mismatch")
+    _require(summary.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route admission summary new_live_next_phase mismatch")
+    _require(summary.get("future_next_step") == PURG00_ROUTE_ADMISSION_NEXT_STEP, "purg00 route admission summary future_next_step mismatch")
+
+    schema_manifest = _load_json(PURG00_ROUTE_ADMISSION_SCHEMA_PATCH_MANIFEST_PATH)
+    _require(schema_manifest.get("old_schema_version") == "3.2", "purg00 route admission schema manifest old_schema_version mismatch")
+    _require(schema_manifest.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route admission schema manifest new_schema_version mismatch")
+    _require(schema_manifest.get("admitted_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route admission schema manifest admitted_phase_class mismatch")
+    _require(schema_manifest.get("schema_patch_applied") is True, "purg00 route admission schema manifest schema_patch_applied mismatch")
+
+    validator_manifest = _load_json(PURG00_ROUTE_ADMISSION_VALIDATOR_PATCH_MANIFEST_PATH)
+    _require(validator_manifest.get("previous_expected_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "purg00 route admission validator manifest previous_expected_next_phase mismatch")
+    _require(validator_manifest.get("new_expected_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route admission validator manifest new_expected_next_phase mismatch")
+    _require(validator_manifest.get("new_expected_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route admission validator manifest new_expected_next_phase_class mismatch")
+    _require(validator_manifest.get("validator_patch_applied") is True, "purg00 route admission validator manifest validator_patch_applied mismatch")
+    _require("purg00_route_admission_decision.json" in validator_manifest.get("required_artifacts", []), "purg00 route admission validator manifest required_artifacts mismatch")
+
+    live_route_manifest = _load_json(PURG00_ROUTE_ADMISSION_LIVE_ROUTE_MUTATION_MANIFEST_PATH)
+    _require(live_route_manifest.get("previous_live_next_phase") == PURG_PRE_LIVE_ROUTE_PHASE_ID, "purg00 route admission live route manifest previous_live_next_phase mismatch")
+    _require(live_route_manifest.get("new_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route admission live route manifest new_live_next_phase mismatch")
+    _require(live_route_manifest.get("new_live_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route admission live route manifest new_live_next_phase_class mismatch")
+    _require(live_route_manifest.get("latest_completed_phase_preserved") == IF11_PHASE, "purg00 route admission live route manifest latest_completed_phase_preserved mismatch")
+    _require(live_route_manifest.get("next_recommended_step_after_mutation") == PURG00_ROUTE_ADMISSION_NEXT_STEP, "purg00 route admission live route manifest next_recommended_step_after_mutation mismatch")
+
+    no_real_execution = _load_json(PURG00_ROUTE_ADMISSION_NO_REAL_EXECUTION_V2_PATH)
+    _require(no_real_execution.get("phase_id") == "PURG-00-ROUTE-ADMISSION", "purg00 route admission no_real_execution phase_id mismatch")
+    _require(no_real_execution.get("status") == PURG00_ROUTE_ADMISSION_STATUS, "purg00 route admission no_real_execution status mismatch")
+    _require(no_real_execution.get("purg00_opened") is True, "purg00 route admission no_real_execution purg00_opened mismatch")
+    _require(no_real_execution.get("purg00_executed") is False, "purg00 route admission no_real_execution purg00_executed mismatch")
+    _require(no_real_execution.get("purg00_intake_executed") is False, "purg00 route admission no_real_execution purg00_intake_executed mismatch")
+    _require(no_real_execution.get("bedrock_ready") is False, "purg00 route admission no_real_execution bedrock_ready mismatch")
+    _require(no_real_execution.get("product_ready") is False, "purg00 route admission no_real_execution product_ready mismatch")
+    _require_forbidden_flags_false(no_real_execution, "purg00 route admission no_real_execution")
+
+    if PURG00_INTAKE_DECISION_PATH.exists():
+        purg00_intake = _load_json(PURG00_INTAKE_DECISION_PATH)
+        _require(purg00_intake.get("decision") != "pass", "purg00 intake decision must not exist as pass during route admission")
+
+    _mirror_contains(
+        PURG00_ROUTE_ADMISSION_REPORT_PATH,
+        "# PURG-00 Route Admission",
+        "## VERDICT",
+        "PASS",
+        "## AUTHORIZATION",
+        "pode começar PURG-00 route admission",
+        "## WHAT CHANGED",
+        "## WHAT DID NOT CHANGE",
+        "## WHY THIS IS SAFE",
+        "## NEXT STEP",
+        "execute_purg00_handoff_intake_authority_lock",
+        "## HARD LOCKS",
+    )
+    _mirror_contains(
+        PURG00_ROUTE_ADMISSION_ROLLBACK_PLAN_PATH,
+        "If PURG-00 route admission creates drift:",
+        "restore active_next_phase/next_phase to PURG-PRE;",
+        "restore active_next_phase_class to purgatorium_full_authority_materialization;",
+        "restore validator expected route;",
+        "report PURG00_ROUTE_ADMISSION_ROLLBACK_COMPLETE.",
+    )
+
+    route_admission_text = "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in (
+            STATE_PATH,
+            PURG00_ROUTE_ADMISSION_DECISION_PATH,
+            PURG00_ROUTE_ADMISSION_SUMMARY_PATH,
+            PURG00_ROUTE_ADMISSION_REPORT_PATH,
+            PURG00_ROUTE_ADMISSION_NO_REAL_EXECUTION_V2_PATH,
+        )
+    )
+    _require("finding_closed" not in route_admission_text, "purg00 route admission must not claim finding_closed")
+    _require("\"purg00_executed\": true" not in route_admission_text, "purg00 route admission must not execute PURG-00")
+    _require("\"purg00_intake_executed\": true" not in route_admission_text, "purg00 route admission must not execute PURG-00 intake")
+    _require("\"purg00_pass_declared\": true" not in route_admission_text, "purg00 route admission must not declare PURG-00 pass")
 
 
 def main() -> None:
@@ -9021,6 +9163,7 @@ def main() -> None:
     # PURG-PRE authority execution checks
     _check_purg_pre_authority_execution_artifacts(state)
     _check_purg00_operator_review_packet_artifacts(state)
+    _check_purg00_route_admission_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -9121,7 +9264,7 @@ def main() -> None:
     ):
         _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
-    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to PURG-PRE")
+    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to PURG-00")
     _require(
         EXPECTED_NEXT_RECOMMENDED_STEP in state["locks"]["deferred_phase_reason"],
         "locks.deferred_phase_reason must mention the exact next recommended step",
@@ -9150,12 +9293,12 @@ def main() -> None:
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "CURRENT_STATE.md",
         "ACTIVE_CONTEXT_STATE.json wins",
-        "purg00_operator_review_packet_pass",
+        "purg00_route_admission_pass",
         "INF-FULL-07",
         "latest_completed_phase: `IF-11 Minos Final Verdict + Closure`",
         "latest_completed_status: `if11_minos_final_verdict_closure_pass`",
-        "Next phase: `PURG-PRE`",
-        "Active next phase class: `purgatorium_full_authority_materialization`",
+        "Next phase: `PURG-00`",
+        "Active next phase class: `purgatorium_full_intake`",
         "next_phase_authorized_by_operator: `true`",
         "source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
         "source_graph_sha256: `c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`",
@@ -9166,12 +9309,13 @@ def main() -> None:
         "infernus_canonroadmap_status: `superseded_excludent_forensic_only`",
         "live_route_opened: `true`",
         "previous_live_next_phase: `IF-08`",
-        "live_route_opened_by: `purg_pre_route_admission_pass`",
+        "live_route_opened_by: `purg00_route_admission_pass`",
         "purg_pre_execution_status: `purg_pre_canonical_authority_execution_pass`",
         "purg_pre_executed: `true`",
         "purg_00_opened: `false`",
         "purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`",
-        "purg00_opened: `false`",
+        "purg00_route_admission_status: `purg00_route_admission_pass`",
+        "purg00_opened: `true`",
         "purg00_executed: `false`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
@@ -9179,38 +9323,40 @@ def main() -> None:
         "governance_gate_streak: `0`",
         "latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `request_operator_authorization_for_purg00_route_admission`",
+        "next_recommended_step: `execute_purg00_handoff_intake_authority_lock`",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — PURG-00 Operator Review Packet Preparado",
-        "next_phase: PURG-PRE",
-        "active_next_phase_class: purgatorium_full_authority_materialization",
+        "INF-FULL-07 — PURG-00 Route Admission Sincronizado",
+        "next_phase: PURG-00",
+        "active_next_phase_class: purgatorium_full_intake",
         "next_phase_authorized_by_operator: true",
         "latest_completed_status: if11_minos_final_verdict_closure_pass",
         "Leia project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md.",
         "Este sync ja registra o packet canonico de IF11 com `source_phase_verified=IF-10 Purgatorium Handoff Graph`, `source_status_verified=if10_purgatorium_handoff_graph_pass`, `source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`, `validated_handoff_ids=['IF09-FIND-001']`, `contextual_candidate_ids=['IF09-FIND-002']`, `excluded_invalid_ids=['IF09-FIND-003']`, `supporting_observation_ids=['IF09-OBS-001']`, `minos_mechanical_verdict=pass`, `minos_semantic_verdict=pass`, `anti_theater_verdict=pass`, `operator_cosignature_status=pending_operator_review`, `infernus_closure_status=closed_with_purgatorium_handoff_ready`, `purgatorium_handoff_ready=true` e `macro_transition_preserved=true`.",
         "O roadmap tecnico ativo pos-Infernus agora e `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "Os artifacts `artifacts/purgatorium/purg00_operator_review_packet_decision.json`, `artifacts/purgatorium/purg00_route_admission_schema_gap_matrix.json` e `artifacts/purgatorium/purg00_route_admission_future_patch_plan.md` agora registram que o pacote de review de `PURG-00` foi preparado sem abrir a rota.",
-        "O proximo prompt pode preparar apenas `request_operator_authorization_for_purg00_route_admission` dentro do escopo canonico aprovado.",
-        "O proximo passo recomendado neste estado e `request_operator_authorization_for_purg00_route_admission`.",
+        "Os artifacts `artifacts/purgatorium/purg00_route_admission_decision.json`, `artifacts/purgatorium/purg00_route_admission_live_route_mutation_manifest.json` e `artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation_v2.json` agora registram que `PURG-00` foi admitido como rota viva sem execucao.",
+        "O proximo prompt pode preparar apenas `execute_purg00_handoff_intake_authority_lock` dentro do escopo canonico aprovado.",
+        "O proximo passo recomendado neste estado e `execute_purg00_handoff_intake_authority_lock`.",
         "PURG-PRE executed: true",
-        "PURG-00 opened: false",
+        "PURG-00 opened: true",
         "PURG-00 executed: false",
+        "PURG-00 intake executed: false",
         "PURG-00 execution real: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "purg00_operator_review_packet_pass",
+        "purg00_route_admission_pass",
         "Latest completed phase: `IF-11 Minos Final Verdict + Closure`",
         "latest_completed_status=if11_minos_final_verdict_closure_pass",
         "active_context_remote_main_reflects_if11_minos_final_verdict_closure=true",
         "permanent_active_update_rule_installed=true",
         "PURG-PRE authority execution = true",
         "PURG-00 operator review packet = true",
+        "PURG-00 route admission = true",
         "PURG-00 real execution = false",
         "future waves real execution = false",
-        "request_operator_authorization_for_purg00_route_admission",
+        "execute_purg00_handoff_intake_authority_lock",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
@@ -9292,8 +9438,8 @@ def main() -> None:
         "artifacts/if08_w05_controlled_execution/decision.json",
         "artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json",
         "artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json",
-        "next_phase: `PURG-PRE`",
-        "active_next_phase_class: `purgatorium_full_authority_materialization`",
+        "next_phase: `PURG-00`",
+        "active_next_phase_class: `purgatorium_full_intake`",
         "next_phase_authorized_by_operator: `true`",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "excludent/",
@@ -9308,20 +9454,27 @@ def main() -> None:
         "artifacts/purgatorium/purg00_operator_review_packet_decision.json",
         "artifacts/purgatorium/purg00_operator_review_packet_summary.json",
         "artifacts/purgatorium/purg00_operator_review_packet_report.md",
-        "artifacts/purgatorium/purg00_route_admission_schema_gap_matrix.json",
-        "artifacts/purgatorium/purg00_route_admission_validator_gap_matrix.json",
-        "artifacts/purgatorium/purg00_route_admission_future_patch_plan.md",
-        "artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation.json",
+        "artifacts/purgatorium/purg00_route_admission_decision.json",
+        "artifacts/purgatorium/purg00_route_admission_summary.json",
+        "artifacts/purgatorium/purg00_route_admission_report.md",
+        "artifacts/purgatorium/purg00_route_admission_schema_patch_manifest.json",
+        "artifacts/purgatorium/purg00_route_admission_validator_patch_manifest.json",
+        "artifacts/purgatorium/purg00_route_admission_live_route_mutation_manifest.json",
+        "artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation_v2.json",
         "artifacts/purgatorium/purg00_required_source_access_matrix.json",
         "artifacts/purgatorium/purg00_not_opened_attestation.json",
-        "next_recommended_step: `request_operator_authorization_for_purg00_route_admission`",
+        "artifacts/purgatorium/purg00_route_admission_rollback_plan.md",
+        "next_recommended_step: `execute_purg00_handoff_intake_authority_lock`",
         "route_admission_decision: `artifacts/purgatorium/purg_pre_route_admission_decision.json`",
         "live_route_opened_by: `purg_pre_route_admission_pass`",
+        "purg00_route_opened_by: `purg00_route_admission_pass`",
         "purg_pre_execution_decision: `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`",
         "purg_pre_executed: `true`",
         "purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`",
-        "purg00_opened: `false`",
+        "purg00_route_admission_status: `purg00_route_admission_pass`",
+        "purg00_opened: `true`",
         "purg00_executed: `false`",
+        "purg00_intake_executed: `false`",
         "technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
         "purg_pre_route_opening_candidate_created: `true`",
         "IF-10 Purgatorium Handoff Graph | pass",
@@ -9375,8 +9528,8 @@ def main() -> None:
         "IF-08 W1 Context/Memory/RAG Preflight Readiness | pass",
         "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution | pass",
         "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "next_phase: `PURG-PRE`",
-        "active_next_phase_class: `purgatorium_full_authority_materialization`",
+        "next_phase: `PURG-00`",
+        "active_next_phase_class: `purgatorium_full_intake`",
         "next_phase_authorized_by_operator: `true`",
         "INF-FULL-06 | ARIS Infernus FULL Excludent Quarantine Gate | pass",
         "INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass",
@@ -9390,30 +9543,35 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg00_operator_review_packet_pass",
+        "purg00_route_admission_pass",
         "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
+        "next_phase: PURG-00",
+        "next_recommended_step: execute_purg00_handoff_intake_authority_lock",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Todos execution_locks: false",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Latest completed phase: IF-11 Minos Final Verdict + Closure",
-        "Active next phase: PURG-PRE",
-        "Active next phase class: purgatorium_full_authority_materialization",
+        "Active next phase: PURG-00",
+        "Active next phase class: purgatorium_full_intake",
         "Standing authorization: canonroadmap approved by operator",
         "Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
         "PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`",
-        "Live route opened by: `purg_pre_route_admission_pass`",
+        "Live route opened by: `purg00_route_admission_pass`",
         "PURG-PRE canonical authority execution verified by: `purg_pre_canonical_authority_execution_pass`",
         "PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`",
+        "PURG-00 route admitted by: `purg00_route_admission_pass`",
+        "PURG-00 execution: false",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG-00 operator review packet preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. Post-IF11 technical authority remains `purgatorium_roadmapcanon.md`; the live route remains `PURG-PRE`, `PURG-00` remains unopened because no Transition Table row exists for it, and the next step is request_operator_authorization_for_purg00_route_admission.",
+        "IF11 minos final verdict closure is canonical as pass; this PURG-00 route admission preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. Post-IF11 technical authority remains `purgatorium_roadmapcanon.md`; the live route is now `PURG-00`, route admission was authorized explicitly by the operator, `PURG-00` is still not executed, and the next step is execute_purg00_handoff_intake_authority_lock.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
         "| INF-FULL-07 | pass | PURG-PRE | purgatorium_full_authority_materialization | operator | purg_pre_route_admission_decision.json + operator review packet + schema/validator admission + no-real-exec attestation |",
+        "| PURG-PRE | pass | PURG-00 | purgatorium_full_intake | operator | purg00_route_admission_decision.json + purg00_operator_review_packet + schema/validator admission + no-real-exec attestation |",
     )
     _mirror_contains(
         ROOT / "EXCLUDENT_POLICY.md",

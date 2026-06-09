@@ -26,6 +26,7 @@
         "infernus_full_execution_authorization",
         "infernus_full_execution",
         "purgatorium_full_authority_materialization",
+        "purgatorium_full_intake",
         "history_only",
         null
       ],
@@ -458,6 +459,7 @@
             "infernus_full_execution_authorization",
             "infernus_full_execution",
             "purgatorium_full_authority_materialization",
+            "purgatorium_full_intake",
             "history_only",
             null
           ],
@@ -805,6 +807,7 @@
             "infernus_full_execution_authorization",
             "infernus_full_execution",
             "purgatorium_full_authority_materialization",
+            "purgatorium_full_intake",
             "history_only",
             null
           ],
@@ -1078,6 +1081,9 @@
                     "type": "string"
                 },
                 "schema_3_2_change_summary": {
+                    "type": "string"
+                },
+                "schema_3_3_change_summary": {
                     "type": "string"
                 },
                 "schema_version_meaning": {

@@ -1,0 +1,13 @@
+{
+  "phase_id": "PURG-00-ROUTE-ADMISSION",
+  "previous_expected_next_phase": "PURG-PRE",
+  "new_expected_next_phase": "PURG-00",
+  "new_expected_next_phase_class": "purgatorium_full_intake",
+  "validator_patch_applied": true,
+  "required_artifacts": [
+    "purg00_route_admission_decision.json",
+    "purg00_route_admission_summary.json",
+    "purg00_route_admission_report.md",
+    "purg00_route_admission_no_real_execution_attestation_v2.json"
+  ]
+}

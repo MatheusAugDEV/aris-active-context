@@ -1,13 +1,13 @@
-## PURG-00 Operator Review Packet Lock
+## PURG-00 Route Admission Lock
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
-- status: `purg00_operator_review_packet_pass`
+- status: `purg00_route_admission_pass`
 - latest_completed_status=if11_minos_final_verdict_closure_pass
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure=true
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=request_operator_authorization_for_purg00_route_admission
+- next_recommended_step=execute_purg00_handoff_intake_authority_lock
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
@@ -15,22 +15,25 @@
 - route_admission_decision_status=purg_pre_route_admission_pass
 - purg_pre_execution_status=purg_pre_canonical_authority_execution_pass
 - purg00_operator_review_packet_prepared=true
+- purg00_route_admission_status=purg00_route_admission_pass
 - previous_live_next_phase=IF-08
 - previous_live_next_phase_class=infernus_full_execution
-- new_live_next_phase=PURG-PRE
-- new_live_next_phase_class=purgatorium_full_authority_materialization
+- new_live_next_phase=PURG-00
+- new_live_next_phase_class=purgatorium_full_intake
 - purg_pre_executed=true
-- does_not_open_purg_00=true
+- live_route_opened_by=purg00_route_admission_pass
+- does_not_open_purg_00=false
 - purg_00_opened=false
-- purg00_opened=false
+- purg00_opened=true
 - purg00_executed=false
+- purg00_intake_executed=false
 - purg00_pass_declared=false
 - purg_00_pass_declared=false
 - finding_fix_executed=false
 - candidate_promoted=false
 - invalid_finding_remediated=false
 - future_purg00_admission_candidate_created=true
-- future_purg00_route_admission_still_required=true
+- future_purg00_route_admission_still_required=false
 - requested_next_phase_candidate=PURG-00
 - requested_next_phase_class_candidate=purgatorium_full_intake
 - schema_gap_matrix_created=true
@@ -75,14 +78,15 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical IF11 closure is verified; this sync prepares only the PURG-00 operator review packet, preserves the PURG-PRE live route plus latest completed phase/status as IF11, leaves operator cosignature pending review, keeps PURG-00 unopened, and does not authorize any real execution surface.
+- Canonical IF11 closure is verified; this sync admits `PURG-00` as the next live route after the PURG-00 operator review packet, preserves latest completed phase/status as IF11, keeps intake and execution false, and does not authorize any real execution surface.
 - PURG-PRE authority execution = true
 - PURG-PRE real execution = false
 - PURG-00 operator review packet = true
+- PURG-00 route admission = true
 - PURG-00 real execution = false
 - future waves real execution = false
-- active_next_phase=PURG-PRE
-- active_next_phase_class=purgatorium_full_authority_materialization
+- active_next_phase=PURG-00
+- active_next_phase_class=purgatorium_full_intake
 - next_phase_authorized_by_operator=true
 - Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
 

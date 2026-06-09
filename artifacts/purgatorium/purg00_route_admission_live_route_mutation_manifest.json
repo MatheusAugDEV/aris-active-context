@@ -1,0 +1,10 @@
+{
+  "phase_id": "PURG-00-ROUTE-ADMISSION",
+  "previous_live_next_phase": "PURG-PRE",
+  "previous_live_next_phase_class": "purgatorium_full_authority_materialization",
+  "new_live_next_phase": "PURG-00",
+  "new_live_next_phase_class": "purgatorium_full_intake",
+  "latest_completed_phase_preserved": "IF-11 Minos Final Verdict + Closure",
+  "latest_completed_status_preserved": "if11_minos_final_verdict_closure_pass",
+  "next_recommended_step_after_mutation": "execute_purg00_handoff_intake_authority_lock"
+}

@@ -1,0 +1,11 @@
+{
+  "phase_id": "PURG-00-ROUTE-ADMISSION",
+  "decision": "pass",
+  "status": "purg00_route_admission_pass",
+  "live_route_opened": true,
+  "new_live_next_phase": "PURG-00",
+  "new_live_next_phase_class": "purgatorium_full_intake",
+  "future_next_step": "execute_purg00_handoff_intake_authority_lock",
+  "does_not_execute_purg00": true,
+  "does_not_execute_intake": true
+}

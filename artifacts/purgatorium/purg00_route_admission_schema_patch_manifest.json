@@ -1,0 +1,7 @@
+{
+  "phase_id": "PURG-00-ROUTE-ADMISSION",
+  "old_schema_version": "3.2",
+  "new_schema_version": "3.3",
+  "admitted_phase_class": "purgatorium_full_intake",
+  "schema_patch_applied": true
+}
