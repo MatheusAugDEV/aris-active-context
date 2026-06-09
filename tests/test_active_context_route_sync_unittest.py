@@ -41,7 +41,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "execute_purg00_handoff_intake_authority_lock",
+            "resolve_purg00_source_data_gap",
         )
         self.assertEqual(state["next_phase"], "PURG-00")
         self.assertEqual(state["active_next_phase"], "PURG-00")
@@ -49,10 +49,13 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
-        self.assertEqual(state["status"], "purg00_route_admission_pass")
-        self.assertEqual(state["current_live_route"]["status"], "purg00_route_admission_pass")
+        self.assertEqual(state["decision"], "blocked")
+        self.assertEqual(state["status"], "purg00_handoff_intake_authority_lock_blocked")
+        self.assertEqual(state["current_live_route"]["decision"], "blocked")
+        self.assertEqual(state["current_live_route"]["status"], "purg00_handoff_intake_authority_lock_blocked")
         self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG-00")
         self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_full_intake")
+        self.assertIn("resolve_purg00_source_data_gap", state["next_action"]["notes"])
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -250,6 +253,13 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_route_admission_decision.json").exists())
         self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_route_admission_no_real_execution_attestation_v2.json").exists())
         module._check_purg00_route_admission_artifacts(state)
+
+    def test_purg00_handoff_intake_artifacts_validate(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_handoff_intake_authority_lock_decision.json").exists())
+        self.assertTrue((ROOT / "artifacts" / "purgatorium" / "purg00_data_gap_matrix.json").exists())
+        module._check_purg00_handoff_intake_authority_lock_artifacts(state)
 
     def test_route_admission_validator_requires_decision_artifact(self):
         module = self._load_validator_module()
@@ -525,6 +535,99 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
                     module._check_purg00_route_admission_artifacts(state)
             finally:
                 module.PURG00_ROUTE_ADMISSION_DECISION_PATH = original
+
+    def test_purg00_handoff_intake_validator_requires_decision_artifact(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            missing = Path(tmpdir) / "missing.json"
+            original = module.PURG00_HANDOFF_INTAKE_DECISION_PATH
+            try:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = missing
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = original
+
+    def test_purg00_handoff_intake_validator_rejects_finding_fix(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_handoff_intake_authority_lock_decision.json").read_text(encoding="utf-8"))
+            decision["finding_fix_executed"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG00_HANDOFF_INTAKE_DECISION_PATH
+            try:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = original
+
+    def test_purg00_handoff_intake_validator_rejects_red_reproduction(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            no_fix = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_no_fix_attestation.json").read_text(encoding="utf-8"))
+            no_fix["red_reproduction_executed"] = True
+            temp_path = Path(tmpdir) / "no_fix.json"
+            temp_path.write_text(json.dumps(no_fix), encoding="utf-8")
+            original = module.PURG00_NO_FIX_ATTESTATION_PATH
+            try:
+                module.PURG00_NO_FIX_ATTESTATION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_NO_FIX_ATTESTATION_PATH = original
+
+    def test_purg00_handoff_intake_validator_rejects_triage_execution(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            no_fix = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_no_fix_attestation.json").read_text(encoding="utf-8"))
+            no_fix["triage_executed"] = True
+            temp_path = Path(tmpdir) / "no_fix.json"
+            temp_path.write_text(json.dumps(no_fix), encoding="utf-8")
+            original = module.PURG00_NO_FIX_ATTESTATION_PATH
+            try:
+                module.PURG00_NO_FIX_ATTESTATION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_NO_FIX_ATTESTATION_PATH = original
+
+    def test_purg00_handoff_intake_validator_rejects_candidate_promotion(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_handoff_intake_authority_lock_decision.json").read_text(encoding="utf-8"))
+            decision["candidate_promoted"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG00_HANDOFF_INTAKE_DECISION_PATH
+            try:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = original
+
+    def test_purg00_handoff_intake_validator_rejects_invalid_finding_remediation(self):
+        module = self._load_validator_module()
+        state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as tmpdir:
+            decision = json.loads((ROOT / "artifacts" / "purgatorium" / "purg00_handoff_intake_authority_lock_decision.json").read_text(encoding="utf-8"))
+            decision["invalid_finding_remediated"] = True
+            temp_path = Path(tmpdir) / "decision.json"
+            temp_path.write_text(json.dumps(decision), encoding="utf-8")
+            original = module.PURG00_HANDOFF_INTAKE_DECISION_PATH
+            try:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = temp_path
+                with self.assertRaises(SystemExit):
+                    module._check_purg00_handoff_intake_authority_lock_artifacts(state)
+            finally:
+                module.PURG00_HANDOFF_INTAKE_DECISION_PATH = original
 
 
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+{
+  "candidate_phase": "PURG-01",
+  "candidate_phase_class": "purgatorium_full_triage",
+  "status": "candidate_only_not_opened",
+  "requires_transition_table_row": true,
+  "requires_operator_authorization": true,
+  "requires_schema_validator_admission": true,
+  "requires_graph_full_detail_access": true,
+  "requires_no_real_execution_attestation": true,
+  "purg01_opened_now": false,
+  "data_gap_status": "DATA_GAP_BLOCKED",
+  "reason": "PURG-00 intake/authority lock does not execute triage. PURG-01 requires separate route admission and full graph detail access."
+}

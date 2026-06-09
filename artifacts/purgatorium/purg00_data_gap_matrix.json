@@ -1,0 +1,30 @@
+{
+  "data_gap_policy": "do_not_infer_missing_graph_details",
+  "required_for_purg01": [
+    "finding severity",
+    "affected layer",
+    "affected files",
+    "source bot",
+    "source wave",
+    "oracle id",
+    "root cause candidate",
+    "blast radius",
+    "target control",
+    "reproduction unit",
+    "replay unit",
+    "mutation unit",
+    "risk class",
+    "dependency group"
+  ],
+  "graph_full_detail_accessible": false,
+  "missing_required_fields": [
+    "affected files",
+    "oracle id",
+    "blast radius",
+    "target control",
+    "risk class",
+    "dependency group"
+  ],
+  "future_purg01_status": "DATA_GAP_BLOCKED",
+  "purg00_decision": "blocked"
+}

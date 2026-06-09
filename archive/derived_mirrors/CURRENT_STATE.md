@@ -5,12 +5,12 @@
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
 - previous_phase_id: `INF-FULL-06`
-- status: `purg00_route_admission_pass`
+- status: `purg00_handoff_intake_authority_lock_blocked`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - decision: `pass`
 - latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `execute_purg00_handoff_intake_authority_lock`
+- next_recommended_step: `resolve_purg00_source_data_gap`
 - active_next_phase: `PURG-00`
 - Next phase: `PURG-00`
 - Active next phase class: `purgatorium_full_intake`
@@ -25,8 +25,11 @@
 - purg_00_opened: `false`
 - purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`
 - purg00_route_admission_status: `purg00_route_admission_pass`
+- purg00_handoff_intake_status: `purg00_handoff_intake_authority_lock_blocked`
 - purg00_opened: `true`
 - purg00_executed: `false`
+- purg00_intake_executed: `true`
+- data_gap_status: `DATA_GAP_BLOCKED`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `canonroadmap aprovado pelo operador — INFERNUS_STANDING_AUTHORIZATION.md`
 - ACTIVE_CONTEXT_REMOTE_MAIN_REFLECTS_IF11_MINOS_FINAL_VERDICT_CLOSURE: `true`
@@ -70,10 +73,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, `PURG-00` is now the admitted live route, route admission is now canonically complete, and the next canonical step is `execute_purg00_handoff_intake_authority_lock`.
+- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, `PURG-00` remains the live route, the handoff intake/authority lock is now canonically blocked by missing explicit source fields for future PURG-01 preparation, and the next canonical step is `resolve_purg00_source_data_gap`.
 
 ## What This Means
 
 INF-FULL-07 remains the canonical current phase, and the latest verified operational packet remains `IF-11 Minos Final Verdict + Closure`.
 The post-Infernus technical direction document remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; the former `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` stays superseded, copied into `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` for forensic retention, and replaced by a non-authoritative stub. The live route is now `PURG-00` because schema, validator, Transition Table, JSON, mirrors, and route-admission artifacts were updated in lockstep.
-The next prompt may target only `execute_purg00_handoff_intake_authority_lock`; `PURG-00` is admitted but still not executed. No finding fix, real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+The next prompt may target only `resolve_purg00_source_data_gap`; `PURG-00` remains the live route, intake/authority lock artifacts now exist, and future `PURG-01` preparation is blocked until explicit source fields for affected files, oracle id, blast radius, target control, risk class, and dependency group are available without inference. No finding fix, real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.

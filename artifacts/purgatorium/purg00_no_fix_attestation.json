@@ -1,0 +1,14 @@
+{
+  "phase_id": "PURG-00-HANDOFF-INTAKE-AUTHORITY-LOCK",
+  "status": "purg00_handoff_intake_authority_lock_blocked",
+  "finding_fix_executed": false,
+  "red_reproduction_executed": false,
+  "triage_executed": false,
+  "remediation_plan_created": false,
+  "dependency_dag_final_created": false,
+  "candidate_promoted": false,
+  "invalid_finding_remediated": false,
+  "finding_closed": false,
+  "product_ready": false,
+  "bedrock_ready": false
+}

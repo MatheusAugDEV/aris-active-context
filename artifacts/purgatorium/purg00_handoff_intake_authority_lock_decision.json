@@ -1,0 +1,69 @@
+{
+  "phase_id": "PURG-00-HANDOFF-INTAKE-AUTHORITY-LOCK",
+  "decision": "blocked",
+  "status": "purg00_handoff_intake_authority_lock_blocked",
+  "route_admission_source": "artifacts/purgatorium/purg00_route_admission_decision.json",
+  "active_next_phase_verified": "PURG-00",
+  "active_next_phase_class_verified": "purgatorium_full_intake",
+  "latest_completed_phase_preserved": "IF-11 Minos Final Verdict + Closure",
+  "latest_completed_status_preserved": "if11_minos_final_verdict_closure_pass",
+  "purg00_intake_executed": true,
+  "authority_lock_created": true,
+  "source_packet_index_created": true,
+  "handoff_id_classification_matrix_created": true,
+  "source_hash_verification_matrix_created": true,
+  "data_gap_matrix_created": true,
+  "future_purg01_triage_candidate_created": true,
+  "if09_root_manifest_verified": true,
+  "if10_graph_verified": true,
+  "if11_closure_boundary_verified": true,
+  "graph_full_detail_accessible": false,
+  "data_gap_status": "DATA_GAP_BLOCKED",
+  "missing_required_fields": [
+    "affected files",
+    "oracle id",
+    "blast radius",
+    "target control",
+    "risk class",
+    "dependency group"
+  ],
+  "validated_handoff_ids": [
+    "IF09-FIND-001"
+  ],
+  "contextual_candidate_ids": [
+    "IF09-FIND-002"
+  ],
+  "excluded_invalid_ids": [
+    "IF09-FIND-003"
+  ],
+  "supporting_observation_ids": [
+    "IF09-OBS-001"
+  ],
+  "candidate_promoted": false,
+  "invalid_finding_remediated": false,
+  "finding_fix_executed": false,
+  "red_reproduction_executed": false,
+  "triage_executed": false,
+  "remediation_plan_created": false,
+  "dependency_dag_final_created": false,
+  "finding_closed": false,
+  "product_ready": false,
+  "bedrock_ready": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_bedrock_real_apply_secrets_executed": false,
+  "external_network_used_except_github_governance": false,
+  "dependency_or_package_manager_used": false,
+  "mcp_activated": false,
+  "rag_ingestion_executed": false,
+  "memory_write_executed": false,
+  "socket_opened": false,
+  "shell_executed": false,
+  "filesystem_escape_performed": false,
+  "real_cost_spent": false,
+  "real_quota_consumed": false,
+  "real_audio_capture_allowed": false,
+  "real_stt_tts_allowed": false,
+  "microphone_access_allowed": false,
+  "voice_clone_or_impersonation_allowed": false
+}

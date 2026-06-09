@@ -1,0 +1,9 @@
+{
+  "phase_id": "PURG-00-HANDOFF-INTAKE-AUTHORITY-LOCK",
+  "decision": "blocked",
+  "status": "purg00_handoff_intake_authority_lock_blocked",
+  "purg00_intake_executed": true,
+  "authority_lock_created": true,
+  "data_gap_status": "DATA_GAP_BLOCKED",
+  "next_recommended_step": "resolve_purg00_source_data_gap"
+}

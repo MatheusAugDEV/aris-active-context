@@ -1,0 +1,36 @@
+{
+  "classification_policy": "source_of_truth_from_IF10_handoff_graph_and_ACTIVE_CONTEXT_STATE",
+  "ids": [
+    {
+      "id": "IF09-FIND-001",
+      "class": "validated_handoff",
+      "future_target": true,
+      "can_be_fixed_in_purg00": false,
+      "can_be_closed_in_purg00": false,
+      "notes": "Validated handoff target for future Purgatorium phases only."
+    },
+    {
+      "id": "IF09-FIND-002",
+      "class": "contextual_candidate",
+      "future_target": false,
+      "promoted": false,
+      "can_be_promoted_in_purg00": false,
+      "notes": "Candidate only; requires separate evidence promotion gate."
+    },
+    {
+      "id": "IF09-FIND-003",
+      "class": "excluded_invalid",
+      "future_target": false,
+      "remediated": false,
+      "can_be_remediated_in_purg00": false,
+      "notes": "Invalid/excluded; must not receive remediation."
+    },
+    {
+      "id": "IF09-OBS-001",
+      "class": "supporting_observation",
+      "future_target": false,
+      "finding": false,
+      "notes": "Observation only; may support context but cannot be treated as finding."
+    }
+  ]
+}

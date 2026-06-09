@@ -204,20 +204,20 @@
         "active_next_phase": "PURG-00",
         "active_next_phase_class": "purgatorium_full_intake",
         "current_status": "if11_minos_final_verdict_closure_pass",
-        "decision": "pass",
+        "decision": "blocked",
         "h4_h5_hx_active_current_route": false,
         "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
         "latest_completed_status": "if11_minos_final_verdict_closure_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "purg00_route_admission_pass",
+        "status": "purg00_handoff_intake_authority_lock_blocked",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "execute_purg00_handoff_intake_authority_lock"
+        "latest_completed_next_recommended_step": "resolve_purg00_source_data_gap"
     },
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "execute_purg00_handoff_intake_authority_lock",
+    "latest_completed_next_recommended_step": "resolve_purg00_source_data_gap",
     "latest_completed_no_execution": {
         "w05_executed": false,
         "wave_executed": false,
@@ -291,7 +291,7 @@
     "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
     "latest_completed_status": "if11_minos_final_verdict_closure_pass",
     "permanent_active_update_rule_installed": true,
-    "decision": "pass",
+    "decision": "blocked",
     "drift_signals": {
         "connector_fallback_required_if_cli_dns_or_ssh_fails": true,
         "json_state_mismatch": "fail_closed",
@@ -321,7 +321,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "PURG-00",
-    "deferred_phase_reason": "Route admission opened PURG-00 as the next live route after PURG-PRE authority/materialization execution and operator-reviewed PURG-00 packet; the exact next step is execute_purg00_handoff_intake_authority_lock and no real execution surface is authorized.",
+        "deferred_phase_reason": "PURG-00 handoff intake and authority lock executed, but future PURG-01 preparation is DATA_GAP_BLOCKED because the accessible source packet does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group; the exact next step is resolve_purg00_source_data_gap and no real execution surface is authorized.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -333,7 +333,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-00 route admitted by explicit operator-authorized route admission. Execute only PURG-00 handoff intake / authority lock next; no finding fix, RED reproduction, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network is authorized.",
+        "notes": "PURG-00 handoff intake/authority lock executed and source packet hashes were verified, but future PURG-01 preparation is DATA_GAP_BLOCKED because the accessible packet does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group. Next step: resolve_purg00_source_data_gap. Do not execute triage, RED, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "PURG-00",
         "phase_class": "purgatorium_full_intake",
@@ -356,7 +356,7 @@
         ]
     },
     "schema_version": "3.3",
-    "status": "purg00_route_admission_pass",
+    "status": "purg00_handoff_intake_authority_lock_blocked",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,

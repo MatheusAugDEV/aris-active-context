@@ -38,9 +38,11 @@
 - purg_00_opened: `false`
 - purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`
 - purg00_route_admission_status: `purg00_route_admission_pass`
+- purg00_handoff_intake_status: `purg00_handoff_intake_authority_lock_blocked`
 - purg00_opened: `true`
 - purg00_executed: `false`
-- purg00_intake_executed: `false`
+- purg00_intake_executed: `true`
+- purg00_data_gap_status: `DATA_GAP_BLOCKED`
 - purg_pre_execution_decision: `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`
 - purg_pre_execution_summary: `artifacts/purgatorium/purg_pre_canonical_authority_execution_summary.json`
 - purg_pre_execution_report: `artifacts/purgatorium/purg_pre_canonical_authority_execution_report.md`
@@ -58,6 +60,16 @@
 - purg00_route_admission_validator_patch_manifest: `artifacts/purgatorium/purg00_route_admission_validator_patch_manifest.json`
 - purg00_route_admission_live_route_mutation_manifest: `artifacts/purgatorium/purg00_route_admission_live_route_mutation_manifest.json`
 - purg00_route_admission_no_real_execution_attestation_v2: `artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation_v2.json`
+- purg00_handoff_intake_authority_lock_decision: `artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json`
+- purg00_handoff_intake_authority_lock_summary: `artifacts/purgatorium/purg00_handoff_intake_authority_lock_summary.json`
+- purg00_handoff_intake_authority_lock_report: `artifacts/purgatorium/purg00_handoff_intake_authority_lock_report.md`
+- purg00_source_packet_index: `artifacts/purgatorium/purg00_source_packet_index.json`
+- purg00_handoff_id_classification_matrix: `artifacts/purgatorium/purg00_handoff_id_classification_matrix.json`
+- purg00_source_hash_verification_matrix: `artifacts/purgatorium/purg00_source_hash_verification_matrix.json`
+- purg00_data_gap_matrix: `artifacts/purgatorium/purg00_data_gap_matrix.json`
+- purg00_no_fix_attestation: `artifacts/purgatorium/purg00_no_fix_attestation.json`
+- purg00_no_real_execution_attestation: `artifacts/purgatorium/purg00_no_real_execution_attestation.json`
+- purg00_future_purg01_triage_candidate: `artifacts/purgatorium/purg00_future_purg01_triage_candidate.json`
 - purg00_required_source_access_matrix: `artifacts/purgatorium/purg00_required_source_access_matrix.json`
 - purg00_not_opened_attestation: `artifacts/purgatorium/purg00_not_opened_attestation.json`
 - purg00_route_admission_rollback_plan: `artifacts/purgatorium/purg00_route_admission_rollback_plan.md`
@@ -80,7 +92,7 @@
 - next_phase: `PURG-00`
 - active_next_phase_class: `purgatorium_full_intake`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `execute_purg00_handoff_intake_authority_lock`
+- next_recommended_step: `resolve_purg00_source_data_gap`
 
 ## IF-10 Purgatorium Handoff Graph | pass
 - status: `if10_purgatorium_handoff_graph_pass`

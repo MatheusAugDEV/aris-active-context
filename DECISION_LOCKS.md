@@ -1,13 +1,13 @@
-## PURG-00 Route Admission Lock
+## PURG-00 Handoff Intake / Authority Lock
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
-- status: `purg00_route_admission_pass`
+- status: `purg00_handoff_intake_authority_lock_blocked`
 - latest_completed_status=if11_minos_final_verdict_closure_pass
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure=true
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=execute_purg00_handoff_intake_authority_lock
+- next_recommended_step=resolve_purg00_source_data_gap
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
@@ -16,6 +16,7 @@
 - purg_pre_execution_status=purg_pre_canonical_authority_execution_pass
 - purg00_operator_review_packet_prepared=true
 - purg00_route_admission_status=purg00_route_admission_pass
+- purg00_handoff_intake_status=purg00_handoff_intake_authority_lock_blocked
 - previous_live_next_phase=IF-08
 - previous_live_next_phase_class=infernus_full_execution
 - new_live_next_phase=PURG-00
@@ -26,7 +27,13 @@
 - purg_00_opened=false
 - purg00_opened=true
 - purg00_executed=false
-- purg00_intake_executed=false
+- purg00_intake_executed=true
+- authority_lock_created=true
+- source_packet_index_created=true
+- source_hash_verification_matrix_created=true
+- data_gap_matrix_created=true
+- data_gap_status=DATA_GAP_BLOCKED
+- missing_required_fields=affected_files,oracle_id,blast_radius,target_control,risk_class,dependency_group
 - purg00_pass_declared=false
 - purg_00_pass_declared=false
 - finding_fix_executed=false
@@ -78,11 +85,12 @@
 - dependency_or_package_manager_used=false
 - real_cost_spent=false
 - real_quota_consumed=false
-- Canonical IF11 closure is verified; this sync admits `PURG-00` as the next live route after the PURG-00 operator review packet, preserves latest completed phase/status as IF11, keeps intake and execution false, and does not authorize any real execution surface.
+- Canonical IF11 closure is verified; this sync executes only the PURG-00 handoff intake / authority lock, verifies the IF09 and IF10 source hashes plus IF11 closure boundary, preserves latest completed phase/status as IF11, keeps all real execution surfaces false, and blocks future PURG-01 preparation until explicit source fields are available without inference.
 - PURG-PRE authority execution = true
 - PURG-PRE real execution = false
 - PURG-00 operator review packet = true
 - PURG-00 route admission = true
+- PURG-00 intake authority lock = true
 - PURG-00 real execution = false
 - future waves real execution = false
 - active_next_phase=PURG-00

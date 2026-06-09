@@ -1,0 +1,11 @@
+{
+  "if09_root_manifest_sha256_expected": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+  "if10_graph_sha256_expected": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+  "if09_root_manifest_sha256_observed": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+  "if10_graph_sha256_observed": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+  "if09_root_manifest_verified": true,
+  "if10_graph_verified": true,
+  "if11_closure_boundary_verified": true,
+  "hash_mismatch_count": 0,
+  "verification_status": "pass"
+}

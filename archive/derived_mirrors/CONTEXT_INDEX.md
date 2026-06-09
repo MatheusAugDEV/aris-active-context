@@ -1,7 +1,7 @@
 # INF-FULL-07 — Estado Atual
 
 - phase_id: `INF-FULL-07`
-- status: `purg00_route_admission_pass`
+- status: `purg00_handoff_intake_authority_lock_blocked`
 - current_status: `if11_minos_final_verdict_closure_pass`
 - latest_completed_phase: `IF-11 Minos Final Verdict + Closure`
 - latest_completed_status: `if11_minos_final_verdict_closure_pass`
@@ -83,6 +83,16 @@ Referências ativas desta fase:
 - `artifacts/purgatorium/purg00_route_admission_live_route_mutation_manifest.json`
 - `artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation_v2.json`
 - `artifacts/purgatorium/purg00_route_admission_rollback_plan.md`
+- `artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json`
+- `artifacts/purgatorium/purg00_handoff_intake_authority_lock_summary.json`
+- `artifacts/purgatorium/purg00_handoff_intake_authority_lock_report.md`
+- `artifacts/purgatorium/purg00_source_packet_index.json`
+- `artifacts/purgatorium/purg00_handoff_id_classification_matrix.json`
+- `artifacts/purgatorium/purg00_source_hash_verification_matrix.json`
+- `artifacts/purgatorium/purg00_data_gap_matrix.json`
+- `artifacts/purgatorium/purg00_no_fix_attestation.json`
+- `artifacts/purgatorium/purg00_no_real_execution_attestation.json`
+- `artifacts/purgatorium/purg00_future_purg01_triage_candidate.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/decision.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/summary.json`
 - `artifacts/infernus/if11_minos_final_verdict_closure/report.md`

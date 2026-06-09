@@ -1,0 +1,55 @@
+{
+  "index_policy": "primary_source_packet_only_no_inference",
+  "graph_file_accessible": true,
+  "graph_full_detail_accessible": false,
+  "packets": [
+    {
+      "phase": "IF-09 Evidence Bundle + Vulnerability Register",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
+      "sha256": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+      "accessible": true
+    },
+    {
+      "phase": "IF-09 Evidence Bundle + Vulnerability Register",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
+      "sha256": "0d6e08179d25f30baf2abe9d91d56cba42592797ba1c54993a040b247e41d9fe",
+      "accessible": true
+    },
+    {
+      "phase": "IF-10 Purgatorium Handoff Graph",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json",
+      "sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+      "accessible": true
+    },
+    {
+      "phase": "IF-10 Purgatorium Handoff Graph",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
+      "sha256": "b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8",
+      "accessible": true
+    },
+    {
+      "phase": "IF-10 Purgatorium Handoff Graph",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/root_cause_candidates.json",
+      "sha256": "7121b04129a525a4aba8d8ab3acda7ec31d667acb39d5d6e89d22b284ed20700",
+      "accessible": true
+    },
+    {
+      "phase": "IF-10 Purgatorium Handoff Graph",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json",
+      "sha256": "c9108316e8e281a0ea9c70e69dac8fa1c19ba43c500aed526a522fb67a86cf49",
+      "accessible": true
+    },
+    {
+      "phase": "IF-11 Minos Final Verdict + Closure",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if11_minos_final_verdict_closure/closure_manifest.json",
+      "sha256": "fa3c2f5b59755b04c9d10cf9b72c5aaaad6af59ce12cf6b655c0060698275348",
+      "accessible": true
+    },
+    {
+      "phase": "IF-11 Minos Final Verdict + Closure",
+      "path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if11_minos_final_verdict_closure/next_phase_boundary.json",
+      "sha256": "c55a35015172ee341192caffbc4c6799b6997197596cf10a1f0121c91fe9d4e4",
+      "accessible": true
+    }
+  ]
+}
