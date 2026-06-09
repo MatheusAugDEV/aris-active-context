@@ -3098,7 +3098,12 @@ def _check_inf_full_03_project_artifacts(state: dict[str, Any]) -> None:
     permission_data = _load_json(IF04_PERMISSION_PATH)
     docs_readme_text = INFERNUS_FULL_DOCS_README_PATH.read_text(encoding="utf-8")
     opening_text = INF_FULL_03_OPENING_DOC_PATH.read_text(encoding="utf-8")
-    canonroadmap_text = INFERNUS_FULL_CANONROADMAP_PATH.read_text(encoding="utf-8")
+    historical_canonroadmap_path = (
+        INFERNUS_CANONROADMAP_FORENSIC_PATH
+        if INFERNUS_CANONROADMAP_FORENSIC_PATH.exists()
+        else INFERNUS_FULL_CANONROADMAP_PATH
+    )
+    canonroadmap_text = historical_canonroadmap_path.read_text(encoding="utf-8")
     ledger_lines = [line for line in IF01_LEDGER_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
     coverage_lines = [line for line in IF02_COVERAGE_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
 
