@@ -61,8 +61,8 @@ Resposta sem SHA no topo = INVALID.
 
 phase_id: INF-FULL-07
 status: inf_full_07_if08_authorization_gate_pass
-latest_completed_phase: IF-08 W6 Final Audit Controlled Execution
-latest_completed_status: if08_w6_final_audit_controlled_execution_pass
+latest_completed_phase: IF-09 Evidence Bundle + Vulnerability Register
+latest_completed_status: if09_evidence_bundle_vulnerability_register_pass
 next_phase: IF-08
-next_recommended_step: prepare_if09_evidence_bundle_vulnerability_register
+next_recommended_step: prepare_if10_purgatorium_handoff_graph
 Todos execution_locks: false

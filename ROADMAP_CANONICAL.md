@@ -16,14 +16,14 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-08 W6 Final Audit Controlled Execution
+Latest completed phase: IF-09 Evidence Bundle + Vulnerability Register
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-W6 controlled execution is canonical as pass; this sync preserves previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness, source_preflight_status=if08_w6_final_audit_preflight_readiness_pass, source_project_sha_drift_recorded=true with primary-ref verification, execution_scope=synthetic_isolated_lab_only, w6_execution_performed=true, w6_real_execution_performed=false, ttr_observed=0, har_observed=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, anti_theater_review_passed=true, evidence_units_complete=true, stop_conditions_respected=true, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if09_evidence_bundle_vulnerability_register.
+IF09 evidence bundle and vulnerability register are canonical as pass; this sync preserves source_phase_verified=IF-08 W6 Final Audit Controlled Execution, source_status_verified=if08_w6_final_audit_controlled_execution_pass, source_project_sha_verified_by_packet=eae468c79687474de086c984b55a3f7ff47d73f7, source_active_context_sha_verified_by_packet=373558e7360a8372f368a330a2d41cc28fc18033, root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_findings_total=1, finding_candidates_total=1, invalid_findings_total=1, observations_total=1, reproduction_units_total=1, replay_units_total=2, mutation_units_total=2, evidence_units_total=7, findings_total=16, purgatorium_handoff_required_ids=[IF09-FIND-001], macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if10_purgatorium_handoff_graph.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

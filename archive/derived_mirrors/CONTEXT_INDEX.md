@@ -2,14 +2,14 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w6_final_audit_controlled_execution_pass`
-- latest_completed_phase: `IF-08 W6 Final Audit Controlled Execution`
-- latest_completed_status: `if08_w6_final_audit_controlled_execution_pass`
+- current_status: `if09_evidence_bundle_vulnerability_register_pass`
+- latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`
+- latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if08_w6_final_audit_preflight_readiness: `true`
+- active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
@@ -21,6 +21,19 @@ Referências ativas desta fase:
 - `artifacts/if08_w6_final_audit_controlled_execution/decision.json`
 - `artifacts/if08_w6_final_audit_controlled_execution/summary.json`
 - `artifacts/if08_w6_final_audit_controlled_execution/report.md`
+- `artifacts/if09_evidence_bundle_vulnerability_register/decision.json`
+- `artifacts/if09_evidence_bundle_vulnerability_register/summary.json`
+- `artifacts/if09_evidence_bundle_vulnerability_register/report.md`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/summary.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/report.md`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/hash_tree.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/custody_chain.jsonl`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/replay_diff_report.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json`
+- `artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl`
+- `docs/infernus_full/if09_evidence_bundle_vulnerability_register.md`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_summary.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_report.md`
@@ -202,4 +215,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The W6 final audit controlled execution packet is canonical as pass; the next canonical step is prepare_if09_evidence_bundle_vulnerability_register and no real execution surface is authorized.
+- The IF09 evidence bundle and vulnerability register packet is canonical as pass; the next canonical step is prepare_if10_purgatorium_handoff_graph and no real execution surface is authorized.

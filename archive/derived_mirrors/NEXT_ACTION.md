@@ -1,29 +1,29 @@
-INF-FULL-07 — IF-08 W6 Final Audit Controlled Execution Sync Sincronizado
+INF-FULL-07 — IF-09 Evidence Bundle + Vulnerability Register Sync Sincronizado
 
 current_phase: INF-FULL-07
 status: inf_full_07_if08_authorization_gate_pass
-current_status: if08_w6_final_audit_controlled_execution_pass
+current_status: if09_evidence_bundle_vulnerability_register_pass
 decision: pass
-latest_completed_phase: IF-08 W6 Final Audit Controlled Execution
-latest_completed_status: if08_w6_final_audit_controlled_execution_pass
-latest_completed_project_commit_sha: eae468c79687474de086c984b55a3f7ff47d73f7
+latest_completed_phase: IF-09 Evidence Bundle + Vulnerability Register
+latest_completed_status: if09_evidence_bundle_vulnerability_register_pass
+latest_completed_project_commit_sha: 38b16edadce15ce8f2049bb3de8538bb921e344e
 latest_completed_ci_state: CI_GREEN_CONFIRMED
 next_phase: IF-08
 active_next_phase: IF-08
 active_next_phase_class: infernus_full_execution
 next_phase_authorized_by_operator: true
 standing_authorization: canonroadmap aprovado pelo operador
-active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution: true
+active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register: true
 permanent_active_update_rule_installed: true
 execution_authorized: false
 
 O que fazer agora
 Leia project_mirror/docs/infernus_full/infernus_full_canonroadmap.md.
-Confirme que o ultimo pacote sincronizado foi `IF-08 W6 Final Audit Controlled Execution`.
-Nao reexecutar W5 nem W6 nesta tarefa de sync; nao tocar audio real, STT/TTS real, microfone, runtime real, MCP real, secrets, rede externa ou real_apply nesta fase.
-Este sync ja registra o packet canonico de W6 controlled execution com `previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness`, `source_preflight_status=if08_w6_final_audit_preflight_readiness_pass`, `source_project_sha_drift_recorded=true`, `execution_scope=synthetic_isolated_lab_only`, `w6_execution_performed=true`, `w6_real_execution_performed=false`, `ttr_observed=0`, `har_observed=1.0`, `minos_mechanical_readiness=true`, `minos_semantic_readiness=true`, `anti_theater_review_passed=true`, `evidence_units_complete=true` e `stop_conditions_respected=true`.
-O proximo prompt pode preparar apenas `prepare_if09_evidence_bundle_vulnerability_register` dentro do escopo canonico aprovado.
-O proximo passo recomendado neste estado e `prepare_if09_evidence_bundle_vulnerability_register`.
+Confirme que o ultimo pacote sincronizado foi `IF-09 Evidence Bundle + Vulnerability Register`.
+Nao reexecutar W5, W6 ou qualquer wave nesta tarefa de sync; nao tocar audio real, STT/TTS real, microfone, runtime real, MCP real, secrets, rede externa ou real_apply nesta fase.
+Este sync ja registra o packet canonico de IF09 com `source_phase_verified=IF-08 W6 Final Audit Controlled Execution`, `source_status_verified=if08_w6_final_audit_controlled_execution_pass`, `root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `validated_findings_total=1`, `finding_candidates_total=1`, `invalid_findings_total=1`, `observations_total=1`, `reproduction_units_total=1`, `replay_units_total=2`, `mutation_units_total=2`, `evidence_units_total=7`, `findings_total=16`, `purgatorium_handoff_required_ids=['IF09-FIND-001']` e `macro_transition_preserved=true`.
+O proximo prompt pode preparar apenas `prepare_if10_purgatorium_handoff_graph` dentro do escopo canonico aprovado.
+O proximo passo recomendado neste estado e `prepare_if10_purgatorium_handoff_graph`.
 Nao emitir proximo prompt canonico se `aris-active-context/main` nao refletir este resultado final.
 Unica coisa que requer comando do operador
 Antes de executar qualquer superficie real fora do laboratorio: informe o operador e aguarde o comando de execucao.

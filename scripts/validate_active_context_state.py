@@ -35,22 +35,22 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
-EXPECTED_PHASE = "IF-08 W6 Final Audit Controlled Execution"
+EXPECTED_PHASE = "IF-09 Evidence Bundle + Vulnerability Register"
 EXPECTED_PHASE_ID = "INF-FULL-07"
-EXPECTED_PREVIOUS_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution"
+EXPECTED_PREVIOUS_PHASE = "IF-08 W6 Final Audit Controlled Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if08_w6_final_audit_controlled_execution_pass"
+EXPECTED_CURRENT_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
 EXPECTED_SCHEMA_VERSION = "3.1"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if08_w6_final_audit_controlled_execution_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if08_w6_final_audit_controlled_execution_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "eae468c79687474de086c984b55a3f7ff47d73f7"
+EXPECTED_NEXT_ACTION_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "38b16edadce15ce8f2049bb3de8538bb921e344e"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if09_evidence_bundle_vulnerability_register"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27173423800"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if10_purgatorium_handoff_graph"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27175174232"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -498,6 +498,32 @@ IF08_W6_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w6_final_audit_controlled_e
 IF08_W6_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W6_CONTROLLED_ROOT / "decision.json"
 IF08_W6_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W6_CONTROLLED_ROOT / "summary.json"
 IF08_W6_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W6_CONTROLLED_ROOT / "report.md"
+IF09_PHASE = "IF-09 Evidence Bundle + Vulnerability Register"
+IF09_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
+IF09_PROJECT_SHA = "38b16edadce15ce8f2049bb3de8538bb921e344e"
+IF09_PROJECT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF09_NEXT_RECOMMENDED_STEP = "prepare_if10_purgatorium_handoff_graph"
+IF09_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27175174232"
+IF09_SOURCE_PHASE = "IF-08 W6 Final Audit Controlled Execution"
+IF09_SOURCE_STATUS = "if08_w6_final_audit_controlled_execution_pass"
+IF09_SOURCE_PROJECT_SHA = "eae468c79687474de086c984b55a3f7ff47d73f7"
+IF09_SOURCE_ACTIVE_CONTEXT_SHA = "373558e7360a8372f368a330a2d41cc28fc18033"
+IF09_ROOT_MANIFEST_SHA = "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660"
+IF09_ROOT = ROOT / "artifacts" / "if09_evidence_bundle_vulnerability_register"
+IF09_ACTIVE_DECISION_PATH = IF09_ROOT / "decision.json"
+IF09_ACTIVE_SUMMARY_PATH = IF09_ROOT / "summary.json"
+IF09_ACTIVE_REPORT_PATH = IF09_ROOT / "report.md"
+IF09_PROJECT_ROOT = _resolve_project_relative("artifacts", "infernus", "if09_evidence_bundle_vulnerability_register")
+IF09_PROJECT_DECISION_PATH = IF09_PROJECT_ROOT / "decision.json"
+IF09_PROJECT_SUMMARY_PATH = IF09_PROJECT_ROOT / "summary.json"
+IF09_PROJECT_REPORT_PATH = IF09_PROJECT_ROOT / "report.md"
+IF09_PROJECT_ROOT_MANIFEST_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "root_manifest.json"
+IF09_PROJECT_HASH_TREE_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "hash_tree.json"
+IF09_PROJECT_CUSTODY_CHAIN_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "custody_chain.jsonl"
+IF09_PROJECT_REPLAY_DIFF_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "replay_diff_report.json"
+IF09_PROJECT_MUTATION_SURVIVAL_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "mutation_survival_report.json"
+IF09_PROJECT_REGISTER_PATH = IF09_PROJECT_ROOT / "vuln_register_v4.jsonl"
+IF09_PROJECT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if09_evidence_bundle_vulnerability_register.md")
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -7734,6 +7760,108 @@ def _check_if08_w6_final_audit_controlled_execution_artifacts(state: dict[str, A
     )
 
 
+def _check_if09_evidence_bundle_vulnerability_register_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF09_ACTIVE_DECISION_PATH,
+        IF09_ACTIVE_SUMMARY_PATH,
+        IF09_ACTIVE_REPORT_PATH,
+        IF09_PROJECT_DECISION_PATH,
+        IF09_PROJECT_SUMMARY_PATH,
+        IF09_PROJECT_REPORT_PATH,
+        IF09_PROJECT_ROOT_MANIFEST_PATH,
+        IF09_PROJECT_HASH_TREE_PATH,
+        IF09_PROJECT_CUSTODY_CHAIN_PATH,
+        IF09_PROJECT_REPLAY_DIFF_PATH,
+        IF09_PROJECT_MUTATION_SURVIVAL_PATH,
+        IF09_PROJECT_REGISTER_PATH,
+        IF09_PROJECT_DOC_PATH,
+    ):
+        _require(path.exists(), f"missing IF09 artifact: {path}")
+
+    active_decision = _load_json(IF09_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-09-EVIDENCE-BUNDLE-VULNERABILITY-REGISTER", "active IF09 decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active IF09 decision must be pass")
+    _require(active_decision.get("status") == IF09_STATUS, "active IF09 decision status mismatch")
+    _require(active_decision.get("project_commit_sha") == IF09_PROJECT_SHA, "active IF09 decision project sha mismatch")
+    _require(active_decision.get("project_ci_state") == IF09_PROJECT_CI_STATE, "active IF09 decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF09_PROJECT_CI_RUN_URL, "active IF09 decision ci url mismatch")
+    _require(active_decision.get("active_context_pre_sync_phase_id") == EXPECTED_PHASE_ID, "active IF09 decision pre-sync phase mismatch")
+    _require(active_decision.get("active_context_pre_sync_current_status") == IF09_SOURCE_STATUS, "active IF09 decision pre-sync status mismatch")
+    _require(active_decision.get("active_context_pre_sync_sha") == IF09_SOURCE_ACTIVE_CONTEXT_SHA, "active IF09 decision pre-sync sha mismatch")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF09_PHASE, "active IF09 decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF09_STATUS, "active IF09 decision latest status mismatch")
+    _require(active_decision.get("source_phase_verified") == IF09_SOURCE_PHASE, "active IF09 decision source phase mismatch")
+    _require(active_decision.get("source_status_verified") == IF09_SOURCE_STATUS, "active IF09 decision source status mismatch")
+    _require(active_decision.get("source_project_sha_verified_by_packet") == IF09_SOURCE_PROJECT_SHA, "active IF09 decision source project sha mismatch")
+    _require(active_decision.get("source_active_context_sha_verified_by_packet") == IF09_SOURCE_ACTIVE_CONTEXT_SHA, "active IF09 decision source active-context sha mismatch")
+    _require(active_decision.get("root_manifest_sha256") == IF09_ROOT_MANIFEST_SHA, "active IF09 decision root manifest sha mismatch")
+    _require(active_decision.get("validated_findings_total") == 1, "active IF09 decision validated_findings_total mismatch")
+    _require(active_decision.get("finding_candidates_total") == 1, "active IF09 decision finding_candidates_total mismatch")
+    _require(active_decision.get("invalid_findings_total") == 1, "active IF09 decision invalid_findings_total mismatch")
+    _require(active_decision.get("observations_total") == 1, "active IF09 decision observations_total mismatch")
+    _require(active_decision.get("reproduction_units_total") == 1, "active IF09 decision reproduction_units_total mismatch")
+    _require(active_decision.get("replay_units_total") == 2, "active IF09 decision replay_units_total mismatch")
+    _require(active_decision.get("mutation_units_total") == 2, "active IF09 decision mutation_units_total mismatch")
+    _require(active_decision.get("evidence_units_total") == 7, "active IF09 decision evidence_units_total mismatch")
+    _require(active_decision.get("findings_total") == 16, "active IF09 decision findings_total mismatch")
+    _require(active_decision.get("purgatorium_handoff_required_ids") == ["IF09-FIND-001"], "active IF09 decision handoff ids mismatch")
+    _require(active_decision.get("macro_transition_preserved") is True, "active IF09 decision macro_transition_preserved mismatch")
+    _require(active_decision.get("current_phase_id_preserved") == EXPECTED_PHASE_ID, "active IF09 decision current_phase_id_preserved mismatch")
+    _require(active_decision.get("active_next_phase_preserved") == EXPECTED_NEXT_PHASE_ID, "active IF09 decision active_next_phase_preserved mismatch")
+    _require(active_decision.get("active_next_phase_class_preserved") == EXPECTED_NEXT_PHASE_CLASS, "active IF09 decision active_next_phase_class_preserved mismatch")
+    _require(active_decision.get("next_recommended_step") == IF09_NEXT_RECOMMENDED_STEP, "active IF09 decision next step mismatch")
+
+    active_summary = _load_json(IF09_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("status") == IF09_STATUS, "active IF09 summary status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF09_PROJECT_SHA, "active IF09 summary project sha mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF09_PROJECT_CI_RUN_URL, "active IF09 summary ci url mismatch")
+    _require(active_summary.get("root_manifest_sha256") == IF09_ROOT_MANIFEST_SHA, "active IF09 summary root manifest sha mismatch")
+    _require(active_summary.get("next_recommended_step") == IF09_NEXT_RECOMMENDED_STEP, "active IF09 summary next step mismatch")
+
+    decision = _load_json(IF09_PROJECT_DECISION_PATH)
+    _require(decision.get("phase") == IF09_PHASE, "project IF09 decision phase mismatch")
+    _require(decision.get("status") == IF09_STATUS, "project IF09 decision status mismatch")
+    _require(decision.get("source_phase") == IF09_SOURCE_PHASE, "project IF09 decision source phase mismatch")
+    _require(decision.get("source_status") == IF09_SOURCE_STATUS, "project IF09 decision source status mismatch")
+    _require(decision.get("source_project_sha_verified_by_packet") == IF09_SOURCE_PROJECT_SHA, "project IF09 decision source project sha mismatch")
+    _require(decision.get("source_active_context_sha_verified_by_packet") == IF09_SOURCE_ACTIVE_CONTEXT_SHA, "project IF09 decision source active-context sha mismatch")
+    _require(decision.get("root_manifest_sha256") == IF09_ROOT_MANIFEST_SHA, "project IF09 decision root manifest sha mismatch")
+    _require(decision.get("next_recommended_step") == IF09_NEXT_RECOMMENDED_STEP, "project IF09 decision next step mismatch")
+
+    summary = _load_json(IF09_PROJECT_SUMMARY_PATH)
+    _require(summary.get("status") == IF09_STATUS, "project IF09 summary status mismatch")
+    _require(summary.get("root_manifest_sha256") == IF09_ROOT_MANIFEST_SHA, "project IF09 summary root manifest sha mismatch")
+
+    root_manifest = _load_json(IF09_PROJECT_ROOT_MANIFEST_PATH)
+    _require(root_manifest.get("status") == IF09_STATUS, "project IF09 root manifest status mismatch")
+    _require(root_manifest.get("root_manifest_references_all_bundle_files") is True, "project IF09 root manifest reference mismatch")
+    _require(root_manifest.get("hash_tree_covers_all_evidence_units") is True, "project IF09 root manifest evidence coverage mismatch")
+    _require(root_manifest.get("validated_findings_total") == 1, "project IF09 root manifest validated_findings_total mismatch")
+    _require(root_manifest.get("evidence_units_total") == 7, "project IF09 root manifest evidence_units_total mismatch")
+
+    hash_tree = _load_json(IF09_PROJECT_HASH_TREE_PATH)
+    _require(hash_tree.get("phase_id") == "IF-09-EVIDENCE-BUNDLE-VULNERABILITY-REGISTER", "project IF09 hash tree phase_id mismatch")
+    _require(hash_tree.get("covers_all_evidence_units") is True, "project IF09 hash tree coverage mismatch")
+    _require(hash_tree.get("leaf_count") == 7, "project IF09 hash tree leaf count mismatch")
+
+    replay = _load_json(IF09_PROJECT_REPLAY_DIFF_PATH)
+    _require(len(replay.get("replay_units", [])) == 2, "project IF09 replay unit count mismatch")
+
+    mutation = _load_json(IF09_PROJECT_MUTATION_SURVIVAL_PATH)
+    _require(len(mutation.get("mutation_units", [])) == 2, "project IF09 mutation unit count mismatch")
+
+    register_lines = [line for line in IF09_PROJECT_REGISTER_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
+    _require(len(register_lines) == 16, "project IF09 register line count mismatch")
+
+    _mirror_contains(
+        IF09_ACTIVE_REPORT_PATH,
+        "IF-09 Evidence Bundle + Vulnerability Register Sync",
+        "status: `if09_evidence_bundle_vulnerability_register_pass`",
+        "project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
+        "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
+    )
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -7841,6 +7969,8 @@ def main() -> None:
     _check_if08_w5_post_sync_review_artifacts(state)
     # IF08 W6 final audit controlled execution checks
     _check_if08_w6_final_audit_controlled_execution_artifacts(state)
+    # IF09 evidence bundle and vulnerability register checks
+    _check_if09_evidence_bundle_vulnerability_register_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -7876,60 +8006,47 @@ def main() -> None:
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["w5_post_sync_review_verified"] is True, "latest_completed_no_execution.w5_post_sync_review_verified must be true")
-    _require(state["latest_completed_no_execution"]["w5_metrics_verified"] is True, "latest_completed_no_execution.w5_metrics_verified must be true")
-    _require(state["latest_completed_no_execution"]["w5_artifacts_complete"] is True, "latest_completed_no_execution.w5_artifacts_complete must be true")
-    _require(state["latest_completed_no_execution"]["w5_safety_attestation_verified"] is True, "latest_completed_no_execution.w5_safety_attestation_verified must be true")
-    _require(state["latest_completed_no_execution"]["w6_preflight_readiness"] is True, "latest_completed_no_execution.w6_preflight_readiness must be true")
-    _require(state["latest_completed_no_execution"]["preflight_readiness_verified"] is True, "latest_completed_no_execution.preflight_readiness_verified must be true")
-    _require(state["latest_completed_no_execution"]["readiness_coverage"] == 1.0, "latest_completed_no_execution.readiness_coverage must be 1.0")
-    _require(state["latest_completed_no_execution"]["required_preflight_checks"] == 10, "latest_completed_no_execution.required_preflight_checks must be 10")
-    _require(state["latest_completed_no_execution"]["ready_preflight_checks"] == 10, "latest_completed_no_execution.ready_preflight_checks must be 10")
-    _require(state["latest_completed_no_execution"]["source_preflight_status"] == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "latest_completed_no_execution.source_preflight_status mismatch")
-    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF08_W6_CONTROLLED_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF08_W6_CONTROLLED_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_project_sha_recorded_in_active_context"] == IF08_W6_CONTROLLED_RECORDED_DRIFT_SHA, "latest_completed_no_execution.source_project_sha_recorded_in_active_context mismatch")
+    _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF09_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_status_verified"] == IF09_SOURCE_STATUS, "latest_completed_no_execution.source_status_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF09_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF09_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
     _require(state["latest_completed_no_execution"]["source_project_sha_drift_recorded"] is True, "latest_completed_no_execution.source_project_sha_drift_recorded must be true")
-    _require(state["latest_completed_no_execution"]["source_project_sha_drift_resolved_via_primary_refs"] is True, "latest_completed_no_execution.source_project_sha_drift_resolved_via_primary_refs must be true")
-    _require(state["latest_completed_no_execution"]["executor_bot_count"] == 14, "latest_completed_no_execution.executor_bot_count must be 14")
-    _require(state["latest_completed_no_execution"]["synthetic_domain_count"] == 7, "latest_completed_no_execution.synthetic_domain_count must be 7")
-    _require(state["latest_completed_no_execution"]["critical_coverage_cells_total"] == 12, "latest_completed_no_execution.critical_coverage_cells_total must be 12")
-    _require(state["latest_completed_no_execution"]["critical_coverage_cells_passed"] == 12, "latest_completed_no_execution.critical_coverage_cells_passed must be 12")
-    _require(state["latest_completed_no_execution"]["critical_coverage_completion"] == 1.0, "latest_completed_no_execution.critical_coverage_completion must be 1.0")
-    _require(state["latest_completed_no_execution"]["future_critical_coverage_required"] == 1.0, "latest_completed_no_execution.future_critical_coverage_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["previous_phase_verified"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "latest_completed_no_execution.previous_phase_verified mismatch")
-    _require(state["latest_completed_no_execution"]["previous_status_verified"] == IF08_W6_CONTROLLED_PREVIOUS_STATUS, "latest_completed_no_execution.previous_status_verified mismatch")
-    _require(state["latest_completed_no_execution"]["business_scenarios_total"] == 14, "latest_completed_no_execution.business_scenarios_total must be 14")
-    _require(state["latest_completed_no_execution"]["business_scenarios_passed"] == 14, "latest_completed_no_execution.business_scenarios_passed must be 14")
-    _require(state["latest_completed_no_execution"]["business_scenarios_blocked_or_detected"] == 14, "latest_completed_no_execution.business_scenarios_blocked_or_detected must be 14")
-    _require(state["latest_completed_no_execution"]["sirene_oracle_mode"] == "synthetic_transcript_only", "latest_completed_no_execution.sirene_oracle_mode mismatch")
+    _require(state["latest_completed_no_execution"]["if09_materialization_performed"] is True, "latest_completed_no_execution.if09_materialization_performed mismatch")
+    _require(state["latest_completed_no_execution"]["evidence_bundle_v4_materialized"] is True, "latest_completed_no_execution.evidence_bundle_v4_materialized mismatch")
+    _require(state["latest_completed_no_execution"]["vulnerability_register_v4_materialized"] is True, "latest_completed_no_execution.vulnerability_register_v4_materialized mismatch")
+    _require(state["latest_completed_no_execution"]["root_manifest_created"] is True, "latest_completed_no_execution.root_manifest_created mismatch")
+    _require(state["latest_completed_no_execution"]["hash_tree_created"] is True, "latest_completed_no_execution.hash_tree_created mismatch")
+    _require(state["latest_completed_no_execution"]["custody_chain_created"] is True, "latest_completed_no_execution.custody_chain_created mismatch")
+    _require(state["latest_completed_no_execution"]["replay_diff_created"] is True, "latest_completed_no_execution.replay_diff_created mismatch")
+    _require(state["latest_completed_no_execution"]["mutation_survival_report_created"] is True, "latest_completed_no_execution.mutation_survival_report_created mismatch")
+    _require(state["latest_completed_no_execution"]["root_manifest_sha256"] == IF09_ROOT_MANIFEST_SHA, "latest_completed_no_execution.root_manifest_sha256 mismatch")
+    _require(state["latest_completed_no_execution"]["root_manifest_references_all_bundle_files"] is True, "latest_completed_no_execution.root_manifest_references_all_bundle_files mismatch")
+    _require(state["latest_completed_no_execution"]["hash_tree_covers_all_evidence_units"] is True, "latest_completed_no_execution.hash_tree_covers_all_evidence_units mismatch")
+    _require(state["latest_completed_no_execution"]["custody_chain_event_order_valid"] is True, "latest_completed_no_execution.custody_chain_event_order_valid mismatch")
+    _require(state["latest_completed_no_execution"]["custody_chain_duplicate_event_ids"] == 0, "latest_completed_no_execution.custody_chain_duplicate_event_ids mismatch")
+    _require(state["latest_completed_no_execution"]["register_parseable_line_count"] == 16, "latest_completed_no_execution.register_parseable_line_count mismatch")
+    _require(state["latest_completed_no_execution"]["duplicate_signal_groups_collapsed_count"] == 1, "latest_completed_no_execution.duplicate_signal_groups_collapsed_count mismatch")
+    _require(state["latest_completed_no_execution"]["validated_findings_total"] == 1, "latest_completed_no_execution.validated_findings_total mismatch")
+    _require(state["latest_completed_no_execution"]["finding_candidates_total"] == 1, "latest_completed_no_execution.finding_candidates_total mismatch")
+    _require(state["latest_completed_no_execution"]["invalid_findings_total"] == 1, "latest_completed_no_execution.invalid_findings_total mismatch")
+    _require(state["latest_completed_no_execution"]["observations_total"] == 1, "latest_completed_no_execution.observations_total mismatch")
+    _require(state["latest_completed_no_execution"]["reproduction_units_total"] == 1, "latest_completed_no_execution.reproduction_units_total mismatch")
+    _require(state["latest_completed_no_execution"]["replay_units_total"] == 2, "latest_completed_no_execution.replay_units_total mismatch")
+    _require(state["latest_completed_no_execution"]["mutation_units_total"] == 2, "latest_completed_no_execution.mutation_units_total mismatch")
+    _require(state["latest_completed_no_execution"]["evidence_units_total"] == 7, "latest_completed_no_execution.evidence_units_total mismatch")
+    _require(state["latest_completed_no_execution"]["findings_total"] == 16, "latest_completed_no_execution.findings_total mismatch")
+    _require(state["latest_completed_no_execution"]["purgatorium_handoff_required_ids"] == ["IF09-FIND-001"], "latest_completed_no_execution.purgatorium_handoff_required_ids mismatch")
+    _require(state["latest_completed_no_execution"]["macro_transition_preserved"] is True, "latest_completed_no_execution.macro_transition_preserved mismatch")
+    _require(state["latest_completed_no_execution"]["current_phase_id_preserved"] == EXPECTED_PHASE_ID, "latest_completed_no_execution.current_phase_id_preserved mismatch")
+    _require(state["latest_completed_no_execution"]["active_next_phase_preserved"] == EXPECTED_NEXT_PHASE_ID, "latest_completed_no_execution.active_next_phase_preserved mismatch")
+    _require(state["latest_completed_no_execution"]["active_next_phase_class_preserved"] == EXPECTED_NEXT_PHASE_CLASS, "latest_completed_no_execution.active_next_phase_class_preserved mismatch")
     _require(state["latest_completed_no_execution"]["real_audio_capture_allowed"] is False, "latest_completed_no_execution.real_audio_capture_allowed must be false")
     _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
     _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
     _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "synthetic_isolated_lab_only", "latest_completed_no_execution.execution_scope must be synthetic_isolated_lab_only")
-    _require(state["latest_completed_no_execution"]["w6_readiness_state"] == "completed_synthetic_controlled_execution", "latest_completed_no_execution.w6_readiness_state mismatch")
-    _require(state["latest_completed_no_execution"]["w6_preparation_allowed_next"] is False, "latest_completed_no_execution.w6_preparation_allowed_next must be false")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "artifact_only_canonical_materialization", "latest_completed_no_execution.execution_scope mismatch")
     _require(state["latest_completed_no_execution"]["w6_execution_performed"] is True, "latest_completed_no_execution.w6_execution_performed must be true")
-    _require(state["latest_completed_no_execution"]["w6_execution_allowed"] is False, "latest_completed_no_execution.w6_execution_allowed must be false")
     _require(state["latest_completed_no_execution"]["w6_real_execution_performed"] is False, "latest_completed_no_execution.w6_real_execution_performed must be false")
-    _require(state["latest_completed_no_execution"]["ttr_required"] == 0, "latest_completed_no_execution.ttr_required must be 0")
-    _require(state["latest_completed_no_execution"]["ttr_observed"] == 0, "latest_completed_no_execution.ttr_observed must be 0")
-    _require(state["latest_completed_no_execution"]["har_required"] == 1.0, "latest_completed_no_execution.har_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["har_observed"] == 1.0, "latest_completed_no_execution.har_observed must be 1.0")
-    _require(state["latest_completed_no_execution"]["future_ttr_required"] == 0, "latest_completed_no_execution.future_ttr_required must be 0")
-    _require(state["latest_completed_no_execution"]["future_har_required"] == 1.0, "latest_completed_no_execution.future_har_required must be 1.0")
-    _require(state["latest_completed_no_execution"]["minos_mechanical_required"] is True, "latest_completed_no_execution.minos_mechanical_required must be true")
-    _require(state["latest_completed_no_execution"]["minos_semantic_required"] is True, "latest_completed_no_execution.minos_semantic_required must be true")
-    _require(state["latest_completed_no_execution"]["minos_mechanical_readiness"] is True, "latest_completed_no_execution.minos_mechanical_readiness must be true")
-    _require(state["latest_completed_no_execution"]["minos_semantic_readiness"] is True, "latest_completed_no_execution.minos_semantic_readiness must be true")
-    _require(state["latest_completed_no_execution"]["anti_theater_review_required"] is True, "latest_completed_no_execution.anti_theater_review_required must be true")
-    _require(state["latest_completed_no_execution"]["anti_theater_review_passed"] is True, "latest_completed_no_execution.anti_theater_review_passed must be true")
-    _require(state["latest_completed_no_execution"]["ttr_har_threshold_contract_created"] is True, "latest_completed_no_execution.ttr_har_threshold_contract_created must be true")
-    _require(state["latest_completed_no_execution"]["stop_condition_matrix_created"] is True, "latest_completed_no_execution.stop_condition_matrix_created must be true")
-    _require(state["latest_completed_no_execution"]["no_execution_attestation_created"] is True, "latest_completed_no_execution.no_execution_attestation_created must be true")
-    _require(state["latest_completed_no_execution"]["evidence_units_complete"] is True, "latest_completed_no_execution.evidence_units_complete must be true")
-    _require(state["latest_completed_no_execution"]["stop_conditions_respected"] is True, "latest_completed_no_execution.stop_conditions_respected must be true")
     for key in (
         "runtime_executed",
         "real_apply_executed",
@@ -7953,8 +8070,8 @@ def main() -> None:
         "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["previous_execution_phase"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF08_W6_CONTROLLED_PREVIOUS_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF09_SOURCE_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF09_SOURCE_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -7977,47 +8094,56 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-08 W6 Final Audit Controlled Execution`",
-        "latest_completed_status: `if08_w6_final_audit_controlled_execution_pass`",
+        "latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`",
+        "latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "W5 metrics verified: `true`",
+        "root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
+        "latest_completed_project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`",
+        "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-08 W6 Final Audit Controlled Execution Sync Sincronizado",
+        "INF-FULL-07 — IF-09 Evidence Bundle + Vulnerability Register Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if08_w6_final_audit_controlled_execution_pass",
-        "Este sync ja registra o packet canonico de W6 controlled execution com `previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness`, `source_preflight_status=if08_w6_final_audit_preflight_readiness_pass`, `source_project_sha_drift_recorded=true`, `execution_scope=synthetic_isolated_lab_only`, `w6_execution_performed=true`, `w6_real_execution_performed=false`, `ttr_observed=0`, `har_observed=1.0`, `minos_mechanical_readiness=true`, `minos_semantic_readiness=true`, `anti_theater_review_passed=true`, `evidence_units_complete=true` e `stop_conditions_respected=true`.",
-        "O proximo prompt pode preparar apenas `prepare_if09_evidence_bundle_vulnerability_register` dentro do escopo canonico aprovado.",
-        "O proximo passo recomendado neste estado e `prepare_if09_evidence_bundle_vulnerability_register`.",
+        "latest_completed_status: if09_evidence_bundle_vulnerability_register_pass",
+        "Este sync ja registra o packet canonico de IF09 com `source_phase_verified=IF-08 W6 Final Audit Controlled Execution`, `source_status_verified=if08_w6_final_audit_controlled_execution_pass`, `root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `validated_findings_total=1`, `finding_candidates_total=1`, `invalid_findings_total=1`, `observations_total=1`, `reproduction_units_total=1`, `replay_units_total=2`, `mutation_units_total=2`, `evidence_units_total=7`, `findings_total=16`, `purgatorium_handoff_required_ids=['IF09-FIND-001']` e `macro_transition_preserved=true`.",
+        "O proximo prompt pode preparar apenas `prepare_if10_purgatorium_handoff_graph` dentro do escopo canonico aprovado.",
+        "O proximo passo recomendado neste estado e `prepare_if10_purgatorium_handoff_graph`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if08_w6_final_audit_controlled_execution_pass",
-        "Latest completed phase: `IF-08 W6 Final Audit Controlled Execution`",
-        "latest_completed_status=if08_w6_final_audit_controlled_execution_pass",
-        "active_context_remote_main_reflects_if08_w6_final_audit_controlled_execution=true",
+        "if09_evidence_bundle_vulnerability_register_pass",
+        "Latest completed phase: `IF-09 Evidence Bundle + Vulnerability Register`",
+        "latest_completed_status=if09_evidence_bundle_vulnerability_register_pass",
+        "active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "prepare_if09_evidence_bundle_vulnerability_register",
+        "prepare_if10_purgatorium_handoff_graph",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
+        "artifacts/if09_evidence_bundle_vulnerability_register/decision.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/hash_tree.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/custody_chain.jsonl",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/replay_diff_report.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json",
+        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
+        "docs/infernus_full/if09_evidence_bundle_vulnerability_register.md",
         "artifacts/if08_w6_final_audit_controlled_execution/decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_evidence_bundle.json",
@@ -8077,6 +8203,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
+        "IF-09 Evidence Bundle + Vulnerability Register | pass",
+        "if09_evidence_bundle_vulnerability_register_pass",
+        "project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
+        "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
         "IF-08 W6 Final Audit Controlled Execution | pass",
         "if08_w6_final_audit_controlled_execution_pass",
         "project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
@@ -8140,12 +8270,13 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-08 W6 Final Audit Controlled Execution",
+        "Latest completed phase: IF-09 Evidence Bundle + Vulnerability Register",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
-        "W6 controlled execution is canonical as pass; this sync preserves previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness, source_preflight_status=if08_w6_final_audit_preflight_readiness_pass, source_project_sha_drift_recorded=true with primary-ref verification, execution_scope=synthetic_isolated_lab_only, w6_execution_performed=true, w6_real_execution_performed=false, ttr_observed=0, har_observed=1.0, minos_mechanical_readiness=true, minos_semantic_readiness=true, anti_theater_review_passed=true, evidence_units_complete=true, stop_conditions_respected=true, and all runtime/apply/network/secret/cost/quota surfaces false. The next step is prepare_if09_evidence_bundle_vulnerability_register.",
+        "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
+        "IF09 evidence bundle and vulnerability register are canonical as pass; this sync preserves source_phase_verified=IF-08 W6 Final Audit Controlled Execution, source_status_verified=if08_w6_final_audit_controlled_execution_pass, source_project_sha_verified_by_packet=eae468c79687474de086c984b55a3f7ff47d73f7, source_active_context_sha_verified_by_packet=373558e7360a8372f368a330a2d41cc28fc18033, root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_findings_total=1, finding_candidates_total=1, invalid_findings_total=1, observations_total=1, reproduction_units_total=1, replay_units_total=2, mutation_units_total=2, evidence_units_total=7, findings_total=16, purgatorium_handoff_required_ids=[IF09-FIND-001], macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if10_purgatorium_handoff_graph.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

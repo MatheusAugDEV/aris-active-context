@@ -2,15 +2,15 @@
 
 - ACTIVE_CONTEXT_STATE.json wins.
 - phase_id: `INF-FULL-07`
-- latest_completed_phase: `IF-08 W6 Final Audit Controlled Execution`
-- latest_completed_status: `if08_w6_final_audit_controlled_execution_pass`
+- latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`
+- latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`
 - previous_phase_id: `INF-FULL-06`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if08_w6_final_audit_controlled_execution_pass`
+- current_status: `if09_evidence_bundle_vulnerability_register_pass`
 - decision: `pass`
-- latest_completed_project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`
+- latest_completed_project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`
+- next_recommended_step: `prepare_if10_purgatorium_handoff_graph`
 - active_next_phase: `IF-08`
 - Next phase: `IF-08`
 - Active next phase class: `infernus_full_execution`
@@ -21,51 +21,26 @@
 - governance_gate_streak: `0`
 - Anti-proliferation rule active: `true`
 - CI enforcement active: `true`
-- previous_phase_verified: `IF-08 W6 Final Audit Preflight Readiness`
-- previous_status_verified: `if08_w6_final_audit_preflight_readiness_pass`
-- source_project_sha_verified_by_packet: `0358de95fd78c41fad2e257fec399d85e74193ce`
-- source_active_context_sha_verified_by_packet: `36f4891c33d6a81eae74df1cfa5d3717cd6b4bc5`
-- source_project_sha_recorded_in_active_context: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`
+- source_phase_verified: `IF-08 W6 Final Audit Controlled Execution`
+- source_status_verified: `if08_w6_final_audit_controlled_execution_pass`
+- source_project_sha_verified_by_packet: `eae468c79687474de086c984b55a3f7ff47d73f7`
+- source_active_context_sha_verified_by_packet: `373558e7360a8372f368a330a2d41cc28fc18033`
 - source_project_sha_drift_recorded: `true`
-- source_project_sha_drift_resolved_via_primary_refs: `true`
-- w5_post_sync_review_verified: `true`
-- W5 metrics verified: `true`
-- w5_artifacts_complete: `true`
-- w5_safety_attestation_verified: `true`
-- w6_preflight_readiness: `true`
-- preflight_readiness_verified: `true`
-- executor_bot_count: `14`
-- synthetic_domain_count: `7`
-- critical_coverage_cells_total: `12`
-- critical_coverage_cells_passed: `12`
-- critical_coverage_completion: `1.0`
-- readiness_coverage: `1.0`
-- required_preflight_checks: `10`
-- ready_preflight_checks: `10`
-- business_scenarios_total: `14`
-- business_scenarios_blocked_or_detected: `14`
-- sirene_oracle_mode: `synthetic_transcript_only`
-- execution_scope: `synthetic_isolated_lab_only`
-- ttr_required: `0`
-- ttr_observed: `0`
-- har_required: `1.0`
-- har_observed: `1.0`
-- future_ttr_required: `0`
-- future_har_required: `1.0`
-- minos_mechanical_required: `true`
-- minos_semantic_required: `true`
-- minos_mechanical_readiness: `true`
-- minos_semantic_readiness: `true`
-- anti_theater_review_required: `true`
-- ttr_har_threshold_contract_created: `true`
-- stop_condition_matrix_created: `true`
-- no_execution_attestation_created: `true`
-- w6_readiness_state: `completed_synthetic_controlled_execution`
-- w6_preparation_allowed_next: `false`
+- root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`
+- validated_findings_total: `1`
+- finding_candidates_total: `1`
+- invalid_findings_total: `1`
+- observations_total: `1`
+- reproduction_units_total: `1`
+- replay_units_total: `2`
+- mutation_units_total: `2`
+- evidence_units_total: `7`
+- findings_total: `16`
+- purgatorium_handoff_required_ids: `['IF09-FIND-001']`
+- execution_scope: `artifact_only_canonical_materialization`
+- macro_transition_preserved: `true`
 - w6_execution_performed: `true`
-- w6_execution_allowed: `false`
 - w6_real_execution_performed: `false`
-- anti_theater_review_passed: `true`
 - real_audio_capture_allowed: `false`
 - real_stt_tts_allowed: `false`
 - microphone_access_allowed: `false`
@@ -83,10 +58,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- W6 controlled execution is canonically pass; the next canonical step is `prepare_if09_evidence_bundle_vulnerability_register`.
+- IF09 evidence bundle and vulnerability register are canonically pass; the next canonical step is `prepare_if10_purgatorium_handoff_graph`.
 
 ## What This Means
 
-INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-08 W6 Final Audit Controlled Execution`.
-The Project repo result was verified on `origin/main` with terminal green CI; the controlled execution packet preserved `previous_phase_verified=IF-08 W6 Final Audit Preflight Readiness`, `source_preflight_status=if08_w6_final_audit_preflight_readiness_pass`, `source_project_sha_drift_recorded=true` with primary-ref resolution, `critical_coverage_cells_passed=12/12`, `critical_coverage_completion=1.0`, `business_scenarios_blocked_or_detected=14`, `ttr_observed=0`, `har_observed=1.0`, `minos_mechanical_readiness=true`, `minos_semantic_readiness=true`, `anti_theater_review_passed=true`, and kept all real/runtime/network/secret/cost/quota surfaces false.
-The next prompt may target only `prepare_if09_evidence_bundle_vulnerability_register`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+INF-FULL-07 remains the canonical current phase, and the latest verified operational packet is now `IF-09 Evidence Bundle + Vulnerability Register`.
+The Project repo result was verified on `origin/main` with terminal green CI; the IF09 packet preserved the W6 evidence chain, materialized the root manifest/hash tree/custody chain/replay diff/mutation survival bundle, collapsed the recorded SHA-drift signal into one validated finding, kept the macro route unchanged, and kept all real/runtime/network/secret/cost/quota/audio surfaces false.
+The next prompt may target only `prepare_if10_purgatorium_handoff_graph`; no real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.

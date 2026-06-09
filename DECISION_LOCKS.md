@@ -1,3 +1,69 @@
+## IF-09 Evidence Bundle + Vulnerability Register Lock
+
+- Latest completed phase: `IF-09 Evidence Bundle + Vulnerability Register`
+- status: `if09_evidence_bundle_vulnerability_register_pass`
+- latest_completed_status=if09_evidence_bundle_vulnerability_register_pass
+- active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register=true
+- permanent_active_update_rule_installed=true
+- project_commit_sha=38b16edadce15ce8f2049bb3de8538bb921e344e
+- project_ci_state=CI_GREEN_CONFIRMED
+- next_recommended_step=prepare_if10_purgatorium_handoff_graph
+- source_phase_verified=IF-08 W6 Final Audit Controlled Execution
+- source_status_verified=if08_w6_final_audit_controlled_execution_pass
+- source_project_sha_verified_by_packet=eae468c79687474de086c984b55a3f7ff47d73f7
+- source_active_context_sha_verified_by_packet=373558e7360a8372f368a330a2d41cc28fc18033
+- source_project_sha_drift_recorded=true
+- evidence_bundle_v4_materialized=true
+- vulnerability_register_v4_materialized=true
+- root_manifest_created=true
+- hash_tree_created=true
+- custody_chain_created=true
+- replay_diff_created=true
+- mutation_survival_report_created=true
+- root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660
+- root_manifest_references_all_bundle_files=true
+- hash_tree_covers_all_evidence_units=true
+- custody_chain_event_order_valid=true
+- duplicate_signal_groups_collapsed_count=1
+- validated_findings_total=1
+- finding_candidates_total=1
+- invalid_findings_total=1
+- observations_total=1
+- reproduction_units_total=1
+- replay_units_total=2
+- mutation_units_total=2
+- evidence_units_total=7
+- findings_total=16
+- purgatorium_handoff_required_ids=['IF09-FIND-001']
+- macro_transition_preserved=true
+- current_phase_id_preserved=INF-FULL-07
+- active_next_phase_preserved=IF-08
+- active_next_phase_class_preserved=infernus_full_execution
+- real_audio_capture_allowed=false
+- real_stt_tts_allowed=false
+- microphone_access_allowed=false
+- voice_clone_or_impersonation_allowed=false
+- runtime_executed=false
+- real_apply_executed=false
+- product_bedrock_real_apply_secrets_executed=false
+- mcp_activated=false
+- rag_ingestion_executed=false
+- memory_write_executed=false
+- socket_opened=false
+- shell_executed=false
+- filesystem_escape_performed=false
+- external_network_used_except_github_governance=false
+- dependency_or_package_manager_used=false
+- real_cost_spent=false
+- real_quota_consumed=false
+- Canonical IF09 materialization is verified; this sync records only the artifact bundle/register consolidation, preserves the macro IF-08 route contract, and routes canonically to IF10 preparation without authorizing any real execution surface.
+- IF-08 real execution = false
+- future waves real execution = false
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+
 ## IF-08 W6 Final Audit Controlled Execution Lock
 
 - Latest completed phase: `IF-08 W6 Final Audit Controlled Execution`

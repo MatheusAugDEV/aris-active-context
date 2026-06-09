@@ -1,3 +1,48 @@
+## IF-09 Evidence Bundle + Vulnerability Register | pass
+- status: `if09_evidence_bundle_vulnerability_register_pass`
+- decision: `pass`
+- source_current_phase_id: `INF-FULL-07`
+- latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`
+- latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`
+- project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`
+- project_ci_state: `CI_GREEN_CONFIRMED`
+- project_ci_run_url: `https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27175174232`
+- source_phase_verified: `IF-08 W6 Final Audit Controlled Execution`
+- source_status_verified: `if08_w6_final_audit_controlled_execution_pass`
+- source_project_sha_verified_by_packet: `eae468c79687474de086c984b55a3f7ff47d73f7`
+- source_active_context_sha_verified_by_packet: `373558e7360a8372f368a330a2d41cc28fc18033`
+- root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`
+- validated_findings_total: `1`
+- finding_candidates_total: `1`
+- invalid_findings_total: `1`
+- observations_total: `1`
+- reproduction_units_total: `1`
+- replay_units_total: `2`
+- mutation_units_total: `2`
+- evidence_units_total: `7`
+- findings_total: `16`
+- purgatorium_handoff_required_ids: `['IF09-FIND-001']`
+- active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register: `true`
+- permanent_active_update_rule_installed: `true`
+- execution_scope: `artifact_only_canonical_materialization`
+- macro_transition_preserved: `true`
+- runtime_executed: `false`
+- real_apply_executed: `false`
+- product_bedrock_real_apply_secrets_executed: `false`
+- mcp_activated: `false`
+- rag_ingestion_executed: `false`
+- memory_write_executed: `false`
+- socket_opened: `false`
+- filesystem_escape_performed: `false`
+- external_network_used_except_github_governance: `false`
+- dependency_or_package_manager_used: `false`
+- real_cost_spent: `false`
+- real_quota_consumed: `false`
+- next_phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
+- next_phase_authorized_by_operator: `true`
+- next_recommended_step: `prepare_if10_purgatorium_handoff_graph`
+
 ## IF-08 W6 Final Audit Controlled Execution | pass
 - status: `if08_w6_final_audit_controlled_execution_pass`
 - decision: `pass`
