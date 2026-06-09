@@ -1,3 +1,48 @@
+## IF-10 Purgatorium Handoff Graph | pass
+- status: `if10_purgatorium_handoff_graph_pass`
+- decision: `pass`
+- source_current_phase_id: `INF-FULL-07`
+- latest_completed_phase: `IF-10 Purgatorium Handoff Graph`
+- latest_completed_status: `if10_purgatorium_handoff_graph_pass`
+- project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`
+- project_ci_state: `CI_GREEN_CONFIRMED`
+- project_ci_run_url: `https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27176578203`
+- source_phase_verified: `IF-09 Evidence Bundle + Vulnerability Register`
+- source_status_verified: `if09_evidence_bundle_vulnerability_register_pass`
+- source_project_sha_verified_by_packet: `38b16edadce15ce8f2049bb3de8538bb921e344e`
+- source_active_context_sha_verified_by_packet: `767138de3fb2b0484fca6be25657e08c21107574`
+- source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`
+- validated_handoff_ids: `['IF09-FIND-001']`
+- contextual_candidate_ids: `['IF09-FIND-002']`
+- excluded_invalid_ids: `['IF09-FIND-003']`
+- supporting_observation_ids: `['IF09-OBS-001']`
+- node_count: `9`
+- edge_count: `8`
+- root_manifest_reference_verified: `true`
+- reproduction_unit_reference: `IF09-REPRO-001`
+- replay_unit_reference: `IF09-REPLAY-001`
+- mutation_unit_reference: `IF09-MUT-001`
+- active_context_remote_main_reflects_if10_purgatorium_handoff_graph: `true`
+- permanent_active_update_rule_installed: `true`
+- execution_scope: `artifact_only_causal_handoff_materialization`
+- macro_transition_preserved: `true`
+- runtime_executed: `false`
+- real_apply_executed: `false`
+- product_bedrock_real_apply_secrets_executed: `false`
+- mcp_activated: `false`
+- rag_ingestion_executed: `false`
+- memory_write_executed: `false`
+- socket_opened: `false`
+- filesystem_escape_performed: `false`
+- external_network_used_except_github_governance: `false`
+- dependency_or_package_manager_used: `false`
+- real_cost_spent: `false`
+- real_quota_consumed: `false`
+- next_phase: `IF-08`
+- active_next_phase_class: `infernus_full_execution`
+- next_phase_authorized_by_operator: `true`
+- next_recommended_step: `prepare_if11_minos_final_verdict_closure`
+
 ## IF-09 Evidence Bundle + Vulnerability Register | pass
 - status: `if09_evidence_bundle_vulnerability_register_pass`
 - decision: `pass`

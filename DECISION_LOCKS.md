@@ -1,3 +1,69 @@
+## IF-10 Purgatorium Handoff Graph Lock
+
+- Latest completed phase: `IF-10 Purgatorium Handoff Graph`
+- status: `if10_purgatorium_handoff_graph_pass`
+- latest_completed_status=if10_purgatorium_handoff_graph_pass
+- active_context_remote_main_reflects_if10_purgatorium_handoff_graph=true
+- permanent_active_update_rule_installed=true
+- project_commit_sha=57106d9780af7a807bd58ea6039af3a7b1b23701
+- project_ci_state=CI_GREEN_CONFIRMED
+- next_recommended_step=prepare_if11_minos_final_verdict_closure
+- source_phase_verified=IF-09 Evidence Bundle + Vulnerability Register
+- source_status_verified=if09_evidence_bundle_vulnerability_register_pass
+- source_project_sha_verified_by_packet=38b16edadce15ce8f2049bb3de8538bb921e344e
+- source_active_context_sha_verified_by_packet=767138de3fb2b0484fca6be25657e08c21107574
+- source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660
+- purgatorium_handoff_graph_v4_materialized=true
+- root_cause_candidates_created=true
+- remediation_tracks_created=true
+- regression_test_plan_created=true
+- revalidation_wave_plan_created=true
+- handoff_manifest_created=true
+- validated_handoff_ids=['IF09-FIND-001']
+- contextual_candidate_ids=['IF09-FIND-002']
+- excluded_invalid_ids=['IF09-FIND-003']
+- supporting_observation_ids=['IF09-OBS-001']
+- graph_node_count=9
+- graph_edge_count=8
+- root_manifest_reference_verified=true
+- reproduction_unit_reference=IF09-REPRO-001
+- replay_unit_reference=IF09-REPLAY-001
+- mutation_unit_reference=IF09-MUT-001
+- duplicate_node_ids_count=0
+- duplicate_edge_ids_count=0
+- dangling_edges_count=0
+- handoff_ids_missing_tracks_count=0
+- invalid_findings_with_remediation_count=0
+- candidate_findings_promoted_without_evidence_count=0
+- macro_transition_preserved=true
+- current_phase_id_preserved=INF-FULL-07
+- active_next_phase_preserved=IF-08
+- active_next_phase_class_preserved=infernus_full_execution
+- real_audio_capture_allowed=false
+- real_stt_tts_allowed=false
+- microphone_access_allowed=false
+- voice_clone_or_impersonation_allowed=false
+- runtime_executed=false
+- real_apply_executed=false
+- product_bedrock_real_apply_secrets_executed=false
+- mcp_activated=false
+- rag_ingestion_executed=false
+- memory_write_executed=false
+- socket_opened=false
+- shell_executed=false
+- filesystem_escape_performed=false
+- external_network_used_except_github_governance=false
+- dependency_or_package_manager_used=false
+- real_cost_spent=false
+- real_quota_consumed=false
+- Canonical IF10 handoff materialization is verified; this sync records only the causal Purgatorium packet, preserves the macro IF-08 route contract, and routes canonically to IF11 preparation without authorizing any real execution surface.
+- IF-08 real execution = false
+- future waves real execution = false
+- active_next_phase=IF-08
+- active_next_phase_class=infernus_full_execution
+- next_phase_authorized_by_operator=true
+- Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
+
 ## IF-09 Evidence Bundle + Vulnerability Register Lock
 
 - Latest completed phase: `IF-09 Evidence Bundle + Vulnerability Register`

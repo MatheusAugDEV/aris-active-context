@@ -16,14 +16,15 @@ Bedrock decide.
 
 ## Active Route
 
-Latest completed phase: IF-09 Evidence Bundle + Vulnerability Register
+Latest completed phase: IF-10 Purgatorium Handoff Graph
 Active next phase: IF-08
 Active next phase class: infernus_full_execution
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 next_phase_authorized_by_operator: true
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-IF09 evidence bundle and vulnerability register are canonical as pass; this sync preserves source_phase_verified=IF-08 W6 Final Audit Controlled Execution, source_status_verified=if08_w6_final_audit_controlled_execution_pass, source_project_sha_verified_by_packet=eae468c79687474de086c984b55a3f7ff47d73f7, source_active_context_sha_verified_by_packet=373558e7360a8372f368a330a2d41cc28fc18033, root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_findings_total=1, finding_candidates_total=1, invalid_findings_total=1, observations_total=1, reproduction_units_total=1, replay_units_total=2, mutation_units_total=2, evidence_units_total=7, findings_total=16, purgatorium_handoff_required_ids=[IF09-FIND-001], macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if10_purgatorium_handoff_graph.
+IF09 evidence bundle and vulnerability register remain the canonical source packet for this sync with source_project_sha_verified_by_packet=38b16edadce15ce8f2049bb3de8538bb921e344e, source_active_context_sha_verified_by_packet=767138de3fb2b0484fca6be25657e08c21107574, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
+IF10 purgatorium handoff graph is canonical as pass; this sync preserves node_count=9, edge_count=8, root_manifest_reference_verified=true, reproduction_unit_reference=IF09-REPRO-001, replay_unit_reference=IF09-REPLAY-001, mutation_unit_reference=IF09-MUT-001, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if11_minos_final_verdict_closure.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

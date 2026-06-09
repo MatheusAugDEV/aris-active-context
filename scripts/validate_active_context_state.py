@@ -35,22 +35,22 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
-EXPECTED_PHASE = "IF-09 Evidence Bundle + Vulnerability Register"
+EXPECTED_PHASE = "IF-10 Purgatorium Handoff Graph"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-08 W6 Final Audit Controlled Execution"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "inf_full_07_if08_authorization_gate_pass"
 EXPECTED_DECISION = "pass"
-EXPECTED_CURRENT_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
+EXPECTED_CURRENT_STATUS = "if10_purgatorium_handoff_graph_pass"
 EXPECTED_SCHEMA_VERSION = "3.1"
 EXPECTED_NEXT_PHASE_ID = "IF-08"
 EXPECTED_NEXT_PHASE_CLASS = "infernus_full_execution"
-EXPECTED_NEXT_ACTION_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
-EXPECTED_LATEST_COMPLETED_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
-EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "38b16edadce15ce8f2049bb3de8538bb921e344e"
+EXPECTED_NEXT_ACTION_STATUS = "if10_purgatorium_handoff_graph_pass"
+EXPECTED_LATEST_COMPLETED_STATUS = "if10_purgatorium_handoff_graph_pass"
+EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "57106d9780af7a807bd58ea6039af3a7b1b23701"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if10_purgatorium_handoff_graph"
-EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27175174232"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_if11_minos_final_verdict_closure"
+EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27176578203"
 IF08_W4_PREFLIGHT_PHASE = "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
 IF08_W4_PREFLIGHT_STATUS = "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
 IF08_W4_PREFLIGHT_PROJECT_SHA = "2785b06e7a73b10675d30ed870fda7959e2e866a"
@@ -524,6 +524,33 @@ IF09_PROJECT_REPLAY_DIFF_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "repl
 IF09_PROJECT_MUTATION_SURVIVAL_PATH = IF09_PROJECT_ROOT / "evidence_bundle_v4" / "mutation_survival_report.json"
 IF09_PROJECT_REGISTER_PATH = IF09_PROJECT_ROOT / "vuln_register_v4.jsonl"
 IF09_PROJECT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if09_evidence_bundle_vulnerability_register.md")
+IF10_PHASE = "IF-10 Purgatorium Handoff Graph"
+IF10_STATUS = "if10_purgatorium_handoff_graph_pass"
+IF10_PROJECT_SHA = "57106d9780af7a807bd58ea6039af3a7b1b23701"
+IF10_PROJECT_CI_STATE = "CI_GREEN_CONFIRMED"
+IF10_NEXT_RECOMMENDED_STEP = "prepare_if11_minos_final_verdict_closure"
+IF10_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27176578203"
+IF10_SOURCE_PHASE = "IF-09 Evidence Bundle + Vulnerability Register"
+IF10_SOURCE_STATUS = "if09_evidence_bundle_vulnerability_register_pass"
+IF10_SOURCE_PROJECT_SHA = "38b16edadce15ce8f2049bb3de8538bb921e344e"
+IF10_SOURCE_ACTIVE_CONTEXT_SHA = "767138de3fb2b0484fca6be25657e08c21107574"
+IF10_SOURCE_ROOT_MANIFEST_SHA = "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660"
+IF10_GRAPH_SHA = "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1"
+IF10_ROOT = ROOT / "artifacts" / "if10_purgatorium_handoff_graph"
+IF10_ACTIVE_DECISION_PATH = IF10_ROOT / "decision.json"
+IF10_ACTIVE_SUMMARY_PATH = IF10_ROOT / "summary.json"
+IF10_ACTIVE_REPORT_PATH = IF10_ROOT / "report.md"
+IF10_PROJECT_ROOT = _resolve_project_relative("artifacts", "infernus", "if10_purgatorium_handoff_graph")
+IF10_PROJECT_DECISION_PATH = IF10_PROJECT_ROOT / "decision.json"
+IF10_PROJECT_SUMMARY_PATH = IF10_PROJECT_ROOT / "summary.json"
+IF10_PROJECT_REPORT_PATH = IF10_PROJECT_ROOT / "report.md"
+IF10_PROJECT_GRAPH_PATH = IF10_PROJECT_ROOT / "purgatorium_handoff_graph_v4.json"
+IF10_PROJECT_ROOT_CAUSE_PATH = IF10_PROJECT_ROOT / "root_cause_candidates.json"
+IF10_PROJECT_REMEDIATION_PATH = IF10_PROJECT_ROOT / "remediation_tracks.json"
+IF10_PROJECT_REGRESSION_PATH = IF10_PROJECT_ROOT / "regression_test_plan.json"
+IF10_PROJECT_REVALIDATION_PATH = IF10_PROJECT_ROOT / "revalidation_wave_plan.json"
+IF10_PROJECT_HANDOFF_MANIFEST_PATH = IF10_PROJECT_ROOT / "handoff_manifest.json"
+IF10_PROJECT_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if10_purgatorium_handoff_graph.md")
 CI_TERMINAL_REPORTING_RULE_ROOT = ROOT / "artifacts" / "ci_terminal_reporting_rule"
 CI_TERMINAL_REPORTING_RULE_DECISION_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "decision.json"
 CI_TERMINAL_REPORTING_RULE_SUMMARY_PATH = CI_TERMINAL_REPORTING_RULE_ROOT / "summary.json"
@@ -7876,6 +7903,124 @@ def _check_if09_evidence_bundle_vulnerability_register_artifacts(state: dict[str
     )
 
 
+def _check_if10_purgatorium_handoff_graph_artifacts(state: dict[str, Any]) -> None:
+    for path in (
+        IF10_ACTIVE_DECISION_PATH,
+        IF10_ACTIVE_SUMMARY_PATH,
+        IF10_ACTIVE_REPORT_PATH,
+    ):
+        _require(path.exists(), f"missing IF10 active-context artifact: {path}")
+
+    external_project_paths = (
+        IF10_PROJECT_DECISION_PATH,
+        IF10_PROJECT_SUMMARY_PATH,
+        IF10_PROJECT_REPORT_PATH,
+        IF10_PROJECT_GRAPH_PATH,
+        IF10_PROJECT_ROOT_CAUSE_PATH,
+        IF10_PROJECT_REMEDIATION_PATH,
+        IF10_PROJECT_REGRESSION_PATH,
+        IF10_PROJECT_REVALIDATION_PATH,
+        IF10_PROJECT_HANDOFF_MANIFEST_PATH,
+        IF10_PROJECT_DOC_PATH,
+    )
+    external_project_available = all(path.exists() for path in external_project_paths)
+
+    active_decision = _load_json(IF10_ACTIVE_DECISION_PATH)
+    _require(active_decision.get("phase_id") == "IF-10-PURGATORIUM-HANDOFF-GRAPH", "active IF10 decision phase_id mismatch")
+    _require(active_decision.get("decision") == "pass", "active IF10 decision must be pass")
+    _require(active_decision.get("status") == IF10_STATUS, "active IF10 decision status mismatch")
+    _require(active_decision.get("project_commit_sha") == IF10_PROJECT_SHA, "active IF10 decision project sha mismatch")
+    _require(active_decision.get("project_ci_state") == IF10_PROJECT_CI_STATE, "active IF10 decision ci state mismatch")
+    _require(active_decision.get("project_ci_run_url") == IF10_PROJECT_CI_RUN_URL, "active IF10 decision ci url mismatch")
+    _require(active_decision.get("active_context_pre_sync_phase_id") == EXPECTED_PHASE_ID, "active IF10 decision pre-sync phase mismatch")
+    _require(active_decision.get("active_context_pre_sync_current_status") == IF10_SOURCE_STATUS, "active IF10 decision pre-sync status mismatch")
+    _require(active_decision.get("active_context_pre_sync_sha") == IF10_SOURCE_ACTIVE_CONTEXT_SHA, "active IF10 decision pre-sync sha mismatch")
+    _require(active_decision.get("latest_completed_phase_after_sync") == IF10_PHASE, "active IF10 decision latest phase mismatch")
+    _require(active_decision.get("latest_completed_status_after_sync") == IF10_STATUS, "active IF10 decision latest status mismatch")
+    _require(active_decision.get("source_phase_verified") == IF10_SOURCE_PHASE, "active IF10 decision source phase mismatch")
+    _require(active_decision.get("source_status_verified") == IF10_SOURCE_STATUS, "active IF10 decision source status mismatch")
+    _require(active_decision.get("source_project_sha_verified_by_packet") == IF10_SOURCE_PROJECT_SHA, "active IF10 decision source project sha mismatch")
+    _require(active_decision.get("source_active_context_sha_verified_by_packet") == IF10_SOURCE_ACTIVE_CONTEXT_SHA, "active IF10 decision source active-context sha mismatch")
+    _require(active_decision.get("source_root_manifest_sha256") == IF10_SOURCE_ROOT_MANIFEST_SHA, "active IF10 decision source root manifest sha mismatch")
+    _require(active_decision.get("graph_sha256") == IF10_GRAPH_SHA, "active IF10 decision graph sha mismatch")
+    _require(active_decision.get("validated_handoff_ids") == ["IF09-FIND-001"], "active IF10 decision handoff ids mismatch")
+    _require(active_decision.get("contextual_candidate_ids") == ["IF09-FIND-002"], "active IF10 decision contextual candidate ids mismatch")
+    _require(active_decision.get("excluded_invalid_ids") == ["IF09-FIND-003"], "active IF10 decision excluded invalid ids mismatch")
+    _require(active_decision.get("supporting_observation_ids") == ["IF09-OBS-001"], "active IF10 decision supporting observation ids mismatch")
+    _require(active_decision.get("node_count") == 9, "active IF10 decision node_count mismatch")
+    _require(active_decision.get("edge_count") == 8, "active IF10 decision edge_count mismatch")
+    _require(active_decision.get("root_manifest_reference_verified") is True, "active IF10 decision root manifest reference mismatch")
+    _require(active_decision.get("reproduction_unit_reference") == "IF09-REPRO-001", "active IF10 decision reproduction unit mismatch")
+    _require(active_decision.get("replay_unit_reference") == "IF09-REPLAY-001", "active IF10 decision replay unit mismatch")
+    _require(active_decision.get("mutation_unit_reference") == "IF09-MUT-001", "active IF10 decision mutation unit mismatch")
+    _require(active_decision.get("next_recommended_step") == IF10_NEXT_RECOMMENDED_STEP, "active IF10 decision next step mismatch")
+
+    active_summary = _load_json(IF10_ACTIVE_SUMMARY_PATH)
+    _require(active_summary.get("status") == IF10_STATUS, "active IF10 summary status mismatch")
+    _require(active_summary.get("project_commit_sha") == IF10_PROJECT_SHA, "active IF10 summary project sha mismatch")
+    _require(active_summary.get("project_ci_run_url") == IF10_PROJECT_CI_RUN_URL, "active IF10 summary ci url mismatch")
+    _require(active_summary.get("source_root_manifest_sha256") == IF10_SOURCE_ROOT_MANIFEST_SHA, "active IF10 summary source root manifest sha mismatch")
+    _require(active_summary.get("validated_handoff_ids") == ["IF09-FIND-001"], "active IF10 summary handoff ids mismatch")
+    _require(active_summary.get("node_count") == 9, "active IF10 summary node_count mismatch")
+    _require(active_summary.get("edge_count") == 8, "active IF10 summary edge_count mismatch")
+    _require(active_summary.get("next_recommended_step") == IF10_NEXT_RECOMMENDED_STEP, "active IF10 summary next step mismatch")
+
+    _mirror_contains(
+        IF10_ACTIVE_REPORT_PATH,
+        "IF-10 Purgatorium Handoff Graph Sync",
+        "status: `if10_purgatorium_handoff_graph_pass`",
+        "project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
+        "next_recommended_step: `prepare_if11_minos_final_verdict_closure`",
+    )
+
+    if not external_project_available:
+        return
+
+    decision = _load_json(IF10_PROJECT_DECISION_PATH)
+    _require(decision.get("phase") == IF10_PHASE, "project IF10 decision phase mismatch")
+    _require(decision.get("status") == IF10_STATUS, "project IF10 decision status mismatch")
+    _require(decision.get("source_phase") == IF10_SOURCE_PHASE, "project IF10 decision source phase mismatch")
+    _require(decision.get("source_status") == IF10_SOURCE_STATUS, "project IF10 decision source status mismatch")
+    _require(decision.get("source_project_sha") == IF10_SOURCE_PROJECT_SHA, "project IF10 decision source project sha mismatch")
+    _require(decision.get("source_root_manifest_sha256") == IF10_SOURCE_ROOT_MANIFEST_SHA, "project IF10 decision source root manifest sha mismatch")
+    _require(decision.get("graph_sha256") == IF10_GRAPH_SHA, "project IF10 decision graph sha mismatch")
+    _require(decision.get("validated_handoff_ids") == ["IF09-FIND-001"], "project IF10 decision handoff ids mismatch")
+    _require(decision.get("node_count") == 9, "project IF10 decision node_count mismatch")
+    _require(decision.get("edge_count") == 8, "project IF10 decision edge_count mismatch")
+    _require(decision.get("duplicate_node_ids") == [], "project IF10 decision duplicate node ids mismatch")
+    _require(decision.get("dangling_edges") == [], "project IF10 decision dangling edges mismatch")
+    _require(decision.get("next_recommended_step") == IF10_NEXT_RECOMMENDED_STEP, "project IF10 decision next step mismatch")
+
+    summary = _load_json(IF10_PROJECT_SUMMARY_PATH)
+    _require(summary.get("status") == IF10_STATUS, "project IF10 summary status mismatch")
+    _require(summary.get("source_root_manifest_sha256") == IF10_SOURCE_ROOT_MANIFEST_SHA, "project IF10 summary source root manifest sha mismatch")
+    _require(summary.get("validated_handoff_ids") == ["IF09-FIND-001"], "project IF10 summary handoff ids mismatch")
+    _require(summary.get("node_count") == 9, "project IF10 summary node_count mismatch")
+    _require(summary.get("edge_count") == 8, "project IF10 summary edge_count mismatch")
+
+    graph = _load_json(IF10_PROJECT_GRAPH_PATH)
+    _require(graph.get("graph_id") == "if10_purgatorium_handoff_graph_v4", "project IF10 graph_id mismatch")
+    _require(graph.get("source_phase") == IF10_SOURCE_PHASE, "project IF10 graph source phase mismatch")
+    _require(graph.get("source_status") == IF10_SOURCE_STATUS, "project IF10 graph source status mismatch")
+    _require(graph.get("source_project_sha") == IF10_SOURCE_PROJECT_SHA, "project IF10 graph source project sha mismatch")
+    _require(graph.get("source_root_manifest_sha256") == IF10_SOURCE_ROOT_MANIFEST_SHA, "project IF10 graph source root manifest sha mismatch")
+    _require(graph.get("handoff_required_ids") == ["IF09-FIND-001"], "project IF10 graph handoff ids mismatch")
+    _require(graph.get("root_manifest_reference_verified") is True, "project IF10 graph root manifest reference mismatch")
+    _require(len(graph.get("nodes", [])) == 9, "project IF10 graph node count mismatch")
+    _require(len(graph.get("edges", [])) == 8, "project IF10 graph edge count mismatch")
+
+    root_cause = _load_json(IF10_PROJECT_ROOT_CAUSE_PATH)
+    _require(len(root_cause.get("candidates", [])) == 1, "project IF10 root cause candidate count mismatch")
+    remediation = _load_json(IF10_PROJECT_REMEDIATION_PATH)
+    _require(len(remediation.get("tracks", [])) == 1, "project IF10 remediation track count mismatch")
+    regression = _load_json(IF10_PROJECT_REGRESSION_PATH)
+    _require(len(regression.get("plans", [])) == 1, "project IF10 regression plan count mismatch")
+    revalidation = _load_json(IF10_PROJECT_REVALIDATION_PATH)
+    _require(len(revalidation.get("waves", [])) == 1, "project IF10 revalidation wave count mismatch")
+    handoff_manifest = _load_json(IF10_PROJECT_HANDOFF_MANIFEST_PATH)
+    _require(handoff_manifest.get("handoff_required_ids") == ["IF09-FIND-001"], "project IF10 handoff manifest ids mismatch")
+
+
 def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
@@ -7985,6 +8130,8 @@ def main() -> None:
     _check_if08_w6_final_audit_controlled_execution_artifacts(state)
     # IF09 evidence bundle and vulnerability register checks
     _check_if09_evidence_bundle_vulnerability_register_artifacts(state)
+    # IF10 purgatorium handoff graph checks
+    _check_if10_purgatorium_handoff_graph_artifacts(state)
     # IF08 W3 post-sync review checks
     _check_if08_w3_post_sync_review_artifacts(state)
     # IF08 W3 runtime/tool/MCP/sandbox controlled execution checks
@@ -8020,36 +8167,62 @@ def main() -> None:
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(state["latest_completed_no_execution"]["wave_executed"] is True, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is True, "latest_completed_no_execution.bot_executed mismatch")
-    _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF09_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
-    _require(state["latest_completed_no_execution"]["source_status_verified"] == IF09_SOURCE_STATUS, "latest_completed_no_execution.source_status_verified mismatch")
-    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF09_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF09_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
-    _require(state["latest_completed_no_execution"]["source_project_sha_drift_recorded"] is True, "latest_completed_no_execution.source_project_sha_drift_recorded must be true")
-    _require(state["latest_completed_no_execution"]["if09_materialization_performed"] is True, "latest_completed_no_execution.if09_materialization_performed mismatch")
-    _require(state["latest_completed_no_execution"]["evidence_bundle_v4_materialized"] is True, "latest_completed_no_execution.evidence_bundle_v4_materialized mismatch")
-    _require(state["latest_completed_no_execution"]["vulnerability_register_v4_materialized"] is True, "latest_completed_no_execution.vulnerability_register_v4_materialized mismatch")
-    _require(state["latest_completed_no_execution"]["root_manifest_created"] is True, "latest_completed_no_execution.root_manifest_created mismatch")
-    _require(state["latest_completed_no_execution"]["hash_tree_created"] is True, "latest_completed_no_execution.hash_tree_created mismatch")
-    _require(state["latest_completed_no_execution"]["custody_chain_created"] is True, "latest_completed_no_execution.custody_chain_created mismatch")
-    _require(state["latest_completed_no_execution"]["replay_diff_created"] is True, "latest_completed_no_execution.replay_diff_created mismatch")
-    _require(state["latest_completed_no_execution"]["mutation_survival_report_created"] is True, "latest_completed_no_execution.mutation_survival_report_created mismatch")
-    _require(state["latest_completed_no_execution"]["root_manifest_sha256"] == IF09_ROOT_MANIFEST_SHA, "latest_completed_no_execution.root_manifest_sha256 mismatch")
-    _require(state["latest_completed_no_execution"]["root_manifest_references_all_bundle_files"] is True, "latest_completed_no_execution.root_manifest_references_all_bundle_files mismatch")
-    _require(state["latest_completed_no_execution"]["hash_tree_covers_all_evidence_units"] is True, "latest_completed_no_execution.hash_tree_covers_all_evidence_units mismatch")
-    _require(state["latest_completed_no_execution"]["custody_chain_event_order_valid"] is True, "latest_completed_no_execution.custody_chain_event_order_valid mismatch")
-    _require(state["latest_completed_no_execution"]["custody_chain_duplicate_event_ids"] == 0, "latest_completed_no_execution.custody_chain_duplicate_event_ids mismatch")
-    _require(state["latest_completed_no_execution"]["register_parseable_line_count"] == 16, "latest_completed_no_execution.register_parseable_line_count mismatch")
-    _require(state["latest_completed_no_execution"]["duplicate_signal_groups_collapsed_count"] == 1, "latest_completed_no_execution.duplicate_signal_groups_collapsed_count mismatch")
-    _require(state["latest_completed_no_execution"]["validated_findings_total"] == 1, "latest_completed_no_execution.validated_findings_total mismatch")
-    _require(state["latest_completed_no_execution"]["finding_candidates_total"] == 1, "latest_completed_no_execution.finding_candidates_total mismatch")
-    _require(state["latest_completed_no_execution"]["invalid_findings_total"] == 1, "latest_completed_no_execution.invalid_findings_total mismatch")
-    _require(state["latest_completed_no_execution"]["observations_total"] == 1, "latest_completed_no_execution.observations_total mismatch")
-    _require(state["latest_completed_no_execution"]["reproduction_units_total"] == 1, "latest_completed_no_execution.reproduction_units_total mismatch")
-    _require(state["latest_completed_no_execution"]["replay_units_total"] == 2, "latest_completed_no_execution.replay_units_total mismatch")
-    _require(state["latest_completed_no_execution"]["mutation_units_total"] == 2, "latest_completed_no_execution.mutation_units_total mismatch")
-    _require(state["latest_completed_no_execution"]["evidence_units_total"] == 7, "latest_completed_no_execution.evidence_units_total mismatch")
-    _require(state["latest_completed_no_execution"]["findings_total"] == 16, "latest_completed_no_execution.findings_total mismatch")
-    _require(state["latest_completed_no_execution"]["purgatorium_handoff_required_ids"] == ["IF09-FIND-001"], "latest_completed_no_execution.purgatorium_handoff_required_ids mismatch")
+    _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF10_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_status_verified"] == IF10_SOURCE_STATUS, "latest_completed_no_execution.source_status_verified mismatch")
+    _require(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"] == IF10_SOURCE_PROJECT_SHA, "latest_completed_no_execution.source_project_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["source_active_context_sha_verified_by_packet"] == IF10_SOURCE_ACTIVE_CONTEXT_SHA, "latest_completed_no_execution.source_active_context_sha_verified_by_packet mismatch")
+    _require(state["latest_completed_no_execution"]["if10_materialization_performed"] is True, "latest_completed_no_execution.if10_materialization_performed mismatch")
+    _require(state["latest_completed_no_execution"]["purgatorium_handoff_graph_v4_materialized"] is True, "latest_completed_no_execution.purgatorium_handoff_graph_v4_materialized mismatch")
+    _require(state["latest_completed_no_execution"]["root_cause_candidates_created"] is True, "latest_completed_no_execution.root_cause_candidates_created mismatch")
+    _require(state["latest_completed_no_execution"]["remediation_tracks_created"] is True, "latest_completed_no_execution.remediation_tracks_created mismatch")
+    _require(state["latest_completed_no_execution"]["regression_test_plan_created"] is True, "latest_completed_no_execution.regression_test_plan_created mismatch")
+    _require(state["latest_completed_no_execution"]["revalidation_wave_plan_created"] is True, "latest_completed_no_execution.revalidation_wave_plan_created mismatch")
+    _require(state["latest_completed_no_execution"]["handoff_manifest_created"] is True, "latest_completed_no_execution.handoff_manifest_created mismatch")
+    _require(state["latest_completed_no_execution"]["source_root_manifest_sha256"] == IF10_SOURCE_ROOT_MANIFEST_SHA, "latest_completed_no_execution.source_root_manifest_sha256 mismatch")
+    _require(state["latest_completed_no_execution"]["source_root_manifest_reference_verified"] is True, "latest_completed_no_execution.source_root_manifest_reference_verified mismatch")
+    _require(state["latest_completed_no_execution"]["validated_handoff_ids"] == ["IF09-FIND-001"], "latest_completed_no_execution.validated_handoff_ids mismatch")
+    _require(state["latest_completed_no_execution"]["contextual_candidate_ids"] == ["IF09-FIND-002"], "latest_completed_no_execution.contextual_candidate_ids mismatch")
+    _require(state["latest_completed_no_execution"]["excluded_invalid_ids"] == ["IF09-FIND-003"], "latest_completed_no_execution.excluded_invalid_ids mismatch")
+    _require(state["latest_completed_no_execution"]["supporting_observation_ids"] == ["IF09-OBS-001"], "latest_completed_no_execution.supporting_observation_ids mismatch")
+    _require(state["latest_completed_no_execution"]["reproduction_unit_reference"] == "IF09-REPRO-001", "latest_completed_no_execution.reproduction_unit_reference mismatch")
+    _require(state["latest_completed_no_execution"]["replay_unit_reference"] == "IF09-REPLAY-001", "latest_completed_no_execution.replay_unit_reference mismatch")
+    _require(state["latest_completed_no_execution"]["mutation_unit_reference"] == "IF09-MUT-001", "latest_completed_no_execution.mutation_unit_reference mismatch")
+    _require(state["latest_completed_no_execution"]["graph_node_count"] == 9, "latest_completed_no_execution.graph_node_count mismatch")
+    _require(state["latest_completed_no_execution"]["graph_edge_count"] == 8, "latest_completed_no_execution.graph_edge_count mismatch")
+    _require(
+        state["latest_completed_no_execution"]["node_type_counts"]
+        == {
+            "finding": 1,
+            "affected_layer": 1,
+            "threat_class": 1,
+            "root_cause_candidate": 1,
+            "evidence_unit": 2,
+            "remediation_track": 1,
+            "regression_test": 1,
+            "revalidation_wave": 1,
+        },
+        "latest_completed_no_execution.node_type_counts mismatch",
+    )
+    _require(
+        state["latest_completed_no_execution"]["edge_type_counts"]
+        == {
+            "affects": 1,
+            "exploited_by": 1,
+            "caused_by": 1,
+            "reproduced_by": 2,
+            "requires_fix": 1,
+            "requires_regression_test": 1,
+            "requires_revalidation": 1,
+        },
+        "latest_completed_no_execution.edge_type_counts mismatch",
+    )
+    _require(state["latest_completed_no_execution"]["duplicate_node_ids_count"] == 0, "latest_completed_no_execution.duplicate_node_ids_count mismatch")
+    _require(state["latest_completed_no_execution"]["duplicate_edge_ids_count"] == 0, "latest_completed_no_execution.duplicate_edge_ids_count mismatch")
+    _require(state["latest_completed_no_execution"]["dangling_edges_count"] == 0, "latest_completed_no_execution.dangling_edges_count mismatch")
+    _require(state["latest_completed_no_execution"]["handoff_ids_missing_tracks_count"] == 0, "latest_completed_no_execution.handoff_ids_missing_tracks_count mismatch")
+    _require(state["latest_completed_no_execution"]["invalid_findings_with_remediation_count"] == 0, "latest_completed_no_execution.invalid_findings_with_remediation_count mismatch")
+    _require(state["latest_completed_no_execution"]["candidate_findings_promoted_without_evidence_count"] == 0, "latest_completed_no_execution.candidate_findings_promoted_without_evidence_count mismatch")
+    _require(state["latest_completed_no_execution"]["graph_integrity_verified"] is True, "latest_completed_no_execution.graph_integrity_verified mismatch")
     _require(state["latest_completed_no_execution"]["macro_transition_preserved"] is True, "latest_completed_no_execution.macro_transition_preserved mismatch")
     _require(state["latest_completed_no_execution"]["current_phase_id_preserved"] == EXPECTED_PHASE_ID, "latest_completed_no_execution.current_phase_id_preserved mismatch")
     _require(state["latest_completed_no_execution"]["active_next_phase_preserved"] == EXPECTED_NEXT_PHASE_ID, "latest_completed_no_execution.active_next_phase_preserved mismatch")
@@ -8058,7 +8231,7 @@ def main() -> None:
     _require(state["latest_completed_no_execution"]["real_stt_tts_allowed"] is False, "latest_completed_no_execution.real_stt_tts_allowed must be false")
     _require(state["latest_completed_no_execution"]["microphone_access_allowed"] is False, "latest_completed_no_execution.microphone_access_allowed must be false")
     _require(state["latest_completed_no_execution"]["voice_clone_or_impersonation_allowed"] is False, "latest_completed_no_execution.voice_clone_or_impersonation_allowed must be false")
-    _require(state["latest_completed_no_execution"]["execution_scope"] == "artifact_only_canonical_materialization", "latest_completed_no_execution.execution_scope mismatch")
+    _require(state["latest_completed_no_execution"]["execution_scope"] == "artifact_only_causal_handoff_materialization", "latest_completed_no_execution.execution_scope mismatch")
     _require(state["latest_completed_no_execution"]["w6_execution_performed"] is True, "latest_completed_no_execution.w6_execution_performed must be true")
     _require(state["latest_completed_no_execution"]["w6_real_execution_performed"] is False, "latest_completed_no_execution.w6_real_execution_performed must be false")
     for key in (
@@ -8084,8 +8257,8 @@ def main() -> None:
         "locks.deferred_phase_reason must mention the exact next recommended step",
     )
     _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["previous_execution_phase"] == IF09_SOURCE_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF09_SOURCE_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == IF10_SOURCE_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == IF10_SOURCE_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -8108,48 +8281,52 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json wins",
         "inf_full_07_if08_authorization_gate_pass",
         "INF-FULL-07",
-        "latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`",
-        "latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`",
+        "latest_completed_phase: `IF-10 Purgatorium Handoff Graph`",
+        "latest_completed_status: `if10_purgatorium_handoff_graph_pass`",
         "Next phase: `IF-08`",
         "Active next phase class: `infernus_full_execution`",
         "next_phase_authorized_by_operator: `true`",
-        "root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
+        "source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
+        "graph_node_count: `9`",
+        "graph_edge_count: `8`",
+        "execution_scope: `artifact_only_causal_handoff_materialization`",
         "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
         "Anti-proliferation rule active: `true`",
         "CI enforcement active: `true`",
         "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
+        "latest_completed_project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
         "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
+        "next_recommended_step: `prepare_if11_minos_final_verdict_closure`",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — IF-09 Evidence Bundle + Vulnerability Register Sync Sincronizado",
+        "INF-FULL-07 — IF-10 Purgatorium Handoff Graph Sync Sincronizado",
         "next_phase: IF-08",
         "active_next_phase_class: infernus_full_execution",
         "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if09_evidence_bundle_vulnerability_register_pass",
-        "Este sync ja registra o packet canonico de IF09 com `source_phase_verified=IF-08 W6 Final Audit Controlled Execution`, `source_status_verified=if08_w6_final_audit_controlled_execution_pass`, `root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `validated_findings_total=1`, `finding_candidates_total=1`, `invalid_findings_total=1`, `observations_total=1`, `reproduction_units_total=1`, `replay_units_total=2`, `mutation_units_total=2`, `evidence_units_total=7`, `findings_total=16`, `purgatorium_handoff_required_ids=['IF09-FIND-001']` e `macro_transition_preserved=true`.",
-        "O proximo prompt pode preparar apenas `prepare_if10_purgatorium_handoff_graph` dentro do escopo canonico aprovado.",
-        "O proximo passo recomendado neste estado e `prepare_if10_purgatorium_handoff_graph`.",
+        "latest_completed_status: if10_purgatorium_handoff_graph_pass",
+        "Este sync ja registra o packet canonico de IF10 com `source_phase_verified=IF-09 Evidence Bundle + Vulnerability Register`, `source_status_verified=if09_evidence_bundle_vulnerability_register_pass`, `source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `validated_handoff_ids=['IF09-FIND-001']`, `contextual_candidate_ids=['IF09-FIND-002']`, `excluded_invalid_ids=['IF09-FIND-003']`, `supporting_observation_ids=['IF09-OBS-001']`, `graph_node_count=9`, `graph_edge_count=8`, `reproduction_unit_reference=IF09-REPRO-001`, `replay_unit_reference=IF09-REPLAY-001`, `mutation_unit_reference=IF09-MUT-001` e `macro_transition_preserved=true`.",
+        "O proximo prompt pode preparar apenas `prepare_if11_minos_final_verdict_closure` dentro do escopo canonico aprovado.",
+        "O proximo passo recomendado neste estado e `prepare_if11_minos_final_verdict_closure`.",
         "IF-08 waves reais: false",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "if09_evidence_bundle_vulnerability_register_pass",
-        "Latest completed phase: `IF-09 Evidence Bundle + Vulnerability Register`",
-        "latest_completed_status=if09_evidence_bundle_vulnerability_register_pass",
-        "active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register=true",
+        "if10_purgatorium_handoff_graph_pass",
+        "Latest completed phase: `IF-10 Purgatorium Handoff Graph`",
+        "latest_completed_status=if10_purgatorium_handoff_graph_pass",
+        "active_context_remote_main_reflects_if10_purgatorium_handoff_graph=true",
         "permanent_active_update_rule_installed=true",
         "IF-08 real execution = false",
         "future waves real execution = false",
-        "prepare_if10_purgatorium_handoff_graph",
+        "prepare_if11_minos_final_verdict_closure",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "CONTEXT_INDEX.md",
         "OPERATOR_PREFERENCES.md",
         "artifacts/if09_evidence_bundle_vulnerability_register/decision.json",
+        "artifacts/if10_purgatorium_handoff_graph/decision.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/hash_tree.json",
@@ -8158,6 +8335,14 @@ def main() -> None:
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json",
         "artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
         "docs/infernus_full/if09_evidence_bundle_vulnerability_register.md",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/decision.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/root_cause_candidates.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/regression_test_plan.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/revalidation_wave_plan.json",
+        "artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
+        "docs/infernus_full/if10_purgatorium_handoff_graph.md",
         "artifacts/if08_w6_final_audit_controlled_execution/decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json",
         "artifacts/infernus/if08_w6_final_audit_controlled_execution_evidence_bundle.json",
@@ -8217,6 +8402,10 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
+        "IF-10 Purgatorium Handoff Graph | pass",
+        "if10_purgatorium_handoff_graph_pass",
+        "project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
+        "next_recommended_step: `prepare_if11_minos_final_verdict_closure`",
         "IF-09 Evidence Bundle + Vulnerability Register | pass",
         "if09_evidence_bundle_vulnerability_register_pass",
         "project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
@@ -8280,17 +8469,19 @@ def main() -> None:
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
         "inf_full_07_if08_authorization_gate_pass",
+        "latest_completed_phase: IF-10 Purgatorium Handoff Graph",
         "Todos execution_locks: false",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF-09 Evidence Bundle + Vulnerability Register",
+        "Latest completed phase: IF-10 Purgatorium Handoff Graph",
         "Active next phase: IF-08",
         "Active next phase class: infernus_full_execution",
         "Standing authorization: canonroadmap approved by operator",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
-        "IF09 evidence bundle and vulnerability register are canonical as pass; this sync preserves source_phase_verified=IF-08 W6 Final Audit Controlled Execution, source_status_verified=if08_w6_final_audit_controlled_execution_pass, source_project_sha_verified_by_packet=eae468c79687474de086c984b55a3f7ff47d73f7, source_active_context_sha_verified_by_packet=373558e7360a8372f368a330a2d41cc28fc18033, root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_findings_total=1, finding_candidates_total=1, invalid_findings_total=1, observations_total=1, reproduction_units_total=1, replay_units_total=2, mutation_units_total=2, evidence_units_total=7, findings_total=16, purgatorium_handoff_required_ids=[IF09-FIND-001], macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if10_purgatorium_handoff_graph.",
+        "IF09 evidence bundle and vulnerability register remain the canonical source packet for this sync with source_project_sha_verified_by_packet=38b16edadce15ce8f2049bb3de8538bb921e344e, source_active_context_sha_verified_by_packet=767138de3fb2b0484fca6be25657e08c21107574, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
+        "IF10 purgatorium handoff graph is canonical as pass; this sync preserves node_count=9, edge_count=8, root_manifest_reference_verified=true, reproduction_unit_reference=IF09-REPRO-001, replay_unit_reference=IF09-REPLAY-001, mutation_unit_reference=IF09-MUT-001, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The next step is prepare_if11_minos_final_verdict_closure.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

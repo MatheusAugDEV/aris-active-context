@@ -2,14 +2,14 @@
 
 - phase_id: `INF-FULL-07`
 - status: `inf_full_07_if08_authorization_gate_pass`
-- current_status: `if09_evidence_bundle_vulnerability_register_pass`
-- latest_completed_phase: `IF-09 Evidence Bundle + Vulnerability Register`
-- latest_completed_status: `if09_evidence_bundle_vulnerability_register_pass`
+- current_status: `if10_purgatorium_handoff_graph_pass`
+- latest_completed_phase: `IF-10 Purgatorium Handoff Graph`
+- latest_completed_status: `if10_purgatorium_handoff_graph_pass`
 - next_phase: `IF-08`
 - active_next_phase_class: `infernus_full_execution`
 - next_phase_authorized_by_operator: `true`
 - standing_authorization: `INFERNUS_STANDING_AUTHORIZATION.md`
-- active_context_remote_main_reflects_if09_evidence_bundle_vulnerability_register: `true`
+- active_context_remote_main_reflects_if10_purgatorium_handoff_graph: `true`
 - permanent_active_update_rule_installed: `true`
 - execution_authorization: `false`
 
@@ -24,6 +24,9 @@ Referências ativas desta fase:
 - `artifacts/if09_evidence_bundle_vulnerability_register/decision.json`
 - `artifacts/if09_evidence_bundle_vulnerability_register/summary.json`
 - `artifacts/if09_evidence_bundle_vulnerability_register/report.md`
+- `artifacts/if10_purgatorium_handoff_graph/decision.json`
+- `artifacts/if10_purgatorium_handoff_graph/summary.json`
+- `artifacts/if10_purgatorium_handoff_graph/report.md`
 - `artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json`
 - `artifacts/infernus/if09_evidence_bundle_vulnerability_register/summary.json`
 - `artifacts/infernus/if09_evidence_bundle_vulnerability_register/report.md`
@@ -34,6 +37,16 @@ Referências ativas desta fase:
 - `artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json`
 - `artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl`
 - `docs/infernus_full/if09_evidence_bundle_vulnerability_register.md`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/decision.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/summary.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/report.md`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/root_cause_candidates.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/regression_test_plan.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/revalidation_wave_plan.json`
+- `artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json`
+- `docs/infernus_full/if10_purgatorium_handoff_graph.md`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_summary.json`
 - `artifacts/infernus/if08_w6_final_audit_controlled_execution_report.md`
@@ -215,4 +228,4 @@ Referências ativas desta fase:
 - `NORTH_POLE.md` é a referência estratégica norte.
 - `BEDROCK_GATE.md` define os critérios de promoção para produto.
 - Referências externas são contexto consultivo apenas. Não autorizam implementação, mudança de sequência de roadmap, mutação de runtime, MCP, promoção de produto, uso real de cliente ou release de produção.
-- The IF09 evidence bundle and vulnerability register packet is canonical as pass; the next canonical step is prepare_if10_purgatorium_handoff_graph and no real execution surface is authorized.
+- The IF10 purgatorium handoff graph packet is canonical as pass; the next canonical step is prepare_if11_minos_final_verdict_closure and no real execution surface is authorized.
