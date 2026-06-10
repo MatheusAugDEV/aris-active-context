@@ -213,11 +213,11 @@
         "status": "purg01_route_admission_pass",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "request_operator_authorization_for_purg01_triage"
+        "latest_completed_next_recommended_step": "prepare_purg01_controlled_triage_execution_gate"
     },
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "request_operator_authorization_for_purg01_triage",
+    "latest_completed_next_recommended_step": "prepare_purg01_controlled_triage_execution_gate",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -439,6 +439,22 @@
         "real_execution_authorized": false,
         "next_recommended_step": "request_operator_authorization_for_purg01_triage"
     },
+    "purg01_triage_authorization_gate": {
+        "decision": "pass",
+        "status": "purg01_triage_authorization_gate_pass",
+        "operator_authorized": true,
+        "operator_authorization_text": "Autorizo PURG-01 triage.",
+        "operator_authorization_scope": "purg01_triage_authorization_only_not_fix_not_real_execution",
+        "target_finding_id": "IF09-FIND-001",
+        "source_packet_sha256": "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
+        "planning_gate_project_commit_sha": "2bfefac900c6c3e7c3f016b7a790570587e57fbb",
+        "planning_gate_active_context_commit_sha": "c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d",
+        "purg01_triage_authorized": true,
+        "triage_execution_authorized": false,
+        "finding_fix_authorized": false,
+        "real_execution_authorized": false,
+        "next_recommended_step": "prepare_purg01_controlled_triage_execution_gate"
+    },
     "route_amendment_authorized_by_operator": true,
     "repeat_source_search_without_new_primary_source_forbidden": true,
     "latest_completed_no_execution": {
@@ -544,7 +560,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "PURG-01",
-        "deferred_phase_reason": "PURG-01 remains the active admitted route, the source packet is still validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625, triage readiness review remains pass, and the triage planning gate now passes using the readiness-review sync captured at project commit 82c2d6fabb076fdf23f0bac554eeb417e0a7a359. PURG-01 triage remains closed, the next non-execution step is request_operator_authorization_for_purg01_triage, planning evidence is recorded in artifacts/purgatorium/purg01_triage_planning_gate_decision.json, and no real execution surface is authorized.",
+        "deferred_phase_reason": "PURG-01 remains the active admitted route, the source packet is still validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625, the triage planning gate remains pass from project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb, and explicit operator authorization for PURG-01 triage is now recorded with scope limited to future controlled triage only. PURG-01 triage is authorized but not executed, the next non-execution step is prepare_purg01_controlled_triage_execution_gate, fix/remediation/runtime remain prohibited, and no real execution surface is authorized.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -556,7 +572,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-01 remains the active admitted route, triage readiness review remains pass, and the triage planning gate now passes using the validated primary source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 plus the readiness-review sync captured at project commit 82c2d6fabb076fdf23f0bac554eeb417e0a7a359. The next non-execution step is request_operator_authorization_for_purg01_triage, while PURG-01 triage, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, and external network remain prohibited.",
+        "notes": "PURG-01 remains the active admitted route, the triage planning gate remains pass, and explicit operator authorization for PURG-01 triage is now recorded with scope limited to future controlled triage only. The next non-execution step is prepare_purg01_controlled_triage_execution_gate, while triage execution itself, finding fix, remediation apply, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, and external network remain prohibited.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "PURG-01",
         "phase_class": "purgatorium_route_admission",
@@ -578,7 +594,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.9",
+    "schema_version": "3.10",
     "status": "purg01_route_admission_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -594,7 +610,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.9",
+        "current_schema_version": "3.10",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -608,6 +624,7 @@
         "schema_3_6_change_summary": "PURG-01 route admission review: record the admission-only review pass, the explicit source-packet field extraction, and the candidate next step request_operator_authorization_for_purg01_route_admission while preserving decision=blocked, next_phase/active_next_phase null, PURG-01 closed, and all real execution surfaces false.",
         "schema_3_7_change_summary": "PURG-01 route admission: open PURG-01 as the live route through operator authorization scoped to route admission only, set next_phase/active_next_phase to PURG-01 with phase class purgatorium_route_admission, require route-admission artifacts and validator enforcement, and keep triage plus every real execution surface closed.",
         "schema_3_8_change_summary": "PURG-01 triage readiness review: record a readiness-only review pass and a planning-only candidate next step while keeping PURG-01 as the admitted route, triage authorization false, finding-fix authorization false, and every real execution surface closed.",
-        "schema_3_9_change_summary": "PURG-01 triage planning gate: record a planning-only pass for IF09-FIND-001, require a formal triage plan plus authorization-request candidate, advance the next recommended step to explicit operator authorization for triage, and keep triage, finding-fix, and every real execution surface closed."
+        "schema_3_9_change_summary": "PURG-01 triage planning gate: record a planning-only pass for IF09-FIND-001, require a formal triage plan plus authorization-request candidate, advance the next recommended step to explicit operator authorization for triage, and keep triage, finding-fix, and every real execution surface closed.",
+        "schema_3_10_change_summary": "PURG-01 triage authorization gate: record explicit operator authorization for future controlled triage with scope limited to authorization only, allow purg01_triage_authorized=true while keeping triage execution, finding-fix, remediation apply, and every real execution surface closed, and advance the next recommended step to the controlled triage execution gate."
     }
 }

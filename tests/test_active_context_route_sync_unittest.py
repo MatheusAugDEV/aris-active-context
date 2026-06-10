@@ -41,7 +41,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "request_operator_authorization_for_purg01_triage",
+            "prepare_purg01_controlled_triage_execution_gate",
         )
         self.assertEqual(state["next_phase"], "PURG-01")
         self.assertEqual(state["active_next_phase"], "PURG-01")
@@ -57,7 +57,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG-01")
         self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_route_admission")
         self.assertFalse(state["current_live_route"]["next_phase_execution_authorization"])
-        self.assertIn("request_operator_authorization_for_purg01_triage", state["next_action"]["notes"])
+        self.assertIn("prepare_purg01_controlled_triage_execution_gate", state["next_action"]["notes"])
         self.assertEqual(
             state["purg00_source_gap_terminal_blocker"]["status"],
             "purg00_source_gap_terminal_blocker_operator_source_required",
@@ -136,6 +136,27 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(
             state["purg01_triage_planning_gate"]["next_recommended_step"],
             "request_operator_authorization_for_purg01_triage",
+        )
+        self.assertEqual(
+            state["purg01_triage_authorization_gate"]["status"],
+            "purg01_triage_authorization_gate_pass",
+        )
+        self.assertTrue(state["purg01_triage_authorization_gate"]["operator_authorized"])
+        self.assertEqual(
+            state["purg01_triage_authorization_gate"]["operator_authorization_text"],
+            "Autorizo PURG-01 triage.",
+        )
+        self.assertEqual(
+            state["purg01_triage_authorization_gate"]["operator_authorization_scope"],
+            "purg01_triage_authorization_only_not_fix_not_real_execution",
+        )
+        self.assertTrue(state["purg01_triage_authorization_gate"]["purg01_triage_authorized"])
+        self.assertFalse(state["purg01_triage_authorization_gate"]["triage_execution_authorized"])
+        self.assertFalse(state["purg01_triage_authorization_gate"]["finding_fix_authorized"])
+        self.assertFalse(state["purg01_triage_authorization_gate"]["real_execution_authorized"])
+        self.assertEqual(
+            state["purg01_triage_authorization_gate"]["next_recommended_step"],
+            "prepare_purg01_controlled_triage_execution_gate",
         )
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
@@ -224,9 +245,11 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertIn("purg01_route_admission", schema["properties"])
         self.assertIn("purg01_triage_readiness_review", schema["properties"])
         self.assertIn("purg01_triage_planning_gate", schema["properties"])
+        self.assertIn("purg01_triage_authorization_gate", schema["properties"])
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_7_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_8_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_9_change_summary"]["type"], "string")
+        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_10_change_summary"]["type"], "string")
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()
