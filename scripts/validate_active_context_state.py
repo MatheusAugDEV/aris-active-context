@@ -12,6 +12,7 @@ PROJECT_ROOT = ROOT.parent
 PROJECT_MIRROR_ROOT = ROOT / "project_mirror"
 STATE_PATH = ROOT / "ACTIVE_CONTEXT_STATE.json"
 SCHEMA_PATH = ROOT / "ACTIVE_CONTEXT_SCHEMA.json"
+PROJECT_CHECKOUT_PRESENT = (PROJECT_ROOT / "main.py").exists() and (PROJECT_ROOT / "artifacts").exists()
 
 
 def _resolve_project_relative(*parts: str) -> pathlib.Path:
@@ -21,6 +22,11 @@ def _resolve_project_relative(*parts: str) -> pathlib.Path:
         if candidate.exists():
             return candidate
     return PROJECT_ROOT / relative
+
+
+def _require_project_checkout_artifact(path: pathlib.Path, message: str) -> None:
+    if PROJECT_CHECKOUT_PRESENT:
+        _require(path.exists(), message)
 
 
 ACB_CORE_01_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_core_01_project_evidence_2026_06_03.json"
@@ -9296,11 +9302,26 @@ def main() -> None:
         blocker.get("operator_required_source_packet") == "artifacts/purgatorium/purg00_operator_required_source_packet.json",
         "terminal blocker operator packet path mismatch",
     )
-    _require(PURG00_TERMINAL_BLOCKER_DECISION_PATH.exists(), "missing purg00 terminal blocker decision artifact")
-    _require(PURG00_OPERATOR_REQUIRED_SOURCE_PACKET_PATH.exists(), "missing purg00 operator required source packet")
-    _require(PURG00_MISSING_FIELDS_CONTRACT_SCHEMA_PATH.exists(), "missing purg00 missing fields contract schema")
-    _require(PURG00_NO_LOOP_ATTESTATION_PATH.exists(), "missing purg00 no-loop attestation")
-    _require(PURG00_NO_REAL_EXECUTION_V2_PATH.exists(), "missing purg00 no real execution attestation v2")
+    _require_project_checkout_artifact(
+        PURG00_TERMINAL_BLOCKER_DECISION_PATH,
+        "missing purg00 terminal blocker decision artifact",
+    )
+    _require_project_checkout_artifact(
+        PURG00_OPERATOR_REQUIRED_SOURCE_PACKET_PATH,
+        "missing purg00 operator required source packet",
+    )
+    _require_project_checkout_artifact(
+        PURG00_MISSING_FIELDS_CONTRACT_SCHEMA_PATH,
+        "missing purg00 missing fields contract schema",
+    )
+    _require_project_checkout_artifact(
+        PURG00_NO_LOOP_ATTESTATION_PATH,
+        "missing purg00 no-loop attestation",
+    )
+    _require_project_checkout_artifact(
+        PURG00_NO_REAL_EXECUTION_V2_PATH,
+        "missing purg00 no real execution attestation v2",
+    )
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
     _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
