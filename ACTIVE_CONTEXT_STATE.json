@@ -218,6 +218,42 @@
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
     "latest_completed_next_recommended_step": "resolve_purg00_source_data_gap",
+    "purg00_source_data_gap_resolution": {
+        "decision": "blocked",
+        "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
+        "artifacts_created": [
+            "artifacts/purgatorium/purg00_source_data_gap_resolution.json",
+            "artifacts/purgatorium/purg00_source_access_matrix.json",
+            "artifacts/purgatorium/purg00_required_fields_extraction_manifest.json",
+            "artifacts/purgatorium/purg00_no_real_execution_attestation.json"
+        ],
+        "missing_required_fields_remaining": [
+            "affected_files",
+            "oracle_id",
+            "blast_radius",
+            "target_control",
+            "risk_class",
+            "dependency_group"
+        ],
+        "reason_not_found": "The accessible IF09/IF10 primary-source packet and directly related handoff artifacts do not explicitly expose affected_files, oracle_id, blast_radius, target_control, risk_class, or dependency_group; deriving them from nearby metadata would be inference and is disallowed.",
+        "searched_paths": [
+            "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
+            "artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
+            "artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json",
+            "artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
+            "artifacts/infernus/if10_purgatorium_handoff_graph/root_cause_candidates.json",
+            "artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json",
+            "artifacts/infernus/if11_minos_final_verdict_closure/closure_manifest.json",
+            "artifacts/infernus/if11_minos_final_verdict_closure/next_phase_boundary.json",
+            "aris-active-context/artifacts/purgatorium/purg00_source_packet_index.json",
+            "aris-active-context/artifacts/purgatorium/purg00_source_hash_verification_matrix.json",
+            "aris-active-context/artifacts/purgatorium/purg00_handoff_id_classification_matrix.json",
+            "aris-active-context/artifacts/purgatorium/purg00_data_gap_matrix.json",
+            "aris-active-context/artifacts/purgatorium/purg00_required_source_access_matrix.json"
+        ],
+        "source_root_manifest_sha256": "3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660",
+        "source_graph_sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1"
+    },
     "latest_completed_no_execution": {
         "w05_executed": false,
         "wave_executed": false,
@@ -321,7 +357,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "PURG-00",
-        "deferred_phase_reason": "PURG-00 handoff intake and authority lock executed, but future PURG-01 preparation is DATA_GAP_BLOCKED because the accessible source packet does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group; the exact next step is resolve_purg00_source_data_gap and no real execution surface is authorized.",
+        "deferred_phase_reason": "PURG-00 handoff intake and authority lock executed, and the 2026-06-09 primary-source search re-verified the IF09 root manifest plus IF10 graph hashes, but future PURG-01 preparation remains DATA_GAP_BLOCKED because the accessible packet still does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group; the exact next step is resolve_purg00_source_data_gap, searched paths and blocking evidence are recorded in artifacts/purgatorium/purg00_source_data_gap_resolution.json, and no real execution surface is authorized.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -333,7 +369,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-00 handoff intake/authority lock executed and source packet hashes were verified, but future PURG-01 preparation is DATA_GAP_BLOCKED because the accessible packet does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group. Next step: resolve_purg00_source_data_gap. Do not execute triage, RED, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network.",
+        "notes": "PURG-00 handoff intake/authority lock executed and the 2026-06-09 primary-source search re-verified the source packet hashes, but future PURG-01 preparation remains DATA_GAP_BLOCKED because the accessible packet still does not explicitly expose affected files, oracle id, blast radius, target control, risk class, and dependency group. Searched paths and blocking evidence are recorded in artifacts/purgatorium/purg00_source_data_gap_resolution.json. Next step remains resolve_purg00_source_data_gap. Do not execute triage, RED, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": "PURG-00",
         "phase_class": "purgatorium_full_intake",
