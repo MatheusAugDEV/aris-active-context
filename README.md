@@ -64,8 +64,9 @@ status: purg00_route_amendment_terminal_wait_state_blocked
 latest_completed_phase: IF-11 Minos Final Verdict + Closure
 latest_completed_status: if11_minos_final_verdict_closure_pass
 next_phase: null
-next_recommended_step: prepare_purg01_route_admission_review
+next_recommended_step: request_operator_authorization_for_purg01_route_admission
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
 PURG-01 continua fechado: true
 Pacote primario do operador validado: true
+Review formal de admissao PURG-01: pass

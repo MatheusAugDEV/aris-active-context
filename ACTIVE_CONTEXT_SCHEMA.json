@@ -787,6 +787,9 @@
     "purg00_operator_source_packet_intake": {
       "type": "object"
     },
+    "purg01_route_admission_review": {
+      "type": "object"
+    },
     "next_action": {
       "additionalProperties": false,
       "properties": {
@@ -929,7 +932,8 @@
         "3.2",
         "3.3",
         "3.4",
-        "3.5"
+        "3.5",
+        "3.6"
       ],
       "type": "string"
     },
@@ -1105,6 +1109,9 @@
           "type": "string"
         },
         "schema_3_5_change_summary": {
+          "type": "string"
+        },
+        "schema_3_6_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {
