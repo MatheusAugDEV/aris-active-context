@@ -41,22 +41,22 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "request_operator_authorization_for_purg01_route_admission",
+            "prepare_purg01_triage_readiness_review",
         )
-        self.assertIsNone(state["next_phase"])
-        self.assertIsNone(state["active_next_phase"])
-        self.assertIsNone(state["active_next_phase_class"])
-        self.assertFalse(state["next_phase_authorized_by_operator"])
+        self.assertEqual(state["next_phase"], "PURG-01")
+        self.assertEqual(state["active_next_phase"], "PURG-01")
+        self.assertEqual(state["active_next_phase_class"], "purgatorium_route_admission")
+        self.assertTrue(state["next_phase_authorized_by_operator"])
         self.assertTrue(state["route_amendment_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
-        self.assertFalse(state["next_action"]["review_only"])
-        self.assertEqual(state["decision"], "blocked")
-        self.assertEqual(state["status"], "purg00_route_amendment_terminal_wait_state_blocked")
-        self.assertEqual(state["current_live_route"]["decision"], "blocked")
-        self.assertEqual(state["current_live_route"]["status"], "purg00_route_amendment_terminal_wait_state_blocked")
-        self.assertIsNone(state["current_live_route"]["active_next_phase"])
-        self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
-        self.assertIn("request_operator_authorization_for_purg01_route_admission", state["next_action"]["notes"])
+        self.assertTrue(state["next_action"]["review_only"])
+        self.assertEqual(state["decision"], "pass")
+        self.assertEqual(state["status"], "purg01_route_admission_pass")
+        self.assertEqual(state["current_live_route"]["decision"], "pass")
+        self.assertEqual(state["current_live_route"]["status"], "purg01_route_admission_pass")
+        self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG-01")
+        self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_route_admission")
+        self.assertIn("prepare_purg01_triage_readiness_review", state["next_action"]["notes"])
         self.assertEqual(
             state["purg00_source_gap_terminal_blocker"]["status"],
             "purg00_source_gap_terminal_blocker_operator_source_required",
@@ -93,6 +93,14 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
             "purgatorium_route_admission",
         )
         self.assertFalse(state["purg01_route_admission_review"]["purg01_open_authorized"])
+        self.assertEqual(
+            state["purg01_route_admission"]["status"],
+            "purg01_route_admission_pass",
+        )
+        self.assertTrue(state["purg01_route_admission"]["operator_authorized"])
+        self.assertTrue(state["purg01_route_admission"]["purg01_open_authorized"])
+        self.assertFalse(state["purg01_route_admission"]["purg01_triage_authorized"])
+        self.assertFalse(state["purg01_route_admission"]["real_execution_authorized"])
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -153,11 +161,23 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
             schema["properties"]["active_next_phase_class"]["enum"],
         )
         self.assertIn(
+            "purgatorium_route_admission",
+            schema["properties"]["active_next_phase_class"]["enum"],
+        )
+        self.assertIn(
             "purgatorium_full_intake",
             schema["properties"]["current_live_route"]["properties"]["active_next_phase_class"]["enum"],
         )
         self.assertIn(
+            "purgatorium_route_admission",
+            schema["properties"]["current_live_route"]["properties"]["active_next_phase_class"]["enum"],
+        )
+        self.assertIn(
             "purgatorium_full_intake",
+            schema["properties"]["next_action"]["properties"]["phase_class"]["enum"],
+        )
+        self.assertIn(
+            "purgatorium_route_admission",
             schema["properties"]["next_action"]["properties"]["phase_class"]["enum"],
         )
         self.assertIn("route_amendment_authorized_by_operator", schema["properties"])
@@ -165,7 +185,8 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertIn("purg00_route_amendment_terminal_wait_state", schema["properties"])
         self.assertIn("purg00_operator_source_packet_intake", schema["properties"])
         self.assertIn("purg01_route_admission_review", schema["properties"])
-        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_6_change_summary"]["type"], "string")
+        self.assertIn("purg01_route_admission", schema["properties"])
+        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_7_change_summary"]["type"], "string")
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()

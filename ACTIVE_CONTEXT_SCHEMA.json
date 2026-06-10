@@ -27,6 +27,7 @@
         "infernus_full_execution",
         "purgatorium_full_authority_materialization",
         "purgatorium_full_intake",
+        "purgatorium_route_admission",
         "history_only",
         null
       ],
@@ -466,6 +467,7 @@
             "infernus_full_execution",
             "purgatorium_full_authority_materialization",
             "purgatorium_full_intake",
+            "purgatorium_route_admission",
             "history_only",
             null
           ],
@@ -790,6 +792,9 @@
     "purg01_route_admission_review": {
       "type": "object"
     },
+    "purg01_route_admission": {
+      "type": "object"
+    },
     "next_action": {
       "additionalProperties": false,
       "properties": {
@@ -823,6 +828,7 @@
             "infernus_full_execution",
             "purgatorium_full_authority_materialization",
             "purgatorium_full_intake",
+            "purgatorium_route_admission",
             "history_only",
             null
           ],
@@ -933,7 +939,8 @@
         "3.3",
         "3.4",
         "3.5",
-        "3.6"
+        "3.6",
+        "3.7"
       ],
       "type": "string"
     },
@@ -1112,6 +1119,9 @@
           "type": "string"
         },
         "schema_3_6_change_summary": {
+          "type": "string"
+        },
+        "schema_3_7_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {

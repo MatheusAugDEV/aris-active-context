@@ -1,18 +1,18 @@
-## PURG-00 Route Amendment / Terminal Wait-State
+## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
-- status: `purg00_route_amendment_terminal_wait_state_blocked`
+- status: `purg01_route_admission_pass`
 - latest_completed_status=if11_minos_final_verdict_closure_pass
 - active_context_remote_main_reflects_if11_minos_final_verdict_closure=true
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=request_operator_authorization_for_purg01_route_admission
+- next_recommended_step=prepare_purg01_triage_readiness_review
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
-- live_route_opened=false
-- live_route_closed_in_wait_state=true
+- live_route_opened=true
+- live_route_closed_in_wait_state=false
 - route_amendment_authorized_by_operator=true
 - route_admission_decision_status=purg_pre_route_admission_pass
 - purg_pre_execution_status=purg_pre_canonical_authority_execution_pass
@@ -22,8 +22,8 @@
 - purg00_route_amendment_terminal_wait_state_status=purg00_route_amendment_terminal_wait_state_operator_source_required
 - previous_live_next_phase=IF-08
 - previous_live_next_phase_class=infernus_full_execution
-- new_live_next_phase=null
-- new_live_next_phase_class=null
+- new_live_next_phase=PURG-01
+- new_live_next_phase_class=purgatorium_route_admission
 - purg_pre_executed=true
 - live_route_opened_by=purg00_route_admission_pass
 - live_route_terminalized_by=purg00_route_amendment_terminal_wait_state_operator_source_required
@@ -46,6 +46,8 @@
 - invalid_finding_remediated=false
 - future_purg00_admission_candidate_created=true
 - future_purg00_route_admission_still_required=false
+- purg01_route_admission_status=purg01_route_admission_pass
+- purg01_open_authorized=true
 - purg01_triage_authorized=false
 - requested_next_phase_candidate=PURG-00
 - requested_next_phase_class_candidate=purgatorium_full_intake
@@ -65,7 +67,9 @@
 - purg01_route_admission_review_status=purg01_route_admission_review_pass
 - purg01_route_admission_candidate_phase=PURG-01
 - purg01_route_admission_candidate_phase_class=purgatorium_route_admission
-- next_route_candidate=request_operator_authorization_for_purg01_route_admission
+- purg01_route_admission_operator_authorized=true
+- purg01_route_admission_scope=route_admission_only_not_execution
+- next_route_candidate=prepare_purg01_triage_readiness_review
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
@@ -112,9 +116,9 @@
 - PURG-00 intake authority lock = true
 - PURG-00 real execution = false
 - future waves real execution = false
-- active_next_phase=null
-- active_next_phase_class=null
-- next_phase_authorized_by_operator=false
+- active_next_phase=PURG-01
+- active_next_phase_class=purgatorium_route_admission
+- next_phase_authorized_by_operator=true
 - Standing authorization source=INFERNUS_STANDING_AUTHORIZATION.md
 
 ## IF-10 Purgatorium Handoff Graph Lock
