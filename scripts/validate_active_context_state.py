@@ -48,7 +48,7 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "purg01_route_admission_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.7"
+EXPECTED_SCHEMA_VERSION = "3.8"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
 CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG-01"
@@ -61,7 +61,7 @@ EXPECTED_NEXT_ACTION_STATUS = "purg01_route_admission_pass"
 EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_purg01_triage_readiness_review"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_purg01_triage_planning_gate"
 PURG01_REVIEW_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg01_route_admission"
 PURG00_REQUIRED_SOURCE_PACKET_STEP = "operator_supply_purg00_required_source_packet"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
@@ -134,6 +134,15 @@ PURG01_ROUTE_ADMISSION_ROLLBACK_PLAN_PATH = PROJECT_ROOT / "artifacts" / "purgat
 PURG01_ROUTE_ADMISSION_STATUS = "purg01_route_admission_pass"
 PURG01_ROUTE_ADMISSION_OPERATOR_SCOPE = "route_admission_only_not_execution"
 PURG01_ROUTE_ADMISSION_OPERATOR_TEXT = "Autorizo PURG-01 route admission. autorizo toda rota purg"
+PURG01_TRIAGE_READINESS_REVIEW_DECISION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_readiness_review_decision.json"
+PURG01_TRIAGE_READINESS_REVIEW_SUMMARY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_readiness_review_summary.json"
+PURG01_TRIAGE_READINESS_REVIEW_REPORT_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_readiness_review_report.md"
+PURG01_TRIAGE_READINESS_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_readiness_matrix.json"
+PURG01_TRIAGE_LOCK_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_lock_matrix.json"
+PURG01_TRIAGE_SCOPE_BOUNDARY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_scope_boundary.json"
+PURG01_TRIAGE_NO_REAL_EXECUTION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_no_real_execution_attestation.json"
+PURG01_TRIAGE_PLANNING_CANDIDATE_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_planning_candidate.json"
+PURG01_TRIAGE_READINESS_REVIEW_STATUS = "purg01_triage_readiness_review_pass"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
     PURG00_ROUTE_ADMISSION_STATUS,
     PURG00_HANDOFF_INTAKE_STATUS,
@@ -9540,7 +9549,24 @@ def main() -> None:
     _require(route_admission.get("next_phase_execution_authorization") is False, "purg01 route admission next_phase_execution_authorization mismatch")
     _require(route_admission.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission new_live_next_phase mismatch")
     _require(route_admission.get("new_live_next_phase_class") == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "purg01 route admission new_live_next_phase_class mismatch")
-    _require(route_admission.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 route admission next step mismatch")
+    _require(route_admission.get("next_recommended_step") == "prepare_purg01_triage_readiness_review", "purg01 route admission next step mismatch")
+    triage_review = state.get("purg01_triage_readiness_review")
+    _require(isinstance(triage_review, dict), "purg01_triage_readiness_review must exist")
+    _require(triage_review.get("decision") == "pass", "purg01 triage readiness review decision mismatch")
+    _require(triage_review.get("status") == PURG01_TRIAGE_READINESS_REVIEW_STATUS, "purg01 triage readiness review status mismatch")
+    _require(triage_review.get("review_scope") == "readiness_only_no_triage_no_execution", "purg01 triage readiness review scope mismatch")
+    _require(triage_review.get("source_packet_path") == "artifacts/purgatorium/purg00_operator_required_source_packet.json", "purg01 triage readiness review source_packet_path mismatch")
+    _require(triage_review.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg01 triage readiness review source_packet_sha256 mismatch")
+    _require(triage_review.get("source_packet_project_commit_sha") == PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA, "purg01 triage readiness review source_packet_project_commit_sha mismatch")
+    _require(triage_review.get("route_admission_project_commit_sha") == "01b46702ebd1654eb2c217c3a77576e109b4254b", "purg01 triage readiness review route_admission_project_commit_sha mismatch")
+    _require(triage_review.get("route_admission_active_context_commit_sha") == "0afe5229c2e25f0b07d4b91f1eacfdff20d81e57", "purg01 triage readiness review route_admission_active_context_commit_sha mismatch")
+    _require(triage_review.get("triage_planning_candidate_created") is True, "purg01 triage readiness review triage_planning_candidate_created mismatch")
+    _require(triage_review.get("purg01_triage_authorized") is False, "purg01 triage readiness review purg01_triage_authorized mismatch")
+    _require(triage_review.get("triage_execution_authorized") is False, "purg01 triage readiness review triage_execution_authorized mismatch")
+    _require(triage_review.get("finding_fix_authorized") is False, "purg01 triage readiness review finding_fix_authorized mismatch")
+    _require(triage_review.get("real_execution_authorized") is False, "purg01 triage readiness review real_execution_authorized mismatch")
+    _require(triage_review.get("candidate_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage readiness review candidate_next_step mismatch")
+    _require(triage_review.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage readiness review next_recommended_step mismatch")
     if PROJECT_CHECKOUT_PRESENT:
         packet = _load_json(PURG00_OPERATOR_SOURCE_PACKET_PATH)
         _require(packet.get("packet_id") == "purg00_operator_required_source_packet", "purg00 operator source packet packet_id mismatch")
@@ -9625,7 +9651,7 @@ def main() -> None:
         _require(route_decision.get("status") == PURG01_ROUTE_ADMISSION_STATUS, "purg01 route admission decision status mismatch")
         _require(route_decision.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission decision new_live_next_phase mismatch")
         _require(route_decision.get("new_live_next_phase_class") == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "purg01 route admission decision new_live_next_phase_class mismatch")
-        _require(route_decision.get("future_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 route admission decision future_next_step mismatch")
+        _require(route_decision.get("future_next_step") == "prepare_purg01_triage_readiness_review", "purg01 route admission decision future_next_step mismatch")
         route_summary = _load_json(PURG01_ROUTE_ADMISSION_SUMMARY_PATH)
         _require(route_summary.get("status") == PURG01_ROUTE_ADMISSION_STATUS, "purg01 route admission summary status mismatch")
         _require(route_summary.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission summary new_live_next_phase mismatch")
@@ -9649,6 +9675,38 @@ def main() -> None:
         _require(route_no_real.get("purg01_triage_authorized") is False, "purg01 route admission no_real_execution purg01_triage_authorized mismatch")
         _require(route_no_real.get("real_execution_authorized") is False, "purg01 route admission no_real_execution real_execution_authorized mismatch")
         _require_forbidden_flags_false(route_no_real, "purg01 route admission no real execution attestation")
+        for path in (
+            PURG01_TRIAGE_READINESS_REVIEW_DECISION_PATH,
+            PURG01_TRIAGE_READINESS_REVIEW_SUMMARY_PATH,
+            PURG01_TRIAGE_READINESS_REVIEW_REPORT_PATH,
+            PURG01_TRIAGE_READINESS_MATRIX_PATH,
+            PURG01_TRIAGE_LOCK_MATRIX_PATH,
+            PURG01_TRIAGE_SCOPE_BOUNDARY_PATH,
+            PURG01_TRIAGE_NO_REAL_EXECUTION_PATH,
+            PURG01_TRIAGE_PLANNING_CANDIDATE_PATH,
+        ):
+            _require(path.exists(), f"missing purg01 triage readiness artifact: {path}")
+        triage_decision = _load_json(PURG01_TRIAGE_READINESS_REVIEW_DECISION_PATH)
+        _require(triage_decision.get("status") == PURG01_TRIAGE_READINESS_REVIEW_STATUS, "purg01 triage readiness decision status mismatch")
+        _require(triage_decision.get("candidate_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage readiness decision candidate_next_step mismatch")
+        triage_summary = _load_json(PURG01_TRIAGE_READINESS_REVIEW_SUMMARY_PATH)
+        _require(triage_summary.get("status") == PURG01_TRIAGE_READINESS_REVIEW_STATUS, "purg01 triage readiness summary status mismatch")
+        triage_matrix = _load_json(PURG01_TRIAGE_READINESS_MATRIX_PATH)
+        _require(triage_matrix.get("checks", {}).get("planning_candidate_only") is True, "purg01 triage readiness matrix planning_candidate_only mismatch")
+        triage_lock_matrix = _load_json(PURG01_TRIAGE_LOCK_MATRIX_PATH)
+        _require(triage_lock_matrix.get("locks", {}).get("purg01_triage_authorized") is False, "purg01 triage lock matrix purg01_triage_authorized mismatch")
+        _require(triage_lock_matrix.get("locks", {}).get("finding_fix_authorized") is False, "purg01 triage lock matrix finding_fix_authorized mismatch")
+        triage_scope = _load_json(PURG01_TRIAGE_SCOPE_BOUNDARY_PATH)
+        _require(triage_scope.get("allowed_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage scope boundary allowed_next_step mismatch")
+        triage_no_real = _load_json(PURG01_TRIAGE_NO_REAL_EXECUTION_PATH)
+        _require(triage_no_real.get("status") == PURG01_TRIAGE_READINESS_REVIEW_STATUS, "purg01 triage no_real_execution status mismatch")
+        _require(triage_no_real.get("purg01_triage_authorized") is False, "purg01 triage no_real_execution purg01_triage_authorized mismatch")
+        _require(triage_no_real.get("triage_execution_authorized") is False, "purg01 triage no_real_execution triage_execution_authorized mismatch")
+        _require(triage_no_real.get("finding_fix_authorized") is False, "purg01 triage no_real_execution finding_fix_authorized mismatch")
+        _require_forbidden_flags_false(triage_no_real, "purg01 triage no real execution attestation")
+        triage_candidate = _load_json(PURG01_TRIAGE_PLANNING_CANDIDATE_PATH)
+        _require(triage_candidate.get("candidate_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage planning candidate next step mismatch")
+        _require(triage_candidate.get("triage_execution_authorized") is False, "purg01 triage planning candidate triage_execution_authorized mismatch")
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
     _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
@@ -9920,10 +9978,14 @@ def main() -> None:
         "purg01_route_admission_operator_authorized=true",
         "purg01_open_authorized=true",
         "purg01_triage_authorized=false",
-        "next_route_candidate=prepare_purg01_triage_readiness_review",
+        "purg01_triage_readiness_review_status=purg01_triage_readiness_review_pass",
+        "purg01_triage_planning_candidate_created=true",
+        "triage_execution_authorized=false",
+        "finding_fix_authorized=false",
+        "next_route_candidate=prepare_purg01_triage_planning_gate",
         "PURG-00 real execution = false",
         "future waves real execution = false",
-        "prepare_purg01_triage_readiness_review",
+        "prepare_purg01_triage_planning_gate",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
@@ -9935,12 +9997,13 @@ def main() -> None:
         "purg01_route_admission_pass",
         "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
         "next_phase: PURG-01",
-        "next_recommended_step: prepare_purg01_triage_readiness_review",
+        "next_recommended_step: prepare_purg01_triage_planning_gate",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "PURG-01 admitido como rota: true",
         "PURG-01 triage continua fechado: true",
         "Pacote primario do operador validado: true",
         "Review formal de admissao PURG-01: pass",
+        "Review de prontidao para triage PURG-01: pass",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -9960,16 +10023,17 @@ def main() -> None:
         "PURG-00 operator source packet intake: `purg00_operator_source_packet_intake_pass`",
         "PURG-01 route admission review: `purg01_route_admission_review_pass`",
         "PURG-01 route admitted by: `purg01_route_admission_pass`",
+        "PURG-01 triage readiness review: `purg01_triage_readiness_review_pass`",
         "PURG-00 execution: false",
         "PURG-00 intake executed: true",
-        "Future PURG-01 triage readiness: READINESS_REVIEW_REQUIRED",
+        "Future PURG-01 triage readiness: PLANNING_CANDIDATE_AVAILABLE",
         "PURG-01 triage authorized: false",
         "Operator primary source packet supplied and validated: true",
-        "Next non-execution step: `prepare_purg01_triage_readiness_review`",
+        "Next non-execution step: `prepare_purg01_triage_planning_gate`",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG sync now keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, records the review pass from project commit e7b9993896b94618d0d01b4a80c260e301871ac4, opens PURG-01 only as a route-admission live route through operator authorization scoped to route_admission_only_not_execution, keeps PURG-01 triage unopened, and limits the next move to prepare_purg01_triage_readiness_review without authorizing any real execution surface.",
+        "IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records a PURG-01 triage readiness review pass from route-admission project commit 01b46702ebd1654eb2c217c3a77576e109b4254b, keeps PURG-01 triage unopened, and limits the next move to prepare_purg01_triage_planning_gate without authorizing any real execution surface.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

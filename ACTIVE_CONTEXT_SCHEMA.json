@@ -795,6 +795,9 @@
     "purg01_route_admission": {
       "type": "object"
     },
+    "purg01_triage_readiness_review": {
+      "type": "object"
+    },
     "next_action": {
       "additionalProperties": false,
       "properties": {
@@ -940,7 +943,8 @@
         "3.4",
         "3.5",
         "3.6",
-        "3.7"
+        "3.7",
+        "3.8"
       ],
       "type": "string"
     },
@@ -1122,6 +1126,9 @@
           "type": "string"
         },
         "schema_3_7_change_summary": {
+          "type": "string"
+        },
+        "schema_3_8_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {
