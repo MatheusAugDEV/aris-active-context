@@ -7,7 +7,7 @@
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_purg01_triage_planning_gate
+- next_recommended_step=request_operator_authorization_for_purg01_triage
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
@@ -71,9 +71,12 @@
 - purg01_route_admission_scope=route_admission_only_not_execution
 - purg01_triage_readiness_review_status=purg01_triage_readiness_review_pass
 - purg01_triage_planning_candidate_created=true
+- purg01_triage_planning_gate_status=purg01_triage_planning_gate_pass
+- triage_plan_created=true
+- triage_authorization_request_candidate_created=true
 - triage_execution_authorized=false
 - finding_fix_authorized=false
-- next_route_candidate=prepare_purg01_triage_planning_gate
+- next_route_candidate=request_operator_authorization_for_purg01_triage
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
