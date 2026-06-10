@@ -10,7 +10,7 @@
 - decision: `pass`
 - latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- next_recommended_step: `resolve_purg00_source_data_gap`
+- next_recommended_step: `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`
 - active_next_phase: `PURG-00`
 - Next phase: `PURG-00`
 - Active next phase class: `purgatorium_full_intake`
@@ -73,10 +73,10 @@
 - dependency_or_package_manager_used: `false`
 - real_cost_spent: `false`
 - real_quota_consumed: `false`
-- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, `PURG-00` remains the live route, the handoff intake/authority lock is now canonically blocked by missing explicit source fields for future PURG-01 preparation, and the next canonical step is `resolve_purg00_source_data_gap`.
+- IF11 minos final verdict closure is canonically pass; the post-Infernus technical roadmap remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, `PURG-00` remains the live route, the handoff intake/authority lock is now canonically blocked by missing explicit source fields for future PURG-01 preparation, the differential search found no acceptable new primary source packet, and the next canonical step is `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`.
 
 ## What This Means
 
 INF-FULL-07 remains the canonical current phase, and the latest verified operational packet remains `IF-11 Minos Final Verdict + Closure`.
 The post-Infernus technical direction document remains `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; the former `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` stays superseded, copied into `excludent/infernus/roadmaps/infernus_full_canonroadmap.md` for forensic retention, and replaced by a non-authoritative stub. The live route is now `PURG-00` because schema, validator, Transition Table, JSON, mirrors, and route-admission artifacts were updated in lockstep.
-The next prompt may target only `resolve_purg00_source_data_gap`; `PURG-00` remains the live route, intake/authority lock artifacts now exist, and future `PURG-01` preparation is blocked until explicit source fields for affected files, oracle id, blast radius, target control, risk class, and dependency group are available without inference. No finding fix, real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.
+The next prompt may not repeat `resolve_purg00_source_data_gap` without a new primary source; `PURG-00` remains the live route, intake/authority lock artifacts now exist, and future `PURG-01` preparation is blocked until explicit source fields for affected files, oracle id, blast radius, target control, risk class, and dependency group are available without inference. The correct next step is `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`. No finding fix, real audio, STT/TTS, microphone, runtime, MCP, secrets, external network, product, Bedrock, or real_apply surface is authorized.

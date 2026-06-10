@@ -64,6 +64,6 @@ status: purg00_handoff_intake_authority_lock_blocked
 latest_completed_phase: IF-11 Minos Final Verdict + Closure
 latest_completed_status: if11_minos_final_verdict_closure_pass
 next_phase: PURG-00
-next_recommended_step: resolve_purg00_source_data_gap
+next_recommended_step: operator_supply_purg00_required_source_packet_or_authorize_route_amendment
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false

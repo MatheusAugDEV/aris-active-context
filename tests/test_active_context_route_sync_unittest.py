@@ -41,7 +41,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "resolve_purg00_source_data_gap",
+            "operator_supply_purg00_required_source_packet_or_authorize_route_amendment",
         )
         self.assertEqual(state["next_phase"], "PURG-00")
         self.assertEqual(state["active_next_phase"], "PURG-00")
@@ -55,7 +55,12 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_live_route"]["status"], "purg00_handoff_intake_authority_lock_blocked")
         self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG-00")
         self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_full_intake")
-        self.assertIn("resolve_purg00_source_data_gap", state["next_action"]["notes"])
+        self.assertIn("operator_supply_purg00_required_source_packet_or_authorize_route_amendment", state["next_action"]["notes"])
+        self.assertEqual(
+            state["purg00_source_gap_terminal_blocker"]["status"],
+            "purg00_source_gap_terminal_blocker_operator_source_required",
+        )
+        self.assertTrue(state["purg00_source_gap_terminal_blocker"]["repeated_search_prevented"])
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")

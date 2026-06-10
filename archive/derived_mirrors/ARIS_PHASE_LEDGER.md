@@ -92,7 +92,7 @@
 - next_phase: `PURG-00`
 - active_next_phase_class: `purgatorium_full_intake`
 - next_phase_authorized_by_operator: `true`
-- next_recommended_step: `resolve_purg00_source_data_gap`
+- next_recommended_step: `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`
 
 ## IF-10 Purgatorium Handoff Graph | pass
 - status: `if10_purgatorium_handoff_graph_pass`

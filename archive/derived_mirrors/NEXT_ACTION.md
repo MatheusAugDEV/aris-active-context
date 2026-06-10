@@ -25,8 +25,8 @@ Este sync ja registra o packet canonico de IF11 com `source_phase_verified=IF-10
 O roadmap tecnico ativo pos-Infernus agora e `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`; o `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` virou stub superseded e a copia forense foi preservada em `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`.
 Os artifacts `artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json`, `artifacts/purgatorium/purg00_source_hash_verification_matrix.json` e `artifacts/purgatorium/purg00_data_gap_matrix.json` agora registram que o intake/authority lock foi executado sem tocar finding, RED, triage ou qualquer superficie real.
 O futuro `PURG-01` permanece bloqueado porque os campos `affected files`, `oracle id`, `blast radius`, `target control`, `risk class` e `dependency group` nao estao explicitamente acessiveis no packet atual sem inferencia.
-O proximo prompt pode preparar apenas `resolve_purg00_source_data_gap` dentro do escopo canonico aprovado.
-O proximo passo recomendado neste estado e `resolve_purg00_source_data_gap`.
+O proximo prompt nao pode repetir `resolve_purg00_source_data_gap` sem nova fonte primaria.
+O proximo passo recomendado neste estado e `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`.
 Nao emitir proximo prompt canonico se `aris-active-context/main` nao refletir este resultado final.
 Unica coisa que requer comando do operador
 Antes de executar qualquer superficie real fora do laboratorio: informe o operador e aguarde o comando de execucao.
