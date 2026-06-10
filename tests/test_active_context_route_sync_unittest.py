@@ -41,26 +41,33 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "operator_supply_purg00_required_source_packet_or_authorize_route_amendment",
+            "operator_supply_purg00_required_source_packet",
         )
-        self.assertEqual(state["next_phase"], "PURG-00")
-        self.assertEqual(state["active_next_phase"], "PURG-00")
-        self.assertEqual(state["active_next_phase_class"], "purgatorium_full_intake")
-        self.assertTrue(state["next_phase_authorized_by_operator"])
+        self.assertIsNone(state["next_phase"])
+        self.assertIsNone(state["active_next_phase"])
+        self.assertIsNone(state["active_next_phase_class"])
+        self.assertFalse(state["next_phase_authorized_by_operator"])
+        self.assertTrue(state["route_amendment_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
         self.assertEqual(state["decision"], "blocked")
-        self.assertEqual(state["status"], "purg00_handoff_intake_authority_lock_blocked")
+        self.assertEqual(state["status"], "purg00_route_amendment_terminal_wait_state_blocked")
         self.assertEqual(state["current_live_route"]["decision"], "blocked")
-        self.assertEqual(state["current_live_route"]["status"], "purg00_handoff_intake_authority_lock_blocked")
-        self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG-00")
-        self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_full_intake")
-        self.assertIn("operator_supply_purg00_required_source_packet_or_authorize_route_amendment", state["next_action"]["notes"])
+        self.assertEqual(state["current_live_route"]["status"], "purg00_route_amendment_terminal_wait_state_blocked")
+        self.assertIsNone(state["current_live_route"]["active_next_phase"])
+        self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
+        self.assertIn("operator_supply_purg00_required_source_packet", state["next_action"]["notes"])
         self.assertEqual(
             state["purg00_source_gap_terminal_blocker"]["status"],
             "purg00_source_gap_terminal_blocker_operator_source_required",
         )
         self.assertTrue(state["purg00_source_gap_terminal_blocker"]["repeated_search_prevented"])
+        self.assertEqual(
+            state["purg00_route_amendment_terminal_wait_state"]["status"],
+            "purg00_route_amendment_terminal_wait_state_operator_source_required",
+        )
+        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["live_route_closed"])
+        self.assertFalse(state["purg00_route_amendment_terminal_wait_state"]["purg01_open_authorized"])
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -128,7 +135,10 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
             "purgatorium_full_intake",
             schema["properties"]["next_action"]["properties"]["phase_class"]["enum"],
         )
-        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_3_change_summary"]["type"], "string")
+        self.assertIn("route_amendment_authorized_by_operator", schema["properties"])
+        self.assertIn("repeat_source_search_without_new_primary_source_forbidden", schema["properties"])
+        self.assertIn("purg00_route_amendment_terminal_wait_state", schema["properties"])
+        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_4_change_summary"]["type"], "string")
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()

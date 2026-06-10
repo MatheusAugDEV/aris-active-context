@@ -60,10 +60,11 @@ Resposta sem SHA no topo = INVALID.
 ## Estado canônico atual
 
 phase_id: INF-FULL-07
-status: purg00_handoff_intake_authority_lock_blocked
+status: purg00_route_amendment_terminal_wait_state_blocked
 latest_completed_phase: IF-11 Minos Final Verdict + Closure
 latest_completed_status: if11_minos_final_verdict_closure_pass
-next_phase: PURG-00
-next_recommended_step: operator_supply_purg00_required_source_packet_or_authorize_route_amendment
+next_phase: null
+next_recommended_step: operator_supply_purg00_required_source_packet
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
+PURG-01 continua fechado: true

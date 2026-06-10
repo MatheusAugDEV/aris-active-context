@@ -45,12 +45,14 @@ EXPECTED_PHASE = "IF-11 Minos Final Verdict + Closure"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-10 Purgatorium Handoff Graph"
 EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
-EXPECTED_STATUS = "purg00_handoff_intake_authority_lock_blocked"
+EXPECTED_STATUS = "purg00_route_amendment_terminal_wait_state_blocked"
 EXPECTED_DECISION = "blocked"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.3"
+EXPECTED_SCHEMA_VERSION = "3.4"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
+CURRENT_EXPECTED_NEXT_PHASE_ID = None
+CURRENT_EXPECTED_NEXT_PHASE_CLASS = None
 PURG_PRE_LIVE_ROUTE_PHASE_ID = "PURG-PRE"
 PURG_PRE_LIVE_ROUTE_PHASE_CLASS = "purgatorium_full_authority_materialization"
 HISTORICAL_PRESERVED_NEXT_PHASE_ID = "IF-08"
@@ -59,7 +61,7 @@ EXPECTED_NEXT_ACTION_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "operator_supply_purg00_required_source_packet_or_authorize_route_amendment"
+EXPECTED_NEXT_RECOMMENDED_STEP = "operator_supply_purg00_required_source_packet"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
 PURG00_OPERATOR_REVIEW_PACKET_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg00_route_admission"
 EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351"
@@ -73,7 +75,7 @@ PURG00_ROUTE_ADMISSION_OPERATOR_SOURCE = "chat_operator_pode_comecar_purg00_rout
 PURG00_ROUTE_ADMISSION_NEXT_STEP = "execute_purg00_handoff_intake_authority_lock"
 PURG00_HANDOFF_INTAKE_STATUS = "purg00_handoff_intake_authority_lock_blocked"
 PURG00_HANDOFF_INTAKE_DECISION = "blocked"
-PURG00_HANDOFF_INTAKE_NEXT_STEP = "operator_supply_purg00_required_source_packet_or_authorize_route_amendment"
+PURG00_HANDOFF_INTAKE_NEXT_STEP = "operator_supply_purg00_required_source_packet"
 PURG00_HANDOFF_INTAKE_DATA_GAP_STATUS = "DATA_GAP_BLOCKED"
 PURG00_HANDOFF_INTAKE_MISSING_FIELDS = [
     "affected files",
@@ -89,6 +91,15 @@ PURG00_OPERATOR_REQUIRED_SOURCE_PACKET_PATH = PROJECT_ROOT / "artifacts" / "purg
 PURG00_MISSING_FIELDS_CONTRACT_SCHEMA_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_missing_fields_contract.schema.json"
 PURG00_NO_LOOP_ATTESTATION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_no_loop_attestation.json"
 PURG00_NO_REAL_EXECUTION_V2_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_no_real_execution_attestation_v2.json"
+PURG00_ROUTE_AMENDMENT_WAIT_STATE_STATUS = "purg00_route_amendment_terminal_wait_state_operator_source_required"
+PURG00_ROUTE_AMENDMENT_DECISION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_terminal_wait_state_decision.json"
+PURG00_ROUTE_AMENDMENT_SUMMARY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_terminal_wait_state_summary.json"
+PURG00_ROUTE_AMENDMENT_REPORT_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_terminal_wait_state_report.md"
+PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_live_state_mutation_manifest.json"
+PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_validator_patch_manifest.json"
+PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_schema_patch_manifest.json"
+PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_no_real_execution_attestation.json"
+PURG00_ROUTE_AMENDMENT_ROLLBACK_PLAN_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_rollback_plan.md"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
     PURG00_ROUTE_ADMISSION_STATUS,
     PURG00_HANDOFF_INTAKE_STATUS,
@@ -1444,6 +1455,10 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
     if transition_row is None:
         _require(state.get("next_phase") is None, "terminal phase must keep next_phase null when there is no successor row")
         _require(state.get("active_next_phase") is None, "terminal phase must keep active_next_phase null when there is no successor row")
+        _require(
+            state.get("next_phase_authorized_by_operator") is False,
+            "terminal wait-state must not declare a live next phase authorization",
+        )
     else:
         _require(
             transition_row.get("advance_mode") == EXPECTED_CURRENT_SUCCESSOR_ADVANCE_MODE,
@@ -1454,10 +1469,10 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
             state.get("active_next_phase_class") == transition_row.get("next_phase_class"),
             "active_next_phase_class must match successor row",
         )
-    _require(
-        state.get("next_phase_authorized_by_operator") is True,
-        "standing authorization must mark next phase as operator-authorized via canonroadmap approval",
-    )
+        _require(
+            state.get("next_phase_authorized_by_operator") is True,
+            "standing authorization must mark next phase as operator-authorized via canonroadmap approval",
+        )
     auth = state.get("authorization", {})
     for key in [
         "production_authorized",
@@ -9014,7 +9029,7 @@ def _check_purg00_route_admission_artifacts(state: dict[str, Any]) -> None:
 
     schema_manifest = _load_json(PURG00_ROUTE_ADMISSION_SCHEMA_PATCH_MANIFEST_PATH)
     _require(schema_manifest.get("old_schema_version") == "3.2", "purg00 route admission schema manifest old_schema_version mismatch")
-    _require(schema_manifest.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route admission schema manifest new_schema_version mismatch")
+    _require(schema_manifest.get("new_schema_version") == "3.3", "purg00 route admission schema manifest new_schema_version mismatch")
     _require(schema_manifest.get("admitted_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route admission schema manifest admitted_phase_class mismatch")
     _require(schema_manifest.get("schema_patch_applied") is True, "purg00 route admission schema manifest schema_patch_applied mismatch")
 
@@ -9322,13 +9337,78 @@ def main() -> None:
         PURG00_NO_REAL_EXECUTION_V2_PATH,
         "missing purg00 no real execution attestation v2",
     )
+    wait_state = state.get("purg00_route_amendment_terminal_wait_state")
+    _require(isinstance(wait_state, dict), "purg00_route_amendment_terminal_wait_state must exist")
+    _require(wait_state.get("decision") == "blocked", "purg00_route_amendment_terminal_wait_state decision mismatch")
+    _require(wait_state.get("status") == PURG00_ROUTE_AMENDMENT_WAIT_STATE_STATUS, "purg00 route amendment wait-state status mismatch")
+    _require(wait_state.get("route_amendment_authorized_by_operator") is True, "purg00 route amendment operator authorization mismatch")
+    _require(
+        wait_state.get("repeat_source_search_without_new_primary_source_forbidden") is True,
+        "purg00 route amendment must preserve repeat-source-search prohibition",
+    )
+    _require(wait_state.get("previous_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route amendment previous_live_next_phase mismatch")
+    _require(wait_state.get("previous_live_next_phase_class") == EXPECTED_NEXT_PHASE_CLASS, "purg00 route amendment previous_live_next_phase_class mismatch")
+    _require(wait_state.get("new_live_next_phase") is None, "purg00 route amendment new_live_next_phase must be null")
+    _require(wait_state.get("new_live_next_phase_class") is None, "purg00 route amendment new_live_next_phase_class must be null")
+    _require(wait_state.get("live_route_closed") is True, "purg00 route amendment live_route_closed mismatch")
+    _require(wait_state.get("purg00_unresolved") is True, "purg00 route amendment purg00_unresolved mismatch")
+    _require(wait_state.get("purg01_open_authorized") is False, "purg00 route amendment purg01_open_authorized mismatch")
+    _require(
+        wait_state.get("operator_required_source_packet") == "artifacts/purgatorium/purg00_operator_required_source_packet.json",
+        "purg00 route amendment operator_required_source_packet mismatch",
+    )
+    _require(
+        wait_state.get("route_amendment_decision_artifact") == "artifacts/purgatorium/purg00_route_amendment_terminal_wait_state_decision.json",
+        "purg00 route amendment decision artifact path mismatch",
+    )
+    _require(wait_state.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment next step mismatch")
+    _require(wait_state.get("real_execution_authorized") is False, "purg00 route amendment real_execution_authorized mismatch")
+    for path, message in (
+        (PURG00_ROUTE_AMENDMENT_DECISION_PATH, "missing purg00 route amendment decision artifact"),
+        (PURG00_ROUTE_AMENDMENT_SUMMARY_PATH, "missing purg00 route amendment summary artifact"),
+        (PURG00_ROUTE_AMENDMENT_REPORT_PATH, "missing purg00 route amendment report artifact"),
+        (PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH, "missing purg00 route amendment live-state manifest"),
+        (PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH, "missing purg00 route amendment validator manifest"),
+        (PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH, "missing purg00 route amendment schema manifest"),
+        (PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH, "missing purg00 route amendment no-real-execution attestation"),
+        (PURG00_ROUTE_AMENDMENT_ROLLBACK_PLAN_PATH, "missing purg00 route amendment rollback plan"),
+    ):
+        _require_project_checkout_artifact(path, message)
+    route_amendment_decision = _load_json(PURG00_ROUTE_AMENDMENT_DECISION_PATH) if PURG00_ROUTE_AMENDMENT_DECISION_PATH.exists() else {}
+    _require(route_amendment_decision.get("phase_id") == "PURG-00-ROUTE-AMENDMENT-TERMINAL-WAIT-STATE", "purg00 route amendment decision phase_id mismatch")
+    _require(route_amendment_decision.get("decision") == "blocked", "purg00 route amendment decision mismatch")
+    _require(route_amendment_decision.get("status") == PURG00_ROUTE_AMENDMENT_WAIT_STATE_STATUS, "purg00 route amendment decision status mismatch")
+    _require(route_amendment_decision.get("new_live_next_phase") is None, "purg00 route amendment decision new_live_next_phase mismatch")
+    _require(route_amendment_decision.get("purg01_open_authorized") is False, "purg00 route amendment decision purg01_open_authorized mismatch")
+    route_amendment_summary = _load_json(PURG00_ROUTE_AMENDMENT_SUMMARY_PATH) if PURG00_ROUTE_AMENDMENT_SUMMARY_PATH.exists() else {}
+    _require(route_amendment_summary.get("live_route_closed") is True, "purg00 route amendment summary live_route_closed mismatch")
+    _require(route_amendment_summary.get("next_phase") is None, "purg00 route amendment summary next_phase mismatch")
+    _require(route_amendment_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment summary next step mismatch")
+    route_amendment_live_state = _load_json(PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH.exists() else {}
+    _require(route_amendment_live_state.get("previous_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route amendment live-state previous_live_next_phase mismatch")
+    _require(route_amendment_live_state.get("new_live_next_phase") is None, "purg00 route amendment live-state new_live_next_phase mismatch")
+    _require(len(route_amendment_live_state.get("registered_artifacts", [])) == 7, "purg00 route amendment live-state registered_artifacts mismatch")
+    route_amendment_validator = _load_json(PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH.exists() else {}
+    _require(route_amendment_validator.get("validator_patch_applied") is True, "purg00 route amendment validator manifest mismatch")
+    _require(route_amendment_validator.get("new_expected_live_next_phase") is None, "purg00 route amendment validator manifest new_expected_live_next_phase mismatch")
+    route_amendment_schema = _load_json(PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH.exists() else {}
+    _require(route_amendment_schema.get("old_schema_version") == "3.3", "purg00 route amendment schema manifest old_schema_version mismatch")
+    _require(route_amendment_schema.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route amendment schema manifest new_schema_version mismatch")
+    route_amendment_no_real = _load_json(PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH) if PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH.exists() else {}
+    _require(route_amendment_no_real.get("purg01_opened") is False, "purg00 route amendment no-real-execution purg01_opened mismatch")
+    _require_forbidden_flags_false(route_amendment_no_real, "purg00 route amendment no real execution attestation")
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
     _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
-    _require(state["next_phase"] == EXPECTED_NEXT_PHASE_ID, "next_phase must declare PURG-00 as admitted live successor")
-    _require(state["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "active_next_phase must declare PURG-00 as admitted live successor")
-    _require(state["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class must declare purgatorium_full_intake")
-    _require(state["next_phase_authorized_by_operator"] is True, "next phase must be operator-authorized through standing canonroadmap approval")
+    _require(state.get("route_amendment_authorized_by_operator") is True, "route_amendment_authorized_by_operator must be true")
+    _require(
+        state.get("repeat_source_search_without_new_primary_source_forbidden") is True,
+        "repeat_source_search_without_new_primary_source_forbidden must be true",
+    )
+    _require(state["next_phase"] is CURRENT_EXPECTED_NEXT_PHASE_ID, "next_phase must be null in terminal wait-state")
+    _require(state["active_next_phase"] is CURRENT_EXPECTED_NEXT_PHASE_ID, "active_next_phase must be null in terminal wait-state")
+    _require(state["active_next_phase_class"] is CURRENT_EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class must be null in terminal wait-state")
+    _require(state["next_phase_authorized_by_operator"] is False, "next phase authorization must be false in terminal wait-state")
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
@@ -9452,18 +9532,27 @@ def main() -> None:
     _require_paths_match(state, policy["latest_completed_status_must_match_across"], "latest_completed_status")
     _require_paths_match(state, policy["status_must_match_across"], "status")
 
-    _require(state["current_live_route"]["active_next_phase"] == EXPECTED_NEXT_PHASE_ID, "current live route next phase must be PURG-00")
-    _require(state["current_live_route"]["active_next_phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "current live route next phase class mismatch")
+    _require(state["current_live_route"]["active_next_phase"] is CURRENT_EXPECTED_NEXT_PHASE_ID, "current live route next phase must be null")
+    _require(state["current_live_route"]["active_next_phase_class"] is CURRENT_EXPECTED_NEXT_PHASE_CLASS, "current live route next phase class mismatch")
     _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["decision"] == EXPECTED_DECISION, "current live route decision mismatch")
+    _require(state["current_live_route"]["status"] == EXPECTED_STATUS, "current live route blocked status mismatch")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
+    _require(
+        state["current_live_route"]["latest_completed_next_recommended_step"] == EXPECTED_NEXT_RECOMMENDED_STEP,
+        "current live route next step mismatch",
+    )
 
-    _require(state["next_action"]["phase"] == EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
-    _require(state["next_action"]["phase_class"] == EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
+    _require(state["next_action"]["phase"] is CURRENT_EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
+    _require(state["next_action"]["phase_class"] is CURRENT_EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
+    _require(
+        EXPECTED_NEXT_RECOMMENDED_STEP in state["next_action"]["notes"],
+        "next_action.notes must mention the exact next recommended step",
+    )
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
     _require(state["latest_completed_no_execution"]["source_phase_verified"] == IF11_SOURCE_PHASE, "latest_completed_no_execution.source_phase_verified mismatch")
@@ -9531,7 +9620,7 @@ def main() -> None:
     ):
         _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
-    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must point to PURG-00")
+    _require(state["locks"]["deferred_phase"] == EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must remain PURG-00")
     _require(
         EXPECTED_NEXT_RECOMMENDED_STEP in state["locks"]["deferred_phase_reason"],
         "locks.deferred_phase_reason must mention the exact next recommended step",
@@ -9558,67 +9647,8 @@ def main() -> None:
     _require(INFERNUS_STANDING_AUTHORIZATION_PATH.exists(), "missing INFERNUS_STANDING_AUTHORIZATION.md")
 
     _mirror_contains(
-        ROOT / "archive" / "derived_mirrors" / "CURRENT_STATE.md",
-        "ACTIVE_CONTEXT_STATE.json wins",
-        "purg00_handoff_intake_authority_lock_blocked",
-        "INF-FULL-07",
-        "latest_completed_phase: `IF-11 Minos Final Verdict + Closure`",
-        "latest_completed_status: `if11_minos_final_verdict_closure_pass`",
-        "Next phase: `PURG-00`",
-        "Active next phase class: `purgatorium_full_intake`",
-        "next_phase_authorized_by_operator: `true`",
-        "source_root_manifest_sha256: `3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`",
-        "source_graph_sha256: `c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`",
-        "operator_cosignature_status: `pending_operator_review`",
-        "purgatorium_handoff_ready: `true`",
-        "execution_scope: `artifact_only_final_verdict_closure`",
-        "technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "infernus_canonroadmap_status: `superseded_excludent_forensic_only`",
-        "live_route_opened: `true`",
-        "previous_live_next_phase: `IF-08`",
-        "live_route_opened_by: `purg00_route_admission_pass`",
-        "purg_pre_execution_status: `purg_pre_canonical_authority_execution_pass`",
-        "purg_pre_executed: `true`",
-        "purg_00_opened: `false`",
-        "purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`",
-        "purg00_route_admission_status: `purg00_route_admission_pass`",
-        "purg00_handoff_intake_status: `purg00_handoff_intake_authority_lock_blocked`",
-        "purg00_opened: `true`",
-        "purg00_executed: `false`",
-        "purg00_intake_executed: `true`",
-        "data_gap_status: `DATA_GAP_BLOCKED`",
-        "PERMANENT_ACTIVE_UPDATE_RULE_INSTALLED: `true`",
-        "Anti-proliferation rule active: `true`",
-        "CI enforcement active: `true`",
-        "governance_gate_streak: `0`",
-        "latest_completed_project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
-        "latest_completed_ci_state: `CI_GREEN_CONFIRMED`",
-        "next_recommended_step: `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`",
-    )
-    _mirror_contains(
-        ROOT / "archive" / "derived_mirrors" / "NEXT_ACTION.md",
-        "INF-FULL-07 — PURG-00 Handoff Intake / Authority Lock Bloqueado",
-        "next_phase: PURG-00",
-        "active_next_phase_class: purgatorium_full_intake",
-        "next_phase_authorized_by_operator: true",
-        "latest_completed_status: if11_minos_final_verdict_closure_pass",
-        "Leia project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md.",
-        "Este sync ja registra o packet canonico de IF11 com `source_phase_verified=IF-10 Purgatorium Handoff Graph`, `source_status_verified=if10_purgatorium_handoff_graph_pass`, `source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660`, `source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1`, `validated_handoff_ids=['IF09-FIND-001']`, `contextual_candidate_ids=['IF09-FIND-002']`, `excluded_invalid_ids=['IF09-FIND-003']`, `supporting_observation_ids=['IF09-OBS-001']`, `minos_mechanical_verdict=pass`, `minos_semantic_verdict=pass`, `anti_theater_verdict=pass`, `operator_cosignature_status=pending_operator_review`, `infernus_closure_status=closed_with_purgatorium_handoff_ready`, `purgatorium_handoff_ready=true` e `macro_transition_preserved=true`.",
-        "O roadmap tecnico ativo pos-Infernus agora e `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "Os artifacts `artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json`, `artifacts/purgatorium/purg00_source_hash_verification_matrix.json` e `artifacts/purgatorium/purg00_data_gap_matrix.json` agora registram que o intake/authority lock foi executado sem tocar finding, RED, triage ou qualquer superficie real.",
-        "O futuro `PURG-01` permanece bloqueado porque os campos `affected files`, `oracle id`, `blast radius`, `target control`, `risk class` e `dependency group` nao estao explicitamente acessiveis no packet atual sem inferencia.",
-        "O proximo prompt nao pode repetir `resolve_purg00_source_data_gap` sem nova fonte primaria.",
-        "O proximo passo recomendado neste estado e `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`.",
-        "PURG-PRE executed: true",
-        "PURG-00 opened: true",
-        "PURG-00 executed: false",
-        "PURG-00 intake executed: true",
-        "Data gap status: DATA_GAP_BLOCKED",
-        "PURG-00 execution real: false",
-    )
-    _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "purg00_handoff_intake_authority_lock_blocked",
+        "purg00_route_amendment_terminal_wait_state_blocked",
         "Latest completed phase: `IF-11 Minos Final Verdict + Closure`",
         "latest_completed_status=if11_minos_final_verdict_closure_pass",
         "active_context_remote_main_reflects_if11_minos_final_verdict_closure=true",
@@ -9627,211 +9657,13 @@ def main() -> None:
         "PURG-00 operator review packet = true",
         "PURG-00 route admission = true",
         "PURG-00 intake authority lock = true",
+        "live_route_closed_in_wait_state=true",
+        "route_amendment_authorized_by_operator=true",
+        "operator_required_source_packet_only_next_input=true",
         "PURG-00 real execution = false",
         "future waves real execution = false",
-        "operator_supply_purg00_required_source_packet_or_authorize_route_amendment",
+        "operator_supply_purg00_required_source_packet",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-    )
-    _mirror_contains(
-        ROOT / "archive" / "derived_mirrors" / "CONTEXT_INDEX.md",
-        "status: `purg00_handoff_intake_authority_lock_blocked`",
-        "OPERATOR_PREFERENCES.md",
-        "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
-        "artifacts/if09_evidence_bundle_vulnerability_register/decision.json",
-        "artifacts/if10_purgatorium_handoff_graph/decision.json",
-        "artifacts/if11_minos_final_verdict_closure/decision.json",
-        "excludent/infernus/roadmaps/infernus_full_canonroadmap.md",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/decision.json",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/root_manifest.json",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/hash_tree.json",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/custody_chain.jsonl",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/replay_diff_report.json",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json",
-        "artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
-        "docs/infernus_full/if09_evidence_bundle_vulnerability_register.md",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/decision.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/root_cause_candidates.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/regression_test_plan.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/revalidation_wave_plan.json",
-        "artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
-        "docs/infernus_full/if10_purgatorium_handoff_graph.md",
-        "artifacts/infernus/if11_minos_final_verdict_closure/decision.json",
-        "artifacts/infernus/if11_minos_final_verdict_closure/minos_mechanical_report_v4.json",
-        "artifacts/infernus/if11_minos_final_verdict_closure/infernus_closure_v4.json",
-        "docs/infernus_full/if11_minos_final_verdict_closure.md",
-        "Roadmap técnico ativo pós-Infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "Infernus canonroadmap: `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` = stub superseded, sem autoridade ativa",
-        "artifacts/if08_w6_final_audit_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w6_final_audit_controlled_execution_decision.json",
-        "artifacts/infernus/if08_w6_final_audit_controlled_execution_evidence_bundle.json",
-        "artifacts/infernus/if08_w6_final_audit_controlled_execution_minos_verdict.json",
-        "artifacts/infernus/if08_w6_final_audit_controlled_execution_safety_attestation.json",
-        "docs/infernus_full/if08_w6_final_audit_controlled_execution.md",
-        "artifacts/if08_w6_final_audit_preflight_readiness/decision.json",
-        "artifacts/infernus/if08_w6_final_audit_preflight_readiness_decision_2026_06_08.json",
-        "artifacts/infernus/if08_w6_minos_mechanical_readiness_matrix_2026_06_08.json",
-        "artifacts/infernus/if08_w6_ttr_har_threshold_contract_2026_06_08.json",
-        "docs/infernus_full/if08_w6_final_audit_preflight_readiness_2026_06_08.md",
-        "artifacts/if08_w5_business_chaos_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_decision_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_ledger_2026_06_08.jsonl",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_domain_results_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_bot_results_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_critical_coverage_results_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_oracle_results_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_safety_attestation_2026_06_08.json",
-        "artifacts/infernus/if08_w5_business_chaos_controlled_execution_no_real_execution_attestation_2026_06_08.json",
-        "docs/infernus_full/if08_w5_business_chaos_controlled_execution_2026_06_08.md",
-        "artifacts/if08_w5_business_chaos_preflight_gap_repair/decision.json",
-        "artifacts/infernus/if08_w5_business_chaos_preflight_gap_repair_decision_2026_06_08.json",
-        "artifacts/if08_w5_business_chaos_preflight_readiness/decision.json",
-        "artifacts/infernus/if08_w5_business_chaos_preflight_readiness_decision_2026_06_08.json",
-        "artifacts/if08_w4_post_sync_review/decision.json",
-        "artifacts/infernus/if08_w4_post_sync_review_decision_2026_06_08.json",
-        "artifacts/if08_w4_replay_rollback_concurrency_cost_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_controlled_execution_decision_2026_06_08.json",
-        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_metrics_2026_06_08.json",
-        "artifacts/infernus/if08_w4_replay_rollback_concurrency_cost_safety_attestation_2026_06_08.json",
-        "docs/infernus_full/if08_w4_replay_rollback_concurrency_cost_controlled_execution_2026_06_08.md",
-        "artifacts/if08_w3_post_sync_review/decision.json",
-        "artifacts/infernus/if08_w3_post_sync_review_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w4_readiness_matrix_2026_06_07.json",
-        "artifacts/if08_w3_runtime_tool_mcp_sandbox_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w3_runtime_tool_mcp_sandbox_controlled_execution_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w3_runtime_sandbox_detection_matrix_2026_06_07.json",
-        "artifacts/infernus/if08_w3_sirene_conditional_execution_record_2026_06_07.json",
-        "docs/infernus_full/if08_w3_runtime_tool_mcp_sandbox_controlled_execution_2026_06_07.md",
-        "artifacts/if08_w1_context_memory_rag_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w1_context_memory_rag_controlled_execution_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w1_context_integrity_detection_matrix_2026_06_07.json",
-        "docs/infernus_full/if08_w1_context_memory_rag_controlled_execution_2026_06_07.md",
-        "artifacts/if08_w1_context_memory_rag_preflight_readiness/decision.json",
-        "artifacts/infernus/if08_w1_context_memory_rag_preflight_readiness_decision_2026_06_07.json",
-        "artifacts/if08_w05_controlled_execution/decision.json",
-        "artifacts/infernus/if08_w05_controlled_execution_decision_2026_06_07.json",
-        "artifacts/infernus/if08_w05_evidence_bundle_manifest_2026_06_07.json",
-        "next_phase: `PURG-00`",
-        "active_next_phase_class: `purgatorium_full_intake`",
-        "next_phase_authorized_by_operator: `true`",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_summary.json",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_report.md",
-        "artifacts/purgatorium/purg00_source_packet_index.json",
-        "artifacts/purgatorium/purg00_handoff_id_classification_matrix.json",
-        "artifacts/purgatorium/purg00_source_hash_verification_matrix.json",
-        "artifacts/purgatorium/purg00_data_gap_matrix.json",
-        "artifacts/purgatorium/purg00_no_fix_attestation.json",
-        "artifacts/purgatorium/purg00_no_real_execution_attestation.json",
-        "artifacts/purgatorium/purg00_future_purg01_triage_candidate.json",
-        "INFERNUS_STANDING_AUTHORIZATION.md",
-        "excludent/",
-        "excluded_from_context",
-        "read_by_default = false",
-    )
-    _mirror_contains(
-        ROOT / "archive" / "derived_mirrors" / "ARIS_PHASE_LEDGER.md",
-        "IF-11 Minos Final Verdict + Closure | pass",
-        "if11_minos_final_verdict_closure_pass",
-        "project_commit_sha: `6312302ea45b72ddc310b2b33f56245be65b99dc`",
-        "artifacts/purgatorium/purg00_operator_review_packet_decision.json",
-        "artifacts/purgatorium/purg00_operator_review_packet_summary.json",
-        "artifacts/purgatorium/purg00_operator_review_packet_report.md",
-        "artifacts/purgatorium/purg00_route_admission_decision.json",
-        "artifacts/purgatorium/purg00_route_admission_summary.json",
-        "artifacts/purgatorium/purg00_route_admission_report.md",
-        "artifacts/purgatorium/purg00_route_admission_schema_patch_manifest.json",
-        "artifacts/purgatorium/purg00_route_admission_validator_patch_manifest.json",
-        "artifacts/purgatorium/purg00_route_admission_live_route_mutation_manifest.json",
-        "artifacts/purgatorium/purg00_route_admission_no_real_execution_attestation_v2.json",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_decision.json",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_summary.json",
-        "artifacts/purgatorium/purg00_handoff_intake_authority_lock_report.md",
-        "artifacts/purgatorium/purg00_source_packet_index.json",
-        "artifacts/purgatorium/purg00_handoff_id_classification_matrix.json",
-        "artifacts/purgatorium/purg00_source_hash_verification_matrix.json",
-        "artifacts/purgatorium/purg00_data_gap_matrix.json",
-        "artifacts/purgatorium/purg00_no_fix_attestation.json",
-        "artifacts/purgatorium/purg00_no_real_execution_attestation.json",
-        "artifacts/purgatorium/purg00_future_purg01_triage_candidate.json",
-        "artifacts/purgatorium/purg00_required_source_access_matrix.json",
-        "artifacts/purgatorium/purg00_not_opened_attestation.json",
-        "artifacts/purgatorium/purg00_route_admission_rollback_plan.md",
-        "next_recommended_step: `operator_supply_purg00_required_source_packet_or_authorize_route_amendment`",
-        "route_admission_decision: `artifacts/purgatorium/purg_pre_route_admission_decision.json`",
-        "live_route_opened_by: `purg_pre_route_admission_pass`",
-        "purg00_route_opened_by: `purg00_route_admission_pass`",
-        "purg_pre_execution_decision: `artifacts/purgatorium/purg_pre_canonical_authority_execution_decision.json`",
-        "purg_pre_executed: `true`",
-        "purg00_operator_review_packet_status: `purg00_operator_review_packet_pass`",
-        "purg00_route_admission_status: `purg00_route_admission_pass`",
-        "purg00_handoff_intake_status: `purg00_handoff_intake_authority_lock_blocked`",
-        "purg00_opened: `true`",
-        "purg00_executed: `false`",
-        "purg00_intake_executed: `true`",
-        "purg00_data_gap_status: `DATA_GAP_BLOCKED`",
-        "technical_roadmap_post_infernus: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "purg_pre_route_opening_candidate_created: `true`",
-        "IF-10 Purgatorium Handoff Graph | pass",
-        "if10_purgatorium_handoff_graph_pass",
-        "project_commit_sha: `57106d9780af7a807bd58ea6039af3a7b1b23701`",
-        "next_recommended_step: `prepare_if11_minos_final_verdict_closure`",
-        "IF-09 Evidence Bundle + Vulnerability Register | pass",
-        "if09_evidence_bundle_vulnerability_register_pass",
-        "project_commit_sha: `38b16edadce15ce8f2049bb3de8538bb921e344e`",
-        "next_recommended_step: `prepare_if10_purgatorium_handoff_graph`",
-        "IF-08 W6 Final Audit Controlled Execution | pass",
-        "if08_w6_final_audit_controlled_execution_pass",
-        "project_commit_sha: `eae468c79687474de086c984b55a3f7ff47d73f7`",
-        "next_recommended_step: `prepare_if09_evidence_bundle_vulnerability_register`",
-        "IF-08 W6 Final Audit Preflight Readiness | pass",
-        "if08_w6_final_audit_preflight_readiness_pass",
-        "project_commit_sha: `0358de95c7fb80d06871a20ae46b8fbc3174c5d7`",
-        "next_recommended_step: `execute_if08_w6_final_audit_controlled_execution`",
-        "IF-08 W5 Controlled Execution Post-Sync Review & W6 Readiness Decision | pass",
-        "if08_w5_post_sync_review_w6_readiness_pass",
-        "project_commit_sha: `e9dfae63206523f26fce5df907945952c7351ad5`",
-        "next_recommended_step: `prepare_if08_w6_final_audit_preflight_readiness`",
-        "IF-08 W5 Business Chaos Controlled Execution | pass",
-        "if08_w5_business_chaos_controlled_execution_pass",
-        "project_commit_sha: `5eb32158153bc5ff3db87d33c3c625f5b0df80fa`",
-        "next_recommended_step: `post_sync_review_if08_w5_business_chaos_controlled_execution`",
-        "IF-08 W5 Business Chaos Preflight Gap Repair | pass",
-        "if08_w5_business_chaos_preflight_gap_repair_pass",
-        "project_commit_sha: `0c9921503418da9883bcc9288178bd3f05e0cd8c`",
-        "next_recommended_step: `execute_if08_w5_business_chaos_controlled_execution`",
-        "IF-08 W5 Business Chaos Preflight Readiness | blocked",
-        "if08_w5_business_chaos_preflight_readiness_blocked",
-        "project_commit_sha: `108ea32fa3a2f9b444f59b49818f5f7f7d6bc60c`",
-        "next_recommended_step: `repair_if08_w5_business_chaos_preflight_gaps`",
-        "IF-08 W4 Controlled Execution Post-Sync Review & W5 Readiness Decision | pass",
-        "if08_w4_post_sync_review_w5_readiness_pass",
-        "project_commit_sha: `d575b6f3c37c1ba411a2a0266efb9d04957234c0`",
-        "next_recommended_step: `prepare_if08_w5_business_chaos_preflight_readiness`",
-        "IF-08 W4 Replay/Rollback/Concurrency/Cost Controlled Execution | pass",
-        "if08_w4_replay_rollback_concurrency_cost_controlled_execution_pass",
-        "project_commit_sha: `c65888a2f587c35b4e38b16b50b917233bac8fa3`",
-        "next_recommended_step: `post_sync_review_if08_w4_replay_rollback_concurrency_cost_controlled_execution`",
-        "IF-08 W3 Runtime/Tool/MCP/Sandbox Controlled Execution | pass",
-        "if08_w3_runtime_tool_mcp_sandbox_controlled_execution_pass",
-        "project_commit_sha: `598dd5c8d98e8c9f89f9123e10efedf50871079b`",
-        "next_recommended_step: `post_sync_review_if08_w3_runtime_tool_mcp_sandbox_controlled_execution`",
-        "IF-08 W1 Context/Memory/RAG Controlled Execution | pass",
-        "if08_w1_context_memory_rag_controlled_execution_pass",
-        "project_commit_sha: `1d0f51584e082d1f3f7c270df89d567a96066711`",
-        "next_recommended_step: `post_sync_review_if08_w1_context_memory_rag_controlled_execution`",
-        "IF-08 W1 Context/Memory/RAG Preflight Readiness | pass",
-        "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution | pass",
-        "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
-        "next_phase: `PURG-00`",
-        "active_next_phase_class: `purgatorium_full_intake`",
-        "next_phase_authorized_by_operator: `true`",
-        "INF-FULL-06 | ARIS Infernus FULL Excludent Quarantine Gate | pass",
-        "INF-FULL-05 | ARIS Infernus FULL Pre-Execution Review Gate | pass",
-        "INF-FULL-04 | ARIS Infernus FULL Scenario Pack & Harness Readiness Gate | pass",
-        "INF-FULL-01 | ARIS Infernus Full Scope Charter Gate | pass",
-        "ACB-CAP-05 | ARIS Capability Build Advanced Supply Chain Gate | pass",
     )
     _mirror_contains(
         ROOT / "README.md",
@@ -9839,33 +9671,37 @@ def main() -> None:
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg00_handoff_intake_authority_lock_blocked",
+        "purg00_route_amendment_terminal_wait_state_blocked",
         "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
-        "next_phase: PURG-00",
-        "next_recommended_step: operator_supply_purg00_required_source_packet_or_authorize_route_amendment",
+        "next_phase: null",
+        "next_recommended_step: operator_supply_purg00_required_source_packet",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+        "PURG-01 continua fechado: true",
         "Todos execution_locks: false",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "Latest completed phase: IF-11 Minos Final Verdict + Closure",
-        "Active next phase: PURG-00",
-        "Active next phase class: purgatorium_full_intake",
+        "Active next phase: null",
+        "Active next phase class: null",
         "Standing authorization: canonroadmap approved by operator",
         "Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
         "PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`",
-        "Live route opened by: `purg00_route_admission_pass`",
+        "Live route terminalized by: `purg00_route_amendment_terminal_wait_state_operator_source_required`",
         "PURG-PRE canonical authority execution verified by: `purg_pre_canonical_authority_execution_pass`",
         "PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`",
         "PURG-00 route admitted by: `purg00_route_admission_pass`",
         "PURG-00 handoff intake / authority lock status: `purg00_handoff_intake_authority_lock_blocked`",
+        "PURG-00 route amendment terminal wait-state status: `purg00_route_amendment_terminal_wait_state_operator_source_required`",
         "PURG-00 execution: false",
         "PURG-00 intake executed: true",
         "Future PURG-01 triage readiness: DATA_GAP_BLOCKED",
+        "PURG-01 triage authorized: false",
+        "Only permitted next input: `operator_supply_purg00_required_source_packet`",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG-00 handoff intake / authority lock preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The live route remains `PURG-00`, the intake authority lock is created, IF09/IF10 hashes are verified, the differential search found no acceptable new primary source packet, and the next step is operator_supply_purg00_required_source_packet_or_authorize_route_amendment.",
+        "IF11 minos final verdict closure is canonical as pass; this PURG-00 route amendment terminal wait-state preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The live route is closed, PURG-01 remains unopened, IF09/IF10 hashes remain verified, repeating resolve_purg00_source_data_gap without a new primary source remains prohibited, and the only next permitted input is operator_supply_purg00_required_source_packet.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
@@ -9888,15 +9724,6 @@ def main() -> None:
         "Nenhum PASS é canônico enquanto aris-active-context/main não refletir",
         "Resposta sem SHA no topo = INVALID",
         "PASS só existe: CI terminal green + validator pass + artifact no disco",
-    )
-    _mirror_contains(
-        ROOT / "archive" / "superseded" / "PROMPT_CONTRACT.md",
-        "REGRA ANTI-PROLIFERAÇÃO DE GATES",
-        "Toda resposta do revisor abre com SHA resolvido de origin/main lido naquele turno.",
-        "Sem SHA citado: resposta é INVALID por construção.",
-        "POST-COMMIT VERIFICATION",
-        "The model never self-reports PASS. The CI reports PASS.",
-        "Every Codex prompt that can produce a phase result must require active-context update as a blocking deliverable.",
     )
 
     fixture_assertion_path = ROOT / "scripts/assert_no_unauthorized_fixtures.py"

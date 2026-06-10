@@ -5,5 +5,5 @@
   "purg00_intake_executed": true,
   "authority_lock_created": true,
   "data_gap_status": "DATA_GAP_BLOCKED",
-  "next_recommended_step": "operator_supply_purg00_required_source_packet_or_authorize_route_amendment"
+  "next_recommended_step": "operator_supply_purg00_required_source_packet"
 }
