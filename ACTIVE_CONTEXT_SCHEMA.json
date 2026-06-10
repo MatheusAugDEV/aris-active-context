@@ -784,6 +784,9 @@
     "purg00_route_amendment_terminal_wait_state": {
       "type": "object"
     },
+    "purg00_operator_source_packet_intake": {
+      "type": "object"
+    },
     "next_action": {
       "additionalProperties": false,
       "properties": {
@@ -925,7 +928,8 @@
         "3.1",
         "3.2",
         "3.3",
-        "3.4"
+        "3.4",
+        "3.5"
       ],
       "type": "string"
     },
@@ -1098,6 +1102,9 @@
           "type": "string"
         },
         "schema_3_4_change_summary": {
+          "type": "string"
+        },
+        "schema_3_5_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {

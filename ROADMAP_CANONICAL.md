@@ -31,18 +31,20 @@ PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`
 PURG-00 route admitted by: `purg00_route_admission_pass`
 PURG-00 handoff intake / authority lock status: `purg00_handoff_intake_authority_lock_blocked`
 PURG-00 route amendment terminal wait-state status: `purg00_route_amendment_terminal_wait_state_operator_source_required`
+PURG-00 operator source packet intake: `purg00_operator_source_packet_intake_pass`
 Future PURG-00 admission candidate: `artifacts/purgatorium/purg_pre_future_purg00_admission_candidate.json`
 Previous live route preserved historically before admission: `IF-08` / `infernus_full_execution`
 PURG-00 execution: false
 PURG-00 intake executed: true
 Future PURG-01 triage readiness: DATA_GAP_BLOCKED
 PURG-01 triage authorized: false
-Only permitted next input: `operator_supply_purg00_required_source_packet`
+Operator primary source packet supplied and validated: true
+Next non-execution step: `prepare_purg01_route_admission_review`
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
 Product/Bedrock/real_apply/secrets/runtime real: false
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
 IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
-IF11 minos final verdict closure is canonical as pass; this PURG-00 route amendment terminal wait-state preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The live route is closed, PURG-01 remains unopened, IF09/IF10 hashes remain verified, repeating resolve_purg00_source_data_gap without a new primary source remains prohibited, and the only next permitted input is operator_supply_purg00_required_source_packet.
+IF11 minos final verdict closure is canonical as pass; this PURG-00 sync now preserves the closed live route, records the operator-supplied primary source packet as validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 unopened, and limits the next move to prepare_purg01_route_admission_review without authorizing any real execution surface.
 excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy

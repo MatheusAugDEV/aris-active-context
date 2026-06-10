@@ -213,11 +213,11 @@
         "status": "purg00_route_amendment_terminal_wait_state_blocked",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "operator_supply_purg00_required_source_packet"
+        "latest_completed_next_recommended_step": "prepare_purg01_route_admission_review"
     },
     "current_status": "if11_minos_final_verdict_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "operator_supply_purg00_required_source_packet",
+    "latest_completed_next_recommended_step": "prepare_purg01_route_admission_review",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -308,9 +308,47 @@
         "purg00_unresolved": true,
         "purg01_open_authorized": false,
         "operator_required_source_packet": "artifacts/purgatorium/purg00_operator_required_source_packet.json",
+        "source_packet_supplied": true,
+        "source_packet_validated": true,
+        "source_packet_sha256": "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
+        "source_packet_project_commit_sha": "ff9ade875ebf47bad8c4fde0311f576d958c1625",
+        "source_packet_project_ci_state": "CI_GREEN_CONFIRMED",
         "route_amendment_decision_artifact": "artifacts/purgatorium/purg00_route_amendment_terminal_wait_state_decision.json",
-        "next_recommended_step": "operator_supply_purg00_required_source_packet",
+        "next_recommended_step": "prepare_purg01_route_admission_review",
         "real_execution_authorized": false
+    },
+    "purg00_operator_source_packet_intake": {
+        "decision": "pass",
+        "status": "purg00_operator_source_packet_intake_pass",
+        "source_packet_supplied": true,
+        "source_packet_validated": true,
+        "source_packet_path": "artifacts/purgatorium/purg00_operator_required_source_packet.json",
+        "source_packet_sha256": "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
+        "source_packet_project_commit_sha": "ff9ade875ebf47bad8c4fde0311f576d958c1625",
+        "source_packet_project_ci_state": "CI_GREEN_CONFIRMED",
+        "source_packet_project_ci_runs": {
+            "Core Public API Baseline": 27248534781,
+            "Advanced Supply Chain": 27248534758,
+            "Product Pilot Boundary": 27248534813,
+            "Runtime Public API": 27248534791,
+            "Backend Baseline": 27248534805,
+            "MCP Runtime Sandbox": 27248534776,
+            "Supply Chain Baseline": 27248534827,
+            "Run Tests": 27248534784,
+            "CI": 27248534792
+        },
+        "finding_id": "IF09-FIND-001",
+        "required_fields_validated": [
+            "affected_files",
+            "oracle_id",
+            "blast_radius",
+            "target_control",
+            "risk_class",
+            "dependency_group"
+        ],
+        "purg01_open_authorized": false,
+        "real_execution_authorized": false,
+        "next_recommended_step": "prepare_purg01_route_admission_review"
     },
     "route_amendment_authorized_by_operator": true,
     "repeat_source_search_without_new_primary_source_forbidden": true,
@@ -417,7 +455,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": "PURG-00",
-        "deferred_phase_reason": "PURG-00 remains unresolved, but the live route is now closed into a terminal wait-state by operator-authorized route amendment. Repeating resolve_purg00_source_data_gap without a new primary source remains prohibited, PURG-01 triage stays closed, the only permitted next input is operator_supply_purg00_required_source_packet, wait-state evidence is recorded in artifacts/purgatorium/purg00_route_amendment_terminal_wait_state_decision.json, and no real execution surface is authorized.",
+        "deferred_phase_reason": "PURG-00 remains unresolved and the live route stays blocked with no successor row, but the operator primary source packet is now supplied and validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with CI_GREEN_CONFIRMED. Repeating resolve_purg00_source_data_gap remains prohibited, PURG-01 stays closed, the next non-execution step is prepare_purg01_route_admission_review, intake evidence is recorded in artifacts/purgatorium/purg00_operator_source_packet_intake_decision.json, and no real execution surface is authorized.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -429,7 +467,7 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-00 remains unresolved and the live route is now closed into an operator-source terminal wait-state. The accessible packet still does not explicitly expose affected_files, oracle_id, blast_radius, target_control, risk_class, and dependency_group, so repeating resolve_purg00_source_data_gap without a new primary source remains prohibited. PURG-01 stays closed. The only permitted next input is operator_supply_purg00_required_source_packet. Do not execute triage, RED, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network.",
+        "notes": "The operator primary source packet for PURG-00 is now supplied and validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with CI_GREEN_CONFIRMED. The live route still has no authorized successor row, so PURG-01 remains closed and the next non-execution step is prepare_purg01_route_admission_review. Do not execute triage, RED, finding fix, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, or external network.",
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": null,
         "phase_class": null,
@@ -451,7 +489,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.4",
+    "schema_version": "3.5",
     "status": "purg00_route_amendment_terminal_wait_state_blocked",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -467,7 +505,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.4",
+        "current_schema_version": "3.5",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -476,6 +514,7 @@
         "schema_3_1_change_summary": "Final compaction: completed_phases archived to completed_phases_history.json and replaced by compact summary object, narrative fields in next_action/last_transition/locks compacted to single-line strings.",
         "schema_3_2_change_summary": "Route admission for PURG-PRE: allow purgatorium_full_authority_materialization as a live-route phase class after IF11 closure and operator-reviewed route-admission artifact pack, while preserving all real execution/product/Bedrock/secrets/apply locks false.",
         "schema_3_3_change_summary": "Route admission for PURG-00: allow purgatorium_full_intake as a live-route phase class after PURG-PRE authority/materialization execution and operator-reviewed PURG-00 admission packet, while preserving all real execution/product/Bedrock/secrets/apply locks false.",
-        "schema_3_4_change_summary": "PURG-00 route amendment terminal wait-state: close the live route after the source-gap terminal blocker, require operator-supplied primary source packet as the only next input, allow next_phase/active_next_phase to become null explicitly, and preserve all real execution/product/Bedrock/secrets/apply locks false."
+        "schema_3_4_change_summary": "PURG-00 route amendment terminal wait-state: close the live route after the source-gap terminal blocker, require operator-supplied primary source packet as the only next input, allow next_phase/active_next_phase to become null explicitly, and preserve all real execution/product/Bedrock/secrets/apply locks false.",
+        "schema_3_5_change_summary": "PURG-00 operator source packet intake sync: record the operator-supplied primary source packet as a validated canonical input with project commit, packet SHA, and CI evidence while keeping next_phase/active_next_phase null, PURG-01 closed, and all real execution surfaces false."
     }
 }

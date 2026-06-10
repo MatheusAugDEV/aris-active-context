@@ -7,7 +7,7 @@
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=operator_supply_purg00_required_source_packet
+- next_recommended_step=prepare_purg01_route_admission_review
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
@@ -55,7 +55,14 @@
 - required_source_access_matrix_created=true
 - source_gap_terminal_blocker_created=true
 - repeat_source_search_without_new_primary_source_forbidden=true
-- operator_required_source_packet_only_next_input=true
+- operator_required_source_packet_only_next_input=false
+- operator_source_packet_supplied=true
+- operator_source_packet_validated=true
+- operator_source_packet_path=artifacts/purgatorium/purg00_operator_required_source_packet.json
+- operator_source_packet_sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72
+- operator_source_packet_project_commit_sha=ff9ade875ebf47bad8c4fde0311f576d958c1625
+- operator_source_packet_project_ci_state=CI_GREEN_CONFIRMED
+- next_route_candidate=prepare_purg01_route_admission_review
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass

@@ -41,7 +41,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["latest_completed_project_commit_sha"], "6312302ea45b72ddc310b2b33f56245be65b99dc")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "operator_supply_purg00_required_source_packet",
+            "prepare_purg01_route_admission_review",
         )
         self.assertIsNone(state["next_phase"])
         self.assertIsNone(state["active_next_phase"])
@@ -56,7 +56,7 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_live_route"]["status"], "purg00_route_amendment_terminal_wait_state_blocked")
         self.assertIsNone(state["current_live_route"]["active_next_phase"])
         self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
-        self.assertIn("operator_supply_purg00_required_source_packet", state["next_action"]["notes"])
+        self.assertIn("prepare_purg01_route_admission_review", state["next_action"]["notes"])
         self.assertEqual(
             state["purg00_source_gap_terminal_blocker"]["status"],
             "purg00_source_gap_terminal_blocker_operator_source_required",
@@ -68,6 +68,18 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         )
         self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["live_route_closed"])
         self.assertFalse(state["purg00_route_amendment_terminal_wait_state"]["purg01_open_authorized"])
+        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["source_packet_supplied"])
+        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["source_packet_validated"])
+        self.assertEqual(
+            state["purg00_operator_source_packet_intake"]["status"],
+            "purg00_operator_source_packet_intake_pass",
+        )
+        self.assertTrue(state["purg00_operator_source_packet_intake"]["source_packet_validated"])
+        self.assertEqual(
+            state["purg00_operator_source_packet_intake"]["source_packet_sha256"],
+            "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
+        )
+        self.assertFalse(state["purg00_operator_source_packet_intake"]["purg01_open_authorized"])
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -138,7 +150,8 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertIn("route_amendment_authorized_by_operator", schema["properties"])
         self.assertIn("repeat_source_search_without_new_primary_source_forbidden", schema["properties"])
         self.assertIn("purg00_route_amendment_terminal_wait_state", schema["properties"])
-        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_4_change_summary"]["type"], "string")
+        self.assertIn("purg00_operator_source_packet_intake", schema["properties"])
+        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_5_change_summary"]["type"], "string")
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()

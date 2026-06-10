@@ -48,7 +48,7 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "purg00_route_amendment_terminal_wait_state_blocked"
 EXPECTED_DECISION = "blocked"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.4"
+EXPECTED_SCHEMA_VERSION = "3.5"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
 CURRENT_EXPECTED_NEXT_PHASE_ID = None
@@ -61,7 +61,8 @@ EXPECTED_NEXT_ACTION_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "operator_supply_purg00_required_source_packet"
+EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_purg01_route_admission_review"
+PURG00_REQUIRED_SOURCE_PACKET_STEP = "operator_supply_purg00_required_source_packet"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
 PURG00_OPERATOR_REVIEW_PACKET_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg00_route_admission"
 EXPECTED_PROJECT_CI_RUN_URL = "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27177997351"
@@ -100,6 +101,17 @@ PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "p
 PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_schema_patch_manifest.json"
 PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_no_real_execution_attestation.json"
 PURG00_ROUTE_AMENDMENT_ROLLBACK_PLAN_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_route_amendment_rollback_plan.md"
+PURG00_OPERATOR_SOURCE_PACKET_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_required_source_packet.json"
+PURG00_OPERATOR_SOURCE_PACKET_INTAKE_DECISION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_intake_decision.json"
+PURG00_OPERATOR_SOURCE_PACKET_INTAKE_SUMMARY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_intake_summary.json"
+PURG00_OPERATOR_SOURCE_PACKET_INTAKE_REPORT_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_intake_report.md"
+PURG00_OPERATOR_SOURCE_PACKET_HASH_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_hash_verification.json"
+PURG00_OPERATOR_SOURCE_PACKET_CI_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_ci_verification.json"
+PURG00_OPERATOR_SOURCE_PACKET_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_no_real_execution_attestation.json"
+PURG00_OPERATOR_SOURCE_PACKET_NEXT_ROUTE_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg00_operator_source_packet_next_route_candidate.json"
+PURG00_OPERATOR_SOURCE_PACKET_SHA = "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72"
+PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA = "ff9ade875ebf47bad8c4fde0311f576d958c1625"
+PURG00_OPERATOR_SOURCE_PACKET_INTAKE_STATUS = "purg00_operator_source_packet_intake_pass"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
     PURG00_ROUTE_ADMISSION_STATUS,
     PURG00_HANDOFF_INTAKE_STATUS,
@@ -9308,7 +9320,7 @@ def main() -> None:
         "purg00_source_gap_terminal_blocker missing fields mismatch",
     )
     _require(
-        blocker.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP,
+        blocker.get("next_recommended_step") == PURG00_REQUIRED_SOURCE_PACKET_STEP,
         "purg00_source_gap_terminal_blocker next step mismatch",
     )
     _require(blocker.get("source_root_manifest_sha256") == IF11_SOURCE_ROOT_MANIFEST_SHA, "terminal blocker root manifest sha mismatch")
@@ -9362,6 +9374,11 @@ def main() -> None:
         "purg00 route amendment decision artifact path mismatch",
     )
     _require(wait_state.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment next step mismatch")
+    _require(wait_state.get("source_packet_supplied") is True, "purg00 route amendment source_packet_supplied mismatch")
+    _require(wait_state.get("source_packet_validated") is True, "purg00 route amendment source_packet_validated mismatch")
+    _require(wait_state.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg00 route amendment source_packet_sha256 mismatch")
+    _require(wait_state.get("source_packet_project_commit_sha") == PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA, "purg00 route amendment source_packet_project_commit_sha mismatch")
+    _require(wait_state.get("source_packet_project_ci_state") == "CI_GREEN_CONFIRMED", "purg00 route amendment source_packet_project_ci_state mismatch")
     _require(wait_state.get("real_execution_authorized") is False, "purg00 route amendment real_execution_authorized mismatch")
     for path, message in (
         (PURG00_ROUTE_AMENDMENT_DECISION_PATH, "missing purg00 route amendment decision artifact"),
@@ -9384,7 +9401,7 @@ def main() -> None:
         route_amendment_summary = _load_json(PURG00_ROUTE_AMENDMENT_SUMMARY_PATH)
         _require(route_amendment_summary.get("live_route_closed") is True, "purg00 route amendment summary live_route_closed mismatch")
         _require(route_amendment_summary.get("next_phase") is None, "purg00 route amendment summary next_phase mismatch")
-        _require(route_amendment_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment summary next step mismatch")
+        _require(route_amendment_summary.get("next_recommended_step") == PURG00_REQUIRED_SOURCE_PACKET_STEP, "purg00 route amendment summary next step mismatch")
         route_amendment_live_state = _load_json(PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH)
         _require(route_amendment_live_state.get("previous_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route amendment live-state previous_live_next_phase mismatch")
         _require(route_amendment_live_state.get("new_live_next_phase") is None, "purg00 route amendment live-state new_live_next_phase mismatch")
@@ -9394,10 +9411,76 @@ def main() -> None:
         _require(route_amendment_validator.get("new_expected_live_next_phase") is None, "purg00 route amendment validator manifest new_expected_live_next_phase mismatch")
         route_amendment_schema = _load_json(PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH)
         _require(route_amendment_schema.get("old_schema_version") == "3.3", "purg00 route amendment schema manifest old_schema_version mismatch")
-        _require(route_amendment_schema.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route amendment schema manifest new_schema_version mismatch")
+        _require(route_amendment_schema.get("new_schema_version") == "3.4", "purg00 route amendment schema manifest new_schema_version mismatch")
         route_amendment_no_real = _load_json(PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH)
         _require(route_amendment_no_real.get("purg01_opened") is False, "purg00 route amendment no-real-execution purg01_opened mismatch")
         _require_forbidden_flags_false(route_amendment_no_real, "purg00 route amendment no real execution attestation")
+    intake = state.get("purg00_operator_source_packet_intake")
+    _require(isinstance(intake, dict), "purg00_operator_source_packet_intake must exist")
+    _require(intake.get("decision") == "pass", "purg00 operator source packet intake decision mismatch")
+    _require(intake.get("status") == PURG00_OPERATOR_SOURCE_PACKET_INTAKE_STATUS, "purg00 operator source packet intake status mismatch")
+    _require(intake.get("source_packet_supplied") is True, "purg00 operator source packet intake source_packet_supplied mismatch")
+    _require(intake.get("source_packet_validated") is True, "purg00 operator source packet intake source_packet_validated mismatch")
+    _require(
+        intake.get("source_packet_path") == "artifacts/purgatorium/purg00_operator_required_source_packet.json",
+        "purg00 operator source packet intake path mismatch",
+    )
+    _require(intake.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg00 operator source packet intake sha mismatch")
+    _require(intake.get("source_packet_project_commit_sha") == PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA, "purg00 operator source packet intake project sha mismatch")
+    _require(intake.get("source_packet_project_ci_state") == "CI_GREEN_CONFIRMED", "purg00 operator source packet intake ci state mismatch")
+    _require(intake.get("finding_id") == "IF09-FIND-001", "purg00 operator source packet intake finding_id mismatch")
+    _require(
+        intake.get("required_fields_validated") == [
+            "affected_files",
+            "oracle_id",
+            "blast_radius",
+            "target_control",
+            "risk_class",
+            "dependency_group",
+        ],
+        "purg00 operator source packet intake required_fields_validated mismatch",
+    )
+    _require(intake.get("purg01_open_authorized") is False, "purg00 operator source packet intake purg01_open_authorized mismatch")
+    _require(intake.get("real_execution_authorized") is False, "purg00 operator source packet intake real_execution_authorized mismatch")
+    _require(intake.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 operator source packet intake next step mismatch")
+    if PROJECT_CHECKOUT_PRESENT:
+        packet = _load_json(PURG00_OPERATOR_SOURCE_PACKET_PATH)
+        _require(packet.get("packet_id") == "purg00_operator_required_source_packet", "purg00 operator source packet packet_id mismatch")
+        _require(packet.get("decision") == "operator_source_supplied", "purg00 operator source packet decision mismatch")
+        _require(packet.get("applies_to", {}).get("phase") == "PURG-00", "purg00 operator source packet phase mismatch")
+        _require(packet.get("applies_to", {}).get("finding_id") == "IF09-FIND-001", "purg00 operator source packet finding_id mismatch")
+        required_fields = packet.get("required_fields", {})
+        _require(isinstance(required_fields.get("affected_files"), list) and len(required_fields["affected_files"]) > 0, "purg00 operator source packet affected_files mismatch")
+        for key in ("oracle_id", "blast_radius", "target_control", "risk_class", "dependency_group"):
+            _require(bool(required_fields.get(key)), f"purg00 operator source packet {key} mismatch")
+        forbidden = packet.get("forbidden", {})
+        for key in ("inferred_fields", "purg01_opened", "triage_executed", "finding_fix_executed", "real_execution_authorized"):
+            _require(forbidden.get(key) is False, f"purg00 operator source packet forbidden flag {key} mismatch")
+        _require(hashlib.sha256(PURG00_OPERATOR_SOURCE_PACKET_PATH.read_bytes()).hexdigest() == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg00 operator source packet sha mismatch")
+        for path in (
+            PURG00_OPERATOR_SOURCE_PACKET_INTAKE_DECISION_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_INTAKE_SUMMARY_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_INTAKE_REPORT_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_HASH_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_CI_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_NO_REAL_PATH,
+            PURG00_OPERATOR_SOURCE_PACKET_NEXT_ROUTE_PATH,
+        ):
+            _require(path.exists(), f"missing purg00 operator source packet intake artifact: {path}")
+        intake_decision = _load_json(PURG00_OPERATOR_SOURCE_PACKET_INTAKE_DECISION_PATH)
+        _require(intake_decision.get("status") == PURG00_OPERATOR_SOURCE_PACKET_INTAKE_STATUS, "purg00 operator source packet intake decision status mismatch")
+        intake_hash = _load_json(PURG00_OPERATOR_SOURCE_PACKET_HASH_PATH)
+        _require(intake_hash.get("sha_match") is True, "purg00 operator source packet hash verification mismatch")
+        intake_ci = _load_json(PURG00_OPERATOR_SOURCE_PACKET_CI_PATH)
+        _require(intake_ci.get("project_commit_sha") == PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA, "purg00 operator source packet ci project sha mismatch")
+        _require(intake_ci.get("project_ci_state") == "CI_GREEN_CONFIRMED", "purg00 operator source packet ci state mismatch")
+        _require(len(intake_ci.get("runs", [])) == 9, "purg00 operator source packet ci runs mismatch")
+        intake_no_real = _load_json(PURG00_OPERATOR_SOURCE_PACKET_NO_REAL_PATH)
+        _require_forbidden_flags_false(intake_no_real, "purg00 operator source packet no real execution attestation")
+        _require(intake_no_real.get("purg01_opened") is False, "purg00 operator source packet no real execution purg01_opened mismatch")
+        intake_next_route = _load_json(PURG00_OPERATOR_SOURCE_PACKET_NEXT_ROUTE_PATH)
+        _require(intake_next_route.get("candidate_phase") == "PURG-01", "purg00 operator source packet next route candidate phase mismatch")
+        _require(intake_next_route.get("purg01_opened_now") is False, "purg00 operator source packet next route candidate purg01_opened_now mismatch")
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
     _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
@@ -9660,10 +9743,13 @@ def main() -> None:
         "PURG-00 intake authority lock = true",
         "live_route_closed_in_wait_state=true",
         "route_amendment_authorized_by_operator=true",
-        "operator_required_source_packet_only_next_input=true",
+        "operator_source_packet_supplied=true",
+        "operator_source_packet_validated=true",
+        "operator_source_packet_project_commit_sha=ff9ade875ebf47bad8c4fde0311f576d958c1625",
+        "next_route_candidate=prepare_purg01_route_admission_review",
         "PURG-00 real execution = false",
         "future waves real execution = false",
-        "operator_supply_purg00_required_source_packet",
+        "prepare_purg01_route_admission_review",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
@@ -9675,9 +9761,10 @@ def main() -> None:
         "purg00_route_amendment_terminal_wait_state_blocked",
         "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
         "next_phase: null",
-        "next_recommended_step: operator_supply_purg00_required_source_packet",
+        "next_recommended_step: prepare_purg01_route_admission_review",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "PURG-01 continua fechado: true",
+        "Pacote primario do operador validado: true",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -9694,15 +9781,17 @@ def main() -> None:
         "PURG-00 route admitted by: `purg00_route_admission_pass`",
         "PURG-00 handoff intake / authority lock status: `purg00_handoff_intake_authority_lock_blocked`",
         "PURG-00 route amendment terminal wait-state status: `purg00_route_amendment_terminal_wait_state_operator_source_required`",
+        "PURG-00 operator source packet intake: `purg00_operator_source_packet_intake_pass`",
         "PURG-00 execution: false",
         "PURG-00 intake executed: true",
         "Future PURG-01 triage readiness: DATA_GAP_BLOCKED",
         "PURG-01 triage authorized: false",
-        "Only permitted next input: `operator_supply_purg00_required_source_packet`",
+        "Operator primary source packet supplied and validated: true",
+        "Next non-execution step: `prepare_purg01_route_admission_review`",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG-00 route amendment terminal wait-state preserves minos_mechanical_verdict=pass, minos_semantic_verdict=pass, anti_theater_verdict=pass, operator_cosignature_status=pending_operator_review, infernus_closure_status=closed_with_purgatorium_handoff_ready, purgatorium_handoff_ready=true, macro_transition_preserved=true, and all runtime/apply/network/secret/cost/quota/audio surfaces false. The live route is closed, PURG-01 remains unopened, IF09/IF10 hashes remain verified, repeating resolve_purg00_source_data_gap without a new primary source remains prohibited, and the only next permitted input is operator_supply_purg00_required_source_packet.",
+        "IF11 minos final verdict closure is canonical as pass; this PURG-00 sync now preserves the closed live route, records the operator-supplied primary source packet as validated from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 unopened, and limits the next move to prepare_purg01_route_admission_review without authorizing any real execution surface.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
