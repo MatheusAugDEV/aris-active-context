@@ -9374,29 +9374,30 @@ def main() -> None:
         (PURG00_ROUTE_AMENDMENT_ROLLBACK_PLAN_PATH, "missing purg00 route amendment rollback plan"),
     ):
         _require_project_checkout_artifact(path, message)
-    route_amendment_decision = _load_json(PURG00_ROUTE_AMENDMENT_DECISION_PATH) if PURG00_ROUTE_AMENDMENT_DECISION_PATH.exists() else {}
-    _require(route_amendment_decision.get("phase_id") == "PURG-00-ROUTE-AMENDMENT-TERMINAL-WAIT-STATE", "purg00 route amendment decision phase_id mismatch")
-    _require(route_amendment_decision.get("decision") == "blocked", "purg00 route amendment decision mismatch")
-    _require(route_amendment_decision.get("status") == PURG00_ROUTE_AMENDMENT_WAIT_STATE_STATUS, "purg00 route amendment decision status mismatch")
-    _require(route_amendment_decision.get("new_live_next_phase") is None, "purg00 route amendment decision new_live_next_phase mismatch")
-    _require(route_amendment_decision.get("purg01_open_authorized") is False, "purg00 route amendment decision purg01_open_authorized mismatch")
-    route_amendment_summary = _load_json(PURG00_ROUTE_AMENDMENT_SUMMARY_PATH) if PURG00_ROUTE_AMENDMENT_SUMMARY_PATH.exists() else {}
-    _require(route_amendment_summary.get("live_route_closed") is True, "purg00 route amendment summary live_route_closed mismatch")
-    _require(route_amendment_summary.get("next_phase") is None, "purg00 route amendment summary next_phase mismatch")
-    _require(route_amendment_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment summary next step mismatch")
-    route_amendment_live_state = _load_json(PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH.exists() else {}
-    _require(route_amendment_live_state.get("previous_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route amendment live-state previous_live_next_phase mismatch")
-    _require(route_amendment_live_state.get("new_live_next_phase") is None, "purg00 route amendment live-state new_live_next_phase mismatch")
-    _require(len(route_amendment_live_state.get("registered_artifacts", [])) == 7, "purg00 route amendment live-state registered_artifacts mismatch")
-    route_amendment_validator = _load_json(PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH.exists() else {}
-    _require(route_amendment_validator.get("validator_patch_applied") is True, "purg00 route amendment validator manifest mismatch")
-    _require(route_amendment_validator.get("new_expected_live_next_phase") is None, "purg00 route amendment validator manifest new_expected_live_next_phase mismatch")
-    route_amendment_schema = _load_json(PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH) if PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH.exists() else {}
-    _require(route_amendment_schema.get("old_schema_version") == "3.3", "purg00 route amendment schema manifest old_schema_version mismatch")
-    _require(route_amendment_schema.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route amendment schema manifest new_schema_version mismatch")
-    route_amendment_no_real = _load_json(PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH) if PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH.exists() else {}
-    _require(route_amendment_no_real.get("purg01_opened") is False, "purg00 route amendment no-real-execution purg01_opened mismatch")
-    _require_forbidden_flags_false(route_amendment_no_real, "purg00 route amendment no real execution attestation")
+    if PROJECT_CHECKOUT_PRESENT:
+        route_amendment_decision = _load_json(PURG00_ROUTE_AMENDMENT_DECISION_PATH)
+        _require(route_amendment_decision.get("phase_id") == "PURG-00-ROUTE-AMENDMENT-TERMINAL-WAIT-STATE", "purg00 route amendment decision phase_id mismatch")
+        _require(route_amendment_decision.get("decision") == "blocked", "purg00 route amendment decision mismatch")
+        _require(route_amendment_decision.get("status") == PURG00_ROUTE_AMENDMENT_WAIT_STATE_STATUS, "purg00 route amendment decision status mismatch")
+        _require(route_amendment_decision.get("new_live_next_phase") is None, "purg00 route amendment decision new_live_next_phase mismatch")
+        _require(route_amendment_decision.get("purg01_open_authorized") is False, "purg00 route amendment decision purg01_open_authorized mismatch")
+        route_amendment_summary = _load_json(PURG00_ROUTE_AMENDMENT_SUMMARY_PATH)
+        _require(route_amendment_summary.get("live_route_closed") is True, "purg00 route amendment summary live_route_closed mismatch")
+        _require(route_amendment_summary.get("next_phase") is None, "purg00 route amendment summary next_phase mismatch")
+        _require(route_amendment_summary.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg00 route amendment summary next step mismatch")
+        route_amendment_live_state = _load_json(PURG00_ROUTE_AMENDMENT_LIVE_STATE_MANIFEST_PATH)
+        _require(route_amendment_live_state.get("previous_live_next_phase") == EXPECTED_NEXT_PHASE_ID, "purg00 route amendment live-state previous_live_next_phase mismatch")
+        _require(route_amendment_live_state.get("new_live_next_phase") is None, "purg00 route amendment live-state new_live_next_phase mismatch")
+        _require(len(route_amendment_live_state.get("registered_artifacts", [])) == 7, "purg00 route amendment live-state registered_artifacts mismatch")
+        route_amendment_validator = _load_json(PURG00_ROUTE_AMENDMENT_VALIDATOR_MANIFEST_PATH)
+        _require(route_amendment_validator.get("validator_patch_applied") is True, "purg00 route amendment validator manifest mismatch")
+        _require(route_amendment_validator.get("new_expected_live_next_phase") is None, "purg00 route amendment validator manifest new_expected_live_next_phase mismatch")
+        route_amendment_schema = _load_json(PURG00_ROUTE_AMENDMENT_SCHEMA_MANIFEST_PATH)
+        _require(route_amendment_schema.get("old_schema_version") == "3.3", "purg00 route amendment schema manifest old_schema_version mismatch")
+        _require(route_amendment_schema.get("new_schema_version") == EXPECTED_SCHEMA_VERSION, "purg00 route amendment schema manifest new_schema_version mismatch")
+        route_amendment_no_real = _load_json(PURG00_ROUTE_AMENDMENT_NO_REAL_EXECUTION_PATH)
+        _require(route_amendment_no_real.get("purg01_opened") is False, "purg00 route amendment no-real-execution purg01_opened mismatch")
+        _require_forbidden_flags_false(route_amendment_no_real, "purg00 route amendment no real execution attestation")
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
     _require(state["permanent_active_update_rule_installed"] is True, "permanent_active_update_rule_installed must be true")
     _require(state["current_phase_bots_executed"] is False, "current_phase_bots_executed must be false")
