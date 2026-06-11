@@ -99,6 +99,32 @@
 - Canonical successor candidate artifact: `artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json`
 - Next recommended step: `PURG-01.2_S3_SCOPE_AND_REMEDIATION_PLANNING_READINESS`
 
+## PURG-01.2 S3 Scope And Remediation Planning Readiness
+
+- Status: `purg01_2_s3_scope_and_remediation_planning_readiness_pass`
+- Decision: `pass`
+- Scope: materialize the artifact-only readiness gate for `IF09-FIND-001` on track `S3`, defining scope, future `PURG-02` readiness, evidence requirements, and blocked conditions without opening execution or remediation.
+- Operator direction received: `AUTHORIZE_PURG_01_2_S3_SCOPE_AND_REMEDIATION_PLANNING_READINESS`
+- Source successor candidate verified:
+  - `artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json`
+  - `selected_track=S3`
+  - `successor_candidate_type=artifact_only_readiness_gate`
+- S3 scope captured from canonical sources:
+  - `IF09-FIND-001` remains a medium-severity finding in `active_context_governance`
+  - the IF10 remediation objective remains `Canonical source packet SHA verification hardening`
+  - no reproduction, RED execution, remediation compiler, or proof loop is opened by this gate
+- Future roadmap phases explicitly preserved:
+  - `PURG-02` remains `Reproduction / RED Baseline`
+  - `PURG-03` remains `Remediation Plan Compiler`
+  - both remain unopened and unauthorized
+- Future `PURG-02` readiness criteria and required evidence are now explicit in the readiness artifact.
+- This gate records blocked conditions for any future `PURG-02` opening, including ambiguous oracle/fixture state, broken evidence chain, or any need to invert real execution/remediation locks.
+- `ACTIVE_CONTEXT_STATE.json` remains unchanged:
+  - `ACTIVE_CONTEXT_SCHEMA.json` still forbids structural drift via `additionalProperties: false`
+  - `scripts/validate_active_context_state.py` still expects the live next-step token `execute_purg01_controlled_triage_artifact_only`
+- Canonical readiness artifact: `artifacts/purgatorium/purg01_2_s3_scope_and_remediation_planning_readiness.json`
+- Next recommended step: `OPERATOR_DECISION_OPEN_PURG02_REPRODUCTION_RED_BASELINE`
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`

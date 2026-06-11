@@ -89,3 +89,7 @@ O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classifi
 ## PURG-01.2 S3 successor candidate
 
 O artifact `artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json` define `PURG-01.2` como um gate artifact-only de escopo e readiness para a trilha `S3` de `IF09-FIND-001`. Ele não abre `PURG-02`, não autoriza remediação, runtime, real_apply ou finding close, e só registra os critérios mínimos que uma etapa futura precisaria satisfazer antes de qualquer avanço roadmap-defined.
+
+## PURG-01.2 S3 readiness gate
+
+O artifact `artifacts/purgatorium/purg01_2_s3_scope_and_remediation_planning_readiness.json` materializa o gate de readiness do `PURG-01.2` para `IF09-FIND-001/S3`. Ele fixa o escopo S3, define critérios e evidências mínimas para uma futura decisão do operador sobre `PURG-02`, mantém `PURG-02` e `PURG-03` fechados e preserva todos os locks reais em `false`.

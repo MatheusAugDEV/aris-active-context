@@ -1,0 +1,51 @@
+{
+  "decision": "pass",
+  "status": "purg01_2_s3_scope_and_remediation_planning_readiness_pass",
+  "scope": "S3 scope and remediation planning readiness gate for IF09-FIND-001.",
+  "operator_direction": "AUTHORIZE_PURG_01_2_S3_SCOPE_AND_REMEDIATION_PLANNING_READINESS",
+  "target_finding_id": "IF09-FIND-001",
+  "selected_track": "S3",
+  "source_successor_candidate": "artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json",
+  "s3_scope_statement": [
+    "The scope remains limited to the verified medium-severity active_context_governance finding IF09-FIND-001 from the IF10 handoff graph.",
+    "The S3 focus is hardening-oriented and bounded to canonical source packet SHA verification drift handling, not to runtime mutation, product behavior, or external-system execution.",
+    "This gate may define readiness, evidence, and blocking criteria only; it may not reproduce the failure, open RED baseline execution, compile a remediation plan, apply a fix, or close the finding."
+  ],
+  "future_purg02_name": "Reproduction / RED Baseline",
+  "future_purg02_opened": false,
+  "future_purg02_authorized": false,
+  "future_purg02_readiness_criteria": [
+    "The IF10 graph, handoff manifest, and source packet hashes must remain stable and traceable to IF09-FIND-001.",
+    "The reproduction, replay, and mutation unit references for IF09-FIND-001 must remain explicit and unambiguous before any RED baseline opening decision.",
+    "A future PURG-02 opener must confirm that the intended reproduction activity does not silently expand into remediation, runtime real, or real_apply scope.",
+    "A future PURG-02 opener must preserve the roadmap-defined boundary that PURG-02 reproduces before any fix and that PURG-03 remains the separate remediation planning phase.",
+    "Any future PURG-02 decision must remain operator-mediated and cannot be auto-opened from this readiness artifact."
+  ],
+  "future_purg02_required_evidence": [
+    "Stable hash references for the IF10 handoff graph and handoff manifest.",
+    "Stable hash reference for the operator source packet used in PURG-01 gates.",
+    "Explicit reproduction_unit, replay_unit, and mutation_unit references bound to IF09-FIND-001.",
+    "A written statement that the RED baseline objective is to prove the finding before any fix and that no remediation action is included in scope.",
+    "A no-real-execution and no-real-apply attestation carried forward into any future PURG-02 opening decision."
+  ],
+  "future_purg02_blocked_conditions": [
+    "Evidence-chain drift or hash mismatch across the IF10 graph, handoff manifest, or operator source packet.",
+    "Ambiguous or missing reproduction, replay, or mutation unit references for IF09-FIND-001.",
+    "Any attempt to combine PURG-02 reproduction with PURG-03 remediation planning or with fix application in the same gate.",
+    "Any requirement to invert runtime, remediation, finding-close, product, Bedrock, secrets, or real_apply locks.",
+    "Any proposal that treats this readiness artifact as automatic authorization to open PURG-02."
+  ],
+  "future_purg03_name": "Remediation Plan Compiler",
+  "future_purg03_opened": false,
+  "future_purg03_authorized": false,
+  "real_execution_authorized": false,
+  "remediation_authorized": false,
+  "finding_close_authorized": false,
+  "runtime_real_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "next_recommended_step": "OPERATOR_DECISION_OPEN_PURG02_REPRODUCTION_RED_BASELINE",
+  "blocked_reason": null
+}
