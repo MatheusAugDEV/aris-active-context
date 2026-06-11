@@ -28,6 +28,26 @@
 - This sync does not advance phase_id/current_phase_id/active_next_phase/next_phase/current_status/latest_completed_phase/latest_completed_status, does not close IF09-FIND-001, does not reopen IF-08/W4, and does not invert any lock in `ACTIVE_CONTEXT_STATE.json.authorization`.
 - real_execution_authorized=false, product_authorized=false, bedrock_authorized=false, real_apply_authorized=false, secrets_authorized=false, runtime_real_authorized=false.
 
+## PURG-01 Stale Next-Step Reconciliation
+
+- Status: `purg01_stale_next_step_reconciliation_blocked`
+- Decision: `blocked`
+- Scope: governance/documentation reconciliation only. No real execution, no remediation, no finding close, no roadmap mutation, no phase advancement.
+- `execute_purg01_controlled_triage_artifact_only` is already completed and CI-green in the confirmed lineage:
+  - `Project_ARIS`: `6cec74deb7a99b7eb227df84a902650ca092e00f`
+  - `aris-active-context`: `a113ad549f0db6c4cb9d8c4aead7d654eb3938da`
+- `ACTIVE_CONTEXT_STATE.json` still preserves `latest_completed_next_recommended_step=execute_purg01_controlled_triage_artifact_only`, which is now stale relative to the materialized artifacts and confirmed CI.
+- `ACTIVE_CONTEXT_STATE.json` is intentionally left unchanged:
+  - `ACTIVE_CONTEXT_SCHEMA.json` has `additionalProperties: false`
+  - `scripts/validate_active_context_state.py` still expects the live next-step token `execute_purg01_controlled_triage_artifact_only`
+  - forcing a state mutation here would create a structural/validator risk outside this reconciliation scope
+- Live route preserved: `phase_id=INF-FULL-07`, `current_phase_id=INF-FULL-07`, `active_next_phase=PURG-01`, `next_phase=PURG-01`
+- Macro roadmap extension remains `documental_not_active`; it cannot be used as an active source to auto-derive a new live next step.
+- `execute_purg01_controlled_triage_artifact_only` must not be repeated.
+- No automatic promotion to `PURG-02`, no remediation apply, and no closing of `IF09-FIND-001` are authorized by this reconciliation.
+- Canonical reconciliation artifact: `artifacts/purgatorium/purg01_stale_next_step_reconciliation.json`
+- Next recommended step: `BLOCKED_NEEDS_OPERATOR_DIRECTION`
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`

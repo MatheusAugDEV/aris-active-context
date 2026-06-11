@@ -1,0 +1,31 @@
+{
+  "decision": "blocked",
+  "status": "purg01_stale_next_step_reconciliation_blocked",
+  "scope": "Canonical reconciliation for stale PURG-01 next-step after artifact-only completion. Governance/documentation only; no real execution, no remediation, no finding close.",
+  "completed_step": "execute_purg01_controlled_triage_artifact_only",
+  "completed_step_project_sha": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "completed_step_active_context_sha": "a113ad549f0db6c4cb9d8c4aead7d654eb3938da",
+  "completed_step_ci_state": "CI_GREEN_CONFIRMED",
+  "stale_next_step_detected": true,
+  "stale_next_step_reason": "ACTIVE_CONTEXT_STATE.json still preserves execute_purg01_controlled_triage_artifact_only as the latest completed next recommended step even though the artifact-only execution artifacts already exist and the reported CI state is terminal green.",
+  "authoritative_artifacts": [
+    "/home/matheus/ARIS/Project_ARIS/artifacts/purgatorium/purg01_controlled_triage_artifact_only_execution_result.json",
+    "/home/matheus/ARIS/Project_ARIS/artifacts/purgatorium/purg01_controlled_triage_artifact_only_evidence_matrix.json",
+    "/home/matheus/ARIS/Project_ARIS/artifacts/purgatorium/purg01_controlled_triage_artifact_only_no_real_execution_attestation.json",
+    "artifacts/roadmap/post_roadmap_canonical_sync_decision.json"
+  ],
+  "live_route_preserved": true,
+  "phase_id_preserved": "INF-FULL-07",
+  "current_phase_id_preserved": "INF-FULL-07",
+  "next_phase_preserved": "PURG-01",
+  "active_next_phase_preserved": "PURG-01",
+  "real_execution_authorized": false,
+  "remediation_authorized": false,
+  "finding_close_authorized": false,
+  "active_context_state_unchanged": true,
+  "active_context_state_unchanged_reason": "ACTIVE_CONTEXT_SCHEMA.json has additionalProperties false and scripts/validate_active_context_state.py still expects execute_purg01_controlled_triage_artifact_only as the live next-step token; changing the state here would introduce structural and validator risk outside reconciliation scope.",
+  "macro_transition_extension_status": "documental_not_active",
+  "safe_next_step_derivation_unambiguous": false,
+  "blocked_reason": "No unambiguous live next step can be derived without operator direction. PURG-02 cannot be opened automatically, remediation is not authorized, finding close is not authorized, and the macro transition candidate is explicitly documental_not_active.",
+  "next_recommended_step": "BLOCKED_NEEDS_OPERATOR_DIRECTION"
+}
