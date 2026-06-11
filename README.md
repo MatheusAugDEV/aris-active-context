@@ -109,3 +109,7 @@ O artifact `artifacts/purgatorium/purg03_if09_find_001_s3_remediation_plan_opera
 ## PURG-04 IF09-FIND-001 S3 local remediation readiness
 
 O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json` converte o approval packet em pré-condições concretas para uma futura remediação local controlada. Ele define superfície candidata, módulos prováveis em escopo, regressões obrigatórias, evidência before/after, rollback documental, blast radius e bloqueios, mantendo `future_apply_gate_required=true` e sem autorizar apply, patch, runtime ou finding close.
+
+## PURG-04 IF09-FIND-001 S3 apply approval packet
+
+O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json` consolida o pacote formal que poderá embasar um pedido futuro de apply local para `IF09-FIND-001/S3`. Ele fixa checklist, preconditions, testes, evidência, rollback e blast radius para um apply futuro, deixando explícito que este gate não autoriza apply agora e exige comando explícito futuro do operador.
