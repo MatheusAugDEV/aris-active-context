@@ -7,7 +7,7 @@
 - permanent_active_update_rule_installed=true
 - project_commit_sha=6312302ea45b72ddc310b2b33f56245be65b99dc
 - project_ci_state=CI_GREEN_CONFIRMED
-- next_recommended_step=prepare_purg01_controlled_triage_execution_gate
+- next_recommended_step=execute_purg01_controlled_triage_artifact_only
 - technical_direction_post_infernus=project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 - infernus_canonroadmap_status=superseded_excludent_forensic_only
 - purg_pre_route_opening_candidate_created=true
