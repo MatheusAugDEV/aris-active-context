@@ -93,3 +93,7 @@ O artifact `artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json` de
 ## PURG-01.2 S3 readiness gate
 
 O artifact `artifacts/purgatorium/purg01_2_s3_scope_and_remediation_planning_readiness.json` materializa o gate de readiness do `PURG-01.2` para `IF09-FIND-001/S3`. Ele fixa o escopo S3, define critérios e evidências mínimas para uma futura decisão do operador sobre `PURG-02`, mantém `PURG-02` e `PURG-03` fechados e preserva todos os locks reais em `false`.
+
+## PURG-02 IF09-FIND-001 S3 RED baseline
+
+O artifact `artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json` abre `PURG-02` apenas no plano artifact-only e synthetic-only para `IF09-FIND-001/S3`. Ele materializa a hipótese RED, a matriz de evidência, o oracle documental e o plano de reprodução segura sem runtime, sem scanner/DAST/pentest, sem patch, sem remediação e sem fechamento do finding; `PURG-03` continua fechado e não autorizado.

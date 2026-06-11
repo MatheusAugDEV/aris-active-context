@@ -1,0 +1,141 @@
+{
+  "decision": "pass",
+  "status": "purg02_if09_find_001_s3_red_baseline_pass",
+  "scope": "Artifact-only synthetic RED baseline for IF09-FIND-001 S3.",
+  "operator_direction": "AUTO_CONTINUE_ARTIFACT_ONLY_OPEN_PURG02_REPRODUCTION_RED_BASELINE",
+  "target_finding_id": "IF09-FIND-001",
+  "selected_track": "S3",
+  "source_readiness_artifact": "artifacts/purgatorium/purg01_2_s3_scope_and_remediation_planning_readiness.json",
+  "future_purg02_name": "Reproduction / RED Baseline",
+  "purg02_opened_as_artifact_only": true,
+  "purg02_real_execution_authorized": false,
+  "purg02_synthetic_only": true,
+  "finding_hypothesis": [
+    "IF09-FIND-001 remains RED when canonical active-context lineage can still be shown, from documentary evidence only, to contain a stale or non-canonical project SHA that diverged from the verified primary refs and therefore required explicit drift surfacing to preserve audit validity.",
+    "The RED condition is reproducible without rerunning any wave because IF09-REPRO-001 already records that the SHA drift can be deterministically reconstructed from the source packet, active-context lineage, and verified git refs.",
+    "A valid PURG-02 baseline for this finding must stay documentary and synthetic-only; any need for runtime execution, scanner, DAST, pentest, external network, payload, or patch would invalidate the baseline and move it out of scope."
+  ],
+  "affected_layer": "active_context_governance",
+  "severity": "medium",
+  "evidence_sources": [
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json",
+      "sha256_or_hash": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+      "facts_verified": [
+        "IF09-FIND-001 is the only validated mandatory handoff finding.",
+        "severity=medium",
+        "affected_layer=active_context_governance",
+        "reproduction_unit_id=IF09-REPRO-001",
+        "replay_unit_id=IF09-REPLAY-001",
+        "mutation_unit_id=IF09-MUT-001"
+      ]
+    },
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/handoff_manifest.json",
+      "sha256_or_hash": "b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8",
+      "facts_verified": [
+        "IF09-FIND-001 maps to IF10-RCA-001, IF10-REM-001, IF10-REG-001, and IF10-REVAL-001.",
+        "The supporting reproduction, replay, and mutation references remain explicit and stable."
+      ]
+    },
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json",
+      "facts_verified": [
+        "The remediation objective remains canonical source packet SHA verification hardening.",
+        "correction_implemented=false"
+      ]
+    },
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if09_evidence_bundle_vulnerability_register/vuln_register_v4.jsonl",
+      "facts_verified": [
+        "IF09-REPRO-001 marks reproduction_status=reproduced and states the drift is reproducible from the source packet and git refs without rerunning any wave.",
+        "IF09-FIND-001 marks reproduction_status=reproduced, replay_status=consistent, mutation_survival_status=survived_as_recorded, and recommended_destination=purgatorium."
+      ]
+    },
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/replay_diff_report.json",
+      "facts_verified": [
+        "IF09-REPLAY-001 keeps W4 threshold-control evidence consistent through W5 and W6 without real-surface activation."
+      ]
+    },
+    {
+      "artifact_path": "/home/matheus/ARIS/Project_ARIS/artifacts/infernus/if09_evidence_bundle_vulnerability_register/evidence_bundle_v4/mutation_survival_report.json",
+      "facts_verified": [
+        "IF09-MUT-001 survived only as detected_or_blocked pressure across W1, W2, W4, W5, and W6, supporting a synthetic replay-only baseline."
+      ]
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg01_controlled_triage_artifact_only_execution_result.json",
+      "facts_verified": [
+        "The source packet, IF10 graph, and IF10 manifest hashes were already rechecked in PURG-01 artifact-only execution.",
+        "No real execution, fix, or remediation apply was performed."
+      ]
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg01_controlled_triage_artifact_only_evidence_matrix.json",
+      "facts_verified": [
+        "The evidence chain already proves the stable references for IF09-REPRO-001, IF09-REPLAY-001, and IF09-MUT-001 without inference."
+      ]
+    }
+  ],
+  "synthetic_reproduction_plan": [
+    "Use the IF10 graph and handoff manifest as the canonical index for IF09-FIND-001 and confirm that the finding still binds to IF09-REPRO-001, IF09-REPLAY-001, and IF09-MUT-001.",
+    "Use the IF09-REPRO-001 documentary record to reconstruct the finding by comparing the stale active-context SHA recorded before W6 against the verified primary refs captured during W6, without executing any wave, runtime, scanner, or external request.",
+    "Use the IF09-FIND-001 and IF10-RCA-001 lineage to show that the mismatch is not hypothetical drift but the same chain-of-custody defect already validated by Infernus and handed to Purgatorium.",
+    "Use IF09-REPLAY-001 to verify that the surrounding control thresholds remained consistent through W4, W5, and W6, so the RED baseline can be replayed as a stable documentary comparison rather than a fresh execution.",
+    "Use IF09-MUT-001 to confirm that the adversarial-control lineage survived only as detected or blocked cases, which keeps this baseline in synthetic evidence space and prevents escalation into runtime or exploit behavior.",
+    "Declare the baseline RED-ready only if the documentary oracle can still observe the drift lineage while correction_implemented remains false and all real-surface locks remain false."
+  ],
+  "oracle_definition": [
+    {
+      "oracle_id": "PURG02-IF09-RED-ORACLE-001",
+      "statement": "The baseline is RED when the evidence chain still demonstrates a stale or non-canonical project SHA in the active-context lineage relative to verified primary refs, with explicit drift preservation rather than silent normalization.",
+      "verification_mode": "documentary_hash_and_field_comparison_only"
+    },
+    {
+      "oracle_id": "PURG02-IF09-RED-ORACLE-002",
+      "statement": "The baseline is valid only if the reproduction can be replayed from IF09-REPRO-001, IF09-REPLAY-001, and IF09-MUT-001 without runtime execution, payload delivery, network use, or patch application.",
+      "verification_mode": "artifact_reference_consistency_only"
+    },
+    {
+      "oracle_id": "PURG02-IF09-RED-ORACLE-003",
+      "statement": "The baseline stays pre-remediation when IF10-REM-001 still reports correction_implemented=false and PURG-03 remains unopened and unauthorized.",
+      "verification_mode": "documentary_state_check_only"
+    }
+  ],
+  "expected_red_condition": [
+    "A documentary comparison still exposes the SHA drift lineage described by IF09-FIND-001 and IF09-REPRO-001.",
+    "The finding remains reproducible and replay-consistent from existing artifacts without fresh execution.",
+    "No correction artifact, patch, remediation apply, or revalidation verdict exists that would convert this baseline into GREEN or closure evidence."
+  ],
+  "replay_requirements": [
+    "Stable access to the IF10 graph, IF10 handoff manifest, IF09 vulnerability register, replay report, mutation report, and PURG-01 artifact-only evidence matrix.",
+    "Preservation of source packet SHA256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72, IF10 graph SHA256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, and IF10 manifest SHA256=b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8.",
+    "No live-state mutation requirement in ACTIVE_CONTEXT_STATE.json; replay is satisfied by documentary comparison and validator-stable evidence only.",
+    "All real-surface authorizations remain false during replay."
+  ],
+  "non-execution_attestation": [
+    "This PURG-02 opener performs no runtime execution, no scanner, no DAST, no pentest, no payload deployment, no external network action, and no patch application.",
+    "The RED baseline is synthetic-only and documentary-only.",
+    "The finding remains open and unremediated after this gate."
+  ],
+  "red_baseline_result": "ready",
+  "red_baseline_result_reason": [
+    "The RED hypothesis is explicit in IF09-FIND-001, IF09-REPRO-001, and IF10-RCA-001.",
+    "The evidence chain already contains stable reproduction, replay, and mutation references for the same finding.",
+    "The oracle is verifiable from hashes and fields already present on disk, without requiring any real execution surface."
+  ],
+  "purg03_remediation_plan_compiler_opened": false,
+  "purg03_remediation_plan_compiler_authorized": false,
+  "real_execution_authorized": false,
+  "remediation_authorized": false,
+  "patch_authorized": false,
+  "finding_close_authorized": false,
+  "runtime_real_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "next_recommended_step": "PURG-03_REMEDIATION_PLAN_COMPILER_OPERATOR_REVIEW_PACKET",
+  "blocked_reason": null
+}

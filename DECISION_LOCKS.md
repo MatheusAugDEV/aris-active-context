@@ -977,3 +977,19 @@ The following track references are historical_residual_route_noise. They do NOT 
 - F21-CTX-BEDROCK-R37 / R38: Bedrock gate closure boundary — historical. Full Bedrock gate pass remains false.
 - F32.F-L: future MCP read-only gates — historical chain, no MCP or Obsidian activation authorized.
 - F33.Y-AUTH-SUBMIT-HOLD: schema materialization hold — superseded by active INF-FULL gate chain. No schema apply authorized.
+
+## PURG-02 IF09-FIND-001 S3 RED Baseline
+
+- Status: `purg02_if09_find_001_s3_red_baseline_pass`
+- Decision: `pass`
+- Scope: open `PURG-02` for `IF09-FIND-001/S3` as artifact-only synthetic RED baseline only.
+- Operator direction recorded: `AUTO_CONTINUE_ARTIFACT_ONLY_OPEN_PURG02_REPRODUCTION_RED_BASELINE`
+- Canonical RED hypothesis is documentary: the active-context lineage can still show canonical SHA drift against verified primary refs, and that mismatch remains reproducible from existing artifacts without rerunning any wave.
+- Evidence chain is explicitly bound to `IF09-REPRO-001`, `IF09-REPLAY-001`, and `IF09-MUT-001`, plus the IF10 graph/manifest and the PURG-01 artifact-only evidence matrix.
+- The RED oracle is documentary/hash-comparison only. No runtime execution, scanner, DAST, pentest, payload, external network action, patch, or remediation apply is authorized.
+- `red_baseline_result=ready`
+- `PURG-03` remains closed and unauthorized: `purg03_remediation_plan_compiler_opened=false`, `purg03_remediation_plan_compiler_authorized=false`
+- `ACTIVE_CONTEXT_STATE.json` remains unchanged because the schema still has `additionalProperties: false` and the validator still expects the preserved live next-step token.
+- All real locks remain false: real execution, remediation, patch, finding close, runtime real, real apply, secrets, product, and Bedrock remain unauthorized.
+- Canonical artifact: `artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json`
+- Next recommended step: `PURG-03_REMEDIATION_PLAN_COMPILER_OPERATOR_REVIEW_PACKET`
