@@ -48,7 +48,7 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "purg01_route_admission_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.11"
+EXPECTED_SCHEMA_VERSION = "3.12"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
 CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG-01"
@@ -168,6 +168,10 @@ PURG01_CONTROLLED_TRIAGE_EXECUTION_PRECONDITIONS_PATH = PROJECT_ROOT / "artifact
 PURG01_CONTROLLED_TRIAGE_EXECUTION_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_no_real_execution_attestation.json"
 PURG01_CONTROLLED_TRIAGE_EXECUTION_SOURCE_INTEGRITY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_source_integrity_report.json"
 PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_STATUS = "purg01_controlled_triage_execution_gate_pass"
+PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_RESULT_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_artifact_only_execution_result.json"
+PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_EVIDENCE_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_artifact_only_evidence_matrix.json"
+PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_artifact_only_no_real_execution_attestation.json"
+PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_STATUS = "purg01_controlled_triage_artifact_only_execution_pass"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -9671,6 +9675,27 @@ def main() -> None:
     _require(controlled_gate.get("real_apply_allowed") is False, "purg01 controlled triage execution gate real_apply_allowed mismatch")
     _require(controlled_gate.get("product_bedrock_real_apply_secrets_allowed") is False, "purg01 controlled triage execution gate product_bedrock_real_apply_secrets_allowed mismatch")
     _require(controlled_gate.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 controlled triage execution gate next_recommended_step mismatch")
+    artifact_only = state.get("purg01_controlled_triage_artifact_only_execution")
+    _require(isinstance(artifact_only, dict), "purg01_controlled_triage_artifact_only_execution must exist")
+    _require(artifact_only.get("decision") == "pass", "purg01 controlled triage artifact-only execution decision mismatch")
+    _require(artifact_only.get("status") == PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_STATUS, "purg01 controlled triage artifact-only execution status mismatch")
+    _require(artifact_only.get("target_finding_id") == "IF09-FIND-001", "purg01 controlled triage artifact-only execution target_finding_id mismatch")
+    _require(artifact_only.get("execution_mode") == "artifact_only", "purg01 controlled triage artifact-only execution mode mismatch")
+    _require(artifact_only.get("triage_execution_real") is False, "purg01 controlled triage artifact-only execution triage_execution_real mismatch")
+    _require(artifact_only.get("finding_fix_executed") is False, "purg01 controlled triage artifact-only execution finding_fix_executed mismatch")
+    _require(artifact_only.get("remediation_apply_executed") is False, "purg01 controlled triage artifact-only execution remediation_apply_executed mismatch")
+    _require(artifact_only.get("real_execution_authorized") is False, "purg01 controlled triage artifact-only execution real_execution_authorized mismatch")
+    _require(artifact_only.get("runtime_allowed") is False, "purg01 controlled triage artifact-only execution runtime_allowed mismatch")
+    _require(artifact_only.get("real_apply_allowed") is False, "purg01 controlled triage artifact-only execution real_apply_allowed mismatch")
+    _require(artifact_only.get("product_bedrock_real_apply_secrets_allowed") is False, "purg01 controlled triage artifact-only execution product_bedrock_real_apply_secrets_allowed mismatch")
+    _require(artifact_only.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg01 controlled triage artifact-only execution source_packet_sha256 mismatch")
+    _require(artifact_only.get("if10_graph_sha256") == "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1", "purg01 controlled triage artifact-only execution if10_graph_sha256 mismatch")
+    _require(artifact_only.get("if10_manifest_sha256") == "b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8", "purg01 controlled triage artifact-only execution if10_manifest_sha256 mismatch")
+    _require(artifact_only.get("execution_result_artifact") == "artifacts/purgatorium/purg01_controlled_triage_artifact_only_execution_result.json", "purg01 controlled triage artifact-only execution result artifact mismatch")
+    _require(artifact_only.get("evidence_matrix_artifact") == "artifacts/purgatorium/purg01_controlled_triage_artifact_only_evidence_matrix.json", "purg01 controlled triage artifact-only execution evidence matrix artifact mismatch")
+    _require(artifact_only.get("no_real_execution_attestation_artifact") == "artifacts/purgatorium/purg01_controlled_triage_artifact_only_no_real_execution_attestation.json", "purg01 controlled triage artifact-only execution no real attestation artifact mismatch")
+    _require(artifact_only.get("verdict") == "pass", "purg01 controlled triage artifact-only execution verdict mismatch")
+    _require(artifact_only.get("next_recommended_step_preserved") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 controlled triage artifact-only execution next_recommended_step_preserved mismatch")
     if PROJECT_CHECKOUT_PRESENT:
         packet = _load_json(PURG00_OPERATOR_SOURCE_PACKET_PATH)
         _require(packet.get("packet_id") == "purg00_operator_required_source_packet", "purg00 operator source packet packet_id mismatch")
@@ -9722,6 +9747,48 @@ def main() -> None:
         controlled_integrity = _load_json(PURG01_CONTROLLED_TRIAGE_EXECUTION_SOURCE_INTEGRITY_PATH)
         _require(controlled_integrity.get("decision") == "pass", "purg01 controlled triage execution source integrity decision mismatch")
         _require(controlled_integrity.get("finding_classification_verification", {}).get("validated_handoff_ids") == ["IF09-FIND-001"], "purg01 controlled triage execution source integrity validated_handoff_ids mismatch")
+        artifact_only_result = _load_json(PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_RESULT_PATH)
+        _require(artifact_only_result.get("phase") == "PURG-01", "purg01 controlled triage artifact-only result phase mismatch")
+        _require(artifact_only_result.get("target_finding_id") == "IF09-FIND-001", "purg01 controlled triage artifact-only result target_finding_id mismatch")
+        _require(artifact_only_result.get("execution_mode") == "artifact_only", "purg01 controlled triage artifact-only result execution_mode mismatch")
+        _require(artifact_only_result.get("triage_execution_real") is False, "purg01 controlled triage artifact-only result triage_execution_real mismatch")
+        _require(artifact_only_result.get("finding_fix_executed") is False, "purg01 controlled triage artifact-only result finding_fix_executed mismatch")
+        _require(artifact_only_result.get("remediation_apply_executed") is False, "purg01 controlled triage artifact-only result remediation_apply_executed mismatch")
+        _require(artifact_only_result.get("real_execution_authorized") is False, "purg01 controlled triage artifact-only result real_execution_authorized mismatch")
+        _require(artifact_only_result.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg01 controlled triage artifact-only result source_packet_sha256 mismatch")
+        _require(artifact_only_result.get("if10_graph_sha256") == "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1", "purg01 controlled triage artifact-only result if10_graph_sha256 mismatch")
+        checks = artifact_only_result.get("deterministic_checks")
+        _require(isinstance(checks, list) and len(checks) >= 5, "purg01 controlled triage artifact-only result deterministic_checks mismatch")
+        for check in checks:
+            _require(isinstance(check, dict), "purg01 controlled triage artifact-only check must be object")
+            _require(check.get("status") == "pass", "purg01 controlled triage artifact-only deterministic check status mismatch")
+            _require(bool(check.get("evidence")), "purg01 controlled triage artifact-only deterministic check evidence mismatch")
+        _require(artifact_only_result.get("verdict") == "pass", "purg01 controlled triage artifact-only result verdict mismatch")
+        evidence_matrix = _load_json(PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_EVIDENCE_MATRIX_PATH)
+        entries = evidence_matrix.get("evidence_matrix")
+        _require(isinstance(entries, list) and len(entries) >= 8, "purg01 controlled triage artifact-only evidence matrix entries mismatch")
+        for entry in entries:
+            _require(isinstance(entry, dict), "purg01 controlled triage artifact-only evidence matrix entry must be object")
+            _require(bool(entry.get("source_artifact_path")), "purg01 controlled triage artifact-only evidence matrix source_artifact_path mismatch")
+            _require(bool(entry.get("observed_sha256")), "purg01 controlled triage artifact-only evidence matrix observed_sha256 mismatch")
+            _require(entry.get("status") == "pass", "purg01 controlled triage artifact-only evidence matrix status mismatch")
+            _require(bool(entry.get("excerpt_or_field_verified")), "purg01 controlled triage artifact-only evidence matrix excerpt mismatch")
+            _require(entry.get("inference_used") is False, "purg01 controlled triage artifact-only evidence matrix inference_used mismatch")
+        artifact_only_no_real = _load_json(PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_NO_REAL_PATH)
+        for key in (
+            "runtime_executed",
+            "real_apply_executed",
+            "product_bedrock_real_apply_secrets_executed",
+            "external_network_used_except_github_governance",
+            "dependency_or_package_manager_used",
+            "mcp_activated",
+            "rag_ingestion_executed",
+            "memory_write_executed",
+            "socket_opened",
+            "real_cost_spent",
+            "real_quota_consumed",
+        ):
+            _require(artifact_only_no_real.get(key) is False, f"purg01 controlled triage artifact-only no real {key} mismatch")
         intake_no_real = _load_json(PURG00_OPERATOR_SOURCE_PACKET_NO_REAL_PATH)
         _require_forbidden_flags_false(intake_no_real, "purg00 operator source packet no real execution attestation")
         _require(intake_no_real.get("purg01_opened") is False, "purg00 operator source packet no real execution purg01_opened mismatch")

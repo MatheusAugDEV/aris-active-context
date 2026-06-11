@@ -513,6 +513,27 @@
         "no_real_execution_attestation_artifact": "artifacts/purgatorium/purg01_controlled_triage_execution_no_real_execution_attestation.json",
         "next_recommended_step": "execute_purg01_controlled_triage_artifact_only"
     },
+    "purg01_controlled_triage_artifact_only_execution": {
+        "decision": "pass",
+        "status": "purg01_controlled_triage_artifact_only_execution_pass",
+        "target_finding_id": "IF09-FIND-001",
+        "execution_mode": "artifact_only",
+        "triage_execution_real": false,
+        "finding_fix_executed": false,
+        "remediation_apply_executed": false,
+        "real_execution_authorized": false,
+        "runtime_allowed": false,
+        "real_apply_allowed": false,
+        "product_bedrock_real_apply_secrets_allowed": false,
+        "source_packet_sha256": "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
+        "if10_graph_sha256": "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1",
+        "if10_manifest_sha256": "b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8",
+        "execution_result_artifact": "artifacts/purgatorium/purg01_controlled_triage_artifact_only_execution_result.json",
+        "evidence_matrix_artifact": "artifacts/purgatorium/purg01_controlled_triage_artifact_only_evidence_matrix.json",
+        "no_real_execution_attestation_artifact": "artifacts/purgatorium/purg01_controlled_triage_artifact_only_no_real_execution_attestation.json",
+        "verdict": "pass",
+        "next_recommended_step_preserved": "execute_purg01_controlled_triage_artifact_only"
+    },
     "route_amendment_authorized_by_operator": true,
     "repeat_source_search_without_new_primary_source_forbidden": true,
     "latest_completed_no_execution": {
@@ -652,7 +673,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.11",
+    "schema_version": "3.12",
     "status": "purg01_route_admission_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -668,7 +689,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.11",
+        "current_schema_version": "3.12",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -684,6 +705,7 @@
         "schema_3_8_change_summary": "PURG-01 triage readiness review: record a readiness-only review pass and a planning-only candidate next step while keeping PURG-01 as the admitted route, triage authorization false, finding-fix authorization false, and every real execution surface closed.",
         "schema_3_9_change_summary": "PURG-01 triage planning gate: record a planning-only pass for IF09-FIND-001, require a formal triage plan plus authorization-request candidate, advance the next recommended step to explicit operator authorization for triage, and keep triage, finding-fix, and every real execution surface closed.",
         "schema_3_10_change_summary": "PURG-01 triage authorization gate: record explicit operator authorization for future controlled triage with scope limited to authorization only, allow purg01_triage_authorized=true while keeping triage execution, finding-fix, remediation apply, and every real execution surface closed, and advance the next recommended step to the controlled triage execution gate.",
-        "schema_3_11_change_summary": "PURG-01 controlled triage execution gate: record the artifact-only readiness decision for IF09-FIND-001, persist the source-packet plus IF10 handoff integrity evidence, add the controlled triage execution gate state object, and advance the next recommended step to execute_purg01_controlled_triage_artifact_only while every real execution surface remains false."
+        "schema_3_11_change_summary": "PURG-01 controlled triage execution gate: record the artifact-only readiness decision for IF09-FIND-001, persist the source-packet plus IF10 handoff integrity evidence, add the controlled triage execution gate state object, and advance the next recommended step to execute_purg01_controlled_triage_artifact_only while every real execution surface remains false.",
+        "schema_3_12_change_summary": "PURG-01 controlled triage artifact-only execution: record the deterministic artifact-only execution result, evidence matrix, and no-real-execution attestation for IF09-FIND-001 while preserving the live PURG-01 route, leaving finding-fix/remediation/runtime/product/Bedrock/secrets locks closed, and avoiding any inferred post-transition."
     }
 }

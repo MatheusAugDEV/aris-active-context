@@ -174,6 +174,22 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertFalse(state["purg01_controlled_triage_execution_gate"]["triage_execution_authorized"])
         self.assertFalse(state["purg01_controlled_triage_execution_gate"]["finding_fix_authorized"])
         self.assertFalse(state["purg01_controlled_triage_execution_gate"]["real_execution_authorized"])
+        self.assertEqual(
+            state["purg01_controlled_triage_artifact_only_execution"]["status"],
+            "purg01_controlled_triage_artifact_only_execution_pass",
+        )
+        self.assertEqual(
+            state["purg01_controlled_triage_artifact_only_execution"]["execution_mode"],
+            "artifact_only",
+        )
+        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["triage_execution_real"])
+        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["finding_fix_executed"])
+        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["remediation_apply_executed"])
+        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["real_execution_authorized"])
+        self.assertEqual(
+            state["purg01_controlled_triage_artifact_only_execution"]["next_recommended_step_preserved"],
+            "execute_purg01_controlled_triage_artifact_only",
+        )
         self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
         self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
         self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
@@ -263,11 +279,13 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertIn("purg01_triage_planning_gate", schema["properties"])
         self.assertIn("purg01_triage_authorization_gate", schema["properties"])
         self.assertIn("purg01_controlled_triage_execution_gate", schema["properties"])
+        self.assertIn("purg01_controlled_triage_artifact_only_execution", schema["properties"])
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_7_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_8_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_9_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_10_change_summary"]["type"], "string")
         self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_11_change_summary"]["type"], "string")
+        self.assertEqual(schema["properties"]["versioning_contract"]["properties"]["schema_3_12_change_summary"]["type"], "string")
 
     def test_if09_validator_skips_external_project_artifacts_when_absent(self):
         module = self._load_validator_module()
