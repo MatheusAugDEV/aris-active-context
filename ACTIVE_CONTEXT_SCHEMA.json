@@ -804,6 +804,9 @@
     "purg01_triage_authorization_gate": {
       "type": "object"
     },
+    "purg01_controlled_triage_execution_gate": {
+      "type": "object"
+    },
     "next_action": {
       "additionalProperties": false,
       "properties": {
@@ -1143,6 +1146,9 @@
           "type": "string"
         },
         "schema_3_10_change_summary": {
+          "type": "string"
+        },
+        "schema_3_11_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {

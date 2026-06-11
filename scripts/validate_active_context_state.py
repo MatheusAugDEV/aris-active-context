@@ -48,7 +48,7 @@ EXPECTED_PREVIOUS_PHASE_ID = "INF-FULL-06"
 EXPECTED_STATUS = "purg01_route_admission_pass"
 EXPECTED_DECISION = "pass"
 EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
-EXPECTED_SCHEMA_VERSION = "3.10"
+EXPECTED_SCHEMA_VERSION = "3.11"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
 CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG-01"
@@ -61,7 +61,7 @@ EXPECTED_NEXT_ACTION_STATUS = "purg01_route_admission_pass"
 EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
-EXPECTED_NEXT_RECOMMENDED_STEP = "prepare_purg01_controlled_triage_execution_gate"
+EXPECTED_NEXT_RECOMMENDED_STEP = "execute_purg01_controlled_triage_artifact_only"
 PURG01_REVIEW_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg01_route_admission"
 PURG00_REQUIRED_SOURCE_PACKET_STEP = "operator_supply_purg00_required_source_packet"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
@@ -163,6 +163,11 @@ PURG01_TRIAGE_AUTHORIZATION_SCHEMA_MANIFEST_PATH = PROJECT_ROOT / "artifacts" / 
 PURG01_TRIAGE_AUTHORIZATION_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_authorization_no_real_execution_attestation.json"
 PURG01_TRIAGE_CONTROLLED_EXECUTION_CANDIDATE_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_triage_controlled_execution_candidate.json"
 PURG01_TRIAGE_AUTHORIZATION_GATE_STATUS = "purg01_triage_authorization_gate_pass"
+PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_DECISION_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_gate_decision.json"
+PURG01_CONTROLLED_TRIAGE_EXECUTION_PRECONDITIONS_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_preconditions_matrix.json"
+PURG01_CONTROLLED_TRIAGE_EXECUTION_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_no_real_execution_attestation.json"
+PURG01_CONTROLLED_TRIAGE_EXECUTION_SOURCE_INTEGRITY_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_execution_source_integrity_report.json"
+PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_STATUS = "purg01_controlled_triage_execution_gate_pass"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -9622,7 +9627,50 @@ def main() -> None:
     _require(auth_gate.get("triage_execution_authorized") is False, "purg01 triage authorization gate triage_execution_authorized mismatch")
     _require(auth_gate.get("finding_fix_authorized") is False, "purg01 triage authorization gate finding_fix_authorized mismatch")
     _require(auth_gate.get("real_execution_authorized") is False, "purg01 triage authorization gate real_execution_authorized mismatch")
-    _require(auth_gate.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage authorization gate next_recommended_step mismatch")
+    _require(auth_gate.get("next_recommended_step") == "prepare_purg01_controlled_triage_execution_gate", "purg01 triage authorization gate next_recommended_step mismatch")
+    controlled_gate = state.get("purg01_controlled_triage_execution_gate")
+    _require(isinstance(controlled_gate, dict), "purg01_controlled_triage_execution_gate must exist")
+    _require(controlled_gate.get("decision") == "pass", "purg01 controlled triage execution gate decision mismatch")
+    _require(controlled_gate.get("status") == PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_STATUS, "purg01 controlled triage execution gate status mismatch")
+    _require(controlled_gate.get("gate_scope") == "artifact_only_readiness_for_controlled_triage", "purg01 controlled triage execution gate scope mismatch")
+    _require(controlled_gate.get("finding_id") == "IF09-FIND-001", "purg01 controlled triage execution gate finding_id mismatch")
+    _require(controlled_gate.get("source_packet_path") == "artifacts/purgatorium/purg00_operator_required_source_packet.json", "purg01 controlled triage execution gate source_packet_path mismatch")
+    _require(controlled_gate.get("source_packet_sha256") == PURG00_OPERATOR_SOURCE_PACKET_SHA, "purg01 controlled triage execution gate source_packet_sha256 mismatch")
+    _require(controlled_gate.get("source_graph_sha256") == "c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1", "purg01 controlled triage execution gate source_graph_sha256 mismatch")
+    _require(controlled_gate.get("source_manifest_sha256") == "b558f97564d14e31f6a4961e5f3e6393b69dbf33bd6a3f4e549b7cf14cdb3bb8", "purg01 controlled triage execution gate source_manifest_sha256 mismatch")
+    _require(
+        controlled_gate.get("required_fields_present")
+        == [
+            "finding_id",
+            "severity",
+            "affected_layer",
+            "affected_files",
+            "source_bot",
+            "source_wave",
+            "oracle_id",
+            "root_cause_candidate",
+            "blast_radius",
+            "target_control",
+            "reproduction_unit",
+            "replay_units",
+            "mutation_units",
+            "risk_class",
+            "dependency_group",
+        ],
+        "purg01 controlled triage execution gate required_fields_present mismatch",
+    )
+    _require(controlled_gate.get("required_fields_missing") == [], "purg01 controlled triage execution gate required_fields_missing mismatch")
+    _require(controlled_gate.get("validated_handoff_ids") == ["IF09-FIND-001"], "purg01 controlled triage execution gate validated_handoff_ids mismatch")
+    _require(controlled_gate.get("contextual_candidate_ids") == ["IF09-FIND-002"], "purg01 controlled triage execution gate contextual_candidate_ids mismatch")
+    _require(controlled_gate.get("excluded_invalid_ids") == ["IF09-FIND-003"], "purg01 controlled triage execution gate excluded_invalid_ids mismatch")
+    _require(controlled_gate.get("purg01_triage_authorized") is True, "purg01 controlled triage execution gate purg01_triage_authorized mismatch")
+    _require(controlled_gate.get("triage_execution_authorized") is False, "purg01 controlled triage execution gate triage_execution_authorized mismatch")
+    _require(controlled_gate.get("finding_fix_authorized") is False, "purg01 controlled triage execution gate finding_fix_authorized mismatch")
+    _require(controlled_gate.get("real_execution_authorized") is False, "purg01 controlled triage execution gate real_execution_authorized mismatch")
+    _require(controlled_gate.get("runtime_allowed") is False, "purg01 controlled triage execution gate runtime_allowed mismatch")
+    _require(controlled_gate.get("real_apply_allowed") is False, "purg01 controlled triage execution gate real_apply_allowed mismatch")
+    _require(controlled_gate.get("product_bedrock_real_apply_secrets_allowed") is False, "purg01 controlled triage execution gate product_bedrock_real_apply_secrets_allowed mismatch")
+    _require(controlled_gate.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 controlled triage execution gate next_recommended_step mismatch")
     if PROJECT_CHECKOUT_PRESENT:
         packet = _load_json(PURG00_OPERATOR_SOURCE_PACKET_PATH)
         _require(packet.get("packet_id") == "purg00_operator_required_source_packet", "purg00 operator source packet packet_id mismatch")
@@ -9655,6 +9703,25 @@ def main() -> None:
         _require(intake_ci.get("project_commit_sha") == PURG00_OPERATOR_SOURCE_PACKET_PROJECT_SHA, "purg00 operator source packet ci project sha mismatch")
         _require(intake_ci.get("project_ci_state") == "CI_GREEN_CONFIRMED", "purg00 operator source packet ci state mismatch")
         _require(len(intake_ci.get("runs", [])) == 9, "purg00 operator source packet ci runs mismatch")
+        for path in (
+            PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_DECISION_PATH,
+            PURG01_CONTROLLED_TRIAGE_EXECUTION_PRECONDITIONS_PATH,
+            PURG01_CONTROLLED_TRIAGE_EXECUTION_NO_REAL_PATH,
+            PURG01_CONTROLLED_TRIAGE_EXECUTION_SOURCE_INTEGRITY_PATH,
+        ):
+            _require(path.exists(), f"missing purg01 controlled triage execution artifact: {path}")
+        controlled_decision = _load_json(PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_DECISION_PATH)
+        _require(controlled_decision.get("status") == PURG01_CONTROLLED_TRIAGE_EXECUTION_GATE_STATUS, "purg01 controlled triage execution decision status mismatch")
+        _require(controlled_decision.get("decision") == "pass", "purg01 controlled triage execution decision mismatch")
+        _require(controlled_decision.get("next_recommended_step_candidate") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 controlled triage execution decision next step mismatch")
+        controlled_matrix = _load_json(PURG01_CONTROLLED_TRIAGE_EXECUTION_PRECONDITIONS_PATH)
+        _require(controlled_matrix.get("decision") == "pass", "purg01 controlled triage execution preconditions decision mismatch")
+        _require(controlled_matrix.get("required_fields_missing") == [], "purg01 controlled triage execution preconditions required_fields_missing mismatch")
+        controlled_no_real = _load_json(PURG01_CONTROLLED_TRIAGE_EXECUTION_NO_REAL_PATH)
+        _require(controlled_no_real.get("no_real_execution_attestation") is True, "purg01 controlled triage execution no-real attestation mismatch")
+        controlled_integrity = _load_json(PURG01_CONTROLLED_TRIAGE_EXECUTION_SOURCE_INTEGRITY_PATH)
+        _require(controlled_integrity.get("decision") == "pass", "purg01 controlled triage execution source integrity decision mismatch")
+        _require(controlled_integrity.get("finding_classification_verification", {}).get("validated_handoff_ids") == ["IF09-FIND-001"], "purg01 controlled triage execution source integrity validated_handoff_ids mismatch")
         intake_no_real = _load_json(PURG00_OPERATOR_SOURCE_PACKET_NO_REAL_PATH)
         _require_forbidden_flags_false(intake_no_real, "purg00 operator source packet no real execution attestation")
         _require(intake_no_real.get("purg01_opened") is False, "purg00 operator source packet no real execution purg01_opened mismatch")
@@ -9812,7 +9879,7 @@ def main() -> None:
         _require(auth_decision.get("operator_authorization_text") == PURG01_TRIAGE_OPERATOR_TEXT, "purg01 triage authorization gate decision operator_authorization_text mismatch")
         _require(auth_decision.get("operator_authorization_scope") == PURG01_TRIAGE_OPERATOR_SCOPE, "purg01 triage authorization gate decision operator_authorization_scope mismatch")
         _require(auth_decision.get("purg01_triage_authorized") is True, "purg01 triage authorization gate decision purg01_triage_authorized mismatch")
-        _require(auth_decision.get("next_recommended_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage authorization gate decision next_recommended_step mismatch")
+        _require(auth_decision.get("next_recommended_step") == "prepare_purg01_controlled_triage_execution_gate", "purg01 triage authorization gate decision next_recommended_step mismatch")
         auth_summary = _load_json(PURG01_TRIAGE_AUTHORIZATION_GATE_SUMMARY_PATH)
         _require(auth_summary.get("status") == PURG01_TRIAGE_AUTHORIZATION_GATE_STATUS, "purg01 triage authorization gate summary status mismatch")
         auth_operator = _load_json(PURG01_TRIAGE_OPERATOR_AUTH_PATH)
@@ -9825,10 +9892,10 @@ def main() -> None:
         auth_live_state_manifest = _load_json(PURG01_TRIAGE_AUTHORIZATION_LIVE_STATE_MANIFEST_PATH)
         _require(auth_live_state_manifest.get("previous_purg01_triage_authorized") is False, "purg01 triage authorization live state previous_purg01_triage_authorized mismatch")
         _require(auth_live_state_manifest.get("new_purg01_triage_authorized") is True, "purg01 triage authorization live state new_purg01_triage_authorized mismatch")
-        _require(auth_live_state_manifest.get("next_recommended_step_after_mutation") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage authorization live state next_recommended_step_after_mutation mismatch")
+        _require(auth_live_state_manifest.get("next_recommended_step_after_mutation") == "prepare_purg01_controlled_triage_execution_gate", "purg01 triage authorization live state next_recommended_step_after_mutation mismatch")
         auth_validator_manifest = _load_json(PURG01_TRIAGE_AUTHORIZATION_VALIDATOR_MANIFEST_PATH)
         _require(auth_validator_manifest.get("previous_expected_next_step") == "request_operator_authorization_for_purg01_triage", "purg01 triage authorization validator manifest previous_expected_next_step mismatch")
-        _require(auth_validator_manifest.get("new_expected_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage authorization validator manifest new_expected_next_step mismatch")
+        _require(auth_validator_manifest.get("new_expected_next_step") == "prepare_purg01_controlled_triage_execution_gate", "purg01 triage authorization validator manifest new_expected_next_step mismatch")
         auth_schema_manifest = _load_json(PURG01_TRIAGE_AUTHORIZATION_SCHEMA_MANIFEST_PATH)
         _require(auth_schema_manifest.get("old_schema_version") == "3.9", "purg01 triage authorization schema manifest old_schema_version mismatch")
         _require(auth_schema_manifest.get("new_schema_version") == "3.10", "purg01 triage authorization schema manifest new_schema_version mismatch")
@@ -9841,7 +9908,7 @@ def main() -> None:
         _require(auth_no_real.get("remediation_apply_executed") is False, "purg01 triage authorization no_real_execution remediation_apply_executed mismatch")
         _require_forbidden_flags_false(auth_no_real, "purg01 triage authorization no real execution attestation")
         controlled_candidate = _load_json(PURG01_TRIAGE_CONTROLLED_EXECUTION_CANDIDATE_PATH)
-        _require(controlled_candidate.get("candidate_next_step") == EXPECTED_NEXT_RECOMMENDED_STEP, "purg01 triage controlled execution candidate next step mismatch")
+        _require(controlled_candidate.get("candidate_next_step") == "prepare_purg01_controlled_triage_execution_gate", "purg01 triage controlled execution candidate next step mismatch")
         _require(controlled_candidate.get("purg01_triage_authorized") is True, "purg01 triage controlled execution candidate purg01_triage_authorized mismatch")
         _require(controlled_candidate.get("authorized_now") is False, "purg01 triage controlled execution candidate authorized_now mismatch")
     _require(state["active_context_remote_main_reflects_latest_phase"] is True, "active_context_remote_main_reflects_latest_phase must be true")
@@ -9993,7 +10060,7 @@ def main() -> None:
     _require(state["next_action"]["phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "next_action.phase mismatch")
     _require(state["next_action"]["phase_class"] == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "next_action.phase_class mismatch")
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
-    _require(state["next_action"]["review_only"] is True, "next_action.review_only must be true")
+    _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
     _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
     _require(
@@ -10123,10 +10190,11 @@ def main() -> None:
         "triage_authorization_request_candidate_created=true",
         "triage_execution_authorized=false",
         "finding_fix_authorized=false",
-        "next_route_candidate=prepare_purg01_controlled_triage_execution_gate",
+        "purg01_controlled_triage_execution_gate_status=purg01_controlled_triage_execution_gate_pass",
+        "next_route_candidate=execute_purg01_controlled_triage_artifact_only",
         "PURG-00 real execution = false",
         "future waves real execution = false",
-        "prepare_purg01_controlled_triage_execution_gate",
+        "execute_purg01_controlled_triage_artifact_only",
         "INFERNUS_STANDING_AUTHORIZATION.md",
     )
     _mirror_contains(
@@ -10138,7 +10206,7 @@ def main() -> None:
         "purg01_route_admission_pass",
         "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
         "next_phase: PURG-01",
-        "next_recommended_step: prepare_purg01_controlled_triage_execution_gate",
+        "next_recommended_step: execute_purg01_controlled_triage_artifact_only",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "PURG-01 admitido como rota: true",
         "PURG-01 triage autorizada para etapa futura controlada: true",
@@ -10147,6 +10215,7 @@ def main() -> None:
         "Review de prontidao para triage PURG-01: pass",
         "Gate de planejamento de triage PURG-01: pass",
         "Gate de autorizacao de triage PURG-01: pass",
+        "Gate de execucao controlada de triage PURG-01: pass",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -10169,16 +10238,17 @@ def main() -> None:
         "PURG-01 triage readiness review: `purg01_triage_readiness_review_pass`",
         "PURG-01 triage planning gate: `purg01_triage_planning_gate_pass`",
         "PURG-01 triage authorization gate: `purg01_triage_authorization_gate_pass`",
+        "PURG-01 controlled triage execution gate: `purg01_controlled_triage_execution_gate_pass`",
         "PURG-00 execution: false",
         "PURG-00 intake executed: true",
-        "Future PURG-01 triage readiness: CONTROLLED_EXECUTION_GATE_AVAILABLE",
+        "Future PURG-01 triage readiness: CONTROLLED_EXECUTION_GATE_PASS",
         "PURG-01 triage authorized: true",
         "Operator primary source packet supplied and validated: true",
-        "Next non-execution step: `prepare_purg01_controlled_triage_execution_gate`",
+        "Next non-execution step: `execute_purg01_controlled_triage_artifact_only`",
         "Real execution (waves against real systems, runtime, apply): false",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, keeps triage execution unopened, and limits the next move to prepare_purg01_controlled_triage_execution_gate without authorizing any real execution surface.",
+        "IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, records the controlled triage execution gate as pass from the operator packet plus IF10 handoff graph evidence, keeps triage execution unopened, and limits the next move to execute_purg01_controlled_triage_artifact_only without authorizing any real execution surface.",
         "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
         "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
         "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",

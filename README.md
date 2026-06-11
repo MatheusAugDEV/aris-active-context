@@ -64,7 +64,7 @@ status: purg01_route_admission_pass
 latest_completed_phase: IF-11 Minos Final Verdict + Closure
 latest_completed_status: if11_minos_final_verdict_closure_pass
 next_phase: PURG-01
-next_recommended_step: prepare_purg01_controlled_triage_execution_gate
+next_recommended_step: execute_purg01_controlled_triage_artifact_only
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
 PURG-01 admitido como rota: true
@@ -74,3 +74,4 @@ Review formal de admissao PURG-01: pass
 Review de prontidao para triage PURG-01: pass
 Gate de planejamento de triage PURG-01: pass
 Gate de autorizacao de triage PURG-01: pass
+Gate de execucao controlada de triage PURG-01: pass

@@ -73,11 +73,12 @@
 - purg01_triage_planning_candidate_created=true
 - purg01_triage_planning_gate_status=purg01_triage_planning_gate_pass
 - purg01_triage_authorization_gate_status=purg01_triage_authorization_gate_pass
+- purg01_controlled_triage_execution_gate_status=purg01_controlled_triage_execution_gate_pass
 - triage_plan_created=true
 - triage_authorization_request_candidate_created=true
 - triage_execution_authorized=false
 - finding_fix_authorized=false
-- next_route_candidate=prepare_purg01_controlled_triage_execution_gate
+- next_route_candidate=execute_purg01_controlled_triage_artifact_only
 - operator_authorization_source=chat_operator_pode_comecar_2026_06_09
 - source_phase_verified=IF-10 Purgatorium Handoff Graph
 - source_status_verified=if10_purgatorium_handoff_graph_pass
