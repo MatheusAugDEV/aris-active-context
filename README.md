@@ -81,3 +81,7 @@ Review de prontidao para triage PURG-01: pass
 Gate de planejamento de triage PURG-01: pass
 Gate de autorizacao de triage PURG-01: pass
 Gate de execucao controlada de triage PURG-01: pass
+
+## PURG-01.1 triage classification
+
+O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json` registra a classificação de triagem de `IF09-FIND-001` usando apenas o handoff IF09/IF10 e o roadmap Purgatorium. O packet fixa `selected_track=S3` com `classification_confidence=medium`, preserva todos os locks de execução em `false` e mantém `next_recommended_step=BLOCKED_NEEDS_OPERATOR_DIRECTION` para evitar abrir `PURG-02` ou inventar um sucessor `PURG-01.2` fora da rota viva.

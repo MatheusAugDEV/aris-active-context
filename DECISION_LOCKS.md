@@ -48,6 +48,27 @@
 - Canonical reconciliation artifact: `artifacts/purgatorium/purg01_stale_next_step_reconciliation.json`
 - Next recommended step: `BLOCKED_NEEDS_OPERATOR_DIRECTION`
 
+## PURG-01.1 Findings Triage Classification Packet
+
+- Status: `purg01_1_if09_find_001_triage_classification_blocked`
+- Decision: `blocked`
+- Scope: classification-only packet for `IF09-FIND-001`. No remediation, no runtime, no real_apply, no finding close, no phase promotion.
+- Operator direction received: `A_PURG_01_1_FINDINGS_TRIAGE_CLASSIFICATION_PACKET`
+- `IF09-FIND-001` remains the only validated mandatory Purgatorium finding from the IF09/IF10 handoff.
+- Classification sources verified:
+  - `artifacts/infernus/if10_purgatorium_handoff_graph/purgatorium_handoff_graph_v4.json` exposes `severity=medium` and `affected_layer=active_context_governance`
+  - `artifacts/infernus/if10_purgatorium_handoff_graph/remediation_tracks.json` names the ready remediation objective `Canonical source packet SHA verification hardening`
+  - `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md` states that `PURG-S0..PURG-S3` are conditional tracks derived from severity and affected layer, and defines `PURG-S3` as the medium-severity hardening track
+- Selected track recorded in the packet: `S3`
+- Classification confidence: `medium`
+- Packet decision remains `blocked` because no canonical `PURG-01.2_*` successor is defined in live routing without inventing a new gate name or auto-opening `PURG-02`, which is out of scope here.
+- `ACTIVE_CONTEXT_STATE.json` remains unchanged:
+  - `ACTIVE_CONTEXT_SCHEMA.json` still forbids structural drift via `additionalProperties: false`
+  - `scripts/validate_active_context_state.py` still expects the live next-step token `execute_purg01_controlled_triage_artifact_only`
+- Purgatorium still cannot close `IF09-FIND-001`; only Revalidation can do that.
+- Canonical classification artifact: `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json`
+- Next recommended step: `BLOCKED_NEEDS_OPERATOR_DIRECTION`
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
