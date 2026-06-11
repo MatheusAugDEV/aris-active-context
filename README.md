@@ -101,3 +101,7 @@ O artifact `artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json` abr
 ## PURG-03 IF09-FIND-001 S3 remediation plan review
 
 O artifact `artifacts/purgatorium/purg03_if09_find_001_s3_remediation_plan_compiler_review_packet.json` compila o pacote de revisão do plano de remediação para `IF09-FIND-001/S3` em modo artifact-only e planning-only. Ele define objetivos, estratégia proposta, superfície candidata, critérios de aceitação, evidência obrigatória, critérios de abort e requisitos futuros de revalidação sem aplicar patch, sem executar remediação e sem fechar o finding.
+
+## PURG-03 IF09-FIND-001 S3 operator approval packet
+
+O artifact `artifacts/purgatorium/purg03_if09_find_001_s3_remediation_plan_operator_approval_packet.json` transforma o plano compilado em um packet objetivo de aprovação/rejeição. Ele fixa critérios de approve/block, requisitos mínimos para uma futura remediação local, evidência anti-teatro, limites de blast radius e rollback documental, deixando explícito que esta decisão não autoriza apply, patch, runtime ou finding close.
