@@ -113,3 +113,7 @@ O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan
 ## PURG-04 IF09-FIND-001 S3 apply approval packet
 
 O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json` consolida o pacote formal que poderá embasar um pedido futuro de apply local para `IF09-FIND-001/S3`. Ele fixa checklist, preconditions, testes, evidência, rollback e blast radius para um apply futuro, deixando explícito que este gate não autoriza apply agora e exige comando explícito futuro do operador.
+
+## PURG-04 IF09-FIND-001 S3 local remediation apply result
+
+O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json` canoniza a tentativa FAILED de apply local controlado para `IF09-FIND-001/S3` como failure-ledger após rollback. O patch temporário passou nos testes focados, mas não pôde ser aceito canonicamente porque `python3 -m unittest discover -s tests` falhou fora da superfície autorizada, com evidência terminal `fatal: path 'CURRENT_STATE.md' exists on disk, but not in 'HEAD'`. O resultado mantém `finding_closed=false`, `remediation_proven=false` e fixa `next_recommended_step=PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY`.

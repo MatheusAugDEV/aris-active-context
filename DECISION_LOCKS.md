@@ -1073,3 +1073,30 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain false: real execution, remediation apply, patch apply, finding close, runtime real, real apply, secrets, product, and Bedrock remain unauthorized.
 - Canonical artifact: `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json`
 - Next recommended step: `AWAIT_EXPLICIT_OPERATOR_COMMAND_FOR_LOCAL_REMEDIATION_APPLY`
+
+## PURG-04 IF09-FIND-001 S3 Local Remediation Apply Result
+
+- Status: `purg04_if09_find_001_s3_local_remediation_apply_failed`
+- Decision: `failed`
+- Scope: failed controlled local remediation apply attempt for `IF09-FIND-001/S3` after rollback.
+- Operator direction recorded: `EXPLICIT_OPERATOR_AUTHORIZED_LOCAL_REMEDIATION_APPLY_CONTROLLED`
+- `apply_attempted=true`
+- `patch_applied_temporarily=true`
+- `rollback_performed=true`
+- `rollback_successful=true`
+- Focused evidence passed while the patch was applied.
+- `python3 -m unittest discover -s tests` failed broadly outside the authorized surface, including `fatal: path 'CURRENT_STATE.md' exists on disk, but not in 'HEAD'`.
+- Per the PURG-04 rollback rule, the Project_ARIS code/test patch was rolled back completely; no targeted W0.5 source/test diff remains in Project_ARIS.
+- `project_aris_committed=false`
+- `project_aris_pushed=false`
+- `global_test_suite_passed=false`
+- `failure_surface=outside_authorized_remediation_surface`
+- `project_diff_residual_after_rollback=false`
+- `silent_normalization_allowed=false`
+- `rollback_required=false` because rollback completed successfully
+- `finding_close_authorized=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- `purgatorium_can_close_finding=false`
+- Canonical artifact: `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json`
+- Next recommended step: `PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY`
