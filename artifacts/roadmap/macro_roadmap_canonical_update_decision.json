@@ -1,0 +1,42 @@
+{
+  "decision": "pass",
+  "status": "macro_roadmap_canonical_update_pass",
+  "operator_source": "operator_prompt_embedded_content",
+  "source_file": "operator_inputs/roadmap_aris_camadas_objetivos.md",
+  "source_sha256": "6b91e7cd5b151e1ebc30e94f3e3916f76df80fe48ac08147c1f18ae507c01817",
+  "external_attachment_present": false,
+  "blocked_due_missing_external_doc": false,
+  "updated_files": [
+    {"path": "ROADMAP_CANONICAL.md", "sha256": "50948e42e315a9ceab0be8b782db20d7aa05b4e68c8d525df3c3540dc05b0b76"},
+    {"path": "README.md", "sha256": "698a150b2202718029184a7699c0ec37fc428fe8e7810832b6a47d3f7c683da0"},
+    {"path": "DECISION_LOCKS.md", "sha256": "d7f9d1ada304a28c44a1465b31119307e3baf5a8631e30497089ef4b7f91d093"},
+    {"path": "EXCLUDENT_POLICY.md", "sha256": "8c03fca7b250e4b1085fdab6a8286c4eda5e8cd57cd0411dccd94a711d218c66"},
+    {"path": "operator_inputs/roadmap_aris_camadas_objetivos.md", "sha256": "6b91e7cd5b151e1ebc30e94f3e3916f76df80fe48ac08147c1f18ae507c01817"}
+  ],
+  "moved_to_excludent": [],
+  "phase_specific_roadmaps_preserved": [
+    "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+    "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md"
+  ],
+  "active_context_preserved": {
+    "phase_id": "INF-FULL-07",
+    "current_phase_id": "INF-FULL-07",
+    "active_next_phase": "PURG-01",
+    "next_phase": "PURG-01",
+    "current_status": "purg01_route_admission_pass",
+    "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
+    "latest_completed_status": "if11_minos_final_verdict_closure_pass",
+    "unchanged": true
+  },
+  "live_transition_table_preserved_verbatim": true,
+  "macro_transition_table_extension_candidate": "artifacts/roadmap/macro_transition_table_extension_candidate.json",
+  "roadmap_inventory_classification": "artifacts/roadmap/roadmap_inventory_classification.json",
+  "roadmap_excludent_move_manifest": "artifacts/roadmap/roadmap_excludent_move_manifest.json",
+  "no_real_execution_attestation": "artifacts/roadmap/macro_roadmap_no_real_execution_attestation.json",
+  "real_execution_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "runtime_real_authorized": false
+}

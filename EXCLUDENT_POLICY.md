@@ -55,3 +55,10 @@ The active post-Infernus technical roadmap document is:
 `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 
 This supersession changes document authority only. It does not open live route, does not authorize execution, and does not override `ACTIVE_CONTEXT_STATE.json` or `ROADMAP_CANONICAL.md`.
+
+## Roadmap classification rule
+
+- `ROADMAP_CANONICAL.md` is the only macro roadmap authority. Exactly one such file may exist.
+- Any other roadmap that attempts to define a global ARIS macro sequence outside `ROADMAP_CANONICAL.md` is `macro_roadmap_duplicate_or_conflict` and must move to `excludent/roadmaps/superseded/YYYY_MM_DD/<original_path_slug>.md` with a move manifest (old path, new path, hash before/after, reason).
+- Phase- or subsystem-specific roadmaps (e.g. `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`) may remain outside `excludent/` if they are explicitly subordinate: they must declare that they do not override `ACTIVE_CONTEXT_STATE.json` or `ROADMAP_CANONICAL.md` and do not authorize real execution, product, Bedrock, secrets, real_apply, or runtime real by themselves.
+- `excludent/` is never an active source for roadmap content, classification, or routing — including for already-classified roadmap files moved there.

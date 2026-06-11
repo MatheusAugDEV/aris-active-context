@@ -1,3 +1,18 @@
+## ARIS Macro Roadmap Canonicalization (Camadas e Objetivos)
+
+- Status: `macro_roadmap_canonical_update_pass`
+- Decision: `pass`
+- Scope: governance/documentation consolidation only — no phase execution, no real_apply, no product, no Bedrock, no runtime real.
+- `ROADMAP_CANONICAL.md` rewritten as the single active macro roadmap authority ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), based on operator input `operator_inputs/roadmap_aris_camadas_objetivos.md`.
+- Macro chain recorded: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUX -> Crisol -> Polimento -> EXT-SEC 00->04 -> Cinzel -> EXT-SEC 05->06 -> Bedrock Gate -> Produto Parte 2 / Design Partner -> EXT-SEC 07->08 contínuo.
+- Live `## Transition Table` in `ROADMAP_CANONICAL.md` preserved verbatim (same rows, same parsing contract for `scripts/validate_active_context_state.py`).
+- New macro transitions recorded only as a documental candidate in `artifacts/roadmap/macro_transition_table_extension_candidate.json` (not active, not consumed by validator, no phase_id/phase_class added to live state or schema).
+- Roadmap inventory completed: `artifacts/roadmap/roadmap_inventory_classification.json`. No `macro_roadmap_duplicate_or_conflict` and no `invalid_unclear_roadmap` found; `roadmap_excludent_move_manifest.json` is empty.
+- `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md` and `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` preserved as phase-specific subordinate roadmaps; neither overrides `ACTIVE_CONTEXT_STATE.json` or `ROADMAP_CANONICAL.md`.
+- This consolidation does not open execution, does not advance `phase_id`/`current_phase_id`/`active_next_phase`/`next_phase`/`current_status`/`latest_completed_phase`/`latest_completed_status`, and does not invert any lock in `ACTIVE_CONTEXT_STATE.json.authorization`.
+- `ACTIVE_CONTEXT_STATE.json` remains preserved at `phase_id=INF-FULL-07`, `current_status=purg01_route_admission_pass`, `active_next_phase=PURG-01`, `latest_completed_phase=IF-11 Minos Final Verdict + Closure`.
+- real_execution_authorized=false, product_authorized=false, bedrock_authorized=false, real_apply_authorized=false, secrets_authorized=false, runtime_real_authorized=false.
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`

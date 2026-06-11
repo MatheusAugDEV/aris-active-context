@@ -14,6 +14,10 @@ Este repositório responde três perguntas:
 1. `ACTIVE_CONTEXT_STATE.json` — estado canônico e fonte de verdade
 2. `ARIS_BOOT.md` — identidade, regras, padrões de prompt
 
+## Roadmap macro canônico
+
+`ROADMAP_CANONICAL.md` é a única autoridade de roadmap macro ativa ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), baseada no documento do operador `operator_inputs/roadmap_aris_camadas_objetivos.md`. Roadmaps de fase/subsistema (ex.: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`) são subordinados e nunca vencem `ACTIVE_CONTEXT_STATE.json` nem `ROADMAP_CANONICAL.md`. Roadmaps macro concorrentes devem estar em `excludent/` (ver `EXCLUDENT_POLICY.md`).
+
 ## Referência sob demanda
 
 | Arquivo | Quando ler |

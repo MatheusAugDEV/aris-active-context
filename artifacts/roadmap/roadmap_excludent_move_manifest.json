@@ -1,0 +1,13 @@
+{
+  "decision": "pass",
+  "status": "roadmap_excludent_move_manifest_empty_pass",
+  "moves": [],
+  "reason": "Inventory in artifacts/roadmap/roadmap_inventory_classification.json found exactly one macro_canonical_active roadmap (ROADMAP_CANONICAL.md), no macro_roadmap_duplicate_or_conflict, no invalid_unclear_roadmap. project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md and project_mirror/docs/infernus_full/infernus_full_canonroadmap.md are correctly classified phase_specific_subordinate (the latter already an explicit superseded stub with forensic copy in excludent/). archive/ entries are historical_only. excludent/infernus/roadmaps/infernus_full_canonroadmap.md is already_excludent. No file required movement to excludent/roadmaps/superseded/.",
+  "excludent_used_as_active_source": false,
+  "real_execution_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "runtime_real_authorized": false
+}

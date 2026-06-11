@@ -1,0 +1,65 @@
+{
+  "decision": "pass",
+  "status": "roadmap_inventory_classification_pass",
+  "scope": "controlled inventory of roadmap-named markdown files via path/name search, no bulk-read of archive/excludent",
+  "search_command": "find . -path './.git' -prune -o -type f \\( -iname '*roadmap*.md' -o -iname '*canonroadmap*.md' -o -iname '*ROADMAP*.md' \\) -print | sort",
+  "inventory": [
+    {
+      "path": "ROADMAP_CANONICAL.md",
+      "classification": "macro_canonical_active",
+      "sha256_before": "e2b2c907e0e0ac5d2423c1b6e0af41e54bc6e50c47bfff329c3f606a9f9ddaca",
+      "notes": "The single macro roadmap canonical authority. Updated in this gate to the full ROADMAP ARIS — CAMADAS E OBJETIVOS chain."
+    },
+    {
+      "path": "project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
+      "classification": "phase_specific_subordinate",
+      "sha256": "7c73bcb28f54a82d2ee20001411748ae19131026dcb2a368dfe610adc781fb74",
+      "notes": "Active post-Infernus Purgatorium technical direction document. Already contains an explicit subordinate authority clause: ACTIVE_CONTEXT_STATE.json > ARIS_BOOT.md > ROADMAP_CANONICAL.md > DECISION_LOCKS.md > este arquivo > rascunhos antigos > memoria/chat. No change required. Preserved as-is."
+    },
+    {
+      "path": "project_mirror/docs/infernus_full/infernus_full_canonroadmap.md",
+      "classification": "phase_specific_subordinate",
+      "sha256": "d45e4fa0f31c48d1f3d2602f109c35b5edc86b2acafb1583dd19e67e63ba6a0c",
+      "notes": "Already a superseded stub (classification: excluded_from_context, authority: none, use: forensic_only). Forensic copy at excludent/infernus/roadmaps/infernus_full_canonroadmap.md. Preserved as-is per EXCLUDENT_POLICY.md post-IF11 supersession clause. Not resurrected as active direction."
+    },
+    {
+      "path": "excludent/infernus/roadmaps/infernus_full_canonroadmap.md",
+      "classification": "already_excludent",
+      "sha256": "f17487852100810fcf09eaff84e02200273ccede073a0bf2fbf651730f90e993",
+      "notes": "Forensic-only copy under excludent/. Content not read beyond path/classification per EXCLUDENT_POLICY.md. Not used as active source."
+    },
+    {
+      "path": "archive/ARIS_ROADMAP_EVOLUTION.md",
+      "classification": "historical_archive",
+      "sha256": "a8586929f5dd66d432266618d3c2b231b08c633256d1f61b0757c3a15cf45d0b",
+      "notes": "Under archive/. Historical only, not active routing authority. Not moved, not read beyond this inventory entry."
+    },
+    {
+      "path": "archive/ARIS_ROADMAP_R0_F120.md",
+      "classification": "historical_archive",
+      "sha256": "326636c160a8fbbcf313796694b844943ca2833366820d7677a01efe917408b2",
+      "notes": "Under archive/. Historical only, not active routing authority. Not moved, not read beyond this inventory entry."
+    },
+    {
+      "path": "archive/ROADMAP_F30_F50_SUPERSEDED_2026-05-11.md",
+      "classification": "historical_archive",
+      "sha256": "3b76b9164408719f64038106c93f527d8e1110efb44ac565c88d39477b6e26a2",
+      "notes": "Under archive/. Filename indicates already explicitly superseded historical roadmap. Not active routing authority. Not moved, not read beyond this inventory entry."
+    },
+    {
+      "path": "archive/superseded/ROADMAP_AMENDMENT_PROTOCOL.md",
+      "classification": "historical_archive",
+      "sha256": "74e51d441d0402ef9bd9dd68544ab43bbcc7713a26e13a4e02243aa904edfffc",
+      "notes": "Under archive/superseded/. Historical only (procedure document, not a sequence-defining macro roadmap). Not active routing authority. Not moved, not read beyond this inventory entry."
+    }
+  ],
+  "macro_roadmap_duplicate_or_conflict_found": false,
+  "invalid_unclear_roadmap_found": false,
+  "blocked_unclassified_roadmap": false,
+  "real_execution_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "runtime_real_authorized": false
+}
