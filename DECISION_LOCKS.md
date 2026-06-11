@@ -69,6 +69,36 @@
 - Canonical classification artifact: `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json`
 - Next recommended step: `BLOCKED_NEEDS_OPERATOR_DIRECTION`
 
+## PURG-01.2 S3 Track Successor Candidate
+
+- Status: `purg01_2_s3_track_successor_candidate_pass`
+- Decision: `pass`
+- Scope: define a safe artifact-only successor candidate for the `S3` track of `IF09-FIND-001`, without opening remediation, runtime, real_apply, or finding close.
+- Operator direction received: `AUTHORIZE_PURG_01_2_S3_TRACK_SUCCESSOR_CANDIDATE`
+- Source classification packet verified:
+  - `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json`
+  - `selected_track=S3`
+  - `classification_confidence=medium`
+- `PURG-01.2` is recorded only as a candidate gate:
+  - `successor_candidate_id=PURG-01.2`
+  - `successor_candidate_name=S3 Track Scope and Remediation Planning Readiness`
+  - `successor_candidate_type=artifact_only_readiness_gate`
+- This candidate does **not** alter live routing, does **not** authorize `PURG-02`, and does **not** invert any real lock.
+- Roadmap boundary preserved:
+  - `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md` still defines `PURG-02` as `Reproduction / RED Baseline`
+  - `PURG-03` remains the roadmap-defined `Remediation Plan Compiler`
+  - therefore `PURG-01.2` only records scope/readiness requirements that a future operator-approved step would need before any RED baseline or planning execution
+- Minimum future requirements are documented in the artifact for:
+  - S3 scope statement bound to `IF09-FIND-001`
+  - evidence requirements for future roadmap-defined `PURG-02`
+  - blocked reasons if the RED baseline is not ready
+  - preservation of all no-real-execution and no-finding-close locks
+- `ACTIVE_CONTEXT_STATE.json` remains unchanged:
+  - `ACTIVE_CONTEXT_SCHEMA.json` still forbids structural drift via `additionalProperties: false`
+  - `scripts/validate_active_context_state.py` still expects the live next-step token `execute_purg01_controlled_triage_artifact_only`
+- Canonical successor candidate artifact: `artifacts/purgatorium/purg01_2_s3_track_successor_candidate.json`
+- Next recommended step: `PURG-01.2_S3_SCOPE_AND_REMEDIATION_PLANNING_READINESS`
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
