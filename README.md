@@ -18,6 +18,8 @@ Este repositório responde três perguntas:
 
 `ROADMAP_CANONICAL.md` é a única autoridade de roadmap macro ativa ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), baseada no documento do operador `operator_inputs/roadmap_aris_camadas_objetivos.md`. Roadmaps de fase/subsistema (ex.: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`) são subordinados e nunca vencem `ACTIVE_CONTEXT_STATE.json` nem `ROADMAP_CANONICAL.md`. Roadmaps macro concorrentes devem estar em `excludent/` (ver `EXCLUDENT_POLICY.md`).
 
+A canonicalização do roadmap macro foi registrada e validada no commit `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09` (ver `DECISION_LOCKS.md` § "Active-Context Post-Roadmap Canonical Sync" e `artifacts/roadmap/post_roadmap_canonical_sync_decision.json`). `ACTIVE_CONTEXT_STATE.json` permanece inalterado (sem novos campos, `additionalProperties: false` no schema); a Macro Transition Table futura permanece documental, não consumida pelo validador, e a rota viva (`active_next_phase=PURG-01`) permanece preservada.
+
 ## Referência sob demanda
 
 | Arquivo | Quando ler |

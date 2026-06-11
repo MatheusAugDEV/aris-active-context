@@ -13,6 +13,21 @@
 - `ACTIVE_CONTEXT_STATE.json` remains preserved at `phase_id=INF-FULL-07`, `current_status=purg01_route_admission_pass`, `active_next_phase=PURG-01`, `latest_completed_phase=IF-11 Minos Final Verdict + Closure`.
 - real_execution_authorized=false, product_authorized=false, bedrock_authorized=false, real_apply_authorized=false, secrets_authorized=false, runtime_real_authorized=false.
 
+## Active-Context Post-Roadmap Canonical Sync
+
+- Status: `post_roadmap_canonical_sync_pass`
+- Decision: `pass`
+- Scope: register that the macro roadmap canonicalization (commit `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09`) is completed, validated, and on `main`, while preserving `ACTIVE_CONTEXT_STATE.json` exactly as-is.
+- `ACTIVE_CONTEXT_SCHEMA.json` has `additionalProperties: false`. Adding new top-level fields (`macro_roadmap_canonical_update_pass`, `roadmap_canonical_commit_sha`, `roadmap_authority`, `macro_transition_extension_status`, `live_route_preserved`, `no_real_execution_authorized`) to `ACTIVE_CONTEXT_STATE.json` would require a structural schema change.
+- Decision: do **not** force a new field into `ACTIVE_CONTEXT_STATE.json` or `ACTIVE_CONTEXT_SCHEMA.json` for this sync. `ACTIVE_CONTEXT_STATE.json` is left byte-identical. The sync is recorded only via this lock entry, the `README.md` "Roadmap macro canônico" section, and `artifacts/roadmap/post_roadmap_canonical_sync_decision.json`.
+- `roadmap_canonical_commit_sha`: `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09`
+- `roadmap_authority`: `ROADMAP_CANONICAL.md` (Status: `MACRO_ROADMAP_CANONICAL_ACTIVE`)
+- `macro_transition_extension_status`: `documental_not_active` (see `## Macro Transition Table — Future Extension (documental, not yet active)` in `ROADMAP_CANONICAL.md` and `artifacts/roadmap/macro_transition_table_extension_candidate.json`)
+- Live route preserved: `phase_id=INF-FULL-07`, `current_phase_id=INF-FULL-07`, `active_next_phase=PURG-01`, `next_phase=PURG-01`, `current_status=if11_minos_final_verdict_closure_pass`, `status=purg01_route_admission_pass`, `latest_completed_phase=IF-11 Minos Final Verdict + Closure`, `latest_completed_status=if11_minos_final_verdict_closure_pass`.
+- Live `## Transition Table` in `ROADMAP_CANONICAL.md` unchanged; future Macro Transition Table remains documental, not consumed by the validator, not promoted to live.
+- This sync does not advance phase_id/current_phase_id/active_next_phase/next_phase/current_status/latest_completed_phase/latest_completed_status, does not close IF09-FIND-001, does not reopen IF-08/W4, and does not invert any lock in `ACTIVE_CONTEXT_STATE.json.authorization`.
+- real_execution_authorized=false, product_authorized=false, bedrock_authorized=false, real_apply_authorized=false, secrets_authorized=false, runtime_real_authorized=false.
+
 ## PURG-01 Route Admission
 
 - Latest completed phase: `IF-11 Minos Final Verdict + Closure`
