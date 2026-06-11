@@ -1,0 +1,86 @@
+{
+  "decision": "pass",
+  "status": "purg03_if09_find_001_s3_remediation_plan_compiler_review_packet_pass",
+  "scope": "Artifact-only remediation plan compiler review packet for IF09-FIND-001 S3.",
+  "operator_direction": "AUTO_CONTINUE_ARTIFACT_ONLY_OPEN_PURG03_REMEDIATION_PLAN_COMPILER_OPERATOR_REVIEW_PACKET",
+  "target_finding_id": "IF09-FIND-001",
+  "selected_track": "S3",
+  "source_red_baseline": "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+  "red_baseline_result": "ready",
+  "remediation_plan_compiler_opened_as_artifact_only": true,
+  "remediation_apply_authorized": false,
+  "patch_authorized": false,
+  "real_execution_authorized": false,
+  "finding_close_authorized": false,
+  "remediation_objectives": [
+    "Ensure stale project SHA metadata cannot enter canonical active-context state without explicit drift recording or fail-closed handling.",
+    "Bind canonical packet generation to verified primary refs before any future state write is considered valid.",
+    "Preserve the forensic evidence chain for SHA mismatches instead of silently normalizing or discarding mismatch evidence.",
+    "Prepare a future remediation scope that can be proven locally with regression evidence before any Infernus revalidation request."
+  ],
+  "proposed_remediation_strategy": [
+    "Harden the canonical sync packet assembly path so the latest completed project SHA is derived from verified primary refs before a packet is written or promoted.",
+    "Introduce an explicit fail-closed branch when recorded SHA and verified SHA diverge, unless a dedicated drift artifact is emitted and linked into the evidence chain.",
+    "Treat mismatch preservation as a first-class output of the remediation flow so the system records drift explicitly rather than silently overwriting packet lineage.",
+    "Anchor future proof of remediation on the IF10 regression plan for tests/test_active_context_canonical_sha_sync.py and on validator-confirmed no-real-surface locks."
+  ],
+  "candidate_change_surface": [
+    "Canonical sync packet generation logic responsible for latest_completed_project_commit_sha selection and persistence.",
+    "Primary-ref verification path that compares the recorded project SHA against the verified canonical ref before active-context packet acceptance.",
+    "Drift artifact emission or fail-closed decision path for SHA mismatch handling.",
+    "Regression coverage defined by IF10-REG-001 at tests/test_active_context_canonical_sha_sync.py.",
+    "Supporting active-context governance documentation and evidence artifacts that explain mismatch handling without opening runtime or product scope."
+  ],
+  "non_goals": [
+    "Apply any patch or code change in this gate.",
+    "Execute remediation, runtime, product, Bedrock, real_apply, or secret-bearing flows.",
+    "Close IF09-FIND-001 or declare finding_closed.",
+    "Open Infernus revalidation in this gate.",
+    "Rename roadmap phases or alter ROADMAP_CANONICAL.md."
+  ],
+  "acceptance_criteria_for_future_remediation": [
+    "The future remediation must prove that latest_completed_project_commit_sha is derived from the verified primary ref chosen for the canonical packet, not from stale packet metadata.",
+    "A SHA mismatch must either emit an explicit drift artifact linked to the evidence chain or fail closed; silent SHA normalization is not acceptable.",
+    "The future regression test at tests/test_active_context_canonical_sha_sync.py must pass with assertions covering canonical SHA equality, mismatch fail-closed or drift-emission behavior, and preservation of forbidden execution surfaces as false.",
+    "Validator output must remain pass after the remediation artifacts are materialized, with no structural schema drift forced into ACTIVE_CONTEXT_STATE.json.",
+    "The remediation proof must keep real execution, remediation apply, patch apply, finding close, runtime real, real apply, secrets, product, and Bedrock authorization false unless a later explicit gate changes them.",
+    "The future remediation packet must include before/after evidence that the canonical packet no longer retains stale project SHA metadata while still preserving custody of any mismatch evidence."
+  ],
+  "required_evidence_for_future_remediation": [
+    "A remediation decision artifact that names the exact canonical sync control being changed and why it satisfies IF10-REM-001.",
+    "Regression evidence for IF10-REG-001, including the test file path tests/test_active_context_canonical_sha_sync.py and pass results for the required assertions.",
+    "A before/after packet comparison showing the stale-SHA condition from IF09-FIND-001 and the corrected canonical SHA behavior after remediation.",
+    "A drift artifact or fail-closed evidence sample demonstrating that mismatches are surfaced explicitly rather than normalized away.",
+    "Validator pass evidence and a no-real-execution / no-real-apply attestation for the remediation proof gate.",
+    "An updated evidence chain linking the remediation proof back to IF09-FIND-001, IF10-RCA-001, IF10-REM-001, and IF10-REG-001."
+  ],
+  "rollback_or_abort_criteria": [
+    "Abort if the future remediation cannot identify a single verified primary ref selection rule for the canonical packet.",
+    "Abort if the proposed change requires mutating runtime, product, Bedrock, secret, network, or real_apply locks.",
+    "Abort if the remediation cannot preserve mismatch evidence explicitly and instead depends on silent normalization.",
+    "Abort if regression coverage for IF10-REG-001 is missing, ambiguous, or fails.",
+    "Abort if validator pass depends on structural schema drift in ACTIVE_CONTEXT_STATE.json or ACTIVE_CONTEXT_SCHEMA.json outside the approved scope."
+  ],
+  "residual_risks": [
+    "This packet is planning-only; it does not prove the remediation is implemented or effective yet.",
+    "The live ACTIVE_CONTEXT_STATE.json still carries the stale next-step token because schema and validator coupling make a safe state mutation out of scope here.",
+    "Future remediation may span both packet-generation logic and governance validation surfaces, increasing coordination risk even if runtime remains closed.",
+    "IF09-FIND-001 remains open until a later remediation proof and an Infernus revalidation wave both succeed."
+  ],
+  "future_revalidation_requirements": [
+    "A future Infernus revalidation request must target IF10-REVAL-001 only after remediation proof is complete.",
+    "The revalidation success criteria must confirm that the corrected packet emits canonical project SHA without primary-ref drift.",
+    "The revalidation success criteria must confirm validator pass with no SHA-mismatch warning for the corrected packet.",
+    "The revalidation evidence must confirm that runtime, network, secret, MCP, RAG, memory, socket, shell, filesystem, cost, quota, and audio locks remain false."
+  ],
+  "revalidation_authorized": false,
+  "purgatorium_can_close_finding": false,
+  "infernus_revalidation_required_for_closure": true,
+  "runtime_real_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "next_recommended_step": "PURG-03_REMEDIATION_PLAN_OPERATOR_APPROVAL_PACKET",
+  "blocked_reason": null
+}

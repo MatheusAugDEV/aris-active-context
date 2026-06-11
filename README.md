@@ -97,3 +97,7 @@ O artifact `artifacts/purgatorium/purg01_2_s3_scope_and_remediation_planning_rea
 ## PURG-02 IF09-FIND-001 S3 RED baseline
 
 O artifact `artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json` abre `PURG-02` apenas no plano artifact-only e synthetic-only para `IF09-FIND-001/S3`. Ele materializa a hipótese RED, a matriz de evidência, o oracle documental e o plano de reprodução segura sem runtime, sem scanner/DAST/pentest, sem patch, sem remediação e sem fechamento do finding; `PURG-03` continua fechado e não autorizado.
+
+## PURG-03 IF09-FIND-001 S3 remediation plan review
+
+O artifact `artifacts/purgatorium/purg03_if09_find_001_s3_remediation_plan_compiler_review_packet.json` compila o pacote de revisão do plano de remediação para `IF09-FIND-001/S3` em modo artifact-only e planning-only. Ele define objetivos, estratégia proposta, superfície candidata, critérios de aceitação, evidência obrigatória, critérios de abort e requisitos futuros de revalidação sem aplicar patch, sem executar remediação e sem fechar o finding.
