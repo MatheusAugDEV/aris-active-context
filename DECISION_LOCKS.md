@@ -1501,3 +1501,54 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_blocker_triage.json`
 - Next recommended step: `PROJECT_ARIS_CLEANROOM_SUBMODULE_GITLINK_REPAIR_PLAN_ARTIFACT_ONLY`
+
+## Project_ARIS Cleanroom Submodule Gitlink Repair Plan
+
+- Status: `project_aris_cleanroom_submodule_gitlink_repair_plan_pass`
+- Decision: `pass`
+- Source triage artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_blocker_triage.json`
+- Source triage artifact sha256 observed: `045e874a8839e3f285fa8dfb8787336a228286fbbf528f91e8e1e4b6dc8c476b`
+- Clean clone head: `6cec74deb7a99b7eb227df84a902650ca092e00f`
+- Current blocker preserved:
+  - `gitlink_index_entry=160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0 aris-active-context`
+  - `.gitmodules` absent
+  - `git submodule status` fails with exit `128`
+- Repair plans evaluated:
+  - `PLAN_A_REMOVE_GITLINK_ADD_EXTERNAL_CONTEXT_DOC` rejected because root docs/tests still depend on the `aris-active-context/*` local path and need a single explicit replacement anchor
+  - `PLAN_B_REPLACE_GITLINK_WITH_POINTER_FILE` selected
+  - `PLAN_C_RESTORE_SUBMODULE_CONTRACT` rejected because no primary evidence shows a legitimate historical `.gitmodules` contract
+  - `PLAN_BLOCKED_NEEDS_OPERATOR_DECISION` rejected because current evidence is sufficient for a conservative repair plan
+- Selected repair plan: `PLAN_B_REPLACE_GITLINK_WITH_POINTER_FILE`
+- Selected plan rationale:
+  - remove the orphan gitlink without recreating `.gitmodules`
+  - add one explicit replacement file such as `ACTIVE_CONTEXT_POINTER.md`
+  - update only the minimum root docs/tests that still route through the nested path contract
+  - keep `MatheusAugDEV/aris-active-context` as the canonical external source
+- Future minimum patch scope:
+  - add `Project_ARIS/ACTIVE_CONTEXT_POINTER.md`
+  - remove `Project_ARIS/aris-active-context` gitlink from the index/worktree contract
+  - update `Project_ARIS/BOOT.md`, `Project_ARIS/CLAUDE.md`, `Project_ARIS/AGENTS.md`, and `Project_ARIS/tests/test_f21a54c_active_context_remote_sync_verification.py`
+  - touch additional `src/aris/context/**`, `src/aris/lab_simulation/**`, or `artifacts/**` only if grep-backed validation proves they are required
+- Future validation matrix:
+  - no `160000` gitlink remains for `aris-active-context`
+  - `.gitmodules` stays absent
+  - `git submodule status` no longer errors on missing mapping
+  - pointer file exists and names `MatheusAugDEV/aris-active-context` as canonical external source
+  - minimal root docs/tests no longer depend on removed nested paths
+  - targeted tests pass before the full baseline is attempted
+- Baseline policy:
+  - `baseline_run=false` in this planning step
+  - full `python3 -m unittest discover -s tests` is allowed only after the future repair resolves the orphan gitlink and the targeted validations pass
+- `dirty_trees_touched=false`
+- `project_aris_changed=false`
+- `project_aris_patch_applied=false`
+- `project_aris_commit_created=false`
+- `reset_clean_stash_discard_performed=false`
+- `runtime_executed=false`
+- `real_apply_executed=false`
+- `bedrock_product_secrets_touched=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json`
+- Next recommended step: `PROJECT_ARIS_CLEANROOM_EXTERNAL_CONTEXT_POINTER_REPAIR`

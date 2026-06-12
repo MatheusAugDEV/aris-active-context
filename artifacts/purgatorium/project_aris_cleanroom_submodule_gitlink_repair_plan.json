@@ -1,0 +1,200 @@
+{
+  "phase_id": "PROJECT_ARIS_CLEANROOM_SUBMODULE_GITLINK_REPAIR_PLAN_ARTIFACT_ONLY",
+  "phase_class": "cleanroom_recovery_repair_plan_artifact_only",
+  "decision": "pass",
+  "status": "project_aris_cleanroom_submodule_gitlink_repair_plan_pass",
+  "source_triage_artifact_path": "artifacts/purgatorium/project_aris_cleanroom_clone_blocker_triage.json",
+  "source_triage_artifact_sha256_observed": "045e874a8839e3f285fa8dfb8787336a228286fbbf528f91e8e1e4b6dc8c476b",
+  "selected_option_from_triage": "OPTION_C_CONVERT_TO_DOCUMENTED_EXTERNAL_CONTEXT_POINTER",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_clean_clone_head": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "gitlink_index_entry": "160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0\taris-active-context",
+  "gitmodules_present": false,
+  "current_blocker": "Project_ARIS clean clone still contains an orphan 160000 gitlink at aris-active-context while .gitmodules is absent and git submodule status exits 128.",
+  "repair_plans_evaluated": [
+    {
+      "plan_id": "PLAN_A_REMOVE_GITLINK_ADD_EXTERNAL_CONTEXT_DOC",
+      "evaluation": "rejected",
+      "reason": "A documentation-only replacement is too weak for the current repository shape because BOOT.md, CLAUDE.md, AGENTS.md, tests, and tracked artifacts still reference the aris-active-context path directly. Removing the gitlink without introducing a single explicit replacement anchor would leave a diffuse contract and increase follow-up churn."
+    },
+    {
+      "plan_id": "PLAN_B_REPLACE_GITLINK_WITH_POINTER_FILE",
+      "evaluation": "selected",
+      "reason": "A dedicated pointer file can replace the orphan gitlink with one explicit external-source contract, while a narrow set of root docs and tests are updated to reference that file instead of a hidden nested checkout. This is the smallest coherent patch that preserves the external canonical-source model and avoids recreating .gitmodules."
+    },
+    {
+      "plan_id": "PLAN_C_RESTORE_SUBMODULE_CONTRACT",
+      "evaluation": "rejected",
+      "reason": "No primary evidence shows any historical .gitmodules contract or a legitimate need for a live submodule. Reintroducing .gitmodules would widen scope and contradict the accepted triage bias toward an external canonical pointer."
+    },
+    {
+      "plan_id": "PLAN_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "evaluation": "rejected",
+      "reason": "The read-only evidence is already sufficient to choose a narrow repair direction without mutating Project_ARIS yet."
+    }
+  ],
+  "selected_repair_plan": "PLAN_B_REPLACE_GITLINK_WITH_POINTER_FILE",
+  "selected_repair_plan_rationale": [
+    "The repository already treats aris-active-context as a pointer, not as a healthy submodule, and multiple commits describe updates to it as pointer syncs.",
+    "Tracked root guidance files such as BOOT.md, CLAUDE.md, and AGENTS.md still instruct readers to consume files under the aris-active-context path; that path will disappear once the orphan gitlink is removed.",
+    "A single replacement file such as Project_ARIS/ACTIVE_CONTEXT_POINTER.md provides a stable textual contract that can declare MatheusAugDEV/aris-active-context as the canonical external source and spell out the new read-first access rule.",
+    "This keeps the future patch small: remove the gitlink from the index, add the pointer file, and update only the minimal set of root docs/tests that currently rely on the nested path contract.",
+    "The plan remains fail-closed because baseline execution stays blocked until the gitlink is removed, the pointer contract is committed, and validation confirms there is no orphan submodule state left."
+  ],
+  "rejected_repair_plans": [
+    {
+      "plan_id": "PLAN_A_REMOVE_GITLINK_ADD_EXTERNAL_CONTEXT_DOC",
+      "rejection_reason": "Too underspecified for the number of existing nested-path references."
+    },
+    {
+      "plan_id": "PLAN_C_RESTORE_SUBMODULE_CONTRACT",
+      "rejection_reason": "No evidence of a real submodule contract."
+    },
+    {
+      "plan_id": "PLAN_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "rejection_reason": "Evidence already supports a conservative plan selection."
+    }
+  ],
+  "future_project_aris_patch_scope": {
+    "summary": "Future repair removes the orphan gitlink entry aris-active-context, adds one explicit external-context pointer file, and updates only the smallest set of tracked docs/tests needed to route readers and validators to the external canonical repository.",
+    "minimum_replacement_files": [
+      "Project_ARIS/ACTIVE_CONTEXT_POINTER.md"
+    ],
+    "minimum_update_targets": [
+      "Project_ARIS/BOOT.md",
+      "Project_ARIS/CLAUDE.md",
+      "Project_ARIS/AGENTS.md",
+      "Project_ARIS/tests/test_f21a54c_active_context_remote_sync_verification.py"
+    ],
+    "possible_followup_targets_if_required_by grep-backed failures": [
+      "Project_ARIS/src/aris/context/**",
+      "Project_ARIS/src/aris/lab_simulation/**",
+      "Project_ARIS/artifacts/**"
+    ],
+    "patch_sequence": [
+      "Record the current gitlink SHA a113ad549f0db6c4cb9d8c4aead7d654eb3938da in the repair artifact and pointer file for audit continuity.",
+      "Remove the orphan gitlink from the Project_ARIS index and working tree contract without touching the external aris-active-context repository.",
+      "Add ACTIVE_CONTEXT_POINTER.md that names MatheusAugDEV/aris-active-context as the canonical external source and explains the read-first contract outside the Project_ARIS tree.",
+      "Rewrite the minimal root docs/tests that still hard-code aris-active-context/* local paths so they reference ACTIVE_CONTEXT_POINTER.md and the external repository contract.",
+      "Run targeted validations that prove no orphan submodule state remains before any baseline test is attempted."
+    ]
+  },
+  "future_files_allowed_to_change": [
+    "Project_ARIS/ACTIVE_CONTEXT_POINTER.md",
+    "Project_ARIS/BOOT.md",
+    "Project_ARIS/CLAUDE.md",
+    "Project_ARIS/AGENTS.md",
+    "Project_ARIS/tests/test_f21a54c_active_context_remote_sync_verification.py",
+    "Project_ARIS/aris-active-context",
+    "Project_ARIS/src/aris/context/**",
+    "Project_ARIS/src/aris/lab_simulation/**",
+    "Project_ARIS/artifacts/**"
+  ],
+  "future_files_forbidden_to_change": [
+    "/home/matheus/ARIS/Project_ARIS/**",
+    "/home/matheus/ARIS/Project_ARIS/aris-active-context/**",
+    "Project_ARIS/.gitmodules",
+    "ACTIVE_CONTEXT_STATE.json",
+    "BEDROCK_GATE.md",
+    "README.md",
+    "archive/**",
+    "excludent/**",
+    "root mirrors"
+  ],
+  "future_commands_allowed": [
+    "git status --short",
+    "git ls-files -s aris-active-context",
+    "git rm --cached aris-active-context",
+    "rm -rf aris-active-context",
+    "python3 -m py_compile <targeted_changed_python_files>",
+    "python3 -m unittest <targeted_changed_tests>",
+    "git grep -n 'aris-active-context\\|ACTIVE_CONTEXT_POINTER\\|MatheusAugDEV/aris-active-context' -- . ':!node_modules'",
+    "git submodule status || true",
+    "test -f .gitmodules && cat .gitmodules || true",
+    "python3 -m unittest discover -s tests"
+  ],
+  "future_commands_forbidden": [
+    "git reset --hard",
+    "git clean -fd",
+    "git stash",
+    "git checkout -- <path>",
+    "git restore <path>",
+    "any command inside /home/matheus/ARIS/Project_ARIS",
+    "any command inside /home/matheus/ARIS/Project_ARIS/aris-active-context",
+    "runtime execution commands",
+    "real_apply commands",
+    "Bedrock or product commands",
+    "secret access commands"
+  ],
+  "future_validation_matrix": [
+    {
+      "check_id": "V1_GITLINK_REMOVED",
+      "command": "git ls-files -s aris-active-context || true",
+      "expected_result": "No 160000 entry remains for aris-active-context."
+    },
+    {
+      "check_id": "V2_NO_GITMODULES_REINTRODUCED",
+      "command": "test -f .gitmodules && cat .gitmodules || true",
+      "expected_result": ".gitmodules remains absent."
+    },
+    {
+      "check_id": "V3_SUBMODULE_STATUS_CLEAN_OR_IRRELEVANT",
+      "command": "git submodule status || true",
+      "expected_result": "No fatal orphan-mapping error remains."
+    },
+    {
+      "check_id": "V4_POINTER_FILE_PRESENT",
+      "command": "sed -n '1,200p' ACTIVE_CONTEXT_POINTER.md",
+      "expected_result": "Pointer file states that MatheusAugDEV/aris-active-context is the canonical external active-context source and explains read-first usage."
+    },
+    {
+      "check_id": "V5_ROOT_DOCS_REROUTED",
+      "command": "git grep -n 'aris-active-context/CURRENT_STATE.md\\|aris-active-context/NEXT_ACTION.md\\|aris-active-context/BOOT_PROFILE.md\\|aris-active-context/READ_PROFILE.md' -- BOOT.md CLAUDE.md AGENTS.md tests/test_f21a54c_active_context_remote_sync_verification.py || true",
+      "expected_result": "Removed or intentionally replaced by pointer-file references in the planned minimal targets."
+    },
+    {
+      "check_id": "V6_TARGETED_TESTS_GREEN",
+      "command": "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q",
+      "expected_result": "Green after the contract rewrite."
+    },
+    {
+      "check_id": "V7_BASELINE_GATE",
+      "command": "python3 -m unittest discover -s tests",
+      "expected_result": "Run only after V1-V6 pass and the orphan gitlink blocker is fully resolved."
+    }
+  ],
+  "rollback_strategy": {
+    "safe_rollback_point": "Before the future Project_ARIS repair commit.",
+    "rollback_method": "If the future repair introduces regressions, revert the single Project_ARIS repair commit and restore the prior clean clone from remote rather than reconstructing the orphan gitlink manually.",
+    "notes": [
+      "Rollback must not touch the quarantined dirty trees.",
+      "Rollback does not require or authorize recreating .gitmodules.",
+      "If the pointer-file patch fails before commit, discard only the clean clone workspace and reclone from the canonical remote."
+    ]
+  },
+  "baseline_run_allowed_after_repair": {
+    "allowed": true,
+    "conditions": [
+      "The orphan gitlink has been removed from the Project_ARIS index.",
+      "ACTIVE_CONTEXT_POINTER.md exists and documents the external canonical repository.",
+      "Minimal root docs/tests selected in the repair no longer depend on the removed nested path contract.",
+      "Targeted validations V1-V6 pass first."
+    ]
+  },
+  "dirty_trees_touched": false,
+  "project_aris_changed": false,
+  "project_aris_patch_applied": false,
+  "project_aris_commit_created": false,
+  "baseline_run": false,
+  "reset_clean_stash_discard_performed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "next_recommended_step": "PROJECT_ARIS_CLEANROOM_EXTERNAL_CONTEXT_POINTER_REPAIR",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "06467eef301a9521ad30a3c8095bd769222691d77b7b50415102a3c8f26958fc"
+  }
+}
