@@ -1,0 +1,245 @@
+{
+  "phase_id": "PURG04_FRESH_RECLONE_EXECUTION_PACKET",
+  "phase_class": "fresh_reclone_execution_bounded_cleanroom",
+  "decision": "pass",
+  "status": "purg04_fresh_reclone_execution_packet_pass_cleanroom_admissible_focused_tests_red",
+  "source_prerequisite_packet_path": "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+  "source_prerequisite_packet_sha256_observed": "4a21abb0afe5c29a24c917689bab8524639b7fa80ffe80a4d5d8102bd4007544",
+  "active_context_head_before": "b36e0a17bc739e2d56ed1a208080c004be1ad964",
+  "dirty_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "dirty_clone_head_observed_before": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "dirty_clone_status_observed_before": {
+    "observed_state": "dirty",
+    "status_lines_total": 167,
+    "modified": 66,
+    "deleted": 100,
+    "untracked": 1,
+    "residue_paths": [
+      "aris-active-context/"
+    ]
+  },
+  "dirty_clone_touched_for_read_only_verification": true,
+  "dirty_clone_mutated": false,
+  "fresh_reclone_target_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "fresh_reclone_target_preexisted": false,
+  "fresh_reclone_executed": true,
+  "fresh_reclone_remote_observed": [
+    "origin\tgit@github.com:MatheusAugDEV/Project-A.R.I.S.git (fetch)",
+    "origin\tgit@github.com:MatheusAugDEV/Project-A.R.I.S.git (push)"
+  ],
+  "fresh_reclone_branch_observed": {
+    "before_checkout": "main",
+    "after_checkout": "DETACHED"
+  },
+  "fresh_reclone_head_observed": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "fresh_reclone_head_matches_expected": true,
+  "fresh_reclone_status_before_checks": {
+    "exit_code": 0,
+    "lines": []
+  },
+  "fresh_reclone_nested_active_context_before_checks": {
+    "exit_code": 0,
+    "paths": []
+  },
+  "minimal_checks_executed": true,
+  "minimal_checks_executed_count": 9,
+  "minimal_check_results": [
+    {
+      "test": "tests.test_f21a54c_active_context_remote_sync_verification",
+      "exit_code": 0,
+      "result": "pass",
+      "log_path": "/tmp/purg04_logs/tests_test_f21a54c_active_context_remote_sync_verification.log",
+      "representative_signal": "clean focused remote-sync verification"
+    },
+    {
+      "test": "tests.test_aris_context_active_track_phase_reconciliation_gate",
+      "exit_code": 1,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_aris_context_active_track_phase_reconciliation_gate.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md during _copy_sources"
+    },
+    {
+      "test": "tests.test_aris_context_active_track_resume_gate",
+      "exit_code": 1,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_aris_context_active_track_resume_gate.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md during _copy_sources"
+    },
+    {
+      "test": "tests.test_strategic_reset_macrostructure_lock_gate",
+      "exit_code": 1,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_strategic_reset_macrostructure_lock_gate.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/DECISION_LOCKS.md"
+    },
+    {
+      "test": "tests.test_phase_completion_materialization_guard",
+      "exit_code": 1,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_phase_completion_materialization_guard.log",
+      "representative_signal": "phase_completion_materialization_guard_blocked != phase_completion_materialization_guard_pass"
+    },
+    {
+      "test": "tests.test_product_loop_l1_15_product_loop_closure_gate",
+      "exit_code": 1,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_product_loop_l1_15_product_loop_closure_gate.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md"
+    },
+    {
+      "test": "tests.test_if08_w05_preflight_readiness_rerun",
+      "exit_code": 5,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_if08_w05_preflight_readiness_rerun.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass"
+    },
+    {
+      "test": "tests.test_if08_w05_post_sync_review",
+      "exit_code": 5,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_if08_w05_post_sync_review.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass"
+    },
+    {
+      "test": "tests.test_if08_w05_controlled_execution",
+      "exit_code": 5,
+      "result": "fail",
+      "log_path": "/tmp/purg04_logs/tests_test_if08_w05_controlled_execution.log",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass"
+    }
+  ],
+  "fresh_reclone_status_after_each_check": [
+    {
+      "test": "tests.test_f21a54c_active_context_remote_sync_verification",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_aris_context_active_track_phase_reconciliation_gate",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_aris_context_active_track_resume_gate",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_strategic_reset_macrostructure_lock_gate",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_phase_completion_materialization_guard",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_product_loop_l1_15_product_loop_closure_gate",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_if08_w05_preflight_readiness_rerun",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_if08_w05_post_sync_review",
+      "exit_code": 0,
+      "lines": []
+    },
+    {
+      "test": "tests.test_if08_w05_controlled_execution",
+      "exit_code": 0,
+      "lines": []
+    }
+  ],
+  "fresh_reclone_nested_active_context_after_each_check": [
+    {
+      "test": "tests.test_f21a54c_active_context_remote_sync_verification",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_aris_context_active_track_phase_reconciliation_gate",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_aris_context_active_track_resume_gate",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_strategic_reset_macrostructure_lock_gate",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_phase_completion_materialization_guard",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_product_loop_l1_15_product_loop_closure_gate",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_if08_w05_preflight_readiness_rerun",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_if08_w05_post_sync_review",
+      "exit_code": 0,
+      "paths": []
+    },
+    {
+      "test": "tests.test_if08_w05_controlled_execution",
+      "exit_code": 0,
+      "paths": []
+    }
+  ],
+  "fresh_reclone_status_after_checks": {
+    "exit_code": 0,
+    "lines": []
+  },
+  "fresh_reclone_nested_active_context_after_checks": {
+    "exit_code": 0,
+    "paths": []
+  },
+  "cleanroom_admissible_for_future_repair": true,
+  "focused_tests_green": false,
+  "focused_failure_surface_summary": [
+    "One focused admission check passed cleanly: tests.test_f21a54c_active_context_remote_sync_verification.",
+    "All remaining failing focused checks reproduced pointer-residual and expectation-drift signals without dirtying the fresh reclone.",
+    "The dominant failure mode remained hard-coded reads of aris-active-context/* paths that no longer exist under the external pointer contract."
+  ],
+  "package_install_required": false,
+  "dependency_change_required": false,
+  "project_aris_original_changed": false,
+  "dirty_clone_changed": false,
+  "project_aris_patch_applied": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "real_locks_preserved_false": true,
+  "canonical_drift_observed": {
+    "present": true,
+    "items": [
+      "ACTIVE_CONTEXT_STATE.json and README.md still preserve the live route at PURG-01 with next_recommended_step=execute_purg01_controlled_triage_artifact_only.",
+      "The PURG04 cleanroom packets and DECISION_LOCKS.md now extend beyond the live JSON route but remain valid as report-only governance artifacts.",
+      "This execution packet does not mutate the live route and therefore does not attempt to resolve that drift."
+    ]
+  },
+  "canonical_drift_resolution_policy": "report_only_no_live_route_mutation",
+  "next_recommended_step": "PURG04_FOCUSED_FAILURE_SURFACE_CLASSIFICATION_PACKET",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "901e96572ea83807311426c8727e202fb61869a3b6a62d7c7e61405c344af72f"
+  }
+}
