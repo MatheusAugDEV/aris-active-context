@@ -4512,6 +4512,56 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     _require(ledger_entry.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled execution ledger status mismatch")
 
 
+def _state_preserves_if08_w05_historical_blocked(state: dict[str, Any]) -> bool:
+    current_live_route = state.get("current_live_route", {})
+    return (
+        state.get("next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
+        and state.get("active_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
+        and state.get("status") == EXPECTED_STATUS
+        and state.get("current_status") == EXPECTED_CURRENT_STATUS
+        and state.get("latest_completed_phase") == EXPECTED_PHASE
+        and state.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS
+        and current_live_route.get("active_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
+        and current_live_route.get("status") == EXPECTED_STATUS
+        and current_live_route.get("current_status") == EXPECTED_CURRENT_STATUS
+        and current_live_route.get("latest_completed_phase") == EXPECTED_PHASE
+        and current_live_route.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS
+    )
+
+
+def _require_if08_w05_historical_blocked_payload(
+    payload: dict[str, Any],
+    label: str,
+    *,
+    require_next_recommended_step: bool,
+) -> None:
+    _require(payload.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", f"{label} phase_id mismatch")
+    _require(payload.get("decision") == "blocked", f"{label} must remain blocked historical artifact")
+    status = payload.get("status")
+    _require(
+        isinstance(status, str) and status.startswith("if08_w05_post_sync_review") and "blocked" in status,
+        f"{label} status must remain blocked historical post-sync review",
+    )
+    if require_next_recommended_step:
+        _require(bool(payload.get("next_recommended_step")), f"{label} next_recommended_step must be present")
+    if "w1_execution_performed" in payload:
+        _require(payload.get("w1_execution_performed") is False, f"{label} w1_execution_performed must remain false")
+    if "w1_execution_allowed" in payload:
+        _require(payload.get("w1_execution_allowed") is False, f"{label} w1_execution_allowed must remain false")
+    for key in (
+        "runtime_executed",
+        "real_apply_executed",
+        "product_or_bedrock_executed",
+        "secrets_accessed",
+        "dependency_or_package_manager_used",
+        "external_network_used_except_github_governance",
+        "finding_closed",
+        "remediation_proven",
+    ):
+        if key in payload:
+            _require(payload.get(key) is False, f"{label} {key} must remain false")
+
+
 def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     for path in (
         IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH,
@@ -4596,6 +4646,55 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
         return
 
     decision = _load_json(IF08_W05_POST_SYNC_DECISION_PATH)
+    summary = _load_json(IF08_W05_POST_SYNC_SUMMARY_PATH)
+    no_execution = _load_json(IF08_W05_POST_SYNC_NO_EXECUTION_PATH)
+    if _state_preserves_if08_w05_historical_blocked(state):
+        _require_if08_w05_historical_blocked_payload(
+            decision,
+            "project post-sync decision",
+            require_next_recommended_step=True,
+        )
+        _require(decision.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync decision source phase mismatch")
+        _require(decision.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync decision source status mismatch")
+        _require(decision.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync decision source project sha mismatch")
+        _require(decision.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync decision source ci state mismatch")
+        _require(decision.get("w05_ter") == 1.0, "project post-sync decision w05_ter must be 1.0")
+        _require(decision.get("w05_tamper_attempts_expected") == 4, "project post-sync decision tamper_attempts_expected must be 4")
+        _require(decision.get("w05_tamper_attempts_detected") == 4, "project post-sync decision tamper_attempts_detected must be 4")
+        _require(decision.get("w05_canonical_sync_verified") is False, "project post-sync decision historical blocked policy requires w05_canonical_sync_verified=false")
+        _require(decision.get("w1_preparation_allowed_next") is False, "project post-sync decision historical blocked policy requires w1_preparation_allowed_next=false")
+        _require(isinstance(decision.get("blocking_findings"), list) and len(decision["blocking_findings"]) > 0, "project post-sync decision historical blocked policy requires blocking_findings")
+
+        _require_if08_w05_historical_blocked_payload(
+            summary,
+            "project post-sync summary",
+            require_next_recommended_step=True,
+        )
+        _require(summary.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync summary source phase mismatch")
+        _require(summary.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync summary source status mismatch")
+        _require(summary.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync summary source project sha mismatch")
+        _require(summary.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync summary source ci state mismatch")
+        _require(summary.get("w05_ter") == 1.0, "project post-sync summary w05_ter must be 1.0")
+        _require(summary.get("w05_tamper_attempts_expected") == 4, "project post-sync summary tamper_attempts_expected must be 4")
+        _require(summary.get("w05_tamper_attempts_detected") == 4, "project post-sync summary tamper_attempts_detected must be 4")
+        _require(summary.get("w05_canonical_sync_verified") is False, "project post-sync summary historical blocked policy requires w05_canonical_sync_verified=false")
+        _require(summary.get("w1_readiness_state") == "blocked", "project post-sync summary historical blocked policy requires w1_readiness_state=blocked")
+        _require(summary.get("w1_preparation_allowed_next") is False, "project post-sync summary historical blocked policy requires w1_preparation_allowed_next=false")
+        _require(summary.get("blocking_findings_count") == 4, "project post-sync summary blocking_findings_count must remain 4")
+
+        _require_if08_w05_historical_blocked_payload(
+            no_execution,
+            "project post-sync no_execution",
+            require_next_recommended_step=False,
+        )
+        for key in (
+            "active_context_state_mutated",
+            "git_commit_attempted",
+            "git_push_attempted",
+        ):
+            _require(no_execution.get(key) is False, f"project post-sync no_execution.{key} must be false")
+        return
+
     _require(decision.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync decision phase_id mismatch")
     _require(decision.get("decision") == "pass", "project post-sync decision must be pass")
     _require(decision.get("status") == IF08_W05_POST_SYNC_STATUS, "project post-sync decision status mismatch")
@@ -4619,7 +4718,6 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     _require(decision.get("next_recommended_step") == IF08_W05_POST_SYNC_NEXT_RECOMMENDED_STEP, "project post-sync decision next step mismatch")
     _require(decision.get("blocking_findings") == [], "project post-sync decision blocking_findings must be empty")
 
-    summary = _load_json(IF08_W05_POST_SYNC_SUMMARY_PATH)
     _require(summary.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync summary phase_id mismatch")
     _require(summary.get("decision") == "pass", "project post-sync summary must be pass")
     _require(summary.get("status") == IF08_W05_POST_SYNC_STATUS, "project post-sync summary status mismatch")
@@ -4646,7 +4744,6 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     _require(readiness.get("w1_execution_allowed") is False, "project w1 readiness must keep execution disallowed")
     _require(readiness.get("w1_execution_artifacts_unchanged") is True, "project w1 readiness must keep historical artifacts unchanged")
 
-    no_execution = _load_json(IF08_W05_POST_SYNC_NO_EXECUTION_PATH)
     _require(no_execution.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync no_execution phase_id mismatch")
     _require(no_execution.get("decision") == "pass", "project post-sync no_execution must be pass")
     _require(no_execution.get("status") == IF08_W05_POST_SYNC_STATUS, "project post-sync no_execution status mismatch")

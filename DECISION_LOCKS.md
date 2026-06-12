@@ -1121,3 +1121,30 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_blocker_triage_artifact_only.json`
 - Next recommended step: `REQUEST_SEPARATE_AUTHORIZATION_FOR_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR`
+
+## PURG-04 Active-Context Validator Scope Repair
+
+- Status: `purg04_active_context_validator_scope_repair_blocked`
+- Decision: `blocked`
+- Scope: surgical repair of blocker `B5` inside `scripts/validate_active_context_state.py`, without touching Project_ARIS code, retrying remediation apply, or changing any real-execution lock.
+- Operator direction recorded: `OPERATOR_DIRECTED_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR_NO_NEW_AUTH_PROMPT`
+- Root cause addressed: `stale_validator_expectation`
+- The validator no longer requires the external IF08 W0.5 Project_ARIS post-sync review artifacts to be `pass` when the live active-context route is the current PURG-01 lineage.
+- New policy: when the current route preserves IF11 closure plus PURG-01 admission, the external IF08 W0.5 review artifacts may remain `decision=blocked` only as preserved historical blockers.
+- The repair stays fail-closed for:
+  - missing or unreadable external artifacts
+  - malformed blocked status values
+  - missing `next_recommended_step` in the historical review decision/summary artifacts
+  - any attempt to reinterpret the preserved blocked history as `pass`, `resolved`, `closed`, or `remediation_proven`
+- A focused validator test was added in `tests/test_purg04_validator_scope_repair.py`.
+- Local validations now pass:
+  - `python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'`
+  - `python3 scripts/validate_active_context_state.py`
+- `Project_ARIS` remains unchanged.
+- `finding_closed=false`
+- `remediation_proven=false`
+- `retry_local_remediation_apply_allowed_now=false`
+- All real locks remain preserved as false.
+- CI state is currently recorded as `CI_UNAVAILABLE_NOT_PASS` because GitHub workflow polling did not return a terminal status from this environment.
+- Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_scope_repair_result.json`
+- Next recommended step: `CONFIRM_CI_TERMINAL_STATE_FOR_PURG04_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR`

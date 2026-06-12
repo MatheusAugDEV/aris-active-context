@@ -1,0 +1,52 @@
+{
+  "decision": "blocked",
+  "status": "purg04_active_context_validator_scope_repair_blocked",
+  "operator_direction": "OPERATOR_DIRECTED_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR_NO_NEW_AUTH_PROMPT",
+  "source_triage_artifact": "artifacts/purgatorium/purg04_active_context_validator_blocker_triage_artifact_only.json",
+  "blocker_id": "B5",
+  "root_cause_classification": "stale_validator_expectation",
+  "files_changed": [
+    "scripts/validate_active_context_state.py",
+    "tests/test_purg04_validator_scope_repair.py",
+    "artifacts/purgatorium/purg04_active_context_validator_scope_repair_result.json",
+    "DECISION_LOCKS.md"
+  ],
+  "validator_change_summary": [
+    "Replaced the rigid IF08 W0.5 external Project_ARIS post-sync expectation with a contextual branch that accepts the tracked blocked artifacts only when the live active-context route is the current PURG-01 lineage.",
+    "The repair still fails closed for missing external artifacts, malformed historical status values, missing required next_recommended_step on the historical review decision/summary artifacts, and any attempt to reinterpret the preserved blocked payloads as pass/resolved/closed/remediation_proven.",
+    "The original pass-only validation path remains intact for contexts that do not match the preserved PURG historical-lineage condition."
+  ],
+  "historical_if08_blocked_artifact_policy": {
+    "allowed_only_when_current_route_is_purg01_lineage": true,
+    "required_decision": "blocked",
+    "required_status_shape": "if08_w05_post_sync_review_*blocked*",
+    "required_next_recommended_step_for_review_artifacts": true,
+    "no_execution_attestation_may_omit_next_recommended_step": true,
+    "forbidden_reinterpretations": [
+      "pass",
+      "resolved",
+      "closed",
+      "remediation_proven"
+    ],
+    "missing_or_corrupt_artifact_policy": "fail_closed"
+  },
+  "validations_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_active_context_validator_blocker_triage_artifact_only.json",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "python3 scripts/validate_active_context_state.py",
+    "git diff --check"
+  ],
+  "validator_result_after_repair": "pass",
+  "ci_state": "CI_UNAVAILABLE_NOT_PASS",
+  "project_aris_changed": false,
+  "project_aris_commit_created": false,
+  "project_aris_push_created": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "retry_local_remediation_apply_allowed_now": false,
+  "locks_preserved_false": true,
+  "next_recommended_step": "CONFIRM_CI_TERMINAL_STATE_FOR_PURG04_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR",
+  "blocked_reason": "The local validator repair is complete and passes locally, but GitHub CI status polling is currently unavailable from this environment, so canonical PASS cannot be declared yet."
+}
