@@ -1685,3 +1685,53 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `ARIS_BOOT.md` still forces JSON authority over markdown, so no live-route mutation is attempted
 - Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_blocker_triage.json`
 - Next recommended step: `PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET`
+
+## PURG04 Cleanroom Fresh Reclone Prerequisite Packet
+
+- Status: `purg04_cleanroom_fresh_reclone_prerequisite_packet_pass`
+- Decision: `pass`
+- Source blocker triage artifact: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_blocker_triage.json`
+- Source blocker triage artifact sha256 observed: `a615f0ea23c70f2937339ac69c24cb1db4bd10e8e0a67219ebbee43e55f83729`
+- Dirty Project_ARIS clone remains quarantined:
+  - path: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean`
+  - branch: `main`
+  - remote: `git@github.com:MatheusAugDEV/Project-A.R.I.S.git`
+  - head observed: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+  - observed status counts: `167` lines total, `66` modified, `100` deleted, `1` untracked
+  - residue still present: `aris-active-context/`
+  - reuse for B1/B3 repair is forbidden
+- Fresh reclone contract is now fixed:
+  - candidate target path: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone`
+  - target path currently absent
+  - required source remote: `git@github.com:MatheusAugDEV/Project-A.R.I.S.git`
+  - required branch: `main`
+  - required head after checkout: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Minimum admission criteria for the future reclone:
+  - `git status --short` must be empty before any focused test
+  - no nested `aris-active-context/` may exist before any focused test
+  - the pointer/external active-context contract must remain in force
+  - `git status --short` must still be empty after the minimum pointer-contract checks
+  - no package installation or dependency mutation is allowed
+- Rejection criteria fixed in the packet:
+  - clone starts dirty
+  - HEAD mismatch
+  - nested `aris-active-context/` exists or is recreated before repair
+  - package install or dependency mutation becomes necessary
+  - full baseline is used to mask focused-test failures
+  - any attempt is made to close `IF09-FIND-001` outside Revalidation
+- Scope controls preserved:
+  - `project_aris_changed=false`
+  - `project_aris_patch_applied=false`
+  - `fresh_reclone_executed=false`
+  - `remediation_apply_retry_executed=false`
+  - `runtime_executed=false`
+  - `real_apply_executed=false`
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - all real locks remain preserved as false
+- Canonical drift remains report-only:
+  - live JSON/README route remains `PURG-01`
+  - PURG04 cleanroom lineage remains recorded only in artifacts plus `DECISION_LOCKS.md`
+  - no live-route mutation is attempted here
+- Canonical artifact: `artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json`
+- Next recommended step: `PURG04_FRESH_RECLONE_EXECUTION_PACKET`

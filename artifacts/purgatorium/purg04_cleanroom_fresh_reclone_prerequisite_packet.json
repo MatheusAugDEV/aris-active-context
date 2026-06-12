@@ -1,0 +1,149 @@
+{
+  "phase_id": "PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET",
+  "phase_class": "cleanroom_fresh_reclone_prerequisite_artifact_only",
+  "decision": "pass",
+  "status": "purg04_cleanroom_fresh_reclone_prerequisite_packet_pass",
+  "source_blocker_triage_artifact_path": "artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_blocker_triage.json",
+  "source_blocker_triage_artifact_sha256_observed": "a615f0ea23c70f2937339ac69c24cb1db4bd10e8e0a67219ebbee43e55f83729",
+  "active_context_head_before": "d81564ca86a85f6daed11b761be78ecec1606b51",
+  "project_aris_dirty_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_dirty_clone_head_observed": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "dirty_clone_quarantine_required": true,
+  "dirty_clone_status_observed": {
+    "observed_state": "dirty",
+    "branch": "main",
+    "remote": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+    "status_lines_total": 167,
+    "modified": 66,
+    "deleted": 100,
+    "untracked": 1,
+    "residue_paths": [
+      "aris-active-context/"
+    ]
+  },
+  "dirty_clone_must_not_be_reused_for_repair": true,
+  "fresh_reclone_required": true,
+  "fresh_reclone_target_path_candidate": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "fresh_reclone_target_path_exists_now": false,
+  "fresh_reclone_source_remote_required": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+  "fresh_reclone_expected_branch": "main",
+  "fresh_reclone_expected_head": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "fresh_reclone_preconditions": [
+    "The dirty clone at /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean remains quarantined and is not reused for any B1/B3 repair attempt.",
+    "The target path /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone must not exist before the future reclone step starts.",
+    "The future reclone must source from git@github.com:MatheusAugDEV/Project-A.R.I.S.git on branch main.",
+    "The future reclone must verify HEAD equals 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad before any focused test or baseline command is allowed.",
+    "git status --short must be empty immediately after clone checkout and before any focused test is run.",
+    "No nested aris-active-context/ directory may exist in the fresh reclone before any focused test is run.",
+    "The external active-context contract must remain pointer-based; no local nested active-context materialization is allowed as a prerequisite for repair.",
+    "No package installation, package manager execution, or dependency-file mutation is allowed in order to make the fresh reclone admissible."
+  ],
+  "fresh_reclone_acceptance_criteria": [
+    "A new clone exists at /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone and the previous dirty clone remains untouched in quarantine.",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone rev-parse HEAD returns 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad.",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone status --short is empty before any focused test.",
+    "find /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone -maxdepth 1 -name aris-active-context returns no nested active-context directory before any focused test.",
+    "The fresh reclone reaches the minimum pointer-contract checks without generating residue and still has git status --short empty after those checks.",
+    "Only after the cleanliness checks pass may the future phase run the focused pointer-residual and B3 expectation-drift tests listed in this packet."
+  ],
+  "fresh_reclone_rejection_criteria": [
+    "The target path already exists before the future reclone starts.",
+    "The new clone is dirty immediately after checkout.",
+    "The new clone HEAD differs from 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad.",
+    "A nested aris-active-context/ directory exists before any focused test.",
+    "Any minimal pointer-contract check recreates aris-active-context/ or otherwise dirties the clone before repair begins.",
+    "Admissibility would require package installation or dependency-file mutation.",
+    "A future step tries to use a full baseline rerun to mask focused-test failures.",
+    "Any future step attempts to close IF09-FIND-001 outside Infernus Revalidation."
+  ],
+  "allowed_future_commands": [
+    "git clone git@github.com:MatheusAugDEV/Project-A.R.I.S.git /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone checkout 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone rev-parse HEAD",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone status --short",
+    "test -d /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+    "find /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone -maxdepth 1 -name aris-active-context",
+    "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q",
+    "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+    "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+    "python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q",
+    "python3 -m unittest tests.test_phase_completion_materialization_guard -q",
+    "python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q",
+    "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+    "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+    "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+  ],
+  "forbidden_future_commands": [
+    "rm -rf /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+    "rm -rf /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean/aris-active-context",
+    "pip install *",
+    "uv *",
+    "npm *",
+    "apt *",
+    "python3 -m unittest discover -s tests before focused-test admission is proven",
+    "Any command that edits /home/matheus/ARIS/Project_ARIS/**",
+    "Any command that edits /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean/** during the future reclone admission step",
+    "Any command that mutates dependency files, .env files, .gitmodules, ACTIVE_CONTEXT_POINTER.md, BEDROCK_GATE.md, archive/**, excludent/**, or secrets/**",
+    "Any command that attempts finding close, remediation apply, runtime execution, Bedrock work, product work, or real_apply"
+  ],
+  "future_cleanliness_checks": [
+    "Verify the dirty clone remains quarantined and untouched.",
+    "Verify the target reclone path does not exist before clone creation.",
+    "Verify the recloned repository remote is git@github.com:MatheusAugDEV/Project-A.R.I.S.git.",
+    "Verify rev-parse HEAD equals 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad.",
+    "Verify git status --short is empty before any focused test.",
+    "Verify find -maxdepth 1 -name aris-active-context returns nothing before any focused test.",
+    "Verify git status --short remains empty after the minimal pointer-contract checks and before any repair packet opens."
+  ],
+  "future_focused_tests_after_reclone": [
+    "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q",
+    "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+    "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+    "python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q",
+    "python3 -m unittest tests.test_phase_completion_materialization_guard -q",
+    "python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q",
+    "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+    "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+    "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+  ],
+  "future_baseline_policy": {
+    "baseline_not_admission_evidence": true,
+    "baseline_may_run_only_after": [
+      "The future fresh reclone has passed every cleanliness check listed in this packet.",
+      "All focused pointer-residual and B3 expectation-drift tests listed in this packet are green first.",
+      "No package installation or dependency-file mutation was required to reach that state."
+    ],
+    "baseline_reject_if": [
+      "The clone starts dirty or becomes dirty before repair starts.",
+      "A nested aris-active-context/ directory appears before repair starts.",
+      "Focused tests are still red and a full baseline is used to blur that fact.",
+      "The baseline would require package installation or dependency-file mutation.",
+      "Any step attempts to use baseline success or partial baseline reduction to imply finding close."
+    ]
+  },
+  "canonical_drift_observed": {
+    "present": true,
+    "items": [
+      "ACTIVE_CONTEXT_STATE.json and README.md still preserve the live route at PURG-01 with next_recommended_step=execute_purg01_controlled_triage_artifact_only.",
+      "DECISION_LOCKS.md and the PURG04 cleanroom artifacts now document blocker, quarantine, and fresh-reclone prerequisite work beyond the live JSON route.",
+      "This mismatch is reportable drift only; it does not block definition of the fresh reclone prerequisite packet because JSON authority remains explicit."
+    ]
+  },
+  "canonical_drift_resolution_policy": "report_only_no_live_route_mutation",
+  "package_install_required": false,
+  "dependency_change_required": false,
+  "project_aris_changed": false,
+  "project_aris_patch_applied": false,
+  "fresh_reclone_executed": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "real_locks_preserved_false": true,
+  "next_recommended_step": "PURG04_FRESH_RECLONE_EXECUTION_PACKET",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "6c6a293023b040f3e638608496ece42014234f9b5c4ea5c44eee586de1621341"
+  }
+}
