@@ -1,0 +1,120 @@
+{
+  "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY",
+  "phase_class": "governance_repair_artifact_only",
+  "decision": "pass",
+  "status": "purg04_b2_active_context_path_contract_normalization_repair_artifact_only_pass",
+  "source_normalization_plan_artifact_path": "artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json",
+  "source_normalization_plan_artifact_sha256_observed": "5c88ce0e3606db661a05540a2f3d85130dc0d92fc25ba0ac755dbb31d77d271c",
+  "source_boundary_decision_artifact_sha256_observed": "1bcdfa48ccdc747f3db1f5aac3523caf482041e8f7e2ea6dd274f37dddf2b843",
+  "source_b2_diagnostic_artifact_sha256_observed": "22ee6bdfd4fa24fdefeca03133aa978303b30485468a96b3cd765a98edc2833e",
+  "source_policy_artifact_sha256_observed": "5d53d3d3afd3c9df713a5b8bc028e69b56fc2062f8f6d1bb21c2d2e68d5455f3",
+  "source_b1_b3_plan_artifact_sha256_observed": "a509fa3511f3b1a381b1852dc085db22826c78bc54e5dceba320cab29858885f",
+  "selected_boundary_confirmed": "BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY",
+  "recommended_plan_applied": "PLAN_B_SCHEMA_PLUS_ASSERT_MIRROR_SYNC_RETIREMENT",
+  "no_ritual_authorization_policy_observed": {
+    "policy_id": "NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+    "boot_rule_present": true,
+    "ledger_rule_present": true,
+    "requires_new_ritual_authorization": false
+  },
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "active_context_state_changed": false,
+  "validate_active_context_state_changed": false,
+  "archive_changed": false,
+  "root_mirrors_staged": false,
+  "schema_changes": [
+    "Removed artifact_routes properties for current_state_mirror, next_action_mirror, context_index_mirror, and phase_ledger_history.",
+    "Removed the same keys from artifact_routes.required.",
+    "Removed anti_corruption_contract from artifact_routes active declarations because it points to a superseded markdown contract outside the selected JSON-only active path."
+  ],
+  "assert_mirror_sync_changes": [
+    "Replaced active mirror checks with a historical-only header and a deterministic retirement message.",
+    "Execution now exits successfully without reading archive or root markdown mirror files.",
+    "The file is retained for audit continuity and no longer acts as an active validation gate."
+  ],
+  "test_changes": [
+    "Removed the default local suite expectation that scripts/assert_mirror_sync.py must pass as an active gate.",
+    "Added a boundary-C schema contract test that asserts markdown mirror route keys are absent from ACTIVE_CONTEXT_SCHEMA.json artifact_routes."
+  ],
+  "readme_changed": false,
+  "files_changed": [
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "scripts/assert_mirror_sync.py",
+    "tests/test_validate_active_context.py",
+    "DECISION_LOCKS.md",
+    "artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json"
+  ],
+  "files_forbidden_not_changed": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "scripts/validate_active_context_state.py",
+    "tests/test_purg04_validator_scope_repair.py",
+    "archive/derived_mirrors/*",
+    "archive/superseded/*",
+    "BEDROCK_GATE.md",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "PROJECT_CONTEXT_ARIS.md",
+    "excludent/*",
+    "Project_ARIS/**"
+  ],
+  "root_untracked_files_observed_but_not_staged": [
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "PROJECT_CONTEXT_ARIS.md"
+  ],
+  "validation_commands_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "python3 -m unittest discover -s tests -p 'test_validate_active_context.py'",
+    "git diff --check",
+    "git status --short"
+  ],
+  "diagnostics_run": [
+    "git grep -n 'current_state_mirror|next_action_mirror|context_index_mirror|phase_ledger_history' -- ACTIVE_CONTEXT_SCHEMA.json || true",
+    "git grep -n 'archive/derived_mirrors|CURRENT_STATE.md|NEXT_ACTION.md|CONTEXT_INDEX.md|ARIS_PHASE_LEDGER.md' -- ACTIVE_CONTEXT_SCHEMA.json scripts/assert_mirror_sync.py tests/test_validate_active_context.py || true",
+    "git status --short | grep -E 'CURRENT_STATE.md|NEXT_ACTION.md|CONTEXT_INDEX.md|ARIS_PHASE_LEDGER.md|PROJECT_CONTEXT_ARIS.md|BEDROCK_GATE.md|archive/superseded|archive/derived_mirrors' || true",
+    "git diff --name-only"
+  ],
+  "ci_expected": {
+    "workflow": "validate-active-context",
+    "terminal_green_required": true
+  },
+  "no_real_execution_attestation": {
+    "project_aris_mutated": false,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "external_network_beyond_github_governance": false,
+    "finding_closed": false,
+    "remediation_proven": false
+  },
+  "rollback_notes": [
+    "Patch scope is limited to active-context schema/helper/test surfaces plus ledger and artifact.",
+    "If CI had failed outside this scope, the repair would have been blocked instead of widening into validator, state, archive, or Project_ARIS."
+  ],
+  "blocker_conditions_checked": [
+    "ACTIVE_CONTEXT_STATE.json mutation not required",
+    "scripts/validate_active_context_state.py mutation not required",
+    "archive/derived_mirrors not promoted to active validation input",
+    "root markdown mirrors not recreated or staged",
+    "Project_ARIS mutation not required",
+    "archive/superseded and archive/derived_mirrors untouched"
+  ],
+  "next_recommended_step": "REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "3cea3ed8fd4b4c8b0ea30920a61efd653b18da5862f2a9c0973d6984da8cbecf"
+  }
+}

@@ -145,28 +145,8 @@
     "artifact_routes": {
       "additionalProperties": false,
       "properties": {
-        "anti_corruption_contract": {
-          "const": "ACTIVE_CONTEXT_ANTI_CORRUPTION_CONTRACT.md",
-          "type": "string"
-        },
-        "context_index_mirror": {
-          "const": "CONTEXT_INDEX.md",
-          "type": "string"
-        },
-        "current_state_mirror": {
-          "const": "CURRENT_STATE.md",
-          "type": "string"
-        },
         "decision_locks_mirror": {
           "const": "DECISION_LOCKS.md",
-          "type": "string"
-        },
-        "next_action_mirror": {
-          "const": "NEXT_ACTION.md",
-          "type": "string"
-        },
-        "phase_ledger_history": {
-          "const": "ARIS_PHASE_LEDGER.md",
           "type": "string"
         },
         "readme": {
@@ -194,14 +174,9 @@
         "state_file",
         "schema_file",
         "validator_script",
-        "current_state_mirror",
-        "next_action_mirror",
         "decision_locks_mirror",
-        "context_index_mirror",
-        "phase_ledger_history",
         "roadmap_authority",
-        "readme",
-        "anti_corruption_contract"
+        "readme"
       ],
       "type": "object"
     },

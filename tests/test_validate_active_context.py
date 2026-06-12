@@ -3,6 +3,7 @@ import importlib.util
 import os
 import subprocess
 import tempfile
+import unittest
 from pathlib import Path
 
 
@@ -33,12 +34,39 @@ def test_fixture_absence_passes():
     assert r.returncode == 0, r.stdout + r.stderr
 
 
-def test_mirror_sync_passes():
-    r = subprocess.run(
-        ["python3", "scripts/assert_mirror_sync.py"],
-        capture_output=True, text=True
-    )
-    assert r.returncode == 0, r.stdout + r.stderr
+def test_boundary_c_schema_no_longer_requires_markdown_mirror_routes():
+    schema = json.loads(Path("ACTIVE_CONTEXT_SCHEMA.json").read_text(encoding="utf-8"))
+    artifact_routes = schema["properties"]["artifact_routes"]
+    properties = artifact_routes["properties"]
+    required = set(artifact_routes["required"])
+
+    for key in (
+        "current_state_mirror",
+        "next_action_mirror",
+        "context_index_mirror",
+        "phase_ledger_history",
+        "anti_corruption_contract",
+    ):
+        assert key not in properties
+        assert key not in required
+
+
+class BoundaryCContractTests(unittest.TestCase):
+    def test_schema_no_longer_requires_markdown_mirror_routes(self):
+        schema = json.loads(Path("ACTIVE_CONTEXT_SCHEMA.json").read_text(encoding="utf-8"))
+        artifact_routes = schema["properties"]["artifact_routes"]
+        properties = artifact_routes["properties"]
+        required = set(artifact_routes["required"])
+
+        for key in (
+            "current_state_mirror",
+            "next_action_mirror",
+            "context_index_mirror",
+            "phase_ledger_history",
+            "anti_corruption_contract",
+        ):
+            self.assertNotIn(key, properties)
+            self.assertNotIn(key, required)
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():

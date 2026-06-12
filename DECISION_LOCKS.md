@@ -1310,3 +1310,28 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json`
 - Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY`
+
+## PURG-04 B2 Active-Context Path Contract Normalization Repair Artifact-Only
+
+- Status: `purg04_b2_active_context_path_contract_normalization_repair_artifact_only_pass`
+- Decision: `pass`
+- `selected_boundary=BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY`
+- `recommended_plan_applied=PLAN_B_SCHEMA_PLUS_ASSERT_MIRROR_SYNC_RETIREMENT`
+- `ACTIVE_CONTEXT_SCHEMA.json` was normalized away from active markdown mirror declarations:
+  - removed `current_state_mirror`
+  - removed `next_action_mirror`
+  - removed `context_index_mirror`
+  - removed `phase_ledger_history`
+  - removed the superseded `anti_corruption_contract` artifact-route declaration from the active path contract
+- `scripts/assert_mirror_sync.py` was retired from the active contract and retained as a historical-only helper.
+- `tests/test_validate_active_context.py` was adjusted so the default local suite no longer requires the mirror-sync helper as an active gate.
+- `ACTIVE_CONTEXT_STATE.json` remained unchanged.
+- `scripts/validate_active_context_state.py` remained unchanged.
+- `archive/derived_mirrors/*` remained untouched.
+- Root mirror files were observed but not staged.
+- `Project_ARIS` remained unchanged.
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json`
+- Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR`
