@@ -1593,3 +1593,48 @@ The following track references are historical_residual_route_noise. They do NOT 
   - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json`
 - Next recommended step: `PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET`
+
+## PURG04 B1/B3 Cleanroom Baseline Repair Readiness Packet
+
+- Status: `purg04_b1_b3_cleanroom_baseline_repair_readiness_packet_blocked`
+- Decision: `blocked`
+- Source pointer-repair artifact: `artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json`
+- Source pointer-repair artifact sha256 observed: `3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909`
+- Project_ARIS clean clone head observed: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Controlled baseline command executed:
+  - `python3 -m unittest discover -s tests 2>&1 | tee /tmp/purg04_b1_b3_cleanroom_baseline_latest.log`
+  - preserved log: `/tmp/purg04_b1_b3_cleanroom_baseline_latest.log`
+  - log bytes: `3488960`
+  - unittest terminal verdict: `FAILED (failures=229, errors=1549)`
+  - shell pipeline exit observed: `0`
+  - inferred unittest exit code from terminal summary: `1`
+- Failure classes by unique signature:
+  - `B1_PRE_EXISTING_GLOBAL_BASELINE_FAILURE=13`
+  - `B3_FOCUSED_TEST_EXPECTATION_DRIFT=6`
+  - `IMPORT_ENVIRONMENT_DRIFT=53`
+  - `POINTER_REPAIR_RESIDUAL=442`
+  - `OUT_OF_SCOPE_LEGACY=1264`
+  - `UNKNOWN_REQUIRES_TRIAGE=0`
+- Representative classified signals:
+  - import/environment drift includes `ModuleNotFoundError: No module named 'aris'` and `ModuleNotFoundError: No module named 'dotenv'`
+  - pointer-repair residual includes repeated `FileNotFoundError` on `/Project_ARIS-clean/aris-active-context/CURRENT_STATE.md`
+  - strategic reset gate still hard-codes `aris-active-context/DECISION_LOCKS.md` and `aris-active-context/NEXT_ACTION.md`
+  - focused B3 drift still appears in `test_phase_completion_materialization_guard`, `test_product_loop_l1_15_product_loop_closure_gate`, and the known IF08/W0.5 lineages
+- Readiness blocker:
+  - the Project_ARIS clean clone was already dirty before the baseline rerun
+  - after the rerun it remained dirty and gained `?? aris-active-context/`
+  - therefore the PASS cleanliness condition for this readiness packet is not met
+- Scope controls:
+  - `dirty_trees_touched=false`
+  - `project_aris_changed=false`
+  - `project_aris_patch_applied=false`
+  - `project_aris_commit_created=false`
+  - `remediation_apply_retry_executed=false`
+  - `runtime_executed=false`
+  - `real_apply_executed=false`
+  - `bedrock_product_secrets_touched=false`
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_readiness_packet.json`
+- Next recommended step: `PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE`

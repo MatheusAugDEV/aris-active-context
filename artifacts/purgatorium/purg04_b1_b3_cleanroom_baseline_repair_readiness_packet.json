@@ -1,0 +1,242 @@
+{
+  "phase_id": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET",
+  "phase_class": "cleanroom_baseline_repair_readiness_artifact_only",
+  "decision": "blocked",
+  "status": "purg04_b1_b3_cleanroom_baseline_repair_readiness_packet_blocked",
+  "source_pointer_repair_artifact_path": "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+  "source_pointer_repair_artifact_sha256_observed": "3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_head": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "active_context_base_commit": "cb1847ee80edc00b1e37dd006dadb9fda4f72437",
+  "active_context_final_commit": "REPORTED_EXTERNALLY_AFTER_COMMIT",
+  "baseline_command": "python3 -m unittest discover -s tests 2>&1 | tee /tmp/purg04_b1_b3_cleanroom_baseline_latest.log",
+  "baseline_log_path": "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log",
+  "baseline_exit_code": 1,
+  "baseline_green": false,
+  "failure_summary": {
+    "ran_tests": 4645,
+    "failures": 229,
+    "errors": 1549,
+    "duration_seconds": 29.72,
+    "log_exists": true,
+    "log_size_bytes": 3488960,
+    "terminal_failed_marker_present": true,
+    "pipeline_shell_exit_code_observed": 0,
+    "unittest_exit_code_inferred_from_terminal_summary": 1,
+    "project_aris_clean_before_status": "dirty",
+    "project_aris_clean_after_status": "dirty",
+    "project_aris_clean_after_new_residue": [
+      "?? aris-active-context/"
+    ],
+    "blocking_readiness_reason": "The clean clone was already dirty before the controlled baseline rerun and became dirtier after it due untracked aris-active-context residue, so the PASS cleanliness precondition is not satisfied."
+  },
+  "failure_classes": {
+    "B1_PRE_EXISTING_GLOBAL_BASELINE_FAILURE": 13,
+    "B3_FOCUSED_TEST_EXPECTATION_DRIFT": 6,
+    "IMPORT_ENVIRONMENT_DRIFT": 53,
+    "POINTER_REPAIR_RESIDUAL": 442,
+    "OUT_OF_SCOPE_LEGACY": 1264,
+    "UNKNOWN_REQUIRES_TRIAGE": 0
+  },
+  "b1_candidates": [
+    {
+      "test_or_family": "test_product_loop_l1_10_pre_apply_execution_readiness_gate",
+      "reason": "Pre-existing Product Loop baseline family failing outside the pointer-repair scope."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_11_first_real_controlled_apply_gate",
+      "reason": "Pre-existing Product Loop baseline family failing outside the pointer-repair scope."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_12_verification_and_evidence_gate",
+      "reason": "Pre-existing Product Loop verification family failing before any new B1/B3 patch."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_13_rollback_proof_gate",
+      "reason": "Pre-existing Product Loop rollback family failing outside focused pointer work."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_1_runtime_awake_discovery_gate",
+      "reason": "Global baseline family currently red and part of the future B1 stabilization surface."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_2_single_task_e2e_plan",
+      "reason": "Global baseline family currently red and part of the future B1 stabilization surface."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_3_permissioned_dry_run_envelope_gate",
+      "reason": "Global baseline family currently red and part of the future B1 stabilization surface."
+    }
+  ],
+  "b3_candidates": [
+    {
+      "test_or_family": "test_lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review",
+      "reason": "Focused expectation drift against preserved active-context text and current canonical route."
+    },
+    {
+      "test_or_family": "test_lab_real_simulation_pack_synthetic_document_dataset_plan",
+      "reason": "Focused expectation drift against preserved active-context text and current canonical route."
+    },
+    {
+      "test_or_family": "test_phase_completion_materialization_guard",
+      "reason": "Guard still assumes nested local active-context materialization and pass-only lineage incompatible with the external pointer contract."
+    },
+    {
+      "test_or_family": "test_product_loop_l1_15_product_loop_closure_gate",
+      "reason": "Focused closure expectation drift against current macrostructure and active-context reality."
+    },
+    {
+      "test_or_family": "test_if08_w05_preflight_readiness_rerun",
+      "reason": "Known IF08/W0.5 lineage expectations are explicitly called out by prior PURG04 planning as stale versus the preserved PURG route."
+    },
+    {
+      "test_or_family": "test_if08_w05_post_sync_review",
+      "reason": "Known IF08/W0.5 lineage expectations are explicitly called out by prior PURG04 planning as stale versus the preserved PURG route."
+    }
+  ],
+  "import_environment_drift_items": [
+    {
+      "signal": "ModuleNotFoundError: No module named 'aris'",
+      "examples": [
+        "tests/test_acb_cap_01_backend.py",
+        "tests/test_acb_cap_02_mcp_runtime_sandbox.py",
+        "tests/test_acb_cap_03_runtime_public_api.py",
+        "tests/test_acb_cap_04_product_pilot_boundary.py"
+      ],
+      "classification_reason": "Discovery imports top-level `aris` without a stable local package path under the current environment."
+    },
+    {
+      "signal": "ModuleNotFoundError: No module named 'dotenv'",
+      "examples": [
+        "src/aris/config/settings.py",
+        "tests/test_actions_responders_hardening.py",
+        "tests/test_actions_service.py",
+        "tests/test_adaptive_response.py"
+      ],
+      "classification_reason": "The baseline environment does not provide python-dotenv, and full discovery reaches settings import paths that require it."
+    }
+  ],
+  "pointer_repair_residual_items": [
+    {
+      "signal": "FileNotFoundError on /Project_ARIS-clean/aris-active-context/CURRENT_STATE.md",
+      "examples": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+        "tests/test_aris_context_active_track_resume_gate.py",
+        "tests/test_aris_context_p0_context_economy_research_ingestion.py"
+      ],
+      "classification_reason": "These suites still copy or read nested `aris-active-context/*` paths removed by the canonical pointer repair."
+    },
+    {
+      "signal": "Strategic reset lock gate still reads aris-active-context/DECISION_LOCKS.md and NEXT_ACTION.md",
+      "examples": [
+        "tests/test_strategic_reset_macrostructure_lock_gate.py",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py"
+      ],
+      "classification_reason": "The read-only gate still hard-codes the nested active-context path and therefore reports missing phrases after pointer conversion."
+    },
+    {
+      "signal": "Baseline rerun leaves untracked aris-active-context/ residue in the clean clone",
+      "examples": [
+        "git status --short after baseline shows ?? aris-active-context/"
+      ],
+      "classification_reason": "Some tests still materialize a local nested active-context workspace during discovery, which violates the cleanroom cleanliness requirement."
+    }
+  ],
+  "out_of_scope_items": [
+    {
+      "test_or_family": "test_aris_context_p17_* through test_aris_context_p29r8_*",
+      "reason": "Large historical active-context artifact-reference suites are red, but they are not the bounded B1/B3 surface for this repair packet."
+    },
+    {
+      "test_or_family": "ARIS-LAB A0-A5 families",
+      "reason": "Historical lab governance suites emit mixed advisory artifacts and are outside the bounded B1/B3 repair scope."
+    },
+    {
+      "test_or_family": "F33 Z9/Z10 schema materialization families",
+      "reason": "Historical controlled-apply candidate gates remain blocked by their own lineage and are outside the B1/B3 repair scope."
+    }
+  ],
+  "unknown_items": [],
+  "future_repair_allowed_scope": {
+    "summary": "No Project_ARIS patch is authorized by this phase. A future B1/B3 repair should start only from a clean clone or fresh reclone, then touch only grep-backed failing tests and the direct source or script files named by real tracebacks.",
+    "preconditions": [
+      "Project_ARIS clean clone must be clean before any future repair starts.",
+      "The future repair must preserve dirty-tree quarantine and must not reopen the pointer contract unless pointer-residual evidence directly requires it.",
+      "No Bedrock, product, runtime, secrets, remediation apply, or finding close actions are allowed."
+    ]
+  },
+  "future_files_allowed_to_change": [
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py",
+    "tests/test_strategic_reset_macrostructure_lock_gate.py",
+    "tests/test_phase_completion_materialization_guard.py",
+    "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+    "tests/test_if08_w05_preflight_readiness_rerun.py",
+    "tests/test_if08_w05_post_sync_review.py",
+    "tests/test_if08_w05_controlled_execution.py",
+    "tests/test_lab_real_simulation_pack_shadow_workspace_dry_run_blueprint_review.py",
+    "tests/test_lab_real_simulation_pack_synthetic_document_dataset_plan.py",
+    "scripts/check_phase_completion_materialization.py",
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "src/aris/context/**",
+    "src/aris/infernus/if08_w05_*",
+    "src/aris/product_loop/**",
+    "src/aris/config/settings.py"
+  ],
+  "future_files_forbidden_to_change": [
+    "/home/matheus/ARIS/Project_ARIS/**",
+    "/home/matheus/ARIS/Project_ARIS/aris-active-context/**",
+    "ACTIVE_CONTEXT_POINTER.md",
+    ".gitmodules",
+    ".env*",
+    "artifacts/f21/bedrock_gate_*",
+    "ACTIVE_CONTEXT_STATE.json",
+    "BEDROCK_GATE.md",
+    "archive/**",
+    "excludent/**",
+    "root mirrors",
+    "secrets/**"
+  ],
+  "future_tests_required_before_baseline": [
+    "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q",
+    "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+    "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+    "python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q",
+    "python3 -m unittest tests.test_phase_completion_materialization_guard -q",
+    "python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q",
+    "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+    "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+    "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+  ],
+  "future_baseline_acceptance_policy": {
+    "baseline_may_run_only_if": [
+      "The future repair starts from a clean Project_ARIS clone with no pre-existing or test-generated residue.",
+      "All focused pointer-residual and B3 expectation-drift tests listed in this packet are green first.",
+      "No package installation or dependency-file mutation is required to get those focused tests green.",
+      "The rerun does not recreate a local nested aris-active-context residue."
+    ],
+    "baseline_is_still_rejecting_if": [
+      "The clone is dirty before or after the focused repair.",
+      "The rerun still produces import-environment drift that would require dependency installation or dependency-file changes.",
+      "The rerun still fails in the pointer-residual families without a bounded authorized patch surface."
+    ]
+  },
+  "package_install_required": false,
+  "dependency_change_required": false,
+  "dirty_trees_touched": false,
+  "project_aris_changed": false,
+  "project_aris_patch_applied": false,
+  "project_aris_commit_created": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "real_locks_preserved_false": true,
+  "next_recommended_step": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "9f053bb8d12d20169d8ab2f64009a9152c2fce7e192e1a372ba078b33d5d15c1"
+  }
+}
