@@ -1,0 +1,324 @@
+{
+  "phase_id": "PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY",
+  "phase_class": "governance_repair_artifact_only",
+  "decision": "pass",
+  "status": "purg04_b2_current_state_path_diagnostic_plan_artifact_only_pass",
+  "source_commit": "10c8ea5b094c684daf9a96ce13f2934a06c680f4",
+  "source_artifact_hashes": {
+    "active_context_no_ritual_authorization_policy_repair.json": "5d53d3d3afd3c9df713a5b8bc028e69b56fc2062f8f6d1bb21c2d2e68d5455f3",
+    "purg04_b1_b3_global_baseline_repair_plan_artifact_only.json": "a509fa3511f3b1a381b1852dc085db22826c78bc54e5dceba320cab29858885f"
+  },
+  "no_ritual_authorization_policy_observed": {
+    "policy_id": "NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+    "boot_rule_present": true,
+    "decision_locks_entry_present": true,
+    "state_conflict_detected": false,
+    "requires_new_ritual_authorization": false
+  },
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "diagnostic_scope": [
+    "Verify that the current B2 step can proceed artifact-only from the committed B1/B3 plan baseline.",
+    "Inventory all live and historical path references around ACTIVE_CONTEXT_STATE.json, CURRENT_STATE/current_state, live_route, active_next_phase, canonical_live_state_file, active-context, validator path, mirror path, derived mirror, and stale route.",
+    "Separate canonical live-state authority from archive mirrors, superseded documents, validator contracts, test contracts, and stale workspace path couplings."
+  ],
+  "path_inventory": [
+    {
+      "path": "ACTIVE_CONTEXT_STATE.json",
+      "exists_on_disk": true,
+      "tracked_in_head": true,
+      "classification": "canonical_authority",
+      "notes": "Single live-state authority; current route remains PURG-01."
+    },
+    {
+      "path": "ACTIVE_CONTEXT_SCHEMA.json",
+      "exists_on_disk": true,
+      "tracked_in_head": true,
+      "classification": "validator_contract",
+      "notes": "artifact_routes still advertise root mirror names CURRENT_STATE.md, NEXT_ACTION.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md."
+    },
+    {
+      "path": "scripts/validate_active_context_state.py",
+      "exists_on_disk": true,
+      "tracked_in_head": true,
+      "classification": "validator_contract",
+      "notes": "Validates STATE_PATH=ACTIVE_CONTEXT_STATE.json and current PURG route; no direct root CURRENT_STATE.md read observed in the core validator."
+    },
+    {
+      "path": "scripts/assert_mirror_sync.py",
+      "exists_on_disk": true,
+      "tracked_in_head": true,
+      "classification": "validator_contract",
+      "notes": "Reads archive/derived_mirrors/CURRENT_STATE.md and archive/derived_mirrors/NEXT_ACTION.md, not root mirror paths."
+    },
+    {
+      "path": "archive/derived_mirrors/CURRENT_STATE.md",
+      "exists_on_disk": true,
+      "tracked_in_head": true,
+      "classification": "derived_mirror",
+      "notes": "Tracked historical mirror still used by assert_mirror_sync.py."
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "exists_on_disk": true,
+      "tracked_in_head": false,
+      "classification": "stale_or_risky",
+      "notes": "Untracked workspace file at repo root; known failure evidence references fatal path coupling against HEAD."
+    },
+    {
+      "path": "NEXT_ACTION.md",
+      "exists_on_disk": true,
+      "tracked_in_head": false,
+      "classification": "stale_or_risky",
+      "notes": "Untracked workspace file at repo root; still named by schema artifact_routes as if it were a live mirror."
+    },
+    {
+      "path": "CONTEXT_INDEX.md",
+      "exists_on_disk": true,
+      "tracked_in_head": false,
+      "classification": "stale_or_risky",
+      "notes": "Untracked workspace file at repo root; references root CURRENT_STATE.md repeatedly."
+    },
+    {
+      "path": "ARIS_PHASE_LEDGER.md",
+      "exists_on_disk": true,
+      "tracked_in_head": false,
+      "classification": "stale_or_risky",
+      "notes": "Untracked workspace file at repo root; schema still names it as phase_ledger_history."
+    }
+  ],
+  "authority_matrix": [
+    {
+      "path": "ACTIVE_CONTEXT_STATE.json",
+      "classification": "canonical_authority",
+      "authority_reason": "ARIS_BOOT, ROADMAP_CANONICAL, README, schema, and validator all point to the JSON as the live-state source of truth."
+    },
+    {
+      "path": "ARIS_BOOT.md",
+      "classification": "documentation_reference",
+      "authority_reason": "Boot-layer operational authority under the JSON; now carries the permanent no-ritual policy."
+    },
+    {
+      "path": "ROADMAP_CANONICAL.md",
+      "classification": "documentation_reference",
+      "authority_reason": "Transition-table authority only; explicitly subordinate to ACTIVE_CONTEXT_STATE.json for live routing."
+    },
+    {
+      "path": "DECISION_LOCKS.md",
+      "classification": "documentation_reference",
+      "authority_reason": "Execution boundary and governance ledger; not a live-state override."
+    },
+    {
+      "path": "ACTIVE_CONTEXT_SCHEMA.json",
+      "classification": "validator_contract",
+      "authority_reason": "Structural contract that still preserves legacy mirror path names at the repo root."
+    },
+    {
+      "path": "scripts/validate_active_context_state.py",
+      "classification": "validator_contract",
+      "authority_reason": "Enforces the current PURG lineage and canonical JSON-first read order."
+    },
+    {
+      "path": "tests/test_purg04_validator_scope_repair.py",
+      "classification": "test_contract",
+      "authority_reason": "Focused guard for current PURG validator scope; does not assert any root CURRENT_STATE.md path contract."
+    },
+    {
+      "path": "archive/derived_mirrors/CURRENT_STATE.md",
+      "classification": "derived_mirror",
+      "authority_reason": "Historical mirror consumed only by mirror-sync helper, never by live routing authority."
+    },
+    {
+      "path": "archive/superseded/*",
+      "classification": "historical_only",
+      "authority_reason": "Superseded boot and prompt contracts still mention root mirrors but are no longer active authority."
+    }
+  ],
+  "current_state_reference_matrix": [
+    {
+      "reference": "ACTIVE_CONTEXT_STATE.json",
+      "classification": "canonical_authority",
+      "evidence": "current_live_route.active_next_phase=PURG-01 and canonical_live_state_file=ACTIVE_CONTEXT_STATE.json."
+    },
+    {
+      "reference": "ARIS_BOOT.md",
+      "classification": "documentation_reference",
+      "evidence": "Boot order and authority stack both place ACTIVE_CONTEXT_STATE.json first and treat markdown as subordinate."
+    },
+    {
+      "reference": "ACTIVE_CONTEXT_SCHEMA.json artifact_routes.current_state_mirror",
+      "classification": "stale_or_risky",
+      "evidence": "Schema still points to CURRENT_STATE.md at repo root while the tracked mirror implementation lives in archive/derived_mirrors/."
+    },
+    {
+      "reference": "scripts/assert_mirror_sync.py",
+      "classification": "validator_contract",
+      "evidence": "Mirror sync checks archive/derived_mirrors/CURRENT_STATE.md rather than CURRENT_STATE.md."
+    },
+    {
+      "reference": "DECISION_LOCKS.md and README.md failure evidence",
+      "classification": "documentation_reference",
+      "evidence": "Both preserve the known fatal message: path CURRENT_STATE.md exists on disk but not in HEAD."
+    },
+    {
+      "reference": "CONTEXT_INDEX.md",
+      "classification": "stale_or_risky",
+      "evidence": "Untracked root file repeatedly references aris-active-context/CURRENT_STATE.md and other root mirrors."
+    },
+    {
+      "reference": "archive/superseded/* and archive/derived_mirrors/*",
+      "classification": "historical_only",
+      "evidence": "Legacy documents still describe CURRENT_STATE.md and NEXT_ACTION.md as root mirrors but are no longer live authority."
+    }
+  ],
+  "validator_reference_matrix": [
+    {
+      "path": "scripts/validate_active_context_state.py",
+      "classification": "validator_contract",
+      "finding": "Core validator is anchored on ACTIVE_CONTEXT_STATE.json, boot order, transition table, and current PURG route expectations."
+    },
+    {
+      "path": "scripts/assert_mirror_sync.py",
+      "classification": "validator_contract",
+      "finding": "Mirror helper expects archive/derived_mirrors/CURRENT_STATE.md and archive/derived_mirrors/NEXT_ACTION.md, creating a different path contract from schema artifact_routes."
+    },
+    {
+      "path": "ACTIVE_CONTEXT_SCHEMA.json",
+      "classification": "validator_contract",
+      "finding": "artifact_routes exposes legacy root mirror names, which no longer match the tracked helper script paths."
+    },
+    {
+      "path": "tests/test_purg04_validator_scope_repair.py",
+      "classification": "test_contract",
+      "finding": "Focused test covers IF08 historical blocker handling only; it does not pin any CURRENT_STATE.md root-path behavior."
+    }
+  ],
+  "mirror_reference_matrix": [
+    {
+      "path": "archive/derived_mirrors/CURRENT_STATE.md",
+      "classification": "derived_mirror",
+      "tracked_in_head": true,
+      "used_by": [
+        "scripts/assert_mirror_sync.py"
+      ]
+    },
+    {
+      "path": "archive/derived_mirrors/NEXT_ACTION.md",
+      "classification": "derived_mirror",
+      "tracked_in_head": true,
+      "used_by": [
+        "scripts/assert_mirror_sync.py"
+      ]
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "classification": "stale_or_risky",
+      "tracked_in_head": false,
+      "used_by": [
+        "pre-existing local workspace only"
+      ]
+    },
+    {
+      "path": "NEXT_ACTION.md",
+      "classification": "stale_or_risky",
+      "tracked_in_head": false,
+      "used_by": [
+        "pre-existing local workspace only"
+      ]
+    },
+    {
+      "path": "ARIS_PHASE_LEDGER.md",
+      "classification": "stale_or_risky",
+      "tracked_in_head": false,
+      "used_by": [
+        "pre-existing local workspace only"
+      ]
+    },
+    {
+      "path": "CONTEXT_INDEX.md",
+      "classification": "stale_or_risky",
+      "tracked_in_head": false,
+      "used_by": [
+        "pre-existing local workspace only"
+      ]
+    }
+  ],
+  "stale_path_risk_matrix": [
+    {
+      "risk_id": "B2-R1",
+      "severity": "high",
+      "classification": "stale_or_risky",
+      "finding": "Repo-root CURRENT_STATE.md exists on disk but is not tracked in HEAD.",
+      "impact": "Any harness or git-path assumption that treats CURRENT_STATE.md as a tracked canonical mirror can reproduce the known fatal path error."
+    },
+    {
+      "risk_id": "B2-R2",
+      "severity": "medium",
+      "classification": "stale_or_risky",
+      "finding": "Schema artifact_routes still name root mirrors while assert_mirror_sync.py checks archive/derived_mirrors paths.",
+      "impact": "Active-context contracts currently advertise two different mirror path regimes."
+    },
+    {
+      "risk_id": "B2-R3",
+      "severity": "medium",
+      "classification": "historical_only",
+      "finding": "Legacy archive and superseded documents still instruct updates to root CURRENT_STATE/NEXT_ACTION/ARIS_PHASE_LEDGER/CONTEXT_INDEX files.",
+      "impact": "Historical guidance can mislead future repair work if path authority is not explicitly normalized."
+    },
+    {
+      "risk_id": "B2-R4",
+      "severity": "low",
+      "classification": "documentation_reference",
+      "finding": "README and DECISION_LOCKS intentionally preserve the fatal CURRENT_STATE.md error as historical evidence.",
+      "impact": "These references are correct as evidence, but they must not be reinterpreted as a live instruction to recreate root mirrors."
+    }
+  ],
+  "canonical_vs_noncanonical_path_findings": [
+    "Canonical live-state authority is ACTIVE_CONTEXT_STATE.json at repo root.",
+    "Canonical schema authority is ACTIVE_CONTEXT_SCHEMA.json at repo root.",
+    "Canonical validator entrypoint is scripts/validate_active_context_state.py.",
+    "Tracked mirror-helper behavior currently points to archive/derived_mirrors/ rather than repo-root CURRENT_STATE.md and NEXT_ACTION.md.",
+    "Repo-root CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, and CONTEXT_INDEX.md are present only as untracked local workspace files in this checkout and are therefore noncanonical.",
+    "Archive and superseded documents that mention root mirrors are historical evidence only, not live routing or live mirror authority."
+  ],
+  "proposed_next_repair_boundaries": [
+    "Decide in a follow-up active-context artifact-only repair whether the canonical mirror contract should point to archive/derived_mirrors/* or return to tracked repo-root mirrors; do not mix both.",
+    "If the active-context contract is normalized, scope that repair to ACTIVE_CONTEXT_SCHEMA.json, scripts/assert_mirror_sync.py, and the minimum documentation/ledger surfaces needed inside this repository only.",
+    "Any change that touches Project_ARIS tests, workspace checkout logic, or full-suite remediation acceptance criteria remains out of scope here and still requires explicit operator command."
+  ],
+  "out_of_scope": [
+    "Project_ARIS code or test mutation",
+    "validator behavior changes beyond documenting the current path contract",
+    "schema mutation",
+    "mirror file recreation at repo root",
+    "remediation apply or retry",
+    "runtime execution",
+    "real_apply",
+    "product or Bedrock work",
+    "finding close",
+    "MCP/RAG/memory write"
+  ],
+  "no_real_execution_attestation": {
+    "project_aris_mutated": false,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "external_network_beyond_github_governance": false,
+    "finding_closed": false
+  },
+  "validations_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "git diff --check",
+    "git status --short"
+  ],
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "d50a34243efdd90667e0d874024ae1be5a3c439a4629e3bc1ce24ccaa37b95a9"
+  },
+  "next_recommended_step": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY"
+}

@@ -1216,3 +1216,32 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json`
 - Next recommended step: `PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY`
+
+## PURG-04 B2 Current State Path Diagnostic Plan Artifact-Only
+
+- Status: `purg04_b2_current_state_path_diagnostic_plan_artifact_only_pass`
+- Decision: `pass`
+- Scope: diagnose the `CURRENT_STATE.md` path-coupling problem as an active-context artifact-only governance step, without changing `Project_ARIS`, mutating the validator/schema, or reopening remediation apply.
+- Preflight passed exactly on the required baseline:
+  - branch `main`
+  - `HEAD=10c8ea5b094c684daf9a96ce13f2934a06c680f4`
+  - `origin/main=10c8ea5b094c684daf9a96ce13f2934a06c680f4`
+  - `git merge-base --is-ancestor 10c8ea5b094c684daf9a96ce13f2934a06c680f4 origin/main` returned success
+  - source artifact hashes matched the required values for `active_context_no_ritual_authorization_policy_repair.json` and `purg04_b1_b3_global_baseline_repair_plan_artifact_only.json`
+- The permanent no-ritual policy is observed through:
+  - explicit rule in `ARIS_BOOT.md`
+  - recorded governance entry in `DECISION_LOCKS.md`
+  - no conflicting execution-lock state in `ACTIVE_CONTEXT_STATE.json`
+- Diagnostic finding:
+  - `ACTIVE_CONTEXT_STATE.json` is the only canonical live-state path.
+  - `scripts/assert_mirror_sync.py` reads `archive/derived_mirrors/CURRENT_STATE.md` and `archive/derived_mirrors/NEXT_ACTION.md`.
+  - `ACTIVE_CONTEXT_SCHEMA.json` still advertises legacy root mirror names (`CURRENT_STATE.md`, `NEXT_ACTION.md`, `CONTEXT_INDEX.md`, `ARIS_PHASE_LEDGER.md`).
+  - repo-root `CURRENT_STATE.md`, `NEXT_ACTION.md`, `CONTEXT_INDEX.md`, and `ARIS_PHASE_LEDGER.md` currently exist only as pre-existing untracked local files, which makes them noncanonical and path-risky.
+- This confirms B2 is an active-context path-contract drift problem, not a Project_ARIS mutation result.
+- No validator, schema, or README mutation was required in this diagnostic phase.
+- `project_aris_changed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json`
+- Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY`
