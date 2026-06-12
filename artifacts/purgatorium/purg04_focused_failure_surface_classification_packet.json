@@ -1,0 +1,522 @@
+{
+  "phase_id": "PURG04_FOCUSED_FAILURE_SURFACE_CLASSIFICATION_PACKET",
+  "phase_class": "focused_failure_surface_classification_artifact_only",
+  "decision": "pass",
+  "status": "purg04_focused_failure_surface_classification_packet_pass_mixed_surface",
+  "source_fresh_reclone_execution_packet_path": "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+  "source_fresh_reclone_execution_packet_sha256_observed": "36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf",
+  "active_context_head_before": "79c44f09c33cfaf3d477e5536e680e544bd57c68",
+  "fresh_reclone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "fresh_reclone_head_observed": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "fresh_reclone_status_before_classification": {
+    "exit_code": 0,
+    "lines": []
+  },
+  "fresh_reclone_nested_active_context_before_classification": {
+    "exit_code": 0,
+    "paths": []
+  },
+  "logs_examined": [
+    "/tmp/purg04_logs/tests_test_aris_context_active_track_phase_reconciliation_gate.log",
+    "/tmp/purg04_logs/tests_test_aris_context_active_track_resume_gate.log",
+    "/tmp/purg04_logs/tests_test_strategic_reset_macrostructure_lock_gate.log",
+    "/tmp/purg04_logs/tests_test_phase_completion_materialization_guard.log",
+    "/tmp/purg04_logs/tests_test_product_loop_l1_15_product_loop_closure_gate.log",
+    "/tmp/purg04_logs/tests_test_if08_w05_preflight_readiness_rerun.log",
+    "/tmp/purg04_logs/tests_test_if08_w05_post_sync_review.log",
+    "/tmp/purg04_logs/tests_test_if08_w05_controlled_execution.log"
+  ],
+  "focused_tests_total": 9,
+  "focused_tests_passed": 1,
+  "focused_tests_failed": 8,
+  "classification_matrix": [
+    {
+      "test": "tests.test_aris_context_active_track_phase_reconciliation_gate",
+      "exit_code": 1,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [
+        "OUT_OF_SCOPE_LEGACY"
+      ],
+      "broken_contract_type": "external_pointer_contract_violation_plus_legacy_pre_f21_artifact_assumption",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md during _copy_sources",
+      "probable_source_files": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+        "src/aris/context/active_track_phase_reconciliation_gate.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_phase_reconciliation_gate.log: FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/CURRENT_STATE.md",
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py:34-41 copies module SOURCE_FILES and falls back to aris-active-context/archive/ARIS_ROADMAP_R0_F120.md",
+        "src/aris/context/active_track_phase_reconciliation_gate.py:27-33 hard-codes CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, LAB_OPERATING_CONTRACT.md, and ROADMAP_PATH under aris-active-context/"
+      ],
+      "secondary_evidence": [
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_phase_reconciliation_gate.log: pre_f21_summary None is not an instance of dict",
+        "src/aris/context/active_track_phase_reconciliation_gate.py:44-46 still requires artifacts/v5/token_economy_context_discipline_*",
+        "fresh reclone read-only check: artifacts/v5/token_economy_context_discipline_summary.json, decision.json, and report.md are missing"
+      ]
+    },
+    {
+      "test": "tests.test_aris_context_active_track_resume_gate",
+      "exit_code": 1,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [
+        "OUT_OF_SCOPE_LEGACY"
+      ],
+      "broken_contract_type": "external_pointer_contract_violation_plus_legacy_pre_f21_artifact_assumption",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md during _copy_sources",
+      "probable_source_files": [
+        "tests/test_aris_context_active_track_resume_gate.py",
+        "src/aris/context/active_track_resume_gate.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_resume_gate.log: FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/CURRENT_STATE.md",
+        "tests/test_aris_context_active_track_resume_gate.py:40-45 copies module TEXT_INPUTS and JSON_INPUTS rooted at aris-active-context/",
+        "src/aris/context/active_track_resume_gate.py:19-23 hard-codes CURRENT_STATE.md, NEXT_ACTION.md, ARIS_PHASE_LEDGER.md, CONTEXT_INDEX.md, and DECISION_LOCKS.md under aris-active-context/"
+      ],
+      "secondary_evidence": [
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_resume_gate.log: pre_f21_summary None is not an instance of dict",
+        "src/aris/context/active_track_resume_gate.py:30-32 still requires artifacts/v5/token_economy_context_discipline_*",
+        "fresh reclone read-only check: artifacts/v5/token_economy_context_discipline_summary.json, decision.json, and report.md are missing"
+      ]
+    },
+    {
+      "test": "tests.test_strategic_reset_macrostructure_lock_gate",
+      "exit_code": 1,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [],
+      "broken_contract_type": "external_pointer_contract_violation",
+      "representative_signal": "FileNotFoundError on aris-active-context/DECISION_LOCKS.md",
+      "probable_source_files": [
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_strategic_reset_macrostructure_lock_gate.log: FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/DECISION_LOCKS.md",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:12-18 requires repeated reads of aris-active-context/DECISION_LOCKS.md",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:40-41 also hard-codes aris-active-context/NEXT_ACTION.md"
+      ]
+    },
+    {
+      "test": "tests.test_phase_completion_materialization_guard",
+      "exit_code": 1,
+      "primary_class": "EXPECTATION_DRIFT",
+      "secondary_classes": [],
+      "broken_contract_type": "fixture_still_expects_nested_active_context_materialization_to_pass",
+      "representative_signal": "phase_completion_materialization_guard_blocked != phase_completion_materialization_guard_pass",
+      "probable_source_files": [
+        "tests/test_phase_completion_materialization_guard.py",
+        "scripts/check_phase_completion_materialization.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_phase_completion_materialization_guard.log: AssertionError phase_completion_materialization_guard_blocked != phase_completion_materialization_guard_pass",
+        "tests/test_phase_completion_materialization_guard.py:42-43 creates a nested aris-active-context git head fixture and lines 135-139 write CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md into that nested tree",
+        "tests/test_phase_completion_materialization_guard.py:145-157 still asserts result status pass for that nested materialization fixture",
+        "scripts/check_phase_completion_materialization.py:22-27 defines ACTIVE_CONTEXT_DIR = Path(\"aris-active-context\") and validates only the nested materialization contract"
+      ]
+    },
+    {
+      "test": "tests.test_product_loop_l1_15_product_loop_closure_gate",
+      "exit_code": 1,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [],
+      "broken_contract_type": "external_pointer_contract_violation",
+      "representative_signal": "FileNotFoundError on aris-active-context/CURRENT_STATE.md",
+      "probable_source_files": [
+        "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+        "src/aris/product_loop/product_loop_closure_gate.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_product_loop_l1_15_product_loop_closure_gate.log: repeated FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/CURRENT_STATE.md",
+        "tests/test_product_loop_l1_15_product_loop_closure_gate.py:34-35 copies every path from ARTIFACT_SPECS into a temp workspace before assertions",
+        "src/aris/product_loop/product_loop_closure_gate.py:62-66 includes CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md under aris-active-context/ in ARTIFACT_SPECS"
+      ]
+    },
+    {
+      "test": "tests.test_if08_w05_preflight_readiness_rerun",
+      "exit_code": 5,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [
+        "ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT"
+      ],
+      "broken_contract_type": "external_pointer_contract_violation_plus_stale_if08_route_expectation",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass",
+      "probable_source_files": [
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_if08_w05_preflight_readiness_rerun.log: setUpClass FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/ACTIVE_CONTEXT_STATE.json",
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py:9-16 defines ACTIVE_CONTEXT_ROOT = PROJECT_ROOT / aris-active-context and reads STATE_PATH and ROADMAP_PATH from that nested tree"
+      ],
+      "secondary_evidence": [
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py:165-179 still asserts INF-FULL-07/pass -> IF-08 and latest_completed_phase == IF08_W05 Minos Mechanical Alias Normalization",
+        "ACTIVE_CONTEXT_STATE.json current live route remains active_next_phase=PURG-01 and latest_completed_phase=IF-11 Minos Final Verdict + Closure"
+      ]
+    },
+    {
+      "test": "tests.test_if08_w05_post_sync_review",
+      "exit_code": 5,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [
+        "ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT"
+      ],
+      "broken_contract_type": "external_pointer_contract_violation_plus_stale_if08_route_expectation",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass",
+      "probable_source_files": [
+        "src/aris/infernus/if08_w05_post_sync_review.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_if08_w05_post_sync_review.log: setUpClass FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/ACTIVE_CONTEXT_STATE.json",
+        "src/aris/infernus/if08_w05_post_sync_review.py:9-18 defines ACTIVE_CONTEXT_ROOT = PROJECT_ROOT / aris-active-context and reads STATE_PATH plus active controlled decision/summary from that nested tree"
+      ],
+      "secondary_evidence": [
+        "src/aris/infernus/if08_w05_post_sync_review.py:201-257 still validates W0.5 controlled execution lineage and expects canonical IF08 continuation artifacts",
+        "ACTIVE_CONTEXT_STATE.json current live route remains PURG-01 and preserves latest_completed_next_recommended_step=execute_purg01_controlled_triage_artifact_only"
+      ]
+    },
+    {
+      "test": "tests.test_if08_w05_controlled_execution",
+      "exit_code": 5,
+      "primary_class": "POINTER_RESIDUAL",
+      "secondary_classes": [
+        "ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT"
+      ],
+      "broken_contract_type": "external_pointer_contract_violation_plus_stale_if08_route_expectation",
+      "representative_signal": "FileNotFoundError on aris-active-context/ACTIVE_CONTEXT_STATE.json in setUpClass",
+      "probable_source_files": [
+        "src/aris/infernus/if08_w05_controlled_execution.py"
+      ],
+      "primary_evidence": [
+        "/tmp/purg04_logs/tests_test_if08_w05_controlled_execution.log: setUpClass FileNotFoundError on /Project_ARIS-clean-reclone/aris-active-context/ACTIVE_CONTEXT_STATE.json",
+        "src/aris/infernus/if08_w05_controlled_execution.py:11-18 defines ACTIVE_CONTEXT_ROOT = PROJECT_ROOT / aris-active-context and reads STATE_PATH, ROADMAP_PATH, and CANONROADMAP_PATH from that nested tree",
+        "src/aris/infernus/if08_w05_controlled_execution.py:74-92 makes the nested active-context files part of INPUT_PATHS"
+      ],
+      "secondary_evidence": [
+        "src/aris/infernus/if08_w05_controlled_execution.py:49-60 keeps IF08 W0.5 execution statuses and next-action tokens as the expected live route",
+        "ACTIVE_CONTEXT_STATE.json current live route remains PURG-01 and latest completed phase remains IF-11 Minos Final Verdict + Closure"
+      ]
+    }
+  ],
+  "failure_groups": {
+    "POINTER_RESIDUAL": {
+      "count_primary": 7,
+      "tests": [
+        "tests.test_aris_context_active_track_phase_reconciliation_gate",
+        "tests.test_aris_context_active_track_resume_gate",
+        "tests.test_strategic_reset_macrostructure_lock_gate",
+        "tests.test_product_loop_l1_15_product_loop_closure_gate",
+        "tests.test_if08_w05_preflight_readiness_rerun",
+        "tests.test_if08_w05_post_sync_review",
+        "tests.test_if08_w05_controlled_execution"
+      ],
+      "summary": "Dominant class. All seven primary failures still dereference nested aris-active-context/* paths that no longer exist under the external pointer contract."
+    },
+    "EXPECTATION_DRIFT": {
+      "count_primary": 1,
+      "tests": [
+        "tests.test_phase_completion_materialization_guard"
+      ],
+      "summary": "The guard fixture still materializes a nested active-context tree and asserts pass, while the current contract blocks or invalidates that materialization shape."
+    },
+    "ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT": {
+      "count_primary": 0,
+      "count_secondary": 3,
+      "tests": [
+        "tests.test_if08_w05_preflight_readiness_rerun",
+        "tests.test_if08_w05_post_sync_review",
+        "tests.test_if08_w05_controlled_execution"
+      ],
+      "summary": "These suites are pointer-blocked first, but their source modules still encode an IF08/W0.5 live route that conflicts with the preserved PURG-01 live JSON route."
+    },
+    "OUT_OF_SCOPE_LEGACY": {
+      "count_primary": 0,
+      "count_secondary": 2,
+      "tests": [
+        "tests.test_aris_context_active_track_phase_reconciliation_gate",
+        "tests.test_aris_context_active_track_resume_gate"
+      ],
+      "summary": "Both active-track suites also expect pre-F21 artifacts under artifacts/v5/* that are absent in the fresh reclone; that legacy dependency is secondary noise, not the first blocking signal."
+    },
+    "UNKNOWN": {
+      "count_primary": 0,
+      "tests": [],
+      "summary": "No focused failing suite remains unclassified."
+    }
+  },
+  "pointer_residual_failures": [
+    "tests.test_aris_context_active_track_phase_reconciliation_gate",
+    "tests.test_aris_context_active_track_resume_gate",
+    "tests.test_strategic_reset_macrostructure_lock_gate",
+    "tests.test_product_loop_l1_15_product_loop_closure_gate",
+    "tests.test_if08_w05_preflight_readiness_rerun",
+    "tests.test_if08_w05_post_sync_review",
+    "tests.test_if08_w05_controlled_execution"
+  ],
+  "expectation_drift_failures": [
+    "tests.test_phase_completion_materialization_guard"
+  ],
+  "route_or_canonical_text_drift_failures": [
+    "tests.test_if08_w05_preflight_readiness_rerun",
+    "tests.test_if08_w05_post_sync_review",
+    "tests.test_if08_w05_controlled_execution"
+  ],
+  "out_of_scope_legacy_failures": [],
+  "unknown_failures": [],
+  "candidate_future_repair_files": [
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "src/aris/context/active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py",
+    "src/aris/context/active_track_resume_gate.py",
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "tests/test_phase_completion_materialization_guard.py",
+    "scripts/check_phase_completion_materialization.py",
+    "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+    "src/aris/product_loop/product_loop_closure_gate.py",
+    "src/aris/infernus/if08_w05_preflight_readiness_rerun.py",
+    "src/aris/infernus/if08_w05_post_sync_review.py",
+    "src/aris/infernus/if08_w05_controlled_execution.py"
+  ],
+  "candidate_future_repair_files_with_evidence": [
+    {
+      "path": "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+      "why_candidate": "The fixture copies the failing nested active-context inputs directly and also preserves the old roadmap fallback path.",
+      "evidence": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py:34-41",
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py:37-38",
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_phase_reconciliation_gate.log"
+      ],
+      "allowed_future_change_type": "test_fixture_path_contract_update_only",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+        "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q"
+      ]
+    },
+    {
+      "path": "src/aris/context/active_track_phase_reconciliation_gate.py",
+      "why_candidate": "The module still hard-codes nested active-context paths and pre-F21 v5 lineage artifacts.",
+      "evidence": [
+        "src/aris/context/active_track_phase_reconciliation_gate.py:27-33",
+        "src/aris/context/active_track_phase_reconciliation_gate.py:44-56",
+        "src/aris/context/active_track_phase_reconciliation_gate.py:64-93"
+      ],
+      "allowed_future_change_type": "bounded_source_path_contract_normalization_and_legacy_input_pruning",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+        "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+        "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q"
+      ]
+    },
+    {
+      "path": "tests/test_aris_context_active_track_resume_gate.py",
+      "why_candidate": "The fixture copies the nested active-context files and the legacy PRE-F21 artifacts directly.",
+      "evidence": [
+        "tests/test_aris_context_active_track_resume_gate.py:40-45",
+        "tests/test_aris_context_active_track_resume_gate.py:131-157",
+        "/tmp/purg04_logs/tests_test_aris_context_active_track_resume_gate.log"
+      ],
+      "allowed_future_change_type": "test_fixture_path_contract_update_only",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+        "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q"
+      ]
+    },
+    {
+      "path": "src/aris/context/active_track_resume_gate.py",
+      "why_candidate": "The source still binds resume readiness to nested active-context files and artifacts/v5 PRE-F21 files.",
+      "evidence": [
+        "src/aris/context/active_track_resume_gate.py:19-37",
+        "src/aris/context/active_track_resume_gate.py:44-62"
+      ],
+      "allowed_future_change_type": "bounded_source_path_contract_normalization_and_legacy_input_pruning",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_aris_context_active_track_resume_gate -q",
+        "python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q",
+        "python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q"
+      ]
+    },
+    {
+      "path": "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+      "why_candidate": "The gate reads DECISION_LOCKS.md and NEXT_ACTION.md only from the removed nested active-context tree.",
+      "evidence": [
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:12-17",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:40-45",
+        "/tmp/purg04_logs/tests_test_strategic_reset_macrostructure_lock_gate.log"
+      ],
+      "allowed_future_change_type": "read_only_gate_path_contract_normalization",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q"
+      ]
+    },
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py",
+      "why_candidate": "The fixture explicitly creates a nested active-context directory and still expects pass from that materialization shape.",
+      "evidence": [
+        "tests/test_phase_completion_materialization_guard.py:42-43",
+        "tests/test_phase_completion_materialization_guard.py:135-149",
+        "/tmp/purg04_logs/tests_test_phase_completion_materialization_guard.log"
+      ],
+      "allowed_future_change_type": "test_expectation_and_fixture_contract_review_only",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_phase_completion_materialization_guard -q"
+      ]
+    },
+    {
+      "path": "scripts/check_phase_completion_materialization.py",
+      "why_candidate": "The guard validates only a nested active-context tree and therefore may now be enforcing a stale contract.",
+      "evidence": [
+        "scripts/check_phase_completion_materialization.py:22-27",
+        "scripts/check_phase_completion_materialization.py:194-217"
+      ],
+      "allowed_future_change_type": "guard_contract_review_after_explicit_expectation_decision",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_phase_completion_materialization_guard -q"
+      ]
+    },
+    {
+      "path": "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+      "why_candidate": "The test copies every artifact required by ARTIFACT_SPECS, including the removed nested active-context files.",
+      "evidence": [
+        "tests/test_product_loop_l1_15_product_loop_closure_gate.py:28-35",
+        "/tmp/purg04_logs/tests_test_product_loop_l1_15_product_loop_closure_gate.log"
+      ],
+      "allowed_future_change_type": "test_fixture_path_contract_update_only",
+      "risk": "medium",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q"
+      ]
+    },
+    {
+      "path": "src/aris/product_loop/product_loop_closure_gate.py",
+      "why_candidate": "ARTIFACT_SPECS still lists the nested active-context files as required closure artifacts.",
+      "evidence": [
+        "src/aris/product_loop/product_loop_closure_gate.py:62-69"
+      ],
+      "allowed_future_change_type": "artifact_path_contract_normalization",
+      "risk": "high",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q"
+      ]
+    },
+    {
+      "path": "src/aris/infernus/if08_w05_preflight_readiness_rerun.py",
+      "why_candidate": "The packet builder reads nested active-context files first and then still enforces the historical IF08 live route.",
+      "evidence": [
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py:9-16",
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py:165-179",
+        "/tmp/purg04_logs/tests_test_if08_w05_preflight_readiness_rerun.log"
+      ],
+      "allowed_future_change_type": "source_path_contract_normalization_plus_route_contract_review",
+      "risk": "high",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+        "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+        "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+      ]
+    },
+    {
+      "path": "src/aris/infernus/if08_w05_post_sync_review.py",
+      "why_candidate": "The review builder reads nested active-context files and active controlled-execution mirrors before checking a stale IF08 continuation chain.",
+      "evidence": [
+        "src/aris/infernus/if08_w05_post_sync_review.py:9-18",
+        "src/aris/infernus/if08_w05_post_sync_review.py:191-257",
+        "/tmp/purg04_logs/tests_test_if08_w05_post_sync_review.log"
+      ],
+      "allowed_future_change_type": "source_path_contract_normalization_plus_route_contract_review",
+      "risk": "high",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+        "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+        "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+      ]
+    },
+    {
+      "path": "src/aris/infernus/if08_w05_controlled_execution.py",
+      "why_candidate": "The controlled execution builder makes nested active-context files part of its required INPUT_PATHS and still preserves IF08 W0.5 route tokens as live expectations.",
+      "evidence": [
+        "src/aris/infernus/if08_w05_controlled_execution.py:11-18",
+        "src/aris/infernus/if08_w05_controlled_execution.py:74-92",
+        "/tmp/purg04_logs/tests_test_if08_w05_controlled_execution.log"
+      ],
+      "allowed_future_change_type": "source_path_contract_normalization_plus_route_contract_review",
+      "risk": "high",
+      "required_tests_after_change": [
+        "python3 -m unittest tests.test_if08_w05_preflight_readiness_rerun -q",
+        "python3 -m unittest tests.test_if08_w05_post_sync_review -q",
+        "python3 -m unittest tests.test_if08_w05_controlled_execution -q"
+      ]
+    }
+  ],
+  "forbidden_future_repair_files": [
+    "/home/matheus/ARIS/Project_ARIS/**",
+    "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean/**",
+    "ACTIVE_CONTEXT_STATE.json",
+    "ACTIVE_CONTEXT_POINTER.md",
+    "BEDROCK_GATE.md",
+    ".gitmodules",
+    ".env*",
+    "archive/**",
+    "excludent/**",
+    "secrets/**",
+    "dependency files and lockfiles"
+  ],
+  "future_repair_order_recommendation": [
+    "Open PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET before any patch, because the focused surface is not a single-class pointer-only problem.",
+    "Split the future work into pointer-residual path-contract normalization first, isolated expectation-drift review second, and IF08 route/canonical-text review third.",
+    "Keep tests.test_phase_completion_materialization_guard and scripts/check_phase_completion_materialization.py outside the first pointer-only patch unless an explicit expectation decision proves they belong together.",
+    "Revisit the two active-track suites only after deciding whether artifacts/v5 PRE-F21 inputs are still part of the supported lineage or should be pruned as legacy noise."
+  ],
+  "future_repair_acceptance_criteria": [
+    "A future bounded repair touches only files listed in candidate_future_repair_files_with_evidence and preserves all currently forbidden files unchanged.",
+    "The fresh reclone remains clean before and after the future repair, and no nested aris-active-context/ directory is recreated at repository root.",
+    "Pointer-residual suites stop failing on missing aris-active-context/* paths under the external pointer contract.",
+    "The phase completion materialization guard is either explicitly re-baselined to current blocking behavior or brought into alignment through a separately justified contract decision; it must not be silently forced green by recreating a nested tree.",
+    "IF08 W0.5 suites are re-reviewed against the preserved PURG-01 live route before any pass claim, rather than assuming historical IF08 route text is still live.",
+    "No package installation, dependency-file mutation, finding close, remediation apply, runtime execution, or real_apply is used to obtain green focused tests."
+  ],
+  "future_repair_rejection_criteria": [
+    "Any future patch recreates a repository-root aris-active-context/ directory inside the fresh reclone to make tests pass.",
+    "Any future patch mutates ACTIVE_CONTEXT_STATE.json, BEDROCK_GATE.md, ACTIVE_CONTEXT_POINTER.md, archive/**, excludent/**, secrets/**, .env*, .gitmodules, or dependency files.",
+    "A single patch mixes pointer-residual normalization, expectation-drift rebaselining, and IF08 route rewrite without an explicit split packet or equally bounded admission artifact.",
+    "A future step treats secondary legacy noise as justification for widening scope into historical suites that were not part of the eight focused failures.",
+    "Any step claims baseline green, remediation proven, or finding close from this classification lineage.",
+    "Any step requires package installation or dependency mutation to make the focused cleanroom surface admissible."
+  ],
+  "fresh_reclone_status_after_classification": {
+    "exit_code": 0,
+    "lines": []
+  },
+  "fresh_reclone_nested_active_context_after_classification": {
+    "exit_code": 0,
+    "paths": []
+  },
+  "fresh_reclone_mutated": false,
+  "dirty_clone_changed": false,
+  "project_aris_original_changed": false,
+  "project_aris_patch_applied": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "package_install_required": false,
+  "dependency_change_required": false,
+  "real_locks_preserved_false": true,
+  "canonical_drift_observed": {
+    "present": true,
+    "items": [
+      "ACTIVE_CONTEXT_STATE.json and README.md still preserve the live route at PURG-01 with latest_completed_next_recommended_step=execute_purg01_controlled_triage_artifact_only.",
+      "PURG04 cleanroom lineage now exists only as report-only governance artifacts plus DECISION_LOCKS.md entries and does not modify the live JSON route.",
+      "This classification packet records the drift but does not attempt to resolve it because JSON authority remains explicit and unchanged."
+    ]
+  },
+  "canonical_drift_resolution_policy": "report_only_no_live_route_mutation",
+  "next_recommended_step": "PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "006fc054849d311ebfb2a68f2cfeab80427c1b42c30b1b43ae07905f59967e10"
+  }
+}

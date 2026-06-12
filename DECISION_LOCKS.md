@@ -1783,3 +1783,56 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Canonical drift remains report-only and unresolved here; no live-route mutation was attempted.
 - Canonical artifact: `artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json`
 - Next recommended step: `PURG04_FOCUSED_FAILURE_SURFACE_CLASSIFICATION_PACKET`
+
+## PURG04 Focused Failure Surface Classification Packet
+
+- Status: `purg04_focused_failure_surface_classification_packet_pass_mixed_surface`
+- Decision: `pass`
+- Source execution packet: `artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json`
+- Source execution packet sha256 observed: `36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf`
+- Fresh reclone remained read-only and admissible during classification:
+  - path: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone`
+  - head observed: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+  - `git status --short` stayed empty before and after classification
+  - `find -maxdepth 1 -name aris-active-context` stayed empty before and after classification
+  - no mutation was applied to the fresh reclone, dirty clone, or original `Project_ARIS`
+- Focused failure surface is fully classified with no remaining `UNKNOWN`:
+  - total focused tests: `9`
+  - passed: `1`
+  - failed: `8`
+  - primary `POINTER_RESIDUAL`: `7` suites
+  - primary `EXPECTATION_DRIFT`: `1` suite
+  - secondary `ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT`: `3` IF08/W0.5 suites
+  - secondary `OUT_OF_SCOPE_LEGACY`: `2` active-track suites due missing `artifacts/v5/*`
+- Primary grouped findings:
+  - `tests.test_aris_context_active_track_phase_reconciliation_gate`, `tests.test_aris_context_active_track_resume_gate`, `tests.test_strategic_reset_macrostructure_lock_gate`, and `tests.test_product_loop_l1_15_product_loop_closure_gate` still fail on hard-coded `aris-active-context/*` paths
+  - `tests.test_if08_w05_preflight_readiness_rerun`, `tests.test_if08_w05_post_sync_review`, and `tests.test_if08_w05_controlled_execution` fail first on missing nested `aris-active-context/ACTIVE_CONTEXT_STATE.json`, then expose stale IF08 route expectations in source
+  - `tests.test_phase_completion_materialization_guard` is classified as expectation drift because its fixture still materializes a nested active-context tree and asserts `phase_completion_materialization_guard_pass`
+- Candidate future repair surface is now bounded by direct evidence:
+  - active-track test/source pairs
+  - `scripts/run_strategic_reset_macrostructure_lock_gate.py`
+  - `tests/test_phase_completion_materialization_guard.py` plus `scripts/check_phase_completion_materialization.py`
+  - `tests/test_product_loop_l1_15_product_loop_closure_gate.py` plus `src/aris/product_loop/product_loop_closure_gate.py`
+  - `src/aris/infernus/if08_w05_preflight_readiness_rerun.py`
+  - `src/aris/infernus/if08_w05_post_sync_review.py`
+  - `src/aris/infernus/if08_w05_controlled_execution.py`
+- Future repair remains explicitly forbidden from touching:
+  - `/home/matheus/ARIS/Project_ARIS/**`
+  - `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean/**`
+  - `ACTIVE_CONTEXT_STATE.json`, `ACTIVE_CONTEXT_POINTER.md`, `BEDROCK_GATE.md`, `.gitmodules`, `.env*`, `archive/**`, `excludent/**`, `secrets/**`, or dependency files
+- Scope controls preserved:
+  - `project_aris_original_changed=false`
+  - `dirty_clone_changed=false`
+  - `project_aris_patch_applied=false`
+  - `remediation_apply_retry_executed=false`
+  - `runtime_executed=false`
+  - `real_apply_executed=false`
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - all real locks remain preserved as false
+- Canonical drift remains report-only:
+  - live JSON/README route remains `PURG-01`
+  - PURG04 cleanroom lineage remains artifact-only plus `DECISION_LOCKS.md`
+  - no live-route mutation is attempted here
+- Canonical artifact: `artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json`
+- Next recommended step: `PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET`
