@@ -1,0 +1,228 @@
+{
+  "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY",
+  "phase_class": "governance_repair_artifact_only",
+  "decision": "pass",
+  "status": "purg04_b2_active_context_path_contract_normalization_plan_artifact_only_pass",
+  "source_boundary_decision_artifact_path": "artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json",
+  "source_boundary_decision_artifact_sha256_observed": "1bcdfa48ccdc747f3db1f5aac3523caf482041e8f7e2ea6dd274f37dddf2b843",
+  "selected_boundary_confirmed": "BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY",
+  "source_b2_diagnostic_artifact_sha256_observed": "22ee6bdfd4fa24fdefeca03133aa978303b30485468a96b3cd765a98edc2833e",
+  "source_policy_artifact_sha256_observed": "5d53d3d3afd3c9df713a5b8bc028e69b56fc2062f8f6d1bb21c2d2e68d5455f3",
+  "source_b1_b3_plan_artifact_sha256_observed": "a509fa3511f3b1a381b1852dc085db22826c78bc54e5dceba320cab29858885f",
+  "source_commit_observed": "54ed361e52e60e384892db52319ef0dea0351fca",
+  "no_ritual_authorization_policy_observed": {
+    "policy_id": "NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+    "boot_rule_present": true,
+    "ledger_rule_present": true,
+    "requires_new_ritual_authorization": false
+  },
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "boundary_c_constraints": [
+    "ACTIVE_CONTEXT_STATE.json remains the only live-state authority.",
+    "ACTIVE_CONTEXT_SCHEMA.json, ARIS_BOOT.md, DECISION_LOCKS.md, ROADMAP_CANONICAL.md, scripts/validate_active_context_state.py, and artifacts/ remain active-contract inputs.",
+    "CURRENT_STATE.md, NEXT_ACTION.md, CONTEXT_INDEX.md, ARIS_PHASE_LEDGER.md, and archive/derived_mirrors/* must not remain active-contract inputs.",
+    "Root untracked mirror files remain ignored, unstaged, and noncanonical.",
+    "archive/derived_mirrors/* remain historical or derived only and must not become live-state authority."
+  ],
+  "current_incompatibilities": [
+    {
+      "surface": "ACTIVE_CONTEXT_SCHEMA.json artifact_routes",
+      "incompatibility": "current_state_mirror, next_action_mirror, context_index_mirror, and phase_ledger_history still encode active root markdown mirror paths."
+    },
+    {
+      "surface": "ACTIVE_CONTEXT_STATE.json validation_policy",
+      "incompatibility": "markdown_mirror_validation_required=true conflicts with the selected no-active-markdown-mirrors boundary."
+    },
+    {
+      "surface": "scripts/assert_mirror_sync.py",
+      "incompatibility": "The helper validates archive/derived_mirrors markdown files, which is incompatible with a future active contract that excludes markdown mirrors."
+    },
+    {
+      "surface": "tests/test_validate_active_context.py",
+      "incompatibility": "test_mirror_sync_passes keeps assert_mirror_sync.py in the active local validation suite."
+    },
+    {
+      "surface": "historical roadmap and artifact references",
+      "incompatibility": "ROADMAP_CANONICAL and historical artifacts still preserve assert_mirror_sync as a historical deliverable, which must remain historical rather than active."
+    }
+  ],
+  "schema_normalization_plan": {
+    "mutation_needed_in_future_step": true,
+    "recommended_actions": [
+      "Remove artifact_routes entries that advertise CURRENT_STATE.md, NEXT_ACTION.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md as active contract paths.",
+      "Remove those mirror keys from the artifact_routes required list or reclassify them into an explicitly historical-only object if preserving audit metadata is necessary.",
+      "Set validation_policy.markdown_mirror_validation_required to false or replace it with wording that no longer implies active markdown mirror gating.",
+      "Preserve state_file, schema_file, validator_script, readme, roadmap_authority, and boot/ledger references that remain active under BOUNDARY_C."
+    ],
+    "must_not_do": [
+      "Do not re-point active mirror fields to archive/derived_mirrors/* as a substitute active contract.",
+      "Do not require ACTIVE_CONTEXT_STATE.json mutations for this normalization."
+    ]
+  },
+  "assert_mirror_sync_normalization_plan": {
+    "mutation_needed_in_future_step": true,
+    "recommended_outcome": "retire_from_active_contract_keep_file_historical",
+    "rationale": [
+      "The helper is not part of the GitHub workflow and therefore can be retired from the active contract without workflow churn.",
+      "Keeping it as an active or CI-required check would contradict BOUNDARY_C by preserving markdown mirrors as validation inputs.",
+      "The file may remain on disk for historical audit, but future default validations must stop treating it as an active requirement."
+    ],
+    "specific_future_actions": [
+      "Remove assert_mirror_sync.py from the future active validation matrix and from default local validation expectations.",
+      "Optionally add a file header or ledger note in the future repair clarifying that the helper is historical-only and not a routing gate.",
+      "Do not delete the helper in the first normalization repair unless a separate cleanup phase is explicitly authorized."
+    ]
+  },
+  "validator_normalization_plan": {
+    "scripts_validate_active_context_state_py_change_needed": false,
+    "rationale": [
+      "The current validator already anchors on ACTIVE_CONTEXT_STATE.json and current PURG route invariants.",
+      "Observed active contradictions are in schema path declarations and helper/test usage, not in the validator's current live-route logic."
+    ],
+    "guardrail": "If implementation of the future schema/helper retirement reveals a hidden validator dependency on mirror fields, block the repair and emit a new active-context-only blocker artifact instead of widening scope."
+  },
+  "test_normalization_plan": {
+    "future_test_changes_needed": true,
+    "recommended_actions": [
+      "Retire or rewrite tests/test_validate_active_context.py::test_mirror_sync_passes so local default validation no longer requires assert_mirror_sync.py.",
+      "Add or adjust focused tests to assert that the active contract no longer requires root markdown mirrors or archive/derived_mirrors paths.",
+      "Preserve tests/test_purg04_validator_scope_repair.py unchanged unless a hidden validator dependency is discovered."
+    ],
+    "must_not_do": [
+      "Do not add tests that recreate root markdown mirror authority.",
+      "Do not add tests that promote archive/derived_mirrors/* to active routing inputs."
+    ]
+  },
+  "documentation_ledger_plan": {
+    "decision_locks_change_needed_in_future_step": true,
+    "readme_change_needed_in_future_step": "optional_minimal_only",
+    "recommended_actions": [
+      "Record the normalization repair result in DECISION_LOCKS.md, explicitly stating that markdown mirrors are no longer active-contract inputs.",
+      "Update README.md only if needed to avoid future operator confusion about mirror expectations; keep any change minimal and aligned with BOUNDARY_C.",
+      "Do not touch archive/superseded/* or archive/derived_mirrors/* in the first normalization repair."
+    ]
+  },
+  "active_context_state_mutation_needed": false,
+  "root_untracked_file_policy": {
+    "policy": "ignore_do_not_stage_do_not_delete_in_normalization_plan_step",
+    "future_repair_rule": "They remain outside the future patch unless an explicit later cleanup phase authorizes deletion or archival handling."
+  },
+  "archive_derived_mirror_policy": {
+    "policy": "historical_only_not_active_contract",
+    "future_repair_rule": "Leave archive/derived_mirrors/* untouched in the first normalization repair; only de-activate references to them from active schema/helper/test surfaces."
+  },
+  "excludent_policy_observed": {
+    "policy_file_read": "EXCLUDENT_POLICY.md",
+    "excludent_content_read_beyond_policy": false,
+    "observed_rule": "excludent/ is not active context, not source-of-truth, and not prompt input except for explicit forensic review."
+  },
+  "recommended_plan": "PLAN_B_SCHEMA_PLUS_ASSERT_MIRROR_SYNC_RETIREMENT",
+  "rejected_plans": [
+    {
+      "plan_id": "PLAN_A_SCHEMA_ONLY_RECLASSIFY_MIRRORS_AS_HISTORICAL",
+      "rejection_reason": "Insufficient because assert_mirror_sync.py and test_mirror_sync_passes would still keep markdown mirrors in the effective active validation path."
+    },
+    {
+      "plan_id": "PLAN_C_SCHEMA_PLUS_ASSERT_MIRROR_SYNC_HISTORICAL_MODE",
+      "rejection_reason": "Wider than necessary for the first repair; formal historical-mode behavior adds extra patch surface when retirement from the active contract already resolves the contradiction."
+    },
+    {
+      "plan_id": "PLAN_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "rejection_reason": "Evidence is sufficient to define a smallest safe future patch without operator tie-break."
+    }
+  ],
+  "future_patch_scope": [
+    "Normalize ACTIVE_CONTEXT_SCHEMA.json away from active markdown mirror declarations.",
+    "Retire scripts/assert_mirror_sync.py from the active contract without deleting historical evidence.",
+    "Update local tests that currently require assert_mirror_sync.py as an active default check.",
+    "Record the normalization result in DECISION_LOCKS.md and, only if needed, minimally clarify README.md."
+  ],
+  "future_files_allowed_to_change": [
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "scripts/assert_mirror_sync.py",
+    "tests/test_validate_active_context.py",
+    "DECISION_LOCKS.md",
+    "README.md"
+  ],
+  "future_files_forbidden_to_change": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "scripts/validate_active_context_state.py",
+    "tests/test_purg04_validator_scope_repair.py",
+    "archive/derived_mirrors/*",
+    "archive/superseded/*",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "PROJECT_CONTEXT_ARIS.md",
+    "BEDROCK_GATE.md",
+    "Project_ARIS/**"
+  ],
+  "future_validation_matrix": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "python3 -m unittest discover -s tests -p 'test_validate_active_context.py'",
+    "git diff --check",
+    "git status --short"
+  ],
+  "future_ci_requirements": {
+    "push_to_main_required": true,
+    "workflow_expected": "validate-active-context",
+    "terminal_green_required": true,
+    "workflow_change_expected": false,
+    "notes": [
+      "Current GitHub workflow runs scripts/validate_active_context_state.py and scripts/assert_no_unauthorized_fixtures.py only.",
+      "The future normalization repair should preserve workflow success without requiring workflow file edits."
+    ]
+  },
+  "rollback_strategy_for_future_patch": [
+    "Stage only active-context files in the approved future patch scope.",
+    "If schema/helper/test normalization causes validator or local test regression, revert only the future normalization patch before push and emit a blocker artifact instead of widening scope.",
+    "Do not rollback or touch pre-existing out-of-scope local files."
+  ],
+  "blocker_conditions": [
+    "Any need to mutate ACTIVE_CONTEXT_STATE.json to implement BOUNDARY_C.",
+    "Any need to promote archive/derived_mirrors/* into active validation inputs.",
+    "Any requirement to recreate or stage root markdown mirror files.",
+    "Any hidden dependency that forces scripts/validate_active_context_state.py changes in the same repair.",
+    "Any need to touch Project_ARIS, archive/superseded/*, or excludent/ contents.",
+    "Any CI regression that cannot be fixed within the approved future file scope."
+  ],
+  "implementation_deferred_to_next_step": true,
+  "no_real_execution_attestation": {
+    "project_aris_mutated": false,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "external_network_beyond_github_governance": false,
+    "finding_closed": false,
+    "remediation_proven": false
+  },
+  "validation_commands_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "git diff --check",
+    "git status --short"
+  ],
+  "diagnostics_run": [
+    "python3 scripts/assert_mirror_sync.py",
+    "git ls-files | grep -E '(^CURRENT_STATE.md$|^NEXT_ACTION.md$|^CONTEXT_INDEX.md$|^ARIS_PHASE_LEDGER.md$|^archive/derived_mirrors/)'",
+    "git status --short | grep -E 'CURRENT_STATE.md|NEXT_ACTION.md|CONTEXT_INDEX.md|ARIS_PHASE_LEDGER.md|PROJECT_CONTEXT_ARIS.md' || true",
+    "git grep -n 'current_state_mirror|next_action_mirror|phase_ledger_history|context_index_mirror|archive/derived_mirrors|CURRENT_STATE.md|NEXT_ACTION.md|CONTEXT_INDEX.md|ARIS_PHASE_LEDGER.md|assert_mirror_sync' -- ACTIVE_CONTEXT_SCHEMA.json scripts tests README.md DECISION_LOCKS.md ARIS_BOOT.md ROADMAP_CANONICAL.md || true"
+  ],
+  "next_recommended_step": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "4a8cf7db951fae7adf1b09272826240edc50e5b6d7bc98e34454233824451b39"
+  }
+}

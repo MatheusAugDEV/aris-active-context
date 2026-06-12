@@ -1279,3 +1279,34 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json`
 - Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY`
+
+## PURG-04 B2 Active-Context Path Contract Normalization Plan Artifact-Only
+
+- Status: `purg04_b2_active_context_path_contract_normalization_plan_artifact_only_pass`
+- Decision: `pass`
+- Scope: define the smallest future patch that normalizes the active-context path contract after `BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY`, without mutating schema, validator, helper scripts, tests, mirrors, or Project_ARIS in this step.
+- Source boundary decision verified:
+  - `selected_boundary=BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY`
+  - `source_boundary_decision_artifact_sha256=1bcdfa48ccdc747f3db1f5aac3523caf482041e8f7e2ea6dd274f37dddf2b843`
+- Current incompatibilities confirmed:
+  - `ACTIVE_CONTEXT_SCHEMA.json` still publishes root mirror fields in `artifact_routes`
+  - `ACTIVE_CONTEXT_STATE.json` still records `markdown_mirror_validation_required=true`
+  - `scripts/assert_mirror_sync.py` still validates archive markdown mirrors
+  - `tests/test_validate_active_context.py` still requires `assert_mirror_sync.py` to pass in the default local suite
+- Recommended plan: `PLAN_B_SCHEMA_PLUS_ASSERT_MIRROR_SYNC_RETIREMENT`
+- Rationale:
+  - schema-only reclassification is insufficient because helper/test surfaces would still keep markdown mirrors inside the effective active validation path
+  - historical-mode repurposing of `assert_mirror_sync.py` is wider than necessary for the first repair
+  - the smallest safe future patch is: normalize schema away from active mirror declarations, retire `assert_mirror_sync.py` from the active contract, and update the affected local test surface
+- Future repair boundary recorded:
+  - allowed future files: `ACTIVE_CONTEXT_SCHEMA.json`, `scripts/assert_mirror_sync.py`, `tests/test_validate_active_context.py`, `DECISION_LOCKS.md`, and only minimally `README.md` if needed
+  - forbidden future files: `ACTIVE_CONTEXT_STATE.json`, `scripts/validate_active_context_state.py`, `tests/test_purg04_validator_scope_repair.py`, `archive/derived_mirrors/*`, `archive/superseded/*`, root untracked mirror files, `BEDROCK_GATE.md`, and anything in `Project_ARIS`
+- `scripts/validate_active_context_state.py` does **not** need a planned mutation in the recommended repair unless hidden coupling is discovered during implementation; that condition is explicitly blocking.
+- `ACTIVE_CONTEXT_STATE.json` does **not** need mutation for the future repair.
+- `EXCLUDENT_POLICY.md` was observed only at policy level; no excludent content beyond the policy file was used.
+- `project_aris_changed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_plan_artifact_only.json`
+- Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY`
