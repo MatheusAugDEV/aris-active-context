@@ -1552,3 +1552,44 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json`
 - Next recommended step: `PROJECT_ARIS_CLEANROOM_EXTERNAL_CONTEXT_POINTER_REPAIR`
+
+## Project_ARIS Cleanroom External Context Pointer Repair
+
+- Status: `project_aris_cleanroom_external_context_pointer_repair_warn_baseline_non_green`
+- Decision: `warn`
+- Source repair plan artifact: `artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json`
+- Source repair plan artifact sha256 observed: `6c3eb8d5ad5880dc7026241a923faf3373056f4e2f7ca1b272582da9dab4566c`
+- Project_ARIS clean clone base head: `6cec74deb7a99b7eb227df84a902650ca092e00f`
+- Project_ARIS clean clone final head: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Repair outcome:
+  - orphan gitlink `aris-active-context` removed from the Project_ARIS index/worktree contract
+  - `.gitmodules` remains absent
+  - `ACTIVE_CONTEXT_POINTER.md` now names `MatheusAugDEV/aris-active-context` as the canonical external source
+  - `BOOT.md`, `CLAUDE.md`, and `AGENTS.md` were rerouted to the external pointer contract
+- Validation summary:
+  - `V1_GITLINK_REMOVED=true`
+  - `V2_NO_GITMODULES_REINTRODUCED=true`
+  - `V3_SUBMODULE_STATUS_CLEAN_OR_IRRELEVANT=true`
+  - `V4_POINTER_FILE_PRESENT=true`
+  - `V5_ROOT_DOCS_REROUTED=true`
+  - `V6_TARGETED_TESTS_GREEN=true`
+  - `V7_BASELINE_GATE=false`
+- Test evidence:
+  - targeted test `python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q` exited `0`
+  - full baseline `python3 -m unittest discover -s tests` exited `1`
+  - baseline failure classified as mixed unrelated environment drift plus out-of-scope legacy tests that still assume the removed local `aris-active-context/*` layout
+- Project_ARIS remote state:
+  - commit `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad` pushed to `origin/main`
+  - GitHub Actions runs `27394896849`, `27394896853`, `27394896854`, `27394896855`, `27394896856`, `27394896861`, `27394896862`, `27394896863`, and `27394896893` all completed `success`
+- Scope controls:
+  - `dirty_trees_touched=false`
+  - `reset_clean_stash_discard_performed=false`
+  - `b1_b3_repair_attempted=false`
+  - `runtime_executed=false`
+  - `real_apply_executed=false`
+  - `bedrock_product_secrets_touched=false`
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json`
+- Next recommended step: `PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET`

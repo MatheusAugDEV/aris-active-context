@@ -1,0 +1,120 @@
+{
+  "phase_id": "PROJECT_ARIS_CLEANROOM_EXTERNAL_CONTEXT_POINTER_REPAIR",
+  "phase_class": "cleanroom_project_aris_repair",
+  "decision": "warn",
+  "status": "project_aris_cleanroom_external_context_pointer_repair_warn_baseline_non_green",
+  "source_repair_plan_artifact_path": "artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json",
+  "source_repair_plan_artifact_sha256_observed": "6c3eb8d5ad5880dc7026241a923faf3373056f4e2f7ca1b272582da9dab4566c",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_base_commit": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "project_aris_final_commit": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "project_aris_remote": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+  "active_context_base_commit": "b6d410a1ccb646de992bf2bc59d07583a93387da",
+  "active_context_final_commit": "REPORTED_EXTERNALLY_AFTER_COMMIT",
+  "previous_gitlink_index_entry": "160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0 aris-active-context",
+  "gitlink_removed": true,
+  "gitmodules_present_after": false,
+  "active_context_pointer_file_created": true,
+  "pointer_file_path": "ACTIVE_CONTEXT_POINTER.md",
+  "files_changed_project_aris": [
+    "ACTIVE_CONTEXT_POINTER.md",
+    "AGENTS.md",
+    "BOOT.md",
+    "CLAUDE.md",
+    "aris-active-context"
+  ],
+  "files_changed_active_context": [
+    "DECISION_LOCKS.md",
+    "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json"
+  ],
+  "additional_files_touched_with_justification": [],
+  "dirty_trees_touched": false,
+  "reset_clean_stash_discard_performed": false,
+  "project_aris_patch_applied": true,
+  "project_aris_commit_created": true,
+  "project_aris_push_performed": true,
+  "project_aris_ci_state": {
+    "summary": "green",
+    "runs": [
+      {
+        "workflow": "CI",
+        "run_id": 27394896849,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Run Tests",
+        "run_id": 27394896853,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Runtime Public API",
+        "run_id": 27394896854,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Product Pilot Boundary",
+        "run_id": 27394896855,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Advanced Supply Chain",
+        "run_id": 27394896856,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Supply Chain Baseline",
+        "run_id": 27394896861,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "MCP Runtime Sandbox",
+        "run_id": 27394896862,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Core Public API Baseline",
+        "run_id": 27394896863,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "Backend Baseline",
+        "run_id": 27394896893,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "validations": {
+    "V1_GITLINK_REMOVED": true,
+    "V2_NO_GITMODULES_REINTRODUCED": true,
+    "V3_SUBMODULE_STATUS_CLEAN_OR_IRRELEVANT": true,
+    "V4_POINTER_FILE_PRESENT": true,
+    "V5_ROOT_DOCS_REROUTED": true,
+    "V6_TARGETED_TESTS_GREEN": true,
+    "V7_BASELINE_GATE": false
+  },
+  "targeted_test_exit_code": 0,
+  "baseline_test_exit_code": 1,
+  "baseline_green": false,
+  "baseline_failure_classification_if_any": "baseline_non_green_due_to_known_b1_b3_or_other_classified_failure: full unittest discovery produced broad unrelated environment drift such as missing `aris` and `dotenv` imports, plus out-of-scope legacy tests that still hard-code the removed local `aris-active-context/*` layout. No B1/B3 repair was attempted in this phase.",
+  "b1_b3_repair_attempted": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "remediation_apply_retry_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "real_locks_preserved_false": true,
+  "rollback_strategy": {
+    "safe_rollback_point": "Project_ARIS commit 6cec74deb7a99b7eb227df84a902650ca092e00f before the pointer-repair commit.",
+    "rollback_method": "Revert Project_ARIS commit 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad if the pointer contract needs to be undone; do not recreate `.gitmodules` and do not touch quarantined dirty trees.",
+    "notes": [
+      "Discarding clean-clone work is preferred over manual reconstruction of the orphan gitlink.",
+      "Any future baseline repair must proceed through a dedicated readiness packet."
+    ]
+  },
+  "next_recommended_step": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "e0acadbd14a27e7b7082289e13d039da685103f42825026fc4679d87e5d003e2"
+  }
+}
