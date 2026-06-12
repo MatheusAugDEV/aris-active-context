@@ -1408,3 +1408,49 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json`
 - Next recommended step: `PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT`
+
+## Project_ARIS Cleanroom Clone And Preflight
+
+- Status: `project_aris_cleanroom_clone_and_preflight_blocked`
+- Decision: `blocked`
+- Source recovery artifact: `artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json`
+- Source recovery artifact sha256 observed: `1f90ba82ca9469bcca4759eba5f8c6c5020f7fc60d103da8476b9f93c52b0173`
+- Active-context base commit for this step: `127a2175e7abfa57136293ffb0fb5963f0a075fd`
+- Active-context clean clone preflight:
+  - `git fetch origin main` completed
+  - `HEAD=127a2175e7abfa57136293ffb0fb5963f0a075fd`
+  - `origin/main=127a2175e7abfa57136293ffb0fb5963f0a075fd`
+  - `git merge-base --is-ancestor 127a2175e7abfa57136293ffb0fb5963f0a075fd origin/main` = yes
+  - `git status --short` remained clean
+- Project_ARIS clean clone target: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean`
+- Clone result:
+  - target did not exist before this step
+  - clone created from `git@github.com:MatheusAugDEV/Project-A.R.I.S.git`
+  - remote `HEAD` resolved to `6cec74deb7a99b7eb227df84a902650ca092e00f`, matching the dirty-tree inventory head
+  - clone `HEAD=6cec74deb7a99b7eb227df84a902650ca092e00f`
+  - clone branch `main`
+  - `git status --short` clean
+  - no Bedrock deletion set (`artifacts/f21/bedrock_gate_*`) appeared in the clean clone worktree
+- Preflight blocker:
+  - `git submodule status` failed with `fatal: no submodule mapping found in .gitmodules for path 'aris-active-context'`
+  - `.gitmodules` is absent in the clean clone
+  - `git ls-files -s aris-active-context` shows a `160000` gitlink entry: `a113ad549f0db6c4cb9d8c4aead7d654eb3938da`
+  - this means the clean clone still contains an inconsistent gitlink/submodule mapping and therefore fails the preflight contract
+- Because preflight was not clean, baseline execution was not authorized:
+  - `python3 -m unittest discover -s tests` not run
+  - no Project_ARIS patch, commit, or push occurred
+  - B1/B3 repair not attempted
+- `dirty_trees_touched=false`
+- `reset_clean_stash_discard_performed=false`
+- `project_aris_patch_applied=false`
+- `project_aris_commit_created=false`
+- `project_aris_push_performed=false`
+- `runtime_executed=false`
+- `real_apply_executed=false`
+- `remediation_apply_retry_executed=false`
+- `bedrock_product_secrets_touched=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_and_preflight.json`
+- Next recommended step: `PROJECT_ARIS_CLEANROOM_CLONE_BLOCKER_TRIAGE`

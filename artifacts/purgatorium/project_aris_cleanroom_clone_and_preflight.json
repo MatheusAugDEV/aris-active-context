@@ -1,0 +1,71 @@
+{
+  "phase_id": "PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT",
+  "phase_class": "cleanroom_recovery_preflight",
+  "decision": "blocked",
+  "status": "project_aris_cleanroom_clone_and_preflight_blocked",
+  "source_recovery_decision_artifact_path": "artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json",
+  "source_recovery_decision_artifact_sha256_observed": "1f90ba82ca9469bcca4759eba5f8c6c5020f7fc60d103da8476b9f93c52b0173",
+  "active_context_base_commit": "127a2175e7abfa57136293ffb0fb5963f0a075fd",
+  "active_context_final_commit": "SELF_REFERENTIAL_COMMIT_REPORTED_EXTERNALLY",
+  "active_context_final_commit_note": "The terminal active-context commit SHA is reported after commit because the artifact cannot embed the containing final commit hash before that commit exists.",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "dirty_project_aris_path_quarantined": "/home/matheus/ARIS/Project_ARIS",
+  "dirty_active_context_path_quarantined": "/home/matheus/ARIS/Project_ARIS/aris-active-context",
+  "dirty_trees_touched": false,
+  "reset_clean_stash_discard_performed": false,
+  "clone_created_or_reused": "created",
+  "clone_remote": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+  "clone_head": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "clone_branch": "main",
+  "clone_status_clean": true,
+  "clone_submodule_status": {
+    "command": "git submodule status || true",
+    "exit_code_observed": 128,
+    "stdout": "",
+    "stderr": "fatal: no submodule mapping found in .gitmodules for path 'aris-active-context'"
+  },
+  "clone_gitmodules_status": {
+    "gitmodules_present": false,
+    "detail": ".gitmodules is absent in the clean clone while the git index still contains a 160000 gitlink entry for aris-active-context."
+  },
+  "bedrock_deletions_absent_in_clean_clone": true,
+  "baseline_test_command": "python3 -m unittest discover -s tests",
+  "baseline_test_exit_code": null,
+  "baseline_test_summary": "Not run because preflight found an inconsistent gitlink/submodule mapping in the clean clone before baseline execution was authorized.",
+  "baseline_green": false,
+  "b1_b3_repair_attempted": false,
+  "project_aris_patch_applied": false,
+  "project_aris_commit_created": false,
+  "project_aris_push_performed": false,
+  "active_context_changed": true,
+  "real_locks_preserved_false": true,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "remediation_apply_retry_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "preflight_observations": {
+    "active_context_origin_main_matches_base_commit": true,
+    "project_remote_available": true,
+    "project_remote_head_matches_dirty_inventory_head": true,
+    "clean_clone_path_is_not_quarantine_path": true,
+    "clean_clone_dirty_entries_total": 0,
+    "clean_clone_bedrock_gate_deletions_found": 0,
+    "clean_clone_gitlink_index_entry": "160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0\taris-active-context"
+  },
+  "blocked_reason": "The canonical clean clone is structurally blocked because it contains an aris-active-context gitlink without any corresponding .gitmodules mapping, which violates the preflight requirement that the clean clone must not contain an inconsistent gitlink/submodule configuration.",
+  "next_recommended_step": "PROJECT_ARIS_CLEANROOM_CLONE_BLOCKER_TRIAGE",
+  "validation_commands_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json",
+    "python3 -m json.tool artifacts/purgatorium/project_aris_cleanroom_clone_and_preflight.json",
+    "python3 scripts/validate_active_context_state.py",
+    "git diff --check",
+    "git status --short"
+  ],
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "2856b1277bc2d4d14bf8908474459bc16646002265947b1a36124b734cdcd88c"
+  }
+}
