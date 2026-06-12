@@ -1245,3 +1245,37 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json`
 - Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY`
+
+## PURG-04 B2 Active-Context Path Contract Boundary Decision Artifact-Only
+
+- Status: `purg04_b2_active_context_path_contract_boundary_decision_artifact_only_pass`
+- Decision: `pass`
+- Scope: choose a single future boundary for the active-context path/mirror contract without yet mutating schema, validator, helper scripts, or mirror files.
+- Preflight verified:
+  - `HEAD=origin/main=fed7716b09ef65fb328e1ecf5dcce97ed3d68a36`
+  - `git merge-base --is-ancestor fed7716b09ef65fb328e1ecf5dcce97ed3d68a36 origin/main` returned success
+  - source artifact hashes matched for:
+    - `active_context_no_ritual_authorization_policy_repair.json`
+    - `purg04_b1_b3_global_baseline_repair_plan_artifact_only.json`
+    - `purg04_b2_current_state_path_diagnostic_plan_artifact_only.json`
+- Diagnostic confirmations:
+  - `python3 scripts/assert_mirror_sync.py` still passes against `archive/derived_mirrors/CURRENT_STATE.md` and `archive/derived_mirrors/NEXT_ACTION.md`.
+  - `git ls-files` shows tracked mirror files only under `archive/derived_mirrors/`.
+  - repo-root `CURRENT_STATE.md`, `NEXT_ACTION.md`, `CONTEXT_INDEX.md`, and `ARIS_PHASE_LEDGER.md` remain untracked local files only.
+  - `ACTIVE_CONTEXT_SCHEMA.json` still advertises the legacy root mirror names in `artifact_routes`.
+- Selected boundary: `BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY`
+- Rationale:
+  - restoring root mirrors would normalize around untracked local files with no primary evidence of future necessity
+  - promoting `archive/derived_mirrors/*` to the future active contract would conflict with the live policy that classifies `archive/` as `historical_only`
+  - the smallest fail-closed future contract is JSON live state + validator/schema + governance ledger/artifacts, with markdown mirrors removed from the active contract
+- Boundary consequences recorded for follow-up normalization:
+  - root mirrors remain noncanonical and must not be staged
+  - archive mirrors remain historical/derived only
+  - `ACTIVE_CONTEXT_SCHEMA.json` mirror entries and `scripts/assert_mirror_sync.py` now have a documented future normalization target
+- No schema, validator, assert-mirror-sync, README, or mirror-file mutation was performed in this step.
+- `project_aris_changed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json`
+- Next recommended step: `PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY`

@@ -1,0 +1,179 @@
+{
+  "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY",
+  "phase_class": "governance_repair_artifact_only",
+  "decision": "pass",
+  "status": "purg04_b2_active_context_path_contract_boundary_decision_artifact_only_pass",
+  "source_b2_artifact_path": "artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json",
+  "source_b2_artifact_sha256_observed": "22ee6bdfd4fa24fdefeca03133aa978303b30485468a96b3cd765a98edc2833e",
+  "source_policy_artifact_sha256_observed": "5d53d3d3afd3c9df713a5b8bc028e69b56fc2062f8f6d1bb21c2d2e68d5455f3",
+  "source_b1_b3_plan_artifact_sha256_observed": "a509fa3511f3b1a381b1852dc085db22826c78bc54e5dceba320cab29858885f",
+  "source_commit_observed": "fed7716b09ef65fb328e1ecf5dcce97ed3d68a36",
+  "no_ritual_authorization_policy_observed": {
+    "policy_id": "NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+    "boot_rule_present": true,
+    "ledger_rule_present": true,
+    "requires_new_ritual_authorization": false
+  },
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "boundary_options_evaluated": [
+    {
+      "boundary_id": "BOUNDARY_A_ARCHIVE_DERIVED_MIRRORS_ONLY",
+      "evaluation": "rejected",
+      "reason": "Tracked files exist under archive/derived_mirrors, but ACTIVE_CONTEXT_STATE.json classifies archive/ as historical_only and explicitly non-active routing authority."
+    },
+    {
+      "boundary_id": "BOUNDARY_B_TRACKED_ROOT_MIRRORS_RESTORED",
+      "evaluation": "rejected",
+      "reason": "No primary evidence shows tracked root mirrors are required for the future active contract; current root files are only pre-existing untracked workspace files."
+    },
+    {
+      "boundary_id": "BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY",
+      "evaluation": "selected",
+      "reason": "Preserves JSON-first canonicality, avoids promoting archive/ to active authority, and refuses to resurrect root mirrors without proof."
+    },
+    {
+      "boundary_id": "BOUNDARY_BLOCKED_INSUFFICIENT_EVIDENCE",
+      "evaluation": "rejected",
+      "reason": "There is enough evidence to reject both mirror-based active contracts and select the narrower JSON-plus-ledger-plus-artifacts boundary."
+    }
+  ],
+  "selected_boundary": "BOUNDARY_C_NO_ACTIVE_MARKDOWN_MIRRORS_JSON_ONLY",
+  "selected_boundary_rationale": [
+    "ACTIVE_CONTEXT_STATE.json already declares markdown files are derived mirrors or history, not authoritative live state.",
+    "archive/derived_mirrors/* are tracked, but archive/ is classified in the live state as historical_only and therefore cannot become the future active mirror contract without contradicting current authority.",
+    "Root CURRENT_STATE.md, NEXT_ACTION.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md are not tracked in HEAD and therefore cannot justify a future canonical contract.",
+    "The smallest fail-closed boundary is to keep the active contract on JSON + validator/schema + ledger/artifacts, while retiring markdown mirrors from the active path contract in a later normalization step."
+  ],
+  "rejected_boundaries": [
+    {
+      "boundary_id": "BOUNDARY_A_ARCHIVE_DERIVED_MIRRORS_ONLY",
+      "rejection_reason": "Would mix a historical-only archive location with an active contract role."
+    },
+    {
+      "boundary_id": "BOUNDARY_B_TRACKED_ROOT_MIRRORS_RESTORED",
+      "rejection_reason": "Would normalize around untracked local files and legacy schema strings rather than current tracked evidence."
+    },
+    {
+      "boundary_id": "BOUNDARY_BLOCKED_INSUFFICIENT_EVIDENCE",
+      "rejection_reason": "Evidence is sufficient to choose a conservative future boundary without operator tie-break."
+    }
+  ],
+  "canonical_path_contract_decision": {
+    "active_canonical_paths": [
+      "ACTIVE_CONTEXT_STATE.json",
+      "ACTIVE_CONTEXT_SCHEMA.json",
+      "ARIS_BOOT.md",
+      "DECISION_LOCKS.md",
+      "ROADMAP_CANONICAL.md",
+      "scripts/validate_active_context_state.py",
+      "artifacts/"
+    ],
+    "canonical_rule": "Future active contract should rely on JSON live state plus validator/schema and governance ledger/artifacts, not on markdown mirrors."
+  },
+  "derived_mirror_contract_decision": {
+    "active_contract": false,
+    "future_rule": "Markdown mirrors may remain only as derived or historical reference material and must not be required by the active path contract.",
+    "affected_paths": [
+      "CURRENT_STATE.md",
+      "NEXT_ACTION.md",
+      "CONTEXT_INDEX.md",
+      "ARIS_PHASE_LEDGER.md",
+      "archive/derived_mirrors/CURRENT_STATE.md",
+      "archive/derived_mirrors/NEXT_ACTION.md",
+      "archive/derived_mirrors/CONTEXT_INDEX.md",
+      "archive/derived_mirrors/ARIS_PHASE_LEDGER.md"
+    ]
+  },
+  "root_mirror_contract_decision": {
+    "active_contract": false,
+    "future_rule": "Repo-root mirror files are prohibited as future active contract inputs unless a later operator-authorized repair produces tracked evidence for them.",
+    "observed_root_untracked_paths": [
+      "CURRENT_STATE.md",
+      "NEXT_ACTION.md",
+      "CONTEXT_INDEX.md",
+      "ARIS_PHASE_LEDGER.md"
+    ]
+  },
+  "archive_mirror_contract_decision": {
+    "active_contract": false,
+    "future_rule": "archive/derived_mirrors/* stay historical or derived evidence only; they are not future live-state contract inputs.",
+    "tracked_archive_paths_observed": [
+      "archive/derived_mirrors/CURRENT_STATE.md",
+      "archive/derived_mirrors/NEXT_ACTION.md",
+      "archive/derived_mirrors/CONTEXT_INDEX.md",
+      "archive/derived_mirrors/ARIS_PHASE_LEDGER.md"
+    ]
+  },
+  "schema_contract_implications": [
+    "The next normalization step should remove or reclassify artifact_routes mirror entries that still point to CURRENT_STATE.md, NEXT_ACTION.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md as if they were active contract paths.",
+    "No schema mutation is performed in this boundary-decision step."
+  ],
+  "validator_contract_implications": [
+    "scripts/validate_active_context_state.py remains the active validator entrypoint and already anchors on ACTIVE_CONTEXT_STATE.json.",
+    "Any later normalization should ensure validator expectations do not depend on markdown mirror paths as active-contract requirements unless explicitly reintroduced with tracked evidence.",
+    "No validator mutation is performed in this boundary-decision step."
+  ],
+  "assert_mirror_sync_implications": [
+    "scripts/assert_mirror_sync.py currently checks archive/derived_mirrors/CURRENT_STATE.md and archive/derived_mirrors/NEXT_ACTION.md, which is incompatible with a future no-active-markdown-mirrors contract.",
+    "The next normalization step should either retire assert_mirror_sync.py from the active contract or narrow it to a historical-only drift check that is not required for active canonical routing.",
+    "No assert_mirror_sync mutation is performed in this step."
+  ],
+  "untracked_root_file_policy": {
+    "policy": "ignore_as_noncanonical_and_do_not_stage",
+    "reason": "These files are pre-existing local workspace artifacts outside HEAD and must not influence future active contract authority."
+  },
+  "stale_path_risk_resolution_strategy": [
+    "Stop treating any markdown mirror path as an active-contract prerequisite.",
+    "Normalize schema and helper-script path contracts in a follow-up artifact-only plan so that live authority remains centered on JSON plus validator/schema and governance ledger/artifacts.",
+    "Continue to preserve untracked root mirror files out of scope until a later authorized normalization decides whether to delete, archive, or ignore them operationally."
+  ],
+  "implementation_deferred_to_next_step": true,
+  "out_of_scope": [
+    "Project_ARIS mutation",
+    "ACTIVE_CONTEXT_STATE.json mutation",
+    "ACTIVE_CONTEXT_SCHEMA.json mutation",
+    "scripts/validate_active_context_state.py mutation",
+    "scripts/assert_mirror_sync.py mutation",
+    "root mirror recreation",
+    "root mirror deletion",
+    "README.md mutation",
+    "archive/superseded/* mutation",
+    "finding close",
+    "remediation apply",
+    "runtime execution",
+    "real_apply",
+    "Bedrock or product work"
+  ],
+  "validation_commands_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_current_state_path_diagnostic_plan_artifact_only.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_b2_active_context_path_contract_boundary_decision_artifact_only.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'",
+    "git diff --check",
+    "git status --short"
+  ],
+  "diagnostics_run": [
+    "python3 scripts/assert_mirror_sync.py",
+    "git ls-files | grep -E '(^CURRENT_STATE.md$|^NEXT_ACTION.md$|^CONTEXT_INDEX.md$|^ARIS_PHASE_LEDGER.md$|^archive/derived_mirrors/)'",
+    "git status --short | grep -E 'CURRENT_STATE.md|NEXT_ACTION.md|CONTEXT_INDEX.md|ARIS_PHASE_LEDGER.md' || true",
+    "git grep -n 'current_state_mirror|next_action_mirror|phase_ledger_history|archive/derived_mirrors|CURRENT_STATE.md|NEXT_ACTION.md' -- ACTIVE_CONTEXT_SCHEMA.json scripts tests README.md DECISION_LOCKS.md ARIS_BOOT.md ROADMAP_CANONICAL.md || true"
+  ],
+  "next_recommended_step": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY",
+  "no_real_execution_attestation": {
+    "project_aris_mutated": false,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "external_network_beyond_github_governance": false,
+    "finding_closed": false,
+    "remediation_proven": false
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "5c996aec56530de775ec1c28aba8e1f75e09321a8dd003b144ed8e6d0abc2cfa"
+  }
+}
