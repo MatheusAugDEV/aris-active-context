@@ -1638,3 +1638,50 @@ The following track references are historical_residual_route_noise. They do NOT 
   - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_readiness_packet.json`
 - Next recommended step: `PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE`
+
+## PURG04 B1/B3 Cleanroom Baseline Repair Blocker Triage
+
+- Status: `purg04_b1_b3_cleanroom_baseline_repair_blocker_triage_blocked`
+- Decision: `blocked`
+- Source readiness packet: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_readiness_packet.json`
+- Source readiness packet sha256 observed: `a808409e47502b08d3fbb5b3945b231ea16e763ed8e7289957e442cbdd5ec2ff`
+- Project_ARIS clean clone head observed: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Clean-clone blocker remains active:
+  - `git status --short` still shows the clean clone as dirty before and after this triage
+  - observed status counts: `167` lines total, `66` modified, `100` deleted, `1` untracked
+  - untracked residue remains `?? aris-active-context/`
+- Residue confirmed:
+  - `aris-active-context/ARIS_PHASE_LEDGER.md`
+  - `aris-active-context/BEDROCK_GATE.md`
+  - `aris-active-context/CONTEXT_INDEX.md`
+  - `aris-active-context/CURRENT_STATE.md`
+  - `aris-active-context/DECISION_LOCKS.md`
+  - `aris-active-context/LAB_STATUS.md`
+  - `aris-active-context/NEXT_ACTION.md`
+  - `aris-active-context/PROJECT_CONTEXT_ARIS.md`
+  - `aris-active-context/README.md`
+- Probable residue sources:
+  - `tests/test_phase_completion_materialization_guard.py` still writes a nested local `aris-active-context/*` fixture tree and is the strongest direct residue-generator candidate
+  - `tests/test_aris_context_active_track_phase_reconciliation_gate.py` still reads `aris-active-context/archive/ARIS_ROADMAP_R0_F120.md`
+  - multiple `tests/test_aris_context_p10_*` through `p29*` suites still enumerate and read nested `aris-active-context/*` paths
+  - `scripts/run_strategic_reset_macrostructure_lock_gate.py` still hard-codes `aris-active-context/DECISION_LOCKS.md` and `aris-active-context/NEXT_ACTION.md`
+- Baseline remains red and non-authoritative for PASS:
+  - preserved log: `/tmp/purg04_b1_b3_cleanroom_baseline_latest.log`
+  - the shell pipeline exit hazard remains confirmed (`tee` path can report `0` while the unittest terminal summary still implies failure)
+  - representative red signals remain `ModuleNotFoundError: No module named 'aris'`, `ModuleNotFoundError: No module named 'dotenv'`, repeated `FileNotFoundError` on `aris-active-context/CURRENT_STATE.md`, `phase_completion_materialization_guard_blocked`, `product_loop_l1_15_product_loop_closure_blocked`, and `aris-active-context/DECISION_LOCKS.md: missing 'Productatization Gate'`
+- Scope controls preserved:
+  - no Project_ARIS repair was applied
+  - `project_aris_changed=false`
+  - `project_aris_patch_applied=false`
+  - `remediation_apply_retry_executed=false`
+  - `runtime_executed=false`
+  - `real_apply_executed=false`
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - all real locks remain preserved as false
+- Canonical drift is reported but not resolved here:
+  - `ACTIVE_CONTEXT_STATE.json` and `README.md` still preserve the live route at `PURG-01`
+  - later PURG04 blocker artifacts now live only in artifacts plus `DECISION_LOCKS.md`
+  - `ARIS_BOOT.md` still forces JSON authority over markdown, so no live-route mutation is attempted
+- Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_blocker_triage.json`
+- Next recommended step: `PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET`

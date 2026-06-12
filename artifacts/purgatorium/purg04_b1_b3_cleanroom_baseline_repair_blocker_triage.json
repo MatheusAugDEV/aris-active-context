@@ -1,0 +1,260 @@
+{
+  "phase_id": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE",
+  "phase_class": "cleanroom_baseline_repair_blocker_triage_artifact_only",
+  "decision": "blocked",
+  "status": "purg04_b1_b3_cleanroom_baseline_repair_blocker_triage_blocked",
+  "source_readiness_packet_path": "artifacts/purgatorium/purg04_b1_b3_cleanroom_baseline_repair_readiness_packet.json",
+  "source_readiness_packet_sha256_observed": "a808409e47502b08d3fbb5b3945b231ea16e763ed8e7289957e442cbdd5ec2ff",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_head_observed": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "active_context_head_before": "1eaa6bdedf8a15a8ebb740d2b4f20bc4dc9d1947",
+  "log_path_checked": "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log",
+  "log_found": true,
+  "clean_clone_status_before_triage": {
+    "observed_state": "dirty",
+    "status_lines_total": 167,
+    "modified": 66,
+    "deleted": 100,
+    "untracked": 1,
+    "residue_present": true
+  },
+  "clean_clone_status_after_triage": {
+    "observed_state": "dirty",
+    "status_lines_total": 167,
+    "modified": 66,
+    "deleted": 100,
+    "untracked": 1,
+    "residue_present": true
+  },
+  "residue_confirmed": true,
+  "residue_paths": [
+    "aris-active-context/",
+    "aris-active-context/ARIS_PHASE_LEDGER.md",
+    "aris-active-context/BEDROCK_GATE.md",
+    "aris-active-context/CONTEXT_INDEX.md",
+    "aris-active-context/CURRENT_STATE.md",
+    "aris-active-context/DECISION_LOCKS.md",
+    "aris-active-context/LAB_STATUS.md",
+    "aris-active-context/NEXT_ACTION.md",
+    "aris-active-context/PROJECT_CONTEXT_ARIS.md",
+    "aris-active-context/README.md"
+  ],
+  "probable_residue_sources": [
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py",
+      "classification": "strongest direct residue generator",
+      "primary_evidence": "The fixture creates a nested .git/HEAD under repo_root / aris-active-context and writes CURRENT_STATE.md, NEXT_ACTION.md, DECISION_LOCKS.md, CONTEXT_INDEX.md, and ARIS_PHASE_LEDGER.md into that tree."
+    },
+    {
+      "path": "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+      "classification": "strong pointer-residual reader",
+      "primary_evidence": "The suite still copies fallback sources from aris-active-context/archive/ARIS_ROADMAP_R0_F120.md and therefore preserves the pre-pointer local layout assumption."
+    },
+    {
+      "path": "tests/test_aris_context_p10_context_compression_candidate_validation_harness.py and related p10-p29 context suites",
+      "classification": "high-confidence nested active-context materializers",
+      "primary_evidence": "These suites enumerate and read multiple aris-active-context/* files directly, matching the exact residue filenames observed in the dirty clean clone."
+    },
+    {
+      "path": "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+      "classification": "pointer-residual consumer",
+      "primary_evidence": "The gate still hard-codes aris-active-context/DECISION_LOCKS.md and aris-active-context/NEXT_ACTION.md, which explains the missing DECISION_LOCKS signals but not the residue creation itself."
+    }
+  ],
+  "grep_evidence": [
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py:43",
+      "signal": "_make_minimal_git_head(repo_root / \"aris-active-context\", active_commit)"
+    },
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py:135",
+      "signal": "_write_text(repo_root / \"aris-active-context\" / \"CURRENT_STATE.md\", current_state)"
+    },
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py:136",
+      "signal": "_write_text(repo_root / \"aris-active-context\" / \"NEXT_ACTION.md\", next_action)"
+    },
+    {
+      "path": "tests/test_phase_completion_materialization_guard.py:137",
+      "signal": "_write_text(repo_root / \"aris-active-context\" / \"DECISION_LOCKS.md\", decision_locks)"
+    },
+    {
+      "path": "tests/test_aris_context_active_track_phase_reconciliation_gate.py:38",
+      "signal": "source = src_root / \"aris-active-context/archive/ARIS_ROADMAP_R0_F120.md\""
+    },
+    {
+      "path": "tests/test_aris_context_p10_context_compression_candidate_validation_harness.py:31",
+      "signal": "\"aris-active-context/CURRENT_STATE.md\""
+    },
+    {
+      "path": "tests/test_aris_context_p10_context_compression_candidate_validation_harness.py:33",
+      "signal": "\"aris-active-context/DECISION_LOCKS.md\""
+    },
+    {
+      "path": "scripts/run_strategic_reset_macrostructure_lock_gate.py:14",
+      "signal": "\"aris-active-context/DECISION_LOCKS.md\""
+    },
+    {
+      "path": "scripts/run_strategic_reset_macrostructure_lock_gate.py:41",
+      "signal": "NEXT_ACTION_PATH = \"aris-active-context/NEXT_ACTION.md\""
+    },
+    {
+      "path": "tests/test_acb_cap_01_backend.py:12",
+      "signal": "import aris"
+    },
+    {
+      "path": "src/aris/config/settings.py:7",
+      "signal": "from dotenv import load_dotenv"
+    }
+  ],
+  "traceback_evidence": [
+    {
+      "log_line": 6307,
+      "signal": "ModuleNotFoundError: No module named 'aris'"
+    },
+    {
+      "log_line": 6381,
+      "signal": "ModuleNotFoundError: No module named 'dotenv'"
+    },
+    {
+      "log_line": 6469,
+      "signal": "FileNotFoundError: [Errno 2] No such file or directory: '/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean/aris-active-context/CURRENT_STATE.md'"
+    },
+    {
+      "log_line": 41877,
+      "signal": "AssertionError: 'phase_completion_materialization_guard_blocked' != 'phase_completion_materialization_guard_pass'"
+    },
+    {
+      "log_line": 41891,
+      "signal": "AssertionError: 'product_loop_l1_15_product_loop_closure_blocked' != 'product_loop_l1_15_product_loop_closure_pass'"
+    },
+    {
+      "log_line": 41909,
+      "signal": "\"aris-active-context/DECISION_LOCKS.md: missing 'Productatization Gate'\""
+    }
+  ],
+  "b1_bounded_items": [
+    {
+      "family": "product_loop_l1_1 through product_loop_l1_13",
+      "count_observed_in_readiness_packet": 13,
+      "classification_reason": "These are pre-existing global baseline failures outside the external pointer repair diff and remain red before any new bounded repair is attempted."
+    }
+  ],
+  "b3_bounded_items": [
+    {
+      "suite": "tests/test_phase_completion_materialization_guard.py",
+      "classification_reason": "The suite still treats nested active-context materialization as a passing contract and therefore now blocks against the preserved external pointer reality."
+    },
+    {
+      "suite": "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+      "classification_reason": "The preserved macrostructure and decision-lock reality produce product_loop_l1_15_product_loop_closure_blocked rather than the legacy pass expectation."
+    },
+    {
+      "suite": "IF08/W0.5 lineages",
+      "classification_reason": "Known IF08/W0.5-focused expectations remain stale versus the preserved PURG route and continue to belong to targeted expectation drift instead of baseline cleanliness."
+    }
+  ],
+  "import_environment_items": [
+    {
+      "signal": "No module named 'aris'",
+      "count_observed": 4,
+      "primary_sources": [
+        "tests/test_acb_cap_01_backend.py:12",
+        "tests/test_acb_cap_02_mcp_runtime_sandbox.py",
+        "tests/test_acb_cap_03_runtime_public_api.py",
+        "tests/test_acb_cap_04_product_pilot_boundary.py"
+      ],
+      "classification_reason": "Full discovery imports top-level aris without a stable package path guarantee for every suite under the current cleanroom environment."
+    },
+    {
+      "signal": "No module named 'dotenv'",
+      "count_observed": 49,
+      "primary_sources": [
+        "src/aris/config/settings.py:7",
+        "tests/test_actions_responders_hardening.py",
+        "tests/test_actions_service.py",
+        "tests/test_adaptive_response.py"
+      ],
+      "classification_reason": "The baseline environment does not provide python-dotenv, and this phase forbids installation or dependency mutation."
+    }
+  ],
+  "pointer_repair_residual_items": [
+    {
+      "signal": "Nested aris-active-context path assumptions remain across tests, scripts, and context families.",
+      "count_observed_in_readiness_packet": 442,
+      "primary_sources": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py:38",
+        "tests/test_aris_context_p10_context_compression_candidate_validation_harness.py:31",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:14"
+      ]
+    },
+    {
+      "signal": "Repeated CURRENT_STATE.md path failures in the preserved baseline log.",
+      "count_observed": 43,
+      "primary_sources": [
+        "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log:6469",
+        "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log:21450",
+        "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log:23650"
+      ]
+    },
+    {
+      "signal": "Repeated DECISION_LOCKS.md missing text failures from the strategic reset lock gate.",
+      "count_observed": 115,
+      "primary_sources": [
+        "/tmp/purg04_b1_b3_cleanroom_baseline_latest.log:41909",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:14",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py:19"
+      ]
+    }
+  ],
+  "out_of_scope_items": [
+    {
+      "family": "Historical aris_context p0-p29 artifact-reference suites outside the bounded B1/B3 target",
+      "classification_reason": "They still encode the old nested active-context layout, but this phase only classifies them and does not open a broad context refactor."
+    },
+    {
+      "family": "ARIS-LAB legacy governance families",
+      "classification_reason": "These produce additional red noise unrelated to the bounded cleanroom blocker and are not candidates for this triage to fix."
+    },
+    {
+      "family": "Other baseline-red historical lineages already present before this phase",
+      "classification_reason": "The blocker triage is not authorized to widen scope just because full discovery remains globally red."
+    }
+  ],
+  "unknown_items": [],
+  "pipeline_exit_code_hazard_confirmed": true,
+  "package_install_required": false,
+  "dependency_change_required": false,
+  "project_aris_changed": false,
+  "project_aris_patch_applied": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "triage_completed": true,
+  "repair_readiness": false,
+  "real_locks_preserved_false": true,
+  "canonical_drift_observed": {
+    "present": true,
+    "items": [
+      "ACTIVE_CONTEXT_STATE.json and README.md still preserve the live route at PURG-01 with next_recommended_step=execute_purg01_controlled_triage_artifact_only.",
+      "DECISION_LOCKS.md and the PURG04 cleanroom artifacts already document later artifact-only blocker work and therefore run ahead of the live JSON route.",
+      "ARIS_BOOT.md states that markdown drift never overrides the JSON, so this phase records the mismatch but does not attempt to mutate ACTIVE_CONTEXT_STATE.json."
+    ],
+    "resolution_policy": "report_only_no_live_route_mutation"
+  },
+  "baseline_failure_classification_counts": {
+    "B1_PRE_EXISTING_GLOBAL_BASELINE_FAILURE": 13,
+    "B3_FOCUSED_TEST_EXPECTATION_DRIFT": 6,
+    "IMPORT_ENVIRONMENT_DRIFT": 53,
+    "POINTER_REPAIR_RESIDUAL": 442,
+    "OUT_OF_SCOPE_LEGACY": 1264,
+    "UNKNOWN_REQUIRES_TRIAGE": 0
+  },
+  "next_recommended_step": "PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "da0e3d3e0b03acb05dc0270b5fdc2850418e13f71e563231fe8a7afb3593448a"
+  }
+}
