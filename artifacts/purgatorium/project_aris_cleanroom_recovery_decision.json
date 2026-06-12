@@ -1,0 +1,99 @@
+{
+  "phase_id": "PROJECT_ARIS_CLEANROOM_RECOVERY_DECISION",
+  "phase_class": "governance_recovery_decision_artifact_only",
+  "decision": "pass",
+  "status": "project_aris_cleanroom_recovery_decision_pass",
+  "source_blocker_artifact": "artifacts/purgatorium/purg04_project_aris_worktree_contamination_blocker.json",
+  "source_blocker_artifact_sha256_observed": "a16709789ca273ddf19b32b3f43deefec62ae870e743bc66d3dab3877bbcd155",
+  "active_context_base_commit": "f69426ed931bee5adadadc6061ef26551ec02a11",
+  "dirty_project_aris_head": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "dirty_project_aris_dirty_entries_total": 4250,
+  "dirty_project_aris_modified_tracked": 409,
+  "dirty_project_aris_deleted_tracked": 143,
+  "dirty_project_aris_untracked": 3698,
+  "dirty_project_aris_bedrock_deletions_observed": true,
+  "dirty_project_aris_gitlink_submodule_issue_observed": true,
+  "dirty_active_context_dirty_tracked": 4,
+  "dirty_active_context_untracked_root_mirrors": 5,
+  "recovery_options_evaluated": [
+    {
+      "option_id": "CLEANROOM_A_FRESH_PROJECT_ARIS_CLONE",
+      "evaluation": "selected",
+      "reason": "The blocker already proves the dirty tree is unsafe for scoped repair, while the inventories provide enough evidence to quarantine it and continue future repair work in a separate clean workspace."
+    },
+    {
+      "option_id": "CLEANROOM_B_FORENSIC_SALVAGE_FIRST",
+      "evaluation": "rejected",
+      "reason": "No primary evidence in the forensic inventories shows indispensable unpublished WIP that must be salvaged before resuming governance repair; investigating 4250 dirty entries now would slow recovery without reducing current contamination risk."
+    },
+    {
+      "option_id": "CLEANROOM_C_BACKUP_THEN_RESET_DIRTY_TREE",
+      "evaluation": "rejected",
+      "reason": "This path is inherently destructive after backup and is explicitly out of bounds without a future operator authorization dedicated to dirty-tree recovery."
+    },
+    {
+      "option_id": "CLEANROOM_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "evaluation": "rejected",
+      "reason": "Evidence is sufficient to choose a conservative cleanroom path now; blocking again would only delay recovery while preserving the same quarantine constraints."
+    }
+  ],
+  "selected_recovery_option": "CLEANROOM_A_FRESH_PROJECT_ARIS_CLONE",
+  "selected_recovery_rationale": [
+    "The blocker artifact already established that B1/B3 repair cannot proceed safely inside the contaminated Project_ARIS tree.",
+    "The forensic inventories capture enough state to preserve evidence without touching either dirty repository.",
+    "A fresh cleanroom clone creates the narrowest future repair surface and avoids mixing new remediation work with 4250 unrelated dirty entries.",
+    "There is no strong evidence in the available inventories that the current dirty tree contains indispensable WIP that must be forensically salvaged before a clean continuation can begin.",
+    "This option preserves the possibility of a later forensic salvage or backup/reset decision if the operator explicitly requests it, without making that destructive or slow path a prerequisite."
+  ],
+  "rejected_recovery_options": [
+    {
+      "option_id": "CLEANROOM_B_FORENSIC_SALVAGE_FIRST",
+      "rejection_reason": "Too slow for the present objective and unsupported by evidence of must-save WIP."
+    },
+    {
+      "option_id": "CLEANROOM_C_BACKUP_THEN_RESET_DIRTY_TREE",
+      "rejection_reason": "Destructive path reserved for a future explicitly authorized operator decision."
+    },
+    {
+      "option_id": "CLEANROOM_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "rejection_reason": "Fail-closed evidence is already strong enough to choose a non-destructive recovery path."
+    }
+  ],
+  "selected_recovery_plan": {
+    "execution_phase_required": "PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT",
+    "operator_constraints_preserved": [
+      "Do not touch the quarantined dirty trees.",
+      "Do not reset, clean, stash, discard, or selectively salvage files from the dirty tree during cleanroom recovery.",
+      "Do not resume B1/B3 repair until the clean Project_ARIS workspace passes preflight."
+    ],
+    "planned_steps": [
+      "Verify the future clone target is outside the quarantined Project_ARIS tree.",
+      "Verify the source remote and intended revision before cloning.",
+      "Create or reuse a clean Project_ARIS clone dedicated to recovery work.",
+      "Run preflight on the clean clone to confirm clean git status, expected repository mapping, and baseline readiness before any future B1/B3 work."
+    ]
+  },
+  "dirty_trees_touched": false,
+  "reset_clean_stash_discard_performed": false,
+  "project_aris_changed": false,
+  "active_context_changed": true,
+  "real_locks_preserved_false": true,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "next_recommended_step": "PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT",
+  "validation_commands_run": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool artifacts/purgatorium/purg04_project_aris_worktree_contamination_blocker.json",
+    "python3 -m json.tool artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json",
+    "python3 scripts/validate_active_context_state.py",
+    "git diff --check",
+    "git status --short"
+  ],
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "36e29e796ab47d200ec92b9efe0c81eb9b349bff8d276a288037817d12a569dd"
+  }
+}

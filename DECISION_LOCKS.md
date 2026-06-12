@@ -1367,3 +1367,44 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Forensic inventories preserved at `/tmp/aris_forensic_inventory_20260612/project_aris_inventory.txt` and `/tmp/aris_forensic_inventory_20260612/active_context_inventory.txt`.
 - Canonical artifact: `artifacts/purgatorium/purg04_project_aris_worktree_contamination_blocker.json`
 - Next recommended step: `PROJECT_ARIS_CLEANROOM_RECOVERY_DECISION`
+
+## Project_ARIS Cleanroom Recovery Decision
+
+- Status: `project_aris_cleanroom_recovery_decision_pass`
+- Decision: `pass`
+- Source blocker artifact: `artifacts/purgatorium/purg04_project_aris_worktree_contamination_blocker.json`
+- Source blocker artifact sha256 observed: `a16709789ca273ddf19b32b3f43deefec62ae870e743bc66d3dab3877bbcd155`
+- Active-context base commit: `f69426ed931bee5adadadc6061ef26551ec02a11`
+- Dirty `Project_ARIS` evidence preserved from blocker:
+  - `HEAD=6cec74deb7a99b7eb227df84a902650ca092e00f`
+  - 4250 total dirty entries: 409 modified tracked, 143 deleted tracked, 3698 untracked
+  - `dirty_project_aris_bedrock_deletions_observed=true`
+  - `dirty_project_aris_gitlink_submodule_issue_observed=true`
+- Dirty `aris-active-context` evidence preserved from blocker:
+  - 4 dirty tracked files
+  - 5 untracked root mirror files
+- Recovery options evaluated:
+  - `CLEANROOM_A_FRESH_PROJECT_ARIS_CLONE` selected
+  - `CLEANROOM_B_FORENSIC_SALVAGE_FIRST` rejected because no primary evidence shows indispensable WIP that must be salvaged before recovery can continue
+  - `CLEANROOM_C_BACKUP_THEN_RESET_DIRTY_TREE` rejected because it is destructive and requires future explicit operator authorization
+  - `CLEANROOM_BLOCKED_NEEDS_OPERATOR_DECISION` rejected because the current evidence is sufficient to choose a conservative non-destructive path
+- Selected recovery rationale:
+  - keep the dirty tree quarantined and untouched
+  - continue future B1/B3 repair work only from a fresh clean Project_ARIS clone outside the contaminated workspace
+  - preserve the option of later forensic salvage or backup/reset as a separate explicitly authorized step if new evidence appears
+- Planned next-step contract: `PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT`
+  - verify clean clone target and remote/revision first
+  - create or reuse a dedicated clean clone outside quarantine
+  - preflight the clean clone before any future B1/B3 repair resumes
+- `dirty_trees_touched=false`
+- `reset_clean_stash_discard_performed=false`
+- `project_aris_changed=false`
+- `active_context_changed=true`
+- `runtime_executed=false`
+- `real_apply_executed=false`
+- `bedrock_product_secrets_touched=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_recovery_decision.json`
+- Next recommended step: `PROJECT_ARIS_CLEANROOM_CLONE_AND_PREFLIGHT`
