@@ -1100,3 +1100,24 @@ The following track references are historical_residual_route_noise. They do NOT 
 - `purgatorium_can_close_finding=false`
 - Canonical artifact: `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json`
 - Next recommended step: `PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY`
+
+## PURG-04 Active-Context Validator Blocker Triage Artifact-Only
+
+- Status: `purg04_active_context_validator_blocker_triage_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only triage of blocker `B5` for the local `aris-active-context` validator failure, without repairing the validator, changing Project_ARIS, or authorizing any retry of remediation apply.
+- Source resolution plan verified: `artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json`
+- `python3 scripts/validate_active_context_state.py` reproduces the local failure with the terminal excerpt `project post-sync decision must be pass`.
+- Probable root cause classification: `stale_validator_expectation`
+- Evidence shows the validator still hard-codes a historical expectation that `Project_ARIS/artifacts/infernus/if08_w05_post_sync_review_decision_2026_06_07.json` must have `decision=pass`, but that tracked artifact currently exists and records `decision=blocked`.
+- This makes the validator fail on an IF08 historical artifact expectation before it can validate the current PURG lineage recorded in `ACTIVE_CONTEXT_STATE.json`, `DECISION_LOCKS.md`, and the PURG-04 artifacts.
+- Missing artifact/pass lineage was rejected as the primary cause because the referenced Project_ARIS artifact exists on disk.
+- Dirty workspace interference was rejected as the primary cause because the failure reproduces from a deterministic validator assertion, even though `README.md` remains locally dirty and outside this commit scope.
+- Secondary contract drift was observed: `ACTIVE_CONTEXT_STATE.json` publishes `active_context_version=3.0` while `ACTIVE_CONTEXT_SCHEMA.json` still enumerates `2.0/2.1`, and the schema requires mirror route fields that the current state no longer publishes.
+- `can_resolve_with_active_context_only=true`
+- `requires_project_aris_change=false`
+- `requires_schema_change=false` for this triage conclusion itself
+- `requires_operator_authorization_for_fix=true`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_blocker_triage_artifact_only.json`
+- Next recommended step: `REQUEST_SEPARATE_AUTHORIZATION_FOR_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR`

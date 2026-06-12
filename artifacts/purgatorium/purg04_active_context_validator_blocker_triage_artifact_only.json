@@ -1,0 +1,58 @@
+{
+  "decision": "pass",
+  "status": "purg04_active_context_validator_blocker_triage_artifact_only_pass",
+  "scope": "Artifact-only triage of blocker B5 for the local active-context validator failure observed during PURG-04 blocker resolution planning.",
+  "source_resolution_plan": "artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json",
+  "blocker_id": "B5",
+  "validator_command": "python3 scripts/validate_active_context_state.py",
+  "validator_result": "fail",
+  "validator_failure_excerpt": "project post-sync decision must be pass",
+  "root_cause_classification": "stale_validator_expectation",
+  "evidence_files_checked": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "ARIS_BOOT.md",
+    "DECISION_LOCKS.md",
+    "README.md",
+    "scripts/validate_active_context_state.py",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json",
+    "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+    "artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json",
+    "../artifacts/infernus/if08_w05_post_sync_review_decision_2026_06_07.json"
+  ],
+  "validator_failure_evidence": [
+    "scripts/validate_active_context_state.py:369 resolves IF08_W05_POST_SYNC_DECISION_PATH to Project_ARIS artifacts/infernus/if08_w05_post_sync_review_decision_2026_06_07.json.",
+    "scripts/validate_active_context_state.py:4600 requires decision.get(\"decision\") == \"pass\" for that IF08 W0.5 post-sync artifact.",
+    "Project_ARIS/artifacts/infernus/if08_w05_post_sync_review_decision_2026_06_07.json exists and currently records decision=blocked, status=if08_w05_post_sync_review_blocked, and next_recommended_step=repair_if08_w05_post_sync_review_blockers.",
+    "The validator therefore fails on a historical Project_ARIS artifact expectation before evaluating the current PURG-01/PURG-04 lineage that ACTIVE_CONTEXT_STATE.json and DECISION_LOCKS.md describe."
+  ],
+  "eliminated_primary_causes": [
+    "missing_pass_lineage_artifact: rejected because the referenced IF08 W0.5 decision artifact exists on disk; the failure is about its expected value, not absence.",
+    "dirty_workspace_interference: rejected as primary cause because the validator failure reproduces deterministically from a hard-coded assertion against a tracked Project_ARIS artifact, independent of the local README.md dirty diff.",
+    "state_markdown_artifact_mismatch: rejected as primary cause because the first failing assertion is against the Project_ARIS IF08 W0.5 decision artifact rather than a PURG-01 mirror mismatch."
+  ],
+  "secondary_observations": [
+    "ACTIVE_CONTEXT_STATE.json currently publishes active_context_version=3.0 while ACTIVE_CONTEXT_SCHEMA.json still enumerates active_context_version values 2.0 and 2.1 only.",
+    "ACTIVE_CONTEXT_STATE.json artifact_routes currently expose boot_rules/state_file/schema_file/validator_script/readme/history_archive, while ACTIVE_CONTEXT_SCHEMA.json requires current_state_mirror/next_action_mirror/decision_locks_mirror/context_index_mirror/phase_ledger_history/anti_corruption_contract constants.",
+    "Those schema/state differences indicate latent contract drift, but they are not the first reproduced validator blocker in this run."
+  ],
+  "active_context_head_observed": "0a9d1d106a882e0855483eac42ce20e962c8fbde",
+  "active_context_workspace_dirty": true,
+  "active_context_workspace_dirty_files_observed": [
+    "M README.md",
+    "M BEDROCK_GATE.md",
+    "M archive/superseded/BOOT_PROFILE.md",
+    "M archive/superseded/READ_PROFILE.md",
+    "?? ARIS_PHASE_LEDGER.md",
+    "?? CONTEXT_INDEX.md",
+    "?? CURRENT_STATE.md",
+    "?? NEXT_ACTION.md",
+    "?? PROJECT_CONTEXT_ARIS.md"
+  ],
+  "can_resolve_with_active_context_only": true,
+  "requires_project_aris_change": false,
+  "requires_schema_change": false,
+  "requires_operator_authorization_for_fix": true,
+  "locks_preserved_false": true,
+  "next_recommended_step": "REQUEST_SEPARATE_AUTHORIZATION_FOR_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR"
+}
