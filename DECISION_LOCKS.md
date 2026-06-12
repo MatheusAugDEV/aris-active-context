@@ -1335,3 +1335,35 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json`
 - Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR`
+
+## PURG-04 Project_ARIS Worktree Contamination Blocker
+
+- Status: `purg04_project_aris_worktree_contamination_blocked`
+- Decision: `blocked`
+- Trigger: `PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR_WITH_OPERATOR_STANDING_DIRECTION`
+- Operator issued a standing direction for B1/B3 repair; before any patch was attempted, a read-only forensic preflight found the `Project_ARIS` working tree in an unexpectedly dirty state incompatible with an isolated B1/B3 repair.
+- Operator confirmed on 2026-06-12 that this dirty state is not expected and instructed to stop B1/B3 repair and record this blocker instead.
+- `Project_ARIS` worktree (`HEAD=6cec74deb7a99b7eb227df84a902650ca092e00f`):
+  - 4250 total dirty entries: 409 modified tracked, 143 deleted tracked, 3698 untracked
+  - all 143 deleted tracked files are under `artifacts/f21/bedrock_gate_*`
+  - the `aris-active-context` gitlink/submodule reference is modified, with no corresponding entry in `.gitmodules` (broken/orphaned submodule mapping)
+  - other modified paths include `.env.example`, `.gitignore`, `.vscode/launch.json`, `PROJECT_CONTEXT_ARIS.md`, `README.md`, `actions.py`
+- `aris-active-context` worktree (`HEAD=50c69bb6fc45dcfd5ccb54525c505c4ae80e49c4`, equal to `origin/main`):
+  - 4 dirty tracked files: `BEDROCK_GATE.md`, `README.md`, `archive/superseded/BOOT_PROFILE.md`, `archive/superseded/READ_PROFILE.md`
+  - 5 untracked root mirror files: `ARIS_PHASE_LEDGER.md`, `CONTEXT_INDEX.md`, `CURRENT_STATE.md`, `NEXT_ACTION.md`, `PROJECT_CONTEXT_ARIS.md`, which correspond to paths forbidden from staging in the B1/B3 repair scope
+- B1/B3 repair was **not attempted**.
+- No stage, commit, reset, clean, stash, discard, or edit was performed on either dirty working tree.
+- This blocker artifact and ledger entry were authored in a clean clone of `active-context` at `origin/main` (`50c69bb6`), located at `/home/matheus/ARIS_RECOVERY_20260612/active-context-clean`.
+- `project_aris_changed=false`
+- `active_context_state_changed=false`
+- `archive_changed=false`
+- `root_mirrors_staged=false`
+- `runtime_executed=false`
+- `real_apply_executed=false`
+- `remediation_apply_retry_executed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Forensic inventories preserved at `/tmp/aris_forensic_inventory_20260612/project_aris_inventory.txt` and `/tmp/aris_forensic_inventory_20260612/active_context_inventory.txt`.
+- Canonical artifact: `artifacts/purgatorium/purg04_project_aris_worktree_contamination_blocker.json`
+- Next recommended step: `PROJECT_ARIS_CLEANROOM_RECOVERY_DECISION`

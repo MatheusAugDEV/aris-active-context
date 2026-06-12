@@ -1,0 +1,89 @@
+{
+  "phase_id": "PURG04_PROJECT_ARIS_WORKTREE_CONTAMINATION_BLOCKER",
+  "phase_class": "governance_blocker_artifact_only",
+  "decision": "blocked",
+  "status": "purg04_project_aris_worktree_contamination_blocked",
+  "trigger": "PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR_WITH_OPERATOR_STANDING_DIRECTION",
+  "operator_standing_direction_observed": true,
+  "b1_b3_repair_attempted": false,
+  "operator_confirmation": "Operator confirmed on 2026-06-12 that the observed dirty worktree state is not expected and instructed to stop B1/B3 repair and record this blocker instead.",
+  "forensic_inventories": {
+    "project_aris": "/tmp/aris_forensic_inventory_20260612/project_aris_inventory.txt",
+    "active_context": "/tmp/aris_forensic_inventory_20260612/active_context_inventory.txt"
+  },
+  "project_aris_worktree_state": {
+    "head": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+    "dirty_entries_total": 4250,
+    "modified_tracked": 409,
+    "deleted_tracked": 143,
+    "untracked": 3698,
+    "deletions_concentration": "143 of 143 deleted tracked files are under artifacts/f21/bedrock_gate_*",
+    "bedrock_artifact_deletions_observed": true,
+    "aris_active_context_gitlink_status": "modified gitlink/submodule reference for path 'aris-active-context' with no corresponding entry in .gitmodules (broken/orphaned submodule mapping)",
+    "other_notable_modified_paths": [
+      ".env.example",
+      ".gitignore",
+      ".vscode/launch.json",
+      "PROJECT_CONTEXT_ARIS.md",
+      "README.md",
+      "actions.py"
+    ]
+  },
+  "active_context_worktree_state": {
+    "head": "50c69bb6fc45dcfd5ccb54525c505c4ae80e49c4",
+    "head_equals_origin_main": true,
+    "dirty_tracked": 4,
+    "dirty_tracked_files": [
+      "BEDROCK_GATE.md",
+      "README.md",
+      "archive/superseded/BOOT_PROFILE.md",
+      "archive/superseded/READ_PROFILE.md"
+    ],
+    "untracked_root_mirrors": 5,
+    "untracked_root_mirror_files": [
+      "ARIS_PHASE_LEDGER.md",
+      "CONTEXT_INDEX.md",
+      "CURRENT_STATE.md",
+      "NEXT_ACTION.md",
+      "PROJECT_CONTEXT_ARIS.md"
+    ],
+    "note": "These untracked root mirror files correspond to paths explicitly listed as forbidden-to-stage in the B1/B3 repair scope."
+  },
+  "actions_taken": {
+    "b1_b3_repair_performed": false,
+    "project_aris_mutated": false,
+    "active_context_dirty_tree_mutated": false,
+    "reset_performed": false,
+    "clean_performed": false,
+    "stash_performed": false,
+    "discard_performed": false,
+    "source": "This artifact was authored from a clean clone of active-context at origin/main (50c69bb6), not from the dirty working trees.",
+    "clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean"
+  },
+  "no_real_execution_attestation": {
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "remediation_apply_retry_executed": false,
+    "bedrock_touched": false,
+    "product_pilot_touched": false,
+    "secrets_touched": false,
+    "mcp_rag_memory_write": false,
+    "external_network_beyond_github_governance": false,
+    "finding_closed": false,
+    "remediation_proven": false
+  },
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "active_context_state_changed": false,
+  "archive_changed": false,
+  "root_mirrors_staged": false,
+  "rollback_notes": [
+    "No mutation occurred in either dirty repository; nothing to roll back there.",
+    "This artifact and the associated DECISION_LOCKS.md entry are additive-only in a clean clone and can be reverted by a single revert commit if needed."
+  ],
+  "next_recommended_step": "PROJECT_ARIS_CLEANROOM_RECOVERY_DECISION",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "0222e604545847e4179414839e026677df032a05a13cf0660081ac9b6d67813f"
+  }
+}
