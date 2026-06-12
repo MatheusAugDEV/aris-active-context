@@ -1173,3 +1173,46 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_scope_repair_ci_confirmation.json`
 - Next recommended step: `RETURN_TO_PURG04_BLOCKER_RESOLUTION_FLOW_WITH_B5_CANONICALLY_CLEARED`
+
+## Active-Context No Ritual Authorization Policy Repair
+
+- Status: `active_context_no_ritual_authorization_policy_repair_pass`
+- Decision: `pass`
+- Policy id: `NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS`
+- Operator direction recorded: `OPERATOR_DIRECTED_NO_MORE_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS`
+- Permanent rule installed in `ARIS_BOOT.md`:
+  artifact-only/governance-only/validator-repair/ledger-repair/CI-confirmation/stale-next-step-reconciliation/policy-repair/blocker-triage steps derived from committed ledger or artifact evidence must emit the next technical prompt directly when all real locks remain false.
+- No new ritual authorization prompt is allowed for those steps.
+- This policy does **not** authorize Project_ARIS code or test changes, remediation apply, retry of local remediation apply, runtime execution, real_apply, product/pilot, Bedrock, secrets, external network beyond GitHub governance, MCP/RAG/memory write, finding close, or Infernus revalidation execution.
+- Historical `REQUEST_SEPARATE_AUTHORIZATION_*` next-step tokens in prior ledger entries are treated as superseded governance history, not active routing authority for future artifact-only repairs.
+- `validator_updated_if_needed=false` because no current validator rule was forcing ritual authorization for this policy scope.
+- `project_aris_changed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json`
+- Next recommended step: `PURG04_B1_B3_GLOBAL_BASELINE_REPAIR_PLAN_ARTIFACT_ONLY`
+
+## PURG-04 B1 B3 Global Baseline Repair Plan Artifact-Only
+
+- Status: `purg04_b1_b3_global_baseline_repair_plan_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only planning packet for blockers `B1` and `B3`, without opening any Project_ARIS mutation scope yet.
+- Source resolution plan verified: `artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json`
+- Source policy repair verified: `artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json`
+- `B1` remains classified as `pre_existing_global_baseline_failure`.
+- `B3` remains classified as `test_assumption_outside_authorized_surface`.
+- The plan defines two future Project_ARIS workstreams:
+  - baseline re-establishment for full-suite acceptance trustworthiness
+  - focused test expectation drift correction for stale IF08/W0.5 assumptions versus the preserved PURG lineage
+- This step is artifact-only and therefore required no new ritual authorization under the permanent policy above.
+- This step still does **not** authorize Project_ARIS code/test mutation, remediation apply, runtime execution, real_apply, product/pilot, Bedrock, secrets, or finding close.
+- `project_aris_change_authorized_now=false`
+- `project_aris_commit_authorized_now=false`
+- `project_aris_push_authorized_now=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- `retry_local_remediation_apply_allowed_now=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json`
+- Next recommended step: `PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY`

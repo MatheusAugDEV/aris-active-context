@@ -1,0 +1,56 @@
+{
+  "decision": "pass",
+  "status": "purg04_b1_b3_global_baseline_repair_plan_artifact_only_pass",
+  "scope": "Artifact-only planning packet for blockers B1 and B3 covering Project_ARIS global baseline repair and focused test expectation drift without opening any Project_ARIS mutation scope yet.",
+  "source_resolution_plan": "artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json",
+  "source_policy_repair_artifact": "artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+  "blockers_targeted": [
+    "B1",
+    "B3"
+  ],
+  "operator_direction": "LEDGER_DERIVED_ARTIFACT_ONLY_CONTINUATION_NO_RITUAL_AUTHORIZATION",
+  "project_aris_head_reference": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "workstreams": [
+    {
+      "blocker_id": "B1",
+      "classification": "pre_existing_global_baseline_failure",
+      "objective": "Re-establish a trustworthy Project_ARIS global unittest baseline for remediation acceptance.",
+      "planned_actions_artifact_only": [
+        "Reproduce the current full-suite baseline on the documented Project_ARIS head and classify failures by deterministic group.",
+        "Separate failures caused by repository/test-harness assumptions from failures caused by stale phase or roadmap assertions.",
+        "Define the smallest authorized future Project_ARIS change surface needed to make the baseline useful again for acceptance decisions."
+      ],
+      "requires_project_aris_change": true
+    },
+    {
+      "blocker_id": "B3",
+      "classification": "test_assumption_outside_authorized_surface",
+      "objective": "Document and isolate focused tests that still assert stale IF08/W0.5 routing or PASS expectations against the current PURG lineage.",
+      "planned_actions_artifact_only": [
+        "Audit focused tests that still expect active_next_phase=IF-08 or a live W0.5 canonroadmap route.",
+        "Map each stale expectation to the current preserved historical-blocked policy and PURG route reality.",
+        "Prepare a bounded future Project_ARIS test-update scope that corrects drift without reopening remediation apply or changing active-context locks."
+      ],
+      "requires_project_aris_change": true
+    }
+  ],
+  "evidence_basis": [
+    "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+    "artifacts/purgatorium/purg04_global_baseline_blocker_resolution_plan_artifact_only.json",
+    "artifacts/purgatorium/purg04_active_context_validator_scope_repair_ci_confirmation.json"
+  ],
+  "known_failure_signals": [
+    "python3 -m unittest discover -s tests fails outside the authorized IF09-FIND-001/S3 remediation surface.",
+    "Focused tests already documented in the triage expect active_next_phase=IF-08, a W0.5 canonroadmap definition, or a pass-only W0.5 post-sync review state that no longer matches the preserved PURG lineage."
+  ],
+  "project_aris_change_authorized_now": false,
+  "project_aris_commit_authorized_now": false,
+  "project_aris_push_authorized_now": false,
+  "real_execution_authorized": false,
+  "real_apply_authorized": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "retry_local_remediation_apply_allowed_now": false,
+  "real_locks_preserved_false": true,
+  "next_recommended_step": "PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY"
+}

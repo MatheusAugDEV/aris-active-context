@@ -129,6 +129,20 @@ Passo 4: CI_GREEN_CONFIRMED (todos success)
 - IF-08 synthetic isolated waves não requerem permissão por wave após preflight pass.
 - Ver INFERNUS_STANDING_AUTHORIZATION.md para política completa.
 
+### No Ritual Authorization — Ledger-Derived Artifact-Only Repairs
+- Política permanente: `NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS`.
+- Para steps `artifact-only`, `governance-only`, `validator repair`, `ledger repair`,
+  `CI confirmation`, `stale next-step reconciliation`, `policy repair` e
+  `blocker triage` derivados de artifact/ledger já commitado:
+  emitir diretamente o próximo prompt técnico.
+- Não pedir nova autorização ritual se todos os locks reais permanecerem `false`.
+- Esses steps preservam os locks reais e não abrem execução por implicação.
+- Ainda requer comando explícito do operador para:
+  Project_ARIS code/test change, remediation apply, retry de local remediation apply,
+  runtime execution, real_apply, product/pilot, Bedrock, secrets,
+  external network além de GitHub governance, MCP/RAG/memory write,
+  finding close e Infernus revalidation execution.
+
 ### Preferência de emissão de prompt
 - Quando resultado do Codex é PASS canônico + Transition Table define
   advance_mode=prompt_only + CI verde + sem lock manual para aquela transição:

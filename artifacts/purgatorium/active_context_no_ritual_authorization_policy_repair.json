@@ -1,0 +1,44 @@
+{
+  "decision": "pass",
+  "status": "active_context_no_ritual_authorization_policy_repair_pass",
+  "policy_id": "NO_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+  "operator_direction": "OPERATOR_DIRECTED_NO_MORE_RITUAL_AUTHORIZATION_FOR_LEDGER_DERIVED_ARTIFACT_ONLY_REPAIRS",
+  "files_changed": [
+    "ARIS_BOOT.md",
+    "DECISION_LOCKS.md",
+    "artifacts/purgatorium/active_context_no_ritual_authorization_policy_repair.json",
+    "artifacts/purgatorium/purg04_b1_b3_global_baseline_repair_plan_artifact_only.json"
+  ],
+  "allowed_without_ritual_authorization": [
+    "artifact-only",
+    "governance-only",
+    "validator repair",
+    "ledger repair",
+    "CI confirmation",
+    "stale next-step reconciliation",
+    "policy repair",
+    "blocker triage"
+  ],
+  "still_requires_explicit_operator_command": [
+    "Project_ARIS code/test change",
+    "remediation apply",
+    "retry de local remediation apply",
+    "runtime execution",
+    "real_apply",
+    "product/pilot",
+    "Bedrock",
+    "secrets",
+    "external network beyond GitHub governance",
+    "MCP/RAG/memory write",
+    "finding close",
+    "Infernus revalidation execution"
+  ],
+  "boot_updated": true,
+  "ledger_updated": true,
+  "validator_updated_if_needed": false,
+  "real_locks_preserved_false": true,
+  "project_aris_changed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "next_recommended_step": "PURG04_B1_B3_GLOBAL_BASELINE_REPAIR_PLAN_ARTIFACT_ONLY"
+}
