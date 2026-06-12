@@ -1,0 +1,45 @@
+{
+  "decision": "pass",
+  "status": "purg04_active_context_validator_scope_repair_ci_confirmed_pass",
+  "source_repair_artifact": "artifacts/purgatorium/purg04_active_context_validator_scope_repair_result.json",
+  "target_commit_sha": "4b814c023f03b2755c9a62c3413e936780fba0d2",
+  "origin_main_sha_observed": "4b814c023f03b2755c9a62c3413e936780fba0d2",
+  "commit_is_origin_main": true,
+  "local_validator_result": "pass",
+  "focused_test_result": "pass",
+  "gh_run_list_result_summary": {
+    "workflow_name": "validate-active-context",
+    "event": "push",
+    "branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "run_id": 27389586576,
+    "display_title": "Repair PURG04 active-context validator scope"
+  },
+  "commit_status_api_result_summary": {
+    "state": "pending",
+    "total_count": 0,
+    "statuses": []
+  },
+  "check_runs_api_result_summary": {
+    "total_count": 1,
+    "check_runs": [
+      {
+        "id": 80944022586,
+        "name": "validate",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/MatheusAugDEV/aris-active-context/actions/runs/27389586576/job/80944022586"
+      }
+    ]
+  },
+  "ci_state": "CI_GREEN_CONFIRMED",
+  "canonical_pass_allowed": true,
+  "reason": "The target commit is the current origin/main head, the local validator and focused repair test pass, gh run list shows the main push workflow as completed success, and the GitHub check-runs API reports the validate job as completed success.",
+  "project_aris_changed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "retry_local_remediation_apply_allowed_now": false,
+  "real_locks_preserved_false": true,
+  "next_recommended_step": "RETURN_TO_PURG04_BLOCKER_RESOLUTION_FLOW_WITH_B5_CANONICALLY_CLEARED"
+}

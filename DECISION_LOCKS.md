@@ -1148,3 +1148,28 @@ The following track references are historical_residual_route_noise. They do NOT 
 - CI state is currently recorded as `CI_UNAVAILABLE_NOT_PASS` because GitHub workflow polling did not return a terminal status from this environment.
 - Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_scope_repair_result.json`
 - Next recommended step: `CONFIRM_CI_TERMINAL_STATE_FOR_PURG04_ACTIVE_CONTEXT_VALIDATOR_SCOPE_REPAIR`
+
+## PURG-04 Active-Context Validator Scope Repair CI Confirmation
+
+- Status: `purg04_active_context_validator_scope_repair_ci_confirmed_pass`
+- Decision: `pass`
+- Scope: confirm the terminal CI state for commit `4b814c023f03b2755c9a62c3413e936780fba0d2` after the validator-scope repair, without touching Project_ARIS or reopening remediation execution.
+- Source repair artifact verified: `artifacts/purgatorium/purg04_active_context_validator_scope_repair_result.json`
+- `origin/main` was verified at `4b814c023f03b2755c9a62c3413e936780fba0d2`.
+- Local validations remain green:
+  - `python3 scripts/validate_active_context_state.py`
+  - `python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'`
+- `gh run list --limit 20 --branch main` reports the workflow `validate-active-context` for the target commit as `completed success` with run id `27389586576`.
+- `gh api repos/MatheusAugDEV/aris-active-context/commits/4b814c023f03b2755c9a62c3413e936780fba0d2/check-runs` reports one check run:
+  - `validate`
+  - `status=completed`
+  - `conclusion=success`
+- `gh api .../status` still returns `state=pending` with `statuses=[]`, but this is treated as non-authoritative here because the concrete GitHub Actions check run is terminal and green.
+- `canonical_pass_allowed=true`
+- `project_aris_changed=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- `retry_local_remediation_apply_allowed_now=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_scope_repair_ci_confirmation.json`
+- Next recommended step: `RETURN_TO_PURG04_BLOCKER_RESOLUTION_FLOW_WITH_B5_CANONICALLY_CLEARED`
