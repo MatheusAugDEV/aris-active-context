@@ -1454,3 +1454,50 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_and_preflight.json`
 - Next recommended step: `PROJECT_ARIS_CLEANROOM_CLONE_BLOCKER_TRIAGE`
+
+## Project_ARIS Cleanroom Clone Blocker Triage
+
+- Status: `project_aris_cleanroom_clone_blocker_triage_pass`
+- Decision: `pass`
+- Source preflight artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_and_preflight.json`
+- Source preflight artifact sha256 observed: `c43d17068d249fc08896fab1c400b9b185b8979d69f3efb664b61da69c7a607d`
+- Clean clone under triage: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean`
+- Clean clone head: `6cec74deb7a99b7eb227df84a902650ca092e00f`
+- Gitlink evidence:
+  - `git ls-files -s aris-active-context` = `160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0 aris-active-context`
+  - `git ls-tree HEAD aris-active-context` = `160000 commit a113ad549f0db6c4cb9d8c4aead7d654eb3938da aris-active-context`
+  - `.gitmodules` absent
+  - `git config --file .gitmodules --list` cannot read `.gitmodules`
+  - `git submodule status` exits `128` with `fatal: no submodule mapping found in .gitmodules for path 'aris-active-context'`
+- Historical triage findings:
+  - `git rev-list --all -- .gitmodules` returned no commits, so no `.gitmodules` history was found in the clean clone
+  - repeated commits modify only `aris-active-context` and describe the action as pointer sync, including:
+    - `590a5fdd` `Update PURG-01 active-context pointer`
+    - `1a2daa82` `Sync active-context gitlink for readiness closure gate`
+    - `4934b235` `F21: sync fixture review gate gitlink`
+    - `4439125a` `Update active-context pointer for schema hardening`
+  - tracked Project_ARIS files also name `MatheusAugDEV/aris-active-context` as the canonical external source in code, tests, and artifact text
+- Option evaluation:
+  - `OPTION_A_RESTORE_GITMODULES_MAPPING` rejected because there is no evidence that `.gitmodules` ever existed or that a healthy live submodule contract is the intended steady state
+  - `OPTION_B_REMOVE_ORPHAN_GITLINK` rejected because removing the gitlink before documenting the replacement external-pointer contract would be unnecessarily destructive
+  - `OPTION_C_CONVERT_TO_DOCUMENTED_EXTERNAL_CONTEXT_POINTER` selected because it matches the observed pointer semantics and the explicit canonical-source references to the standalone `aris-active-context` repository
+  - `OPTION_BLOCKED_NEEDS_OPERATOR_DECISION` rejected because the current read-only evidence is sufficient for a conservative recommendation
+- Selected option: `OPTION_C_CONVERT_TO_DOCUMENTED_EXTERNAL_CONTEXT_POINTER`
+- Future repair direction:
+  - plan an artifact-only repair that retires the orphan gitlink from Project_ARIS
+  - replace it with a documented external pointer contract to `MatheusAugDEV/aris-active-context`
+  - do not recreate `.gitmodules` unless later primary evidence proves a real submodule contract is required
+- `dirty_trees_touched=false`
+- `project_aris_changed=false`
+- `project_aris_patch_applied=false`
+- `project_aris_commit_created=false`
+- `baseline_run=false`
+- `reset_clean_stash_discard_performed=false`
+- `runtime_executed=false`
+- `real_apply_executed=false`
+- `bedrock_product_secrets_touched=false`
+- `finding_closed=false`
+- `remediation_proven=false`
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/project_aris_cleanroom_clone_blocker_triage.json`
+- Next recommended step: `PROJECT_ARIS_CLEANROOM_SUBMODULE_GITLINK_REPAIR_PLAN_ARTIFACT_ONLY`

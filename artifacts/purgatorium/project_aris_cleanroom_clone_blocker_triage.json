@@ -1,0 +1,133 @@
+{
+  "phase_id": "PROJECT_ARIS_CLEANROOM_CLONE_BLOCKER_TRIAGE",
+  "phase_class": "cleanroom_recovery_blocker_triage_artifact_only",
+  "decision": "pass",
+  "status": "project_aris_cleanroom_clone_blocker_triage_pass",
+  "source_clone_preflight_artifact_path": "artifacts/purgatorium/project_aris_cleanroom_clone_and_preflight.json",
+  "source_clone_preflight_artifact_sha256_observed": "c43d17068d249fc08896fab1c400b9b185b8979d69f3efb664b61da69c7a607d",
+  "project_aris_clean_clone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean",
+  "project_aris_clean_clone_head": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "gitlink_path": "aris-active-context",
+  "gitlink_index_entry": "160000 a113ad549f0db6c4cb9d8c4aead7d654eb3938da 0\taris-active-context",
+  "gitmodules_present": false,
+  "gitmodules_mapping_present": false,
+  "git_submodule_status_exit_code": 128,
+  "git_submodule_status_stderr": "fatal: no submodule mapping found in .gitmodules for path 'aris-active-context'",
+  "evidence_commands_run": [
+    "pwd",
+    "git rev-parse HEAD",
+    "git branch --show-current",
+    "git remote -v",
+    "git status --short",
+    "git ls-files -s aris-active-context || true",
+    "git ls-tree HEAD aris-active-context || true",
+    "test -f .gitmodules && cat .gitmodules || true",
+    "git config --file .gitmodules --list || true",
+    "git config --get-regexp '^submodule\\.' || true",
+    "git submodule status || true",
+    "git log --oneline -- .gitmodules aris-active-context | head -50 || true",
+    "git diff -- .gitmodules aris-active-context || true",
+    "git rev-list --all -- .gitmodules",
+    "git log --reverse --format='%H %s' -- aris-active-context",
+    "git show --stat --summary --name-status --format=fuller 590a5fdd -- .gitmodules aris-active-context",
+    "git show --stat --summary --name-status --format=fuller 1a2daa82 -- .gitmodules aris-active-context",
+    "git show --stat --summary --name-status --format=fuller 4934b235 -- .gitmodules aris-active-context",
+    "git show --stat --summary --name-status --format=fuller 4439125a -- .gitmodules aris-active-context",
+    "git grep -n 'aris-active-context\\|active-context' -- . ':!node_modules'",
+    "git grep -n 'github.com.*/aris-active-context\\|MatheusAugDEV/aris-active-context\\|canonical_repository\\|active-context pointer' -- . ':!node_modules'"
+  ],
+  "options_evaluated": [
+    {
+      "option_id": "OPTION_A_RESTORE_GITMODULES_MAPPING",
+      "evaluation": "rejected",
+      "reason": "No commit in the available history touches .gitmodules, while the gitlink has been advanced repeatedly by commits explicitly described as active-context pointer syncs. The evidence does not show a previously valid submodule mapping that should simply be restored."
+    },
+    {
+      "option_id": "OPTION_B_REMOVE_ORPHAN_GITLINK",
+      "evaluation": "rejected",
+      "reason": "The orphan gitlink is structurally invalid, but outright removal would erase the current pointer surface before a replacement contract is documented. Existing project files still reference aris-active-context paths and external active-context synchronization concepts."
+    },
+    {
+      "option_id": "OPTION_C_CONVERT_TO_DOCUMENTED_EXTERNAL_CONTEXT_POINTER",
+      "evaluation": "selected",
+      "reason": "The repository repeatedly treats aris-active-context as a pointer, not as a configured submodule, and multiple tracked files explicitly identify MatheusAugDEV/aris-active-context as the canonical external source. Converting the orphan gitlink into a documented external pointer is the smallest repair consistent with the evidence and current governance model."
+    },
+    {
+      "option_id": "OPTION_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "evaluation": "rejected",
+      "reason": "The evidence is sufficient to rule out blind .gitmodules restoration and blind gitlink deletion, and to select the narrower external-pointer repair direction without yet mutating Project_ARIS."
+    }
+  ],
+  "selected_option": "OPTION_C_CONVERT_TO_DOCUMENTED_EXTERNAL_CONTEXT_POINTER",
+  "selected_option_rationale": [
+    "git rev-list --all -- .gitmodules returned no commits, so there is no evidence of any valid .gitmodules mapping in the repository history available in the clean clone.",
+    "git log over aris-active-context shows repeated commits such as 'Update PURG-01 active-context pointer', 'Sync active-context gitlink for readiness closure gate', and 'F21: sync fixture review gate gitlink', which frame the entry as a moving pointer rather than a normal submodule lifecycle.",
+    "The clean clone stores aris-active-context as a 160000 gitlink entry while .gitmodules is absent and git submodule status fails, proving the current state is an orphan pointer rather than a healthy submodule configuration.",
+    "Tracked code and tests inside Project_ARIS explicitly reference MatheusAugDEV/aris-active-context as the canonical active-context source on GitHub, which aligns with an external documented pointer model and conflicts with silently relying on a hidden nested checkout as the source of truth.",
+    "A documented external pointer repair preserves referential intent without presuming that the project should keep a live submodule or should drop the active-context linkage entirely."
+  ],
+  "rejected_options": [
+    {
+      "option_id": "OPTION_A_RESTORE_GITMODULES_MAPPING",
+      "rejection_reason": "Insufficient evidence that .gitmodules ever existed or that a live submodule contract remains intended."
+    },
+    {
+      "option_id": "OPTION_B_REMOVE_ORPHAN_GITLINK",
+      "rejection_reason": "Too aggressive before a replacement external-pointer contract is documented and propagated."
+    },
+    {
+      "option_id": "OPTION_BLOCKED_NEEDS_OPERATOR_DECISION",
+      "rejection_reason": "The read-only evidence already supports a conservative recommendation."
+    }
+  ],
+  "future_repair_scope": {
+    "summary": "Plan an artifact-only repair that retires the orphan 160000 gitlink from Project_ARIS and replaces it with a documented external-context pointer contract anchored on the canonical GitHub repository MatheusAugDEV/aris-active-context.",
+    "required_invariants": [
+      "Do not mutate the quarantined dirty trees.",
+      "Do not recreate .gitmodules unless new primary evidence later proves a real submodule contract is desired.",
+      "Do not treat a nested local active-context checkout inside Project_ARIS as canonical state.",
+      "Preserve the explicit canonical-source language that points to the external aris-active-context repository."
+    ],
+    "future_validation_goals": [
+      "Project_ARIS clean clone no longer contains a 160000 orphan gitlink for aris-active-context.",
+      "Project_ARIS documentation and tests that currently refer to active-context access are aligned to the external-pointer contract.",
+      "git submodule status returns cleanly or becomes irrelevant because no submodule contract remains."
+    ]
+  },
+  "future_files_allowed_to_change": [
+    "Project_ARIS/.gitmodules",
+    "Project_ARIS/aris-active-context",
+    "Project_ARIS/BOOT.md",
+    "Project_ARIS/CLAUDE.md",
+    "Project_ARIS/AGENTS.md",
+    "Project_ARIS/src/aris/context/**",
+    "Project_ARIS/tests/**",
+    "Project_ARIS/artifacts/**"
+  ],
+  "future_files_forbidden_to_change": [
+    "/home/matheus/ARIS/Project_ARIS/**",
+    "/home/matheus/ARIS/Project_ARIS/aris-active-context/**",
+    "ACTIVE_CONTEXT_STATE.json",
+    "BEDROCK_GATE.md",
+    "README.md",
+    "archive/**",
+    "excludent/**",
+    "root mirrors"
+  ],
+  "dirty_trees_touched": false,
+  "project_aris_changed": false,
+  "project_aris_patch_applied": false,
+  "project_aris_commit_created": false,
+  "baseline_run": false,
+  "reset_clean_stash_discard_performed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "bedrock_product_secrets_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "next_recommended_step": "PROJECT_ARIS_CLEANROOM_SUBMODULE_GITLINK_REPAIR_PLAN_ARTIFACT_ONLY",
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "7b3f34eca65435e3e447f03d6d93b487c9fbb5fcd192a7494fbe3b105c711d4d"
+  }
+}
