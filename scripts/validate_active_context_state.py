@@ -10555,6 +10555,8 @@ def main() -> None:
     _require(workflow_path.read_text(encoding="utf-8") == EXPECTED_WORKFLOW, "unexpected workflow content")
 
     _warn_boot_receipt(state)
+    from check_boot_sync import assert_boot_in_sync
+    assert_boot_in_sync()
 
     # Apply streak management (in-memory only — Codex writes back to JSON on next run)
     _apply_streak_management(state, sig, EXPECTED_DECISION)

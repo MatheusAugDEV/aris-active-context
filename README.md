@@ -1,5 +1,10 @@
 # aris-active-context
 
+## Leia Primeiro
+
+- `BOOT.md` — página única gerada para boot rápido; se o carimbo divergir do ref atual, rode `python3 scripts/render_boot.py`.
+- `ACTIVE_CONTEXT_STATE.json` continua sendo a fonte de verdade; `BOOT.md` é derivado e deve permanecer sincronizado.
+
 Memória externa do GPT/Codex para o projeto ARIS entre sessões.
 
 ## Propósito
