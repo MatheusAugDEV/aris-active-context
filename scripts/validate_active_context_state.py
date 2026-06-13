@@ -244,13 +244,18 @@ IF08_W05_POST_SYNC_CI_STATE = "CI_GREEN_CONFIRMED"
 IF08_W05_POST_SYNC_NEXT_RECOMMENDED_STEP = "prepare_if08_w1_context_memory_rag_preflight_readiness"
 IF08_W05_CONTROLLED_PHASE = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
 IF08_W05_CONTROLLED_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_pass"
+IF08_W05_CONTROLLED_INVALID_STATUS = "if08_w05_controlled_ledger_evidence_integrity_execution_invalid"
 IF08_W05_CONTROLLED_PROJECT_SHA = "9ad30a803ffe2227551bdbe2856633eef1165047"
 IF08_W05_CONTROLLED_CI_STATE = "CI_GREEN_CONFIRMED"
 IF08_W05_CONTROLLED_NEXT_RECOMMENDED_STEP = "defer_next_if08_wave_prompt_until_post_sync_review"
+IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_PASS = "sync_if08_w05_controlled_execution_into_active_context"
+IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_INVALID = "resolve_if08_w05_integrity_drift_before_reexecution"
 IF08_W05_RERUN_PHASE = "IF08_W05 Preflight Readiness Rerun"
 IF08_W05_RERUN_STATUS = "if08_w05_preflight_readiness_rerun_pass"
+IF08_W05_RERUN_BLOCKED_STATUS = "if08_w05_preflight_readiness_rerun_blocked"
 IF08_W05_RERUN_PROJECT_SHA = "93b4ee5c6aa96869ef426331c51e5f3df76e2812"
 IF08_W05_RERUN_NEXT_RECOMMENDED_STEP = "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution"
+IF08_W05_RERUN_BLOCKED_NEXT_RECOMMENDED_STEP = "repair_if08_w05_preflight_readiness_rerun_inputs"
 IF08_W05_SYNC_SOURCE_PHASE = "IF08_W05 Minos Mechanical Alias Normalization"
 IF08_W05_SYNC_SOURCE_STATUS = "if08_w05_minos_mechanical_alias_normalization_packet_ready"
 IF08_W05_SYNC_SOURCE_PROJECT_SHA = "f05ff031a95625da4d09c1c8bb648cc81ed3a97f"
@@ -4340,23 +4345,40 @@ def _check_if08_w05_preflight_rerun_artifacts(state: dict[str, Any]) -> None:
         return
 
     rerun_decision = _load_json(IF08_W05_RERUN_DECISION_PATH)
+    rerun_decision_value = rerun_decision.get("decision")
     _require(rerun_decision.get("phase_id") == "IF08_W05_PREFLIGHT_READINESS_RERUN", "project rerun decision phase_id mismatch")
-    _require(rerun_decision.get("decision") == "pass", "project rerun decision must be pass")
-    _require(rerun_decision.get("status") == IF08_W05_RERUN_STATUS, "project rerun decision status mismatch")
-    _require(rerun_decision.get("source_latest_completed_phase") == IF08_W05_SYNC_SOURCE_PHASE, "project rerun decision source phase mismatch")
-    _require(rerun_decision.get("source_latest_completed_status") == IF08_W05_SYNC_SOURCE_STATUS, "project rerun decision source status mismatch")
-    _require(rerun_decision.get("source_project_sha") == IF08_W05_SYNC_SOURCE_PROJECT_SHA, "project rerun decision source project sha mismatch")
-    _require(rerun_decision.get("ready_for_next_recommended_step") is True, "project rerun decision must be ready for next step")
-    _require(rerun_decision.get("next_recommended_step") == IF08_W05_RERUN_NEXT_RECOMMENDED_STEP, "project rerun decision next step mismatch")
+    _require(rerun_decision_value in {"pass", "blocked"}, "project rerun decision must be pass or blocked")
+    expected_rerun_status = IF08_W05_RERUN_STATUS if rerun_decision_value == "pass" else IF08_W05_RERUN_BLOCKED_STATUS
+    _require(rerun_decision.get("status") == expected_rerun_status, "project rerun decision status mismatch")
+    if rerun_decision_value == "pass":
+        _require(rerun_decision.get("source_latest_completed_phase") == IF08_W05_SYNC_SOURCE_PHASE, "project rerun decision source phase mismatch")
+        _require(rerun_decision.get("source_latest_completed_status") == IF08_W05_SYNC_SOURCE_STATUS, "project rerun decision source status mismatch")
+        _require(rerun_decision.get("source_project_sha") == IF08_W05_SYNC_SOURCE_PROJECT_SHA, "project rerun decision source project sha mismatch")
+        _require(rerun_decision.get("ready_for_next_recommended_step") is True, "project rerun decision must be ready for next step")
+        _require(rerun_decision.get("next_recommended_step") == IF08_W05_RERUN_NEXT_RECOMMENDED_STEP, "project rerun decision next step mismatch")
+    else:
+        _require(bool(rerun_decision.get("source_latest_completed_phase")), "project blocked rerun decision source phase must be present")
+        _require(bool(rerun_decision.get("source_latest_completed_status")), "project blocked rerun decision source status must be present")
+        _require(bool(rerun_decision.get("source_project_sha")), "project blocked rerun decision source project sha must be present")
+        _require(rerun_decision.get("ready_for_next_recommended_step") is False, "project blocked rerun decision must not be ready for next step")
+        _require(rerun_decision.get("next_recommended_step") == IF08_W05_RERUN_BLOCKED_NEXT_RECOMMENDED_STEP, "project blocked rerun decision next step mismatch")
+        _require(bool(rerun_decision.get("unresolved_mismatches")), "project blocked rerun decision must document unresolved_mismatches")
     active_update = rerun_decision.get("active_context_update", {})
     _require(active_update.get("required") is True, "project rerun decision active_context_update.required must be true")
     _require(active_update.get("applied") is True, "project rerun decision active_context_update.applied must be true")
     _require(active_update.get("remote_main_verified") is True, "project rerun decision active_context_update.remote_main_verified must be true")
 
     rerun_summary = _load_json(IF08_W05_RERUN_SUMMARY_PATH)
-    _require(rerun_summary.get("status") == IF08_W05_RERUN_STATUS, "project rerun summary status mismatch")
-    _require(rerun_summary.get("next_recommended_step") == IF08_W05_RERUN_NEXT_RECOMMENDED_STEP, "project rerun summary next step mismatch")
-    _require(rerun_summary.get("unresolved_mismatch_count") == 0, "project rerun summary unresolved mismatch count must be zero")
+    rerun_summary_decision = rerun_summary.get("decision")
+    _require(rerun_summary_decision in {"pass", "blocked"}, "project rerun summary must be pass or blocked")
+    expected_rerun_summary_status = IF08_W05_RERUN_STATUS if rerun_summary_decision == "pass" else IF08_W05_RERUN_BLOCKED_STATUS
+    _require(rerun_summary.get("status") == expected_rerun_summary_status, "project rerun summary status mismatch")
+    if rerun_summary_decision == "pass":
+        _require(rerun_summary.get("next_recommended_step") == IF08_W05_RERUN_NEXT_RECOMMENDED_STEP, "project rerun summary next step mismatch")
+        _require(rerun_summary.get("unresolved_mismatch_count") == 0, "project rerun summary unresolved mismatch count must be zero")
+    else:
+        _require(rerun_summary.get("next_recommended_step") == IF08_W05_RERUN_BLOCKED_NEXT_RECOMMENDED_STEP, "project blocked rerun summary next step mismatch")
+        _require(int(rerun_summary.get("unresolved_mismatch_count", 0)) > 0, "project blocked rerun summary unresolved mismatch count must be positive")
 
     rerun_no_execution = _load_json(IF08_W05_RERUN_NO_EXECUTION_PATH)
     for key in (
@@ -4453,38 +4475,62 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
         return
 
     decision = _load_json(IF08_W05_CONTROLLED_DECISION_PATH)
+    valid_decisions = {"pass", "invalid"}
+    decision_value = decision.get("decision")
     _require(decision.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "project controlled decision phase_id mismatch")
-    _require(decision.get("decision") == "pass", "project controlled decision must be pass")
-    _require(decision.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled decision status mismatch")
+    _require(
+        decision_value in valid_decisions,
+        "project controlled decision must be pass or invalid",
+    )
+    expected_decision_status = (
+        IF08_W05_CONTROLLED_STATUS
+        if decision_value == "pass"
+        else IF08_W05_CONTROLLED_INVALID_STATUS
+    )
+    _require(decision.get("status") == expected_decision_status, "project controlled decision status mismatch")
     _require(decision.get("wave_id") == "W0.5", "project controlled decision wave_id mismatch")
-    _require(decision.get("wave_name") == "Ledger/evidence integrity", "project controlled decision wave_name mismatch")
-    _require(decision.get("execution_scope") == "synthetic_isolated_lab_only", "project controlled decision execution_scope mismatch")
-    _require(decision.get("tamper_attempts_expected") == 4, "project controlled decision tamper_attempts_expected must be 4")
-    _require(decision.get("tamper_attempts_detected") == 4, "project controlled decision tamper_attempts_detected must be 4")
-    _require(decision.get("ter_result") == 1.0, "project controlled decision ter_result must be 1.0")
-    _require(decision.get("required_ter") == 1.0, "project controlled decision required_ter must be 1.0")
-    _require(decision.get("hash_chain_valid_clean") is True, "project controlled decision hash_chain_valid_clean must be true")
-    _require(decision.get("custody_chain_valid_clean") is True, "project controlled decision custody_chain_valid_clean must be true")
-    _require(decision.get("provenance_baseline_valid") is True, "project controlled decision provenance_baseline_valid must be true")
-    _require(decision.get("ledger_order_baseline_valid") is True, "project controlled decision ledger_order_baseline_valid must be true")
-    _require(decision.get("bedrock_preparation_exception") is True, "project controlled decision bedrock_preparation_exception must be true")
-    _require(decision.get("active_context_update_required") is True, "project controlled decision active_context_update_required must be true")
-    _require(decision.get("canonical_sync_blocked_by_guard") == "NO-EXTERNAL-NETWORK-EXCEPT-GITHUB-GOVERNANCE", "project controlled decision guard mismatch")
-    _require(decision.get("next_wave_authorized") is False, "project controlled decision next_wave_authorized must be false")
-    _require(decision.get("required_next_action") == "sync_if08_w05_controlled_execution_into_active_context", "project controlled decision next action mismatch")
+    if decision_value == "pass":
+        _require(decision.get("wave_name") == "Ledger/evidence integrity", "project controlled decision wave_name mismatch")
+        _require(decision.get("execution_scope") == "synthetic_isolated_lab_only", "project controlled decision execution_scope mismatch")
+        _require(decision.get("tamper_attempts_expected") == 4, "project controlled decision tamper_attempts_expected must be 4")
+        _require(decision.get("tamper_attempts_detected") == 4, "project controlled decision tamper_attempts_detected must be 4")
+        _require(decision.get("ter_result") == 1.0, "project controlled decision ter_result must be 1.0")
+        _require(decision.get("required_ter") == 1.0, "project controlled decision required_ter must be 1.0")
+        _require(decision.get("hash_chain_valid_clean") is True, "project controlled decision hash_chain_valid_clean must be true")
+        _require(decision.get("custody_chain_valid_clean") is True, "project controlled decision custody_chain_valid_clean must be true")
+        _require(decision.get("provenance_baseline_valid") is True, "project controlled decision provenance_baseline_valid must be true")
+        _require(decision.get("ledger_order_baseline_valid") is True, "project controlled decision ledger_order_baseline_valid must be true")
+        _require(decision.get("bedrock_preparation_exception") is True, "project controlled decision bedrock_preparation_exception must be true")
+        _require(decision.get("active_context_update_required") is True, "project controlled decision active_context_update_required must be true")
+        _require(decision.get("canonical_sync_blocked_by_guard") == "NO-EXTERNAL-NETWORK-EXCEPT-GITHUB-GOVERNANCE", "project controlled decision guard mismatch")
+        _require(decision.get("next_wave_authorized") is False, "project controlled decision next_wave_authorized must be false")
+        _require(decision.get("required_next_action") == IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_PASS, "project controlled decision next action mismatch")
+    else:
+        _require(bool(decision.get("blocking_findings")), "project controlled invalid decision must document blocking_findings")
+        _require(decision.get("required_next_action") == IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_INVALID, "project controlled invalid decision next action mismatch")
 
     summary = _load_json(IF08_W05_CONTROLLED_SUMMARY_PATH)
+    summary_decision = summary.get("decision")
     _require(summary.get("phase_id") == "IF-08-W05-CONTROLLED-EXECUTION", "project controlled summary phase_id mismatch")
-    _require(summary.get("decision") == "pass", "project controlled summary must be pass")
-    _require(summary.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled summary status mismatch")
-    _require(summary.get("tamper_attempts_expected") == 4, "project controlled summary tamper_attempts_expected must be 4")
-    _require(summary.get("tamper_attempts_detected") == 4, "project controlled summary tamper_attempts_detected must be 4")
-    _require(summary.get("ter_result") == 1.0, "project controlled summary ter_result must be 1.0")
-    _require(summary.get("hash_chain_valid_clean") is True, "project controlled summary hash_chain_valid_clean must be true")
-    _require(summary.get("custody_chain_valid_clean") is True, "project controlled summary custody_chain_valid_clean must be true")
-    _require(summary.get("active_context_update_applied") is False, "project controlled summary active_context_update_applied must remain false before sync record")
-    _require(summary.get("canonical_sync_performed") is False, "project controlled summary canonical_sync_performed must remain false before sync record")
-    _require(summary.get("required_next_action") == "sync_if08_w05_controlled_execution_into_active_context", "project controlled summary next action mismatch")
+    _require(summary_decision in valid_decisions, "project controlled summary must be pass or invalid")
+    expected_summary_status = (
+        IF08_W05_CONTROLLED_STATUS
+        if summary_decision == "pass"
+        else IF08_W05_CONTROLLED_INVALID_STATUS
+    )
+    _require(summary.get("status") == expected_summary_status, "project controlled summary status mismatch")
+    if summary_decision == "pass":
+        _require(summary.get("tamper_attempts_expected") == 4, "project controlled summary tamper_attempts_expected must be 4")
+        _require(summary.get("tamper_attempts_detected") == 4, "project controlled summary tamper_attempts_detected must be 4")
+        _require(summary.get("ter_result") == 1.0, "project controlled summary ter_result must be 1.0")
+        _require(summary.get("hash_chain_valid_clean") is True, "project controlled summary hash_chain_valid_clean must be true")
+        _require(summary.get("custody_chain_valid_clean") is True, "project controlled summary custody_chain_valid_clean must be true")
+        _require(summary.get("active_context_update_applied") is False, "project controlled summary active_context_update_applied must remain false before sync record")
+        _require(summary.get("canonical_sync_performed") is False, "project controlled summary canonical_sync_performed must remain false before sync record")
+        _require(summary.get("required_next_action") == IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_PASS, "project controlled summary next action mismatch")
+    else:
+        _require(bool(summary.get("blocking_findings")), "project controlled invalid summary must document blocking_findings")
+        _require(summary.get("required_next_action") == IF08_W05_CONTROLLED_PROJECT_NEXT_ACTION_INVALID, "project controlled invalid summary next action mismatch")
 
     matrix = _load_json(IF08_W05_CONTROLLED_MATRIX_PATH)
     _require(matrix.get("expected_tamper_attempts") == 4, "project controlled matrix expected_tamper_attempts must be 4")
@@ -4509,7 +4555,10 @@ def _check_if08_w05_controlled_execution_artifacts(state: dict[str, Any]) -> Non
     ledger_lines = [line for line in IF08_W05_CONTROLLED_LEDGER_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
     _require(len(ledger_lines) > 0, "project controlled execution ledger must not be empty")
     ledger_entry = json.loads(ledger_lines[-1])
-    _require(ledger_entry.get("status") == IF08_W05_CONTROLLED_STATUS, "project controlled execution ledger status mismatch")
+    _require(
+        ledger_entry.get("status") in {IF08_W05_CONTROLLED_STATUS, IF08_W05_CONTROLLED_INVALID_STATUS},
+        "project controlled execution ledger status mismatch",
+    )
 
 
 def _state_preserves_if08_w05_historical_blocked(state: dict[str, Any]) -> bool:
