@@ -1336,6 +1336,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json`
 - Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR`
 
+<<<<<<< HEAD
 ## PURG-04 Project_ARIS Worktree Contamination Blocker
 
 - Status: `purg04_project_aris_worktree_contamination_blocked`
@@ -1836,3 +1837,43 @@ The following track references are historical_residual_route_noise. They do NOT 
   - no live-route mutation is attempted here
 - Canonical artifact: `artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json`
 - Next recommended step: `PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET`
+
+## PURG04 Mixed Surface Repair Split Packet
+
+- Status: `purg04_mixed_surface_repair_split_packet_pass`
+- Decision: `pass`
+- Scope: artifact-only split of the mixed PURG-04 failure surface into bounded future tracks. No Project_ARIS patch, no remediation apply retry, no live-route mutation, no finding close, no product/Bedrock/runtime/secrets/real_apply work.
+- Source classification packet verified:
+  - `artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json`
+  - `source_artifact_sha256=aec47989c804426076fce6cc8e3a460315008e7a0e5450b5123f81f11aa0671b`
+  - supporting cleanroom lineage observed from `purg04_fresh_reclone_execution_packet`, `purg04_cleanroom_fresh_reclone_prerequisite_packet`, `project_aris_cleanroom_external_context_pointer_repair`, and `project_aris_cleanroom_submodule_gitlink_repair_plan`
+- Mixed surface summary preserved:
+  - focused tests: `9 total / 1 pass / 8 fail`
+  - primary surfaces: `POINTER_RESIDUAL=7`, `EXPECTATION_DRIFT=1`
+  - secondary surfaces: `ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT=3`, `OUT_OF_SCOPE_LEGACY=2`
+  - live route remains report-only at `PURG-01`; this packet does not attempt live JSON reconciliation
+- Future tracks are now explicitly separated:
+  - `TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE`
+    - bounded to active-track test/source pairs, `scripts/run_strategic_reset_macrostructure_lock_gate.py`, and the product-loop closure gate surfaces already evidenced
+    - excludes IF08 route text review, expectation drift rebasing, and PRE-F21 legacy pruning from the first patch by default
+  - `TRACK_B_EXPECTATION_DRIFT_REPAIR_CANDIDATE`
+    - isolated to `tests/test_phase_completion_materialization_guard.py` and `scripts/check_phase_completion_materialization.py`
+    - requires a separate expectation decision; nested active-context recreation is forbidden
+  - `TRACK_C_ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT_REVIEW_ONLY`
+    - limited to `src/aris/infernus/if08_w05_preflight_readiness_rerun.py`, `src/aris/infernus/if08_w05_post_sync_review.py`, and `src/aris/infernus/if08_w05_controlled_execution.py`
+    - remains review-only until separately authorized because the surface is dual-class: pointer residual plus stale IF08 route/canonical text
+  - `TRACK_D_OUT_OF_SCOPE_LEGACY_QUARANTINE_OR_DEFER`
+    - quarantines PRE-F21 `artifacts/v5/*` assumptions as secondary noise in the two active-track suites
+    - cannot widen or block the first bounded pointer-residual repair candidate without an explicit scope packet
+- Split policy enforced:
+  - any future Project_ARIS mutation still requires separate operator authorization
+  - any future mutation still requires cleanroom preflight
+  - `finding_close_allowed=false`
+  - `real_execution_allowed=false`
+  - all real locks remain preserved as false
+- `ACTIVE_CONTEXT_STATE.json` remained unchanged.
+- `README.md` remained unchanged.
+- `Project_ARIS` remained unchanged.
+- Canonical artifact: `artifacts/purgatorium/purg04_mixed_surface_repair_split_packet.json`
+- Selected next step: `TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE`
+- Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_READINESS_PACKET`

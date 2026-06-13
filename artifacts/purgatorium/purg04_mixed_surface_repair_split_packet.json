@@ -1,0 +1,170 @@
+{
+  "phase_id": "PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET",
+  "phase_class": "mixed_surface_split_artifact_only",
+  "decision": "pass",
+  "status": "purg04_mixed_surface_repair_split_packet_pass",
+  "source_artifact": "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json",
+  "source_artifact_sha256": "aec47989c804426076fce6cc8e3a460315008e7a0e5450b5123f81f11aa0671b",
+  "source_artifact_observed_from_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean/artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json",
+  "supporting_source_artifacts": [
+    {
+      "path": "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+      "sha256": "36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf",
+      "observed_from_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean/artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+      "sha256": "4a21abb0afe5c29a24c917689bab8524639b7fa80ffe80a4d5d8102bd4007544",
+      "observed_from_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean/artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json"
+    },
+    {
+      "path": "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+      "sha256": "3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909",
+      "observed_from_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean/artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json"
+    },
+    {
+      "path": "artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json",
+      "sha256": "6c3eb8d5ad5880dc7026241a923faf3373056f4e2f7ca1b272582da9dab4566c",
+      "observed_from_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/active-context-clean/artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json"
+    }
+  ],
+  "fresh_reclone_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "fresh_reclone_head": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "mixed_surface_summary": {
+    "focused_tests_total": 9,
+    "focused_tests_passed": 1,
+    "focused_tests_failed": 8,
+    "primary_surfaces": {
+      "POINTER_RESIDUAL": 7,
+      "EXPECTATION_DRIFT": 1
+    },
+    "secondary_surfaces": {
+      "ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT": 3,
+      "OUT_OF_SCOPE_LEGACY": 2
+    },
+    "split_rule": "Pointer residual, expectation drift, route drift, and legacy noise stay in separate future tracks; no single future patch may mix them by default.",
+    "live_route_preserved": {
+      "active_next_phase": "PURG-01",
+      "active_next_phase_class": "purgatorium_route_admission",
+      "latest_completed_next_recommended_step": "execute_purg01_controlled_triage_artifact_only"
+    },
+    "canonical_drift_resolution_policy": "report_only_no_live_route_mutation"
+  },
+  "split_tracks": {
+    "TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE": {
+      "classification": "bounded_project_aris_pointer_contract_normalization_candidate",
+      "evidence_sources": [
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#failure_groups.POINTER_RESIDUAL",
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#candidate_future_repair_files_with_evidence",
+        "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json#focused_failure_surface_summary",
+        "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+        "artifacts/purgatorium/project_aris_cleanroom_submodule_gitlink_repair_plan.json"
+      ],
+      "candidate_files": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+        "src/aris/context/active_track_phase_reconciliation_gate.py",
+        "tests/test_aris_context_active_track_resume_gate.py",
+        "src/aris/context/active_track_resume_gate.py",
+        "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+        "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+        "src/aris/product_loop/product_loop_closure_gate.py"
+      ],
+      "allowed_future_action": "After separate operator authorization, open a cleanroom-bounded Project_ARIS repair-readiness packet limited to pointer-contract normalization in the listed files, without touching IF08 route text, expectation baselines, legacy PRE-F21 pruning, Active Context live state, or any forbidden path.",
+      "forbidden_now": [
+        "Do not patch Project_ARIS in this packet.",
+        "Do not include tests/test_phase_completion_materialization_guard.py or scripts/check_phase_completion_materialization.py in the same patch by default.",
+        "Do not include src/aris/infernus/if08_w05_preflight_readiness_rerun.py, src/aris/infernus/if08_w05_post_sync_review.py, or src/aris/infernus/if08_w05_controlled_execution.py in the same patch by default.",
+        "Do not prune PRE-F21 legacy inputs as part of the first pointer-only patch unless separately authorized.",
+        "Do not recreate a repository-root aris-active-context/ directory."
+      ],
+      "requires_operator_authorization_for_project_mutation": true,
+      "requires_cleanroom_preflight": true,
+      "finding_close_allowed": false,
+      "real_execution_allowed": false
+    },
+    "TRACK_B_EXPECTATION_DRIFT_REPAIR_CANDIDATE": {
+      "classification": "separate_expectation_rebaseline_or_contract_decision_candidate",
+      "evidence_sources": [
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#failure_groups.EXPECTATION_DRIFT",
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#candidate_future_repair_files_with_evidence"
+      ],
+      "candidate_files": [
+        "tests/test_phase_completion_materialization_guard.py",
+        "scripts/check_phase_completion_materialization.py"
+      ],
+      "allowed_future_action": "Only after explicit authorization, open a dedicated expectation-review packet that decides whether the materialization guard should remain blocked, be re-baselined, or be rewritten to the current external pointer contract.",
+      "forbidden_now": [
+        "Do not silently force the guard green by recreating a nested active-context tree.",
+        "Do not mix this expectation decision with pointer-contract normalization by default.",
+        "Do not treat this track as evidence that remediation is proven."
+      ],
+      "requires_operator_authorization_for_project_mutation": true,
+      "requires_cleanroom_preflight": true,
+      "finding_close_allowed": false,
+      "real_execution_allowed": false
+    },
+    "TRACK_C_ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT_REVIEW_ONLY": {
+      "classification": "review_only_dual_surface_pointer_plus_route_drift",
+      "evidence_sources": [
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#failure_groups.ROUTE_DRIFT_OR_CANONICAL_TEXT_DRIFT",
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#candidate_future_repair_files_with_evidence",
+        "ACTIVE_CONTEXT_STATE.json#current_live_route"
+      ],
+      "candidate_files": [
+        "src/aris/infernus/if08_w05_preflight_readiness_rerun.py",
+        "src/aris/infernus/if08_w05_post_sync_review.py",
+        "src/aris/infernus/if08_w05_controlled_execution.py"
+      ],
+      "allowed_future_action": "Review-only until a separately authorized packet decides whether the IF08 W0.5 route text is historical-only, requires canonical text updates, or should remain untouched while PURG-01 stays the live route.",
+      "forbidden_now": [
+        "Do not include IF08 route rewrites in the first pointer residual patch.",
+        "Do not claim these suites are pointer-only; route and canonical-text drift must be reviewed explicitly.",
+        "Do not mutate ACTIVE_CONTEXT_STATE.json to make IF08 expectations pass."
+      ],
+      "requires_operator_authorization_for_project_mutation": true,
+      "requires_cleanroom_preflight": true,
+      "finding_close_allowed": false,
+      "real_execution_allowed": false
+    },
+    "TRACK_D_OUT_OF_SCOPE_LEGACY_QUARANTINE_OR_DEFER": {
+      "classification": "legacy_noise_quarantine_or_explicit_scope_decision_only",
+      "evidence_sources": [
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#failure_groups.OUT_OF_SCOPE_LEGACY",
+        "artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json#future_repair_order_recommendation"
+      ],
+      "candidate_files": [
+        "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+        "src/aris/context/active_track_phase_reconciliation_gate.py",
+        "tests/test_aris_context_active_track_resume_gate.py",
+        "src/aris/context/active_track_resume_gate.py"
+      ],
+      "allowed_future_action": "Keep PRE-F21 artifacts/v5 assumptions quarantined until a separate scope decision explicitly authorizes pruning, retaining, or replacing that lineage.",
+      "forbidden_now": [
+        "Do not let legacy PRE-F21 artifact assumptions widen the pointer-residual patch by default.",
+        "Do not promote excludent or archive material as active repair input.",
+        "Do not block Track A repair candidacy solely because secondary legacy noise exists."
+      ],
+      "requires_operator_authorization_for_project_mutation": true,
+      "requires_cleanroom_preflight": true,
+      "finding_close_allowed": false,
+      "real_execution_allowed": false
+    }
+  },
+  "selected_next_step": "TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE",
+  "next_recommended_step": "REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_READINESS_PACKET",
+  "readme_changed": false,
+  "active_context_state_changed": false,
+  "project_aris_patch_applied": false,
+  "dirty_clone_changed": false,
+  "fresh_reclone_mutated": false,
+  "remediation_apply_retry_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "real_locks_preserved_false": true,
+  "files_changed": [
+    "artifacts/purgatorium/purg04_mixed_surface_repair_split_packet.json",
+    "DECISION_LOCKS.md"
+  ]
+}
