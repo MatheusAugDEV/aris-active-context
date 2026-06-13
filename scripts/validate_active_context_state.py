@@ -41,6 +41,9 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 
+# ── HISTORICAL POSITION CONSTANTS (DO NOT CHANGE — used by HISTORICAL_ARTIFACT checks) ──
+# These values describe the state at the time historical artifacts were created.
+# Changing them would break validation of immutable past artifacts.
 EXPECTED_PHASE = "IF-11 Minos Final Verdict + Closure"
 EXPECTED_PHASE_ID = "INF-FULL-07"
 EXPECTED_PREVIOUS_PHASE = "IF-10 Purgatorium Handoff Graph"
@@ -51,17 +54,7 @@ EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_SCHEMA_VERSION = "3.12"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
-CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
-CURRENT_EXPECTED_NEXT_PHASE_CLASS = "purgatorium_route_admission"
-CURRENT_LIVE_PHASE_ID = "PURG-04"
-CURRENT_LIVE_PREVIOUS_PHASE_ID = "INF-FULL-07"
-CURRENT_LIVE_PHASE = "PURG-04 Track A Pointer Residual Repair Patch Packet"
-CURRENT_LIVE_STATUS = "purg04_track_a_pointer_residual_repair_patch_pass"
-CURRENT_LIVE_CURRENT_STATUS = "purg04_track_a_pointer_residual_repair_patch_pass"
-CURRENT_LIVE_SCHEMA_VERSION = "3.13"
-CURRENT_LIVE_NEXT_RECOMMENDED_STEP = "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
-CURRENT_LIVE_NEXT_ACTION_NOTE = "Next: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
-CURRENT_LIVE_PHASE_CLASS = "track_a_pointer_residual_repair_bounded_cleanroom_patch"
+# ───────────────────────────────────────────────────────────────────────────────────────────
 PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID = "PURG-01"
 PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_CLASS = "purgatorium_route_admission"
 PURG_PRE_LIVE_ROUTE_PHASE_ID = "PURG-PRE"
@@ -1358,6 +1351,51 @@ def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] 
         if row["current_phase_id"] == current_phase_id and row["decision"] == decision:
             return row
     return None
+
+
+def _load_live_position() -> dict[str, str]:
+    state = _load_json(STATE_PATH)
+    transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
+    next_action = state.get("next_action") or {}
+    active_next_phase = state.get("active_next_phase", "")
+    active_next_phase_class = state.get("active_next_phase_class", "")
+    if transition_row is not None:
+        active_next_phase = active_next_phase or transition_row.get("next_phase_id", "")
+        active_next_phase_class = active_next_phase_class or transition_row.get("next_phase_class", "")
+    return {
+        "phase_id": state.get("phase_id", ""),
+        "current_phase_id": state.get("current_phase_id", ""),
+        "previous_phase_id": state.get("previous_phase_id", ""),
+        "status": state.get("status", ""),
+        "current_status": state.get("current_status", ""),
+        "latest_completed_phase": state.get("latest_completed_phase", ""),
+        "latest_completed_status": state.get("latest_completed_status", ""),
+        "schema_version": state.get("schema_version", ""),
+        "active_next_phase": active_next_phase,
+        "active_next_phase_class": active_next_phase_class,
+        "phase_class": state.get("phase_class", ""),
+        "latest_completed_next_recommended_step": state.get("latest_completed_next_recommended_step", ""),
+        "next_action_phase": next_action.get("phase", ""),
+        "next_action_phase_class": next_action.get("phase_class", ""),
+        "next_action_status": next_action.get("status", ""),
+    }
+
+
+# ── CURRENT LIVE POSITION (derived from STATE.json at startup) ──────────────
+# DO NOT HARDCODE VALUES HERE. Edit STATE.json + regenerate BOOT.md instead.
+_live = _load_live_position()
+CURRENT_LIVE_PHASE_ID = _live["phase_id"]
+CURRENT_LIVE_PREVIOUS_PHASE_ID = _live["previous_phase_id"]
+CURRENT_LIVE_PHASE = _live["latest_completed_phase"]
+CURRENT_LIVE_STATUS = _live["status"]
+CURRENT_LIVE_CURRENT_STATUS = _live["current_status"]
+CURRENT_LIVE_SCHEMA_VERSION = _live["schema_version"]
+CURRENT_LIVE_NEXT_RECOMMENDED_STEP = _live["latest_completed_next_recommended_step"]
+CURRENT_LIVE_NEXT_ACTION_NOTE = f"Next: {_live['active_next_phase']}"
+CURRENT_LIVE_PHASE_CLASS = _live["phase_class"]
+CURRENT_EXPECTED_NEXT_PHASE_ID = _live["active_next_phase"]
+CURRENT_EXPECTED_NEXT_PHASE_CLASS = _live["active_next_phase_class"]
+# ─────────────────────────────────────────────────────────────────────────────
 
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
