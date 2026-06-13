@@ -1877,3 +1877,63 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Canonical artifact: `artifacts/purgatorium/purg04_mixed_surface_repair_split_packet.json`
 - Selected next step: `TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE`
 - Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_READINESS_PACKET`
+
+## PURG04 Track A Pointer Residual Repair Readiness Packet
+
+- Status: `purg04_track_a_pointer_residual_repair_readiness_packet_pass`
+- Decision: `pass`
+- Scope: artifact/readiness plus read-only cleanroom preflight for `TRACK_A_POINTER_RESIDUAL_REPAIR_CANDIDATE`. No Project_ARIS patch, no remediation apply retry, no real_apply, no runtime, no product/Bedrock/secrets work, no finding close, and no live-route mutation.
+- Operator direction recorded: `AUTHORIZE_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_READINESS_PACKET`
+- Source split packet verified:
+  - `artifacts/purgatorium/purg04_mixed_surface_repair_split_packet.json`
+  - `source_split_packet_sha256_observed=54ea950627bab61ea26d91a7f433697ed4a19a9b89a854b2e62b2773053178d4`
+  - Track A classification confirmed as `bounded_project_aris_pointer_contract_normalization_candidate`
+- Supporting lineage verified:
+  - `artifacts/purgatorium/purg04_focused_failure_surface_classification_packet.json`
+  - `artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json`
+  - `artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json`
+- Read-only cleanroom preflight now passes for the existing fresh reclone:
+  - path: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone`
+  - `HEAD=7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`, matching the expected bounded cleanroom head
+  - `git status --short` is empty now
+  - no repository-root `aris-active-context/` directory exists now
+  - remote remains `git@github.com:MatheusAugDEV/Project-A.R.I.S.git`
+  - the dirty quarantine clone at `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean` remains dirty and must not be reused
+- Future bounded Track A patch surface is fixed to:
+  - `tests/test_aris_context_active_track_phase_reconciliation_gate.py`
+  - `src/aris/context/active_track_phase_reconciliation_gate.py`
+  - `tests/test_aris_context_active_track_resume_gate.py`
+  - `src/aris/context/active_track_resume_gate.py`
+  - `scripts/run_strategic_reset_macrostructure_lock_gate.py`
+  - `tests/test_product_loop_l1_15_product_loop_closure_gate.py`
+  - `src/aris/product_loop/product_loop_closure_gate.py`
+- Future focused tests in scope after a separately authorized patch:
+  - `tests.test_f21a54c_active_context_remote_sync_verification`
+  - `tests.test_aris_context_active_track_phase_reconciliation_gate`
+  - `tests.test_aris_context_active_track_resume_gate`
+  - `tests.test_strategic_reset_macrostructure_lock_gate`
+  - `tests.test_product_loop_l1_15_product_loop_closure_gate`
+- Explicitly deferred from the first Track A patch:
+  - `tests/test_phase_completion_materialization_guard.py`
+  - `scripts/check_phase_completion_materialization.py`
+  - `src/aris/infernus/if08_w05_preflight_readiness_rerun.py`
+  - `src/aris/infernus/if08_w05_post_sync_review.py`
+  - `src/aris/infernus/if08_w05_controlled_execution.py`
+  - PRE-F21 legacy pruning or replacement
+- Entry criteria for any future Track A patch:
+  - separate explicit operator authorization is still required
+  - the fresh reclone must be revalidated immediately before mutation: same `HEAD`, empty `git status --short`, and no nested `aris-active-context/`
+  - the dirty quarantine clone must remain untouched
+  - forbidden paths remain unchanged: `ACTIVE_CONTEXT_STATE.json`, `ACTIVE_CONTEXT_POINTER.md`, `.gitmodules`, `.env*`, `archive/**`, `excludent/**`, `secrets/**`, dependency files, and any IF08 route-text surface
+- Rejection criteria preserved:
+  - no patch without new authorization
+  - no recreation of repository-root `aris-active-context/`
+  - no IF08 route/canonical-text widening
+  - no expectation-drift rebasing
+  - no PRE-F21 legacy pruning
+  - no remediation_proven/finding close/real_apply/runtime/product/Bedrock/secrets claims
+- `ACTIVE_CONTEXT_STATE.json` remained unchanged.
+- `Project_ARIS` remained unchanged.
+- All real locks remain preserved as false.
+- Canonical artifact: `artifacts/purgatorium/purg04_track_a_pointer_residual_repair_readiness_packet.json`
+- Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_PATCH_PACKET`
