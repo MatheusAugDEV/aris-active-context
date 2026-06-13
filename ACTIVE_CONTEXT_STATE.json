@@ -1,14 +1,14 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "INF-FULL-07",
-    "current_phase_id": "INF-FULL-07",
-    "previous_phase_id": "INF-FULL-06",
-    "gate_opened_at": "2026-06-06",
+    "phase_id": "PURG-04",
+    "current_phase_id": "PURG-04",
+    "previous_phase_id": "INF-FULL-07",
+    "gate_opened_at": "2026-06-12",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
     "governance_gate_streak": 0,
     "seen_gate_signatures": [],
-    "phase_class": "infernus_full",
+    "phase_class": "track_a_pointer_residual_repair_bounded_cleanroom_patch",
     "fixture_materialization_allowed": true,
     "fixture_materialization_executed": true,
     "fixture_count": 65,
@@ -58,10 +58,10 @@
         ],
         "condition": "ci_green_and_validator_pass"
     },
-    "active_next_phase": "PURG-01",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
     "active_next_phase_class": "purgatorium_route_admission",
-    "next_phase": "PURG-01",
-    "next_phase_authorized_by_operator": true,
+    "next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "next_phase_authorized_by_operator": false,
     "anti_proliferation_rule_active": true,
     "ci_enforcement_active": true,
     "additional_live_state_sources_allowed": false,
@@ -159,16 +159,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "IF-11 Minos Final Verdict + Closure",
+            "phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
             "decision": "pass",
-            "status": "if11_minos_final_verdict_closure_pass"
+            "status": "purg04_track_a_pointer_residual_repair_patch_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 56,
+        "total_phases_completed": 57,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -201,23 +201,23 @@
         ]
     },
     "current_live_route": {
-        "active_next_phase": "PURG-01",
+        "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
         "active_next_phase_class": "purgatorium_route_admission",
-        "current_status": "if11_minos_final_verdict_closure_pass",
+        "current_status": "purg04_track_a_pointer_residual_repair_patch_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
-        "latest_completed_status": "if11_minos_final_verdict_closure_pass",
+        "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+        "latest_completed_status": "purg04_track_a_pointer_residual_repair_patch_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "purg01_route_admission_pass",
+        "status": "purg04_track_a_pointer_residual_repair_patch_pass",
         "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "execute_purg01_controlled_triage_artifact_only"
+        "latest_completed_next_recommended_step": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
     },
-    "current_status": "if11_minos_final_verdict_closure_pass",
+    "current_status": "purg04_track_a_pointer_residual_repair_patch_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "execute_purg01_controlled_triage_artifact_only",
+    "latest_completed_next_recommended_step": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -607,7 +607,7 @@
         "real_quota_consumed": false
     },
     "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
-    "latest_completed_status": "if11_minos_final_verdict_closure_pass",
+    "latest_completed_status": "purg04_track_a_pointer_residual_repair_patch_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -618,28 +618,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "IF-11 Minos Final Verdict + Closure",
+        "latest_execution_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "IF-10 Purgatorium Handoff Graph",
-        "latest_execution_status": "if11_minos_final_verdict_closure_pass"
+        "previous_execution_phase": "IF-11 Minos Final Verdict + Closure",
+        "latest_execution_status": "purg04_track_a_pointer_residual_repair_patch_pass"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "IF-10 Purgatorium Handoff Graph",
-        "proof_source": "project_origin_main_sha_6312302ea45b72ddc310b2b33f56245be65b99dc_verified_with_terminal_green_ci_run_27177997351_and_if11_closure_status_closed_with_purgatorium_handoff_ready_from_if10_graph_sha_c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1_without_macro_route_mutation",
-        "to_phase": "IF-11 Minos Final Verdict + Closure",
-        "to_status": "if11_minos_final_verdict_closure_pass",
-        "transition_type": "active_context_if11_minos_final_verdict_closure_sync",
-        "verified_via": "canonroadmap IF-11 final verdict closure + project IF11 closure packet + terminal green CI. Macro route preserved, operator cosignature remains pending review, and no real execution surface activated."
+        "from_phase": "IF-11 Minos Final Verdict + Closure",
+        "proof_source": "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "to_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+        "to_status": "purg04_track_a_pointer_residual_repair_patch_pass",
+        "transition_type": "purgatorium_track_a_bounded_cleanroom_patch",
+        "verified_via": "6 files patched in cleanroom. 5/5 required tests pass. bounded_scope_respected=true. commit 1e9a04a. Validator reconciled e747ee5."
     },
-    "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-        "deferred_phase": "PURG-01",
-        "deferred_phase_reason": "PURG-01 remains the active admitted route, the operator source packet and IF10 handoff graph stay hash-stable, the controlled triage execution gate is now pass for IF09-FIND-001, and the next artifact-only step is execute_purg01_controlled_triage_artifact_only. Triage execution, finding fix, remediation apply, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, and every real execution surface remain prohibited.",
+        "deferred_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+        "deferred_phase_reason": "Track A patch applied in cleanroom. Merge to Project_ARIS main requires separate operator authorization for PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -651,13 +651,22 @@
     "markdown_files_are": "derived_mirrors_or_history_not_authoritative_live_state",
     "next_action": {
         "execution_authorization": false,
-        "notes": "PURG-01 remains the active admitted route, the controlled triage execution gate is pass for IF09-FIND-001, and the next artifact-only step is execute_purg01_controlled_triage_artifact_only. Triage execution itself, finding fix, remediation apply, runtime, real_apply, product, Bedrock, secrets, MCP, RAG, memory write, real cost, real quota, and external network remain prohibited.",
+        "notes": [
+            "JSON advanced from frozen INF-FULL-07 to PURG-04.",
+            "Schema phase_id pattern expanded to accept two-segment IDs.",
+            "Track A patch applied in cleanroom — branch codex/purg04-track-a-pointer-residual-repair-20260612.",
+            "Patch commit: 1e9a04a02846f3261ae72d0c95fbee6b0163b45b.",
+            "Merge to Project_ARIS main NOT authorized — requires separate decision.",
+            "IF09-FIND-001 remains open — closure only via Infernus Revalidation.",
+            "All execution locks remain false.",
+            "Next: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
+        ],
         "operator_approval_packet_review_is_execution_approval": false,
-        "phase": "PURG-01",
+        "phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
         "phase_class": "purgatorium_route_admission",
         "planning_only": false,
         "review_only": false,
-        "status": "purg01_route_admission_pass"
+        "status": "purg04_track_a_pointer_residual_repair_patch_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -673,8 +682,8 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.12",
-    "status": "purg01_route_admission_pass",
+    "schema_version": "3.13",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,

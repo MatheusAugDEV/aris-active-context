@@ -65,22 +65,18 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: INF-FULL-07
-status: purg01_route_admission_pass
-latest_completed_phase: IF-11 Minos Final Verdict + Closure
-latest_completed_status: if11_minos_final_verdict_closure_pass
-next_phase: PURG-01
-next_recommended_step: execute_purg01_controlled_triage_artifact_only
+phase_id: PURG-04
+status: purg04_track_a_pointer_residual_repair_patch_pass
+latest_completed_phase: PURG-04 Track A Pointer Residual Repair Patch Packet
+latest_completed_status: purg04_track_a_pointer_residual_repair_patch_pass
+next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
+next_recommended_step: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
-PURG-01 admitido como rota: true
-PURG-01 triage autorizada para etapa futura controlada: true
-Pacote primario do operador validado: true
-Review formal de admissao PURG-01: pass
-Review de prontidao para triage PURG-01: pass
-Gate de planejamento de triage PURG-01: pass
-Gate de autorizacao de triage PURG-01: pass
-Gate de execucao controlada de triage PURG-01: pass
+Track A patch: aplicado em cleanroom, branch pushed, merge em main NOT authorized
+Merge to Project_ARIS main: NOT authorized
+IF09-FIND-001 remains open
+Project_ARIS main workspace: intocado
 
 ## PURG-01.1 triage classification
 

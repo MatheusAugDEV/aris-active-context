@@ -1,0 +1,32 @@
+{
+  "phase_id": "PURG04-STATE-RECON-01",
+  "phase_class": "state_reconciliation",
+  "decision": "pass",
+  "status": "purg04_state_reconciliation_pass",
+  "base_sha": "e747ee51d28f7bf7430b2d6407002810225ab077",
+  "reconciliation_date": "2026-06-12",
+  "root_cause_1": "phase_id regex blocked two-segment IDs (PURG-XX)",
+  "root_cause_2": "purgatorium progress lived only in ledger/artifacts without updating JSON",
+  "root_cause_3": "validator had CURRENT_EXPECTED_NEXT_PHASE_ID hardcoded to PURG-01",
+  "root_cause_4": "validator had live state phase_id checks hardcoded to INF-FULL-07",
+  "fix_schema": "Expanded phase_id pattern to two-or-three-segment, schema_version 3.13",
+  "fix_validator": "Updated CURRENT_EXPECTED_NEXT_PHASE_ID and live state checks to PURG-04",
+  "fix_state": "Advanced phase_id from INF-FULL-07 to PURG-04",
+  "fix_mirrors": "Rewrote CURRENT_STATE.md, NEXT_ACTION.md; updated BEDROCK_GATE.md, README.md",
+  "evidence_artifacts": [
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_readiness_packet.json",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json"
+  ],
+  "project_aris_changed": false,
+  "execution_locks_changed": false,
+  "track_a_merge_authorized": false,
+  "finding_if09_find_001_closed": false,
+  "next_recommended_step": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+  "prevention_installed": [
+    "Schema phase_id pattern covers full canonical chain",
+    "CURRENT_EXPECTED_NEXT_PHASE_ID updated to real current phase",
+    "permanent_active_update_rule_installed=true",
+    "active_context_remote_main_reflects_latest_phase=true",
+    "Mirrors reduced to single clean block"
+  ]
+}

@@ -51,8 +51,19 @@ EXPECTED_CURRENT_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_SCHEMA_VERSION = "3.12"
 EXPECTED_NEXT_PHASE_ID = "PURG-00"
 EXPECTED_NEXT_PHASE_CLASS = "purgatorium_full_intake"
-CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG-01"
+CURRENT_EXPECTED_NEXT_PHASE_ID = "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
 CURRENT_EXPECTED_NEXT_PHASE_CLASS = "purgatorium_route_admission"
+CURRENT_LIVE_PHASE_ID = "PURG-04"
+CURRENT_LIVE_PREVIOUS_PHASE_ID = "INF-FULL-07"
+CURRENT_LIVE_PHASE = "PURG-04 Track A Pointer Residual Repair Patch Packet"
+CURRENT_LIVE_STATUS = "purg04_track_a_pointer_residual_repair_patch_pass"
+CURRENT_LIVE_CURRENT_STATUS = "purg04_track_a_pointer_residual_repair_patch_pass"
+CURRENT_LIVE_SCHEMA_VERSION = "3.13"
+CURRENT_LIVE_NEXT_RECOMMENDED_STEP = "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
+CURRENT_LIVE_NEXT_ACTION_NOTE = "Next: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
+CURRENT_LIVE_PHASE_CLASS = "track_a_pointer_residual_repair_bounded_cleanroom_patch"
+PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID = "PURG-01"
+PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_CLASS = "purgatorium_route_admission"
 PURG_PRE_LIVE_ROUTE_PHASE_ID = "PURG-PRE"
 PURG_PRE_LIVE_ROUTE_PHASE_CLASS = "purgatorium_full_authority_materialization"
 HISTORICAL_PRESERVED_NEXT_PHASE_ID = "IF-08"
@@ -1351,6 +1362,15 @@ def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] 
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
+    if (
+        state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
+        and state.get("decision") == EXPECTED_DECISION
+        and state.get("status") == CURRENT_LIVE_STATUS
+    ):
+        row = {
+            "next_phase_id": CURRENT_EXPECTED_NEXT_PHASE_ID,
+            "next_phase_class": CURRENT_EXPECTED_NEXT_PHASE_CLASS,
+        }
     if state.get("status") in PURG00_LIVE_ROUTE_PRESERVING_STATUSES:
         row = _get_transition_row(PURG_PRE_LIVE_ROUTE_PHASE_ID, "pass")
         _require(row is not None, "BLOCK: PURG-PRE route successor must exist in Transition Table")
@@ -1532,6 +1552,16 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
         "prompt emission preference must not bypass green validator requirement",
     )
     transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
+    if (
+        state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
+        and state.get("decision") == EXPECTED_DECISION
+        and state.get("status") == CURRENT_LIVE_STATUS
+    ):
+        transition_row = {
+            "next_phase_id": CURRENT_EXPECTED_NEXT_PHASE_ID,
+            "next_phase_class": CURRENT_EXPECTED_NEXT_PHASE_CLASS,
+            "advance_mode": EXPECTED_CURRENT_SUCCESSOR_ADVANCE_MODE,
+        }
     if state.get("status") in PURG00_LIVE_ROUTE_PRESERVING_STATUSES:
         transition_row = _get_transition_row(PURG_PRE_LIVE_ROUTE_PHASE_ID, "pass")
     if state.get("status") == PURG01_ROUTE_ADMISSION_STATUS:
@@ -1553,9 +1583,17 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
             state.get("active_next_phase_class") == transition_row.get("next_phase_class"),
             "active_next_phase_class must match successor row",
         )
+        expected_next_phase_authorized = not (
+            state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
+            and state.get("status") == CURRENT_LIVE_STATUS
+        )
         _require(
-            state.get("next_phase_authorized_by_operator") is True,
-            "standing authorization must mark next phase as operator-authorized via canonroadmap approval",
+            state.get("next_phase_authorized_by_operator") is expected_next_phase_authorized,
+            (
+                "standing authorization must mark next phase as operator-authorized via canonroadmap approval"
+                if expected_next_phase_authorized
+                else "reconciled PURG-04 live route must keep next_phase_authorized_by_operator false"
+            ),
         )
     auth = state.get("authorization", {})
     for key in [
@@ -1641,7 +1679,7 @@ def _check_ci_terminal_reporting_rule() -> None:
 
 
 def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CORE_01_EVIDENCE_PATH.exists(), "missing ACB-CORE-01 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CORE_01_EVIDENCE_PATH)
@@ -1740,7 +1778,7 @@ def _check_acb_core_01_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CORE_02_EVIDENCE_PATH.exists(), "missing ACB-CORE-02 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CORE_02_EVIDENCE_PATH)
@@ -1848,7 +1886,7 @@ def _check_acb_core_02_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_01_OPERATOR_AUTH_PATH.exists(), "missing ACB-CAP-01 operator authorization artifact in active-context")
     _require(ACB_CAP_01_EVIDENCE_PATH.exists(), "missing ACB-CAP-01 evidence artifact in active-context")
 
@@ -2040,7 +2078,7 @@ def _check_acb_cap_01_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_02_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_02_EVIDENCE_PATH.exists(), "missing ACB-CAP-02 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_02_EVIDENCE_PATH)
@@ -2258,7 +2296,7 @@ def _check_acb_cap_02_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_03_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_03_EVIDENCE_PATH.exists(), "missing ACB-CAP-03 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_03_EVIDENCE_PATH)
@@ -2511,7 +2549,7 @@ def _check_acb_cap_03_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_04_EVIDENCE_PATH.exists(), "missing ACB-CAP-04 evidence artifact in active-context")
 
     evidence_data = _load_json(ACB_CAP_04_EVIDENCE_PATH)
@@ -2789,7 +2827,7 @@ def _check_acb_cap_04_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") in {"capability_build", "infernus_full"}, "phase_class must preserve capability-build baseline compatibility")
+    _require(state.get("phase_class") in {"capability_build", "infernus_full", CURRENT_LIVE_PHASE_CLASS}, "phase_class must preserve capability-build baseline compatibility")
     _require(ACB_CAP_05_EVIDENCE_PATH.exists(), "missing ACB-CAP-05 evidence artifact in active-context")
     _require(ACB_CAP_05_RESYNC_PATH.exists(), "missing ACB-CAP-05 resync artifact in active-context")
 
@@ -3053,7 +3091,10 @@ def _check_acb_cap_05_project_artifacts(state: dict[str, Any]) -> None:
 
 
 def _check_inf_full_01_project_artifacts(state: dict[str, Any]) -> None:
-    _require(state.get("phase_class") == "infernus_full", "phase_class must be infernus_full")
+    _require(
+        state.get("phase_class") in {"infernus_full", CURRENT_LIVE_PHASE_CLASS},
+        "phase_class must remain compatible with infernus_full lineage",
+    )
 
     required_paths = [
         INF_FULL_01_SCOPE_DECISION_PATH,
@@ -4566,15 +4607,15 @@ def _state_preserves_if08_w05_historical_blocked(state: dict[str, Any]) -> bool:
     return (
         state.get("next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
         and state.get("active_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
-        and state.get("status") == EXPECTED_STATUS
-        and state.get("current_status") == EXPECTED_CURRENT_STATUS
-        and state.get("latest_completed_phase") == EXPECTED_PHASE
-        and state.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS
+        and state.get("status") == CURRENT_LIVE_STATUS
+        and state.get("current_status") == CURRENT_LIVE_CURRENT_STATUS
+        and state.get("latest_completed_phase") == CURRENT_LIVE_PHASE
+        and state.get("latest_completed_status") == CURRENT_LIVE_STATUS
         and current_live_route.get("active_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID
-        and current_live_route.get("status") == EXPECTED_STATUS
-        and current_live_route.get("current_status") == EXPECTED_CURRENT_STATUS
-        and current_live_route.get("latest_completed_phase") == EXPECTED_PHASE
-        and current_live_route.get("latest_completed_status") == EXPECTED_LATEST_COMPLETED_STATUS
+        and current_live_route.get("status") == CURRENT_LIVE_STATUS
+        and current_live_route.get("current_status") == CURRENT_LIVE_CURRENT_STATUS
+        and current_live_route.get("latest_completed_phase") == CURRENT_LIVE_PHASE
+        and current_live_route.get("latest_completed_status") == CURRENT_LIVE_STATUS
     )
 
 
@@ -9499,18 +9540,18 @@ def main() -> None:
     state = _load_json(STATE_PATH)
     _load_json(SCHEMA_PATH)
 
-    _require(state["phase_id"] == EXPECTED_PHASE_ID, "unexpected phase_id")
-    _require(state["current_phase_id"] == EXPECTED_PHASE_ID, "unexpected current_phase_id")
-    _require(state["previous_phase_id"] == EXPECTED_PREVIOUS_PHASE_ID, "unexpected previous_phase_id")
-    _require(state["status"] == EXPECTED_STATUS, "unexpected status")
+    _require(state["phase_id"] == CURRENT_LIVE_PHASE_ID, "unexpected phase_id")
+    _require(state["current_phase_id"] == CURRENT_LIVE_PHASE_ID, "unexpected current_phase_id")
+    _require(state["previous_phase_id"] == CURRENT_LIVE_PREVIOUS_PHASE_ID, "unexpected previous_phase_id")
+    _require(state["status"] == CURRENT_LIVE_STATUS, "unexpected status")
     _require(state["decision"] == EXPECTED_DECISION, "unexpected decision")
-    _require(state["latest_completed_phase"] == EXPECTED_PHASE, "unexpected latest completed phase")
-    _require(state["latest_completed_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected latest completed status")
-    _require(state["current_status"] == EXPECTED_CURRENT_STATUS, "unexpected current status")
-    _require(state["schema_version"] == EXPECTED_SCHEMA_VERSION, "unexpected schema version")
+    _require(state["latest_completed_phase"] == CURRENT_LIVE_PHASE, "unexpected latest completed phase")
+    _require(state["latest_completed_status"] == CURRENT_LIVE_STATUS, "unexpected latest completed status")
+    _require(state["current_status"] == CURRENT_LIVE_CURRENT_STATUS, "unexpected current status")
+    _require(state["schema_version"] == CURRENT_LIVE_SCHEMA_VERSION, "unexpected schema version")
     _require(state["latest_completed_project_commit_sha"] == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "unexpected latest completed project sha")
     _require(state["latest_completed_ci_state"] == EXPECTED_LATEST_COMPLETED_CI_STATE, "unexpected latest completed ci state")
-    _require(state["latest_completed_next_recommended_step"] == EXPECTED_NEXT_RECOMMENDED_STEP, "unexpected latest completed next step")
+    _require(state["latest_completed_next_recommended_step"] == CURRENT_LIVE_NEXT_RECOMMENDED_STEP, "unexpected latest completed next step")
     blocker = state.get("purg00_source_gap_terminal_blocker")
     _require(isinstance(blocker, dict), "purg00_source_gap_terminal_blocker must exist")
     _require(blocker.get("decision") == "blocked", "purg00_source_gap_terminal_blocker decision mismatch")
@@ -9724,8 +9765,14 @@ def main() -> None:
     _require(route_admission.get("purg01_triage_authorized") is False, "purg01 route admission purg01_triage_authorized mismatch")
     _require(route_admission.get("real_execution_authorized") is False, "purg01 route admission real_execution_authorized mismatch")
     _require(route_admission.get("next_phase_execution_authorization") is False, "purg01 route admission next_phase_execution_authorization mismatch")
-    _require(route_admission.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission new_live_next_phase mismatch")
-    _require(route_admission.get("new_live_next_phase_class") == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "purg01 route admission new_live_next_phase_class mismatch")
+    _require(
+        route_admission.get("new_live_next_phase") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID,
+        "purg01 route admission new_live_next_phase mismatch",
+    )
+    _require(
+        route_admission.get("new_live_next_phase_class") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_CLASS,
+        "purg01 route admission new_live_next_phase_class mismatch",
+    )
     _require(route_admission.get("next_recommended_step") == "prepare_purg01_triage_readiness_review", "purg01 route admission next step mismatch")
     triage_review = state.get("purg01_triage_readiness_review")
     _require(isinstance(triage_review, dict), "purg01_triage_readiness_review must exist")
@@ -9985,26 +10032,44 @@ def main() -> None:
             _require(path.exists(), f"missing purg01 route admission artifact: {path}")
         route_decision = _load_json(PURG01_ROUTE_ADMISSION_DECISION_PATH)
         _require(route_decision.get("status") == PURG01_ROUTE_ADMISSION_STATUS, "purg01 route admission decision status mismatch")
-        _require(route_decision.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission decision new_live_next_phase mismatch")
-        _require(route_decision.get("new_live_next_phase_class") == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "purg01 route admission decision new_live_next_phase_class mismatch")
+        _require(
+            route_decision.get("new_live_next_phase") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID,
+            "purg01 route admission decision new_live_next_phase mismatch",
+        )
+        _require(
+            route_decision.get("new_live_next_phase_class") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_CLASS,
+            "purg01 route admission decision new_live_next_phase_class mismatch",
+        )
         _require(route_decision.get("future_next_step") == "prepare_purg01_triage_readiness_review", "purg01 route admission decision future_next_step mismatch")
         route_summary = _load_json(PURG01_ROUTE_ADMISSION_SUMMARY_PATH)
         _require(route_summary.get("status") == PURG01_ROUTE_ADMISSION_STATUS, "purg01 route admission summary status mismatch")
-        _require(route_summary.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission summary new_live_next_phase mismatch")
+        _require(
+            route_summary.get("new_live_next_phase") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID,
+            "purg01 route admission summary new_live_next_phase mismatch",
+        )
         operator_auth = _load_json(PURG01_ROUTE_ADMISSION_OPERATOR_AUTH_PATH)
         _require(operator_auth.get("operator_authorization_scope") == PURG01_ROUTE_ADMISSION_OPERATOR_SCOPE, "purg01 route admission operator auth scope mismatch")
         _require(operator_auth.get("purg01_open_authorized") is True, "purg01 route admission operator auth purg01_open_authorized mismatch")
         _require(operator_auth.get("purg01_triage_authorized") is False, "purg01 route admission operator auth purg01_triage_authorized mismatch")
         live_route_manifest = _load_json(PURG01_ROUTE_ADMISSION_LIVE_ROUTE_MANIFEST_PATH)
         _require(live_route_manifest.get("previous_live_next_phase") is None, "purg01 route admission live route previous_live_next_phase mismatch")
-        _require(live_route_manifest.get("new_live_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission live route new_live_next_phase mismatch")
+        _require(
+            live_route_manifest.get("new_live_next_phase") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID,
+            "purg01 route admission live route new_live_next_phase mismatch",
+        )
         schema_manifest = _load_json(PURG01_ROUTE_ADMISSION_SCHEMA_MANIFEST_PATH)
         _require(schema_manifest.get("old_schema_version") == "3.6", "purg01 route admission schema manifest old_schema_version mismatch")
         _require(schema_manifest.get("new_schema_version") == "3.7", "purg01 route admission schema manifest new_schema_version mismatch")
         validator_manifest = _load_json(PURG01_ROUTE_ADMISSION_VALIDATOR_MANIFEST_PATH)
         _require(validator_manifest.get("previous_expected_next_phase") is None, "purg01 route admission validator manifest previous_expected_next_phase mismatch")
-        _require(validator_manifest.get("new_expected_next_phase") == CURRENT_EXPECTED_NEXT_PHASE_ID, "purg01 route admission validator manifest new_expected_next_phase mismatch")
-        _require(validator_manifest.get("new_expected_next_phase_class") == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "purg01 route admission validator manifest new_expected_next_phase_class mismatch")
+        _require(
+            validator_manifest.get("new_expected_next_phase") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_ID,
+            "purg01 route admission validator manifest new_expected_next_phase mismatch",
+        )
+        _require(
+            validator_manifest.get("new_expected_next_phase_class") == PURG01_ROUTE_ADMISSION_HISTORICAL_NEXT_PHASE_CLASS,
+            "purg01 route admission validator manifest new_expected_next_phase_class mismatch",
+        )
         route_no_real = _load_json(PURG01_ROUTE_ADMISSION_NO_REAL_EXECUTION_PATH)
         _require(route_no_real.get("status") == PURG01_ROUTE_ADMISSION_STATUS, "purg01 route admission no_real_execution status mismatch")
         _require(route_no_real.get("purg01_open_authorized") is True, "purg01 route admission no_real_execution purg01_open_authorized mismatch")
@@ -10132,10 +10197,13 @@ def main() -> None:
         state.get("repeat_source_search_without_new_primary_source_forbidden") is True,
         "repeat_source_search_without_new_primary_source_forbidden must be true",
     )
-    _require(state["next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "next_phase must be PURG-01 after route admission")
-    _require(state["active_next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "active_next_phase must be PURG-01 after route admission")
-    _require(state["active_next_phase_class"] == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class mismatch after route admission")
-    _require(state["next_phase_authorized_by_operator"] is True, "next phase authorization must be true after route admission")
+    _require(state["next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "next_phase must match the current live route")
+    _require(state["active_next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "active_next_phase must match the current live route")
+    _require(state["active_next_phase_class"] == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class mismatch after live route reconciliation")
+    _require(
+        state["next_phase_authorized_by_operator"] is False,
+        "next phase authorization must remain false until a separate operator merge decision",
+    )
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")
 
@@ -10259,14 +10327,14 @@ def main() -> None:
     _require_paths_match(state, policy["latest_completed_status_must_match_across"], "latest_completed_status")
     _require_paths_match(state, policy["status_must_match_across"], "status")
 
-    _require(state["current_live_route"]["active_next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "current live route next phase must be PURG-01")
+    _require(state["current_live_route"]["active_next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "current live route next phase mismatch")
     _require(state["current_live_route"]["active_next_phase_class"] == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "current live route next phase class mismatch")
-    _require(state["current_live_route"]["current_status"] == EXPECTED_CURRENT_STATUS, "current live route status mismatch")
+    _require(state["current_live_route"]["current_status"] == CURRENT_LIVE_CURRENT_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["decision"] == EXPECTED_DECISION, "current live route decision mismatch")
-    _require(state["current_live_route"]["status"] == EXPECTED_STATUS, "current live route blocked status mismatch")
+    _require(state["current_live_route"]["status"] == CURRENT_LIVE_STATUS, "current live route status mismatch")
     _require(state["current_live_route"]["next_phase_execution_authorization"] is False, "next phase execution authorization must be false")
     _require(
-        state["current_live_route"]["latest_completed_next_recommended_step"] == EXPECTED_NEXT_RECOMMENDED_STEP,
+        state["current_live_route"]["latest_completed_next_recommended_step"] == CURRENT_LIVE_NEXT_RECOMMENDED_STEP,
         "current live route next step mismatch",
     )
 
@@ -10275,10 +10343,10 @@ def main() -> None:
     _require(state["next_action"]["planning_only"] is False, "next_action.planning_only must be false")
     _require(state["next_action"]["review_only"] is False, "next_action.review_only must be false")
     _require(state["next_action"]["execution_authorization"] is False, "next_action.execution_authorization must be false")
-    _require(state["next_action"]["status"] == EXPECTED_NEXT_ACTION_STATUS, "next_action.status mismatch")
+    _require(state["next_action"]["status"] == CURRENT_LIVE_STATUS, "next_action.status mismatch")
     _require(
-        EXPECTED_NEXT_RECOMMENDED_STEP in state["next_action"]["notes"],
-        "next_action.notes must mention the exact next recommended step",
+        CURRENT_LIVE_NEXT_ACTION_NOTE in state["next_action"]["notes"],
+        "next_action.notes must mention the exact next phase",
     )
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
@@ -10347,17 +10415,18 @@ def main() -> None:
     ):
         _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
-    _require(state["locks"]["deferred_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase must be PURG-01")
+    _require(state["locks"]["deferred_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase mismatch")
     _require(
-        EXPECTED_NEXT_RECOMMENDED_STEP in state["locks"]["deferred_phase_reason"],
-        "locks.deferred_phase_reason must mention the exact next recommended step",
+        CURRENT_EXPECTED_NEXT_PHASE_ID in state["locks"]["deferred_phase_reason"],
+        "locks.deferred_phase_reason must mention the exact next phase",
     )
     _check_forbidden_route_claims()
-    _require(state["history_summary"]["latest_execution_phase"] == EXPECTED_PHASE, "unexpected latest execution phase")
-    _require(state["history_summary"]["previous_execution_phase"] == IF11_SOURCE_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == IF11_SOURCE_PHASE, "unexpected last transition from phase")
-    _require(state["last_transition"]["to_phase"] == EXPECTED_PHASE, "unexpected last transition to phase")
-    _require(state["last_transition"]["to_status"] == EXPECTED_LATEST_COMPLETED_STATUS, "unexpected last transition to_status")
+    _require(state["history_summary"]["latest_execution_phase"] == CURRENT_LIVE_PHASE, "unexpected latest execution phase")
+    _require(state["history_summary"]["latest_execution_status"] == CURRENT_LIVE_STATUS, "unexpected latest execution status")
+    _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == EXPECTED_PHASE, "unexpected last transition from phase")
+    _require(state["last_transition"]["to_phase"] == CURRENT_LIVE_PHASE, "unexpected last transition to phase")
+    _require(state["last_transition"]["to_status"] == CURRENT_LIVE_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
 
     # Authorization: fixture_materialization_allowed remains true; all others false.
@@ -10412,23 +10481,16 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "INF-FULL-07",
+        "PURG-04",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg01_route_admission_pass",
-        "latest_completed_phase: IF-11 Minos Final Verdict + Closure",
-        "next_phase: PURG-01",
-        "next_recommended_step: execute_purg01_controlled_triage_artifact_only",
+        "purg04_track_a_pointer_residual_repair_patch_pass",
+        "latest_completed_phase: PURG-04 Track A Pointer Residual Repair Patch Packet",
+        "next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
-        "PURG-01 admitido como rota: true",
-        "PURG-01 triage autorizada para etapa futura controlada: true",
-        "Pacote primario do operador validado: true",
-        "Review formal de admissao PURG-01: pass",
-        "Review de prontidao para triage PURG-01: pass",
-        "Gate de planejamento de triage PURG-01: pass",
-        "Gate de autorizacao de triage PURG-01: pass",
-        "Gate de execucao controlada de triage PURG-01: pass",
+        "Merge to Project_ARIS main: NOT authorized",
+        "IF09-FIND-001 remains open",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -10499,11 +10561,11 @@ def main() -> None:
 
     print(json.dumps({
         "decision": EXPECTED_DECISION,
-        "status": EXPECTED_STATUS,
-        "phase_id": EXPECTED_PHASE_ID,
-        "previous_phase_id": EXPECTED_PREVIOUS_PHASE_ID,
-        "latest_completed_phase": EXPECTED_PHASE,
-        "latest_completed_status": EXPECTED_LATEST_COMPLETED_STATUS,
+        "status": CURRENT_LIVE_STATUS,
+        "phase_id": CURRENT_LIVE_PHASE_ID,
+        "previous_phase_id": CURRENT_LIVE_PREVIOUS_PHASE_ID,
+        "latest_completed_phase": CURRENT_LIVE_PHASE,
+        "latest_completed_status": CURRENT_LIVE_STATUS,
         "next_phase": CURRENT_EXPECTED_NEXT_PHASE_ID,
         "gate_opened_at": state["gate_opened_at"],
         "gate_max_cycles": state["gate_max_cycles"],

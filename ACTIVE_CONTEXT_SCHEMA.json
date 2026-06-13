@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "description": "Structural evolutionary validation contract for ACTIVE_CONTEXT_STATE.json. Const retained only for permanent invariants. Phase names, status strings, and mutable flags use type/enum/required constraints. Markdown files are derived mirrors only.",
+  "schema_3_13_change_summary": "Expanded phase_id/current_phase_id/previous_phase_id pattern to two-or-three-segment. Added schema_version 3.13. Reconciled completed_phases to accept both array and object formats. Triggered by state reconciliation packet base SHA e747ee5.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -335,37 +336,61 @@
       "type": "object"
     },
     "completed_phases": {
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-        "decision": {
-          "enum": [
-            "pass",
-            "blocked",
-            "warn",
-            "fail"
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "phase",
+              "decision",
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "phase": {
+                "type": "string"
+              },
+              "decision": {
+                "enum": [
+                  "pass",
+                  "blocked",
+                  "warn",
+                  "fail"
+                ]
+              },
+              "repair_type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        {
+          "type": "object",
+          "required": [
+            "latest",
+            "total_phases_completed"
           ],
-          "type": "string"
-        },
-          "phase": {
-            "type": "string"
-          },
-          "repair_type": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
+          "properties": {
+            "latest": {
+              "type": "object"
+            },
+            "latest_capability": {
+              "type": "object"
+            },
+            "total_phases_completed": {
+              "type": "integer"
+            },
+            "full_history": {
+              "type": "string"
+            }
           }
-        },
-        "required": [
-          "phase",
-          "decision",
-          "status"
-        ],
-        "type": "object"
-      },
-      "minItems": 1,
-      "type": "array"
+        }
+      ]
     },
     "cross_field_consistency_policy": {
       "additionalProperties": false,
@@ -506,7 +531,7 @@
       "type": "boolean"
     },
     "current_phase_id": {
-      "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
+      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
       "type": "string"
     },
     "fixture_count": {
@@ -859,7 +884,7 @@
       "type": "boolean"
     },
     "phase_id": {
-      "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
+      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
       "type": "string"
     },
     "scenario_count": {
@@ -933,12 +958,13 @@
         "3.7",
         "3.8",
         "3.9",
-        "3.10"
+        "3.10",
+        "3.13"
       ],
       "type": "string"
     },
     "previous_phase_id": {
-      "pattern": "^[A-Z]{2,6}-[A-Z]{2,8}-[0-9]{2}$",
+      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
       "type": "string"
     },
     "gate_opened_at": {
