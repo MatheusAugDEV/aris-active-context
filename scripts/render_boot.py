@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import pathlib
-import subprocess
-import sys
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -52,18 +51,6 @@ PHASE_TO_LAYER_PREFIXES = {
     "BEDROCK": "Bedrock Gate",
     "PROD": "Produto Parte 2 / Design Partner",
 }
-
-
-def _git(args: list[str]) -> str:
-    result = subprocess.run(
-        ["git", *args],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return result.stdout.strip()
-
 
 def _load_state() -> dict[str, Any]:
     return json.loads(STATE_PATH.read_text(encoding="utf-8"))
@@ -189,6 +176,7 @@ def _model_reasoning_section(state: dict[str, Any]) -> list[str]:
 
 
 def render_boot_text() -> str:
+    state_bytes = STATE_PATH.read_bytes()
     state = _load_state()
     roadmap_text = _roadmap_text()
     transition_rows = _parse_transition_rows(roadmap_text)
@@ -196,8 +184,7 @@ def render_boot_text() -> str:
     phase_id = state.get("phase_id", "")
     current_layer = _current_layer(phase_id)
     transition = _transition_for_state(state, transition_rows)
-    state_sha = _git(["log", "-1", "--format=%H", "--", str(STATE_PATH.name)])
-    state_commit_time = _git(["log", "-1", "--format=%cI", "--", str(STATE_PATH.name)])
+    state_sha = hashlib.sha256(state_bytes).hexdigest()[:12]
     model_reasoning = _model_reasoning_section(state)
 
     map_lines = []
@@ -214,12 +201,11 @@ def render_boot_text() -> str:
         "## CARIMBO",
         "",
         f"- state_sha: `{state_sha}`",
-        f"- generated_at: `{state_commit_time}`",
         f"- schema_version: `{state.get('schema_version', '')}`",
         "",
         "## AVISO DE STALE",
         "",
-        "- Se `ACTIVE_CONTEXT_STATE.json` mudar e este carimbo ficar para tras, rode `python3 scripts/render_boot.py`.",
+        "- Se este state_sha nao bate com sha256(STATE.json), rode `python3 scripts/render_boot.py`.",
         "",
         "## ONDE ESTOU",
         "",

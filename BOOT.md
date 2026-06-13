@@ -4,13 +4,12 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `1c80ca4514d74279dce5c33e49c5c0cb2d20fce3`
-- generated_at: `2026-06-12T22:51:01-03:00`
+- state_sha: `8733a8f457cd`
 - schema_version: `3.13`
 
 ## AVISO DE STALE
 
-- Se `ACTIVE_CONTEXT_STATE.json` mudar e este carimbo ficar para tras, rode `python3 scripts/render_boot.py`.
+- Se este state_sha nao bate com sha256(STATE.json), rode `python3 scripts/render_boot.py`.
 
 ## ONDE ESTOU
 
