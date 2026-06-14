@@ -164,16 +164,36 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
+Latest completed phase: PURG-04 Track A Pointer Residual Repair Patch Packet
+Current phase_id/current_phase_id: PURG-04
+Current status/status: purg04_track_a_pointer_residual_repair_patch_pass
+Decision: pass
+Active next phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
+Active next phase class: purgatorium_route_admission
+next_phase_authorized_by_operator: false
+next_phase_execution_authorization: false
+operator_approval_packet_review_is_execution_approval: false
+real_apply_authorized: false
+runtime_integration_allowed: false
+production_authorized: false
+product_ready: false
+secrets_access_authorized: false
+Track A patch applied in cleanroom branch only.
+Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
+Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+Latest completed project commit SHA: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+Latest completed CI state: `CI_GREEN_CONFIRMED`
+Merge to Project_ARIS main: `NOT AUTHORIZED`
+IF09-FIND-001 remains open; closure only via Infernus Revalidation.
+Project_ARIS main workspace remains untouched.
+Next canonical step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
 Latest completed phase: IF-11 Minos Final Verdict + Closure
 Active next phase: PURG-01
-Active next phase class: purgatorium_route_admission
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
-next_phase_authorized_by_operator: true
 Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
-Infernus canonroadmap status: superseded/excludent/forensic-only with stub retained at `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` and forensic copy at `excludent/infernus/roadmaps/infernus_full_canonroadmap.md`
 PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`
 Live route terminalized by: `purg00_route_amendment_terminal_wait_state_operator_source_required`
-Live route admission artifacts: `artifacts/purgatorium/purg_pre_route_admission_decision.json`, `artifacts/purgatorium/purg_pre_route_admission_summary.json`, `artifacts/purgatorium/purg_pre_route_admission_no_real_execution_attestation.json`
 PURG-PRE canonical authority execution verified by: `purg_pre_canonical_authority_execution_pass`
 PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`
 PURG-00 route admitted by: `purg00_route_admission_pass`
@@ -186,8 +206,6 @@ PURG-01 triage readiness review: `purg01_triage_readiness_review_pass`
 PURG-01 triage planning gate: `purg01_triage_planning_gate_pass`
 PURG-01 triage authorization gate: `purg01_triage_authorization_gate_pass`
 PURG-01 controlled triage execution gate: `purg01_controlled_triage_execution_gate_pass`
-Future PURG-00 admission candidate: `artifacts/purgatorium/purg_pre_future_purg00_admission_candidate.json`
-Previous live route preserved historically before admission: `IF-08` / `infernus_full_execution`
 PURG-00 execution: false
 PURG-00 intake executed: true
 Future PURG-01 triage readiness: CONTROLLED_EXECUTION_GATE_PASS
@@ -195,11 +213,9 @@ PURG-01 triage authorized: true
 Operator primary source packet supplied and validated: true
 Next non-execution step: `execute_purg01_controlled_triage_artifact_only`
 Real execution (waves against real systems, runtime, apply): false — requires operator execution command
-Product/Bedrock/real_apply/secrets/runtime real: false
 W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
 IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
 IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, records the controlled triage execution gate as pass from the operator packet plus IF10 handoff graph evidence, keeps triage execution unopened, and limits the next move to execute_purg01_controlled_triage_artifact_only without authorizing any real execution surface.
-excludent/ remains excluded_from_context with read_by_default=false, authority=none, forensic_only.
 
 Standing Authorization Policy
 Historical note: the operator-approved `infernus_full_canonroadmap.md` granted standing authorization for Infernus FULL while that program was active. After IF-11, that document is superseded and forensic-only. The post-Infernus technical direction document is `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, but it does not open a live route by itself and does not authorize real execution.

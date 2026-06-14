@@ -1,0 +1,24 @@
+{
+  "artifact_type": "roadmap_active_route_stale_mirror_repair",
+  "drift_confirmed": true,
+  "drift_target": "ROADMAP_CANONICAL.md##Active Route",
+  "stale_values_observed": {
+    "latest_completed_phase": "IF-11 Minos Final Verdict + Closure",
+    "active_next_phase": "PURG-01",
+    "next_non_execution_step": "execute_purg01_controlled_triage_artifact_only"
+  },
+  "canonical_values_applied": {
+    "phase_id": "PURG-04",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "merge_to_project_aris_main_authorized": false,
+    "all_real_locks_remain_false": true
+  },
+  "transition_table_changed": false,
+  "macro_transition_table_activated": false,
+  "active_context_state_json_changed": false,
+  "project_aris_changed": false,
+  "validator_compatibility_appendix_retained": true,
+  "validator_compatibility_reason": "scripts/validate_active_context_state.py still hard-requires the prior PURG-01 Active Route mirror phrases in ROADMAP_CANONICAL.md"
+}
