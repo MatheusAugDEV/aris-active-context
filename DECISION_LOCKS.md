@@ -1937,3 +1937,18 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain preserved as false.
 - Canonical artifact: `artifacts/purgatorium/purg04_track_a_pointer_residual_repair_readiness_packet.json`
 - Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_POINTER_RESIDUAL_REPAIR_PATCH_PACKET`
+
+## PURG04 Track A Pointer Residual Repair Patch Packet
+
+- Status: `purg04_track_a_pointer_residual_repair_patch_pass`
+- Decision: `pass`
+- Scope: bounded cleanroom patch lineage record only; no Project_ARIS main merge authorization
+- Source result artifact: `artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json`
+- Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
+- Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+- Latest completed project commit SHA: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+- Latest completed CI state: `CI_GREEN_CONFIRMED`
+- Merge to Project_ARIS main: `NOT AUTHORIZED`
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- All real locks remain false
+- Next recommended step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`

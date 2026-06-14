@@ -1,0 +1,44 @@
+{
+  "artifact_type": "decision_locks_drift_repair",
+  "recorded_at": "2026-06-13T21:23:16-03:00",
+  "repository": "MatheusAugDEV/aris-active-context",
+  "branch": "main",
+  "scope": "governance_only_artifact_only",
+  "drift_confirmed": true,
+  "drift_target": "DECISION_LOCKS.md",
+  "drift_summary": "ACTIVE_CONTEXT_STATE.json, BOOT.md, CURRENT_STATE.md, and NEXT_ACTION.md already record PURG-04 Track A Pointer Residual Repair Patch Packet as pass, while DECISION_LOCKS.md stopped at the prior readiness packet and had no corresponding patch-pass ledger entry.",
+  "canonical_state_observed": {
+    "phase_id": "PURG-04",
+    "current_phase_id": "PURG-04",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "execution_authorization": false,
+    "merge_to_project_aris_main_authorized": false,
+    "all_real_locks_remain_false": true
+  },
+  "decision_locks_observation": {
+    "matching_patch_pass_entry_present_before_repair": false,
+    "latest_track_a_entry_before_repair": "PURG04 Track A Pointer Residual Repair Readiness Packet"
+  },
+  "source_result_artifact": {
+    "path": "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+    "sha256": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
+    "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+    "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+    "latest_completed_ci_state": "CI_GREEN_CONFIRMED"
+  },
+  "constraints_preserved": {
+    "project_aris_main_merge_authorized": false,
+    "execution_authorization": false,
+    "finding_if09_find_001_closed": false,
+    "active_next_phase_preserved": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "active_context_state_json_changed": false,
+    "project_aris_workspace_changed": false
+  },
+  "additional_observations_report_only": [
+    "ROADMAP_CANONICAL.md Active Route remains stale at IF-11/PURG-01 relative to the canonical JSON and was not modified in this repair."
+  ],
+  "origin_main_sha_observed_before_repair": "85a46bec84b7772e2bb551304e0b8e483af00b21"
+}
