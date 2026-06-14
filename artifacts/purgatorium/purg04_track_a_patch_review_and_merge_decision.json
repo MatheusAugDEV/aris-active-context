@@ -1,52 +1,59 @@
 {
-  "artifact_type": "track_a_patch_review_and_merge_decision",
-  "phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
-  "recorded_at": "2026-06-13T21:43:23-03:00",
-  "decision_scope": "review_and_merge_decision_only_no_merge_execution",
-  "canonical_state_verified": true,
-  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
-  "patch_branch_remote_ref": "origin/codex/purg04-track-a-pointer-residual-repair-20260612",
-  "patch_branch_remote_matches_recorded_commit": true,
-  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
-  "patch_commit_subject": "Repair Track A pointer residual contracts",
-  "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
-  "latest_completed_project_commit_sha_relationship_to_patch_commit": "ancestor_not_direct_parent",
-  "reviewed_evidence": [
-    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
-    "artifacts/purgatorium/purg04_decision_locks_track_a_patch_pass_drift_repair.json",
-    "artifacts/purgatorium/purg04_roadmap_active_route_stale_mirror_repair.json"
-  ],
-  "reviewed_evidence_sha256": {
-    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe"
+  "artifact_id": "purg04_track_a_patch_review_and_merge_decision",
+  "created_at": "2026-06-14T14:47:44-03:00",
+  "phase_id": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+  "scope": "artifact_only_review_only_patch_review_and_merge_decision_no_merge_no_rebase_no_project_aris_mutation",
+  "source_state_sha256": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+  "source_packets_verified": {
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json": "91fc5c5cfd1365cf93cfec5042178a9882076a7d1b4a1b254e83b132d5a5eb85",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json": "fc76d78666f8f61035599dee40cbfbad3c802ddb9042670a87c5e002444aaa0e",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+    "artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json": "28f60f70e843bcfe97a186c85d11e3d2f87cd3f84d3f1476ba6c2caa42f3e4f1"
   },
-  "scope_bounded": true,
-  "bounded_scope_review": {
-    "allowed_surface_confirmed": [
-      "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
-      "src/aris/context/active_track_phase_reconciliation_gate.py",
-      "tests/test_aris_context_active_track_resume_gate.py",
-      "src/aris/context/active_track_resume_gate.py",
-      "scripts/run_strategic_reset_macrostructure_lock_gate.py",
-      "src/aris/product_loop/product_loop_closure_gate.py"
+  "transition_table_row_verified": {
+    "roadmap_sha256": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895",
+    "current_gate_row": "| PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence |",
+    "successor_row": "| PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |"
+  },
+  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "base_previously_authorized": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+  "observed_origin_main": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "forbidden_surface_exclusion_verified": {
+    "verified": true,
+    "forbidden_surfaces_in_main_movement": [
+      "ACTIVE_CONTEXT_POINTER.md"
     ],
-    "allowed_but_unchanged": [
-      "tests/test_product_loop_l1_15_product_loop_closure_gate.py"
+    "forbidden_surfaces_in_patch_vs_current_main": [],
+    "cleanroom_merge_plan_exclusions_preserved": [
+      "ACTIVE_CONTEXT_POINTER.md",
+      ".gitmodules",
+      ".env*",
+      "secrets/**",
+      "archive/**",
+      "excludent/**",
+      "dependency files",
+      "any IF08 route-text or canonical-text surface"
     ]
   },
-  "forbidden_paths_touched": [],
-  "transition_table_changed": false,
-  "active_context_state_json_changed": false,
-  "project_aris_main_changed": false,
-  "explicit_operator_merge_authorization_found": false,
-  "merge_execution_authorized": false,
-  "merge_executed": false,
-  "if09_find_001_closed": false,
-  "all_real_locks_remain_false": true,
-  "decision": "needs_operator_merge_authorization",
-  "next_recommended_step": "REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
-  "notes": [
-    "Review executed against the canonical active-context state without performing any Project_ARIS merge.",
-    "Patch branch and commit match the canonical patch result artifact and the remote branch head.",
-    "No explicit operator text authorizing merge execution into Project_ARIS main was found in the active-context sources reviewed for this gate."
-  ]
+  "merge_attempted": false,
+  "rebase_attempted": false,
+  "project_aris_mutated": false,
+  "active_context_state_mutation_authorized_now": false,
+  "active_context_state_mutated": false,
+  "merge_execution_authorized_now": false,
+  "future_merge_execution_requires_explicit_operator_authorization": true,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "decision": "pass",
+  "recommended_next_step": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "state_update_blocked_by_validator_contract": {
+    "blocked": true,
+    "reason": "scripts/validate_active_context_state.py and README.md still hard-require the live mirror phrase next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION, so advancing ACTIVE_CONTEXT_STATE.json here would create out-of-scope validator drift."
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "ecd676c8383d1dc8c021208b9c84f534e1ccabbea055c05615a8eb40b365eb68"
+  }
 }

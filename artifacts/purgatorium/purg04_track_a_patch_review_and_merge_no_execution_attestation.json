@@ -1,0 +1,32 @@
+{
+  "artifact_id": "purg04_track_a_patch_review_and_merge_no_execution_attestation",
+  "created_at": "2026-06-14T14:47:44-03:00",
+  "phase_id": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+  "scope": "no_execution_attestation_for_review_only_track_a_patch_review_and_merge_gate",
+  "source_state_sha256": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+  "source_packets_verified": {
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "e4d312fd663dbf0507dd3cac912b0520b7f0ae949eddd74e27e26c17169321cc",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json": "91fc5c5cfd1365cf93cfec5042178a9882076a7d1b4a1b254e83b132d5a5eb85"
+  },
+  "merge_attempted": false,
+  "rebase_attempted": false,
+  "project_aris_mutated": false,
+  "project_aris_main_changed": false,
+  "active_context_state_mutated": false,
+  "dirty_or_quarantine_clones_touched": false,
+  "forbidden_surfaces_touched": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_executed": false,
+  "bedrock_executed": false,
+  "secrets_accessed": false,
+  "external_network_beyond_github_governance": false,
+  "self_report_used_as_evidence": false,
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "b373355e91f506db055262bc2c458e49bdd82ec519ef57d525a67260512c3625"
+  }
+}

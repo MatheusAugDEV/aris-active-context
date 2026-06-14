@@ -2132,3 +2132,36 @@ The following track references are historical_residual_route_noise. They do NOT 
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - Canonical artifact: `artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json`
 - Recommended next step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+
+## PURG04 Track A Patch Review And Merge Decision
+
+- Status: `review_only_patch_review_and_merge_decision_pass`
+- Decision: `pass`
+- Scope: artifact-only/review-only materialization of `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`; no merge, no rebase, no Project_ARIS mutation, no execution authorization
+- Source packets verified:
+  - `artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json`
+  - `artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json`
+  - `artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json`
+  - `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
+  - `artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json`
+- Transition Table review gate row verified and successor row present for future execution only.
+- Forbidden surface exclusion preserved:
+  - `ACTIVE_CONTEXT_POINTER.md`
+  - `.gitmodules`
+  - `.env*`
+  - `secrets/**`
+  - `archive/**`
+  - `excludent/**`
+  - dependency files
+  - any IF08 route-text or canonical-text surface
+- Merge attempted: `false`
+- Rebase attempted: `false`
+- Project_ARIS changed: `false`
+- Active-context state changed: `false` (`validator_contract_blocks_live_route_advance_in_this_scope`)
+- Merge execution authorized now: `false`
+- Future merge execution requires separate explicit operator authorization: `true`
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- Canonical artifacts:
+  - `artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json`
+  - `artifacts/purgatorium/purg04_track_a_patch_review_and_merge_no_execution_attestation.json`
+- Recommended next step: `PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
