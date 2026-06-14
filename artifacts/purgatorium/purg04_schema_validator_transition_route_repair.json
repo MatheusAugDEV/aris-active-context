@@ -1,0 +1,22 @@
+{
+  "artifact_type": "schema_validator_transition_route_repair",
+  "phase": "DEFINE_CANONICAL_SCHEMA_VALIDATOR_AND_TRANSITION_ROUTE_FOR_PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "source_blocker_artifact": "artifacts/purgatorium/purg04_track_a_main_merge_execution_schema_blocker.json",
+  "operator_merge_authorization_text_recorded": true,
+  "route_repair_scope": "active_context_schema_validator_transition_table_only",
+  "project_aris_changed": false,
+  "merge_executed": false,
+  "active_context_schema_changed": true,
+  "validator_changed": true,
+  "transition_table_changed": true,
+  "active_context_state_json_changed": false,
+  "new_phase_id_supported": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "new_phase_class_supported": "purgatorium_track_a_main_merge_execution",
+  "post_merge_phase_id_supported": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+  "post_merge_phase_class_supported": "purgatorium_post_merge_validation",
+  "forbidden_runtime_locks_preserved_false": true,
+  "if09_find_001_closed": false,
+  "next_recommended_step": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "merge_execution_authorized_by_this_repair": false,
+  "requires_operator_authorization_text_for_actual_merge": true
+}

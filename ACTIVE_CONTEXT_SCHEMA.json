@@ -29,6 +29,8 @@
         "purgatorium_full_authority_materialization",
         "purgatorium_full_intake",
         "purgatorium_route_admission",
+        "purgatorium_track_a_main_merge_execution",
+        "purgatorium_post_merge_validation",
         "history_only",
         null
       ],
@@ -468,6 +470,8 @@
             "purgatorium_full_authority_materialization",
             "purgatorium_full_intake",
             "purgatorium_route_admission",
+            "purgatorium_track_a_main_merge_execution",
+            "purgatorium_post_merge_validation",
             "history_only",
             null
           ],
@@ -531,7 +535,7 @@
       "type": "boolean"
     },
     "current_phase_id": {
-      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
+      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
       "type": "string"
     },
     "fixture_count": {
@@ -844,6 +848,8 @@
             "purgatorium_full_authority_materialization",
             "purgatorium_full_intake",
             "purgatorium_route_admission",
+            "purgatorium_track_a_main_merge_execution",
+            "purgatorium_post_merge_validation",
             "history_only",
             null
           ],
@@ -884,7 +890,7 @@
       "type": "boolean"
     },
     "phase_id": {
-      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
+      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
       "type": "string"
     },
     "scenario_count": {
@@ -964,7 +970,7 @@
       "type": "string"
     },
     "previous_phase_id": {
-      "pattern": "^[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}$",
+      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
       "type": "string"
     },
     "gate_opened_at": {

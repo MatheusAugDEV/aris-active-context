@@ -788,10 +788,14 @@ INF_FULL_ROUTE_SYNC_DECISION_PATH = ROOT / "artifacts" / "inf_full_route_sync_04
 INF_FULL_ROUTE_SYNC_SUMMARY_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "summary.json"
 INF_FULL_ROUTE_SYNC_REPORT_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "report.md"
 INF_FULL_ROUTE_SYNC_WORKSPACE_PATH = ROOT / "artifacts" / "inf_full_route_sync_04_to_05" / "workspace_hygiene_snapshot.txt"
+PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_main_merge_execution_result.json"
+PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_packet.json"
 
 GOVERNANCE_CLASSES = {
     "governance_repair", "observability",
-    "transition_engine", "contract", "route"
+    "transition_engine", "contract", "route",
+    "purgatorium_track_a_main_merge_execution",
+    "purgatorium_post_merge_validation",
 }
 CAPACITY_CLASSES = {
     "fixture_materialization", "bot_execution",
@@ -833,6 +837,25 @@ PHASE_DELIVERABLES = {
             json.loads(
                 pathlib.Path("artifacts/purg_01/finding_nemesis_validator_bypass.json").read_text(encoding="utf-8")
             ).get("status")
+        )
+    ),
+    "PURG04_TRACK_A_MAIN_MERGE_EXECUTION": lambda: (
+        PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH.exists()
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("artifact_type") == "track_a_main_merge_execution_result"
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("phase") == "PURG04_TRACK_A_MAIN_MERGE_EXECUTION"
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("diff_scope_allowed") is True
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("forbidden_paths_touched") == []
+        and bool(_load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("merge_commit_sha"))
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("merge_executed") is True
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("project_aris_main_changed") is True
+        and _load_json(PURG04_TRACK_A_MAIN_MERGE_EXECUTION_RESULT_PATH).get("project_aris_ci_state") == "CI_GREEN_CONFIRMED"
+    ),
+    "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET": lambda: (
+        PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH.exists()
+        and _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("phase") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET"
+        and (
+            _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("project_aris_ci_state") == "CI_GREEN_CONFIRMED"
+            or bool(_load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("explicit_ci_confirmation_artifact"))
         )
     ),
     "ACB-CORE-01": lambda: (
