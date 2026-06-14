@@ -1952,3 +1952,31 @@ The following track references are historical_residual_route_noise. They do NOT 
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - All real locks remain false
 - Next recommended step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+
+## PURG04 Project_ARIS Main Moved Review Packet
+
+- Source status: `BLOCKED_PROJECT_MAIN_MOVED_REVIEW_REQUIRED`
+- Scope: artifact-only review packet for the `Project_ARIS origin/main` movement blocker; no merge, no rebase, no Project_ARIS mutation
+- Fresh clone used: `/home/matheus/ARIS_REVIEW_20260613/Project_ARIS-main-moved-review`
+- Dirty workspace reused: `false`
+- Nested `aris-active-context/` in fresh clone: `false`
+- Base previously authorized: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+- Observed `origin/main`: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
+- Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+- Merge base old->current main: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+- Merge base current main->patch: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+- Merge base old->patch: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+- Track A overlap with main movement: `false`
+- Forbidden surfaces in main movement:
+  - `ACTIVE_CONTEXT_POINTER.md`
+- Forbidden surfaces in patch vs current main: none
+- Decision: `blocked_forbidden_surface_in_main_movement`
+- Next recommended step: `BLOCKED_OPERATOR_REVIEW_REQUIRED`
+- Merge attempted: `false`
+- Rebase attempted: `false`
+- Project_ARIS main changed: `false`
+- Active-context state changed: `false` (`review_packet_only_no_route_advance`)
+- All real locks remain false
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- Canonical artifact: `artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json`
