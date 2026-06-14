@@ -2026,3 +2026,65 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context state changed: `false` (`review_only_no_route_advance`)
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - Canonical artifact: `artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json`
+
+## PURG04 Cleanroom Merge Plan With Forbidden Surface Exclusion
+
+- Status: `review_only_cleanroom_merge_plan_recorded`
+- Decision: `plan_only_fail_closed`
+- Scope: artifact-only/review-only cleanroom merge plan for a future Track A integration path; no merge, no rebase, no Project_ARIS mutation, no live-route mutation
+- Source packets verified:
+  - `artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json`
+  - `artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json`
+- Canonical state preserved:
+  - `phase_id=current_phase_id=PURG-04`
+  - `latest_completed_phase=PURG-04 Track A Pointer Residual Repair Patch Packet`
+  - `current_status=status=purg04_track_a_pointer_residual_repair_patch_pass`
+  - `active_next_phase=PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - `active_next_phase_class=purgatorium_route_admission`
+- Required cleanroom admission for any future execution:
+  - path: `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone`
+  - `origin/main` required SHA: `7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+  - patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
+  - patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+- Allowed future merge surface remains bounded to the previously authorized Track A files only:
+  - `tests/test_aris_context_active_track_phase_reconciliation_gate.py`
+  - `src/aris/context/active_track_phase_reconciliation_gate.py`
+  - `tests/test_aris_context_active_track_resume_gate.py`
+  - `src/aris/context/active_track_resume_gate.py`
+  - `scripts/run_strategic_reset_macrostructure_lock_gate.py`
+  - `tests/test_product_loop_l1_15_product_loop_closure_gate.py`
+  - `src/aris/product_loop/product_loop_closure_gate.py`
+- Forbidden surface exclusion remains mandatory:
+  - `ACTIVE_CONTEXT_POINTER.md`
+  - `.gitmodules`
+  - `.env*`
+  - `secrets/**`
+  - `archive/**`
+  - `excludent/**`
+  - dependency files
+  - any IF08 route-text or canonical-text surface
+- Transition Table contradiction remains risk-only and fail-closed:
+  - live route remains `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - Transition Table still maps `PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+  - this packet does not repair that contradiction and cannot authorize automatic merge advancement
+- Authorization locks preserved:
+  - `merge_execution_authorized_now=false`
+  - `rebase_authorized_now=false`
+  - `project_aris_mutation_authorized_now=false`
+  - `active_context_state_mutation_authorized_now=false`
+  - `finding_close_allowed=false`
+  - `real_apply_allowed=false`
+  - `runtime_allowed=false`
+  - `product_allowed=false`
+  - `bedrock_allowed=false`
+  - `secrets_allowed=false`
+- Future execution requirements preserved:
+  - separate future operator execution authorization artifact required
+  - explicit diff/no-overlap/no-forbidden-surface proof required
+  - CI green plus validator evidence required after any future execution
+- Merge attempted: `false`
+- Rebase attempted: `false`
+- Project_ARIS changed: `false`
+- Active-context state changed: `false` (`review_only_plan_no_route_advance`)
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- Canonical artifact: `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`

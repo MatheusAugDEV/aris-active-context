@@ -1,0 +1,210 @@
+{
+  "artifact_id": "purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion",
+  "created_at": "2026-06-14T14:17:02-03:00",
+  "scope": "artifact_only_review_only_cleanroom_merge_plan_for_future_track_a_integration_with_forbidden_surface_exclusion_no_merge_no_rebase_no_project_aris_mutation",
+  "source_operator_decision_packet": {
+    "path": "artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json",
+    "sha256": "fc76d78666f8f61035599dee40cbfbad3c802ddb9042670a87c5e002444aaa0e",
+    "recommended_option_observed": "C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION"
+  },
+  "source_main_moved_review_packet": {
+    "path": "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json",
+    "sha256": "91fc5c5cfd1365cf93cfec5042178a9882076a7d1b4a1b254e83b132d5a5eb85",
+    "decision_observed": "blocked_forbidden_surface_in_main_movement"
+  },
+  "canonical_inputs_read": [
+    "BOOT.md",
+    "ACTIVE_CONTEXT_STATE.json",
+    "DECISION_LOCKS.md",
+    "ROADMAP_CANONICAL.md",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md"
+  ],
+  "observed_active_context_state": {
+    "canonical_repository": "MatheusAugDEV/aris-active-context",
+    "canonical_branch": "main",
+    "canonical_head": "c3b68f051e4bfcae4d96d8d73d1d2883b2b9ed4e",
+    "phase_id": "PURG-04",
+    "current_phase_id": "PURG-04",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "current_status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "active_next_phase_class": "purgatorium_route_admission",
+    "latest_blocker": "PROJECT_ARIS_MAIN_MOVED_ACTIVE_CONTEXT_POINTER_FORBIDDEN_SURFACE",
+    "blocker_status": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+    "merge_allowed_now": false,
+    "rebase_allowed_now": false,
+    "project_aris_mutation_allowed": false,
+    "active_context_state_mutation_allowed": false
+  },
+  "observed_transition_table_drift": {
+    "drift_detected": true,
+    "roadmap_file": "ROADMAP_CANONICAL.md",
+    "current_phase_id": "PURG-04",
+    "decision": "pass",
+    "transition_table_row_observed": {
+      "next_phase_id": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+      "next_phase_class": "purgatorium_track_a_main_merge_execution",
+      "advance_mode": "operator"
+    },
+    "live_route_observed": {
+      "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+      "active_next_phase_class": "purgatorium_route_admission"
+    },
+    "risk_statement": "The Transition Table does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and therefore cannot be used here to authorize or auto-advance any merge execution.",
+    "repair_attempted_in_this_packet": false
+  },
+  "fail_closed_policy": {
+    "policy_active": true,
+    "merge_automatic_advance_blocked": true,
+    "rebase_automatic_advance_blocked": true,
+    "live_route_mutation_blocked": true,
+    "reason": "Forbidden surface drift exists on Project_ARIS main and the Transition Table remains contradictory relative to the live PURG-04 review gate.",
+    "enforcement": [
+      "No merge execution is authorized by this packet.",
+      "No rebase is authorized by this packet.",
+      "No Project_ARIS mutation is authorized by this packet.",
+      "No ACTIVE_CONTEXT_STATE.json mutation is authorized by this packet.",
+      "A separate future execution authorization artifact is mandatory before any merge attempt."
+    ]
+  },
+  "planned_cleanroom_prerequisites": [
+    "Use a fresh or freshly revalidated cleanroom clone only.",
+    "Confirm the cleanroom clone HEAD equals the required origin/main SHA before any future execution.",
+    "Confirm the Track A patch branch and patch commit still match the recorded cleanroom lineage.",
+    "Confirm the cleanroom clone is status-clean immediately before any future execution.",
+    "Confirm no repository-root nested aris-active-context directory exists in the cleanroom clone.",
+    "Diff current origin/main versus the Track A patch commit before any future execution.",
+    "Prove ACTIVE_CONTEXT_POINTER.md is excluded from any future merge surface.",
+    "Prove .gitmodules, .env*, secrets/**, dependency files, archive/**, and excludent/** are excluded from any future merge surface.",
+    "Require a separate operator execution authorization artifact before any merge attempt.",
+    "Require CI green plus validator evidence after any future execution."
+  ],
+  "required_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "required_origin_main_sha": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "forbidden_surface_exclusion_list": [
+    "ACTIVE_CONTEXT_POINTER.md",
+    ".gitmodules",
+    ".env*",
+    "secrets/**",
+    "archive/**",
+    "excludent/**",
+    "dependency files",
+    "src/aris/infernus/if08_w05_preflight_readiness_rerun.py",
+    "src/aris/infernus/if08_w05_post_sync_review.py",
+    "src/aris/infernus/if08_w05_controlled_execution.py",
+    "tests/test_phase_completion_materialization_guard.py",
+    "scripts/check_phase_completion_materialization.py",
+    "PRE-F21 artifacts/v5 lineage pruning or replacement"
+  ],
+  "allowed_future_merge_surface": [
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "src/aris/context/active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py",
+    "src/aris/context/active_track_resume_gate.py",
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+    "src/aris/product_loop/product_loop_closure_gate.py"
+  ],
+  "forbidden_future_merge_surface": [
+    "ACTIVE_CONTEXT_POINTER.md",
+    ".gitmodules",
+    ".env*",
+    "secrets/**",
+    "archive/**",
+    "excludent/**",
+    "dependency files",
+    "any ACTIVE_CONTEXT_STATE.json / BOOT.md / ROADMAP_CANONICAL.md / CURRENT_STATE.md / NEXT_ACTION.md mutation",
+    "any IF08 route-text or canonical-text surface",
+    "tests/test_phase_completion_materialization_guard.py",
+    "scripts/check_phase_completion_materialization.py",
+    "PRE-F21 artifacts/v5 lineage pruning or replacement"
+  ],
+  "required_pre_merge_checks": [
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone rev-parse HEAD must equal 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad unless a separate cleanroom refresh packet explicitly admits a new head.",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone status --short must be empty.",
+    "git -C /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone remote -v must still point to MatheusAugDEV/Project-A.R.I.S.",
+    "find /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone -maxdepth 1 -name aris-active-context must return nothing.",
+    "The dirty quarantine clone /home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean must remain untouched and must not be reused.",
+    "A separate future operator execution authorization artifact must exist before any merge attempt."
+  ],
+  "required_diff_checks": [
+    "git diff --name-only 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad..1e9a04a02846f3261ae72d0c95fbee6b0163b45b must be captured in a future execution packet.",
+    "The diff inventory must prove the candidate merge surface remains limited to the seven Track A files already authorized.",
+    "The diff inventory must explicitly show whether any non-Track-A surface appears and must fail closed if it does."
+  ],
+  "required_no_overlap_checks": [
+    "Reconfirm that Track A overlap with the main movement remains false.",
+    "Reconfirm that patch-vs-current-main forbidden surfaces remain none.",
+    "Reconfirm that no ACTIVE_CONTEXT_POINTER.md hunk is imported by the future integration path."
+  ],
+  "required_no_forbidden_surface_checks": [
+    "Produce explicit file-name evidence that ACTIVE_CONTEXT_POINTER.md is absent from the future merge surface.",
+    "Produce explicit file-name evidence that .gitmodules is absent from the future merge surface.",
+    "Produce explicit file-name evidence that .env*, secrets/**, dependency files, archive/**, and excludent/** are absent from the future merge surface.",
+    "Produce explicit file-name evidence that IF08 route-text surfaces remain unchanged."
+  ],
+  "required_ci_checks_for_future_execution": [
+    "Project_ARIS CI must be green after any future merge execution, or an explicit CI confirmation artifact must exist.",
+    "Active-context validator evidence must be green after any future execution recording step.",
+    "No future execution may claim pass without artifact + hash + CI green + validator pass."
+  ],
+  "required_artifacts_before_any_future_merge_execution": [
+    "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_readiness_packet.json",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json",
+    "A separate future cleanroom refresh or revalidation packet if the required cleanroom path/HEAD/status evidence has changed.",
+    "A separate future operator authorization artifact for merge execution; this plan is not that artifact."
+  ],
+  "merge_execution_authorized_now": false,
+  "rebase_authorized_now": false,
+  "project_aris_mutation_authorized_now": false,
+  "active_context_state_mutation_authorized_now": false,
+  "finding_close_allowed": false,
+  "real_apply_allowed": false,
+  "runtime_allowed": false,
+  "product_allowed": false,
+  "bedrock_allowed": false,
+  "secrets_allowed": false,
+  "recommended_next_operator_decision": {
+    "live_gate_remains": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "blocked_state_remains": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+    "future_execution_authorization_required_separately": true,
+    "rationale": "This packet only materializes option C as a bounded cleanroom merge plan. Because the forbidden-surface blocker and Transition Table contradiction both remain active, the plan cannot advance to merge execution automatically."
+  },
+  "no_execution_attestation": {
+    "merge_attempted": false,
+    "rebase_attempted": false,
+    "project_aris_mutated": false,
+    "active_context_state_mutated": false,
+    "runtime_executed": false,
+    "product_executed": false,
+    "bedrock_executed": false,
+    "secrets_accessed": false,
+    "finding_closed": false,
+    "remediation_proven": false,
+    "self_report_used_as_evidence": false
+  },
+  "source_hashes": {
+    "canonical_repo_head_before_plan_entry": "c3b68f051e4bfcae4d96d8d73d1d2883b2b9ed4e",
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "DECISION_LOCKS.md_before_plan_entry": "22094dba2870a0ce005536762f2d1a526c0fc773d7cd5206162a43899105487e",
+    "ROADMAP_CANONICAL.md": "0d7d3fa5d27d0d8142b7b41f396dceaadda4205f9a910078efc980fc42217af4",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json": "fc76d78666f8f61035599dee40cbfbad3c802ddb9042670a87c5e002444aaa0e",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json": "91fc5c5cfd1365cf93cfec5042178a9882076a7d1b4a1b254e83b132d5a5eb85",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_readiness_packet.json": "aa6ffce683fa4750c578527dbfa2e8d54327eeb1531ce3236a66406234a90892",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "c22f248ffc685d1d736787c1ce5330af8f0d8ce0d8ea89cec39e39af7c8313ee"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "4e7456919a271721f76b1db7481980c0f6176550f2737952fca2b9a62b64ff30"
+  }
+}
