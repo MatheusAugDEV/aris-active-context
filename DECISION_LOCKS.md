@@ -1980,3 +1980,49 @@ The following track references are historical_residual_route_noise. They do NOT 
 - All real locks remain false
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - Canonical artifact: `artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json`
+
+## PURG04 Project_ARIS Main Moved Operator Decision Packet
+
+- Status: `review_only_operator_decision_packet_recorded`
+- Decision: `blocked_operator_review_required`
+- Scope: review-only governance packet for the `Project_ARIS main moved / ACTIVE_CONTEXT_POINTER.md forbidden surface` blocker; no merge, no rebase, no Project_ARIS mutation, no live-route mutation
+- Canonical state bundle verified:
+  - `phase_id=current_phase_id=PURG-04`
+  - `latest_completed_phase=PURG-04 Track A Pointer Residual Repair Patch Packet`
+  - `current_status=status=purg04_track_a_pointer_residual_repair_patch_pass`
+  - `active_next_phase=PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - `active_next_phase_class=purgatorium_route_admission`
+- Latest blocker packet verified:
+  - `decision=blocked_forbidden_surface_in_main_movement`
+  - `next_recommended_step=BLOCKED_OPERATOR_REVIEW_REQUIRED`
+  - `base_previously_authorized=6312302ea45b72ddc310b2b33f56245be65b99dc`
+  - `observed_origin_main=7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+  - forbidden surface detected in main movement: `ACTIVE_CONTEXT_POINTER.md`
+- Consistency review result:
+  - `ACTIVE_CONTEXT_STATE.json`, `BOOT.md`, `CURRENT_STATE.md`, `NEXT_ACTION.md`, and the latest `DECISION_LOCKS.md` packet are consistent on the live PURG-04 review gate
+  - `ROADMAP_CANONICAL.md` Active Route is consistent with that same PURG-04 review gate
+  - `ROADMAP_CANONICAL.md` Transition Table remains contradictory because `PURG-04/pass` still points directly to `PURG04_TRACK_A_MAIN_MERGE_EXECUTION` and does not model `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+- Classification:
+  - `BLOCKED_OPERATOR_REVIEW_REQUIRED`
+  - `MERGE_NOT_AUTHORIZED`
+  - `REBASE_NOT_AUTHORIZED`
+  - `PROJECT_ARIS_MAIN_MOVED_REVIEW_ONLY`
+- Authorization locks preserved:
+  - `merge_allowed_now=false`
+  - `rebase_allowed_now=false`
+  - `project_aris_mutation_allowed=false`
+  - `active_context_state_mutation_allowed=false`
+  - `finding_close_allowed=false`
+  - `real_apply_allowed=false`
+  - `runtime_allowed=false`
+  - `product_allowed=false`
+  - `bedrock_allowed=false`
+  - `secrets_allowed=false`
+- Recommended operator option: `C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION`
+  - rationale: the blocker is real and fail-closed, but the recorded review packet also shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch. A new cleanroom merge-plan packet is the narrowest next admissible move because it preserves review-only governance, excludes `ACTIVE_CONTEXT_POINTER.md`, and avoids inventing merge or rebase authority while the Transition Table gap remains unresolved.
+- Merge attempted: `false`
+- Rebase attempted: `false`
+- Project_ARIS changed: `false`
+- Active-context state changed: `false` (`review_only_no_route_advance`)
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- Canonical artifact: `artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json`

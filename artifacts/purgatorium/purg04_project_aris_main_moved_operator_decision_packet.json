@@ -1,0 +1,152 @@
+{
+  "artifact_id": "purg04_project_aris_main_moved_operator_decision_packet",
+  "created_at": "2026-06-14T14:10:04-03:00",
+  "scope": "review_only_operator_decision_packet_for_project_aris_main_moved_active_context_pointer_forbidden_surface_blocker",
+  "canonical_inputs_read": [
+    "BOOT.md",
+    "ACTIVE_CONTEXT_STATE.json",
+    "DECISION_LOCKS.md",
+    "ROADMAP_CANONICAL.md",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md"
+  ],
+  "observed_active_context_state": {
+    "canonical_repository": "MatheusAugDEV/aris-active-context",
+    "canonical_branch": "main",
+    "canonical_head": "97b430294c7b0131f38320fd0d10a4d9c0723608",
+    "phase_id": "PURG-04",
+    "current_phase_id": "PURG-04",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "current_status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "active_next_phase_class": "purgatorium_route_admission",
+    "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+    "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
+    "execution_authorization": false,
+    "operator_merge_authorization_present": false,
+    "review_bundle_consistent": true
+  },
+  "observed_decision_locks_latest_packet": {
+    "packet_title": "PURG04 Project_ARIS Main Moved Review Packet",
+    "path": "DECISION_LOCKS.md",
+    "artifact_path": "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json",
+    "source_status": "BLOCKED_PROJECT_MAIN_MOVED_REVIEW_REQUIRED",
+    "decision": "blocked_forbidden_surface_in_main_movement",
+    "next_recommended_step": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+    "base_previously_authorized": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+    "observed_origin_main": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+    "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "forbidden_surfaces_in_main_movement": [
+      "ACTIVE_CONTEXT_POINTER.md"
+    ],
+    "merge_attempted": false,
+    "rebase_attempted": false,
+    "project_aris_main_changed": false,
+    "active_context_state_changed": false
+  },
+  "consistency_review": {
+    "active_context_bundle_consistent": true,
+    "decision_locks_latest_packet_consistent_with_active_context": true,
+    "roadmap_transition_table_consistent_with_active_context": false,
+    "roadmap_transition_table_observation": {
+      "row_found": true,
+      "current_phase_id": "PURG-04",
+      "decision": "pass",
+      "next_phase_id": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+      "next_phase_class": "purgatorium_track_a_main_merge_execution"
+    },
+    "contradictions": [
+      "ACTIVE_CONTEXT_STATE.json, BOOT.md, CURRENT_STATE.md, NEXT_ACTION.md, ROADMAP_CANONICAL.md Active Route, and the latest DECISION_LOCKS packet all point to PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION as the live review gate.",
+      "ROADMAP_CANONICAL.md Transition Table does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and instead routes PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
+    ],
+    "fail_closed_result": "no_merge_no_rebase_review_only_until_operator_decides"
+  },
+  "blocker_id": "PROJECT_ARIS_MAIN_MOVED_ACTIVE_CONTEXT_POINTER_FORBIDDEN_SURFACE",
+  "blocker_status": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+  "latest_recorded_decision": "blocked_forbidden_surface_in_main_movement",
+  "state_classification": [
+    "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+    "MERGE_NOT_AUTHORIZED",
+    "REBASE_NOT_AUTHORIZED",
+    "PROJECT_ARIS_MAIN_MOVED_REVIEW_ONLY"
+  ],
+  "forbidden_surface_detected": true,
+  "forbidden_surface_paths": [
+    "ACTIVE_CONTEXT_POINTER.md"
+  ],
+  "base_previously_authorized": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+  "observed_origin_main": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_allowed_now": false,
+  "rebase_allowed_now": false,
+  "project_aris_mutation_allowed": false,
+  "active_context_state_mutation_allowed": false,
+  "finding_close_allowed": false,
+  "real_apply_allowed": false,
+  "runtime_allowed": false,
+  "product_allowed": false,
+  "bedrock_allowed": false,
+  "secrets_allowed": false,
+  "operator_options": {
+    "A_REJECT_MERGE_AND_REQUEST_NEW_TRACK_A_REBASE_REVIEW_PACKET": {
+      "summary": "Reject the current merge path and require a new cleanroom rebase-review packet against the moved Project_ARIS main.",
+      "technical_effect": "Forces a new patch lineage review from origin/main=7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad before any merge authorization is reconsidered.",
+      "tradeoff": "Safest for lineage strictness, but it increases cycle cost and is not justified by overlap evidence alone because the patch-vs-current-main delta did not touch forbidden surfaces."
+    },
+    "B_AUTHORIZE_REVIEW_ONLY_DIFF_OF_ACTIVE_CONTEXT_POINTER_CHANGE": {
+      "summary": "Authorize a bounded review-only diff packet focused on the ACTIVE_CONTEXT_POINTER.md change that moved on Project_ARIS main.",
+      "technical_effect": "Keeps all mutations blocked while letting the operator isolate whether the forbidden-surface movement is acceptable as external context-pointer drift only.",
+      "tradeoff": "Minimal and safe, but by itself it does not produce a merge path or bounded integration plan for the Track A patch."
+    },
+    "C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION": {
+      "summary": "Authorize a new cleanroom merge-plan packet that excludes ACTIVE_CONTEXT_POINTER.md and any other forbidden surface from the future merge path.",
+      "technical_effect": "Preserves review-only mode now, respects the blocker, and creates the only bounded path that can later reconcile the moved main branch with the Track A patch without touching forbidden surfaces.",
+      "tradeoff": "Requires another governance packet before any execution, but avoids unnecessary abort or immediate rebase while keeping the route fail-closed."
+    },
+    "D_ABORT_TRACK_A_MAIN_MERGE_AND_RETURN_TO_PURG04_SPLIT_TRACKS": {
+      "summary": "Abort the main-merge path and return the workstream to split-track handling under PURG-04.",
+      "technical_effect": "Stops any attempt to integrate the current Track A patch into Project_ARIS main and reopens broader track selection.",
+      "tradeoff": "Most conservative, but it discards a bounded cleanroom patch that is still internally green and non-overlapping with the forbidden-surface movement."
+    }
+  },
+  "recommended_option": {
+    "option": "C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION",
+    "technical_justification": "The blocker is real because Project_ARIS main moved on a forbidden surface, so merge and rebase must remain unauthorized now. At the same time, the recorded review packet shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch itself. A new cleanroom merge-plan packet is therefore the narrowest admissible next move: it keeps review-only governance, preserves the current origin/main pointer state, explicitly excludes ACTIVE_CONTEXT_POINTER.md, and avoids inventing execution authority while the Transition Table still lacks an explicit row for PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION."
+  },
+  "no_execution_attestation": {
+    "merge_attempted": false,
+    "rebase_attempted": false,
+    "project_aris_mutated": false,
+    "active_context_state_mutated": false,
+    "runtime_executed": false,
+    "product_executed": false,
+    "bedrock_executed": false,
+    "secrets_accessed": false,
+    "dependency_mutation_executed": false,
+    "finding_closed": false,
+    "remediation_proven": false,
+    "self_report_used_as_evidence": false
+  },
+  "source_hashes": {
+    "canonical_repo_head": "97b430294c7b0131f38320fd0d10a4d9c0723608",
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "DECISION_LOCKS.md": "e397e1731744de8ef57d946f3168683939ca6b038f10619fd13aff008eb61fc6",
+    "ROADMAP_CANONICAL.md": "0d7d3fa5d27d0d8142b7b41f396dceaadda4205f9a910078efc980fc42217af4",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_project_aris_main_moved_review_packet.json": "91fc5c5cfd1365cf93cfec5042178a9882076a7d1b4a1b254e83b132d5a5eb85",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "c22f248ffc685d1d736787c1ce5330af8f0d8ce0d8ea89cec39e39af7c8313ee",
+    "artifacts/purgatorium/purg04_track_a_main_merge_execution_schema_blocker.json": "cf7a78df0144840ce9cebb6d4001a69106710307603d334ae6247c1f01bd2415",
+    "artifacts/purgatorium/purg04_schema_validator_transition_route_repair.json": "a50473aff333dbddf3548cfa311de0447630dd08ad32c216afb386945e5c5175",
+    "artifacts/purgatorium/purg04_state_reconciliation_packet.json": "2dde724dd800c73da83072b0946f8b6a59225b6bba91a0368af6db3b4dd53939",
+    "artifacts/purgatorium/purg04_decision_locks_track_a_patch_pass_drift_repair.json": "15528a3db14cc3c2005afffa4f946abf57b5563f87a1e3a16fbdd94d31548565"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "c8af198eb7836253be15fed35ca206a512911e40fd0f0dd094ee7eb93cf9653e"
+  }
+}
