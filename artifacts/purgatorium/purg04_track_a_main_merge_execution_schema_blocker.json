@@ -1,0 +1,34 @@
+{
+  "artifact_type": "track_a_main_merge_execution_schema_blocker",
+  "phase": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "recorded_at": "2026-06-13T21:43:23-03:00",
+  "decision": "blocked_schema_route_required",
+  "operator_authorization_text": "Autorizo PURG04_TRACK_A_MAIN_MERGE_EXECUTION para aplicar o merge do branch codex/purg04-track-a-pointer-residual-repair-20260612 em Project_ARIS main, limitado ao Track A ja revisado, sem produto, sem Bedrock, sem secrets, sem runtime real, sem dependency mutation, sem fechar IF09-FIND-001.",
+  "canonical_state_verified": true,
+  "active_context_preflight": {
+    "state_json_tool_passed": true,
+    "schema_json_tool_passed": true,
+    "validator_passed": true
+  },
+  "schema_route_safe_for_live_state_update": false,
+  "blocking_findings": [
+    "ACTIVE_CONTEXT_SCHEMA.json and scripts/validate_active_context_state.py contain no explicit route or successor modeling for PURG04_TRACK_A_MAIN_MERGE_EXECUTION.",
+    "ROADMAP_CANONICAL.md Transition Table contains no successor row for PURG-04/pass into a merge-execution or post-merge validation phase.",
+    "scripts/validate_active_context_state.py hardcodes the current live mirrors around PURG-04 Track A patch pass and next_phase PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION, but contains no modeled successor for a merge-executed live state.",
+    "Executing the Project_ARIS main merge and recording it only in artifact plus DECISION_LOCKS while leaving ACTIVE_CONTEXT_STATE.json at the pre-merge review gate would create canonical live-state drift."
+  ],
+  "evidence": {
+    "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+    "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "review_decision_artifact": "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json",
+    "active_context_origin_main_before_block": "6b08059d3bbc1bc426aee61eb98047828865cbf5"
+  },
+  "merge_execution_authorized": false,
+  "merge_executed": false,
+  "project_aris_main_changed": false,
+  "active_context_state_json_changed": false,
+  "decision_locks_updated": false,
+  "if09_find_001_closed": false,
+  "all_real_locks_remain_false": true,
+  "next_recommended_step": "DEFINE_CANONICAL_SCHEMA_VALIDATOR_AND_TRANSITION_ROUTE_FOR_PURG04_TRACK_A_MAIN_MERGE_EXECUTION"
+}
