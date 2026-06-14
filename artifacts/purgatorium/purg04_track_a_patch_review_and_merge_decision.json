@@ -1,0 +1,52 @@
+{
+  "artifact_type": "track_a_patch_review_and_merge_decision",
+  "phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+  "recorded_at": "2026-06-13T21:43:23-03:00",
+  "decision_scope": "review_and_merge_decision_only_no_merge_execution",
+  "canonical_state_verified": true,
+  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_branch_remote_ref": "origin/codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_branch_remote_matches_recorded_commit": true,
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "patch_commit_subject": "Repair Track A pointer residual contracts",
+  "latest_completed_project_commit_sha": "6312302ea45b72ddc310b2b33f56245be65b99dc",
+  "latest_completed_project_commit_sha_relationship_to_patch_commit": "ancestor_not_direct_parent",
+  "reviewed_evidence": [
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+    "artifacts/purgatorium/purg04_decision_locks_track_a_patch_pass_drift_repair.json",
+    "artifacts/purgatorium/purg04_roadmap_active_route_stale_mirror_repair.json"
+  ],
+  "reviewed_evidence_sha256": {
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe"
+  },
+  "scope_bounded": true,
+  "bounded_scope_review": {
+    "allowed_surface_confirmed": [
+      "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+      "src/aris/context/active_track_phase_reconciliation_gate.py",
+      "tests/test_aris_context_active_track_resume_gate.py",
+      "src/aris/context/active_track_resume_gate.py",
+      "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+      "src/aris/product_loop/product_loop_closure_gate.py"
+    ],
+    "allowed_but_unchanged": [
+      "tests/test_product_loop_l1_15_product_loop_closure_gate.py"
+    ]
+  },
+  "forbidden_paths_touched": [],
+  "transition_table_changed": false,
+  "active_context_state_json_changed": false,
+  "project_aris_main_changed": false,
+  "explicit_operator_merge_authorization_found": false,
+  "merge_execution_authorized": false,
+  "merge_executed": false,
+  "if09_find_001_closed": false,
+  "all_real_locks_remain_false": true,
+  "decision": "needs_operator_merge_authorization",
+  "next_recommended_step": "REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "notes": [
+    "Review executed against the canonical active-context state without performing any Project_ARIS merge.",
+    "Patch branch and commit match the canonical patch result artifact and the remote branch head.",
+    "No explicit operator text authorizing merge execution into Project_ARIS main was found in the active-context sources reviewed for this gate."
+  ]
+}
