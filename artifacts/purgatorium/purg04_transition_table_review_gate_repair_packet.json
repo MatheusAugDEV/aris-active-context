@@ -1,0 +1,134 @@
+{
+  "artifact_id": "purg04_transition_table_review_gate_repair_packet",
+  "created_at": "2026-06-14T14:30:56-03:00",
+  "scope": "governance_only_transition_table_route_repair_for_purg04_review_gate_no_execution_no_project_aris_mutation",
+  "canonical_inputs_read": [
+    "BOOT.md",
+    "ACTIVE_CONTEXT_STATE.json",
+    "DECISION_LOCKS.md",
+    "ROADMAP_CANONICAL.md",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md"
+  ],
+  "source_cleanroom_merge_plan": {
+    "path": "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
+    "sha256": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0"
+  },
+  "observed_active_context_state": {
+    "canonical_repository": "MatheusAugDEV/aris-active-context",
+    "canonical_branch": "main",
+    "phase_id": "PURG-04",
+    "current_phase_id": "PURG-04",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "current_status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "active_next_phase_class": "purgatorium_route_admission",
+    "current_blocker": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
+    "merge_execution_authorized_now": false,
+    "rebase_authorized_now": false,
+    "project_aris_mutation_authorized_now": false,
+    "active_context_state_mutation_authorized_now": false
+  },
+  "observed_transition_table_before": {
+    "purg04_pass_row": "| PURG-04 | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | purg04_track_a_main_merge_execution_result.json + Project_ARIS merge commit + no forbidden paths + validator evidence + CI evidence |",
+    "review_gate_row_present": false,
+    "main_merge_execution_row_present": true
+  },
+  "transition_table_drift_classification": {
+    "drift_detected": true,
+    "classification": "structural_route_drift",
+    "severity": "blocking_fail_closed",
+    "reason": "The live PURG-04 route points to PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION while the Transition Table still routed PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
+  },
+  "repair_strategy": {
+    "type": "transition_table_alignment_without_live_state_mutation",
+    "actions": [
+      "Replace the direct PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION row with PURG-04/pass -> PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION.",
+      "Add a separate successor row from PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION.",
+      "Preserve the Active Route section, macro chain, and all execution locks as-is.",
+      "Preserve all forbidden-surface exclusions and keep merge execution unauthorized."
+    ]
+  },
+  "transition_table_after_expected": {
+    "purg04_pass_row": "| PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence |",
+    "review_gate_successor_row": "| PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |",
+    "main_merge_execution_row_preserved": "| PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact |"
+  },
+  "files_changed": [
+    "ROADMAP_CANONICAL.md",
+    "DECISION_LOCKS.md",
+    "artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json"
+  ],
+  "execution_authorization_preserved_false": {
+    "merge_execution_authorized_now": false,
+    "rebase_authorized_now": false,
+    "project_aris_mutation_authorized_now": false,
+    "active_context_state_mutation_authorized_now": false,
+    "runtime_allowed": false,
+    "product_allowed": false,
+    "bedrock_allowed": false,
+    "secrets_allowed": false
+  },
+  "forbidden_surface_exclusion_preserved": {
+    "preserved": true,
+    "exclusions": [
+      "ACTIVE_CONTEXT_POINTER.md",
+      ".gitmodules",
+      ".env*",
+      "secrets/**",
+      "archive/**",
+      "excludent/**",
+      "dependency files",
+      "any IF08 route-text or canonical-text surface"
+    ]
+  },
+  "no_execution_attestation": {
+    "merge_attempted": false,
+    "rebase_attempted": false,
+    "project_aris_mutated": false,
+    "active_context_state_mutated": false,
+    "runtime_executed": false,
+    "product_executed": false,
+    "bedrock_executed": false,
+    "secrets_accessed": false,
+    "finding_closed": false,
+    "remediation_proven": false,
+    "self_report_used_as_evidence": false
+  },
+  "validation_commands": [
+    "python3 -m json.tool artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json",
+    "python3 scripts/check_boot_sync.py",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 - <<'PY' ... parse ROADMAP_CANONICAL.md Transition Table rows for PURG-04 and PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION ... PY"
+  ],
+  "validation_results": {
+    "json_tool": "pass",
+    "check_boot_sync": "pass",
+    "validate_active_context_state": "pass",
+    "transition_table_parse_check": {
+      "status": "pass",
+      "observed_rows": [
+        "PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence",
+        "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence",
+        "PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact"
+      ]
+    }
+  },
+  "source_hashes": {
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "DECISION_LOCKS.md_before_repair": "4baf22928573b76ba5a612415db3bb7044601711d15e9d7f303f000d29e78527",
+    "ROADMAP_CANONICAL.md_before_repair": "0d7d3fa5d27d0d8142b7b41f396dceaadda4205f9a910078efc980fc42217af4",
+    "DECISION_LOCKS.md_after_repair": "c506f4a6663cf9a355e44c32f932692fa296bb8a3fac69f4605cee8d40e6cf1b",
+    "ROADMAP_CANONICAL.md_after_repair": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "b7db190a0ed2e9148b6fd20ddf70400d0a4ac4e1d6e852bdbacdf79917ff3a61"
+  },
+  "recommended_next_step": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION"
+}

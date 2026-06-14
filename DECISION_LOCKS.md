@@ -2088,3 +2088,47 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context state changed: `false` (`review_only_plan_no_route_advance`)
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - Canonical artifact: `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
+
+## PURG04 Transition Table Review Gate Repair Packet
+
+- Status: `governance_only_transition_table_repair_pass`
+- Decision: `pass`
+- Scope: governance-only repair of the `ROADMAP_CANONICAL.md` Transition Table so the live PURG-04 review gate is modeled explicitly; no merge, no rebase, no Project_ARIS mutation, no live-route mutation
+- Source packet verified:
+  - `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
+- Repair applied to Transition Table only:
+  - replaced direct `PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+  - added explicit `PURG-04/pass -> PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - added explicit `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+  - preserved `PURG04_TRACK_A_MAIN_MERGE_EXECUTION/pass -> PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- Canonical state preserved:
+  - `phase_id=current_phase_id=PURG-04`
+  - `latest_completed_phase=PURG-04 Track A Pointer Residual Repair Patch Packet`
+  - `current_status=status=purg04_track_a_pointer_residual_repair_patch_pass`
+  - `active_next_phase=PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - `active_next_phase_class=purgatorium_route_admission`
+- Execution authorization preserved false:
+  - `merge_execution_authorized_now=false`
+  - `rebase_authorized_now=false`
+  - `project_aris_mutation_authorized_now=false`
+  - `active_context_state_mutation_authorized_now=false`
+  - `runtime_allowed=false`
+  - `product_allowed=false`
+  - `bedrock_allowed=false`
+  - `secrets_allowed=false`
+- Forbidden surface exclusion preserved:
+  - `ACTIVE_CONTEXT_POINTER.md`
+  - `.gitmodules`
+  - `.env*`
+  - `secrets/**`
+  - `archive/**`
+  - `excludent/**`
+  - dependency files
+  - any IF08 route-text or canonical-text surface
+- Merge attempted: `false`
+- Rebase attempted: `false`
+- Project_ARIS changed: `false`
+- Active-context state changed: `false` (`governance_only_route_repair_no_live_route_advance`)
+- IF09-FIND-001 remains open; closure only via Infernus Revalidation
+- Canonical artifact: `artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json`
+- Recommended next step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
