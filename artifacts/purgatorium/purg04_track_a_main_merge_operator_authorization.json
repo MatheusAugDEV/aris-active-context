@@ -1,0 +1,68 @@
+{
+  "artifact_id": "purg04_track_a_main_merge_operator_authorization",
+  "artifact_type": "track_a_main_merge_operator_authorization",
+  "phase": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "created_at": "2026-06-14T15:00:11-03:00",
+  "scope": "operator_authorization_for_controlled_track_a_merge_execution_in_admissible_project_aris_cleanroom_only",
+  "operator_authorization_text": "Autorizo PURG04_TRACK_A_MAIN_MERGE_EXECUTION. Escopo autorizado: executar o merge controlado do patch Track A para Project_ARIS main; usar apenas o cleanroom admissível; preservar a exclusão de ACTIVE_CONTEXT_POINTER.md, .gitmodules, .env*, secrets/**, archive/**, excludent/**, dependency files e qualquer IF08 route-text/canonical-text surface; gerar artifact de autorização, diff/no-forbidden-surface proof, merge evidence, CI terminal green e active-context sync. Não autorizo: rebase fora do plano; mudança fora da superfície Track A; finding close; remediation_proven; runtime, real_apply, produto, Bedrock, secrets ou dependency mutation.",
+  "authorization_scope": {
+    "merge_execution_authorized_now": true,
+    "rebase_authorized_now": false,
+    "project_aris_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+    "project_aris_worktree_mutation_allowed": true,
+    "project_aris_main_push_allowed_after_admissible_validation": true,
+    "active_context_state_mutation_allowed_only_if_validator_contract_supports_transition": true,
+    "active_context_state_mutation_authorized_now": false,
+    "finding_close_allowed": false,
+    "remediation_proven_allowed": false,
+    "runtime_allowed": false,
+    "real_apply_allowed": false,
+    "product_allowed": false,
+    "bedrock_allowed": false,
+    "secrets_allowed": false,
+    "dependency_mutation_allowed": false
+  },
+  "cleanroom_preflight": {
+    "remote_url_confirmed": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+    "base_branch": "main",
+    "observed_origin_main": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "expected_origin_main": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+    "observed_patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "expected_patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "preflight_head_before_main_checkout": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "git_status_short_empty": true,
+    "nested_aris_active_context_root_present": false,
+    "dirty_or_quarantine_clone_reused": false
+  },
+  "active_context_preflight": {
+    "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+    "active_next_phase_class": "purgatorium_route_admission",
+    "latest_completed_phase": "PURG-04 Track A Pointer Residual Repair Patch Packet",
+    "latest_completed_status": "purg04_track_a_pointer_residual_repair_patch_pass",
+    "review_gate_artifact_exists": true,
+    "review_gate_decision": "pass",
+    "review_gate_recommended_next_step": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+    "transition_table_row_confirmed": "| PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |",
+    "validator_preflight_passed": true
+  },
+  "source_hashes": {
+    "canonical_repo_head": "eb0ed789c45540df881dcf39037430e92bffd20f",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "ARIS_BOOT.md": "d9e3cc657df9f3ae36389e414e69f6dd13b8ca6bbb0eb75867c93ba7d4207623",
+    "ROADMAP_CANONICAL.md": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895",
+    "DECISION_LOCKS.md": "2cff700b3974c5c36063dbc84a03f26e2b2fad2b1c4f7ea1c2b69966eb6b61c1",
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "e4d312fd663dbf0507dd3cac912b0520b7f0ae949eddd74e27e26c17169321cc",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_no_execution_attestation.json": "2e6298d58aa7096dac6961659c4e0e33fc0c179e0bc6d7a3d90c13441cf60a10",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+    "artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json": "28f60f70e843bcfe97a186c85d11e3d2f87cd3f84d3f1476ba6c2caa42f3e4f1",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "392be9f6f5210a48783168010a10ca66711ed0295fbd6db437e581fa98f74049"
+  }
+}

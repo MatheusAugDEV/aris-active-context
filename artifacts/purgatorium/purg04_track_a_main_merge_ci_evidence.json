@@ -1,0 +1,80 @@
+{
+  "artifact_id": "purg04_track_a_main_merge_ci_evidence",
+  "artifact_type": "track_a_main_merge_ci_evidence",
+  "phase": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "created_at": "2026-06-14T15:10:58-03:00",
+  "scope": "terminal_ci_evidence_for_project_aris_track_a_main_merge_execution",
+  "project_repo": "MatheusAugDEV/Project-A.R.I.S",
+  "head_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "ci_state": "CI_GREEN_CONFIRMED",
+  "all_relevant_runs_completed_success": true,
+  "runs": [
+    {
+      "workflow": "CI",
+      "database_id": 27507555124,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555124"
+    },
+    {
+      "workflow": "Run Tests",
+      "database_id": 27507555110,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555110"
+    },
+    {
+      "workflow": "Backend Baseline",
+      "database_id": 27507555112,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555112"
+    },
+    {
+      "workflow": "Core Public API Baseline",
+      "database_id": 27507555120,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555120"
+    },
+    {
+      "workflow": "Runtime Public API",
+      "database_id": 27507555118,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555118"
+    },
+    {
+      "workflow": "MCP Runtime Sandbox",
+      "database_id": 27507555094,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555094"
+    },
+    {
+      "workflow": "Supply Chain Baseline",
+      "database_id": 27507555145,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555145"
+    },
+    {
+      "workflow": "Advanced Supply Chain",
+      "database_id": 27507555130,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555130"
+    },
+    {
+      "workflow": "Product Pilot Boundary",
+      "database_id": 27507555117,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555117"
+    }
+  ],
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "6e4a5212bbd5c31302d201b1bd0e834b30e90a985293ac6dc21bd15e04a7aa09"
+  }
+}

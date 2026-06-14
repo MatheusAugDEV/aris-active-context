@@ -1,0 +1,171 @@
+{
+  "artifact_id": "purg04_track_a_main_merge_execution_result",
+  "artifact_type": "track_a_main_merge_execution_result",
+  "phase": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "status": "purg04_track_a_main_merge_execution_pass",
+  "decision": "pass",
+  "created_at": "2026-06-14T15:10:58-03:00",
+  "scope": "controlled_track_a_merge_execution_in_admissible_project_aris_cleanroom_with_terminal_ci_and_active_context_sync_evidence",
+  "project_aris_cleanroom_path": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+  "base_sha_before_merge": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "observed_origin_main_before_merge": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+  "patch_branch": "codex/purg04-track-a-pointer-residual-repair-20260612",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "merge_parents": [
+    "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "1e9a04a02846f3261ae72d0c95fbee6b0163b45b"
+  ],
+  "merge_executed": true,
+  "merge_conflicts_detected": false,
+  "rebase_executed": false,
+  "project_aris_main_changed": true,
+  "changed_files": [
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "src/aris/context/active_track_phase_reconciliation_gate.py",
+    "src/aris/context/active_track_resume_gate.py",
+    "src/aris/product_loop/product_loop_closure_gate.py",
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py"
+  ],
+  "diff_scope_allowed": true,
+  "forbidden_paths_touched": [],
+  "post_merge_diff_sha256": "71284a77ac5d78d80051b88f41562418c894224d905df183d46dcad1c0283a0c",
+  "focused_validations": {
+    "tests.test_f21a54c_active_context_remote_sync_verification": {
+      "status": "passed",
+      "ran": 3
+    },
+    "tests.test_aris_context_active_track_phase_reconciliation_gate": {
+      "status": "passed",
+      "ran": 6
+    },
+    "tests.test_aris_context_active_track_resume_gate": {
+      "status": "passed",
+      "ran": 6
+    },
+    "tests.test_strategic_reset_macrostructure_lock_gate": {
+      "status": "passed",
+      "ran": 1
+    },
+    "tests.test_product_loop_l1_15_product_loop_closure_gate": {
+      "status": "passed",
+      "ran": 3
+    }
+  },
+  "baseline_validation": {
+    "command": "python3 -m unittest discover -s tests",
+    "exit_code": 1,
+    "ran_line": "Ran 4647 tests in 28.632s",
+    "failed_line": "FAILED (failures=231, errors=1519)",
+    "active_track_failures_present": false,
+    "product_loop_failure_present": true,
+    "classification": "warn_global_baseline_failed_but_track_a_focused_validations_passed",
+    "notes": [
+      "The merged baseline remained globally red on many historical suites outside the Track A surface.",
+      "A single order-dependent failure appeared in test_product_loop_l1_15_product_loop_closure_gate during the merged global baseline, but the targeted module run passed in isolation.",
+      "A comparison baseline on origin/main was also globally red and included multiple active_track and strategic_reset failures that are absent after the merge."
+    ],
+    "origin_main_comparison": {
+      "exit_code": 1,
+      "failed_line": "FAILED (failures=220, errors=1567)",
+      "track_a_failure_lines_present": true
+    }
+  },
+  "project_aris_ci_state": "CI_GREEN_CONFIRMED",
+  "project_aris_ci_runs": [
+    {
+      "workflow": "CI",
+      "database_id": 27507555124,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555124"
+    },
+    {
+      "workflow": "Run Tests",
+      "database_id": 27507555110,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555110"
+    },
+    {
+      "workflow": "Backend Baseline",
+      "database_id": 27507555112,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555112"
+    },
+    {
+      "workflow": "Core Public API Baseline",
+      "database_id": 27507555120,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555120"
+    },
+    {
+      "workflow": "Runtime Public API",
+      "database_id": 27507555118,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555118"
+    },
+    {
+      "workflow": "MCP Runtime Sandbox",
+      "database_id": 27507555094,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555094"
+    },
+    {
+      "workflow": "Supply Chain Baseline",
+      "database_id": 27507555145,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555145"
+    },
+    {
+      "workflow": "Advanced Supply Chain",
+      "database_id": 27507555130,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555130"
+    },
+    {
+      "workflow": "Product Pilot Boundary",
+      "database_id": 27507555117,
+      "conclusion": "success",
+      "url": "https://github.com/MatheusAugDEV/Project-A.R.I.S/actions/runs/27507555117"
+    }
+  ],
+  "active_context_sync": {
+    "active_context_state_transition_supported_now": false,
+    "active_context_state_transition_blocked_by_validator_contract": true,
+    "active_context_state_transition_blocker_reason": "scripts/validate_active_context_state.py and README.md still hard-require the live mirror phrase next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION, so promoting ACTIVE_CONTEXT_STATE.json to the merge execution route remains out of contract in this phase.",
+    "active_context_state_mutated": false,
+    "readme_mutated": false,
+    "boot_render_required": true,
+    "boot_render_expected_to_be_noop_when_state_unchanged": true
+  },
+  "if09_find_001_closed": false,
+  "remediation_proven": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_executed": false,
+  "bedrock_executed": false,
+  "secrets_accessed": false,
+  "dependency_mutation_executed": false,
+  "next_recommended_step": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+  "source_hashes": {
+    "canonical_repo_head_before_post_merge_artifacts": "eb0ed789c45540df881dcf39037430e92bffd20f",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "ARIS_BOOT.md": "d9e3cc657df9f3ae36389e414e69f6dd13b8ca6bbb0eb75867c93ba7d4207623",
+    "ROADMAP_CANONICAL.md": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895",
+    "DECISION_LOCKS.md": "2cff700b3974c5c36063dbc84a03f26e2b2fad2b1c4f7ea1c2b69966eb6b61c1",
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "e4d312fd663dbf0507dd3cac912b0520b7f0ae949eddd74e27e26c17169321cc",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_no_execution_attestation.json": "2e6298d58aa7096dac6961659c4e0e33fc0c179e0bc6d7a3d90c13441cf60a10",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+    "artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json": "28f60f70e843bcfe97a186c85d11e3d2f87cd3f84d3f1476ba6c2caa42f3e4f1",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
+    "artifacts/purgatorium/purg04_track_a_main_merge_operator_authorization.json": "ea473055dc99830f8518599ba5ca52126fd0c0dfc4d845a91a3969596850d34f",
+    "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json": "33c7eda8a6f127012977ee66170bc2979341d2d47bf904d9772f6400d9fa1da5"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "905434f264d1415274552442364084f79cfccba21ceb662a3ead333f4729205f"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "artifact_id": "purg04_track_a_main_merge_diff_no_forbidden_surface_proof",
+  "artifact_type": "track_a_main_merge_diff_no_forbidden_surface_proof",
+  "phase": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+  "created_at": "2026-06-14T15:00:11-03:00",
+  "scope": "pre_merge_diff_proof_for_track_a_patch_against_origin_main_with_forbidden_surface_exclusion",
+  "diff_inputs": {
+    "project_repo_cleanroom": "/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone",
+    "base_ref": "origin/main",
+    "base_sha": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "patch_ref": "origin/codex/purg04-track-a-pointer-residual-repair-20260612",
+    "patch_sha": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+    "merge_base_sha": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "git_diff_sha256": "71284a77ac5d78d80051b88f41562418c894224d905df183d46dcad1c0283a0c"
+  },
+  "allowed_track_a_surface": [
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "src/aris/context/active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py",
+    "src/aris/context/active_track_resume_gate.py",
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "tests/test_product_loop_l1_15_product_loop_closure_gate.py",
+    "src/aris/product_loop/product_loop_closure_gate.py"
+  ],
+  "observed_changed_files": [
+    "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+    "src/aris/context/active_track_phase_reconciliation_gate.py",
+    "src/aris/context/active_track_resume_gate.py",
+    "src/aris/product_loop/product_loop_closure_gate.py",
+    "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+    "tests/test_aris_context_active_track_resume_gate.py"
+  ],
+  "surface_analysis": {
+    "observed_files_are_subset_of_allowed_surface": true,
+    "unexpected_changed_files": [],
+    "allowed_but_unchanged_files": [
+      "tests/test_product_loop_l1_15_product_loop_closure_gate.py"
+    ],
+    "forbidden_surface_detected": false,
+    "forbidden_paths_touched": [],
+    "forbidden_surface_checks": [
+      "ACTIVE_CONTEXT_POINTER.md",
+      ".gitmodules",
+      ".env*",
+      "secrets/**",
+      "archive/**",
+      "excludent/**",
+      "dependency files",
+      "IF08 route-text/canonical-text surfaces"
+    ]
+  },
+  "cleanroom_preflight": {
+    "remote_url_confirmed": "git@github.com:MatheusAugDEV/Project-A.R.I.S.git",
+    "git_status_short_empty": true,
+    "nested_aris_active_context_root_present": false,
+    "patch_branch_head_matches_expected_commit": true
+  },
+  "diff_scope_allowed": true,
+  "merge_allowed_to_proceed_from_diff_perspective": true,
+  "execution_locks_preserved": {
+    "rebase_authorized": false,
+    "finding_close_allowed": false,
+    "remediation_proven_allowed": false,
+    "runtime_allowed": false,
+    "real_apply_allowed": false,
+    "product_allowed": false,
+    "bedrock_allowed": false,
+    "secrets_allowed": false,
+    "dependency_mutation_allowed": false
+  },
+  "source_hashes": {
+    "canonical_repo_head": "eb0ed789c45540df881dcf39037430e92bffd20f",
+    "ACTIVE_CONTEXT_STATE.json": "8733a8f457cd803d2a31266e49f4bd675ff035a9bd493b4419c8f17fefa39a8c",
+    "ARIS_BOOT.md": "d9e3cc657df9f3ae36389e414e69f6dd13b8ca6bbb0eb75867c93ba7d4207623",
+    "ROADMAP_CANONICAL.md": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895",
+    "DECISION_LOCKS.md": "2cff700b3974c5c36063dbc84a03f26e2b2fad2b1c4f7ea1c2b69966eb6b61c1",
+    "BOOT.md": "f148849d79507cd42acb32986042e0213795e6cd28739ab7d724644e454c23c7",
+    "CURRENT_STATE.md": "babb819d9a0d8176f0941dd620c232b6b85566c71d30b5480ce7801a10482875",
+    "NEXT_ACTION.md": "bc674b238b62a2aa8b8b56fe71d9d9a755d44fb2b8b7fe2c9d992c223af3e6f5",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json": "e4d312fd663dbf0507dd3cac912b0520b7f0ae949eddd74e27e26c17169321cc",
+    "artifacts/purgatorium/purg04_track_a_patch_review_and_merge_no_execution_attestation.json": "2e6298d58aa7096dac6961659c4e0e33fc0c179e0bc6d7a3d90c13441cf60a10",
+    "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+    "artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json": "28f60f70e843bcfe97a186c85d11e3d2f87cd3f84d3f1476ba6c2caa42f3e4f1",
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe"
+  },
+  "artifact_sha256": {
+    "self_hash_limitation": "The terminal file sha256 is reported externally after write because a file cannot embed its own final sha256 without self-reference drift.",
+    "payload_sha256_excluding_artifact_sha256_field": "2c14dd35acfae02078f1da32f8d4a502c85c304ee0937b3ac7a9b09c76bc8055"
+  }
+}

@@ -2165,3 +2165,60 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `artifacts/purgatorium/purg04_track_a_patch_review_and_merge_decision.json`
   - `artifacts/purgatorium/purg04_track_a_patch_review_and_merge_no_execution_attestation.json`
 - Recommended next step: `PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+
+## PURG04 Track A Main Merge Execution
+
+- Status: `purg04_track_a_main_merge_execution_pass`
+- Decision: `pass`
+- Scope: controlled merge execution of Track A into `Project_ARIS/main` using only `/home/matheus/ARIS_RECOVERY_20260612/Project_ARIS-clean-reclone`; no rebase, no forbidden-surface touch, no runtime/product/Bedrock/secrets/dependency mutation, no finding close.
+- Operator execution authorization materialized in `artifacts/purgatorium/purg04_track_a_main_merge_operator_authorization.json`.
+- Pre-merge diff/no-forbidden-surface proof materialized in `artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json`.
+- Project_ARIS preflight confirmed:
+  - remote=`git@github.com:MatheusAugDEV/Project-A.R.I.S.git`
+  - base=`main`
+  - base SHA before merge=`7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`
+  - patch branch=`codex/purg04-track-a-pointer-residual-repair-20260612`
+  - patch commit=`1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+  - clean status before merge=`true`
+  - nested root `aris-active-context/` inside the cleanroom root=`false`
+- Merge executed on `Project_ARIS/main` without conflict:
+  - merge commit=`7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+  - parents=`7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad`, `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+  - changed files=`scripts/run_strategic_reset_macrostructure_lock_gate.py`, `src/aris/context/active_track_phase_reconciliation_gate.py`, `src/aris/context/active_track_resume_gate.py`, `src/aris/product_loop/product_loop_closure_gate.py`, `tests/test_aris_context_active_track_phase_reconciliation_gate.py`, `tests/test_aris_context_active_track_resume_gate.py`
+  - forbidden paths touched=`[]`
+  - rebase executed=`false`
+- Focused validations required by the phase all passed:
+  - `python3 -m unittest tests.test_f21a54c_active_context_remote_sync_verification -q`
+  - `python3 -m unittest tests.test_aris_context_active_track_phase_reconciliation_gate -q`
+  - `python3 -m unittest tests.test_aris_context_active_track_resume_gate -q`
+  - `python3 -m unittest tests.test_strategic_reset_macrostructure_lock_gate -q`
+  - `python3 -m unittest tests.test_product_loop_l1_15_product_loop_closure_gate -q`
+- Global baseline on merged `main` remained red:
+  - `Ran 4647 tests in 28.632s`
+  - `FAILED (failures=231, errors=1519)`
+  - no failing `active_track` tests were present in the merged baseline summary
+  - one order-dependent `FAIL` appeared in `test_product_loop_l1_15_product_loop_closure_gate` even though the targeted module run passed in isolation
+  - comparison baseline on `origin/main` was also red: `FAILED (failures=220, errors=1567)` and still included multiple `active_track` plus `strategic_reset` failures
+- Project_ARIS push completed: `main -> origin/main` at merge commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+- Project_ARIS CI terminal state: `CI_GREEN_CONFIRMED`
+  - `CI`: success
+  - `Run Tests`: success
+  - `Backend Baseline`: success
+  - `Core Public API Baseline`: success
+  - `Runtime Public API`: success
+  - `MCP Runtime Sandbox`: success
+  - `Supply Chain Baseline`: success
+  - `Advanced Supply Chain`: success
+  - `Product Pilot Boundary`: success
+- Post-merge artifacts materialized:
+  - `artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json`
+  - `artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json`
+  - `artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json`
+- `ACTIVE_CONTEXT_STATE.json` was intentionally left unchanged:
+  - `scripts/validate_active_context_state.py` still hard-requires `next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - `README.md` still mirrors that same live route
+  - therefore the merge execution is recorded canonically via artifacts and this lock entry, but live route promotion remains blocked by the validator contract
+- `IF09-FIND-001` remains open.
+- `remediation_proven=false`
+- runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+- Recommended next step: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
