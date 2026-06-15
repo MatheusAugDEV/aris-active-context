@@ -1,14 +1,14 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
-    "current_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
-    "previous_phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+    "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+    "current_phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+    "previous_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
     "governance_gate_streak": 0,
     "seen_gate_signatures": [],
-    "phase_class": "infernus_revalidation_execution",
+    "phase_class": "infernus_revalidation_adjudication_or_closure",
     "fixture_materialization_allowed": true,
     "fixture_materialization_executed": true,
     "fixture_count": 65,
@@ -25,6 +25,11 @@
     "minos_verdict_count": 1,
     "purgatorium_finding_created": true,
     "finding_count": 1,
+    "target_finding_id": "IF09-FIND-001",
+    "target_finding_status": "closed",
+    "finding_closed": true,
+    "remediation_proven": true,
+    "closure_basis": "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface",
     "last_boot_files_read": [
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md"
@@ -159,16 +164,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "INF Revalidation Execution Packet",
+            "phase": "INF Revalidation Adjudication Or Closure Packet",
             "decision": "pass",
-            "status": "inf_revalidation_execution_pass"
+            "status": "inf_revalidation_adjudication_closure_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 64,
+        "total_phases_completed": 65,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -203,19 +208,19 @@
     "current_live_route": {
         "active_next_phase": null,
         "active_next_phase_class": null,
-        "current_status": "inf_revalidation_execution_pass",
+        "current_status": "inf_revalidation_adjudication_closure_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "INF Revalidation Execution Packet",
-        "latest_completed_status": "inf_revalidation_execution_pass",
+        "latest_completed_phase": "INF Revalidation Adjudication Or Closure Packet",
+        "latest_completed_status": "inf_revalidation_adjudication_closure_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "inf_revalidation_execution_pass",
+        "status": "inf_revalidation_adjudication_closure_pass",
         "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
         "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador."
     },
-    "current_status": "inf_revalidation_execution_pass",
+    "current_status": "inf_revalidation_adjudication_closure_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
     "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador.",
     "purg00_source_data_gap_resolution": {
@@ -607,7 +612,7 @@
         "real_quota_consumed": false
     },
     "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
-    "latest_completed_status": "inf_revalidation_execution_pass",
+    "latest_completed_status": "inf_revalidation_adjudication_closure_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -618,28 +623,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "INF Revalidation Execution Packet",
+        "latest_execution_phase": "INF Revalidation Adjudication Or Closure Packet",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "INF Revalidation Operator Authorization Packet",
-        "latest_execution_status": "inf_revalidation_execution_pass"
+        "previous_execution_phase": "INF Revalidation Execution Packet",
+        "latest_execution_status": "inf_revalidation_adjudication_closure_pass"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "INF Revalidation Operator Authorization Packet",
-        "proof_source": "artifacts/purgatorium/inf_revalidation_execution_packet.json",
-        "to_phase": "INF Revalidation Execution Packet",
-        "to_status": "inf_revalidation_execution_pass",
-        "transition_type": "infernus_revalidation_execution",
-        "verified_via": "Explicit operator execution command was consumed, the authorized focused runner passed on a read-only snapshot of Project_ARIS commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295, IF09-FIND-001 was not reproduced, no tracked-lineage regression appeared, the closure flag remained false, remediation_proven remained false, and no forbidden surface was executed."
+        "from_phase": "INF Revalidation Execution Packet",
+        "proof_source": "artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json",
+        "to_phase": "INF Revalidation Adjudication Or Closure Packet",
+        "to_status": "inf_revalidation_adjudication_closure_pass",
+        "transition_type": "infernus_revalidation_adjudication_or_closure",
+        "verified_via": "The explicit operator adjudication route-opening command was consumed, the committed oracle and regression evidence remained pass on the authoritative Track A lineage commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295, no forbidden surface or Project_ARIS mutation was introduced in this gate, and IF09-FIND-001 was canonically closed with remediation_proven=true."
     },
-    "latest_completed_phase": "INF Revalidation Execution Packet",
+    "latest_completed_phase": "INF Revalidation Adjudication Or Closure Packet",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_EXECUTION_PACKET.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -652,18 +657,17 @@
     "next_action": {
         "execution_authorization": false,
         "notes": [
-            "Explicit operator execution command was recorded via execucao logo.",
-            "The controlled IF09 execution consumed the authorized future gate candidate INF_REVALIDATION_EXECUTION_PACKET.",
-            "Workspace HEAD 6cec74deb7a99b7eb227df84a902650ca092e00f did not match the target commit, so the authoritative runner used a read-only git-archive snapshot of 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
-            "Focused revalidation runner result on the authorized snapshot: 19 tests passed, no IF09 reproduction, no tracked-lineage regression.",
-            "Deterministic oracle result: pass.",
-            "Future candidate-only gate: INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.",
+            "Explicit operator adjudication route-opening command was recorded via abrir adjudicação/closure do INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.",
+            "The committed IF09 execution evidence was adjudicated without rerunning the focused runner.",
+            "Execution evidence remained anchored to the read-only git-archive snapshot lineage of 7883af5a32c629026bfc6dc15ebee4ebbcadd295 because the live Project_ARIS workspace HEAD 6cec74deb7a99b7eb227df84a902650ca092e00f was not the authority for the prior execution gate.",
+            "Primary closure criteria satisfied: 19 tests passed, no IF09 reproduction, no tracked-lineage regression, and no forbidden surface was executed.",
+            "Deterministic oracle result remained pass.",
             "Project_ARIS merge commit: 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
             "Patch commit: 1e9a04a02846f3261ae72d0c95fbee6b0163b45b.",
             "Project_ARIS CI: CI_GREEN_CONFIRMED.",
             "Project_ARIS main workspace remained unchanged during this phase.",
-            "IF09-FIND-001 remains open — closure candidate only, no automatic closure in this gate.",
-            "remediation_proven remains false.",
+            "IF09-FIND-001 is now closed by deterministic adjudication.",
+            "remediation_proven is now true.",
             "All execution locks remain false.",
             "Nenhuma transição definida. Aguardando instrução do operador."
         ],
@@ -672,7 +676,7 @@
         "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "inf_revalidation_execution_pass"
+        "status": "inf_revalidation_adjudication_closure_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -688,8 +692,8 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.19",
-    "status": "inf_revalidation_execution_pass",
+    "schema_version": "3.20",
+    "status": "inf_revalidation_adjudication_closure_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -704,7 +708,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.19",
+        "current_schema_version": "3.20",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -727,6 +731,7 @@
         "schema_3_16_change_summary": "INF revalidation route activation: promote INF_REVALIDATION_ROUTE_ADMISSION_PACKET from the TRACK_REVALIDATION_FIRST candidate into the live active-context route, admit infernus_revalidation_route_admission as a valid live/next route class, require the route-activation plus route-admission artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened INF route.",
         "schema_3_17_change_summary": "INF revalidation readiness activation: promote INF_REVALIDATION_READINESS_PACKET from the live route-admission candidate into the active-context route, admit infernus_revalidation_readiness as a valid live/next route class, require the route-activation plus readiness artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened readiness route.",
         "schema_3_18_change_summary": "INF revalidation operator authorization: promote INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET into the live active-context route, record the explicit operator execution-contract authorization without opening execution, add the operator-authorization artifact family plus validator enforcement, materialize the readiness successor row, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened operator gate.",
-        "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution."
+        "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
+        "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure."
     }
 }

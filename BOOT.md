@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `a419c6506aee`
-- schema_version: `3.19`
+- state_sha: `40861e98f28f`
+- schema_version: `3.20`
 
 ## AVISO DE STALE
 
@@ -14,16 +14,16 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Infernus Revalidation`
-- phase_id: `INF_REVALIDATION_EXECUTION_PACKET`
-- status: `inf_revalidation_execution_pass`
+- phase_id: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+- status: `inf_revalidation_adjudication_closure_pass`
 - decision: `pass`
-- resumo: INF Revalidation Execution Packet; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: INF Revalidation Adjudication Or Closure Packet; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
   Infernus FULL
   Purgatorium FULL
-▸ Infernus Revalidation (phase_id=INF_REVALIDATION_EXECUTION_PACKET)
+▸ Infernus Revalidation (phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET)
   BenchUX
   Crisol
   Polimento
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_EXECUTION_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.
 
 ## REGRAS DE AGORA
 

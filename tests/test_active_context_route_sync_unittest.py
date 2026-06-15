@@ -36,12 +36,12 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
 
     def test_current_route_tracks_inf_revalidation_execution_packet_sync(self):
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["phase_id"], "INF_REVALIDATION_EXECUTION_PACKET")
-        self.assertEqual(state["current_phase_id"], "INF_REVALIDATION_EXECUTION_PACKET")
-        self.assertEqual(state["previous_phase_id"], "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET")
-        self.assertEqual(state["phase_class"], "infernus_revalidation_execution")
-        self.assertEqual(state["latest_completed_phase"], "INF Revalidation Execution Packet")
-        self.assertEqual(state["latest_completed_status"], "inf_revalidation_execution_pass")
+        self.assertEqual(state["phase_id"], "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET")
+        self.assertEqual(state["current_phase_id"], "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET")
+        self.assertEqual(state["previous_phase_id"], "INF_REVALIDATION_EXECUTION_PACKET")
+        self.assertEqual(state["phase_class"], "infernus_revalidation_adjudication_or_closure")
+        self.assertEqual(state["latest_completed_phase"], "INF Revalidation Adjudication Or Closure Packet")
+        self.assertEqual(state["latest_completed_status"], "inf_revalidation_adjudication_closure_pass")
         self.assertEqual(state["latest_completed_project_commit_sha"], "7883af5a32c629026bfc6dc15ebee4ebbcadd295")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
@@ -55,9 +55,17 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
         self.assertEqual(state["decision"], "pass")
-        self.assertEqual(state["status"], "inf_revalidation_execution_pass")
+        self.assertEqual(state["status"], "inf_revalidation_adjudication_closure_pass")
+        self.assertEqual(state["target_finding_id"], "IF09-FIND-001")
+        self.assertEqual(state["target_finding_status"], "closed")
+        self.assertTrue(state["finding_closed"])
+        self.assertTrue(state["remediation_proven"])
+        self.assertEqual(
+            state["closure_basis"],
+            "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface",
+        )
         self.assertEqual(state["current_live_route"]["decision"], "pass")
-        self.assertEqual(state["current_live_route"]["status"], "inf_revalidation_execution_pass")
+        self.assertEqual(state["current_live_route"]["status"], "inf_revalidation_adjudication_closure_pass")
         self.assertIsNone(state["current_live_route"]["active_next_phase"])
         self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
         self.assertFalse(state["current_live_route"]["next_phase_execution_authorization"])
@@ -283,6 +291,10 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
             "purgatorium_post_merge_validation",
             schema["properties"]["active_next_phase_class"]["enum"],
         )
+        self.assertIn(
+            "infernus_revalidation_adjudication_or_closure",
+            schema["properties"]["active_next_phase_class"]["enum"],
+        )
         self.assertIn("route_amendment_authorized_by_operator", schema["properties"])
         self.assertIn("repeat_source_search_without_new_primary_source_forbidden", schema["properties"])
         self.assertIn("purg00_route_amendment_terminal_wait_state", schema["properties"])
@@ -471,9 +483,17 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(row["next_phase_class"], "infernus_revalidation_execution")
         self.assertEqual(row["advance_mode"], "operator")
 
-    def test_transition_table_has_no_successor_for_inf_revalidation_execution_packet(self):
+    def test_transition_table_contains_inf_revalidation_execution_successor(self):
         module = self._load_validator_module()
-        self.assertIsNone(module._get_transition_row("INF_REVALIDATION_EXECUTION_PACKET", "pass"))
+        row = module._get_transition_row("INF_REVALIDATION_EXECUTION_PACKET", "pass")
+        self.assertIsNotNone(row)
+        self.assertEqual(row["next_phase_id"], "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET")
+        self.assertEqual(row["next_phase_class"], "infernus_revalidation_adjudication_or_closure")
+        self.assertEqual(row["advance_mode"], "operator")
+
+    def test_transition_table_has_no_successor_for_inf_revalidation_adjudication_packet(self):
+        module = self._load_validator_module()
+        self.assertIsNone(module._get_transition_row("INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "pass"))
 
     def test_purg00_route_admission_artifacts_validate(self):
         module = self._load_validator_module()

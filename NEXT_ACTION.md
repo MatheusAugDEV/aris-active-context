@@ -2,15 +2,15 @@
 
 > Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
 
-## INF Revalidation Execution Packet — Próxima Ação
+## INF Revalidation Adjudication Or Closure Packet — Próxima Ação
 
-- latest_completed_phase: `INF Revalidation Execution Packet`
-- status: `inf_revalidation_execution_pass`
+- latest_completed_phase: `INF Revalidation Adjudication Or Closure Packet`
+- status: `inf_revalidation_adjudication_closure_pass`
 - active_next_phase: `null`
 - next_phase: `null`
 - execution_authorization: `false`
 - Próximo passo canônico: `Nenhuma transição definida. Aguardando instrução do operador.`
-- Nota documental: `INF_REVALIDATION_EXECUTION_PACKET` foi promovido canonicamente por `artifacts/purgatorium/inf_revalidation_execution_packet.json` após execução controlada do runner focado autorizado em snapshot read-only do commit-alvo `7883af5a32c629026bfc6dc15ebee4ebbcadd295`. A live Transition Table ainda não define sucessor ativo para esta fase, então `next_phase` e `active_next_phase` permanecem `null`, `IF09-FIND-001` segue open, `remediation_proven=false` segue preservado e o próximo movimento continua dependente de nova instrução explícita do operador. O candidate-only futuro passou a ser `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`.
+- Nota documental: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` foi promovido canonicamente por `artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json` após adjudicação documental da evidência primária já commitada da execução controlada no commit-alvo `7883af5a32c629026bfc6dc15ebee4ebbcadd295`. A live Transition Table não define sucessor ativo para esta fase, então `next_phase` e `active_next_phase` permanecem `null`, `IF09-FIND-001` está closed, `remediation_proven=true` ficou canonizado e o próximo movimento continua dependente de nova instrução explícita do operador.
 
 - Nota documental (remaining roadmap): a trilha restante do Purgatorium foi canonizada artifact-only em `project_mirror/docs/purgatorium_full/purgatorium_remaining_roadmapcanon.md` com `roadmap_status=canonical_technical_trail_pending_active_transition_activation`. O primeiro candidate next gate é `PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET` (candidate only, não ativo). `next_phase` permanece `null` até o operador autorizar amendment/route opening; nada fecha `IF09-FIND-001` nem prova remediação fora dos gates próprios pós-revalidação.
 

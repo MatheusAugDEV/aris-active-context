@@ -1,0 +1,20 @@
+{
+  "artifact_id": "inf_revalidation_adjudication_evidence_matrix",
+  "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "created_at": "2026-06-15T18:24:02-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_execution_packet": "artifacts/purgatorium/inf_revalidation_execution_packet.json",
+  "source_oracle_result": "artifacts/purgatorium/inf_revalidation_execution_oracle_result.json",
+  "source_regression_matrix": "artifacts/purgatorium/inf_revalidation_execution_regression_matrix.json",
+  "source_no_forbidden_surface_attestation": "artifacts/purgatorium/inf_revalidation_execution_no_forbidden_surface_attestation.json",
+  "oracle_pass": true,
+  "runner_pass": true,
+  "runner_exit_code_zero": true,
+  "tests_run_count_matches_19": true,
+  "if09_failure_not_reproduced": true,
+  "tracked_lineage_regression_not_detected": true,
+  "no_forbidden_surface_confirmed": true,
+  "all_closure_criteria_satisfied": true,
+  "finding_status_after_adjudication": "closed"
+}

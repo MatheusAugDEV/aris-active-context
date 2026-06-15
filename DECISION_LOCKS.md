@@ -3177,6 +3177,39 @@ The following track references are historical_residual_route_noise. They do NOT 
 - This gate records the branch selection and emits `candidate_next_gate=INF_REVALIDATION_ROUTE_ADMISSION_PACKET` only; activating this row in the live Transition Table requires a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern.
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+## INF Revalidation Adjudication Or Closure Packet
+
+- Status: `inf_revalidation_adjudication_closure_pass`
+- Decision: `pass`
+- Scope: documentary-only adjudication of the already committed `INF_REVALIDATION_EXECUTION_PACKET` evidence for `IF09-FIND-001`. No runner rerun, no `Project_ARIS` mutation, no `Project_ARIS` tests, no runtime, no real_apply, no product/Bedrock/secrets work, no package manager.
+- Operator route-opening command:
+  - exact text: `abrir adjudicação/closure do INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - interpretation: `explicit_operator_route_opening_for_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - source artifact: `artifacts/purgatorium/inf_revalidation_adjudication_operator_command.json`
+- Evidence adjudicated:
+  - execution packet: `artifacts/purgatorium/inf_revalidation_execution_packet.json`
+  - closure packet: `artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json`
+  - oracle review: `artifacts/purgatorium/inf_revalidation_adjudication_oracle_review.json`
+  - regression review: `artifacts/purgatorium/inf_revalidation_adjudication_regression_review.json`
+  - no-forbidden-surface carry-forward: `artifacts/purgatorium/inf_revalidation_adjudication_no_forbidden_surface_carry_forward.json`
+- Closure result:
+  - `phase_id=current_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - `previous_phase_id=INF_REVALIDATION_EXECUTION_PACKET`
+  - `phase_class=infernus_revalidation_adjudication_or_closure`
+  - `next_phase=null`
+  - `active_next_phase=null`
+  - `IF09-FIND-001` closed
+  - `finding_closed=true`
+  - `remediation_proven=true`
+  - `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`
+- Safety locks preserved:
+  - `real_apply_authorized=false`
+  - `production_authorized=false`
+  - `product_ready=false`
+  - `secrets_access_authorized=false`
+  - `runtime_integration_allowed=false`
+  - `Project_ARIS changed during this phase=false`
+
 ## INF Revalidation Execution Packet
 
 - Status: `inf_revalidation_execution_pass`

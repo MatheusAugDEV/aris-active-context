@@ -34,7 +34,7 @@ def test_validator_reports_canonical_inf_revalidation_readiness_summary():
     )
     assert r.returncode == 0, r.stdout + r.stderr
     summary = json.loads(r.stdout)
-    assert summary["phase_id"] == "INF_REVALIDATION_EXECUTION_PACKET"
+    assert summary["phase_id"] == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET"
     assert summary["next_phase"] is None
     assert summary["governance_gate_streak"] == 0
 

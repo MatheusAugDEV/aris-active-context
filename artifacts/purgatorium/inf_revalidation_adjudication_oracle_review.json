@@ -1,0 +1,15 @@
+{
+  "artifact_id": "inf_revalidation_adjudication_oracle_review",
+  "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "created_at": "2026-06-15T18:24:03-03:00",
+  "source_artifact": "artifacts/purgatorium/inf_revalidation_execution_oracle_result.json",
+  "oracle_id": "INF_REVALIDATION_IF09_TRACK_A_ACCEPTED_LINEAGE_ORACLE_001",
+  "oracle_result": "pass",
+  "runner_result": "pass",
+  "runner_exit_code": 0,
+  "tests_run_count": 19,
+  "if09_failure_reproduced": false,
+  "tracked_lineage_regression_detected": false,
+  "finding_closure_candidate": true,
+  "adjudication_result": "closure_permitted"
+}

@@ -227,6 +227,18 @@ INF_REVALIDATION_EXECUTION_SUMMARY_PATH = ROOT / "artifacts" / "purgatorium" / "
 INF_REVALIDATION_EXECUTION_REPORT_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_execution_report.md"
 INF_REVALIDATION_EXECUTION_VALIDATION_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_execution_validation_evidence.json"
 INF_REVALIDATION_EXECUTION_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_execution_next_route_candidate.json"
+INF_REVALIDATION_ADJUDICATION_OPERATOR_COMMAND_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_operator_command.json"
+INF_REVALIDATION_ADJUDICATION_TRANSITION_ROW_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_transition_row.json"
+INF_REVALIDATION_ADJUDICATION_EVIDENCE_MATRIX_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_evidence_matrix.json"
+INF_REVALIDATION_ADJUDICATION_ORACLE_REVIEW_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_oracle_review.json"
+INF_REVALIDATION_ADJUDICATION_REGRESSION_REVIEW_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_regression_review.json"
+INF_REVALIDATION_ADJUDICATION_NO_FORBIDDEN_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_no_forbidden_surface_carry_forward.json"
+INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_closure_packet.json"
+INF_REVALIDATION_ADJUDICATION_CLOSURE_DECISION_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_closure_decision.json"
+INF_REVALIDATION_ADJUDICATION_SUMMARY_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_summary.json"
+INF_REVALIDATION_ADJUDICATION_REPORT_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_report.md"
+INF_REVALIDATION_ADJUDICATION_VALIDATION_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_validation_evidence.json"
+INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_next_route_candidate.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -851,6 +863,7 @@ GOVERNANCE_CLASSES = {
     "infernus_revalidation_readiness",
     "infernus_revalidation_operator_authorization",
     "infernus_revalidation_execution",
+    "infernus_revalidation_adjudication_or_closure",
 }
 CAPACITY_CLASSES = {
     "fixture_materialization", "bot_execution",
@@ -989,6 +1002,26 @@ PHASE_DELIVERABLES = {
         and _load_json(INF_REVALIDATION_EXECUTION_PACKET_PATH).get("finding_closed") is False
         and _load_json(INF_REVALIDATION_EXECUTION_PACKET_PATH).get("remediation_proven") is False
         and _load_json(INF_REVALIDATION_EXECUTION_NEXT_ROUTE_CANDIDATE_PATH).get("candidate_next_gate") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET"
+    ),
+    "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET": lambda: (
+        INF_REVALIDATION_ADJUDICATION_OPERATOR_COMMAND_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_TRANSITION_ROW_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_EVIDENCE_MATRIX_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_ORACLE_REVIEW_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_REGRESSION_REVIEW_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_NO_FORBIDDEN_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_CLOSURE_DECISION_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_SUMMARY_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_REPORT_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_VALIDATION_EVIDENCE_PATH.exists()
+        and INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH.exists()
+        and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET"
+        and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("status") == "inf_revalidation_adjudication_closure_pass"
+        and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("finding_closed") is True
+        and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("remediation_proven") is True
+        and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface"
+        and _load_json(INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH).get("candidate_next_gate") is None
     ),
     "ACB-CORE-01": lambda: (
         ACB_CORE_01_EVIDENCE_PATH.exists()
@@ -2375,6 +2408,140 @@ def _check_inf_revalidation_execution_artifacts(state: dict[str, Any]) -> None:
 
     command_log_lines = [line for line in INF_REVALIDATION_EXECUTION_COMMAND_LOG_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
     _require(len(command_log_lines) >= 3, "INF execution command log must contain at least three events")
+
+
+def _check_inf_revalidation_adjudication_or_closure_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET":
+        return
+
+    for path in (
+        INF_REVALIDATION_ADJUDICATION_OPERATOR_COMMAND_PATH,
+        INF_REVALIDATION_ADJUDICATION_TRANSITION_ROW_PATH,
+        INF_REVALIDATION_ADJUDICATION_EVIDENCE_MATRIX_PATH,
+        INF_REVALIDATION_ADJUDICATION_ORACLE_REVIEW_PATH,
+        INF_REVALIDATION_ADJUDICATION_REGRESSION_REVIEW_PATH,
+        INF_REVALIDATION_ADJUDICATION_NO_FORBIDDEN_PATH,
+        INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH,
+        INF_REVALIDATION_ADJUDICATION_CLOSURE_DECISION_PATH,
+        INF_REVALIDATION_ADJUDICATION_SUMMARY_PATH,
+        INF_REVALIDATION_ADJUDICATION_REPORT_PATH,
+        INF_REVALIDATION_ADJUDICATION_VALIDATION_EVIDENCE_PATH,
+        INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH,
+        INF_REVALIDATION_EXECUTION_PACKET_PATH,
+        INF_REVALIDATION_EXECUTION_ORACLE_RESULT_PATH,
+        INF_REVALIDATION_EXECUTION_REGRESSION_MATRIX_PATH,
+        INF_REVALIDATION_EXECUTION_NO_FORBIDDEN_PATH,
+    ):
+        _require(path.exists(), f"missing INF revalidation adjudication artifact: {path}")
+
+    operator_command = _load_json(INF_REVALIDATION_ADJUDICATION_OPERATOR_COMMAND_PATH)
+    _require(operator_command.get("phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication operator command phase_id mismatch")
+    _require(operator_command.get("operator_command_text") == "abrir adjudicação/closure do INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication operator command text mismatch")
+    _require(operator_command.get("interpreted_as") == "explicit_operator_route_opening_for_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication operator command interpretation mismatch")
+    for key in (
+        "project_mutation_authorized",
+        "project_aris_tests_authorized",
+        "runtime_authorized",
+        "real_apply_authorized",
+        "product_authorized",
+        "bedrock_authorized",
+        "secrets_authorized",
+        "package_manager_authorized",
+    ):
+        _require(operator_command.get(key) is False, f"INF adjudication operator command {key} must be false")
+
+    transition_row = _load_json(INF_REVALIDATION_ADJUDICATION_TRANSITION_ROW_PATH)
+    _require(transition_row.get("current_phase_id") == "INF_REVALIDATION_EXECUTION_PACKET", "INF adjudication transition row current_phase_id mismatch")
+    _require(transition_row.get("next_phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication transition row next_phase_id mismatch")
+    _require(transition_row.get("next_phase_class") == "infernus_revalidation_adjudication_or_closure", "INF adjudication transition row next_phase_class mismatch")
+    _require(transition_row.get("advance_mode") == "operator", "INF adjudication transition row advance_mode mismatch")
+    _require(transition_row.get("unlocked_by_operator_command") is True, "INF adjudication transition row unlock mismatch")
+
+    evidence_matrix = _load_json(INF_REVALIDATION_ADJUDICATION_EVIDENCE_MATRIX_PATH)
+    _require(evidence_matrix.get("target_finding_id") == "IF09-FIND-001", "INF adjudication evidence matrix target_finding_id mismatch")
+    _require(evidence_matrix.get("all_closure_criteria_satisfied") is True, "INF adjudication evidence matrix all_closure_criteria_satisfied mismatch")
+    _require(evidence_matrix.get("finding_status_after_adjudication") == "closed", "INF adjudication evidence matrix finding_status_after_adjudication mismatch")
+
+    oracle_review = _load_json(INF_REVALIDATION_ADJUDICATION_ORACLE_REVIEW_PATH)
+    _require(oracle_review.get("oracle_result") == "pass", "INF adjudication oracle review oracle_result mismatch")
+    _require(oracle_review.get("runner_result") == "pass", "INF adjudication oracle review runner_result mismatch")
+    _require(oracle_review.get("runner_exit_code") == 0, "INF adjudication oracle review runner_exit_code mismatch")
+    _require(oracle_review.get("tests_run_count") == 19, "INF adjudication oracle review tests_run_count mismatch")
+    _require(oracle_review.get("if09_failure_reproduced") is False, "INF adjudication oracle review IF09 reproduction mismatch")
+    _require(oracle_review.get("tracked_lineage_regression_detected") is False, "INF adjudication oracle review regression mismatch")
+    _require(oracle_review.get("finding_closure_candidate") is True, "INF adjudication oracle review closure candidate mismatch")
+
+    regression_review = _load_json(INF_REVALIDATION_ADJUDICATION_REGRESSION_REVIEW_PATH)
+    _require(regression_review.get("total_tests") == 19, "INF adjudication regression review total_tests mismatch")
+    _require(regression_review.get("failures") == 0, "INF adjudication regression review failures mismatch")
+    _require(regression_review.get("errors") == 0, "INF adjudication regression review errors mismatch")
+    _require(regression_review.get("if09_regression_detected") is False, "INF adjudication regression review IF09 regression mismatch")
+    _require(regression_review.get("tracked_lineage_regression_detected") is False, "INF adjudication regression review tracked_lineage_regression_detected mismatch")
+
+    no_forbidden = _load_json(INF_REVALIDATION_ADJUDICATION_NO_FORBIDDEN_PATH)
+    for key in (
+        "project_aris_mutated",
+        "project_aris_main_workspace_touched",
+        "global_test_suite_executed",
+        "proof_loop_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_executed",
+        "bedrock_executed",
+        "secrets_accessed",
+        "package_manager_executed",
+        "dependency_changed",
+        "production_authorized",
+        "product_ready",
+        "runtime_integration_allowed",
+        "secrets_access_authorized",
+    ):
+        _require(no_forbidden.get(key) is False, f"INF adjudication no-forbidden {key} must be false")
+    _require(no_forbidden.get("finding_closed") is True, "INF adjudication no-forbidden finding_closed mismatch")
+    _require(no_forbidden.get("remediation_proven") is True, "INF adjudication no-forbidden remediation_proven mismatch")
+
+    closure_packet = _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH)
+    _require(closure_packet.get("phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication closure packet phase_id mismatch")
+    _require(closure_packet.get("phase_class") == "infernus_revalidation_adjudication_or_closure", "INF adjudication closure packet phase_class mismatch")
+    _require(closure_packet.get("status") == "inf_revalidation_adjudication_closure_pass", "INF adjudication closure packet status mismatch")
+    _require(closure_packet.get("decision") == "pass", "INF adjudication closure packet decision mismatch")
+    _require(closure_packet.get("previous_live_phase_id") == "INF_REVALIDATION_EXECUTION_PACKET", "INF adjudication closure packet previous_live_phase_id mismatch")
+    _require(closure_packet.get("target_finding_id") == "IF09-FIND-001", "INF adjudication closure packet target_finding_id mismatch")
+    _require(closure_packet.get("finding_status") == "closed", "INF adjudication closure packet finding_status mismatch")
+    _require(closure_packet.get("finding_closed") is True, "INF adjudication closure packet finding_closed mismatch")
+    _require(closure_packet.get("remediation_proven") is True, "INF adjudication closure packet remediation_proven mismatch")
+    _require(closure_packet.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "INF adjudication closure packet closure_basis mismatch")
+    _require(closure_packet.get("candidate_next_gate") is None, "INF adjudication closure packet candidate_next_gate must be null")
+    _require(closure_packet.get("next_phase_preserved") is None, "INF adjudication closure packet next_phase_preserved must be null")
+    _require(closure_packet.get("active_next_phase_preserved") is None, "INF adjudication closure packet active_next_phase_preserved must be null")
+
+    closure_decision = _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_DECISION_PATH)
+    _require(closure_decision.get("decision") == "pass", "INF adjudication closure decision mismatch")
+    _require(closure_decision.get("status") == "inf_revalidation_adjudication_closure_pass", "INF adjudication closure decision status mismatch")
+    _require(closure_decision.get("finding_status") == "closed", "INF adjudication closure decision finding_status mismatch")
+    _require(closure_decision.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "INF adjudication closure decision closure_basis mismatch")
+
+    summary = _load_json(INF_REVALIDATION_ADJUDICATION_SUMMARY_PATH)
+    _require(summary.get("decision") == "pass", "INF adjudication summary decision mismatch")
+    _require(summary.get("finding_closed") is True, "INF adjudication summary finding_closed mismatch")
+    _require(summary.get("remediation_proven") is True, "INF adjudication summary remediation_proven mismatch")
+
+    next_candidate = _load_json(INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH)
+    _require(next_candidate.get("phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "INF adjudication next route candidate phase_id mismatch")
+    _require(next_candidate.get("candidate_next_gate") is None, "INF adjudication next route candidate candidate_next_gate must be null")
+    _require(next_candidate.get("candidate_only") is True, "INF adjudication next route candidate candidate_only mismatch")
+    _require(next_candidate.get("state_advanced") is False, "INF adjudication next route candidate state_advanced mismatch")
+    _require(next_candidate.get("finding_closed") is True, "INF adjudication next route candidate finding_closed mismatch")
+    _require(next_candidate.get("remediation_proven") is True, "INF adjudication next route candidate remediation_proven mismatch")
+
+    _require(state.get("phase_class") == "infernus_revalidation_adjudication_or_closure", "live state phase_class mismatch for INF adjudication")
+    _require(state.get("status") == "inf_revalidation_adjudication_closure_pass", "live state status mismatch for INF adjudication")
+    _require(state.get("decision") == "pass", "live state decision mismatch for INF adjudication")
+    _require(state.get("target_finding_id") == "IF09-FIND-001", "live state target_finding_id mismatch for INF adjudication")
+    _require(state.get("target_finding_status") == "closed", "live state target_finding_status mismatch for INF adjudication")
+    _require(state.get("finding_closed") is True, "live state finding_closed mismatch for INF adjudication")
+    _require(state.get("remediation_proven") is True, "live state remediation_proven mismatch for INF adjudication")
+    _require(state.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "live state closure_basis mismatch for INF adjudication")
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -9900,7 +10067,6 @@ def _check_purg_pre_route_admission_artifacts(state: dict[str, Any]) -> None:
     route_admission_text = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (
-            STATE_PATH,
             PURG_PRE_ROUTE_ADMISSION_DECISION_PATH,
             PURG_PRE_ROUTE_ADMISSION_SUMMARY_PATH,
             PURG_PRE_ROUTE_ADMISSION_REPORT_PATH,
@@ -10013,7 +10179,6 @@ def _check_purg_pre_authority_execution_artifacts(state: dict[str, Any]) -> None
     authority_execution_text = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (
-            STATE_PATH,
             PURG_PRE_AUTHORITY_EXECUTION_DECISION_PATH,
             PURG_PRE_AUTHORITY_EXECUTION_SUMMARY_PATH,
             PURG_PRE_AUTHORITY_EXECUTION_REPORT_PATH,
@@ -10185,7 +10350,6 @@ def _check_purg00_operator_review_packet_artifacts(state: dict[str, Any]) -> Non
     purg00_review_text = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (
-            STATE_PATH,
             PURG00_OPERATOR_REVIEW_PACKET_DECISION_PATH,
             PURG00_OPERATOR_REVIEW_PACKET_SUMMARY_PATH,
             PURG00_OPERATOR_REVIEW_PACKET_REPORT_PATH,
@@ -10313,7 +10477,6 @@ def _check_purg00_route_admission_artifacts(state: dict[str, Any]) -> None:
     route_admission_text = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (
-            STATE_PATH,
             PURG00_ROUTE_ADMISSION_DECISION_PATH,
             PURG00_ROUTE_ADMISSION_SUMMARY_PATH,
             PURG00_ROUTE_ADMISSION_REPORT_PATH,
@@ -11286,6 +11449,7 @@ def main() -> None:
     _check_inf_revalidation_readiness_activation_artifacts(state)
     _check_inf_revalidation_operator_authorization_artifacts(state)
     _check_inf_revalidation_execution_artifacts(state)
+    _check_inf_revalidation_adjudication_or_closure_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -11454,16 +11618,16 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "INF_REVALIDATION_EXECUTION_PACKET",
+        "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "inf_revalidation_execution_pass",
-        "latest_completed_phase: INF Revalidation Execution Packet",
+        "inf_revalidation_adjudication_closure_pass",
+        "latest_completed_phase: INF Revalidation Adjudication Or Closure Packet",
         "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
-        "IF09-FIND-001 remains open",
+        "IF09-FIND-001 closed",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -11475,6 +11639,16 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## INF Revalidation Adjudication Or Closure Packet",
+        "inf_revalidation_adjudication_closure_pass",
+        "inf_revalidation_adjudication_closure_packet.json",
+        "phase_id=current_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+        "IF09-FIND-001` closed",
+        "`remediation_proven=true`",
+        "`finding_closed=true`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -11549,7 +11723,7 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: INF Revalidation Execution Packet",
+        "Latest completed phase: INF Revalidation Adjudication Or Closure Packet",
         "Active next phase: null",
         "Active next phase class: null",
         "Standing authorization: canonroadmap approved by operator",
@@ -11585,6 +11759,7 @@ def main() -> None:
         "| PURG-PRE | pass | PURG-00 | purgatorium_full_intake | operator | purg00_route_admission_decision.json + purg00_operator_review_packet + schema/validator admission + no-real-exec attestation |",
         "| PURG-00 | pass | PURG-01 | purgatorium_route_admission | operator | purg01_route_admission_decision.json + operator authorization + no-real-exec attestation + validator evidence |",
         "| INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |",
+        "| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |",
     )
     _mirror_contains(
         ROOT / "EXCLUDENT_POLICY.md",

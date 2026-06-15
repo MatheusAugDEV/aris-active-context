@@ -164,9 +164,9 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
-Latest completed phase: INF Revalidation Execution Packet
-Current phase_id/current_phase_id: INF_REVALIDATION_EXECUTION_PACKET
-Current status/status: inf_revalidation_execution_pass
+Latest completed phase: INF Revalidation Adjudication Or Closure Packet
+Current phase_id/current_phase_id: INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
+Current status/status: inf_revalidation_adjudication_closure_pass
 Decision: pass
 Active next phase: null
 Active next phase class: null
@@ -185,11 +185,11 @@ Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 Latest completed CI state: `CI_GREEN_CONFIRMED`
 Merge to Project_ARIS main: `executed earlier at 7883af5a32c629026bfc6dc15ebee4ebbcadd295`
-IF09-FIND-001 remains open; closure only via Infernus Revalidation.
+IF09-FIND-001 closed by Infernus Revalidation adjudication.
 Project_ARIS main workspace remains untouched.
 The authoritative runner used a read-only git-archive snapshot of Project_ARIS commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295` because the live Project_ARIS workspace HEAD had already advanced to `6cec74deb7a99b7eb227df84a902650ca092e00f`.
 Oracle result for IF09 focused revalidation: `pass`
-Future candidate only: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+No successor row is active after canonical closure.
 Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
 Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
 Latest completed phase: IF-11 Minos Final Verdict + Closure
@@ -263,6 +263,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | pass | INF_REVALIDATION_READINESS_PACKET | infernus_revalidation_readiness | operator | inf_revalidation_readiness_packet.json + scenario scope + oracle contract + abort criteria + no-real-execution attestation |
 | INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix |
 | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |
+| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

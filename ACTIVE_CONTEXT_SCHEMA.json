@@ -8,6 +8,7 @@
   "schema_3_16_change_summary": "INF revalidation route activation: promote INF_REVALIDATION_ROUTE_ADMISSION_PACKET from the TRACK_REVALIDATION_FIRST candidate into the live active-context route, admit infernus_revalidation_route_admission as a valid live/next route class, require the route-activation plus route-admission artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened INF route.",
   "schema_3_17_change_summary": "INF revalidation readiness activation: promote INF_REVALIDATION_READINESS_PACKET from the live route-admission candidate into the active-context route, admit infernus_revalidation_readiness as a valid live/next route class, require the route-activation plus readiness artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened readiness route.",
   "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
+  "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -41,6 +42,7 @@
         "infernus_revalidation_readiness",
         "infernus_revalidation_operator_authorization",
         "infernus_revalidation_execution",
+        "infernus_revalidation_adjudication_or_closure",
         "history_only",
         null
       ],
@@ -491,6 +493,7 @@
             "infernus_revalidation_readiness",
             "infernus_revalidation_operator_authorization",
             "infernus_revalidation_execution",
+            "infernus_revalidation_adjudication_or_closure",
             "history_only",
             null
           ],
@@ -576,6 +579,21 @@
         "blocked",
         "warn"
       ],
+      "type": "string"
+    },
+    "target_finding_id": {
+      "type": "string"
+    },
+    "target_finding_status": {
+      "type": "string"
+    },
+    "finding_closed": {
+      "type": "boolean"
+    },
+    "remediation_proven": {
+      "type": "boolean"
+    },
+    "closure_basis": {
       "type": "string"
     },
     "latest_completed_ci_state": {
@@ -870,8 +888,10 @@
             "purgatorium_track_a_main_merge_execution",
             "purgatorium_post_merge_validation",
             "infernus_revalidation_route_admission",
+            "infernus_revalidation_readiness",
             "infernus_revalidation_operator_authorization",
             "infernus_revalidation_execution",
+            "infernus_revalidation_adjudication_or_closure",
             "history_only",
             null
           ],
@@ -985,7 +1005,8 @@
         "3.16",
         "3.17",
         "3.18",
-        "3.19"
+        "3.19",
+        "3.20"
       ],
       "type": "string"
     },
@@ -1210,6 +1231,9 @@
         },
         "schema_3_19_change_summary": {
           "type": "string"
+        },
+        "schema_3_20_change_summary": {
+          "type": "string"
         }
       },
       "required": [
@@ -1405,6 +1429,11 @@
     "ci_enforcement_active",
     "status",
     "decision",
+    "target_finding_id",
+    "target_finding_status",
+    "finding_closed",
+    "remediation_proven",
+    "closure_basis",
     "latest_completed_status",
     "latest_completed_project_commit_sha",
     "latest_completed_ci_state",
@@ -1445,8 +1474,9 @@
     "purg00_source_data_gap_resolution",
     "purg00_source_gap_terminal_blocker"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v3.19",
+  "title": "ARIS Active Context Canonical Live State Schema v3.20",
   "type": "object",
   "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
-  "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution."
+  "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
+  "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure."
 }

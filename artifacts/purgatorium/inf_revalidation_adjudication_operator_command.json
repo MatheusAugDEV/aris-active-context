@@ -1,0 +1,15 @@
+{
+  "artifact_id": "inf_revalidation_adjudication_operator_command",
+  "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "created_at": "2026-06-15T18:24:00-03:00",
+  "operator_command_text": "abrir adjudicação/closure do INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "interpreted_as": "explicit_operator_route_opening_for_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "project_mutation_authorized": false,
+  "project_aris_tests_authorized": false,
+  "runtime_authorized": false,
+  "real_apply_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "secrets_authorized": false,
+  "package_manager_authorized": false
+}
