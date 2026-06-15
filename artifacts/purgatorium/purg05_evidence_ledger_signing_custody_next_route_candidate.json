@@ -1,0 +1,17 @@
+{
+  "artifact_id": "purg05_evidence_ledger_signing_custody_next_route_candidate",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:47:26-03:00",
+  "source_admission_packet": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json",
+  "candidate_next_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+  "candidate_only": true,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "requires_operator_or_route_opening": true,
+  "purg05_opened": false,
+  "can_open_purg05_now": false,
+  "reason": "purg05_candidate_admitted_but_not_opened",
+  "remaining_blockers": [],
+  "decision": "pass"
+}

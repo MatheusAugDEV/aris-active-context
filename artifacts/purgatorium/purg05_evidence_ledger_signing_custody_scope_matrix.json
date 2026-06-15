@@ -1,0 +1,49 @@
+{
+  "artifact_id": "purg05_evidence_ledger_signing_custody_scope_matrix",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:47:26-03:00",
+  "candidate_target_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "allowed_in_future_purg05": [
+    "artifact hash inventory",
+    "evidence ledger signing metadata",
+    "custody chain mapping",
+    "source-to-output lineage table",
+    "no-real-execution attestation",
+    "carry-forward locks",
+    "candidate handoff after custody"
+  ],
+  "forbidden_in_future_purg05": [
+    "Project_ARIS mutation",
+    "Project_ARIS tests",
+    "proof-loop execution",
+    "RED execution",
+    "RESET execution",
+    "GREEN execution",
+    "benign-flow execution",
+    "rollback execution",
+    "kill-switch execution",
+    "runtime",
+    "real_apply",
+    "finding closure",
+    "remediation_proven=true",
+    "product",
+    "Bedrock",
+    "secrets",
+    "dependency/package-manager use"
+  ],
+  "carried_forward_locks": [
+    "candidate_only=true until future operator or route opening packet",
+    "purg05_opened=false",
+    "can_open_purg05_now=false",
+    "ACTIVE_CONTEXT_STATE.json unchanged",
+    "next_phase=null",
+    "active_next_phase=null",
+    "IF09-FIND-001 remains open",
+    "remediation_proven=false"
+  ],
+  "decision": "pass"
+}

@@ -99,6 +99,8 @@ O retry `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_pa
 
 O recheck `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_packet.json` reavaliou a decisão de rota pós-PURG04 usando apenas esses cinco artifacts PASS e confirmou que os blockers documentais originais foram removidos. O resultado emite somente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` como `candidate_next_gate`, com `candidate_only=true`, `can_open_purg05_now=false`, `next_phase=null`, `active_next_phase=null`, `IF09-FIND-001` ainda open e `remediation_proven=false`.
 
+O admission packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json` transforma esse candidate em contrato verificável para uma abertura futura, sem abrir `PURG05` agora. Ele fixa os inputs obrigatórios, o escopo permitido, os critérios de aceitação e os bloqueios futuros, emitindo somente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET` como próximo candidate gate, ainda com `candidate_only=true`, `purg05_opened=false`, `next_phase=null` e `remediation_proven=false`.
+
 ## PURG-01.1 triage classification
 
 O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json` registra a classificação de triagem de `IF09-FIND-001` usando apenas o handoff IF09/IF10 e o roadmap Purgatorium. O packet fixa `selected_track=S3` com `classification_confidence=medium`, preserva todos os locks de execução em `false` e mantém `next_recommended_step=BLOCKED_NEEDS_OPERATOR_DIRECTION` para evitar abrir `PURG-02` ou inventar um sucessor `PURG-01.2` fora da rota viva.

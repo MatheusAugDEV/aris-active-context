@@ -2452,6 +2452,62 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
 
+## PURG05 Evidence Ledger Signing Custody Admission Packet Artifact-Only
+
+- Status: `purg05_evidence_ledger_signing_custody_admission_packet_artifact_only_pass`
+- Decision: `pass`
+- Source candidate:
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_next_route_candidate.json`
+  - `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`
+- Artifacts created:
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_required_inputs.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_scope_matrix.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_acceptance_criteria.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_next_route_candidate.json`
+- Admission verdict:
+  - `candidate_admitted_for_future_operator_or_route_opening`
+- Future PURG05 scope admitted:
+  - artifact hash inventory
+  - evidence ledger signing metadata
+  - custody chain mapping
+  - source-to-output lineage table
+  - no-real-execution attestation
+  - carry-forward locks
+  - candidate handoff after custody
+- Candidate next gate:
+  - emitted: `true`
+  - `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET`
+  - `candidate_only=true`
+  - `requires_operator_or_route_opening=true`
+  - `purg05_opened=false`
+  - `can_open_purg05_now=false`
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - PURG05 opened: `false`
+- Not authorized:
+  - ledger signing execution
+  - Project_ARIS mutation
+  - Project_ARIS tests
+  - proof-loop execution
+  - runtime
+  - real_apply
+  - finding closure
+  - `remediation_proven=true`
+  - product, Bedrock, secrets, dependency/package-manager use
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
 ## Purgatorium Post-PURG04 Route Decision Recheck Artifact-Only
 
 - Status: `purgatorium_post_purg04_route_decision_recheck_artifact_only_pass`

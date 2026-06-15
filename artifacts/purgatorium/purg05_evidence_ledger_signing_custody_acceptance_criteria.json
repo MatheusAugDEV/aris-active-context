@@ -1,0 +1,58 @@
+{
+  "artifact_id": "purg05_evidence_ledger_signing_custody_acceptance_criteria",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:47:26-03:00",
+  "candidate_target_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "criteria": [
+    {
+      "criterion_id": "required_inputs_exist",
+      "requirement": "every required input exists",
+      "blocking": true
+    },
+    {
+      "criterion_id": "required_inputs_have_sha256",
+      "requirement": "every required input has sha256 recorded",
+      "blocking": true
+    },
+    {
+      "criterion_id": "proof_loop_corpus_artifacts_pass",
+      "requirement": "proof-loop corpus artifacts are all decision=pass",
+      "blocking": true
+    },
+    {
+      "criterion_id": "lineage_binding_matches",
+      "requirement": "lineage binding points to IF09-FIND-001, accepted_merged_track_a, patch_commit and merge_commit",
+      "blocking": true
+    },
+    {
+      "criterion_id": "no_new_execution_claims",
+      "requirement": "no artifact claims new execution",
+      "blocking": true
+    },
+    {
+      "criterion_id": "no_finding_close_claims",
+      "requirement": "no artifact claims finding closure",
+      "blocking": true
+    },
+    {
+      "criterion_id": "no_remediation_proven_true",
+      "requirement": "no artifact claims remediation_proven=true",
+      "blocking": true
+    },
+    {
+      "criterion_id": "custody_outputs_artifact_only_metadata",
+      "requirement": "custody/signing output is artifact-only metadata",
+      "blocking": true
+    },
+    {
+      "criterion_id": "active_context_state_unchanged_until_explicit_opening",
+      "requirement": "ACTIVE_CONTEXT_STATE.json remains unchanged unless a later explicit route opening packet authorizes a schema/validator-supported route change",
+      "blocking": true
+    }
+  ],
+  "decision": "pass"
+}
