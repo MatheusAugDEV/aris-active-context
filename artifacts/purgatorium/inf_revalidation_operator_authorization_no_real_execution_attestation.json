@@ -1,0 +1,12 @@
+{
+  "revalidation_executed": false,
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "product_bedrock_real_apply_secrets_executed": false,
+  "dependency_or_package_manager_used": false
+}

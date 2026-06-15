@@ -164,9 +164,9 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
-Latest completed phase: INF Revalidation Readiness Packet
-Current phase_id/current_phase_id: INF_REVALIDATION_READINESS_PACKET
-Current status/status: inf_revalidation_readiness_opened
+Latest completed phase: INF Revalidation Operator Authorization Packet
+Current phase_id/current_phase_id: INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET
+Current status/status: inf_revalidation_operator_authorization_pass
 Decision: pass
 Active next phase: null
 Active next phase class: null
@@ -179,7 +179,7 @@ production_authorized: false
 product_ready: false
 secrets_access_authorized: false
 Selected branch: `TRACK_REVALIDATION_FIRST`
-Operator-authorized INF revalidation readiness activated from the live route-admission candidate; no revalidation execution was performed.
+Explicit operator authorization for the future INF revalidation execution contract was recorded from the live readiness packet; no revalidation execution was performed.
 Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
 Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
@@ -258,6 +258,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | pass | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | purgatorium_route_admission | operator | purg_residual_risk_carry_forward_route_opening_packet.json + route-opening operator authorization + validator evidence |
 | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | pass | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | infernus_revalidation_route_admission | operator | inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate |
 | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | pass | INF_REVALIDATION_READINESS_PACKET | infernus_revalidation_readiness | operator | inf_revalidation_readiness_packet.json + scenario scope + oracle contract + abort criteria + no-real-execution attestation |
+| INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

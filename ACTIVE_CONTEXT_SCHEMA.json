@@ -33,14 +33,15 @@
         "infernus_full_execution",
         "purgatorium_full_authority_materialization",
         "purgatorium_full_intake",
-            "purgatorium_route_admission",
-            "purgatorium_track_a_main_merge_execution",
-            "purgatorium_post_merge_validation",
-            "infernus_revalidation_route_admission",
-            "infernus_revalidation_readiness",
-            "history_only",
-            null
-          ],
+        "purgatorium_route_admission",
+        "purgatorium_track_a_main_merge_execution",
+        "purgatorium_post_merge_validation",
+        "infernus_revalidation_route_admission",
+        "infernus_revalidation_readiness",
+        "infernus_revalidation_operator_authorization",
+        "history_only",
+        null
+      ],
       "type": [
         "string",
         "null"
@@ -865,6 +866,7 @@
             "purgatorium_track_a_main_merge_execution",
             "purgatorium_post_merge_validation",
             "infernus_revalidation_route_admission",
+            "infernus_revalidation_operator_authorization",
             "history_only",
             null
           ],
@@ -976,7 +978,8 @@
         "3.14",
         "3.15",
         "3.16",
-        "3.17"
+        "3.17",
+        "3.18"
       ],
       "type": "string"
     },
@@ -1194,6 +1197,9 @@
           "type": "string"
         },
         "schema_3_1_change_summary": {
+          "type": "string"
+        },
+        "schema_3_18_change_summary": {
           "type": "string"
         }
       },
@@ -1431,5 +1437,6 @@
     "purg00_source_gap_terminal_blocker"
   ],
   "title": "ARIS Active Context Canonical Live State Schema v3.14",
-  "type": "object"
+  "type": "object",
+  "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet."
 }

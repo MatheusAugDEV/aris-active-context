@@ -34,7 +34,7 @@ def test_validator_reports_canonical_inf_revalidation_readiness_summary():
     )
     assert r.returncode == 0, r.stdout + r.stderr
     summary = json.loads(r.stdout)
-    assert summary["phase_id"] == "INF_REVALIDATION_READINESS_PACKET"
+    assert summary["phase_id"] == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET"
     assert summary["next_phase"] is None
     assert summary["governance_gate_streak"] == 0
 
@@ -929,7 +929,7 @@ def test_transition_table_contains_inf_full_07_canonroadmap_successor():
 def test_state_separates_historical_and_planned_scenario_counts():
     state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
 
-    assert state["current_phase_id"] == "INF_REVALIDATION_READINESS_PACKET"
+    assert state["current_phase_id"] == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET"
     assert state["scenario_count"] == 13
     assert state["fixture_scenario_count"] == 13
     assert state["current_phase_planned_scenario_count"] == 16
@@ -940,9 +940,9 @@ def test_state_separates_historical_and_planned_scenario_counts():
     assert state["active_next_phase"] is None
     assert state["active_next_phase_class"] is None
     assert state["next_phase_authorized_by_operator"] is False
-    assert state["current_status"] == "inf_revalidation_readiness_opened"
-    assert state["latest_completed_phase"] == "INF Revalidation Readiness Packet"
-    assert state["latest_completed_status"] == "inf_revalidation_readiness_opened"
+    assert state["current_status"] == "inf_revalidation_operator_authorization_pass"
+    assert state["latest_completed_phase"] == "INF Revalidation Operator Authorization Packet"
+    assert state["latest_completed_status"] == "inf_revalidation_operator_authorization_pass"
     assert state["latest_completed_project_commit_sha"] == "7883af5a32c629026bfc6dc15ebee4ebbcadd295"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
     assert state["latest_completed_next_recommended_step"] == "Nenhuma transição definida. Aguardando instrução do operador."

@@ -70,10 +70,10 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: INF_REVALIDATION_READINESS_PACKET
-status: inf_revalidation_readiness_opened
-latest_completed_phase: INF Revalidation Readiness Packet
-latest_completed_status: inf_revalidation_readiness_opened
+phase_id: INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET
+status: inf_revalidation_operator_authorization_pass
+latest_completed_phase: INF Revalidation Operator Authorization Packet
+latest_completed_status: inf_revalidation_operator_authorization_pass
 next_phase: null
 next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
@@ -82,11 +82,11 @@ Selected branch: `TRACK_REVALIDATION_FIRST`
 Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 remains open
-Project_ARIS main workspace: não alterado por este INF readiness activation packet
+Project_ARIS main workspace: não alterado por este INF operator authorization packet
 
-O packet canônico de ativação da readiness de revalidação está registrado em `artifacts/purgatorium/inf_revalidation_readiness_route_activation_packet.json`. Ele consome o candidate vivo `INF_REVALIDATION_READINESS_PACKET` emitido pela fase de route admission, materializa a row viva `INF_REVALIDATION_ROUTE_ADMISSION_PACKET -> INF_REVALIDATION_READINESS_PACKET`, promove a rota viva para `INF_REVALIDATION_READINESS_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
+O packet canônico de autorização operatorial da revalidação está registrado em `artifacts/purgatorium/inf_revalidation_operator_authorization_packet.json`. Ele consome a readiness viva, materializa a row viva `INF_REVALIDATION_READINESS_PACKET -> INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`, promove a rota viva para `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
 
-Como artifact family da fase viva, o repositório agora registra `artifacts/purgatorium/inf_revalidation_readiness_packet.json`, `inf_revalidation_scenario_scope.json`, `inf_revalidation_oracle_contract.json`, `inf_revalidation_abort_criteria.json`, `inf_revalidation_readiness_no_real_execution_attestation.json` e `inf_revalidation_readiness_next_route_candidate.json`. Esses artifacts abrem somente a readiness da rota de Infernus Revalidation; eles não executam revalidation, não fecham finding, não provam remediação e não tocam `Project_ARIS`.
+Como artifact family da fase viva, o repositório agora registra `artifacts/purgatorium/inf_revalidation_operator_authorization_packet.json`, `inf_revalidation_execution_contract.json`, `inf_revalidation_safety_lock_matrix.json`, `inf_revalidation_operator_authorization_no_real_execution_attestation.json` e `inf_revalidation_operator_authorization_next_route_candidate.json`. Esses artifacts registram apenas a autorização explícita do operador para um futuro execution contract da Infernus Revalidation; eles não executam revalidation, não fecham finding, não provam remediação e não tocam `Project_ARIS`. O future gate autorizado continua somente como candidate-only: `INF_REVALIDATION_EXECUTION_PACKET`.
 
 ## PURG-04 proof-loop corpus materialization
 

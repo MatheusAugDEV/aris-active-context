@@ -209,6 +209,11 @@ INF_REVALIDATION_ORACLE_CONTRACT_PATH = ROOT / "artifacts" / "purgatorium" / "in
 INF_REVALIDATION_ABORT_CRITERIA_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_abort_criteria.json"
 INF_REVALIDATION_READINESS_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_readiness_no_real_execution_attestation.json"
 INF_REVALIDATION_READINESS_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_readiness_next_route_candidate.json"
+INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_operator_authorization_packet.json"
+INF_REVALIDATION_EXECUTION_CONTRACT_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_execution_contract.json"
+INF_REVALIDATION_SAFETY_LOCK_MATRIX_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_safety_lock_matrix.json"
+INF_REVALIDATION_OPERATOR_AUTH_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_operator_authorization_no_real_execution_attestation.json"
+INF_REVALIDATION_OPERATOR_AUTH_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_operator_authorization_next_route_candidate.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -831,6 +836,7 @@ GOVERNANCE_CLASSES = {
     "purgatorium_post_merge_validation",
     "infernus_revalidation_route_admission",
     "infernus_revalidation_readiness",
+    "infernus_revalidation_operator_authorization",
 }
 CAPACITY_CLASSES = {
     "fixture_materialization", "bot_execution",
@@ -934,6 +940,20 @@ PHASE_DELIVERABLES = {
         and _load_json(INF_REVALIDATION_READINESS_PACKET_PATH).get("remediation_proven") is False
         and _load_json(INF_REVALIDATION_READINESS_ROUTE_ACTIVATION_PACKET_PATH).get("state_advanced") is True
         and _load_json(INF_REVALIDATION_READINESS_ROUTE_ACTIVATION_PACKET_PATH).get("target_phase_id") == "INF_REVALIDATION_READINESS_PACKET"
+    ),
+    "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET": lambda: (
+        INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH.exists()
+        and INF_REVALIDATION_EXECUTION_CONTRACT_PATH.exists()
+        and INF_REVALIDATION_SAFETY_LOCK_MATRIX_PATH.exists()
+        and INF_REVALIDATION_OPERATOR_AUTH_NO_REAL_PATH.exists()
+        and INF_REVALIDATION_OPERATOR_AUTH_NEXT_ROUTE_CANDIDATE_PATH.exists()
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("phase_id") == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET"
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("status") == "inf_revalidation_operator_authorization_pass"
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("operator_authorized") is True
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("revalidation_executed_now") is False
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("finding_closed") is False
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH).get("remediation_proven") is False
+        and _load_json(INF_REVALIDATION_OPERATOR_AUTH_NEXT_ROUTE_CANDIDATE_PATH).get("candidate_next_gate") == "INF_REVALIDATION_EXECUTION_PACKET"
     ),
     "ACB-CORE-01": lambda: (
         ACB_CORE_01_EVIDENCE_PATH.exists()
@@ -2088,6 +2108,110 @@ def _check_inf_revalidation_readiness_activation_artifacts(state: dict[str, Any]
     _require(next_candidate.get("next_phase_preserved") is None, "INF readiness next route candidate next_phase_preserved must be null")
     _require(next_candidate.get("active_next_phase_preserved") is None, "INF readiness next route candidate active_next_phase_preserved must be null")
     _require(next_candidate.get("decision") == "pass", "INF readiness next route candidate decision mismatch")
+
+
+def _check_inf_revalidation_operator_authorization_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET":
+        return
+
+    for path in (
+        INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH,
+        INF_REVALIDATION_EXECUTION_CONTRACT_PATH,
+        INF_REVALIDATION_SAFETY_LOCK_MATRIX_PATH,
+        INF_REVALIDATION_OPERATOR_AUTH_NO_REAL_PATH,
+        INF_REVALIDATION_OPERATOR_AUTH_NEXT_ROUTE_CANDIDATE_PATH,
+        INF_REVALIDATION_READINESS_PACKET_PATH,
+        INF_REVALIDATION_SCENARIO_SCOPE_PATH,
+        INF_REVALIDATION_ORACLE_CONTRACT_PATH,
+        INF_REVALIDATION_ABORT_CRITERIA_PATH,
+    ):
+        _require(path.exists(), f"missing INF revalidation operator authorization artifact: {path}")
+
+    auth_packet = _load_json(INF_REVALIDATION_OPERATOR_AUTH_PACKET_PATH)
+    _require(auth_packet.get("artifact_id") == "inf_revalidation_operator_authorization_packet", "INF operator auth artifact_id mismatch")
+    _require(auth_packet.get("phase_id") == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET", "INF operator auth phase_id mismatch")
+    _require(auth_packet.get("phase_class") == "infernus_revalidation_operator_authorization", "INF operator auth phase_class mismatch")
+    _require(auth_packet.get("status") == "inf_revalidation_operator_authorization_pass", "INF operator auth status mismatch")
+    _require(auth_packet.get("previous_live_phase_id") == "INF_REVALIDATION_READINESS_PACKET", "INF operator auth previous_live_phase_id mismatch")
+    _require(auth_packet.get("source_readiness_packet") == "artifacts/purgatorium/inf_revalidation_readiness_packet.json", "INF operator auth source_readiness_packet mismatch")
+    _require(auth_packet.get("target_finding_id") == "IF09-FIND-001", "INF operator auth target_finding_id mismatch")
+    _require(auth_packet.get("operator_authorized") is True, "INF operator auth operator_authorized must be true")
+    _require(auth_packet.get("authorization_scope") == "future_controlled_infernus_revalidation_execution_only", "INF operator auth authorization_scope mismatch")
+    _require(auth_packet.get("authorized_future_gate") == "INF_REVALIDATION_EXECUTION_PACKET", "INF operator auth authorized_future_gate mismatch")
+    for key in (
+        "execution_contract_created",
+        "safety_lock_matrix_created",
+    ):
+        _require(auth_packet.get(key) is True, f"INF operator auth {key} must be true")
+    for key in (
+        "revalidation_executed_now",
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "proof_loop_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "finding_closed",
+        "remediation_proven",
+    ):
+        _require(auth_packet.get(key) is False, f"INF operator auth {key} must be false")
+    _require(auth_packet.get("decision") == "pass", "INF operator auth decision mismatch")
+
+    execution_contract = _load_json(INF_REVALIDATION_EXECUTION_CONTRACT_PATH)
+    _require(execution_contract.get("phase_id") == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET", "INF execution contract phase_id mismatch")
+    _require(execution_contract.get("target_finding_id") == "IF09-FIND-001", "INF execution contract target_finding_id mismatch")
+    _require(execution_contract.get("source_readiness_packet") == "artifacts/purgatorium/inf_revalidation_readiness_packet.json", "INF execution contract readiness source mismatch")
+    _require(execution_contract.get("scenario_scope_source") == "artifacts/purgatorium/inf_revalidation_scenario_scope.json", "INF execution contract scenario scope source mismatch")
+    _require(execution_contract.get("oracle_source") == "artifacts/purgatorium/inf_revalidation_oracle_contract.json", "INF execution contract oracle source mismatch")
+    _require(execution_contract.get("abort_criteria_source") == "artifacts/purgatorium/inf_revalidation_abort_criteria.json", "INF execution contract abort criteria source mismatch")
+    _require(execution_contract.get("execution_requires_next_gate") is True, "INF execution contract execution_requires_next_gate must be true")
+    _require(execution_contract.get("next_required_gate") == "INF_REVALIDATION_EXECUTION_PACKET", "INF execution contract next_required_gate mismatch")
+    _require(execution_contract.get("no_secrets_no_product_no_bedrock") is True, "INF execution contract no_secrets_no_product_no_bedrock must be true")
+
+    safety_lock_matrix = _load_json(INF_REVALIDATION_SAFETY_LOCK_MATRIX_PATH)
+    _require(safety_lock_matrix.get("phase_id") == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET", "INF safety lock matrix phase_id mismatch")
+    _require(safety_lock_matrix.get("target_finding_id") == "IF09-FIND-001", "INF safety lock matrix target_finding_id mismatch")
+    _require(safety_lock_matrix.get("execution_authorized_now") is False, "INF safety lock matrix execution_authorized_now must be false")
+    _require(safety_lock_matrix.get("authorized_future_gate") == "INF_REVALIDATION_EXECUTION_PACKET", "INF safety lock matrix authorized_future_gate mismatch")
+    _require(safety_lock_matrix.get("future_execution_authorized_for_next_gate_only") is True, "INF safety lock matrix future_execution_authorized_for_next_gate_only must be true")
+    for key in (
+        "project_aris_mutation_allowed_now",
+        "project_aris_tests_allowed_now",
+        "proof_loop_execution_allowed_now",
+        "runtime_allowed_now",
+        "real_apply_allowed_now",
+        "product_ready",
+        "bedrock_ready",
+        "secrets_allowed_now",
+        "dependency_package_manager_allowed_now",
+        "finding_closed",
+        "remediation_proven",
+    ):
+        _require(safety_lock_matrix.get(key) is False, f"INF safety lock matrix {key} must be false")
+    _require(safety_lock_matrix.get("IF09-FIND-001") == "open", "INF safety lock matrix finding status mismatch")
+
+    no_real = _load_json(INF_REVALIDATION_OPERATOR_AUTH_NO_REAL_PATH)
+    for key in (
+        "revalidation_executed",
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "proof_loop_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "finding_closed",
+        "remediation_proven",
+        "product_bedrock_real_apply_secrets_executed",
+        "dependency_or_package_manager_used",
+    ):
+        _require(no_real.get(key) is False, f"INF operator auth no-real {key} must be false")
+
+    next_candidate = _load_json(INF_REVALIDATION_OPERATOR_AUTH_NEXT_ROUTE_CANDIDATE_PATH)
+    _require(next_candidate.get("phase_id") == "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET", "INF operator auth next route candidate phase_id mismatch")
+    _require(next_candidate.get("candidate_next_gate") == "INF_REVALIDATION_EXECUTION_PACKET", "INF operator auth next route candidate gate mismatch")
+    _require(next_candidate.get("candidate_only") is True, "INF operator auth next route candidate candidate_only must be true")
+    _require(next_candidate.get("state_advanced") is False, "INF operator auth next route candidate state_advanced must be false")
+    _require(next_candidate.get("next_phase_preserved") is None, "INF operator auth next route candidate next_phase_preserved must be null")
+    _require(next_candidate.get("active_next_phase_preserved") is None, "INF operator auth next route candidate active_next_phase_preserved must be null")
+    _require(next_candidate.get("decision") == "pass", "INF operator auth next route candidate decision mismatch")
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -10997,6 +11121,7 @@ def main() -> None:
     _check_purg_residual_risk_carry_forward_route_opening_artifacts(state)
     _check_inf_revalidation_route_activation_artifacts(state)
     _check_inf_revalidation_readiness_activation_artifacts(state)
+    _check_inf_revalidation_operator_authorization_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -11165,12 +11290,12 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "INF_REVALIDATION_READINESS_PACKET",
+        "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "inf_revalidation_readiness_opened",
-        "latest_completed_phase: INF Revalidation Readiness Packet",
+        "inf_revalidation_operator_authorization_pass",
+        "latest_completed_phase: INF Revalidation Operator Authorization Packet",
         "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
@@ -11186,6 +11311,20 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## INF Revalidation Operator Authorization Packet",
+        "inf_revalidation_operator_authorization_pass",
+        "inf_revalidation_operator_authorization_packet.json",
+        "inf_revalidation_execution_contract.json",
+        "inf_revalidation_safety_lock_matrix.json",
+        "phase_id=current_phase_id=INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+        "next_phase=null",
+        "active_next_phase=null",
+        "INF_REVALIDATION_EXECUTION_PACKET",
+        "IF09-FIND-001` remains open",
+        "`remediation_proven=false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",

@@ -178,6 +178,50 @@
   - `Project_ARIS changed during this phase=false`
   - Infernus Revalidation remains unopened for execution; only the readiness layer was activated
 
+## INF Revalidation Operator Authorization Packet
+
+- Status: `inf_revalidation_operator_authorization_pass`
+- Decision: `pass`
+- Scope: explicit operator authorization for a future controlled Infernus Revalidation execution contract for `IF09-FIND-001`; no revalidation execution, no `Project_ARIS` mutation, no `Project_ARIS` tests, no runtime, no real_apply, no finding close.
+- Source chain verified:
+  - `artifacts/purgatorium/inf_revalidation_readiness_packet.json`
+  - `artifacts/purgatorium/inf_revalidation_scenario_scope.json`
+  - `artifacts/purgatorium/inf_revalidation_oracle_contract.json`
+  - `artifacts/purgatorium/inf_revalidation_abort_criteria.json`
+  - `artifacts/purgatorium/inf_revalidation_readiness_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/inf_revalidation_readiness_next_route_candidate.json`
+  - `artifacts/purgatorium/purg05_carry_forward_locks.json`
+- Artifacts created:
+  - `artifacts/purgatorium/inf_revalidation_operator_authorization_packet.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_contract.json`
+  - `artifacts/purgatorium/inf_revalidation_safety_lock_matrix.json`
+  - `artifacts/purgatorium/inf_revalidation_operator_authorization_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/inf_revalidation_operator_authorization_next_route_candidate.json`
+- Operator authorization:
+  - exact lines: `operator_authorizes_revalidation_execution_contract_for=IF09-FIND-001`
+  - `operator_understands_this_does_not_execute_revalidation_now=true`
+  - execution authorized now: `false`
+  - future gate candidate only: `INF_REVALIDATION_EXECUTION_PACKET`
+- ACTIVE_CONTEXT_STATE advanced canonically to:
+  - `phase_id=current_phase_id=INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
+  - `previous_phase_id=INF_REVALIDATION_READINESS_PACKET`
+  - `phase_class=infernus_revalidation_operator_authorization`
+  - `status=inf_revalidation_operator_authorization_pass`
+  - `active_next_phase=null`
+  - `next_phase=null`
+- Transition Table result:
+  - `INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix`
+  - no successor row exists for `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
+  - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
+  - future candidate only: `INF_REVALIDATION_EXECUTION_PACKET`
+- Safety locks preserved:
+  - `IF09-FIND-001` remains open
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+  - `Project_ARIS changed during this phase=false`
+  - Infernus Revalidation remains unopened for execution; only the operator authorization layer was activated
+
 ## Active-Context Schema/State Drift Repair
 
 - Status: `active_context_schema_state_drift_repair_pass`

@@ -1,0 +1,37 @@
+{
+  "artifact_id": "inf_revalidation_execution_contract",
+  "phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+  "created_at": "2026-06-15T21:45:00-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "source_readiness_packet": "artifacts/purgatorium/inf_revalidation_readiness_packet.json",
+  "scenario_scope_source": "artifacts/purgatorium/inf_revalidation_scenario_scope.json",
+  "oracle_source": "artifacts/purgatorium/inf_revalidation_oracle_contract.json",
+  "abort_criteria_source": "artifacts/purgatorium/inf_revalidation_abort_criteria.json",
+  "abort_rollback_reference": "artifacts/purgatorium/inf_revalidation_abort_criteria.json",
+  "expected_evidence": [
+    "deterministic oracle result",
+    "authorized revalidation-surface execution evidence only",
+    "regression matrix for the accepted Track A lineage",
+    "no-forbidden-surface attestation"
+  ],
+  "command_family_allowed_later": [
+    "focused_revalidation_runner",
+    "deterministic_oracle_validation",
+    "authorized_evidence_capture"
+  ],
+  "command_family_forbidden_now": [
+    "project_aris_global_test_suite",
+    "project_aris_mutation",
+    "proof_loop",
+    "runtime",
+    "real_apply",
+    "product",
+    "bedrock",
+    "secrets",
+    "package_manager"
+  ],
+  "no_secrets_no_product_no_bedrock": true,
+  "execution_requires_next_gate": true,
+  "next_required_gate": "INF_REVALIDATION_EXECUTION_PACKET",
+  "decision": "pass"
+}
