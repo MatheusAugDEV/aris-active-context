@@ -1,3 +1,44 @@
+## IF09 Closure Milestone Mirror Sanity Packet
+
+- Status: `if09_closure_milestone_mirror_sanity_pass`
+- Decision: `pass`
+- Scope: governance/documentary mirror sanity only; no `Project_ARIS` mutation, no `Project_ARIS` tests, no runner rerun, no bots, no runtime, no real_apply, no product, no Bedrock, no secrets.
+- Artifacts created:
+  - `artifacts/active_context/if09_closure_milestone_sanity_packet.json`
+  - `artifacts/active_context/if09_closure_milestone_mirror_drift_matrix.json`
+  - `artifacts/active_context/if09_closure_milestone_superseded_notes_manifest.json`
+  - `artifacts/active_context/if09_closure_milestone_no_real_execution_attestation.json`
+  - `artifacts/active_context/if09_closure_milestone_validation_evidence.json`
+  - `artifacts/benchux/benchux_route_opening_candidate.json`
+  - `artifacts/benchux/benchux_pre_route_scope_note.json`
+- ACTIVE_CONTEXT_STATE advanced canonically to:
+  - `phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+  - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - `phase_class=governance_repair`
+  - `status=if09_closure_milestone_mirror_sanity_pass`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Closure preserved:
+  - `IF09-FIND-001` closed
+  - `finding_closed=true`
+  - `remediation_proven=true`
+  - `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`
+- BenchUX preserved as documentary candidate only:
+  - `BENCHUX_ROUTE_OPENING_PACKET`
+  - `candidate_only=true`
+  - `state_advanced=false`
+  - `benchux_execution_authorized=false`
+- Historical labels applied to stale mirrors:
+  - `HISTORICAL_ONLY`
+  - `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - `NOT_CURRENT_STATE`
+- No real lock opened:
+  - `real_apply_authorized=false`
+  - `production_authorized=false`
+  - `product_ready=false`
+  - `runtime_integration_allowed=false`
+  - `secrets_access_authorized=false`
+
 ## PURG Residual Risk Carry-Forward Admission Packet Artifact-Only
 
 - Status: `purg_residual_risk_carry_forward_admission_packet_artifact_only_pass`

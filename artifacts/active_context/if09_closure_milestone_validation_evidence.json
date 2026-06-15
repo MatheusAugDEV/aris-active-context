@@ -1,0 +1,47 @@
+{
+  "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "validation_status": "local_validation_pass",
+  "validator_summary": {
+    "decision": "pass",
+    "status": "if09_closure_milestone_mirror_sanity_pass",
+    "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "previous_phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+    "latest_completed_phase": "IF09 Closure Milestone Mirror Sanity Packet",
+    "next_phase": null,
+    "governance_gate_streak": 0,
+    "phase_class": "governance_repair"
+  },
+  "unittest_summary": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "result": "pass",
+    "tests_ran": 52
+  },
+  "defensive_grep_summary": {
+    "target_finding_status": "closed",
+    "finding_closed": true,
+    "remediation_proven": true,
+    "next_phase": null,
+    "active_next_phase": null,
+    "real_apply_authorized": false,
+    "production_authorized": false,
+    "product_ready": false,
+    "secrets_access_authorized": false,
+    "runtime_integration_allowed": false,
+    "dependency_change_authorized": false,
+    "package_manager_execution_authorized": false,
+    "benchux_live_route_activated": false,
+    "project_aris_mutated": false,
+    "project_aris_tests_executed": false,
+    "revalidation_runner_executed": false,
+    "bot_execution_triggered": false
+  },
+  "required_commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/active_context/if09_closure_milestone_sanity_packet.json",
+    "python3 -m json.tool artifacts/active_context/if09_closure_milestone_mirror_drift_matrix.json",
+    "python3 -m json.tool artifacts/benchux/benchux_route_opening_candidate.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -q"
+  ]
+}

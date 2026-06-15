@@ -26,7 +26,7 @@ def test_validator_passes():
     assert r.returncode == 0, r.stdout + r.stderr
 
 
-def test_validator_reports_canonical_inf_revalidation_readiness_summary():
+def test_validator_reports_canonical_if09_closure_mirror_sanity_summary():
     r = subprocess.run(
         ["python3", "scripts/validate_active_context_state.py"],
         capture_output=True,
@@ -34,7 +34,7 @@ def test_validator_reports_canonical_inf_revalidation_readiness_summary():
     )
     assert r.returncode == 0, r.stdout + r.stderr
     summary = json.loads(r.stdout)
-    assert summary["phase_id"] == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET"
+    assert summary["phase_id"] == "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET"
     assert summary["next_phase"] is None
     assert summary["governance_gate_streak"] == 0
 

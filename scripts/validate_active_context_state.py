@@ -239,6 +239,15 @@ INF_REVALIDATION_ADJUDICATION_SUMMARY_PATH = ROOT / "artifacts" / "purgatorium" 
 INF_REVALIDATION_ADJUDICATION_REPORT_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_report.md"
 INF_REVALIDATION_ADJUDICATION_VALIDATION_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_validation_evidence.json"
 INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_adjudication_next_route_candidate.json"
+ACTIVE_CONTEXT_ROOT = ROOT / "artifacts" / "active_context"
+BENCHUX_ROOT = ROOT / "artifacts" / "benchux"
+IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH = ACTIVE_CONTEXT_ROOT / "if09_closure_milestone_sanity_packet.json"
+IF09_CLOSURE_MILESTONE_MIRROR_DRIFT_MATRIX_PATH = ACTIVE_CONTEXT_ROOT / "if09_closure_milestone_mirror_drift_matrix.json"
+IF09_CLOSURE_MILESTONE_SUPERSEDED_NOTES_MANIFEST_PATH = ACTIVE_CONTEXT_ROOT / "if09_closure_milestone_superseded_notes_manifest.json"
+IF09_CLOSURE_MILESTONE_NO_REAL_EXECUTION_ATTESTATION_PATH = ACTIVE_CONTEXT_ROOT / "if09_closure_milestone_no_real_execution_attestation.json"
+IF09_CLOSURE_MILESTONE_VALIDATION_EVIDENCE_PATH = ACTIVE_CONTEXT_ROOT / "if09_closure_milestone_validation_evidence.json"
+BENCHUX_ROUTE_OPENING_CANDIDATE_PATH = BENCHUX_ROOT / "benchux_route_opening_candidate.json"
+BENCHUX_PRE_ROUTE_SCOPE_NOTE_PATH = BENCHUX_ROOT / "benchux_pre_route_scope_note.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -1022,6 +1031,23 @@ PHASE_DELIVERABLES = {
         and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("remediation_proven") is True
         and _load_json(INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH).get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface"
         and _load_json(INF_REVALIDATION_ADJUDICATION_NEXT_ROUTE_CANDIDATE_PATH).get("candidate_next_gate") is None
+    ),
+    "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET": lambda: (
+        IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH.exists()
+        and IF09_CLOSURE_MILESTONE_MIRROR_DRIFT_MATRIX_PATH.exists()
+        and IF09_CLOSURE_MILESTONE_SUPERSEDED_NOTES_MANIFEST_PATH.exists()
+        and IF09_CLOSURE_MILESTONE_NO_REAL_EXECUTION_ATTESTATION_PATH.exists()
+        and IF09_CLOSURE_MILESTONE_VALIDATION_EVIDENCE_PATH.exists()
+        and BENCHUX_ROUTE_OPENING_CANDIDATE_PATH.exists()
+        and BENCHUX_PRE_ROUTE_SCOPE_NOTE_PATH.exists()
+        and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("phase_id") == "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET"
+        and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("status") == "if09_closure_milestone_mirror_sanity_pass"
+        and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("target_finding_status") == "closed"
+        and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("finding_closed") is True
+        and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("remediation_proven") is True
+        and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET"
+        and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("candidate_only") is True
+        and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("state_advanced") is False
     ),
     "ACB-CORE-01": lambda: (
         ACB_CORE_01_EVIDENCE_PATH.exists()
@@ -2542,6 +2568,107 @@ def _check_inf_revalidation_adjudication_or_closure_artifacts(state: dict[str, A
     _require(state.get("finding_closed") is True, "live state finding_closed mismatch for INF adjudication")
     _require(state.get("remediation_proven") is True, "live state remediation_proven mismatch for INF adjudication")
     _require(state.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "live state closure_basis mismatch for INF adjudication")
+
+
+def _check_if09_closure_milestone_mirror_sanity_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET":
+        return
+
+    for path in (
+        IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH,
+        IF09_CLOSURE_MILESTONE_MIRROR_DRIFT_MATRIX_PATH,
+        IF09_CLOSURE_MILESTONE_SUPERSEDED_NOTES_MANIFEST_PATH,
+        IF09_CLOSURE_MILESTONE_NO_REAL_EXECUTION_ATTESTATION_PATH,
+        IF09_CLOSURE_MILESTONE_VALIDATION_EVIDENCE_PATH,
+        BENCHUX_ROUTE_OPENING_CANDIDATE_PATH,
+        BENCHUX_PRE_ROUTE_SCOPE_NOTE_PATH,
+        INF_REVALIDATION_ADJUDICATION_CLOSURE_PACKET_PATH,
+        INF_REVALIDATION_EXECUTION_ORACLE_RESULT_PATH,
+        INF_REVALIDATION_EXECUTION_REGRESSION_MATRIX_PATH,
+        INF_REVALIDATION_EXECUTION_NO_FORBIDDEN_PATH,
+    ):
+        _require(path.exists(), f"missing IF09 closure milestone artifact: {path}")
+
+    sanity_packet = _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH)
+    _require(sanity_packet.get("phase_id") == "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET", "IF09 closure sanity packet phase_id mismatch")
+    _require(sanity_packet.get("phase_class") == "governance_repair", "IF09 closure sanity packet phase_class mismatch")
+    _require(sanity_packet.get("status") == "if09_closure_milestone_mirror_sanity_pass", "IF09 closure sanity packet status mismatch")
+    _require(sanity_packet.get("decision") == "pass", "IF09 closure sanity packet decision mismatch")
+    _require(sanity_packet.get("previous_live_phase_id") == "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "IF09 closure sanity packet previous_live_phase_id mismatch")
+    _require(sanity_packet.get("target_finding_id") == "IF09-FIND-001", "IF09 closure sanity packet target_finding_id mismatch")
+    _require(sanity_packet.get("target_finding_status") == "closed", "IF09 closure sanity packet target_finding_status mismatch")
+    _require(sanity_packet.get("finding_closed") is True, "IF09 closure sanity packet finding_closed mismatch")
+    _require(sanity_packet.get("remediation_proven") is True, "IF09 closure sanity packet remediation_proven mismatch")
+    _require(sanity_packet.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "IF09 closure sanity packet closure_basis mismatch")
+    _require(sanity_packet.get("benchux_candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "IF09 closure sanity packet benchux_candidate_next_gate mismatch")
+    _require(sanity_packet.get("next_phase_preserved") is None, "IF09 closure sanity packet next_phase_preserved must be null")
+    _require(sanity_packet.get("active_next_phase_preserved") is None, "IF09 closure sanity packet active_next_phase_preserved must be null")
+
+    drift_matrix = _load_json(IF09_CLOSURE_MILESTONE_MIRROR_DRIFT_MATRIX_PATH)
+    _require(drift_matrix.get("finding_status_preserved") == "closed", "IF09 closure drift matrix finding_status_preserved mismatch")
+    _require(drift_matrix.get("finding_closed_preserved") is True, "IF09 closure drift matrix finding_closed_preserved mismatch")
+    _require(drift_matrix.get("remediation_proven_preserved") is True, "IF09 closure drift matrix remediation_proven_preserved mismatch")
+    _require(drift_matrix.get("historical_labels_applied") is True, "IF09 closure drift matrix historical_labels_applied mismatch")
+    _require(drift_matrix.get("benchux_live_route_activated") is False, "IF09 closure drift matrix benchux_live_route_activated mismatch")
+
+    superseded_manifest = _load_json(IF09_CLOSURE_MILESTONE_SUPERSEDED_NOTES_MANIFEST_PATH)
+    _require(superseded_manifest.get("historical_label") == "HISTORICAL_ONLY", "IF09 closure superseded manifest historical_label mismatch")
+    _require(superseded_manifest.get("superseded_label") == "SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET", "IF09 closure superseded manifest superseded_label mismatch")
+    _require(superseded_manifest.get("not_current_state_label") == "NOT_CURRENT_STATE", "IF09 closure superseded manifest not_current_state_label mismatch")
+
+    no_real = _load_json(IF09_CLOSURE_MILESTONE_NO_REAL_EXECUTION_ATTESTATION_PATH)
+    for key in (
+        "project_aris_mutated",
+        "project_aris_tests_executed",
+        "revalidation_runner_executed",
+        "bot_execution_triggered",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_executed",
+        "bedrock_executed",
+        "secrets_accessed",
+        "package_manager_executed",
+        "dependency_changed",
+        "benchux_live_route_activated",
+        "production_authorized",
+        "product_ready",
+        "runtime_integration_allowed",
+        "secrets_access_authorized",
+    ):
+        _require(no_real.get(key) is False, f"IF09 closure no-real {key} must be false")
+    _require(no_real.get("finding_closed") is True, "IF09 closure no-real finding_closed mismatch")
+    _require(no_real.get("remediation_proven") is True, "IF09 closure no-real remediation_proven mismatch")
+
+    benchux_candidate = _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH)
+    _require(benchux_candidate.get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "BenchUX candidate gate mismatch")
+    _require(benchux_candidate.get("candidate_only") is True, "BenchUX candidate candidate_only mismatch")
+    _require(benchux_candidate.get("state_advanced") is False, "BenchUX candidate state_advanced mismatch")
+    _require(benchux_candidate.get("next_phase_preserved") is None, "BenchUX candidate next_phase_preserved must be null")
+    _require(benchux_candidate.get("active_next_phase_preserved") is None, "BenchUX candidate active_next_phase_preserved must be null")
+    for key in (
+        "benchux_execution_authorized",
+        "product_authorized",
+        "bedrock_authorized",
+        "real_apply_authorized",
+        "runtime_authorized",
+        "secrets_authorized",
+    ):
+        _require(benchux_candidate.get(key) is False, f"BenchUX candidate {key} must be false")
+    _require(benchux_candidate.get("purpose") == "prepare_operator_decision_to_open_BenchUX_after_IF09_closure", "BenchUX candidate purpose mismatch")
+
+    benchux_scope = _load_json(BENCHUX_PRE_ROUTE_SCOPE_NOTE_PATH)
+    _require(benchux_scope.get("phase_id") == "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET", "BenchUX scope note phase_id mismatch")
+    _require(benchux_scope.get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "BenchUX scope note candidate_next_gate mismatch")
+    _require(benchux_scope.get("benchux_live_route_activated") is False, "BenchUX scope note benchux_live_route_activated mismatch")
+
+    _require(state.get("phase_class") == "governance_repair", "live state phase_class mismatch for IF09 closure sanity")
+    _require(state.get("status") == "if09_closure_milestone_mirror_sanity_pass", "live state status mismatch for IF09 closure sanity")
+    _require(state.get("decision") == "pass", "live state decision mismatch for IF09 closure sanity")
+    _require(state.get("target_finding_id") == "IF09-FIND-001", "live state target_finding_id mismatch for IF09 closure sanity")
+    _require(state.get("target_finding_status") == "closed", "live state target_finding_status mismatch for IF09 closure sanity")
+    _require(state.get("finding_closed") is True, "live state finding_closed mismatch for IF09 closure sanity")
+    _require(state.get("remediation_proven") is True, "live state remediation_proven mismatch for IF09 closure sanity")
+    _require(state.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "live state closure_basis mismatch for IF09 closure sanity")
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -11450,6 +11577,7 @@ def main() -> None:
     _check_inf_revalidation_operator_authorization_artifacts(state)
     _check_inf_revalidation_execution_artifacts(state)
     _check_inf_revalidation_adjudication_or_closure_artifacts(state)
+    _check_if09_closure_milestone_mirror_sanity_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -11618,16 +11746,17 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+        "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "inf_revalidation_adjudication_closure_pass",
-        "latest_completed_phase: INF Revalidation Adjudication Or Closure Packet",
+        "if09_closure_milestone_mirror_sanity_pass",
+        "latest_completed_phase: IF09 Closure Milestone Mirror Sanity Packet",
         "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
         "IF09-FIND-001 closed",
+        "BENCHUX_ROUTE_OPENING_PACKET",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -11639,6 +11768,17 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## IF09 Closure Milestone Mirror Sanity Packet",
+        "if09_closure_milestone_mirror_sanity_pass",
+        "if09_closure_milestone_sanity_packet.json",
+        "phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+        "BENCHUX_ROUTE_OPENING_PACKET",
+        "HISTORICAL_ONLY",
+        "SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+        "NOT_CURRENT_STATE",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -11723,7 +11863,7 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: INF Revalidation Adjudication Or Closure Packet",
+        "Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet",
         "Active next phase: null",
         "Active next phase class: null",
         "Standing authorization: canonroadmap approved by operator",
@@ -11749,6 +11889,7 @@ def main() -> None:
         "Operator primary source packet supplied and validated: true",
         "Next non-execution step: `execute_purg01_controlled_triage_artifact_only`",
         "Real execution (waves against real systems, runtime, apply): false",
+        "BENCHUX_ROUTE_OPENING_PACKET",
         "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
         "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
         "IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, records the controlled triage execution gate as pass from the operator packet plus IF10 handoff graph evidence, keeps triage execution unopened, and limits the next move to execute_purg01_controlled_triage_artifact_only without authorizing any real execution surface.",
@@ -11760,6 +11901,7 @@ def main() -> None:
         "| PURG-00 | pass | PURG-01 | purgatorium_route_admission | operator | purg01_route_admission_decision.json + operator authorization + no-real-exec attestation + validator evidence |",
         "| INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |",
         "| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |",
+        "| INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |",
     )
     _mirror_contains(
         ROOT / "EXCLUDENT_POLICY.md",

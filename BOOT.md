@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `40861e98f28f`
+- state_sha: `368753f7dc2a`
 - schema_version: `3.20`
 
 ## AVISO DE STALE
@@ -13,17 +13,17 @@ GERADO — NAO EDITE A MAO
 
 ## ONDE ESTOU
 
-- camada: `Infernus Revalidation`
-- phase_id: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
-- status: `inf_revalidation_adjudication_closure_pass`
+- camada: `Unknown`
+- phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+- status: `if09_closure_milestone_mirror_sanity_pass`
 - decision: `pass`
-- resumo: INF Revalidation Adjudication Or Closure Packet; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: IF09 Closure Milestone Mirror Sanity Packet; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
   Infernus FULL
   Purgatorium FULL
-▸ Infernus Revalidation (phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET)
+  Infernus Revalidation
   BenchUX
   Crisol
   Polimento
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET.
 
 ## REGRAS DE AGORA
 

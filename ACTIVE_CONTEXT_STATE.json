@@ -1,14 +1,14 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
-    "current_phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
-    "previous_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+    "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "current_phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "previous_phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
     "governance_gate_streak": 0,
     "seen_gate_signatures": [],
-    "phase_class": "infernus_revalidation_adjudication_or_closure",
+    "phase_class": "governance_repair",
     "fixture_materialization_allowed": true,
     "fixture_materialization_executed": true,
     "fixture_count": 65,
@@ -164,16 +164,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "INF Revalidation Adjudication Or Closure Packet",
+            "phase": "IF09 Closure Milestone Mirror Sanity Packet",
             "decision": "pass",
-            "status": "inf_revalidation_adjudication_closure_pass"
+            "status": "if09_closure_milestone_mirror_sanity_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 65,
+        "total_phases_completed": 66,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -208,19 +208,19 @@
     "current_live_route": {
         "active_next_phase": null,
         "active_next_phase_class": null,
-        "current_status": "inf_revalidation_adjudication_closure_pass",
+        "current_status": "if09_closure_milestone_mirror_sanity_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "INF Revalidation Adjudication Or Closure Packet",
-        "latest_completed_status": "inf_revalidation_adjudication_closure_pass",
+        "latest_completed_phase": "IF09 Closure Milestone Mirror Sanity Packet",
+        "latest_completed_status": "if09_closure_milestone_mirror_sanity_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "inf_revalidation_adjudication_closure_pass",
+        "status": "if09_closure_milestone_mirror_sanity_pass",
         "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
         "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador."
     },
-    "current_status": "inf_revalidation_adjudication_closure_pass",
+    "current_status": "if09_closure_milestone_mirror_sanity_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
     "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador.",
     "purg00_source_data_gap_resolution": {
@@ -612,7 +612,7 @@
         "real_quota_consumed": false
     },
     "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
-    "latest_completed_status": "inf_revalidation_adjudication_closure_pass",
+    "latest_completed_status": "if09_closure_milestone_mirror_sanity_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -623,28 +623,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "INF Revalidation Adjudication Or Closure Packet",
+        "latest_execution_phase": "IF09 Closure Milestone Mirror Sanity Packet",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "INF Revalidation Execution Packet",
-        "latest_execution_status": "inf_revalidation_adjudication_closure_pass"
+        "previous_execution_phase": "INF Revalidation Adjudication Or Closure Packet",
+        "latest_execution_status": "if09_closure_milestone_mirror_sanity_pass"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "INF Revalidation Execution Packet",
-        "proof_source": "artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json",
-        "to_phase": "INF Revalidation Adjudication Or Closure Packet",
-        "to_status": "inf_revalidation_adjudication_closure_pass",
-        "transition_type": "infernus_revalidation_adjudication_or_closure",
-        "verified_via": "The explicit operator adjudication route-opening command was consumed, the committed oracle and regression evidence remained pass on the authoritative Track A lineage commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295, no forbidden surface or Project_ARIS mutation was introduced in this gate, and IF09-FIND-001 was canonically closed with remediation_proven=true."
+        "from_phase": "INF Revalidation Adjudication Or Closure Packet",
+        "proof_source": "artifacts/active_context/if09_closure_milestone_sanity_packet.json",
+        "to_phase": "IF09 Closure Milestone Mirror Sanity Packet",
+        "to_status": "if09_closure_milestone_mirror_sanity_pass",
+        "transition_type": "governance_repair",
+        "verified_via": "The post-closure mirror sanity packet reconciled derived mirrors so that stale pre-closure notes are explicitly labeled HISTORICAL_ONLY and SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET, preserved IF09-FIND-001 as closed with remediation_proven=true, kept all real/runtime/product/Bedrock/secrets locks false, and emitted a documentary BenchUX route-opening candidate without activating any live route."
     },
-    "latest_completed_phase": "INF Revalidation Adjudication Or Closure Packet",
+    "latest_completed_phase": "IF09 Closure Milestone Mirror Sanity Packet",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -657,17 +657,17 @@
     "next_action": {
         "execution_authorization": false,
         "notes": [
-            "Explicit operator adjudication route-opening command was recorded via abrir adjudicação/closure do INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET.",
-            "The committed IF09 execution evidence was adjudicated without rerunning the focused runner.",
-            "Execution evidence remained anchored to the read-only git-archive snapshot lineage of 7883af5a32c629026bfc6dc15ebee4ebbcadd295 because the live Project_ARIS workspace HEAD 6cec74deb7a99b7eb227df84a902650ca092e00f was not the authority for the prior execution gate.",
-            "Primary closure criteria satisfied: 19 tests passed, no IF09 reproduction, no tracked-lineage regression, and no forbidden surface was executed.",
-            "Deterministic oracle result remained pass.",
+            "Explicit operator mirror-sanity route-opening command was recorded for IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET.",
+            "Derived mirrors were sanitized so that stale pre-closure notes now carry HISTORICAL_ONLY, SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET, and NOT_CURRENT_STATE labels.",
+            "The committed IF09 closure remains anchored to the deterministic oracle pass, zero-regression matrix, and no-forbidden-surface attestation for Track A merge commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
+            "No Project_ARIS mutation, no Project_ARIS tests, no new revalidation runner, no bots, and no runtime/product/Bedrock/secrets/package-manager surfaces were executed in this gate.",
             "Project_ARIS merge commit: 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
             "Patch commit: 1e9a04a02846f3261ae72d0c95fbee6b0163b45b.",
             "Project_ARIS CI: CI_GREEN_CONFIRMED.",
             "Project_ARIS main workspace remained unchanged during this phase.",
-            "IF09-FIND-001 is now closed by deterministic adjudication.",
-            "remediation_proven is now true.",
+            "IF09-FIND-001 remains canonically closed.",
+            "remediation_proven remains true.",
+            "Documentary BenchUX candidate prepared: BENCHUX_ROUTE_OPENING_PACKET.",
             "All execution locks remain false.",
             "Nenhuma transição definida. Aguardando instrução do operador."
         ],
@@ -676,7 +676,7 @@
         "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "inf_revalidation_adjudication_closure_pass"
+        "status": "if09_closure_milestone_mirror_sanity_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -693,7 +693,7 @@
         ]
     },
     "schema_version": "3.20",
-    "status": "inf_revalidation_adjudication_closure_pass",
+    "status": "if09_closure_milestone_mirror_sanity_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,

@@ -70,10 +70,10 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
-status: inf_revalidation_adjudication_closure_pass
-latest_completed_phase: INF Revalidation Adjudication Or Closure Packet
-latest_completed_status: inf_revalidation_adjudication_closure_pass
+phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
+status: if09_closure_milestone_mirror_sanity_pass
+latest_completed_phase: IF09 Closure Milestone Mirror Sanity Packet
+latest_completed_status: if09_closure_milestone_mirror_sanity_pass
 next_phase: null
 next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
@@ -82,11 +82,20 @@ Selected branch: `TRACK_REVALIDATION_FIRST`
 Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 closed
-Project_ARIS main workspace: não alterado por este INF revalidation adjudication/closure packet
+BENCHUX_ROUTE_OPENING_PACKET
+Project_ARIS main workspace: não alterado por este IF09 closure milestone mirror sanity packet
 
-O packet canônico de adjudicação/closure está registrado em `artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json`. Ele consome a abertura explícita do operador para `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`, materializa a row viva `INF_REVALIDATION_EXECUTION_PACKET -> INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`, promove a rota viva para `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, fixa `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, e fecha canonicamente `IF09-FIND-001` sem rerodar o runner focado.
+O packet canônico de mirror sanity está registrado em `artifacts/active_context/if09_closure_milestone_sanity_packet.json`. Ele consome a row viva `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET -> IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, reafirma `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, saneia mirrors derivados e emite `artifacts/benchux/benchux_route_opening_candidate.json` apenas como candidato documental.
 
-Como artifact family da fase viva, o repositório agora registra `artifacts/purgatorium/inf_revalidation_adjudication_operator_command.json`, `inf_revalidation_adjudication_transition_row.json`, `inf_revalidation_adjudication_evidence_matrix.json`, `inf_revalidation_adjudication_oracle_review.json`, `inf_revalidation_adjudication_regression_review.json`, `inf_revalidation_adjudication_no_forbidden_surface_carry_forward.json`, `inf_revalidation_adjudication_closure_packet.json`, `inf_revalidation_adjudication_closure_decision.json`, `inf_revalidation_adjudication_summary.json`, `inf_revalidation_adjudication_report.md`, `inf_revalidation_adjudication_validation_evidence.json` e `inf_revalidation_adjudication_next_route_candidate.json`. Esses artifacts registram a adjudicação documental baseada apenas na evidência primária commitada da execução controlada, mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados e encerram `IF09-FIND-001` apenas porque o oracle, a matriz de regressão e a attestation de no-forbidden-surface permaneceram integralmente pass.
+Como artifact family desta fase viva, o repositório agora registra `artifacts/active_context/if09_closure_milestone_sanity_packet.json`, `if09_closure_milestone_mirror_drift_matrix.json`, `if09_closure_milestone_superseded_notes_manifest.json`, `if09_closure_milestone_no_real_execution_attestation.json`, `if09_closure_milestone_validation_evidence.json`, `artifacts/benchux/benchux_route_opening_candidate.json` e `benchux_pre_route_scope_note.json`. Esses artifacts mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados, rotulam stale notes como `HISTORICAL_ONLY`, `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` e `NOT_CURRENT_STATE`, e deixam BenchUX estritamente fora da rota viva.
+
+## Historical Appendix
+
+HISTORICAL_ONLY
+SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
+NOT_CURRENT_STATE
+
+As seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual.
 
 ## PURG-04 proof-loop corpus materialization
 

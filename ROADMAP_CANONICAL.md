@@ -164,9 +164,9 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
-Latest completed phase: INF Revalidation Adjudication Or Closure Packet
-Current phase_id/current_phase_id: INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
-Current status/status: inf_revalidation_adjudication_closure_pass
+Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet
+Current phase_id/current_phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
+Current status/status: if09_closure_milestone_mirror_sanity_pass
 Decision: pass
 Active next phase: null
 Active next phase class: null
@@ -186,10 +186,11 @@ Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 Latest completed CI state: `CI_GREEN_CONFIRMED`
 Merge to Project_ARIS main: `executed earlier at 7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 IF09-FIND-001 closed by Infernus Revalidation adjudication.
+BenchUX next gate candidate only: `BENCHUX_ROUTE_OPENING_PACKET`
 Project_ARIS main workspace remains untouched.
 The authoritative runner used a read-only git-archive snapshot of Project_ARIS commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295` because the live Project_ARIS workspace HEAD had already advanced to `6cec74deb7a99b7eb227df84a902650ca092e00f`.
 Oracle result for IF09 focused revalidation: `pass`
-No successor row is active after canonical closure.
+No successor row is active after mirror sanity cleanup.
 Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
 Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
 Latest completed phase: IF-11 Minos Final Verdict + Closure
@@ -264,6 +265,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix |
 | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |
 | INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |
+| INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

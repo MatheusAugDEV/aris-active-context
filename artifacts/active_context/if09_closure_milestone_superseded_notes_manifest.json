@@ -1,0 +1,19 @@
+{
+  "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "historical_label": "HISTORICAL_ONLY",
+  "superseded_label": "SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "not_current_state_label": "NOT_CURRENT_STATE",
+  "stale_note_tokens": [
+    "IF09-FIND-001 open",
+    "finding_closed=false",
+    "remediation_proven=false",
+    "INF_REVALIDATION_EXECUTION_PACKET candidate-only",
+    "revalidation not executed"
+  ],
+  "applied_to": [
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "DECISION_LOCKS.md",
+    "README.md"
+  ]
+}

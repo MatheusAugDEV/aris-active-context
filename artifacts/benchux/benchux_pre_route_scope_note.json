@@ -1,0 +1,8 @@
+{
+  "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "candidate_next_gate": "BENCHUX_ROUTE_OPENING_PACKET",
+  "candidate_only": true,
+  "benchux_live_route_activated": false,
+  "scope": "documentary_pre_route_scope_only",
+  "purpose": "prepare_operator_decision_to_open_BenchUX_after_IF09_closure"
+}
