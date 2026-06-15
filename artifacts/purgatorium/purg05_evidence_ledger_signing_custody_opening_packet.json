@@ -1,0 +1,58 @@
+{
+  "artifact_id": "purg05_evidence_ledger_signing_custody_opening_packet",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+  "created_at": "2026-06-15T00:59:30-03:00",
+  "source_admission_packet": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json",
+  "source_next_route_candidate": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_next_route_candidate.json",
+  "target_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "opening_packet_only": true,
+  "candidate_only": true,
+  "requires_operator_or_explicit_route_activation": true,
+  "purg05_opened": false,
+  "ledger_signing_executed": false,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "opening_verdict": "candidate_route_opening_ready_for_future_purg05_packet",
+  "required_inputs_verification": {
+    "artifact": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_required_input_verification.json",
+    "required_inputs_source": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_required_inputs.json",
+    "all_required_inputs_present": true,
+    "all_required_inputs_hash_recorded": true,
+    "all_required_inputs_admissible": true,
+    "proof_loop_corpus_artifacts_all_pass": true,
+    "lineage_binding_verified_for_applicable_inputs": true,
+    "append_only_ledger_snapshot_verified": true
+  },
+  "future_purg05_gate_contract": {
+    "artifact": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_gate_contract.json",
+    "future_gate_must_remain_artifact_only": true,
+    "future_gate_requires_explicit_activation": true
+  },
+  "future_purg05_outputs_required": [
+    "artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json",
+    "artifacts/purgatorium/purg05_evidence_ledger_signing_metadata.json",
+    "artifacts/purgatorium/purg05_evidence_custody_chain_map.json",
+    "artifacts/purgatorium/purg05_source_to_output_lineage_table.json",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json",
+    "artifacts/purgatorium/purg05_no_real_execution_attestation.json",
+    "artifacts/purgatorium/purg05_next_route_candidate.json"
+  ],
+  "future_purg05_forbidden_actions": {
+    "artifact": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_forbidden_actions.json"
+  },
+  "candidate_next_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_purg05_now": false,
+  "decision": "pass"
+}

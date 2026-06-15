@@ -1,0 +1,24 @@
+{
+  "artifact_id": "purg05_evidence_ledger_signing_custody_opening_gate_contract",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+  "created_at": "2026-06-15T00:59:30-03:00",
+  "target_gate": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "future_gate_must_remain_artifact_only": true,
+  "requires_operator_or_explicit_route_activation": true,
+  "allowed_future_purg05_outputs": [
+    "artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json",
+    "artifacts/purgatorium/purg05_evidence_ledger_signing_metadata.json",
+    "artifacts/purgatorium/purg05_evidence_custody_chain_map.json",
+    "artifacts/purgatorium/purg05_source_to_output_lineage_table.json",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json",
+    "artifacts/purgatorium/purg05_no_real_execution_attestation.json",
+    "artifacts/purgatorium/purg05_next_route_candidate.json"
+  ],
+  "future_gate_requirements": [
+    "All admitted inputs remain present and hashable.",
+    "Proof-loop corpus artifacts remain decision=pass.",
+    "Custody outputs stay documentary metadata only.",
+    "ACTIVE_CONTEXT_STATE.json remains unchanged unless a later explicit route activation packet authorizes a supported change."
+  ],
+  "decision": "pass"
+}

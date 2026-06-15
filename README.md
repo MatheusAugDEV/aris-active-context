@@ -101,6 +101,8 @@ O recheck `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_
 
 O admission packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json` transforma esse candidate em contrato verificável para uma abertura futura, sem abrir `PURG05` agora. Ele fixa os inputs obrigatórios, o escopo permitido, os critérios de aceitação e os bloqueios futuros, emitindo somente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET` como próximo candidate gate, ainda com `candidate_only=true`, `purg05_opened=false`, `next_phase=null` e `remediation_proven=false`.
 
+O opening packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json` verificou que a admissão continua íntegra, que todos os required inputs seguem presentes e que a futura abertura de `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` pode ser proposta sem ativar o gate agora. O resultado emite novamente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` apenas como candidate gate, com `candidate_only=true`, `requires_operator_or_explicit_route_activation=true`, `purg05_opened=false`, `next_phase=null` e `remediation_proven=false`.
+
 ## PURG-01.1 triage classification
 
 O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json` registra a classificação de triagem de `IF09-FIND-001` usando apenas o handoff IF09/IF10 e o roadmap Purgatorium. O packet fixa `selected_track=S3` com `classification_confidence=medium`, preserva todos os locks de execução em `false` e mantém `next_recommended_step=BLOCKED_NEEDS_OPERATOR_DIRECTION` para evitar abrir `PURG-02` ou inventar um sucessor `PURG-01.2` fora da rota viva.
