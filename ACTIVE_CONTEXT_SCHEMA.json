@@ -4,6 +4,7 @@
   "description": "Structural evolutionary validation contract for ACTIVE_CONTEXT_STATE.json. Const retained only for permanent invariants. Phase names, status strings, and mutable flags use type/enum/required constraints. Markdown files are derived mirrors only.",
   "schema_3_13_change_summary": "Expanded phase_id/current_phase_id/previous_phase_id pattern to two-or-three-segment. Added schema_version 3.13. Reconciled completed_phases to accept both array and object formats. Triggered by state reconciliation packet base SHA e747ee5.",
   "schema_3_14_change_summary": "PURG04 post-merge validation packet: permit the live state to advance from PURG04_TRACK_A_MAIN_MERGE_EXECUTION to PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET, enforce the operator authorization plus no-real-execution packet artifacts, and allow next_phase/active_next_phase/deferred_phase to become null when the Transition Table defines no successor.",
+  "schema_3_15_change_summary": "Residual risk carry-forward route opening: admit PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET as the live artifact-only route through an explicit operator route-opening packet, add validator enforcement for the residual candidate chain and new artifacts, materialize the PURG04 post-merge validation successor row in the active Transition Table, and preserve next_phase/active_next_phase null because the new residual route has no successor row.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -965,7 +966,8 @@
         "3.11",
         "3.12",
         "3.13",
-        "3.14"
+        "3.14",
+        "3.15"
       ],
       "type": "string"
     },
@@ -1165,6 +1167,9 @@
           "type": "string"
         },
         "schema_3_14_change_summary": {
+          "type": "string"
+        },
+        "schema_3_15_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {

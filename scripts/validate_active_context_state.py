@@ -180,6 +180,13 @@ PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_STATUS = "purg01_controlled_triage_artifa
 PURG04_POST_MERGE_VALIDATION_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_operator_authorization.json"
 PURG04_POST_MERGE_VALIDATION_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_packet.json"
 PURG04_POST_MERGE_VALIDATION_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_no_real_execution_attestation.json"
+PURG_RESIDUAL_ROUTE_OPENING_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_operator_authorization.json"
+PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_packet.json"
+PURG_RESIDUAL_ROUTE_OPENING_SUMMARY_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_summary.json"
+PURG_RESIDUAL_ROUTE_OPENING_REPORT_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_report.md"
+PURG_RESIDUAL_ROUTE_OPENING_LOCK_MATRIX_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_lock_matrix.json"
+PURG_RESIDUAL_ROUTE_OPENING_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_no_real_execution_attestation.json"
+PURG_RESIDUAL_ROUTE_OPENING_VALIDATION_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_validation_evidence.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -862,6 +869,14 @@ PHASE_DELIVERABLES = {
             _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("project_aris_ci_state") == "CI_GREEN_CONFIRMED"
             or bool(_load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("explicit_ci_confirmation_artifact"))
         )
+    ),
+    "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET": lambda: (
+        PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH.exists()
+        and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET"
+        and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("decision") == "pass"
+        and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("live_route_opened") is True
+        and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("new_live_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET"
+        and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("new_live_next_phase") is None
     ),
     "ACB-CORE-01": lambda: (
         ACB_CORE_01_EVIDENCE_PATH.exists()
@@ -1622,6 +1637,119 @@ def _check_purg04_track_a_post_merge_validation_artifacts(state: dict[str, Any])
         "secrets_accessed",
     ):
         _require(no_real.get(key) is False, f"post-merge validation no-real-execution {key} must be false")
+
+
+def _check_purg_residual_risk_carry_forward_route_opening_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET":
+        return
+
+    _require(PURG_RESIDUAL_ROUTE_OPENING_REPORT_PATH.exists(), "missing residual route-opening report")
+
+    operator_auth = _load_json(PURG_RESIDUAL_ROUTE_OPENING_OPERATOR_AUTH_PATH)
+    _require(
+        operator_auth.get("operator_authorization_text")
+        == "AUTHORIZE_ROUTE_OPENING_PACKET_FOR_PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+        "residual route-opening operator authorization text mismatch",
+    )
+    _require(
+        operator_auth.get("authorization_scope")
+        == "route_opening_packet_for_purg_residual_risk_carry_forward_only",
+        "residual route-opening operator authorization scope mismatch",
+    )
+    _require(operator_auth.get("route_opening_only") is True, "residual route-opening must remain route-opening only")
+    for key in (
+        "project_aris_mutation_authorized",
+        "finding_close_authorized",
+        "remediation_proven_override_authorized",
+        "runtime_authorized",
+        "real_apply_authorized",
+        "production_authorized",
+        "product_authorized",
+        "bedrock_authorized",
+        "secrets_authorized",
+        "dependency_or_package_manager_authorized",
+        "proof_loop_execution_authorized",
+    ):
+        _require(operator_auth.get(key) is False, f"residual route-opening operator authorization {key} must be false")
+
+    packet = _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH)
+    _require(packet.get("artifact_id") == "purg_residual_risk_carry_forward_route_opening_packet", "residual route-opening artifact_id mismatch")
+    _require(packet.get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening phase_id mismatch")
+    _require(packet.get("authorization_artifact") == "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_operator_authorization.json", "residual route-opening authorization artifact mismatch")
+    _require(packet.get("source_candidate_next_gate") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening candidate_next_gate mismatch")
+    _require(packet.get("operator_authorized") is True, "residual route-opening must be operator authorized")
+    _require(packet.get("candidate_chain_verified") is True, "residual route-opening candidate chain must be verified")
+    _require(packet.get("live_route_opened") is True, "residual route-opening must open the live route")
+    _require(packet.get("state_advanced") is True, "residual route-opening must advance state")
+    _require(packet.get("previous_live_phase_id") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", "residual route-opening previous_live_phase_id mismatch")
+    _require(packet.get("new_live_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening new_live_phase_id mismatch")
+    _require(packet.get("new_live_phase_class") == "purgatorium_route_admission", "residual route-opening new_live_phase_class mismatch")
+    _require(packet.get("new_live_status") == "purg_residual_risk_carry_forward_route_opening_pass", "residual route-opening new_live_status mismatch")
+    _require(packet.get("new_live_next_phase") is None, "residual route-opening new_live_next_phase must be null")
+    _require(packet.get("new_live_active_next_phase") is None, "residual route-opening new_live_active_next_phase must be null")
+    _require(packet.get("latest_completed_project_commit_sha") == "7883af5a32c629026bfc6dc15ebee4ebbcadd295", "residual route-opening latest_completed_project_commit_sha mismatch")
+    _require(packet.get("latest_completed_ci_state") == "CI_GREEN_CONFIRMED", "residual route-opening latest_completed_ci_state mismatch")
+    _require(packet.get("recommended_next_step") == NO_TRANSITION_DEFINED_MESSAGE, "residual route-opening recommended_next_step mismatch")
+    _require(packet.get("project_aris_changed") is False, "residual route-opening must not change Project_ARIS")
+    _require(packet.get("project_aris_tests_executed") is False, "residual route-opening must not execute Project_ARIS tests")
+    _require(packet.get("proof_loop_executed") is False, "residual route-opening proof_loop_executed must be false")
+    _require(packet.get("runtime_executed") is False, "residual route-opening runtime_executed must be false")
+    _require(packet.get("real_apply_executed") is False, "residual route-opening real_apply_executed must be false")
+    _require(packet.get("finding_closed") is False, "residual route-opening finding_closed must be false")
+    _require(packet.get("remediation_proven") is False, "residual route-opening remediation_proven must be false")
+    _require(packet.get("decision") == "pass", "residual route-opening decision mismatch")
+
+    summary = _load_json(PURG_RESIDUAL_ROUTE_OPENING_SUMMARY_PATH)
+    _require(summary.get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening summary phase_id mismatch")
+    _require(summary.get("status") == "purg_residual_risk_carry_forward_route_opening_pass", "residual route-opening summary status mismatch")
+    _require(summary.get("live_route_opened") is True, "residual route-opening summary must report live_route_opened=true")
+    _require(summary.get("next_phase") is None, "residual route-opening summary next_phase must be null")
+    _require(summary.get("active_next_phase") is None, "residual route-opening summary active_next_phase must be null")
+
+    lock_matrix = _load_json(PURG_RESIDUAL_ROUTE_OPENING_LOCK_MATRIX_PATH)
+    _require(lock_matrix.get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening lock matrix phase_id mismatch")
+    for key in (
+        "project_aris_mutation_authorized",
+        "project_aris_tests_authorized",
+        "proof_loop_execution_authorized",
+        "runtime_authorized",
+        "real_apply_authorized",
+        "production_authorized",
+        "product_authorized",
+        "bedrock_authorized",
+        "secrets_authorized",
+        "dependency_or_package_manager_authorized",
+        "finding_close_authorized",
+        "remediation_override_authorized",
+    ):
+        _require(lock_matrix.get(key) is False, f"residual route-opening lock matrix {key} must be false")
+
+    no_real = _load_json(PURG_RESIDUAL_ROUTE_OPENING_NO_REAL_PATH)
+    _require(no_real.get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "residual route-opening no-real phase_id mismatch")
+    for key in (
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "proof_loop_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "secrets_accessed",
+    ):
+        _require(no_real.get(key) is False, f"residual route-opening no-real {key} must be false")
+
+    validation_evidence = _load_json(PURG_RESIDUAL_ROUTE_OPENING_VALIDATION_EVIDENCE_PATH)
+    _require(
+        validation_evidence.get("phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+        "residual route-opening validation evidence phase_id mismatch",
+    )
+    _require(
+        validation_evidence.get("status") == "purg_residual_risk_carry_forward_route_opening_pass",
+        "residual route-opening validation evidence status mismatch",
+    )
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -10528,6 +10656,7 @@ def main() -> None:
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
     _check_purg04_track_a_post_merge_validation_artifacts(state)
+    _check_purg_residual_risk_carry_forward_route_opening_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -10696,12 +10825,12 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+        "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg04_track_a_post_merge_validation_packet_pass",
-        "latest_completed_phase: PURG04 Track A Post-Merge Validation Packet",
+        "purg_residual_risk_carry_forward_route_opening_pass",
+        "latest_completed_phase: PURG Residual Risk Carry-Forward Packet",
         "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
@@ -10717,6 +10846,18 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## PURG Residual Risk Carry-Forward Packet Route Opening",
+        "purg_residual_risk_carry_forward_route_opening_pass",
+        "purg_residual_risk_carry_forward_route_opening_operator_authorization.json",
+        "purg_residual_risk_carry_forward_route_opening_packet.json",
+        "phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+        "next_phase=null",
+        "active_next_phase=null",
+        "IF09-FIND-001` remains open",
+        "`remediation_proven=false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",

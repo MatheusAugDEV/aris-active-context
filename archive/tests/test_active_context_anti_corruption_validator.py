@@ -31,6 +31,13 @@ def _run_validator_with_state(state: dict, *, extra_files: dict[str, str] | None
                 shutil.copy2(src, dst)
 
         (tmp_path / "ACTIVE_CONTEXT_STATE.json").write_text(json.dumps(state, indent=2), encoding="utf-8")
+        subprocess.run(
+            [sys.executable, str(tmp_path / "scripts" / "render_boot.py")],
+            check=True,
+            cwd=tmp,
+            capture_output=True,
+            text=True,
+        )
 
         if extra_files:
             for relpath, content in extra_files.items():

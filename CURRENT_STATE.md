@@ -2,12 +2,12 @@
 
 > Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
 
-## PURG04 Track A Post-Merge Validation Packet
+## PURG Residual Risk Carry-Forward Packet
 
-- phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
-- current_phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
-- latest_completed_phase: `PURG04 Track A Post-Merge Validation Packet`
-- status: `purg04_track_a_post_merge_validation_packet_pass`
+- phase_id: `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+- current_phase_id: `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+- latest_completed_phase: `PURG Residual Risk Carry-Forward Packet`
+- status: `purg_residual_risk_carry_forward_route_opening_pass`
 - decision: `pass`
 - active_next_phase: `null`
 - next_phase: `null`
@@ -19,4 +19,4 @@
 - Track A merge lineage: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 - IF09-FIND-001: `open` — fechamento apenas via Infernus Revalidation
 - remediation_proven: `false`
-- Nota documental: a tentativa `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY` ficou `blocked` por divergência de hash em `DECISION_LOCKS.md` frente ao manifest de readiness; o reparo `PURG04_PROOF_LOOP_CORPUS_SOURCE_HASH_MANIFEST_DIVERGENCE_REPAIR_ARTIFACT_ONLY` classificou o drift como `self_induced_post_output_hash_drift` com subtipo seguro `append_only_governance_ledger_drift`; a finalização `PURG04_PROOF_LOOP_CORPUS_RETRY_EPOCH_FINALIZATION_ARTIFACT_ONLY` emitiu `resync_v2` e `retry_candidate_v2`; o retry `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY` materializou os cinco artifacts PASS; o `PURGATORIUM_POST_PURG04_ROUTE_DECISION_RECHECK_ARTIFACT_ONLY` confirmou que os cinco blockers originais foram removidos e emitiu `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`; o `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY` admitiu esse candidate apenas para futura abertura por packet dedicado; o `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET` confirmou a prontidão de abertura futura sem executar PURG05; e o `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` materializou a custódia documental do corpus e emitiu `candidate_next_gate=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, ainda com estado canônico JSON inalterado
+- Nota documental: a cadeia `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY` -> `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET` -> `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` foi revalidada e consumida por `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`; a rota canônica foi aberta somente no active-context, `Project_ARIS` permaneceu intocado, `finding_closed` não foi introduzido e `remediation_proven=false` foi preservado

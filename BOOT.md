@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `8155a1186f2c`
-- schema_version: `3.14`
+- state_sha: `0e7acd4d8170`
+- schema_version: `3.15`
 
 ## AVISO DE STALE
 
@@ -14,15 +14,15 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Purgatorium FULL`
-- phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
-- status: `purg04_track_a_post_merge_validation_packet_pass`
+- phase_id: `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+- status: `purg_residual_risk_carry_forward_route_opening_pass`
 - decision: `pass`
-- resumo: PURG04 Track A Post-Merge Validation Packet; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: PURG Residual Risk Carry-Forward Packet; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
   Infernus FULL
-▸ Purgatorium FULL (phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET)
+▸ Purgatorium FULL (phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET)
   Infernus Revalidation
   BenchUX
   Crisol
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET.
 
 ## REGRAS DE AGORA
 

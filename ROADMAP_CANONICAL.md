@@ -164,12 +164,12 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
-Latest completed phase: PURG-04 Track A Pointer Residual Repair Patch Packet
-Current phase_id/current_phase_id: PURG-04
-Current status/status: purg04_track_a_pointer_residual_repair_patch_pass
+Latest completed phase: PURG Residual Risk Carry-Forward Packet
+Current phase_id/current_phase_id: PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET
+Current status/status: purg_residual_risk_carry_forward_route_opening_pass
 Decision: pass
-Active next phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
-Active next phase class: purgatorium_route_admission
+Active next phase: null
+Active next phase class: null
 next_phase_authorized_by_operator: false
 next_phase_execution_authorization: false
 operator_approval_packet_review_is_execution_approval: false
@@ -178,18 +178,19 @@ runtime_integration_allowed: false
 production_authorized: false
 product_ready: false
 secrets_access_authorized: false
-Track A patch applied in cleanroom branch only.
+Residual route admitted artifact-only through explicit route-opening authorization.
 Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
 Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
-Latest completed project commit SHA: `6312302ea45b72ddc310b2b33f56245be65b99dc`
+Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 Latest completed CI state: `CI_GREEN_CONFIRMED`
-Merge to Project_ARIS main: `NOT AUTHORIZED`
+Merge to Project_ARIS main: `executed earlier at 7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 IF09-FIND-001 remains open; closure only via Infernus Revalidation.
 Project_ARIS main workspace remains untouched.
-Next canonical step: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
 Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
 Latest completed phase: IF-11 Minos Final Verdict + Closure
 Active next phase: PURG-01
+Active next phase class: purgatorium_route_admission
 Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
 Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
 PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`
@@ -253,6 +254,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence |
 | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |
 | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact |
+| PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | pass | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | purgatorium_route_admission | operator | purg_residual_risk_carry_forward_route_opening_packet.json + route-opening operator authorization + validator evidence |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

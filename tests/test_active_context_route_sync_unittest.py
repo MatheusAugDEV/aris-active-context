@@ -34,14 +34,14 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_phase_mutation_family_count"], 10)
         self.assertEqual(state["current_phase_oracle_count"], 9)
 
-    def test_current_route_tracks_purg04_track_a_post_merge_validation_packet_sync(self):
+    def test_current_route_tracks_purg_residual_risk_carry_forward_packet_sync(self):
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
-        self.assertEqual(state["current_phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
-        self.assertEqual(state["previous_phase_id"], "PURG04_TRACK_A_MAIN_MERGE_EXECUTION")
-        self.assertEqual(state["phase_class"], "purgatorium_post_merge_validation")
-        self.assertEqual(state["latest_completed_phase"], "PURG04 Track A Post-Merge Validation Packet")
-        self.assertEqual(state["latest_completed_status"], "purg04_track_a_post_merge_validation_packet_pass")
+        self.assertEqual(state["phase_id"], "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET")
+        self.assertEqual(state["current_phase_id"], "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET")
+        self.assertEqual(state["previous_phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
+        self.assertEqual(state["phase_class"], "purgatorium_route_admission")
+        self.assertEqual(state["latest_completed_phase"], "PURG Residual Risk Carry-Forward Packet")
+        self.assertEqual(state["latest_completed_status"], "purg_residual_risk_carry_forward_route_opening_pass")
         self.assertEqual(state["latest_completed_project_commit_sha"], "7883af5a32c629026bfc6dc15ebee4ebbcadd295")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
@@ -55,9 +55,9 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
         self.assertEqual(state["decision"], "pass")
-        self.assertEqual(state["status"], "purg04_track_a_post_merge_validation_packet_pass")
+        self.assertEqual(state["status"], "purg_residual_risk_carry_forward_route_opening_pass")
         self.assertEqual(state["current_live_route"]["decision"], "pass")
-        self.assertEqual(state["current_live_route"]["status"], "purg04_track_a_post_merge_validation_packet_pass")
+        self.assertEqual(state["current_live_route"]["status"], "purg_residual_risk_carry_forward_route_opening_pass")
         self.assertIsNone(state["current_live_route"]["active_next_phase"])
         self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
         self.assertFalse(state["current_live_route"]["next_phase_execution_authorization"])
@@ -431,9 +431,17 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(row["next_phase_class"], "purgatorium_post_merge_validation")
         self.assertEqual(row["advance_mode"], "operator")
 
-    def test_transition_table_has_no_successor_for_purg04_track_a_post_merge_validation_packet(self):
+    def test_transition_table_contains_purg04_track_a_post_merge_validation_successor(self):
         module = self._load_validator_module()
-        self.assertIsNone(module._get_transition_row("PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", "pass"))
+        row = module._get_transition_row("PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", "pass")
+        self.assertIsNotNone(row)
+        self.assertEqual(row["next_phase_id"], "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET")
+        self.assertEqual(row["next_phase_class"], "purgatorium_route_admission")
+        self.assertEqual(row["advance_mode"], "operator")
+
+    def test_transition_table_has_no_successor_for_purg_residual_risk_carry_forward_packet(self):
+        module = self._load_validator_module()
+        self.assertIsNone(module._get_transition_row("PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "pass"))
 
     def test_purg00_route_admission_artifacts_validate(self):
         module = self._load_validator_module()

@@ -70,10 +70,10 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET
-status: purg04_track_a_post_merge_validation_packet_pass
-latest_completed_phase: PURG04 Track A Post-Merge Validation Packet
-latest_completed_status: purg04_track_a_post_merge_validation_packet_pass
+phase_id: PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET
+status: purg_residual_risk_carry_forward_route_opening_pass
+latest_completed_phase: PURG Residual Risk Carry-Forward Packet
+latest_completed_status: purg_residual_risk_carry_forward_route_opening_pass
 next_phase: null
 next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
@@ -81,9 +81,9 @@ Todos execution_locks: false
 Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 remains open
-Project_ARIS main workspace: não alterado por este post-merge validation packet
+Project_ARIS main workspace: não alterado por este residual route-opening packet
 
-O packet canônico de validação pós-merge está registrado em `artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json`, com autorização explícita em `artifacts/purgatorium/purg04_track_a_post_merge_validation_operator_authorization.json`. Ele confirma que o merge Track A permaneceu dentro do escopo autorizado, que `forbidden_paths_touched=[]`, que `remediation_proven=false`, que `IF09-FIND-001` continua open e que a Transition Table não define sucessor após esta fase.
+O packet canônico de abertura da rota residual está registrado em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, com autorização explícita em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_operator_authorization.json`. Ele consome a cadeia documental PURG05 já validada, promove a rota viva para `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
 
 ## PURG-04 proof-loop corpus materialization
 
@@ -103,7 +103,7 @@ O admission packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody
 
 O opening packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json` verificou que a admissão continua íntegra, que todos os required inputs seguem presentes e que a futura abertura de `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` pode ser proposta sem ativar o gate agora. O resultado emite novamente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` apenas como candidate gate, com `candidate_only=true`, `requires_operator_or_explicit_route_activation=true`, `purg05_opened=false`, `next_phase=null` e `remediation_proven=false`.
 
-O gate `artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json` e seus artifacts irmãos materializam a custódia documental do corpus já admitido: inventário de hashes, metadados de signing sem assinatura real, cadeia de custódia, tabela de lineage, locks carry-forward e attestation de não execução real. O resultado emite somente `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET` como próximo candidate gate, sem alterar `ACTIVE_CONTEXT_STATE.json`, sem executar signing real e sem abrir residual agora.
+O gate `artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json` e seus artifacts irmãos materializam a custódia documental do corpus já admitido: inventário de hashes, metadados de signing sem assinatura real, cadeia de custódia, tabela de lineage, locks carry-forward e attestation de não execução real. Esse candidate foi consumido pelo novo packet `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, que abriu a rota residual apenas no active-context e preservou todos os locks reais em `false`.
 
 ## PURG-01.1 triage classification
 

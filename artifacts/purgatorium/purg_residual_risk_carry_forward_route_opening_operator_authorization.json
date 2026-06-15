@@ -1,0 +1,21 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_route_opening_operator_authorization",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "created_at": "2026-06-15T13:01:59-03:00",
+  "operator_authorized": true,
+  "operator_authorization_text": "AUTHORIZE_ROUTE_OPENING_PACKET_FOR_PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "authorization_scope": "route_opening_packet_for_purg_residual_risk_carry_forward_only",
+  "route_opening_only": true,
+  "state_advance_authorized": true,
+  "project_aris_mutation_authorized": false,
+  "finding_close_authorized": false,
+  "remediation_proven_override_authorized": false,
+  "runtime_authorized": false,
+  "real_apply_authorized": false,
+  "production_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "secrets_authorized": false,
+  "dependency_or_package_manager_authorized": false,
+  "proof_loop_execution_authorized": false
+}

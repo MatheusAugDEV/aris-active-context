@@ -2,12 +2,12 @@
 
 > Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
 
-## PURG04 Track A — Próxima Ação
+## PURG Residual Risk Carry-Forward Packet — Próxima Ação
 
-- latest_completed_phase: `PURG04 Track A Post-Merge Validation Packet`
-- status: `purg04_track_a_post_merge_validation_packet_pass`
+- latest_completed_phase: `PURG Residual Risk Carry-Forward Packet`
+- status: `purg_residual_risk_carry_forward_route_opening_pass`
 - active_next_phase: `null`
 - next_phase: `null`
 - execution_authorization: `false`
 - Próximo passo canônico: `Nenhuma transição definida. Aguardando instrução do operador.`
-- Nota documental: o repair `PURG04_PROOF_LOOP_CORPUS_SOURCE_HASH_MANIFEST_DIVERGENCE_REPAIR_ARTIFACT_ONLY` emitiu `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY` como candidate gate documental, a finalização `PURG04_PROOF_LOOP_CORPUS_RETRY_EPOCH_FINALIZATION_ARTIFACT_ONLY` substituiu o manifest consumível por `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json`, o retry materializou o corpus com `candidate_next_gate=PURGATORIUM_POST_PURG04_ROUTE_DECISION_RECHECK_ARTIFACT_ONLY`, o recheck de rota confirmou `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`, a admissão de PURG05 emitiu `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET`, o opening packet confirmou `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`, e o próprio PURG05 emitiu `candidate_next_gate=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET` apenas como candidato documental; a rota canônica continua sem transição definida no JSON
+- Nota documental: o candidate `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET` já foi admitido canonicamente por `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, mas a Transition Table não define sucessor ativo para esta nova rota. O próximo passo continua bloqueado em `null` até nova instrução do operador, sem fechar `IF09-FIND-001` e sem provar remediação

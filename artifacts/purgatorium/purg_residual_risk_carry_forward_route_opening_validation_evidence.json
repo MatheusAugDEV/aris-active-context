@@ -1,0 +1,75 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_route_opening_validation_evidence",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "created_at": "2026-06-15T13:01:59-03:00",
+  "status": "purg_residual_risk_carry_forward_route_opening_pass",
+  "local_required_validations_passed": true,
+  "commands": [
+    {
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "passed": true
+    },
+    {
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+      "passed": true
+    },
+    {
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "command": "python3 -m pytest -q tests/test_validate_active_context.py tests/test_purg04_validator_scope_repair.py tests/test_active_context_route_sync_unittest.py",
+      "passed": true,
+      "summary": "80 passed in 1.28s"
+    },
+    {
+      "command": "python3 -m pytest -q",
+      "passed": true,
+      "summary": "84 passed in 2.42s"
+    }
+  ],
+  "validator_summary": {
+    "decision": "pass",
+    "status": "purg_residual_risk_carry_forward_route_opening_pass",
+    "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+    "previous_phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+    "latest_completed_phase": "PURG Residual Risk Carry-Forward Packet",
+    "latest_completed_status": "purg_residual_risk_carry_forward_route_opening_pass",
+    "next_phase": null,
+    "governance_gate_streak": 0,
+    "phase_class": "purgatorium_route_admission"
+  },
+  "defensive_grep_checks_recorded": true,
+  "defensive_grep_results": {
+    "next_phase_null_preserved": true,
+    "active_next_phase_null_preserved": true,
+    "real_apply_authorized_false_preserved": true,
+    "production_authorized_false_preserved": true,
+    "product_ready_false_preserved": true,
+    "secrets_access_authorized_false_preserved": true,
+    "runtime_integration_allowed_false_preserved": true,
+    "finding_closed_true_present_in_changed_files": false,
+    "remediation_proven_false_preserved": true,
+    "project_aris_code_paths_changed": []
+  },
+  "changed_file_hashes": {
+    "ACTIVE_CONTEXT_SCHEMA.json": "602d3a933a8f3f4fd77628076271d78c9b2a7679052cb3ee51534eaa1ed597e3",
+    "ACTIVE_CONTEXT_STATE.json": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+    "BOOT.md": "260fab11bc13a983c7323931c93e190ba04d38246138421c3f3c8c6fb479839f",
+    "CURRENT_STATE.md": "65cfb4df6a7766b6f0bc3e2855a472278e23c2468affc29cf2efdeef8c7467cb",
+    "DECISION_LOCKS.md": "5cd7fb681b5e1ff496b27faa4954ce34ce2a21ae3bd363fdb272227742725db5",
+    "NEXT_ACTION.md": "0a2dc6f8286c58dd1443c9ed9cc6fc805bc4c8059c03a0e1539cdadf3482cf43",
+    "README.md": "2aa7bbd796c4bfc345a79ef3bf95ef3fce3db51109479d7b10770647de81f17c",
+    "ROADMAP_CANONICAL.md": "696123e7fe10443403f2efc0f7607a03a4e734d348741972833767b1c0feb9da",
+    "archive/tests/test_active_context_anti_corruption_validator.py": "b49d1d8db4873c952101926f8c0e8b377c8a6994e2a048397235cb47de5cf01a",
+    "scripts/validate_active_context_state.py": "554dc4076e0e7e63f7d37a3d3021bed596e9a598d7d8a7cdce6ae4f804ef87df",
+    "tests/test_active_context_route_sync_unittest.py": "32f1800ffaa876208409204a2e432845f9bc3301cc2b7dd22842ff9f3276e188",
+    "tests/test_validate_active_context.py": "ce7e7872f0402a2c7c7dd8441cf6c5c9e5d71ad2b6c278d4bd8f02e4204f71c6",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_lock_matrix.json": "aee1875b0f644ec7100c8b52ee3a6e0998495919d36b177ca5fc77059b783f14",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_no_real_execution_attestation.json": "47a10a5c18d3dc5340e58853ba46c1b2e0f71026969f62b6dac80661da062991",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_operator_authorization.json": "11627edfc1ad9496c8b36c6d63283e0f2a8f75e9a7a8d1d9262530b1c4c79919",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json": "9459ed3b02fcf8c40e2bbee6a693ca6b1f4d85906d3da788ea47f2401ae28c8e",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_report.md": "4735f293b31528b0d48d69a8bd36086f36c575ee655cbadd922e580081436302",
+    "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_summary.json": "d06a49c679e700980090d63aa1dd7b905ab6dfaf6d01f6d3ad2082d8ca18ffcd"
+  }
+}
