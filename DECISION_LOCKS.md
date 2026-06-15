@@ -2493,3 +2493,40 @@ The following track references are historical_residual_route_noise. They do NOT 
   - PURG05 opening: `false`
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURG04 Proof-Loop Corpus Retry Epoch Finalization Artifact-Only
+
+- Status: `purg04_proof_loop_corpus_retry_epoch_finalization_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only finalization of the proof-loop retry epoch and source manifest; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no PURG05, no finding close.
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_retry_epoch_finalization_diagnostic.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_retry_epoch_finalization_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_retry_epoch_finalization_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json`
+- Resync v2:
+  - emitted: `true`
+  - supersedes: `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json`
+  - retry candidate v2 emitted: `true`
+  - candidate_next_gate: `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY`
+- Retry policy:
+  - `DECISION_LOCKS.md` is treated as `mutable_governance_ledger_append_only`
+  - authority sources and immutable derivation sources remain exact-hash blocking
+  - one known pre-retry append-only section is allowed relative to the resync v2 epoch snapshot
+  - any non-append mutation or unrecognized pre-retry append remains blocking
+  - blocked stub hashes must be preserved before any future overwrite
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - PURG05 opening: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
