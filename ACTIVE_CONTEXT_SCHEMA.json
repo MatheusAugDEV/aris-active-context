@@ -6,6 +6,7 @@
   "schema_3_14_change_summary": "PURG04 post-merge validation packet: permit the live state to advance from PURG04_TRACK_A_MAIN_MERGE_EXECUTION to PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET, enforce the operator authorization plus no-real-execution packet artifacts, and allow next_phase/active_next_phase/deferred_phase to become null when the Transition Table defines no successor.",
   "schema_3_15_change_summary": "Residual risk carry-forward route opening: admit PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET as the live artifact-only route through an explicit operator route-opening packet, add validator enforcement for the residual candidate chain and new artifacts, materialize the PURG04 post-merge validation successor row in the active Transition Table, and preserve next_phase/active_next_phase null because the new residual route has no successor row.",
   "schema_3_16_change_summary": "INF revalidation route activation: promote INF_REVALIDATION_ROUTE_ADMISSION_PACKET from the TRACK_REVALIDATION_FIRST candidate into the live active-context route, admit infernus_revalidation_route_admission as a valid live/next route class, require the route-activation plus route-admission artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened INF route.",
+  "schema_3_17_change_summary": "INF revalidation readiness activation: promote INF_REVALIDATION_READINESS_PACKET from the live route-admission candidate into the active-context route, admit infernus_revalidation_readiness as a valid live/next route class, require the route-activation plus readiness artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened readiness route.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -32,12 +33,14 @@
         "infernus_full_execution",
         "purgatorium_full_authority_materialization",
         "purgatorium_full_intake",
-        "purgatorium_route_admission",
-        "purgatorium_track_a_main_merge_execution",
-        "purgatorium_post_merge_validation",
-        "history_only",
-        null
-      ],
+            "purgatorium_route_admission",
+            "purgatorium_track_a_main_merge_execution",
+            "purgatorium_post_merge_validation",
+            "infernus_revalidation_route_admission",
+            "infernus_revalidation_readiness",
+            "history_only",
+            null
+          ],
       "type": [
         "string",
         "null"
@@ -482,6 +485,7 @@
             "purgatorium_track_a_main_merge_execution",
             "purgatorium_post_merge_validation",
             "infernus_revalidation_route_admission",
+            "infernus_revalidation_readiness",
             "history_only",
             null
           ],
@@ -971,7 +975,8 @@
         "3.13",
         "3.14",
         "3.15",
-        "3.16"
+        "3.16",
+        "3.17"
       ],
       "type": "string"
     },
@@ -1177,6 +1182,9 @@
           "type": "string"
         },
         "schema_3_16_change_summary": {
+          "type": "string"
+        },
+        "schema_3_17_change_summary": {
           "type": "string"
         },
         "schema_version_meaning": {

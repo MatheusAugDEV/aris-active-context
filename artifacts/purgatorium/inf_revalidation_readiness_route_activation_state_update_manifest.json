@@ -1,0 +1,139 @@
+{
+  "artifact_id": "inf_revalidation_readiness_route_activation_state_update_manifest",
+  "created_at": "2026-06-15T20:10:00-03:00",
+  "source_live_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+  "new_phase_id": "INF_REVALIDATION_READINESS_PACKET",
+  "new_status": "inf_revalidation_readiness_opened",
+  "field_updates": [
+    {
+      "path": "phase_id",
+      "old": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "new": "INF_REVALIDATION_READINESS_PACKET"
+    },
+    {
+      "path": "current_phase_id",
+      "old": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "new": "INF_REVALIDATION_READINESS_PACKET"
+    },
+    {
+      "path": "previous_phase_id",
+      "old": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+      "new": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET"
+    },
+    {
+      "path": "phase_class",
+      "old": "infernus_revalidation_route_admission",
+      "new": "infernus_revalidation_readiness"
+    },
+    {
+      "path": "status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "current_status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "latest_completed_phase",
+      "old": "INF Revalidation Route Admission Packet",
+      "new": "INF Revalidation Readiness Packet"
+    },
+    {
+      "path": "latest_completed_status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "current_live_route.status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "current_live_route.latest_completed_phase",
+      "old": "INF Revalidation Route Admission Packet",
+      "new": "INF Revalidation Readiness Packet"
+    },
+    {
+      "path": "current_live_route.latest_completed_status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "history_summary.latest_execution_phase",
+      "old": "INF Revalidation Route Admission Packet",
+      "new": "INF Revalidation Readiness Packet"
+    },
+    {
+      "path": "history_summary.previous_execution_phase",
+      "old": "PURG Residual Risk Carry-Forward Packet",
+      "new": "INF Revalidation Route Admission Packet"
+    },
+    {
+      "path": "history_summary.latest_execution_status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "last_transition.from_phase",
+      "old": "PURG Residual Risk Carry-Forward Packet",
+      "new": "INF Revalidation Route Admission Packet"
+    },
+    {
+      "path": "last_transition.proof_source",
+      "old": "artifacts/purgatorium/inf_revalidation_route_activation_packet.json",
+      "new": "artifacts/purgatorium/inf_revalidation_readiness_route_activation_packet.json"
+    },
+    {
+      "path": "last_transition.to_phase",
+      "old": "INF Revalidation Route Admission Packet",
+      "new": "INF Revalidation Readiness Packet"
+    },
+    {
+      "path": "last_transition.to_status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "last_transition.transition_type",
+      "old": "infernus_revalidation_route_admission",
+      "new": "infernus_revalidation_readiness"
+    },
+    {
+      "path": "completed_phases.latest.phase",
+      "old": "INF Revalidation Route Admission Packet",
+      "new": "INF Revalidation Readiness Packet"
+    },
+    {
+      "path": "completed_phases.latest.status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "completed_phases.total_phases_completed",
+      "old": 61,
+      "new": 62
+    },
+    {
+      "path": "locks.deferred_phase_reason",
+      "old": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ROUTE_ADMISSION_PACKET.",
+      "new": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_READINESS_PACKET."
+    },
+    {
+      "path": "next_action.status",
+      "old": "inf_revalidation_route_admission_opened",
+      "new": "inf_revalidation_readiness_opened"
+    },
+    {
+      "path": "schema_version",
+      "old": "3.16",
+      "new": "3.17"
+    },
+    {
+      "path": "versioning_contract.current_schema_version",
+      "old": "3.16",
+      "new": "3.17"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "artifact_id": "inf_revalidation_readiness_next_route_candidate",
+  "phase_id": "INF_REVALIDATION_READINESS_PACKET",
+  "created_at": "2026-06-15T20:10:00-03:00",
+  "candidate_next_gate": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+  "candidate_only": true,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "decision": "pass",
+  "reason": "readiness_opened_without_successor_activation"
+}
