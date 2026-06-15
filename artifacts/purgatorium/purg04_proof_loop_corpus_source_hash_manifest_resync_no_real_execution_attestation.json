@@ -1,0 +1,35 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_source_hash_manifest_resync_no_real_execution_attestation",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_SOURCE_HASH_MANIFEST_DIVERGENCE_REPAIR_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:33:50-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json"
+  ],
+  "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json": "3eae136975a2a1ef514a6fed279a6bf76b9501532e121a6a9a8349183cc6cd6d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json": "f206fd2aea335fa2cfcb83da9ec2465512284bb5521e11a38e7d310dd868810b"
+  },
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "red_executed": false,
+  "reset_executed": false,
+  "green_executed": false,
+  "benign_flow_executed": false,
+  "rollback_executed": false,
+  "kill_switch_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_purg05_now": false,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "decision": "pass"
+}

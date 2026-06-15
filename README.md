@@ -91,6 +91,8 @@ O packet `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readine
 
 Esse bloqueio é estritamente documental: `ACTIVE_CONTEXT_STATE.json` continua terminal em `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`, `next_phase=null`, `active_next_phase=null`, `IF09-FIND-001` permanece open, `remediation_proven=false`, `Project_ARIS` não foi mutado e nenhum teste de `Project_ARIS` ou proof-loop foi executado nesta fase.
 
+O repair `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json` verificou que a divergência veio de `DECISION_LOCKS.md` tratado como se fosse fonte imutável, embora o hash esperado no manifest correspondesse ao estado pré-append do próprio cycle de readiness. O resync `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json` separa fontes imutáveis de derivação, autoridades canônicas, ledger mutável e mirrors não autoritativos, e emite `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate.json` apenas como candidate gate documental para um retry futuro ainda artifact-only.
+
 ## PURG-01.1 triage classification
 
 O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json` registra a classificação de triagem de `IF09-FIND-001` usando apenas o handoff IF09/IF10 e o roadmap Purgatorium. O packet fixa `selected_track=S3` com `classification_confidence=medium`, preserva todos os locks de execução em `false` e mantém `next_recommended_step=BLOCKED_NEEDS_OPERATOR_DIRECTION` para evitar abrir `PURG-02` ou inventar um sucessor `PURG-01.2` fora da rota viva.

@@ -1,0 +1,242 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_source_hash_manifest_resync",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_SOURCE_HASH_MANIFEST_DIVERGENCE_REPAIR_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:33:50-03:00",
+  "manifest_version": "resync_v1",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_manifest_replaces_for_future_retry": "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json",
+  "do_not_mutate_original_manifest": true,
+  "source_verification_epoch_commit": "507816f48864eb0e324bcab064ffe3276c162fae",
+  "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_output_hashes.json"
+  ],
+  "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json": "3eae136975a2a1ef514a6fed279a6bf76b9501532e121a6a9a8349183cc6cd6d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_output_hashes.json": "729ab9d44f0c086ce3ecbb1072c80ee0c416dbda31d71720ad800dd7bfc845c4"
+  },
+  "authoritative_blocking_sources": [
+    {
+      "path": "ACTIVE_CONTEXT_STATE.json",
+      "role": "canonical_live_state",
+      "source_class": "canonical_state_authority",
+      "epoch_sha256": "8155a1186f2c731464e6c64c7d80b99c142de1223bead2d73909acb750e77879"
+    },
+    {
+      "path": "ARIS_BOOT.md",
+      "role": "boot_authority",
+      "source_class": "canonical_state_authority",
+      "epoch_sha256": "d9e3cc657df9f3ae36389e414e69f6dd13b8ca6bbb0eb75867c93ba7d4207623"
+    },
+    {
+      "path": "ACTIVE_CONTEXT_SCHEMA.json",
+      "role": "schema_authority",
+      "source_class": "canonical_state_authority",
+      "epoch_sha256": "af7e7b3c80f24beed101745c7bb2ce060f9f3a36ad45a3d6f64788355fdd2d2c"
+    },
+    {
+      "path": "scripts/validate_active_context_state.py",
+      "role": "validator_authority",
+      "source_class": "canonical_state_authority",
+      "epoch_sha256": "7514094d200acd3a2a544be1f06c373ef4af264b9e20690890398efa2636a6f5"
+    },
+    {
+      "path": "ROADMAP_CANONICAL.md",
+      "role": "transition_and_macro_doctrine",
+      "source_class": "route_authority",
+      "epoch_sha256": "be98eb2fc6218cae89c2ccaa981e26b56d04e6f7e3ec75b1a3d48c14dd057895"
+    }
+  ],
+  "immutable_derivation_sources": [
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
+      "role": "accepted_lineage_validation",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+      "role": "green_and_merge_binding_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+      "role": "green_supporting_ci",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "972f68bb1babd0c0510f2a545d55f6251592d23dcb354b3551a11830fb917638"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json",
+      "role": "scope_proof",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "33c7eda8a6f127012977ee66170bc2979341d2d47bf904d9772f6400d9fa1da5"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json",
+      "role": "scope_attestation",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "83c3ea499a5e0e653f7a7f928a913066afa4b51113c8ca675289781e82d59ad2"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+      "role": "focused_green_and_preflight_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+      "role": "reset_precondition_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "4a21abb0afe5c29a24c917689bab8524639b7fa80ffe80a4d5d8102bd4007544"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+      "role": "reset_event_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf"
+    },
+    {
+      "path": "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+      "role": "red_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "c0b93b2bd1fb320d084058483b0de79640f85c4483b52877c0414accb6f059b3"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
+      "role": "rollback_path_and_scope_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0"
+    },
+    {
+      "path": "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+      "role": "rollback_strategy_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+      "role": "benign_and_rollback_expectation_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "64f39486b3ff9646f169457d2f07a71f021a830e75a56af32c6bef53c8466f60"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json",
+      "role": "benign_and_rollback_acceptance_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "d91ed43c12a64b40ca10df63ce37be9d81cbc72d9e919e4e321e337ac677269b"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json",
+      "role": "historical_rollback_preservation_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "613537d7878668aa15af46883d417b88108e934b9f0f72aed504e3eba8384c36"
+    },
+    {
+      "path": "project_mirror/artifacts/infernus/if06_kill_switch_policy.json",
+      "role": "kill_switch_doctrine_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "0e4e31157dc0c59a576d766445e1518bcd01c083d4096021a8ccf2427d5cf0ac"
+    },
+    {
+      "path": "project_mirror/artifacts/infernus/if06_sandbox_contract.json",
+      "role": "kill_switch_boundary_source",
+      "source_class": "immutable_derivation_source",
+      "epoch_sha256": "cff4ffbe967d897c9a81209e4fa56a77cc228b41b721011ffe80f880a7a9d15f"
+    }
+  ],
+  "mutable_governance_sources": [
+    {
+      "path": "DECISION_LOCKS.md",
+      "role": "current_lock_ledger",
+      "source_class": "mutable_governance_ledger_snapshot",
+      "epoch_sha256": "0f2536bdf14ca0237a54a16bc04f5e5f5d86f2ba7d13352262b5213baeda4cb3",
+      "historical_manifest_expected_sha256": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
+      "historical_readiness_commit_sha256": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+    }
+  ],
+  "non_blocking_mirror_sources": [
+    {
+      "path": "README.md",
+      "role": "mirror_reference",
+      "source_class": "mirror_non_authoritative",
+      "epoch_sha256": "36fa66a2b9deb8dfe4b8f1febed609de56c5ddc47f94924a737c0c69cccdad32"
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "role": "derived_current_state_mirror",
+      "source_class": "mirror_non_authoritative",
+      "epoch_sha256": "2df1c93ae4821fefab842a35a357b97aee1c5ed8e91f428f8549b1bfef588ab8"
+    },
+    {
+      "path": "NEXT_ACTION.md",
+      "role": "derived_next_action_mirror",
+      "source_class": "mirror_non_authoritative",
+      "epoch_sha256": "b7943853a0de5e1f323187ecd9bb41d744b9a30fdaedb352e07483fd4ee5400f"
+    }
+  ],
+  "historical_blocked_outputs_to_preserve": [
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+      "source_class": "historical_blocked_output",
+      "blocked_stub_sha256": "872389edda535e1c365e33f47cdbc26aeeccf788782fd3c4d6bc68621c4dd25c"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+      "source_class": "historical_blocked_output",
+      "blocked_stub_sha256": "e1674235272ced6020646fc69c0ee40cf6abeae58a3f5283de15e54b23485f47"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+      "source_class": "historical_blocked_output",
+      "blocked_stub_sha256": "6775e7a56a42170d2d8af86662f32b1da8b5cd756330d0489294cd8290bacfcb"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+      "source_class": "historical_blocked_output",
+      "blocked_stub_sha256": "6c0fb5de3999736adeafc381e5ac65790a9bec29ee9e3911289750c9fb7d4650"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "source_class": "historical_blocked_output",
+      "blocked_stub_sha256": "7999be3bb77605f6c97855a8fa3303bf7fc387f282f3f4930b2a44ecb2d5aa27"
+    }
+  ],
+  "blocking_hash_policy": {
+    "canonical_state_authority": "Future retry must verify exact hash equality against the resync snapshot before any output write.",
+    "route_authority": "Future retry must verify exact hash equality against the resync snapshot before any output write.",
+    "immutable_derivation_source": "Future retry must verify exact hash equality against the resync snapshot before any output write.",
+    "historical_blocked_output": "Future retry must preserve blocked stub hashes before any overwrite and record both old and new hashes in retry output custody."
+  },
+  "mutable_ledger_hash_policy": {
+    "class": "mutable_governance_ledger_snapshot",
+    "retry_start_rule": "Future retry must verify DECISION_LOCKS.md equals the resync epoch snapshot at the beginning of the retry before output writes begin.",
+    "post_output_rule": "Future retry must not fail only because DECISION_LOCKS.md changes after its own ledger append.",
+    "allowed_post_output_drift": [
+      "append_only_new_section_at_end_of_file",
+      "new section documents the retry phase just executed",
+      "no prior section text modified"
+    ],
+    "retry_blockers": [
+      "DECISION_LOCKS.md differs from the resync epoch snapshot before retry output writes begin",
+      "Any non-append mutation to existing DECISION_LOCKS.md sections is detected",
+      "Any immutable derivation source or authority source hash diverges from the resync snapshot"
+    ]
+  },
+  "future_retry_must_verify_before_output_writes": true,
+  "future_retry_must_not_fail_only_because_DECISION_LOCKS_changes_after_its_own_ledger_append": true,
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_purg05_now": false,
+  "decision": "pass"
+}

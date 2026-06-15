@@ -10,4 +10,4 @@
 - next_phase: `null`
 - execution_authorization: `false`
 - Próximo passo canônico: `Nenhuma transição definida. Aguardando instrução do operador.`
-- Nota documental: `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY` foi bloqueado porque `DECISION_LOCKS.md` não bate mais com o hash registrado em `purg04_proof_loop_corpus_materialization_source_hashes.json`
+- Nota documental: o repair `PURG04_PROOF_LOOP_CORPUS_SOURCE_HASH_MANIFEST_DIVERGENCE_REPAIR_ARTIFACT_ONLY` emitiu `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY` apenas como candidate gate documental via resync manifest; a rota canônica continua sem transição definida no JSON

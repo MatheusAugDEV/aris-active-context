@@ -2448,6 +2448,48 @@ The following track references are historical_residual_route_noise. They do NOT 
   - proof-loop execution: `false`
   - PURG05 opening: `false`
   - IF09-FIND-001 remains open
+- remediation_proven remains false
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURG04 Proof-Loop Corpus Source Hash Manifest Divergence Repair Artifact-Only
+
+- Status: `purg04_proof_loop_corpus_source_hash_manifest_divergence_repair_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only repair of the proof-loop source-hash manifest divergence; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no PURG05, no finding close.
+- Divergence classification:
+  - primary: `self_induced_post_output_hash_drift`
+  - safe subtype: `append_only_governance_ledger_drift`
+  - semantic source change detected: `false`
+  - local worktree mutation detected: `false`
+  - unexplained hash drift detected: `false`
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_divergence_diagnostic.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate.json`
+- Retry candidate:
+  - emitted: `true`
+  - candidate_next_gate: `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY`
+  - uses_resync_manifest: `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync.json`
+  - blocked stub hashes must be preserved before any future overwrite
+- Resync policy:
+  - `DECISION_LOCKS.md` is reclassified for retry purposes as `mutable_governance_ledger_snapshot`
+  - `README.md`, `CURRENT_STATE.md`, and `NEXT_ACTION.md` are treated as mirrors, not proof-loop derivation sources
+  - `ACTIVE_CONTEXT_STATE.json`, `ARIS_BOOT.md`, `ACTIVE_CONTEXT_SCHEMA.json`, `scripts/validate_active_context_state.py`, and `ROADMAP_CANONICAL.md` remain blocking authorities
+  - immutable derivation artifacts remain blocking exact-hash sources
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
   - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - PURG05 opening: `false`
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
