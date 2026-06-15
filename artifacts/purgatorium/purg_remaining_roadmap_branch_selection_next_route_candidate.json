@@ -1,0 +1,12 @@
+{
+  "artifact_id": "purg_remaining_roadmap_branch_selection_next_route_candidate",
+  "phase_id": "PURG_REMAINING_ROADMAP_BRANCH_SELECTION_DIAGNOSTIC_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T15:30:00-03:00",
+  "candidate_next_gate": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+  "candidate_only": true,
+  "state_advanced": false,
+  "active_context_changed": false,
+  "recommended_operator_selected_branch_line": "operator_selected_branch=TRACK_REVALIDATION_FIRST",
+  "reason": "branch_selection_diagnostic_completed_operator_must_confirm",
+  "decision": "pass"
+}

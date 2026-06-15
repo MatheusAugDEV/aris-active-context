@@ -2968,3 +2968,36 @@ The following track references are historical_residual_route_noise. They do NOT 
   - proof-loop executed: `false`
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURG Remaining Roadmap Branch Selection Diagnostic Packet (R1 evidence) — Artifact-Only, Non-Binding
+
+- Status: `purg_remaining_roadmap_branch_selection_diagnostic_packet_pass`
+- Decision: `pass`
+- Scope: artifact-only diagnostic mapping the IF09-FIND-001 revalidation surface against the globally-red `Project_ARIS` local test baseline, to support (without making) the operator's R1 `operator_selected_branch` decision.
+- Central question answered: `baseline_intersects_if09_revalidation_oracle=false` (`confidence=medium`).
+- Reasoning summary: the accepted Track A lineage (patch `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`, merge `7883af5a32c629026bfc6dc15ebee4ebbcadd295`) is bounded to 6 files in `src/aris/context/`, `src/aris/product_loop/`, `scripts/`, and `tests/`; all 5 focused validations for that lineage passed, and `focused_tests_passed_with_patch=true` was recorded for the IF09-FIND-001/S3 patch. The documented global-suite failure (`python3 -m unittest discover -s tests`) is a single git pathspec error (`fatal: path 'CURRENT_STATE.md' exists on disk, but not in 'HEAD'`) plus three IF-08/W0.5-specific test expectations — none of which touch the IF09/Track A surface. The merged lineage reduced (not introduced) active_track/strategic_reset failures relative to `origin/main`.
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_diagnostic_packet.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_surface_matrix.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_evidence_inventory.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_gate_compression_analysis.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_next_route_candidate.json`
+- Non-binding branch recommendation: `recommended_branch=TRACK_REVALIDATION_FIRST`, `recommendation_is_binding=false`, `operator_still_must_select_branch=true`.
+- Gate compression analysis (Task 5): both candidate collapses (R5+R6 and R9+R10+R11) were found non-collapsible without losing a distinct operator/evidence check; `requires_amendment_to_apply=true`, `roadmap_changed_now=false`, recommendation `keep_as_is`.
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `ROADMAP_CANONICAL.md` and live Transition Table unchanged
+  - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - finding_closed remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop / revalidation / runtime / real_apply executed: `false`
+- candidate_next_gate: `PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET` (candidate only; operator must still provide `operator_selected_branch`).
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`

@@ -1,0 +1,42 @@
+{
+  "artifact_id": "purg_remaining_roadmap_branch_selection_evidence_inventory",
+  "phase_id": "PURG_REMAINING_ROADMAP_BRANCH_SELECTION_DIAGNOSTIC_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T15:30:00-03:00",
+  "read_order_files_and_hashes": {
+    "ACTIVE_CONTEXT_STATE.json": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+    "ARIS_BOOT.md": "d9e3cc657df9f3ae36389e414e69f6dd13b8ca6bbb0eb75867c93ba7d4207623",
+    "BOOT.md": "260fab11bc13a983c7323931c93e190ba04d38246138421c3f3c8c6fb479839f",
+    "ROADMAP_CANONICAL.md": "696123e7fe10443403f2efc0f7607a03a4e734d348741972833767b1c0feb9da",
+    "DECISION_LOCKS.md": "8d618d25f01a7151a4fe5b34d3633d0467716bfef0d53a7ad7452aa7d94eee66",
+    "CURRENT_STATE.md": "937529664da18527b44d7c8f12c1a995a00cf98008aaaa7c03f09a044e519a6b",
+    "NEXT_ACTION.md": "0ca85571b607015b5458fedb58648fdbedeac8aa2ad9ebe0cc115a09143972e8",
+    "README.md": "03887704f73be37aec27c1a4e9f32c32030edf97bb9f521503e8895cbe672cbe",
+    "project_mirror/docs/purgatorium_full/purgatorium_remaining_roadmapcanon.md": "f3ab93a61874e45bffa9f9107209c0c13165f56a4ca1594f35da99420eb6dad0",
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json": "c39b4e352ec7e2cc6b8a8c6dc98e68c2183fd1382163c691ae3e22a381f1aadb",
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_branch_matrix.json": "ecf349ed48204301299f791e27f1bfc069b7f6c1778558becadf4b5530c6c9b5",
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json": "f6f7c72c3796462ec2d29135264ae7c171fabf8ab8928b23dc3a28b450c9cc7e",
+    "artifacts/purgatorium/purgatorium_remaining_roadmap_phase_graph.json": "b12d938b6c5f82cbb670afbed7d0a4b9e1428d1759e8b71d27ba60fcb228db65",
+    "artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.json": "c8d01d2c757421abd9599a88f351e6e415c993fa0e973b13472d111a79c8b54d",
+    "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json": "febaffa5b55c0021124410c75fe4b6ffd3ed0fa9837323e462283d660e546244",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json": "613537d7878668aa15af46883d417b88108e934b9f0f72aed504e3eba8384c36",
+    "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
+    "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json": "972f68bb1babd0c0510f2a545d55f6251592d23dcb354b3551a11830fb917638",
+    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a",
+    "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json": "6e052fa50b27b9ee0ebf0e8a0b9278680dcf385d9d1d48e8db8a8f8106eea1a4",
+    "artifacts/purgatorium/purg04_track_a_reset_evidence.json": "4fdc3f430520f9d83dc8a7abf019ebdb6798697f86f5ffea3312aecd78524e39",
+    "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json": "8427e39f3ce72aa88acb268aa857ef182bbf60af51cc1fe58b289ccb9ffa63cc",
+    "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json": "b3c70f4488225abd9964d79431f017bacdb343eb061f2d60c74673d329067083",
+    "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json": "37199e21cd3b7a31d44bd3c3bc746b2dc61a50c831a900dfc089ceb631a8e0e3",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json": "86dbaa0234df11557ee7e3d92ee85d1b2e0a4ba67c826c85848f5fe3d42d7f43"
+  },
+  "all_required_read_order_items_present": true,
+  "additional_relevant_artifacts_consulted": [],
+  "grep_command_executed": "rg -n \"231 failures|1519 errors|global baseline|baseline|CURRENT_STATE.md|fatal: path|Track A|IF09-FIND-001|oracle|revalidation|focused|focused validation|test evidence|RED|RESET|GREEN|benign|rollback|kill-switch\" artifacts README.md DECISION_LOCKS.md CURRENT_STATE.md NEXT_ACTION.md project_mirror",
+  "grep_corroboration_notes": [
+    "README.md and CURRENT_STATE.md confirm Track A patch 1e9a04a02846f3261ae72d0c95fbee6b0163b45b merged to 7883af5a32c629026bfc6dc15ebee4ebbcadd295 with CI_GREEN_CONFIRMED and IF09-FIND-001 remains open.",
+    "README.md documents the FAILED local remediation apply result verbatim, citing the focused-tests-passed / global-suite-fatal-CURRENT_STATE.md dichotomy.",
+    "DECISION_LOCKS.md repeatedly confirms IF09-FIND-001 remains open across all prior gates and that only Infernus Revalidation can close it.",
+    "No grep hit ties the CURRENT_STATE.md fatal error or any global baseline failure count to the Track A/IF09 changed-file surface."
+  ],
+  "decision": "pass"
+}

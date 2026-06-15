@@ -1,0 +1,28 @@
+{
+  "artifact_id": "purg_remaining_roadmap_branch_selection_diagnostic_packet",
+  "phase_id": "PURG_REMAINING_ROADMAP_BRANCH_SELECTION_DIAGNOSTIC_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T15:30:00-03:00",
+  "source_current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "source_status": "purg_residual_risk_carry_forward_route_opening_pass",
+  "source_activation_decision": "artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json",
+  "target_finding_id": "IF09-FIND-001",
+  "remediation_proven": false,
+  "finding_closed": false,
+  "baseline_intersects_if09_revalidation_oracle": false,
+  "confidence": "medium",
+  "reasoning": [
+    "The accepted Track A lineage (patch 1e9a04a02846f3261ae72d0c95fbee6b0163b45b, merge 7883af5a32c629026bfc6dc15ebee4ebbcadd295) changed exactly 6 files, all in src/aris/context/, src/aris/product_loop/, scripts/, and tests/, related to active_track_phase_reconciliation_gate, active_track_resume_gate, strategic_reset_macrostructure_lock_gate, and product_loop_closure_gate.",
+    "All focused validations for the accepted Track A lineage (tests.test_f21a54c_active_context_remote_sync_verification, tests.test_aris_context_active_track_phase_reconciliation_gate, tests.test_aris_context_active_track_resume_gate, tests.test_strategic_reset_macrostructure_lock_gate, tests.test_product_loop_l1_15_product_loop_closure_gate) are recorded as passed in purg04_track_a_main_merge_execution_result.json.",
+    "purg04_if09_find_001_s3_local_remediation_apply_result.json records focused_tests_passed_with_patch=true for the IF09-FIND-001/S3 patch, while global_test_suite_passed=false.",
+    "The single root cause documented for the global suite failure (python3 -m unittest discover -s tests) is 'fatal: path '\\''CURRENT_STATE.md'\\'' exists on disk, but not in '\\''HEAD'\\''', a git pathspec/worktree-tracking error in the nested aris-active-context checkout, not a Python assertion failure inside any IF09/Track A module.",
+    "purg04_global_test_baseline_triage_artifact_only.json classifies this global failure as triage_classification=pre_existing_global_baseline_failure, observed against the same Project_ARIS HEAD (6cec74deb7a99b7eb227df84a902650ca092e00f) as the failed apply attempt, with current_state_exists_on_disk=true and current_state_exists_in_head=true confirming the fatal path is not explained by any residual S3 remediation patch.",
+    "The only individually-named failing tests in the triage (test_if08_w05_preflight_readiness_rerun, test_if08_w05_controlled_execution, test_if08_w05_post_sync_review) belong to the IF-08/W0.5 track, a distinct finding/phase unrelated to IF09-FIND-001/S3/Track A.",
+    "purg04_track_a_main_merge_execution_result.json baseline_validation records the merged global baseline as 'Ran 4647 tests... FAILED (failures=231, errors=1519)' versus an origin/main comparison baseline of 'failures=220, errors=1567' that 'included multiple active_track and strategic_reset failures that are absent after the merge' -- i.e. the merge reduced, not introduced, active_track/strategic_reset failures, and the global red baseline pre-dates and is independent of the accepted Track A lineage.",
+    "RED/RESET/GREEN, benign-flow, kill-switch, and rollback evidence for the accepted Track A lineage (purg04_track_a_red_reset_green_evidence.json, purg04_track_a_benign_flow_evidence.json, purg04_track_a_kill_switch_evidence.json, purg04_track_a_rollback_evidence_for_accepted_lineage.json) all report forbidden_paths_touched=[], forbidden_surface_detected=false, and bound the accepted lineage strictly to the 6-file Track A surface, with no overlap to CURRENT_STATE.md tracking or IF-08/W0.5 modules.",
+    "Confidence is medium rather than high because the full python3 -m unittest discover -s tests output (all 231 failures / 1519 errors) was not individually enumerated in the read artifacts -- only the fatal path error and the three named IF-08/W0.5 failures are documented, so a residual unknown-overlap risk with the IF09/S3 oracle cannot be fully excluded without running the global suite, which this diagnostic gate is forbidden from doing."
+  ],
+  "recommended_branch": "TRACK_REVALIDATION_FIRST",
+  "recommendation_is_binding": false,
+  "operator_still_must_select_branch": true,
+  "decision": "pass"
+}

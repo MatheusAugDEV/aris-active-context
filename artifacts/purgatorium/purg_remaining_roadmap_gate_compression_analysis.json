@@ -1,0 +1,33 @@
+{
+  "artifact_id": "purg_remaining_roadmap_gate_compression_analysis",
+  "phase_id": "PURG_REMAINING_ROADMAP_BRANCH_SELECTION_DIAGNOSTIC_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T15:30:00-03:00",
+  "risk": "governance_gate_proliferation",
+  "candidate_collapses": [
+    {
+      "candidate_collapse_id": "R5_R6_COLLAPSE",
+      "gates": ["INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF_REVALIDATION_READINESS_PACKET"],
+      "collapsible": false,
+      "reasoning": "R5 (route admission) decides only that the macro transition Purgatorium FULL -> Infernus Revalidation is admissible, without enumerating concrete inputs, scope, or forbidden actions for the specific revalidation run. R6 (readiness) is the gate where the required_inputs, scope_matrix, and forbidden_actions for THAT specific revalidation execution are concretely assembled and checked against the accepted Track A lineage. Collapsing them would let a single artifact both admit the macro route and certify execution-readiness in the same step, removing the operator's ability to review route admission independently of concrete readiness evidence. The two gates check distinct claims: 'is this macro transition permitted at all' (R5) versus 'is THIS specific revalidation run ready to execute' (R6)."
+    },
+    {
+      "candidate_collapse_id": "R9_R10_R11_COLLAPSE",
+      "gates": ["INF_REVALIDATION_RESULT_ADJUDICATION_PACKET", "PURG_REMEDIATION_PROVEN_DECISION_PACKET", "PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET"],
+      "collapsible": false,
+      "reasoning": "R9 (result adjudication) is a factual judgment on the raw revalidation execution output (did the executed revalidation pass or fail against the oracle). R10 (remediation proven decision) is a separate normative judgment: given an adjudicated PASS, does the evidence meet the bar required to set remediation_proven=true (this can fail even after a PASS adjudication, e.g. if evidence is incomplete or scope was narrower than required). R11 (finding closure eligibility) is a third, distinct check: given remediation_proven=true, are ALL OTHER preconditions for closing IF09-FIND-001 met (no other open blockers, no carry-forward locks pending, residual risk matrix consistent). Collapsing all three into one artifact would conflate 'did the test pass', 'is that sufficient to prove remediation', and 'is the finding now eligible to close given everything else in the system', removing three independent rejection points that the no_deviation_policy explicitly requires (remediation_proven_true_requires_dedicated_gate_R10_and_state_update_R13, finding_close_requires_dedicated_gate_R12_and_state_update_R13)."
+    }
+  ],
+  "load_bearing_gates": [
+    "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET (R1) - the only branch-selection fork in the graph",
+    "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET (R7) - the only operator-authorization gate before real revalidation execution",
+    "INF_REVALIDATION_EXECUTION_PACKET (R8) - the only gate where revalidation actually executes",
+    "PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET (R13) - one of only two gates with allows_state_change=true",
+    "PURG_FINAL_EXIT_PACKET (R14) - the other allows_state_change=true gate"
+  ],
+  "potentially_redundant_gates": [],
+  "requires_amendment_to_apply": true,
+  "roadmap_changed_now": false,
+  "recommendation": "keep_as_is",
+  "recommendation_reasoning": "Both candidate collapses examined (R5+R6 and R9+R10+R11) check distinct operator/evidence boundaries that the no_deviation_policy invariants depend on (only_infernus_revalidation_can_prove_closure, remediation_proven_true_requires_dedicated_gate_R10_and_state_update_R13, finding_close_requires_dedicated_gate_R12_and_state_update_R13). No gate was identified in this analysis whose removal would not eliminate a distinct check. If the operator later wants to reduce gate count, this would require a formal amendment artifact with explicit operator approval, validator pass, and CI terminal green per purgatorium_remaining_roadmap_no_deviation_policy.json rules (deviations only via amendment).",
+  "decision": "pass"
+}

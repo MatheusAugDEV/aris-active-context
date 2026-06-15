@@ -1,0 +1,113 @@
+{
+  "artifact_id": "purg_remaining_roadmap_branch_selection_surface_matrix",
+  "phase_id": "PURG_REMAINING_ROADMAP_BRANCH_SELECTION_DIAGNOSTIC_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T15:30:00-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "if09_revalidation_surfaces": [
+    {
+      "surface": "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+      "role": "Track A accepted-lineage changed file (merge 7883af5a32c629026bfc6dc15ebee4ebbcadd295)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "src/aris/context/active_track_phase_reconciliation_gate.py",
+      "role": "Track A accepted-lineage changed file",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "src/aris/context/active_track_resume_gate.py",
+      "role": "Track A accepted-lineage changed file",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "src/aris/product_loop/product_loop_closure_gate.py",
+      "role": "Track A accepted-lineage changed file",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+      "role": "Focused oracle test (passed)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "tests/test_aris_context_active_track_resume_gate.py",
+      "role": "Focused oracle test (passed)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "tests.test_f21a54c_active_context_remote_sync_verification",
+      "role": "Focused oracle test (passed)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "tests.test_strategic_reset_macrostructure_lock_gate",
+      "role": "Focused oracle test (passed)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "tests.test_product_loop_l1_15_product_loop_closure_gate",
+      "role": "Focused oracle test (passed)",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+    },
+    {
+      "surface": "documentary RED baseline (purg02_if09_find_001_s3_red_baseline.json)",
+      "role": "RED oracle for IF09-FIND-001/S3 (documentary/hash-comparison)",
+      "evidence_source": "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json"
+    },
+    {
+      "surface": "merge_commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295 CI evidence (9 workflows)",
+      "role": "GREEN oracle / CI_GREEN_CONFIRMED",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json"
+    }
+  ],
+  "global_baseline_failure_surfaces": [
+    {
+      "surface": "CURRENT_STATE.md (git pathspec, nested aris-active-context worktree)",
+      "failure_type": "fatal: path 'CURRENT_STATE.md' exists on disk, but not in 'HEAD'",
+      "overlap_with_if09_surface": "no",
+      "evidence_source": "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+      "confidence": "high",
+      "notes": "Git-level worktree/path-tracking error raised during python3 -m unittest discover -s tests; not located in any IF09/S3/Track A module, and current_state_exists_on_disk=true / current_state_exists_in_head=true confirm it is not a residual of the reverted S3 patch."
+    },
+    {
+      "surface": "tests.test_if08_w05_preflight_readiness_rerun",
+      "failure_type": "expects active_next_phase=IF-08 (unmet)",
+      "overlap_with_if09_surface": "no",
+      "evidence_source": "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+      "confidence": "high",
+      "notes": "IF-08/W0.5 track, unrelated finding."
+    },
+    {
+      "surface": "tests.test_if08_w05_controlled_execution",
+      "failure_type": "expects a W0.5 canonroadmap definition (unmet)",
+      "overlap_with_if09_surface": "no",
+      "evidence_source": "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+      "confidence": "high",
+      "notes": "IF-08/W0.5 track, unrelated finding."
+    },
+    {
+      "surface": "tests.test_if08_w05_post_sync_review",
+      "failure_type": "blocked instead of pass (unmet)",
+      "overlap_with_if09_surface": "no",
+      "evidence_source": "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json",
+      "confidence": "high",
+      "notes": "IF-08/W0.5 track, unrelated finding."
+    },
+    {
+      "surface": "remaining 231 failures / 1519 errors in 'python3 -m unittest discover -s tests' (merged baseline) / 220 failures / 1567 errors (origin/main comparison)",
+      "failure_type": "not individually enumerated in read artifacts",
+      "overlap_with_if09_surface": "unknown",
+      "evidence_source": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+      "confidence": "low",
+      "notes": "The merged baseline reduced active_track/strategic_reset failures relative to origin/main per documented notes, but the full failure/error list was not enumerated in any read artifact. This is the residual source of 'medium' rather than 'high' confidence in the overall intersection determination."
+    }
+  ],
+  "non_intersecting_baseline_failures": [
+    "CURRENT_STATE.md git pathspec fatal error (worktree-tracking, not code)",
+    "tests.test_if08_w05_preflight_readiness_rerun",
+    "tests.test_if08_w05_controlled_execution",
+    "tests.test_if08_w05_post_sync_review"
+  ],
+  "intersecting_surfaces": [],
+  "decision": "pass"
+}
