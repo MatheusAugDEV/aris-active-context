@@ -150,13 +150,16 @@
         "status": "operator_review_pending",
         "roadmap_path": "Benchuix_roadmap.md",
         "roadmap_hash": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
-        "current_candidate_phase": "BENCHUIX-00",
-        "latest_candidate_decision": "READY_FOR_OPERATOR_REVIEW",
+        "current_candidate_phase": "BENCHUIX-01",
+        "latest_candidate_decision": "OPERATOR_GATE_ACCEPTED",
         "schema_tracking_repair_required": true,
         "schema_tracking_repair_status": "completed",
         "admission_commit_sha": "89443c9c80df69568da0c7c2efdb0a72b6e371af",
         "admission_ci_state": "CI_GREEN_CONFIRMED",
         "admission_github_actions_run_id": "27582515556",
+        "operator_gate_decision": "accepted",
+        "operator_gate_scope": "BENCHUIX-00_AND_00R",
+        "operator_gate_commit_sha": "73870715dd0d74bc0757b845d34d430b70d94867",
         "transition_table_artifact": "artifacts/benchuix/00_transition_table.json",
         "admission_packet_artifact": "artifacts/benchuix/00_admission_packet.json",
         "no_real_execution_attestation_artifact": "artifacts/benchuix/00_no_real_execution_attestation.json",
@@ -167,7 +170,7 @@
         "real_apply_authorized": false,
         "runtime_integration_allowed": false,
         "secrets_access_authorized": false,
-        "candidate_next_phase_after_operator_gate": "BENCHUIX-01"
+        "candidate_next_phase_after_operator_gate": "BENCHUIX-02"
     },
     "canonical_branch": "main",
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
@@ -715,7 +718,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.21",
+    "schema_version": "3.22",
     "status": "if09_closure_milestone_mirror_sanity_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -731,7 +734,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.21",
+        "current_schema_version": "3.22",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -756,6 +759,7 @@
         "schema_3_18_change_summary": "INF revalidation operator authorization: promote INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET into the live active-context route, record the explicit operator execution-contract authorization without opening execution, add the operator-authorization artifact family plus validator enforcement, materialize the readiness successor row, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened operator gate.",
         "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
         "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
-        "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false."
+        "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
+        "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false."
     }
 }

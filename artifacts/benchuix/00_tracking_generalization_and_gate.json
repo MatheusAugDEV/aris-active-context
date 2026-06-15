@@ -1,0 +1,49 @@
+{
+  "phase_id": "BENCHUIX-00S",
+  "reason": "schema_tracking_generalization_required_before_benchuix_01",
+  "accepted_gate_scope": "BENCHUIX-00_AND_00R",
+  "admission_commit_sha": "89443c9c80df69568da0c7c2efdb0a72b6e371af",
+  "repair_commit_sha": "73870715dd0d74bc0757b845d34d430b70d94867",
+  "previous_schema_version": "3.21",
+  "new_schema_version": "3.22",
+  "fields_generalized": [
+    "benchuix_track.current_candidate_phase",
+    "benchuix_track.candidate_next_phase_after_operator_gate",
+    "benchuix_track.latest_candidate_decision"
+  ],
+  "state_fields_updated": [
+    "benchuix_track.current_candidate_phase=BENCHUIX-01",
+    "benchuix_track.candidate_next_phase_after_operator_gate=BENCHUIX-02",
+    "benchuix_track.latest_candidate_decision=OPERATOR_GATE_ACCEPTED",
+    "benchuix_track.operator_gate_decision=accepted",
+    "benchuix_track.operator_gate_scope=BENCHUIX-00_AND_00R",
+    "benchuix_track.operator_gate_commit_sha=73870715dd0d74bc0757b845d34d430b70d94867"
+  ],
+  "locks_preserved": {
+    "authorization.product_ready": false,
+    "authorization.production_authorized": false,
+    "authorization.real_apply_authorized": false,
+    "authorization.runtime_integration_allowed": false,
+    "authorization.secrets_access_authorized": false,
+    "authorization.generic_action_runtime_activated": false,
+    "authorization.frontend_backend_action_runtime_audio_mutation_authorized": false,
+    "authorization.package_installation_authorized": false,
+    "authorization.dependency_change_authorized": false,
+    "benchuix_track.execution_authorized": false,
+    "benchuix_track.product_authorized": false,
+    "benchuix_track.production_authorized": false,
+    "benchuix_track.real_apply_authorized": false,
+    "benchuix_track.runtime_integration_allowed": false,
+    "benchuix_track.secrets_access_authorized": false
+  },
+  "no_real_execution_attestation": {
+    "artifacts_only": true,
+    "runtime_executed": false,
+    "real_apply_executed": false,
+    "product_created": false,
+    "production_deploy_executed": false,
+    "secrets_accessed": false
+  },
+  "next_candidate_phase": "BENCHUIX-01",
+  "note": "Codex does not declare PASS; operator gate was materialized as instructed."
+}

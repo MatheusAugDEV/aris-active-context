@@ -10,6 +10,7 @@
   "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
   "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
   "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
+  "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -1008,7 +1009,8 @@
         "3.18",
         "3.19",
         "3.20",
-        "3.21"
+        "3.21",
+        "3.22"
       ],
       "type": "string"
     },
@@ -1030,13 +1032,44 @@
           "type": "string"
         },
         "current_candidate_phase": {
-          "const": "BENCHUIX-00",
+          "enum": [
+            "BENCHUIX-00",
+            "BENCHUIX-01",
+            "BENCHUIX-02",
+            "BENCHUIX-03",
+            "BENCHUIX-04",
+            "BENCHUIX-05",
+            "BENCHUIX-06",
+            "BENCHUIX-07",
+            "BENCHUIX-08",
+            "BENCHUIX-09",
+            "BENCHUIX-10",
+            "BENCHUIX-11",
+            "BENCHUIX-12",
+            "BENCHUIX-13",
+            "BENCHUIX-14",
+            "BENCHUIX-15",
+            "BENCHUIX-16",
+            "BENCHUIX-17",
+            "BENCHUIX-18",
+            "BENCHUIX-19",
+            "BENCHUIX-20",
+            "BENCHUIX-21",
+            "BENCHUIX-22",
+            "BENCHUIX-23",
+            "BENCHUIX-24",
+            "BENCHUIX-25",
+            "BENCHUIX-26",
+            "BENCHUIX-27",
+            "CRISOL"
+          ],
           "type": "string"
         },
         "latest_candidate_decision": {
           "enum": [
             "WARN_SCHEMA_UPDATE_REQUIRED",
-            "READY_FOR_OPERATOR_REVIEW"
+            "READY_FOR_OPERATOR_REVIEW",
+            "OPERATOR_GATE_ACCEPTED"
           ],
           "type": "string"
         },
@@ -1061,6 +1094,22 @@
         },
         "admission_github_actions_run_id": {
           "const": "27582515556",
+          "type": "string"
+        },
+        "operator_gate_decision": {
+          "enum": [
+            "accepted"
+          ],
+          "type": "string"
+        },
+        "operator_gate_scope": {
+          "enum": [
+            "BENCHUIX-00_AND_00R"
+          ],
+          "type": "string"
+        },
+        "operator_gate_commit_sha": {
+          "const": "73870715dd0d74bc0757b845d34d430b70d94867",
           "type": "string"
         },
         "transition_table_artifact": {
@@ -1104,7 +1153,36 @@
           "type": "boolean"
         },
         "candidate_next_phase_after_operator_gate": {
-          "const": "BENCHUIX-01",
+          "enum": [
+            "BENCHUIX-01",
+            "BENCHUIX-02",
+            "BENCHUIX-03",
+            "BENCHUIX-04",
+            "BENCHUIX-05",
+            "BENCHUIX-06",
+            "BENCHUIX-07",
+            "BENCHUIX-08",
+            "BENCHUIX-09",
+            "BENCHUIX-10",
+            "BENCHUIX-11",
+            "BENCHUIX-12",
+            "BENCHUIX-13",
+            "BENCHUIX-14",
+            "BENCHUIX-15",
+            "BENCHUIX-16",
+            "BENCHUIX-17",
+            "BENCHUIX-18",
+            "BENCHUIX-19",
+            "BENCHUIX-20",
+            "BENCHUIX-21",
+            "BENCHUIX-22",
+            "BENCHUIX-23",
+            "BENCHUIX-24",
+            "BENCHUIX-25",
+            "BENCHUIX-26",
+            "BENCHUIX-27",
+            "CRISOL"
+          ],
           "type": "string"
         }
       },
@@ -1119,6 +1197,9 @@
         "admission_commit_sha",
         "admission_ci_state",
         "admission_github_actions_run_id",
+        "operator_gate_decision",
+        "operator_gate_scope",
+        "operator_gate_commit_sha",
         "transition_table_artifact",
         "admission_packet_artifact",
         "no_real_execution_attestation_artifact",
@@ -1356,6 +1437,9 @@
           "type": "string"
         },
         "schema_3_21_change_summary": {
+          "type": "string"
+        },
+        "schema_3_22_change_summary": {
           "type": "string"
         },
         "schema_3_20_change_summary": {
@@ -1601,10 +1685,11 @@
     "purg00_source_gap_terminal_blocker",
     "benchuix_track"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v3.21",
+  "title": "ARIS Active Context Canonical Live State Schema v3.22",
   "type": "object",
   "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
   "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
   "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
-  "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false."
+  "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
+  "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false."
 }
