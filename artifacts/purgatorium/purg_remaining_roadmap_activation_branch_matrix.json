@@ -1,0 +1,130 @@
+{
+  "artifact_id": "purg_remaining_roadmap_activation_branch_matrix",
+  "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+  "created_at": "2026-06-15T14:05:00-03:00",
+  "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+  "operator_selected_branch": null,
+  "selection_status": "none_selected_blocked",
+  "branches": [
+    {
+      "branch_id": "TRACK_EXIT_FIRST",
+      "next_candidate_gate": "PURG_EXIT_READINESS_PACKET",
+      "purpose": "Follow the remaining Purgatorium trail to prepare exit/handoff (residual risk formalization and handoff packaging) before Infernus Revalidation is admitted.",
+      "required_future_artifacts": [
+        "purg_exit_readiness_packet.json",
+        "purg_exit_findings_matrix.json",
+        "purg_exit_residual_risk_matrix.json",
+        "purg_exit_forbidden_claim_scan.json",
+        "purg_exit_next_route_candidate.json",
+        "purg_exit_handoff_package.json",
+        "purg_exit_handoff_custody_table.json",
+        "purg_exit_handoff_open_findings.json",
+        "purg_exit_handoff_required_revalidation.json",
+        "purg_exit_handoff_no_real_execution_attestation.json",
+        "purg_exit_handoff_next_route_candidate.json"
+      ],
+      "risks": [
+        "Exit packaging could be misread as closure if not paired with explicit open-finding ledger",
+        "Residual risk matrix must remain consistent with purg05_carry_forward_locks.json"
+      ],
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "why_admissible": "R2/R3 are artifact-only nodes that formalize residual risk and package the handoff without touching the finding or remediation flags, and both terminate into INF_REVALIDATION_ROUTE_ADMISSION_PACKET, preserving the requirement that closure remains downstream of Infernus Revalidation.",
+      "selected": false
+    },
+    {
+      "branch_id": "TRACK_REVALIDATION_FIRST",
+      "next_candidate_gate": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "purpose": "Go directly to the macro-route admission for the layer that can in the future prove or reject closure of IF09-FIND-001, without executing revalidation in this gate.",
+      "required_future_artifacts": [
+        "inf_revalidation_route_admission_packet.json",
+        "inf_revalidation_required_inputs.json",
+        "inf_revalidation_scope_matrix.json",
+        "inf_revalidation_forbidden_actions.json",
+        "inf_revalidation_next_route_candidate.json"
+      ],
+      "risks": [
+        "Risk of skipping explicit exit-readiness formalization of residual risk if exit packaging is needed later",
+        "Must not be read as authorization to execute revalidation (R5 is admission-only)"
+      ],
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "why_admissible": "R5 (INF_REVALIDATION_ROUTE_ADMISSION_PACKET) is route-admission-only: it admits the macro transition Purgatorium FULL -> Infernus Revalidation per ROADMAP_CANONICAL.md macro chain without executing revalidation, keeping IF09-FIND-001 open and remediation_proven false.",
+      "selected": false
+    },
+    {
+      "branch_id": "TRACK_BASELINE_STABILIZATION_FIRST",
+      "next_candidate_gate": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET",
+      "purpose": "Explicitly address the globally-red local Project_ARIS test baseline (acknowledge and decide defer-vs-repair) before deciding on revalidation routing.",
+      "required_future_artifacts": [
+        "purg_project_aris_global_baseline_stabilization_decision.json",
+        "purg_project_aris_global_baseline_risk_matrix.json",
+        "purg_project_aris_global_baseline_defer_or_repair_candidate.json"
+      ],
+      "risks": [
+        "Decision must not claim the global baseline is green without evidence",
+        "REPAIR_BASELINE_BEFORE_REVALIDATION sub-branch eventually reaches R4C (the only Project_ARIS-mutating node), which requires a separate operator authorization gate (R4B) before any mutation"
+      ],
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "why_admissible": "R4 is an artifact-only decision node (requires_operator=true but allows_execution=false, allows_project_aris_mutation=false) that records an explicit defer-or-repair decision; no Project_ARIS mutation occurs at this gate, and any repair path is gated again at R4B/R4C.",
+      "selected": false
+    }
+  ],
+  "decision": "blocked",
+  "blocked_reason": "operator_branch_selection_required"
+}

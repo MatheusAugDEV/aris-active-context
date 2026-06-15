@@ -2940,3 +2940,31 @@ The following track references are historical_residual_route_noise. They do NOT 
   - proof-loop executed: `false`
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURG Remaining Roadmap Activation Decision Packet (R1) — Blocked
+
+- Status: `purg_remaining_roadmap_activation_decision_packet_blocked`
+- Decision: `blocked`
+- Blocked reason: `operator_branch_selection_required`
+- Scope: artifact-only operator route governance decision (R1 of the remaining Purgatorium roadmap trail). No `operator_selected_branch` line (`TRACK_EXIT_FIRST` | `TRACK_REVALIDATION_FIRST` | `TRACK_BASELINE_STABILIZATION_FIRST`) was present in the operator input, so this gate did not select a branch and did not invent one.
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_branch_matrix.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json`
+- candidate_next_gate: `BLOCKED_OPERATOR_DIRECTION_REQUIRED` (sentinel of the remaining-roadmap phase graph; not an active Transition Table row).
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
