@@ -1,0 +1,46 @@
+{
+  "ledger_name": "BENCHUIX-00 Structural Research Source Ledger",
+  "scope": "initial_structural_claims_from_local_benchuix_roadmap",
+  "entries": [
+    {
+      "source_id": "NNG_USABILITY_HEURISTICS",
+      "source_family": "Nielsen Norman Group",
+      "topic": "usability_and_heuristics",
+      "why_relevant_to_benchuix": "Supports owner-solo simplicity, interaction clarity, and comprehensible UX constraints.",
+      "verification_status": "pending_primary_verification",
+      "claim_status": "not_packet_verified_yet"
+    },
+    {
+      "source_id": "CORE_WEB_VITALS",
+      "source_family": "Web Performance Standards",
+      "topic": "core_web_vitals",
+      "why_relevant_to_benchuix": "Supports LCP, INP, CLS and mobile performance thresholds declared in the roadmap.",
+      "verification_status": "pending_primary_verification",
+      "claim_status": "not_packet_verified_yet"
+    },
+    {
+      "source_id": "WCAG_2_2",
+      "source_family": "W3C Accessibility Standards",
+      "topic": "wcag_2_2_accessibility",
+      "why_relevant_to_benchuix": "Supports keyboard, mobile, screen-reader and reduced-motion accessibility requirements.",
+      "verification_status": "pending_primary_verification",
+      "claim_status": "not_packet_verified_yet"
+    },
+    {
+      "source_id": "OWASP_LLM_GENAI_RISKS",
+      "source_family": "OWASP",
+      "topic": "llm_and_genai_risks",
+      "why_relevant_to_benchuix": "Supports trust UX, prompt-injection handling, approval safety, and no-real-execution boundaries.",
+      "verification_status": "pending_primary_verification",
+      "claim_status": "not_packet_verified_yet"
+    },
+    {
+      "source_id": "NIST_CSF_2_0",
+      "source_family": "NIST",
+      "topic": "cybersecurity_framework_2_0",
+      "why_relevant_to_benchuix": "Supports governance, risk communication, and control-language consistency for future product reality lab work.",
+      "verification_status": "pending_primary_verification",
+      "claim_status": "not_packet_verified_yet"
+    }
+  ]
+}

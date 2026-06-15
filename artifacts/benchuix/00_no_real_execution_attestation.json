@@ -1,0 +1,23 @@
+{
+  "phase_id": "BENCHUIX-00",
+  "artifacts_only": true,
+  "product_created": false,
+  "prototype_created": false,
+  "runtime_executed": false,
+  "runtime_real_executed": false,
+  "real_apply_executed": false,
+  "secrets_accessed": false,
+  "client_real_accessed": false,
+  "psp_real_accessed": false,
+  "production_deploy_executed": false,
+  "external_endpoint_called": false,
+  "package_manager_executed": false,
+  "dependency_changed": false,
+  "network_external_used": false,
+  "product_ready": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "runtime_integration_allowed": false,
+  "secrets_access_authorized": false,
+  "note": "BenchUIX-00 only materializes governance artifacts for a future pre-product layer."
+}

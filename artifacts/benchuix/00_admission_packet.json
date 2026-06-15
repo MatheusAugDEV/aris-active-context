@@ -1,0 +1,60 @@
+{
+  "phase_id": "BENCHUIX-00",
+  "phase_name": "Charter, Anti-escopo e Admission Packet",
+  "roadmap_path_read": "/home/matheus/ARIS/Project_ARIS/aris-active-context/Benchuix_roadmap.md",
+  "roadmap_sha256": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+  "roadmap_required_sections_verified": true,
+  "transition_table_complete": true,
+  "artifacts_created": [
+    "Benchuix_roadmap.md",
+    "artifacts/benchuix/00_charter.md",
+    "artifacts/benchuix/00_transition_table.json",
+    "artifacts/benchuix/00_research_source_ledger.json",
+    "artifacts/benchuix/00_no_real_execution_attestation.json",
+    "artifacts/benchuix/00_admission_packet.json"
+  ],
+  "artifact_sha256": {
+    "Benchuix_roadmap.md": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+    "artifacts/benchuix/00_charter.md": "df0d6115ce348bf6bb3bc88b64ab652d4e559e65fe920db28601dd50a3573423",
+    "artifacts/benchuix/00_transition_table.json": "fe98e714b842a4a80a90af4169ce9b8bba3009a364b0c5c3436ad7d2b02801c6",
+    "artifacts/benchuix/00_research_source_ledger.json": "e15749482821e187a446e50e79ddac573c520fb3c760ae2ccf35f29c048bafae",
+    "artifacts/benchuix/00_no_real_execution_attestation.json": "135febd74345aa46ed444bb49ffcd2a3c431dc28c37d16c4a344e2d655342e74"
+  },
+  "self_hash_reported_externally": true,
+  "validations_run": [
+    {
+      "command": "grep roadmap required sections",
+      "result": "pass"
+    },
+    {
+      "command": "python3 -m json.tool artifacts/benchuix/*.json",
+      "result": "pass"
+    },
+    {
+      "command": "python3 scripts/validate_active_context_state.py",
+      "result": "pass"
+    },
+    {
+      "command": "grep prohibited true authorizations in artifacts/benchuix",
+      "result": "pass"
+    }
+  ],
+  "locks_preserved": {
+    "product_ready": false,
+    "production_authorized": false,
+    "real_apply_authorized": false,
+    "runtime_integration_allowed": false,
+    "secrets_access_authorized": false
+  },
+  "schema_compatibility": {
+    "active_context_schema_update_required": true,
+    "reason": "schema_does_not_allow_benchuix_tracking_fields"
+  },
+  "live_state_mutated": false,
+  "active_context_candidate_tracking_written": false,
+  "next_step_candidates": [
+    "operator_review_benchuix_00_artifacts",
+    "BENCHUIX-01"
+  ],
+  "decision_candidate": "WARN_SCHEMA_UPDATE_REQUIRED"
+}
