@@ -1,0 +1,15 @@
+{
+  "artifact_id": "purgatorium_post_purg04_no_real_execution_attestation",
+  "phase_id": "PURGATORIUM_POST_PURG04_ROUTE_DECISION_PACKET",
+  "created_at": "2026-06-14T22:21:02-03:00",
+  "project_aris_changed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_bedrock_real_apply_secrets_executed": false,
+  "dependency_or_package_manager_used": false,
+  "mcp_activated": false,
+  "rag_ingestion_executed": false,
+  "memory_write_executed": false,
+  "secrets_accessed": false,
+  "external_network_used_except_github_governance": false
+}

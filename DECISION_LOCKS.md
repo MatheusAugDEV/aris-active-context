@@ -2292,3 +2292,47 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Transition Table result:
   - no successor row exists for `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
+
+## Purgatorium Post-PURG04 Route Decision Packet
+
+- Status: `purgatorium_post_purg04_route_decision_blocked`
+- Decision: `blocked`
+- Scope: artifact-only route decision after `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`; no Project_ARIS mutation, no runtime, no real_apply, no product/Bedrock/secrets work, no finding close.
+- Doctrinal carry-forward lock materialized:
+  - `artifacts/purgatorium/purgatorium_remediation_proven_carry_forward_policy_lock.json`
+  - `remediation_proven=false` is preserved as carry-forward and does not by itself block evidence packaging, residual management, exit handoff, or Infernus revalidation admission.
+  - `remediation_proven=false` still blocks `finding_closed`, `resolved`, `safe`, `production_ready`, `bedrock_ready`, and any Purgatorium closure claim.
+- Evidence inventory materialized:
+  - `artifacts/purgatorium/purgatorium_post_purg04_evidence_inventory.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_matrix.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_packet.json`
+- Candidate evaluation result:
+  - `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`: expected architectural successor, but blocked by insufficient proof-loop corpus
+  - `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`: blocked because `PURG-RES` comes after `PURG-05`
+  - `PURG_EXIT_REVALIDATION_HANDOFF_PACKAGE`: blocked because `PURG-EXIT` comes after `PURG-05` and `PURG-RES`
+  - `INF_REVALIDATION_ROUTE_ADMISSION_PACKET`: blocked because exit handoff is not ready
+  - selected outcome: `BLOCKED_NEEDS_ADDITIONAL_PURGATORIUM_EVIDENCE`
+- Evidence present and accepted as supporting only:
+  - post-merge validation packet, no-real attestation, and operator authorization
+  - main merge execution result, CI green confirmation, and no-forbidden-surface attestation
+  - active-context sync repair after the Track A main merge
+  - diff/fix/scope evidence via the merge execution result, diff proof, no-forbidden-surface attestation, and Track A patch result
+  - synthetic RED baseline exists for `IF09-FIND-001`
+- Material blockers for opening `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`:
+  - no canonical `RED -> RESET -> GREEN` evidence chain is materialized for the accepted merged Track A lineage
+  - no canonical reset artifact is materialized for that lineage
+  - no canonical benign-flow artifact is materialized for that lineage
+  - no canonical kill-switch artifact is materialized for that lineage
+  - rollback evidence exists only for the failed local remediation attempt and not as an accepted proof-loop output for the merged Track A lineage
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` remains unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+  - no Transition Table/schema/validator/state patch was applied in this cycle
+- Safety locks preserved:
+  - `IF09-FIND-001` remains open
+  - `remediation_proven=false`
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+  - Project_ARIS changed during this phase=`false`
