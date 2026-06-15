@@ -1,0 +1,23 @@
+{
+  "artifact_id": "inf_revalidation_execution_preflight",
+  "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "created_at": "2026-06-15T16:03:27-03:00",
+  "current_phase_id_before_execution": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+  "current_status_before_execution": "inf_revalidation_operator_authorization_pass",
+  "next_phase_before_execution": null,
+  "active_next_phase_before_execution": null,
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "target_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "workspace_head_commit_sha": "6cec74deb7a99b7eb227df84a902650ca092e00f",
+  "workspace_head_matches_target": false,
+  "authoritative_execution_surface": "read_only_git_archive_snapshot",
+  "read_only_snapshot_root": "/tmp/if09-reval-g3FccK",
+  "required_source_artifacts_exist": true,
+  "oracle_id": "INF_REVALIDATION_IF09_TRACK_A_ACCEPTED_LINEAGE_ORACLE_001",
+  "oracle_contract_verified": true,
+  "abort_criteria_verified": true,
+  "focused_runner_available": true,
+  "forbidden_commands_required": false,
+  "decision": "pass"
+}

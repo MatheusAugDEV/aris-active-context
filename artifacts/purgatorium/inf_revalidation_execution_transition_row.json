@@ -1,0 +1,14 @@
+{
+  "artifact_id": "inf_revalidation_execution_transition_row",
+  "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "created_at": "2026-06-15T16:03:26-03:00",
+  "operator_command_text": "execucao logo",
+  "current_phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+  "decision": "pass",
+  "next_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "next_phase_class": "infernus_revalidation_execution",
+  "advance_mode": "operator",
+  "minimum_deliverable": "inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation",
+  "transition_materialized_in_roadmap": true,
+  "unlocked_by_operator_command": true
+}

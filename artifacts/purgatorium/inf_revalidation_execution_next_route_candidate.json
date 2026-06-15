@@ -1,0 +1,14 @@
+{
+  "artifact_id": "inf_revalidation_execution_next_route_candidate",
+  "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "created_at": "2026-06-15T16:03:35-03:00",
+  "candidate_next_gate": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+  "candidate_only": true,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "finding_closure_candidate": true,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "decision": "pass"
+}

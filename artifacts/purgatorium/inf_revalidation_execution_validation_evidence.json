@@ -1,0 +1,54 @@
+{
+  "artifact_id": "inf_revalidation_execution_validation_evidence",
+  "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "created_at": "2026-06-15T16:16:58-03:00",
+  "json_validation": [
+    {
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m json.tool artifacts/purgatorium/inf_revalidation_execution_operator_command.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m json.tool artifacts/purgatorium/inf_revalidation_execution_packet.json",
+      "exit_code": 0
+    }
+  ],
+  "validator": {
+    "command": "python3 scripts/validate_active_context_state.py",
+    "exit_code": 0,
+    "status": "inf_revalidation_execution_pass",
+    "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+    "next_phase": null
+  },
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "exit_code": 0,
+    "summary": "Ran 50 tests in 0.414s OK"
+  },
+  "grep_checks": {
+    "next_phase_null_matches": 1,
+    "active_next_phase_null_matches": 2,
+    "real_apply_authorized_false_matches": 2,
+    "production_authorized_false_matches": 2,
+    "product_ready_false_matches": 3,
+    "secrets_access_authorized_false_matches": 2,
+    "runtime_integration_allowed_false_matches": 2,
+    "finding_closed_true_matches": 0,
+    "remediation_proven_false_matches": 4,
+    "package_manager_executed_false_matches": 1
+  },
+  "focused_runner_snapshot_validation": {
+    "command": "python3 -m unittest -q tests.test_f21a54c_active_context_remote_sync_verification tests.test_aris_context_active_track_phase_reconciliation_gate tests.test_aris_context_active_track_resume_gate tests.test_strategic_reset_macrostructure_lock_gate tests.test_product_loop_l1_15_product_loop_closure_gate",
+    "workdir": "/tmp/if09-reval-g3FccK",
+    "exit_code": 0,
+    "summary": "Ran 19 tests in 0.560s OK"
+  },
+  "decision": "pass"
+}

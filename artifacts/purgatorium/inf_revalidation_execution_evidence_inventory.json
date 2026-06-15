@@ -1,0 +1,35 @@
+{
+  "artifact_id": "inf_revalidation_execution_evidence_inventory",
+  "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+  "created_at": "2026-06-15T16:03:30-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_artifacts": [
+    "artifacts/purgatorium/inf_revalidation_execution_contract.json",
+    "artifacts/purgatorium/inf_revalidation_operator_authorization_next_route_candidate.json",
+    "artifacts/purgatorium/inf_revalidation_safety_lock_matrix.json",
+    "artifacts/purgatorium/inf_revalidation_readiness_packet.json",
+    "artifacts/purgatorium/inf_revalidation_scenario_scope.json",
+    "artifacts/purgatorium/inf_revalidation_oracle_contract.json",
+    "artifacts/purgatorium/inf_revalidation_abort_criteria.json",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json",
+    "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+  ],
+  "generated_artifacts": [
+    "artifacts/purgatorium/inf_revalidation_execution_operator_command.json",
+    "artifacts/purgatorium/inf_revalidation_execution_transition_row.json",
+    "artifacts/purgatorium/inf_revalidation_execution_packet.json",
+    "artifacts/purgatorium/inf_revalidation_execution_preflight.json",
+    "artifacts/purgatorium/inf_revalidation_execution_command_log.jsonl",
+    "artifacts/purgatorium/inf_revalidation_execution_oracle_result.json",
+    "artifacts/purgatorium/inf_revalidation_execution_regression_matrix.json",
+    "artifacts/purgatorium/inf_revalidation_execution_evidence_inventory.json",
+    "artifacts/purgatorium/inf_revalidation_execution_no_forbidden_surface_attestation.json",
+    "artifacts/purgatorium/inf_revalidation_execution_summary.json",
+    "artifacts/purgatorium/inf_revalidation_execution_report.md",
+    "artifacts/purgatorium/inf_revalidation_execution_validation_evidence.json",
+    "artifacts/purgatorium/inf_revalidation_execution_next_route_candidate.json"
+  ],
+  "authoritative_snapshot_root": "/tmp/if09-reval-g3FccK",
+  "decision": "pass"
+}

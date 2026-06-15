@@ -2,13 +2,13 @@
 
 > Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
 
-## INF Revalidation Operator Authorization Packet
+## INF Revalidation Execution Packet
 
-- phase_id: `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
-- current_phase_id: `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
-- previous_phase_id: `INF_REVALIDATION_READINESS_PACKET`
-- latest_completed_phase: `INF Revalidation Operator Authorization Packet`
-- status: `inf_revalidation_operator_authorization_pass`
+- phase_id: `INF_REVALIDATION_EXECUTION_PACKET`
+- current_phase_id: `INF_REVALIDATION_EXECUTION_PACKET`
+- previous_phase_id: `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
+- latest_completed_phase: `INF Revalidation Execution Packet`
+- status: `inf_revalidation_execution_pass`
 - decision: `pass`
 - active_next_phase: `null`
 - next_phase: `null`
@@ -21,7 +21,8 @@
 - Track A merge lineage: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 - IF09-FIND-001: `open` — fechamento apenas via Infernus Revalidation
 - remediation_proven: `false`
-- Nota documental: a autorização explícita do operador para um futuro execution contract de revalidação foi registrada por `artifacts/purgatorium/inf_revalidation_operator_authorization_packet.json`. Esse gate consumiu a readiness já materializada, emitiu `inf_revalidation_execution_contract.json`, `inf_revalidation_safety_lock_matrix.json`, `inf_revalidation_operator_authorization_no_real_execution_attestation.json` e `inf_revalidation_operator_authorization_next_route_candidate.json`, preservou `next_phase=null` e `active_next_phase=null`, não executou revalidation, não mutou `Project_ARIS`, não rodou testes de `Project_ARIS`, não fechou `IF09-FIND-001` e manteve `remediation_proven=false`. O future gate autorizado continua apenas como candidate-only: `INF_REVALIDATION_EXECUTION_PACKET`.
+- Nota documental: o comando explícito do operador `execucao logo` foi consumido por `artifacts/purgatorium/inf_revalidation_execution_operator_command.json`, que destravou a row viva `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET -> INF_REVALIDATION_EXECUTION_PACKET` sem abrir nenhum lock real adicional.
+- Nota documental: a execução autorizada foi feita somente na superfície focada já existente, por meio de um snapshot read-only extraído do commit-alvo `7883af5a32c629026bfc6dc15ebee4ebbcadd295`, porque a workspace viva do `Project_ARIS` já estava em `6cec74deb7a99b7eb227df84a902650ca092e00f` e não era a autoridade desta fase. O runner autorizado passou com `19 tests / 0 failures / 0 errors`, o oracle `INF_REVALIDATION_IF09_TRACK_A_ACCEPTED_LINEAGE_ORACLE_001` resultou `pass`, `IF09-FIND-001` não foi reproduzido, `finding_closed=false` permaneceu, `remediation_proven=false` permaneceu e o candidate-only futuro passou a ser `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`.
 - Nota documental: a readiness route foi ativada canonicamente por `artifacts/purgatorium/inf_revalidation_readiness_route_activation_packet.json`, que consumiu o candidate vivo `INF_REVALIDATION_READINESS_PACKET` emitido pela fase de route admission e promoveu a fase viva para `INF_REVALIDATION_READINESS_PACKET` sem executar revalidation, sem mutar `Project_ARIS`, sem rodar testes de `Project_ARIS`, sem introduzir `finding_closed=true` e sem alterar `remediation_proven=false`. A família de artifacts da fase viva foi materializada em `artifacts/purgatorium/inf_revalidation_readiness_packet.json`, `inf_revalidation_scenario_scope.json`, `inf_revalidation_oracle_contract.json`, `inf_revalidation_abort_criteria.json`, `inf_revalidation_readiness_no_real_execution_attestation.json` e `inf_revalidation_readiness_next_route_candidate.json`.
 
 - Nota histórica imediata: a cadeia `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_ADMISSION_PACKET_ARTIFACT_ONLY` -> `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET` -> `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` já havia sido consumida por `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, que abriu a etapa residual anterior sem tocar `Project_ARIS`.

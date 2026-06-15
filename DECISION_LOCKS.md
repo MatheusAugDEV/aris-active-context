@@ -3177,3 +3177,57 @@ The following track references are historical_residual_route_noise. They do NOT 
 - This gate records the branch selection and emits `candidate_next_gate=INF_REVALIDATION_ROUTE_ADMISSION_PACKET` only; activating this row in the live Transition Table requires a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern.
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+## INF Revalidation Execution Packet
+
+- Status: `inf_revalidation_execution_pass`
+- Decision: `pass`
+- Scope: controlled Infernus Revalidation execution only for `IF09-FIND-001`, limited to the already authorized focused runner, deterministic oracle, and evidence capture surfaces. No `Project_ARIS` mutation, no global suite, no proof-loop, no runtime, no real_apply, no product/Bedrock/secrets work, no package manager.
+- Operator execution command:
+  - exact text: `execucao logo`
+  - interpretation: `explicit_operator_execution_command_for_INF_REVALIDATION_EXECUTION_PACKET`
+  - source artifact: `artifacts/purgatorium/inf_revalidation_execution_operator_command.json`
+- Preflight result:
+  - current live state before execution: `phase_id=current_phase_id=INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`, `status=inf_revalidation_operator_authorization_pass`, `next_phase=null`, `active_next_phase=null`
+  - workspace `Project_ARIS` HEAD was `6cec74deb7a99b7eb227df84a902650ca092e00f`, so it was rejected as non-authoritative for this gate
+  - authoritative execution root was a read-only git-archive snapshot of commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+  - oracle contract and abort criteria were verified before execution
+- Authorized runner result:
+  - command family used: `focused_revalidation_runner`, `deterministic_oracle_validation`, `authorized_evidence_capture`
+  - focused test modules executed on the authorized snapshot: `tests.test_f21a54c_active_context_remote_sync_verification`, `tests.test_aris_context_active_track_phase_reconciliation_gate`, `tests.test_aris_context_active_track_resume_gate`, `tests.test_strategic_reset_macrostructure_lock_gate`, `tests.test_product_loop_l1_15_product_loop_closure_gate`
+  - outcome: `19 tests`, `0 failures`, `0 errors`
+  - oracle: `INF_REVALIDATION_IF09_TRACK_A_ACCEPTED_LINEAGE_ORACLE_001` => `pass`
+  - `IF09-FIND-001` was not reproduced and no tracked-lineage regression appeared on the authorized surface
+- Artifacts created:
+  - `artifacts/purgatorium/inf_revalidation_execution_transition_row.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_packet.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_preflight.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_command_log.jsonl`
+  - `artifacts/purgatorium/inf_revalidation_execution_oracle_result.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_regression_matrix.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_evidence_inventory.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_no_forbidden_surface_attestation.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_summary.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_report.md`
+  - `artifacts/purgatorium/inf_revalidation_execution_validation_evidence.json`
+  - `artifacts/purgatorium/inf_revalidation_execution_next_route_candidate.json`
+- ACTIVE_CONTEXT_STATE advanced canonically to:
+  - `phase_id=current_phase_id=INF_REVALIDATION_EXECUTION_PACKET`
+  - `previous_phase_id=INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
+  - `phase_class=infernus_revalidation_execution`
+  - `status=inf_revalidation_execution_pass`
+  - `active_next_phase=null`
+  - `next_phase=null`
+- Transition Table result:
+  - `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation`
+  - no successor row exists for `INF_REVALIDATION_EXECUTION_PACKET`
+  - future candidate only: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+- Safety locks preserved:
+  - `IF09-FIND-001` remains open
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - `real_apply_authorized=false`
+  - `production_authorized=false`
+  - `product_ready=false`
+  - `secrets_access_authorized=false`
+  - `runtime_integration_allowed=false`
+  - `Project_ARIS changed during this phase=false`
