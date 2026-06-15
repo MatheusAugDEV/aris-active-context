@@ -2903,3 +2903,40 @@ The following track references are historical_residual_route_noise. They do NOT 
   - PURG05 opening: `false`
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURGATORIUM Remaining Roadmap Canonicalization Packet Artifact-Only
+
+- Status: `purgatorium_remaining_roadmap_canonicalization_packet_artifact_only_pass`
+- Decision: `pass`
+- Scope: documentation-only / artifact-only canonicalization of the remaining Purgatorium technical trail; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no finding close, no remediation_proven change, no live Transition Table change, no ACTIVE_CONTEXT_STATE.json change.
+- Roadmap file: `project_mirror/docs/purgatorium_full/purgatorium_remaining_roadmapcanon.md`
+- Roadmap status: `canonical_technical_trail_pending_active_transition_activation`
+- Artifacts materialized:
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_diagnostic_reconciliation.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_canonicalization_packet.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_phase_graph.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_transition_table_candidate.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_post_save_self_review.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_no_real_execution_attestation.json`
+- Trail: R0 terminal-state lock -> R1 activation decision (branches: exit-first / revalidation-first / baseline-stabilization-first) -> R2/R3 exit readiness+handoff -> R4/R4A/R4B/R4C baseline stabilization decision + operator-gated repair -> R5-R9 Infernus Revalidation admission/readiness/authorization/execution/adjudication (R8 fail -> R8F loopback triage) -> R10 remediation-proven decision -> R11 closure eligibility -> R12 finding-close operator gate -> R13 canonical state update (only finding-closure state change) -> R14 final exit -> macro handoff.
+- Closure discipline:
+  - `purgatorium_can_close_finding=false`
+  - `infernus_revalidation_required_for_closure=true`
+  - closure and remediation_proven becoming true are strictly downstream of the Infernus Revalidation execution gate (R8) and have dedicated gates (R10/R12/R13).
+  - GitHub CI green is not treated as proof that the local global Project_ARIS suite is green.
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+  - first candidate next gate: `PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET` (candidate only, not active)
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`

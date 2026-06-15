@@ -1,0 +1,463 @@
+{
+  "artifact_id": "purgatorium_remaining_roadmap_transition_table_candidate",
+  "phase_id": "PURGATORIUM_REMAINING_ROADMAP_CANONICALIZATION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:40:00-03:00",
+  "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+  "roadmap_canonical_sha256_at_generation": "696123e7fe10443403f2efc0f7607a03a4e734d348741972833767b1c0feb9da",
+  "not_active": true,
+  "not_consumed_by_validator": true,
+  "live_transition_table_unchanged": true,
+  "note": "Candidate rows only. None of these rows is active. The live Transition Table in ROADMAP_CANONICAL.md is unchanged and remains terminal at PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET (next_phase=null).",
+  "row_count": 28,
+  "rows": [
+    {
+      "current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "next_phase_class": "purgatorium_route_governance_decision",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_current_terminal_state_lock.json (R0) + purg_remaining_roadmap_activation_decision_packet.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "ENTRY_AFTER_TERMINAL_STATE_LOCK"
+    },
+    {
+      "current_phase_id": "PURG_CURRENT_TERMINAL_STATE_LOCK",
+      "decision": "pass",
+      "next_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "next_phase_class": "purgatorium_route_governance_decision",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_current_terminal_state_lock.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_EXIT_READINESS_PACKET",
+      "next_phase_class": "purgatorium_exit_readiness",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_remaining_roadmap_activation_decision_packet.json, purg_remaining_roadmap_activation_amendment_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "TRACK_EXIT_FIRST"
+    },
+    {
+      "current_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_phase_class": "infernus_revalidation_route_admission",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_remaining_roadmap_activation_decision_packet.json, purg_remaining_roadmap_activation_amendment_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "TRACK_REVALIDATION_FIRST"
+    },
+    {
+      "current_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET",
+      "next_phase_class": "purgatorium_baseline_stabilization_decision",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_remaining_roadmap_activation_decision_packet.json, purg_remaining_roadmap_activation_amendment_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "TRACK_BASELINE_STABILIZATION_FIRST"
+    },
+    {
+      "current_phase_id": "PURG_EXIT_READINESS_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_EXIT_HANDOFF_PACKAGE_PACKET",
+      "next_phase_class": "purgatorium_exit_handoff",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_exit_readiness_packet.json, purg_exit_findings_matrix.json, purg_exit_residual_risk_matrix.json, purg_exit_forbidden_claim_scan.json, purg_exit_next_route_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_EXIT_HANDOFF_PACKAGE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_phase_class": "infernus_revalidation_route_admission",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_exit_handoff_package.json, purg_exit_handoff_custody_table.json, purg_exit_handoff_open_findings.json, purg_exit_handoff_required_revalidation.json, purg_exit_handoff_no_real_execution_attestation.json, purg_exit_handoff_next_route_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+      "next_phase_class": "purgatorium_baseline_repair_readiness",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_project_aris_global_baseline_stabilization_decision.json, purg_project_aris_global_baseline_risk_matrix.json, purg_project_aris_global_baseline_defer_or_repair_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "REPAIR_BASELINE_BEFORE_REVALIDATION"
+    },
+    {
+      "current_phase_id": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_phase_class": "infernus_revalidation_route_admission",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_project_aris_global_baseline_stabilization_decision.json, purg_project_aris_global_baseline_risk_matrix.json, purg_project_aris_global_baseline_defer_or_repair_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "DEFER_TO_INFERNUS_REVALIDATION"
+    },
+    {
+      "current_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_OPERATOR_AUTHORIZATION_PACKET",
+      "next_phase_class": "purgatorium_baseline_repair_operator_authorization",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_project_aris_baseline_repair_readiness_packet.json, purg_project_aris_baseline_repair_scope_matrix.json, purg_project_aris_baseline_repair_forbidden_actions.json, purg_project_aris_baseline_repair_operator_authorization_needed.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_OPERATOR_AUTHORIZATION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_EXECUTION_PACKET",
+      "next_phase_class": "purgatorium_baseline_repair_execution",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_project_aris_baseline_repair_operator_authorization_packet.json, purg_project_aris_baseline_repair_execution_contract.json, purg_project_aris_baseline_repair_safety_lock_matrix.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_EXECUTION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_phase_class": "infernus_revalidation_route_admission",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_project_aris_baseline_repair_execution_result.json, purg_project_aris_baseline_repair_test_evidence.json, purg_project_aris_baseline_repair_regression_matrix.json, purg_project_aris_baseline_repair_no_forbidden_surface_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_READINESS_PACKET",
+      "next_phase_class": "infernus_revalidation_readiness",
+      "advance_mode": "operator",
+      "minimum_deliverable": "inf_revalidation_route_admission_packet.json, inf_revalidation_required_inputs.json, inf_revalidation_scope_matrix.json, inf_revalidation_forbidden_actions.json, inf_revalidation_next_route_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_READINESS_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+      "next_phase_class": "infernus_revalidation_operator_authorization",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_readiness_packet.json, inf_revalidation_scenario_scope.json, inf_revalidation_oracle_contract.json, inf_revalidation_abort_criteria.json, inf_revalidation_no_real_execution_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+      "next_phase_class": "infernus_revalidation_execution",
+      "advance_mode": "operator",
+      "minimum_deliverable": "inf_revalidation_operator_authorization_packet.json, inf_revalidation_execution_contract.json, inf_revalidation_safety_lock_matrix.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_RESULT_ADJUDICATION_PACKET",
+      "next_phase_class": "infernus_revalidation_result_adjudication",
+      "advance_mode": "operator",
+      "minimum_deliverable": "inf_revalidation_execution_result.json, inf_revalidation_oracle_result.json, inf_revalidation_test_evidence.json, inf_revalidation_regression_matrix.json, inf_revalidation_no_forbidden_surface_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG03_REMEDIATION_PLAN_REVISION_PACKET",
+      "next_phase_class": "purgatorium_remediation_plan_revision_loopback",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_failure_loopback_triage.json, inf_revalidation_failure_root_cause_matrix.json, inf_revalidation_failure_next_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "PLAN_REVISION"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+      "next_phase_class": "purgatorium_track_a_patch_revision_loopback",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_failure_loopback_triage.json, inf_revalidation_failure_root_cause_matrix.json, inf_revalidation_failure_next_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "PATCH_REVISION"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+      "next_phase_class": "purgatorium_baseline_repair_readiness",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_failure_loopback_triage.json, inf_revalidation_failure_root_cause_matrix.json, inf_revalidation_failure_next_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "BASELINE_REPAIR"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "next_phase_class": "terminal_sentinel",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_failure_loopback_triage.json, inf_revalidation_failure_root_cause_matrix.json, inf_revalidation_failure_next_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "OPERATOR_DIRECTION"
+    },
+    {
+      "current_phase_id": "INF_REVALIDATION_RESULT_ADJUDICATION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_REMEDIATION_PROVEN_DECISION_PACKET",
+      "next_phase_class": "purgatorium_remediation_proven_decision",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "inf_revalidation_result_adjudication_packet.json, inf_revalidation_evidence_sufficiency_matrix.json, inf_revalidation_regression_check.json, inf_revalidation_remediation_proven_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_REMEDIATION_PROVEN_DECISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET",
+      "next_phase_class": "purgatorium_finding_closure_eligibility",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_remediation_proven_decision_packet.json, purg_remediation_proven_evidence_bundle.json, purg_remediation_proven_state_change_candidate.json, purg_remediation_proven_no_real_execution_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_FINDING_CLOSE_OPERATOR_PACKET",
+      "next_phase_class": "purgatorium_finding_close_operator",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg_finding_closure_eligibility_packet.json, purg_finding_closure_evidence_matrix.json, purg_finding_closure_policy_check.json, purg_finding_closure_forbidden_claim_scan.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_FINDING_CLOSE_OPERATOR_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET",
+      "next_phase_class": "purgatorium_finding_close_canonical_state_update",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_finding_close_operator_packet.json, purg_finding_close_state_change_manifest.json, purg_finding_close_rollback_plan.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG_FINAL_EXIT_PACKET",
+      "next_phase_class": "purgatorium_final_exit",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_finding_close_canonical_state_update_packet.json, purg_finding_close_validator_evidence.json, purg_finding_close_ci_evidence.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG_FINAL_EXIT_PACKET",
+      "decision": "pass",
+      "next_phase_id": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "next_phase_class": "external_macro_handoff_sentinel",
+      "advance_mode": "operator",
+      "minimum_deliverable": "purg_final_exit_packet.json, purg_final_exit_evidence_bundle.json, purg_final_exit_residual_risk_matrix.json, purg_final_exit_next_macro_candidate.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG03_REMEDIATION_PLAN_REVISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+      "next_phase_class": "purgatorium_track_a_patch_revision_loopback",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg03_remediation_plan_revision_packet.json, purg03_remediation_plan_revision_scope_matrix.json, purg03_remediation_plan_revision_no_real_execution_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    },
+    {
+      "current_phase_id": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+      "decision": "pass",
+      "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_phase_class": "infernus_revalidation_route_admission",
+      "advance_mode": "artifact_only",
+      "minimum_deliverable": "purg04_track_a_patch_revision_packet.json, purg04_track_a_patch_revision_scope_matrix.json, purg04_track_a_patch_revision_no_real_execution_attestation.json",
+      "activation_requirements": [
+        "explicit operator route-opening / amendment authorization",
+        "schema + validator support for the new phase_id/phase_class",
+        "an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern",
+        "CI terminal green"
+      ],
+      "not_active_yet": true,
+      "branch_choice": "pass"
+    }
+  ],
+  "decision": "pass"
+}

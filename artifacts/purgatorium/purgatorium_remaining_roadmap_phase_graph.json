@@ -1,0 +1,1258 @@
+{
+  "artifact_id": "purgatorium_remaining_roadmap_phase_graph",
+  "phase_id": "PURGATORIUM_REMAINING_ROADMAP_CANONICALIZATION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:40:00-03:00",
+  "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+  "entry_locks_live_phase": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "entry_node": "PURG_CURRENT_TERMINAL_STATE_LOCK",
+  "sentinels": [
+    "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+    "BLOCKED_OPERATOR_DIRECTION_REQUIRED"
+  ],
+  "node_count": 23,
+  "nodes": [
+    {
+      "r_label": "R0",
+      "phase_id": "PURG_CURRENT_TERMINAL_STATE_LOCK",
+      "name": "Terminal State Lock",
+      "type": "artifact_only_governance_lock",
+      "phase_class": "purgatorium_terminal_state_lock",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "ACTIVE_CONTEXT_STATE.json",
+        "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json",
+        "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_validation_evidence.json",
+        "artifacts/purgatorium/purg05_carry_forward_locks.json"
+      ],
+      "outputs": [
+        "purg_current_terminal_state_lock.json"
+      ],
+      "pass_criteria": [
+        "next_phase=null",
+        "active_next_phase=null",
+        "IF09-FIND-001 remains open",
+        "remediation_proven stays false",
+        "all execution locks remain false"
+      ],
+      "block_criteria": [
+        "critical JSON/mirror conflict",
+        "any closure claim",
+        "any remediation_proven=true claim"
+      ],
+      "next_on_pass": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Materializes a governance lock over the current live terminal phase; does not advance the live route. Activation of the trail is the live->R1 transition gated by this lock artifact.",
+      "locks_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET"
+    },
+    {
+      "r_label": "R1",
+      "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "name": "Roadmap Activation Decision Packet",
+      "type": "operator_route_governance_decision",
+      "phase_class": "purgatorium_route_governance_decision",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_current_terminal_state_lock.json",
+        "ROADMAP_CANONICAL.md macro chain",
+        "operator direction"
+      ],
+      "outputs": [
+        "purg_remaining_roadmap_activation_decision_packet.json",
+        "purg_remaining_roadmap_activation_amendment_candidate.json"
+      ],
+      "pass_criteria": [
+        "operator selects exactly one route",
+        "amendment candidate created",
+        "active Transition Table NOT changed in this phase"
+      ],
+      "block_criteria": [
+        "ambiguous decision",
+        "attempt to execute revalidation",
+        "attempt to close finding"
+      ],
+      "next_on_pass": {
+        "TRACK_EXIT_FIRST": "PURG_EXIT_READINESS_PACKET",
+        "TRACK_REVALIDATION_FIRST": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+        "TRACK_BASELINE_STABILIZATION_FIRST": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET"
+      },
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Branch gate. Activates the candidate roadmap and picks the initial branch. Does not mutate the live Transition Table.",
+      "choices": [
+        "TRACK_EXIT_FIRST",
+        "TRACK_REVALIDATION_FIRST",
+        "TRACK_BASELINE_STABILIZATION_FIRST",
+        "BLOCKED_OPERATOR_DIRECTION_REQUIRED"
+      ]
+    },
+    {
+      "r_label": "R2",
+      "phase_id": "PURG_EXIT_READINESS_PACKET",
+      "name": "PURG Exit Readiness Packet",
+      "type": "artifact_only_exit_readiness",
+      "phase_class": "purgatorium_exit_readiness",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "purg_remaining_roadmap_activation_decision_packet.json",
+        "purg05_carry_forward_locks.json",
+        "purg_residual_risk_carry_forward_route_opening_packet.json"
+      ],
+      "outputs": [
+        "purg_exit_readiness_packet.json",
+        "purg_exit_findings_matrix.json",
+        "purg_exit_residual_risk_matrix.json",
+        "purg_exit_forbidden_claim_scan.json",
+        "purg_exit_next_route_candidate.json"
+      ],
+      "pass_criteria": [
+        "residual risk formalized",
+        "open finding preserved",
+        "closure delegated to Infernus Revalidation",
+        "no safe/resolved claim"
+      ],
+      "block_criteria": [
+        "any closure/safe/resolved claim",
+        "missing residual matrix"
+      ],
+      "next_on_pass": "PURG_EXIT_HANDOFF_PACKAGE_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Exit readiness never closes the finding; it only formalizes residual risk and delegates closure."
+    },
+    {
+      "r_label": "R3",
+      "phase_id": "PURG_EXIT_HANDOFF_PACKAGE_PACKET",
+      "name": "PURG Exit Handoff Package",
+      "type": "artifact_only_handoff",
+      "phase_class": "purgatorium_exit_handoff",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "purg_exit_readiness_packet.json",
+        "purg_exit_residual_risk_matrix.json"
+      ],
+      "outputs": [
+        "purg_exit_handoff_package.json",
+        "purg_exit_handoff_custody_table.json",
+        "purg_exit_handoff_open_findings.json",
+        "purg_exit_handoff_required_revalidation.json",
+        "purg_exit_handoff_no_real_execution_attestation.json",
+        "purg_exit_handoff_next_route_candidate.json"
+      ],
+      "pass_criteria": [
+        "handoff ready",
+        "IF09-FIND-001 open preserved",
+        "remediation_proven stays false",
+        "revalidation required"
+      ],
+      "block_criteria": [
+        "any closure claim",
+        "missing open-findings ledger"
+      ],
+      "next_on_pass": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Packages the Purgatorium exit without ending the finding; routes to Infernus Revalidation admission."
+    },
+    {
+      "r_label": "R4",
+      "phase_id": "PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET",
+      "name": "Project_ARIS Global Baseline Stabilization Decision",
+      "type": "artifact_only_decision",
+      "phase_class": "purgatorium_baseline_stabilization_decision",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json",
+        "artifacts/purgatorium/purg04_global_test_baseline_triage_artifact_only.json"
+      ],
+      "outputs": [
+        "purg_project_aris_global_baseline_stabilization_decision.json",
+        "purg_project_aris_global_baseline_risk_matrix.json",
+        "purg_project_aris_global_baseline_defer_or_repair_candidate.json"
+      ],
+      "pass_criteria": [
+        "explicit defer-or-repair decision recorded",
+        "global baseline red state acknowledged (not hidden)"
+      ],
+      "block_criteria": [
+        "decision omits the red global baseline",
+        "decision claims baseline green without evidence"
+      ],
+      "next_on_pass": {
+        "REPAIR_BASELINE_BEFORE_REVALIDATION": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+        "DEFER_TO_INFERNUS_REVALIDATION": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET"
+      },
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Explicitly handles the globally-red local suite (231 failures/1519 errors at merge); GitHub CI green is not treated as local-suite green.",
+      "choices": [
+        "DEFER_TO_INFERNUS_REVALIDATION",
+        "REPAIR_BASELINE_BEFORE_REVALIDATION"
+      ]
+    },
+    {
+      "r_label": "R4A",
+      "phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+      "name": "Project_ARIS Baseline Repair Readiness",
+      "type": "artifact_only_readiness",
+      "phase_class": "purgatorium_baseline_repair_readiness",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "purg_project_aris_global_baseline_stabilization_decision.json",
+        "purg_project_aris_global_baseline_risk_matrix.json"
+      ],
+      "outputs": [
+        "purg_project_aris_baseline_repair_readiness_packet.json",
+        "purg_project_aris_baseline_repair_scope_matrix.json",
+        "purg_project_aris_baseline_repair_forbidden_actions.json",
+        "purg_project_aris_baseline_repair_operator_authorization_needed.json"
+      ],
+      "pass_criteria": [
+        "repair scope defined",
+        "Project_ARIS mutation NOT yet authorized"
+      ],
+      "block_criteria": [
+        "any Project_ARIS mutation attempted",
+        "scope undefined"
+      ],
+      "next_on_pass": "PURG_PROJECT_ARIS_BASELINE_REPAIR_OPERATOR_AUTHORIZATION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Readiness only; explicitly requires a separate operator approval (R4B) before any Project_ARIS mutation."
+    },
+    {
+      "r_label": "R4B",
+      "phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_OPERATOR_AUTHORIZATION_PACKET",
+      "name": "Project_ARIS Baseline Repair Operator Authorization",
+      "type": "operator_gate",
+      "phase_class": "purgatorium_baseline_repair_operator_authorization",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_project_aris_baseline_repair_readiness_packet.json",
+        "purg_project_aris_baseline_repair_scope_matrix.json",
+        "operator authorization"
+      ],
+      "outputs": [
+        "purg_project_aris_baseline_repair_operator_authorization_packet.json",
+        "purg_project_aris_baseline_repair_execution_contract.json",
+        "purg_project_aris_baseline_repair_safety_lock_matrix.json"
+      ],
+      "pass_criteria": [
+        "explicit operator authorization captured",
+        "scope closed",
+        "no product/Bedrock/secrets/real_apply included"
+      ],
+      "block_criteria": [
+        "no explicit authorization",
+        "scope creep beyond baseline repair"
+      ],
+      "next_on_pass": "PURG_PROJECT_ARIS_BASELINE_REPAIR_EXECUTION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Added for graph completeness: R4A names this operator-authorization packet as its candidate next. Authorizes but does not execute."
+    },
+    {
+      "r_label": "R4C",
+      "phase_id": "PURG_PROJECT_ARIS_BASELINE_REPAIR_EXECUTION_PACKET",
+      "name": "Project_ARIS Baseline Repair Execution",
+      "type": "controlled_execution_project_aris_baseline_repair",
+      "phase_class": "purgatorium_baseline_repair_execution",
+      "requires_operator": true,
+      "allows_execution": true,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": true,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_project_aris_baseline_repair_operator_authorization_packet.json",
+        "purg_project_aris_baseline_repair_execution_contract.json"
+      ],
+      "outputs": [
+        "purg_project_aris_baseline_repair_execution_result.json",
+        "purg_project_aris_baseline_repair_test_evidence.json",
+        "purg_project_aris_baseline_repair_regression_matrix.json",
+        "purg_project_aris_baseline_repair_no_forbidden_surface_attestation.json"
+      ],
+      "pass_criteria": [
+        "authorized baseline surface stabilized",
+        "no forbidden surface touched",
+        "no new regression"
+      ],
+      "block_criteria": [
+        "repair failure",
+        "regression introduced",
+        "scope/forbidden-surface violation"
+      ],
+      "next_on_pass": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write",
+        "finding closure at this phase",
+        "remediation_proven set true at this phase",
+        "any surface beyond the authorized baseline repair scope"
+      ],
+      "notes": "Only baseline-repair Project_ARIS mutation node; gated by R4B operator authorization. Does NOT close the finding or prove remediation."
+    },
+    {
+      "r_label": "R5",
+      "phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "name": "Infernus Revalidation Route Admission",
+      "type": "route_admission_artifact_only",
+      "phase_class": "infernus_revalidation_route_admission",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_exit_handoff_package.json OR baseline branch result",
+        "ROADMAP_CANONICAL.md macro chain (Purgatorium FULL -> Infernus Revalidation)",
+        "operator authorization"
+      ],
+      "outputs": [
+        "inf_revalidation_route_admission_packet.json",
+        "inf_revalidation_required_inputs.json",
+        "inf_revalidation_scope_matrix.json",
+        "inf_revalidation_forbidden_actions.json",
+        "inf_revalidation_next_route_candidate.json"
+      ],
+      "pass_criteria": [
+        "macro route admission defined",
+        "revalidation NOT executed",
+        "finding still open"
+      ],
+      "block_criteria": [
+        "attempt to execute revalidation in this phase",
+        "attempt to close finding"
+      ],
+      "next_on_pass": "INF_REVALIDATION_READINESS_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Admits the macro transition Purgatorium FULL -> Infernus Revalidation. Infernus Revalidation is the only layer that can declare finding_closed."
+    },
+    {
+      "r_label": "R6",
+      "phase_id": "INF_REVALIDATION_READINESS_PACKET",
+      "name": "Infernus Revalidation Readiness",
+      "type": "artifact_only_readiness",
+      "phase_class": "infernus_revalidation_readiness",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_route_admission_packet.json",
+        "inf_revalidation_scope_matrix.json"
+      ],
+      "outputs": [
+        "inf_revalidation_readiness_packet.json",
+        "inf_revalidation_scenario_scope.json",
+        "inf_revalidation_oracle_contract.json",
+        "inf_revalidation_abort_criteria.json",
+        "inf_revalidation_no_real_execution_attestation.json"
+      ],
+      "pass_criteria": [
+        "scenario and oracle defined",
+        "abort criteria defined",
+        "execution authorization still absent"
+      ],
+      "block_criteria": [
+        "execution attempted without authorization",
+        "oracle undefined"
+      ],
+      "next_on_pass": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Prepares scope/scenarios/oracles/abort criteria for revalidating IF09-FIND-001; no execution."
+    },
+    {
+      "r_label": "R7",
+      "phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+      "name": "Infernus Revalidation Operator Authorization",
+      "type": "operator_gate",
+      "phase_class": "infernus_revalidation_operator_authorization",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "inf_revalidation_readiness_packet.json",
+        "inf_revalidation_oracle_contract.json",
+        "operator authorization"
+      ],
+      "outputs": [
+        "inf_revalidation_operator_authorization_packet.json",
+        "inf_revalidation_execution_contract.json",
+        "inf_revalidation_safety_lock_matrix.json"
+      ],
+      "pass_criteria": [
+        "explicit authorization, closed scope",
+        "does not include product/Bedrock/real_apply/secrets"
+      ],
+      "block_criteria": [
+        "no explicit authorization",
+        "scope includes forbidden surfaces"
+      ],
+      "next_on_pass": "INF_REVALIDATION_EXECUTION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Captures explicit operator authorization to run controlled revalidation."
+    },
+    {
+      "r_label": "R8",
+      "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+      "name": "Infernus Revalidation Execution",
+      "type": "controlled_execution_only_after_R7_pass",
+      "phase_class": "infernus_revalidation_execution",
+      "requires_operator": true,
+      "allows_execution": true,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "inf_revalidation_operator_authorization_packet.json",
+        "inf_revalidation_execution_contract.json"
+      ],
+      "outputs": [
+        "inf_revalidation_execution_result.json",
+        "inf_revalidation_oracle_result.json",
+        "inf_revalidation_test_evidence.json",
+        "inf_revalidation_regression_matrix.json",
+        "inf_revalidation_no_forbidden_surface_attestation.json"
+      ],
+      "pass_criteria": [
+        "oracle passes",
+        "no regression",
+        "evidence sufficient"
+      ],
+      "block_criteria": [
+        "oracle failure",
+        "regression",
+        "scope violation"
+      ],
+      "next_on_pass": "INF_REVALIDATION_RESULT_ADJUDICATION_PACKET",
+      "next_on_block": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write",
+        "finding closure at this phase",
+        "remediation_proven set true at this phase",
+        "product/Bedrock/secrets/real_apply"
+      ],
+      "notes": "Controlled revalidation execution; read-only against accepted Track A lineage. Does not itself close the finding or set remediation_proven."
+    },
+    {
+      "r_label": "R8F",
+      "phase_id": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
+      "name": "Revalidation Failure Loopback Triage",
+      "type": "artifact_only_failure_triage",
+      "phase_class": "infernus_revalidation_failure_loopback_triage",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_execution_result.json",
+        "inf_revalidation_regression_matrix.json"
+      ],
+      "outputs": [
+        "inf_revalidation_failure_loopback_triage.json",
+        "inf_revalidation_failure_root_cause_matrix.json",
+        "inf_revalidation_failure_next_candidate.json"
+      ],
+      "pass_criteria": [
+        "failure classified",
+        "loopback target selected"
+      ],
+      "block_criteria": [
+        "root cause undetermined and no operator direction"
+      ],
+      "next_on_pass": {
+        "PLAN_REVISION": "PURG03_REMEDIATION_PLAN_REVISION_PACKET",
+        "PATCH_REVISION": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+        "BASELINE_REPAIR": "PURG_PROJECT_ARIS_BASELINE_REPAIR_READINESS_PACKET",
+        "OPERATOR_DIRECTION": "BLOCKED_OPERATOR_DIRECTION_REQUIRED"
+      },
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Classifies a failed revalidation and routes a loopback. Never closes the finding."
+    },
+    {
+      "r_label": "R9",
+      "phase_id": "INF_REVALIDATION_RESULT_ADJUDICATION_PACKET",
+      "name": "Revalidation Result Adjudication",
+      "type": "artifact_only_adjudication",
+      "phase_class": "infernus_revalidation_result_adjudication",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_execution_result.json",
+        "inf_revalidation_oracle_result.json",
+        "inf_revalidation_regression_matrix.json"
+      ],
+      "outputs": [
+        "inf_revalidation_result_adjudication_packet.json",
+        "inf_revalidation_evidence_sufficiency_matrix.json",
+        "inf_revalidation_regression_check.json",
+        "inf_revalidation_remediation_proven_candidate.json"
+      ],
+      "pass_criteria": [
+        "evidence sufficient",
+        "regressions absent",
+        "lineage consistent"
+      ],
+      "block_criteria": [
+        "insufficient evidence",
+        "regression present",
+        "lineage mismatch"
+      ],
+      "next_on_pass": "PURG_REMEDIATION_PROVEN_DECISION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Adjudicates whether revalidation evidence can support a remediation_proven candidate. Emits a candidate only, not a state change."
+    },
+    {
+      "r_label": "R10",
+      "phase_id": "PURG_REMEDIATION_PROVEN_DECISION_PACKET",
+      "name": "Remediation Proven Decision",
+      "type": "decision_gate",
+      "phase_class": "purgatorium_remediation_proven_decision",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_result_adjudication_packet.json",
+        "inf_revalidation_remediation_proven_candidate.json"
+      ],
+      "outputs": [
+        "purg_remediation_proven_decision_packet.json",
+        "purg_remediation_proven_evidence_bundle.json",
+        "purg_remediation_proven_state_change_candidate.json",
+        "purg_remediation_proven_no_real_execution_attestation.json"
+      ],
+      "pass_criteria": [
+        "reachable only if R8 and R9 passed",
+        "does not change state without the separate state-update gate"
+      ],
+      "block_criteria": [
+        "R8/R9 not passed",
+        "attempt to mutate state in this phase"
+      ],
+      "next_on_pass": "PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Decides whether remediation_proven may become true; emits a state-change CANDIDATE only. State is changed later at R13."
+    },
+    {
+      "r_label": "R11",
+      "phase_id": "PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET",
+      "name": "Finding Closure Eligibility",
+      "type": "artifact_only_eligibility",
+      "phase_class": "purgatorium_finding_closure_eligibility",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "purg_remediation_proven_decision_packet.json",
+        "purg05_carry_forward_locks.json"
+      ],
+      "outputs": [
+        "purg_finding_closure_eligibility_packet.json",
+        "purg_finding_closure_evidence_matrix.json",
+        "purg_finding_closure_policy_check.json",
+        "purg_finding_closure_forbidden_claim_scan.json"
+      ],
+      "pass_criteria": [
+        "valid remediation_proven candidate present",
+        "revalidation pass present",
+        "no residual blocker"
+      ],
+      "block_criteria": [
+        "missing revalidation pass",
+        "residual blocker present"
+      ],
+      "next_on_pass": "PURG_FINDING_CLOSE_OPERATOR_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Eligibility only; does not close the finding."
+    },
+    {
+      "r_label": "R12",
+      "phase_id": "PURG_FINDING_CLOSE_OPERATOR_PACKET",
+      "name": "Finding Close Operator Packet",
+      "type": "operator_gate",
+      "phase_class": "purgatorium_finding_close_operator",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_finding_closure_eligibility_packet.json",
+        "operator authorization"
+      ],
+      "outputs": [
+        "purg_finding_close_operator_packet.json",
+        "purg_finding_close_state_change_manifest.json",
+        "purg_finding_close_rollback_plan.json"
+      ],
+      "pass_criteria": [
+        "explicit operator authorization",
+        "state change manifest prepared",
+        "validator/schema support planned"
+      ],
+      "block_criteria": [
+        "no explicit authorization",
+        "no rollback plan"
+      ],
+      "next_on_pass": "PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Captures explicit operator authorization for closure; prepares but does not apply the state change."
+    },
+    {
+      "r_label": "R13",
+      "phase_id": "PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET",
+      "name": "Finding Close Canonical State Update",
+      "type": "canonical_state_update",
+      "phase_class": "purgatorium_finding_close_canonical_state_update",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": true,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_finding_close_operator_packet.json",
+        "purg_finding_close_state_change_manifest.json"
+      ],
+      "outputs": [
+        "purg_finding_close_canonical_state_update_packet.json",
+        "purg_finding_close_validator_evidence.json",
+        "purg_finding_close_ci_evidence.json"
+      ],
+      "pass_criteria": [
+        "IF09-FIND-001 transitions to closed ONLY at this gate after R8 revalidation",
+        "remediation_proven candidate promoted to true under operator authorization",
+        "validator pass",
+        "CI green"
+      ],
+      "block_criteria": [
+        "any prior gate (R8/R9/R10/R12) not passed",
+        "validator fail",
+        "CI not green"
+      ],
+      "next_on_pass": "PURG_FINAL_EXIT_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write",
+        "product promotion implied by closure",
+        "Bedrock authorization implied by closure"
+      ],
+      "notes": "The ONLY phase that mutates ACTIVE_CONTEXT_STATE.json for finding closure / remediation_proven. Strictly downstream of Infernus Revalidation execution (R8)."
+    },
+    {
+      "r_label": "R14",
+      "phase_id": "PURG_FINAL_EXIT_PACKET",
+      "name": "Purgatorium Final Exit Packet",
+      "type": "exit_gate",
+      "phase_class": "purgatorium_final_exit",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": true,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [
+        "purg_finding_close_canonical_state_update_packet.json OR approved exit handoff",
+        "purg_exit_residual_risk_matrix.json"
+      ],
+      "outputs": [
+        "purg_final_exit_packet.json",
+        "purg_final_exit_evidence_bundle.json",
+        "purg_final_exit_residual_risk_matrix.json",
+        "purg_final_exit_next_macro_candidate.json"
+      ],
+      "pass_criteria": [
+        "evidence bundle complete",
+        "closure/handoff policy satisfied",
+        "product/Bedrock still NOT implied"
+      ],
+      "block_criteria": [
+        "incomplete evidence bundle",
+        "any product/Bedrock implication"
+      ],
+      "next_on_pass": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write",
+        "product promotion",
+        "Bedrock authorization",
+        "any claim that exit implies product_ready or bedrock_ready"
+      ],
+      "notes": "Layer-exit live-route advance only (does not re-touch finding/remediation flags, which R13 set). Hands off to a separate macro gate."
+    },
+    {
+      "r_label": "LB-PLAN",
+      "phase_id": "PURG03_REMEDIATION_PLAN_REVISION_PACKET",
+      "name": "Remediation Plan Revision (loopback)",
+      "type": "artifact_only_loopback_revision",
+      "phase_class": "purgatorium_remediation_plan_revision_loopback",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_failure_loopback_triage.json",
+        "purg03_if09_find_001_s3_remediation_plan_compiler_review_packet.json"
+      ],
+      "outputs": [
+        "purg03_remediation_plan_revision_packet.json",
+        "purg03_remediation_plan_revision_scope_matrix.json",
+        "purg03_remediation_plan_revision_no_real_execution_attestation.json"
+      ],
+      "pass_criteria": [
+        "revised remediation plan recorded",
+        "no apply/patch executed"
+      ],
+      "block_criteria": [
+        "apply/patch executed",
+        "scope undefined"
+      ],
+      "next_on_pass": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Loopback target after a failed revalidation classified as a plan defect. Re-enters the trail toward patch revision then revalidation re-admission."
+    },
+    {
+      "r_label": "LB-PATCH",
+      "phase_id": "PURG04_TRACK_A_PATCH_REVISION_PACKET",
+      "name": "Track A Patch Revision (loopback)",
+      "type": "artifact_only_loopback_revision",
+      "phase_class": "purgatorium_track_a_patch_revision_loopback",
+      "requires_operator": false,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "artifact_only",
+      "required_inputs": [
+        "inf_revalidation_failure_loopback_triage.json OR purg03_remediation_plan_revision_packet.json",
+        "purg04_track_a_main_merge_execution_result.json"
+      ],
+      "outputs": [
+        "purg04_track_a_patch_revision_packet.json",
+        "purg04_track_a_patch_revision_scope_matrix.json",
+        "purg04_track_a_patch_revision_no_real_execution_attestation.json"
+      ],
+      "pass_criteria": [
+        "revised patch plan recorded",
+        "actual apply/merge deferred to its own operator-gated mutation phase"
+      ],
+      "block_criteria": [
+        "apply/merge executed in this artifact-only phase"
+      ],
+      "next_on_pass": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Loopback target; records a revised patch plan and re-admits Infernus Revalidation. Actual patch apply remains a separate operator-gated mutation outside this artifact-only node."
+    },
+    {
+      "r_label": "SENTINEL",
+      "phase_id": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+      "name": "Blocked / Operator Direction Required",
+      "type": "terminal_block_sentinel",
+      "phase_class": "terminal_sentinel",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [],
+      "outputs": [],
+      "pass_criteria": [],
+      "block_criteria": [],
+      "next_on_pass": null,
+      "next_on_block": null,
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Terminal wait-state. Halts the trail pending explicit operator direction."
+    },
+    {
+      "r_label": "SENTINEL",
+      "phase_id": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "name": "BenchUX / Macro Handoff Admission (external)",
+      "type": "external_macro_handoff_sentinel",
+      "phase_class": "external_macro_handoff_sentinel",
+      "requires_operator": true,
+      "allows_execution": false,
+      "allows_state_change": false,
+      "allows_project_aris_mutation": false,
+      "advance_mode": "operator",
+      "required_inputs": [],
+      "outputs": [],
+      "pass_criteria": [],
+      "block_criteria": [],
+      "next_on_pass": null,
+      "next_on_block": null,
+      "forbidden_actions": [
+        "ACTIVE_CONTEXT_STATE.json mutation",
+        "live Transition Table mutation",
+        "Project_ARIS mutation",
+        "Project_ARIS tests execution",
+        "proof-loop execution",
+        "runtime execution",
+        "real_apply",
+        "finding closure",
+        "remediation_proven set true",
+        "resolved claim",
+        "safe claim",
+        "product_ready claim",
+        "bedrock_ready claim",
+        "product promotion",
+        "Bedrock authorization",
+        "secrets access",
+        "dependency/package-manager use",
+        "MCP/RAG/memory write"
+      ],
+      "notes": "Outside Purgatorium scope. The next macro layer (per ROADMAP_CANONICAL.md macro chain) is admitted by a separate macro gate, not by this roadmap."
+    }
+  ],
+  "decision": "pass"
+}

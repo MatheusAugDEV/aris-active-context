@@ -1,0 +1,51 @@
+{
+  "artifact_id": "purgatorium_remaining_roadmap_diagnostic_reconciliation",
+  "phase_id": "PURGATORIUM_REMAINING_ROADMAP_CANONICALIZATION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:40:00-03:00",
+  "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+  "source_current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "source_current_status": "purg_residual_risk_carry_forward_route_opening_pass",
+  "source_next_phase": null,
+  "source_active_next_phase": null,
+  "diagnostic_confirmed": true,
+  "diagnostic_checks": {
+    "live_phase_is_residual_carry_forward": true,
+    "next_phase_null": true,
+    "active_next_phase_null": true,
+    "if09_find_001_open": true,
+    "remediation_proven_false": true,
+    "finding_closed_false": true,
+    "all_real_execution_locks_false": true,
+    "project_aris_at_accepted_commit_7883af5a": true,
+    "residual_route_opening_was_operator_authorized_route_opening_only": true,
+    "transition_table_defines_no_successor_for_residual": true,
+    "pasted_diagnostic_compatible_with_artifacts": true,
+    "no_relevant_blocker_omitted": true,
+    "bedrock_gate_md_stale_is_mirror_drift_not_live_source": true,
+    "completed_phases_history_partial_is_mirror_history_not_live_source": true,
+    "no_remediation_proven_true_in_active_artifacts": true,
+    "no_candidate_gate_treated_as_active_gate": true
+  },
+  "diagnostic_conflicts": [],
+  "json_beats_markdown_conflicts": [
+    {
+      "file": "BEDROCK_GATE.md",
+      "stale_claim": "Active next phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION; Latest completed phase: PURG-04 Track A Pointer Residual Repair Patch Packet",
+      "live_json_truth": "current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET, next_phase=null",
+      "resolution": "json_wins_markdown_is_non_authoritative_mirror_drift",
+      "blocking": false,
+      "classification": "non_blocking_mirror_drift_to_repair_in_future_governance_sync"
+    },
+    {
+      "file": "archive/derived_mirrors/completed_phases_history.json",
+      "stale_claim": "list of 54 entries ending in the IF-08 era; does not include PURG04/PURG05/residual phases",
+      "live_json_truth": "ACTIVE_CONTEXT_STATE.json completed_phases.total_phases_completed=60 with compact latest summary",
+      "resolution": "history_mirror_is_audit_only_not_live_routing_authority",
+      "blocking": false,
+      "classification": "non_blocking_history_mirror_lag"
+    }
+  ],
+  "active_context_state_unchanged": true,
+  "roadmap_canonical_live_transition_table_unchanged": true,
+  "decision": "pass"
+}

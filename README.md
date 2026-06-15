@@ -144,3 +144,9 @@ O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_appl
 ## PURG-04 IF09-FIND-001 S3 local remediation apply result
 
 O artifact `artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json` canoniza a tentativa FAILED de apply local controlado para `IF09-FIND-001/S3` como failure-ledger após rollback. O patch temporário passou nos testes focados, mas não pôde ser aceito canonicamente porque `python3 -m unittest discover -s tests` falhou fora da superfície autorizada, com evidência terminal `fatal: path 'CURRENT_STATE.md' exists on disk, but not in 'HEAD'`. O resultado mantém `finding_closed=false`, `remediation_proven=false` e fixa `next_recommended_step=PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY`.
+
+## PURGATORIUM Remaining Roadmap Canon (trilha técnica subordinada)
+
+`purgatorium_remaining_roadmapcanon.md` é a trilha técnica canônica restante do Purgatorium, subordinada ao ACTIVE_CONTEXT_STATE.json e ao ROADMAP_CANONICAL.md. Ela não ativa successor row sozinha.
+
+O gate artifact-only `PURGATORIUM_REMAINING_ROADMAP_CANONICALIZATION_PACKET_ARTIFACT_ONLY` materializou `project_mirror/docs/purgatorium_full/purgatorium_remaining_roadmapcanon.md` e os artifacts `purgatorium_remaining_roadmap_diagnostic_reconciliation.json`, `...canonicalization_packet.json`, `...phase_graph.json`, `...transition_table_candidate.json`, `...no_deviation_policy.json`, `...post_save_self_review.json` e `...no_real_execution_attestation.json` em `artifacts/purgatorium/`. A trilha cobre R0–R14 (mais loopbacks de revalidação e uma fase explícita de estabilização do baseline global do `Project_ARIS`). Fechamento de finding e `remediation_proven=true` só ocorrem em gates próprios estritamente a jusante da Infernus Revalidation. Este gate não alterou `ACTIVE_CONTEXT_STATE.json`, não alterou a live Transition Table, manteve `next_phase: null`, `IF09-FIND-001 remains open` e `remediation_proven=false`.
