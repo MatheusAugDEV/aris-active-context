@@ -1,0 +1,9 @@
+{
+  "candidate_next_gate": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+  "candidate_only": false,
+  "state_advanced": true,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "reason": "operator_authorized_revalidation_branch_route_activation",
+  "decision": "pass"
+}

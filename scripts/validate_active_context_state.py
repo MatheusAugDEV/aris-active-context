@@ -187,6 +187,17 @@ PURG_RESIDUAL_ROUTE_OPENING_REPORT_PATH = ROOT / "artifacts" / "purgatorium" / "
 PURG_RESIDUAL_ROUTE_OPENING_LOCK_MATRIX_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_lock_matrix.json"
 PURG_RESIDUAL_ROUTE_OPENING_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_no_real_execution_attestation.json"
 PURG_RESIDUAL_ROUTE_OPENING_VALIDATION_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "purg_residual_risk_carry_forward_route_opening_validation_evidence.json"
+INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_admission_packet.json"
+INF_REVALIDATION_REQUIRED_INPUTS_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_required_inputs.json"
+INF_REVALIDATION_SCOPE_MATRIX_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_scope_matrix.json"
+INF_REVALIDATION_FORBIDDEN_ACTIONS_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_forbidden_actions.json"
+INF_REVALIDATION_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_next_route_candidate.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_packet.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_TRANSITION_ROW_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_transition_row.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_STATE_UPDATE_MANIFEST_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_state_update_manifest.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_SCHEMA_VALIDATOR_EVIDENCE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_schema_validator_evidence.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_no_real_execution_attestation.json"
+INF_REVALIDATION_ROUTE_ACTIVATION_NEXT_ROUTE_CANDIDATE_PATH = ROOT / "artifacts" / "purgatorium" / "inf_revalidation_route_activation_next_route_candidate.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -807,6 +818,7 @@ GOVERNANCE_CLASSES = {
     "transition_engine", "contract", "route",
     "purgatorium_track_a_main_merge_execution",
     "purgatorium_post_merge_validation",
+    "infernus_revalidation_route_admission",
 }
 CAPACITY_CLASSES = {
     "fixture_materialization", "bot_execution",
@@ -877,6 +889,22 @@ PHASE_DELIVERABLES = {
         and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("live_route_opened") is True
         and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("new_live_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET"
         and _load_json(PURG_RESIDUAL_ROUTE_OPENING_PACKET_PATH).get("new_live_next_phase") is None
+    ),
+    "INF_REVALIDATION_ROUTE_ADMISSION_PACKET": lambda: (
+        INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH.exists()
+        and INF_REVALIDATION_REQUIRED_INPUTS_PATH.exists()
+        and INF_REVALIDATION_SCOPE_MATRIX_PATH.exists()
+        and INF_REVALIDATION_FORBIDDEN_ACTIONS_PATH.exists()
+        and INF_REVALIDATION_NEXT_ROUTE_CANDIDATE_PATH.exists()
+        and INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH.exists()
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET"
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("status") == "inf_revalidation_route_admission_opened"
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("selected_branch") == "TRACK_REVALIDATION_FIRST"
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("revalidation_executed") is False
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("finding_closed") is False
+        and _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH).get("remediation_proven") is False
+        and _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH).get("state_advanced") is True
+        and _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH).get("target_phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET"
     ),
     "ACB-CORE-01": lambda: (
         ACB_CORE_01_EVIDENCE_PATH.exists()
@@ -1750,6 +1778,160 @@ def _check_purg_residual_risk_carry_forward_route_opening_artifacts(state: dict[
         validation_evidence.get("status") == "purg_residual_risk_carry_forward_route_opening_pass",
         "residual route-opening validation evidence status mismatch",
     )
+
+
+def _check_inf_revalidation_route_activation_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "INF_REVALIDATION_ROUTE_ADMISSION_PACKET":
+        return
+
+    for path in (
+        INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH,
+        INF_REVALIDATION_REQUIRED_INPUTS_PATH,
+        INF_REVALIDATION_SCOPE_MATRIX_PATH,
+        INF_REVALIDATION_FORBIDDEN_ACTIONS_PATH,
+        INF_REVALIDATION_NEXT_ROUTE_CANDIDATE_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_TRANSITION_ROW_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_STATE_UPDATE_MANIFEST_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_SCHEMA_VALIDATOR_EVIDENCE_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_NO_REAL_PATH,
+        INF_REVALIDATION_ROUTE_ACTIVATION_NEXT_ROUTE_CANDIDATE_PATH,
+    ):
+        _require(path.exists(), f"missing INF revalidation route activation artifact: {path}")
+
+    route_packet = _load_json(INF_REVALIDATION_ROUTE_ADMISSION_PACKET_PATH)
+    _require(route_packet.get("artifact_id") == "inf_revalidation_route_admission_packet", "INF route admission artifact_id mismatch")
+    _require(route_packet.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF route admission phase_id mismatch")
+    _require(route_packet.get("phase_class") == "infernus_revalidation_route_admission", "INF route admission phase_class mismatch")
+    _require(route_packet.get("status") == "inf_revalidation_route_admission_opened", "INF route admission status mismatch")
+    _require(route_packet.get("selected_branch") == "TRACK_REVALIDATION_FIRST", "INF route admission selected_branch mismatch")
+    _require(route_packet.get("source_activation_decision") == "artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json", "INF route admission source_activation_decision mismatch")
+    _require(route_packet.get("source_activation_packet") == "artifacts/purgatorium/inf_revalidation_route_activation_packet.json", "INF route admission source_activation_packet mismatch")
+    _require(route_packet.get("previous_live_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "INF route admission previous_live_phase_id mismatch")
+    _require(route_packet.get("next_phase") is None, "INF route admission next_phase must be null")
+    _require(route_packet.get("active_next_phase") is None, "INF route admission active_next_phase must be null")
+    _require(route_packet.get("finding_id") == "IF09-FIND-001", "INF route admission finding_id mismatch")
+    for key in (
+        "operator_authorized",
+        "route_activation_only",
+        "state_advanced",
+        "required_inputs_recorded",
+        "scope_matrix_recorded",
+        "forbidden_actions_recorded",
+    ):
+        _require(route_packet.get(key) is True, f"INF route admission {key} must be true")
+    for key in (
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "proof_loop_executed",
+        "revalidation_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "finding_closed",
+        "remediation_proven",
+    ):
+        _require(route_packet.get(key) is False, f"INF route admission {key} must be false")
+    _require(route_packet.get("decision") == "pass", "INF route admission decision mismatch")
+
+    required_inputs = _load_json(INF_REVALIDATION_REQUIRED_INPUTS_PATH)
+    _require(required_inputs.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF required inputs phase_id mismatch")
+    _require(required_inputs.get("selected_branch") == "TRACK_REVALIDATION_FIRST", "INF required inputs selected_branch mismatch")
+    _require(required_inputs.get("operator_authorized_route_activation") is True, "INF required inputs operator authorization mismatch")
+
+    scope_matrix = _load_json(INF_REVALIDATION_SCOPE_MATRIX_PATH)
+    _require(scope_matrix.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF scope matrix phase_id mismatch")
+    _require(scope_matrix.get("route_activation_only") is True, "INF scope matrix route_activation_only mismatch")
+    _require(scope_matrix.get("revalidation_execution_in_scope") is False, "INF scope matrix revalidation_execution_in_scope must be false")
+
+    forbidden_actions = _load_json(INF_REVALIDATION_FORBIDDEN_ACTIONS_PATH)
+    _require(forbidden_actions.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF forbidden actions phase_id mismatch")
+    for key in (
+        "project_aris_mutation_forbidden",
+        "project_aris_tests_forbidden",
+        "proof_loop_execution_forbidden",
+        "revalidation_execution_forbidden",
+        "runtime_forbidden",
+        "real_apply_forbidden",
+        "finding_close_forbidden",
+        "remediation_proven_override_forbidden",
+        "product_forbidden",
+        "bedrock_forbidden",
+        "secrets_forbidden",
+        "dependency_or_package_manager_forbidden",
+    ):
+        _require(forbidden_actions.get(key) is True, f"INF forbidden actions {key} must be true")
+
+    next_candidate = _load_json(INF_REVALIDATION_NEXT_ROUTE_CANDIDATE_PATH)
+    _require(next_candidate.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF next route candidate phase_id mismatch")
+    _require(next_candidate.get("candidate_next_gate") == "INF_REVALIDATION_READINESS_PACKET", "INF next route candidate gate mismatch")
+    _require(next_candidate.get("candidate_only") is True, "INF next route candidate candidate_only must be true")
+    _require(next_candidate.get("state_advanced") is False, "INF next route candidate state_advanced must be false")
+    _require(next_candidate.get("next_phase_preserved") is None, "INF next route candidate next_phase_preserved must be null")
+    _require(next_candidate.get("active_next_phase_preserved") is None, "INF next route candidate active_next_phase_preserved must be null")
+
+    activation_packet = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_PACKET_PATH)
+    _require(activation_packet.get("artifact_id") == "inf_revalidation_route_activation_packet", "INF activation packet artifact_id mismatch")
+    _require(activation_packet.get("phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_ACTIVATION_PACKET", "INF activation packet phase_id mismatch")
+    _require(activation_packet.get("source_current_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "INF activation packet source_current_phase_id mismatch")
+    _require(activation_packet.get("selected_branch") == "TRACK_REVALIDATION_FIRST", "INF activation packet selected_branch mismatch")
+    _require(activation_packet.get("source_activation_decision") == "artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json", "INF activation packet source activation decision mismatch")
+    _require(activation_packet.get("target_phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF activation packet target_phase_id mismatch")
+    _require(activation_packet.get("target_phase_class") == "infernus_revalidation_route_admission", "INF activation packet target_phase_class mismatch")
+    for key in (
+        "operator_authorized",
+        "route_activation_only",
+        "state_advanced",
+    ):
+        _require(activation_packet.get(key) is True, f"INF activation packet {key} must be true")
+    for key in (
+        "revalidation_executed",
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "finding_closed",
+        "remediation_proven",
+    ):
+        _require(activation_packet.get(key) is False, f"INF activation packet {key} must be false")
+    _require(activation_packet.get("decision") == "pass", "INF activation packet decision mismatch")
+
+    transition_row = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_TRANSITION_ROW_PATH)
+    _require(transition_row.get("row_applied_to_live_transition_table") is True, "INF transition row must be applied to the live Transition Table")
+    _require(transition_row.get("current_phase_id") == "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET", "INF transition row current_phase_id mismatch")
+    _require(transition_row.get("next_phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF transition row next_phase_id mismatch")
+    _require(transition_row.get("next_phase_class") == "infernus_revalidation_route_admission", "INF transition row next_phase_class mismatch")
+
+    state_manifest = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_STATE_UPDATE_MANIFEST_PATH)
+    _require(state_manifest.get("new_phase_id") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF state update manifest new_phase_id mismatch")
+    _require(state_manifest.get("new_status") == "inf_revalidation_route_admission_opened", "INF state update manifest new_status mismatch")
+
+    schema_validator_evidence = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_SCHEMA_VALIDATOR_EVIDENCE_PATH)
+    _require(schema_validator_evidence.get("schema_updated") is True, "INF schema/validator evidence schema_updated must be true")
+    _require(schema_validator_evidence.get("validator_updated") is True, "INF schema/validator evidence validator_updated must be true")
+
+    no_real = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_NO_REAL_PATH)
+    for key in (
+        "project_aris_changed",
+        "project_aris_tests_executed",
+        "proof_loop_executed",
+        "revalidation_executed",
+        "runtime_executed",
+        "real_apply_executed",
+        "finding_closed",
+        "remediation_proven",
+        "product_bedrock_real_apply_secrets_executed",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+    ):
+        _require(no_real.get(key) is False, f"INF route activation no-real {key} must be false")
+
+    activation_next_candidate = _load_json(INF_REVALIDATION_ROUTE_ACTIVATION_NEXT_ROUTE_CANDIDATE_PATH)
+    _require(activation_next_candidate.get("candidate_next_gate") == "INF_REVALIDATION_ROUTE_ADMISSION_PACKET", "INF activation next route candidate gate mismatch")
+    _require(activation_next_candidate.get("candidate_only") is False, "INF activation next route candidate candidate_only must be false")
+    _require(activation_next_candidate.get("state_advanced") is True, "INF activation next route candidate state_advanced must be true")
+    _require(activation_next_candidate.get("next_phase_preserved") is None, "INF activation next route candidate next_phase_preserved must be null")
+    _require(activation_next_candidate.get("active_next_phase_preserved") is None, "INF activation next route candidate active_next_phase_preserved must be null")
+    _require(activation_next_candidate.get("decision") == "pass", "INF activation next route candidate decision mismatch")
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -10657,6 +10839,7 @@ def main() -> None:
     _check_scenario_count_resolution(state)
     _check_purg04_track_a_post_merge_validation_artifacts(state)
     _check_purg_residual_risk_carry_forward_route_opening_artifacts(state)
+    _check_inf_revalidation_route_activation_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -10825,12 +11008,12 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+        "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg_residual_risk_carry_forward_route_opening_pass",
-        "latest_completed_phase: PURG Residual Risk Carry-Forward Packet",
+        "inf_revalidation_route_admission_opened",
+        "latest_completed_phase: INF Revalidation Route Admission Packet",
         "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
@@ -10846,6 +11029,19 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## INF Revalidation Route Activation / Amendment Packet",
+        "inf_revalidation_route_admission_opened",
+        "inf_revalidation_route_activation_packet.json",
+        "inf_revalidation_route_admission_packet.json",
+        "phase_id=current_phase_id=INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+        "next_phase=null",
+        "active_next_phase=null",
+        "TRACK_REVALIDATION_FIRST",
+        "IF09-FIND-001` remains open",
+        "`remediation_proven=false`",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",

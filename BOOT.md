@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `0e7acd4d8170`
-- schema_version: `3.15`
+- state_sha: `ee08aa42e21e`
+- schema_version: `3.16`
 
 ## AVISO DE STALE
 
@@ -13,17 +13,17 @@ GERADO — NAO EDITE A MAO
 
 ## ONDE ESTOU
 
-- camada: `Purgatorium FULL`
-- phase_id: `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
-- status: `purg_residual_risk_carry_forward_route_opening_pass`
+- camada: `Infernus Revalidation`
+- phase_id: `INF_REVALIDATION_ROUTE_ADMISSION_PACKET`
+- status: `inf_revalidation_route_admission_opened`
 - decision: `pass`
-- resumo: PURG Residual Risk Carry-Forward Packet; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: INF Revalidation Route Admission Packet; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
   Infernus FULL
-▸ Purgatorium FULL (phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET)
-  Infernus Revalidation
+  Purgatorium FULL
+▸ Infernus Revalidation (phase_id=INF_REVALIDATION_ROUTE_ADMISSION_PACKET)
   BenchUX
   Crisol
   Polimento
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ROUTE_ADMISSION_PACKET.
 
 ## REGRAS DE AGORA
 

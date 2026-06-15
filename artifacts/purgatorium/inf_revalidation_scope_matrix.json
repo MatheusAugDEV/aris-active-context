@@ -1,0 +1,15 @@
+{
+  "artifact_id": "inf_revalidation_scope_matrix",
+  "phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+  "created_at": "2026-06-15T19:05:00-03:00",
+  "route_activation_only": true,
+  "revalidation_execution_in_scope": false,
+  "project_aris_mutation_in_scope": false,
+  "project_aris_tests_in_scope": false,
+  "proof_loop_in_scope": false,
+  "runtime_in_scope": false,
+  "real_apply_in_scope": false,
+  "finding_close_in_scope": false,
+  "remediation_proven_override_in_scope": false,
+  "authorized_outcome": "activate_live_inf_route_admission_without_execution"
+}

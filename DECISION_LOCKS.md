@@ -79,6 +79,55 @@
   - `Project_ARIS changed during this phase=false`
   - residual carry-forward is not accepted-risk final and does not authorize Infernus Revalidation
 
+## INF Revalidation Route Activation / Amendment Packet
+
+- Status: `inf_revalidation_route_admission_opened`
+- Decision: `pass`
+- Scope: operator-authorized route activation plus artifact-only route admission for the selected branch `TRACK_REVALIDATION_FIRST`; no revalidation execution, no `Project_ARIS` mutation, no `Project_ARIS` tests, no runtime, no real_apply, no finding close.
+- Source chain verified:
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_diagnostic_packet.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_transition_table_candidate.json`
+  - `artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.json`
+  - `artifacts/purgatorium/purg05_carry_forward_locks.json`
+- Artifacts created:
+  - `artifacts/purgatorium/inf_revalidation_route_activation_packet.json`
+  - `artifacts/purgatorium/inf_revalidation_route_activation_transition_row.json`
+  - `artifacts/purgatorium/inf_revalidation_route_activation_state_update_manifest.json`
+  - `artifacts/purgatorium/inf_revalidation_route_activation_schema_validator_evidence.json`
+  - `artifacts/purgatorium/inf_revalidation_route_activation_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/inf_revalidation_route_activation_next_route_candidate.json`
+  - `artifacts/purgatorium/inf_revalidation_route_admission_packet.json`
+  - `artifacts/purgatorium/inf_revalidation_required_inputs.json`
+  - `artifacts/purgatorium/inf_revalidation_scope_matrix.json`
+  - `artifacts/purgatorium/inf_revalidation_forbidden_actions.json`
+  - `artifacts/purgatorium/inf_revalidation_next_route_candidate.json`
+- Operator authorization:
+  - exact lines: `operator_authorizes_route_activation_for=INF_REVALIDATION_ROUTE_ADMISSION_PACKET`
+  - `operator_selected_branch=TRACK_REVALIDATION_FIRST`
+  - route activation only: `true`
+  - revalidation execution authorized: `false`
+- ACTIVE_CONTEXT_STATE advanced canonically to:
+  - `phase_id=current_phase_id=INF_REVALIDATION_ROUTE_ADMISSION_PACKET`
+  - `previous_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `phase_class=infernus_revalidation_route_admission`
+  - `status=inf_revalidation_route_admission_opened`
+  - `active_next_phase=null`
+  - `next_phase=null`
+- Transition Table result:
+  - `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | pass | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | infernus_revalidation_route_admission | operator | inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate`
+  - no successor row exists for `INF_REVALIDATION_ROUTE_ADMISSION_PACKET`
+  - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
+- Safety locks preserved:
+  - `IF09-FIND-001` remains open
+  - `finding_closed=false`
+  - `remediation_proven=false`
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+  - `Project_ARIS changed during this phase=false`
+  - Infernus Revalidation remains unopened for execution; only the admission/route layer was activated
+
 ## Active-Context Schema/State Drift Repair
 
 - Status: `active_context_schema_state_drift_repair_pass`

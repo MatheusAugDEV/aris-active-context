@@ -70,22 +70,23 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET
-status: purg_residual_risk_carry_forward_route_opening_pass
-latest_completed_phase: PURG Residual Risk Carry-Forward Packet
-latest_completed_status: purg_residual_risk_carry_forward_route_opening_pass
+phase_id: INF_REVALIDATION_ROUTE_ADMISSION_PACKET
+status: inf_revalidation_route_admission_opened
+latest_completed_phase: INF Revalidation Route Admission Packet
+latest_completed_status: inf_revalidation_route_admission_opened
 next_phase: null
 next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
+Selected branch: `TRACK_REVALIDATION_FIRST`
 Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 remains open
-Project_ARIS main workspace: não alterado por este residual route-opening packet
+Project_ARIS main workspace: não alterado por este INF route activation packet
 
-O packet canônico de abertura da rota residual está registrado em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, com autorização explícita em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_operator_authorization.json`. Ele consome a cadeia documental PURG05 já validada, promove a rota viva para `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
+O packet canônico de ativação da rota de revalidação está registrado em `artifacts/purgatorium/inf_revalidation_route_activation_packet.json`. Ele consome a cadeia documental `PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET` + amendment candidate já validada, materializa a row viva `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET -> INF_REVALIDATION_ROUTE_ADMISSION_PACKET`, promove a rota viva para `INF_REVALIDATION_ROUTE_ADMISSION_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
 
-Para fechar a cadeia documental anterior à abertura, o repositório agora também registra `artifacts/purgatorium/purg_residual_risk_carry_forward_admission_packet.json` como `historical_backfill_only=true`. Esse packet não reabre a rota nem retrocede o estado vivo; ele apenas formaliza a admissão artifact-only que o candidate residual teria emitido antes do route-opening já canônico em `2026-06-15`.
+Como artifact family da fase viva, o repositório agora registra `artifacts/purgatorium/inf_revalidation_route_admission_packet.json`, `inf_revalidation_required_inputs.json`, `inf_revalidation_scope_matrix.json`, `inf_revalidation_forbidden_actions.json` e `inf_revalidation_next_route_candidate.json`. Esses artifacts abrem somente a admissão da rota de Infernus Revalidation; eles não executam revalidation, não fecham finding, não provam remediação e não tocam `Project_ARIS`.
 
 ## PURG-04 proof-loop corpus materialization
 

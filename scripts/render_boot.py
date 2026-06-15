@@ -41,6 +41,7 @@ PHASE_TO_LAYER_PREFIXES = {
     "AC-": "Infernus FULL",
     "ACB-": "Infernus FULL",
     "IF-": "Infernus FULL",
+    "INF_REVALIDATION": "Infernus Revalidation",
     "INF-": "Infernus FULL",
     "PURG": "Purgatorium FULL",
     "BENCH": "BenchUX",
@@ -124,7 +125,6 @@ def _transition_for_state(state: dict[str, Any], rows: list[dict[str, str]]) -> 
         "decision": decision,
         "next_phase_id": state.get("active_next_phase", ""),
         "next_phase_class": state.get("active_next_phase_class", ""),
-        # Current PURG-04 live state is not yet represented in the Transition Table.
         "advance_mode": "operator" if not state.get("next_phase_authorized_by_operator", False) else "prompt_only",
         "minimum_deliverable": "state_reconciliation_and_review_only",
     }

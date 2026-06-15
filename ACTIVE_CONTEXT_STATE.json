@@ -1,14 +1,14 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
-    "current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
-    "previous_phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+    "phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+    "current_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+    "previous_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
     "governance_gate_streak": 0,
     "seen_gate_signatures": [],
-    "phase_class": "purgatorium_route_admission",
+    "phase_class": "infernus_revalidation_route_admission",
     "fixture_materialization_allowed": true,
     "fixture_materialization_executed": true,
     "fixture_count": 65,
@@ -159,16 +159,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "PURG Residual Risk Carry-Forward Packet",
+            "phase": "INF Revalidation Route Admission Packet",
             "decision": "pass",
-            "status": "purg_residual_risk_carry_forward_route_opening_pass"
+            "status": "inf_revalidation_route_admission_opened"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 60,
+        "total_phases_completed": 61,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -203,19 +203,19 @@
     "current_live_route": {
         "active_next_phase": null,
         "active_next_phase_class": null,
-        "current_status": "purg_residual_risk_carry_forward_route_opening_pass",
+        "current_status": "inf_revalidation_route_admission_opened",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "PURG Residual Risk Carry-Forward Packet",
-        "latest_completed_status": "purg_residual_risk_carry_forward_route_opening_pass",
+        "latest_completed_phase": "INF Revalidation Route Admission Packet",
+        "latest_completed_status": "inf_revalidation_route_admission_opened",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "purg_residual_risk_carry_forward_route_opening_pass",
+        "status": "inf_revalidation_route_admission_opened",
         "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
         "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador."
     },
-    "current_status": "purg_residual_risk_carry_forward_route_opening_pass",
+    "current_status": "inf_revalidation_route_admission_opened",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
     "latest_completed_next_recommended_step": "Nenhuma transição definida. Aguardando instrução do operador.",
     "purg00_source_data_gap_resolution": {
@@ -607,7 +607,7 @@
         "real_quota_consumed": false
     },
     "latest_completed_project_commit_sha": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
-    "latest_completed_status": "purg_residual_risk_carry_forward_route_opening_pass",
+    "latest_completed_status": "inf_revalidation_route_admission_opened",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -618,28 +618,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "PURG Residual Risk Carry-Forward Packet",
+        "latest_execution_phase": "INF Revalidation Route Admission Packet",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "PURG04 Track A Post-Merge Validation Packet",
-        "latest_execution_status": "purg_residual_risk_carry_forward_route_opening_pass"
+        "previous_execution_phase": "PURG Residual Risk Carry-Forward Packet",
+        "latest_execution_status": "inf_revalidation_route_admission_opened"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "PURG04 Track A Post-Merge Validation Packet",
-        "proof_source": "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json",
-        "to_phase": "PURG Residual Risk Carry-Forward Packet",
-        "to_status": "purg_residual_risk_carry_forward_route_opening_pass",
-        "transition_type": "purgatorium_route_admission",
-        "verified_via": "Route-opening packet binds the explicit operator authorization to the verified PURG05 residual candidate chain, advances only the canonical active-context route, preserves IF09-FIND-001 open, keeps remediation_proven=false, and opens no real execution surface."
+        "from_phase": "PURG Residual Risk Carry-Forward Packet",
+        "proof_source": "artifacts/purgatorium/inf_revalidation_route_activation_packet.json",
+        "to_phase": "INF Revalidation Route Admission Packet",
+        "to_status": "inf_revalidation_route_admission_opened",
+        "transition_type": "infernus_revalidation_route_admission",
+        "verified_via": "Operator-authorized TRACK_REVALIDATION_FIRST route activation consumed the remaining-roadmap activation decision candidate, materialized the INF route-admission artifact family, advanced only the active-context route, preserved IF09-FIND-001 open, kept remediation_proven=false, and executed no revalidation or other real surface."
     },
-    "latest_completed_phase": "PURG Residual Risk Carry-Forward Packet",
+    "latest_completed_phase": "INF Revalidation Route Admission Packet",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para INF_REVALIDATION_ROUTE_ADMISSION_PACKET.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -652,8 +652,8 @@
     "next_action": {
         "execution_authorization": false,
         "notes": [
-            "Operator authorization recorded via AUTHORIZE_ROUTE_OPENING_PACKET_FOR_PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET.",
-            "Residual route-opening packet materialized from the verified PURG05 candidate chain and explicit operator authorization.",
+            "Operator authorization recorded via operator_authorizes_route_activation_for=INF_REVALIDATION_ROUTE_ADMISSION_PACKET.",
+            "TRACK_REVALIDATION_FIRST was promoted from the remaining-roadmap candidate chain into the live INF revalidation route admission packet.",
             "Project_ARIS merge commit: 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
             "Patch commit: 1e9a04a02846f3261ae72d0c95fbee6b0163b45b.",
             "Project_ARIS CI: CI_GREEN_CONFIRMED.",
@@ -668,7 +668,7 @@
         "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "purg_residual_risk_carry_forward_route_opening_pass"
+        "status": "inf_revalidation_route_admission_opened"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -684,8 +684,8 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.15",
-    "status": "purg_residual_risk_carry_forward_route_opening_pass",
+    "schema_version": "3.16",
+    "status": "inf_revalidation_route_admission_opened",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -700,7 +700,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.15",
+        "current_schema_version": "3.16",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -719,6 +719,7 @@
         "schema_3_11_change_summary": "PURG-01 controlled triage execution gate: record the artifact-only readiness decision for IF09-FIND-001, persist the source-packet plus IF10 handoff integrity evidence, add the controlled triage execution gate state object, and advance the next recommended step to execute_purg01_controlled_triage_artifact_only while every real execution surface remains false.",
         "schema_3_12_change_summary": "PURG-01 controlled triage artifact-only execution: record the deterministic artifact-only execution result, evidence matrix, and no-real-execution attestation for IF09-FIND-001 while preserving the live PURG-01 route, leaving finding-fix/remediation/runtime/product/Bedrock/secrets locks closed, and avoiding any inferred post-transition.",
         "schema_3_14_change_summary": "PURG04 post-merge validation packet: permit the live state to advance from PURG04_TRACK_A_MAIN_MERGE_EXECUTION to PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET, enforce the operator authorization plus no-real-execution packet artifacts, and allow next_phase/active_next_phase/deferred_phase to become null when the Transition Table defines no successor.",
-        "schema_3_15_change_summary": "Residual risk carry-forward route opening: admit PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET as the live artifact-only route through an explicit operator route-opening packet, add validator enforcement for the residual candidate chain and new artifacts, materialize the PURG04 post-merge validation successor row in the active Transition Table, and preserve next_phase/active_next_phase null because the new residual route has no successor row."
+        "schema_3_15_change_summary": "Residual risk carry-forward route opening: admit PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET as the live artifact-only route through an explicit operator route-opening packet, add validator enforcement for the residual candidate chain and new artifacts, materialize the PURG04 post-merge validation successor row in the active Transition Table, and preserve next_phase/active_next_phase null because the new residual route has no successor row.",
+        "schema_3_16_change_summary": "INF revalidation route activation: promote INF_REVALIDATION_ROUTE_ADMISSION_PACKET from the TRACK_REVALIDATION_FIRST candidate into the live active-context route, admit infernus_revalidation_route_admission as a valid live/next route class, require the route-activation plus route-admission artifact family, and preserve next_phase/active_next_phase null because no successor row is active yet for the newly opened INF route."
     }
 }

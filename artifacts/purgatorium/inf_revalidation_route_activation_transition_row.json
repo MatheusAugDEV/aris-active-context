@@ -1,0 +1,13 @@
+{
+  "artifact_id": "inf_revalidation_route_activation_transition_row",
+  "created_at": "2026-06-15T19:05:00-03:00",
+  "row_applied_to_live_transition_table": true,
+  "current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "decision": "pass",
+  "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+  "next_phase_class": "infernus_revalidation_route_admission",
+  "advance_mode": "operator",
+  "minimum_deliverable": "inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate",
+  "reason": "operator_authorized_track_revalidation_first_activation",
+  "source_candidate_row": "artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json"
+}

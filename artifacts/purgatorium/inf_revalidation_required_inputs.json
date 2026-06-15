@@ -1,0 +1,19 @@
+{
+  "artifact_id": "inf_revalidation_required_inputs",
+  "phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+  "created_at": "2026-06-15T19:05:00-03:00",
+  "selected_branch": "TRACK_REVALIDATION_FIRST",
+  "operator_authorized_route_activation": true,
+  "required_inputs": [
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json",
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json",
+    "artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json",
+    "artifacts/purgatorium/purg_remaining_roadmap_branch_selection_diagnostic_packet.json",
+    "artifacts/purgatorium/purgatorium_remaining_roadmap_transition_table_candidate.json",
+    "artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.json",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json"
+  ],
+  "finding_id": "IF09-FIND-001",
+  "remediation_proven": false,
+  "finding_closed": false
+}
