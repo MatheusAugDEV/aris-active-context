@@ -1,0 +1,22 @@
+{
+  "artifact_id": "purg05_carry_forward_locks",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "created_at": "2026-06-15T01:10:22-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "IF09-FIND-001": "open",
+  "remediation_proven": false,
+  "finding_closed": false,
+  "purgatorium_can_close_finding": false,
+  "infernus_revalidation_required_for_closure": true,
+  "project_aris_mutation_allowed": false,
+  "project_aris_tests_allowed": false,
+  "proof_loop_execution_allowed": false,
+  "runtime_allowed": false,
+  "real_apply_allowed": false,
+  "product_ready": false,
+  "bedrock_ready": false,
+  "secrets_allowed": false,
+  "dependency_package_manager_allowed": false,
+  "decision": "pass"
+}

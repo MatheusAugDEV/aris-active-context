@@ -1,0 +1,16 @@
+{
+  "artifact_id": "purg05_next_route_candidate",
+  "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "created_at": "2026-06-15T01:10:22-03:00",
+  "candidate_next_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "candidate_only": true,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "reason": "purg05_evidence_custody_completed_artifact_only_residual_risk_packet_candidate",
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_residual_now": false,
+  "requires_future_route_or_operator_packet": true,
+  "decision": "pass"
+}

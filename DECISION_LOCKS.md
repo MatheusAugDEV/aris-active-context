@@ -2452,6 +2452,50 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
 
+## PURG05 Evidence Ledger Signing Custody Packet
+
+- Status: `purg05_evidence_ledger_signing_custody_packet_pass`
+- Decision: `pass`
+- Opening packet source:
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json`
+- Artifacts created:
+  - `artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json`
+  - `artifacts/purgatorium/purg05_evidence_ledger_signing_metadata.json`
+  - `artifacts/purgatorium/purg05_evidence_custody_chain_map.json`
+  - `artifacts/purgatorium/purg05_source_to_output_lineage_table.json`
+  - `artifacts/purgatorium/purg05_carry_forward_locks.json`
+  - `artifacts/purgatorium/purg05_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg05_next_route_candidate.json`
+- Signing mode:
+  - `documentary_metadata_only`
+  - `cryptographic_signing_executed=false`
+  - `external_signing_service_used=false`
+- Hash inventory result:
+  - all required input hashes recorded: `true`
+  - proof-loop corpus artifacts preserved as `decision=pass`
+- Custody chain result:
+  - documentary custody chain materialized for route recheck, retry corpus, five proof-loop artifacts, post-merge validation, merge execution, CI evidence, policy lock, canonical state, roadmap snapshot, and governance ledger snapshot
+- Candidate next gate:
+  - emitted: `true`
+  - `candidate_next_gate=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `candidate_only=true`
+  - `can_open_residual_now=false`
+  - `requires_future_route_or_operator_packet=true`
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - real ledger signing executed: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
 ## PURG05 Evidence Ledger Signing Custody Opening Packet Artifact-Only
 
 - Status: `purg05_evidence_ledger_signing_custody_opening_packet_artifact_only_pass`
