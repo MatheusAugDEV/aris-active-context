@@ -1,0 +1,51 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_retry_next_route_candidate",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:17:19-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json"
+  ],
+  "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json": "467862f01baf34f72f5d180fa5916d1a7d7d17e2ce04cea49d501b9f343f39a0",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json": "f786d2b388c0e1b5a4fc0af90ca5f49c6a8734c17434c95c7bff29628cf6f197",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json": "3f4d3a4500e0bbba46976901488384a059cd2d101e72babd9d285b24b6080e8d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json": "4306566c54d6eb78f66ae07e9cd4562908bb1163ce297968fd975efcf2c2f6b1"
+  },
+  "blocked_stub_previous_hash": {
+    "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json": "872389edda535e1c365e33f47cdbc26aeeccf788782fd3c4d6bc68621c4dd25c",
+    "artifacts/purgatorium/purg04_track_a_reset_evidence.json": "e1674235272ced6020646fc69c0ee40cf6abeae58a3f5283de15e54b23485f47",
+    "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json": "6775e7a56a42170d2d8af86662f32b1da8b5cd756330d0489294cd8290bacfcb",
+    "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json": "6c0fb5de3999736adeafc381e5ac65790a9bec29ee9e3911289750c9fb7d4650",
+    "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json": "7999be3bb77605f6c97855a8fa3303bf7fc387f282f3f4930b2a44ecb2d5aa27"
+  },
+  "lineage_binding": {
+    "binding_status": "accepted_lineage_documentary_binding",
+    "finding_id_matches": true,
+    "target_lineage_matches": true,
+    "patch_commit_matches": true,
+    "merge_commit_matches": true
+  },
+  "candidate_next_gate": "PURGATORIUM_POST_PURG04_ROUTE_DECISION_RECHECK_ARTIFACT_ONLY",
+  "candidate_only": true,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "can_open_purg05_now": false,
+  "reason": "proof_loop_corpus_artifacts_materialized_for_route_recheck_only",
+  "all_required_artifacts_materialized": true,
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "decision": "pass"
+}

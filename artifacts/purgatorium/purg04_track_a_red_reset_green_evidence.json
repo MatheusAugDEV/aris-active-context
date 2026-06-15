@@ -1,46 +1,133 @@
 {
   "artifact_id": "purg04_track_a_red_reset_green_evidence",
-  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
-  "created_at": "2026-06-14T23:09:54-03:00",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:17:19-03:00",
   "target_finding_id": "IF09-FIND-001",
   "target_lineage": "accepted_merged_track_a",
   "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
   "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
   "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_precondition_matrix.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json",
     "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
     "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
     "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
     "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
-    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json"
+    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
   ],
   "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json": "467862f01baf34f72f5d180fa5916d1a7d7d17e2ce04cea49d501b9f343f39a0",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json": "f786d2b388c0e1b5a4fc0af90ca5f49c6a8734c17434c95c7bff29628cf6f197",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json": "3f4d3a4500e0bbba46976901488384a059cd2d101e72babd9d285b24b6080e8d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_precondition_matrix.json": "9133f607c74468ec5eae4179d095594f7f61a3ae51324addeda2b730f299cc76",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json": "4306566c54d6eb78f66ae07e9cd4562908bb1163ce297968fd975efcf2c2f6b1",
     "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json": "c0b93b2bd1fb320d084058483b0de79640f85c4483b52877c0414accb6f059b3",
     "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json": "4a21abb0afe5c29a24c917689bab8524639b7fa80ffe80a4d5d8102bd4007544",
     "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json": "36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf",
     "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
     "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json": "972f68bb1babd0c0510f2a545d55f6251592d23dcb354b3551a11830fb917638",
-    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
-    "DECISION_LOCKS.md.expected_from_manifest": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
-    "DECISION_LOCKS.md.actual_at_phase_start": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a"
   },
+  "blocked_stub_previous_hash": "872389edda535e1c365e33f47cdbc26aeeccf788782fd3c4d6bc68621c4dd25c",
   "lineage_binding": {
-    "binding_status": "target_lineage_preserved_but_derivation_blocked",
+    "binding_status": "accepted_lineage_documentary_binding",
     "finding_id_matches": true,
     "target_lineage_matches": true,
     "patch_commit_matches": true,
-    "merge_commit_matches": true
+    "merge_commit_matches": true,
+    "accepted_merge_parents": [
+      "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+      "1e9a04a02846f3261ae72d0c95fbee6b0163b45b"
+    ]
   },
-  "red_source_artifact": "not_materialized_due_to_source_hash_manifest_divergence",
-  "reset_event": "not_materialized_due_to_source_hash_manifest_divergence",
-  "green_source_artifacts": "not_materialized_due_to_source_hash_manifest_divergence",
-  "ordered_chain": "not_materialized_due_to_source_hash_manifest_divergence",
-  "hashes": "not_materialized_due_to_source_hash_manifest_divergence",
-  "no_contamination_attestation": "not_materialized_due_to_source_hash_manifest_divergence",
+  "red_source_artifact": {
+    "path": "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+    "status": "purg02_if09_find_001_s3_red_baseline_pass",
+    "selected_track": "S3",
+    "red_baseline_result": "ready",
+    "expected_red_condition": [
+      "A documentary comparison still exposes the SHA drift lineage described by IF09-FIND-001 and IF09-REPRO-001.",
+      "The finding remains reproducible and replay-consistent from existing artifacts without fresh execution.",
+      "No correction artifact, patch, remediation apply, or revalidation verdict exists that would convert this baseline into GREEN or closure evidence."
+    ]
+  },
+  "reset_event": {
+    "prerequisite_packet": "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+    "execution_packet": "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+    "cleanroom_reset_basis": "fresh_reclone_execution",
+    "fresh_reclone_executed": true,
+    "fresh_reclone_head_observed": "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+    "cleanroom_admissible_for_future_repair": true
+  },
+  "green_source_artifacts": [
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+      "signal": "all focused tests required by the readiness packet passed in the cleanroom patch packet"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+      "signal": "accepted merged Track A lineage preserves focused validations as passed and merge_commit_sha as 7883af5a32c629026bfc6dc15ebee4ebbcadd295"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+      "signal": "all relevant Project_ARIS CI runs completed successfully for the accepted merge commit"
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
+      "signal": "post_merge_validation_passed=true with forbidden_paths_touched=[]"
+    }
+  ],
+  "ordered_chain": [
+    {
+      "stage": "RED",
+      "derivation_method": "documentary_binding",
+      "artifact": "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+      "binding_reason": "documentary baseline remains the canonical RED source for IF09-FIND-001"
+    },
+    {
+      "stage": "RESET",
+      "derivation_method": "documentary_binding",
+      "artifact": "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+      "binding_reason": "fresh cleanroom reclone and admissibility checks provide the accepted reset event without a new retry-time reset"
+    },
+    {
+      "stage": "GREEN",
+      "derivation_method": "documentary_binding",
+      "artifact": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+      "binding_reason": "focused validations plus terminal CI and post-merge validation are already recorded for the accepted merged lineage"
+    }
+  ],
+  "hashes": {
+    "blocked_stub_previous_hash": "872389edda535e1c365e33f47cdbc26aeeccf788782fd3c4d6bc68621c4dd25c",
+    "documentary_chain_hashes": {
+      "red_source": "c0b93b2bd1fb320d084058483b0de79640f85c4483b52877c0414accb6f059b3",
+      "reset_prerequisite": "4a21abb0afe5c29a24c917689bab8524639b7fa80ffe80a4d5d8102bd4007544",
+      "reset_execution": "36006a5f7aa0f9e624df1fbee7998c38e84d5f9152724d1facf96768cfbef7cf",
+      "green_patch_packet": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
+      "green_merge_packet": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
+      "green_ci_packet": "972f68bb1babd0c0510f2a545d55f6251592d23dcb354b3551a11830fb917638",
+      "post_merge_validation": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a"
+    }
+  },
+  "no_contamination_attestation": {
+    "documentary_only": true,
+    "no_new_red_reset_green_execution": true,
+    "cleanroom_preflight_proved_clean": true,
+    "forbidden_surface_detected": false,
+    "project_ci_green": true,
+    "rationale": [
+      "The reset event comes from the previously recorded fresh reclone and not from a retry-time mutable workspace.",
+      "The merge diff proof and no-forbidden-surface attestation keep the accepted lineage bounded to the authorized Track A surface.",
+      "The retry assembled this chain from verified source artifacts only."
+    ]
+  },
+  "no_new_red_reset_green_execution": true,
   "project_aris_changed": false,
   "project_aris_tests_executed": false,
   "proof_loop_executed": false,
@@ -49,6 +136,5 @@
   "finding_closed": false,
   "remediation_proven": false,
   "can_open_purg05_now": false,
-  "decision": "blocked",
-  "blocked_reason": "Source-hash verification failed before documentary RED->RESET->GREEN derivation could begin."
+  "decision": "pass"
 }

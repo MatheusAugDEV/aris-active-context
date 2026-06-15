@@ -1,46 +1,98 @@
 {
   "artifact_id": "purg04_track_a_rollback_evidence_for_accepted_lineage",
-  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
-  "created_at": "2026-06-14T23:09:54-03:00",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:17:19-03:00",
   "target_finding_id": "IF09-FIND-001",
   "target_lineage": "accepted_merged_track_a",
   "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
   "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
   "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json",
     "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
     "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
     "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
     "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
     "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json",
-    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json"
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json"
   ],
   "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json": "467862f01baf34f72f5d180fa5916d1a7d7d17e2ce04cea49d501b9f343f39a0",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json": "f786d2b388c0e1b5a4fc0af90ca5f49c6a8734c17434c95c7bff29628cf6f197",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json": "3f4d3a4500e0bbba46976901488384a059cd2d101e72babd9d285b24b6080e8d",
     "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json": "3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909",
     "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
     "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a",
     "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json": "64f39486b3ff9646f169457d2f07a71f021a830e75a56af32c6bef53c8466f60",
     "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json": "d91ed43c12a64b40ca10df63ce37be9d81cbc72d9e919e4e321e337ac677269b",
-    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json": "613537d7878668aa15af46883d417b88108e934b9f0f72aed504e3eba8384c36",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
-    "DECISION_LOCKS.md.expected_from_manifest": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
-    "DECISION_LOCKS.md.actual_at_phase_start": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json": "613537d7878668aa15af46883d417b88108e934b9f0f72aed504e3eba8384c36"
   },
+  "blocked_stub_previous_hash": "7999be3bb77605f6c97855a8fa3303bf7fc387f282f3f4930b2a44ecb2d5aa27",
   "lineage_binding": {
-    "binding_status": "target_lineage_preserved_but_derivation_blocked",
+    "binding_status": "accepted_lineage_documentary_binding",
     "finding_id_matches": true,
     "target_lineage_matches": true,
     "patch_commit_matches": true,
-    "merge_commit_matches": true
+    "merge_commit_matches": true,
+    "accepted_merge_parents": [
+      "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+      "1e9a04a02846f3261ae72d0c95fbee6b0163b45b"
+    ]
   },
-  "rollback_scope": "not_materialized_due_to_source_hash_manifest_divergence",
-  "rollback_path": "not_materialized_due_to_source_hash_manifest_divergence",
-  "merge_parents_or_source_reference": "not_materialized_due_to_source_hash_manifest_divergence",
-  "evidence_preservation": "not_materialized_due_to_source_hash_manifest_divergence",
-  "benign_after_rollback_or_not_applicable_reason": "not_materialized_due_to_source_hash_manifest_divergence",
-  "hashes": "not_materialized_due_to_source_hash_manifest_divergence",
+  "rollback_scope": {
+    "accepted_lineage_only": true,
+    "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+    "changed_files": [
+      "scripts/run_strategic_reset_macrostructure_lock_gate.py",
+      "src/aris/context/active_track_phase_reconciliation_gate.py",
+      "src/aris/context/active_track_resume_gate.py",
+      "src/aris/product_loop/product_loop_closure_gate.py",
+      "tests/test_aris_context_active_track_phase_reconciliation_gate.py",
+      "tests/test_aris_context_active_track_resume_gate.py"
+    ],
+    "excluded_from_scope": "failed local remediation apply attempt is not accepted-lineage proof"
+  },
+  "rollback_path": {
+    "primary_path": "revert merge commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295 against first parent 7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad if accepted-lineage rollback is ever required",
+    "documentary_sources": [
+      "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+      "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+      "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json"
+    ],
+    "runtime_or_retry_execution_performed_now": false
+  },
+  "merge_parents_or_source_reference": {
+    "merge_parents": [
+      "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+      "1e9a04a02846f3261ae72d0c95fbee6b0163b45b"
+    ],
+    "source_reference": "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+    "source_pointer_repair_safe_rollback_point": "Project_ARIS commit 6cec74deb7a99b7eb227df84a902650ca092e00f before the pointer-repair commit"
+  },
+  "evidence_preservation": {
+    "preservation_rules": [
+      "Rollback custody must preserve emitted drift artifacts and must not erase mismatch evidence.",
+      "Rollback must keep forbidden-surface exclusion intact and must not recreate the removed gitlink or nested active-context layout.",
+      "The failed local remediation apply result is retained only as historical custody support after rollback, not as accepted-lineage proof."
+    ],
+    "source_failure_ledger_used_as_historical_support_only": true
+  },
+  "benign_after_rollback_or_not_applicable_reason": {
+    "status": "not_applicable",
+    "reason": "No accepted-lineage rollback was executed in this artifact-only retry, so a post-rollback benign run cannot be claimed from verified sources."
+  },
+  "hashes": {
+    "blocked_stub_previous_hash": "7999be3bb77605f6c97855a8fa3303bf7fc387f282f3f4930b2a44ecb2d5aa27",
+    "rollback_path_sources": {
+      "pointer_repair": "3dd2c9860d48149e35f566ee9eca0c0ec6d77c7a2ee4044a2c49606b20847909",
+      "merge_plan": "f21c150babf172f72dd89d2a9f03d4cbd05b07c643ec5820b21a89005ed70bd0",
+      "merge_execution": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
+      "post_merge_validation": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a"
+    }
+  },
   "rollback_executed": false,
   "project_aris_changed": false,
   "project_aris_tests_executed": false,
@@ -50,6 +102,5 @@
   "finding_closed": false,
   "remediation_proven": false,
   "can_open_purg05_now": false,
-  "decision": "blocked",
-  "blocked_reason": "Source-hash verification failed before accepted-lineage rollback evidence could be assembled."
+  "decision": "pass"
 }

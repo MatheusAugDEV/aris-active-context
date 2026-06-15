@@ -2494,6 +2494,59 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
 
+## PURG04 Proof-Loop Corpus Materialization Retry Artifact-Only
+
+- Status: `purg04_proof_loop_corpus_materialization_retry_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only retry of proof-loop corpus materialization for the accepted merged Track A lineage; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no PURG05, no finding close.
+- `resync_v2` used:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json`
+  - authority sources exact-hash verified: `true`
+  - immutable derivation sources exact-hash verified: `true`
+  - `DECISION_LOCKS.md` append-only policy verified: `true`
+- Replaced blocked stubs with PASS artifacts:
+  - `artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_reset_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json`
+- Control artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_packet.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_output_hashes.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_lineage_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_custody_map.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_next_route_candidate.json`
+- Old blocked stub hashes:
+  - `purg04_track_a_red_reset_green_evidence.json` = `872389edda535e1c365e33f47cdbc26aeeccf788782fd3c4d6bc68621c4dd25c`
+  - `purg04_track_a_reset_evidence.json` = `e1674235272ced6020646fc69c0ee40cf6abeae58a3f5283de15e54b23485f47`
+  - `purg04_track_a_benign_flow_evidence.json` = `6775e7a56a42170d2d8af86662f32b1da8b5cd756330d0489294cd8290bacfcb`
+  - `purg04_track_a_kill_switch_evidence.json` = `6c0fb5de3999736adeafc381e5ac65790a9bec29ee9e3911289750c9fb7d4650`
+  - `purg04_track_a_rollback_evidence_for_accepted_lineage.json` = `7999be3bb77605f6c97855a8fa3303bf7fc387f282f3f4930b2a44ecb2d5aa27`
+- New PASS artifact hashes:
+  - `purg04_track_a_red_reset_green_evidence.json` = `6e052fa50b27b9ee0ebf0e8a0b9278680dcf385d9d1d48e8db8a8f8106eea1a4`
+  - `purg04_track_a_reset_evidence.json` = `4fdc3f430520f9d83dc8a7abf019ebdb6798697f86f5ffea3312aecd78524e39`
+  - `purg04_track_a_benign_flow_evidence.json` = `8427e39f3ce72aa88acb268aa857ef182bbf60af51cc1fe58b289ccb9ffa63cc`
+  - `purg04_track_a_kill_switch_evidence.json` = `b3c70f4488225abd9964d79431f017bacdb343eb061f2d60c74673d329067083`
+  - `purg04_track_a_rollback_evidence_for_accepted_lineage.json` = `37199e21cd3b7a31d44bd3c3bc746b2dc61a50c831a900dfc089ceb631a8e0e3`
+- Candidate next gate:
+  - emitted: `true`
+  - `candidate_next_gate=PURGATORIUM_POST_PURG04_ROUTE_DECISION_RECHECK_ARTIFACT_ONLY`
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - PURG05 opening: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
 ## PURG04 Proof-Loop Corpus Retry Epoch Finalization Artifact-Only
 
 - Status: `purg04_proof_loop_corpus_retry_epoch_finalization_artifact_only_pass`

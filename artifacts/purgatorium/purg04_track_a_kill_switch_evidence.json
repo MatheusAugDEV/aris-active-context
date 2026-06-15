@@ -1,42 +1,82 @@
 {
   "artifact_id": "purg04_track_a_kill_switch_evidence",
-  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
-  "created_at": "2026-06-14T23:09:54-03:00",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:17:19-03:00",
   "target_finding_id": "IF09-FIND-001",
   "target_lineage": "accepted_merged_track_a",
   "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
   "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
   "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json",
     "project_mirror/artifacts/infernus/if06_kill_switch_policy.json",
     "project_mirror/artifacts/infernus/if06_sandbox_contract.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json",
     "artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json",
-    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json"
+    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
   ],
   "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_candidate_v2.json": "467862f01baf34f72f5d180fa5916d1a7d7d17e2ce04cea49d501b9f343f39a0",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_source_hash_manifest_resync_v2.json": "f786d2b388c0e1b5a4fc0af90ca5f49c6a8734c17434c95c7bff29628cf6f197",
+    "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json": "3f4d3a4500e0bbba46976901488384a059cd2d101e72babd9d285b24b6080e8d",
     "project_mirror/artifacts/infernus/if06_kill_switch_policy.json": "0e4e31157dc0c59a576d766445e1518bcd01c083d4096021a8ccf2427d5cf0ac",
     "project_mirror/artifacts/infernus/if06_sandbox_contract.json": "cff4ffbe967d897c9a81209e4fa56a77cc228b41b721011ffe80f880a7a9d15f",
     "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
     "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json": "33c7eda8a6f127012977ee66170bc2979341d2d47bf904d9772f6400d9fa1da5",
     "artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json": "83c3ea499a5e0e653f7a7f928a913066afa4b51113c8ca675289781e82d59ad2",
-    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
-    "DECISION_LOCKS.md.expected_from_manifest": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
-    "DECISION_LOCKS.md.actual_at_phase_start": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+    "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json": "5038a403eeb9e95eb8b4cde6b7cf2827e6a435e0ce78aef3d729b9ff0f76cc5a"
   },
+  "blocked_stub_previous_hash": "6c0fb5de3999736adeafc381e5ac65790a9bec29ee9e3911289750c9fb7d4650",
   "lineage_binding": {
-    "binding_status": "target_lineage_preserved_but_derivation_blocked",
+    "binding_status": "accepted_lineage_documentary_binding",
     "finding_id_matches": true,
     "target_lineage_matches": true,
     "patch_commit_matches": true,
-    "merge_commit_matches": true
+    "merge_commit_matches": true,
+    "accepted_merge_parents": [
+      "7c0dc8d14fcbc2bc4246282c7ebf8b0896622dad",
+      "1e9a04a02846f3261ae72d0c95fbee6b0163b45b"
+    ]
   },
-  "kill_switch_id_or_not_applicable_reason": "not_materialized_due_to_source_hash_manifest_divergence",
-  "activation_path_or_control_boundary": "not_materialized_due_to_source_hash_manifest_divergence",
-  "rollback_interaction": "not_materialized_due_to_source_hash_manifest_divergence",
-  "hashes": "not_materialized_due_to_source_hash_manifest_divergence",
+  "kill_switch_id_or_not_applicable_reason": {
+    "status": "not_applicable",
+    "reason": "The accepted Track A lineage is a bounded non-runtime merge surface, so no runtime kill-switch exercise is authorized or required in this artifact-only retry."
+  },
+  "activation_path_or_control_boundary": {
+    "kill_switch_policy_triggers": [
+      "KS-ESCAPE",
+      "KS-SECRET",
+      "KS-NET",
+      "KS-TAMPER"
+    ],
+    "sandbox_contract_boundary": {
+      "runtime_start_allowed": false,
+      "network_mode": "deny_by_default",
+      "secret_access_allowed": false,
+      "artifact_write_root_in_scope": "/home/matheus/ARIS/Project_ARIS/aris-active-context"
+    },
+    "track_a_boundary": {
+      "forbidden_paths_touched": [],
+      "forbidden_surface_detected": false,
+      "runtime_executed": false
+    }
+  },
+  "rollback_interaction": {
+    "interaction_mode": "documentary_only",
+    "reason": "If a kill-switch-class breach had been observed, IF06 policy would stop and seal custody; in the accepted Track A lineage no such runtime path was exercised, so rollback interaction remains a documented boundary only."
+  },
+  "hashes": {
+    "blocked_stub_previous_hash": "6c0fb5de3999736adeafc381e5ac65790a9bec29ee9e3911289750c9fb7d4650",
+    "kill_switch_policy_hash": "0e4e31157dc0c59a576d766445e1518bcd01c083d4096021a8ccf2427d5cf0ac",
+    "sandbox_contract_hash": "cff4ffbe967d897c9a81209e4fa56a77cc228b41b721011ffe80f880a7a9d15f",
+    "merge_scope_hashes": {
+      "merge_packet": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
+      "diff_proof": "33c7eda8a6f127012977ee66170bc2979341d2d47bf904d9772f6400d9fa1da5",
+      "no_forbidden_surface_attestation": "83c3ea499a5e0e653f7a7f928a913066afa4b51113c8ca675289781e82d59ad2"
+    }
+  },
   "kill_switch_executed": false,
   "project_aris_changed": false,
   "project_aris_tests_executed": false,
@@ -46,6 +86,5 @@
   "finding_closed": false,
   "remediation_proven": false,
   "can_open_purg05_now": false,
-  "decision": "blocked",
-  "blocked_reason": "Source-hash verification failed before kill-switch not-applicable attestation could be assembled."
+  "decision": "pass"
 }
