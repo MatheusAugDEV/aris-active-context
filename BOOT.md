@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `8733a8f457cd`
+- state_sha: `5963b2097349`
 - schema_version: `3.13`
 
 ## AVISO DE STALE
@@ -14,15 +14,15 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Purgatorium FULL`
-- phase_id: `PURG-04`
-- status: `purg04_track_a_pointer_residual_repair_patch_pass`
+- phase_id: `PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+- status: `purg04_track_a_main_merge_execution_pass`
 - decision: `pass`
-- resumo: PURG-04 Track A Pointer Residual Repair Patch Packet; aguardando PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION sem autorizacao de execucao.
+- resumo: PURG04 Track A Main Merge Execution; aguardando PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET sem autorizacao de execucao.
 
 ## MAPA
 
   Infernus FULL
-▸ Purgatorium FULL (phase_id=PURG-04)
+▸ Purgatorium FULL (phase_id=PURG04_TRACK_A_MAIN_MERGE_EXECUTION)
   Infernus Revalidation
   BenchUX
   Crisol
@@ -36,8 +36,8 @@ GERADO — NAO EDITE A MAO
 
 ## PROXIMO PASSO
 
-- active_next_phase: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
-- next_phase_class: `purgatorium_route_admission`
+- active_next_phase: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- next_phase_class: `purgatorium_post_merge_validation`
 - advance_mode: `operator`
 - travas relevantes:
   - next_phase_authorized_by_operator=False
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Track A patch applied in cleanroom. Merge to Project_ARIS main requires separate operator authorization for PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION.
+  - deferred_phase_reason=Track A merge already materialized in Project_ARIS main at 7883af5a32c629026bfc6dc15ebee4ebbcadd295. PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET remains the next operator-gated candidate and was not executed by this sync repair.
 
 ## REGRAS DE AGORA
 

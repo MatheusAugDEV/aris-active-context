@@ -1380,6 +1380,8 @@ def _load_live_position() -> dict[str, str]:
     state = _load_json(STATE_PATH)
     transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
     next_action = state.get("next_action") or {}
+    history_summary = state.get("history_summary") or {}
+    last_transition = state.get("last_transition") or {}
     active_next_phase = state.get("active_next_phase", "")
     active_next_phase_class = state.get("active_next_phase_class", "")
     if transition_row is not None:
@@ -1398,6 +1400,10 @@ def _load_live_position() -> dict[str, str]:
         "active_next_phase_class": active_next_phase_class,
         "phase_class": state.get("phase_class", ""),
         "latest_completed_next_recommended_step": state.get("latest_completed_next_recommended_step", ""),
+        "latest_completed_project_commit_sha": state.get("latest_completed_project_commit_sha", ""),
+        "latest_completed_ci_state": state.get("latest_completed_ci_state", ""),
+        "previous_execution_phase": history_summary.get("previous_execution_phase", ""),
+        "last_transition_from_phase": last_transition.get("from_phase", ""),
         "next_action_phase": next_action.get("phase", ""),
         "next_action_phase_class": next_action.get("phase_class", ""),
         "next_action_status": next_action.get("status", ""),
@@ -1414,6 +1420,10 @@ CURRENT_LIVE_STATUS = _live["status"]
 CURRENT_LIVE_CURRENT_STATUS = _live["current_status"]
 CURRENT_LIVE_SCHEMA_VERSION = _live["schema_version"]
 CURRENT_LIVE_NEXT_RECOMMENDED_STEP = _live["latest_completed_next_recommended_step"]
+CURRENT_LIVE_LATEST_COMPLETED_PROJECT_SHA = _live["latest_completed_project_commit_sha"]
+CURRENT_LIVE_LATEST_COMPLETED_CI_STATE = _live["latest_completed_ci_state"]
+CURRENT_LIVE_PREVIOUS_EXECUTION_PHASE = _live["previous_execution_phase"]
+CURRENT_LIVE_LAST_TRANSITION_FROM_PHASE = _live["last_transition_from_phase"]
 CURRENT_LIVE_NEXT_ACTION_NOTE = f"Next: {_live['active_next_phase']}"
 CURRENT_LIVE_PHASE_CLASS = _live["phase_class"]
 CURRENT_EXPECTED_NEXT_PHASE_ID = _live["active_next_phase"]
@@ -1427,6 +1437,7 @@ def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
         state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
         and state.get("decision") == EXPECTED_DECISION
         and state.get("status") == CURRENT_LIVE_STATUS
+        and row is None
     ):
         row = {
             "next_phase_id": CURRENT_EXPECTED_NEXT_PHASE_ID,
@@ -9610,8 +9621,8 @@ def main() -> None:
     _require(state["latest_completed_status"] == CURRENT_LIVE_STATUS, "unexpected latest completed status")
     _require(state["current_status"] == CURRENT_LIVE_CURRENT_STATUS, "unexpected current status")
     _require(state["schema_version"] == CURRENT_LIVE_SCHEMA_VERSION, "unexpected schema version")
-    _require(state["latest_completed_project_commit_sha"] == EXPECTED_LATEST_COMPLETED_PROJECT_SHA, "unexpected latest completed project sha")
-    _require(state["latest_completed_ci_state"] == EXPECTED_LATEST_COMPLETED_CI_STATE, "unexpected latest completed ci state")
+    _require(state["latest_completed_project_commit_sha"] == CURRENT_LIVE_LATEST_COMPLETED_PROJECT_SHA, "unexpected latest completed project sha")
+    _require(state["latest_completed_ci_state"] == CURRENT_LIVE_LATEST_COMPLETED_CI_STATE, "unexpected latest completed ci state")
     _require(state["latest_completed_next_recommended_step"] == CURRENT_LIVE_NEXT_RECOMMENDED_STEP, "unexpected latest completed next step")
     blocker = state.get("purg00_source_gap_terminal_blocker")
     _require(isinstance(blocker, dict), "purg00_source_gap_terminal_blocker must exist")
@@ -10484,8 +10495,8 @@ def main() -> None:
     _check_forbidden_route_claims()
     _require(state["history_summary"]["latest_execution_phase"] == CURRENT_LIVE_PHASE, "unexpected latest execution phase")
     _require(state["history_summary"]["latest_execution_status"] == CURRENT_LIVE_STATUS, "unexpected latest execution status")
-    _require(state["history_summary"]["previous_execution_phase"] == EXPECTED_PHASE, "unexpected previous execution phase")
-    _require(state["last_transition"]["from_phase"] == EXPECTED_PHASE, "unexpected last transition from phase")
+    _require(state["history_summary"]["previous_execution_phase"] == CURRENT_LIVE_PREVIOUS_EXECUTION_PHASE, "unexpected previous execution phase")
+    _require(state["last_transition"]["from_phase"] == CURRENT_LIVE_LAST_TRANSITION_FROM_PHASE, "unexpected last transition from phase")
     _require(state["last_transition"]["to_phase"] == CURRENT_LIVE_PHASE, "unexpected last transition to phase")
     _require(state["last_transition"]["to_status"] == CURRENT_LIVE_STATUS, "unexpected last transition to_status")
     _require(state["last_transition"]["decision"] == "pass", "unexpected last transition decision")
@@ -10542,17 +10553,27 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "PURG-04",
+        "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg04_track_a_pointer_residual_repair_patch_pass",
-        "latest_completed_phase: PURG-04 Track A Pointer Residual Repair Patch Packet",
-        "next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+        "purg04_track_a_main_merge_execution_pass",
+        "latest_completed_phase: PURG04 Track A Main Merge Execution",
+        "next_phase: PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
-        "Merge to Project_ARIS main: NOT authorized",
+        "Merge to Project_ARIS main: executed",
         "IF09-FIND-001 remains open",
         "Todos execution_locks: false",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## PURG04 Track A Main Merge Execution",
+        "purg04_track_a_main_merge_execution_pass",
+        "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+        "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+        "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
+        "purg04_active_context_canonical_sync_repair_pass",
+        "Project_ARIS changed during this sync repair: `false`",
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",

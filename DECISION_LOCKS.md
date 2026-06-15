@@ -1336,7 +1336,6 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Canonical artifact: `artifacts/purgatorium/purg04_b2_active_context_path_contract_normalization_repair_artifact_only.json`
 - Next recommended step: `REQUEST_OPERATOR_AUTHORIZATION_FOR_PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR`
 
-<<<<<<< HEAD
 ## PURG-04 Project_ARIS Worktree Contamination Blocker
 
 - Status: `purg04_project_aris_worktree_contamination_blocked`
@@ -2222,3 +2221,36 @@ The following track references are historical_residual_route_noise. They do NOT 
 - `remediation_proven=false`
 - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
 - Recommended next step: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+
+## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge
+
+- Status: `purg04_active_context_canonical_sync_repair_pass`
+- Decision: `pass`
+- Scope: reconcile the live active-context state with the already-materialized Track A main merge execution; no Project_ARIS mutation, no runtime, no real_apply, no product/Bedrock/secrets work, no finding close, no automatic execution of post-merge validation.
+- Source previous live next phase: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+- Source Project_ARIS merge commit: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+- Source patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+- Source Project_ARIS CI state: `CI_GREEN_CONFIRMED`
+- Transition Table row verified and preserved:
+  - `PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact`
+- Live state synchronized to:
+  - `phase_id=current_phase_id=PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+  - `latest_completed_phase=PURG04 Track A Main Merge Execution`
+  - `latest_completed_status=purg04_track_a_main_merge_execution_pass`
+  - `active_next_phase=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `active_next_phase_class=purgatorium_post_merge_validation`
+  - `next_phase_authorized_by_operator=false`
+- Validator updated: `true`
+- Schema updated: `false` (the live schema already admitted the merge-execution and post-merge classes)
+- README updated: `true`
+- Project_ARIS changed during this sync repair: `false`
+- runtime_executed=`false`
+- real_apply_executed=`false`
+- product_bedrock_real_apply_secrets_executed=`false`
+- dependency_or_package_manager_used=`false`
+- finding_closed=`false`
+- remediation_proven=`false`
+- Non-blocking residual note: the `ROADMAP_CANONICAL.md` active-route appendix remains stale markdown and non-authoritative for this repair because roadmap edits were out of scope; `ACTIVE_CONTEXT_STATE.json` remains the canonical live source.
+- Canonical artifacts:
+  - `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_after_track_a_main_merge.json`
+  - `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_no_real_execution_attestation.json`

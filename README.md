@@ -70,18 +70,20 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: PURG-04
-status: purg04_track_a_pointer_residual_repair_patch_pass
-latest_completed_phase: PURG-04 Track A Pointer Residual Repair Patch Packet
-latest_completed_status: purg04_track_a_pointer_residual_repair_patch_pass
-next_phase: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
-next_recommended_step: PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION
+phase_id: PURG04_TRACK_A_MAIN_MERGE_EXECUTION
+status: purg04_track_a_main_merge_execution_pass
+latest_completed_phase: PURG04 Track A Main Merge Execution
+latest_completed_status: purg04_track_a_main_merge_execution_pass
+next_phase: PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET
+next_recommended_step: PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
-Track A patch: aplicado em cleanroom, branch pushed, merge em main NOT authorized
-Merge to Project_ARIS main: NOT authorized
+Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 remains open
-Project_ARIS main workspace: intocado
+Project_ARIS main workspace: não alterado por este sync repair
+
+O repair canônico pós-merge está registrado em `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_after_track_a_main_merge.json` e confirma que o estado vivo agora reflete a execução já materializada do merge Track A sem avançar `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`.
 
 ## PURG-01.1 triage classification
 
