@@ -2452,6 +2452,53 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
 
+## Purgatorium Post-PURG04 Route Decision Recheck Artifact-Only
+
+- Status: `purgatorium_post_purg04_route_decision_recheck_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only post-PURG04 route decision recheck after proof-loop corpus materialization retry; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no PURG05 opening, no finding close.
+- Artifacts created:
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_packet.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_matrix.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_evidence_inventory.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_next_route_candidate.json`
+- Original blockers rechecked:
+  - RED->RESET->GREEN evidence: `pass`
+  - reset evidence: `pass`
+  - benign-flow evidence: `pass`
+  - kill-switch evidence: `pass`
+  - rollback evidence for accepted merged lineage: `pass`
+- Candidate next gate:
+  - emitted: `true`
+  - `candidate_next_gate=PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET`
+  - `candidate_only=true`
+  - `can_open_purg05_now=false`
+  - `requires_operator_or_future_route_admission=true`
+- Carry-forward limits for any future custody packet:
+  - no Project_ARIS mutation
+  - no Project_ARIS tests
+  - no proof-loop execution
+  - no runtime
+  - no real_apply
+  - no finding closure
+  - no `remediation_proven=true`
+  - no product, Bedrock, secrets, or dependency/package-manager use
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop executed: `false`
+  - PURG05 opened: `false`
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
 ## PURG04 Proof-Loop Corpus Source Hash Manifest Divergence Repair Artifact-Only
 
 - Status: `purg04_proof_loop_corpus_source_hash_manifest_divergence_repair_artifact_only_pass`

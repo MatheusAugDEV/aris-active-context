@@ -1,0 +1,144 @@
+{
+  "artifact_id": "purgatorium_post_purg04_route_decision_recheck_matrix",
+  "phase_id": "PURGATORIUM_POST_PURG04_ROUTE_DECISION_RECHECK_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T00:35:30-03:00",
+  "source_prior_route_decision": "artifacts/purgatorium/purgatorium_post_purg04_route_decision_packet.json",
+  "source_retry_packet": "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_packet.json",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "rows": [
+    {
+      "original_blocker": "missing RED->RESET->GREEN evidence",
+      "required_artifact": "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+      "artifact_exists": true,
+      "artifact_sha256": "6e052fa50b27b9ee0ebf0e8a0b9278680dcf385d9d1d48e8db8a8f8106eea1a4",
+      "artifact_decision": "pass",
+      "lineage_binding_verified": true,
+      "no_real_execution_claim_verified": true,
+      "no_finding_close_verified": true,
+      "no_remediation_proven_verified": true,
+      "recheck_result": "pass",
+      "notes": [
+        "Artifact exists and binds IF09-FIND-001 to accepted_merged_track_a with patch_commit 1e9a04a02846f3261ae72d0c95fbee6b0163b45b and merge_commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
+        "Artifact states no new RED, RESET, or GREEN execution and preserves finding_closed=false plus remediation_proven=false."
+      ]
+    },
+    {
+      "original_blocker": "missing reset evidence",
+      "required_artifact": "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+      "artifact_exists": true,
+      "artifact_sha256": "4fdc3f430520f9d83dc8a7abf019ebdb6798697f86f5ffea3312aecd78524e39",
+      "artifact_decision": "pass",
+      "lineage_binding_verified": true,
+      "no_real_execution_claim_verified": true,
+      "no_finding_close_verified": true,
+      "no_remediation_proven_verified": true,
+      "recheck_result": "pass",
+      "notes": [
+        "Artifact exists and records the previously accepted fresh reclone reset for the same accepted merged lineage.",
+        "Artifact says no new reset executed during this retry and carries finding_closed=false plus remediation_proven=false."
+      ]
+    },
+    {
+      "original_blocker": "missing benign-flow evidence",
+      "required_artifact": "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+      "artifact_exists": true,
+      "artifact_sha256": "8427e39f3ce72aa88acb268aa857ef182bbf60af51cc1fe58b289ccb9ffa63cc",
+      "artifact_decision": "pass",
+      "lineage_binding_verified": true,
+      "no_real_execution_claim_verified": true,
+      "no_finding_close_verified": true,
+      "no_remediation_proven_verified": true,
+      "recheck_result": "pass",
+      "notes": [
+        "Artifact exists and binds expected benign-flow constraints to the accepted merged Track A lineage only.",
+        "Artifact says no new benign-flow execution and preserves finding_closed=false plus remediation_proven=false."
+      ]
+    },
+    {
+      "original_blocker": "missing kill-switch evidence",
+      "required_artifact": "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+      "artifact_exists": true,
+      "artifact_sha256": "b3c70f4488225abd9964d79431f017bacdb343eb061f2d60c74673d329067083",
+      "artifact_decision": "pass",
+      "lineage_binding_verified": true,
+      "no_real_execution_claim_verified": true,
+      "no_finding_close_verified": true,
+      "no_remediation_proven_verified": true,
+      "recheck_result": "pass",
+      "notes": [
+        "Artifact exists and documents the kill-switch control boundary as not_applicable for the bounded non-runtime Track A lineage.",
+        "Artifact says kill_switch_executed=false, runtime_executed=false, finding_closed=false, and remediation_proven=false."
+      ]
+    },
+    {
+      "original_blocker": "rollback evidence not tied to accepted merged lineage",
+      "required_artifact": "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "artifact_exists": true,
+      "artifact_sha256": "37199e21cd3b7a31d44bd3c3bc746b2dc61a50c831a900dfc089ceb631a8e0e3",
+      "artifact_decision": "pass",
+      "lineage_binding_verified": true,
+      "no_real_execution_claim_verified": true,
+      "no_finding_close_verified": true,
+      "no_remediation_proven_verified": true,
+      "recheck_result": "pass",
+      "notes": [
+        "Artifact exists and ties rollback custody directly to merge_commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295 for accepted_merged_track_a.",
+        "Artifact says rollback_executed=false in this retry and preserves finding_closed=false plus remediation_proven=false."
+      ]
+    }
+  ],
+  "required_artifact_contract_satisfied": true,
+  "candidate_evaluation": [
+    {
+      "candidate_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+      "candidate_phase_class": "purgatorium_evidence_packaging",
+      "expected_architecture_position": "immediate successor if proof-loop corpus is sufficient",
+      "eligible_now": true,
+      "decision": "selected",
+      "reasons": [
+        "All five original proof-loop corpus blockers now have PASS artifacts bound to the accepted merged Track A lineage.",
+        "No artifact claims new execution, finding closure, or remediation_proven=true.",
+        "Candidate emission stays artifact-only and preserves ACTIVE_CONTEXT_STATE.json with next_phase=null."
+      ]
+    },
+    {
+      "candidate_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+      "candidate_phase_class": "purgatorium_residual_management",
+      "expected_architecture_position": "after PURG05",
+      "eligible_now": false,
+      "decision": "blocked",
+      "reasons": [
+        "Roadmap sequence still requires PURG05 before PURG-RES.",
+        "This recheck may emit only the immediate documentary custody candidate."
+      ]
+    },
+    {
+      "candidate_id": "PURG_EXIT_REVALIDATION_HANDOFF_PACKAGE",
+      "candidate_phase_class": "purgatorium_handoff",
+      "expected_architecture_position": "after PURG05 and PURG-RES",
+      "eligible_now": false,
+      "decision": "blocked",
+      "reasons": [
+        "Roadmap sequence still requires PURG05 and PURG-RES before PURG-EXIT.",
+        "Exit handoff remains out of scope for this route recheck."
+      ]
+    },
+    {
+      "candidate_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "candidate_phase_class": "infernus_revalidation_admission",
+      "expected_architecture_position": "after PURG-EXIT",
+      "eligible_now": false,
+      "decision": "blocked",
+      "reasons": [
+        "Infernus admission cannot precede packaged Purgatorium custody and exit handoff artifacts.",
+        "This recheck did not and cannot open revalidation."
+      ]
+    }
+  ],
+  "selected_outcome": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+  "evidence_sufficiency": "sufficient_for_candidate_only",
+  "decision": "pass"
+}
