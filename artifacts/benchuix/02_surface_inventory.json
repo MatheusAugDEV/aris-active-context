@@ -1,0 +1,498 @@
+{
+  "surfaces": [
+    {
+      "surface_id": "ARIS_CLIENT_WORKSPACE",
+      "name": "ARIS Client Workspace",
+      "surface_type": "web_pwa_primary_workspace",
+      "primary_user": "client",
+      "is_client_facing": true,
+      "is_internal": false,
+      "is_sandbox": false,
+      "is_control_plane": true,
+      "allowed_modes": [
+        "A_OWNER_SOLO",
+        "B_OWNER_PLUS_HELPER",
+        "C_SMALL_TEAM",
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [
+        "Hoje",
+        "Automações",
+        "Aprovar",
+        "Histórico / Comprovantes",
+        "Configurações"
+      ],
+      "allowed_actions": [
+        "ver resumo do dia",
+        "simular",
+        "aprovar",
+        "recusar",
+        "pausar",
+        "retomar",
+        "ver comprovante",
+        "consultar histórico",
+        "ajustar configurações seguras"
+      ],
+      "forbidden_actions": [
+        "acessar admin",
+        "ver runtime técnico",
+        "executar real_apply",
+        "usar secret",
+        "operar PSP real",
+        "mostrar jargão técnico como linguagem primária"
+      ],
+      "allowed_data": [
+        "status sintético",
+        "risco traduzido para cliente",
+        "histórico de ações",
+        "comprovantes sintéticos",
+        "configurações de experiência"
+      ],
+      "forbidden_data": [
+        "secret",
+        "payload técnico",
+        "stack trace",
+        "credencial",
+        "dado real de PSP"
+      ],
+      "entry_points": [
+        "login web",
+        "deep link de canal auxiliar",
+        "retorno do Mobile Companion"
+      ],
+      "exit_points": [
+        "abrir comprovante",
+        "ir para configurações",
+        "abrir decisão detalhada",
+        "encerrar sessão"
+      ],
+      "deep_link_policy": "Pode receber deep links de canais auxiliares e do Mobile Companion apenas para telas cliente permitidas.",
+      "decision_policy": "Decisões sensíveis podem ocorrer aqui com contexto completo, linguagem will/will-not e confirmação explícita.",
+      "auth_boundary": "Cliente autenticado em escopo de workspace; nunca compartilha boundary com admin interno.",
+      "trust_boundary": "Superfície oficial de decisão do cliente; sem dependência de runtime real nesta camada.",
+      "risk_controls": [
+        "copy anti-jargão",
+        "progressive disclosure",
+        "aprovação explícita",
+        "isolamento de admin"
+      ],
+      "jargon_policy": "Nenhum jargão técnico como linguagem primária.",
+      "no_real_execution_policy": "Não autoriza produto, runtime, secrets, real_apply ou produção.",
+      "invariants_protected": [
+        "workspace_is_primary_surface",
+        "no_admin_visibility",
+        "no_runtime_real",
+        "no_secrets",
+        "no_product_real"
+      ],
+      "blocking_criteria": [
+        "admin aparece ao cliente",
+        "ação sensível sem contexto",
+        "uso de dado real",
+        "jargão técnico domina fluxo básico"
+      ],
+      "notes": "Baseline do acesso do cliente e control-plane principal do ARIS."
+    },
+    {
+      "surface_id": "MOBILE_COMPANION",
+      "name": "Mobile Companion",
+      "surface_type": "mobile_pwa_companion",
+      "primary_user": "client_mobile_first",
+      "is_client_facing": true,
+      "is_internal": false,
+      "is_sandbox": false,
+      "is_control_plane": true,
+      "allowed_modes": [
+        "A_OWNER_SOLO",
+        "B_OWNER_PLUS_HELPER",
+        "C_SMALL_TEAM",
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [
+        "Alertas",
+        "Aprovações",
+        "Status",
+        "Comprovantes",
+        "Pausa"
+      ],
+      "allowed_actions": [
+        "aprovar",
+        "recusar",
+        "ver alerta",
+        "ver status",
+        "ver comprovante",
+        "pausar"
+      ],
+      "forbidden_actions": [
+        "admin",
+        "runtime técnico",
+        "criação complexa",
+        "real_apply",
+        "edição estrutural de fluxo"
+      ],
+      "allowed_data": [
+        "status sintético resumido",
+        "alertas",
+        "risco resumido",
+        "comprovante sintético",
+        "contexto de aprovação"
+      ],
+      "forbidden_data": [
+        "secret",
+        "payload técnico",
+        "credencial",
+        "configuração de admin",
+        "dado real"
+      ],
+      "entry_points": [
+        "atalho móvel",
+        "notificação push com deep link",
+        "deep link de e-mail ou WhatsApp"
+      ],
+      "exit_points": [
+        "deep link para Workspace",
+        "fechar alerta",
+        "consultar comprovante"
+      ],
+      "deep_link_policy": "Pode abrir diretamente itens móveis e encaminhar decisões complexas ao Workspace.",
+      "decision_policy": "Pode decidir aprovar ou recusar apenas quando o contexto for curto e completo; casos complexos retornam ao Workspace.",
+      "auth_boundary": "Boundary do cliente autenticado, separado de admin e de sandbox.",
+      "trust_boundary": "Companion de decisão rápida e status; não substitui criação nem administração.",
+      "risk_controls": [
+        "escopo curto",
+        "deep link para contexto completo",
+        "copy direta",
+        "sem edição estrutural"
+      ],
+      "jargon_policy": "Sem linguagem técnica de runtime ou governança.",
+      "no_real_execution_policy": "Não autoriza runtime real, produto, secrets, real_apply ou produção.",
+      "invariants_protected": [
+        "mobile_not_for_complex_creation",
+        "no_admin",
+        "no_runtime_real",
+        "no_secrets",
+        "no_product_real"
+      ],
+      "blocking_criteria": [
+        "permite criação complexa",
+        "permite admin",
+        "expõe jargão técnico",
+        "usa dado real"
+      ],
+      "notes": "Companion móvel para alertas, aprovação, status, comprovantes e pausa."
+    },
+    {
+      "surface_id": "PUBLIC_LANDING",
+      "name": "Public Landing",
+      "surface_type": "public_marketing_surface",
+      "primary_user": "prospect",
+      "is_client_facing": true,
+      "is_internal": false,
+      "is_sandbox": false,
+      "is_control_plane": false,
+      "allowed_modes": [
+        "A_OWNER_SOLO",
+        "B_OWNER_PLUS_HELPER",
+        "C_SMALL_TEAM",
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [
+        "Hero",
+        "Proposta de valor",
+        "Exemplos sintéticos",
+        "CTA para Demo Sandbox"
+      ],
+      "allowed_actions": [
+        "entender valor",
+        "iniciar demo sandbox",
+        "explorar casos sintéticos",
+        "solicitar onboarding futuro"
+      ],
+      "forbidden_actions": [
+        "aprovar ação",
+        "operar automação",
+        "executar fluxo de control-plane",
+        "mostrar dado operacional real",
+        "mostrar admin"
+      ],
+      "allowed_data": [
+        "copy de valor",
+        "cenários sintéticos",
+        "limites declarados",
+        "provas de confiança sintéticas"
+      ],
+      "forbidden_data": [
+        "dado operacional real",
+        "comprovante real",
+        "secret",
+        "log técnico",
+        "métrica operacional real"
+      ],
+      "entry_points": [
+        "tráfego público",
+        "campanha",
+        "indicação"
+      ],
+      "exit_points": [
+        "Demo Sandbox",
+        "contato comercial futuro"
+      ],
+      "deep_link_policy": "Pode encaminhar somente para Landing interna ou Demo Sandbox; não recebe links de decisão.",
+      "decision_policy": "Não decide nem controla nada; apenas informa e encaminha.",
+      "auth_boundary": "Boundary público e anônimo, separado de qualquer área autenticada.",
+      "trust_boundary": "Superfície de descoberta; não expõe dado operacional real.",
+      "risk_controls": [
+        "separação total do control-plane",
+        "copy sem jargão",
+        "exemplos sintéticos"
+      ],
+      "jargon_policy": "Sem backstage técnico para convencer o prospect.",
+      "no_real_execution_policy": "Não autoriza produto, runtime, secrets, real_apply ou produção.",
+      "invariants_protected": [
+        "landing_not_control_plane",
+        "no_operational_real_data",
+        "no_admin_visibility"
+      ],
+      "blocking_criteria": [
+        "mostra dado operacional real",
+        "vira control-plane",
+        "depende de explicação arquitetural"
+      ],
+      "notes": "Superfície pública de valor e entrada para o sandbox."
+    },
+    {
+      "surface_id": "DEMO_SANDBOX",
+      "name": "Demo Sandbox",
+      "surface_type": "synthetic_demo_surface",
+      "primary_user": "prospect_or_evaluating_client",
+      "is_client_facing": true,
+      "is_internal": false,
+      "is_sandbox": true,
+      "is_control_plane": false,
+      "allowed_modes": [
+        "A_OWNER_SOLO",
+        "B_OWNER_PLUS_HELPER",
+        "C_SMALL_TEAM",
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [
+        "Jornada guiada",
+        "Preview sintético",
+        "Aprovação simulada",
+        "Comprovante sintético",
+        "Falha sintética"
+      ],
+      "allowed_actions": [
+        "navegar cenários sintéticos",
+        "simular decisão",
+        "ver before/after sintético",
+        "explorar limites"
+      ],
+      "forbidden_actions": [
+        "real_apply",
+        "usar PSP real",
+        "usar secret",
+        "usar runtime real",
+        "executar webhook real",
+        "usar credencial real"
+      ],
+      "allowed_data": [
+        "dataset sintético",
+        "riscos sintéticos",
+        "comprovantes sintéticos",
+        "efeitos simulados"
+      ],
+      "forbidden_data": [
+        "dado real",
+        "PSP real",
+        "secret",
+        "token",
+        "log de produção",
+        "runtime real"
+      ],
+      "entry_points": [
+        "CTA da Landing",
+        "entrada guiada de demo"
+      ],
+      "exit_points": [
+        "retorno para Landing",
+        "onboarding futuro"
+      ],
+      "deep_link_policy": "Pode ser iniciado pela Landing, mas não envia para runtime real nem para admin.",
+      "decision_policy": "Permite apenas decisões simuladas em ambiente synthetic-only.",
+      "auth_boundary": "Boundary de demonstração isolado de cliente autenticado e de admin.",
+      "trust_boundary": "Sem conexão com runtime mutável; prova apenas entendimento e narrativa de uso.",
+      "risk_controls": [
+        "synthetic-only labeling",
+        "isolamento explícito",
+        "cenários roteirizados",
+        "proibição de dados reais"
+      ],
+      "jargon_policy": "Explica limites sem exigir arquitetura.",
+      "no_real_execution_policy": "Synthetic-only; proibidos runtime real, dado real, PSP real, secret e real_apply.",
+      "invariants_protected": [
+        "sandbox_is_synthetic_only",
+        "no_runtime_real",
+        "no_psp_real",
+        "no_secrets",
+        "no_product_real"
+      ],
+      "blocking_criteria": [
+        "aparece dado real",
+        "toca runtime real",
+        "toca PSP real",
+        "usa secret"
+      ],
+      "notes": "Demonstração controlada do ARIS sem tocar qualquer operação real."
+    },
+    {
+      "surface_id": "INTERNAL_ADMIN",
+      "name": "Internal Admin",
+      "surface_type": "internal_support_surface",
+      "primary_user": "internal_team",
+      "is_client_facing": false,
+      "is_internal": true,
+      "is_sandbox": false,
+      "is_control_plane": false,
+      "allowed_modes": [
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [
+        "Auditoria interna",
+        "Diagnóstico sintético",
+        "Suporte"
+      ],
+      "allowed_actions": [
+        "revisar diagnóstico sintético",
+        "acompanhar suporte",
+        "consultar trilha de auditoria sintética"
+      ],
+      "forbidden_actions": [
+        "aparecer no client workspace",
+        "ser acessível pelo mobile companion",
+        "usar dado real nesta camada",
+        "abrir runtime real",
+        "executar real_apply"
+      ],
+      "allowed_data": [
+        "evidências sintéticas",
+        "notas internas",
+        "classificação de suporte"
+      ],
+      "forbidden_data": [
+        "surface cliente",
+        "secret",
+        "credencial de produção",
+        "PSP real",
+        "dado operacional real"
+      ],
+      "entry_points": [
+        "acesso interno separado"
+      ],
+      "exit_points": [
+        "registro de suporte interno"
+      ],
+      "deep_link_policy": "Não recebe deep link de superfícies cliente e não deep-linka para telas cliente.",
+      "decision_policy": "Não é superfície de decisão do cliente; permanece isolada para auditoria e suporte.",
+      "auth_boundary": "Boundary interno separado de prospect, sandbox e cliente autenticado.",
+      "trust_boundary": "Somente equipe interna; zero exposição ao cliente.",
+      "risk_controls": [
+        "isolamento de acesso",
+        "navegação separada",
+        "sem mistura de copy com cliente"
+      ],
+      "jargon_policy": "Pode usar termos internos, mas eles nunca vazam para superfícies cliente.",
+      "no_real_execution_policy": "Não autoriza runtime real, produto, secrets, real_apply ou produção nesta camada.",
+      "invariants_protected": [
+        "client_does_not_see_admin",
+        "admin_is_isolated",
+        "no_runtime_real",
+        "no_product_real"
+      ],
+      "blocking_criteria": [
+        "admin aparece ao cliente",
+        "há navegação compartilhada com workspace",
+        "usa dado real"
+      ],
+      "notes": "Superfície interna isolada e invisível ao cliente."
+    },
+    {
+      "surface_id": "AUXILIARY_CHANNELS",
+      "name": "Auxiliary Channels",
+      "surface_type": "notification_and_deeplink_channels",
+      "primary_user": "client_or_prospect_receiver",
+      "is_client_facing": true,
+      "is_internal": false,
+      "is_sandbox": false,
+      "is_control_plane": false,
+      "allowed_modes": [
+        "A_OWNER_SOLO",
+        "B_OWNER_PLUS_HELPER",
+        "C_SMALL_TEAM",
+        "D_LARGER_OPERATION"
+      ],
+      "allowed_screens": [],
+      "allowed_actions": [
+        "notificar",
+        "deep-linkar",
+        "informar status",
+        "enviar resumo de comprovante"
+      ],
+      "forbidden_actions": [
+        "não pode aprovar no corpo da mensagem",
+        "não pode recusar no corpo da mensagem",
+        "não pode executar ação sensível no canal",
+        "não pode mostrar admin",
+        "não pode expor detalhe técnico"
+      ],
+      "allowed_data": [
+        "resumo curto",
+        "alerta",
+        "cta com deep link",
+        "status de alto nível",
+        "identificador humano de comprovante"
+      ],
+      "forbidden_data": [
+        "payload técnico",
+        "secret",
+        "token",
+        "dado real sensível",
+        "controle de runtime"
+      ],
+      "entry_points": [
+        "whatsapp",
+        "e-mail",
+        "push"
+      ],
+      "exit_points": [
+        "Workspace",
+        "Mobile Companion"
+      ],
+      "deep_link_policy": "Pode apenas deep-linkar para Workspace ou Mobile Companion; nunca executa ação diretamente.",
+      "decision_policy": "Canais auxiliares notificam e redirecionam; decisão sensível sempre sai do canal.",
+      "auth_boundary": "Boundary de notificação fora do control-plane; autenticação real acontece no destino.",
+      "trust_boundary": "Canal transitório, não confiável para decisão nem execução.",
+      "risk_controls": [
+        "proibição de aprovação inline",
+        "deep link obrigatório",
+        "copy curta",
+        "zero dado sensível"
+      ],
+      "jargon_policy": "Mensagens curtas e não técnicas.",
+      "no_real_execution_policy": "Não autoriza produto, runtime, secrets, real_apply ou produção.",
+      "invariants_protected": [
+        "aux_channels_not_control_plane",
+        "no_inline_approval",
+        "no_runtime_real",
+        "no_secrets"
+      ],
+      "blocking_criteria": [
+        "canal aprova",
+        "canal executa",
+        "canal expõe dado sensível",
+        "canal vira pseudo-control-plane"
+      ],
+      "notes": "WhatsApp, e-mail e push notificam e redirecionam, mas não controlam o ARIS."
+    }
+  ]
+}

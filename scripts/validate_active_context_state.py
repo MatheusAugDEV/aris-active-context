@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-01", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-02", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-02", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-03", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         for key in (
             "execution_authorized",
             "product_authorized",
@@ -1745,6 +1745,9 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / benchuix_track["transition_table_artifact"]).exists(), "benchuix_track transition_table_artifact missing on disk")
         _require((ROOT / benchuix_track["admission_packet_artifact"]).exists(), "benchuix_track admission_packet_artifact missing on disk")
         _require((ROOT / benchuix_track["no_real_execution_attestation_artifact"]).exists(), "benchuix_track no_real_execution_attestation_artifact missing on disk")
+        _require((ROOT / "artifacts/benchuix/02_access_model.md").exists(), "BENCHUIX-02 access model missing on disk")
+        _require((ROOT / "artifacts/benchuix/02_surface_inventory.json").exists(), "BENCHUIX-02 surface inventory missing on disk")
+        _require((ROOT / "artifacts/benchuix/02_surfaces_diagram.mmd").exists(), "BENCHUIX-02 surfaces diagram missing on disk")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

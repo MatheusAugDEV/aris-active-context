@@ -1,0 +1,19 @@
+flowchart TD
+    Prospect[Prospect] --> Landing[PUBLIC_LANDING]
+    Landing --> Sandbox[DEMO_SANDBOX]
+
+    Client[Cliente] --> Workspace[ARIS_CLIENT_WORKSPACE]
+    Client --> Mobile[MOBILE_COMPANION]
+
+    Aux[AUXILIARY_CHANNELS] -->|deep link| Workspace
+    Aux -->|deep link| Mobile
+    Mobile -->|decisão sensível quando precisar de mais contexto| Workspace
+
+    InternalUser[Equipe interna] --> Admin[INTERNAL_ADMIN]
+
+    Sandbox --> SandboxPolicy[Synthetic-only<br/>sem dado real<br/>sem runtime real<br/>sem PSP real]
+    Aux --> AuxPolicy[Notifica e deep-linka<br/>sem aprovação inline<br/>sem execução direta]
+    Admin --> AdminPolicy[Isolado e invisível ao cliente]
+
+    classDef isolated fill:#f4f4f4,stroke:#555,stroke-width:1px,color:#111;
+    class Sandbox,Admin,AdminPolicy,SandboxPolicy isolated;
