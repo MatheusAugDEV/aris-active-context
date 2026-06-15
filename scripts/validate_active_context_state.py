@@ -1718,7 +1718,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
         _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-01", "benchuix_track.current_candidate_phase mismatch")
-        _require(benchuix_track.get("latest_candidate_decision") == "OPERATOR_GATE_ACCEPTED", "benchuix_track.latest_candidate_decision mismatch")
+        _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
         _require(benchuix_track.get("admission_commit_sha") == "89443c9c80df69568da0c7c2efdb0a72b6e371af", "benchuix_track.admission_commit_sha mismatch")

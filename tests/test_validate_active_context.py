@@ -107,7 +107,7 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_track["roadmap_path"] == "Benchuix_roadmap.md"
     assert benchuix_track["roadmap_hash"] == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5"
     assert benchuix_track["current_candidate_phase"] == "BENCHUIX-01"
-    assert benchuix_track["latest_candidate_decision"] == "OPERATOR_GATE_ACCEPTED"
+    assert benchuix_track["latest_candidate_decision"] == "READY_FOR_OPERATOR_REVIEW"
     assert benchuix_track["schema_tracking_repair_required"] is True
     assert benchuix_track["schema_tracking_repair_status"] == "completed"
     assert benchuix_track["trilha_lock_active"] is True

@@ -1,0 +1,247 @@
+{
+  "modes": [
+    {
+      "mode_id": "A_OWNER_SOLO",
+      "name": "Owner Solo",
+      "baseline": true,
+      "post_bedrock_primary": false,
+      "profile": "Small business owner operating alone, mobile-first, no IT, low tolerance for setup, focused on outcome, control, and receipt clarity.",
+      "user_count_range": "1",
+      "visible_surfaces": [
+        "ARIS Client Workspace",
+        "Mobile Companion"
+      ],
+      "visible_screens": [
+        "Hoje",
+        "Automações",
+        "Aprovar",
+        "Histórico / Comprovantes",
+        "Configurações"
+      ],
+      "hidden_complexity": [
+        "advanced_role_configuration",
+        "corporate_dashboard_density",
+        "technical_runtime_language",
+        "integration_depth"
+      ],
+      "roles": [
+        "owner"
+      ],
+      "permission_model": "least_privilege_owner_control_with_sensitive_actions_requiring_explicit_confirmation",
+      "approval_model": "owner_reviews_sensitive_actions_with_will_and_will_not_language",
+      "dashboard_model": "today_first_not_corporate_dashboard",
+      "mobile_behavior": "mobile_first_all_core_actions_available_without_zoom",
+      "disclosure_triggers": [
+        "owner_requests_more_control",
+        "business_adds_helper",
+        "task_complexity_increases"
+      ],
+      "success_metrics": [
+        "first_safe_automation_in_3_to_5_minutes",
+        "today_screen_understood_in_5_seconds",
+        "confidence_to_approve",
+        "receipt_comprehension",
+        "rollback_comprehension",
+        "anxiety_reduction",
+        "can_explain_aris_in_one_sentence"
+      ],
+      "blocking_criteria": [
+        "requires_technical_jargon_for_basic_flow",
+        "requires_advanced_configuration_for_mode_a",
+        "today_screen_becomes_corporate_dashboard",
+        "sensitive_action_without_will_and_will_not",
+        "first_safe_automation_requires_real_data_or_runtime"
+      ],
+      "invariants_protected": [
+        "no_product_real",
+        "no_runtime_real",
+        "no_real_apply",
+        "no_secrets",
+        "no_customer_real",
+        "mode_a_governs_experience"
+      ],
+      "notes": "Mode A is the baseline and must remain the simplest trustworthy ARIS experience."
+    },
+    {
+      "mode_id": "B_OWNER_PLUS_HELPER",
+      "name": "Owner Plus Helper",
+      "baseline": false,
+      "post_bedrock_primary": false,
+      "profile": "Owner remains decision-maker while one helper accompanies or operationalizes simple tasks.",
+      "user_count_range": "2",
+      "visible_surfaces": [
+        "ARIS Client Workspace",
+        "Mobile Companion"
+      ],
+      "visible_screens": [
+        "Hoje",
+        "Automações",
+        "Aprovar",
+        "Histórico / Comprovantes",
+        "Configurações",
+        "Equipe Mínima"
+      ],
+      "hidden_complexity": [
+        "advanced_rbac",
+        "multi_step_chain_approval",
+        "compliance_reporting"
+      ],
+      "roles": [
+        "owner",
+        "helper"
+      ],
+      "permission_model": "simple_helper_permissions_owner_keeps_sensitive_control",
+      "approval_model": "owner_approves_sensitive_actions_helper_handles_follow_up",
+      "dashboard_model": "same_mode_a_baseline_with_small_team_context",
+      "mobile_behavior": "owner_and_helper_can_track_status_mobile_first",
+      "disclosure_triggers": [
+        "need_to_delegate_a_simple_task",
+        "owner_adds_operational_support"
+      ],
+      "success_metrics": [
+        "delegate_simple_task_in_3_minutes",
+        "owner_keeps_sensitive_control",
+        "helper_understands_status_without_jargon"
+      ],
+      "blocking_criteria": [
+        "requires_enterprise_setup",
+        "helper_can_bypass_owner_on_sensitive_actions",
+        "basic_flow_uses_technical_jargon"
+      ],
+      "invariants_protected": [
+        "mode_a_navigation_remains_intact",
+        "no_runtime_real",
+        "no_real_apply",
+        "no_secrets",
+        "no_product_real"
+      ],
+      "notes": "Mode B only adds a minimal helper layer and does not rewrite the product."
+    },
+    {
+      "mode_id": "C_SMALL_TEAM",
+      "name": "Small Team",
+      "baseline": false,
+      "post_bedrock_primary": false,
+      "profile": "Small operation with basic roles, short approval chains, and more structured visibility.",
+      "user_count_range": "3-10",
+      "visible_surfaces": [
+        "ARIS Client Workspace",
+        "Mobile Companion",
+        "Team Views"
+      ],
+      "visible_screens": [
+        "Hoje",
+        "Automações",
+        "Aprovar",
+        "Histórico / Comprovantes",
+        "Configurações",
+        "Equipe",
+        "Painel Operacional Básico"
+      ],
+      "hidden_complexity": [
+        "advanced_compliance",
+        "sso_saml",
+        "multi_unit_governance"
+      ],
+      "roles": [
+        "owner",
+        "manager",
+        "operator",
+        "finance",
+        "viewer"
+      ],
+      "permission_model": "basic_role_based_views_with_least_privilege_defaults",
+      "approval_model": "short_chain_approval_with_max_three_steps",
+      "dashboard_model": "basic_operational_visibility_without_corporate_overload",
+      "mobile_behavior": "mobile_support_for_status_approvals_and_pause_actions",
+      "disclosure_triggers": [
+        "team_growth",
+        "need_for_role_separation",
+        "need_for_short_chain_approvals"
+      ],
+      "success_metrics": [
+        "approval_chain_max_three_steps",
+        "team_understands_responsibilities_without_jargon",
+        "operational_status_visible_without_runtime_language"
+      ],
+      "blocking_criteria": [
+        "requires_advanced_it_knowledge",
+        "approval_chain_exceeds_three_steps",
+        "small_team_basics_depend_on_enterprise_controls"
+      ],
+      "invariants_protected": [
+        "mode_a_still_baseline",
+        "no_runtime_real",
+        "no_real_apply",
+        "no_secrets",
+        "no_product_real"
+      ],
+      "notes": "Mode C extends the baseline with basic roles and short chains, not enterprise governance."
+    },
+    {
+      "mode_id": "D_LARGER_OPERATION",
+      "name": "Larger Operation",
+      "baseline": false,
+      "post_bedrock_primary": true,
+      "profile": "Larger operation with advanced RBAC, multi-unit needs, audit depth, and future SSO or compliance requirements.",
+      "user_count_range": "10+",
+      "visible_surfaces": [
+        "ARIS Client Workspace",
+        "Mobile Companion",
+        "Advanced Operational Views",
+        "Admin Internal"
+      ],
+      "visible_screens": [
+        "Hoje",
+        "Automações",
+        "Aprovar",
+        "Histórico / Comprovantes",
+        "Configurações",
+        "Equipe",
+        "Dashboard Avançado",
+        "Auditoria"
+      ],
+      "hidden_complexity": [
+        "enterprise_identity_and_access",
+        "sso_saml_future",
+        "compliance_frameworks",
+        "multiunit_orchestration"
+      ],
+      "roles": [
+        "owner",
+        "manager",
+        "operator",
+        "finance",
+        "viewer",
+        "admin_internal"
+      ],
+      "permission_model": "advanced_rbac_only_as_post_bedrock_primary_direction",
+      "approval_model": "structured_approval_chains_with_audit_depth",
+      "dashboard_model": "advanced_dashboard_not_baseline_for_benchuix",
+      "mobile_behavior": "mobile_support_secondary_to_advanced_operational_views",
+      "disclosure_triggers": [
+        "scale_requires_advanced_controls",
+        "audit_depth_required",
+        "post_bedrock_expansion"
+      ],
+      "success_metrics": [
+        "advanced_controls_do_not_pollute_mode_a",
+        "audit_visibility_without_jargon_in_core_flows",
+        "larger_operation_features_remain_non_baseline_pre_bedrock"
+      ],
+      "blocking_criteria": [
+        "enterprise_scope_leaks_into_mode_a",
+        "advanced_controls_become_pre_bedrock_default",
+        "technical_jargon_required_for_basic_flow"
+      ],
+      "invariants_protected": [
+        "post_bedrock_primary_direction_only",
+        "no_runtime_real",
+        "no_real_apply",
+        "no_secrets",
+        "no_product_real_pre_bedrock"
+      ],
+      "notes": "Mode D is not the BenchUIX baseline; it is a future larger-operation direction and should stay secondary before Bedrock."
+    }
+  ]
+}
