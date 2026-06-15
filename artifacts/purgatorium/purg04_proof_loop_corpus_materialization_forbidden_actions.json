@@ -1,0 +1,39 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_forbidden_actions",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "future_candidate_gate": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+  "forbidden_actions": [
+    "Edit, stage, commit, merge, rebase, cherry-pick, revert, apply, or push any file under /home/matheus/ARIS/Project_ARIS during the future materialization phase.",
+    "Run any Project_ARIS unit test, integration test, CI rerun, harness, runtime launcher, or focused test as part of the future materialization phase.",
+    "Execute RED, reset, GREEN, benign flow, rollback, or kill-switch during the future materialization phase.",
+    "Create any artifact that states or implies a new proof-loop execution occurred in the future materialization phase.",
+    "Open PURG05 or mutate ACTIVE_CONTEXT_STATE.json to point at PURG05 in the future materialization phase.",
+    "Declare the finding closed, resolved, safe, product ready, or Bedrock ready from the future materialization phase.",
+    "Invert runtime, real apply, secrets, dependency, product, Bedrock, MCP, RAG, memory-write, or external-network locks.",
+    "Use package managers, dependency installation, or any command whose only purpose is to recreate missing proof evidence by fresh execution.",
+    "Invent missing evidence that is not derivable from the verified source artifacts and hashes recorded in the readiness packet."
+  ],
+  "forbidden_command_families": [
+    "python3 -m unittest * from /home/matheus/ARIS/Project_ARIS",
+    "pytest * from /home/matheus/ARIS/Project_ARIS",
+    "git -C /home/matheus/ARIS/Project_ARIS commit *",
+    "git -C /home/matheus/ARIS/Project_ARIS merge *",
+    "git -C /home/matheus/ARIS/Project_ARIS rebase *",
+    "git -C /home/matheus/ARIS/Project_ARIS push *",
+    "git -C /home/matheus/ARIS/Project_ARIS cherry-pick *",
+    "git -C /home/matheus/ARIS/Project_ARIS revert *",
+    "pip *",
+    "uv *",
+    "npm *",
+    "pnpm *",
+    "poetry *"
+  ],
+  "forbidden_claims": [
+    "The future materialization phase must not say a new proof loop ran.",
+    "The future materialization phase must not say Project_ARIS was touched.",
+    "The future materialization phase must not say PURG05 can open now.",
+    "The future materialization phase must not say remediation became proven.",
+    "The future materialization phase must not say the finding is closed."
+  ],
+  "decision": "pass"
+}

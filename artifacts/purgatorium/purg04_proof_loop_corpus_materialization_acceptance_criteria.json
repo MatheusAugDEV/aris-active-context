@@ -1,0 +1,25 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_acceptance_criteria",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "future_candidate_gate": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+  "artifact_only_materialization_acceptance": [
+    "Every source artifact referenced by the future materialization phase matches the sha256 recorded in purg04_proof_loop_corpus_materialization_source_hashes.json.",
+    "Every future artifact binds explicitly to IF09-FIND-001, accepted_merged_track_a, patch commit 1e9a04a02846f3261ae72d0c95fbee6b0163b45b, and merge commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
+    "The RED->RESET->GREEN artifact states clearly that RED comes from the documentary baseline, reset comes from the cleanroom admissibility chain, and GREEN comes from already-recorded focused validations plus CI evidence.",
+    "The reset artifact states pre-reset state, reset attestation, and post-reset state from the accepted cleanroom lineage without implying a new reset was executed now.",
+    "The benign-flow artifact maps expected behavior from the approved bounded surface and observed behavior from already-recorded focused validations.",
+    "The kill-switch artifact is emitted only as an explicit not-applicable proof tied to IF06 policy plus the accepted Track A non-runtime boundary.",
+    "The rollback artifact maps merge-commit rollback path, merge parents, evidence-preservation rules, and the benign-after-rollback not-applicable reason from recorded sources only.",
+    "No future artifact created in the materialization phase claims new execution, Project_ARIS mutation, finding closure, remediation proof, product readiness, or Bedrock readiness.",
+    "The future materialization phase keeps can_open_purg05_now false and leaves ACTIVE_CONTEXT_STATE.json terminal with next_phase null."
+  ],
+  "rejection_conditions": [
+    "Any future materialization step depends on a fresh Project_ARIS test run.",
+    "Any future materialization step depends on a Project_ARIS mutation or revert.",
+    "Any future materialization step cannot be derived from the recorded source hashes.",
+    "Any future materialization step tries to convert planning-only IF06 doctrine into a claim that a runtime kill-switch was exercised.",
+    "Any future materialization step tries to use the failed local remediation apply result as accepted-lineage proof instead of historical custody support."
+  ],
+  "current_readiness_verdict": "pass",
+  "decision": "pass"
+}

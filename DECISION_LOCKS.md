@@ -2375,3 +2375,41 @@ The following track references are historical_residual_route_noise. They do NOT 
   - remediation_proven remains false
   - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
   - Project_ARIS changed during this phase=`false`
+
+## PURG04 Proof-Loop Corpus Materialization Readiness Packet
+
+- Status: `purg04_proof_loop_corpus_materialization_readiness_packet_pass`
+- Decision: `pass`
+- Scope: artifact-only readiness packet for a future proof-loop corpus materialization phase; no Project_ARIS mutation, no Project_ARIS test run, no proof-loop execution, no RED/RESET/GREEN/benign/rollback/kill-switch execution, no runtime, no real_apply, no product/Bedrock/secrets work, no finding close.
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_precondition_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_forbidden_actions.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_no_real_execution_attestation.json`
+- Readiness verdict:
+  - all required source artifacts were hash-verified
+  - all five future proof-loop artifacts have an admissible artifact-only derivation method
+  - no future artifact requires a new Project_ARIS test run
+  - no future artifact requires Project_ARIS mutation
+  - no future artifact requires a fresh proof-loop execution
+- Artifact-by-artifact route:
+  - `purg04_track_a_red_reset_green_evidence.json` via documentary binding of RED baseline, cleanroom reset lineage, focused validations, and CI evidence
+  - `purg04_track_a_reset_evidence.json` via documentary binding of cleanroom admissibility and pre-mutation clean-state evidence
+  - `purg04_track_a_benign_flow_evidence.json` via documentary binding of bounded expected behavior and already-recorded focused validations
+  - `purg04_track_a_kill_switch_evidence.json` via explicit `not_applicable` attestation bound to IF06 kill-switch doctrine plus accepted Track A non-runtime scope
+  - `purg04_track_a_rollback_evidence_for_accepted_lineage.json` via merge-parent and rollback-path custody mapping bound to the accepted merged lineage
+- Candidate next gate derived by readiness:
+  - `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY`
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+  - `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` remains blocked in this phase
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+  - Project_ARIS changed during this phase=`false`

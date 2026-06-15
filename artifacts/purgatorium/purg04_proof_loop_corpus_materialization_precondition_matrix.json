@@ -1,0 +1,100 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_precondition_matrix",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "global_preconditions": [
+    "All source hashes in purg04_proof_loop_corpus_materialization_source_hashes.json remain stable.",
+    "The future phase writes only to aris-active-context artifacts and does not mutate Project_ARIS.",
+    "The future phase reuses already-recorded evidence only and performs no new proof-loop execution.",
+    "Every future artifact binds explicitly to IF09-FIND-001, accepted_merged_track_a, patch commit 1e9a04a02846f3261ae72d0c95fbee6b0163b45b, and merge commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
+    "ACTIVE_CONTEXT_STATE.json remains terminal with next_phase null during the materialization cycle unless schema and validator support a new explicit row, which does not exist now.",
+    "The future phase preserves finding openness and remediation_proven as false."
+  ],
+  "artifact_preconditions": [
+    {
+      "future_artifact": "purg04_track_a_red_reset_green_evidence.json",
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+        "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+        "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
+      ],
+      "preconditions": [
+        "RED source remains the documentary baseline for IF09-FIND-001.",
+        "Reset is bound to the cleanroom admissibility chain before patch and merge.",
+        "GREEN is bound to the already-recorded focused validations and CI evidence.",
+        "No-contamination attestation is derived from clean preflight, status-clean, and no forbidden-surface evidence."
+      ],
+      "materialization_without_execution": true
+    },
+    {
+      "future_artifact": "purg04_track_a_reset_evidence.json",
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+        "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+      ],
+      "preconditions": [
+        "Pre-reset and post-reset state are represented by the cleanroom reclone admissibility evidence and immediate clean preflight before mutation.",
+        "Reset remains bound to the accepted Track A lineage rather than the failed local remediation attempt.",
+        "No additional test or runtime execution is introduced."
+      ],
+      "materialization_without_execution": true
+    },
+    {
+      "future_artifact": "purg04_track_a_benign_flow_evidence.json",
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json"
+      ],
+      "preconditions": [
+        "Expected benign behavior is taken from the bounded Track A change surface and approval/readiness packets.",
+        "Observed benign behavior is derived from already-recorded focused validations and CI success for the accepted lineage.",
+        "The artifact states clearly that it is binding historical evidence, not executing a new benign flow."
+      ],
+      "materialization_without_execution": true
+    },
+    {
+      "future_artifact": "purg04_track_a_kill_switch_evidence.json",
+      "required_source_artifacts": [
+        "project_mirror/artifacts/infernus/if06_kill_switch_policy.json",
+        "project_mirror/artifacts/infernus/if06_sandbox_contract.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
+      ],
+      "preconditions": [
+        "The artifact is emitted as an explicit not-applicable proof for the bounded non-runtime Track A lineage.",
+        "The control boundary and rollback interaction are mapped from IF06 kill-switch doctrine plus Track A scope evidence.",
+        "The artifact does not claim a functioning runtime kill-switch was exercised in this phase."
+      ],
+      "materialization_without_execution": true
+    },
+    {
+      "future_artifact": "purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "required_source_artifacts": [
+        "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+        "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json"
+      ],
+      "preconditions": [
+        "Rollback scope and path are bound to the accepted merged Track A merge commit and its recorded merge parents.",
+        "Evidence preservation rules are derived from the cleanroom rollback strategy and the prior failure-ledger preservation requirements.",
+        "Benign-after-rollback is emitted with an explicit not-applicable reason tied to the bounded non-runtime lineage."
+      ],
+      "materialization_without_execution": true
+    }
+  ],
+  "decision": "pass"
+}

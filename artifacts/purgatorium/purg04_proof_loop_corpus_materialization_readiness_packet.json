@@ -1,0 +1,130 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_readiness_packet",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "source_current_phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+  "source_gap_diagnostic": "artifacts/purgatorium/purg04_proof_loop_corpus_gap_diagnostic.json",
+  "source_required_artifact_contract": "artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "project_merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "readiness_type": "artifact_only_materialization_readiness",
+  "does_execute_proof_loop": false,
+  "does_touch_project_aris": false,
+  "can_materialize_all_required_artifacts_artifact_only": true,
+  "required_future_artifacts": [
+    "purg04_track_a_red_reset_green_evidence.json",
+    "purg04_track_a_reset_evidence.json",
+    "purg04_track_a_benign_flow_evidence.json",
+    "purg04_track_a_kill_switch_evidence.json",
+    "purg04_track_a_rollback_evidence_for_accepted_lineage.json"
+  ],
+  "artifact_by_artifact_readiness": [
+    {
+      "future_artifact": "purg04_track_a_red_reset_green_evidence.json",
+      "purpose": "Canonical RED->RESET->GREEN chain bound to IF09-FIND-001 and the accepted merged Track A lineage.",
+      "source_inputs_available": true,
+      "can_be_materialized_without_execution": true,
+      "requires_project_aris_test_run": false,
+      "requires_project_aris_mutation": false,
+      "requires_new_evidence_execution": false,
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg02_if09_find_001_s3_red_baseline.json",
+        "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+        "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
+      ],
+      "admissible_derivation_method": "documentary_binding",
+      "blocked_reason": null
+    },
+    {
+      "future_artifact": "purg04_track_a_reset_evidence.json",
+      "purpose": "Clean-state reset proof between RED and GREEN using the accepted Track A cleanroom lineage.",
+      "source_inputs_available": true,
+      "can_be_materialized_without_execution": true,
+      "requires_project_aris_test_run": false,
+      "requires_project_aris_mutation": false,
+      "requires_new_evidence_execution": false,
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg04_cleanroom_fresh_reclone_prerequisite_packet.json",
+        "artifacts/purgatorium/purg04_fresh_reclone_execution_packet.json",
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json"
+      ],
+      "admissible_derivation_method": "documentary_binding",
+      "blocked_reason": null
+    },
+    {
+      "future_artifact": "purg04_track_a_benign_flow_evidence.json",
+      "purpose": "Benign-flow proof bound to the accepted merged Track A lineage using already-recorded focused validations.",
+      "source_inputs_available": true,
+      "can_be_materialized_without_execution": true,
+      "requires_project_aris_test_run": false,
+      "requires_project_aris_mutation": false,
+      "requires_new_evidence_execution": false,
+      "required_source_artifacts": [
+        "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json"
+      ],
+      "admissible_derivation_method": "documentary_binding",
+      "blocked_reason": null
+    },
+    {
+      "future_artifact": "purg04_track_a_kill_switch_evidence.json",
+      "purpose": "Kill-switch not-applicable proof for the accepted merged Track A lineage, mapped to its bounded non-runtime surface.",
+      "source_inputs_available": true,
+      "can_be_materialized_without_execution": true,
+      "requires_project_aris_test_run": false,
+      "requires_project_aris_mutation": false,
+      "requires_new_evidence_execution": false,
+      "required_source_artifacts": [
+        "project_mirror/artifacts/infernus/if06_kill_switch_policy.json",
+        "project_mirror/artifacts/infernus/if06_sandbox_contract.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_diff_no_forbidden_surface_proof.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
+      ],
+      "admissible_derivation_method": "not_applicable_attestation",
+      "blocked_reason": null
+    },
+    {
+      "future_artifact": "purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "purpose": "Rollback path and custody mapping tied to the accepted merged Track A lineage.",
+      "source_inputs_available": true,
+      "can_be_materialized_without_execution": true,
+      "requires_project_aris_test_run": false,
+      "requires_project_aris_mutation": false,
+      "requires_new_evidence_execution": false,
+      "required_source_artifacts": [
+        "artifacts/purgatorium/project_aris_cleanroom_external_context_pointer_repair.json",
+        "artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json",
+        "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json",
+        "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_result.json"
+      ],
+      "admissible_derivation_method": "hash_custody_mapping",
+      "blocked_reason": null
+    }
+  ],
+  "materialization_blockers": [],
+  "candidate_next_gate": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+  "can_open_purg05_now": false,
+  "if09_find_001_state": "open",
+  "remediation_proven": false,
+  "finding_closed": false,
+  "project_aris_changed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_bedrock_real_apply_secrets_executed": false,
+  "dependency_or_package_manager_used": false,
+  "decision": "pass"
+}
