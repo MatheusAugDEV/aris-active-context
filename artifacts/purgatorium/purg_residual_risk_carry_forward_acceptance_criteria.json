@@ -1,0 +1,30 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_acceptance_criteria",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:23:37-03:00",
+  "candidate_target_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "historical_backfill_only": true,
+  "acceptance_criteria": {
+    "every_required_input_exists": true,
+    "every_required_input_has_sha256_recorded": true,
+    "IF09-FIND-001_remains_open": true,
+    "remediation_proven_false": true,
+    "finding_closed_false": true,
+    "infernus_revalidation_required_for_closure": true,
+    "no_artifact_claims_new_execution": true,
+    "no_artifact_claims_closure_or_resolved_or_safe": true,
+    "no_artifact_claims_product_ready_or_bedrock_ready": true,
+    "ACTIVE_CONTEXT_STATE_unchanged_without_later_explicit_activation": true
+  },
+  "blocking_conditions_for_future_residual_packet": [
+    "Any required input is missing.",
+    "Any required input lacks a recorded sha256.",
+    "IF09-FIND-001 is not open.",
+    "Any artifact asserts finding_closed=true.",
+    "Any artifact asserts remediation_proven=true.",
+    "Any artifact claims resolved or safe.",
+    "Any artifact claims product_ready or bedrock_ready.",
+    "Any artifact claims new execution or requires real execution to complete the packet.",
+    "Any attempt to mutate ACTIVE_CONTEXT_STATE.json without a later explicit validator-supported activation packet."
+  ]
+}

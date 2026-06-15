@@ -85,6 +85,8 @@ Project_ARIS main workspace: não alterado por este residual route-opening packe
 
 O packet canônico de abertura da rota residual está registrado em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, com autorização explícita em `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_operator_authorization.json`. Ele consome a cadeia documental PURG05 já validada, promove a rota viva para `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, mantém `remediation_proven=false` e confirma que `IF09-FIND-001` continua open sem abrir nenhuma superfície real.
 
+Para fechar a cadeia documental anterior à abertura, o repositório agora também registra `artifacts/purgatorium/purg_residual_risk_carry_forward_admission_packet.json` como `historical_backfill_only=true`. Esse packet não reabre a rota nem retrocede o estado vivo; ele apenas formaliza a admissão artifact-only que o candidate residual teria emitido antes do route-opening já canônico em `2026-06-15`.
+
 ## PURG-04 proof-loop corpus materialization
 
 O packet `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json` abriu apenas a readiness documental para materializar o corpus proof-loop ausente da linhagem aceita de Track A. Na execução seguinte, `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_artifact_only_packet.json` registrou `blocked` porque o manifest `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json` já não bate com `DECISION_LOCKS.md` na `main` canônica. Por contrato, isso impede materializar os cinco artifacts de RED->RESET->GREEN, reset, benign-flow, kill-switch e rollback sem antes corrigir ou substituir o source manifest.
@@ -104,6 +106,8 @@ O admission packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody
 O opening packet `artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json` verificou que a admissão continua íntegra, que todos os required inputs seguem presentes e que a futura abertura de `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` pode ser proposta sem ativar o gate agora. O resultado emite novamente `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` apenas como candidate gate, com `candidate_only=true`, `requires_operator_or_explicit_route_activation=true`, `purg05_opened=false`, `next_phase=null` e `remediation_proven=false`.
 
 O gate `artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json` e seus artifacts irmãos materializam a custódia documental do corpus já admitido: inventário de hashes, metadados de signing sem assinatura real, cadeia de custódia, tabela de lineage, locks carry-forward e attestation de não execução real. Esse candidate foi consumido pelo novo packet `artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json`, que abriu a rota residual apenas no active-context e preservou todos os locks reais em `false`.
+
+O admission backfill `artifacts/purgatorium/purg_residual_risk_carry_forward_admission_packet.json` fixa retrospectivamente os inputs obrigatórios, o scope matrix, os acceptance criteria e a attestation de não execução real para esse candidate residual, mantendo `candidate_only=true`, `admission_only=true`, `residual_packet_opened=false` e `finding_closed=false`.
 
 ## PURG-01.1 triage classification
 

@@ -1,0 +1,21 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_no_real_execution_attestation",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:23:37-03:00",
+  "historical_backfill_only": true,
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "red_executed": false,
+  "reset_executed": false,
+  "green_executed": false,
+  "benign_flow_executed": false,
+  "rollback_executed": false,
+  "kill_switch_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "residual_packet_opened": false,
+  "can_open_residual_now": false
+}

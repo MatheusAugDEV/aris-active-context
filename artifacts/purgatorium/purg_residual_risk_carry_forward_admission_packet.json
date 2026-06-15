@@ -1,0 +1,112 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_admission_packet",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:23:37-03:00",
+  "source_candidate": "artifacts/purgatorium/purg05_next_route_candidate.json",
+  "source_carry_forward_locks": "artifacts/purgatorium/purg05_carry_forward_locks.json",
+  "candidate_target_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "candidate_only": true,
+  "admission_only": true,
+  "historical_backfill_only": true,
+  "residual_packet_opened": false,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_hashes": {
+    "artifacts/purgatorium/purg05_next_route_candidate.json": "13dfbd17003986aaf20b110c21b2cd0b54a7a4de3238d6b371400898fa07e020",
+    "artifacts/purgatorium/purg05_carry_forward_locks.json": "86dbaa0234df11557ee7e3d92ee85d1b2e0a4ba67c826c85848f5fe3d42d7f43",
+    "artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json": "c250c41e51dc471b4d2aff95759713cf35770e21a636f2f21f12028ecc848870",
+    "artifacts/purgatorium/purg05_evidence_ledger_signing_metadata.json": "ff2c113508902298139a48b5542e42e26285813b83e7444a6083560e2957b23b",
+    "artifacts/purgatorium/purg05_evidence_custody_chain_map.json": "a9226ce5b92dfe9f11c557169d59ac17dc56868f3a70471869c40cfd93aa051f",
+    "artifacts/purgatorium/purg05_source_to_output_lineage_table.json": "ef3982b51d3fa8d201d17fee2cadd0e4719b5dcd56644f0dac7d3fcd9ddebff9",
+    "artifacts/purgatorium/purg05_no_real_execution_attestation.json": "908cbe196dd51ac887625e2d138ac950896b6eb4bca513804234969ac89d7d7c",
+    "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json": "202bc2660fd8b6fdbf29cb5561b3e6ef160d92067675544c3118945884e24991",
+    "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json": "15ddb4e79ac863b016cab98930bfa621c34e8e97f8ff72a0bcd4845ff433aae9",
+    "artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_packet.json": "60ba0f5ee03f5a8025c84468d6356cc0da939c2c9b2ccf47718c79c5b8ad72e8",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_packet.json": "43f34a46c9c79e56c85abb4740e325802cf788ad99e854630a8574d1edf18d1b",
+    "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json": "6e052fa50b27b9ee0ebf0e8a0b9278680dcf385d9d1d48e8db8a8f8106eea1a4",
+    "artifacts/purgatorium/purg04_track_a_reset_evidence.json": "4fdc3f430520f9d83dc8a7abf019ebdb6798697f86f5ffea3312aecd78524e39",
+    "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json": "8427e39f3ce72aa88acb268aa857ef182bbf60af51cc1fe58b289ccb9ffa63cc",
+    "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json": "b3c70f4488225abd9964d79431f017bacdb343eb061f2d60c74673d329067083",
+    "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json": "37199e21cd3b7a31d44bd3c3bc746b2dc61a50c831a900dfc089ceb631a8e0e3",
+    "artifacts/purgatorium/purgatorium_remediation_proven_carry_forward_policy_lock.json": "58ab37b5518381def7836884c28978f0fd2a2b32de2b73d6110ef811d0606aad",
+    "ACTIVE_CONTEXT_STATE.json": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+    "ROADMAP_CANONICAL.md": "696123e7fe10443403f2efc0f7607a03a4e734d348741972833767b1c0feb9da",
+    "DECISION_LOCKS.md": "ae6f45e784de64cd5b1b97e2b07eae314e23577ab851289945af42989a2621ca"
+  },
+  "admission_verdict": "candidate_admitted_for_future_operator_or_route_opening",
+  "future_residual_scope": {
+    "artifact": "artifacts/purgatorium/purg_residual_risk_carry_forward_scope_matrix.json",
+    "allowed_outputs_only": [
+      "residual risk inventory",
+      "carry-forward lock binding",
+      "open-finding preservation",
+      "revalidation-required statement",
+      "closure-blocker register",
+      "prohibited-claim matrix",
+      "candidate handoff after residual-risk custody"
+    ],
+    "historical_candidate_handoff_after_admission": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+    "superseded_by_live_route_opening_packet": "artifacts/purgatorium/purg_residual_risk_carry_forward_route_opening_packet.json"
+  },
+  "future_residual_required_inputs": {
+    "artifact": "artifacts/purgatorium/purg_residual_risk_carry_forward_required_inputs.json",
+    "every_input_requires_sha256": true,
+    "lineage_binding_must_match": [
+      "IF09-FIND-001",
+      "accepted_merged_track_a",
+      "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+      "7883af5a32c629026bfc6dc15ebee4ebbcadd295"
+    ]
+  },
+  "future_residual_forbidden_actions": [
+    "finding closure",
+    "remediation_proven=true",
+    "resolved claim",
+    "safe claim",
+    "Project_ARIS mutation",
+    "Project_ARIS tests",
+    "proof-loop execution",
+    "RED execution",
+    "RESET execution",
+    "GREEN execution",
+    "benign-flow execution",
+    "rollback execution",
+    "kill-switch execution",
+    "runtime",
+    "real_apply",
+    "product",
+    "Bedrock",
+    "secrets",
+    "dependency/package-manager use"
+  ],
+  "future_residual_acceptance_criteria": {
+    "artifact": "artifacts/purgatorium/purg_residual_risk_carry_forward_acceptance_criteria.json",
+    "summary": [
+      "every required input exists with a recorded sha256",
+      "IF09-FIND-001 remains open",
+      "remediation_proven=false",
+      "finding_closed=false",
+      "infernus_revalidation_required_for_closure=true",
+      "no artifact claims new execution",
+      "no artifact claims closure, resolved, safe, product_ready, or bedrock_ready",
+      "ACTIVE_CONTEXT_STATE.json remains unchanged unless a later explicit packet authorizes a supported live-route change"
+    ]
+  },
+  "future_residual_blockers": [
+    "Any required input missing at future residual packet opening time.",
+    "Any required input lacking a recorded sha256.",
+    "Any lineage binding mismatch for IF09-FIND-001, accepted_merged_track_a, patch_commit, or merge_commit.",
+    "Any artifact claiming finding_closed=true, remediation_proven=true, resolved, safe, product_ready, or bedrock_ready.",
+    "Any need for Project_ARIS mutation, Project_ARIS tests, proof-loop execution, or runtime to complete the packet.",
+    "Any attempt to treat residual carry-forward as final accepted risk or as closure without Infernus Revalidation."
+  ],
+  "candidate_next_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+  "superseded_by_live_state_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "superseded_by_live_state_status": "purg_residual_risk_carry_forward_route_opening_pass",
+  "decision": "pass"
+}

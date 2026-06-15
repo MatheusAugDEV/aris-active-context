@@ -1,0 +1,45 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_scope_matrix",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:23:37-03:00",
+  "candidate_target_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "historical_backfill_only": true,
+  "allowed_in_future_residual_packet": [
+    "residual risk inventory",
+    "carry-forward lock binding",
+    "open-finding preservation",
+    "revalidation-required statement",
+    "closure-blocker register",
+    "prohibited-claim matrix",
+    "candidate handoff after residual-risk custody"
+  ],
+  "forbidden_in_future_residual_packet": [
+    "finding closure",
+    "remediation_proven=true",
+    "resolved claim",
+    "safe claim",
+    "Project_ARIS mutation",
+    "Project_ARIS tests",
+    "proof-loop execution",
+    "RED execution",
+    "RESET execution",
+    "GREEN execution",
+    "benign-flow execution",
+    "rollback execution",
+    "kill-switch execution",
+    "runtime",
+    "real_apply",
+    "product",
+    "Bedrock",
+    "secrets",
+    "dependency/package-manager use"
+  ],
+  "carried_forward_claims": {
+    "IF09-FIND-001": "open",
+    "finding_closed": false,
+    "remediation_proven": false,
+    "infernus_revalidation_required_for_closure": true,
+    "accepted_risk_final": false
+  },
+  "live_state_mutation_allowed_in_this_phase": false
+}

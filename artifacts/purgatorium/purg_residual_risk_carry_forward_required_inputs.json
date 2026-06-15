@@ -1,0 +1,189 @@
+{
+  "artifact_id": "purg_residual_risk_carry_forward_required_inputs",
+  "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_ADMISSION_PACKET_ARTIFACT_ONLY",
+  "created_at": "2026-06-15T13:23:37-03:00",
+  "candidate_target_gate": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+  "historical_backfill_only": true,
+  "required_inputs": [
+    {
+      "path": "artifacts/purgatorium/purg05_next_route_candidate.json",
+      "role": "residual_candidate_contract",
+      "sha256": "13dfbd17003986aaf20b110c21b2cd0b54a7a4de3238d6b371400898fa07e020",
+      "evidence_class": "route_candidate",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_candidate_only_requires_future_activation",
+      "blocker_if_missing": "Residual packet cannot prove that PURG05 emitted PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET as the next candidate."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_carry_forward_locks.json",
+      "role": "carry_forward_lock_source",
+      "sha256": "86dbaa0234df11557ee7e3d92ee85d1b2e0a4ba67c826c85848f5fe3d42d7f43",
+      "evidence_class": "lock_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_open_finding_and_no_real_exec_locks_preserved",
+      "blocker_if_missing": "Residual packet cannot bind the open-finding, no-close, and no-real-execution locks."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_evidence_ledger_hash_inventory.json",
+      "role": "custodied_hash_inventory",
+      "sha256": "c250c41e51dc471b4d2aff95759713cf35770e21a636f2f21f12028ecc848870",
+      "evidence_class": "custody_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_all_required_input_hashes_recorded",
+      "blocker_if_missing": "Residual packet cannot prove which proof-loop and governance inputs were hash-bound into PURG05 custody."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_evidence_ledger_signing_metadata.json",
+      "role": "documentary_signing_scope",
+      "sha256": "ff2c113508902298139a48b5542e42e26285813b83e7444a6083560e2957b23b",
+      "evidence_class": "custody_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_documentary_metadata_only",
+      "blocker_if_missing": "Residual packet loses the documentary-signing scope and may over-claim real signing."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_evidence_custody_chain_map.json",
+      "role": "custody_chain_binding",
+      "sha256": "a9226ce5b92dfe9f11c557169d59ac17dc56868f3a70471869c40cfd93aa051f",
+      "evidence_class": "custody_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_custody_nodes_and_edges_verified",
+      "blocker_if_missing": "Residual packet cannot prove documentary custody of the accepted merged Track A lineage."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_source_to_output_lineage_table.json",
+      "role": "source_to_output_lineage",
+      "sha256": "ef3982b51d3fa8d201d17fee2cadd0e4719b5dcd56644f0dac7d3fcd9ddebff9",
+      "evidence_class": "custody_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_lineage_binding_verified",
+      "blocker_if_missing": "Residual packet cannot prove which sources support the residual carry-forward outputs."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_no_real_execution_attestation.json",
+      "role": "no_real_execution_guard",
+      "sha256": "908cbe196dd51ac887625e2d138ac950896b6eb4bca513804234969ac89d7d7c",
+      "evidence_class": "lock_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_all_execution_booleans_false",
+      "blocker_if_missing": "Residual packet cannot prove that PURG05 custody remained artifact-only."
+    },
+    {
+      "path": "artifacts/purgatorium/purgatorium_remediation_proven_carry_forward_policy_lock.json",
+      "role": "remediation_proven_policy_lock",
+      "sha256": "58ab37b5518381def7836884c28978f0fd2a2b32de2b73d6110ef811d0606aad",
+      "evidence_class": "risk_policy",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_remediation_false_policy_lock",
+      "blocker_if_missing": "Residual packet cannot safely preserve remediation_proven=false as a non-closure carry-forward constraint."
+    },
+    {
+      "path": "artifacts/purgatorium/purgatorium_post_purg04_route_decision_recheck_packet.json",
+      "role": "route_recheck_anchor",
+      "sha256": "60ba0f5ee03f5a8025c84468d6356cc0da939c2c9b2ccf47718c79c5b8ad72e8",
+      "evidence_class": "custody_source",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_proof_loop_blockers_cleared",
+      "blocker_if_missing": "Residual packet cannot prove that post-PURG04 blockers were cleared before PURG05 custody."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_retry_packet.json",
+      "role": "proof_loop_retry_anchor",
+      "sha256": "43f34a46c9c79e56c85abb4740e325802cf788ad99e854630a8574d1edf18d1b",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_five_artifacts_materialized",
+      "blocker_if_missing": "Residual packet cannot prove the accepted proof-loop corpus exists for the merged Track A lineage."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+      "role": "proof_loop_red_reset_green_evidence",
+      "sha256": "6e052fa50b27b9ee0ebf0e8a0b9278680dcf385d9d1d48e8db8a8f8106eea1a4",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_documentary_chain_bound_to_accepted_lineage",
+      "blocker_if_missing": "Residual packet cannot prove the RED->RESET->GREEN documentary chain."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+      "role": "proof_loop_reset_evidence",
+      "sha256": "4fdc3f430520f9d83dc8a7abf019ebdb6798697f86f5ffea3312aecd78524e39",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_documentary_reset_bound_to_accepted_lineage",
+      "blocker_if_missing": "Residual packet cannot prove the accepted reset event."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+      "role": "proof_loop_benign_flow_evidence",
+      "sha256": "8427e39f3ce72aa88acb268aa857ef182bbf60af51cc1fe58b289ccb9ffa63cc",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_benign_flow_documented",
+      "blocker_if_missing": "Residual packet cannot prove benign-flow preservation for the accepted lineage."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+      "role": "proof_loop_kill_switch_evidence",
+      "sha256": "b3c70f4488225abd9964d79431f017bacdb343eb061f2d60c74673d329067083",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_kill_switch_documented",
+      "blocker_if_missing": "Residual packet cannot prove kill-switch handling constraints for the accepted lineage."
+    },
+    {
+      "path": "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "role": "proof_loop_rollback_evidence",
+      "sha256": "37199e21cd3b7a31d44bd3c3bc746b2dc61a50c831a900dfc089ceb631a8e0e3",
+      "evidence_class": "proof_loop_corpus",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_rollback_documented",
+      "blocker_if_missing": "Residual packet cannot prove rollback evidence for the accepted merged lineage."
+    },
+    {
+      "path": "ACTIVE_CONTEXT_STATE.json",
+      "role": "canonical_live_state_snapshot",
+      "sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
+      "evidence_class": "canonical_state",
+      "required_for_future_residual_packet": true,
+      "admissibility": "canonical_route_opened_residual_live_state_snapshot",
+      "blocker_if_missing": "Residual packet cannot prove the current live route, open finding state, and null successor terminal wait state."
+    },
+    {
+      "path": "ROADMAP_CANONICAL.md",
+      "role": "canonical_transition_snapshot",
+      "sha256": "696123e7fe10443403f2efc0f7607a03a4e734d348741972833767b1c0feb9da",
+      "evidence_class": "canonical_state",
+      "required_for_future_residual_packet": true,
+      "admissibility": "pass_transition_table_snapshot",
+      "blocker_if_missing": "Residual packet cannot prove the live Transition Table context and terminal no-successor condition."
+    },
+    {
+      "path": "DECISION_LOCKS.md",
+      "role": "governance_ledger_snapshot",
+      "sha256": "ae6f45e784de64cd5b1b97e2b07eae314e23577ab851289945af42989a2621ca",
+      "evidence_class": "ledger",
+      "required_for_future_residual_packet": true,
+      "admissibility": "append_only_ledger_snapshot",
+      "blocker_if_missing": "Residual packet cannot prove the current governance ledger and backfilled admission lineage."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_admission_packet.json",
+      "role": "prior_purg05_admission_context",
+      "sha256": "15ddb4e79ac863b016cab98930bfa621c34e8e97f8ff72a0bcd4845ff433aae9",
+      "evidence_class": "route_candidate",
+      "required_for_future_residual_packet": false,
+      "admissibility": "supporting_only_prior_admission_context",
+      "blocker_if_missing": "None; supporting context only."
+    },
+    {
+      "path": "artifacts/purgatorium/purg05_evidence_ledger_signing_custody_opening_packet.json",
+      "role": "prior_purg05_opening_context",
+      "sha256": "202bc2660fd8b6fdbf29cb5561b3e6ef160d92067675544c3118945884e24991",
+      "evidence_class": "route_candidate",
+      "required_for_future_residual_packet": false,
+      "admissibility": "supporting_only_prior_opening_context",
+      "blocker_if_missing": "None; supporting context only."
+    }
+  ]
+}
