@@ -1,10 +1,10 @@
 {
   "artifact_id": "purg_remaining_roadmap_activation_branch_matrix",
   "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
-  "created_at": "2026-06-15T14:05:00-03:00",
+  "created_at": "2026-06-15T18:00:00-03:00",
   "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
-  "operator_selected_branch": null,
-  "selection_status": "none_selected_blocked",
+  "operator_selected_branch": "TRACK_REVALIDATION_FIRST",
+  "selection_status": "selected",
   "branches": [
     {
       "branch_id": "TRACK_EXIT_FIRST",
@@ -86,7 +86,21 @@
         "MCP/RAG/memory write"
       ],
       "why_admissible": "R5 (INF_REVALIDATION_ROUTE_ADMISSION_PACKET) is route-admission-only: it admits the macro transition Purgatorium FULL -> Infernus Revalidation per ROADMAP_CANONICAL.md macro chain without executing revalidation, keeping IF09-FIND-001 open and remediation_proven false.",
-      "selected": false
+      "selected": true,
+      "selection_evidence": {
+        "operator_input_line": "operator_selected_branch=TRACK_REVALIDATION_FIRST",
+        "consistent_with_diagnostic_recommendation": true,
+        "diagnostic_artifact": "artifacts/purgatorium/purg_remaining_roadmap_branch_selection_diagnostic_packet.json",
+        "diagnostic_baseline_intersects_if09_revalidation_oracle": false,
+        "diagnostic_confidence": "medium",
+        "transition_table_row_matched": {
+          "current_phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+          "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+          "next_phase_class": "infernus_revalidation_route_admission",
+          "advance_mode": "operator",
+          "branch_choice": "TRACK_REVALIDATION_FIRST"
+        }
+      }
     },
     {
       "branch_id": "TRACK_BASELINE_STABILIZATION_FIRST",
@@ -125,6 +139,6 @@
       "selected": false
     }
   ],
-  "decision": "blocked",
-  "blocked_reason": "operator_branch_selection_required"
+  "decision": "pass",
+  "blocked_reason": null
 }

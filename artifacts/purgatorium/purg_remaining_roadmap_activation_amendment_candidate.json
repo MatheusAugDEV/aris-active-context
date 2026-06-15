@@ -1,28 +1,35 @@
 {
   "artifact_id": "purg_remaining_roadmap_activation_amendment_candidate",
   "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
-  "created_at": "2026-06-15T14:05:00-03:00",
+  "created_at": "2026-06-15T18:00:00-03:00",
   "source_active_context_sha256": "0e7acd4d81707502e1970bed56d2d7660e37ff0b21183ff82152f378aba385a4",
   "not_active": true,
   "roadmap_canonical_changed_now": false,
   "active_transition_table_changed_now": false,
-  "candidate_row": null,
-  "candidate_row_status": "not_generated_pending_operator_branch_selection",
-  "candidate_row_template": {
+  "operator_selected_branch": "TRACK_REVALIDATION_FIRST",
+  "candidate_row": {
     "current_phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
     "decision": "pass",
-    "next_phase_id": "<candidate_next_gate, one of PURG_EXIT_READINESS_PACKET | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | PURG_PROJECT_ARIS_GLOBAL_BASELINE_STABILIZATION_DECISION_PACKET, selected by operator_selected_branch>",
-    "next_phase_class": "<from purgatorium_remaining_roadmap_transition_table_candidate.json, matched by branch_choice>",
+    "next_phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+    "next_phase_class": "infernus_revalidation_route_admission",
     "advance_mode": "operator",
-    "minimum_deliverable": "<from purgatorium_remaining_roadmap_transition_table_candidate.json, matched row>"
+    "minimum_deliverable": "purg_remaining_roadmap_activation_decision_packet.json, purg_remaining_roadmap_activation_amendment_candidate.json"
   },
+  "candidate_row_status": "generated_pending_operator_amendment_authorization",
+  "candidate_row_source": "artifacts/purgatorium/purgatorium_remaining_roadmap_transition_table_candidate.json (row with current_phase_id=PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET, branch_choice=TRACK_REVALIDATION_FIRST, next_phase_id=INF_REVALIDATION_ROUTE_ADMISSION_PACKET)",
   "activation_requirements": [
     "explicit operator amendment activation",
     "schema/validator support",
     "CI terminal green",
     "active-context state update gate"
   ],
-  "decision": "blocked",
-  "blocked_reason": "operator_branch_selection_required",
-  "notes": "No operator_selected_branch was provided in this gate. The candidate_row cannot be populated without a selected branch, since next_phase_id/next_phase_class/minimum_deliverable depend on which of the three R1 branches (TRACK_EXIT_FIRST / TRACK_REVALIDATION_FIRST / TRACK_BASELINE_STABILIZATION_FIRST) the operator selects. This artifact records the template and activation requirements only; it does not change ROADMAP_CANONICAL.md or the live Transition Table."
+  "activation_requirements_met": {
+    "explicit_operator_amendment_activation": false,
+    "schema_validator_support": false,
+    "ci_terminal_green": "pending_this_gates_ci_run",
+    "active_context_state_update_gate": false
+  },
+  "decision": "pass",
+  "blocked_reason": null,
+  "notes": "The operator selected TRACK_REVALIDATION_FIRST via 'operator_selected_branch=TRACK_REVALIDATION_FIRST' in this prompt, so candidate_row can now be populated from purgatorium_remaining_roadmap_transition_table_candidate.json using the matched branch_choice row. This artifact records the candidate row only; it does NOT amend ROADMAP_CANONICAL.md, does NOT change the live Transition Table, and does NOT mutate ACTIVE_CONTEXT_STATE.json. Activating this row as a live Transition Table entry would still require a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern, per purgatorium_remaining_roadmap_no_deviation_policy.json (deviations only via amendment with operator approval, validator pass, and CI terminal green)."
 }

@@ -1,12 +1,13 @@
 {
   "artifact_id": "purg_remaining_roadmap_activation_next_route_candidate",
   "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
-  "created_at": "2026-06-15T14:05:00-03:00",
-  "candidate_next_gate": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
+  "created_at": "2026-06-15T18:00:00-03:00",
+  "operator_selected_branch": "TRACK_REVALIDATION_FIRST",
+  "candidate_next_gate": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
   "candidate_only": true,
   "state_advanced": false,
-  "blocked_reason": "operator_branch_selection_required",
+  "blocked_reason": null,
   "next_phase_preserved": null,
   "active_next_phase_preserved": null,
-  "decision": "blocked"
+  "decision": "pass"
 }

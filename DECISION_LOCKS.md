@@ -3001,3 +3001,36 @@ The following track references are historical_residual_route_noise. They do NOT 
 - candidate_next_gate: `PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET` (candidate only; operator must still provide `operator_selected_branch`).
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
+
+## PURG Remaining Roadmap Activation Decision Packet (R1) — Branch Selected: TRACK_REVALIDATION_FIRST
+
+- Status: `purg_remaining_roadmap_activation_decision_packet_pass`
+- Decision: `pass`
+- Scope: artifact-only operator route governance decision (R1 of the remaining Purgatorium roadmap trail), re-executed with an explicit operator branch selection.
+- `operator_selected_branch`: `TRACK_REVALIDATION_FIRST` (provided explicitly by the operator as `operator_selected_branch=TRACK_REVALIDATION_FIRST`).
+- `branch_selection_source`: operator explicit prompt line. `branch_selection_valid=true`.
+- Consistency note: the selection is consistent with (but not bound by) the non-binding recommendation in `artifacts/purgatorium/purg_remaining_roadmap_branch_selection_diagnostic_packet.json` (`baseline_intersects_if09_revalidation_oracle=false`, `confidence=medium`, `recommended_branch=TRACK_REVALIDATION_FIRST`).
+- Transition table row matched (from `artifacts/purgatorium/purgatorium_remaining_roadmap_transition_table_candidate.json`): `current_phase_id=PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET`, `branch_choice=TRACK_REVALIDATION_FIRST`, `next_phase_id=INF_REVALIDATION_ROUTE_ADMISSION_PACKET`, `next_phase_class=infernus_revalidation_route_admission`, `advance_mode=operator`.
+- Artifacts updated:
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_decision_packet.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_branch_matrix.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json`
+- `candidate_next_gate`: `INF_REVALIDATION_ROUTE_ADMISSION_PACKET` (candidate of the remaining-roadmap phase graph; not an active Transition Table row).
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - finding_closed remains false
+  - Project_ARIS changed: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop / revalidation / runtime / real_apply executed: `false`
+- This gate records the branch selection and emits `candidate_next_gate=INF_REVALIDATION_ROUTE_ADMISSION_PACKET` only; activating this row in the live Transition Table requires a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern.
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
