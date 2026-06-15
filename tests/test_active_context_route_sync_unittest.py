@@ -34,34 +34,36 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(state["current_phase_mutation_family_count"], 10)
         self.assertEqual(state["current_phase_oracle_count"], 9)
 
-    def test_current_route_tracks_purg04_track_a_main_merge_execution_sync(self):
+    def test_current_route_tracks_purg04_track_a_post_merge_validation_packet_sync(self):
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["phase_id"], "PURG04_TRACK_A_MAIN_MERGE_EXECUTION")
-        self.assertEqual(state["current_phase_id"], "PURG04_TRACK_A_MAIN_MERGE_EXECUTION")
-        self.assertEqual(state["previous_phase_id"], "PURG-04")
-        self.assertEqual(state["phase_class"], "purgatorium_track_a_main_merge_execution")
-        self.assertEqual(state["latest_completed_phase"], "PURG04 Track A Main Merge Execution")
-        self.assertEqual(state["latest_completed_status"], "purg04_track_a_main_merge_execution_pass")
+        self.assertEqual(state["phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
+        self.assertEqual(state["current_phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
+        self.assertEqual(state["previous_phase_id"], "PURG04_TRACK_A_MAIN_MERGE_EXECUTION")
+        self.assertEqual(state["phase_class"], "purgatorium_post_merge_validation")
+        self.assertEqual(state["latest_completed_phase"], "PURG04 Track A Post-Merge Validation Packet")
+        self.assertEqual(state["latest_completed_status"], "purg04_track_a_post_merge_validation_packet_pass")
         self.assertEqual(state["latest_completed_project_commit_sha"], "7883af5a32c629026bfc6dc15ebee4ebbcadd295")
         self.assertEqual(
             state["latest_completed_next_recommended_step"],
-            "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+            "Nenhuma transição definida. Aguardando instrução do operador.",
         )
-        self.assertEqual(state["next_phase"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
-        self.assertEqual(state["active_next_phase"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
-        self.assertEqual(state["active_next_phase_class"], "purgatorium_post_merge_validation")
+        self.assertIsNone(state["next_phase"])
+        self.assertIsNone(state["active_next_phase"])
+        self.assertIsNone(state["active_next_phase_class"])
         self.assertFalse(state["next_phase_authorized_by_operator"])
         self.assertTrue(state["route_amendment_authorized_by_operator"])
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
         self.assertEqual(state["decision"], "pass")
-        self.assertEqual(state["status"], "purg04_track_a_main_merge_execution_pass")
+        self.assertEqual(state["status"], "purg04_track_a_post_merge_validation_packet_pass")
         self.assertEqual(state["current_live_route"]["decision"], "pass")
-        self.assertEqual(state["current_live_route"]["status"], "purg04_track_a_main_merge_execution_pass")
-        self.assertEqual(state["current_live_route"]["active_next_phase"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
-        self.assertEqual(state["current_live_route"]["active_next_phase_class"], "purgatorium_post_merge_validation")
+        self.assertEqual(state["current_live_route"]["status"], "purg04_track_a_post_merge_validation_packet_pass")
+        self.assertIsNone(state["current_live_route"]["active_next_phase"])
+        self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
         self.assertFalse(state["current_live_route"]["next_phase_execution_authorization"])
-        self.assertIn("PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", state["next_action"]["notes"][-1])
+        self.assertIsNone(state["next_action"]["phase"])
+        self.assertIsNone(state["next_action"]["phase_class"])
+        self.assertIn("Nenhuma transição definida. Aguardando instrução do operador.", state["next_action"]["notes"][-1])
         self.assertEqual(
             state["purg00_source_gap_terminal_blocker"]["status"],
             "purg00_source_gap_terminal_blocker_operator_source_required",
@@ -428,6 +430,10 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
         self.assertEqual(row["next_phase_id"], "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET")
         self.assertEqual(row["next_phase_class"], "purgatorium_post_merge_validation")
         self.assertEqual(row["advance_mode"], "operator")
+
+    def test_transition_table_has_no_successor_for_purg04_track_a_post_merge_validation_packet(self):
+        module = self._load_validator_module()
+        self.assertIsNone(module._get_transition_row("PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", "pass"))
 
     def test_purg00_route_admission_artifacts_validate(self):
         module = self._load_validator_module()

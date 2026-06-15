@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `5963b2097349`
-- schema_version: `3.13`
+- state_sha: `8155a1186f2c`
+- schema_version: `3.14`
 
 ## AVISO DE STALE
 
@@ -14,15 +14,15 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Purgatorium FULL`
-- phase_id: `PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
-- status: `purg04_track_a_main_merge_execution_pass`
+- phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- status: `purg04_track_a_post_merge_validation_packet_pass`
 - decision: `pass`
-- resumo: PURG04 Track A Main Merge Execution; aguardando PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET sem autorizacao de execucao.
+- resumo: PURG04 Track A Post-Merge Validation Packet; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
   Infernus FULL
-▸ Purgatorium FULL (phase_id=PURG04_TRACK_A_MAIN_MERGE_EXECUTION)
+▸ Purgatorium FULL (phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET)
   Infernus Revalidation
   BenchUX
   Crisol
@@ -36,8 +36,8 @@ GERADO — NAO EDITE A MAO
 
 ## PROXIMO PASSO
 
-- active_next_phase: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
-- next_phase_class: `purgatorium_post_merge_validation`
+- active_next_phase: `null`
+- next_phase_class: `null`
 - advance_mode: `operator`
 - travas relevantes:
   - next_phase_authorized_by_operator=False
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Track A merge already materialized in Project_ARIS main at 7883af5a32c629026bfc6dc15ebee4ebbcadd295. PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET remains the next operator-gated candidate and was not executed by this sync repair.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET.
 
 ## REGRAS DE AGORA
 

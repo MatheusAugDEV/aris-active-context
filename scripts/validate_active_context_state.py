@@ -66,6 +66,7 @@ EXPECTED_LATEST_COMPLETED_STATUS = "if11_minos_final_verdict_closure_pass"
 EXPECTED_LATEST_COMPLETED_PROJECT_SHA = "6312302ea45b72ddc310b2b33f56245be65b99dc"
 EXPECTED_LATEST_COMPLETED_CI_STATE = "CI_GREEN_CONFIRMED"
 EXPECTED_NEXT_RECOMMENDED_STEP = "execute_purg01_controlled_triage_artifact_only"
+NO_TRANSITION_DEFINED_MESSAGE = "Nenhuma transição definida. Aguardando instrução do operador."
 PURG01_REVIEW_NEXT_RECOMMENDED_STEP = "request_operator_authorization_for_purg01_route_admission"
 PURG00_REQUIRED_SOURCE_PACKET_STEP = "operator_supply_purg00_required_source_packet"
 ROUTE_ADMISSION_NEXT_RECOMMENDED_STEP = "execute_purg_pre_canonical_authority_materialization"
@@ -176,6 +177,9 @@ PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_RESULT_PATH = PROJECT_ROOT / "artifacts" 
 PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_EVIDENCE_MATRIX_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_artifact_only_evidence_matrix.json"
 PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_NO_REAL_PATH = PROJECT_ROOT / "artifacts" / "purgatorium" / "purg01_controlled_triage_artifact_only_no_real_execution_attestation.json"
 PURG01_CONTROLLED_TRIAGE_ARTIFACT_ONLY_STATUS = "purg01_controlled_triage_artifact_only_execution_pass"
+PURG04_POST_MERGE_VALIDATION_OPERATOR_AUTH_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_operator_authorization.json"
+PURG04_POST_MERGE_VALIDATION_PACKET_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_packet.json"
+PURG04_POST_MERGE_VALIDATION_NO_REAL_PATH = ROOT / "artifacts" / "purgatorium" / "purg04_track_a_post_merge_validation_no_real_execution_attestation.json"
 PURG01_TRIAGE_OPERATOR_TEXT = "Autorizo PURG-01 triage."
 PURG01_TRIAGE_OPERATOR_SCOPE = "purg01_triage_authorization_only_not_fix_not_real_execution"
 PURG00_LIVE_ROUTE_PRESERVING_STATUSES = {
@@ -852,7 +856,8 @@ PHASE_DELIVERABLES = {
     ),
     "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET": lambda: (
         PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH.exists()
-        and _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("phase") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET"
+        and _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("phase_id") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET"
+        and _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("post_merge_validation_passed") is True
         and (
             _load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("project_aris_ci_state") == "CI_GREEN_CONFIRMED"
             or bool(_load_json(PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET_PATH).get("explicit_ci_confirmation_artifact"))
@@ -1424,7 +1429,11 @@ CURRENT_LIVE_LATEST_COMPLETED_PROJECT_SHA = _live["latest_completed_project_comm
 CURRENT_LIVE_LATEST_COMPLETED_CI_STATE = _live["latest_completed_ci_state"]
 CURRENT_LIVE_PREVIOUS_EXECUTION_PHASE = _live["previous_execution_phase"]
 CURRENT_LIVE_LAST_TRANSITION_FROM_PHASE = _live["last_transition_from_phase"]
-CURRENT_LIVE_NEXT_ACTION_NOTE = f"Next: {_live['active_next_phase']}"
+CURRENT_LIVE_NEXT_ACTION_NOTE = (
+    NO_TRANSITION_DEFINED_MESSAGE
+    if _live["active_next_phase"] is None
+    else f"Next: {_live['active_next_phase']}"
+)
 CURRENT_LIVE_PHASE_CLASS = _live["phase_class"]
 CURRENT_EXPECTED_NEXT_PHASE_ID = _live["active_next_phase"]
 CURRENT_EXPECTED_NEXT_PHASE_CLASS = _live["active_next_phase_class"]
@@ -1486,7 +1495,77 @@ def _check_governance_streak(state: dict[str, Any]) -> None:
         print("Operador deve autorizar explicitamente.")
         sys.exit(1)
     if streak == 2:
-        print(f"WARN: governance_gate_streak=2. Proximo gate DEVE ser capacidade.")
+        print("WARN: governance_gate_streak=2. Proximo gate DEVE ser capacidade.")
+
+
+def _check_purg04_track_a_post_merge_validation_artifacts(state: dict[str, Any]) -> None:
+    if state.get("current_phase_id") != "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET":
+        return
+
+    operator_auth = _load_json(PURG04_POST_MERGE_VALIDATION_OPERATOR_AUTH_PATH)
+    _require(
+        operator_auth.get("operator_authorization_text") == "Autorizo PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET.",
+        "post-merge validation operator authorization text mismatch",
+    )
+    _require(
+        operator_auth.get("authorization_scope") == "post_merge_validation_packet_only",
+        "post-merge validation operator authorization scope mismatch",
+    )
+    _require(operator_auth.get("project_aris_mutation_authorized") is False, "post-merge validation must not authorize Project_ARIS mutation")
+    _require(operator_auth.get("finding_close_authorized") is False, "post-merge validation must not authorize finding close")
+
+    packet = _load_json(PURG04_POST_MERGE_VALIDATION_PACKET_PATH)
+    _require(packet.get("artifact_id") == "purg04_track_a_post_merge_validation_packet", "post-merge validation artifact_id mismatch")
+    _require(packet.get("phase_id") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET", "post-merge validation phase_id mismatch")
+    _require(
+        packet.get("source_merge_execution_artifact") == "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+        "post-merge validation source_merge_execution_artifact mismatch",
+    )
+    _require(
+        packet.get("source_sync_repair_artifact") == "artifacts/purgatorium/purg04_active_context_canonical_sync_repair_after_track_a_main_merge.json",
+        "post-merge validation source_sync_repair_artifact mismatch",
+    )
+    _require(packet.get("project_merge_commit") == "7883af5a32c629026bfc6dc15ebee4ebbcadd295", "post-merge validation merge commit mismatch")
+    _require(packet.get("patch_commit") == "1e9a04a02846f3261ae72d0c95fbee6b0163b45b", "post-merge validation patch commit mismatch")
+    _require(packet.get("project_ci_state") == "CI_GREEN_CONFIRMED", "post-merge validation project ci mismatch")
+    _require(packet.get("forbidden_paths_touched") == [], "post-merge validation forbidden_paths_touched mismatch")
+    _require(packet.get("post_merge_validation_passed") is True, "post-merge validation must pass")
+    _require(packet.get("project_aris_changed") is False, "post-merge validation must not change Project_ARIS")
+    _require(packet.get("runtime_executed") is False, "post-merge validation runtime_executed must be false")
+    _require(packet.get("real_apply_executed") is False, "post-merge validation real_apply_executed must be false")
+    _require(
+        packet.get("product_bedrock_real_apply_secrets_executed") is False,
+        "post-merge validation product_bedrock_real_apply_secrets_executed must be false",
+    )
+    _require(
+        packet.get("dependency_or_package_manager_used") is False,
+        "post-merge validation dependency_or_package_manager_used must be false",
+    )
+    _require(packet.get("finding_closed") is False, "post-merge validation finding_closed must be false")
+    _require(packet.get("remediation_proven") is False, "post-merge validation remediation_proven must be false")
+    _require(packet.get("decision") == "pass", "post-merge validation decision mismatch")
+    _require(
+        packet.get("recommended_next_step") == NO_TRANSITION_DEFINED_MESSAGE,
+        "post-merge validation recommended_next_step mismatch",
+    )
+
+    no_real = _load_json(PURG04_POST_MERGE_VALIDATION_NO_REAL_PATH)
+    _require(
+        no_real.get("phase_id") == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+        "post-merge validation no-real-execution phase_id mismatch",
+    )
+    for key in (
+        "project_aris_changed",
+        "runtime_executed",
+        "real_apply_executed",
+        "product_bedrock_real_apply_secrets_executed",
+        "dependency_or_package_manager_used",
+        "mcp_activated",
+        "rag_ingestion_executed",
+        "memory_write_executed",
+        "secrets_accessed",
+    ):
+        _require(no_real.get(key) is False, f"post-merge validation no-real-execution {key} must be false")
 
 
 def _check_gate_signature(state: dict[str, Any]) -> str:
@@ -10391,6 +10470,7 @@ def main() -> None:
     _check_if08_w05_preflight_rerun_artifacts(state)
     # Historical 13 vs planned 16 normalization checks
     _check_scenario_count_resolution(state)
+    _check_purg04_track_a_post_merge_validation_artifacts(state)
 
     policy = state["cross_field_consistency_policy"]
     _require_paths_match(state, policy["active_next_phase_must_match_across"], "active_next_phase")
@@ -10418,7 +10498,7 @@ def main() -> None:
     _require(state["next_action"]["status"] == CURRENT_LIVE_STATUS, "next_action.status mismatch")
     _require(
         CURRENT_LIVE_NEXT_ACTION_NOTE in state["next_action"]["notes"],
-        "next_action.notes must mention the exact next phase",
+        "next_action.notes must mention the exact next phase or terminal wait state",
     )
     _require(state["latest_completed_no_execution"]["wave_executed"] is False, "latest_completed_no_execution.wave_executed mismatch")
     _require(state["latest_completed_no_execution"]["bot_executed"] is False, "latest_completed_no_execution.bot_executed mismatch")
@@ -10488,10 +10568,16 @@ def main() -> None:
         _require(state["latest_completed_no_execution"][key] is False, f"latest_completed_no_execution.{key} must be false")
 
     _require(state["locks"]["deferred_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "locks.deferred_phase mismatch")
-    _require(
-        CURRENT_EXPECTED_NEXT_PHASE_ID in state["locks"]["deferred_phase_reason"],
-        "locks.deferred_phase_reason must mention the exact next phase",
-    )
+    if CURRENT_EXPECTED_NEXT_PHASE_ID is None:
+        _require(
+            NO_TRANSITION_DEFINED_MESSAGE in state["locks"]["deferred_phase_reason"],
+            "locks.deferred_phase_reason must mention terminal no-transition wait state",
+        )
+    else:
+        _require(
+            CURRENT_EXPECTED_NEXT_PHASE_ID in state["locks"]["deferred_phase_reason"],
+            "locks.deferred_phase_reason must mention the exact next phase",
+        )
     _check_forbidden_route_claims()
     _require(state["history_summary"]["latest_execution_phase"] == CURRENT_LIVE_PHASE, "unexpected latest execution phase")
     _require(state["history_summary"]["latest_execution_status"] == CURRENT_LIVE_STATUS, "unexpected latest execution status")
@@ -10553,13 +10639,13 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "README.md",
-        "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+        "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
         "ACTIVE_CONTEXT_STATE.json",
         "ARIS_BOOT.md",
         "INFERNUS_STANDING_AUTHORIZATION.md",
-        "purg04_track_a_main_merge_execution_pass",
-        "latest_completed_phase: PURG04 Track A Main Merge Execution",
-        "next_phase: PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+        "purg04_track_a_post_merge_validation_packet_pass",
+        "latest_completed_phase: PURG04 Track A Post-Merge Validation Packet",
+        "next_phase: null",
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
         "IF09-FIND-001 remains open",
@@ -10574,6 +10660,14 @@ def main() -> None:
         "## PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
         "purg04_active_context_canonical_sync_repair_pass",
         "Project_ARIS changed during this sync repair: `false`",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## PURG04 Track A Post-Merge Validation Packet",
+        "purg04_track_a_post_merge_validation_packet_pass",
+        "purg04_track_a_post_merge_validation_operator_authorization.json",
+        "purg04_track_a_post_merge_validation_packet.json",
+        NO_TRANSITION_DEFINED_MESSAGE,
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",

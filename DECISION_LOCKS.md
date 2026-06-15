@@ -2254,3 +2254,41 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Canonical artifacts:
   - `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_after_track_a_main_merge.json`
   - `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_no_real_execution_attestation.json`
+
+## PURG04 Track A Post-Merge Validation Packet
+
+- Status: `purg04_track_a_post_merge_validation_packet_pass`
+- Decision: `pass`
+- Scope: artifact-only/governance-only post-merge validation of the already-executed Track A merge; no Project_ARIS mutation, no runtime, no real_apply, no product/Bedrock/secrets work, no finding close.
+- Operator authorization materialized:
+  - `artifacts/purgatorium/purg04_track_a_post_merge_validation_operator_authorization.json`
+  - exact text: `Autorizo PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET.`
+  - `authorization_scope=post_merge_validation_packet_only`
+  - `project_aris_mutation_authorized=false`
+  - `finding_close_authorized=false`
+- Validation packet materialized:
+  - `artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json`
+  - `artifacts/purgatorium/purg04_track_a_post_merge_validation_no_real_execution_attestation.json`
+- Source evidence verified:
+  - `artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json`
+  - `artifacts/purgatorium/purg04_track_a_main_merge_no_forbidden_surface_attestation.json`
+  - `artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json`
+  - `artifacts/purgatorium/purg04_active_context_canonical_sync_repair_after_track_a_main_merge.json`
+- Verified facts:
+  - merge commit=`7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+  - patch commit=`1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+  - Project_ARIS CI=`CI_GREEN_CONFIRMED`
+  - forbidden paths touched=`[]`
+  - Project_ARIS changed during this phase=`false`
+  - IF09-FIND-001 remains open
+  - `remediation_proven=false`
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+- ACTIVE_CONTEXT_STATE advanced canonically to:
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `latest_completed_phase=PURG04 Track A Post-Merge Validation Packet`
+  - `latest_completed_status=purg04_track_a_post_merge_validation_packet_pass`
+  - `active_next_phase=null`
+  - `next_phase=null`
+- Transition Table result:
+  - no successor row exists for `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`

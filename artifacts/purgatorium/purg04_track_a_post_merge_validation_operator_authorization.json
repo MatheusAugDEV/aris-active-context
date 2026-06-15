@@ -1,0 +1,9 @@
+{
+  "artifact_id": "purg04_track_a_post_merge_validation_operator_authorization",
+  "phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+  "recorded_at": "2026-06-14T22:30:00-03:00",
+  "operator_authorization_text": "Autorizo PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET.",
+  "authorization_scope": "post_merge_validation_packet_only",
+  "project_aris_mutation_authorized": false,
+  "finding_close_authorized": false
+}

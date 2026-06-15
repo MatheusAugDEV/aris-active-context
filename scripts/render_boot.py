@@ -130,9 +130,15 @@ def _transition_for_state(state: dict[str, Any], rows: list[dict[str, str]]) -> 
     }
 
 
+def _display_optional(value: Any) -> str:
+    return "null" if value is None else str(value)
+
+
 def _summary_line(state: dict[str, Any]) -> str:
     latest_completed = state.get("latest_completed_phase", "")
     active_next = state.get("active_next_phase", "")
+    if active_next is None:
+        return f"{latest_completed}; sem transicao sucessora definida, aguardando instrucao do operador."
     return f"{latest_completed}; aguardando {active_next} sem autorizacao de execucao."
 
 
@@ -221,8 +227,8 @@ def render_boot_text() -> str:
         "",
         "## PROXIMO PASSO",
         "",
-        f"- active_next_phase: `{state.get('active_next_phase', '')}`",
-        f"- next_phase_class: `{state.get('active_next_phase_class', '')}`",
+        f"- active_next_phase: `{_display_optional(state.get('active_next_phase', ''))}`",
+        f"- next_phase_class: `{_display_optional(state.get('active_next_phase_class', ''))}`",
         f"- advance_mode: `{transition.get('advance_mode', '')}`",
         "- travas relevantes:",
     ]
