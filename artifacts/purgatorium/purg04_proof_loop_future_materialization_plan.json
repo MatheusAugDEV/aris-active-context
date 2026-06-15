@@ -1,0 +1,49 @@
+{
+  "artifact_id": "purg04_proof_loop_future_materialization_plan",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_GAP_DIAGNOSTIC_AND_PLAN_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:55:00-03:00",
+  "future_candidate_gate": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "future_gate_type": "artifact_only_readiness_packet",
+  "does_not_execute_proof_loop": true,
+  "does_not_touch_project_aris": true,
+  "required_preconditions": [
+    "operator authorization",
+    "clean active-context preflight",
+    "all source artifacts hash-verified",
+    "explicit no-Project_ARIS-mutation scope"
+  ],
+  "blocked_if": [
+    "requires Project_ARIS mutation",
+    "requires running tests in Project_ARIS",
+    "requires inventing missing evidence",
+    "requires declaring remediation_proven as true",
+    "requires finding closure"
+  ],
+  "steps": [
+    {
+      "step_id": "verify_sources",
+      "description": "Hash-verify the source inventory, route decision packet, RED baseline, merge execution result, CI evidence, diff/scope evidence, and failed-local-attempt rollback artifact.",
+      "output": "source hash verification table inside the future readiness packet"
+    },
+    {
+      "step_id": "check_required_future_artifact_presence",
+      "description": "Check whether each required contract artifact exists without executing proof-loop commands or touching Project_ARIS.",
+      "output": "presence and admissibility matrix"
+    },
+    {
+      "step_id": "lineage_binding_review",
+      "description": "Verify every present future artifact binds to IF09-FIND-001, accepted_merged_track_a, patch commit, and merge commit.",
+      "output": "lineage binding verdict per artifact"
+    },
+    {
+      "step_id": "acceptance_gate",
+      "description": "Emit pass only if all required future artifacts are present, hash-verified, non-contradictory, and free of closure/product/Bedrock claims.",
+      "output": "candidate readiness decision for a later non-PURG05 or PURG05 route decision as appropriate"
+    }
+  ],
+  "expected_next_step_if_pass": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+  "next_phase_mutation_allowed_now": false,
+  "active_context_state_should_remain_terminal_now": true,
+  "can_open_purg05_now": false,
+  "decision": "pass"
+}

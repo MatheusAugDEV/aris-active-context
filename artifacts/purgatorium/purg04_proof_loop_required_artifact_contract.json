@@ -1,0 +1,79 @@
+{
+  "artifact_id": "purg04_proof_loop_required_artifact_contract",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_GAP_DIAGNOSTIC_AND_PLAN_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:55:00-03:00",
+  "target_lineage": "accepted_merged_track_a",
+  "target_finding_id": "IF09-FIND-001",
+  "required_future_artifacts": [
+    {
+      "artifact_name": "purg04_track_a_red_reset_green_evidence.json",
+      "purpose": "canonical RED->RESET->GREEN evidence bound to IF09-FIND-001 and merged Track A",
+      "must_include": [
+        "red_source_artifact",
+        "reset_event",
+        "green_source_artifact",
+        "lineage_binding",
+        "hashes",
+        "no_contamination_attestation"
+      ],
+      "blocks_purg05_if_missing": true
+    },
+    {
+      "artifact_name": "purg04_track_a_reset_evidence.json",
+      "purpose": "clean-state reset proof between RED and GREEN",
+      "must_include": [
+        "pre_reset_state",
+        "reset_action_or_attestation",
+        "post_reset_state",
+        "hashes"
+      ],
+      "blocks_purg05_if_missing": true
+    },
+    {
+      "artifact_name": "purg04_track_a_benign_flow_evidence.json",
+      "purpose": "benign-flow proof for accepted merged Track A lineage",
+      "must_include": [
+        "benign_flow_id",
+        "expected_behavior",
+        "observed_behavior",
+        "pass_fail",
+        "lineage_binding",
+        "hashes"
+      ],
+      "blocks_purg05_if_missing": true
+    },
+    {
+      "artifact_name": "purg04_track_a_kill_switch_evidence.json",
+      "purpose": "kill-switch availability or explicit not-applicable proof",
+      "must_include": [
+        "kill_switch_id_or_not_applicable_reason",
+        "activation_path_or_control_boundary",
+        "rollback_interaction",
+        "lineage_binding",
+        "hashes"
+      ],
+      "blocks_purg05_if_missing": true
+    },
+    {
+      "artifact_name": "purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "purpose": "rollback proof tied to accepted merged Track A lineage, not failed local attempt",
+      "must_include": [
+        "rollback_scope",
+        "rollback_path",
+        "evidence_preservation",
+        "benign_after_rollback_or_not_applicable_reason",
+        "lineage_binding",
+        "hashes"
+      ],
+      "blocks_purg05_if_missing": true
+    }
+  ],
+  "acceptance_criteria_for_future_materialization": [
+    "Every required artifact exists on disk with stable sha256 recorded in the future packet.",
+    "Every required artifact binds to IF09-FIND-001, patch commit 1e9a04a02846f3261ae72d0c95fbee6b0163b45b, and merge commit 7883af5a32c629026bfc6dc15ebee4ebbcadd295.",
+    "RED, RESET, and GREEN are represented as an ordered chain and include no-contamination attestation.",
+    "Benign, rollback, and kill-switch evidence is either concrete proof or an explicit not-applicable proof where the contract allows it.",
+    "No future artifact claims finding closure, remediation proof, product readiness, Bedrock readiness, or safe/resolved status."
+  ],
+  "decision": "pass"
+}

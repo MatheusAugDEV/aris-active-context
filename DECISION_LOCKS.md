@@ -2336,3 +2336,42 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `remediation_proven=false`
   - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
   - Project_ARIS changed during this phase=`false`
+
+## PURG04 Proof-Loop Corpus Gap Diagnostic And Plan Artifact-Only
+
+- Status: `purg04_proof_loop_corpus_gap_diagnostic_and_plan_artifact_only_pass`
+- Decision: `pass`
+- Scope: artifact-only diagnostic and future materialization plan for the proof-loop corpus gap after `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`; no Project_ARIS mutation, no proof-loop execution, no RED/GREEN/reset/benign/rollback/kill-switch execution, no runtime, no real_apply, no product/Bedrock/secrets work, no finding close.
+- Artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_gap_diagnostic.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_gap_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_required_artifact_contract.json`
+  - `artifacts/purgatorium/purg04_proof_loop_future_materialization_plan.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_gap_no_real_execution_attestation.json`
+- Diagnostic result:
+  - RED evidence: `partial_only`
+  - GREEN evidence: `insufficient`
+  - reset evidence: `missing`
+  - benign-flow evidence: `missing`
+  - rollback evidence: `insufficient` for accepted merged Track A lineage
+  - kill-switch evidence: `missing`
+  - diff/fix/scope evidence: `found` as supporting evidence
+  - CI evidence: `found` as supporting evidence, not proof-loop substitute
+- Required future artifact contract:
+  - `purg04_track_a_red_reset_green_evidence.json`
+  - `purg04_track_a_reset_evidence.json`
+  - `purg04_track_a_benign_flow_evidence.json`
+  - `purg04_track_a_kill_switch_evidence.json`
+  - `purg04_track_a_rollback_evidence_for_accepted_lineage.json`
+- Candidate next gate derived from blockers: `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET`
+- Route preservation:
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+  - `PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET` remains blocked until the proof-loop corpus is sufficient
+- Safety locks preserved:
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+  - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
+  - Project_ARIS changed during this phase=`false`
