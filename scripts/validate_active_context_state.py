@@ -1712,6 +1712,37 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         "versioning_contract.current_schema_version must match schema_version",
     )
 
+    benchuix_track = state.get("benchuix_track")
+    if benchuix_track is not None:
+        _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
+        _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
+        _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-00", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
+        _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
+        _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
+        _require(benchuix_track.get("admission_commit_sha") == "89443c9c80df69568da0c7c2efdb0a72b6e371af", "benchuix_track.admission_commit_sha mismatch")
+        _require(benchuix_track.get("admission_ci_state") == "CI_GREEN_CONFIRMED", "benchuix_track.admission_ci_state mismatch")
+        _require(benchuix_track.get("admission_github_actions_run_id") == "27582515556", "benchuix_track.admission_github_actions_run_id mismatch")
+        _require(benchuix_track.get("transition_table_artifact") == "artifacts/benchuix/00_transition_table.json", "benchuix_track.transition_table_artifact mismatch")
+        _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
+        _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
+        _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-01", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        for key in (
+            "execution_authorized",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "runtime_integration_allowed",
+            "secrets_access_authorized",
+        ):
+            _require(benchuix_track.get(key) is False, f"benchuix_track.{key} must be false")
+        _require((ROOT / benchuix_track["roadmap_path"]).exists(), "benchuix_track roadmap_path missing on disk")
+        _require((ROOT / benchuix_track["transition_table_artifact"]).exists(), "benchuix_track transition_table_artifact missing on disk")
+        _require((ROOT / benchuix_track["admission_packet_artifact"]).exists(), "benchuix_track admission_packet_artifact missing on disk")
+        _require((ROOT / benchuix_track["no_real_execution_attestation_artifact"]).exists(), "benchuix_track no_real_execution_attestation_artifact missing on disk")
+
 
 def _check_minimum_deliverable(state: dict[str, Any]) -> None:
     phase_id = state.get("current_phase_id", "")
