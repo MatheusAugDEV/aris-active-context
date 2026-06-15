@@ -26,6 +26,19 @@ def test_validator_passes():
     assert r.returncode == 0, r.stdout + r.stderr
 
 
+def test_validator_reports_canonical_purg04_summary():
+    r = subprocess.run(
+        ["python3", "scripts/validate_active_context_state.py"],
+        capture_output=True,
+        text=True,
+    )
+    assert r.returncode == 0, r.stdout + r.stderr
+    summary = json.loads(r.stdout)
+    assert summary["phase_id"] == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET"
+    assert summary["next_phase"] is None
+    assert summary["governance_gate_streak"] == 0
+
+
 def test_fixture_absence_passes():
     r = subprocess.run(
         ["python3", "scripts/assert_no_unauthorized_fixtures.py"],
@@ -67,6 +80,23 @@ class BoundaryCContractTests(unittest.TestCase):
         ):
             self.assertNotIn(key, properties)
             self.assertNotIn(key, required)
+
+
+def test_schema_covers_live_active_context_shape():
+    schema = json.loads(Path("ACTIVE_CONTEXT_SCHEMA.json").read_text(encoding="utf-8"))
+    state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+
+    assert state["active_context_version"] in schema["properties"]["active_context_version"]["enum"]
+    assert state["schema_version"] in schema["properties"]["schema_version"]["enum"]
+    assert set(state) <= set(schema["properties"])
+    assert set(schema["required"]) <= set(state)
+
+    artifact_routes = schema["properties"]["artifact_routes"]
+    assert set(artifact_routes["properties"]) == set(state["artifact_routes"])
+    assert set(artifact_routes["required"]) == set(state["artifact_routes"])
+
+    versioning_contract = schema["properties"]["versioning_contract"]["properties"]
+    assert set(state["versioning_contract"]) <= set(versioning_contract)
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
@@ -891,30 +921,30 @@ def test_transition_table_contains_inf_full_07_canonroadmap_successor():
 
     row = module._get_transition_row("INF-FULL-07", "pass")
     assert row is not None
-    assert row["next_phase_id"] == "IF-08"
-    assert row["advance_mode"] == "canonroadmap"
-    assert row["next_phase_class"] == "infernus_full_execution"
+    assert row["next_phase_id"] == "PURG-PRE"
+    assert row["advance_mode"] == "operator"
+    assert row["next_phase_class"] == "purgatorium_full_authority_materialization"
 
 
 def test_state_separates_historical_and_planned_scenario_counts():
     state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
 
-    assert state["current_phase_id"] == "INF-FULL-07"
+    assert state["current_phase_id"] == "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET"
     assert state["scenario_count"] == 13
     assert state["fixture_scenario_count"] == 13
     assert state["current_phase_planned_scenario_count"] == 16
     assert state["current_phase_planned_bot_count"] == 16
     assert state["current_phase_mutation_family_count"] == 10
     assert state["current_phase_oracle_count"] == 9
-    assert state["next_phase"] == "IF-08"
-    assert state["active_next_phase"] == "IF-08"
-    assert state["active_next_phase_class"] == "infernus_full_execution"
-    assert state["next_phase_authorized_by_operator"] is True
-    assert state["current_status"] == "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
-    assert state["latest_completed_phase"] == "IF-08 W4 Replay/Rollback/Concurrency/Cost Preflight Readiness"
-    assert state["latest_completed_status"] == "if08_w4_replay_rollback_concurrency_cost_preflight_readiness_pass"
-    assert state["latest_completed_project_commit_sha"] == "2785b06e7a73b10675d30ed870fda7959e2e866a"
+    assert state["next_phase"] is None
+    assert state["active_next_phase"] is None
+    assert state["active_next_phase_class"] is None
+    assert state["next_phase_authorized_by_operator"] is False
+    assert state["current_status"] == "purg04_track_a_post_merge_validation_packet_pass"
+    assert state["latest_completed_phase"] == "PURG04 Track A Post-Merge Validation Packet"
+    assert state["latest_completed_status"] == "purg04_track_a_post_merge_validation_packet_pass"
+    assert state["latest_completed_project_commit_sha"] == "7883af5a32c629026bfc6dc15ebee4ebbcadd295"
     assert state["latest_completed_ci_state"] == "CI_GREEN_CONFIRMED"
-    assert state["latest_completed_next_recommended_step"] == "execute_if08_w4_replay_rollback_concurrency_cost_controlled_execution"
+    assert state["latest_completed_next_recommended_step"] == "Nenhuma transição definida. Aguardando instrução do operador."
     assert state["active_context_remote_main_reflects_latest_phase"] is True
     assert state["permanent_active_update_rule_installed"] is True

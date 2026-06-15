@@ -1,3 +1,40 @@
+## Active-Context Schema/State Drift Repair
+
+- Status: `active_context_schema_state_drift_repair_pass`
+- Decision: `pass`
+- Scope: governance/schema/validator coherence repair only. No phase advancement, no real execution, no `Project_ARIS` mutation, no finding close.
+- Drift repaired in `ACTIVE_CONTEXT_SCHEMA.json`:
+  - `active_context_version` now admits live version `3.0`
+  - `artifact_routes` now matches the live state shape (`boot_rules`, `roadmap_authority`, `schema_file`, `state_file`, `validator_script`, `readme`, `history_archive`)
+  - stale `required_files_for_transition` and top-level `schema_2_13_change_summary` requirements removed from the live contract
+  - missing live-state fields restored to the schema contract (`boot_file_superseded_to_archive`, bot/minos/finding counters, `purg00_source_data_gap_resolution`, `purg00_source_gap_terminal_blocker`)
+  - `versioning_contract` now includes the live `schema_3_0_change_summary` and `schema_3_1_change_summary` keys
+- `scripts/validate_active_context_state.py` now enforces schema↔state contract coherence directly and reports the canonical stored `governance_gate_streak` instead of an in-memory derived increment.
+- Tests updated to the current live route:
+  - `INF-FULL-07 -> PURG-PRE` remains historical Transition Table truth
+  - live state assertions now target `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- Live route preserved:
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `status=purg04_track_a_post_merge_validation_packet_pass`
+  - `active_next_phase=null`
+  - `next_phase=null`
+  - `governance_gate_streak=0`
+  - `IF09-FIND-001` remains open
+  - `remediation_proven=false` remains asserted by `artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json`
+- Real locks preserved:
+  - `real_apply_authorized=false`
+  - `production_authorized=false`
+  - `product_ready=false`
+  - `secrets_access_authorized=false`
+  - `runtime_integration_allowed=false`
+  - no `finding_closed=true` introduced
+- Validation artifacts:
+  - `artifacts/active_context/schema_state_drift_repair_decision.json`
+  - `artifacts/active_context/schema_state_drift_repair_summary.json`
+  - `artifacts/active_context/schema_state_drift_repair_report.md`
+  - `artifacts/active_context/schema_state_drift_repair_no_real_execution_attestation.json`
+  - `artifacts/active_context/schema_state_drift_repair_validation_evidence.json`
+
 ## ARIS Macro Roadmap Canonicalization (Camadas e Objetivos)
 
 - Status: `macro_roadmap_canonical_update_pass`

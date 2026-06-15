@@ -8,7 +8,8 @@
     "active_context_version": {
       "enum": [
         "2.0",
-        "2.1"
+        "2.1",
+        "3.0"
       ],
       "type": "string"
     },
@@ -149,12 +150,8 @@
     "artifact_routes": {
       "additionalProperties": false,
       "properties": {
-        "decision_locks_mirror": {
-          "const": "DECISION_LOCKS.md",
-          "type": "string"
-        },
-        "readme": {
-          "const": "README.md",
+        "boot_rules": {
+          "const": "ARIS_BOOT.md",
           "type": "string"
         },
         "roadmap_authority": {
@@ -172,15 +169,24 @@
         "validator_script": {
           "const": "scripts/validate_active_context_state.py",
           "type": "string"
+        },
+        "readme": {
+          "const": "README.md",
+          "type": "string"
+        },
+        "history_archive": {
+          "const": "archive/",
+          "type": "string"
         }
       },
       "required": [
-        "state_file",
-        "schema_file",
-        "validator_script",
-        "decision_locks_mirror",
+        "boot_rules",
         "roadmap_authority",
-        "readme"
+        "schema_file",
+        "state_file",
+        "validator_script",
+        "readme",
+        "history_archive"
       ],
       "type": "object"
     },
@@ -897,14 +903,6 @@
     "scenario_count": {
       "type": "integer"
     },
-    "required_files_for_transition": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 15,
-      "type": "array",
-      "uniqueItems": true
-    },
     "required_update_policy": {
       "additionalProperties": false,
       "properties": {
@@ -938,9 +936,6 @@
       ],
       "type": "object"
     },
-    "schema_2_13_change_summary": {
-      "type": "string"
-    },
     "schema_version": {
       "enum": [
         "2.1",
@@ -956,6 +951,7 @@
         "2.11",
         "2.12",
         "2.13",
+        "3.0",
         "3.1",
         "3.2",
         "3.3",
@@ -966,6 +962,8 @@
         "3.8",
         "3.9",
         "3.10",
+        "3.11",
+        "3.12",
         "3.13",
         "3.14"
       ],
@@ -1112,30 +1110,30 @@
         "schema_2_6_change_summary": {
           "type": "string"
         },
-                "schema_2_7_change_summary": {
-                    "type": "string"
-                },
-                "schema_2_8_change_summary": {
-                    "type": "string"
-                },
-                "schema_2_9_change_summary": {
-                    "type": "string"
-                },
-                "schema_2_10_change_summary": {
-                    "type": "string"
-                },
-                "schema_2_11_change_summary": {
-                    "type": "string"
-                },
+        "schema_2_7_change_summary": {
+          "type": "string"
+        },
+        "schema_2_8_change_summary": {
+          "type": "string"
+        },
+        "schema_2_9_change_summary": {
+          "type": "string"
+        },
+        "schema_2_10_change_summary": {
+          "type": "string"
+        },
+        "schema_2_11_change_summary": {
+          "type": "string"
+        },
         "schema_2_12_change_summary": {
-                    "type": "string"
-                },
-                "schema_2_13_change_summary": {
-                    "type": "string"
-                },
-                "schema_3_2_change_summary": {
-                    "type": "string"
-                },
+          "type": "string"
+        },
+        "schema_2_13_change_summary": {
+          "type": "string"
+        },
+        "schema_3_2_change_summary": {
+          "type": "string"
+        },
         "schema_3_3_change_summary": {
           "type": "string"
         },
@@ -1171,6 +1169,12 @@
         },
         "schema_version_meaning": {
           "type": "string"
+        },
+        "schema_3_0_change_summary": {
+          "type": "string"
+        },
+        "schema_3_1_change_summary": {
+          "type": "string"
         }
       },
       "required": [
@@ -1180,6 +1184,155 @@
         "current_schema_version",
         "increment_schema_version_when",
         "increment_active_context_version_when"
+      ],
+      "type": "object"
+    },
+    "boot_file_superseded_to_archive": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "bot_execution_executed": {
+      "type": "boolean"
+    },
+    "bot_execution_log_count": {
+      "type": "integer"
+    },
+    "minos_verdict_executed": {
+      "type": "boolean"
+    },
+    "minos_verdict_count": {
+      "type": "integer"
+    },
+    "purgatorium_finding_created": {
+      "type": "boolean"
+    },
+    "finding_count": {
+      "type": "integer"
+    },
+    "purg00_source_data_gap_resolution": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "artifacts_created": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "missing_required_fields_remaining": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "reason_not_found": {
+          "type": "string"
+        },
+        "searched_paths": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "source_root_manifest_sha256": {
+          "type": "string"
+        },
+        "source_graph_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "status",
+        "artifacts_created",
+        "missing_required_fields_remaining",
+        "reason_not_found",
+        "searched_paths",
+        "source_root_manifest_sha256",
+        "source_graph_sha256"
+      ],
+      "type": "object"
+    },
+    "purg00_source_gap_terminal_blocker": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "previous_gap_artifacts_verified": {
+          "type": "boolean"
+        },
+        "repeated_search_prevented": {
+          "type": "boolean"
+        },
+        "repeat_source_search_without_new_primary_source_forbidden": {
+          "type": "boolean"
+        },
+        "missing_required_fields_remaining": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "source_root_manifest_sha256": {
+          "type": "string"
+        },
+        "source_graph_sha256": {
+          "type": "string"
+        },
+        "searched_paths_previous": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "searched_paths_delta": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "operator_required_source_packet": {
+          "type": "string"
+        },
+        "terminal_blocker_reason": {
+          "type": "string"
+        },
+        "next_recommended_step": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "status",
+        "previous_gap_artifacts_verified",
+        "repeated_search_prevented",
+        "repeat_source_search_without_new_primary_source_forbidden",
+        "missing_required_fields_remaining",
+        "source_root_manifest_sha256",
+        "source_graph_sha256",
+        "searched_paths_previous",
+        "searched_paths_delta",
+        "operator_required_source_packet",
+        "terminal_blocker_reason",
+        "next_recommended_step"
       ],
       "type": "object"
     }
@@ -1227,6 +1380,8 @@
     "active_context_remote_main_reflects_latest_phase",
     "permanent_active_update_rule_installed",
     "current_phase_bots_executed",
+    "bot_execution_log_count",
+    "bot_execution_executed",
     "next_phase",
     "next_phase_authorized_by_operator",
     "active_next_phase",
@@ -1235,7 +1390,6 @@
     "anti_corruption_contract",
     "artifact_integrity_policy",
     "cross_field_consistency_policy",
-    "required_files_for_transition",
     "completed_phases",
     "current_live_route",
     "next_action",
@@ -1248,8 +1402,14 @@
     "last_transition",
     "required_update_policy",
     "drift_signals",
-    "schema_2_13_change_summary"
+    "boot_file_superseded_to_archive",
+    "minos_verdict_executed",
+    "minos_verdict_count",
+    "purgatorium_finding_created",
+    "finding_count",
+    "purg00_source_data_gap_resolution",
+    "purg00_source_gap_terminal_blocker"
   ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.2",
-    "type": "object"
+  "title": "ARIS Active Context Canonical Live State Schema v3.14",
+  "type": "object"
 }

@@ -1471,6 +1471,62 @@ def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     )
 
 
+def _check_schema_state_contract(state: dict[str, Any]) -> None:
+    schema = _load_json(SCHEMA_PATH)
+    properties = schema.get("properties", {})
+    required = set(schema.get("required", []))
+
+    _require(
+        state.get("active_context_version") in properties.get("active_context_version", {}).get("enum", []),
+        "ACTIVE_CONTEXT_SCHEMA.json active_context_version enum must include the live state version",
+    )
+    _require(
+        state.get("schema_version") in properties.get("schema_version", {}).get("enum", []),
+        "ACTIVE_CONTEXT_SCHEMA.json schema_version enum must include the live state schema_version",
+    )
+
+    missing_state_keys = sorted(set(state) - set(properties))
+    _require(not missing_state_keys, f"ACTIVE_CONTEXT_SCHEMA.json missing live state properties: {missing_state_keys}")
+
+    missing_required = sorted(required - set(state))
+    _require(not missing_required, f"ACTIVE_CONTEXT_SCHEMA.json requires keys absent from live state: {missing_required}")
+
+    artifact_routes_schema = properties.get("artifact_routes", {})
+    artifact_route_properties = artifact_routes_schema.get("properties", {})
+    artifact_route_required = set(artifact_routes_schema.get("required", []))
+    live_artifact_routes = state.get("artifact_routes", {})
+
+    _require(
+        set(artifact_route_properties) == set(live_artifact_routes),
+        "ACTIVE_CONTEXT_SCHEMA.json artifact_routes keys must match the live state exactly",
+    )
+    _require(
+        artifact_route_required == set(live_artifact_routes),
+        "ACTIVE_CONTEXT_SCHEMA.json artifact_routes required keys must match the live state exactly",
+    )
+    for key, value in live_artifact_routes.items():
+        _require(
+            artifact_route_properties.get(key, {}).get("const") == value,
+            f"ACTIVE_CONTEXT_SCHEMA.json artifact_routes.{key} const mismatch",
+        )
+
+    versioning_contract = state.get("versioning_contract", {})
+    versioning_properties = properties.get("versioning_contract", {}).get("properties", {})
+    missing_versioning_keys = sorted(set(versioning_contract) - set(versioning_properties))
+    _require(
+        not missing_versioning_keys,
+        f"ACTIVE_CONTEXT_SCHEMA.json versioning_contract missing live keys: {missing_versioning_keys}",
+    )
+    _require(
+        versioning_contract.get("current_active_context_version") == state.get("active_context_version"),
+        "versioning_contract.current_active_context_version must match active_context_version",
+    )
+    _require(
+        versioning_contract.get("current_schema_version") == state.get("schema_version"),
+        "versioning_contract.current_schema_version must match schema_version",
+    )
+
+
 def _check_minimum_deliverable(state: dict[str, Any]) -> None:
     phase_id = state.get("current_phase_id", "")
     decision = state.get("decision", "")
@@ -10362,6 +10418,7 @@ def main() -> None:
     _require("governance_gate_streak" in state, "governance_gate_streak must be present")
     _require("seen_gate_signatures" in state, "seen_gate_signatures must be present")
     _require("phase_class" in state, "phase_class must be present")
+    _check_schema_state_contract(state)
 
     _check_gate_ttl(state)
     _check_auto_advance(state)
@@ -10733,9 +10790,6 @@ def main() -> None:
     _warn_boot_receipt(state)
     from check_boot_sync import assert_boot_in_sync
     assert_boot_in_sync()
-
-    # Apply streak management (in-memory only — Codex writes back to JSON on next run)
-    _apply_streak_management(state, sig, EXPECTED_DECISION)
 
     print(json.dumps({
         "decision": EXPECTED_DECISION,

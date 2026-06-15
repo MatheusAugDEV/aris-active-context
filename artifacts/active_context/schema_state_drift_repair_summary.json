@@ -1,0 +1,29 @@
+{
+  "artifact_id": "schema_state_drift_repair_summary",
+  "status": "active_context_schema_state_drift_repair_pass",
+  "active_context_version": "3.0",
+  "schema_version": "3.14",
+  "state_sha256": "8155a1186f2c731464e6c64c7d80b99c142de1223bead2d73909acb750e77879",
+  "schema_sha256": "910b59221b3f145ed35f4e101980930cdb2065be64a628725d6c4d17f94d0cf2",
+  "validator_sha256": "8ffa801b78f102a3908f3624bf84e8cf7b24a63c313b6113e50cbe730b683058",
+  "phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+  "status_token": "purg04_track_a_post_merge_validation_packet_pass",
+  "next_phase": null,
+  "active_next_phase": null,
+  "governance_gate_streak": 0,
+  "project_aris_touched": false,
+  "real_locks_opened": false,
+  "finding_closed_true_introduced": false,
+  "remediation_proven_false_evidence_source": "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json",
+  "files_changed": [
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "scripts/validate_active_context_state.py",
+    "tests/test_validate_active_context.py",
+    "DECISION_LOCKS.md",
+    "artifacts/active_context/schema_state_drift_repair_decision.json",
+    "artifacts/active_context/schema_state_drift_repair_summary.json",
+    "artifacts/active_context/schema_state_drift_repair_report.md",
+    "artifacts/active_context/schema_state_drift_repair_no_real_execution_attestation.json",
+    "artifacts/active_context/schema_state_drift_repair_validation_evidence.json"
+  ]
+}
