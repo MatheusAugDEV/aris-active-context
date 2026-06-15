@@ -85,6 +85,12 @@ Project_ARIS main workspace: não alterado por este post-merge validation packet
 
 O packet canônico de validação pós-merge está registrado em `artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json`, com autorização explícita em `artifacts/purgatorium/purg04_track_a_post_merge_validation_operator_authorization.json`. Ele confirma que o merge Track A permaneceu dentro do escopo autorizado, que `forbidden_paths_touched=[]`, que `remediation_proven=false`, que `IF09-FIND-001` continua open e que a Transition Table não define sucessor após esta fase.
 
+## PURG-04 proof-loop corpus materialization
+
+O packet `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json` abriu apenas a readiness documental para materializar o corpus proof-loop ausente da linhagem aceita de Track A. Na execução seguinte, `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_artifact_only_packet.json` registrou `blocked` porque o manifest `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json` já não bate com `DECISION_LOCKS.md` na `main` canônica. Por contrato, isso impede materializar os cinco artifacts de RED->RESET->GREEN, reset, benign-flow, kill-switch e rollback sem antes corrigir ou substituir o source manifest.
+
+Esse bloqueio é estritamente documental: `ACTIVE_CONTEXT_STATE.json` continua terminal em `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`, `next_phase=null`, `active_next_phase=null`, `IF09-FIND-001` permanece open, `remediation_proven=false`, `Project_ARIS` não foi mutado e nenhum teste de `Project_ARIS` ou proof-loop foi executado nesta fase.
+
 ## PURG-01.1 triage classification
 
 O pacote canônico `artifacts/purgatorium/purg01_1_if09_find_001_triage_classification_packet.json` registra a classificação de triagem de `IF09-FIND-001` usando apenas o handoff IF09/IF10 e o roadmap Purgatorium. O packet fixa `selected_track=S3` com `classification_confidence=medium`, preserva todos os locks de execução em `false` e mantém `next_recommended_step=BLOCKED_NEEDS_OPERATOR_DIRECTION` para evitar abrir `PURG-02` ou inventar um sucessor `PURG-01.2` fora da rota viva.

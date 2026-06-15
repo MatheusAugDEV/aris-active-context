@@ -2,16 +2,21 @@
 
 > Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
 
-## PURG-04 — Track A Pointer Residual Repair Patch Packet
+## PURG04 Track A Post-Merge Validation Packet
 
-- phase_id: `PURG-04`
-- latest_completed_phase: `PURG-04 Track A Pointer Residual Repair Patch Packet`
-- status: `purg04_track_a_pointer_residual_repair_patch_pass`
+- phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- current_phase_id: `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+- latest_completed_phase: `PURG04 Track A Post-Merge Validation Packet`
+- status: `purg04_track_a_post_merge_validation_packet_pass`
 - decision: `pass`
-- active_next_phase: `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
-- active_next_phase_class: `purgatorium_route_admission`
+- active_next_phase: `null`
+- next_phase: `null`
 - next_phase_authorized_by_operator: `false`
+- latest_completed_ci_state: `CI_GREEN_CONFIRMED`
+- latest_completed_next_recommended_step: `Nenhuma transição definida. Aguardando instrução do operador.`
 - execution_locks: todos `false`
-- Track A patch: aplicado em cleanroom, branch pushed, merge em main NÃO autorizado
-- IF09-FIND-001: aberto — fechamento apenas via Infernus Revalidation
-- Project_ARIS main workspace: intocado
+- Track A patch lineage: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
+- Track A merge lineage: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+- IF09-FIND-001: `open` — fechamento apenas via Infernus Revalidation
+- remediation_proven: `false`
+- Nota documental: a tentativa `PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY` ficou `blocked` por divergência de hash em `DECISION_LOCKS.md` frente ao manifest de readiness; o estado canônico JSON permanece inalterado

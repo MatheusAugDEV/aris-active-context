@@ -1,0 +1,106 @@
+{
+  "artifact_id": "purg04_proof_loop_corpus_materialization_artifact_only_packet",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:09:54-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_precondition_matrix.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_forbidden_actions.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_no_real_execution_attestation.json"
+  ],
+  "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json": "6ec31b4e4aa2a6ce91f1b0022a4d53f1966308c2118abc7128bd86bbf792e914",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_precondition_matrix.json": "9133f607c74468ec5eae4179d095594f7f61a3ae51324addeda2b730f299cc76",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_forbidden_actions.json": "39bf04761f9b3522814da19a097d10cfcb676857b649a0fa2aa9101000a026a0",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_acceptance_criteria.json": "4306566c54d6eb78f66ae07e9cd4562908bb1163ce297968fd975efcf2c2f6b1",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_no_real_execution_attestation.json": "35ea06f4ed5bd6b07102791a1cd766febf4a6b2d81eb5f4b4a9fbca985e5a8c7",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.manifest.DECISION_LOCKS.md.expected": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
+    "DECISION_LOCKS.md.actual_at_phase_start": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+  },
+  "lineage_binding": {
+    "binding_status": "preserved_but_not_materialized",
+    "finding_id_matches": true,
+    "target_lineage_matches": true,
+    "patch_commit_matches": true,
+    "merge_commit_matches": true,
+    "accepted_lineage_source": "artifacts/purgatorium/purg04_track_a_post_merge_validation_packet.json"
+  },
+  "source_hash_verification": {
+    "manifest_path": "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json",
+    "hash_algorithm": "sha256",
+    "verified_source_count_expected": 32,
+    "verified_source_count_checked": 32,
+    "verification_result": "blocked",
+    "mismatches": [
+      {
+        "path": "DECISION_LOCKS.md",
+        "expected_sha256": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
+        "actual_sha256": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee",
+        "scope": "canonical_origin_main_already_diverged_from_readiness_manifest"
+      }
+    ]
+  },
+  "proof_loop_artifacts_requested": [
+    "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json"
+  ],
+  "proof_loop_artifacts_materialized": [],
+  "proof_loop_artifacts_created_as_blocked_packets": [
+    "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+    "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json"
+  ],
+  "proof_loop_artifacts_blocked": [
+    {
+      "artifact_path": "artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json",
+      "decision": "blocked",
+      "blocked_reason": "source_hash_manifest_divergence_detected_before_derivation"
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg04_track_a_reset_evidence.json",
+      "decision": "blocked",
+      "blocked_reason": "source_hash_manifest_divergence_detected_before_derivation"
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json",
+      "decision": "blocked",
+      "blocked_reason": "source_hash_manifest_divergence_detected_before_derivation"
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json",
+      "decision": "blocked",
+      "blocked_reason": "source_hash_manifest_divergence_detected_before_derivation"
+    },
+    {
+      "artifact_path": "artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json",
+      "decision": "blocked",
+      "blocked_reason": "source_hash_manifest_divergence_detected_before_derivation"
+    }
+  ],
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_purg05_now": false,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "decision": "blocked",
+  "status": "purg04_proof_loop_corpus_materialization_artifact_only_blocked_source_hash_divergence",
+  "blocked_reason": "The readiness source-hash manifest no longer matches DECISION_LOCKS.md on canonical main, so the five proof-loop corpus artifacts cannot be materialized under the verified-source-only rule."
+}

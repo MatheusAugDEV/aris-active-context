@@ -2413,3 +2413,41 @@ The following track references are historical_residual_route_noise. They do NOT 
   - remediation_proven remains false
   - runtime/real_apply/product/Bedrock/secrets/dependency mutation executed=`false`
   - Project_ARIS changed during this phase=`false`
+
+## PURG04 Proof-Loop Corpus Materialization Artifact-Only
+
+- Status: `purg04_proof_loop_corpus_materialization_artifact_only_blocked_source_hash_divergence`
+- Decision: `blocked`
+- Scope: artifact-only proof-loop corpus materialization attempt for the accepted merged Track A lineage; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no PURG05, no finding close.
+- Control artifacts materialized:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_artifact_only_packet.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_output_hashes.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_lineage_matrix.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_no_real_execution_attestation.json`
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_next_route_candidate.json`
+- Requested proof-loop artifacts not materialized:
+  - `artifacts/purgatorium/purg04_track_a_red_reset_green_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_reset_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_benign_flow_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_kill_switch_evidence.json`
+  - `artifacts/purgatorium/purg04_track_a_rollback_evidence_for_accepted_lineage.json`
+- Source hash verification:
+  - `artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json` remained the governing manifest
+  - verification failed before derivation because `DECISION_LOCKS.md` expected `ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d`
+  - actual `DECISION_LOCKS.md` on canonical `main` was `f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee`
+  - because the divergence exists on `origin/main` itself, the blocker is canonical-source drift rather than a local worktree mutation
+- Route effect:
+  - `candidate_next_gate=null`
+  - `ACTIVE_CONTEXT_STATE.json` unchanged
+  - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
+  - `next_phase=null`
+  - `active_next_phase=null`
+- Safety locks preserved:
+  - Project_ARIS mutation: `false`
+  - Project_ARIS tests executed: `false`
+  - proof-loop execution: `false`
+  - PURG05 opening: `false`
+  - IF09-FIND-001 remains open
+  - remediation_proven remains false
+- Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
+- CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`

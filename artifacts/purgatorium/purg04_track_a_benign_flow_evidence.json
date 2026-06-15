@@ -1,0 +1,50 @@
+{
+  "artifact_id": "purg04_track_a_benign_flow_evidence",
+  "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+  "created_at": "2026-06-14T23:09:54-03:00",
+  "target_finding_id": "IF09-FIND-001",
+  "target_lineage": "accepted_merged_track_a",
+  "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
+  "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
+  "source_artifacts": [
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json",
+    "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json",
+    "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json"
+  ],
+  "source_hashes": {
+    "artifacts/purgatorium/purg04_track_a_pointer_residual_repair_patch_result.json": "a37ba930a76f49d3377d0e23d861133439370b2e6a65ca2c9a4ca27a0e2968fe",
+    "artifacts/purgatorium/purg04_track_a_main_merge_execution_result.json": "b986f27b43b41976fb49cd9a73e3a8b567d3a78fa602453c6ed7b42e30de1b4f",
+    "artifacts/purgatorium/purg04_track_a_main_merge_ci_evidence.json": "972f68bb1babd0c0510f2a545d55f6251592d23dcb354b3551a11830fb917638",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_plan_readiness.json": "64f39486b3ff9646f169457d2f07a71f021a830e75a56af32c6bef53c8466f60",
+    "artifacts/purgatorium/purg04_if09_find_001_s3_local_remediation_apply_approval_packet.json": "d91ed43c12a64b40ca10df63ce37be9d81cbc72d9e919e4e321e337ac677269b",
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_source_hashes.json": "ec02f3da856c3cd9a81d15a7c7a954c5224a930196a4511a51b957df59633a7d",
+    "DECISION_LOCKS.md.expected_from_manifest": "ea7928a043f03b2121f6f00dbaab3a0b9aae235c73ffe9be7846993b65831c0d",
+    "DECISION_LOCKS.md.actual_at_phase_start": "f471a344f2746bf6b95671a11f5fdb1fbe62a43f0807652a48a722c8f78b55ee"
+  },
+  "lineage_binding": {
+    "binding_status": "target_lineage_preserved_but_derivation_blocked",
+    "finding_id_matches": true,
+    "target_lineage_matches": true,
+    "patch_commit_matches": true,
+    "merge_commit_matches": true
+  },
+  "benign_flow_id": "not_materialized_due_to_source_hash_manifest_divergence",
+  "expected_behavior": "not_materialized_due_to_source_hash_manifest_divergence",
+  "observed_behavior": "not_materialized_due_to_source_hash_manifest_divergence",
+  "pass_fail": "blocked",
+  "hashes": "not_materialized_due_to_source_hash_manifest_divergence",
+  "no_new_benign_flow_executed": true,
+  "project_aris_changed": false,
+  "project_aris_tests_executed": false,
+  "proof_loop_executed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "finding_closed": false,
+  "remediation_proven": false,
+  "can_open_purg05_now": false,
+  "decision": "blocked",
+  "blocked_reason": "Source-hash verification failed before benign-flow documentary binding could be assembled."
+}

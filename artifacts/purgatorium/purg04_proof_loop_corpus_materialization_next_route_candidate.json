@@ -1,5 +1,5 @@
 {
-  "artifact_id": "purg04_proof_loop_corpus_materialization_no_real_execution_attestation",
+  "artifact_id": "purg04_proof_loop_corpus_materialization_next_route_candidate",
   "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
   "created_at": "2026-06-14T23:09:54-03:00",
   "target_finding_id": "IF09-FIND-001",
@@ -7,42 +7,35 @@
   "patch_commit": "1e9a04a02846f3261ae72d0c95fbee6b0163b45b",
   "merge_commit": "7883af5a32c629026bfc6dc15ebee4ebbcadd295",
   "source_artifacts": [
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_artifact_only_packet.json",
     "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_forbidden_actions.json"
+    "artifacts/purgatorium/purgatorium_post_purg04_route_decision_packet.json"
   ],
   "source_hashes": {
+    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_artifact_only_packet.json": "e905313e9a15ecd4b1626935e07d1ab3d013e343435aa64a8ba1a9c33a7b0694",
     "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_readiness_packet.json": "6ec31b4e4aa2a6ce91f1b0022a4d53f1966308c2118abc7128bd86bbf792e914",
-    "artifacts/purgatorium/purg04_proof_loop_corpus_materialization_forbidden_actions.json": "39bf04761f9b3522814da19a097d10cfcb676857b649a0fa2aa9101000a026a0"
+    "artifacts/purgatorium/purgatorium_post_purg04_route_decision_packet.json": "4a364e2c31e9e54d0a1fa5ff02a3d01fff1ed976133bdea5fdd2cdea762fbee2"
   },
   "lineage_binding": {
-    "binding_status": "preserved",
+    "binding_status": "preserved_without_route_advancement",
     "finding_id_matches": true,
     "target_lineage_matches": true,
     "patch_commit_matches": true,
     "merge_commit_matches": true
   },
+  "candidate_only": true,
+  "candidate_next_gate": null,
+  "state_advanced": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null,
+  "can_open_purg05_now": false,
   "project_aris_changed": false,
   "project_aris_tests_executed": false,
   "proof_loop_executed": false,
-  "red_executed": false,
-  "reset_executed": false,
-  "green_executed": false,
-  "benign_flow_executed": false,
-  "rollback_executed": false,
-  "kill_switch_executed": false,
   "runtime_executed": false,
   "real_apply_executed": false,
-  "product_bedrock_real_apply_secrets_executed": false,
-  "dependency_or_package_manager_used": false,
-  "external_network_used_except_github_governance": false,
-  "mcp_activated": false,
-  "rag_ingestion_executed": false,
-  "memory_write_executed": false,
   "finding_closed": false,
   "remediation_proven": false,
-  "can_open_purg05_now": false,
-  "active_context_state_updated": false,
-  "next_phase_preserved": null,
-  "active_next_phase_preserved": null,
-  "decision": "pass"
+  "decision": "blocked",
+  "blocked_reason": "Source-hash verification failed before materialization, so no recheck route can be proposed from this artifact-only phase."
 }
