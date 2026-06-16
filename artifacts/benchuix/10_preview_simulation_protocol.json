@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-10",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "preview_objective": "Permitir que o cliente veja o que aconteceria antes de aprovar, com diff, impacto, risco, custo e isolamento em linguagem humana.",
+  "primary_question": "o cliente entende o que aconteceria antes de aprovar?",
+  "preview_entry_policy": {
+    "source_candidate_phase": "BENCHUIX-09",
+    "automation_candidate_required": true,
+    "playbooks_from_benchuix_08_can_seed_preview": true,
+    "approval_without_preview_allowed": false
+  },
+  "deterministic_preview_policy": {
+    "preview_is_deterministic": true,
+    "preview_uses_synthetic_inputs_only": true,
+    "preview_result_variation_without_input_change_allowed": false,
+    "timeout_seconds_simple_preview": 30,
+    "timeout_seconds_extended_preview": 45
+  },
+  "before_after_diff_policy": {
+    "human_language_only": true,
+    "before_summary_required": true,
+    "after_summary_required": true,
+    "unchanged_scope_required": true,
+    "approval_points_must_be_highlighted": true
+  },
+  "impact_estimation_policy": {
+    "show_estimated_scope": true,
+    "show_estimated_volume_band": true,
+    "show_estimated_time_window": true,
+    "claims_real_result_accuracy": false
+  },
+  "risk_estimation_policy": {
+    "show_risk_level": true,
+    "show_risk_drivers": true,
+    "show_human_approval_boundaries": true,
+    "sensitive_or_ambiguous_preview_blocks": true
+  },
+  "cost_estimation_policy": {
+    "show_relative_cost_band": true,
+    "show_cost_drivers": true,
+    "currency_or_billing_real_used": false,
+    "simplification_guidance_when_cost_is_high": true
+  },
+  "isolation_proof_policy": {
+    "isolation_proof_required": true,
+    "preview_reads_real_data": false,
+    "preview_calls_real_services": false,
+    "preview_executes_real_actions": false,
+    "preview_mutates_state": false,
+    "preview_opens_runtime": false
+  },
+  "no_real_data_touch_policy": {
+    "real_data_touched": false,
+    "real_customer_data_allowed": false,
+    "synthetic_examples_required": true
+  },
+  "no_real_service_call_policy": {
+    "real_service_called": false,
+    "real_integrations_allowed": false,
+    "external_api_runtime_allowed": false
+  },
+  "no_real_action_policy": {
+    "real_action_executed": false,
+    "approval_without_preview_allowed": false,
+    "side_effectful_behavior_allowed": false
+  },
+  "no_state_mutation_policy": {
+    "state_mutated": false,
+    "persistent_write_allowed": false,
+    "draft_can_be_documented_only": true
+  },
+  "degraded_behavior_policy": {
+    "degraded_allowed": true,
+    "degraded_when_context_is_insufficient": true,
+    "degraded_must_explain_missing_input": true,
+    "degraded_must_preserve_safe_next_step": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "client_facing_copy_samples": [
+    "Nada real sera alterado neste preview.",
+    "Vou te mostrar o que mudaria antes de qualquer aprovacao.",
+    "Este resultado e uma simulacao isolada.",
+    "Se eu nao conseguir te mostrar um preview claro, vou bloquear e explicar o motivo.",
+    "Voce esta vendo impacto esperado, nao execucao real."
+  ],
+  "blocking_criteria": [
+    "preview ilegivel",
+    "diff antes_depois ausente",
+    "impacto sem explicacao",
+    "risco sem explicacao",
+    "custo sem linguagem humana",
+    "ausencia de prova de isolamento",
+    "dado real, servico real, acao real ou mutacao de estado no escopo",
+    "aprovacao sem preview legivel"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-11"
+  ]
+}

@@ -106,7 +106,7 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_track["status"] == "operator_review_pending"
     assert benchuix_track["roadmap_path"] == "Benchuix_roadmap.md"
     assert benchuix_track["roadmap_hash"] == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5"
-    assert benchuix_track["current_candidate_phase"] == "BENCHUIX-09"
+    assert benchuix_track["current_candidate_phase"] == "BENCHUIX-10"
     assert benchuix_track["latest_candidate_decision"] == "READY_FOR_OPERATOR_REVIEW"
     assert benchuix_track["schema_tracking_repair_required"] is True
     assert benchuix_track["schema_tracking_repair_status"] == "completed"
@@ -114,7 +114,7 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_track["operator_gate_decision"] == "accepted"
     assert benchuix_track["operator_gate_scope"] == "BENCHUIX-00_AND_00R"
     assert benchuix_track["operator_gate_commit_sha"] == "73870715dd0d74bc0757b845d34d430b70d94867"
-    assert benchuix_track["candidate_next_phase_after_operator_gate"] == "BENCHUIX-10"
+    assert benchuix_track["candidate_next_phase_after_operator_gate"] == "BENCHUIX-11"
     assert benchuix_track["standing_candidate_authorization_active"] is True
     assert benchuix_track["standing_candidate_authorization_scope"] == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY"
     assert benchuix_track["standing_candidate_authorization_artifact"] == "artifacts/benchuix/standing_authorization_packet.json"
@@ -163,6 +163,12 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert Path("artifacts/benchuix/09_create_automation_flow.json").exists()
     assert Path("artifacts/benchuix/09_no_real_execution_attestation.json").exists()
     assert Path("artifacts/benchuix/09_validation_evidence.json").exists()
+    assert Path("artifacts/benchuix/10_operator_opening_source.json").exists()
+    assert Path("artifacts/benchuix/10_simulation_spec.md").exists()
+    assert Path("artifacts/benchuix/10_isolation_proof.md").exists()
+    assert Path("artifacts/benchuix/10_preview_simulation_protocol.json").exists()
+    assert Path("artifacts/benchuix/10_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/10_validation_evidence.json").exists()
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():

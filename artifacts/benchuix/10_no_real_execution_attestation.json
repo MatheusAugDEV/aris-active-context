@@ -1,0 +1,21 @@
+{
+  "phase_id": "BENCHUIX-10",
+  "Project_ARIS_touched": false,
+  "runtime_executed": false,
+  "real_automation_created": false,
+  "real_data_touched": false,
+  "real_service_called": false,
+  "real_action_executed": false,
+  "state_mutated": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "package_manager_execution_authorized": false,
+  "real_customer_data_used": false,
+  "real_oauth_used": false,
+  "real_billing_used": false,
+  "real_integration_used": false,
+  "deterministic_preview_synthetic_only": true
+}
