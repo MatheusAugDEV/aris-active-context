@@ -1,0 +1,22 @@
+{
+  "phase_id": "BENCHUIX-14",
+  "Project_ARIS_touched": false,
+  "runtime_executed": false,
+  "real_action_executed": false,
+  "real_state_mutated": false,
+  "real_automation_created": false,
+  "real_service_called": false,
+  "real_customer_data_used": false,
+  "real_rollback_executed": false,
+  "real_export_executed": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "package_manager_execution_authorized": false,
+  "stack_trace_primary_view_allowed": false,
+  "hash_as_primary_client_term_allowed": false,
+  "edit_or_delete_old_receipt_allowed": false,
+  "synthetic_history_receipts_only": true
+}

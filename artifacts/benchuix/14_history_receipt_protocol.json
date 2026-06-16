@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-14",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "history_view_policy": {
+    "human_readable_history_required": true,
+    "history_is_synthetic_only": true,
+    "event_order_must_be_clear": true,
+    "failure_visibility_required": true
+  },
+  "receipt_policy": {
+    "receipt_must_exist_for_material_events": true,
+    "receipt_must_use_human_language": true,
+    "receipt_must_distinguish_simulation_from_execution": true,
+    "receipt_cannot_claim_real_proof": true
+  },
+  "verification_code_policy": {
+    "verification_code_required": true,
+    "verification_code_must_be_legible": true,
+    "verification_code_must_be_copyable": true,
+    "verification_code_is_not_real_signature": true
+  },
+  "search_policy": {
+    "search_candidate_only": true,
+    "search_by_human_terms_required": true,
+    "search_requires_technical_identifier": false
+  },
+  "export_policy": {
+    "export_candidate_only": true,
+    "export_synthetic_only": true,
+    "export_cannot_claim_real_receipt": true,
+    "export_must_carry_limit_notice": true
+  },
+  "rollback_link_policy": {
+    "rollback_link_reference_only": true,
+    "rollback_link_executes_real_rollback": false,
+    "rollback_or_compensation_context_required": true
+  },
+  "immutable_receipt_policy": {
+    "old_receipts_must_be_immutable": true,
+    "correction_requires_new_event": true,
+    "history_rewrite_allowed": false
+  },
+  "no_stack_trace_primary_view_policy": {
+    "stack_trace_primary_view_allowed": false,
+    "human_failure_summary_required": true,
+    "technical_detail_secondary_only": true
+  },
+  "no_hash_primary_term_policy": {
+    "hash_as_primary_client_term_allowed": false,
+    "verification_code_primary_term_required": true,
+    "technical_fingerprint_secondary_only": true
+  },
+  "no_edit_or_delete_old_receipt_policy": {
+    "edit_old_receipt_allowed": false,
+    "delete_old_receipt_allowed": false,
+    "new_event_required_for_change": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "historico nao humanizado",
+    "comprovante sem codigo de verificacao legivel",
+    "stack trace como visao primaria",
+    "hash como termo primario para cliente",
+    "comprovante antigo editavel",
+    "comprovante antigo deletavel",
+    "exportacao apresentada como prova real",
+    "link de rollback que pareca executar acao real",
+    "qualquer acao, mutacao, dado ou servico real no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-15"
+  ]
+}
