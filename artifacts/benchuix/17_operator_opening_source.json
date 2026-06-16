@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-17",
+  "opened_from_candidate_phase": "BENCHUIX-16",
+  "opened_candidate_phase": "BENCHUIX-17",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "d55fe901150e805931b8f8f89d7916bc182f9705",
+  "previous_candidate_ci_run": "27591137936",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Mobile Companion / PWA synthetic-only como preparo para Product Reality Lab; nao produz Bedrock PASS, nao autoriza produto, piloto, runtime, integracao real, billing real, OAuth real, cache real, service worker real, secrets, producao, Project_ARIS mutation ou real_apply."
+}

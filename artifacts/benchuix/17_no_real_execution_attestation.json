@@ -1,0 +1,22 @@
+{
+  "phase_id": "BENCHUIX-17",
+  "Project_ARIS_touched": false,
+  "native_app_created": false,
+  "executable_pwa_created": false,
+  "service_worker_created": false,
+  "real_cache_created": false,
+  "runtime_executed": false,
+  "real_action_executed": false,
+  "real_state_mutated": false,
+  "real_service_called": false,
+  "real_customer_data_used": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "package_manager_execution_authorized": false,
+  "stale_cache_approval_allowed": false,
+  "gesture_only_essential_action_allowed": false,
+  "synthetic_mobile_pwa_spec_only": true
+}

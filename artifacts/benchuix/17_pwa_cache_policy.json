@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-17",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "pwa_candidate_policy": {
+    "mobile_first_candidate_only": true,
+    "native_app_required": false,
+    "executable_pwa_required": false,
+    "offline_guarantee_promised": false,
+    "service_worker_real_created": false
+  },
+  "mobile_today_policy": {
+    "priority_summary_required": true,
+    "last_sync_label_required": true,
+    "degraded_banner_when_context_limited": true,
+    "one_hand_scanability_required": true
+  },
+  "mobile_approval_policy": {
+    "risk_visible_before_action": true,
+    "permission_copy_visible_before_action": true,
+    "will_will_not_visible_before_action": true,
+    "approval_blocked_when_data_stale": true,
+    "approval_blocked_when_data_incomplete": true
+  },
+  "mobile_receipt_policy": {
+    "recent_receipts_readable_on_mobile": true,
+    "verification_code_copyable": true,
+    "event_age_required": true,
+    "stale_receipt_warning_required": true
+  },
+  "mobile_pause_policy": {
+    "pause_scope_explained_before_confirmation": true,
+    "text_confirmation_required": true,
+    "recovery_path_visible_after_pause": true,
+    "gesture_only_pause_forbidden": true
+  },
+  "cache_policy": {
+    "candidate_only_cache_model": true,
+    "cache_scope": [
+      "Hoje",
+      "Aprovar",
+      "Comprovantes",
+      "Pausar"
+    ],
+    "cache_for_read_continuity_only": true,
+    "manual_refresh_available": true,
+    "cache_never_claims_live_truth": true
+  },
+  "stale_cache_policy": {
+    "stale_banner_required": true,
+    "last_sync_time_required": true,
+    "stale_data_must_reduce_available_actions": true,
+    "stale_data_cannot_masquerade_as_fresh": true
+  },
+  "stale_cache_approval_policy": {
+    "approval_allowed_when_stale": false,
+    "approval_allowed_when_incomplete": false,
+    "refresh_or_history_review_required": true,
+    "simulate_again_guidance_when_needed": true
+  },
+  "mobile_degraded_state_policy": {
+    "mobile_degraded_state_required": true,
+    "degraded_must_explain_limitations": true,
+    "degraded_must_offer_safe_fallback": true,
+    "white_screen_allowed": false,
+    "infinite_spinner_allowed": false
+  },
+  "gesture_only_essential_action_policy": {
+    "essential_actions_need_text_alternative": true,
+    "gesture_only_essential_action_allowed": false,
+    "screen_reader_action_labels_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "approval with stale cache",
+    "approval with incomplete data",
+    "essential action available only by gesture",
+    "cache sold as real-time guarantee",
+    "mobile degraded state hidden",
+    "white screen",
+    "infinite spinner",
+    "customer-facing stack trace",
+    "any native app, executable pwa, service worker real, cache real, action real or data real in scope"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-18"
+  ]
+}

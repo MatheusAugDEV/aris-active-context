@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-17",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "mobile_states": {
+    "Hoje": {
+      "empty": "Explica que ainda nao ha resumo disponivel e oferece revisar configuracoes candidatas ou voltar depois.",
+      "loading": "Mostra skeleton curto com contexto do que esta carregando.",
+      "error": "Explica falha na leitura do resumo e oferece retry seguro.",
+      "success": "Mostra prioridades, ultimo sync e proximo passo recomendado.",
+      "degraded": "Mostra ultimo contexto confiavel, limitacao atual e acao segura reduzida."
+    },
+    "Aprovar": {
+      "empty": "Explica ausencia de itens pendentes sem prometer fila live.",
+      "loading": "Mostra loading com rastro da origem da simulacao.",
+      "error": "Explica por que o pedido nao pode ser avaliado agora.",
+      "success": "Mostra risco, permissao, will/will-not e CTA candidato.",
+      "degraded": "Remove CTA de aprovar quando faltar confianca e orienta atualizar ou revisar historico."
+    },
+    "Comprovantes": {
+      "empty": "Mostra que ainda nao ha comprovantes candidatos disponiveis.",
+      "loading": "Preserva estrutura de lista e codigo de verificacao como placeholder legivel.",
+      "error": "Explica indisponibilidade temporaria sem jargao tecnico.",
+      "success": "Mostra lista legivel, codigo copiavel e idade do evento.",
+      "degraded": "Mantem leitura do ultimo comprovante confiavel e sinaliza limite do restante."
+    },
+    "Pausar": {
+      "empty": "Explica quando a superficie de pausa ainda nao se aplica.",
+      "loading": "Mostra confirmacao em preparo com texto curto.",
+      "error": "Explica por que a pausa nao pode ser confirmada agora.",
+      "success": "Mostra escopo, impacto e confirmacao textual da pausa candidata.",
+      "degraded": "Preserva consulta do escopo e bloqueia confirmacao se o contexto estiver incompleto."
+    }
+  },
+  "stale_data_states": {
+    "Hoje": "Banner informa que o resumo pode estar desatualizado e reduz links de decisao sensivel.",
+    "Aprovar": "Selo de dado stale bloqueia aprovacao e exige atualizar, revisar comprovante ou simular novamente.",
+    "Comprovantes": "Lista informa idade do dado e separa comprovante confiavel de registro desatualizado.",
+    "Pausar": "Pausa pode continuar apenas se o escopo confiavel estiver visivel; caso contrario entra em degradado."
+  },
+  "cache_warning_copy": [
+    "Mostrando a ultima versao disponivel neste dispositivo.",
+    "Estas informacoes podem estar desatualizadas.",
+    "Atualize antes de aprovar qualquer mudanca."
+  ],
+  "approval_blocking_rules": [
+    "Bloquear aprovacao quando existir selo de stale data.",
+    "Bloquear aprovacao quando faltar origem confiavel da simulacao.",
+    "Bloquear aprovacao quando o estado estiver degradado por contexto insuficiente."
+  ],
+  "degraded_mobile_copy": [
+    "Parte desta experiencia esta limitada no celular agora.",
+    "Mantivemos apenas o que continua confiavel para consulta.",
+    "Voce pode atualizar, revisar comprovantes ou pausar com seguranca quando aplicavel."
+  ],
+  "safe_fallback_actions": [
+    "atualizar dados",
+    "revisar comprovantes",
+    "simular novamente",
+    "consultar estado atual",
+    "pausar quando o escopo estiver confiavel"
+  ],
+  "color_not_sole_signal": true,
+  "handoff_targets": [
+    "BENCHUIX-18"
+  ]
+}
