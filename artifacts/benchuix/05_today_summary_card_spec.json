@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-05",
+    "status": "candidate",
+    "screen_id": "HOJE",
+    "baseline_mode": "A_OWNER_SOLO",
+    "primary_surface": "ARIS_CLIENT_WORKSPACE",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "navigation": [
+    "Hoje",
+    "Automações",
+    "Aprovar",
+    "Histórico / Comprovantes",
+    "Configurações"
+  ],
+  "screen_objective": "Orientar o dono-solo rapidamente sobre o que precisa de atenção, o que já está claro e qual é o próximo passo seguro sem virar dashboard corporativo.",
+  "five_second_question": "O dono entende o que precisa da atenção dele agora?",
+  "above_the_fold_regions": [
+    "context_header",
+    "today_summary",
+    "approval_attention",
+    "next_safe_action",
+    "recent_evidence"
+  ],
+  "today_summary_card": {
+    "component_id": "TODAY_SUMMARY_CARD",
+    "purpose": "Resumir o dia em linguagem humana, com foco em pendências, risco visível e próximo passo seguro.",
+    "content_blocks": [
+      "simple_context_header",
+      "today_priorities",
+      "approval_attention",
+      "automation_needing_attention",
+      "recent_evidence_link",
+      "next_safe_action"
+    ],
+    "states": [
+      "empty",
+      "loading",
+      "error",
+      "success",
+      "degraded"
+    ],
+    "primary_action": "Ver o próximo passo recomendado",
+    "secondary_actions": [
+      "Abrir Aprovar",
+      "Abrir Histórico / Comprovantes",
+      "Ver automação que precisa de atenção"
+    ],
+    "must_not_include": [
+      "dashboard corporativo",
+      "stack trace",
+      "payload técnico",
+      "dado real",
+      "admin",
+      "runtime"
+    ],
+    "risk_display_policy": "Risco sempre aparece por texto e apoio visual, nunca apenas por cor.",
+    "evidence_link_policy": "Quando houver comprovante útil, o card aponta para um recibo legível ou para o histórico.",
+    "degraded_behavior": "Em limitação, o card explica o que ainda funciona, o que não funciona e qual é o próximo passo seguro."
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "allowed_components": [
+    "APP_SHELL",
+    "TOP_BAR",
+    "SIDE_OR_BOTTOM_NAV",
+    "TODAY_SUMMARY_CARD",
+    "RISK_BADGE",
+    "APPROVAL_CARD",
+    "EVIDENCE_RECEIPT",
+    "FAILURE_EXPLANATION_CARD",
+    "DEGRADED_MODE_BANNER",
+    "EMPTY_STATE",
+    "LOADING_SKELETON",
+    "TOAST_STATUS_MESSAGE"
+  ],
+  "forbidden_client_facing_terms": [
+    "runtime",
+    "gate",
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "tenant",
+    "idempotency",
+    "hash",
+    "oracle",
+    "CI",
+    "real_apply",
+    "active-context"
+  ],
+  "client_facing_copy_samples": [
+    "2 itens pedem seu ok agora.",
+    "Nada mudou por enquanto.",
+    "1 automação pede atenção.",
+    "Você pode testar antes do ok.",
+    "Comprovante no histórico.",
+    "Há um passo seguro para hoje."
+  ],
+  "synthetic_data_policy": {
+    "real_customer_data_allowed": false,
+    "real_financial_data_allowed": false,
+    "psp_real_allowed": false,
+    "secrets_allowed": false,
+    "synthetic_examples_required": true
+  },
+  "performance_slo_candidates": {
+    "useful_today_screen_seconds": 2,
+    "lcp_p75_mobile_seconds": 2.5,
+    "five_second_comprehension_required": true,
+    "loading_feedback_ms": 300
+  },
+  "accessibility_requirements": [
+    "mensagem principal legível sem depender de cor",
+    "foco visível na navegação mínima",
+    "target mínimo para toque em ações principais",
+    "status announcements para loading, error e degraded",
+    "hierarquia textual simples para leitura rápida"
+  ],
+  "invariants_protected": [
+    "densidade_cognitiva",
+    "compressao_de_contexto",
+    "sincronismo",
+    "governanca",
+    "rastreabilidade",
+    "resiliencia",
+    "eficiencia"
+  ],
+  "blocking_criteria": [
+    "a tela exige jargão técnico",
+    "informação crítica fica escondida",
+    "Hoje vira dashboard corporativo",
+    "primeiro estado exige dado real",
+    "estado de erro mostra stack trace",
+    "estado degradado não explica limitação",
+    "ação sensível é executada a partir da tela",
+    "admin aparece para cliente",
+    "real_apply, secrets, runtime ou produto aparecem no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-06",
+    "BENCHUIX-09",
+    "BENCHUIX-11",
+    "BENCHUIX-14",
+    "BENCHUIX-16"
+  ]
+}
