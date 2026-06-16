@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-03",
+    "status": "candidate",
+    "final_branding_locked": false,
+    "crisol_review_required": true
+  },
+  "token_architecture": {
+    "tiers": [
+      "reference",
+      "system",
+      "component"
+    ],
+    "dark_light_strategy": "system_tier_remap_only",
+    "component_hardcoded_values_allowed": false
+  },
+  "reference": {
+    "color": {
+      "ink_900": "#101418",
+      "ink_700": "#32404d",
+      "cloud_000": "#f7f8fa",
+      "cloud_100": "#eef1f4",
+      "blue_500": "#2f6fed",
+      "green_500": "#2f8f63",
+      "amber_500": "#d68a1f",
+      "red_500": "#c24732"
+    },
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 24,
+      "xxl": 32
+    },
+    "radius": {
+      "sm": 8,
+      "md": 14,
+      "lg": 20
+    },
+    "type": {
+      "body": "ui-sans-candidate",
+      "emphasis": "ui-sans-emphasis-candidate",
+      "mono_support": "ui-mono-support-candidate"
+    },
+    "motion": {
+      "quick_ms": 120,
+      "base_ms": 180,
+      "slow_ms": 240
+    },
+    "target": {
+      "touch_min_px": 44
+    }
+  },
+  "system": {
+    "surface": {
+      "app_bg": "{reference.color.cloud_000}",
+      "panel_bg": "{reference.color.cloud_100}",
+      "text_primary": "{reference.color.ink_900}",
+      "text_secondary": "{reference.color.ink_700}"
+    },
+    "action": {
+      "primary": "{reference.color.blue_500}",
+      "destructive": "{reference.color.red_500}",
+      "supportive": "{reference.color.green_500}"
+    },
+    "status": {
+      "success": "{reference.color.green_500}",
+      "warning": "{reference.color.amber_500}",
+      "critical": "{reference.color.red_500}",
+      "interactive": "{reference.color.blue_500}"
+    },
+    "layout": {
+      "screen_padding": "{reference.spacing.lg}",
+      "card_gap": "{reference.spacing.md}",
+      "stack_gap": "{reference.spacing.lg}"
+    }
+  },
+  "component": {
+    "approval_card": {
+      "container_surface": "{system.surface.panel_bg}",
+      "headline_color": "{system.surface.text_primary}",
+      "risk_accent": "{risk_tokens.risk_sensitive.color}",
+      "padding": "{system.layout.screen_padding}"
+    },
+    "risk_badge": {
+      "label_color": "{system.surface.text_primary}",
+      "radius": "{reference.radius.md}"
+    },
+    "degraded_mode_banner": {
+      "surface": "{state_tokens.degraded.background}",
+      "text_color": "{system.surface.text_primary}"
+    },
+    "evidence_receipt": {
+      "surface": "{system.surface.panel_bg}",
+      "support_type": "{reference.type.mono_support}"
+    }
+  },
+  "governance_semantic_tokens": {
+    "awaiting_approval": {
+      "label": "Awaiting approval",
+      "intent": "sensitive action paused until explicit confirmation"
+    },
+    "approval_required": {
+      "label": "Approval required",
+      "intent": "client must confirm before change"
+    },
+    "will_do": {
+      "label": "Will do",
+      "intent": "explicit action summary"
+    },
+    "will_not_do": {
+      "label": "Will not do",
+      "intent": "explicit non-action summary"
+    },
+    "permission_limited": {
+      "label": "Permission limited",
+      "intent": "scope boundary remains visible"
+    },
+    "risk_visible": {
+      "label": "Risk visible",
+      "intent": "risk is textual and visual"
+    },
+    "evidence_available": {
+      "label": "Evidence available",
+      "intent": "receipt or proof can be inspected"
+    },
+    "rollback_available": {
+      "label": "Rollback available",
+      "intent": "reversal path exists and is explained"
+    },
+    "cannot_undo": {
+      "label": "Cannot undo",
+      "intent": "irreversible consequence is explicit"
+    },
+    "degraded_mode": {
+      "label": "Degraded mode",
+      "intent": "system is partially available with visible limits"
+    }
+  },
+  "state_tokens": {
+    "empty": {
+      "label": "Nothing here yet",
+      "background": "{system.surface.panel_bg}"
+    },
+    "loading": {
+      "label": "Loading",
+      "background": "{system.surface.panel_bg}"
+    },
+    "error": {
+      "label": "Action needs attention",
+      "background": "{reference.color.cloud_100}"
+    },
+    "success": {
+      "label": "Done",
+      "background": "{reference.color.cloud_100}"
+    },
+    "degraded": {
+      "label": "Limited mode",
+      "background": "{reference.color.cloud_100}"
+    },
+    "running": {
+      "label": "Running",
+      "background": "{reference.color.cloud_100}"
+    },
+    "failed": {
+      "label": "Failed",
+      "background": "{reference.color.cloud_100}"
+    },
+    "partial": {
+      "label": "Partial",
+      "background": "{reference.color.cloud_100}"
+    },
+    "paused": {
+      "label": "Paused",
+      "background": "{reference.color.cloud_100}"
+    },
+    "undone": {
+      "label": "Undone",
+      "background": "{reference.color.cloud_100}"
+    }
+  },
+  "risk_tokens": {
+    "risk_low": {
+      "label": "Low risk",
+      "color": "{reference.color.green_500}"
+    },
+    "risk_sensitive": {
+      "label": "Sensitive risk",
+      "color": "{reference.color.amber_500}"
+    },
+    "risk_critical": {
+      "label": "Critical risk",
+      "color": "{reference.color.red_500}"
+    },
+    "risk_destructive": {
+      "label": "Destructive action",
+      "color": "{reference.color.red_500}"
+    }
+  },
+  "evidence_tokens": {
+    "evidence_pending": {
+      "label": "Evidence pending",
+      "emphasis": "queue"
+    },
+    "evidence_saved": {
+      "label": "Evidence saved",
+      "emphasis": "stored"
+    },
+    "evidence_verified": {
+      "label": "Evidence verified",
+      "emphasis": "verified"
+    },
+    "evidence_unavailable": {
+      "label": "Evidence unavailable",
+      "emphasis": "missing"
+    }
+  },
+  "motion_tokens": {
+    "reduced_motion_supported": true,
+    "decision_critical_motion_required": false,
+    "enter_duration_ms": "{reference.motion.base_ms}",
+    "exit_duration_ms": "{reference.motion.quick_ms}"
+  },
+  "accessibility_tokens": {
+    "focus_ring_required": true,
+    "text_beyond_color_required": true,
+    "minimum_touch_target_px": 44,
+    "status_message_announced": true,
+    "contrast_target": "wcag22_candidate"
+  }
+}
