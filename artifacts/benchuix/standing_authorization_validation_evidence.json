@@ -1,0 +1,52 @@
+{
+  "phase_id": "BENCHUIX_STANDING_AUTHORIZATION",
+  "status": "local_validation_pass_recorded",
+  "commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/benchuix/standing_authorization_packet.json",
+    "python3 -m json.tool artifacts/benchuix/standing_authorization_no_real_execution_attestation.json",
+    "python3 -m json.tool artifacts/benchuix/standing_authorization_validation_evidence.json",
+    "python3 -m py_compile scripts/validate_active_context_state.py",
+    "python3 scripts/render_boot.py",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -q",
+    "python3 inline standing authorization verification",
+    "grep defensive lock verification",
+    "git diff --name-only",
+    "git diff --check",
+    "git status --short --untracked-files=all"
+  ],
+  "results": {
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "standing_authorization_packet_json_tool": "OK",
+    "standing_authorization_no_real_execution_attestation_json_tool": "OK",
+    "standing_authorization_validation_evidence_json_tool": "OK",
+    "validator_py_compile": "OK",
+    "render_boot": "OK",
+    "validator_script": "PASS",
+    "unittest_discover": "PASS",
+    "BENCHUIX_STANDING_AUTHORIZATION_OK": true,
+    "BENCHUIX_STANDING_AUTHORIZATION_LOCKS_OK": true,
+    "BENCHUIX_STANDING_AUTHORIZATION_CANDIDATE_ONLY_OK": true,
+    "next_phase_preserved_null": true,
+    "active_next_phase_preserved_null": true,
+    "Project_ARIS_touched": false,
+    "git_diff_check": "clean"
+  },
+  "hashes": {
+    "ACTIVE_CONTEXT_STATE.json": "48a15caddf83e71413095366182146fc74539906fbb6c2a0083f0907efc3bcf6",
+    "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
+    "BOOT.md": "0e70c7fb64c7a51139a459342b57779fe14d2b46a6a197cc1045a63db230c70b",
+    "scripts/validate_active_context_state.py": "7e65c7b3f31440fc274c9d40068cc577ae10d95d25503e9183508acb5501ef9e",
+    "tests/test_validate_active_context.py": "5e503b1a2c6a27d614b1a9490c2e936961c636fc2b655eeb51defa0bab7c4b3d",
+    "artifacts/benchuix/standing_authorization_packet.json": "74041be439e995323d25998ddb1f30c6b28521f0704a5145b684a6f4b1b44f4d",
+    "artifacts/benchuix/standing_authorization_no_real_execution_attestation.json": "90ccd9f96a1b1f260dd8c8ea3a45ab750aaf5059de73864edb5dd771fadd1a23"
+  },
+  "notes": [
+    "Project_ARIS permaneceu intocado durante a materialização da standing authorization.",
+    "A autorização permanece candidate-only e não abre runtime, produto, produção, secrets, billing, OAuth real, integrações reais ou real_apply.",
+    "git diff --name-only mostrou apenas arquivos tracked do active-context; os novos artifacts da standing authorization aparecem em git status --short."
+  ]
+}

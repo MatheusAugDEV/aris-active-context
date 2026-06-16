@@ -11,6 +11,7 @@
   "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
   "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
   "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false.",
+  "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -1010,7 +1011,8 @@
         "3.19",
         "3.20",
         "3.21",
-        "3.22"
+        "3.22",
+        "3.23"
       ],
       "type": "string"
     },
@@ -1184,6 +1186,26 @@
             "CRISOL"
           ],
           "type": "string"
+        },
+        "standing_candidate_authorization_active": {
+          "const": true,
+          "type": "boolean"
+        },
+        "standing_candidate_authorization_scope": {
+          "const": "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
+          "type": "string"
+        },
+        "standing_candidate_authorization_artifact": {
+          "const": "artifacts/benchuix/standing_authorization_packet.json",
+          "type": "string"
+        },
+        "standing_candidate_authorization_real_locks_opened": {
+          "const": false,
+          "type": "boolean"
+        },
+        "repeated_operator_ritual_required_for_next_candidate_phases": {
+          "const": false,
+          "type": "boolean"
         }
       },
       "required": [
@@ -1210,7 +1232,12 @@
         "real_apply_authorized",
         "runtime_integration_allowed",
         "secrets_access_authorized",
-        "candidate_next_phase_after_operator_gate"
+        "candidate_next_phase_after_operator_gate",
+        "standing_candidate_authorization_active",
+        "standing_candidate_authorization_scope",
+        "standing_candidate_authorization_artifact",
+        "standing_candidate_authorization_real_locks_opened",
+        "repeated_operator_ritual_required_for_next_candidate_phases"
       ],
       "type": "object"
     },
@@ -1434,6 +1461,18 @@
           "type": "string"
         },
         "schema_3_19_change_summary": {
+          "type": "string"
+        },
+        "schema_3_20_change_summary": {
+          "type": "string"
+        },
+        "schema_3_21_change_summary": {
+          "type": "string"
+        },
+        "schema_3_22_change_summary": {
+          "type": "string"
+        },
+        "schema_3_23_change_summary": {
           "type": "string"
         },
         "schema_3_21_change_summary": {

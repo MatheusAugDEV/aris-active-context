@@ -115,6 +115,11 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_track["operator_gate_scope"] == "BENCHUIX-00_AND_00R"
     assert benchuix_track["operator_gate_commit_sha"] == "73870715dd0d74bc0757b845d34d430b70d94867"
     assert benchuix_track["candidate_next_phase_after_operator_gate"] == "BENCHUIX-08"
+    assert benchuix_track["standing_candidate_authorization_active"] is True
+    assert benchuix_track["standing_candidate_authorization_scope"] == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY"
+    assert benchuix_track["standing_candidate_authorization_artifact"] == "artifacts/benchuix/standing_authorization_packet.json"
+    assert benchuix_track["standing_candidate_authorization_real_locks_opened"] is False
+    assert benchuix_track["repeated_operator_ritual_required_for_next_candidate_phases"] is False
     for key in (
         "execution_authorized",
         "product_authorized",
@@ -145,6 +150,9 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert Path("artifacts/benchuix/07_business_profile_form.json").exists()
     assert Path("artifacts/benchuix/07_no_real_execution_attestation.json").exists()
     assert Path("artifacts/benchuix/07_validation_evidence.json").exists()
+    assert Path("artifacts/benchuix/standing_authorization_packet.json").exists()
+    assert Path("artifacts/benchuix/standing_authorization_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/standing_authorization_validation_evidence.json").exists()
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():

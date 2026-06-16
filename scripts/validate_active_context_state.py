@@ -1732,6 +1732,23 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
         _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-08", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
+        _require(
+            benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
+            "benchuix_track.standing_candidate_authorization_scope mismatch",
+        )
+        _require(
+            benchuix_track.get("standing_candidate_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "benchuix_track.standing_candidate_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_track.get("standing_candidate_authorization_real_locks_opened") is False,
+            "benchuix_track.standing_candidate_authorization_real_locks_opened mismatch",
+        )
+        _require(
+            benchuix_track.get("repeated_operator_ritual_required_for_next_candidate_phases") is False,
+            "benchuix_track.repeated_operator_ritual_required_for_next_candidate_phases mismatch",
+        )
         for key in (
             "execution_authorized",
             "product_authorized",
@@ -1745,6 +1762,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / benchuix_track["transition_table_artifact"]).exists(), "benchuix_track transition_table_artifact missing on disk")
         _require((ROOT / benchuix_track["admission_packet_artifact"]).exists(), "benchuix_track admission_packet_artifact missing on disk")
         _require((ROOT / benchuix_track["no_real_execution_attestation_artifact"]).exists(), "benchuix_track no_real_execution_attestation_artifact missing on disk")
+        _require((ROOT / benchuix_track["standing_candidate_authorization_artifact"]).exists(), "benchuix_track standing_candidate_authorization_artifact missing on disk")
         _require((ROOT / "artifacts/benchuix/02_access_model.md").exists(), "BENCHUIX-02 access model missing on disk")
         _require((ROOT / "artifacts/benchuix/02_surface_inventory.json").exists(), "BENCHUIX-02 surface inventory missing on disk")
         _require((ROOT / "artifacts/benchuix/02_surfaces_diagram.mmd").exists(), "BENCHUIX-02 surfaces diagram missing on disk")
@@ -1765,6 +1783,9 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/07_business_profile_form.json").exists(), "BENCHUIX-07 business profile form missing on disk")
         _require((ROOT / "artifacts/benchuix/07_no_real_execution_attestation.json").exists(), "BENCHUIX-07 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/07_validation_evidence.json").exists(), "BENCHUIX-07 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/standing_authorization_packet.json").exists(), "BENCHUIX standing authorization packet missing on disk")
+        _require((ROOT / "artifacts/benchuix/standing_authorization_no_real_execution_attestation.json").exists(), "BENCHUIX standing authorization no-real attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/standing_authorization_validation_evidence.json").exists(), "BENCHUIX standing authorization validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -1882,6 +1903,65 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         ):
             _require(benchuix_07_no_real.get(key) is False, f"BENCHUIX-07 no-real {key} must be false")
         _require(benchuix_07_no_real.get("synthetic_profile_only") is True, "BENCHUIX-07 synthetic_profile_only mismatch")
+
+        benchuix_standing_packet = _load_json(ROOT / "artifacts/benchuix/standing_authorization_packet.json")
+        _require(benchuix_standing_packet.get("phase_id") == "BENCHUIX_STANDING_AUTHORIZATION", "BENCHUIX standing authorization phase_id mismatch")
+        _require(
+            benchuix_standing_packet.get("source_operator_text") == "autorizo toda bench, sem pedrir autoerizacao mais",
+            "BENCHUIX standing authorization source operator text mismatch",
+        )
+        _require(benchuix_standing_packet.get("source_chat_received") is True, "BENCHUIX standing authorization source_chat_received mismatch")
+        _require(
+            benchuix_standing_packet.get("authorization_type") == "standing_candidate_phase_authorization",
+            "BENCHUIX standing authorization type mismatch",
+        )
+        _require(benchuix_standing_packet.get("scope_start") == "BENCHUIX-08", "BENCHUIX standing authorization scope_start mismatch")
+        _require(benchuix_standing_packet.get("scope_end") == "CRISOL", "BENCHUIX standing authorization scope_end mismatch")
+        for key in (
+            "applies_to_candidate_tracking_only",
+            "allows_prompt_emission_without_new_operator_ritual",
+            "requires_previous_candidate_ready_for_operator_review",
+            "requires_ci_green_confirmed",
+            "requires_validator_pass",
+            "requires_required_artifacts_present",
+            "requires_all_real_locks_false",
+        ):
+            _require(benchuix_standing_packet.get(key) is True, f"BENCHUIX standing authorization {key} must be true")
+        for key in (
+            "project_aris_mutation_authorized",
+            "product_authorized",
+            "production_authorized",
+            "runtime_integration_allowed",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "real_customer_data_allowed",
+            "real_billing_allowed",
+            "real_oauth_allowed",
+            "real_integrations_allowed",
+            "bedrock_pass_declared",
+        ):
+            _require(benchuix_standing_packet.get(key) is False, f"BENCHUIX standing authorization {key} must be false")
+
+        benchuix_standing_no_real = _load_json(ROOT / "artifacts/benchuix/standing_authorization_no_real_execution_attestation.json")
+        _require(
+            benchuix_standing_no_real.get("phase_id") == "BENCHUIX_STANDING_AUTHORIZATION",
+            "BENCHUIX standing authorization no-real phase_id mismatch",
+        )
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integration_used",
+        ):
+            _require(benchuix_standing_no_real.get(key) is False, f"BENCHUIX standing authorization no-real {key} must be false")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

@@ -170,7 +170,12 @@
         "real_apply_authorized": false,
         "runtime_integration_allowed": false,
         "secrets_access_authorized": false,
-        "candidate_next_phase_after_operator_gate": "BENCHUIX-08"
+        "candidate_next_phase_after_operator_gate": "BENCHUIX-08",
+        "standing_candidate_authorization_active": true,
+        "standing_candidate_authorization_scope": "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
+        "standing_candidate_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+        "standing_candidate_authorization_real_locks_opened": false,
+        "repeated_operator_ritual_required_for_next_candidate_phases": false
     },
     "canonical_branch": "main",
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
@@ -718,7 +723,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.22",
+    "schema_version": "3.23",
     "status": "if09_closure_milestone_mirror_sanity_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -734,7 +739,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.22",
+        "current_schema_version": "3.23",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -760,6 +765,7 @@
         "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
         "schema_3_20_change_summary": "INF revalidation adjudication and closure: promote INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET into the live documentary closure route, add infernus_revalidation_adjudication_or_closure as a valid live/next route class for roadmap/validator coherence, require the adjudication artifact family plus closure decision evidence, and preserve next_phase/active_next_phase null because no successor row is active after canonical closure.",
         "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
-        "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false."
+        "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false.",
+        "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false."
     }
 }
