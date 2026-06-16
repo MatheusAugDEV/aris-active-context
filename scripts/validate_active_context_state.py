@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-06", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-07", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-07", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-08", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         for key in (
             "execution_authorized",
             "product_authorized",
@@ -1760,6 +1760,128 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/06_time_to_first_preview_protocol.json").exists(), "BENCHUIX-06 time-to-first-preview protocol missing on disk")
         _require((ROOT / "artifacts/benchuix/06_no_real_execution_attestation.json").exists(), "BENCHUIX-06 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/06_validation_evidence.json").exists(), "BENCHUIX-06 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/07_operator_opening_source.json").exists(), "BENCHUIX-07 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/07_business_profile_spec.md").exists(), "BENCHUIX-07 business profile spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/07_business_profile_form.json").exists(), "BENCHUIX-07 business profile form missing on disk")
+        _require((ROOT / "artifacts/benchuix/07_no_real_execution_attestation.json").exists(), "BENCHUIX-07 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/07_validation_evidence.json").exists(), "BENCHUIX-07 validation evidence missing on disk")
+
+        benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
+        _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
+        _require(
+            benchuix_07_operator.get("operator_authorization_exact_text")
+            == "Operador aceita BENCHUIX-06 como READY_FOR_OPERATOR_REVIEW materializado no commit 9fd985ac623fc33fbbc6eb1fa23c6d3784c3c5ba, com CI_GREEN_CONFIRMED no run 27586295569, sem abertura de real_apply, produção, secrets, runtime ou produto. Autorizo abrir BENCHUIX-07 apenas como próxima fase candidata da trilha BENCHUIX.",
+            "BENCHUIX-07 operator authorization text mismatch",
+        )
+        _require(benchuix_07_operator.get("accepted_previous_candidate_phase") == "BENCHUIX-06", "BENCHUIX-07 accepted previous candidate mismatch")
+        _require(benchuix_07_operator.get("opened_candidate_phase") == "BENCHUIX-07", "BENCHUIX-07 opened candidate mismatch")
+        _require(benchuix_07_operator.get("previous_commit") == "9fd985ac623fc33fbbc6eb1fa23c6d3784c3c5ba", "BENCHUIX-07 previous commit mismatch")
+        _require(benchuix_07_operator.get("previous_ci_run") == "27586295569", "BENCHUIX-07 previous ci run mismatch")
+        _require(benchuix_07_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-07 all_real_locks_remain_false mismatch")
+        _require(benchuix_07_operator.get("similar_projects_consulted") is False, "BENCHUIX-07 similar_projects_consulted mismatch")
+        _require(benchuix_07_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-07 similar_projects_advisory_only mismatch")
+        _require(benchuix_07_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-07 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_07_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-07 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_07_spec_text = (ROOT / "artifacts/benchuix/07_business_profile_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese do perfil mínimo",
+            "## objetivo",
+            "\"quais dados mínimos permitem automação segura e útil?\"",
+            "## relação com BENCHUIX-06",
+            "## campos iniciais obrigatórios",
+            "## campos incrementais opcionais",
+            "## justificativa de cada campo",
+            "## defaults seguros por modo A/B/C/D",
+            "## política de não repetição de dados",
+            "## política de auto-save synthetic-only",
+            "## estados obrigatórios",
+            "## microcopy candidata",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-08",
+        ):
+            _require(required_snippet in benchuix_07_spec_text, f"BENCHUIX-07 spec missing section: {required_snippet}")
+        _require("cadastro longo" in benchuix_07_spec_text, "BENCHUIX-07 spec must forbid cadastro longo")
+
+        benchuix_07_form = _load_json(ROOT / "artifacts/benchuix/07_business_profile_form.json")
+        metadata = benchuix_07_form.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 form metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-07 form metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-07 form metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-07 form metadata.real_execution_authorized mismatch")
+        _require(benchuix_07_form.get("max_initial_required_fields") == 3, "BENCHUIX-07 max_initial_required_fields mismatch")
+        initial_required_fields = benchuix_07_form.get("initial_required_fields", [])
+        _require(len(initial_required_fields) <= 3, "BENCHUIX-07 initial_required_fields must be <= 3")
+        _require(len(initial_required_fields) > 0, "BENCHUIX-07 initial_required_fields must not be empty")
+        _require(benchuix_07_form.get("repeated_fields_allowed") is False, "BENCHUIX-07 repeated_fields_allowed must be false")
+        justifications = benchuix_07_form.get("field_justifications", {})
+        for field in initial_required_fields:
+            field_id = field.get("field_id")
+            _require(field_id in justifications, f"BENCHUIX-07 justification missing for {field_id}")
+        for field in benchuix_07_form.get("incremental_optional_fields", []):
+            field_id = field.get("field_id")
+            _require(field_id in justifications, f"BENCHUIX-07 optional field justification missing for {field_id}")
+        safe_defaults = benchuix_07_form.get("safe_defaults_by_mode", {})
+        _require(set(safe_defaults) == {"A", "B", "C", "D"}, "BENCHUIX-07 safe_defaults_by_mode must contain A/B/C/D")
+        no_real_data_policy = benchuix_07_form.get("no_real_data_policy", {})
+        for key in (
+            "real_customer_data_allowed",
+            "real_oauth_used",
+            "real_billing_used",
+            "real_integration_used",
+            "real_autosave_used",
+        ):
+            _require(no_real_data_policy.get(key) is False, f"BENCHUIX-07 no_real_data_policy.{key} must be false")
+        autosave_policy = benchuix_07_form.get("autosave_policy", {})
+        _require(autosave_policy.get("synthetic_only") is True, "BENCHUIX-07 autosave_policy.synthetic_only must be true")
+        _require(autosave_policy.get("runtime_real_used") is False, "BENCHUIX-07 autosave_policy.runtime_real_used must be false")
+        _require(
+            benchuix_07_form.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-07 required_states mismatch",
+        )
+        forbidden_terms = [term.lower() for term in benchuix_07_form.get("forbidden_client_facing_terms", [])]
+        _require(
+            forbidden_terms == ["schema", "validator", "artifact", "ledger", "hash", "real_apply", "runtime", "tenant", "ci", "active-context"],
+            "BENCHUIX-07 forbidden_client_facing_terms mismatch",
+        )
+        for sample in benchuix_07_form.get("client_facing_copy_samples", []):
+            lowered_sample = sample.lower()
+            normalized_sample = lowered_sample
+            for punctuation in ",.;:!?()/":
+                normalized_sample = normalized_sample.replace(punctuation, " ")
+            normalized_tokens = set(normalized_sample.replace("-", " ").split())
+            for term in forbidden_terms:
+                if "-" in term or "_" in term:
+                    _require(term not in lowered_sample, f"BENCHUIX-07 copy sample leaks forbidden term: {term}")
+                else:
+                    _require(term not in normalized_tokens, f"BENCHUIX-07 copy sample leaks forbidden term: {term}")
+        _require("BENCHUIX-08" in benchuix_07_form.get("handoff_targets", []), "BENCHUIX-07 handoff target mismatch")
+
+        benchuix_07_no_real = _load_json(ROOT / "artifacts/benchuix/07_no_real_execution_attestation.json")
+        _require(benchuix_07_no_real.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "real_customer_data_used",
+            "real_oauth_used",
+            "real_billing_used",
+            "real_integration_used",
+            "real_autosave_used",
+        ):
+            _require(benchuix_07_no_real.get(key) is False, f"BENCHUIX-07 no-real {key} must be false")
+        _require(benchuix_07_no_real.get("synthetic_profile_only") is True, "BENCHUIX-07 synthetic_profile_only mismatch")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

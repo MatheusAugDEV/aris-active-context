@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-07",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "screen_objective": "Capturar o perfil minimo do negocio com poucas perguntas, sem repetir o que ja foi dito e sem virar cadastro longo.",
+  "primary_question": "quais dados mínimos permitem automação segura e útil?",
+  "max_initial_required_fields": 3,
+  "repeated_fields_allowed": false,
+  "sections": [
+    {
+      "section_id": "START",
+      "title": "O essencial do seu negocio",
+      "purpose": "Coletar o minimo necessario para orientar defaults seguros."
+    },
+    {
+      "section_id": "DETAILS_LATER",
+      "title": "Detalhes que podem entrar depois",
+      "purpose": "Registrar contexto complementar sem bloquear o fluxo."
+    }
+  ],
+  "initial_required_fields": [
+    {
+      "field_id": "oferta_principal",
+      "label": "O que voce entrega com mais frequencia?",
+      "input_type": "short_select_or_text",
+      "required": true,
+      "synthetic_only": true,
+      "source_policy": "ask_once_or_prefill_from_existing_context"
+    },
+    {
+      "field_id": "ritmo_operacao",
+      "label": "Como o trabalho costuma chegar no dia a dia?",
+      "input_type": "single_choice",
+      "required": true,
+      "synthetic_only": true,
+      "source_policy": "ask_once_if_missing"
+    },
+    {
+      "field_id": "acoes_que_pedem_ok",
+      "label": "O que sempre precisa do seu ok antes de seguir?",
+      "input_type": "multi_choice_with_optional_text",
+      "required": true,
+      "synthetic_only": true,
+      "source_policy": "always_visible_as_safety_anchor"
+    }
+  ],
+  "incremental_optional_fields": [
+    {
+      "field_id": "sazonalidade_curta",
+      "label": "Seu negocio tem semanas mais puxadas?",
+      "input_type": "single_choice"
+    },
+    {
+      "field_id": "horarios_sensiveis",
+      "label": "Existe horario em que voce prefere nao receber sugestoes?",
+      "input_type": "single_choice_or_text"
+    },
+    {
+      "field_id": "excecoes_frequentes",
+      "label": "Tem alguma excecao que aparece bastante?",
+      "input_type": "short_text"
+    },
+    {
+      "field_id": "meta_secundaria",
+      "label": "Depois do principal, o que mais importa?",
+      "input_type": "single_choice_or_text"
+    },
+    {
+      "field_id": "tom_de_comunicacao",
+      "label": "Voce prefere uma linguagem mais direta ou mais acolhedora?",
+      "input_type": "single_choice"
+    },
+    {
+      "field_id": "restricoes_operacionais",
+      "label": "Existe algum limite simples que nunca pode ser ignorado?",
+      "input_type": "short_text"
+    }
+  ],
+  "field_justifications": {
+    "oferta_principal": "Define o contexto base sem exigir cadastro comercial completo.",
+    "ritmo_operacao": "Ajusta prioridade e expectativa de resposta para defaults mais seguros.",
+    "acoes_que_pedem_ok": "Protege o dono-solo ao delimitar o que nunca deve avancar sem confirmacao.",
+    "sazonalidade_curta": "Ajuda a calibrar intensidade sintetica sem depender de historico real.",
+    "horarios_sensiveis": "Evita sugestoes fora da janela preferida do negocio.",
+    "excecoes_frequentes": "Mostra casos que merecem bloqueio ou alerta.",
+    "meta_secundaria": "Ordena recomendacoes quando houver empate de valor.",
+    "tom_de_comunicacao": "Aproxima a linguagem das sugestoes da expectativa do negocio.",
+    "restricoes_operacionais": "Registra limites curtos que reduzem risco de recomendacao inadequada."
+  },
+  "safe_defaults_by_mode": {
+    "A": {
+      "profile_depth": "minimo",
+      "approval_posture": "confirmacao_forte",
+      "visibility": "uma_prioridade_por_vez",
+      "optional_fields_collapsed": true
+    },
+    "B": {
+      "profile_depth": "minimo_com_delegacao_simples",
+      "approval_posture": "dono_confirma_sensivel",
+      "visibility": "pendencias_compartilhadas",
+      "optional_fields_collapsed": true
+    },
+    "C": {
+      "profile_depth": "contexto_de_equipe_pequena",
+      "approval_posture": "fila_curta_com_responsaveis",
+      "visibility": "basico_por_papel",
+      "optional_fields_collapsed": false
+    },
+    "D": {
+      "profile_depth": "conservador_com_camadas_futuras",
+      "approval_posture": "sempre_explicita_para_acoes_sensiveis",
+      "visibility": "disclosure_gradual",
+      "optional_fields_collapsed": false
+    }
+  },
+  "autosave_policy": {
+    "synthetic_only": true,
+    "runtime_real_used": false,
+    "saves_draft_progress": true,
+    "save_trigger": "step_change_or_pause",
+    "failure_behavior": "mostrar_erro_sem_perder_respostas_visiveis"
+  },
+  "no_real_data_policy": {
+    "real_customer_data_allowed": false,
+    "real_oauth_used": false,
+    "real_billing_used": false,
+    "real_integration_used": false,
+    "real_autosave_used": false,
+    "synthetic_examples_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "client_facing_copy_samples": [
+    "Conte so o necessario para eu ajustar o caminho inicial.",
+    "Se algo faltar, voce completa depois.",
+    "Nada real sera alterado agora.",
+    "Vamos guardar um rascunho simples para continuar quando fizer sentido."
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "accessibility_requirements": [
+    "uma pergunta principal por bloco",
+    "labels sem ambiguidade",
+    "foco visivel",
+    "ajuda curta perto do campo",
+    "feedback de loading em ate 300ms",
+    "erro com orientacao objetiva",
+    "degraded com limite e proximo passo seguro"
+  ],
+  "blocking_criteria": [
+    "mais de 3 campos iniciais obrigatorios",
+    "algum campo sem justificativa",
+    "cadastro longo antes do primeiro valor",
+    "dado real obrigatorio",
+    "auto-save dependente de runtime real",
+    "repeticao de dados coletados no BENCHUIX-06",
+    "ausencia de defaults seguros por modo",
+    "billing, oauth real, integracao real, producao, secrets ou real_apply no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-08"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "phase_id": "BENCHUIX-07",
+  "status": "candidate_opening_authorized",
+  "operator_authorization_exact_text": "Operador aceita BENCHUIX-06 como READY_FOR_OPERATOR_REVIEW materializado no commit 9fd985ac623fc33fbbc6eb1fa23c6d3784c3c5ba, com CI_GREEN_CONFIRMED no run 27586295569, sem abertura de real_apply, produção, secrets, runtime ou produto. Autorizo abrir BENCHUIX-07 apenas como próxima fase candidata da trilha BENCHUIX.",
+  "accepted_previous_candidate_phase": "BENCHUIX-06",
+  "opened_candidate_phase": "BENCHUIX-07",
+  "previous_commit": "9fd985ac623fc33fbbc6eb1fa23c6d3784c3c5ba",
+  "previous_ci_run": "27586295569",
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Perfil do negócio synthetic-only para Product Reality Lab; não produz Bedrock PASS, não autoriza produto, piloto, runtime, integração real, billing real, OAuth real, secrets, produção ou real_apply.",
+  "similar_projects_consulted": false,
+  "similar_projects_advisory_only": true,
+  "similar_projects_used_for_decision": false,
+  "similar_projects_primary_source_verification_required": true
+}

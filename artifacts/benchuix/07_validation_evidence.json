@@ -1,0 +1,56 @@
+{
+  "phase_id": "BENCHUIX-07",
+  "status": "local_validation_pass_recorded",
+  "commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/benchuix/07_operator_opening_source.json",
+    "python3 -m json.tool artifacts/benchuix/07_business_profile_form.json",
+    "python3 -m json.tool artifacts/benchuix/07_no_real_execution_attestation.json",
+    "python3 -m json.tool artifacts/benchuix/07_validation_evidence.json",
+    "python3 -m py_compile scripts/validate_active_context_state.py",
+    "python3 scripts/render_boot.py",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -q",
+    "python3 inline business profile verification",
+    "grep defensive lock verification",
+    "git diff --name-only",
+    "git diff --check",
+    "git status --short --untracked-files=all"
+  ],
+  "results": {
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "operator_opening_source_json_tool": "OK",
+    "business_profile_form_json_tool": "OK",
+    "no_real_execution_attestation_json_tool": "OK",
+    "validation_evidence_json_tool": "OK",
+    "validator_py_compile": "OK",
+    "render_boot": "OK",
+    "validator_script": "PASS",
+    "unittest_discover": "PASS",
+    "BENCHUIX_07_BUSINESS_PROFILE_SPEC_OK": true,
+    "BENCHUIX_07_TRACKING_AND_LOCKS_OK": true,
+    "BENCHUIX_07_NO_LONG_REGISTRATION_OK": true,
+    "BENCHUIX_07_SAFE_DEFAULTS_OK": true,
+    "next_phase_preserved_null": true,
+    "active_next_phase_preserved_null": true,
+    "Project_ARIS_touched": false,
+    "git_diff_check": "clean"
+  },
+  "hashes": {
+    "ACTIVE_CONTEXT_STATE.json": "fb4cfc6c00f72a0204b15df642462362c643a7fff4658e57409bf7a6138b9c38",
+    "BOOT.md": "805988d60eccf97ce13663ca8455c9555e1ceab4e191c551a69ea9221f1f09f7",
+    "scripts/validate_active_context_state.py": "2a99a830d02cd376f4c4071b1268a4b8f0f466f8c8b83e62f133166c88c8475d",
+    "tests/test_validate_active_context.py": "f17cbf45b250820a969fe3cbb2b64d822dfe3c2a30110f0b8a1b041e3e6a2c17",
+    "artifacts/benchuix/07_operator_opening_source.json": "73190c1894a1d1f17b4998267b892ae01ab386a2bef9779af3affd7503111fc4",
+    "artifacts/benchuix/07_business_profile_spec.md": "c5631c310884b118ec994b9f307e8ea39a7e191fb091acf0a8aa17f7c8ce99d7",
+    "artifacts/benchuix/07_business_profile_form.json": "f2816a9caeca9e8fd9b191dcb29820f8120dc4422fcb13bb471880f190f254cf",
+    "artifacts/benchuix/07_no_real_execution_attestation.json": "5e529d05b78671858bc1a89d79fb1b906206cdd739314d9b5002842d203f71ac"
+  },
+  "notes": [
+    "Project_ARIS permaneceu intocado durante BENCHUIX-07.",
+    "Similar Projects local library not found; consulted=false recorded in operator opening source.",
+    "git diff --name-only mostrou apenas arquivos tracked do active-context; os novos artifacts 07 aparecem em git status --short."
+  ]
+}
