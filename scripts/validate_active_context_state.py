@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-12", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-13", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-13", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-14", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1814,6 +1814,11 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/12_execution_states_spec.md").exists(), "BENCHUIX-12 execution states spec missing on disk")
         _require((ROOT / "artifacts/benchuix/12_no_real_execution_attestation.json").exists(), "BENCHUIX-12 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/12_validation_evidence.json").exists(), "BENCHUIX-12 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/13_operator_opening_source.json").exists(), "BENCHUIX-13 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/13_automations_list_spec.md").exists(), "BENCHUIX-13 automations list spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/13_automation_list_state_model.json").exists(), "BENCHUIX-13 automation list state model missing on disk")
+        _require((ROOT / "artifacts/benchuix/13_no_real_execution_attestation.json").exists(), "BENCHUIX-13 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/13_validation_evidence.json").exists(), "BENCHUIX-13 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -2749,6 +2754,173 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_12_NO_HIDDEN_FAILURE_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-12 validation evidence missing {key}")
+
+        benchuix_13_operator = _load_json(ROOT / "artifacts/benchuix/13_operator_opening_source.json")
+        _require(benchuix_13_operator.get("phase_id") == "BENCHUIX-13", "BENCHUIX-13 operator source phase_id mismatch")
+        _require(benchuix_13_operator.get("opened_from_candidate_phase") == "BENCHUIX-12", "BENCHUIX-13 opened_from_candidate_phase mismatch")
+        _require(benchuix_13_operator.get("opened_candidate_phase") == "BENCHUIX-13", "BENCHUIX-13 opened_candidate_phase mismatch")
+        _require(
+            benchuix_13_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-13 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_13_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-13 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_13_operator.get("previous_candidate_commit") == "d9421bd2ae31d31553cadf2c7d6fe5edfdbfe02a",
+            "BENCHUIX-13 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_13_operator.get("previous_candidate_ci_run") == "27589568352",
+            "BENCHUIX-13 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_13_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-13 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_13_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-13 all_real_locks_remain_false mismatch")
+        _require(benchuix_13_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-13 bedrock_preparation_exception_recorded mismatch")
+        _require(benchuix_13_operator.get("similar_projects_consulted") is False, "BENCHUIX-13 similar_projects_consulted mismatch")
+        _require(benchuix_13_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-13 similar_projects_advisory_only mismatch")
+        _require(benchuix_13_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-13 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_13_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-13 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_13_spec_text = (ROOT / "artifacts/benchuix/13_automations_list_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese da Tela Automações",
+            "## objetivo",
+            "\"o cliente entende quais automações existem, em que estado estão e o que pode fazer com elas?\"",
+            "## relação com BENCHUIX-12",
+            "## estrutura da lista",
+            "## estrutura do card/item de automação",
+            "## status de próxima execução candidata",
+            "## status de última execução/simulação candidata",
+            "## erros visíveis",
+            "## ações candidatas",
+            "## política de alteração auditável",
+            "## empty state",
+            "## degraded behavior",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-14",
+        ):
+            _require(required_snippet in benchuix_13_spec_text, f"BENCHUIX-13 automations list spec missing section: {required_snippet}")
+
+        benchuix_13_model = _load_json(ROOT / "artifacts/benchuix/13_automation_list_state_model.json")
+        metadata = benchuix_13_model.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-13", "BENCHUIX-13 state model metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-13 state model metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-13 state model metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-13 state model metadata.real_execution_authorized mismatch")
+        list_item_schema = benchuix_13_model.get("list_item_schema", {})
+        _require(
+            list_item_schema.get("required_fields")
+            == [
+                "automation_name",
+                "automation_goal_summary",
+                "current_status",
+                "next_execution_status",
+                "last_execution_or_simulation_status",
+                "data_age_visible",
+                "visible_error_state",
+                "candidate_actions",
+            ],
+            "BENCHUIX-13 list_item_schema.required_fields mismatch",
+        )
+        _require(list_item_schema.get("technical_console_fields_allowed") is False, "BENCHUIX-13 technical_console_fields_allowed mismatch")
+        _require(
+            benchuix_13_model.get("automation_statuses")
+            == [
+                "rascunho",
+                "pronto_para_revisar",
+                "simulado",
+                "aguardando_aprovacao",
+                "aprovado_candidato",
+                "pausado",
+                "bloqueado",
+                "falhou",
+                "degradado",
+                "concluido_sintetico",
+            ],
+            "BENCHUIX-13 automation_statuses mismatch",
+        )
+        next_policy = benchuix_13_model.get("next_execution_status_policy", {})
+        _require(next_policy.get("must_be_visible") is True, "BENCHUIX-13 next execution visibility mismatch")
+        _require(next_policy.get("unknown_next_execution_blocks_sensitive_progress") is True, "BENCHUIX-13 next execution unknown block mismatch")
+        last_policy = benchuix_13_model.get("last_execution_status_policy", {})
+        _require(last_policy.get("must_distinguish_execution_from_simulation") is True, "BENCHUIX-13 execution vs simulation mismatch")
+        visible_error_policy = benchuix_13_model.get("visible_error_policy", {})
+        _require(visible_error_policy.get("errors_must_be_visible") is True, "BENCHUIX-13 errors visible mismatch")
+        _require(visible_error_policy.get("error_can_be_suppressed") is False, "BENCHUIX-13 error suppression mismatch")
+        pause_policy = benchuix_13_model.get("pause_policy", {})
+        _require(pause_policy.get("pause_action_candidate_only") is True, "BENCHUIX-13 pause candidate-only mismatch")
+        _require(pause_policy.get("pause_without_auditability_allowed") is False, "BENCHUIX-13 pause auditability mismatch")
+        edit_policy = benchuix_13_model.get("edit_policy", {})
+        _require(edit_policy.get("edit_action_candidate_only") is True, "BENCHUIX-13 edit candidate-only mismatch")
+        _require(edit_policy.get("duplicate_allowed_when_benchuix_09_compatible") is True, "BENCHUIX-13 duplicate policy mismatch")
+        history_policy = benchuix_13_model.get("history_link_policy", {})
+        _require(history_policy.get("history_action_must_be_visible") is True, "BENCHUIX-13 history action visibility mismatch")
+        _require(history_policy.get("history_as_primary_debug_console") is False, "BENCHUIX-13 history debug console mismatch")
+        auditability_policy = benchuix_13_model.get("auditability_policy", {})
+        _require(auditability_policy.get("every_change_must_leave_visible_trace") is True, "BENCHUIX-13 audit trace mismatch")
+        _require(auditability_policy.get("unaudited_change_allowed") is False, "BENCHUIX-13 unaudited change mismatch")
+        no_technical_dag_policy = benchuix_13_model.get("no_technical_dag_policy", {})
+        _require(no_technical_dag_policy.get("technical_dag_visible_to_client") is False, "BENCHUIX-13 technical DAG mismatch")
+        no_raw_logs_policy = benchuix_13_model.get("no_raw_logs_policy", {})
+        _require(no_raw_logs_policy.get("raw_logs_primary_surface_allowed") is False, "BENCHUIX-13 raw logs mismatch")
+        _require(no_raw_logs_policy.get("stack_trace_primary_surface_allowed") is False, "BENCHUIX-13 stack trace mismatch")
+        no_unaudited_change_policy = benchuix_13_model.get("no_unaudited_change_policy", {})
+        _require(no_unaudited_change_policy.get("silent_change_allowed") is False, "BENCHUIX-13 silent change mismatch")
+        _require(
+            benchuix_13_model.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-13 required_states mismatch",
+        )
+        _require(bool(benchuix_13_model.get("blocking_criteria")), "BENCHUIX-13 blocking_criteria missing")
+        _require("BENCHUIX-14" in benchuix_13_model.get("handoff_targets", []), "BENCHUIX-13 handoff target mismatch")
+
+        benchuix_13_no_real = _load_json(ROOT / "artifacts/benchuix/13_no_real_execution_attestation.json")
+        _require(benchuix_13_no_real.get("phase_id") == "BENCHUIX-13", "BENCHUIX-13 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_action_executed",
+            "real_state_mutated",
+            "real_automation_created",
+            "real_service_called",
+            "real_customer_data_used",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "technical_dag_exposed",
+            "raw_logs_exposed",
+            "unaudited_change_allowed",
+        ):
+            _require(benchuix_13_no_real.get(key) is False, f"BENCHUIX-13 no-real {key} must be false")
+        _require(benchuix_13_no_real.get("synthetic_automation_list_only") is True, "BENCHUIX-13 synthetic_automation_list_only mismatch")
+
+        benchuix_13_evidence = _load_json(ROOT / "artifacts/benchuix/13_validation_evidence.json")
+        _require(benchuix_13_evidence.get("phase_id") == "BENCHUIX-13", "BENCHUIX-13 validation evidence phase_id mismatch")
+        _require(
+            benchuix_13_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-13 validation evidence status mismatch",
+        )
+        if benchuix_13_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_13_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_13_AUTOMATIONS_LIST_SPEC_OK",
+                "BENCHUIX_13_AUTOMATION_LIST_STATE_MODEL_OK",
+                "BENCHUIX_13_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_13_VISIBLE_ERRORS_STATUS_OK",
+                "BENCHUIX_13_NO_TECHNICAL_DAG_OR_RAW_LOGS_OK",
+                "BENCHUIX_13_NO_UNAUDITED_CHANGE_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-13 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

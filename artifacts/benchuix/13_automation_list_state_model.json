@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-13",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "list_item_schema": {
+    "required_fields": [
+      "automation_name",
+      "automation_goal_summary",
+      "current_status",
+      "next_execution_status",
+      "last_execution_or_simulation_status",
+      "data_age_visible",
+      "visible_error_state",
+      "candidate_actions"
+    ],
+    "supporting_fields": [
+      "risk_or_limit_hint",
+      "last_updated_label",
+      "auditability_notice"
+    ],
+    "technical_console_fields_allowed": false
+  },
+  "automation_statuses": [
+    "rascunho",
+    "pronto_para_revisar",
+    "simulado",
+    "aguardando_aprovacao",
+    "aprovado_candidato",
+    "pausado",
+    "bloqueado",
+    "falhou",
+    "degradado",
+    "concluido_sintetico"
+  ],
+  "next_execution_status_policy": {
+    "must_be_visible": true,
+    "must_distinguish_scheduled_paused_blocked": true,
+    "unknown_next_execution_blocks_sensitive_progress": true,
+    "scheduled_does_not_mean_running": true
+  },
+  "last_execution_status_policy": {
+    "must_be_visible": true,
+    "must_distinguish_execution_from_simulation": true,
+    "must_show_terminal_state": true,
+    "must_show_timestamp_or_age": true
+  },
+  "visible_error_policy": {
+    "errors_must_be_visible": true,
+    "error_reason_required": true,
+    "next_safe_step_required": true,
+    "error_can_be_suppressed": false
+  },
+  "pause_policy": {
+    "pause_action_candidate_only": true,
+    "pause_requires_visible_state_change": true,
+    "pause_without_auditability_allowed": false
+  },
+  "edit_policy": {
+    "edit_action_candidate_only": true,
+    "edit_requires_visible_state_change": true,
+    "duplicate_allowed_when_benchuix_09_compatible": true,
+    "silent_edit_allowed": false
+  },
+  "history_link_policy": {
+    "history_action_must_be_visible": true,
+    "history_points_to_benchuix_14_contract": true,
+    "history_as_primary_debug_console": false
+  },
+  "auditability_policy": {
+    "every_change_must_leave_visible_trace": true,
+    "who_or_what_changed_copy_required": true,
+    "unaudited_change_allowed": false
+  },
+  "no_technical_dag_policy": {
+    "technical_dag_visible_to_client": false,
+    "node_edge_console_language_allowed": false,
+    "workflow_logic_must_be_translated_to_human_language": true
+  },
+  "no_raw_logs_policy": {
+    "raw_logs_primary_surface_allowed": false,
+    "stack_trace_primary_surface_allowed": false,
+    "human_error_summary_required": true
+  },
+  "no_unaudited_change_policy": {
+    "silent_change_allowed": false,
+    "background_mutation_without_notice_allowed": false,
+    "auditability_notice_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "blocking_criteria": [
+    "erro escondido",
+    "status de proxima execucao ausente",
+    "status da ultima execucao ou simulacao ausente",
+    "DAG tecnico exposto",
+    "raw logs expostos como superficie primaria",
+    "alteracao sem auditoria",
+    "sucesso sem base de estado",
+    "qualquer acao, automacao, estado ou servico real no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-14"
+  ]
+}
