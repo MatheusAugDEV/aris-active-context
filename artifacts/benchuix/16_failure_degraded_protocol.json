@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-16",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "failure_library_policy": {
+    "failure_library_required": true,
+    "human_readable_failure_categories_required": true,
+    "failure_visibility_required": true,
+    "hidden_failure_allowed": false
+  },
+  "degraded_mode_policy": {
+    "degraded_mode_must_explain_limitations": true,
+    "degraded_mode_must_preserve_safe_context": true,
+    "degraded_mode_cannot_masquerade_as_success": true
+  },
+  "safe_defaults_policy": {
+    "safe_defaults_required": true,
+    "unsafe_cta_hidden_when_context_missing": true,
+    "partial_failure_requires_scope_reduction": true
+  },
+  "next_step_guidance_policy": {
+    "every_failure_requires_next_step": true,
+    "retry_only_when_safe": true,
+    "simulate_again_guidance_when_preview_incomplete": true
+  },
+  "no_white_screen_policy": {
+    "white_screen_allowed": false,
+    "minimum_explanatory_shell_required": true
+  },
+  "no_infinite_spinner_policy": {
+    "infinite_spinner_allowed": false,
+    "loading_must_timeout_into_explained_state": true
+  },
+  "no_customer_stack_trace_policy": {
+    "customer_stack_trace_allowed": false,
+    "human_error_summary_required": true,
+    "technical_detail_secondary_only": true
+  },
+  "no_failure_without_action_policy": {
+    "failure_without_action_allowed": false,
+    "fallback_or_next_step_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "white screen",
+    "spinner infinito",
+    "stack trace para cliente",
+    "falha sem acao",
+    "falha escondida",
+    "estado degradado vendido como sucesso",
+    "qualquer acao, mutacao, dado ou servico real no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-17"
+  ]
+}

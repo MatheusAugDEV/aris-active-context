@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-15", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-16", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-16", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-17", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1831,6 +1831,12 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/15_recovery_copy_matrix.json").exists(), "BENCHUIX-15 recovery copy matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/15_no_real_execution_attestation.json").exists(), "BENCHUIX-15 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/15_validation_evidence.json").exists(), "BENCHUIX-15 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_operator_opening_source.json").exists(), "BENCHUIX-16 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_failure_library.md").exists(), "BENCHUIX-16 failure library missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_degraded_mode_spec.md").exists(), "BENCHUIX-16 degraded mode spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_failure_degraded_protocol.json").exists(), "BENCHUIX-16 failure degraded protocol missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_no_real_execution_attestation.json").exists(), "BENCHUIX-16 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/16_validation_evidence.json").exists(), "BENCHUIX-16 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -3249,6 +3255,155 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_15_NO_DUPLICABLE_OR_LIMITLESS_ROLLBACK_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-15 validation evidence missing {key}")
+
+        benchuix_16_operator = _load_json(ROOT / "artifacts/benchuix/16_operator_opening_source.json")
+        _require(benchuix_16_operator.get("phase_id") == "BENCHUIX-16", "BENCHUIX-16 operator source phase_id mismatch")
+        _require(benchuix_16_operator.get("opened_from_candidate_phase") == "BENCHUIX-15", "BENCHUIX-16 opened_from_candidate_phase mismatch")
+        _require(benchuix_16_operator.get("opened_candidate_phase") == "BENCHUIX-16", "BENCHUIX-16 opened_candidate_phase mismatch")
+        _require(
+            benchuix_16_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-16 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_16_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-16 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_16_operator.get("previous_candidate_commit") == "2bfb9a3b4c7129534a1167ce952404921be7b186",
+            "BENCHUIX-16 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_16_operator.get("previous_candidate_ci_run") == "27590759392",
+            "BENCHUIX-16 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_16_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-16 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_16_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-16 all_real_locks_remain_false mismatch")
+        _require(benchuix_16_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-16 bedrock_preparation_exception_recorded mismatch")
+        _require(benchuix_16_operator.get("similar_projects_consulted") is False, "BENCHUIX-16 similar_projects_consulted mismatch")
+        _require(benchuix_16_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-16 similar_projects_advisory_only mismatch")
+        _require(benchuix_16_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-16 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_16_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-16 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_16_failure_text = (ROOT / "artifacts/benchuix/16_failure_library.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese de falhas e modo degradado",
+            "## objetivo",
+            "\"o cliente entende o que falhou e o que pode fazer agora?\"",
+            "## relação com BENCHUIX-12 e BENCHUIX-15",
+            "## categorias de falha",
+            "## sintomas visíveis",
+            "## causa provável em linguagem humana",
+            "## risco para o cliente",
+            "## default seguro",
+            "## próximo passo recomendado",
+            "## quando bloquear",
+            "## quando permitir retry",
+            "## quando orientar simular novamente",
+            "## microcopy candidata",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-17",
+        ):
+            _require(required_snippet in benchuix_16_failure_text, f"BENCHUIX-16 failure library missing section: {required_snippet}")
+
+        benchuix_16_degraded_text = (ROOT / "artifacts/benchuix/16_degraded_mode_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição de modo degradado",
+            "## princípios de degradação segura",
+            "## o que ainda pode ser mostrado",
+            "## o que deve ser bloqueado",
+            "## como sinalizar limitação",
+            "## política contra spinner infinito",
+            "## política contra white screen",
+            "## política contra stack trace para cliente",
+            "## política de próximo passo",
+            "## relação com defaults seguros",
+            "## exemplo sintético de modo degradado",
+            "## limitações explícitas",
+        ):
+            _require(required_snippet in benchuix_16_degraded_text, f"BENCHUIX-16 degraded mode spec missing section: {required_snippet}")
+
+        benchuix_16_protocol = _load_json(ROOT / "artifacts/benchuix/16_failure_degraded_protocol.json")
+        metadata = benchuix_16_protocol.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-16", "BENCHUIX-16 protocol metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-16 protocol metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-16 protocol metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-16 protocol metadata.real_execution_authorized mismatch")
+        failure_library_policy = benchuix_16_protocol.get("failure_library_policy", {})
+        _require(failure_library_policy.get("failure_library_required") is True, "BENCHUIX-16 failure library required mismatch")
+        _require(failure_library_policy.get("hidden_failure_allowed") is False, "BENCHUIX-16 hidden failure mismatch")
+        degraded_mode_policy = benchuix_16_protocol.get("degraded_mode_policy", {})
+        _require(degraded_mode_policy.get("degraded_mode_must_explain_limitations") is True, "BENCHUIX-16 degraded explanation mismatch")
+        _require(degraded_mode_policy.get("degraded_mode_cannot_masquerade_as_success") is True, "BENCHUIX-16 degraded success mismatch")
+        safe_defaults_policy = benchuix_16_protocol.get("safe_defaults_policy", {})
+        _require(safe_defaults_policy.get("safe_defaults_required") is True, "BENCHUIX-16 safe defaults mismatch")
+        next_step_policy = benchuix_16_protocol.get("next_step_guidance_policy", {})
+        _require(next_step_policy.get("every_failure_requires_next_step") is True, "BENCHUIX-16 next step required mismatch")
+        _require(next_step_policy.get("simulate_again_guidance_when_preview_incomplete") is True, "BENCHUIX-16 simulate again mismatch")
+        no_white_screen_policy = benchuix_16_protocol.get("no_white_screen_policy", {})
+        _require(no_white_screen_policy.get("white_screen_allowed") is False, "BENCHUIX-16 white screen mismatch")
+        no_spinner_policy = benchuix_16_protocol.get("no_infinite_spinner_policy", {})
+        _require(no_spinner_policy.get("infinite_spinner_allowed") is False, "BENCHUIX-16 infinite spinner mismatch")
+        no_stack_policy = benchuix_16_protocol.get("no_customer_stack_trace_policy", {})
+        _require(no_stack_policy.get("customer_stack_trace_allowed") is False, "BENCHUIX-16 customer stack trace mismatch")
+        _require(no_stack_policy.get("human_error_summary_required") is True, "BENCHUIX-16 human error summary mismatch")
+        no_failure_without_action_policy = benchuix_16_protocol.get("no_failure_without_action_policy", {})
+        _require(no_failure_without_action_policy.get("failure_without_action_allowed") is False, "BENCHUIX-16 failure without action mismatch")
+        _require(
+            benchuix_16_protocol.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-16 required_states mismatch",
+        )
+        _require(bool(benchuix_16_protocol.get("forbidden_client_facing_terms")), "BENCHUIX-16 forbidden_client_facing_terms missing")
+        _require(bool(benchuix_16_protocol.get("blocking_criteria")), "BENCHUIX-16 blocking_criteria missing")
+        _require("BENCHUIX-17" in benchuix_16_protocol.get("handoff_targets", []), "BENCHUIX-16 handoff target mismatch")
+
+        benchuix_16_no_real = _load_json(ROOT / "artifacts/benchuix/16_no_real_execution_attestation.json")
+        _require(benchuix_16_no_real.get("phase_id") == "BENCHUIX-16", "BENCHUIX-16 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_action_executed",
+            "real_state_mutated",
+            "real_service_called",
+            "real_customer_data_used",
+            "real_automation_created",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "white_screen_allowed",
+            "infinite_spinner_allowed",
+            "customer_stack_trace_allowed",
+            "failure_without_action_allowed",
+        ):
+            _require(benchuix_16_no_real.get(key) is False, f"BENCHUIX-16 no-real {key} must be false")
+        _require(benchuix_16_no_real.get("synthetic_failure_degraded_only") is True, "BENCHUIX-16 synthetic_failure_degraded_only mismatch")
+
+        benchuix_16_evidence = _load_json(ROOT / "artifacts/benchuix/16_validation_evidence.json")
+        _require(benchuix_16_evidence.get("phase_id") == "BENCHUIX-16", "BENCHUIX-16 validation evidence phase_id mismatch")
+        _require(
+            benchuix_16_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-16 validation evidence status mismatch",
+        )
+        if benchuix_16_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_16_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_16_FAILURE_LIBRARY_OK",
+                "BENCHUIX_16_DEGRADED_MODE_SPEC_OK",
+                "BENCHUIX_16_FAILURE_DEGRADED_PROTOCOL_OK",
+                "BENCHUIX_16_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_16_NO_WHITE_SCREEN_OR_INFINITE_SPINNER_OK",
+                "BENCHUIX_16_NO_CUSTOMER_STACK_TRACE_OK",
+                "BENCHUIX_16_FAILURE_WITH_ACTION_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-16 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
