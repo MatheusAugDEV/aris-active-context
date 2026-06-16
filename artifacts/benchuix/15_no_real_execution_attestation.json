@@ -1,0 +1,21 @@
+{
+  "phase_id": "BENCHUIX-15",
+  "Project_ARIS_touched": false,
+  "runtime_executed": false,
+  "real_rollback_executed": false,
+  "real_compensation_executed": false,
+  "real_action_executed": false,
+  "real_state_mutated": false,
+  "real_service_called": false,
+  "real_customer_data_used": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "package_manager_execution_authorized": false,
+  "irreversible_undo_promised": false,
+  "duplicate_rollback_allowed": false,
+  "limitless_rollback_allowed": false,
+  "synthetic_recovery_only": true
+}

@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-15",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "recovery_labels": [
+    "reversivel",
+    "compensavel",
+    "irreversivel",
+    "nao_aplicavel",
+    "exige_revisao"
+  ],
+  "decision_tree": {
+    "impact_reason_must_be_shown_first": true,
+    "reversible_if_safe_and_time_bounded": true,
+    "compensable_if_no_direct_reversal_exists": true,
+    "irreversible_requires_explicit_no_undo_copy": true,
+    "review_required_if_risk_or_context_is_ambiguous": true,
+    "record_only_if_no_safe_recovery_path_exists": true
+  },
+  "reversible_policy": {
+    "allowed_only_when_prior_state_is_recoverable": true,
+    "must_show_limit_and_timeout": true,
+    "duplicate_rollback_requires_guard": true
+  },
+  "compensable_policy": {
+    "must_not_be_called_reversal": true,
+    "must_show_tradeoff": true,
+    "requires_related_receipt_or_history_reference": true
+  },
+  "irreversible_policy": {
+    "must_explicitly_block_undo_promise": true,
+    "must_show_residual_impact": true,
+    "must_offer_register_or_review_path": true
+  },
+  "impact_reason_policy": {
+    "impact_reason_required": true,
+    "impact_reason_before_decision_cta": true,
+    "residual_risk_visibility_required": true
+  },
+  "rollback_evidence_policy": {
+    "evidence_candidate_only": true,
+    "evidence_synthetic_only": true,
+    "evidence_cannot_claim_real_recovery": true,
+    "evidence_must_link_to_benchuix_14_receipt": true
+  },
+  "duplicate_rollback_prevention_policy": {
+    "duplicate_rollback_allowed": false,
+    "repeat_attempt_requires_new_review": true,
+    "idempotent_language_required": true
+  },
+  "rollback_limit_policy": {
+    "limitless_rollback_allowed": false,
+    "time_window_required": true,
+    "scope_boundary_required": true
+  },
+  "no_real_rollback_policy": {
+    "real_rollback_executed": false,
+    "real_compensation_executed": false,
+    "real_service_calls_allowed": false
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "promessa de desfazer irreversivel",
+    "compensacao chamada de reversao",
+    "rollback duplicavel",
+    "rollback sem limite",
+    "razao de impacto ausente",
+    "evidencia vendida como prova real",
+    "qualquer acao, mutacao, dado ou servico real no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-16"
+  ]
+}

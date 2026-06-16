@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-15",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "client_labels": {
+    "reversivel": "Pode desfazer",
+    "compensavel": "Pode compensar",
+    "irreversivel": "Nao pode desfazer",
+    "nao_aplicavel": "Nao se aplica",
+    "exige_revisao": "Exige revisao"
+  },
+  "short_copy": {
+    "reversivel": "Pode voltar ao estado anterior neste ambiente candidato.",
+    "compensavel": "Nao volta ao estado anterior, mas ha um caminho de compensacao.",
+    "irreversivel": "Este efeito nao pode ser desfeito.",
+    "nao_aplicavel": "Nao ha acao de recuperacao aplicavel.",
+    "exige_revisao": "Precisa de revisao antes de qualquer tentativa."
+  },
+  "detail_copy": {
+    "impact_reason_intro": "Impacto desta decisao",
+    "limit_intro": "Limites desta recuperacao",
+    "evidence_intro": "Comprovante candidato relacionado"
+  },
+  "confirmation_copy": {
+    "reversible": "Voce esta revisando uma tentativa candidata de desfazer, sem efeito real.",
+    "compensable": "Voce esta revisando uma compensacao candidata, nao uma reversao real.",
+    "review_required": "Antes de continuar, este caso precisa de revisao."
+  },
+  "limitation_copy": {
+    "timeout": "Depois deste limite, a tentativa deixa de ser recomendada.",
+    "scope": "A proposta vale apenas para o escopo descrito neste ambiente candidato.",
+    "no_real_effect": "Nenhuma recuperacao real e executada nesta fase."
+  },
+  "irreversible_copy": {
+    "primary": "Este efeito nao pode ser desfeito.",
+    "secondary": "O proximo passo e registrar o ocorrido e avaliar compensacao ou revisao."
+  },
+  "compensable_copy": {
+    "primary": "Nao desfaz o que ocorreu, mas reduz o impacto esperado.",
+    "secondary": "A compensacao proposta deve ser lida junto com o comprovante relacionado."
+  },
+  "rollback_link_copy": {
+    "label": "Ver proposta de recuperacao",
+    "helper": "Este link mostra apenas referencia candidata; nao executa rollback real."
+  },
+  "forbidden_copy_patterns": [
+    "100% desfeito",
+    "reversao garantida",
+    "sem limite",
+    "pode repetir quantas vezes quiser",
+    "compensacao igual a desfazer",
+    "efeito irreversivel foi anulado"
+  ],
+  "color_not_sole_signal": true,
+  "handoff_targets": [
+    "BENCHUIX-16"
+  ]
+}

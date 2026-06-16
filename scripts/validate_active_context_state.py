@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-14", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-15", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-15", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-16", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1825,6 +1825,12 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/14_history_receipt_protocol.json").exists(), "BENCHUIX-14 history receipt protocol missing on disk")
         _require((ROOT / "artifacts/benchuix/14_no_real_execution_attestation.json").exists(), "BENCHUIX-14 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/14_validation_evidence.json").exists(), "BENCHUIX-14 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_operator_opening_source.json").exists(), "BENCHUIX-15 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_rollback_spec.md").exists(), "BENCHUIX-15 rollback spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_recovery_decision_tree.json").exists(), "BENCHUIX-15 recovery decision tree missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_recovery_copy_matrix.json").exists(), "BENCHUIX-15 recovery copy matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_no_real_execution_attestation.json").exists(), "BENCHUIX-15 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/15_validation_evidence.json").exists(), "BENCHUIX-15 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -3088,6 +3094,161 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_14_NO_EDIT_OR_DELETE_OLD_RECEIPT_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-14 validation evidence missing {key}")
+
+        benchuix_15_operator = _load_json(ROOT / "artifacts/benchuix/15_operator_opening_source.json")
+        _require(benchuix_15_operator.get("phase_id") == "BENCHUIX-15", "BENCHUIX-15 operator source phase_id mismatch")
+        _require(benchuix_15_operator.get("opened_from_candidate_phase") == "BENCHUIX-14", "BENCHUIX-15 opened_from_candidate_phase mismatch")
+        _require(benchuix_15_operator.get("opened_candidate_phase") == "BENCHUIX-15", "BENCHUIX-15 opened_candidate_phase mismatch")
+        _require(
+            benchuix_15_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-15 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_15_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-15 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_15_operator.get("previous_candidate_commit") == "0d80082ed0830923df97ab2593ad7568fb48ae91",
+            "BENCHUIX-15 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_15_operator.get("previous_candidate_ci_run") == "27590439210",
+            "BENCHUIX-15 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_15_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-15 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_15_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-15 all_real_locks_remain_false mismatch")
+        _require(benchuix_15_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-15 bedrock_preparation_exception_recorded mismatch")
+        _require(benchuix_15_operator.get("similar_projects_consulted") is False, "BENCHUIX-15 similar_projects_consulted mismatch")
+        _require(benchuix_15_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-15 similar_projects_advisory_only mismatch")
+        _require(benchuix_15_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-15 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_15_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-15 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_15_spec_text = (ROOT / "artifacts/benchuix/15_rollback_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese de rollback/desfazer/compensar",
+            "## objetivo",
+            "\"o cliente entende o que pode ser desfeito, compensado ou apenas registrado?\"",
+            "## relação com BENCHUIX-14",
+            "## labels reversível/compensável/irreversível/não aplicável/exige revisão",
+            "## diferença entre desfazer, compensar e registrar",
+            "## razão de impacto",
+            "## evidência de rollback/compensação",
+            "## limites",
+            "## timeouts",
+            "## microcopy candidata",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-16",
+        ):
+            _require(required_snippet in benchuix_15_spec_text, f"BENCHUIX-15 rollback spec missing section: {required_snippet}")
+
+        benchuix_15_tree = _load_json(ROOT / "artifacts/benchuix/15_recovery_decision_tree.json")
+        metadata = benchuix_15_tree.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-15", "BENCHUIX-15 decision tree metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-15 decision tree metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-15 decision tree metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-15 decision tree metadata.real_execution_authorized mismatch")
+        _require(
+            benchuix_15_tree.get("recovery_labels")
+            == ["reversivel", "compensavel", "irreversivel", "nao_aplicavel", "exige_revisao"],
+            "BENCHUIX-15 recovery_labels mismatch",
+        )
+        decision_tree = benchuix_15_tree.get("decision_tree", {})
+        _require(decision_tree.get("impact_reason_must_be_shown_first") is True, "BENCHUIX-15 impact reason first mismatch")
+        _require(decision_tree.get("record_only_if_no_safe_recovery_path_exists") is True, "BENCHUIX-15 register-only mismatch")
+        reversible_policy = benchuix_15_tree.get("reversible_policy", {})
+        _require(reversible_policy.get("allowed_only_when_prior_state_is_recoverable") is True, "BENCHUIX-15 reversible policy mismatch")
+        _require(reversible_policy.get("duplicate_rollback_requires_guard") is True, "BENCHUIX-15 duplicate rollback guard mismatch")
+        compensable_policy = benchuix_15_tree.get("compensable_policy", {})
+        _require(compensable_policy.get("must_not_be_called_reversal") is True, "BENCHUIX-15 compensable naming mismatch")
+        irreversible_policy = benchuix_15_tree.get("irreversible_policy", {})
+        _require(irreversible_policy.get("must_explicitly_block_undo_promise") is True, "BENCHUIX-15 irreversible undo mismatch")
+        impact_policy = benchuix_15_tree.get("impact_reason_policy", {})
+        _require(impact_policy.get("impact_reason_required") is True, "BENCHUIX-15 impact reason required mismatch")
+        _require(impact_policy.get("impact_reason_before_decision_cta") is True, "BENCHUIX-15 impact reason order mismatch")
+        evidence_policy = benchuix_15_tree.get("rollback_evidence_policy", {})
+        _require(evidence_policy.get("evidence_candidate_only") is True, "BENCHUIX-15 evidence candidate-only mismatch")
+        _require(evidence_policy.get("evidence_cannot_claim_real_recovery") is True, "BENCHUIX-15 evidence real recovery mismatch")
+        duplicate_policy = benchuix_15_tree.get("duplicate_rollback_prevention_policy", {})
+        _require(duplicate_policy.get("duplicate_rollback_allowed") is False, "BENCHUIX-15 duplicate rollback allowed mismatch")
+        limit_policy = benchuix_15_tree.get("rollback_limit_policy", {})
+        _require(limit_policy.get("limitless_rollback_allowed") is False, "BENCHUIX-15 limitless rollback mismatch")
+        no_real_policy = benchuix_15_tree.get("no_real_rollback_policy", {})
+        _require(no_real_policy.get("real_rollback_executed") is False, "BENCHUIX-15 real rollback mismatch")
+        _require(no_real_policy.get("real_compensation_executed") is False, "BENCHUIX-15 real compensation mismatch")
+        _require(
+            benchuix_15_tree.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-15 required_states mismatch",
+        )
+        _require(bool(benchuix_15_tree.get("forbidden_client_facing_terms")), "BENCHUIX-15 forbidden_client_facing_terms missing")
+        _require(bool(benchuix_15_tree.get("blocking_criteria")), "BENCHUIX-15 blocking_criteria missing")
+        _require("BENCHUIX-16" in benchuix_15_tree.get("handoff_targets", []), "BENCHUIX-15 handoff target mismatch")
+
+        benchuix_15_copy = _load_json(ROOT / "artifacts/benchuix/15_recovery_copy_matrix.json")
+        copy_metadata = benchuix_15_copy.get("metadata", {})
+        _require(copy_metadata.get("phase_id") == "BENCHUIX-15", "BENCHUIX-15 copy matrix metadata.phase_id mismatch")
+        _require(copy_metadata.get("status") == "candidate", "BENCHUIX-15 copy matrix metadata.status mismatch")
+        _require(copy_metadata.get("synthetic_only") is True, "BENCHUIX-15 copy matrix metadata.synthetic_only mismatch")
+        client_labels = benchuix_15_copy.get("client_labels", {})
+        for key in ("reversivel", "compensavel", "irreversivel", "nao_aplicavel", "exige_revisao"):
+            _require(bool(client_labels.get(key)), f"BENCHUIX-15 client_labels missing {key}")
+        _require(bool(benchuix_15_copy.get("short_copy")), "BENCHUIX-15 short_copy missing")
+        _require(bool(benchuix_15_copy.get("detail_copy")), "BENCHUIX-15 detail_copy missing")
+        _require(bool(benchuix_15_copy.get("confirmation_copy")), "BENCHUIX-15 confirmation_copy missing")
+        _require(bool(benchuix_15_copy.get("limitation_copy")), "BENCHUIX-15 limitation_copy missing")
+        _require(bool(benchuix_15_copy.get("irreversible_copy")), "BENCHUIX-15 irreversible_copy missing")
+        _require(bool(benchuix_15_copy.get("compensable_copy")), "BENCHUIX-15 compensable_copy missing")
+        _require(bool(benchuix_15_copy.get("rollback_link_copy")), "BENCHUIX-15 rollback_link_copy missing")
+        _require(bool(benchuix_15_copy.get("forbidden_copy_patterns")), "BENCHUIX-15 forbidden_copy_patterns missing")
+        _require(benchuix_15_copy.get("color_not_sole_signal") is True, "BENCHUIX-15 color_not_sole_signal mismatch")
+        _require("BENCHUIX-16" in benchuix_15_copy.get("handoff_targets", []), "BENCHUIX-15 copy matrix handoff target mismatch")
+
+        benchuix_15_no_real = _load_json(ROOT / "artifacts/benchuix/15_no_real_execution_attestation.json")
+        _require(benchuix_15_no_real.get("phase_id") == "BENCHUIX-15", "BENCHUIX-15 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_rollback_executed",
+            "real_compensation_executed",
+            "real_action_executed",
+            "real_state_mutated",
+            "real_service_called",
+            "real_customer_data_used",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "irreversible_undo_promised",
+            "duplicate_rollback_allowed",
+            "limitless_rollback_allowed",
+        ):
+            _require(benchuix_15_no_real.get(key) is False, f"BENCHUIX-15 no-real {key} must be false")
+        _require(benchuix_15_no_real.get("synthetic_recovery_only") is True, "BENCHUIX-15 synthetic_recovery_only mismatch")
+
+        benchuix_15_evidence = _load_json(ROOT / "artifacts/benchuix/15_validation_evidence.json")
+        _require(benchuix_15_evidence.get("phase_id") == "BENCHUIX-15", "BENCHUIX-15 validation evidence phase_id mismatch")
+        _require(
+            benchuix_15_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-15 validation evidence status mismatch",
+        )
+        if benchuix_15_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_15_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_15_ROLLBACK_SPEC_OK",
+                "BENCHUIX_15_RECOVERY_DECISION_TREE_OK",
+                "BENCHUIX_15_RECOVERY_COPY_MATRIX_OK",
+                "BENCHUIX_15_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_15_NO_IRREVERSIBLE_UNDO_PROMISE_OK",
+                "BENCHUIX_15_NO_DUPLICABLE_OR_LIMITLESS_ROLLBACK_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-15 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
