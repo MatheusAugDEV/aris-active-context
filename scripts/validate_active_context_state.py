@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-17", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-18", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-18", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-19", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1843,6 +1843,12 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/17_mobile_degraded_state_matrix.json").exists(), "BENCHUIX-17 mobile degraded state matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/17_no_real_execution_attestation.json").exists(), "BENCHUIX-17 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/17_validation_evidence.json").exists(), "BENCHUIX-17 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_operator_opening_source.json").exists(), "BENCHUIX-18 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_permissions_matrix.json").exists(), "BENCHUIX-18 permissions matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_role_based_views.md").exists(), "BENCHUIX-18 role based views missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_permission_language_matrix.json").exists(), "BENCHUIX-18 permission language matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_no_real_execution_attestation.json").exists(), "BENCHUIX-18 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/18_validation_evidence.json").exists(), "BENCHUIX-18 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -3549,6 +3555,152 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_17_SYNTHETIC_ONLY_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-17 validation evidence missing {key}")
+
+        benchuix_18_operator = _load_json(ROOT / "artifacts/benchuix/18_operator_opening_source.json")
+        _require(benchuix_18_operator.get("phase_id") == "BENCHUIX-18", "BENCHUIX-18 operator source phase_id mismatch")
+        _require(benchuix_18_operator.get("opened_from_candidate_phase") == "BENCHUIX-17", "BENCHUIX-18 opened_from_candidate_phase mismatch")
+        _require(benchuix_18_operator.get("opened_candidate_phase") == "BENCHUIX-18", "BENCHUIX-18 opened_candidate_phase mismatch")
+        _require(
+            benchuix_18_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-18 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_18_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-18 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_18_operator.get("previous_candidate_commit") == "7ec6ff5fa80f335792e7e3f9a4c80075b25f578a",
+            "BENCHUIX-18 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_18_operator.get("previous_candidate_ci_run") == "27591590951",
+            "BENCHUIX-18 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_18_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-18 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_18_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-18 all_real_locks_remain_false mismatch")
+        _require(benchuix_18_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-18 bedrock_preparation_exception_recorded mismatch")
+
+        benchuix_18_views_text = (ROOT / "artifacts/benchuix/18_role_based_views.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese de permissões progressivas",
+            "## objetivo",
+            "\"cada pessoa vê só o que precisa e entende o que pode fazer?\"",
+            "## relação com BENCHUIX-02, BENCHUIX-11, BENCHUIX-13 e BENCHUIX-17",
+            "## papel dono",
+            "## papel ajudante",
+            "## papel operador",
+            "## papel financeiro",
+            "## papel gerente",
+            "## papel viewer",
+            "## views por papel",
+            "## linguagem pode/não pode",
+            "## suspensão de acesso",
+            "## defaults seguros por modo A/B/C/D",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-19",
+        ):
+            _require(required_snippet in benchuix_18_views_text, f"BENCHUIX-18 role based views missing section: {required_snippet}")
+
+        benchuix_18_matrix = _load_json(ROOT / "artifacts/benchuix/18_permissions_matrix.json")
+        metadata = benchuix_18_matrix.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-18", "BENCHUIX-18 matrix metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-18 matrix metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-18 matrix metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-18 matrix metadata.real_execution_authorized mismatch")
+        _require(benchuix_18_matrix.get("least_privilege_policy", {}).get("default_access_starts_minimal") is True, "BENCHUIX-18 default_access_starts_minimal mismatch")
+        _require(
+            benchuix_18_matrix.get("roles") == ["dono", "ajudante", "operador", "financeiro", "gerente", "viewer"],
+            "BENCHUIX-18 roles mismatch",
+        )
+        _require(bool(benchuix_18_matrix.get("surfaces")), "BENCHUIX-18 surfaces missing")
+        _require(bool(benchuix_18_matrix.get("permission_actions")), "BENCHUIX-18 permission_actions missing")
+        role_permission_matrix = benchuix_18_matrix.get("role_permission_matrix", {})
+        for role in ("dono", "ajudante", "operador", "financeiro", "gerente", "viewer"):
+            _require(role in role_permission_matrix, f"BENCHUIX-18 role_permission_matrix missing {role}")
+        sensitive_rules = benchuix_18_matrix.get("sensitive_action_rules", {})
+        _require(sensitive_rules.get("approve_requires_explicit_role") is True, "BENCHUIX-18 approve_requires_explicit_role mismatch")
+        _require(sensitive_rules.get("access_management_limited_to_owner") is True, "BENCHUIX-18 access_management_limited_to_owner mismatch")
+        suspension_policy = benchuix_18_matrix.get("access_suspension_policy", {})
+        _require(suspension_policy.get("candidate_only_suspension") is True, "BENCHUIX-18 candidate_only_suspension mismatch")
+        _require(suspension_policy.get("suspension_must_not_delete_history") is True, "BENCHUIX-18 suspension_must_not_delete_history mismatch")
+        god_mode_policy = benchuix_18_matrix.get("god_mode_prohibition_policy", {})
+        _require(god_mode_policy.get("god_mode_allowed") is False, "BENCHUIX-18 god_mode_allowed mismatch")
+        broad_policy = benchuix_18_matrix.get("broad_privilege_prohibition_policy", {})
+        _require(broad_policy.get("broad_privilege_for_convenience_allowed") is False, "BENCHUIX-18 broad_privilege_for_convenience_allowed mismatch")
+        client_side_policy = benchuix_18_matrix.get("client_side_only_enforcement_prohibition_policy", {})
+        _require(client_side_policy.get("client_side_only_enforcement_allowed") is False, "BENCHUIX-18 client_side_only_enforcement_allowed mismatch")
+        can_cannot_policy = benchuix_18_matrix.get("can_and_cannot_language_policy", {})
+        _require(can_cannot_policy.get("every_sensitive_surface_needs_can_and_cannot_copy") is True, "BENCHUIX-18 can_and_cannot copy mismatch")
+        _require(
+            benchuix_18_matrix.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-18 required_states mismatch",
+        )
+        _require(bool(benchuix_18_matrix.get("forbidden_client_facing_terms")), "BENCHUIX-18 forbidden_client_facing_terms missing")
+        _require(bool(benchuix_18_matrix.get("blocking_criteria")), "BENCHUIX-18 blocking_criteria missing")
+        _require("BENCHUIX-19" in benchuix_18_matrix.get("handoff_targets", []), "BENCHUIX-18 handoff target mismatch")
+
+        benchuix_18_language = _load_json(ROOT / "artifacts/benchuix/18_permission_language_matrix.json")
+        language_metadata = benchuix_18_language.get("metadata", {})
+        _require(language_metadata.get("phase_id") == "BENCHUIX-18", "BENCHUIX-18 language metadata.phase_id mismatch")
+        _require(language_metadata.get("status") == "candidate", "BENCHUIX-18 language metadata.status mismatch")
+        _require(language_metadata.get("synthetic_only") is True, "BENCHUIX-18 language metadata.synthetic_only mismatch")
+        for key in ("dono", "ajudante", "operador", "financeiro", "gerente", "viewer"):
+            _require(key in benchuix_18_language.get("permission_copy_by_role", {}), f"BENCHUIX-18 permission_copy_by_role missing {key}")
+        _require(bool(benchuix_18_language.get("can_copy")), "BENCHUIX-18 can_copy missing")
+        _require(bool(benchuix_18_language.get("cannot_copy")), "BENCHUIX-18 cannot_copy missing")
+        _require(bool(benchuix_18_language.get("approval_required_copy")), "BENCHUIX-18 approval_required_copy missing")
+        _require(bool(benchuix_18_language.get("access_suspended_copy")), "BENCHUIX-18 access_suspended_copy missing")
+        _require(bool(benchuix_18_language.get("denied_action_copy")), "BENCHUIX-18 denied_action_copy missing")
+        _require(bool(benchuix_18_language.get("forbidden_copy_patterns")), "BENCHUIX-18 forbidden_copy_patterns missing")
+        _require(benchuix_18_language.get("color_not_sole_signal") is True, "BENCHUIX-18 color_not_sole_signal mismatch")
+        _require("BENCHUIX-19" in benchuix_18_language.get("handoff_targets", []), "BENCHUIX-18 language handoff target mismatch")
+
+        benchuix_18_no_real = _load_json(ROOT / "artifacts/benchuix/18_no_real_execution_attestation.json")
+        _require(benchuix_18_no_real.get("phase_id") == "BENCHUIX-18", "BENCHUIX-18 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "real_auth_created",
+            "real_rbac_created",
+            "real_enforcement_created",
+            "client_side_only_enforcement_allowed",
+            "runtime_executed",
+            "real_action_executed",
+            "real_state_mutated",
+            "real_service_called",
+            "real_customer_data_used",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "god_mode_allowed",
+            "broad_privilege_for_convenience_allowed",
+        ):
+            _require(benchuix_18_no_real.get(key) is False, f"BENCHUIX-18 no-real {key} must be false")
+        _require(benchuix_18_no_real.get("synthetic_permissions_only") is True, "BENCHUIX-18 synthetic_permissions_only mismatch")
+
+        benchuix_18_evidence = _load_json(ROOT / "artifacts/benchuix/18_validation_evidence.json")
+        _require(benchuix_18_evidence.get("phase_id") == "BENCHUIX-18", "BENCHUIX-18 validation evidence phase_id mismatch")
+        _require(
+            benchuix_18_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-18 validation evidence status mismatch",
+        )
+        if benchuix_18_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_18_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_18_PERMISSIONS_MATRIX_OK",
+                "BENCHUIX_18_ROLE_BASED_VIEWS_OK",
+                "BENCHUIX_18_PERMISSION_LANGUAGE_MATRIX_OK",
+                "BENCHUIX_18_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_18_NO_GOD_MODE_OK",
+                "BENCHUIX_18_NO_BROAD_PRIVILEGE_OK",
+                "BENCHUIX_18_NO_CLIENT_SIDE_ONLY_ENFORCEMENT_OK",
+                "BENCHUIX_18_SYNTHETIC_ONLY_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-18 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-18",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "permission_copy_by_role": {
+    "dono": "Voce pode revisar, aprovar e ajustar acessos candidatos dentro deste workspace.",
+    "ajudante": "Voce pode acompanhar o operacional e editar apenas o que estiver liberado para apoio.",
+    "operador": "Voce pode operar a rotina candidata e pausar fluxos permitidos, sem assumir aprovacoes sensiveis.",
+    "financeiro": "Voce pode consultar comprovantes e exportacoes candidatas do seu escopo.",
+    "gerente": "Voce pode acompanhar a operacao e aprovar apenas os fluxos candidatos liberados para sua funcao.",
+    "viewer": "Voce pode consultar status e comprovantes permitidos, sem editar ou aprovar."
+  },
+  "can_copy": [
+    "Voce pode consultar esta informacao agora.",
+    "Voce pode seguir com esta acao dentro do seu escopo.",
+    "Voce pode pedir revisao se precisar ampliar o acesso."
+  ],
+  "cannot_copy": [
+    "Voce nao pode executar esta acao com o acesso atual.",
+    "Esta decisao exige um papel com permissao explicita.",
+    "Esta superficie fica apenas para consulta neste papel."
+  ],
+  "approval_required_copy": [
+    "Esta mudanca precisa de aprovacao explicita antes de continuar.",
+    "Seu papel pode preparar a revisao, mas nao concluir esta aprovacao.",
+    "Revise quem pode aprovar antes de seguir."
+  ],
+  "access_suspended_copy": [
+    "Este acesso candidato esta suspenso temporariamente.",
+    "Mantivemos o historico, mas bloqueamos as acoes sensiveis ate revisao.",
+    "Voce pode pedir reavaliacao do acesso ao dono."
+  ],
+  "denied_action_copy": [
+    "Esta acao foi bloqueada para proteger o escopo deste papel.",
+    "Mostramos apenas o que continua permitido para voce agora.",
+    "Se isso parecer incorreto, revise o papel atribuido."
+  ],
+  "forbidden_copy_patterns": [
+    "voce pode tudo",
+    "acesso total",
+    "sem restricoes",
+    "superusuario",
+    "god mode",
+    "isso e so um detalhe tecnico"
+  ],
+  "color_not_sole_signal": true,
+  "handoff_targets": [
+    "BENCHUIX-19"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-18",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "least_privilege_policy": {
+    "default_access_starts_minimal": true,
+    "sensitive_actions_need_explicit_scope": true,
+    "mode_a_prefers_single_owner_visibility": true,
+    "mode_b_c_d_expand_by_clear_need_only": true
+  },
+  "roles": [
+    "dono",
+    "ajudante",
+    "operador",
+    "financeiro",
+    "gerente",
+    "viewer"
+  ],
+  "surfaces": [
+    "Hoje",
+    "Automacoes",
+    "Aprovar",
+    "Historico_Comprovantes",
+    "Configuracoes"
+  ],
+  "permission_actions": [
+    "ver_resumo",
+    "ver_automacoes",
+    "ver_comprovantes",
+    "aprovar",
+    "editar",
+    "pausar",
+    "exportar",
+    "gerenciar_acesso"
+  ],
+  "role_permission_matrix": {
+    "dono": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes", "editar", "pausar"],
+      "Aprovar": ["aprovar"],
+      "Historico_Comprovantes": ["ver_comprovantes", "exportar"],
+      "Configuracoes": ["gerenciar_acesso"]
+    },
+    "ajudante": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes", "editar"],
+      "Aprovar": [],
+      "Historico_Comprovantes": ["ver_comprovantes"],
+      "Configuracoes": []
+    },
+    "operador": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes", "editar", "pausar"],
+      "Aprovar": [],
+      "Historico_Comprovantes": ["ver_comprovantes"],
+      "Configuracoes": []
+    },
+    "financeiro": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes"],
+      "Aprovar": [],
+      "Historico_Comprovantes": ["ver_comprovantes", "exportar"],
+      "Configuracoes": []
+    },
+    "gerente": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes", "editar"],
+      "Aprovar": ["aprovar"],
+      "Historico_Comprovantes": ["ver_comprovantes", "exportar"],
+      "Configuracoes": []
+    },
+    "viewer": {
+      "Hoje": ["ver_resumo"],
+      "Automacoes": ["ver_automacoes"],
+      "Aprovar": [],
+      "Historico_Comprovantes": ["ver_comprovantes"],
+      "Configuracoes": []
+    }
+  },
+  "sensitive_action_rules": {
+    "approve_requires_explicit_role": true,
+    "pause_requires_scope_visibility": true,
+    "export_requires_human_readable_receipt_context": true,
+    "access_management_limited_to_owner": true
+  },
+  "access_suspension_policy": {
+    "candidate_only_suspension": true,
+    "suspension_must_explain_impact": true,
+    "suspension_must_not_delete_history": true,
+    "reactivation_requires_clear_review_step": true
+  },
+  "god_mode_prohibition_policy": {
+    "god_mode_allowed": false,
+    "single_role_can_do_everything_by_default": false,
+    "diagnostic_admin_invisible_to_client_roles": true
+  },
+  "broad_privilege_prohibition_policy": {
+    "broad_privilege_for_convenience_allowed": false,
+    "temporary_access_needs_explicit_reason_copy": true,
+    "viewer_cannot_become_hidden_operator": true
+  },
+  "client_side_only_enforcement_prohibition_policy": {
+    "client_side_only_enforcement_allowed": false,
+    "permission_copy_cannot_claim_real_enforcement": true,
+    "server_authority_future_required": true
+  },
+  "can_and_cannot_language_policy": {
+    "every_sensitive_surface_needs_can_and_cannot_copy": true,
+    "ambiguous_permission_copy_forbidden": true,
+    "approval_visibility_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "god mode",
+    "broad privilege for convenience",
+    "client-side only enforcement sold as sufficient",
+    "approval right hidden or ambiguous",
+    "everyone can do everything",
+    "sensitive action without explicit role boundary",
+    "any real auth, real rbac, real enforcement, runtime, data real or action real in scope"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-19"
+  ]
+}

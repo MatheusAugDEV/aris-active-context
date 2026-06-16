@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-18",
+  "opened_from_candidate_phase": "BENCHUIX-17",
+  "opened_candidate_phase": "BENCHUIX-18",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "7ec6ff5fa80f335792e7e3f9a4c80075b25f578a",
+  "previous_candidate_ci_run": "27591590951",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Permissoes progressivas synthetic-only como preparo para Product Reality Lab; nao produz Bedrock PASS, nao autoriza produto, piloto, runtime, auth real, RBAC real, integracao real, billing real, OAuth real, secrets, producao, Project_ARIS mutation ou real_apply."
+}
