@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-11",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "permission_categories": [
+    {
+      "category": "simple_change",
+      "permission_prompt": "Voce autoriza esta mudanca especifica dentro do escopo mostrado?",
+      "requires_named_scope": true
+    },
+    {
+      "category": "sensitive_change",
+      "permission_prompt": "Voce autoriza explicitamente esta mudanca sensivel com os limites descritos neste card?",
+      "requires_named_scope": true
+    },
+    {
+      "category": "blocked_request",
+      "permission_prompt": "Este pedido permanece bloqueado ate que risco, permissao e limites fiquem claros.",
+      "requires_named_scope": false
+    }
+  ],
+  "will_will_not_patterns": {
+    "will_patterns": [
+      "Se aprovado, eu vou executar apenas o que esta descrito neste card.",
+      "Se aprovado, eu vou seguir o escopo e os limites desta solicitacao."
+    ],
+    "will_not_patterns": [
+      "Nao vou executar nada fora do escopo descrito.",
+      "Nao vou usar canal externo, dado real ou sistemas ativos fora do que foi mostrado aqui."
+    ]
+  },
+  "approval_action_copy": {
+    "label": "Aprovar",
+    "helper_text": "Aprova somente esta mudanca especifica, com risco e limites visiveis.",
+    "candidate_only": true
+  },
+  "deny_action_copy": {
+    "label": "Negar",
+    "helper_text": "Recusa este pedido e preserva os limites atuais.",
+    "candidate_only": true
+  },
+  "edit_action_copy": {
+    "label": "Editar",
+    "helper_text": "Permite ajustar escopo, linguagem ou detalhes antes de qualquer aprovacao.",
+    "candidate_only": true
+  },
+  "simulate_again_copy": {
+    "label": "Simular novamente",
+    "helper_text": "Refaz a simulacao synthetic-only para melhorar clareza antes da decisao.",
+    "candidate_only": true
+  },
+  "forbidden_copy_patterns": [
+    "tem certeza?",
+    "confirmar",
+    "ok",
+    "tudo certo",
+    "aprova ai",
+    "manda no whatsapp",
+    "responde por email",
+    "push para aprovar"
+  ],
+  "external_channel_approval_allowed": false,
+  "generic_confirmation_allowed": false,
+  "sensitive_approval_removal_allowed": false,
+  "handoff_targets": [
+    "BENCHUIX-12"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-11",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "risk_levels": [
+    {
+      "level": "low",
+      "label": "baixo",
+      "requires_explicit_approval": true,
+      "client_expectation": "Mudanca localizada, com escopo simples e reversivel no plano."
+    },
+    {
+      "level": "medium",
+      "label": "medio",
+      "requires_explicit_approval": true,
+      "client_expectation": "Mudanca relevante, com mais impacto operacional e necessidade de leitura cuidadosa."
+    },
+    {
+      "level": "high",
+      "label": "alto",
+      "requires_explicit_approval": true,
+      "client_expectation": "Mudanca sensivel, com risco elevado ou dependencias que exigem decisao deliberada."
+    },
+    {
+      "level": "blocked_sensitive",
+      "label": "bloqueado",
+      "requires_explicit_approval": false,
+      "client_expectation": "A inbox deve bloquear porque falta clareza, permissao ou isolamento."
+    }
+  ],
+  "risk_display_policy": {
+    "risk_visible_before_actions": true,
+    "risk_reason_required": true,
+    "risk_icon_required": true,
+    "risk_text_required": true,
+    "risk_position": "header_before_actions",
+    "blocked_reason_required": true
+  },
+  "risk_copy_rules": {
+    "human_language_only": true,
+    "must_name_why_risk_exists": true,
+    "must_name_if_approval_is_sensitive": true,
+    "must_explain_when_card_is_blocked": true,
+    "must_not_hide_risk_in_secondary_copy": true
+  },
+  "color_not_sole_signal": true,
+  "sensitive_action_rules": {
+    "sensitive_actions_require_explicit_permission": true,
+    "sensitive_actions_allow_generic_confirmation": false,
+    "sensitive_actions_allow_external_channel_approval": false,
+    "sensitive_actions_allow_approval_removal": false
+  },
+  "blocking_criteria": [
+    "risk absent",
+    "risk reason absent",
+    "permission absent",
+    "will_will_not absent",
+    "generic confirmation replacing explicit permission",
+    "external approval channel requested",
+    "sensitive action without explicit approval",
+    "real action or real integration introduced"
+  ]
+}

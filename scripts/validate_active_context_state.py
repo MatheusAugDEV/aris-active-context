@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-10", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-11", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-11", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-12", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1802,6 +1802,12 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/10_preview_simulation_protocol.json").exists(), "BENCHUIX-10 preview simulation protocol missing on disk")
         _require((ROOT / "artifacts/benchuix/10_no_real_execution_attestation.json").exists(), "BENCHUIX-10 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/10_validation_evidence.json").exists(), "BENCHUIX-10 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_operator_opening_source.json").exists(), "BENCHUIX-11 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_approval_inbox_spec.md").exists(), "BENCHUIX-11 approval inbox spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_risk_taxonomy.json").exists(), "BENCHUIX-11 risk taxonomy missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_permission_language_matrix.json").exists(), "BENCHUIX-11 permission language matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_no_real_execution_attestation.json").exists(), "BENCHUIX-11 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/11_validation_evidence.json").exists(), "BENCHUIX-11 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -2436,6 +2442,132 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             benchuix_10_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
             "BENCHUIX-10 validation evidence status mismatch",
         )
+
+        benchuix_11_operator = _load_json(ROOT / "artifacts/benchuix/11_operator_opening_source.json")
+        _require(benchuix_11_operator.get("phase_id") == "BENCHUIX-11", "BENCHUIX-11 operator source phase_id mismatch")
+        _require(benchuix_11_operator.get("opened_from_candidate_phase") == "BENCHUIX-10", "BENCHUIX-11 opened_from_candidate_phase mismatch")
+        _require(benchuix_11_operator.get("opened_candidate_phase") == "BENCHUIX-11", "BENCHUIX-11 opened_candidate_phase mismatch")
+        _require(
+            benchuix_11_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-11 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_11_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-11 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_11_operator.get("previous_candidate_commit") == "2a436098bf1d1f835c9a92fe4f13eacf304fb4f0",
+            "BENCHUIX-11 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_11_operator.get("previous_candidate_ci_run") == "27588600884",
+            "BENCHUIX-11 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_11_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-11 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_11_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-11 all_real_locks_remain_false mismatch")
+        _require(benchuix_11_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-11 bedrock_preparation_exception_recorded mismatch")
+        _require(benchuix_11_operator.get("similar_projects_consulted") is False, "BENCHUIX-11 similar_projects_consulted mismatch")
+        _require(benchuix_11_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-11 similar_projects_advisory_only mismatch")
+        _require(benchuix_11_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-11 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_11_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-11 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_11_spec_text = (ROOT / "artifacts/benchuix/11_approval_inbox_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese da Approval Inbox",
+            "## objetivo",
+            "\"o cliente entende exatamente o que está aprovando?\"",
+            "## relação com BENCHUIX-10",
+            "## estrutura do card de aprovação",
+            "## risco visível",
+            "## permissão explícita",
+            "## will/will-not copy",
+            "## ações permitidas",
+            "## estados obrigatórios",
+            "## microcopy candidata",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-12",
+        ):
+            _require(required_snippet in benchuix_11_spec_text, f"BENCHUIX-11 approval inbox spec missing section: {required_snippet}")
+
+        benchuix_11_risk = _load_json(ROOT / "artifacts/benchuix/11_risk_taxonomy.json")
+        metadata = benchuix_11_risk.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-11", "BENCHUIX-11 risk metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-11 risk metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-11 risk metadata.synthetic_only mismatch")
+        _require(bool(benchuix_11_risk.get("risk_levels")), "BENCHUIX-11 risk_levels missing")
+        _require(bool(benchuix_11_risk.get("risk_display_policy")), "BENCHUIX-11 risk_display_policy missing")
+        _require(bool(benchuix_11_risk.get("risk_copy_rules")), "BENCHUIX-11 risk_copy_rules missing")
+        _require(benchuix_11_risk.get("color_not_sole_signal") is True, "BENCHUIX-11 color_not_sole_signal mismatch")
+        sensitive_action_rules = benchuix_11_risk.get("sensitive_action_rules", {})
+        _require(sensitive_action_rules.get("sensitive_actions_require_explicit_permission") is True, "BENCHUIX-11 sensitive permission rule mismatch")
+        _require(sensitive_action_rules.get("sensitive_actions_allow_generic_confirmation") is False, "BENCHUIX-11 generic confirmation sensitivity mismatch")
+        _require(sensitive_action_rules.get("sensitive_actions_allow_external_channel_approval") is False, "BENCHUIX-11 external approval sensitivity mismatch")
+        _require(sensitive_action_rules.get("sensitive_actions_allow_approval_removal") is False, "BENCHUIX-11 approval removal sensitivity mismatch")
+        _require(bool(benchuix_11_risk.get("blocking_criteria")), "BENCHUIX-11 blocking_criteria missing")
+
+        benchuix_11_permission = _load_json(ROOT / "artifacts/benchuix/11_permission_language_matrix.json")
+        metadata = benchuix_11_permission.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-11", "BENCHUIX-11 permission metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-11 permission metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-11 permission metadata.synthetic_only mismatch")
+        _require(bool(benchuix_11_permission.get("permission_categories")), "BENCHUIX-11 permission_categories missing")
+        _require(bool(benchuix_11_permission.get("will_will_not_patterns")), "BENCHUIX-11 will_will_not_patterns missing")
+        for key in ("approval_action_copy", "deny_action_copy", "edit_action_copy", "simulate_again_copy"):
+            _require(bool(benchuix_11_permission.get(key)), f"BENCHUIX-11 {key} missing")
+            _require(benchuix_11_permission.get(key, {}).get("candidate_only") is True, f"BENCHUIX-11 {key}.candidate_only mismatch")
+        forbidden_patterns = [pattern.lower() for pattern in benchuix_11_permission.get("forbidden_copy_patterns", [])]
+        _require("tem certeza?" in forbidden_patterns, "BENCHUIX-11 forbidden generic confirmation missing")
+        _require("manda no whatsapp" in forbidden_patterns, "BENCHUIX-11 forbidden external approval pattern missing")
+        _require(benchuix_11_permission.get("external_channel_approval_allowed") is False, "BENCHUIX-11 external_channel_approval_allowed mismatch")
+        _require(benchuix_11_permission.get("generic_confirmation_allowed") is False, "BENCHUIX-11 generic_confirmation_allowed mismatch")
+        _require(benchuix_11_permission.get("sensitive_approval_removal_allowed") is False, "BENCHUIX-11 sensitive_approval_removal_allowed mismatch")
+        _require("BENCHUIX-12" in benchuix_11_permission.get("handoff_targets", []), "BENCHUIX-11 handoff target mismatch")
+
+        benchuix_11_no_real = _load_json(ROOT / "artifacts/benchuix/11_no_real_execution_attestation.json")
+        _require(benchuix_11_no_real.get("phase_id") == "BENCHUIX-11", "BENCHUIX-11 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_approval_executed",
+            "real_action_executed",
+            "external_channel_approval_used",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "real_customer_data_used",
+            "real_oauth_used",
+            "real_billing_used",
+            "real_integration_used",
+        ):
+            _require(benchuix_11_no_real.get(key) is False, f"BENCHUIX-11 no-real {key} must be false")
+        _require(benchuix_11_no_real.get("synthetic_approval_inbox_only") is True, "BENCHUIX-11 synthetic_approval_inbox_only mismatch")
+
+        benchuix_11_evidence = _load_json(ROOT / "artifacts/benchuix/11_validation_evidence.json")
+        _require(benchuix_11_evidence.get("phase_id") == "BENCHUIX-11", "BENCHUIX-11 validation evidence phase_id mismatch")
+        _require(
+            benchuix_11_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-11 validation evidence status mismatch",
+        )
+        if benchuix_11_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_11_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_11_APPROVAL_INBOX_SPEC_OK",
+                "BENCHUIX_11_RISK_TAXONOMY_OK",
+                "BENCHUIX_11_PERMISSION_LANGUAGE_MATRIX_OK",
+                "BENCHUIX_11_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_11_NO_EXTERNAL_APPROVAL_OK",
+                "BENCHUIX_11_NO_GENERIC_CONFIRMATION_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-11 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
