@@ -1,0 +1,49 @@
+{
+  "phase_id": "BENCHUIX-06",
+  "status": "local_validation_pass_recorded",
+  "commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m json.tool artifacts/benchuix/06_operator_opening_source.json",
+    "python3 -m json.tool artifacts/benchuix/06_time_to_first_preview_protocol.json",
+    "python3 -m json.tool artifacts/benchuix/06_no_real_execution_attestation.json",
+    "python3 -m json.tool artifacts/benchuix/06_validation_evidence.json",
+    "python3 -m py_compile scripts/validate_active_context_state.py",
+    "python3 scripts/render_boot.py",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -q",
+    "python3 inline onboarding spec verification",
+    "python3 inline tracking and locks verification",
+    "python3 inline defensive policy verification",
+    "git diff --name-only",
+    "git diff --check"
+  ],
+  "results": {
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "operator_opening_source_json_tool": "OK",
+    "time_to_first_preview_protocol_json_tool": "OK",
+    "no_real_execution_attestation_json_tool": "OK",
+    "validation_evidence_json_tool": "OK",
+    "validator_py_compile": "OK",
+    "render_boot": "OK",
+    "validator_script": "PASS",
+    "unittest_discover": "PASS",
+    "BENCHUIX_06_ONBOARDING_SPEC_OK": true,
+    "BENCHUIX_06_TRACKING_AND_LOCKS_OK": true,
+    "BENCHUIX_06_DEFENSIVE_POLICY_OK": true,
+    "Project_ARIS_touched": false,
+    "git_diff_check": "clean"
+  },
+  "hashes": {
+    "ACTIVE_CONTEXT_STATE.json": "7a44d90b719a8a6b26d638de3960e4c37a139ff5d56f42fd1ada21d42eb71017",
+    "artifacts/benchuix/06_operator_opening_source.json": "c12f2d68b99472ec7a67d216256ab5da4c9a9f0f79b22f6bce0171511eb0d890",
+    "artifacts/benchuix/06_onboarding_spec.md": "4bbc7cac477f746eadb0bf774bbf7f123d86854cc5c7cdb16ad238a2af46859d",
+    "artifacts/benchuix/06_time_to_first_preview_protocol.json": "e6890458fa2f55d41f8f3a3a8d31adcef39c3f296afd640563f9f44ca3ff350a",
+    "artifacts/benchuix/06_no_real_execution_attestation.json": "304fa31e6693b6d0adf4f264cf02963d9f54a37ca5706df49915d0c8ea1d4be3"
+  },
+  "notes": [
+    "Project_ARIS permaneceu intocado durante BENCHUIX-06.",
+    "Similar Projects local library not found; consulted=false recorded in operator opening source."
+  ]
+}

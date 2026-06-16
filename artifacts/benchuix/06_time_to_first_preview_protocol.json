@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-06",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "target_time_to_first_preview_seconds": 180,
+  "repeated_fields_allowed": false,
+  "steps": [
+    {
+      "step_id": "STEP_01_BUSINESS_TYPE",
+      "order": 1,
+      "goal": "Capturar o tipo de negócio em linguagem simples.",
+      "max_time_seconds": 30
+    },
+    {
+      "step_id": "STEP_02_PRIMARY_GOAL",
+      "order": 2,
+      "goal": "Capturar o objetivo principal do dono-solo.",
+      "max_time_seconds": 30
+    },
+    {
+      "step_id": "STEP_03_CHANNELS_USED",
+      "order": 3,
+      "goal": "Identificar canais usados sem integração real.",
+      "max_time_seconds": 30
+    },
+    {
+      "step_id": "STEP_04_TEMPLATE_SELECTION",
+      "order": 4,
+      "goal": "Escolher um template inicial sintético.",
+      "max_time_seconds": 45
+    },
+    {
+      "step_id": "STEP_05_FIRST_PREVIEW",
+      "order": 5,
+      "goal": "Gerar o primeiro preview sintético seguro.",
+      "max_time_seconds": 45
+    }
+  ],
+  "allowed_inputs": [
+    "tipo_de_negocio",
+    "objetivo_principal",
+    "canais_usados",
+    "faixa_de_volume_sintetica",
+    "horario_de_operacao_simplificado",
+    "template_preferido",
+    "contexto_opcional_curto"
+  ],
+  "forbidden_inputs": [
+    "billing_real",
+    "cartao_real",
+    "oauth_real",
+    "credencial_real",
+    "secret",
+    "endpoint_real",
+    "integracao_real",
+    "dado_real_de_cliente",
+    "campo_repetido"
+  ],
+  "preview_policy": {
+    "first_preview_required": true,
+    "synthetic_only": true,
+    "must_happen_before_deep_configuration": true,
+    "nothing_real_is_changed": true
+  },
+  "template_selection_policy": {
+    "required_before_first_preview": true,
+    "must_offer_simple_recommended_templates": true,
+    "advanced_template_branching_allowed": false
+  },
+  "no_real_data_policy": {
+    "real_customer_data_allowed": false,
+    "real_oauth_used": false,
+    "real_billing_used": false,
+    "real_integration_used": false,
+    "real_financial_data_allowed": false,
+    "synthetic_examples_required": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "accessibility_requirements": [
+    "passos curtos com headings claros",
+    "foco visível",
+    "feedback de loading em até 300ms",
+    "erro com orientação objetiva",
+    "alvos de toque adequados",
+    "progresso legível por leitor de tela"
+  ],
+  "blocking_criteria": [
+    "target_time_to_first_preview_seconds excede 180",
+    "repeated_fields_allowed diferente de false",
+    "billing aparece antes do primeiro preview",
+    "oauth real aparece",
+    "integração real é exigida",
+    "preview não é sintético",
+    "copy usa jargão técnico primário",
+    "onboarding vira cadastro corporativo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-07"
+  ]
+}
