@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-09",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "editor_objective": "Permitir que o cliente descreva uma automacao em linguagem natural e receba um plano seguro, revisavel e nao tecnico.",
+  "primary_question": "o cliente consegue criar uma automacao segura sem ver complexidade tecnica?",
+  "vertical_playbook_starting_point_policy": {
+    "playbooks_from_benchuix_08_are_starting_points": true,
+    "start_from_blank_allowed": true,
+    "playbook_choice_visible_as_optional_shortcut": true,
+    "real_automation_started_from_playbook": false
+  },
+  "flow_steps": [
+    {
+      "step_id": "INTENT_CAPTURE",
+      "title": "Capturar objetivo",
+      "goal": "Receber o pedido do cliente em linguagem natural.",
+      "client_value": "Explicar o que quer sem montar fluxo tecnico."
+    },
+    {
+      "step_id": "SAFE_STARTING_POINT",
+      "title": "Sugerir ponto de partida",
+      "goal": "Oferecer playbook da vertical ou rascunho vazio seguro.",
+      "client_value": "Comecar rapido sem ficar preso a um template."
+    },
+    {
+      "step_id": "TYPE_SAFE_PROPOSAL",
+      "title": "Montar proposta simples",
+      "goal": "Traduzir o pedido em plano compreensivel com limites claros.",
+      "client_value": "Ver o que vai acontecer antes de aprovar."
+    },
+    {
+      "step_id": "PLAN_REVIEW",
+      "title": "Revisar plano",
+      "goal": "Apresentar gatilhos, condicoes, aprovacoes e limites em linguagem humana.",
+      "client_value": "Conferir risco e expectativa sem jargao tecnico."
+    },
+    {
+      "step_id": "SAFE_EDIT_ACTIONS",
+      "title": "Pausar, duplicar ou editar",
+      "goal": "Permitir ajustes seguros no rascunho sem runtime real.",
+      "client_value": "Experimentar variacoes sem efeito real."
+    },
+    {
+      "step_id": "AMBIGUITY_CHECK",
+      "title": "Resolver ambiguidade",
+      "goal": "Pedir clarificacao curta quando o pedido nao estiver seguro.",
+      "client_value": "Evitar surpresa e manter controle."
+    }
+  ],
+  "natural_language_creation_policy": {
+    "input_style": "objetivo_em_linguagem_natural",
+    "short_prompt_examples": [
+      "quando entrar pedido urgente, me avise antes do fim do turno",
+      "quero revisar agendas que merecem confirmacao",
+      "monte um rascunho para priorizar pendencias"
+    ],
+    "playbooks_from_benchuix_08_are_starting_points": true,
+    "technical_surface_hidden_from_client": true,
+    "client_can_start_without_knowing_rules": true
+  },
+  "type_safe_proposal_policy": {
+    "human_language_only": true,
+    "proposal_sections": [
+      "objetivo",
+      "quando observar",
+      "o que sugerir",
+      "o que pede confirmacao",
+      "limites",
+      "comportamento_degraded"
+    ],
+    "visible_schema_exposed_to_client": false,
+    "technical_dag_exposed_to_client": false,
+    "visible_runtime_exposed_to_client": false,
+    "proposal_needs_review_before_any_approval": true
+  },
+  "plan_review_policy": {
+    "summary_before_approval": true,
+    "will_statement_required": true,
+    "will_not_statement_required": true,
+    "show_limits_before_confirmation": true,
+    "show_sensitive_points_before_confirmation": true,
+    "approval_copy_must_be_explicit": true
+  },
+  "pause_duplicate_edit_policy": {
+    "allowed_actions": [
+      "pausar",
+      "duplicar",
+      "editar"
+    ],
+    "actions_are_candidate_only": true,
+    "runtime_real_used": false,
+    "draft_state_preserved": true
+  },
+  "ambiguity_handling_policy": {
+    "clarification_required_on_high_ambiguity": true,
+    "offer_safe_interpretations": 3,
+    "autonomous_execution_without_clarification": false,
+    "preserve_previous_draft": true,
+    "sensitive_intent_routes_to_approval_language": true
+  },
+  "sensitive_action_approval_policy": {
+    "approval_required_for_sensitive_actions": true,
+    "sensitive_action_without_approval_allowed": false,
+    "approval_examples": [
+      "qualquer disparo externo",
+      "qualquer alteracao de agenda",
+      "qualquer acao financeira",
+      "qualquer envio para cliente"
+    ],
+    "phase_scope_remains_candidate_only": true
+  },
+  "no_real_automation_policy": {
+    "synthetic_only": true,
+    "real_automation_created": false,
+    "runtime_real_used": false,
+    "real_integrations_allowed": false,
+    "real_customer_data_allowed": false,
+    "visual_node_editor_created": false,
+    "technical_dag_exposed_to_client": false,
+    "visible_schema_exposed_to_client": false,
+    "visible_runtime_exposed_to_client": false
+  },
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context",
+    "DAG"
+  ],
+  "client_facing_copy_samples": [
+    "Descreva o resultado que voce quer e eu monto um rascunho seguro.",
+    "Antes de qualquer confirmacao, voce vai revisar o plano.",
+    "Se eu precisar de contexto extra, vou pedir so o minimo.",
+    "Nada real sera executado agora.",
+    "Voce pode pausar, duplicar ou editar este rascunho."
+  ],
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "accessibility_requirements": [
+    "uma intencao principal por bloco",
+    "foco visivel",
+    "feedback de loading em ate 300ms",
+    "erro com proximo passo claro",
+    "degraded com limite e saida segura",
+    "copy legivel sem jargao tecnico"
+  ],
+  "blocking_criteria": [
+    "necessidade de automacao real para demonstrar valor",
+    "dependencia de visual node editor para entendimento basico",
+    "exposicao de DAG tecnico, schema ou runtime ao cliente",
+    "acao sensivel sem aprovacao",
+    "ausencia de revisao de plano antes de confirmar",
+    "billing, oauth real, integracao real, secrets, producao ou real_apply no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-10"
+  ]
+}

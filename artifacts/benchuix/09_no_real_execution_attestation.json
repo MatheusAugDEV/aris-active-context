@@ -1,0 +1,21 @@
+{
+  "phase_id": "BENCHUIX-09",
+  "Project_ARIS_touched": false,
+  "runtime_executed": false,
+  "real_automation_created": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_access_authorized": false,
+  "dependency_change_authorized": false,
+  "package_manager_execution_authorized": false,
+  "real_customer_data_used": false,
+  "real_oauth_used": false,
+  "real_billing_used": false,
+  "real_integration_used": false,
+  "visual_node_editor_created": false,
+  "technical_dag_exposed_to_client": false,
+  "visible_schema_exposed_to_client": false,
+  "visible_runtime_exposed_to_client": false,
+  "synthetic_automation_editor_only": true
+}
