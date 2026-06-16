@@ -1,0 +1,16 @@
+{
+  "phase_id": "BENCHUIX-08",
+  "opened_from_candidate_phase": "BENCHUIX-07",
+  "opened_candidate_phase": "BENCHUIX-08",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "standing_authorization_ci_run": "27587291588",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Playbooks sintéticos por vertical para Product Reality Lab; não produz Bedrock PASS, não autoriza produto, piloto, runtime, integração real, billing real, OAuth real, secrets, produção ou real_apply.",
+  "similar_projects_consulted": false,
+  "similar_projects_advisory_only": true,
+  "similar_projects_used_for_decision": false,
+  "similar_projects_primary_source_verification_required": true
+}

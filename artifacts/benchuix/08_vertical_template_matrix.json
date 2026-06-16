@@ -1,0 +1,420 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-08",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "verticals": [
+    {
+      "vertical_id": "barbearia",
+      "label": "Barbearia",
+      "template_ids": [
+        "agenda_do_dia_prioritaria",
+        "reconfirmacao_de_horarios_sensiveis"
+      ]
+    },
+    {
+      "vertical_id": "loja",
+      "label": "Loja",
+      "template_ids": [
+        "reposicao_de_vitrine",
+        "alerta_de_ruptura_sensivel"
+      ]
+    },
+    {
+      "vertical_id": "mercado",
+      "label": "Mercado",
+      "template_ids": [
+        "pico_de_corredor",
+        "pereciveis_em_atencao"
+      ]
+    },
+    {
+      "vertical_id": "escritorio",
+      "label": "Escritorio",
+      "template_ids": [
+        "fila_de_pendencias",
+        "revisao_antes_de_enviar"
+      ]
+    },
+    {
+      "vertical_id": "agencia",
+      "label": "Agencia",
+      "template_ids": [
+        "campanhas_da_semana",
+        "aprovar_conteudo_sensivel"
+      ]
+    },
+    {
+      "vertical_id": "clinica_servico",
+      "label": "Clinica/Servico",
+      "template_ids": [
+        "confirmacoes_do_turno",
+        "sala_e_fluxo_do_dia"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "template_id": "agenda_do_dia_prioritaria",
+      "vertical_id": "barbearia",
+      "name": "Agenda do Dia Prioritaria",
+      "goal": "Organizar a ordem de atendimento do dia.",
+      "when_to_use": "Quando o dono quer enxergar encaixes e conflitos de forma simples.",
+      "synthetic_minimum_data": [
+        "agenda_sintetica_do_dia",
+        "duracao_media_por_servico",
+        "blocos_de_horario"
+      ],
+      "will_statement": "ARIS vai sugerir uma ordem simples para o dia e destacar conflitos visiveis.",
+      "will_not_statement": "ARIS não vai mover agenda real nem disparar mensagem real.",
+      "limits": {
+        "max_items": 20,
+        "max_highlighted_conflicts": 3
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas os tres horarios mais pressionados.",
+      "blocking_criterion": "Depender de agenda real ou envio real.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "reconfirmacao_de_horarios_sensiveis",
+      "vertical_id": "barbearia",
+      "name": "Reconfirmacao de Horarios Sensiveis",
+      "goal": "Identificar horarios que merecem reconfirmacao.",
+      "when_to_use": "Quando faltas e atrasos pesam no caixa do dia.",
+      "synthetic_minimum_data": [
+        "blocos_de_maior_risco",
+        "janela_de_aviso_sintetica",
+        "tipo_de_servico"
+      ],
+      "will_statement": "ARIS vai sugerir quais horarios merecem reconfirmacao.",
+      "will_not_statement": "ARIS não vai enviar mensagem real nem alterar agenda automaticamente.",
+      "limits": {
+        "max_items": 5,
+        "max_batches_per_cycle": 1
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Entrega uma lista curta de horarios com maior risco.",
+      "blocking_criterion": "Permitir envio sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "reposicao_de_vitrine",
+      "vertical_id": "loja",
+      "name": "Reposicao de Vitrine",
+      "goal": "Priorizar categorias para reposicao visual.",
+      "when_to_use": "Quando o dono quer decidir o que volta para a frente de loja primeiro.",
+      "synthetic_minimum_data": [
+        "categorias_sinteticas",
+        "volume_em_vitrine",
+        "giro_relativo_sintetico"
+      ],
+      "will_statement": "ARIS vai ordenar categorias por prioridade de reposicao.",
+      "will_not_statement": "ARIS não vai baixar estoque real nem emitir pedido.",
+      "limits": {
+        "max_items": 10,
+        "max_priority_bands": 3
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas as tres categorias mais impactadas.",
+      "blocking_criterion": "Depender de estoque real ou pedido real.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "alerta_de_ruptura_sensivel",
+      "vertical_id": "loja",
+      "name": "Alerta de Ruptura Sensivel",
+      "goal": "Destacar itens com maior risco de ruptura.",
+      "when_to_use": "Quando alguns itens puxam venda e não podem sumir da vitrine.",
+      "synthetic_minimum_data": [
+        "itens_sinteticos_criticos",
+        "faixa_de_demanda",
+        "janela_de_reposicao"
+      ],
+      "will_statement": "ARIS vai destacar risco de ruptura e sugerir revisão.",
+      "will_not_statement": "ARIS não vai comprar, reservar ou alterar inventario real.",
+      "limits": {
+        "max_items": 8,
+        "max_critical_items": 3
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Resume dois itens mais criticos e um proximo passo manual.",
+      "blocking_criterion": "Acionar compra ou reserva sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "pico_de_corredor",
+      "vertical_id": "mercado",
+      "name": "Pico de Corredor",
+      "goal": "Mostrar corredores sinteticos com maior pressao.",
+      "when_to_use": "Quando o dono quer distribuir atenção da equipe nos horarios cheios.",
+      "synthetic_minimum_data": [
+        "fluxo_sintetico_por_corredor",
+        "janela_de_pico",
+        "categorias_de_maior_giro"
+      ],
+      "will_statement": "ARIS vai sugerir foco operacional por corredor.",
+      "will_not_statement": "ARIS não vai acionar equipe real nem alterar escala.",
+      "limits": {
+        "max_items": 6,
+        "max_peak_windows": 2
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas o corredor mais pressionado.",
+      "blocking_criterion": "Depender de escala real ou monitoramento em tempo real.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "pereciveis_em_atencao",
+      "vertical_id": "mercado",
+      "name": "Pereciveis em Atenção",
+      "goal": "Apontar itens sinteticos que merecem revisão antes de perda.",
+      "when_to_use": "Quando o negocio quer evitar descarte alto em categorias sensiveis.",
+      "synthetic_minimum_data": [
+        "categoria_perecivel_sintetica",
+        "janela_de_validade_simulada",
+        "faixa_de_giro"
+      ],
+      "will_statement": "ARIS vai listar itens que pedem revisão prioritaria.",
+      "will_not_statement": "ARIS não vai descartar, remarcar preço real ou alterar inventario real.",
+      "limits": {
+        "max_items": 12,
+        "max_critical_items": 3
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Mostra so os tres itens com janela mais curta.",
+      "blocking_criterion": "Permitir ajuste real sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "fila_de_pendencias",
+      "vertical_id": "escritorio",
+      "name": "Fila de Pendencias",
+      "goal": "Priorizar pendencias administrativas do dia.",
+      "when_to_use": "Quando ha muitas tarefas pequenas e pouca clareza do que vem primeiro.",
+      "synthetic_minimum_data": [
+        "lista_sintetica_de_pendencias",
+        "prazo_relativo",
+        "impacto_estimado"
+      ],
+      "will_statement": "ARIS vai ordenar a fila por urgencia e impacto percebido.",
+      "will_not_statement": "ARIS não vai enviar documento real nem editar sistema externo.",
+      "limits": {
+        "max_items": 15,
+        "max_highlights": 3
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas o topo da fila e uma justificativa curta.",
+      "blocking_criterion": "Depender de documento real ou sistema externo.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "revisao_antes_de_enviar",
+      "vertical_id": "escritorio",
+      "name": "Revisao Antes de Enviar",
+      "goal": "Marcar itens que precisam dupla checagem.",
+      "when_to_use": "Quando erro de documento custa retrabalho ou confiança.",
+      "synthetic_minimum_data": [
+        "tipo_de_entrega",
+        "prazo",
+        "nivel_de_sensibilidade",
+        "checklist_sintetico"
+      ],
+      "will_statement": "ARIS vai indicar o que merece revisão reforçada.",
+      "will_not_statement": "ARIS não vai enviar e-mail real nem protocolar pedido real.",
+      "limits": {
+        "max_items": 10,
+        "max_checkpoints": 4
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Reduz para uma checklist curta por item.",
+      "blocking_criterion": "Permitir envio sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "campanhas_da_semana",
+      "vertical_id": "agencia",
+      "name": "Campanhas da Semana",
+      "goal": "Resumir campanhas sinteticas que pedem atenção na semana.",
+      "when_to_use": "Quando o time quer um ponto de partida para revisar prioridades.",
+      "synthetic_minimum_data": [
+        "campanhas_sinteticas",
+        "objetivo_principal",
+        "status_estimado",
+        "janela_da_semana"
+      ],
+      "will_statement": "ARIS vai destacar campanhas que merecem foco primeiro.",
+      "will_not_statement": "ARIS não vai publicar, impulsionar ou alterar canal real.",
+      "limits": {
+        "max_items": 8,
+        "max_priorities": 3
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas as duas campanhas mais urgentes.",
+      "blocking_criterion": "Acionar publicacao real.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "aprovar_conteudo_sensivel",
+      "vertical_id": "agencia",
+      "name": "Aprovar Conteudo Sensivel",
+      "goal": "Sinalizar conteudos que exigem revisão antes de uso.",
+      "when_to_use": "Quando ha ofertas, temas delicados ou claims com risco.",
+      "synthetic_minimum_data": [
+        "tipo_de_conteudo",
+        "claim_principal",
+        "urgencia",
+        "publico_sintetico"
+      ],
+      "will_statement": "ARIS vai marcar conteudos que precisam do seu ok.",
+      "will_not_statement": "ARIS não vai publicar, enviar ou editar peça real automaticamente.",
+      "limits": {
+        "max_items": 6,
+        "max_sensitive_batches": 1
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Entrega lista curta de itens sensiveis com motivo principal.",
+      "blocking_criterion": "Permitir publicacao sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "confirmacoes_do_turno",
+      "vertical_id": "clinica_servico",
+      "name": "Confirmacoes do Turno",
+      "goal": "Sugerir confirmacoes sinteticas para horarios sensiveis do turno.",
+      "when_to_use": "Quando atrasos e faltas afetam a operacao diaria.",
+      "synthetic_minimum_data": [
+        "agenda_sintetica_do_turno",
+        "tipo_de_atendimento",
+        "janela_de_antecedencia"
+      ],
+      "will_statement": "ARIS vai sugerir quais horarios merecem confirmação.",
+      "will_not_statement": "ARIS não vai enviar mensagem real nem alterar prontuario ou agenda real.",
+      "limits": {
+        "max_items": 6,
+        "max_batches_per_shift": 1
+      },
+      "timeout_seconds": 45,
+      "initial_risk": "medium",
+      "approval_required": true,
+      "degraded_behavior": "Mostra apenas os tres horarios de maior risco.",
+      "blocking_criterion": "Tocar dado clinico real ou enviar sem aprovação.",
+      "real_automation_created": false
+    },
+    {
+      "template_id": "sala_e_fluxo_do_dia",
+      "vertical_id": "clinica_servico",
+      "name": "Sala e Fluxo do Dia",
+      "goal": "Organizar fluxo sintetico entre salas e janelas do dia.",
+      "when_to_use": "Quando a equipe precisa enxergar gargalos de atendimento.",
+      "synthetic_minimum_data": [
+        "salas_sinteticas",
+        "duracao_media",
+        "janelas_de_espera",
+        "tipo_de_atendimento"
+      ],
+      "will_statement": "ARIS vai sugerir uma ordem simples de fluxo do dia.",
+      "will_not_statement": "ARIS não vai alterar agenda real, prontuario ou chamada de paciente real.",
+      "limits": {
+        "max_items": 10,
+        "max_highlighted_bottlenecks": 3
+      },
+      "timeout_seconds": 30,
+      "initial_risk": "low",
+      "approval_required": false,
+      "degraded_behavior": "Mostra apenas a sala mais pressionada e o horario sensivel.",
+      "blocking_criterion": "Depender de agenda real ou prontuario.",
+      "real_automation_created": false
+    }
+  ],
+  "low_risk_template_policy": {
+    "default_risk_levels_allowed": [
+      "low",
+      "medium"
+    ],
+    "high_risk_templates_forbidden": true,
+    "synthetic_examples_required": true
+  },
+  "will_will_not_policy": {
+    "every_template_requires_will_statement": true,
+    "every_template_requires_will_not_statement": true,
+    "customer_copy_must_be_plain_language": true
+  },
+  "limits_and_timeouts_policy": {
+    "every_template_requires_limits": true,
+    "every_template_requires_timeout_seconds": true,
+    "max_timeout_seconds": 45
+  },
+  "sensitive_action_approval_policy": {
+    "approval_required_for_sensitive_actions": true,
+    "sensitive_actions_must_not_run_without_approval": true,
+    "sensitive_action_without_approval_allowed": false
+  },
+  "no_real_automation_policy": {
+    "real_automation_created": false,
+    "runtime_real_used": false,
+    "real_integrations_allowed": false,
+    "real_customer_data_allowed": false,
+    "synthetic_only": true
+  },
+  "required_states": [
+    "empty",
+    "loading",
+    "error",
+    "success",
+    "degraded"
+  ],
+  "client_facing_copy_samples": [
+    "Comece com um atalho simples para o seu tipo de negocio.",
+    "Voce pode revisar antes de qualquer passo sensivel.",
+    "Nada real sera alterado agora.",
+    "Se quiser, comecamos pelo caminho mais seguro."
+  ],
+  "forbidden_client_facing_terms": [
+    "schema",
+    "validator",
+    "artifact",
+    "ledger",
+    "hash",
+    "real_apply",
+    "runtime",
+    "tenant",
+    "CI",
+    "active-context"
+  ],
+  "blocking_criteria": [
+    "template sem will statement",
+    "template sem will-not statement",
+    "template sem limites",
+    "template sem timeout",
+    "acao sensivel sem aprovacao",
+    "automacao real no escopo",
+    "integracao real no escopo",
+    "billing, oauth real, secrets, producao, runtime ou real_apply no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-09"
+  ]
+}

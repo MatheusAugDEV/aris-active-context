@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-07", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-08", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-08", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-09", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1786,6 +1786,11 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/standing_authorization_packet.json").exists(), "BENCHUIX standing authorization packet missing on disk")
         _require((ROOT / "artifacts/benchuix/standing_authorization_no_real_execution_attestation.json").exists(), "BENCHUIX standing authorization no-real attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/standing_authorization_validation_evidence.json").exists(), "BENCHUIX standing authorization validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/08_operator_opening_source.json").exists(), "BENCHUIX-08 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/08_playbooks_catalog.md").exists(), "BENCHUIX-08 playbooks catalog missing on disk")
+        _require((ROOT / "artifacts/benchuix/08_vertical_template_matrix.json").exists(), "BENCHUIX-08 vertical template matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/08_no_real_execution_attestation.json").exists(), "BENCHUIX-08 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/08_validation_evidence.json").exists(), "BENCHUIX-08 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -1962,6 +1967,150 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             "real_integration_used",
         ):
             _require(benchuix_standing_no_real.get(key) is False, f"BENCHUIX standing authorization no-real {key} must be false")
+
+        benchuix_08_operator = _load_json(ROOT / "artifacts/benchuix/08_operator_opening_source.json")
+        _require(benchuix_08_operator.get("phase_id") == "BENCHUIX-08", "BENCHUIX-08 operator source phase_id mismatch")
+        _require(benchuix_08_operator.get("opened_from_candidate_phase") == "BENCHUIX-07", "BENCHUIX-08 opened_from_candidate_phase mismatch")
+        _require(benchuix_08_operator.get("opened_candidate_phase") == "BENCHUIX-08", "BENCHUIX-08 opened_candidate_phase mismatch")
+        _require(
+            benchuix_08_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-08 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_08_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-08 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_08_operator.get("standing_authorization_ci_run") == "27587291588",
+            "BENCHUIX-08 standing_authorization_ci_run mismatch",
+        )
+        _require(benchuix_08_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-08 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_08_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-08 all_real_locks_remain_false mismatch")
+        _require(benchuix_08_operator.get("similar_projects_consulted") is False, "BENCHUIX-08 similar_projects_consulted mismatch")
+        _require(benchuix_08_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-08 similar_projects_advisory_only mismatch")
+        _require(benchuix_08_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-08 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_08_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-08 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_08_catalog_text = (ROOT / "artifacts/benchuix/08_playbooks_catalog.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese dos playbooks por vertical",
+            "## objetivo",
+            "\"o cliente começa com atalhos úteis ou do zero?\"",
+            "## relação com BENCHUIX-07",
+            "## verticais cobertas",
+            "### barbearia",
+            "### loja",
+            "### mercado",
+            "### escritorio",
+            "### agencia",
+            "### clinica_servico",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-09",
+        ):
+            _require(required_snippet in benchuix_08_catalog_text, f"BENCHUIX-08 catalog missing section: {required_snippet}")
+
+        benchuix_08_matrix = _load_json(ROOT / "artifacts/benchuix/08_vertical_template_matrix.json")
+        metadata = benchuix_08_matrix.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-08", "BENCHUIX-08 matrix metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-08 matrix metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-08 matrix metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-08 matrix metadata.real_execution_authorized mismatch")
+        verticals = benchuix_08_matrix.get("verticals", [])
+        templates = benchuix_08_matrix.get("templates", [])
+        _require(len(verticals) == 6, "BENCHUIX-08 vertical count mismatch")
+        _require(len(templates) >= 12, "BENCHUIX-08 templates must be >= 12")
+        template_ids = {template.get("template_id") for template in templates}
+        for vertical in verticals:
+            vertical_template_ids = vertical.get("template_ids", [])
+            _require(len(vertical_template_ids) >= 2, f"BENCHUIX-08 vertical {vertical.get('vertical_id')} must have at least 2 templates")
+            for template_id in vertical_template_ids:
+                _require(template_id in template_ids, f"BENCHUIX-08 template {template_id} missing from matrix")
+        for template in templates:
+            for key in (
+                "template_id",
+                "vertical_id",
+                "name",
+                "goal",
+                "when_to_use",
+                "will_statement",
+                "will_not_statement",
+                "degraded_behavior",
+                "blocking_criterion",
+            ):
+                _require(bool(template.get(key)), f"BENCHUIX-08 template {template.get('template_id')} missing {key}")
+            _require(template.get("real_automation_created") is False, f"BENCHUIX-08 template {template.get('template_id')} real_automation_created must be false")
+            _require(bool(template.get("synthetic_minimum_data")), f"BENCHUIX-08 template {template.get('template_id')} synthetic_minimum_data missing")
+            limits = template.get("limits", {})
+            _require(bool(limits), f"BENCHUIX-08 template {template.get('template_id')} limits missing")
+            _require(template.get("timeout_seconds") in (30, 45), f"BENCHUIX-08 template {template.get('template_id')} timeout mismatch")
+            _require(template.get("initial_risk") in ("low", "medium"), f"BENCHUIX-08 template {template.get('template_id')} initial_risk mismatch")
+        low_risk_policy = benchuix_08_matrix.get("low_risk_template_policy", {})
+        _require(low_risk_policy.get("high_risk_templates_forbidden") is True, "BENCHUIX-08 low risk policy mismatch")
+        will_policy = benchuix_08_matrix.get("will_will_not_policy", {})
+        _require(will_policy.get("every_template_requires_will_statement") is True, "BENCHUIX-08 will policy mismatch")
+        _require(will_policy.get("every_template_requires_will_not_statement") is True, "BENCHUIX-08 will-not policy mismatch")
+        limits_policy = benchuix_08_matrix.get("limits_and_timeouts_policy", {})
+        _require(limits_policy.get("every_template_requires_limits") is True, "BENCHUIX-08 limits policy mismatch")
+        _require(limits_policy.get("every_template_requires_timeout_seconds") is True, "BENCHUIX-08 timeout policy mismatch")
+        _require(limits_policy.get("max_timeout_seconds") == 45, "BENCHUIX-08 max timeout mismatch")
+        approval_policy = benchuix_08_matrix.get("sensitive_action_approval_policy", {})
+        _require(approval_policy.get("approval_required_for_sensitive_actions") is True, "BENCHUIX-08 approval policy mismatch")
+        _require(approval_policy.get("sensitive_action_without_approval_allowed") is False, "BENCHUIX-08 no-approval mismatch")
+        no_real_policy = benchuix_08_matrix.get("no_real_automation_policy", {})
+        for key in (
+            "real_automation_created",
+            "runtime_real_used",
+            "real_integrations_allowed",
+            "real_customer_data_allowed",
+        ):
+            _require(no_real_policy.get(key) is False, f"BENCHUIX-08 no_real_automation_policy.{key} must be false")
+        _require(no_real_policy.get("synthetic_only") is True, "BENCHUIX-08 no_real_automation_policy.synthetic_only mismatch")
+        _require(
+            benchuix_08_matrix.get("required_states") == ["empty", "loading", "error", "success", "degraded"],
+            "BENCHUIX-08 required_states mismatch",
+        )
+        forbidden_terms = [term.lower() for term in benchuix_08_matrix.get("forbidden_client_facing_terms", [])]
+        _require(
+            forbidden_terms == ["schema", "validator", "artifact", "ledger", "hash", "real_apply", "runtime", "tenant", "ci", "active-context"],
+            "BENCHUIX-08 forbidden_client_facing_terms mismatch",
+        )
+        for sample in benchuix_08_matrix.get("client_facing_copy_samples", []):
+            lowered_sample = sample.lower()
+            normalized_sample = lowered_sample
+            for punctuation in ",.;:!?()/":
+                normalized_sample = normalized_sample.replace(punctuation, " ")
+            normalized_tokens = set(normalized_sample.replace("-", " ").split())
+            for term in forbidden_terms:
+                if "-" in term or "_" in term:
+                    _require(term not in lowered_sample, f"BENCHUIX-08 copy sample leaks forbidden term: {term}")
+                else:
+                    _require(term not in normalized_tokens, f"BENCHUIX-08 copy sample leaks forbidden term: {term}")
+        _require("BENCHUIX-09" in benchuix_08_matrix.get("handoff_targets", []), "BENCHUIX-08 handoff target mismatch")
+
+        benchuix_08_no_real = _load_json(ROOT / "artifacts/benchuix/08_no_real_execution_attestation.json")
+        _require(benchuix_08_no_real.get("phase_id") == "BENCHUIX-08", "BENCHUIX-08 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_automation_created",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "real_customer_data_used",
+            "real_oauth_used",
+            "real_billing_used",
+            "real_integration_used",
+            "sensitive_action_without_approval_allowed",
+        ):
+            _require(benchuix_08_no_real.get(key) is False, f"BENCHUIX-08 no-real {key} must be false")
+        _require(benchuix_08_no_real.get("synthetic_playbooks_only") is True, "BENCHUIX-08 synthetic_playbooks_only mismatch")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
