@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-12",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "state_copy": {
+    "rascunho": "Este fluxo ainda esta em rascunho.",
+    "pronto_para_revisar": "Tudo que precisa de leitura ja esta pronto para revisar.",
+    "simulado": "Voce esta vendo uma simulacao isolada do que aconteceria.",
+    "aguardando_aprovacao": "Aguardando sua decisao para este pedido especifico.",
+    "aprovado_candidato": "A aprovacao candidata foi registrada neste fluxo sintético.",
+    "negado": "Este pedido foi negado e nao vai seguir adiante.",
+    "editado": "O pedido foi editado e voltou para ajuste.",
+    "pausado": "O fluxo esta pausado de forma segura e visivel.",
+    "bloqueado": "Este fluxo esta bloqueado ate que o risco ou o limite fique claro.",
+    "falhou": "Algo falhou neste fluxo e a falha esta visivel para revisao.",
+    "degradado": "O fluxo segue com informacao parcial e precisa de cautela.",
+    "concluido_sintetico": "Este ciclo candidato foi concluido sem executar nada real."
+  },
+  "short_labels": {
+    "rascunho": "Rascunho",
+    "pronto_para_revisar": "Pronto",
+    "simulado": "Simulado",
+    "aguardando_aprovacao": "Aguardando",
+    "aprovado_candidato": "Aprovado",
+    "negado": "Negado",
+    "editado": "Editado",
+    "pausado": "Pausado",
+    "bloqueado": "Bloqueado",
+    "falhou": "Falhou",
+    "degradado": "Degradado",
+    "concluido_sintetico": "Concluido"
+  },
+  "detail_copy": {
+    "rascunho": "Ainda faltam detalhes antes da revisao.",
+    "pronto_para_revisar": "Voce ja pode revisar escopo, risco e limites.",
+    "simulado": "Nada foi executado; este estado so mostra o que aconteceria.",
+    "aguardando_aprovacao": "O proximo passo depende da sua decisao explicita.",
+    "aprovado_candidato": "A decisao foi registrada neste fluxo candidato, sem efeito fora daqui.",
+    "negado": "O pedido ficou encerrado como negado neste fluxo.",
+    "editado": "A versao anterior foi ajustada antes de seguir.",
+    "pausado": "Nenhum progresso oculto acontece enquanto estiver pausado.",
+    "bloqueado": "Existe um motivo claro para o bloqueio e ele precisa aparecer aqui.",
+    "falhou": "A falha precisa mostrar o que deu errado e o proximo passo seguro.",
+    "degradado": "A leitura continua possivel, mas falta contexto para seguir com confianca.",
+    "concluido_sintetico": "O ciclo terminou apenas como registro sintetico e legivel."
+  },
+  "action_copy": {
+    "rascunho": "Completar detalhes antes de revisar.",
+    "pronto_para_revisar": "Revisar antes de simular.",
+    "simulado": "Ler impacto e decidir se quer seguir.",
+    "aguardando_aprovacao": "Aprovar, negar, editar ou pausar.",
+    "aprovado_candidato": "Encerrar este ciclo ou revisar novamente.",
+    "negado": "Manter negado ou revisar o pedido.",
+    "editado": "Revisar a nova versao.",
+    "pausado": "Retomar quando o contexto estiver claro.",
+    "bloqueado": "Corrigir o bloqueio antes de seguir.",
+    "falhou": "Entender a falha e escolher o proximo passo seguro.",
+    "degradado": "Restaurar clareza antes de avancar.",
+    "concluido_sintetico": "Consultar o resumo final deste ciclo."
+  },
+  "forbidden_copy_patterns": [
+    "deu certo",
+    "tudo certo",
+    "sumiu mas segue",
+    "sem risco",
+    "sem falha",
+    "rodando normal",
+    "tem certeza?"
+  ],
+  "accessibility_announcements": {
+    "rascunho": "Estado atual: rascunho.",
+    "pronto_para_revisar": "Estado atual: pronto para revisar.",
+    "simulado": "Estado atual: simulado.",
+    "aguardando_aprovacao": "Estado atual: aguardando aprovacao.",
+    "aprovado_candidato": "Estado atual: aprovado candidato.",
+    "negado": "Estado atual: negado.",
+    "editado": "Estado atual: editado.",
+    "pausado": "Estado atual: pausado.",
+    "bloqueado": "Estado atual: bloqueado.",
+    "falhou": "Estado atual: falhou.",
+    "degradado": "Estado atual: degradado.",
+    "concluido_sintetico": "Estado atual: concluido sintetico."
+  },
+  "visible_data_age_copy": {
+    "fresh": "Atualizado ha pouco.",
+    "stale_warning": "Esta informacao pode estar desatualizada; confira antes de decidir.",
+    "unknown_age_block": "Sem referencia de tempo visivel, este estado deve bloquear progresso sensivel.",
+    "timestamp_prefix": "Atualizado"
+  },
+  "critical_state_copy": {
+    "bloqueado": "Este bloqueio impede seguir ate que o motivo fique claro.",
+    "falhou": "A falha nao fica escondida; ela precisa aparecer com motivo e proximo passo.",
+    "degradado": "Este estado pede cautela porque a leitura esta parcial."
+  },
+  "color_not_sole_signal": true,
+  "handoff_targets": [
+    "BENCHUIX-13"
+  ]
+}

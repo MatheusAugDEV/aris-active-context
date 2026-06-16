@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-11", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-12", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-12", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-13", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1808,6 +1808,12 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/11_permission_language_matrix.json").exists(), "BENCHUIX-11 permission language matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/11_no_real_execution_attestation.json").exists(), "BENCHUIX-11 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/11_validation_evidence.json").exists(), "BENCHUIX-11 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_operator_opening_source.json").exists(), "BENCHUIX-12 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_execution_state_machine.json").exists(), "BENCHUIX-12 execution state machine missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_state_microcopy_matrix.json").exists(), "BENCHUIX-12 state microcopy matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_execution_states_spec.md").exists(), "BENCHUIX-12 execution states spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_no_real_execution_attestation.json").exists(), "BENCHUIX-12 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/12_validation_evidence.json").exists(), "BENCHUIX-12 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -2568,6 +2574,181 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_11_NO_GENERIC_CONFIRMATION_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-11 validation evidence missing {key}")
+
+        benchuix_12_operator = _load_json(ROOT / "artifacts/benchuix/12_operator_opening_source.json")
+        _require(benchuix_12_operator.get("phase_id") == "BENCHUIX-12", "BENCHUIX-12 operator source phase_id mismatch")
+        _require(benchuix_12_operator.get("opened_from_candidate_phase") == "BENCHUIX-11", "BENCHUIX-12 opened_from_candidate_phase mismatch")
+        _require(benchuix_12_operator.get("opened_candidate_phase") == "BENCHUIX-12", "BENCHUIX-12 opened_candidate_phase mismatch")
+        _require(
+            benchuix_12_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-12 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_12_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-12 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_12_operator.get("previous_candidate_commit") == "e47285aecdc7059a4eba0d992d00d207b8a1ef1f",
+            "BENCHUIX-12 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_12_operator.get("previous_candidate_ci_run") == "27589161080",
+            "BENCHUIX-12 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_12_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-12 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_12_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-12 all_real_locks_remain_false mismatch")
+        _require(benchuix_12_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-12 bedrock_preparation_exception_recorded mismatch")
+        _require(benchuix_12_operator.get("similar_projects_consulted") is False, "BENCHUIX-12 similar_projects_consulted mismatch")
+        _require(benchuix_12_operator.get("similar_projects_advisory_only") is True, "BENCHUIX-12 similar_projects_advisory_only mismatch")
+        _require(benchuix_12_operator.get("similar_projects_used_for_decision") is False, "BENCHUIX-12 similar_projects_used_for_decision mismatch")
+        _require(
+            benchuix_12_operator.get("similar_projects_primary_source_verification_required") is True,
+            "BENCHUIX-12 similar_projects_primary_source_verification_required mismatch",
+        )
+
+        benchuix_12_machine = _load_json(ROOT / "artifacts/benchuix/12_execution_state_machine.json")
+        metadata = benchuix_12_machine.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-12", "BENCHUIX-12 state machine metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-12 state machine metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-12 state machine metadata.synthetic_only mismatch")
+        _require(metadata.get("real_execution_authorized") is False, "BENCHUIX-12 state machine metadata.real_execution_authorized mismatch")
+        expected_states = [
+            "rascunho",
+            "pronto_para_revisar",
+            "simulado",
+            "aguardando_aprovacao",
+            "aprovado_candidato",
+            "negado",
+            "editado",
+            "pausado",
+            "bloqueado",
+            "falhou",
+            "degradado",
+            "concluido_sintetico",
+        ]
+        machine_states = [state_row.get("state_id") for state_row in benchuix_12_machine.get("states", [])]
+        _require(machine_states == expected_states, "BENCHUIX-12 states mismatch")
+        _require(benchuix_12_machine.get("required_states") == expected_states, "BENCHUIX-12 required_states mismatch")
+        _require(bool(benchuix_12_machine.get("transitions_allowed")), "BENCHUIX-12 transitions_allowed missing")
+        _require(bool(benchuix_12_machine.get("transitions_forbidden")), "BENCHUIX-12 transitions_forbidden missing")
+        _require("concluido_sintetico" in benchuix_12_machine.get("terminal_candidate_states", []), "BENCHUIX-12 terminal_candidate_states mismatch")
+        degraded_policy = benchuix_12_machine.get("degraded_state_policy", {})
+        _require(degraded_policy.get("degraded_must_be_explicit") is True, "BENCHUIX-12 degraded explicit mismatch")
+        _require(degraded_policy.get("degraded_must_not_claim_completion") is True, "BENCHUIX-12 degraded completion mismatch")
+        failure_policy = benchuix_12_machine.get("failure_state_policy", {})
+        _require(failure_policy.get("failure_must_be_visible") is True, "BENCHUIX-12 failure visible mismatch")
+        _require(failure_policy.get("hidden_failure_allowed") is False, "BENCHUIX-12 hidden_failure_allowed mismatch")
+        false_success_policy = benchuix_12_machine.get("false_success_prevention_policy", {})
+        _require(false_success_policy.get("success_requires_terminal_candidate_state") is True, "BENCHUIX-12 success terminal mismatch")
+        _require(false_success_policy.get("approved_candidate_not_equal_completed") is True, "BENCHUIX-12 approved vs completed mismatch")
+        _require(false_success_policy.get("simulated_not_equal_executed") is True, "BENCHUIX-12 simulated vs executed mismatch")
+        _require(false_success_policy.get("stale_data_blocks_success_claim") is True, "BENCHUIX-12 stale data success mismatch")
+        invisible_state_policy = benchuix_12_machine.get("invisible_state_prevention_policy", {})
+        _require(invisible_state_policy.get("every_state_must_be_named") is True, "BENCHUIX-12 named state mismatch")
+        _require(invisible_state_policy.get("silent_transition_allowed") is False, "BENCHUIX-12 silent transition mismatch")
+        _require(invisible_state_policy.get("hidden_failure_allowed") is False, "BENCHUIX-12 hidden failure prevention mismatch")
+        visible_data_age_policy = benchuix_12_machine.get("visible_data_age_policy", {})
+        _require(visible_data_age_policy.get("data_age_must_be_visible") is True, "BENCHUIX-12 data age visibility mismatch")
+        _require(visible_data_age_policy.get("unknown_age_blocks_sensitive_progress") is True, "BENCHUIX-12 unknown age block mismatch")
+        critical_visuals = benchuix_12_machine.get("critical_state_visuals_policy", {})
+        _require(critical_visuals.get("color_allowed_as_support_only") is True, "BENCHUIX-12 critical color support mismatch")
+        _require("falhou" in critical_visuals.get("critical_states", []), "BENCHUIX-12 critical states missing falhou")
+        _require("BENCHUIX-13" in benchuix_12_machine.get("handoff_targets", []), "BENCHUIX-12 handoff target mismatch")
+
+        benchuix_12_microcopy = _load_json(ROOT / "artifacts/benchuix/12_state_microcopy_matrix.json")
+        metadata = benchuix_12_microcopy.get("metadata", {})
+        _require(metadata.get("phase_id") == "BENCHUIX-12", "BENCHUIX-12 microcopy metadata.phase_id mismatch")
+        _require(metadata.get("status") == "candidate", "BENCHUIX-12 microcopy metadata.status mismatch")
+        _require(metadata.get("synthetic_only") is True, "BENCHUIX-12 microcopy metadata.synthetic_only mismatch")
+        for key in ("state_copy", "short_labels", "detail_copy", "action_copy", "accessibility_announcements"):
+            _require(set(benchuix_12_microcopy.get(key, {}).keys()) == set(expected_states), f"BENCHUIX-12 {key} state coverage mismatch")
+        forbidden_patterns = [pattern.lower() for pattern in benchuix_12_microcopy.get("forbidden_copy_patterns", [])]
+        _require("deu certo" in forbidden_patterns, "BENCHUIX-12 false success forbidden copy missing")
+        _require("sumiu mas segue" in forbidden_patterns, "BENCHUIX-12 invisible state forbidden copy missing")
+        _require(benchuix_12_microcopy.get("color_not_sole_signal") is True, "BENCHUIX-12 color_not_sole_signal mismatch")
+        _require(bool(benchuix_12_microcopy.get("visible_data_age_copy")), "BENCHUIX-12 visible_data_age_copy missing")
+        _require(bool(benchuix_12_microcopy.get("critical_state_copy")), "BENCHUIX-12 critical_state_copy missing")
+        _require("BENCHUIX-13" in benchuix_12_microcopy.get("handoff_targets", []), "BENCHUIX-12 microcopy handoff target mismatch")
+        forbidden_terms = {"schema", "validator", "artifact", "ledger", "hash", "real_apply", "runtime", "tenant", "ci", "active-context"}
+        client_facing_strings = []
+        for key in ("state_copy", "short_labels", "detail_copy", "action_copy", "accessibility_announcements"):
+            client_facing_strings.extend(benchuix_12_microcopy.get(key, {}).values())
+        client_facing_strings.extend(benchuix_12_microcopy.get("visible_data_age_copy", {}).values())
+        client_facing_strings.extend(benchuix_12_microcopy.get("critical_state_copy", {}).values())
+        for sample in client_facing_strings:
+            lowered_sample = str(sample).lower()
+            normalized_sample = lowered_sample
+            for punctuation in ",.;:!?()/":
+                normalized_sample = normalized_sample.replace(punctuation, " ")
+            normalized_tokens = set(normalized_sample.replace("-", " ").split())
+            for term in forbidden_terms:
+                if "-" in term or "_" in term:
+                    _require(term not in lowered_sample, f"BENCHUIX-12 microcopy leaks forbidden term: {term}")
+                else:
+                    _require(term not in normalized_tokens, f"BENCHUIX-12 microcopy leaks forbidden term: {term}")
+
+        benchuix_12_spec_text = (ROOT / "artifacts/benchuix/12_execution_states_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definição da fase",
+            "## tese dos estados visíveis",
+            "## objetivo",
+            "\"o cliente sabe exatamente em que estado a automação está?\"",
+            "## relação com BENCHUIX-11",
+            "## máquina de estados em linguagem humana",
+            "## transições permitidas",
+            "## transições proibidas",
+            "## idade visível dos dados",
+            "## estados críticos",
+            "## prevenção de falso sucesso",
+            "## prevenção de estado invisível",
+            "## acessibilidade",
+            "## critérios de BLOCK",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-13",
+        ):
+            _require(required_snippet in benchuix_12_spec_text, f"BENCHUIX-12 execution states spec missing section: {required_snippet}")
+
+        benchuix_12_no_real = _load_json(ROOT / "artifacts/benchuix/12_no_real_execution_attestation.json")
+        _require(benchuix_12_no_real.get("phase_id") == "BENCHUIX-12", "BENCHUIX-12 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_touched",
+            "runtime_executed",
+            "real_action_executed",
+            "real_state_mutated",
+            "real_automation_created",
+            "real_service_called",
+            "real_customer_data_used",
+            "product_authorized",
+            "production_authorized",
+            "real_apply_authorized",
+            "secrets_access_authorized",
+            "dependency_change_authorized",
+            "package_manager_execution_authorized",
+            "false_success_allowed",
+            "hidden_failure_allowed",
+            "invisible_state_allowed",
+        ):
+            _require(benchuix_12_no_real.get(key) is False, f"BENCHUIX-12 no-real {key} must be false")
+        _require(benchuix_12_no_real.get("synthetic_execution_states_only") is True, "BENCHUIX-12 synthetic_execution_states_only mismatch")
+
+        benchuix_12_evidence = _load_json(ROOT / "artifacts/benchuix/12_validation_evidence.json")
+        _require(benchuix_12_evidence.get("phase_id") == "BENCHUIX-12", "BENCHUIX-12 validation evidence phase_id mismatch")
+        _require(
+            benchuix_12_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-12 validation evidence status mismatch",
+        )
+        if benchuix_12_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_12_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_12_EXECUTION_STATE_MACHINE_OK",
+                "BENCHUIX_12_STATE_MICROCOPY_MATRIX_OK",
+                "BENCHUIX_12_EXECUTION_STATES_SPEC_OK",
+                "BENCHUIX_12_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_12_NO_FALSE_SUCCESS_OK",
+                "BENCHUIX_12_NO_INVISIBLE_STATE_OK",
+                "BENCHUIX_12_NO_HIDDEN_FAILURE_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-12 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

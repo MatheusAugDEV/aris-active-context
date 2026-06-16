@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-12",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_execution_authorized": false
+  },
+  "states": [
+    {
+      "state_id": "rascunho",
+      "label": "rascunho",
+      "category": "preparacao",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "pronto_para_revisar",
+      "label": "pronto para revisar",
+      "category": "review",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "simulado",
+      "label": "simulado",
+      "category": "review",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "aguardando_aprovacao",
+      "label": "aguardando aprovacao",
+      "category": "review",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "aprovado_candidato",
+      "label": "aprovado candidato",
+      "category": "candidate_terminal",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "negado",
+      "label": "negado",
+      "category": "candidate_terminal",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "editado",
+      "label": "editado",
+      "category": "work_in_progress",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "pausado",
+      "label": "pausado",
+      "category": "hold",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "bloqueado",
+      "label": "bloqueado",
+      "category": "critical",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "falhou",
+      "label": "falhou",
+      "category": "critical",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "degradado",
+      "label": "degradado",
+      "category": "critical",
+      "visible_when_active": true
+    },
+    {
+      "state_id": "concluido_sintetico",
+      "label": "concluido sintetico",
+      "category": "candidate_terminal",
+      "visible_when_active": true
+    }
+  ],
+  "transitions_allowed": [
+    {
+      "from": "rascunho",
+      "to": "pronto_para_revisar",
+      "reason": "Escopo e copy ficaram legiveis para revisao."
+    },
+    {
+      "from": "pronto_para_revisar",
+      "to": "simulado",
+      "reason": "A simulacao synthetic-only foi preparada."
+    },
+    {
+      "from": "simulado",
+      "to": "aguardando_aprovacao",
+      "reason": "O pedido ficou claro e pronto para decisao."
+    },
+    {
+      "from": "aguardando_aprovacao",
+      "to": "aprovado_candidato",
+      "reason": "A decisao candidata foi registrada sem efeito real."
+    },
+    {
+      "from": "aguardando_aprovacao",
+      "to": "negado",
+      "reason": "O pedido foi recusado."
+    },
+    {
+      "from": "aguardando_aprovacao",
+      "to": "editado",
+      "reason": "O pedido voltou para ajuste."
+    },
+    {
+      "from": "editado",
+      "to": "pronto_para_revisar",
+      "reason": "A nova versao voltou para revisao."
+    },
+    {
+      "from": "simulado",
+      "to": "degradado",
+      "reason": "A simulacao perdeu clareza ou contexto suficiente."
+    },
+    {
+      "from": "degradado",
+      "to": "simulado",
+      "reason": "A clareza minima foi restaurada."
+    },
+    {
+      "from": "qualquer_estado_nao_terminal",
+      "to": "pausado",
+      "reason": "O fluxo foi interrompido de forma visivel e segura."
+    },
+    {
+      "from": "pausado",
+      "to": "pronto_para_revisar",
+      "reason": "O fluxo foi retomado com contexto claro."
+    },
+    {
+      "from": "qualquer_estado_nao_terminal",
+      "to": "bloqueado",
+      "reason": "Existe risco, ambiguidade ou ausencia de dados claros."
+    },
+    {
+      "from": "qualquer_estado_nao_terminal",
+      "to": "falhou",
+      "reason": "A etapa candidata nao conseguiu concluir com seguranca."
+    },
+    {
+      "from": "aprovado_candidato",
+      "to": "concluido_sintetico",
+      "reason": "O ciclo candidato foi encerrado sem execucao real."
+    }
+  ],
+  "transitions_forbidden": [
+    {
+      "from": "simulado",
+      "to": "concluido_sintetico",
+      "reason": "Simulado nao pode ser tratado como concluido."
+    },
+    {
+      "from": "degradado",
+      "to": "concluido_sintetico",
+      "reason": "Estado degradado nao pode virar sucesso sem restauracao."
+    },
+    {
+      "from": "falhou",
+      "to": "concluido_sintetico",
+      "reason": "Falha nao pode ser escondida como conclusao."
+    },
+    {
+      "from": "bloqueado",
+      "to": "aprovado_candidato",
+      "reason": "Bloqueio precisa ser resolvido antes de aprovar."
+    },
+    {
+      "from": "qualquer_estado",
+      "to": "estado_invisivel",
+      "reason": "Nenhuma transicao pode apagar o estado do cliente."
+    }
+  ],
+  "terminal_candidate_states": [
+    "aprovado_candidato",
+    "negado",
+    "bloqueado",
+    "falhou",
+    "concluido_sintetico"
+  ],
+  "degraded_state_policy": {
+    "degraded_must_be_explicit": true,
+    "degraded_must_show_limitations": true,
+    "degraded_must_offer_next_safe_step": true,
+    "degraded_must_not_claim_completion": true
+  },
+  "failure_state_policy": {
+    "failure_must_be_visible": true,
+    "failure_must_name_what_failed": true,
+    "failure_must_offer_recovery_path": true,
+    "hidden_failure_allowed": false
+  },
+  "false_success_prevention_policy": {
+    "success_requires_terminal_candidate_state": true,
+    "approved_candidate_not_equal_completed": true,
+    "simulated_not_equal_executed": true,
+    "stale_data_blocks_success_claim": true,
+    "degraded_not_equal_success": true
+  },
+  "invisible_state_prevention_policy": {
+    "every_state_must_be_named": true,
+    "every_state_must_have_visible_reason": true,
+    "silent_transition_allowed": false,
+    "unknown_state_fallback_allowed": false,
+    "hidden_failure_allowed": false
+  },
+  "visible_data_age_policy": {
+    "data_age_must_be_visible": true,
+    "timestamp_required_for_active_states": true,
+    "stale_warning_required": true,
+    "unknown_age_blocks_sensitive_progress": true
+  },
+  "critical_state_visuals_policy": {
+    "critical_states": [
+      "bloqueado",
+      "falhou",
+      "degradado"
+    ],
+    "icon_required": true,
+    "text_required": true,
+    "color_allowed_as_support_only": true,
+    "escalation_copy_required": true
+  },
+  "required_states": [
+    "rascunho",
+    "pronto_para_revisar",
+    "simulado",
+    "aguardando_aprovacao",
+    "aprovado_candidato",
+    "negado",
+    "editado",
+    "pausado",
+    "bloqueado",
+    "falhou",
+    "degradado",
+    "concluido_sintetico"
+  ],
+  "blocking_criteria": [
+    "estado sem nome visivel",
+    "idade dos dados ausente",
+    "sucesso sem estado terminal candidato",
+    "falha escondida",
+    "estado degradado tratado como conclusao",
+    "transicao proibida para sucesso",
+    "sinal critico dependente apenas de cor",
+    "qualquer acao ou mutacao real no escopo"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-13"
+  ]
+}
