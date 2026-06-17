@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-19",
+    "status": "candidate",
+    "synthetic_only": true,
+    "advanced_mode_only": true
+  },
+  "kpis": [
+    {
+      "kpi": "aprovacoes_pendentes_acima_do_sla_candidato",
+      "why_it_matters": "Mostra gargalo humano que bloqueia execucao ou revisao.",
+      "associated_action": "abrir_fila_priorizada_por_atraso",
+      "anti_metric_forbidden": "contador_total_de_aprovacoes_sem_prazo_ou_prioridade",
+      "interpretation_limit": "Nao indica produtividade sozinho; exige contexto de risco e horario.",
+      "gap_destination_if_not_measurable": "BENCHUIX-20_microcopy_de_atraso_e_prioridade",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "approval_queue_candidate_snapshot"
+    },
+    {
+      "kpi": "execucoes_bloqueadas_ou_degradadas",
+      "why_it_matters": "Sinaliza onde a operacao precisa intervir antes de acumular backlog.",
+      "associated_action": "abrir_execucoes_com_estado_critico",
+      "anti_metric_forbidden": "numero_total_de_execucoes_sem_estado",
+      "interpretation_limit": "Nao mede valor entregue; mede necessidade de atencao.",
+      "gap_destination_if_not_measurable": "Crisol_operational_state_normalization",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "execution_state_machine_candidate_snapshot"
+    },
+    {
+      "kpi": "falhas_recorrentes_por_janela",
+      "why_it_matters": "Ajuda a separar incidente isolado de padrao repetido.",
+      "associated_action": "abrir_falhas_recorrentes_com_ultima_evidencia",
+      "anti_metric_forbidden": "qualquer_falha_ja_e_caos",
+      "interpretation_limit": "Precisa de comparacao com baseline candidato e severidade.",
+      "gap_destination_if_not_measurable": "BENCHUIX-20_copy_de_falha_vs_risco",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "failure_library_candidate_cases"
+    },
+    {
+      "kpi": "cobertura_de_evidencia_recente",
+      "why_it_matters": "Mostra se o operador consegue provar o que acabou de acontecer.",
+      "associated_action": "abrir_recibos_ou_comprovantes_faltantes",
+      "anti_metric_forbidden": "numero_bruto_de_recibos_sem_relevancia_operacional",
+      "interpretation_limit": "Cobertura nao substitui qualidade do comprovante.",
+      "gap_destination_if_not_measurable": "BENCHUIX-20_copy_de_comprovante_e_gap",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "history_receipt_protocol_candidate_receipts"
+    },
+    {
+      "kpi": "itens_em_risco_acima_do_limite_candidato",
+      "why_it_matters": "Ajuda a direcionar revisao para automacoes ou aprovacoes sensiveis.",
+      "associated_action": "abrir_lista_de_itens_em_observacao",
+      "anti_metric_forbidden": "score_risco_abstrato_sem_destino_de_acao",
+      "interpretation_limit": "Nao pode prometer seguranca final; e apenas priorizacao.",
+      "gap_destination_if_not_measurable": "Crisol_taxonomia_de_risco_comparavel",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "risk_taxonomy_candidate_labels"
+    },
+    {
+      "kpi": "consumo_estimado_vs_teto_candidato",
+      "why_it_matters": "Impede surpresa de custo em operacao maior.",
+      "associated_action": "abrir_guardrail_de_custo_e_rever_fluxos_pesados",
+      "anti_metric_forbidden": "economia_maxima_teorica_sem_base",
+      "interpretation_limit": "E estimativa synthetic-only, nao fatura real.",
+      "gap_destination_if_not_measurable": "BENCHUIX-20_copy_de_estimativa_conservadora",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "preview_cost_estimate_snapshots"
+    },
+    {
+      "kpi": "tempo_economizado_com_base_explicitada",
+      "why_it_matters": "Ajuda a sustentar valor sem vender automacao como magia.",
+      "associated_action": "revisar_metodologia_da_estimativa",
+      "anti_metric_forbidden": "tempo_economizado_agregado_sem_baseline",
+      "interpretation_limit": "Nao representa ROI real nem produtividade final.",
+      "gap_destination_if_not_measurable": "BENCHUIX-20_copy_para_estimativa_inconclusiva",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "candidate_effort_baseline_estimates"
+    },
+    {
+      "kpi": "saude_operacional_com_stale_e_warning_embutidos",
+      "why_it_matters": "Condensa risco de desatualizacao ou degradacao em uma mensagem prioritaria.",
+      "associated_action": "abrir_fatores_degradantes_e_warnings",
+      "anti_metric_forbidden": "indice_de_saude_sem_explicar_componentes",
+      "interpretation_limit": "Nao substitui leitura de falhas ou aprovacoes; e um resumo.",
+      "gap_destination_if_not_measurable": "Crisol_operational_health_rollup_contract",
+      "visible_only_in": "advanced_only",
+      "synthetic_source": "candidate_health_rollup"
+    }
+  ],
+  "forbidden_vanity_patterns": [
+    "page_views_do_dashboard",
+    "numero_total_de_cards_renderizados",
+    "percentual_generico_de_crescimento_sem_acao"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-20"
+  ]
+}

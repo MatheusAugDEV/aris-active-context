@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-19",
+    "status": "candidate",
+    "synthetic_only": true,
+    "advanced_mode_only": true,
+    "real_execution_authorized": false
+  },
+  "widgets": [
+    {
+      "widget_id": "pending_approvals",
+      "title": "Aprovacoes Pendentes",
+      "purpose": "Mostrar fila de decisoes humanas que destravam a operacao.",
+      "synthetic_documentary_source": "approval_inbox_candidate_snapshots",
+      "risk_level": "medium",
+      "associated_action": "abrir_fila_de_aprovacoes_filtrada",
+      "empty_state": "Nenhuma aprovacao exige revisao agora.",
+      "error_state": "Nao conseguimos montar a fila de aprovacoes com seguranca.",
+      "stale_state": "Fila exibida com snapshot atrasado; confirme antes de agir.",
+      "partial_state": "Mostramos apenas aprovacoes com recibo valido neste snapshot.",
+      "degraded_state": "Resumir para contador e CTA unico.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "execution_flow",
+      "title": "Execucoes",
+      "purpose": "Resumir o fluxo candidato entre executando, pausado e aguardando aprovacao.",
+      "synthetic_documentary_source": "execution_state_machine_candidate_snapshots",
+      "risk_level": "medium",
+      "associated_action": "abrir_lista_de_execucoes",
+      "empty_state": "Nenhuma execucao candidata em andamento.",
+      "error_state": "Estado das execucoes indisponivel neste momento.",
+      "stale_state": "Estados podem estar atrasados; usamos o ultimo snapshot seguro.",
+      "partial_state": "Mostramos apenas execucoes com estado deterministico.",
+      "degraded_state": "Exibir so execucoes bloqueadas ou aguardando revisao.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "failure_watch",
+      "title": "Falhas",
+      "purpose": "Concentrar falhas recorrentes e orientar priorizacao.",
+      "synthetic_documentary_source": "failure_library_candidate_cases",
+      "risk_level": "high",
+      "associated_action": "revisar_falha_mais_recente",
+      "empty_state": "Nenhuma falha critica no snapshot atual.",
+      "error_state": "Falhas nao puderam ser classificadas agora.",
+      "stale_state": "A criticidade pode ter mudado desde o ultimo snapshot.",
+      "partial_state": "Algumas falhas ficaram sem classificacao detalhada.",
+      "degraded_state": "Mostrar apenas falhas bloqueantes.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "evidence_receipts",
+      "title": "Evidencias",
+      "purpose": "Exibir cobertura recente de comprovantes e recibos.",
+      "synthetic_documentary_source": "history_receipt_protocol_candidate_receipts",
+      "risk_level": "low",
+      "associated_action": "abrir_comprovantes_recentes",
+      "empty_state": "Ainda nao ha comprovantes novos neste periodo.",
+      "error_state": "Nao conseguimos carregar os comprovantes candidatos.",
+      "stale_state": "Comprovantes exibidos podem nao refletir o ultimo evento.",
+      "partial_state": "Apenas comprovantes verificados foram exibidos.",
+      "degraded_state": "Manter ultimo recibo valido e CTA para historico.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "risk_watch",
+      "title": "Risco",
+      "purpose": "Destacar automacoes e aprovacoes com risco acima do baseline.",
+      "synthetic_documentary_source": "risk_taxonomy_candidate_labels",
+      "risk_level": "high",
+      "associated_action": "abrir_itens_em_observacao",
+      "empty_state": "Nenhum item acima do limite candidato.",
+      "error_state": "Risco indisponivel; mantenha revisao humana conservadora.",
+      "stale_state": "Risco calculado com snapshot atrasado.",
+      "partial_state": "So itens com taxonomia consistente foram mostrados.",
+      "degraded_state": "Exibir somente riscos altos e bloqueios.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "cost_guardrail",
+      "title": "Custo",
+      "purpose": "Mostrar consumo estimado contra teto e guardrails candidatos.",
+      "synthetic_documentary_source": "preview_cost_estimate_snapshots",
+      "risk_level": "medium",
+      "associated_action": "abrir_guardrails_de_custo",
+      "empty_state": "Nao ha consumo estimado relevante nesta janela.",
+      "error_state": "Custo estimado indisponivel; use o teto conservador.",
+      "stale_state": "Estimativa de custo pode estar defasada.",
+      "partial_state": "Exibimos apenas fluxos com estimativa comparavel.",
+      "degraded_state": "Manter so faixa de teto e alerta de extrapolacao.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "time_saved_estimate",
+      "title": "Tempo Economizado",
+      "purpose": "Apresentar economia estimada sem vender automacao como magia.",
+      "synthetic_documentary_source": "candidate_effort_baseline_estimates",
+      "risk_level": "low",
+      "associated_action": "revisar_base_da_estimativa",
+      "empty_state": "Ainda nao ha base suficiente para estimar tempo economizado.",
+      "error_state": "Nao conseguimos comparar esta estimativa com baseline candidato.",
+      "stale_state": "Estimativa usa referencia anterior ao snapshot atual.",
+      "partial_state": "Exibimos so fluxos com baseline explicito.",
+      "degraded_state": "Ocultar numero e manter apenas aviso de indisponibilidade.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "operational_health",
+      "title": "Saude Operacional",
+      "purpose": "Resumir se a operacao candidata esta estavel, degradada ou bloqueada.",
+      "synthetic_documentary_source": "candidate_health_rollup",
+      "risk_level": "high",
+      "associated_action": "ver_fatores_degradantes",
+      "empty_state": "Sem sinal suficiente para classificar saude agora.",
+      "error_state": "Nao foi possivel montar a saude operacional.",
+      "stale_state": "Saude pode nao refletir os ultimos eventos.",
+      "partial_state": "Saude calculada com cobertura parcial de widgets.",
+      "degraded_state": "Promover esta mensagem como headline principal.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "warnings_center",
+      "title": "Warnings",
+      "purpose": "Concentrar stale data, gaps e contradicoes operacionais.",
+      "synthetic_documentary_source": "candidate_warning_registry",
+      "risk_level": "medium",
+      "associated_action": "priorizar_warning_mais_critico",
+      "empty_state": "Nenhum warning operacional relevante agora.",
+      "error_state": "Warnings indisponiveis; assuma estado conservador.",
+      "stale_state": "A lista de warnings pode nao estar atualizada.",
+      "partial_state": "Alguns warnings foram omitidos por falta de contexto confiavel.",
+      "degraded_state": "Mostrar apenas warnings bloqueantes.",
+      "visible_in_mode": "advanced_only"
+    },
+    {
+      "widget_id": "audit_trail",
+      "title": "Audit Trail",
+      "purpose": "Dar acesso rapido aos eventos recentes sem despejar logs crus.",
+      "synthetic_documentary_source": "candidate_audit_receipt_index",
+      "risk_level": "low",
+      "associated_action": "abrir_eventos_recentes",
+      "empty_state": "Nenhum evento novo no recorte atual.",
+      "error_state": "Trilha de auditoria indisponivel neste snapshot.",
+      "stale_state": "Eventos podem estar atrasados em relacao ao estado atual.",
+      "partial_state": "Exibimos apenas eventos com recibo verificavel.",
+      "degraded_state": "Manter ultimos eventos criticos com horario relativo.",
+      "visible_in_mode": "advanced_only"
+    }
+  ],
+  "forbidden_widgets": [
+    "top_10_vaidade_sem_acao",
+    "ticker_continuo_bloqueando_thread",
+    "dashboard_corporativo_como_primeira_tela"
+  ],
+  "handoff_targets": [
+    "BENCHUIX-20"
+  ]
+}

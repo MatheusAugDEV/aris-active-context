@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-19",
+  "opened_from_candidate_phase": "BENCHUIX-18",
+  "opened_candidate_phase": "BENCHUIX-19",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "6327482b73c7ff3f3fb79cc710997e29b9d84781",
+  "previous_candidate_ci_run": "27591966346",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Dashboard operacional avancado synthetic-only como preparo de Product Reality Lab. Nao produz Bedrock PASS, nao autoriza produto, piloto, runtime real, dado real, billing real, OAuth real, integracao real, secrets, producao, Project_ARIS mutation ou real_apply."
+}

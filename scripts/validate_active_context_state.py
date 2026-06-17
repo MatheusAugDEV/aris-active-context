@@ -1717,7 +1717,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-18", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-19", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1731,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-19", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-20", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1849,6 +1849,13 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/18_permission_language_matrix.json").exists(), "BENCHUIX-18 permission language matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/18_no_real_execution_attestation.json").exists(), "BENCHUIX-18 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/18_validation_evidence.json").exists(), "BENCHUIX-18 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_operator_opening_source.json").exists(), "BENCHUIX-19 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_advanced_dashboard_spec.md").exists(), "BENCHUIX-19 advanced dashboard spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_dashboard_widget_inventory.json").exists(), "BENCHUIX-19 dashboard widget inventory missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_actionable_kpi_matrix.json").exists(), "BENCHUIX-19 actionable KPI matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_dashboard_state_latency_budget.json").exists(), "BENCHUIX-19 dashboard state latency budget missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_no_real_execution_attestation.json").exists(), "BENCHUIX-19 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/19_validation_evidence.json").exists(), "BENCHUIX-19 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -3701,6 +3708,144 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_18_SYNTHETIC_ONLY_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-18 validation evidence missing {key}")
+
+        benchuix_19_operator = _load_json(ROOT / "artifacts/benchuix/19_operator_opening_source.json")
+        _require(benchuix_19_operator.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 operator source phase_id mismatch")
+        _require(benchuix_19_operator.get("opened_from_candidate_phase") == "BENCHUIX-18", "BENCHUIX-19 opened_from_candidate_phase mismatch")
+        _require(benchuix_19_operator.get("opened_candidate_phase") == "BENCHUIX-19", "BENCHUIX-19 opened_candidate_phase mismatch")
+        _require(
+            benchuix_19_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-19 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_19_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-19 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_19_operator.get("previous_candidate_commit") == "6327482b73c7ff3f3fb79cc710997e29b9d84781",
+            "BENCHUIX-19 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_19_operator.get("previous_candidate_ci_run") == "27591966346",
+            "BENCHUIX-19 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_19_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-19 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_19_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-19 all_real_locks_remain_false mismatch")
+        _require(benchuix_19_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-19 bedrock_preparation_exception_recorded mismatch")
+
+        benchuix_19_spec_text = (ROOT / "artifacts/benchuix/19_advanced_dashboard_spec.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## definicao da fase",
+            "## tese do dashboard",
+            "## pergunta central",
+            "## modo simples vs modo avancado",
+            "## principios de anti-ruido",
+            "## composicao da tela",
+            "## widgets operacionais obrigatorios",
+            "## loading, stale, vazio, erro, parcial e degradado",
+            "## progressive disclosure",
+            "## exemplos de linguagem para o usuario",
+            "## criterios de PASS/WARN/BLOCK/INVALID",
+            "## anti-escopo",
+            "## handoff para BENCHUIX-20",
+        ):
+            _require(required_snippet in benchuix_19_spec_text, f"BENCHUIX-19 advanced dashboard spec missing section: {required_snippet}")
+
+        benchuix_19_widgets = _load_json(ROOT / "artifacts/benchuix/19_dashboard_widget_inventory.json")
+        widget_metadata = benchuix_19_widgets.get("metadata", {})
+        _require(widget_metadata.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 widget inventory metadata.phase_id mismatch")
+        _require(widget_metadata.get("status") == "candidate", "BENCHUIX-19 widget inventory metadata.status mismatch")
+        _require(widget_metadata.get("synthetic_only") is True, "BENCHUIX-19 widget inventory metadata.synthetic_only mismatch")
+        _require(widget_metadata.get("advanced_mode_only") is True, "BENCHUIX-19 widget inventory metadata.advanced_mode_only mismatch")
+        widgets = benchuix_19_widgets.get("widgets", [])
+        _require(len(widgets) >= 10, "BENCHUIX-19 widget inventory must list at least 10 widgets")
+        widget_ids = {widget.get("widget_id") for widget in widgets}
+        _require(
+            widget_ids == {
+                "pending_approvals",
+                "execution_flow",
+                "failure_watch",
+                "evidence_receipts",
+                "risk_watch",
+                "cost_guardrail",
+                "time_saved_estimate",
+                "operational_health",
+                "warnings_center",
+                "audit_trail",
+            },
+            "BENCHUIX-19 widget inventory widget_id mismatch",
+        )
+        for widget in widgets:
+            for key in ("purpose", "synthetic_documentary_source", "risk_level", "associated_action", "empty_state", "error_state", "stale_state"):
+                _require(bool(widget.get(key)), f"BENCHUIX-19 widget missing {key}")
+            _require(widget.get("visible_in_mode") in {"advanced_only", "simple_and_advanced"}, "BENCHUIX-19 widget visible_in_mode mismatch")
+
+        benchuix_19_kpis = _load_json(ROOT / "artifacts/benchuix/19_actionable_kpi_matrix.json")
+        kpi_metadata = benchuix_19_kpis.get("metadata", {})
+        _require(kpi_metadata.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 KPI matrix metadata.phase_id mismatch")
+        _require(kpi_metadata.get("status") == "candidate", "BENCHUIX-19 KPI matrix metadata.status mismatch")
+        _require(kpi_metadata.get("synthetic_only") is True, "BENCHUIX-19 KPI matrix metadata.synthetic_only mismatch")
+        kpis = benchuix_19_kpis.get("kpis", [])
+        _require(len(kpis) >= 8, "BENCHUIX-19 KPI matrix must list at least 8 KPIs")
+        for kpi in kpis:
+            for key in ("kpi", "why_it_matters", "associated_action", "anti_metric_forbidden", "interpretation_limit", "gap_destination_if_not_measurable"):
+                _require(bool(kpi.get(key)), f"BENCHUIX-19 KPI missing {key}")
+
+        benchuix_19_latency = _load_json(ROOT / "artifacts/benchuix/19_dashboard_state_latency_budget.json")
+        latency_metadata = benchuix_19_latency.get("metadata", {})
+        _require(latency_metadata.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 latency budget metadata.phase_id mismatch")
+        _require(latency_metadata.get("status") == "candidate", "BENCHUIX-19 latency budget metadata.status mismatch")
+        _require(latency_metadata.get("synthetic_only") is True, "BENCHUIX-19 latency budget metadata.synthetic_only mismatch")
+        slos = benchuix_19_latency.get("slos", {})
+        _require(slos.get("advanced_dashboard_max_latency_ms") == 600, "BENCHUIX-19 advanced dashboard latency mismatch")
+        _require(slos.get("primary_message_max_latency_ms") == 5000, "BENCHUIX-19 primary message latency mismatch")
+        _require(benchuix_19_latency.get("thread_blocking_prohibited") is True, "BENCHUIX-19 thread_blocking_prohibited mismatch")
+        _require(bool(benchuix_19_latency.get("stale_data_policy")), "BENCHUIX-19 stale_data_policy missing")
+        _require(bool(benchuix_19_latency.get("loading_policy")), "BENCHUIX-19 loading_policy missing")
+        _require(bool(benchuix_19_latency.get("safe_degradation")), "BENCHUIX-19 safe_degradation missing")
+        _require(bool(benchuix_19_latency.get("mobile_constraints")), "BENCHUIX-19 mobile_constraints missing")
+
+        benchuix_19_no_real = _load_json(ROOT / "artifacts/benchuix/19_no_real_execution_attestation.json")
+        _require(benchuix_19_no_real.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "external_network_used_except_github_governance",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+        ):
+            _require(benchuix_19_no_real.get(key) is False, f"BENCHUIX-19 no-real {key} must be false")
+        _require(benchuix_19_no_real.get("synthetic_dashboard_only") is True, "BENCHUIX-19 synthetic_dashboard_only mismatch")
+
+        benchuix_19_evidence = _load_json(ROOT / "artifacts/benchuix/19_validation_evidence.json")
+        _require(benchuix_19_evidence.get("phase_id") == "BENCHUIX-19", "BENCHUIX-19 validation evidence phase_id mismatch")
+        _require(
+            benchuix_19_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-19 validation evidence status mismatch",
+        )
+        if benchuix_19_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_19_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_19_ADVANCED_DASHBOARD_SPEC_OK",
+                "BENCHUIX_19_WIDGET_INVENTORY_OK",
+                "BENCHUIX_19_ACTIONABLE_KPI_MATRIX_OK",
+                "BENCHUIX_19_LATENCY_BUDGET_OK",
+                "BENCHUIX_19_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_19_NO_VANITY_METRICS_OK",
+                "BENCHUIX_19_ADVANCED_MODE_ONLY_OK",
+                "BENCHUIX_19_SYNTHETIC_ONLY_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-19 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

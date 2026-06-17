@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-19",
+    "status": "candidate",
+    "synthetic_only": true,
+    "advanced_mode_only": true
+  },
+  "slos": {
+    "advanced_dashboard_max_latency_ms": 600,
+    "primary_message_max_latency_ms": 5000,
+    "max_safe_stale_window_minutes": 5
+  },
+  "loading_policy": {
+    "message_first": true,
+    "skeletons_allowed": true,
+    "slow_load_copy_after_ms": 1000,
+    "widgets_can_stream_after_message": true
+  },
+  "stale_data_policy": {
+    "must_show_data_age": true,
+    "must_label_snapshot_as_stale_after_threshold": true,
+    "stale_state_restricts_high_confidence_copy": true,
+    "stale_state_requires_cta_to_history_or_receipts": true
+  },
+  "safe_degradation": {
+    "degrade_to_message_health_warning_history": true,
+    "hide_non_critical_widgets_before_blocking_thread": true,
+    "cost_and_time_saved_can_be_withheld_if_baseline_missing": true,
+    "warnings_must_survive_degradation": true
+  },
+  "fallback_when_exceeded": {
+    "over_600ms": "render_message_health_and_top_warning_first",
+    "over_5000ms": "show_primary_message_with_safe_snapshot_notice",
+    "missing_widget_data": "replace_with_unavailable_card_and_clear_next_step",
+    "partial_snapshot": "show_only_verified_cards"
+  },
+  "mobile_constraints": {
+    "headline_and_primary_cta_visible_without_horizontal_scroll": true,
+    "max_priority_widgets_above_fold": 3,
+    "chart_dependency_optional": true,
+    "dense_tables_forbidden_on_mobile_first_view": true
+  },
+  "thread_blocking_prohibited": true,
+  "handoff_targets": [
+    "BENCHUIX-20"
+  ]
+}
