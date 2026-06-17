@@ -1,0 +1,22 @@
+{
+  "phase_id": "BENCHUIX-27",
+  "route_type": "candidate_only",
+  "source_phase": "BENCHUIX-26",
+  "opened_candidate_phase": "BENCHUIX-27",
+  "operator_gate_source": "artifacts/benchuix/26_operator_gate_decision.json",
+  "admission_packet_source": "artifacts/benchuix/26_to_27_candidate_admission_packet.json",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "previous_candidate_commit": "0edcc5a135802473bfd18a239ed31c230888a771",
+  "previous_candidate_ci_run": "27663435313",
+  "live_route_opened": false,
+  "product_authorized": false,
+  "runtime_real_authorized": false,
+  "real_apply_authorized": false,
+  "bedrock_authorized": false,
+  "secrets_authorized": false,
+  "real_user_data_authorized": false,
+  "real_sessions_authorized": false,
+  "project_aris_mutation_authorized": false,
+  "crisol_admitted": false,
+  "all_real_locks_remain_false": true
+}

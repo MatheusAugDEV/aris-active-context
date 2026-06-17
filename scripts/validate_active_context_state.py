@@ -1833,8 +1833,8 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-26", "benchuix_track.current_candidate_phase mismatch")
-        _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-27", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("latest_candidate_decision") == "OPERATOR_GATE_ACCEPTED", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
         _require(benchuix_track.get("admission_commit_sha") == "89443c9c80df69568da0c7c2efdb0a72b6e371af", "benchuix_track.admission_commit_sha mismatch")
@@ -1847,7 +1847,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-27", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "CRISOL", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -2043,6 +2043,10 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/26_demo_value_message_matrix.json").exists(), "BENCHUIX-26 demo value message matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/26_demo_validation_evidence.json").exists(), "BENCHUIX-26 demo validation evidence missing on disk")
         _require((ROOT / "artifacts/benchuix/26_demo_no_real_execution_attestation.json").exists(), "BENCHUIX-26 demo no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_operator_gate_decision.json").exists(), "BENCHUIX-26 operator gate decision missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_to_27_candidate_admission_packet.json").exists(), "BENCHUIX-26 to BENCHUIX-27 admission packet missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_candidate_opening_source.json").exists(), "BENCHUIX-27 candidate opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_no_real_execution_attestation.json").exists(), "BENCHUIX-27 no-real-execution attestation missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -6033,6 +6037,147 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "git_diff_check",
             ):
                 _require(bool(validation_results.get(key)), f"BENCHUIX-26 validation results missing {key}")
+
+        benchuix_26_gate = _load_json(ROOT / "artifacts/benchuix/26_operator_gate_decision.json")
+        _require(benchuix_26_gate.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 gate decision phase_id mismatch")
+        _require(benchuix_26_gate.get("artifact_type") == "operator_gate_decision", "BENCHUIX-26 gate decision artifact_type mismatch")
+        _require(benchuix_26_gate.get("candidate_only") is True, "BENCHUIX-26 gate decision candidate_only mismatch")
+        _require(benchuix_26_gate.get("decision") == "admit_benchuix27_candidate_only", "BENCHUIX-26 gate decision mismatch")
+        _require(benchuix_26_gate.get("decision_source") == "standing_authorization_packet", "BENCHUIX-26 gate decision source mismatch")
+        _require(
+            benchuix_26_gate.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-26 gate standing authorization artifact mismatch",
+        )
+        _require(benchuix_26_gate.get("previous_candidate_phase") == "BENCHUIX-26", "BENCHUIX-26 gate previous_candidate_phase mismatch")
+        _require(benchuix_26_gate.get("previous_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "BENCHUIX-26 gate previous_candidate_decision mismatch")
+        _require(benchuix_26_gate.get("opened_candidate_phase") == "BENCHUIX-27", "BENCHUIX-26 gate opened_candidate_phase mismatch")
+        _require(benchuix_26_gate.get("candidate_next_phase_after_gate") == "CRISOL", "BENCHUIX-26 gate next candidate mismatch")
+        _require(benchuix_26_gate.get("operator_ritual_repeated") is False, "BENCHUIX-26 gate operator ritual mismatch")
+        _require(benchuix_26_gate.get("block_reasons") == [], "BENCHUIX-26 gate block_reasons must be empty")
+        gate_scope = benchuix_26_gate.get("approval_scope", {})
+        _require(gate_scope.get("authorizes_benchuix26_candidate_acceptance") is True, "BENCHUIX-26 gate acceptance authorization mismatch")
+        _require(gate_scope.get("authorizes_benchuix27_candidate_only_admission") is True, "BENCHUIX-26 gate BENCHUIX-27 authorization mismatch")
+        for key in (
+            "authorizes_crisol_admission",
+            "authorizes_live_route",
+            "authorizes_product",
+            "authorizes_pilot",
+            "authorizes_runtime_real",
+            "authorizes_real_apply",
+            "authorizes_bedrock",
+            "authorizes_secrets",
+            "authorizes_real_user_data",
+            "authorizes_real_usability_sessions",
+            "authorizes_project_aris_mutation",
+        ):
+            _require(gate_scope.get(key) is False, f"BENCHUIX-26 gate {key} must be false")
+        _require(benchuix_26_gate.get("no_real_execution_attestation") is True, "BENCHUIX-26 gate no-real attestation mismatch")
+
+        benchuix_27_admission = _load_json(ROOT / "artifacts/benchuix/26_to_27_candidate_admission_packet.json")
+        _require(benchuix_27_admission.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 admission phase_id mismatch")
+        _require(benchuix_27_admission.get("artifact_type") == "candidate_admission_packet", "BENCHUIX-27 admission artifact_type mismatch")
+        _require(benchuix_27_admission.get("route_type") == "candidate_only", "BENCHUIX-27 admission route_type mismatch")
+        _require(benchuix_27_admission.get("source_phase") == "BENCHUIX-26", "BENCHUIX-27 admission source_phase mismatch")
+        _require(
+            benchuix_27_admission.get("source_operator_gate_artifact") == "artifacts/benchuix/26_operator_gate_decision.json",
+            "BENCHUIX-27 admission source_operator_gate_artifact mismatch",
+        )
+        _require(
+            benchuix_27_admission.get("source_validation_artifact") == "artifacts/benchuix/26_demo_validation_evidence.json",
+            "BENCHUIX-27 admission source_validation_artifact mismatch",
+        )
+        _require(
+            benchuix_27_admission.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-27 admission standing_authorization_artifact mismatch",
+        )
+        _require(benchuix_27_admission.get("accepted_previous_candidate_phase") == "BENCHUIX-26", "BENCHUIX-27 admission accepted_previous_candidate_phase mismatch")
+        _require(
+            benchuix_27_admission.get("accepted_previous_candidate_commit") == "0edcc5a135802473bfd18a239ed31c230888a771",
+            "BENCHUIX-27 admission accepted_previous_candidate_commit mismatch",
+        )
+        _require(benchuix_27_admission.get("opened_candidate_phase") == "BENCHUIX-27", "BENCHUIX-27 admission opened_candidate_phase mismatch")
+        _require(benchuix_27_admission.get("candidate_next_phase_after_gate") == "CRISOL", "BENCHUIX-27 admission next phase mismatch")
+        _require(benchuix_27_admission.get("live_route_opened") is False, "BENCHUIX-27 admission live route must remain closed")
+        _require(benchuix_27_admission.get("active_next_phase") is None, "BENCHUIX-27 admission active_next_phase must remain null")
+        _require(benchuix_27_admission.get("next_phase") is None, "BENCHUIX-27 admission next_phase must remain null")
+        for key in (
+            "project_aris_mutation_authorized",
+            "product_authorized",
+            "production_authorized",
+            "runtime_real_authorized",
+            "real_apply_authorized",
+            "bedrock_authorized",
+            "secrets_authorized",
+            "real_user_data_authorized",
+            "real_sessions_authorized",
+        ):
+            _require(benchuix_27_admission.get(key) is False, f"BENCHUIX-27 admission {key} must be false")
+        _require(benchuix_27_admission.get("all_real_locks_remain_false") is True, "BENCHUIX-27 admission locks mismatch")
+
+        benchuix_27_opening = _load_json(ROOT / "artifacts/benchuix/27_candidate_opening_source.json")
+        _require(benchuix_27_opening.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 opening phase_id mismatch")
+        _require(benchuix_27_opening.get("route_type") == "candidate_only", "BENCHUIX-27 opening route_type mismatch")
+        _require(benchuix_27_opening.get("source_phase") == "BENCHUIX-26", "BENCHUIX-27 opening source_phase mismatch")
+        _require(benchuix_27_opening.get("opened_candidate_phase") == "BENCHUIX-27", "BENCHUIX-27 opening opened_candidate_phase mismatch")
+        _require(
+            benchuix_27_opening.get("operator_gate_source") == "artifacts/benchuix/26_operator_gate_decision.json",
+            "BENCHUIX-27 opening operator_gate_source mismatch",
+        )
+        _require(
+            benchuix_27_opening.get("admission_packet_source") == "artifacts/benchuix/26_to_27_candidate_admission_packet.json",
+            "BENCHUIX-27 opening admission_packet_source mismatch",
+        )
+        _require(
+            benchuix_27_opening.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-27 opening standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_27_opening.get("previous_candidate_commit") == "0edcc5a135802473bfd18a239ed31c230888a771",
+            "BENCHUIX-27 opening previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_27_opening.get("previous_candidate_ci_run") == "27663435313",
+            "BENCHUIX-27 opening previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_27_opening.get("live_route_opened") is False, "BENCHUIX-27 opening live route must remain closed")
+        for key in (
+            "product_authorized",
+            "runtime_real_authorized",
+            "real_apply_authorized",
+            "bedrock_authorized",
+            "secrets_authorized",
+            "real_user_data_authorized",
+            "real_sessions_authorized",
+            "project_aris_mutation_authorized",
+        ):
+            _require(benchuix_27_opening.get(key) is False, f"BENCHUIX-27 opening {key} must be false")
+        _require(benchuix_27_opening.get("crisol_admitted") is False, "BENCHUIX-27 opening crisol_admitted mismatch")
+        _require(benchuix_27_opening.get("all_real_locks_remain_false") is True, "BENCHUIX-27 opening locks mismatch")
+
+        benchuix_27_no_real = _load_json(ROOT / "artifacts/benchuix/27_no_real_execution_attestation.json")
+        _require(benchuix_27_no_real.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+            "crisol_opened",
+        ):
+            _require(benchuix_27_no_real.get(key) is False, f"BENCHUIX-27 no-real {key} must be false")
+        _require(benchuix_27_no_real.get("documentary_candidate_only") is True, "BENCHUIX-27 documentary_candidate_only mismatch")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

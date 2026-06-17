@@ -1,0 +1,30 @@
+{
+  "phase_id": "BENCHUIX-26",
+  "artifact_type": "operator_gate_decision",
+  "candidate_only": true,
+  "decision": "admit_benchuix27_candidate_only",
+  "decision_source": "standing_authorization_packet",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "previous_candidate_phase": "BENCHUIX-26",
+  "previous_candidate_decision": "READY_FOR_OPERATOR_REVIEW",
+  "opened_candidate_phase": "BENCHUIX-27",
+  "candidate_next_phase_after_gate": "CRISOL",
+  "operator_ritual_repeated": false,
+  "block_reasons": [],
+  "approval_scope": {
+    "authorizes_benchuix26_candidate_acceptance": true,
+    "authorizes_benchuix27_candidate_only_admission": true,
+    "authorizes_crisol_admission": false,
+    "authorizes_live_route": false,
+    "authorizes_product": false,
+    "authorizes_pilot": false,
+    "authorizes_runtime_real": false,
+    "authorizes_real_apply": false,
+    "authorizes_bedrock": false,
+    "authorizes_secrets": false,
+    "authorizes_real_user_data": false,
+    "authorizes_real_usability_sessions": false,
+    "authorizes_project_aris_mutation": false
+  },
+  "no_real_execution_attestation": true
+}

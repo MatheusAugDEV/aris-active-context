@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `6be8c527d066`
+- state_sha: `2945196bc7e6`
 - schema_version: `3.23`
 
 ## AVISO DE STALE
