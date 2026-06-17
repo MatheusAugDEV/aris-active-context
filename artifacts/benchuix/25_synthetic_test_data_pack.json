@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-25",
+    "status": "candidate",
+    "candidate_only": true,
+    "all_data_synthetic": true
+  },
+  "domains": [
+    {
+      "domain": "barbearia",
+      "synthetic_entities": ["agenda_do_dia", "cliente_sintetico_A", "cliente_sintetico_B", "profissional_sintetico_1"],
+      "synthetic_actions": ["confirmar_horario", "lembrar_no_show", "reagendar_janela_ociosa"],
+      "synthetic_risks": ["mensagem_em_horario_errado", "reagendamento_sem_confirmacao", "duplicidade_de_lembrete"],
+      "synthetic_receipts": ["recibo_confirmacao_0900", "recibo_reagendamento_1130"],
+      "synthetic_failures": ["falha_envio_lembrete", "agenda_sem_contato_confirmado"],
+      "rollback_cases": ["cancelar_lembrete_nao_enviado", "compensar_reagendamento_ja_comunicado"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "loja",
+      "synthetic_entities": ["pedido_sintetico_301", "item_sintetico_estoque_12", "fornecedor_sintetico_x"],
+      "synthetic_actions": ["sugerir_reposicao", "pausar_rotina_de_alerta", "avisar_baixo_estoque"],
+      "synthetic_risks": ["repor_item_errado", "pausar_alerta_critico", "duplicar_notificacao"],
+      "synthetic_receipts": ["recibo_alerta_estoque_301", "recibo_pausa_rotina_17"],
+      "synthetic_failures": ["fornecedor_sem_resposta_sintetica", "estoque_sem_confirmacao_de_contagem"],
+      "rollback_cases": ["reativar_alerta_pausado", "compensar_sugestao_invalidada"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "mercado",
+      "synthetic_entities": ["pedido_fila_88", "setor_hortifruti", "caixa_noturno"],
+      "synthetic_actions": ["priorizar_reabastecimento", "simular_alerta_operacional", "escalar_excecao"],
+      "synthetic_risks": ["prioridade_invertida", "acao_em_setor_errado", "silenciar_falha_operacional"],
+      "synthetic_receipts": ["recibo_priorizacao_88", "recibo_escalonamento_12"],
+      "synthetic_failures": ["erro_sintetico_de_sincronia", "alerta_sem_confirmacao_de_leitura"],
+      "rollback_cases": ["voltar_prioridade_para_fila_padrao", "compensar_setor_errado_sem_runtime_real"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "escritorio",
+      "synthetic_entities": ["comprovante_contabil_45", "caixa_postal_financeiro", "rotina_aprovacao_mensal"],
+      "synthetic_actions": ["gerar_comprovante", "sinalizar_pendencia", "encaminhar_para_aprovacao"],
+      "synthetic_risks": ["prova_incompleta", "registro_sem_horario", "aprovacao_sem_historico"],
+      "synthetic_receipts": ["recibo_encaminhamento_45", "recibo_pendencia_20"],
+      "synthetic_failures": ["arquivo_sintetico_inconsistente", "comprovante_sem_referencia_de_acao"],
+      "rollback_cases": ["compensar_encaminhamento_incorreto", "desfazer_sinalizacao_nao_publicada"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "agencia",
+      "synthetic_entities": ["conta_cliente_alpha", "conta_cliente_beta", "campanha_sintetica_77"],
+      "synthetic_actions": ["simular_aprovacao_multicliente", "recuperar_recibo_por_conta", "bloquear_contexto_cruzado"],
+      "synthetic_risks": ["conta_errada", "comprovante_em_cliente_errado", "acao_sem_identidade_visivel"],
+      "synthetic_receipts": ["recibo_cliente_alpha_1", "recibo_cliente_beta_2"],
+      "synthetic_failures": ["falha_de_contexto_cruzado", "aprovacao_sem_conta_ativa_clara"],
+      "rollback_cases": ["compensar_apontamento_em_conta_errada", "reverter_pausa_em_conta_correta"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "automation_anxiety_overlay",
+      "synthetic_entities": ["tarefa_sensivel_preview", "risco_limite_card", "gate_humano_sintetico"],
+      "synthetic_actions": ["comparar_preview_vs_execucao", "checar_will_will_not", "classificar_rollback"],
+      "synthetic_risks": ["excesso_de_confianca", "medo_de_acao_irreversivel", "confusao_entre_preview_e_execucao"],
+      "synthetic_receipts": ["recibo_preview_nao_executado", "recibo_aprovacao_bloqueada"],
+      "synthetic_failures": ["copy_de_risco_ambigua", "limite_nao_memorizado"],
+      "rollback_cases": ["reversivel", "compensavel", "irreversivel_com_aviso_honesto"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    },
+    {
+      "domain": "mobile_4g_overlay",
+      "synthetic_entities": ["alerta_contextual_mobile", "recibo_mobile_compacto", "estado_degradado_4g"],
+      "synthetic_actions": ["aprovar_alerta", "pausar_rotina", "ver_falha", "achar_recibo"],
+      "synthetic_risks": ["perda_de_contexto_em_tela_pequena", "latencia_percebida", "scroll_excessivo"],
+      "synthetic_receipts": ["recibo_mobile_approve", "recibo_mobile_pause"],
+      "synthetic_failures": ["estado_desatualizado_sintetico", "falha_sem_proximo_passo_claro"],
+      "rollback_cases": ["retomar_rotina_pausada", "compensar_acao_nao_publicada"],
+      "no_real_personal_data": true,
+      "no_real_customer_data": true
+    }
+  ]
+}

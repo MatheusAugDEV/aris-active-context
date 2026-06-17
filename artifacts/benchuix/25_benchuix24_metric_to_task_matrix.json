@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-25",
+    "status": "candidate",
+    "candidate_only": true,
+    "source_scorecard": "artifacts/benchuix/24_metrics_scorecard.json"
+  },
+  "entries": [
+    {
+      "metric_id": "time_to_first_value",
+      "linked_tasks": ["understand_today"],
+      "observable_signals": ["Tempo ate identificar prioridade", "Hesitacao inicial antes de resumir o estado atual"],
+      "threshold_candidate": "<= 180s em walkthrough sintetico representativo, com no maximo um ponto de hesitacao registrado.",
+      "raw_data_fields": ["participant_profile_id", "task_id", "start_timestamp", "end_timestamp", "hesitation_markers"],
+      "decision_enabled": "Decidir se a entrada owner-solo continua curta o suficiente para permanecer como baseline do produto.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "time_to_first_safe_automation",
+      "linked_tasks": ["create_automation"],
+      "observable_signals": ["Tempo ate automacao segura pronta", "Presenca de limite e gate antes do fim da tarefa"],
+      "threshold_candidate": "<= 300s em cenario sintetico owner-solo, com will/will-not e risco presentes antes do fim do fluxo.",
+      "raw_data_fields": ["participant_profile_id", "task_id", "start_timestamp", "end_timestamp", "will_will_not_understood"],
+      "decision_enabled": "Decidir se o baseline de automacao segura permanece plausivel para dono-solo ou se precisa de reducao de friccao.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "task_success",
+      "linked_tasks": ["understand_today", "create_automation", "run_simulation", "approve_action", "find_receipt", "understand_failure", "pause_automation", "understand_aris_will_not", "check_rollback_boundary", "explain_aris"],
+      "observable_signals": ["Outcome por tarefa", "Bloqueios e abandonos", "Dependencia de ajuda"],
+      "threshold_candidate": ">= 5 de 6 tarefas criticas concluidas por segmento principal, sem erro bloqueante de interpretacao.",
+      "raw_data_fields": ["participant_profile_id", "task_id", "task_outcome", "help_requested", "wrong_turn_count"],
+      "decision_enabled": "Decidir se a experiencia pode seguir para teste de usabilidade task-based sem reabrir o baseline de UX.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "confidence_to_approve",
+      "linked_tasks": ["approve_action", "understand_aris_will_not", "check_rollback_boundary"],
+      "observable_signals": ["Decisao coerente com risco", "Recall de limite antes de aprovar", "Ausencia de aprovacao insegura"],
+      "threshold_candidate": ">= 4/5 de confianca somente quando o respondente tambem acertar os limites da acao.",
+      "raw_data_fields": ["task_id", "task_outcome", "risk_misunderstanding", "will_will_not_understood", "participant_explanation_summary"],
+      "decision_enabled": "Decidir se a inbox de aprovacao comunica contexto suficiente ou se ainda depende de copy e estrutura adicionais.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "evidence_comprehension",
+      "linked_tasks": ["find_receipt"],
+      "observable_signals": ["Encontrabilidade do comprovante", "Acerto em resumir o que a prova mostra"],
+      "threshold_candidate": ">= 80% de acerto nas perguntas de recibo para tarefas criticas.",
+      "raw_data_fields": ["task_id", "receipt_found", "participant_explanation_summary", "observer_notes", "end_timestamp"],
+      "decision_enabled": "Decidir se historico e comprovantes estao prontos para teste mais amplo ou se ainda sao telemetria demais e recibo de menos.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "rollback_comprehension",
+      "linked_tasks": ["check_rollback_boundary", "pause_automation"],
+      "observable_signals": ["Classificacao correta de reversibilidade", "Nao confundir pausar com desfazer total"],
+      "threshold_candidate": ">= 80% de classificacao correta nas tarefas com efeito sensivel.",
+      "raw_data_fields": ["task_id", "rollback_understood", "pause_completed", "risk_misunderstanding", "observer_notes"],
+      "decision_enabled": "Decidir se a linguagem de recuperacao esta honesta o suficiente para seguir para demo e usabilidade.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "anxiety_reduction",
+      "linked_tasks": ["run_simulation", "approve_action", "understand_aris_will_not"],
+      "observable_signals": ["Mudanca de hesitacao apos preview", "Menor medo sem perder lembranca de risco"],
+      "threshold_candidate": "Delta positivo minimo de 1 ponto em escala de 5, sem queda de compreensao de risco.",
+      "raw_data_fields": ["task_id", "hesitation_markers", "risk_misunderstanding", "will_will_not_understood", "participant_explanation_summary"],
+      "decision_enabled": "Decidir se a linguagem de confianca acalma sem virar falsa seguranca.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "ability_to_explain",
+      "linked_tasks": ["approve_action", "understand_failure", "understand_aris_will_not", "check_rollback_boundary", "explain_aris"],
+      "observable_signals": ["Explain-back com valor, limite e gate humano", "Ausencia de jargao tecnico como muleta"],
+      "threshold_candidate": ">= 80% das respostas contendo valor, limite e gate humano quando a tarefa exigir aprovacao.",
+      "raw_data_fields": ["task_id", "participant_explanation_summary", "severity_if_issue", "observer_notes", "task_outcome"],
+      "decision_enabled": "Decidir se o produto ja pode ser demonstrado sem explicacao arquitetural longa.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "mobile_usability",
+      "linked_tasks": ["understand_today", "approve_action", "find_receipt", "understand_failure", "pause_automation"],
+      "observable_signals": ["Conclusao de tarefas moveis sem perda de contexto", "Poucos desvios e pouca releitura em 4G"],
+      "threshold_candidate": ">= 4 de 4 tarefas moveis criticas sem scroll horizontal e com no maximo 3 taps apos abrir o alerta contextual.",
+      "raw_data_fields": ["participant_profile_id", "task_id", "wrong_turn_count", "hesitation_markers", "task_outcome"],
+      "decision_enabled": "Decidir se o mobile companion continua focado em acoes essenciais ou se precisa reduzir carga cognitiva antes do protocolo de usabilidade.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "accessibility_pass",
+      "linked_tasks": ["understand_today", "approve_action", "find_receipt", "understand_failure", "pause_automation"],
+      "observable_signals": ["Tarefas essenciais continuam compreensiveis sem depender de cor, mouse ou motion"],
+      "threshold_candidate": "0 falhas bloqueantes nas tarefas criticas; gaps menores precisam destino explicito.",
+      "raw_data_fields": ["task_id", "severity_if_issue", "observer_notes", "task_outcome", "no_pii_required"],
+      "decision_enabled": "Decidir se o baseline de acessibilidade permite seguir para teste task-based sem reabrir a fundacao.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "performance_pass",
+      "linked_tasks": ["understand_today", "run_simulation", "find_receipt", "understand_failure", "pause_automation"],
+      "observable_signals": ["Atraso percebido nao destrói a compreensao da tarefa", "Mobile 4G continua acionavel em superficie critica"],
+      "threshold_candidate": "Dentro do budget candidate-only em todas as superficies criticas; sem declarar Core Web Vitals reais nem dado de campo.",
+      "raw_data_fields": ["task_id", "start_timestamp", "end_timestamp", "hesitation_markers", "task_outcome"],
+      "decision_enabled": "Decidir se o scorecard pode usar performance como signal de UX sem fingir prova de campo.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    },
+    {
+      "metric_id": "preference_vs_competitor",
+      "linked_tasks": ["create_automation", "run_simulation", "explain_aris"],
+      "observable_signals": ["Tarefas documentadas de modo que comparacao futura seja por tarefa, nao por narrativa global"],
+      "threshold_candidate": "Diagnostico apenas; sem threshold global agregado e sem claim de mercado enquanto faltar raw data task-based.",
+      "raw_data_fields": ["task_id", "participant_explanation_summary", "observer_notes", "task_outcome", "no_pii_required"],
+      "decision_enabled": "Decidir qual tarefa merece aprofundamento de demo, copy ou usabilidade antes de qualquer narrativa comparativa externa.",
+      "still_candidate_only": true,
+      "blocks_benchuix25_pass_if_unmapped": true
+    }
+  ]
+}

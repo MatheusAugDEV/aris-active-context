@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-25",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "profiles": [
+    {
+      "profile_id": "barbearia_owner_solo",
+      "context": "Dono de barbearia que decide no celular entre clientes e precisa respostas imediatas.",
+      "constraints": ["Tempo curto", "Baixa paciencia para setup", "Risco de interrupcao frequente"],
+      "risk_sensitivity": "Alta para cobranca, agenda e mensagens equivocadas.",
+      "technical_familiarity": "Baixa a media; entende operacao, nao arquitetura.",
+      "device_context": "Mobile first com uso ocasional de desktop.",
+      "tasks_prioritized": ["understand_today", "create_automation", "approve_action", "understand_aris_will_not", "explain_aris"],
+      "synthetic_data_needs": ["Agenda sintetica", "Clientes sinteticos anonimos", "Alertas de no-show e recibos sinteticos"],
+      "exclusion_reason_if_not_tested_now": "Nao ha sessao real nesta fase; perfil fica apenas documentado para execucao futura autorizada."
+    },
+    {
+      "profile_id": "loja_owner_operator",
+      "context": "Dono-operador de loja pequena que alterna atendimento, caixa e estoque.",
+      "constraints": ["Troca de contexto", "Desktop e celular", "Baixa tolerancia a ambiguidade operacional"],
+      "risk_sensitivity": "Alta para estoque, mensagens e pausas erradas.",
+      "technical_familiarity": "Media; acostumado a software operacional, nao a automacao abstrata.",
+      "device_context": "Desktop no caixa e celular no piso da loja.",
+      "tasks_prioritized": ["understand_today", "create_automation", "pause_automation", "check_rollback_boundary", "find_receipt"],
+      "synthetic_data_needs": ["Pedidos sinteticos", "Itens de estoque sinteticos", "Recibos de reposicao e pausa sinteticos"],
+      "exclusion_reason_if_not_tested_now": "Sessao futura depende de autorizacao separada e continua fora desta fase candidate-only."
+    },
+    {
+      "profile_id": "mercado_small_team",
+      "context": "Pequena equipe com dono e operador lidando com excecoes operacionais durante o dia.",
+      "constraints": ["Varios itens simultaneos", "Aprovacao curta", "Falhas precisam proximo passo claro"],
+      "risk_sensitivity": "Alta para pedidos, estoque e aprovacao errada em volume.",
+      "technical_familiarity": "Media; conhece processo, nao quer ler detalhe tecnico.",
+      "device_context": "Desktop principal com consultas moveis ocasionais.",
+      "tasks_prioritized": ["create_automation", "run_simulation", "understand_failure", "pause_automation"],
+      "synthetic_data_needs": ["Filas sinteticas de pedido", "Excecoes sinteticas", "Falhas de integracao simuladas sem runtime real"],
+      "exclusion_reason_if_not_tested_now": "Perfil permanece hipotetico enquanto a trilha segue sem sessao real."
+    },
+    {
+      "profile_id": "escritorio_admin",
+      "context": "Pessoa administrativa que precisa rastreabilidade, prova e linguagem conservadora.",
+      "constraints": ["Baixa tolerancia a lacuna de auditoria", "Precisa explicar para terceiros", "Prefere desktop"],
+      "risk_sensitivity": "Muito alta para comprovante, historico e rollback.",
+      "technical_familiarity": "Media; entende processo e compliance basico.",
+      "device_context": "Desktop primario, mobilidade secundaria.",
+      "tasks_prioritized": ["find_receipt", "understand_failure", "check_rollback_boundary", "explain_aris"],
+      "synthetic_data_needs": ["Comprovantes sinteticos", "Historico sintetico", "Casos sinteticos de compensacao e irreversibilidade"],
+      "exclusion_reason_if_not_tested_now": "Dados permanecem sinteticos e sem contato com operador real nesta fase."
+    },
+    {
+      "profile_id": "agencia_operator",
+      "context": "Operador de agencia que alterna varias contas e precisa evitar contexto cruzado.",
+      "constraints": ["Multicliente", "Troca frequente de contexto", "Baixa margem para aprovar no cliente errado"],
+      "risk_sensitivity": "Muito alta para contexto, comprovante e identidade da conta.",
+      "technical_familiarity": "Media a alta em operacao, baixa tolerancia a jargao irrelevante.",
+      "device_context": "Desktop com consultas moveis ocasionais.",
+      "tasks_prioritized": ["run_simulation", "find_receipt", "understand_aris_will_not", "explain_aris"],
+      "synthetic_data_needs": ["Contas sinteticas separadas", "Recibos por conta", "Falhas sinteticas de contexto cruzado"],
+      "exclusion_reason_if_not_tested_now": "Continuamos sem contas reais, sem clientes reais e sem sessao executada."
+    },
+    {
+      "profile_id": "automation_anxious_user",
+      "context": "Pessoa que teme automacao agir errado e busca prova antes de aprovar.",
+      "constraints": ["Ansiedade alta", "Leitura cuidadosa", "Risco de congelar na decisao"],
+      "risk_sensitivity": "Extremamente alta para aprovacao e irreversibilidade.",
+      "technical_familiarity": "Baixa a media; foco em confianca, nao em mecanismo.",
+      "device_context": "Desktop ou mobile, desde que a copy seja clara.",
+      "tasks_prioritized": ["run_simulation", "approve_action", "understand_aris_will_not", "check_rollback_boundary"],
+      "synthetic_data_needs": ["Riscos sinteticos contrastados", "Exemplos sinteticos de will/will-not", "Casos sinteticos de rollback"],
+      "exclusion_reason_if_not_tested_now": "Ansiedade e inferida apenas como perfil futuro; nenhuma pessoa real foi envolvida."
+    },
+    {
+      "profile_id": "mobile_4g_user",
+      "context": "Usuario em rua ou loja, com tela pequena e rede limitada, que precisa agir rapido sem perder contexto.",
+      "constraints": ["Latencia percebida", "Tela pequena", "Interrupcao externa", "Pouco texto de uma vez"],
+      "risk_sensitivity": "Alta para aprovar, pausar, achar recibo e entender falha.",
+      "technical_familiarity": "Variavel; protocolo assume pouca paciencia para explorar.",
+      "device_context": "PWA mobile em contexto 4G.",
+      "tasks_prioritized": ["understand_today", "approve_action", "find_receipt", "understand_failure", "pause_automation"],
+      "synthetic_data_needs": ["Alertas sinteticos moveis", "Recibos sinteticos moveis", "Falhas sinteticas em contexto degradado"],
+      "exclusion_reason_if_not_tested_now": "O perfil e planejado apenas para futura execucao autorizada; nada foi medido nesta fase."
+    }
+  ]
+}

@@ -1833,7 +1833,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-24", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-25", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1847,7 +1847,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-25", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-26", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -2019,6 +2019,17 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/24_vanity_metric_rejection_report.json").exists(), "BENCHUIX-24 vanity metric rejection report missing on disk")
         _require((ROOT / "artifacts/benchuix/24_no_real_execution_attestation.json").exists(), "BENCHUIX-24 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/24_validation_evidence.json").exists(), "BENCHUIX-24 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_operator_opening_source.json").exists(), "BENCHUIX-25 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_usability_test_protocol.md").exists(), "BENCHUIX-25 usability test protocol missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_task_success_matrix.json").exists(), "BENCHUIX-25 task success matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_usability_severity_rubric.json").exists(), "BENCHUIX-25 usability severity rubric missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_participant_profile_matrix.json").exists(), "BENCHUIX-25 participant profile matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_synthetic_test_data_pack.json").exists(), "BENCHUIX-25 synthetic test data pack missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_task_scenario_script.md").exists(), "BENCHUIX-25 task scenario script missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_observation_and_raw_data_schema.json").exists(), "BENCHUIX-25 observation/raw-data schema missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_benchuix24_metric_to_task_matrix.json").exists(), "BENCHUIX-25 metric-to-task matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_no_real_execution_attestation.json").exists(), "BENCHUIX-25 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/25_validation_evidence.json").exists(), "BENCHUIX-25 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -5227,6 +5238,326 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_24_RAW_DATA_REQUIRED_FOR_FUTURE_CLAIMS_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-24 validation evidence missing {key}")
+
+        benchuix_25_operator = _load_json(ROOT / "artifacts/benchuix/25_operator_opening_source.json")
+        _require(benchuix_25_operator.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 operator source phase_id mismatch")
+        _require(benchuix_25_operator.get("opened_from_candidate_phase") == "BENCHUIX-24", "BENCHUIX-25 opened_from_candidate_phase mismatch")
+        _require(benchuix_25_operator.get("opened_candidate_phase") == "BENCHUIX-25", "BENCHUIX-25 opened_candidate_phase mismatch")
+        _require(
+            benchuix_25_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-25 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_25_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-25 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_25_operator.get("previous_candidate_commit") == "44d816e792db2eec594b60fd181c9354c026096c",
+            "BENCHUIX-25 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_25_operator.get("previous_candidate_ci_run") == "27661016575",
+            "BENCHUIX-25 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_25_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-25 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_25_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-25 all_real_locks_remain_false mismatch")
+        _require(benchuix_25_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-25 bedrock_preparation_exception_recorded mismatch")
+        _require(bool(benchuix_25_operator.get("bedrock_preparation_exception_scope")), "BENCHUIX-25 bedrock_preparation_exception_scope missing")
+
+        benchuix_25_protocol = (ROOT / "artifacts/benchuix/25_usability_test_protocol.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## tese da fase",
+            "## limites candidate-only",
+            "## perfis simulados/futuros",
+            "## tarefas criticas",
+            "## ambiente esperado",
+            "## instrucoes do facilitador",
+            "## regras anti-leading",
+            "## protocolo think-aloud",
+            "## o que observar",
+            "## o que registrar",
+            "## como tratar hesitacao, erro, abandono e pedido de ajuda",
+            "## como mapear observacao para severidade",
+            "## placeholders futuros de consentimento e privacidade",
+            "## como o protocolo alimenta BENCHUIX-26",
+            "## criterios PASS/WARN/BLOCK/INVALID",
+            "mobile 4G",
+        ):
+            _require(required_snippet in benchuix_25_protocol, f"BENCHUIX-25 protocol missing section: {required_snippet}")
+
+        benchuix_25_tasks = _load_json(ROOT / "artifacts/benchuix/25_task_success_matrix.json")
+        benchuix_25_tasks_metadata = benchuix_25_tasks.get("metadata", {})
+        _require(benchuix_25_tasks_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 task matrix metadata.phase_id mismatch")
+        _require(benchuix_25_tasks_metadata.get("status") == "candidate", "BENCHUIX-25 task matrix metadata.status mismatch")
+        _require(benchuix_25_tasks_metadata.get("candidate_only") is True, "BENCHUIX-25 task matrix metadata.candidate_only mismatch")
+        required_benchuix_25_task_ids = {
+            "understand_today",
+            "create_automation",
+            "run_simulation",
+            "approve_action",
+            "find_receipt",
+            "understand_failure",
+            "pause_automation",
+            "understand_aris_will_not",
+            "check_rollback_boundary",
+            "explain_aris",
+        }
+        benchuix_25_task_entries = benchuix_25_tasks.get("tasks", [])
+        _require({entry.get("task_id") for entry in benchuix_25_task_entries} == required_benchuix_25_task_ids, "BENCHUIX-25 task ids mismatch")
+        required_benchuix_25_profile_ids = {
+            "barbearia_owner_solo",
+            "loja_owner_operator",
+            "mercado_small_team",
+            "escritorio_admin",
+            "agencia_operator",
+            "automation_anxious_user",
+            "mobile_4g_user",
+        }
+        for entry in benchuix_25_task_entries:
+            _require(
+                {
+                    "task_id",
+                    "task_name",
+                    "task_goal",
+                    "user_profile_targets",
+                    "scenario_summary",
+                    "success_criteria",
+                    "failure_conditions",
+                    "unsafe_success_conditions",
+                    "allowed_help",
+                    "observable_signals",
+                    "mapped_metrics_from_benchuix24",
+                    "raw_data_fields_required_future",
+                    "blocks_candidate_pass_if_missing",
+                } <= set(entry),
+                "BENCHUIX-25 task entry missing keys",
+            )
+            _require(bool(entry.get("task_name")), f"BENCHUIX-25 task_name missing for {entry.get('task_id')}")
+            _require(bool(entry.get("task_goal")), f"BENCHUIX-25 task_goal missing for {entry.get('task_id')}")
+            _require(set(entry.get("user_profile_targets", [])) <= required_benchuix_25_profile_ids and entry.get("user_profile_targets"), f"BENCHUIX-25 user_profile_targets mismatch for {entry.get('task_id')}")
+            _require(bool(entry.get("scenario_summary")), f"BENCHUIX-25 scenario_summary missing for {entry.get('task_id')}")
+            _require(isinstance(entry.get("success_criteria"), list) and entry.get("success_criteria"), f"BENCHUIX-25 success_criteria missing for {entry.get('task_id')}")
+            _require(isinstance(entry.get("failure_conditions"), list) and entry.get("failure_conditions"), f"BENCHUIX-25 failure_conditions missing for {entry.get('task_id')}")
+            _require(isinstance(entry.get("unsafe_success_conditions"), list) and entry.get("unsafe_success_conditions"), f"BENCHUIX-25 unsafe_success_conditions missing for {entry.get('task_id')}")
+            _require(isinstance(entry.get("allowed_help"), list) and entry.get("allowed_help"), f"BENCHUIX-25 allowed_help missing for {entry.get('task_id')}")
+            _require(isinstance(entry.get("observable_signals"), list) and entry.get("observable_signals"), f"BENCHUIX-25 observable_signals missing for {entry.get('task_id')}")
+            _require(set(entry.get("mapped_metrics_from_benchuix24", [])) <= expected_metric_ids and entry.get("mapped_metrics_from_benchuix24"), f"BENCHUIX-25 mapped metrics mismatch for {entry.get('task_id')}")
+            _require(isinstance(entry.get("raw_data_fields_required_future"), list) and entry.get("raw_data_fields_required_future"), f"BENCHUIX-25 raw_data_fields_required_future missing for {entry.get('task_id')}")
+            _require(entry.get("blocks_candidate_pass_if_missing") is True, f"BENCHUIX-25 blocks_candidate_pass_if_missing must be true for {entry.get('task_id')}")
+
+        benchuix_25_severity = _load_json(ROOT / "artifacts/benchuix/25_usability_severity_rubric.json")
+        benchuix_25_severity_metadata = benchuix_25_severity.get("metadata", {})
+        _require(benchuix_25_severity_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 severity metadata.phase_id mismatch")
+        _require(benchuix_25_severity_metadata.get("status") == "candidate", "BENCHUIX-25 severity metadata.status mismatch")
+        severity_entries = benchuix_25_severity.get("severities", [])
+        _require({entry.get("severity") for entry in severity_entries} == {"CRITICAL", "HIGH", "MEDIUM", "LOW"}, "BENCHUIX-25 severity levels mismatch")
+        for entry in severity_entries:
+            _require(
+                {"severity", "definition", "examples", "blocks_candidate_pass", "destination_phase", "required_artifact_if_found"} <= set(entry),
+                "BENCHUIX-25 severity entry missing keys",
+            )
+            _require(bool(entry.get("definition")), f"BENCHUIX-25 severity definition missing for {entry.get('severity')}")
+            _require(isinstance(entry.get("examples"), list) and entry.get("examples"), f"BENCHUIX-25 severity examples missing for {entry.get('severity')}")
+            _require(isinstance(entry.get("blocks_candidate_pass"), bool), f"BENCHUIX-25 severity blocks_candidate_pass invalid for {entry.get('severity')}")
+            _require(entry.get("destination_phase") in allowed_destinations, f"BENCHUIX-25 severity destination mismatch for {entry.get('severity')}")
+            _require(bool(entry.get("required_artifact_if_found")), f"BENCHUIX-25 severity required_artifact_if_found missing for {entry.get('severity')}")
+
+        benchuix_25_profiles = _load_json(ROOT / "artifacts/benchuix/25_participant_profile_matrix.json")
+        benchuix_25_profiles_metadata = benchuix_25_profiles.get("metadata", {})
+        _require(benchuix_25_profiles_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 profiles metadata.phase_id mismatch")
+        _require(benchuix_25_profiles_metadata.get("status") == "candidate", "BENCHUIX-25 profiles metadata.status mismatch")
+        profile_entries = benchuix_25_profiles.get("profiles", [])
+        _require({entry.get("profile_id") for entry in profile_entries} == required_benchuix_25_profile_ids, "BENCHUIX-25 profile ids mismatch")
+        for entry in profile_entries:
+            _require(
+                {
+                    "profile_id",
+                    "context",
+                    "constraints",
+                    "risk_sensitivity",
+                    "technical_familiarity",
+                    "device_context",
+                    "tasks_prioritized",
+                    "synthetic_data_needs",
+                    "exclusion_reason_if_not_tested_now",
+                } <= set(entry),
+                "BENCHUIX-25 profile entry missing keys",
+            )
+            _require(bool(entry.get("context")), f"BENCHUIX-25 profile context missing for {entry.get('profile_id')}")
+            _require(isinstance(entry.get("constraints"), list) and entry.get("constraints"), f"BENCHUIX-25 constraints missing for {entry.get('profile_id')}")
+            _require(bool(entry.get("risk_sensitivity")), f"BENCHUIX-25 risk_sensitivity missing for {entry.get('profile_id')}")
+            _require(bool(entry.get("technical_familiarity")), f"BENCHUIX-25 technical_familiarity missing for {entry.get('profile_id')}")
+            _require(bool(entry.get("device_context")), f"BENCHUIX-25 device_context missing for {entry.get('profile_id')}")
+            _require(set(entry.get("tasks_prioritized", [])) <= required_benchuix_25_task_ids and entry.get("tasks_prioritized"), f"BENCHUIX-25 tasks_prioritized mismatch for {entry.get('profile_id')}")
+            _require(isinstance(entry.get("synthetic_data_needs"), list) and entry.get("synthetic_data_needs"), f"BENCHUIX-25 synthetic_data_needs missing for {entry.get('profile_id')}")
+            _require(bool(entry.get("exclusion_reason_if_not_tested_now")), f"BENCHUIX-25 exclusion reason missing for {entry.get('profile_id')}")
+
+        benchuix_25_data_pack = _load_json(ROOT / "artifacts/benchuix/25_synthetic_test_data_pack.json")
+        benchuix_25_data_pack_metadata = benchuix_25_data_pack.get("metadata", {})
+        _require(benchuix_25_data_pack_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 data pack metadata.phase_id mismatch")
+        _require(benchuix_25_data_pack_metadata.get("status") == "candidate", "BENCHUIX-25 data pack metadata.status mismatch")
+        data_pack_entries = benchuix_25_data_pack.get("domains", [])
+        _require(len(data_pack_entries) >= 7, "BENCHUIX-25 data pack must define at least seven synthetic domains/overlays")
+        for entry in data_pack_entries:
+            _require(
+                {
+                    "domain",
+                    "synthetic_entities",
+                    "synthetic_actions",
+                    "synthetic_risks",
+                    "synthetic_receipts",
+                    "synthetic_failures",
+                    "rollback_cases",
+                    "no_real_personal_data",
+                    "no_real_customer_data",
+                } <= set(entry),
+                "BENCHUIX-25 data pack entry missing keys",
+            )
+            _require(bool(entry.get("domain")), "BENCHUIX-25 data pack domain missing")
+            _require(isinstance(entry.get("synthetic_entities"), list) and entry.get("synthetic_entities"), f"BENCHUIX-25 synthetic_entities missing for {entry.get('domain')}")
+            _require(isinstance(entry.get("synthetic_actions"), list) and entry.get("synthetic_actions"), f"BENCHUIX-25 synthetic_actions missing for {entry.get('domain')}")
+            _require(isinstance(entry.get("synthetic_risks"), list) and entry.get("synthetic_risks"), f"BENCHUIX-25 synthetic_risks missing for {entry.get('domain')}")
+            _require(isinstance(entry.get("synthetic_receipts"), list) and entry.get("synthetic_receipts"), f"BENCHUIX-25 synthetic_receipts missing for {entry.get('domain')}")
+            _require(isinstance(entry.get("synthetic_failures"), list) and entry.get("synthetic_failures"), f"BENCHUIX-25 synthetic_failures missing for {entry.get('domain')}")
+            _require(isinstance(entry.get("rollback_cases"), list) and entry.get("rollback_cases"), f"BENCHUIX-25 rollback_cases missing for {entry.get('domain')}")
+            _require(entry.get("no_real_personal_data") is True, f"BENCHUIX-25 no_real_personal_data must be true for {entry.get('domain')}")
+            _require(entry.get("no_real_customer_data") is True, f"BENCHUIX-25 no_real_customer_data must be true for {entry.get('domain')}")
+
+        benchuix_25_script = (ROOT / "artifacts/benchuix/25_task_scenario_script.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## task: understand_today",
+            "## task: create_automation",
+            "## task: run_simulation",
+            "## task: approve_action",
+            "## task: find_receipt",
+            "## task: understand_failure",
+            "## task: pause_automation",
+            "## task: understand_aris_will_not",
+            "## task: check_rollback_boundary",
+            "## task: explain_aris",
+            "## bad examples rejected",
+        ):
+            _require(required_snippet in benchuix_25_script, f"BENCHUIX-25 task scenario script missing section: {required_snippet}")
+
+        benchuix_25_observation = _load_json(ROOT / "artifacts/benchuix/25_observation_and_raw_data_schema.json")
+        benchuix_25_observation_metadata = benchuix_25_observation.get("metadata", {})
+        _require(benchuix_25_observation_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 observation metadata.phase_id mismatch")
+        _require(benchuix_25_observation_metadata.get("status") == "candidate", "BENCHUIX-25 observation metadata.status mismatch")
+        _require(benchuix_25_observation_metadata.get("real_data_blocked_in_this_phase") is True, "BENCHUIX-25 observation real_data_blocked_in_this_phase mismatch")
+        observation_fields = benchuix_25_observation.get("fields", [])
+        required_observation_fields = {
+            "participant_profile_id",
+            "task_id",
+            "start_timestamp",
+            "end_timestamp",
+            "task_outcome",
+            "help_requested",
+            "wrong_turn_count",
+            "hesitation_markers",
+            "risk_misunderstanding",
+            "will_will_not_understood",
+            "receipt_found",
+            "rollback_understood",
+            "failure_understood",
+            "pause_completed",
+            "participant_explanation_summary",
+            "observer_notes",
+            "severity_if_issue",
+            "no_pii_required",
+        }
+        _require({entry.get("field_name") for entry in observation_fields} == required_observation_fields, "BENCHUIX-25 observation field set mismatch")
+        for entry in observation_fields:
+            _require({"field_name", "type", "required_future", "description"} <= set(entry), "BENCHUIX-25 observation field missing keys")
+            _require(bool(entry.get("type")), f"BENCHUIX-25 observation field type missing for {entry.get('field_name')}")
+            _require(isinstance(entry.get("required_future"), bool), f"BENCHUIX-25 observation field required_future invalid for {entry.get('field_name')}")
+            _require(bool(entry.get("description")), f"BENCHUIX-25 observation field description missing for {entry.get('field_name')}")
+
+        benchuix_25_metric_matrix = _load_json(ROOT / "artifacts/benchuix/25_benchuix24_metric_to_task_matrix.json")
+        benchuix_25_metric_matrix_metadata = benchuix_25_metric_matrix.get("metadata", {})
+        _require(benchuix_25_metric_matrix_metadata.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 metric matrix metadata.phase_id mismatch")
+        _require(benchuix_25_metric_matrix_metadata.get("status") == "candidate", "BENCHUIX-25 metric matrix metadata.status mismatch")
+        metric_task_entries = benchuix_25_metric_matrix.get("entries", [])
+        _require({entry.get("metric_id") for entry in metric_task_entries} == expected_metric_ids, "BENCHUIX-25 metric matrix metric ids mismatch")
+        benchuix_24_metrics_by_id = {entry.get("metric_id"): entry for entry in benchuix_24_metrics}
+        required_observation_field_names = {entry.get("field_name") for entry in observation_fields}
+        for entry in metric_task_entries:
+            _require(
+                {
+                    "metric_id",
+                    "linked_tasks",
+                    "observable_signals",
+                    "threshold_candidate",
+                    "raw_data_fields",
+                    "decision_enabled",
+                    "still_candidate_only",
+                    "blocks_benchuix25_pass_if_unmapped",
+                } <= set(entry),
+                "BENCHUIX-25 metric matrix entry missing keys",
+            )
+            metric_id = entry.get("metric_id")
+            _require(set(entry.get("linked_tasks", [])) <= required_benchuix_25_task_ids and entry.get("linked_tasks"), f"BENCHUIX-25 linked_tasks mismatch for {metric_id}")
+            _require(isinstance(entry.get("observable_signals"), list) and entry.get("observable_signals"), f"BENCHUIX-25 observable_signals missing for {metric_id}")
+            _require(entry.get("threshold_candidate") == benchuix_24_metrics_by_id[metric_id].get("threshold"), f"BENCHUIX-25 threshold_candidate mismatch for {metric_id}")
+            _require(set(entry.get("raw_data_fields", [])) <= required_observation_field_names and entry.get("raw_data_fields"), f"BENCHUIX-25 raw_data_fields mismatch for {metric_id}")
+            _require(entry.get("decision_enabled") == benchuix_24_metrics_by_id[metric_id].get("decision_enabled"), f"BENCHUIX-25 decision_enabled mismatch for {metric_id}")
+            _require(entry.get("still_candidate_only") is True, f"BENCHUIX-25 still_candidate_only must be true for {metric_id}")
+            _require(isinstance(entry.get("blocks_benchuix25_pass_if_unmapped"), bool), f"BENCHUIX-25 blocks_benchuix25_pass_if_unmapped invalid for {metric_id}")
+
+        benchuix_25_no_real = _load_json(ROOT / "artifacts/benchuix/25_no_real_execution_attestation.json")
+        _require(benchuix_25_no_real.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "usability_test_executed",
+            "real_user_recruited",
+            "real_user_testing_executed",
+            "audio_recorded",
+            "video_recorded",
+            "screen_recorded",
+            "analytics_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "pii_collected",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+            "product_usability_claim_made",
+        ):
+            _require(benchuix_25_no_real.get(key) is False, f"BENCHUIX-25 no-real {key} must be false")
+        _require(benchuix_25_no_real.get("documentary_candidate_only") is True, "BENCHUIX-25 documentary_candidate_only mismatch")
+
+        benchuix_25_evidence = _load_json(ROOT / "artifacts/benchuix/25_validation_evidence.json")
+        _require(benchuix_25_evidence.get("phase_id") == "BENCHUIX-25", "BENCHUIX-25 validation evidence phase_id mismatch")
+        _require(
+            benchuix_25_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-25 validation evidence status mismatch",
+        )
+        if benchuix_25_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_25_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_25_PROTOCOL_OK",
+                "BENCHUIX_25_TASK_SUCCESS_MATRIX_OK",
+                "BENCHUIX_25_SEVERITY_RUBRIC_OK",
+                "BENCHUIX_25_PROFILE_MATRIX_OK",
+                "BENCHUIX_25_SYNTHETIC_DATA_PACK_OK",
+                "BENCHUIX_25_TASK_SCENARIOS_OK",
+                "BENCHUIX_25_OBSERVATION_SCHEMA_OK",
+                "BENCHUIX_25_METRIC_TO_TASK_MATRIX_OK",
+                "BENCHUIX_25_NO_REAL_ATTESTATION_OK",
+                "BENCHUIX_25_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_25_ALL_CRITICAL_TASKS_DEFINED_OK",
+                "BENCHUIX_25_ALL_METRICS_MAPPED_OR_DEFERRED_OK",
+                "BENCHUIX_25_SYNTHETIC_ONLY_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-25 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-25",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "severities": [
+    {
+      "severity": "CRITICAL",
+      "definition": "Usuario executa ou aprova algo inseguro, nao conclui tarefa essencial, ou entende o oposto do que ARIS fara ou nao fara.",
+      "examples": [
+        "Aprova uma acao sensivel sem conseguir repetir o risco",
+        "Confunde um limite explicito com permissao total",
+        "Nao consegue encontrar caminho para tarefa essencial em contexto baseline"
+      ],
+      "blocks_candidate_pass": true,
+      "destination_phase": "BENCHUIX-26",
+      "required_artifact_if_found": "artifacts/benchuix/26_findings_and_prioritization_packet.json"
+    },
+    {
+      "severity": "HIGH",
+      "definition": "Usuario conclui apenas com ajuda substancial ou compreende risco, rollback ou evidencia de forma incompleta.",
+      "examples": [
+        "Consegue aprovar apenas apos facilitador repetir a meta varias vezes",
+        "Encontra o recibo mas nao entende o que ele prova",
+        "Confunde compensacao com desfazer total"
+      ],
+      "blocks_candidate_pass": true,
+      "destination_phase": "BENCHUIX-26",
+      "required_artifact_if_found": "artifacts/benchuix/26_findings_and_prioritization_packet.json"
+    },
+    {
+      "severity": "MEDIUM",
+      "definition": "Usuario conclui com hesitacao relevante, retrabalho, leitura repetida ou incerteza persistente, sem erro irreversivel.",
+      "examples": [
+        "Le varias vezes a mesma copy para decidir",
+        "Da voltas antes de encontrar a pausa",
+        "Conclui a tarefa, mas ainda verbaliza duvida sobre o proximo passo"
+      ],
+      "blocks_candidate_pass": false,
+      "destination_phase": "BENCHUIX-26",
+      "required_artifact_if_found": "artifacts/benchuix/26_findings_and_prioritization_packet.json"
+    },
+    {
+      "severity": "LOW",
+      "definition": "Atrito menor ou microcopy ajustavel, sem risco de decisao errada e sem bloquear conclusao da tarefa.",
+      "examples": [
+        "Termo pouco claro mas recuperavel pelo contexto",
+        "Pequena releitura antes de concluir com seguranca",
+        "Ajuste de ordem visual sem impacto na decisao"
+      ],
+      "blocks_candidate_pass": false,
+      "destination_phase": "BENCHUIX-26",
+      "required_artifact_if_found": "artifacts/benchuix/26_findings_and_prioritization_packet.json"
+    }
+  ]
+}

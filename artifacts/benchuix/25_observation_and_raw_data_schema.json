@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-25",
+    "status": "candidate",
+    "candidate_only": true,
+    "real_data_blocked_in_this_phase": true,
+    "pii_prohibited_by_default": true,
+    "consent_placeholder_only": true,
+    "privacy_placeholder_only": true
+  },
+  "fields": [
+    {
+      "field_name": "participant_profile_id",
+      "type": "string",
+      "required_future": true,
+      "description": "Perfil sintetico/futuro em teste; nunca identidade real nesta fase."
+    },
+    {
+      "field_name": "task_id",
+      "type": "string",
+      "required_future": true,
+      "description": "Tarefa critica observada."
+    },
+    {
+      "field_name": "start_timestamp",
+      "type": "string",
+      "required_future": true,
+      "description": "Inicio observado da tarefa em futura execucao autorizada."
+    },
+    {
+      "field_name": "end_timestamp",
+      "type": "string",
+      "required_future": true,
+      "description": "Fim observado da tarefa em futura execucao autorizada."
+    },
+    {
+      "field_name": "task_outcome",
+      "type": "string",
+      "required_future": true,
+      "description": "Taxonomia: sucesso completo, sucesso com hesitacao, sucesso com ajuda, falha recuperavel, falha bloqueante, risco de aprovacao insegura ou abandono."
+    },
+    {
+      "field_name": "help_requested",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se o participante pediu ajuda durante a tarefa."
+    },
+    {
+      "field_name": "wrong_turn_count",
+      "type": "integer",
+      "required_future": true,
+      "description": "Numero de desvios observados antes de concluir ou abandonar."
+    },
+    {
+      "field_name": "hesitation_markers",
+      "type": "array",
+      "required_future": true,
+      "description": "Lista de pausas, releituras, voltas ou verbalizacoes observadas."
+    },
+    {
+      "field_name": "risk_misunderstanding",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se houve entendimento incorreto do risco."
+    },
+    {
+      "field_name": "will_will_not_understood",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se a fronteira do que ARIS fara e nao fara foi compreendida."
+    },
+    {
+      "field_name": "receipt_found",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se o comprovante correto foi encontrado."
+    },
+    {
+      "field_name": "rollback_understood",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se o limite de rollback/compensacao foi compreendido."
+    },
+    {
+      "field_name": "failure_understood",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se a falha e o proximo passo foram entendidos."
+    },
+    {
+      "field_name": "pause_completed",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Marca se a pausa foi concluida corretamente."
+    },
+    {
+      "field_name": "participant_explanation_summary",
+      "type": "string",
+      "required_future": true,
+      "description": "Resumo curto do explain-back do participante, sem identidade."
+    },
+    {
+      "field_name": "observer_notes",
+      "type": "string",
+      "required_future": true,
+      "description": "Notas observacionais objetivas; nao inferir motivacao sem evidencia."
+    },
+    {
+      "field_name": "severity_if_issue",
+      "type": "string",
+      "required_future": true,
+      "description": "Severidade segundo rubrica de BENCHUIX-25 quando houver issue."
+    },
+    {
+      "field_name": "no_pii_required",
+      "type": "boolean",
+      "required_future": true,
+      "description": "Campo de controle que deve permanecer true em qualquer execucao futura autorizada deste protocolo."
+    }
+  ],
+  "collection_rules": {
+    "observe_not_infer": [
+      "Registrar comportamento antes de interpretar intencao.",
+      "Fala think-aloud nao invalida o comportamento observado."
+    ],
+    "anti_leading_rules": [
+      "Nao sugerir caminho ou nome de interface.",
+      "Nao perguntar se entendeu como evidenca principal."
+    ],
+    "real_data_prohibited_now": true
+  }
+}

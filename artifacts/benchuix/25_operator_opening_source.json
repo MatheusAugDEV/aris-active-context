@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-25",
+  "opened_from_candidate_phase": "BENCHUIX-24",
+  "opened_candidate_phase": "BENCHUIX-25",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "44d816e792db2eec594b60fd181c9354c026096c",
+  "previous_candidate_ci_run": "27661016575",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Usability test protocol candidate-only como preparo documental para Product Reality Lab. Nao recruta usuario real, nao executa sessao real, nao coleta audio/video/tela/telemetria real, nao usa PII, nao usa customer data, nao autoriza browser real, billing real, OAuth real, integracao real, secrets, producao, Project_ARIS mutation ou real_apply."
+}
