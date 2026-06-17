@@ -1,0 +1,106 @@
+{
+  "phase_id": "BENCHUIX-27D",
+  "artifact_type": "operator_visual_observation_sheet",
+  "preview_executed_by_codex": false,
+  "scenarios": [
+    {
+      "scenario_id": "barbearia_after_hours_vip_exception",
+      "screens_to_check": [
+        "Hoje",
+        "Aprovar",
+        "Historico / Comprovantes",
+        "Rollback / Desfazer",
+        "Falha / Modo degradado"
+      ],
+      "questions": [
+        "O que ARIS vai fazer?",
+        "O que ARIS nao vai fazer?",
+        "Qual risco existe?",
+        "Precisa aprovacao?",
+        "Qual evidencia aparece?",
+        "Da para desfazer ou compensar?",
+        "Esta claro que nenhum estado real foi tocado?"
+      ],
+      "expected_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "observed_understanding": null,
+      "severity_if_failed": "S1_BLOCKER",
+      "notes": null,
+      "synthetic_only": true,
+      "real_user": false
+    },
+    {
+      "scenario_id": "mercado_suspected_refund_declined",
+      "screens_to_check": [
+        "Hoje",
+        "Aprovar",
+        "Historico / Comprovantes",
+        "Rollback / Desfazer",
+        "Falha / Modo degradado"
+      ],
+      "questions": [
+        "O que ARIS vai fazer?",
+        "O que ARIS nao vai fazer?",
+        "Qual risco existe?",
+        "Precisa aprovacao?",
+        "Qual evidencia aparece?",
+        "Da para desfazer ou compensar?",
+        "Esta claro que nenhum estado real foi tocado?"
+      ],
+      "expected_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "observed_understanding": null,
+      "severity_if_failed": "S1_BLOCKER",
+      "notes": null,
+      "synthetic_only": true,
+      "real_user": false
+    },
+    {
+      "scenario_id": "escritorio_attachment_intercepted",
+      "screens_to_check": [
+        "Hoje",
+        "Aprovar",
+        "Historico / Comprovantes",
+        "Rollback / Desfazer",
+        "Falha / Modo degradado"
+      ],
+      "questions": [
+        "O que ARIS vai fazer?",
+        "O que ARIS nao vai fazer?",
+        "Qual risco existe?",
+        "Precisa aprovacao?",
+        "Qual evidencia aparece?",
+        "Da para desfazer ou compensar?",
+        "Esta claro que nenhum estado real foi tocado?"
+      ],
+      "expected_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "observed_understanding": null,
+      "severity_if_failed": "S1_BLOCKER",
+      "notes": null,
+      "synthetic_only": true,
+      "real_user": false
+    }
+  ]
+}

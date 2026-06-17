@@ -440,6 +440,69 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_27c_no_real["crisol_opened"] is False
     assert benchuix_27c_no_real["all_real_locks_remain_false"] is True
 
+    assert Path("artifacts/benchuix/27D_local_static_preview_operator_runbook.md").exists()
+    assert Path("artifacts/benchuix/27D_operator_visual_observation_sheet.json").exists()
+    assert Path("artifacts/benchuix/27D_preview_boundary_attestation.json").exists()
+    assert Path("artifacts/benchuix/27D_static_preview_preflight_checklist.json").exists()
+    assert Path("artifacts/benchuix/27D_manual_preview_result_schema.json").exists()
+    assert Path("artifacts/benchuix/27D_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/27D_validation_evidence.json").exists()
+
+    benchuix_27d_observation_sheet = json.loads(Path("artifacts/benchuix/27D_operator_visual_observation_sheet.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_observation_sheet["phase_id"] == "BENCHUIX-27D"
+    assert benchuix_27d_observation_sheet["preview_executed_by_codex"] is False
+    assert {scenario["scenario_id"] for scenario in benchuix_27d_observation_sheet["scenarios"]} == {
+        "barbearia_after_hours_vip_exception",
+        "mercado_suspected_refund_declined",
+        "escritorio_attachment_intercepted",
+    }
+    for scenario in benchuix_27d_observation_sheet["scenarios"]:
+        assert scenario["observed_understanding"] is None
+        assert scenario["notes"] is None
+        assert scenario["synthetic_only"] is True
+        assert scenario["real_user"] is False
+
+    benchuix_27d_preview_boundary = json.loads(Path("artifacts/benchuix/27D_preview_boundary_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_preview_boundary["preview_mode"] == "manual_operator_local_file_only"
+    assert benchuix_27d_preview_boundary["codex_browser_opened"] is False
+    assert benchuix_27d_preview_boundary["localhost_allowed"] is False
+    assert benchuix_27d_preview_boundary["package_manager_allowed"] is False
+    assert benchuix_27d_preview_boundary["api_allowed"] is False
+    assert benchuix_27d_preview_boundary["crisol_admitted"] is False
+
+    benchuix_27d_preflight = json.loads(Path("artifacts/benchuix/27D_static_preview_preflight_checklist.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_preflight["package_json_absent"] is True
+    assert benchuix_27d_preflight["node_modules_absent"] is True
+    assert benchuix_27d_preflight["no_network_patterns_confirmed"] is True
+    assert benchuix_27d_preflight["sandbox_badge_scan_confirmed"] is True
+    assert benchuix_27d_preflight["state_touched_false_confirmed"] is True
+    assert benchuix_27d_preflight["blockers"] == []
+
+    benchuix_27d_result_schema = json.loads(Path("artifacts/benchuix/27D_manual_preview_result_schema.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_result_schema["fixed_values"]["no_real_data_used"] is True
+    assert benchuix_27d_result_schema["fixed_values"]["no_runtime_used"] is True
+    assert benchuix_27d_result_schema["fixed_values"]["no_api_used"] is True
+    assert benchuix_27d_result_schema["fixed_values"]["no_product_claim"] is True
+
+    benchuix_27d_validation = json.loads(Path("artifacts/benchuix/27D_validation_evidence.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_validation["candidate_tracking_preserved"]["current_candidate_phase"] == "BENCHUIX-27"
+    assert benchuix_27d_validation["candidate_tracking_preserved"]["candidate_next_phase_after_operator_gate"] == "CRISOL"
+    assert benchuix_27d_validation["candidate_tracking_preserved"]["next_phase"] is None
+    assert benchuix_27d_validation["candidate_tracking_preserved"]["active_next_phase"] is None
+
+    benchuix_27d_no_real = json.loads(Path("artifacts/benchuix/27D_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27d_no_real["Project_ARIS_changed"] is False
+    assert benchuix_27d_no_real["runtime_executed"] is False
+    assert benchuix_27d_no_real["preview_executed_by_codex"] is False
+    assert benchuix_27d_no_real["browser_executed_by_codex"] is False
+    assert benchuix_27d_no_real["localhost_opened"] is False
+    assert benchuix_27d_no_real["package_manager_executed"] is False
+    assert benchuix_27d_no_real["package_json_created"] is False
+    assert benchuix_27d_no_real["node_modules_created"] is False
+    assert benchuix_27d_no_real["real_user_testing_executed"] is False
+    assert benchuix_27d_no_real["crisol_opened"] is False
+    assert benchuix_27d_no_real["all_real_locks_remain_false"] is True
+
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
     module = _load_validator_module()

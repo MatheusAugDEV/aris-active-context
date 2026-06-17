@@ -1,0 +1,16 @@
+{
+  "phase_id": "BENCHUIX-27D",
+  "artifact_type": "static_preview_preflight_checklist",
+  "index_html_exists": true,
+  "visual_sandbox_readme_exists": true,
+  "27B_manifest_exists": true,
+  "27C_test_matrix_exists": true,
+  "package_json_absent": true,
+  "node_modules_absent": true,
+  "no_network_patterns_confirmed": true,
+  "sandbox_badge_scan_confirmed": true,
+  "state_touched_false_confirmed": true,
+  "preview_can_be_manual_file_open": true,
+  "preview_requires_no_package_manager": true,
+  "blockers": []
+}

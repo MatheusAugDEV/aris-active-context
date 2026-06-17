@@ -1,0 +1,16 @@
+{
+  "phase_id": "BENCHUIX-27D",
+  "artifact_type": "preview_boundary_attestation",
+  "preview_mode": "manual_operator_local_file_only",
+  "codex_browser_opened": false,
+  "localhost_allowed": false,
+  "package_manager_allowed": false,
+  "backend_allowed": false,
+  "api_allowed": false,
+  "real_data_allowed": false,
+  "real_user_allowed": false,
+  "public_deploy_allowed": false,
+  "crisol_admitted": false,
+  "live_route_opened": false,
+  "product_ready_declared": false
+}

@@ -1,0 +1,63 @@
+{
+  "phase_id": "BENCHUIX-27D",
+  "artifact_type": "manual_preview_result_schema",
+  "fixed_values": {
+    "no_real_data_used": true,
+    "no_runtime_used": true,
+    "no_api_used": true,
+    "no_product_claim": true
+  },
+  "required_fields": {
+    "preview_session_id": {
+      "type": "string",
+      "example": "PREVIEW-27D-001"
+    },
+    "operator": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "YYYY-MM-DD"
+    },
+    "local_file_opened": {
+      "type": "boolean"
+    },
+    "browser_used": {
+      "type": "string"
+    },
+    "scenarios_completed": {
+      "type": "array"
+    },
+    "scenario_results": {
+      "type": "array"
+    },
+    "blockers_found": {
+      "type": "array"
+    },
+    "warnings_found": {
+      "type": "array"
+    },
+    "screenshots_taken": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "no_real_data_used": {
+      "type": "boolean",
+      "required_value": true
+    },
+    "no_runtime_used": {
+      "type": "boolean",
+      "required_value": true
+    },
+    "no_api_used": {
+      "type": "boolean",
+      "required_value": true
+    },
+    "no_product_claim": {
+      "type": "boolean",
+      "required_value": true
+    }
+  }
+}
