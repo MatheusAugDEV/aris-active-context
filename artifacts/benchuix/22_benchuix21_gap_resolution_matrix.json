@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-22",
+    "status": "candidate",
+    "synthetic_only": true,
+    "source_phase": "BENCHUIX-21",
+    "zero_open_critical_gaps": true
+  },
+  "resolutions": [
+    {
+      "gap_id": "A11Y-21-001",
+      "source_severity": "HIGH",
+      "destination_from_21": "BENCHUIX-22",
+      "benchuix22_resolution_or_carry_forward": "Resolvido no nivel documental com regra de ordem relativa da ajuda em multiestado e mobile narrow viewport.",
+      "still_open": false,
+      "new_destination_if_open": null,
+      "blocks_benchuix22_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-002",
+      "source_severity": "MEDIUM",
+      "destination_from_21": "BENCHUIX-22",
+      "benchuix22_resolution_or_carry_forward": "Resolvido no nivel de budget visual por cobertura explicita de reflow e resize textual em receipt_available e receipt_unavailable.",
+      "still_open": false,
+      "new_destination_if_open": null,
+      "blocks_benchuix22_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-003",
+      "source_severity": "MEDIUM",
+      "destination_from_21": "CRISOL",
+      "benchuix22_resolution_or_carry_forward": "Permanece aberto por depender de name-role-value e status live reais em componentes implementados.",
+      "still_open": true,
+      "new_destination_if_open": "CRISOL",
+      "blocks_benchuix22_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-004",
+      "source_severity": "LOW",
+      "destination_from_21": "BENCHUIX-22",
+      "benchuix22_resolution_or_carry_forward": "Resolvido documentalmente ao amarrar retorno de foco ao metodo de cobertura visual multiestado e narrow viewport.",
+      "still_open": false,
+      "new_destination_if_open": null,
+      "blocks_benchuix22_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-005",
+      "source_severity": "LOW",
+      "destination_from_21": "CRISOL",
+      "benchuix22_resolution_or_carry_forward": "Permanece aberto porque autenticacao acessivel depende de implementacao real e medicao de fluxo completo.",
+      "still_open": true,
+      "new_destination_if_open": "CRISOL",
+      "blocks_benchuix22_pass": false
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-23"
+  ]
+}

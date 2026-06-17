@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-22",
+    "status": "candidate",
+    "synthetic_only": true,
+    "critical_path_target_kb": 170,
+    "bundle_target_kb": 250
+  },
+  "categories": [
+    {
+      "category": "shell",
+      "budget_kb": 55,
+      "rationale": "Abriga navegacao base, layout e bootstrap minimo do workspace.",
+      "allowed_growth_condition": "Crescimento so com prova de reducao equivalente em outra camada critica.",
+      "block_condition": "Ultrapassar budget sem compensacao documentada.",
+      "future_measurement_method": "Inventario de assets do shell carregados no primeiro paint util."
+    },
+    {
+      "category": "routes",
+      "budget_kb": 35,
+      "rationale": "Rotas essenciais devem permanecer leves para mobile narrow viewport.",
+      "allowed_growth_condition": "Rotas menos usadas podem absorver crescimento desde que nao entrem no critical path.",
+      "block_condition": "Rotas essenciais entram no carregamento inicial sem justificativa.",
+      "future_measurement_method": "Breakdown por code-splitting e caminho de navegacao."
+    },
+    {
+      "category": "dashboard",
+      "budget_kb": 35,
+      "rationale": "Dashboard avancado nao pode rebaixar a experiencia baseline mobile.",
+      "allowed_growth_condition": "Somente fora do caminho inicial e com lazy loading claro.",
+      "block_condition": "Dashboard pesa no fluxo Hoje ou Aprovar sem isolamento.",
+      "future_measurement_method": "Chunk accounting por superficie de dashboard."
+    },
+    {
+      "category": "charts",
+      "budget_kb": 22,
+      "rationale": "Visualizacao rica precisa teto proprio para nao sequestrar interatividade.",
+      "allowed_growth_condition": "Apenas com carregamento sob demanda e fallback textual.",
+      "block_condition": "Biblioteca de grafico entra no shell padrao.",
+      "future_measurement_method": "Analisar dependencias de grafico e bytes transferidos por rota."
+    },
+    {
+      "category": "icons",
+      "budget_kb": 10,
+      "rationale": "Iconografia deve permanecer funcional e nao ornamental.",
+      "allowed_growth_condition": "Apenas se substituicao reduzir chamadas ou complexidade total.",
+      "block_condition": "Pacote amplo de icones sem tree-shaking comprovado.",
+      "future_measurement_method": "Inventario de simbolos efetivamente enviados."
+    },
+    {
+      "category": "copy_content",
+      "budget_kb": 8,
+      "rationale": "Conteudo textual nao deve virar payload inflado no bootstrap.",
+      "allowed_growth_condition": "Somente com particionamento por rota ou locale.",
+      "block_condition": "Microcopy inteira embutida no caminho inicial sem necessidade.",
+      "future_measurement_method": "Auditoria de strings e assets textuais por bundle."
+    },
+    {
+      "category": "accessibility_helpers",
+      "budget_kb": 15,
+      "rationale": "Suporte de acessibilidade e foco visivel e obrigatorio, mas precisa permanecer enxuto.",
+      "allowed_growth_condition": "Comprovada remocao de complexidade ou cobertura de criterio essencial.",
+      "block_condition": "Helper cresce sem relacao direta com criterio de acessibilidade ou interacao.",
+      "future_measurement_method": "Breakdown de helpers, polyfills e wrappers de estado assistivo."
+    },
+    {
+      "category": "future_instrumentation",
+      "budget_kb": 12,
+      "rationale": "Observabilidade futura de performance precisa reserva sem invadir o baseline.",
+      "allowed_growth_condition": "Somente fora do bundle inicial ou com env gating claro.",
+      "block_condition": "Instrumentacao entra sempre ligada no baseline mobile.",
+      "future_measurement_method": "Separar bytes de observabilidade, logging e collection libs."
+    }
+  ],
+  "budget_rules": {
+    "critical_path_less_than_kb": 170,
+    "bundle_less_than_kb": 250,
+    "slo_without_measurement_method_is_invalid": true
+  },
+  "handoff_targets": [
+    "BENCHUIX-23"
+  ]
+}

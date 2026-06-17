@@ -1,0 +1,18 @@
+{
+  "phase_id": "BENCHUIX-22",
+  "primary_segment": "mobile",
+  "percentile": 75,
+  "desktop_is_secondary": true,
+  "field_data_required_for_real_claim": true,
+  "lab_data_allowed_for_candidate_budget": true,
+  "raw_data_required": true,
+  "sample_policy_future": "Agregacao futura deve preservar amostragem suficiente por pagina ou fluxo, com janela temporal explicita e exclusao de ruido documentada.",
+  "device_network_assumptions_future": "Prova futura deve separar classes de dispositivo e declarar premissas de rede, incluindo recorte 3G/4G quando usar laboratorio.",
+  "why_average_desktop_is_invalid": "Media desktop mascara a experiencia dominante em mobile e pode esconder caudas ruins; a fase exige p75 mobile como leitura principal.",
+  "field_vs_lab_contract": {
+    "field_primary_for_real_claims": true,
+    "lab_supports_budgeting_and_regression": true,
+    "lighthouse_cannot_close_real_claim": true,
+    "tbt_is_proxy_not_substitute_for_inp": true
+  }
+}

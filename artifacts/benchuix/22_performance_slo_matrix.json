@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-22",
+    "status": "candidate",
+    "synthetic_only": true,
+    "real_core_web_vitals_pass_declared": false
+  },
+  "metrics": [
+    {
+      "metric": "LCP",
+      "target": "<= 2.5s",
+      "source_basis": "web.dev Core Web Vitals threshold",
+      "candidate_measurement_method": "future field-first p75 mobile plus supporting lab traces for regression diagnosis",
+      "field_or_lab": "field_primary_lab_supporting",
+      "mobile_p75_required": true,
+      "raw_data_required_future": true,
+      "why_it_matters": "Mede quando o conteudo principal parece carregado em viewport realista.",
+      "invalid_claim_conditions": [
+        "claim com media desktop como prova principal",
+        "claim sem raw data",
+        "claim sem segmentacao mobile"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "INP",
+      "target": "<= 200ms",
+      "source_basis": "web.dev Core Web Vitals threshold",
+      "candidate_measurement_method": "future field p75 mobile via RUM; lab usa TBT apenas como proxy diagnostico",
+      "field_or_lab": "field_primary",
+      "mobile_p75_required": true,
+      "raw_data_required_future": true,
+      "why_it_matters": "Mede responsividade de click, tap e teclado ao longo da visita inteira.",
+      "invalid_claim_conditions": [
+        "claim com Lighthouse simulado como medicao direta de INP",
+        "claim usando TBT como substituto final",
+        "claim sem dados de interacao real"
+      ],
+      "gap_destination_if_unmeasurable": "CRISOL"
+    },
+    {
+      "metric": "CLS",
+      "target": "<= 0.1",
+      "source_basis": "web.dev Core Web Vitals threshold",
+      "candidate_measurement_method": "future field p75 mobile com apoio de revisao visual multiestado em lab",
+      "field_or_lab": "field_primary_lab_supporting",
+      "mobile_p75_required": true,
+      "raw_data_required_future": true,
+      "why_it_matters": "Protege estabilidade visual e evita movimento inesperado de CTA, foco e estados.",
+      "invalid_claim_conditions": [
+        "claim sem cobrir viewport mobile",
+        "claim com screenshot unico",
+        "claim sem raw data"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "TTFB",
+      "target": "tracked_budget_no_real_claim",
+      "source_basis": "supporting metric for LCP diagnosis",
+      "candidate_measurement_method": "future field and lab split to explain backend and edge contribution",
+      "field_or_lab": "field_and_lab_supporting",
+      "mobile_p75_required": true,
+      "raw_data_required_future": true,
+      "why_it_matters": "Ajuda a separar latencia de servidor da renderizacao do cliente.",
+      "invalid_claim_conditions": [
+        "claim sem separar field e lab",
+        "claim sem raw data",
+        "claim como substituto de LCP"
+      ],
+      "gap_destination_if_unmeasurable": "CRISOL"
+    },
+    {
+      "metric": "FCP",
+      "target": "<= 1.8s_supporting_budget",
+      "source_basis": "web.dev FCP guidance",
+      "candidate_measurement_method": "future field and lab measurement segmented by mobile and desktop",
+      "field_or_lab": "field_and_lab_supporting",
+      "mobile_p75_required": true,
+      "raw_data_required_future": true,
+      "why_it_matters": "Indica quando a pessoa ve o primeiro sinal concreto de vida na tela.",
+      "invalid_claim_conditions": [
+        "claim usando FCP como prova suficiente de rapidez total",
+        "claim sem segmentacao mobile",
+        "claim sem raw data"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "TBT",
+      "target": "tracked_lab_proxy_only",
+      "source_basis": "web.dev lab proxy guidance for INP",
+      "candidate_measurement_method": "future lab-only regression budget to flag main-thread blocking during bootstrap",
+      "field_or_lab": "lab_only_proxy",
+      "mobile_p75_required": false,
+      "raw_data_required_future": true,
+      "why_it_matters": "Ajuda a diagnosticar bloqueio de main thread antes da prova real de INP em campo.",
+      "invalid_claim_conditions": [
+        "claim de INP real baseado so em TBT",
+        "claim de campo com metrica de lab",
+        "claim sem traces brutos"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "critical_path",
+      "target": "< 170KB",
+      "source_basis": "prompt candidate budget",
+      "candidate_measurement_method": "future build artifact accounting by route-critical assets",
+      "field_or_lab": "lab_budgeting",
+      "mobile_p75_required": false,
+      "raw_data_required_future": true,
+      "why_it_matters": "Contem o custo inicial do caminho minimo para mobile realista.",
+      "invalid_claim_conditions": [
+        "budget sem metodo de contagem",
+        "claim sem breakdown por categoria",
+        "claim sem raw inventory"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "bundle",
+      "target": "< 250KB",
+      "source_basis": "prompt candidate budget",
+      "candidate_measurement_method": "future build artifact accounting for shipped JS/CSS/assets by category",
+      "field_or_lab": "lab_budgeting",
+      "mobile_p75_required": false,
+      "raw_data_required_future": true,
+      "why_it_matters": "Evita que crescimento acumulado destrua loading e interatividade em mobile.",
+      "invalid_claim_conditions": [
+        "budget sem inventario bruto",
+        "budget sem regra de bloqueio",
+        "claim sem separar rotas e shell"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    },
+    {
+      "metric": "TTI_3G",
+      "target": "< 5s",
+      "source_basis": "prompt candidate budget",
+      "candidate_measurement_method": "future lab scenario with explicit 3G assumptions, never replacing field responsiveness",
+      "field_or_lab": "lab_supporting",
+      "mobile_p75_required": false,
+      "raw_data_required_future": true,
+      "why_it_matters": "Fornece um teto operacional para a primeira janela util de interacao em rede limitada.",
+      "invalid_claim_conditions": [
+        "claim de experiencia real baseado so em TTI simulado",
+        "claim sem declarar premissas de rede",
+        "claim sem raw trace"
+      ],
+      "gap_destination_if_unmeasurable": "BENCHUIX-23"
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-23"
+  ]
+}
