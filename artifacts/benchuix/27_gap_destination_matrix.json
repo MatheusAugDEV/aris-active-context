@@ -1,0 +1,117 @@
+{
+  "phase_id": "BENCHUIX-27",
+  "artifact_type": "gap_destination_matrix",
+  "candidate_only": true,
+  "gap_destinations": [
+    {
+      "gap_id": "GAP-27-001",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_runtime_evidence_gate",
+      "evidence_required": "Runtime evidence packet for demo-equivalent flow",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-002",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_raw_data_claim_gate",
+      "evidence_required": "Raw event evidence and claim replay",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-003",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_real_usability_gate",
+      "evidence_required": "Real task session evidence with explain-back",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-004",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_field_performance_gate",
+      "evidence_required": "Real p75 performance samples with device context",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-005",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_accessibility_conformance_gate",
+      "evidence_required": "Real assistive-tech verification evidence",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-006",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_trust_copy_validation_gate",
+      "evidence_required": "Confidence and explain-back evidence tied to real sessions",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-007",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_runtime_boundary_gate",
+      "evidence_required": "Live boundary evidence for approval, receipts and rollback",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-008",
+      "destination": "BEDROCK",
+      "destination_phase": "BEDROCK",
+      "closure_gate": "bedrock_secrets_and_apply_gate",
+      "evidence_required": "Secret-handling, integration and real_apply proof",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-009",
+      "destination": "BEDROCK",
+      "destination_phase": "BEDROCK",
+      "closure_gate": "bedrock_admission_gate",
+      "evidence_required": "Bedrock admission packet and lock choreography",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": true
+    },
+    {
+      "gap_id": "GAP-27-010",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_workspace_hygiene_gate",
+      "evidence_required": "Workspace hygiene check and scoped mutation plan",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": false
+    },
+    {
+      "gap_id": "GAP-27-011",
+      "destination": "CRISOL",
+      "destination_phase": "CRISOL",
+      "closure_gate": "crisol_candidate_admission_gate",
+      "evidence_required": "Separate Crisol admission packet with scope and CI",
+      "forbidden_acceptance_modes": ["ACCEPTED_COSMETIC_RISK", "DOCUMENTATION_ONLY"],
+      "requires_operator_explicit_gate": true,
+      "requires_real_lock_change": false
+    }
+  ]
+}

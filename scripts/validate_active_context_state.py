@@ -1834,7 +1834,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
         _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-27", "benchuix_track.current_candidate_phase mismatch")
-        _require(benchuix_track.get("latest_candidate_decision") == "OPERATOR_GATE_ACCEPTED", "benchuix_track.latest_candidate_decision mismatch")
+        _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
         _require(benchuix_track.get("admission_commit_sha") == "89443c9c80df69568da0c7c2efdb0a72b6e371af", "benchuix_track.admission_commit_sha mismatch")
@@ -2047,6 +2047,13 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/26_to_27_candidate_admission_packet.json").exists(), "BENCHUIX-26 to BENCHUIX-27 admission packet missing on disk")
         _require((ROOT / "artifacts/benchuix/27_candidate_opening_source.json").exists(), "BENCHUIX-27 candidate opening source missing on disk")
         _require((ROOT / "artifacts/benchuix/27_no_real_execution_attestation.json").exists(), "BENCHUIX-27 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_product_gap_ledger.json").exists(), "BENCHUIX-27 product gap ledger missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_anti_theater_rules.json").exists(), "BENCHUIX-27 anti-theater rules missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_crisol_handoff.md").exists(), "BENCHUIX-27 Crisol handoff missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_gap_destination_matrix.json").exists(), "BENCHUIX-27 gap destination matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_benchuix_closure_summary.md").exists(), "BENCHUIX-27 closure summary missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_validation_evidence.json").exists(), "BENCHUIX-27 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/27_no_real_execution_attestation_final.json").exists(), "BENCHUIX-27 final no-real attestation missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -6178,6 +6185,231 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         ):
             _require(benchuix_27_no_real.get(key) is False, f"BENCHUIX-27 no-real {key} must be false")
         _require(benchuix_27_no_real.get("documentary_candidate_only") is True, "BENCHUIX-27 documentary_candidate_only mismatch")
+
+        benchuix_27_gap_ledger = _load_json(ROOT / "artifacts/benchuix/27_product_gap_ledger.json")
+        _require(benchuix_27_gap_ledger.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 gap ledger phase_id mismatch")
+        _require(benchuix_27_gap_ledger.get("artifact_type") == "product_gap_ledger", "BENCHUIX-27 gap ledger artifact_type mismatch")
+        _require(benchuix_27_gap_ledger.get("candidate_only") is True, "BENCHUIX-27 gap ledger candidate_only mismatch")
+        _require(benchuix_27_gap_ledger.get("crisol_admitted") is False, "BENCHUIX-27 gap ledger crisol_admitted mismatch")
+        _require(benchuix_27_gap_ledger.get("product_ready_declared") is False, "BENCHUIX-27 gap ledger product_ready_declared mismatch")
+        benchuix_27_gaps = benchuix_27_gap_ledger.get("gaps", [])
+        _require(len(benchuix_27_gaps) >= 10, "BENCHUIX-27 gap ledger must contain at least ten gaps")
+        required_gap_ids = {
+            "GAP-27-001",
+            "GAP-27-002",
+            "GAP-27-003",
+            "GAP-27-004",
+            "GAP-27-005",
+            "GAP-27-006",
+            "GAP-27-007",
+            "GAP-27-008",
+            "GAP-27-009",
+            "GAP-27-010",
+            "GAP-27-011",
+        }
+        _require({gap.get("gap_id") for gap in benchuix_27_gaps} == required_gap_ids, "BENCHUIX-27 gap ids mismatch")
+        gap_by_id = {gap["gap_id"]: gap for gap in benchuix_27_gaps}
+        for gap in benchuix_27_gaps:
+            _require(
+                {
+                    "gap_id",
+                    "source_phase",
+                    "source_artifact",
+                    "source_signal",
+                    "category",
+                    "severity",
+                    "user_impact",
+                    "owner_mode_impact",
+                    "destination",
+                    "destination_reason",
+                    "closure_criteria",
+                    "evidence_required",
+                    "forbidden_shortcut",
+                    "can_be_accepted_risk",
+                    "accepted_risk_allowed_reason",
+                    "real_runtime_required",
+                    "secret_or_real_apply_related",
+                    "status",
+                } <= set(gap),
+                "BENCHUIX-27 gap entry missing keys",
+            )
+            _require(gap.get("status") == "open_for_destination", f"BENCHUIX-27 gap status mismatch for {gap.get('gap_id')}")
+            _require(bool(gap.get("destination")), f"BENCHUIX-27 gap destination missing for {gap.get('gap_id')}")
+            _require(bool(gap.get("closure_criteria")), f"BENCHUIX-27 gap closure_criteria missing for {gap.get('gap_id')}")
+            _require(bool(gap.get("evidence_required")), f"BENCHUIX-27 gap evidence_required missing for {gap.get('gap_id')}")
+            if gap.get("real_runtime_required") is True:
+                _require(
+                    gap.get("destination") in {"CRISOL", "BEDROCK"},
+                    f"BENCHUIX-27 runtime gap cannot target {gap.get('destination')}",
+                )
+            if gap.get("secret_or_real_apply_related") is True:
+                _require(
+                    gap.get("destination") in {"CRISOL", "BEDROCK"},
+                    f"BENCHUIX-27 secret/apply gap cannot target {gap.get('destination')}",
+                )
+            if gap.get("category") in {"ux", "trust", "evidence", "rollback", "performance", "accessibility", "copy"}:
+                if gap.get("destination") == "ACCEPTED_COSMETIC_RISK":
+                    _require(False, f"BENCHUIX-27 trust/critical gap cannot be cosmetic: {gap.get('gap_id')}")
+            _require(gap.get("destination") != "", f"BENCHUIX-27 gap destination empty for {gap.get('gap_id')}")
+
+        _require(gap_by_id["GAP-27-008"].get("destination") == "BEDROCK", "BENCHUIX-27 GAP-27-008 must target BEDROCK")
+        _require(gap_by_id["GAP-27-009"].get("destination") == "BEDROCK", "BENCHUIX-27 GAP-27-009 must target BEDROCK")
+        _require(gap_by_id["GAP-27-011"].get("destination") == "CRISOL", "BENCHUIX-27 GAP-27-011 must target CRISOL")
+
+        benchuix_27_rules = _load_json(ROOT / "artifacts/benchuix/27_anti_theater_rules.json")
+        _require(benchuix_27_rules.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 anti-theater rules phase_id mismatch")
+        rules = benchuix_27_rules.get("rules", [])
+        _require(len(rules) >= 8, "BENCHUIX-27 anti-theater rules unexpectedly short")
+        for rule in rules:
+            _require(
+                {
+                    "rule_id",
+                    "prohibited_claim",
+                    "why_forbidden",
+                    "detection_signal",
+                    "required_response",
+                    "applies_to",
+                } <= set(rule),
+                "BENCHUIX-27 anti-theater rule missing keys",
+            )
+            _require(bool(rule.get("applies_to")), f"BENCHUIX-27 anti-theater applies_to missing for {rule.get('rule_id')}")
+
+        benchuix_27_handoff = (ROOT / "artifacts/benchuix/27_crisol_handoff.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "## resumo executivo de benchuix",
+            "## o que benchuix provou",
+            "## o que benchuix nao provou",
+            "## limites explicitos",
+            "## artifacts de entrada para crisol",
+            "## gaps que devem ir para crisol",
+            "## gaps que devem ir para bedrock",
+            "## riscos aceitos permitidos somente se cosmeticos",
+            "## criterios minimos para admitir crisol no proximo gate",
+            "crisol ainda nao esta admitido por este artifact.",
+        ):
+            _require(required_snippet in benchuix_27_handoff, f"BENCHUIX-27 handoff missing snippet: {required_snippet}")
+
+        benchuix_27_gap_matrix = _load_json(ROOT / "artifacts/benchuix/27_gap_destination_matrix.json")
+        _require(benchuix_27_gap_matrix.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 gap matrix phase_id mismatch")
+        matrix_entries = benchuix_27_gap_matrix.get("gap_destinations", [])
+        _require({entry.get("gap_id") for entry in matrix_entries} == required_gap_ids, "BENCHUIX-27 gap matrix gap ids mismatch")
+        for entry in matrix_entries:
+            _require(
+                {
+                    "gap_id",
+                    "destination",
+                    "destination_phase",
+                    "closure_gate",
+                    "evidence_required",
+                    "forbidden_acceptance_modes",
+                    "requires_operator_explicit_gate",
+                    "requires_real_lock_change",
+                } <= set(entry),
+                "BENCHUIX-27 gap matrix entry missing keys",
+            )
+            _require(entry.get("destination") == gap_by_id[entry["gap_id"]].get("destination"), f"BENCHUIX-27 gap matrix destination drift for {entry.get('gap_id')}")
+
+        benchuix_27_summary = (ROOT / "artifacts/benchuix/27_benchuix_closure_summary.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "## fases benchuix cobertas",
+            "## artifacts principais usados",
+            "## conclusao candidate-only",
+            "## valor demonstrado",
+            "## lacunas remanescentes",
+            "## por que nao e produto pronto",
+            "## por que crisol e o proximo candidato, mas nao esta admitido",
+        ):
+            _require(required_snippet in benchuix_27_summary, f"BENCHUIX-27 closure summary missing snippet: {required_snippet}")
+
+        benchuix_27_validation = _load_json(ROOT / "artifacts/benchuix/27_validation_evidence.json")
+        _require(benchuix_27_validation.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 validation evidence phase_id mismatch")
+        _require(
+            benchuix_27_validation.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-27 validation evidence status mismatch",
+        )
+        expected_27_created_artifacts = {
+            "artifacts/benchuix/27_product_gap_ledger.json",
+            "artifacts/benchuix/27_anti_theater_rules.json",
+            "artifacts/benchuix/27_crisol_handoff.md",
+            "artifacts/benchuix/27_gap_destination_matrix.json",
+            "artifacts/benchuix/27_benchuix_closure_summary.md",
+            "artifacts/benchuix/27_validation_evidence.json",
+            "artifacts/benchuix/27_no_real_execution_attestation_final.json",
+        }
+        _require(set(benchuix_27_validation.get("created_artifacts", [])) == expected_27_created_artifacts, "BENCHUIX-27 created_artifacts mismatch")
+        criteria_27 = benchuix_27_validation.get("criteria_covered", {})
+        for key in (
+            "product_gap_ledger_present",
+            "anti_theater_rules_present",
+            "crisol_handoff_present",
+            "all_gaps_have_destination",
+            "no_gap_closed_without_destination",
+            "runtime_or_secret_gap_not_accepted_risk",
+            "live_route_opened",
+            "no_project_aris_mutation",
+            "all_real_locks_remain_false",
+        ):
+            _require(key in criteria_27, f"BENCHUIX-27 criteria_covered missing key {key}")
+        _require(criteria_27.get("product_gap_ledger_present") is True, "BENCHUIX-27 product_gap_ledger_present mismatch")
+        _require(criteria_27.get("anti_theater_rules_present") is True, "BENCHUIX-27 anti_theater_rules_present mismatch")
+        _require(criteria_27.get("crisol_handoff_present") is True, "BENCHUIX-27 crisol_handoff_present mismatch")
+        _require(criteria_27.get("all_gaps_have_destination") is True, "BENCHUIX-27 all_gaps_have_destination mismatch")
+        _require(criteria_27.get("no_gap_closed_without_destination") is True, "BENCHUIX-27 no_gap_closed_without_destination mismatch")
+        _require(criteria_27.get("runtime_or_secret_gap_not_accepted_risk") is True, "BENCHUIX-27 runtime_or_secret_gap_not_accepted_risk mismatch")
+        _require(criteria_27.get("product_ready_declared") is False, "BENCHUIX-27 product_ready_declared must be false")
+        _require(criteria_27.get("crisol_admitted") is False, "BENCHUIX-27 crisol_admitted must be false")
+        _require(criteria_27.get("live_route_opened") is False, "BENCHUIX-27 live_route_opened must be false")
+        _require(criteria_27.get("no_project_aris_mutation") is True, "BENCHUIX-27 no_project_aris_mutation mismatch")
+        _require(criteria_27.get("all_real_locks_remain_false") is True, "BENCHUIX-27 all_real_locks_remain_false mismatch")
+        _require(benchuix_27_validation.get("candidate_next_phase_after_operator_gate") == "CRISOL", "BENCHUIX-27 validation next candidate mismatch")
+        _require(benchuix_27_validation.get("next_phase") is None, "BENCHUIX-27 validation next_phase must remain null")
+        _require(benchuix_27_validation.get("active_next_phase") is None, "BENCHUIX-27 validation active_next_phase must remain null")
+        if benchuix_27_validation.get("status") == "local_validation_pass_recorded":
+            artifact_hashes = benchuix_27_validation.get("artifact_hashes", {})
+            for path in sorted(expected_27_created_artifacts - {"artifacts/benchuix/27_validation_evidence.json"}):
+                _require(artifact_hashes.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27 artifact hash mismatch for {path}")
+            results_27 = benchuix_27_validation.get("results", {})
+            for key in (
+                "ACTIVE_CONTEXT_STATE_json_tool",
+                "ACTIVE_CONTEXT_SCHEMA_json_tool",
+                "gap_ledger_json_tool",
+                "anti_theater_rules_json_tool",
+                "gap_destination_matrix_json_tool",
+                "validation_evidence_json_tool",
+                "no_real_execution_attestation_final_json_tool",
+                "render_boot",
+                "validator_py_compile",
+                "validator_script",
+                "unittest_discover",
+                "git_diff_check",
+            ):
+                _require(bool(results_27.get(key)), f"BENCHUIX-27 validation results missing {key}")
+
+        benchuix_27_final_no_real = _load_json(ROOT / "artifacts/benchuix/27_no_real_execution_attestation_final.json")
+        _require(benchuix_27_final_no_real.get("phase_id") == "BENCHUIX-27", "BENCHUIX-27 final no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+            "crisol_opened",
+            "product_ready_declared",
+        ):
+            _require(benchuix_27_final_no_real.get(key) is False, f"BENCHUIX-27 final no-real {key} must be false")
+        _require(benchuix_27_final_no_real.get("documentary_candidate_only") is True, "BENCHUIX-27 final documentary_candidate_only mismatch")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

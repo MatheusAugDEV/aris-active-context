@@ -1,0 +1,79 @@
+{
+  "phase_id": "BENCHUIX-27",
+  "artifact_type": "anti_theater_rules",
+  "candidate_only": true,
+  "rules": [
+    {
+      "rule_id": "ATR-27-001",
+      "prohibited_claim": "Declarar produto pronto so porque o roteiro candidate-only ficou convincente.",
+      "why_forbidden": "Roteiro, copy e receipts sinteticos nao substituem runtime, dados reais nem usuarios reais.",
+      "detection_signal": "Aparecem frases como produto pronto, launch-ready ou production-ready sem gate posterior.",
+      "required_response": "Bloquear a claim, apontar o gap ledger e exigir destino real em Crisol ou Bedrock.",
+      "applies_to": ["closure_summary", "handoff", "future_operator_reports"]
+    },
+    {
+      "rule_id": "ATR-27-002",
+      "prohibited_claim": "Tratar demo sandbox como execucao real.",
+      "why_forbidden": "Sandbox prova narrativa e interface, nao prova integracao, runtime ou mutacao de estado.",
+      "detection_signal": "A demo e descrita como se tivesse tocado agenda, pagamento, anexo ou integracao real.",
+      "required_response": "Reclassificar imediatamente como candidate-only e reforcar o no-real attestation.",
+      "applies_to": ["demo_scripts", "closure_summary", "crisol_handoff"]
+    },
+    {
+      "rule_id": "ATR-27-003",
+      "prohibited_claim": "Tratar synthetic data como validacao de cliente real.",
+      "why_forbidden": "Dados sinteticos nao medem comportamento real, preferencia real nem riscos operacionais reais.",
+      "detection_signal": "Synthetic-only e usado como prova de acceptance, fit ou preference de cliente.",
+      "required_response": "Mover a necessidade para Crisol com evidencia de dado ou sessao real autorizada.",
+      "applies_to": ["metrics", "usability", "benchmark", "demo"]
+    },
+    {
+      "rule_id": "ATR-27-004",
+      "prohibited_claim": "Tratar CI green como UX real validada.",
+      "why_forbidden": "CI verde prova consistencia do pacote, nao prova compreensao, confianca ou acessibilidade real.",
+      "detection_signal": "A conclusao usa apenas validator e CI para afirmar experiencia do usuario comprovada.",
+      "required_response": "Citar o gap correspondente e exigir evidencia de Crisol antes da claim.",
+      "applies_to": ["validation_evidence", "closure_summary", "future_gate_intake"]
+    },
+    {
+      "rule_id": "ATR-27-005",
+      "prohibited_claim": "Tratar accepted risk como resolved.",
+      "why_forbidden": "Risk aceito permanece aberto como escolha explicita; nao vira ausencia de problema.",
+      "detection_signal": "Um gap e removido do ledger so porque alguem o chamou de aceitavel.",
+      "required_response": "Manter o gap aberto ou registrar destino explicitamente com criterio de fechamento.",
+      "applies_to": ["gap_ledger", "destination_matrix", "future_change_logs"]
+    },
+    {
+      "rule_id": "ATR-27-006",
+      "prohibited_claim": "Tratar handoff Crisol como Crisol admitido.",
+      "why_forbidden": "Handoff documental nao substitui gate de admissao separado.",
+      "detection_signal": "Aparece linguagem que sugere que CRISOL ja esta aberto, ativo ou autorizado.",
+      "required_response": "Substituir por linguagem de proximo candidato e manter crisol_admitted=false.",
+      "applies_to": ["crisol_handoff", "state_review", "candidate_reports"]
+    },
+    {
+      "rule_id": "ATR-27-007",
+      "prohibited_claim": "Tratar BenchUIX closure como Bedrock, piloto ou produto.",
+      "why_forbidden": "BenchUIX fecha descoberta e preparacao de valor, nao o pacote de execucao real.",
+      "detection_signal": "Closure summary ou gate posterior usa o encerramento BenchUIX para implicar piloto, Bedrock ou deploy.",
+      "required_response": "Bloquear a associacao e exigir gate especifico para Bedrock ou produto.",
+      "applies_to": ["closure_summary", "handoff", "future_operator_prompts"]
+    },
+    {
+      "rule_id": "ATR-27-008",
+      "prohibited_claim": "Esconder gaps de runtime, secrets, real_apply ou dados reais como cosmeticos.",
+      "why_forbidden": "Esses gaps alteram seguranca, confianca ou capacidade real de operacao.",
+      "detection_signal": "Destination vira ACCEPTED_COSMETIC_RISK para gap com real_runtime_required=true ou secret_or_real_apply_related=true.",
+      "required_response": "Rejeitar o destino e reenquadrar para CRISOL ou BEDROCK.",
+      "applies_to": ["gap_ledger", "destination_matrix", "future_gate_repairs"]
+    },
+    {
+      "rule_id": "ATR-27-009",
+      "prohibited_claim": "Fechar gap sem artifact e criterio de fechamento.",
+      "why_forbidden": "Sem evidência e closure criteria, o fechamento vira só narrativa.",
+      "detection_signal": "Status diferente de open_for_destination aparece sem packet, evidence_required e closure_criteria verificavel.",
+      "required_response": "Invalidar o fechamento e restaurar o gap no ledger.",
+      "applies_to": ["gap_ledger", "destination_matrix", "future_closure_packets"]
+    }
+  ]
+}
