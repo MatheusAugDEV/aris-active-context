@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-21",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "entries": [
+    {"surface_id": "cta_primaria", "focus_visible": "always_required", "focus_appearance": "contraste_claro_sem_sumir_no_background", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "resultado_anunciavel_sem_roubar_foco", "reduced_motion": "nao_depende_de_animacao", "animation_not_required": true, "textual_fallback": "sempre_presente"},
+    {"surface_id": "cta_secundaria", "focus_visible": "always_required", "focus_appearance": "contorno_visivel_e_estavel", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "acao_secundaria_sem_ambiguidade", "reduced_motion": "transicao_opcional", "animation_not_required": true, "textual_fallback": "sempre_presente"},
+    {"surface_id": "banner_status", "focus_visible": "nao_aplicavel_como_destino_padrao", "focus_appearance": "nao_pode_ocultar_foco_do_gatilho", "target_minimum": "n_a", "label_in_name": false, "status_messages": "programaticamente_determinaveis", "reduced_motion": "sem_pulse_obrigatorio", "animation_not_required": true, "textual_fallback": "mensagem_textual_curta"},
+    {"surface_id": "banner_erro", "focus_visible": "foco_no_alerta_quando_critico", "focus_appearance": "alerta_visivel_sem_depender_so_de_cor", "target_minimum": "n_a", "label_in_name": false, "status_messages": "erro_anunciado_com_proximo_passo", "reduced_motion": "sem_shake_obrigatorio", "animation_not_required": true, "textual_fallback": "erro_e_proximo_passo_em_texto"},
+    {"surface_id": "comprovante_link", "focus_visible": "always_required", "focus_appearance": "subrayado_ou_contorno_visivel", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "disponibilidade_anunciavel", "reduced_motion": "abertura_sem_animacao_obrigatoria", "animation_not_required": true, "textual_fallback": "rotulo_do_link_explicito"},
+    {"surface_id": "controle_pausa", "focus_visible": "always_required", "focus_appearance": "estado_visivel_antes_e_depois", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "pausa_ou_retomada_anunciada", "reduced_motion": "sem_spinner_como_unica_prova", "animation_not_required": true, "textual_fallback": "estado_em_texto"},
+    {"surface_id": "ajuda_contextual", "focus_visible": "always_required", "focus_appearance": "foco_no_titulo_e_no_fechar", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "abertura_e_fecho_sem_apagar_alertas", "reduced_motion": "drawer_ou_modal_sem_animacao_obrigatoria", "animation_not_required": true, "textual_fallback": "titulo_e_resumo_textual"},
+    {"surface_id": "painel_risco", "focus_visible": "always_required", "focus_appearance": "nao_obscurecido_por_header_ou_chip", "target_minimum": "24x24_css_px_ou_equivalente_quando_operavel", "label_in_name": true, "status_messages": "mudanca_de_faixa_anunciavel", "reduced_motion": "barra_ou_animacao_tem_fallback_textual", "animation_not_required": true, "textual_fallback": "faixa_e_impacto_em_texto"},
+    {"surface_id": "dialogo_confirmacao", "focus_visible": "always_required", "focus_appearance": "contorno_firme_em_aprovar_negar_cancelar", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "confirmacao_anunciavel_sem_trap", "reduced_motion": "entrada_saida_suaves_podem_ser_desligadas", "animation_not_required": true, "textual_fallback": "titulo_resumo_e_botoes_textuais"},
+    {"surface_id": "autenticacao_reforco", "focus_visible": "always_required", "focus_appearance": "campo_e_acao_visiveis_sem_ruido", "target_minimum": "24x24_css_px_ou_equivalente", "label_in_name": true, "status_messages": "sucesso_falha_e_ajuda_anunciados", "reduced_motion": "sem_puzzle_ou_animacao_necessaria", "animation_not_required": true, "textual_fallback": "instrucao_clara_e_ajuda_textual"}
+  ],
+  "handoff_targets": [
+    "BENCHUIX-22"
+  ]
+}

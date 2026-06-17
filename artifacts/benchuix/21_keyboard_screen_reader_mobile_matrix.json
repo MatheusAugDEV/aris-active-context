@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-21",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "keyboard": [
+    {"flow_id": "hoje", "tab_order": "titulo,resumo,risco,cta,ajuda", "escape_or_back": "voltar do detalhe sem perder contexto", "initial_focus": "titulo_hoje", "focus_after_action": "cta_ou_item_origem", "keyboard_trap_absent": true},
+    {"flow_id": "aprovar", "tab_order": "titulo,impacto,comprovante,aprovar,ajuda", "escape_or_back": "escape_fecha_dialogo", "initial_focus": "titulo_dialogo_aprovar", "focus_after_action": "status_ou_gatilho_origem", "keyboard_trap_absent": true},
+    {"flow_id": "negar", "tab_order": "titulo,motivo,impacto,negar,ajuda", "escape_or_back": "escape_fecha_dialogo", "initial_focus": "titulo_dialogo_negar", "focus_after_action": "status_ou_gatilho_origem", "keyboard_trap_absent": true},
+    {"flow_id": "ver_risco", "tab_order": "titulo,faixa,explicacao,proximo_passo", "escape_or_back": "voltar_para_card_origem", "initial_focus": "titulo_risco", "focus_after_action": "card_risco_origem", "keyboard_trap_absent": true},
+    {"flow_id": "ver_permissao", "tab_order": "titulo,escopo,acao_bloqueada,revisao", "escape_or_back": "voltar_para_acao_origem", "initial_focus": "aviso_permissao", "focus_after_action": "gatilho_origem", "keyboard_trap_absent": true},
+    {"flow_id": "ver_comprovante", "tab_order": "titulo,horario,escopo,acao_relacionada,voltar", "escape_or_back": "voltar_sem_perder_posicao", "initial_focus": "titulo_comprovante", "focus_after_action": "link_comprovante_origem", "keyboard_trap_absent": true},
+    {"flow_id": "ver_desfazer_compensar", "tab_order": "titulo,tipo,impacto,cta_segura,fechar", "escape_or_back": "escape_fecha_drawer", "initial_focus": "titulo_recuperacao", "focus_after_action": "link_recuperacao_origem", "keyboard_trap_absent": true},
+    {"flow_id": "pausar_automacao", "tab_order": "item,estado,pausar,confirmar", "escape_or_back": "cancelar_confirmação_sem_trap", "initial_focus": "controle_pausar", "focus_after_action": "item_pausado", "keyboard_trap_absent": true},
+    {"flow_id": "ver_falha", "tab_order": "titulo,causa_humana,estado_preservado,proximo_passo", "escape_or_back": "voltar_para_tela_origem", "initial_focus": "alerta_falha", "focus_after_action": "cta_recuperacao", "keyboard_trap_absent": true},
+    {"flow_id": "ver_dado_atrasado", "tab_order": "aviso,idade,proximo_passo,ajuda", "escape_or_back": "voltar_para_fluxo_sem_salto", "initial_focus": "aviso_stale", "focus_after_action": "acao_segura", "keyboard_trap_absent": true},
+    {"flow_id": "abrir_ajuda_contextual", "tab_order": "titulo,conteudo,acao_ajuda,fechar", "escape_or_back": "escape_fecha_ajuda", "initial_focus": "titulo_ajuda", "focus_after_action": "gatilho_ajuda", "keyboard_trap_absent": true}
+  ],
+  "screen_reader": [
+    {"flow_id": "hoje", "accessible_name": "Resumo de hoje", "expected_role": "main_region", "status_announced": "sim", "error_announced": "sim_quando_houver", "help_announced": "sim"},
+    {"flow_id": "aprovar", "accessible_name": "Aprovar esta etapa", "expected_role": "dialog", "status_announced": "sim", "error_announced": "sim", "help_announced": "sim"},
+    {"flow_id": "negar", "accessible_name": "Negar esta etapa", "expected_role": "dialog", "status_announced": "sim", "error_announced": "sim", "help_announced": "sim"},
+    {"flow_id": "ver_risco", "accessible_name": "Detalhes de risco", "expected_role": "region", "status_announced": "sim", "error_announced": "nao_aplicavel", "help_announced": "sim"},
+    {"flow_id": "ver_permissao", "accessible_name": "Limite de acesso atual", "expected_role": "status_or_alert", "status_announced": "sim", "error_announced": "sim_quando_bloquear", "help_announced": "sim"},
+    {"flow_id": "ver_comprovante", "accessible_name": "Comprovante desta etapa", "expected_role": "article_or_region", "status_announced": "sim", "error_announced": "sim_quando_indisponivel", "help_announced": "sim"},
+    {"flow_id": "ver_desfazer_compensar", "accessible_name": "Caminho de desfazer ou compensar", "expected_role": "dialog_or_drawer", "status_announced": "sim", "error_announced": "sim_quando_indisponivel", "help_announced": "sim"},
+    {"flow_id": "pausar_automacao", "accessible_name": "Pausar automacao", "expected_role": "button", "status_announced": "sim", "error_announced": "sim", "help_announced": "sim"},
+    {"flow_id": "ver_falha", "accessible_name": "Falha desta etapa", "expected_role": "alert_or_status", "status_announced": "sim", "error_announced": "sim", "help_announced": "sim"},
+    {"flow_id": "ver_dado_atrasado", "accessible_name": "Aviso de dado atrasado", "expected_role": "status", "status_announced": "sim", "error_announced": "nao_aplicavel", "help_announced": "sim"},
+    {"flow_id": "abrir_ajuda_contextual", "accessible_name": "Abrir ajuda contextual", "expected_role": "button_and_dialog", "status_announced": "sim_quando_abrir", "error_announced": "nao_aplicavel", "help_announced": "sim"}
+  ],
+  "mobile": [
+    {"flow_id": "hoje", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "aprovar", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "negar", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_risco", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_permissao", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_comprovante", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_desfazer_compensar", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "pausar_automacao", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_falha", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "ver_dado_atrasado", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true},
+    {"flow_id": "abrir_ajuda_contextual", "target_minimum": "24x24_css_px_ou_equivalente", "no_zoom_required": true, "no_dense_table_first_view": true, "primary_cta_reachable": true}
+  ],
+  "handoff_targets": [
+    "BENCHUIX-22"
+  ]
+}

@@ -1833,7 +1833,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-20", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-21", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1847,7 +1847,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-21", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-22", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1981,6 +1981,15 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/20_jargon_scan_report.json").exists(), "BENCHUIX-20 jargon scan report missing on disk")
         _require((ROOT / "artifacts/benchuix/20_no_real_execution_attestation.json").exists(), "BENCHUIX-20 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/20_validation_evidence.json").exists(), "BENCHUIX-20 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_operator_opening_source.json").exists(), "BENCHUIX-21 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_accessibility_wcag22_mapping.json").exists(), "BENCHUIX-21 accessibility mapping missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_accessibility_audit_report.md").exists(), "BENCHUIX-21 accessibility audit report missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_critical_flow_accessibility_matrix.json").exists(), "BENCHUIX-21 critical flow accessibility matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_keyboard_screen_reader_mobile_matrix.json").exists(), "BENCHUIX-21 keyboard/screen-reader/mobile matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_focus_target_status_motion_matrix.json").exists(), "BENCHUIX-21 focus/target/status/motion matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_accessibility_gap_severity_matrix.json").exists(), "BENCHUIX-21 accessibility gap severity matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_no_real_execution_attestation.json").exists(), "BENCHUIX-21 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/21_validation_evidence.json").exists(), "BENCHUIX-21 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -4152,6 +4161,219 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_20_SYNTHETIC_ONLY_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-20 validation evidence missing {key}")
+
+        benchuix_21_operator = _load_json(ROOT / "artifacts/benchuix/21_operator_opening_source.json")
+        _require(benchuix_21_operator.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 operator source phase_id mismatch")
+        _require(benchuix_21_operator.get("opened_from_candidate_phase") == "BENCHUIX-20", "BENCHUIX-21 opened_from_candidate_phase mismatch")
+        _require(benchuix_21_operator.get("opened_candidate_phase") == "BENCHUIX-21", "BENCHUIX-21 opened_candidate_phase mismatch")
+        _require(
+            benchuix_21_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-21 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_21_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-21 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_21_operator.get("previous_candidate_commit") == "d9b32c51faeaacd921575b99685473459b158c16",
+            "BENCHUIX-21 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_21_operator.get("previous_candidate_ci_run") == "27658176363",
+            "BENCHUIX-21 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_21_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-21 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_21_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-21 all_real_locks_remain_false mismatch")
+        _require(benchuix_21_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-21 bedrock_preparation_exception_recorded mismatch")
+
+        benchuix_21_mapping = _load_json(ROOT / "artifacts/benchuix/21_accessibility_wcag22_mapping.json")
+        mapping_metadata = benchuix_21_mapping.get("metadata", {})
+        _require(mapping_metadata.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 mapping metadata.phase_id mismatch")
+        _require(mapping_metadata.get("status") == "candidate", "BENCHUIX-21 mapping metadata.status mismatch")
+        _require(mapping_metadata.get("synthetic_only") is True, "BENCHUIX-21 mapping metadata.synthetic_only mismatch")
+        _require(mapping_metadata.get("documentary_candidate_only") is True, "BENCHUIX-21 mapping documentary_candidate_only mismatch")
+        _require(mapping_metadata.get("wcag_real_conformance_declared") is False, "BENCHUIX-21 mapping wcag_real_conformance_declared mismatch")
+        criteria = benchuix_21_mapping.get("criteria", [])
+        _require(len(criteria) >= 15, "BENCHUIX-21 mapping must list at least 15 criteria")
+        for entry in criteria:
+            for key in (
+                "criterion_id",
+                "criterion_name",
+                "level",
+                "applies_to_flows",
+                "candidate_requirement",
+                "evidence_type",
+                "manual_check_required_future",
+                "automated_check_possible_future",
+                "not_claiming_real_conformance",
+                "gap_destination_if_unmet",
+            ):
+                _require(key in entry, f"BENCHUIX-21 mapping entry missing {key}")
+            _require(entry.get("not_claiming_real_conformance") is True, "BENCHUIX-21 mapping entry must not claim real conformance")
+
+        benchuix_21_audit_text = (ROOT / "artifacts/benchuix/21_accessibility_audit_report.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## tese da fase",
+            "## limites da auditoria documental",
+            "## escopo synthetic-only",
+            "## fluxos criticos avaliados",
+            "## achados por teclado",
+            "## achados por leitor de tela",
+            "## achados por mobile",
+            "## achados por foco/target/status/reduced motion",
+            "## decisoes que nao podem depender so de cor",
+            "## gaps que devem ir para BENCHUIX-22 ou Crisol",
+            "## criterios PASS/WARN/BLOCK/INVALID",
+        ):
+            _require(required_snippet in benchuix_21_audit_text, f"BENCHUIX-21 audit report missing section: {required_snippet}")
+
+        benchuix_21_flows = _load_json(ROOT / "artifacts/benchuix/21_critical_flow_accessibility_matrix.json")
+        flow_metadata = benchuix_21_flows.get("metadata", {})
+        _require(flow_metadata.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 flow matrix metadata.phase_id mismatch")
+        _require(flow_metadata.get("status") == "candidate", "BENCHUIX-21 flow matrix metadata.status mismatch")
+        _require(flow_metadata.get("synthetic_only") is True, "BENCHUIX-21 flow matrix metadata.synthetic_only mismatch")
+        flows = benchuix_21_flows.get("flows", [])
+        expected_flow_ids = {
+            "hoje",
+            "aprovar",
+            "negar",
+            "ver_risco",
+            "ver_permissao",
+            "ver_comprovante",
+            "ver_desfazer_compensar",
+            "pausar_automacao",
+            "ver_falha",
+            "ver_dado_atrasado",
+            "abrir_ajuda_contextual",
+        }
+        _require({entry.get("flow_id") for entry in flows} == expected_flow_ids, "BENCHUIX-21 flow ids mismatch")
+        for entry in flows:
+            for key in (
+                "flow_id",
+                "flow_name",
+                "keyboard_path",
+                "screen_reader_expectation",
+                "mobile_expectation",
+                "focus_requirement",
+                "status_message_requirement",
+                "color_independence_requirement",
+                "reduced_motion_requirement",
+                "critical_failure_condition",
+                "candidate_status",
+            ):
+                _require(bool(entry.get(key)), f"BENCHUIX-21 flow entry missing {key}")
+
+        benchuix_21_ksm = _load_json(ROOT / "artifacts/benchuix/21_keyboard_screen_reader_mobile_matrix.json")
+        ksm_metadata = benchuix_21_ksm.get("metadata", {})
+        _require(ksm_metadata.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 keyboard/screen-reader/mobile metadata.phase_id mismatch")
+        _require(ksm_metadata.get("status") == "candidate", "BENCHUIX-21 keyboard/screen-reader/mobile metadata.status mismatch")
+        _require(ksm_metadata.get("synthetic_only") is True, "BENCHUIX-21 keyboard/screen-reader/mobile metadata.synthetic_only mismatch")
+        for section, keys in (
+            ("keyboard", ("flow_id", "tab_order", "escape_or_back", "initial_focus", "focus_after_action", "keyboard_trap_absent")),
+            ("screen_reader", ("flow_id", "accessible_name", "expected_role", "status_announced", "error_announced", "help_announced")),
+            ("mobile", ("flow_id", "target_minimum", "no_zoom_required", "no_dense_table_first_view", "primary_cta_reachable")),
+        ):
+            entries = benchuix_21_ksm.get(section, [])
+            _require(len(entries) == 11, f"BENCHUIX-21 {section} section must cover 11 flows")
+            _require({entry.get('flow_id') for entry in entries} == expected_flow_ids, f"BENCHUIX-21 {section} flow ids mismatch")
+            for entry in entries:
+                for key in keys:
+                    _require(key in entry, f"BENCHUIX-21 {section} entry missing {key}")
+
+        benchuix_21_focus = _load_json(ROOT / "artifacts/benchuix/21_focus_target_status_motion_matrix.json")
+        focus_metadata = benchuix_21_focus.get("metadata", {})
+        _require(focus_metadata.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 focus matrix metadata.phase_id mismatch")
+        _require(focus_metadata.get("status") == "candidate", "BENCHUIX-21 focus matrix metadata.status mismatch")
+        _require(focus_metadata.get("synthetic_only") is True, "BENCHUIX-21 focus matrix metadata.synthetic_only mismatch")
+        focus_entries = benchuix_21_focus.get("entries", [])
+        _require(len(focus_entries) >= 8, "BENCHUIX-21 focus matrix must list at least 8 surfaces")
+        for entry in focus_entries:
+            for key in (
+                "surface_id",
+                "focus_visible",
+                "focus_appearance",
+                "target_minimum",
+                "label_in_name",
+                "status_messages",
+                "reduced_motion",
+                "animation_not_required",
+                "textual_fallback",
+            ):
+                _require(key in entry, f"BENCHUIX-21 focus matrix entry missing {key}")
+
+        benchuix_21_gaps = _load_json(ROOT / "artifacts/benchuix/21_accessibility_gap_severity_matrix.json")
+        gap_metadata = benchuix_21_gaps.get("metadata", {})
+        _require(gap_metadata.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 gap metadata.phase_id mismatch")
+        _require(gap_metadata.get("status") == "candidate", "BENCHUIX-21 gap metadata.status mismatch")
+        _require(gap_metadata.get("synthetic_only") is True, "BENCHUIX-21 gap metadata.synthetic_only mismatch")
+        _require(gap_metadata.get("zero_open_critical_violations") is True, "BENCHUIX-21 zero_open_critical_violations mismatch")
+        severity_definitions = benchuix_21_gaps.get("severity_definitions", {})
+        _require(set(severity_definitions) == {"CRITICAL", "HIGH", "MEDIUM", "LOW"}, "BENCHUIX-21 severity definitions mismatch")
+        gaps = benchuix_21_gaps.get("gaps", [])
+        _require(len(gaps) >= 1, "BENCHUIX-21 gap matrix must list at least one tracked gap")
+        for entry in gaps:
+            for key in (
+                "gap_id",
+                "severity",
+                "affected_flow",
+                "affected_user_mode",
+                "why_it_matters",
+                "safe_candidate_resolution",
+                "destination_phase",
+                "blocks_candidate_pass",
+            ):
+                _require(key in entry, f"BENCHUIX-21 gap entry missing {key}")
+            _require(entry.get("severity") in {"CRITICAL", "HIGH", "MEDIUM", "LOW"}, "BENCHUIX-21 gap severity invalid")
+            _require(entry.get("affected_flow") in expected_flow_ids, "BENCHUIX-21 gap affected_flow invalid")
+            _require(not (entry.get("severity") == "CRITICAL" and entry.get("blocks_candidate_pass") is True), "BENCHUIX-21 cannot keep open CRITICAL blocking gap")
+
+        benchuix_21_no_real = _load_json(ROOT / "artifacts/benchuix/21_no_real_execution_attestation.json")
+        _require(benchuix_21_no_real.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "browser_tests_executed",
+            "axe_executed",
+            "lighthouse_executed",
+            "runtime_executed",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "external_network_used_except_github_governance",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+            "wcag_real_conformance_declared",
+        ):
+            _require(benchuix_21_no_real.get(key) is False, f"BENCHUIX-21 no-real {key} must be false")
+        _require(benchuix_21_no_real.get("documentary_candidate_only") is True, "BENCHUIX-21 documentary_candidate_only mismatch")
+
+        benchuix_21_evidence = _load_json(ROOT / "artifacts/benchuix/21_validation_evidence.json")
+        _require(benchuix_21_evidence.get("phase_id") == "BENCHUIX-21", "BENCHUIX-21 validation evidence phase_id mismatch")
+        _require(
+            benchuix_21_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-21 validation evidence status mismatch",
+        )
+        if benchuix_21_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_21_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_21_WCAG22_MAPPING_OK",
+                "BENCHUIX_21_AUDIT_REPORT_OK",
+                "BENCHUIX_21_CRITICAL_FLOW_MATRIX_OK",
+                "BENCHUIX_21_KEYBOARD_SCREEN_READER_MOBILE_OK",
+                "BENCHUIX_21_FOCUS_TARGET_STATUS_MOTION_OK",
+                "BENCHUIX_21_GAP_SEVERITY_MATRIX_OK",
+                "BENCHUIX_21_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_21_ZERO_CRITICAL_GAPS_OK",
+                "BENCHUIX_21_WCAG_REAL_CONFORMANCE_DECLARED_FALSE",
+                "BENCHUIX_21_SYNTHETIC_ONLY_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-21 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

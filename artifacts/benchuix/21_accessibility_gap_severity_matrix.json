@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-21",
+    "status": "candidate",
+    "synthetic_only": true,
+    "zero_open_critical_violations": true
+  },
+  "severity_definitions": {
+    "CRITICAL": "impede fluxo essencial ou decisao segura",
+    "HIGH": "exige workaround substancial",
+    "MEDIUM": "atrito relevante mas fluxo ainda possivel",
+    "LOW": "melhoria de clareza ou conforto"
+  },
+  "gaps": [
+    {
+      "gap_id": "A11Y-21-001",
+      "severity": "HIGH",
+      "affected_flow": "abrir_ajuda_contextual",
+      "affected_user_mode": "screen_reader_mobile",
+      "why_it_matters": "A ordem relativa da ajuda entre variacoes responsivas ainda precisa prova visual e assistiva em implementacao real.",
+      "safe_candidate_resolution": "Fixar ordem relativa da ajuda no layout responsivo e validar em BENCHUIX-22 antes de qualquer claim forte.",
+      "destination_phase": "BENCHUIX-22",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-002",
+      "severity": "MEDIUM",
+      "affected_flow": "ver_comprovante",
+      "affected_user_mode": "mobile_low_vision",
+      "why_it_matters": "Linhas de comprovante podem exigir prova real de reflow e resize text para recibos longos.",
+      "safe_candidate_resolution": "Testar reflow e quebra de linha em comprovantes extensos dentro do budget visual da fase 22.",
+      "destination_phase": "BENCHUIX-22",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-003",
+      "severity": "MEDIUM",
+      "affected_flow": "ver_falha",
+      "affected_user_mode": "screen_reader",
+      "why_it_matters": "O pacote define annunciation de status, mas a implementacao futura ainda precisa decidir role e politeness adequadas por superficie.",
+      "safe_candidate_resolution": "Levar para Crisol a definicao final de name-role-value e status live por componente real.",
+      "destination_phase": "CRISOL",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-004",
+      "severity": "LOW",
+      "affected_flow": "hoje",
+      "affected_user_mode": "keyboard_only",
+      "why_it_matters": "A volta do foco apos fechar ajuda contextual ainda depende de convencao documental e merece prova interativa futura.",
+      "safe_candidate_resolution": "Validar retorno de foco no prototipo visual de BENCHUIX-22.",
+      "destination_phase": "BENCHUIX-22",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "A11Y-21-005",
+      "severity": "LOW",
+      "affected_flow": "aprovar",
+      "affected_user_mode": "cognitive_load",
+      "why_it_matters": "Autenticacao acessivel foi coberta como requisito, mas o reforco de identidade ainda precisa design final sem carga cognitiva desnecessaria.",
+      "safe_candidate_resolution": "Levar para Crisol a regra final de autenticacao assistida com apoio a password manager e copia segura.",
+      "destination_phase": "CRISOL",
+      "blocks_candidate_pass": false
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-22"
+  ]
+}

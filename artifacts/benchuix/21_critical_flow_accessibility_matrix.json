@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-21",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "flows": [
+    {
+      "flow_id": "hoje",
+      "flow_name": "Hoje",
+      "keyboard_path": "Tab percorre resumo, risco, proxima acao segura e ajuda; Enter abre detalhe contextual; Shift+Tab retorna sem salto inesperado.",
+      "screen_reader_expectation": "Resumo inicial anuncia estado do dia, risco prioritario e acao principal em ordem coerente.",
+      "mobile_expectation": "Resumo principal aparece sem tabela densa e sem exigir zoom para entender a CTA.",
+      "focus_requirement": "Foco inicia no titulo util e segue para a CTA principal sem area fantasma.",
+      "status_message_requirement": "Atualizacao do resumo precisa ser anunciavel sem mover foco.",
+      "color_independence_requirement": "Prioridade do dia nao pode depender so de chip colorido.",
+      "reduced_motion_requirement": "Animacao de entrada do resumo pode ser desligada sem perder contexto.",
+      "critical_failure_condition": "Pessoa nao entende a proxima acao segura sem mouse ou sem perceber cor.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "aprovar",
+      "flow_name": "Aprovar",
+      "keyboard_path": "Tab percorre contexto, impacto, comprovante previo, Aprovar e Ajuda; Escape fecha camada contextual sem prender foco.",
+      "screen_reader_expectation": "Leitor anuncia nome do fluxo, risco, efeito esperado, estado de aprovacao e retorno de status.",
+      "mobile_expectation": "Botao Aprovar fica alcancavel com alvo minimo e sem gesto fino obrigatorio.",
+      "focus_requirement": "Foco inicial cai no titulo do dialogo e retorna para o gatilho apos fechar.",
+      "status_message_requirement": "Resultado de aprovacao precisa ser anunciado sem roubar foco do proximo passo.",
+      "color_independence_requirement": "Aprovacao nao depende so do botao verde.",
+      "reduced_motion_requirement": "Confirmacao visual pode reduzir ou remover animacao sem perder o resultado textual.",
+      "critical_failure_condition": "Acao de aprovar nao pode ser completada por teclado ou seu estado final nao e anunciado.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "negar",
+      "flow_name": "Negar",
+      "keyboard_path": "Tab percorre motivo, impacto, Negar seguro e saida; Escape sai da camada sem trap.",
+      "screen_reader_expectation": "Leitor anuncia diferenca entre negar, cancelar e voltar para revisao.",
+      "mobile_expectation": "Botao Negar fica separado da CTA primaria para evitar toque acidental.",
+      "focus_requirement": "Foco visivel destaca a opcao selecionada e o campo de justificativa quando existir.",
+      "status_message_requirement": "Negacao e seus proximos passos precisam ser anunciados em texto e status.",
+      "color_independence_requirement": "Negar nao depende so do botao vermelho.",
+      "reduced_motion_requirement": "Transicao de negacao nao pode ser necessaria para entender o bloqueio.",
+      "critical_failure_condition": "Pessoa nega sem entender impacto ou nao consegue sair do fluxo por teclado.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_risco",
+      "flow_name": "Ver risco",
+      "keyboard_path": "Tab percorre resumo do risco, faixa explicada em texto e caminho de revisao.",
+      "screen_reader_expectation": "Risco e impacto potencial sao anunciados antes de detalhes secundarios.",
+      "mobile_expectation": "Faixa de risco cabe em cartao vertical com texto completo e CTA legivel.",
+      "focus_requirement": "Foco visivel destaca bloco de risco sem ser escondido por sticky header.",
+      "status_message_requirement": "Mudanca de risco ou aviso elevado gera status anunciavel.",
+      "color_independence_requirement": "Baixo, medio e alto risco sempre aparecem em texto, nao so em cor.",
+      "reduced_motion_requirement": "Qualquer animacao de barra ou intensidade tem fallback textual.",
+      "critical_failure_condition": "Risco so pode ser entendido por cor ou por grafico animado.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_permissao",
+      "flow_name": "Ver permissao",
+      "keyboard_path": "Tab percorre escopo atual, acao indisponivel e quem pode revisar; Enter abre ajuda.",
+      "screen_reader_expectation": "Mensagem deixa claro que o limite e de acesso e nao erro generico.",
+      "mobile_expectation": "Mensagem de permissao cabe em bloco curto com CTA para revisao sem zoom.",
+      "focus_requirement": "Foco vai para o aviso de permissao antes da CTA alternativa.",
+      "status_message_requirement": "Suspensao ou liberacao de permissao precisa ser anunciada.",
+      "color_independence_requirement": "Permissao insuficiente precisa de texto explicito alem do icone.",
+      "reduced_motion_requirement": "Aviso de permissao nao usa animacao como unico sinal de bloqueio.",
+      "critical_failure_condition": "Pessoa entende o limite como falha tecnica ou nao descobre o proximo passo.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_comprovante",
+      "flow_name": "Ver comprovante",
+      "keyboard_path": "Tab percorre resumo, horario, escopo, acao vinculada e voltar; Enter abre detalhes.",
+      "screen_reader_expectation": "Leitor anuncia que se trata de comprovante consultavel e nao permissao para repetir a acao.",
+      "mobile_expectation": "Conteudo reflowa em colunas simples e nao exige tabela larga como primeira camada.",
+      "focus_requirement": "Foco inicia no titulo do comprovante e mantem trilha clara ate voltar.",
+      "status_message_requirement": "Comprovante disponivel ou indisponivel deve ser anunciado.",
+      "color_independence_requirement": "Disponibilidade do comprovante nao depende so de selo colorido.",
+      "reduced_motion_requirement": "Abertura do comprovante funciona sem animacao obrigatoria.",
+      "critical_failure_condition": "Comprovante fica ilegivel no mobile ou invisivel ao leitor de tela.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_desfazer_compensar",
+      "flow_name": "Ver rollback/desfazer/compensar",
+      "keyboard_path": "Tab percorre reversibilidade, impacto, caminho seguro e sair; Escape fecha drawer sem trap.",
+      "screen_reader_expectation": "Leitor anuncia se a etapa e reversivel, compensavel ou irreversivel em linguagem humana.",
+      "mobile_expectation": "Caminho seguro aparece em lista vertical e com CTA alcançavel.",
+      "focus_requirement": "Foco nao pode ser ocultado por camada lateral nem por rodape fixo.",
+      "status_message_requirement": "Mudanca de disponibilidade do caminho seguro precisa ser anunciavel.",
+      "color_independence_requirement": "Reversivel vs irreversivel nao depende so de cor.",
+      "reduced_motion_requirement": "Transicao da camada lateral pode ser removida sem perder informacao.",
+      "critical_failure_condition": "Pessoa nao descobre se pode desfazer ou compensar sem usar mouse.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "pausar_automacao",
+      "flow_name": "Pausar automacao",
+      "keyboard_path": "Tab vai ao controle Pausar, confirma o efeito e retorna ao item pausado com status atualizado.",
+      "screen_reader_expectation": "Controle anuncia nome da automacao, estado atual e efeito de pausar.",
+      "mobile_expectation": "Controle de pausa tem alvo minimo e espaco suficiente contra toques acidentais.",
+      "focus_requirement": "Foco retorna ao item pausado com indicacao visivel do novo estado.",
+      "status_message_requirement": "Pausa ou retomada precisam ser anunciadas sem exigir refoco manual.",
+      "color_independence_requirement": "Estado pausado nao depende so de cor cinza ou amarela.",
+      "reduced_motion_requirement": "Mudanca de estado nao exige spinner animado como unica prova.",
+      "critical_failure_condition": "Pausa depende de hover, gesto fino ou status invisivel apos a acao.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_falha",
+      "flow_name": "Ver falha",
+      "keyboard_path": "Tab percorre o que falhou, o que foi preservado, proxima tentativa segura e ajuda.",
+      "screen_reader_expectation": "Leitor anuncia falha, impacto e proxima acao segura sem jargao tecnico.",
+      "mobile_expectation": "Falha critica cabe em cartao vertical com CTA clara e sem esconder o motivo.",
+      "focus_requirement": "Foco vai para o bloco de falha ou alerta antes da CTA secundaria.",
+      "status_message_requirement": "Falha e recuperacao precisam ser anunciadas imediatamente.",
+      "color_independence_requirement": "Falha bloqueante precisa de texto, nao apenas banner vermelho.",
+      "reduced_motion_requirement": "Estado de falha nao pode depender de shake, pulse ou animacao intensa.",
+      "critical_failure_condition": "Falha critica nao e anunciada ao leitor de tela ou some sem foco visivel.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "ver_dado_atrasado",
+      "flow_name": "Ver dado atrasado",
+      "keyboard_path": "Tab percorre aviso de dado atrasado, idade do dado e acao segura seguinte.",
+      "screen_reader_expectation": "Leitor anuncia que a leitura nao e atual e informa idade ou janela do dado.",
+      "mobile_expectation": "Aviso de stale data aparece acima da decisao principal e sem rolagem lateral.",
+      "focus_requirement": "Foco encontra o aviso antes do botao de continuar.",
+      "status_message_requirement": "Mudanca entre dado atual e atrasado precisa ser anunciavel.",
+      "color_independence_requirement": "Stale data nao depende so de tom amarelo.",
+      "reduced_motion_requirement": "Indicador de atualizacao nao usa animacao como unica pista.",
+      "critical_failure_condition": "Pessoa toma decisao em dado atrasado sem aviso textual ou anunciavel.",
+      "candidate_status": "documented_candidate_ready"
+    },
+    {
+      "flow_id": "abrir_ajuda_contextual",
+      "flow_name": "Abrir ajuda contextual",
+      "keyboard_path": "Tab encontra Ajuda, Enter abre, Escape fecha e o foco retorna ao gatilho.",
+      "screen_reader_expectation": "Ajuda possui nome acessivel claro, papel coerente e ordem consistente entre telas.",
+      "mobile_expectation": "Ajuda abre em camada leve, com CTA de fechar visivel e alvo minimo.",
+      "focus_requirement": "Foco vai para o titulo da ajuda e nunca fica preso na camada.",
+      "status_message_requirement": "Abertura da ajuda nao deve apagar alertas de risco e falha ja ativos.",
+      "color_independence_requirement": "Ajuda nao pode ser identificada so por icone sem texto ou nome acessivel.",
+      "reduced_motion_requirement": "Ajuda continua compreensivel sem animacao de drawer.",
+      "critical_failure_condition": "Ajuda so abre por mouse, prende foco ou some da leitura assistiva.",
+      "candidate_status": "documented_candidate_ready"
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-22"
+  ]
+}
