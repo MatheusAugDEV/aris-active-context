@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-26",
+    "candidate_only": true,
+    "synthetic_only": true
+  },
+  "scenes": [
+    {
+      "scene": "barb_01_context",
+      "owner_solo_message": "Voce ve a fila e o limite antes de qualquer surpresa.",
+      "small_team_message": "Seu time entende o contexto da agenda sem precisar abrir sistema real.",
+      "trust_message": "O limite aparece primeiro, nao depois do erro.",
+      "limit_message": "Isto e sandbox e nao muda horario real.",
+      "evidence_message": "A regra aplicada ja fica visivel na abertura.",
+      "rollback_message": "Se a excecao acontecer, a reversao tambem fica visivel.",
+      "forbidden_real_product_phrase": "Sua agenda ja foi sincronizada agora.",
+      "safe_replacement": "Esta cena mostra como a decisao seria apresentada no sandbox."
+    },
+    {
+      "scene": "barb_02_trigger",
+      "owner_solo_message": "O pedido VIP chega com impacto claro para voce decidir rapido.",
+      "small_team_message": "A equipe ve o risco do encaixe sem perder a narrativa do atendimento.",
+      "trust_message": "O bloqueio protege o negocio antes da aprovacao.",
+      "limit_message": "Nada e confirmado sem operador humano.",
+      "evidence_message": "O risco fica escrito antes da decisao.",
+      "rollback_message": "Se aprovar, a saida de reversao fica pronta.",
+      "forbidden_real_product_phrase": "O ARIS encaixou o cliente automaticamente.",
+      "safe_replacement": "O ARIS prepara a decisao sintetica e espera o humano."
+    },
+    {
+      "scene": "barb_03_decision",
+      "owner_solo_message": "Voce aprova so a excecao que faz sentido.",
+      "small_team_message": "A regra continua central e a excecao fica unica.",
+      "trust_message": "A aprovacao mostra custo e limite no mesmo painel.",
+      "limit_message": "Sem mensagem real, sem cobranca, sem agenda real.",
+      "evidence_message": "A trilha da aprovacao ja nasce explicada.",
+      "rollback_message": "A reversao fica pronta como historia controlada.",
+      "forbidden_real_product_phrase": "Tudo isso ja esta rodando na sua barbearia.",
+      "safe_replacement": "Isto demonstra a experiencia de aprovacao em modo candidate-only."
+    },
+    {
+      "scene": "barb_04_receipt_rollback",
+      "owner_solo_message": "Voce fecha a historia com comprovante e saida segura.",
+      "small_team_message": "A equipe ganha recibo claro para revisar depois.",
+      "trust_message": "A evidencia aparece no mesmo fluxo da decisao.",
+      "limit_message": "O recibo e sintetico e nao representa atendimento real.",
+      "evidence_message": "Codigo de verificacao e politica ficam visiveis.",
+      "rollback_message": "A reversao aparece como opcao documental imediata.",
+      "forbidden_real_product_phrase": "O rollback ja desfez sua agenda real.",
+      "safe_replacement": "O sandbox mostra como a reversao seria apresentada."
+    },
+    {
+      "scene": "mkt_01_context",
+      "owner_solo_message": "Voce entende o pedido e o limite de caixa antes do risco.",
+      "small_team_message": "O time ve o contexto sem tocar ERP, PSP ou estoque real.",
+      "trust_message": "O limite financeiro fica claro antes da pressa.",
+      "limit_message": "Nada desta cena mexe com dinheiro real.",
+      "evidence_message": "O pedido sintetico ja chega identificado.",
+      "rollback_message": "Se houver revisao depois, ela fica documentada.",
+      "forbidden_real_product_phrase": "Seu caixa acabou de receber essa transacao.",
+      "safe_replacement": "Este pedido e sintetico e serve apenas para demonstracao."
+    },
+    {
+      "scene": "mkt_02_trigger",
+      "owner_solo_message": "Os sinais de risco aparecem antes de qualquer perda.",
+      "small_team_message": "A equipe entende por que o fluxo trava e quem precisa revisar.",
+      "trust_message": "O sistema mostra limite e risco no mesmo lugar.",
+      "limit_message": "Nao existe reembolso instantaneo real nesta demo.",
+      "evidence_message": "Os sinais sinteticos ficam visiveis para auditoria.",
+      "rollback_message": "A compensacao vira revisao manual, nao transferencia real.",
+      "forbidden_real_product_phrase": "O PSP foi bloqueado em producao agora.",
+      "safe_replacement": "O sandbox mostra a recusa que seria apresentada ao operador."
+    },
+    {
+      "scene": "mkt_03_decline",
+      "owner_solo_message": "Voce ve o motivo da recusa sem depender de leitura tecnica.",
+      "small_team_message": "A equipe entende a protecao do caixa em linguagem direta.",
+      "trust_message": "A decisao recusa com justificativa, nao com opacidade.",
+      "limit_message": "Sem dinheiro real, sem integracao real, sem PSP.",
+      "evidence_message": "A politica acionada fica no painel e no recibo.",
+      "rollback_message": "A proxima etapa segura continua humana.",
+      "forbidden_real_product_phrase": "O valor ja foi estornado e recomposto.",
+      "safe_replacement": "A recusa sintetica mostra como a protecao seria explicada."
+    },
+    {
+      "scene": "mkt_04_receipt_review",
+      "owner_solo_message": "Voce encerra com recibo e proxima acao definida.",
+      "small_team_message": "O time sai com evidencias para revisar sem correr risco real.",
+      "trust_message": "A recusa deixa rastros verificaveis e nao so um aviso.",
+      "limit_message": "Nenhum fluxo financeiro foi executado.",
+      "evidence_message": "Codigo, motivo e politica ficam no recibo.",
+      "rollback_message": "A compensacao vira fila de revisao, nao ajuste de caixa.",
+      "forbidden_real_product_phrase": "A contestacao ja esta aberta no seu provedor.",
+      "safe_replacement": "A revisao manual e mostrada apenas como historia documental."
+    },
+    {
+      "scene": "ofc_01_context",
+      "owner_solo_message": "Voce entende a caixa documental antes do risco.",
+      "small_team_message": "A equipe ve de onde veio o anexo sem tocar ambiente real.",
+      "trust_message": "A regra de quarentena aparece antes da liberacao.",
+      "limit_message": "Nenhum anexo real e aberto aqui.",
+      "evidence_message": "O material chega rotulado como sintetico.",
+      "rollback_message": "A liberacao controlada so aparece como historia futura.",
+      "forbidden_real_product_phrase": "Esse documento ja entrou no seu ambiente real.",
+      "safe_replacement": "Esta caixa documental e sintetica e existe apenas para a demo."
+    },
+    {
+      "scene": "ofc_02_trigger",
+      "owner_solo_message": "O risco aparece cedo sem transformar a demo em aula de ataque.",
+      "small_team_message": "A equipe ve o limite sem receber instrucao operacional perigosa.",
+      "trust_message": "A sinalizacao e clara e nao exige suposicao tecnica.",
+      "limit_message": "O texto sintetico nao executa nada e nao ensina nada ofensivo.",
+      "evidence_message": "A flag de revisao humana aparece no momento certo.",
+      "rollback_message": "A trilha de liberacao continua bloqueada por padrao.",
+      "forbidden_real_product_phrase": "O anexo malicioso acabou de ser processado aqui.",
+      "safe_replacement": "O anexo sintetico foi apenas sinalizado para revisao humana."
+    },
+    {
+      "scene": "ofc_03_quarantine",
+      "owner_solo_message": "Voce ve o bloqueio certo antes do erro.",
+      "small_team_message": "A equipe entende por que a quarentena protege o negocio.",
+      "trust_message": "A decisao segura e parar e pedir humano.",
+      "limit_message": "Nenhuma automacao externa e disparada.",
+      "evidence_message": "A justificativa da quarentena fica escrita e verificavel.",
+      "rollback_message": "A liberacao continua condicionada a revisao humana.",
+      "forbidden_real_product_phrase": "Ja removemos essa ameaca do seu ambiente.",
+      "safe_replacement": "O sandbox mostra como a quarentena seria apresentada."
+    },
+    {
+      "scene": "ofc_04_receipt_release",
+      "owner_solo_message": "Voce fecha com recibo e proxima etapa segura.",
+      "small_team_message": "A equipe ganha comprovante e caminho de liberacao claro.",
+      "trust_message": "Evidencia e limite aparecem juntos no encerramento.",
+      "limit_message": "Nada foi liberado em sistema real.",
+      "evidence_message": "Recibo, risco e proxima acao ficam lado a lado.",
+      "rollback_message": "A liberacao controlada continua humana e documentada.",
+      "forbidden_real_product_phrase": "O anexo ja voltou para sua operacao real.",
+      "safe_replacement": "A liberacao e mostrada apenas como historia documental apos revisao."
+    }
+  ]
+}

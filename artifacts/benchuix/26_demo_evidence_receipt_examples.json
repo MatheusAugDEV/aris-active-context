@@ -1,0 +1,48 @@
+{
+  "phase_id": "BENCHUIX-26",
+  "candidate_only": true,
+  "receipts": [
+    {
+      "receipt_id": "RCPT-BARB-001",
+      "action_summary": "Excecao VIP sintetica aprovada para encaixe fora do horario.",
+      "will_do": "Registrar a excecao apenas no sandbox demonstrativo.",
+      "will_not_do": "Nao confirmar horario real nem avisar cliente real.",
+      "decision": "approved_single_exception",
+      "permission_used": "operator_single_exception_vip",
+      "risk_label": "fila_posterior_atraso_controlado",
+      "evidence_summary": "Horario fora da politica com aprovacao humana unica e recibo sintetico.",
+      "rollback_status": "reversible_documentary_only",
+      "verification_code": "VC-BARB-01",
+      "timestamp": "2026-06-17T10:02:00Z_SYNTHETIC",
+      "no_real_state_touched": true
+    },
+    {
+      "receipt_id": "RCPT-MKT-002",
+      "action_summary": "Reembolso sintetico recusado por risco alto e limite diario excedido.",
+      "will_do": "Abrir revisao manual sintetica com trilha de risco.",
+      "will_not_do": "Nao devolver dinheiro real nem acionar PSP.",
+      "decision": "declined_auto_refund",
+      "permission_used": "risk_policy_auto_block",
+      "risk_label": "loss_prevention_high",
+      "evidence_summary": "Dois sinais sinteticos de risco e limite diario acionado.",
+      "rollback_status": "compensable_via_manual_review_story",
+      "verification_code": "VC-MKT-02",
+      "timestamp": "2026-06-17T10:03:10Z_SYNTHETIC",
+      "no_real_state_touched": true
+    },
+    {
+      "receipt_id": "RCPT-OFC-003",
+      "action_summary": "Anexo sintetico colocado em quarentena por linguagem de excecao de politica.",
+      "will_do": "Encaminhar para revisao humana documental.",
+      "will_not_do": "Nao abrir anexo real nem executar qualquer acao automatica externa.",
+      "decision": "quarantined_for_human_review",
+      "permission_used": "document_quarantine_policy",
+      "risk_label": "policy_bypass_language_detected",
+      "evidence_summary": "Flag sintetica de excecao de politica interceptada antes de qualquer liberacao.",
+      "rollback_status": "releasable_only_after_human_documentary_review",
+      "verification_code": "VC-OFC-03",
+      "timestamp": "2026-06-17T10:04:20Z_SYNTHETIC",
+      "no_real_state_touched": true
+    }
+  ]
+}

@@ -1834,7 +1834,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
         _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-26", "benchuix_track.current_candidate_phase mismatch")
-        _require(benchuix_track.get("latest_candidate_decision") == "OPERATOR_GATE_ACCEPTED", "benchuix_track.latest_candidate_decision mismatch")
+        _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
         _require(benchuix_track.get("admission_commit_sha") == "89443c9c80df69568da0c7c2efdb0a72b6e371af", "benchuix_track.admission_commit_sha mismatch")
@@ -2035,6 +2035,14 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/25_to_26_candidate_admission_packet.json").exists(), "BENCHUIX-25 to BENCHUIX-26 admission packet missing on disk")
         _require((ROOT / "artifacts/benchuix/26_candidate_opening_source.json").exists(), "BENCHUIX-26 candidate opening source missing on disk")
         _require((ROOT / "artifacts/benchuix/26_no_real_execution_attestation.json").exists(), "BENCHUIX-26 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_scripts.md").exists(), "BENCHUIX-26 demo scripts missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_sandbox_spec.md").exists(), "BENCHUIX-26 demo sandbox spec missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_timing_matrix.json").exists(), "BENCHUIX-26 demo timing matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_synthetic_data_pack.json").exists(), "BENCHUIX-26 demo synthetic data pack missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_evidence_receipt_examples.json").exists(), "BENCHUIX-26 demo evidence receipt examples missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_value_message_matrix.json").exists(), "BENCHUIX-26 demo value message matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_validation_evidence.json").exists(), "BENCHUIX-26 demo validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/26_demo_no_real_execution_attestation.json").exists(), "BENCHUIX-26 demo no-real-execution attestation missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -5765,6 +5773,266 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         ):
             _require(benchuix_26_no_real.get(key) is False, f"BENCHUIX-26 no-real {key} must be false")
         _require(benchuix_26_no_real.get("documentary_candidate_only") is True, "BENCHUIX-26 documentary_candidate_only mismatch")
+
+        benchuix_26_demo_scripts = (ROOT / "artifacts/benchuix/26_demo_scripts.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "## demo 1 - barbearia",
+            "## demo 2 - mercado",
+            "## demo 3 - escritorio",
+            "objetivo de negocio em 1 frase",
+            "estado inicial sintetico",
+            "evento que dispara a automacao",
+            "o que aris entende",
+            "o que aris vai fazer",
+            "o que aris nao vai fazer",
+            "risco apresentado ao usuario",
+            "decisao necessaria ou bloqueio automatico",
+            "comprovante visivel",
+            "rollback/compensacao visivel",
+            "frase final de valor",
+            "tempo estimado por cena",
+            "criterio de falha da demo",
+        ):
+            _require(required_snippet in benchuix_26_demo_scripts, f"BENCHUIX-26 demo scripts missing snippet: {required_snippet}")
+
+        benchuix_26_sandbox_spec = (ROOT / "artifacts/benchuix/26_demo_sandbox_spec.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "## superficies simuladas",
+            "## estados sinteticos",
+            "## eventos sinteticos",
+            "## comprovantes sinteticos",
+            "## limites explicitos",
+            "## proibicoes",
+            "## o que nao e executado",
+            "## como impedir confusao com produto real",
+            "## como sinalizar sandbox / dados sinteticos",
+            "## fail-closed",
+        ):
+            _require(required_snippet in benchuix_26_sandbox_spec, f"BENCHUIX-26 sandbox spec missing snippet: {required_snippet}")
+
+        benchuix_26_timing = _load_json(ROOT / "artifacts/benchuix/26_demo_timing_matrix.json")
+        timing_metadata = benchuix_26_timing.get("metadata", {})
+        _require(timing_metadata.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 timing metadata.phase_id mismatch")
+        _require(timing_metadata.get("candidate_only") is True, "BENCHUIX-26 timing metadata.candidate_only mismatch")
+        timing_demos = benchuix_26_timing.get("demos", [])
+        expected_timing_domains = {
+            "barbearia_after_hours_vip_exception": "barbearia",
+            "mercado_suspected_refund_declined": "mercado",
+            "escritorio_attachment_prompt_injection_intercepted": "escritorio",
+        }
+        _require({entry.get("demo_id"): entry.get("domain") for entry in timing_demos} == expected_timing_domains, "BENCHUIX-26 timing demo ids/domain mismatch")
+        for entry in timing_demos:
+            _require(entry.get("total_target_seconds", 0) <= 120, f"BENCHUIX-26 timing total exceeds 120 for {entry.get('demo_id')}")
+            scenes = entry.get("scenes", [])
+            _require(bool(scenes), f"BENCHUIX-26 timing scenes missing for {entry.get('demo_id')}")
+            cumulative = 0
+            for scene in scenes:
+                _require(
+                    {
+                        "scene_id",
+                        "scene_goal",
+                        "target_seconds",
+                        "cumulative_seconds",
+                        "required_user_understanding",
+                        "visible_artifact",
+                        "pass_condition",
+                        "fail_condition",
+                    } <= set(scene),
+                    "BENCHUIX-26 timing scene missing keys",
+                )
+                cumulative += scene["target_seconds"]
+                _require(scene["target_seconds"] > 0, f"BENCHUIX-26 timing target_seconds invalid for {scene.get('scene_id')}")
+                _require(scene["cumulative_seconds"] == cumulative, f"BENCHUIX-26 timing cumulative mismatch for {scene.get('scene_id')}")
+            _require(cumulative == entry.get("total_target_seconds"), f"BENCHUIX-26 timing total mismatch for {entry.get('demo_id')}")
+
+        benchuix_26_synthetic_data = _load_json(ROOT / "artifacts/benchuix/26_demo_synthetic_data_pack.json")
+        synthetic_metadata = benchuix_26_synthetic_data.get("metadata", {})
+        _require(synthetic_metadata.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 synthetic data metadata.phase_id mismatch")
+        _require(synthetic_metadata.get("candidate_only") is True, "BENCHUIX-26 synthetic data metadata.candidate_only mismatch")
+        _require(synthetic_metadata.get("synthetic_only") is True, "BENCHUIX-26 synthetic data metadata.synthetic_only mismatch")
+        synthetic_domains = benchuix_26_synthetic_data.get("domains", [])
+        _require(
+            {entry.get("domain") for entry in synthetic_domains} == {"barbearia", "mercado", "escritorio"},
+            "BENCHUIX-26 synthetic data domains mismatch",
+        )
+
+        def _collect_strings(value: Any) -> list[str]:
+            if isinstance(value, str):
+                return [value]
+            if isinstance(value, list):
+                strings: list[str] = []
+                for item in value:
+                    strings.extend(_collect_strings(item))
+                return strings
+            if isinstance(value, dict):
+                strings = []
+                for item in value.values():
+                    strings.extend(_collect_strings(item))
+                return strings
+            return []
+
+        for text_value in _collect_strings(benchuix_26_synthetic_data):
+            lowered = text_value.lower()
+            for forbidden in ("@", "http://", "https://", "sk-", "akia", "begin private key", "token", "secret", "cpf", "cnpj"):
+                _require(forbidden not in lowered, f"BENCHUIX-26 synthetic data contains forbidden marker: {forbidden}")
+        _require(
+            benchuix_26_synthetic_data.get("metadata", {}).get("safe_attachment_review_flag")
+            == "ATTACHMENT_TEXT_SYNTHETIC_POLICY_EXCEPTION_REQUEST_REQUIRES_HUMAN_REVIEW",
+            "BENCHUIX-26 safe attachment review flag mismatch",
+        )
+
+        benchuix_26_receipts = _load_json(ROOT / "artifacts/benchuix/26_demo_evidence_receipt_examples.json")
+        _require(benchuix_26_receipts.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 receipt examples phase_id mismatch")
+        receipt_entries = benchuix_26_receipts.get("receipts", [])
+        _require(len(receipt_entries) == 3, "BENCHUIX-26 receipt examples must contain three receipts")
+        for receipt in receipt_entries:
+            _require(
+                {
+                    "receipt_id",
+                    "action_summary",
+                    "will_do",
+                    "will_not_do",
+                    "decision",
+                    "permission_used",
+                    "risk_label",
+                    "evidence_summary",
+                    "rollback_status",
+                    "verification_code",
+                    "timestamp",
+                    "no_real_state_touched",
+                } <= set(receipt),
+                "BENCHUIX-26 receipt example missing keys",
+            )
+            _require(receipt.get("no_real_state_touched") is True, f"BENCHUIX-26 receipt no_real_state_touched mismatch for {receipt.get('receipt_id')}")
+
+        benchuix_26_value_messages = _load_json(ROOT / "artifacts/benchuix/26_demo_value_message_matrix.json")
+        value_metadata = benchuix_26_value_messages.get("metadata", {})
+        _require(value_metadata.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 value message metadata.phase_id mismatch")
+        _require(value_metadata.get("candidate_only") is True, "BENCHUIX-26 value message metadata.candidate_only mismatch")
+        value_entries = benchuix_26_value_messages.get("scenes", [])
+        _require(len(value_entries) >= 9, "BENCHUIX-26 value message scenes unexpectedly short")
+        for entry in value_entries:
+            _require(
+                {
+                    "scene",
+                    "owner_solo_message",
+                    "small_team_message",
+                    "trust_message",
+                    "limit_message",
+                    "evidence_message",
+                    "rollback_message",
+                    "forbidden_real_product_phrase",
+                    "safe_replacement",
+                } <= set(entry),
+                "BENCHUIX-26 value message entry missing keys",
+            )
+            _require(
+                entry.get("forbidden_real_product_phrase") != entry.get("safe_replacement"),
+                f"BENCHUIX-26 value message safe replacement must differ for {entry.get('scene')}",
+            )
+
+        benchuix_26_demo_no_real = _load_json(ROOT / "artifacts/benchuix/26_demo_no_real_execution_attestation.json")
+        _require(benchuix_26_demo_no_real.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 demo no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "sandbox_demo_executed",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+        ):
+            _require(benchuix_26_demo_no_real.get(key) is False, f"BENCHUIX-26 demo no-real {key} must be false")
+        _require(benchuix_26_demo_no_real.get("documentary_candidate_only") is True, "BENCHUIX-26 demo documentary_candidate_only mismatch")
+
+        benchuix_26_validation = _load_json(ROOT / "artifacts/benchuix/26_demo_validation_evidence.json")
+        _require(benchuix_26_validation.get("phase_id") == "BENCHUIX-26", "BENCHUIX-26 validation evidence phase_id mismatch")
+        _require(
+            benchuix_26_validation.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-26 validation evidence status mismatch",
+        )
+        expected_created_artifacts = {
+            "artifacts/benchuix/26_demo_scripts.md",
+            "artifacts/benchuix/26_demo_sandbox_spec.md",
+            "artifacts/benchuix/26_demo_timing_matrix.json",
+            "artifacts/benchuix/26_demo_synthetic_data_pack.json",
+            "artifacts/benchuix/26_demo_evidence_receipt_examples.json",
+            "artifacts/benchuix/26_demo_value_message_matrix.json",
+            "artifacts/benchuix/26_demo_validation_evidence.json",
+            "artifacts/benchuix/26_demo_no_real_execution_attestation.json",
+        }
+        _require(set(benchuix_26_validation.get("created_artifacts", [])) == expected_created_artifacts, "BENCHUIX-26 created_artifacts mismatch")
+        criteria_covered = benchuix_26_validation.get("criteria_covered", {})
+        for key in (
+            "closed_scripts_present",
+            "sandbox_spec_present",
+            "timing_matrix_present",
+            "synthetic_data_present",
+            "evidence_receipts_present",
+            "value_message_matrix_present",
+            "demo_lte_120_each",
+            "visible_evidence_present",
+            "rollback_story_present",
+            "no_real_state_touched",
+        ):
+            _require(criteria_covered.get(key) is True, f"BENCHUIX-26 criteria_covered missing {key}")
+        demo_total_checks = benchuix_26_validation.get("demo_total_seconds_lte_120", {})
+        _require(
+            demo_total_checks == {
+                "barbearia_after_hours_vip_exception": True,
+                "mercado_suspected_refund_declined": True,
+                "escritorio_attachment_prompt_injection_intercepted": True,
+            },
+            "BENCHUIX-26 demo_total_seconds_lte_120 mismatch",
+        )
+        _require(benchuix_26_validation.get("no_real_data") is True, "BENCHUIX-26 no_real_data mismatch")
+        _require(benchuix_26_validation.get("no_runtime_execution") is True, "BENCHUIX-26 no_runtime_execution mismatch")
+        _require(benchuix_26_validation.get("no_project_aris_mutation") is True, "BENCHUIX-26 no_project_aris_mutation mismatch")
+        _require(benchuix_26_validation.get("no_live_route_opened") is True, "BENCHUIX-26 no_live_route_opened mismatch")
+        _require(benchuix_26_validation.get("all_real_locks_remain_false") is True, "BENCHUIX-26 all_real_locks_remain_false mismatch")
+        _require(
+            benchuix_26_validation.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-27",
+            "BENCHUIX-26 validation candidate_next_phase_after_operator_gate mismatch",
+        )
+        _require(benchuix_26_validation.get("next_phase") is None, "BENCHUIX-26 validation next_phase must remain null")
+        _require(benchuix_26_validation.get("active_next_phase") is None, "BENCHUIX-26 validation active_next_phase must remain null")
+        if benchuix_26_validation.get("status") == "local_validation_pass_recorded":
+            artifact_hashes = benchuix_26_validation.get("artifact_hashes", {})
+            for path in sorted(expected_created_artifacts - {"artifacts/benchuix/26_demo_validation_evidence.json"}):
+                _require(artifact_hashes.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-26 artifact hash mismatch for {path}")
+            _require(
+                benchuix_26_validation.get("validation_evidence_sha256")
+                == _canonical_hash_without_field(benchuix_26_validation, "validation_evidence_sha256"),
+                "BENCHUIX-26 validation evidence canonical hash mismatch",
+            )
+            validation_results = benchuix_26_validation.get("results", {})
+            for key in (
+                "ACTIVE_CONTEXT_STATE_json_tool",
+                "ACTIVE_CONTEXT_SCHEMA_json_tool",
+                "demo_timing_matrix_json_tool",
+                "demo_synthetic_data_pack_json_tool",
+                "demo_evidence_receipt_examples_json_tool",
+                "demo_value_message_matrix_json_tool",
+                "demo_validation_evidence_json_tool",
+                "demo_no_real_execution_attestation_json_tool",
+                "render_boot",
+                "validator_py_compile",
+                "validator_script",
+                "unittest_discover",
+                "git_diff_check",
+            ):
+                _require(bool(validation_results.get(key)), f"BENCHUIX-26 validation results missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

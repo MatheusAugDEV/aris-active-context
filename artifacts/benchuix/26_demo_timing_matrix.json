@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-26",
+    "status": "candidate",
+    "candidate_only": true,
+    "synthetic_only": true
+  },
+  "demos": [
+    {
+      "demo_id": "barbearia_after_hours_vip_exception",
+      "domain": "barbearia",
+      "total_target_seconds": 108,
+      "scenes": [
+        {
+          "scene_id": "barb_01_context",
+          "scene_goal": "Mostrar agenda sintetica e a regra de horario.",
+          "target_seconds": 18,
+          "cumulative_seconds": 18,
+          "required_user_understanding": "Existe agenda sintetica e o limite de horario e real para a historia.",
+          "visible_artifact": "Card sintetico de agenda com regra de horario.",
+          "pass_condition": "O usuario entende o limite antes do evento.",
+          "fail_condition": "A cena exige explicacao tecnica para fazer sentido."
+        },
+        {
+          "scene_id": "barb_02_trigger",
+          "scene_goal": "Mostrar o pedido VIP fora do horario.",
+          "target_seconds": 24,
+          "cumulative_seconds": 42,
+          "required_user_understanding": "O pedido viola a politica padrao.",
+          "visible_artifact": "Banner sintetico de risco com horario solicitado.",
+          "pass_condition": "O bloqueio e entendido como protecao, nao como erro.",
+          "fail_condition": "O usuario acha que o encaixe foi executado automaticamente."
+        },
+        {
+          "scene_id": "barb_03_decision",
+          "scene_goal": "Exibir a aprovacao unica da excecao VIP.",
+          "target_seconds": 38,
+          "cumulative_seconds": 80,
+          "required_user_understanding": "A excecao depende de humano e mostra custo visivel.",
+          "visible_artifact": "Painel sintetico de aprovacao com impacto na fila.",
+          "pass_condition": "A decisao humana fica explicita e rastreavel.",
+          "fail_condition": "A excecao parece livre de risco ou ilimitada."
+        },
+        {
+          "scene_id": "barb_04_receipt_rollback",
+          "scene_goal": "Fechar com recibo e reversao visivel.",
+          "target_seconds": 28,
+          "cumulative_seconds": 108,
+          "required_user_understanding": "Ha evidencia e rollback documental disponivel.",
+          "visible_artifact": "Recibo sintetico RCPT-BARB-001 e acao de reversao.",
+          "pass_condition": "O usuario sai com evidencias e limite claros.",
+          "fail_condition": "Nao existe comprovante ou rollback visivel."
+        }
+      ]
+    },
+    {
+      "demo_id": "mercado_suspected_refund_declined",
+      "domain": "mercado",
+      "total_target_seconds": 110,
+      "scenes": [
+        {
+          "scene_id": "mkt_01_context",
+          "scene_goal": "Mostrar pedido sintetico e o limite diario.",
+          "target_seconds": 20,
+          "cumulative_seconds": 20,
+          "required_user_understanding": "Existe pedido sintetico e politica de reembolso.",
+          "visible_artifact": "Resumo sintetico do pedido PED-MKT-204.",
+          "pass_condition": "O pedido e entendido antes da recusa.",
+          "fail_condition": "A origem do pedido fica vaga."
+        },
+        {
+          "scene_id": "mkt_02_trigger",
+          "scene_goal": "Mostrar o pedido de reembolso integral e os sinais de risco.",
+          "target_seconds": 25,
+          "cumulative_seconds": 45,
+          "required_user_understanding": "O limite foi excedido e ha dois sinais de risco.",
+          "visible_artifact": "Painel sintetico de risco do reembolso.",
+          "pass_condition": "O usuario entende por que o fluxo trava.",
+          "fail_condition": "A recusa parece arbitraria."
+        },
+        {
+          "scene_id": "mkt_03_decline",
+          "scene_goal": "Exibir a recusa automatica e a trilha da regra.",
+          "target_seconds": 35,
+          "cumulative_seconds": 80,
+          "required_user_understanding": "A protecao do caixa vale mais do que velocidade cega.",
+          "visible_artifact": "Decisao sintetica com politica e sinais de risco.",
+          "pass_condition": "A recusa e percebida como segura e justificavel.",
+          "fail_condition": "Parece que dinheiro real foi devolvido."
+        },
+        {
+          "scene_id": "mkt_04_receipt_review",
+          "scene_goal": "Mostrar comprovante e revisao manual sintetica.",
+          "target_seconds": 30,
+          "cumulative_seconds": 110,
+          "required_user_understanding": "Ha comprovante agora e revisao humana depois.",
+          "visible_artifact": "Recibo sintetico RCPT-MKT-002 e tarefa de revisao.",
+          "pass_condition": "O usuario entende evidencias e proxima etapa.",
+          "fail_condition": "Nao ha fechamento verificavel."
+        }
+      ]
+    },
+    {
+      "demo_id": "escritorio_attachment_prompt_injection_intercepted",
+      "domain": "escritorio",
+      "total_target_seconds": 106,
+      "scenes": [
+        {
+          "scene_id": "ofc_01_context",
+          "scene_goal": "Mostrar a caixa documental sintetica e a regra de quarentena.",
+          "target_seconds": 18,
+          "cumulative_seconds": 18,
+          "required_user_understanding": "Existe fluxo documental e politica sintetica de excecao.",
+          "visible_artifact": "Lista sintetica de anexos recebidos.",
+          "pass_condition": "O usuario entende que o ambiente e controlado.",
+          "fail_condition": "Parece um anexo real em producao."
+        },
+        {
+          "scene_id": "ofc_02_trigger",
+          "scene_goal": "Mostrar a entrada do anexo sinalizado.",
+          "target_seconds": 22,
+          "cumulative_seconds": 40,
+          "required_user_understanding": "O texto sinalizado pede excecao de politica.",
+          "visible_artifact": "Flag sintetica de revisao humana no anexo.",
+          "pass_condition": "A sinalizacao e entendida sem detalhar tecnicas ofensivas.",
+          "fail_condition": "A cena ensina bypass em vez de mostrar protecao."
+        },
+        {
+          "scene_id": "ofc_03_quarantine",
+          "scene_goal": "Exibir quarentena e proxima acao segura.",
+          "target_seconds": 38,
+          "cumulative_seconds": 78,
+          "required_user_understanding": "A acao automatica correta e parar e pedir humano.",
+          "visible_artifact": "Painel sintetico de quarentena e justificativa.",
+          "pass_condition": "Limite e evidencia aparecem antes da liberacao.",
+          "fail_condition": "A quarentena parece invisivel ou opcional."
+        },
+        {
+          "scene_id": "ofc_04_receipt_release",
+          "scene_goal": "Fechar com comprovante e historia de liberacao controlada.",
+          "target_seconds": 28,
+          "cumulative_seconds": 106,
+          "required_user_understanding": "Rollback e liberacao continuam humanos e verificaveis.",
+          "visible_artifact": "Recibo sintetico RCPT-OFC-003 e acao de liberacao controlada.",
+          "pass_condition": "O usuario sai com limite, evidencia e rollback claros.",
+          "fail_condition": "Nao ha encerramento verificavel ou a liberacao parece automatica."
+        }
+      ]
+    }
+  ]
+}

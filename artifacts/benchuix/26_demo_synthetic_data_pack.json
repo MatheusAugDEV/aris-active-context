@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-26",
+    "status": "candidate",
+    "candidate_only": true,
+    "synthetic_only": true,
+    "safe_attachment_review_flag": "ATTACHMENT_TEXT_SYNTHETIC_POLICY_EXCEPTION_REQUEST_REQUIRES_HUMAN_REVIEW"
+  },
+  "domains": [
+    {
+      "domain": "barbearia",
+      "business_alias": "BARB-LUZ-ALFA",
+      "actors": [
+        "BARBEIRO-ALFA",
+        "BARBEIRO-BETA",
+        "OPERADOR-SALA-1",
+        "VIP-LIGHT"
+      ],
+      "synthetic_state": {
+        "day_window": "SEG-SEX_09_20_SYNTHETIC",
+        "queue_load": "stable_medium",
+        "policy_alias": "after_hours_requires_single_exception"
+      },
+      "synthetic_event": {
+        "event_id": "EVT-BARB-20H30",
+        "request_type": "vip_after_hours_booking",
+        "requested_slot": "20_30_SYNTHETIC"
+      },
+      "receipt_seed": "RCPT-BARB-001"
+    },
+    {
+      "domain": "mercado",
+      "business_alias": "MERC-PRACA-BETA",
+      "actors": [
+        "OPERADOR-CAIXA-1",
+        "SUPERVISOR-RISCO-1"
+      ],
+      "synthetic_state": {
+        "order_id": "PED-MKT-204",
+        "risk_bucket": "alto_risco_sintetico",
+        "daily_refund_limit_band": "limit_reached"
+      },
+      "synthetic_event": {
+        "event_id": "EVT-MKT-REF-204",
+        "request_type": "full_refund_request",
+        "requested_amount_band": "above_daily_limit"
+      },
+      "receipt_seed": "RCPT-MKT-002"
+    },
+    {
+      "domain": "escritorio",
+      "business_alias": "OFC-CENTRO-GAMA",
+      "actors": [
+        "OPERADOR-DOCS-1",
+        "REVISOR-HUMANO-1"
+      ],
+      "synthetic_state": {
+        "document_queue": "triage_ready",
+        "attachment_id": "ANX-SAFE-07",
+        "policy_alias": "quarantine_policy_exception_language"
+      },
+      "synthetic_event": {
+        "event_id": "EVT-OFC-ANX-07",
+        "request_type": "attachment_review_flag",
+        "attachment_marker": "ATTACHMENT_TEXT_SYNTHETIC_POLICY_EXCEPTION_REQUEST_REQUIRES_HUMAN_REVIEW"
+      },
+      "receipt_seed": "RCPT-OFC-003"
+    }
+  ]
+}
