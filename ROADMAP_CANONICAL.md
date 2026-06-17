@@ -308,3 +308,44 @@ gate, schema/validator support for the new phase_id/phase_class values, an
 admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern,
 and CI terminal green. None of these conditions are satisfied by this document
 alone.
+
+## Candidate Governance Layers
+
+### FIDES — Programa de Conformidade Legal e Regulatória
+status: CANDIDATE
+activation_condition: após Bedrock Gate
+altera_rota_ativa: false
+criado_em: 2026-06-16
+
+Pergunta central:
+"Se a ANPD fiscalizar amanhã, se um cliente mover ação,
+se um conselho profissional investigar — o ARIS tem
+evidência verificável de que operou dentro dos limites
+legais em cada ação executada?"
+
+PASS somente quando a resposta for SIM absoluto.
+BLOCK é o estado padrão de qualquer controle sem
+evidência verificável.
+
+Separação de escopo:
+  EXT-SEC → resiste ao adversário técnico
+  FIDES   → opera de boa-fé dentro da lei
+
+Módulos planejados:
+  FIDES-00  Source Ledger & Boundary Charter
+  FIDES-01  Regulated Vertical Classification Gate
+  FIDES-02  Qualified Approver Identity Binding
+  FIDES-03  Approval Quality / Anti-Rubber-Stamp
+  FIDES-04  LGPD Role, DPA & Data Processing Boundary
+  FIDES-05  Training/Data Isolation
+  FIDES-06  Incident & Regulatory Notification Workflow
+  FIDES-07  Vertical Compliance Packs
+            (contabilidade / saúde / advocacia)
+
+Referência desta conversa:
+  Origem: sessão Claude junho 2026
+  Pesquisa jurídica base: relatório de inteligência
+  jurídica produzido nesta sessão — três verticais,
+  CDC/CC/LGPD/conselhos profissionais, jurisprudência
+  STJ, comparação internacional EU AI Act / OpenAI /
+  Microsoft / NIST AI RMF.
