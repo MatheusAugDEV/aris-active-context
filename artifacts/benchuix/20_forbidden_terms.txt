@@ -1,0 +1,20 @@
+# Forbidden technical terms for primary customer-facing language
+runtime
+gate
+schema
+artifact
+ledger
+tenant
+idempotency
+active-context
+hash
+validator
+ci
+stack trace
+exception
+json
+pipeline
+trace
+token
+policy engine
+rbac

@@ -1,0 +1,87 @@
+{
+  "phase_id": "BENCHUIX-20",
+  "status": "local_validation_pass_recorded",
+  "terms_scanned": [
+    "runtime",
+    "gate",
+    "schema",
+    "artifact",
+    "ledger",
+    "tenant",
+    "idempotency",
+    "active-context",
+    "hash",
+    "validator",
+    "ci",
+    "stack trace",
+    "exception",
+    "json",
+    "pipeline",
+    "trace",
+    "token",
+    "policy engine",
+    "rbac"
+  ],
+  "files_scanned": [
+    "20_ux_copy_system.md",
+    "20_trust_language_translation_matrix.json",
+    "20_risk_failure_permission_copy_matrix.json",
+    "20_receipt_rollback_cost_copy_examples.md"
+  ],
+  "per_file": {
+    "20_ux_copy_system.md": {
+      "customer_facing_hits": {},
+      "allowed_internal_hits": {
+        "runtime": 2,
+        "gate": 2,
+        "schema": 2,
+        "artifact": 2,
+        "ledger": 1,
+        "tenant": 1,
+        "idempotency": 1,
+        "active-context": 2,
+        "hash": 1,
+        "validator": 3,
+        "ci": 2,
+        "stack trace": 1,
+        "exception": 3,
+        "json": 2,
+        "pipeline": 2,
+        "trace": 3,
+        "token": 1,
+        "policy engine": 1,
+        "rbac": 2
+      }
+    },
+    "20_trust_language_translation_matrix.json": {
+      "customer_facing_hits": {},
+      "allowed_internal_hits": {
+        "gate": 2,
+        "artifact": 2,
+        "ledger": 2,
+        "rbac": 2
+      }
+    },
+    "20_risk_failure_permission_copy_matrix.json": {
+      "customer_facing_hits": {},
+      "allowed_internal_hits": {}
+    },
+    "20_receipt_rollback_cost_copy_examples.md": {
+      "customer_facing_hits": {},
+      "allowed_internal_hits": {
+        "runtime": 1,
+        "gate": 1,
+        "artifact": 1,
+        "ledger": 1,
+        "validator": 1,
+        "exception": 1,
+        "pipeline": 1,
+        "token": 1,
+        "rbac": 1
+      }
+    }
+  },
+  "jargon_scan_customer_facing_hits": 0,
+  "allowed_internal_hits_total": 51,
+  "jargon_scan_pass": true
+}

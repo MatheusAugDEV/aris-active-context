@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-20",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "entries": [
+    {
+      "category": "risco_baixo",
+      "short_message": "Esta etapa segue dentro do esperado.",
+      "expanded_message": "Nao ha sinal de cuidado extra alem da revisao normal desta etapa.",
+      "cta": "Seguir revisao",
+      "what_will_happen": "Voce pode revisar a etapa com o fluxo normal.",
+      "what_will_not_happen": "Nada sera ampliado sem nova revisao.",
+      "limit_of_interpretation": "Baixo risco nao significa ausencia total de impacto.",
+      "next_safe_step": "Revise e siga com a rotina normal."
+    },
+    {
+      "category": "risco_medio",
+      "short_message": "Esta etapa pede atencao antes de seguir.",
+      "expanded_message": "Ha sinal suficiente para pedir revisao mais cuidadosa antes da conclusao.",
+      "cta": "Revisar com cuidado",
+      "what_will_happen": "Mostramos os pontos que merecem confirmacao.",
+      "what_will_not_happen": "A etapa nao sera concluida em silencio.",
+      "limit_of_interpretation": "Nao define falha; define necessidade de cuidado extra.",
+      "next_safe_step": "Confirme contexto, custo e impacto antes de seguir."
+    },
+    {
+      "category": "risco_alto",
+      "short_message": "Esta etapa merece pausa e revisao reforcada.",
+      "expanded_message": "O impacto potencial desta etapa esta acima do baseline esperado para seguir sem pausa.",
+      "cta": "Pausar e revisar",
+      "what_will_happen": "A revisao reforcada vira prioridade antes de qualquer conclusao.",
+      "what_will_not_happen": "A etapa nao deve seguir como rotina comum.",
+      "limit_of_interpretation": "Alto risco nao e prova de dano, mas impede leitura relaxada.",
+      "next_safe_step": "Pausar, revisar contexto e envolver quem pode decidir."
+    },
+    {
+      "category": "falha_recuperavel",
+      "short_message": "Esta etapa falhou, mas existe caminho seguro para tentar de novo.",
+      "expanded_message": "A etapa nao concluiu, e o sistema preservou o caminho seguro para nova tentativa guiada.",
+      "cta": "Ver proxima tentativa segura",
+      "what_will_happen": "Mostramos o passo de recuperacao disponivel.",
+      "what_will_not_happen": "Nada sera repetido em silencio.",
+      "limit_of_interpretation": "Recuperavel nao significa resolvido.",
+      "next_safe_step": "Leia o motivo e siga a nova tentativa guiada."
+    },
+    {
+      "category": "falha_parcial",
+      "short_message": "Parte desta etapa concluiu, parte ainda exige revisao.",
+      "expanded_message": "Voce esta vendo uma conclusao parcial; alguns blocos ficaram preservados e outros ainda pedem cuidado.",
+      "cta": "Revisar parte pendente",
+      "what_will_happen": "Indicamos o que ficou concluido e o que permanece aberto.",
+      "what_will_not_happen": "A etapa nao sera tratada como totalmente concluida.",
+      "limit_of_interpretation": "Nao leia parcial como sucesso completo.",
+      "next_safe_step": "Revise a parte pendente antes de confirmar conclusao."
+    },
+    {
+      "category": "falha_bloqueante",
+      "short_message": "Esta etapa parou e precisa de revisao antes de continuar.",
+      "expanded_message": "A operacao foi interrompida para evitar decisao insegura ou sem contexto suficiente.",
+      "cta": "Abrir motivo do bloqueio",
+      "what_will_happen": "Voce vera o ponto que impediu a continuidade.",
+      "what_will_not_happen": "A etapa nao vai seguir sozinha.",
+      "limit_of_interpretation": "Bloqueio protege a operacao; nao e mensagem decorativa.",
+      "next_safe_step": "Abrir motivo, revisar contexto e decidir o proximo movimento."
+    },
+    {
+      "category": "dado_atrasado",
+      "short_message": "Voce esta vendo um dado atrasado.",
+      "expanded_message": "A tela mostra o ultimo snapshot seguro disponivel, mas ele nao representa a leitura mais atual.",
+      "cta": "Ver idade do dado",
+      "what_will_happen": "Mostramos quando este dado foi atualizado pela ultima vez.",
+      "what_will_not_happen": "Nao trataremos esta leitura como atual.",
+      "limit_of_interpretation": "Nao use esta visao como confirmacao final sem checar a idade.",
+      "next_safe_step": "Ver a idade do dado e confirmar se a decisao ainda pode esperar."
+    },
+    {
+      "category": "aprovacao_pendente",
+      "short_message": "Esta etapa ainda aguarda revisao humana.",
+      "expanded_message": "A operacao depende de revisao explicita antes de seguir para a proxima etapa.",
+      "cta": "Abrir aprovacao pendente",
+      "what_will_happen": "Voce pode revisar o que ainda falta decidir.",
+      "what_will_not_happen": "A etapa nao sera concluida sem revisao.",
+      "limit_of_interpretation": "Pendente nao significa falha; significa decisao em aberto.",
+      "next_safe_step": "Abrir a aprovacao e confirmar quem pode decidir."
+    },
+    {
+      "category": "permissao_insuficiente",
+      "short_message": "Seu acesso atual nao cobre esta acao.",
+      "expanded_message": "Voce pode acompanhar esta etapa, mas nao concluir esta mudanca com o acesso atual.",
+      "cta": "Ver caminho de revisao",
+      "what_will_happen": "Mostramos quem pode concluir ou revisar esta etapa.",
+      "what_will_not_happen": "A acao nao sera forcada nem escondida.",
+      "limit_of_interpretation": "Nao e erro da tela; e limite claro de escopo.",
+      "next_safe_step": "Peça revisao a quem pode concluir esta etapa."
+    },
+    {
+      "category": "acao_irreversivel",
+      "short_message": "Depois desta etapa, a acao nao volta sozinha.",
+      "expanded_message": "Esta etapa pode gerar impacto que exige compensacao posterior em vez de retorno automatico.",
+      "cta": "Revisar antes de confirmar",
+      "what_will_happen": "Mostramos o impacto esperado antes da confirmacao.",
+      "what_will_not_happen": "A operacao nao sera desfeita automaticamente.",
+      "limit_of_interpretation": "Nao confunda cuidado previo com opcao de voltar sem impacto.",
+      "next_safe_step": "Revisar impacto e confirmar so quando houver clareza."
+    },
+    {
+      "category": "desfazer_disponivel",
+      "short_message": "Existe caminho seguro para desfazer ou compensar esta etapa.",
+      "expanded_message": "A operacao oferece retorno guiado para reduzir impacto quando a revisao indicar necessidade.",
+      "cta": "Ver caminho de desfazer",
+      "what_will_happen": "Voce pode abrir o caminho seguro de retorno.",
+      "what_will_not_happen": "Nada sera desfeito automaticamente sem sua revisao.",
+      "limit_of_interpretation": "Ter retorno disponivel nao torna a etapa sem risco.",
+      "next_safe_step": "Abrir o caminho de desfazer e revisar impacto antes de usar."
+    },
+    {
+      "category": "desfazer_indisponivel",
+      "short_message": "Esta etapa nao pode ser desfeita automaticamente.",
+      "expanded_message": "Se precisar voltar atras, a revisao vai orientar compensacao manual ou caminho alternativo.",
+      "cta": "Ver caminho alternativo",
+      "what_will_happen": "Mostramos a melhor saida segura disponivel.",
+      "what_will_not_happen": "Nao prometemos retorno automatico inexistente.",
+      "limit_of_interpretation": "Indisponivel nao significa sem saida; significa sem retorno automatico.",
+      "next_safe_step": "Abrir o caminho alternativo e revisar o impacto da compensacao."
+    },
+    {
+      "category": "custo_estimado_acima_do_teto",
+      "short_message": "A previsao desta etapa ficou acima do teto desta janela.",
+      "expanded_message": "O valor estimado pede revisao antes de continuar, porque supera o limite esperado para este recorte.",
+      "cta": "Revisar custo estimado",
+      "what_will_happen": "Voce vera o teto e a diferenca estimada nesta etapa.",
+      "what_will_not_happen": "A previsao nao sera vendida como valor final.",
+      "limit_of_interpretation": "Estimativa nao e cobranca final, mas ja pede cuidado real.",
+      "next_safe_step": "Revisar o teto, a margem e decidir se a etapa deve continuar."
+    },
+    {
+      "category": "comprovante_indisponivel",
+      "short_message": "O comprovante desta etapa ainda nao esta disponivel.",
+      "expanded_message": "Voce pode seguir acompanhando a etapa, mas a prova consultavel ainda nao foi materializada neste recorte.",
+      "cta": "Abrir historico recente",
+      "what_will_happen": "Mostramos o historico mais proximo enquanto o comprovante nao aparece.",
+      "what_will_not_happen": "Nao trataremos esta etapa como comprovada sem registro consultavel.",
+      "limit_of_interpretation": "Ausencia de comprovante nao prova falha, mas bloqueia leitura de conclusao completa.",
+      "next_safe_step": "Abrir o historico recente e aguardar o comprovante consultavel."
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-21"
+  ]
+}

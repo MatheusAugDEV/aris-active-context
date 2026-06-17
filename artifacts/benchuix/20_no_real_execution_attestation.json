@@ -1,0 +1,19 @@
+{
+  "phase_id": "BENCHUIX-20",
+  "Project_ARIS_changed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_executed": false,
+  "bedrock_executed": false,
+  "secrets_accessed": false,
+  "real_customer_data_used": false,
+  "real_billing_used": false,
+  "real_oauth_used": false,
+  "real_integrations_used": false,
+  "external_network_used_except_github_governance": false,
+  "package_manager_executed": false,
+  "dependency_changed": false,
+  "live_route_opened": false,
+  "real_locks_opened": false,
+  "human_language_only_packet": true
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import pathlib
+import re
 import sys
 from typing import Any
 
@@ -1435,6 +1436,121 @@ def _require_sha256_matches_if_accessible(path: pathlib.Path, expected_sha256: s
     _require(hashlib.sha256(path.read_bytes()).hexdigest() == expected_sha256, f"{label} physical sha mismatch")
 
 
+def _load_forbidden_terms(path: pathlib.Path) -> list[str]:
+    terms: list[str] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        entry = line.strip().lower()
+        if not entry or entry.startswith("#"):
+            continue
+        terms.append(entry)
+    return terms
+
+
+def _split_markdown_allow_jargon_blocks(text: str) -> tuple[str, str]:
+    customer_lines: list[str] = []
+    allowed_lines: list[str] = []
+    in_allowed = False
+    for line in text.splitlines():
+        if "<!-- ALLOW_JARGON_START -->" in line:
+            in_allowed = True
+            continue
+        if "<!-- ALLOW_JARGON_END -->" in line:
+            in_allowed = False
+            continue
+        if in_allowed:
+            allowed_lines.append(line)
+        else:
+            customer_lines.append(line)
+    return "\n".join(customer_lines), "\n".join(allowed_lines)
+
+
+def _count_jargon_hits(text: str, terms: list[str]) -> dict[str, int]:
+    lowered = text.lower()
+    hits: dict[str, int] = {}
+    for term in terms:
+        pattern = re.compile(rf"(?<![a-z0-9]){re.escape(term)}(?![a-z0-9])")
+        count = len(pattern.findall(lowered))
+        if count:
+            hits[term] = count
+    return hits
+
+
+def _scan_benchuix20_copy_surfaces() -> dict[str, Any]:
+    root = ROOT / "artifacts" / "benchuix"
+    forbidden_terms_path = root / "20_forbidden_terms.txt"
+    terms = _load_forbidden_terms(forbidden_terms_path)
+
+    ux_customer, ux_allowed = _split_markdown_allow_jargon_blocks((root / "20_ux_copy_system.md").read_text(encoding="utf-8"))
+    examples_customer, examples_allowed = _split_markdown_allow_jargon_blocks((root / "20_receipt_rollback_cost_copy_examples.md").read_text(encoding="utf-8"))
+
+    translation_matrix = _load_json(root / "20_trust_language_translation_matrix.json")
+    translation_entries = translation_matrix.get("translations", [])
+    translation_customer_parts: list[str] = []
+    translation_allowed_parts: list[str] = []
+    for entry in translation_entries:
+        translation_customer_parts.extend(
+            str(entry.get(key, ""))
+            for key in ("human_translation", "when_to_show", "what_not_to_claim", "risk_if_mistranslated", "safe_example")
+        )
+        translation_allowed_parts.extend(
+            [
+                str(entry.get("technical_concept", "")),
+                " ".join(str(item) for item in entry.get("forbidden_primary_terms", [])),
+                str(entry.get("source_phase_or_artifact", "")),
+                str(entry.get("unsafe_example", "")),
+            ]
+        )
+
+    copy_matrix = _load_json(root / "20_risk_failure_permission_copy_matrix.json")
+    copy_entries = copy_matrix.get("entries", [])
+    copy_customer_parts: list[str] = []
+    copy_allowed_parts: list[str] = []
+    for entry in copy_entries:
+        copy_customer_parts.extend(
+            str(entry.get(key, ""))
+            for key in (
+                "short_message",
+                "expanded_message",
+                "cta",
+                "what_will_happen",
+                "what_will_not_happen",
+                "limit_of_interpretation",
+                "next_safe_step",
+            )
+        )
+        copy_allowed_parts.append(str(entry.get("category", "")))
+
+    scans = {
+        "20_ux_copy_system.md": {
+            "customer_facing_hits": _count_jargon_hits(ux_customer, terms),
+            "allowed_internal_hits": _count_jargon_hits(ux_allowed, terms),
+        },
+        "20_trust_language_translation_matrix.json": {
+            "customer_facing_hits": _count_jargon_hits("\n".join(translation_customer_parts), terms),
+            "allowed_internal_hits": _count_jargon_hits("\n".join(translation_allowed_parts), terms),
+        },
+        "20_risk_failure_permission_copy_matrix.json": {
+            "customer_facing_hits": _count_jargon_hits("\n".join(copy_customer_parts), terms),
+            "allowed_internal_hits": _count_jargon_hits("\n".join(copy_allowed_parts), terms),
+        },
+        "20_receipt_rollback_cost_copy_examples.md": {
+            "customer_facing_hits": _count_jargon_hits(examples_customer, terms),
+            "allowed_internal_hits": _count_jargon_hits(examples_allowed, terms),
+        },
+    }
+
+    total_customer = sum(sum(file_hits["customer_facing_hits"].values()) for file_hits in scans.values())
+    total_allowed = sum(sum(file_hits["allowed_internal_hits"].values()) for file_hits in scans.values())
+    return {
+        "terms_scanned": terms,
+        "files_scanned": list(scans),
+        "per_file": scans,
+        "jargon_scan_customer_facing_hits": total_customer,
+        "allowed_internal_hits_total": total_allowed,
+        "jargon_scan_pass": total_customer == 0,
+    }
+
+
 def _check_forbidden_route_claims() -> None:
     _require(EXPECTED_PHASE != "PURG-00", "latest completed phase cannot be PURG-00 here")
     _require(EXPECTED_LATEST_COMPLETED_STATUS not in {"purg_00_pass", "purg00_pass"}, "latest completed status cannot be PURG-00 pass here")
@@ -1717,7 +1833,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-19", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-20", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1731,7 +1847,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-20", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-21", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -1856,6 +1972,15 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/19_dashboard_state_latency_budget.json").exists(), "BENCHUIX-19 dashboard state latency budget missing on disk")
         _require((ROOT / "artifacts/benchuix/19_no_real_execution_attestation.json").exists(), "BENCHUIX-19 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/19_validation_evidence.json").exists(), "BENCHUIX-19 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_operator_opening_source.json").exists(), "BENCHUIX-20 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_ux_copy_system.md").exists(), "BENCHUIX-20 UX copy system missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_forbidden_terms.txt").exists(), "BENCHUIX-20 forbidden terms missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_trust_language_translation_matrix.json").exists(), "BENCHUIX-20 translation matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_risk_failure_permission_copy_matrix.json").exists(), "BENCHUIX-20 risk/failure/permission copy matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_receipt_rollback_cost_copy_examples.md").exists(), "BENCHUIX-20 receipt/rollback/cost copy examples missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_jargon_scan_report.json").exists(), "BENCHUIX-20 jargon scan report missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_no_real_execution_attestation.json").exists(), "BENCHUIX-20 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/20_validation_evidence.json").exists(), "BENCHUIX-20 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -3846,6 +3971,187 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_19_SYNTHETIC_ONLY_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-19 validation evidence missing {key}")
+
+        benchuix_20_operator = _load_json(ROOT / "artifacts/benchuix/20_operator_opening_source.json")
+        _require(benchuix_20_operator.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 operator source phase_id mismatch")
+        _require(benchuix_20_operator.get("opened_from_candidate_phase") == "BENCHUIX-19", "BENCHUIX-20 opened_from_candidate_phase mismatch")
+        _require(benchuix_20_operator.get("opened_candidate_phase") == "BENCHUIX-20", "BENCHUIX-20 opened_candidate_phase mismatch")
+        _require(
+            benchuix_20_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-20 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_20_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-20 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_20_operator.get("previous_candidate_commit") == "b57817367e9e1768c5023da742349779d4a6b5c1",
+            "BENCHUIX-20 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_20_operator.get("previous_candidate_ci_run") == "27657559789",
+            "BENCHUIX-20 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_20_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-20 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_20_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-20 all_real_locks_remain_false mismatch")
+        _require(benchuix_20_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-20 bedrock_preparation_exception_recorded mismatch")
+
+        benchuix_20_copy_text = (ROOT / "artifacts/benchuix/20_ux_copy_system.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## tese da linguagem",
+            "## principios de escrita",
+            "## tom permitido",
+            "## tom proibido",
+            "## como explicar risco",
+            "## como explicar limite",
+            "## como explicar permissao",
+            "## como explicar falha",
+            "## como explicar desfazer e compensar",
+            "## como explicar comprovante",
+            "## como explicar custo estimado",
+            "## como explicar dado atrasado",
+            "## exemplos bons e ruins",
+            "## regras de nao ocultar risco",
+            "## criterios PASS/WARN/BLOCK/INVALID",
+        ):
+            _require(required_snippet in benchuix_20_copy_text, f"BENCHUIX-20 UX copy system missing section: {required_snippet}")
+
+        forbidden_terms = _load_forbidden_terms(ROOT / "artifacts/benchuix/20_forbidden_terms.txt")
+        for required_term in (
+            "runtime",
+            "gate",
+            "schema",
+            "artifact",
+            "ledger",
+            "tenant",
+            "idempotency",
+            "active-context",
+            "hash",
+            "validator",
+            "ci",
+            "stack trace",
+            "exception",
+            "json",
+            "pipeline",
+            "trace",
+            "token",
+            "policy engine",
+            "rbac",
+        ):
+            _require(required_term in forbidden_terms, f"BENCHUIX-20 forbidden terms missing {required_term}")
+
+        benchuix_20_translation = _load_json(ROOT / "artifacts/benchuix/20_trust_language_translation_matrix.json")
+        translation_metadata = benchuix_20_translation.get("metadata", {})
+        _require(translation_metadata.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 translation metadata.phase_id mismatch")
+        _require(translation_metadata.get("status") == "candidate", "BENCHUIX-20 translation metadata.status mismatch")
+        _require(translation_metadata.get("synthetic_only") is True, "BENCHUIX-20 translation metadata.synthetic_only mismatch")
+        translations = benchuix_20_translation.get("translations", [])
+        _require(len(translations) >= 10, "BENCHUIX-20 translation matrix must list at least 10 concepts")
+        for entry in translations:
+            for key in (
+                "technical_concept",
+                "forbidden_primary_terms",
+                "human_translation",
+                "when_to_show",
+                "what_not_to_claim",
+                "risk_if_mistranslated",
+                "source_phase_or_artifact",
+                "safe_example",
+                "unsafe_example",
+            ):
+                _require(bool(entry.get(key)), f"BENCHUIX-20 translation entry missing {key}")
+
+        benchuix_20_copy_matrix = _load_json(ROOT / "artifacts/benchuix/20_risk_failure_permission_copy_matrix.json")
+        copy_matrix_metadata = benchuix_20_copy_matrix.get("metadata", {})
+        _require(copy_matrix_metadata.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 copy matrix metadata.phase_id mismatch")
+        _require(copy_matrix_metadata.get("status") == "candidate", "BENCHUIX-20 copy matrix metadata.status mismatch")
+        _require(copy_matrix_metadata.get("synthetic_only") is True, "BENCHUIX-20 copy matrix metadata.synthetic_only mismatch")
+        copy_entries = benchuix_20_copy_matrix.get("entries", [])
+        _require(len(copy_entries) >= 12, "BENCHUIX-20 copy matrix must list at least 12 categories")
+        for entry in copy_entries:
+            for key in (
+                "category",
+                "short_message",
+                "expanded_message",
+                "cta",
+                "what_will_happen",
+                "what_will_not_happen",
+                "limit_of_interpretation",
+                "next_safe_step",
+            ):
+                _require(bool(entry.get(key)), f"BENCHUIX-20 copy matrix entry missing {key}")
+
+        benchuix_20_examples_text = (ROOT / "artifacts/benchuix/20_receipt_rollback_cost_copy_examples.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## comprovantes",
+            "## desfazer e compensar",
+            "## custo estimado",
+            "## acao bloqueada",
+            "## dado atrasado",
+            "## versoes tecnicas ruins permitidas",
+            "## versoes humanas corretas",
+        ):
+            _require(required_snippet in benchuix_20_examples_text, f"BENCHUIX-20 examples missing section: {required_snippet}")
+
+        benchuix_20_scan_report = _load_json(ROOT / "artifacts/benchuix/20_jargon_scan_report.json")
+        computed_scan = _scan_benchuix20_copy_surfaces()
+        _require(benchuix_20_scan_report.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 jargon scan report phase_id mismatch")
+        _require(
+            benchuix_20_scan_report.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-20 jargon scan report status mismatch",
+        )
+        _require(benchuix_20_scan_report.get("terms_scanned") == computed_scan["terms_scanned"], "BENCHUIX-20 jargon scan terms mismatch")
+        _require(benchuix_20_scan_report.get("files_scanned") == computed_scan["files_scanned"], "BENCHUIX-20 jargon scan files mismatch")
+        _require(benchuix_20_scan_report.get("per_file") == computed_scan["per_file"], "BENCHUIX-20 jargon scan per-file mismatch")
+        _require(
+            benchuix_20_scan_report.get("allowed_internal_hits_total") == computed_scan["allowed_internal_hits_total"],
+            "BENCHUIX-20 jargon scan allowed_internal_hits_total mismatch",
+        )
+        _require(benchuix_20_scan_report.get("jargon_scan_customer_facing_hits") == computed_scan["jargon_scan_customer_facing_hits"], "BENCHUIX-20 jargon scan customer-facing hits mismatch")
+        _require(benchuix_20_scan_report.get("jargon_scan_pass") == computed_scan["jargon_scan_pass"], "BENCHUIX-20 jargon scan pass mismatch")
+        _require(computed_scan["jargon_scan_customer_facing_hits"] == 0, "BENCHUIX-20 customer-facing copy still contains forbidden jargon")
+
+        benchuix_20_no_real = _load_json(ROOT / "artifacts/benchuix/20_no_real_execution_attestation.json")
+        _require(benchuix_20_no_real.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "external_network_used_except_github_governance",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+        ):
+            _require(benchuix_20_no_real.get(key) is False, f"BENCHUIX-20 no-real {key} must be false")
+        _require(benchuix_20_no_real.get("human_language_only_packet") is True, "BENCHUIX-20 human_language_only_packet mismatch")
+
+        benchuix_20_evidence = _load_json(ROOT / "artifacts/benchuix/20_validation_evidence.json")
+        _require(benchuix_20_evidence.get("phase_id") == "BENCHUIX-20", "BENCHUIX-20 validation evidence phase_id mismatch")
+        _require(
+            benchuix_20_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-20 validation evidence status mismatch",
+        )
+        if benchuix_20_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_20_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_20_UX_COPY_SYSTEM_OK",
+                "BENCHUIX_20_FORBIDDEN_TERMS_OK",
+                "BENCHUIX_20_TRANSLATION_MATRIX_OK",
+                "BENCHUIX_20_COPY_MATRIX_OK",
+                "BENCHUIX_20_JARGON_SCAN_OK",
+                "BENCHUIX_20_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_20_NO_RISK_OBFUSCATION_OK",
+                "BENCHUIX_20_SYNTHETIC_ONLY_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-20 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

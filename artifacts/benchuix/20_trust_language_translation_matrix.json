@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-20",
+    "status": "candidate",
+    "synthetic_only": true
+  },
+  "translations": [
+    {
+      "technical_concept": "risk_classification",
+      "forbidden_primary_terms": [
+        "risk score",
+        "risk taxonomy"
+      ],
+      "human_translation": "Esta etapa pede mais cuidado antes de seguir.",
+      "when_to_show": "Quando uma acao pode gerar impacto maior do que o baseline esperado.",
+      "what_not_to_claim": "Nao diga que a operacao esta segura so porque o risco esta sob observacao.",
+      "risk_if_mistranslated": "A pessoa pode subestimar impacto e seguir sem revisar.",
+      "source_phase_or_artifact": "BENCHUIX-11 permission language + BENCHUIX-19 risk widget",
+      "safe_example": "Esta etapa merece revisao extra antes de seguir.",
+      "unsafe_example": "Risk taxonomy elevou o score para high."
+    },
+    {
+      "technical_concept": "permission_boundary",
+      "forbidden_primary_terms": [
+        "rbac",
+        "access policy"
+      ],
+      "human_translation": "Seu acesso atual nao cobre esta acao.",
+      "when_to_show": "Quando a pessoa pode ver, mas nao concluir ou alterar.",
+      "what_not_to_claim": "Nao diga que a acao falhou; diga que ela nao esta liberada neste acesso.",
+      "risk_if_mistranslated": "A pessoa pode entender o bloqueio como erro do sistema.",
+      "source_phase_or_artifact": "BENCHUIX-18 permissions matrix",
+      "safe_example": "Voce pode revisar esta etapa, mas nao concluir esta mudanca.",
+      "unsafe_example": "RBAC denied this mutation."
+    },
+    {
+      "technical_concept": "approval_pending_state",
+      "forbidden_primary_terms": [
+        "approval queue",
+        "workflow gate"
+      ],
+      "human_translation": "Esta etapa ainda aguarda revisao humana.",
+      "when_to_show": "Quando ha decisao pendente para destravar a etapa.",
+      "what_not_to_claim": "Nao prometa que a etapa vai seguir sozinha.",
+      "risk_if_mistranslated": "A pessoa pode esperar execucao automatica indevida.",
+      "source_phase_or_artifact": "BENCHUIX-11 approval inbox + BENCHUIX-19 pending approvals",
+      "safe_example": "Ainda falta revisao humana antes de continuar.",
+      "unsafe_example": "The gate is waiting in the approval queue."
+    },
+    {
+      "technical_concept": "degraded_mode",
+      "forbidden_primary_terms": [
+        "fallback mode",
+        "resilience state"
+      ],
+      "human_translation": "Mostramos apenas o que continua confiavel agora.",
+      "when_to_show": "Quando parte da visao ou da acao fica reduzida para manter seguranca.",
+      "what_not_to_claim": "Nao diga que esta tudo normal.",
+      "risk_if_mistranslated": "A pessoa pode agir como se todos os dados estivessem completos.",
+      "source_phase_or_artifact": "BENCHUIX-16 degraded mode + BENCHUIX-19 safe degradation",
+      "safe_example": "Reducimos esta tela ao essencial para manter a operacao segura.",
+      "unsafe_example": "Fallback mode engaged with partial resilience."
+    },
+    {
+      "technical_concept": "stale_snapshot",
+      "forbidden_primary_terms": [
+        "stale cache",
+        "snapshot inconsistency"
+      ],
+      "human_translation": "Voce esta vendo um dado atrasado.",
+      "when_to_show": "Quando a idade do dado ultrapassa o limite seguro desta tela.",
+      "what_not_to_claim": "Nao trate o dado atrasado como leitura atual.",
+      "risk_if_mistranslated": "A pessoa pode tomar decisao com confianca maior do que a situacao permite.",
+      "source_phase_or_artifact": "BENCHUIX-17 stale approval + BENCHUIX-19 latency policy",
+      "safe_example": "Este painel usa um snapshot anterior de 4 minutos atras.",
+      "unsafe_example": "Cache stale after threshold."
+    },
+    {
+      "technical_concept": "estimated_cost_guardrail",
+      "forbidden_primary_terms": [
+        "cost model",
+        "pricing engine"
+      ],
+      "human_translation": "Esta e uma previsao de custo, nao o valor final.",
+      "when_to_show": "Quando a etapa exibe consumo previsto contra teto candidato.",
+      "what_not_to_claim": "Nao diga que o valor esta fechado ou faturado.",
+      "risk_if_mistranslated": "A pessoa pode assumir um custo final inexistente.",
+      "source_phase_or_artifact": "BENCHUIX-10 preview + BENCHUIX-19 cost guardrail",
+      "safe_example": "A previsao continua dentro do teto desta janela.",
+      "unsafe_example": "Pricing engine projects final amount."
+    },
+    {
+      "technical_concept": "receipt_availability",
+      "forbidden_primary_terms": [
+        "evidence ledger",
+        "receipt artifact"
+      ],
+      "human_translation": "O comprovante desta etapa esta disponivel para consulta.",
+      "when_to_show": "Quando existe prova legivel do que acabou de acontecer.",
+      "what_not_to_claim": "Nao chame de garantia absoluta.",
+      "risk_if_mistranslated": "A pessoa pode confundir comprovante com permissao para repetir a acao.",
+      "source_phase_or_artifact": "BENCHUIX-14 evidence receipt + BENCHUIX-19 evidence receipts",
+      "safe_example": "Voce pode abrir o comprovante desta etapa agora.",
+      "unsafe_example": "The evidence ledger artifact is ready."
+    },
+    {
+      "technical_concept": "rollback_or_compensation_path",
+      "forbidden_primary_terms": [
+        "rollback",
+        "compensation handler"
+      ],
+      "human_translation": "Esta etapa pode ser desfeita ou compensada de forma guiada.",
+      "when_to_show": "Quando a operacao oferece retorno seguro apos a acao.",
+      "what_not_to_claim": "Nao diga que tudo volta sozinho.",
+      "risk_if_mistranslated": "A pessoa pode assumir reversao automatica inexistente.",
+      "source_phase_or_artifact": "BENCHUIX-15 rollback recovery",
+      "safe_example": "Se precisar voltar atras, mostramos o caminho seguro de desfazer ou compensar.",
+      "unsafe_example": "Rollback handler is available."
+    },
+    {
+      "technical_concept": "partial_data_visibility",
+      "forbidden_primary_terms": [
+        "partial payload",
+        "incomplete response"
+      ],
+      "human_translation": "Mostramos apenas a parte confirmada desta visao.",
+      "when_to_show": "Quando a tela manteve blocos confiaveis e omitiu o restante.",
+      "what_not_to_claim": "Nao diga que o painel esta completo.",
+      "risk_if_mistranslated": "A pessoa pode acreditar que nao existe informacao faltando.",
+      "source_phase_or_artifact": "BENCHUIX-19 partial widget states",
+      "safe_example": "Esta tela mostra so a parte confirmada neste momento.",
+      "unsafe_example": "Partial payload returned with incomplete response."
+    },
+    {
+      "technical_concept": "irreversible_action_boundary",
+      "forbidden_primary_terms": [
+        "irreversible mutation",
+        "write commitment"
+      ],
+      "human_translation": "Depois desta etapa, a acao nao volta sozinha.",
+      "when_to_show": "Quando ha impacto que nao pode ser desfeito automaticamente.",
+      "what_not_to_claim": "Nao sugira retorno automatico ou sem custo.",
+      "risk_if_mistranslated": "A pessoa pode agir sem medir consequencia.",
+      "source_phase_or_artifact": "BENCHUIX-15 recovery decision tree + BENCHUIX-19 risk language",
+      "safe_example": "Revise com calma: depois desta etapa, a operacao nao volta sozinha.",
+      "unsafe_example": "Irreversible mutation will be committed."
+    }
+  ],
+  "handoff_targets": [
+    "BENCHUIX-21"
+  ]
+}
