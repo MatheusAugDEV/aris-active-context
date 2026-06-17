@@ -6659,6 +6659,289 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             ):
                 _require(bool(results_27a.get(key)), f"BENCHUIX-27A validation results missing {key}")
 
+        visual_27b_root = ROOT / "artifacts/benchuix/visual_sandbox_static"
+        expected_27b_artifacts = {
+            "artifacts/benchuix/27B_react_static_prototype_manifest.json",
+            "artifacts/benchuix/27B_static_boundary_report.md",
+            "artifacts/benchuix/27B_visual_static_test_plan.json",
+            "artifacts/benchuix/27B_no_real_execution_attestation.json",
+            "artifacts/benchuix/27B_validation_evidence.json",
+        }
+        required_27b_source_files = {
+            "README.md",
+            "index.html",
+            "src/App.js",
+            "src/app/AppShell.js",
+            "src/app/navigation.js",
+            "src/app/ScenarioDriver.js",
+            "src/domain/ids.js",
+            "src/domain/state.js",
+            "src/domain/contracts.js",
+            "src/domain/events.js",
+            "src/domain/stateMachine.js",
+            "src/domain/invariants.js",
+            "src/components/shell/AppShell.js",
+            "src/components/shell/BottomTabBar.js",
+            "src/components/shell/SandboxBadge.js",
+            "src/components/shell/DegradedBanner.js",
+            "src/components/sandbox/ScenarioSwitcher.js",
+            "src/components/today/TodaySummary.js",
+            "src/components/today/PendingItem.js",
+            "src/components/contract/ActionContractCard.js",
+            "src/components/contract/WillDoList.js",
+            "src/components/contract/WillNotDoList.js",
+            "src/components/contract/RiskBadge.js",
+            "src/components/contract/ApprovalRequirement.js",
+            "src/components/contract/EvidencePreview.js",
+            "src/components/contract/RollbackStatus.js",
+            "src/components/contract/StateTouchedIndicator.js",
+            "src/components/approve/ApprovalPanel.js",
+            "src/components/approve/DecisionBar.js",
+            "src/components/receipts/ReceiptCard.js",
+            "src/components/receipts/ReceiptDetail.js",
+            "src/components/undo/UndoSheet.js",
+            "src/components/primitives/StatusPill.js",
+            "src/screens/TodayScreen.js",
+            "src/screens/ApproveScreen.js",
+            "src/screens/HistoryScreen.js",
+            "src/screens/RollbackScreen.js",
+            "src/screens/DegradedScreen.js",
+            "src/data/scenarioRegistry.js",
+            "src/data/clock.js",
+            "src/data/scenarios/barbearia.js",
+            "src/data/scenarios/mercado.js",
+            "src/data/scenarios/escritorio.js",
+            "src/styles/tokens.css",
+            "src/styles/app.css",
+            "src/tests/stateMachine.test.js",
+            "src/tests/invariants.test.js",
+            "src/tests/no-network.test.js",
+            "src/tests/copy-jargon.test.js",
+            "src/tests/screens-sandbox-badge.test.js",
+        }
+        _require(visual_27b_root.exists() and visual_27b_root.is_dir(), "BENCHUIX-27B visual_sandbox_static directory missing")
+        for relative_path in sorted(required_27b_source_files):
+            _require((visual_27b_root / relative_path).exists(), f"BENCHUIX-27B source file missing: {relative_path}")
+        for path in sorted(expected_27b_artifacts):
+            _require((ROOT / path).exists(), f"BENCHUIX-27B artifact missing on disk: {path}")
+        _require(not (visual_27b_root / "package.json").exists(), "BENCHUIX-27B package.json must not exist")
+        _require(not (visual_27b_root / "node_modules").exists(), "BENCHUIX-27B node_modules must not exist")
+
+        operational_27b_files = [
+            path
+            for path in sorted((visual_27b_root / "src").rglob("*"))
+            if path.is_file()
+        ] + [visual_27b_root / "index.html"]
+        forbidden_27b_patterns = (
+            "fetch(",
+            "XMLHttpRequest",
+            "WebSocket",
+            "localStorage",
+            "sessionStorage",
+            "api/",
+            "backend",
+            "oauth",
+            "psp",
+            "billing",
+            "secret",
+            "real_apply",
+        )
+        for path in operational_27b_files:
+            text = path.read_text(encoding="utf-8")
+            for pattern in forbidden_27b_patterns:
+                _require(pattern not in text, f"BENCHUIX-27B forbidden pattern {pattern!r} found in {path.relative_to(ROOT)}")
+
+        for screen_file in (
+            "src/screens/TodayScreen.js",
+            "src/screens/ApproveScreen.js",
+            "src/screens/HistoryScreen.js",
+            "src/screens/RollbackScreen.js",
+            "src/screens/DegradedScreen.js",
+        ):
+            _require("SandboxBadge" in (visual_27b_root / screen_file).read_text(encoding="utf-8"), f"BENCHUIX-27B screen missing SandboxBadge: {screen_file}")
+
+        decision_bar_text = (visual_27b_root / "src/components/approve/DecisionBar.js").read_text(encoding="utf-8")
+        for forbidden_label in ("Executar agora", "Sincronizar real", "Cobrar", "Conectar conta", "Enviar mensagem real"):
+            _require(forbidden_label not in decision_bar_text, f"BENCHUIX-27B DecisionBar contains forbidden label: {forbidden_label}")
+
+        state_text = "\n".join(path.read_text(encoding="utf-8") for path in operational_27b_files)
+        _require("stateTouched: false" in state_text or "stateTouched=false" in state_text, "BENCHUIX-27B stateTouched false marker missing")
+        _require("isDemo: true" in state_text, "BENCHUIX-27B isDemo true marker missing")
+        _require("ActionContractCard" in (visual_27b_root / "src/components/contract/ActionContractCard.js").read_text(encoding="utf-8"), "BENCHUIX-27B ActionContractCard source mismatch")
+
+        benchuix_27b_manifest = _load_json(ROOT / "artifacts/benchuix/27B_react_static_prototype_manifest.json")
+        _require(benchuix_27b_manifest.get("phase_id") == "BENCHUIX-27B", "BENCHUIX-27B manifest phase_id mismatch")
+        _require(benchuix_27b_manifest.get("artifact_type") == "react_static_prototype_manifest", "BENCHUIX-27B manifest artifact_type mismatch")
+        for key in ("candidate_only", "synthetic_only", "no_build", "static_source_pack_only"):
+            _require(benchuix_27b_manifest.get(key) is True, f"BENCHUIX-27B manifest {key} must be true")
+        for key in (
+            "package_manager_executed",
+            "package_json_created",
+            "node_modules_created",
+            "preview_run",
+            "project_aris_mutation",
+            "crisol_admitted",
+            "live_route_opened",
+            "real_locks_opened",
+        ):
+            _require(benchuix_27b_manifest.get(key) is False, f"BENCHUIX-27B manifest {key} must be false")
+        _require(set(required_27b_source_files) <= {path.removeprefix("artifacts/benchuix/visual_sandbox_static/") for path in benchuix_27b_manifest.get("created_files", [])}, "BENCHUIX-27B manifest created_files missing required source")
+        for component in (
+            "AppShell",
+            "BottomTabBar",
+            "SandboxBadge",
+            "ScenarioSwitcher",
+            "TodaySummary",
+            "PendingItem",
+            "ActionContractCard",
+            "WillDoList",
+            "WillNotDoList",
+            "RiskBadge",
+            "ApprovalRequirement",
+            "EvidencePreview",
+            "RollbackStatus",
+            "StateTouchedIndicator",
+            "ApprovalPanel",
+            "DecisionBar",
+            "ReceiptCard",
+            "ReceiptDetail",
+            "UndoSheet",
+            "DegradedBanner",
+            "DegradedScreen",
+            "StatusPill",
+        ):
+            _require(benchuix_27b_manifest.get("component_coverage", {}).get(component) is True, f"BENCHUIX-27B component coverage missing {component}")
+        for scenario_id in required_27a_scenario_ids:
+            _require(benchuix_27b_manifest.get("scenario_coverage", {}).get(scenario_id) is True, f"BENCHUIX-27B scenario coverage missing {scenario_id}")
+        for invariant in (
+            "aris_can_propose",
+            "aris_cannot_auto_approve_sensitive_action",
+            "sensitive_action_needs_visual_gate",
+            "refusal_or_block_generates_receipt",
+            "degraded_blocks_owner_approve_override_undo",
+            "state_touched_always_false",
+            "sandbox_badge_on_every_screen",
+            "no_real_state_touched",
+        ):
+            _require(benchuix_27b_manifest.get("invariant_coverage", {}).get(invariant) is True, f"BENCHUIX-27B invariant coverage missing {invariant}")
+
+        boundary_27b = (ROOT / "artifacts/benchuix/27B_static_boundary_report.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "why there is no package manager",
+            "why there is no backend or api",
+            "why modo_degradado is orthogonal",
+            "why js/esm plus jsdoc-style contracts",
+            "confusion risks mitigated",
+            "remaining limits",
+        ):
+            _require(required_snippet in boundary_27b, f"BENCHUIX-27B boundary report missing snippet: {required_snippet}")
+
+        benchuix_27b_test_plan = _load_json(ROOT / "artifacts/benchuix/27B_visual_static_test_plan.json")
+        expected_27b_test_ids = {
+            "stateMachine_valid_transitions",
+            "aris_cannot_auto_approve",
+            "degraded_blocks_execution_like_controls",
+            "refusal_or_block_generates_receipt",
+            "state_touched_always_false",
+            "sandbox_badge_required_on_every_screen",
+            "no_network_api_patterns",
+            "no_jargon_primary_copy",
+            "deterministic_replay",
+            "seven_fields_rendered_for_sensitive_action",
+        }
+        _require({test.get("test_id") for test in benchuix_27b_test_plan.get("tests", [])} == expected_27b_test_ids, "BENCHUIX-27B test plan ids mismatch")
+
+        benchuix_27b_no_real = _load_json(ROOT / "artifacts/benchuix/27B_no_real_execution_attestation.json")
+        _require(benchuix_27b_no_real.get("phase_id") == "BENCHUIX-27B", "BENCHUIX-27B no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "preview_executed",
+            "package_manager_executed",
+            "package_json_created",
+            "node_modules_created",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "live_route_opened",
+            "real_locks_opened",
+            "crisol_opened",
+            "state_touched",
+        ):
+            _require(benchuix_27b_no_real.get(key) is False, f"BENCHUIX-27B no-real {key} must be false")
+        _require(benchuix_27b_no_real.get("documentary_candidate_only") is True, "BENCHUIX-27B documentary_candidate_only mismatch")
+        _require(benchuix_27b_no_real.get("static_visual_artifact_only") is True, "BENCHUIX-27B static_visual_artifact_only mismatch")
+        _require(benchuix_27b_no_real.get("all_real_locks_remain_false") is True, "BENCHUIX-27B all_real_locks_remain_false mismatch")
+
+        benchuix_27b_validation = _load_json(ROOT / "artifacts/benchuix/27B_validation_evidence.json")
+        _require(benchuix_27b_validation.get("phase_id") == "BENCHUIX-27B", "BENCHUIX-27B validation phase_id mismatch")
+        _require(
+            benchuix_27b_validation.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-27B validation status mismatch",
+        )
+        criteria_27b = benchuix_27b_validation.get("criteria_covered", {})
+        for key in (
+            "react_static_source_pack_created",
+            "no_build",
+            "no_fetch_xhr_websocket",
+            "sandbox_badge_present_in_all_screen_sources",
+            "action_contract_card_present",
+            "required_components_present",
+            "required_scenarios_present",
+            "state_machine_invariants_present",
+            "state_touched_always_false",
+            "all_real_locks_remain_false",
+        ):
+            _require(criteria_27b.get(key) is True, f"BENCHUIX-27B criteria_covered {key} must be true")
+        for key in (
+            "package_json_created",
+            "package_manager_executed",
+            "node_modules_created",
+            "crisol_admitted",
+            "live_route_opened",
+            "Project_ARIS_touched",
+        ):
+            _require(criteria_27b.get(key) is False, f"BENCHUIX-27B criteria_covered {key} must be false")
+        tracking_27b = benchuix_27b_validation.get("candidate_tracking_preserved", {})
+        _require(tracking_27b.get("current_candidate_phase") == "BENCHUIX-27", "BENCHUIX-27B validation current candidate mismatch")
+        _require(tracking_27b.get("candidate_next_phase_after_operator_gate") == "CRISOL", "BENCHUIX-27B validation next candidate mismatch")
+        _require(tracking_27b.get("next_phase") is None, "BENCHUIX-27B validation next_phase must remain null")
+        _require(tracking_27b.get("active_next_phase") is None, "BENCHUIX-27B validation active_next_phase must remain null")
+        if benchuix_27b_validation.get("status") == "local_validation_pass_recorded":
+            artifact_hashes_27b = benchuix_27b_validation.get("artifact_hashes", {})
+            for path in sorted(expected_27b_artifacts - {"artifacts/benchuix/27B_validation_evidence.json"}):
+                _require(artifact_hashes_27b.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27B artifact hash mismatch for {path}")
+            source_hashes_27b = benchuix_27b_validation.get("source_file_hashes", {})
+            for relative_path in sorted(required_27b_source_files):
+                full_path = visual_27b_root / relative_path
+                _require(source_hashes_27b.get(str(full_path.relative_to(ROOT))) == hashlib.sha256(full_path.read_bytes()).hexdigest(), f"BENCHUIX-27B source hash mismatch for {relative_path}")
+            results_27b = benchuix_27b_validation.get("results", {})
+            for key in (
+                "ACTIVE_CONTEXT_STATE_json_tool",
+                "ACTIVE_CONTEXT_SCHEMA_json_tool",
+                "manifest_json_tool",
+                "test_plan_json_tool",
+                "no_real_execution_attestation_json_tool",
+                "validation_evidence_json_tool",
+                "validator_py_compile",
+                "validator_script",
+                "unittest_discover",
+                "git_diff_check",
+                "package_manager_executed",
+                "package_json_created",
+                "node_modules_created",
+                "preview_executed",
+            ):
+                _require(key in results_27b, f"BENCHUIX-27B validation results missing {key}")
+
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",

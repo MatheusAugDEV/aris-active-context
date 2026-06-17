@@ -1,0 +1,59 @@
+{
+  "phase_id": "BENCHUIX-27B",
+  "artifact_type": "visual_static_test_plan",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "tests": [
+    {
+      "test_id": "stateMachine_valid_transitions",
+      "target": "src/domain/stateMachine.js",
+      "expected": "required action states transition through explicit owner or deterministic events"
+    },
+    {
+      "test_id": "aris_cannot_auto_approve",
+      "target": "src/domain/invariants.js",
+      "expected": "PROPOSTO plus OWNER_APPROVE moves to AGUARDANDO_APROVACAO, not APROVADO"
+    },
+    {
+      "test_id": "degraded_blocks_execution_like_controls",
+      "target": "src/domain/stateMachine.js",
+      "expected": "MODO_DEGRADADO blocks OWNER_APPROVE, OWNER_OVERRIDE and OWNER_UNDO"
+    },
+    {
+      "test_id": "refusal_or_block_generates_receipt",
+      "target": "src/domain/stateMachine.js",
+      "expected": "BLOQUEADO_AUTO and RECUSADO require receipt generation"
+    },
+    {
+      "test_id": "state_touched_always_false",
+      "target": "src/data/scenarios/*.js and src/domain/state.js",
+      "expected": "stateTouched remains false"
+    },
+    {
+      "test_id": "sandbox_badge_required_on_every_screen",
+      "target": "src/screens/*.js",
+      "expected": "all five screen sources import and render SandboxBadge"
+    },
+    {
+      "test_id": "no_network_api_patterns",
+      "target": "visual_sandbox_static operational sources",
+      "expected": "no forbidden remote or integration patterns"
+    },
+    {
+      "test_id": "no_jargon_primary_copy",
+      "target": "src/tests/copy-jargon.test.js and visible labels",
+      "expected": "primary copy uses action/risk/evidence language"
+    },
+    {
+      "test_id": "deterministic_replay",
+      "target": "src/domain/state.js",
+      "expected": "same state and event return same reducer result"
+    },
+    {
+      "test_id": "seven_fields_rendered_for_sensitive_action",
+      "target": "src/components/contract/ActionContractCard.js",
+      "expected": "will-do, will-not, risk, approval, evidence, rollback and state touched fields render"
+    }
+  ]
+}
+

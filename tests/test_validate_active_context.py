@@ -329,6 +329,57 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_27a_no_real["react_executable_created"] is False
     assert benchuix_27a_no_real["crisol_admitted"] is False
     assert benchuix_27a_no_real["all_real_locks_remain_false"] is True
+    assert Path("artifacts/benchuix/visual_sandbox_static").is_dir()
+    assert Path("artifacts/benchuix/visual_sandbox_static/README.md").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/index.html").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/App.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/domain/invariants.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/components/shell/SandboxBadge.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/screens/TodayScreen.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/screens/ApproveScreen.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/screens/HistoryScreen.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/screens/RollbackScreen.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/screens/DegradedScreen.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js").exists()
+    assert Path("artifacts/benchuix/visual_sandbox_static/src/tests/stateMachine.test.js").exists()
+    assert Path("artifacts/benchuix/27B_react_static_prototype_manifest.json").exists()
+    assert Path("artifacts/benchuix/27B_static_boundary_report.md").exists()
+    assert Path("artifacts/benchuix/27B_visual_static_test_plan.json").exists()
+    assert Path("artifacts/benchuix/27B_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/27B_validation_evidence.json").exists()
+    assert not Path("artifacts/benchuix/visual_sandbox_static/package.json").exists()
+    assert not Path("artifacts/benchuix/visual_sandbox_static/node_modules").exists()
+
+    benchuix_27b_manifest = json.loads(Path("artifacts/benchuix/27B_react_static_prototype_manifest.json").read_text(encoding="utf-8"))
+    assert benchuix_27b_manifest["candidate_only"] is True
+    assert benchuix_27b_manifest["synthetic_only"] is True
+    assert benchuix_27b_manifest["no_build"] is True
+    assert benchuix_27b_manifest["package_manager_executed"] is False
+    assert benchuix_27b_manifest["package_json_created"] is False
+    assert benchuix_27b_manifest["node_modules_created"] is False
+    assert benchuix_27b_manifest["preview_run"] is False
+    assert benchuix_27b_manifest["crisol_admitted"] is False
+    assert benchuix_27b_manifest["live_route_opened"] is False
+
+    benchuix_27b_validation = json.loads(Path("artifacts/benchuix/27B_validation_evidence.json").read_text(encoding="utf-8"))
+    assert benchuix_27b_validation["candidate_tracking_preserved"]["current_candidate_phase"] == "BENCHUIX-27"
+    assert benchuix_27b_validation["candidate_tracking_preserved"]["candidate_next_phase_after_operator_gate"] == "CRISOL"
+    assert benchuix_27b_validation["candidate_tracking_preserved"]["next_phase"] is None
+    assert benchuix_27b_validation["candidate_tracking_preserved"]["active_next_phase"] is None
+
+    benchuix_27b_no_real = json.loads(Path("artifacts/benchuix/27B_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27b_no_real["Project_ARIS_changed"] is False
+    assert benchuix_27b_no_real["runtime_executed"] is False
+    assert benchuix_27b_no_real["preview_executed"] is False
+    assert benchuix_27b_no_real["package_manager_executed"] is False
+    assert benchuix_27b_no_real["package_json_created"] is False
+    assert benchuix_27b_no_real["node_modules_created"] is False
+    assert benchuix_27b_no_real["crisol_opened"] is False
+    assert benchuix_27b_no_real["all_real_locks_remain_false"] is True
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
