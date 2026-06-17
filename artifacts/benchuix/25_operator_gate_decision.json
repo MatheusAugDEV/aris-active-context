@@ -1,0 +1,40 @@
+{
+  "phase_id": "BENCHUIX-25",
+  "artifact_type": "operator_gate_decision",
+  "candidate_only": true,
+  "operator_approval_present": false,
+  "operator_approval_source": null,
+  "operator_approval_text_hash": null,
+  "approval_scope": {
+    "authorizes_benchuix25_candidate_acceptance": false,
+    "authorizes_benchuix26_candidate_only_admission": false,
+    "authorizes_live_route": false,
+    "authorizes_product": false,
+    "authorizes_pilot": false,
+    "authorizes_runtime_real": false,
+    "authorizes_real_apply": false,
+    "authorizes_bedrock": false,
+    "authorizes_secrets": false,
+    "authorizes_real_user_data": false,
+    "authorizes_real_usability_sessions": false
+  },
+  "verified_inputs": {
+    "active_context_sha_reported": "3d40ad91a9c69c427df8bec0831bd6d6d79094d5",
+    "active_context_state_hash_reported": "056a1c597dcce4717717f56176a451f3d8ca4ba6e4504d3e969ee4800e07c73c",
+    "validator_hash_reported": "cdcecea114b3ed1887490dcccc7e1fd1319c1f30a14ba25f31fac86dea27ec9d",
+    "ci_run_id_reported": "27661935939",
+    "ci_terminal_state_reported": "CI_GREEN_CONFIRMED"
+  },
+  "actual_hashes": {
+    "active_context_sha_actual": "3d40ad91a9c69c427df8bec0831bd6d6d79094d5",
+    "active_context_state_hash_actual": "056a1c597dcce4717717f56176a451f3d8ca4ba6e4504d3e969ee4800e07c73c",
+    "validator_hash_actual": "cdcecea114b3ed1887490dcccc7e1fd1319c1f30a14ba25f31fac86dea27ec9d"
+  },
+  "decision": "blocked_missing_operator_approval",
+  "block_reasons": [
+    "explicit_operator_gate_decision_absent",
+    "project_aris_workspace_dirty",
+    "required_read_documents_missing"
+  ],
+  "no_real_execution_attestation": true
+}
