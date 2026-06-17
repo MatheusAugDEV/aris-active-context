@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-23",
+  "opened_from_candidate_phase": "BENCHUIX-22",
+  "opened_candidate_phase": "BENCHUIX-23",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "90b53a3ecdd95bed99c0c0b9700fa087cd80eca1",
+  "previous_candidate_ci_run": "27659088398",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Benchmark competitivo candidate-only com ledger oficial, sem runtime, sem produto, sem UI real, sem dado real, sem billing, sem OAuth, sem integracao real, sem secrets, sem Bedrock declarado pronto, sem marketing comparativo publicado e sem mutacao em Project_ARIS."
+}

@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-23",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "findings": [
+    {
+      "gap_id": "BX23-001",
+      "task": "onboarding",
+      "competitor": "Zapier",
+      "finding_type": "aris_gap",
+      "finding": "Zapier already documents a direct blank-workflow start plus draft preservation, which sets a strong expectation for immediate setup.",
+      "evidence_source_id": "ZAPIER_QUICKSTART",
+      "implication_for_aris": "ARIS must prove that owner-solo onboarding reaches a safe first preview with equal or lower cognitive load.",
+      "destination_phase": "BENCHUIX-24",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-002",
+      "task": "create_automation",
+      "competitor": "n8n",
+      "finding_type": "aris_learning",
+      "finding": "n8n exposes strong builder power and human review controls, but through a more technical surface.",
+      "evidence_source_id": "N8N_CREATE_WORKFLOW",
+      "implication_for_aris": "ARIS should keep advanced capability available behind progressive disclosure instead of making it the baseline.",
+      "destination_phase": "BENCHUIX-24",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-003",
+      "task": "preview_simulation",
+      "competitor": "Salesforce Agentforce",
+      "finding_type": "aris_strength",
+      "finding": "Salesforce proves testing-center breadth, but ARIS can still be stronger if its preview remains deterministic and shorter to interpret.",
+      "evidence_source_id": "SALESFORCE_TESTING_CENTER",
+      "implication_for_aris": "ARIS preview must emphasize before-action trust, not only testing infrastructure.",
+      "destination_phase": "BENCHUIX-26",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-004",
+      "task": "approval",
+      "competitor": "Microsoft Power Automate",
+      "finding_type": "aris_learning",
+      "finding": "Power Automate has mature approval patterns across desktop and mobile, setting an enterprise baseline for gate coverage.",
+      "evidence_source_id": "POWER_AUTOMATE_MOBILE_APPROVALS",
+      "implication_for_aris": "ARIS should keep approvals tighter and more comprehensible than enterprise workflow routing.",
+      "destination_phase": "BENCHUIX-25",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-005",
+      "task": "risk_explanation",
+      "competitor": "HubSpot Breeze",
+      "finding_type": "source_gap",
+      "finding": "Verified approval sources prove that actions can be reviewed, but they do not prove strong owner-facing risk explanation language.",
+      "evidence_source_id": "HUBSPOT_APPROVALS",
+      "implication_for_aris": "ARIS should treat explicit risk explanation as a product pillar and keep a ledger of any future places where it becomes vague.",
+      "destination_phase": "BENCHUIX-27",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-006",
+      "task": "evidence_receipt",
+      "competitor": "Airtable AI",
+      "finding_type": "aris_learning",
+      "finding": "Airtable proves strong history and audit capability, but not a business receipt that explains what happened in plain language.",
+      "evidence_source_id": "AIRTABLE_AUDIT_LOGS",
+      "implication_for_aris": "ARIS should convert trace depth into receipt clarity instead of only mirroring admin logs.",
+      "destination_phase": "BENCHUIX-27",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-007",
+      "task": "rollback_undo_compensate",
+      "competitor": "Zapier",
+      "finding_type": "aris_strength",
+      "finding": "Zapier replay proves rerun mechanics, but not honest language around irreversible effects or compensation.",
+      "evidence_source_id": "ZAPIER_REPLAY",
+      "implication_for_aris": "ARIS should preserve its reversible versus compensating language and make it demo-visible.",
+      "destination_phase": "BENCHUIX-26",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-008",
+      "task": "failure_degraded_mode",
+      "competitor": "Make",
+      "finding_type": "aris_gap",
+      "finding": "Make has strong operator history and search, but this packet still lacks equivalent evidence that ARIS failure states are equally inspectable once implemented.",
+      "evidence_source_id": "MAKE_SCENARIO_HISTORY",
+      "implication_for_aris": "ARIS should make degraded states both explainable and searchable, not only visually clear.",
+      "destination_phase": "BENCHUIX-24",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-009",
+      "task": "mobile",
+      "competitor": "Airtable AI",
+      "finding_type": "aris_learning",
+      "finding": "Airtable explicitly documents mobile-optimized interfaces and immediate action patterns.",
+      "evidence_source_id": "AIRTABLE_MOBILE_INTERFACES",
+      "implication_for_aris": "ARIS mobile companion should keep the same immediacy while remaining safer and calmer for decisions.",
+      "destination_phase": "BENCHUIX-25",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-010",
+      "task": "mobile",
+      "competitor": "Make",
+      "finding_type": "source_gap",
+      "finding": "No current official Make mobile control source strong enough for scoring was verified in this packet.",
+      "evidence_source_id": "MAKE_MOBILE_OFFICIAL_GAP",
+      "implication_for_aris": "Do not publish mobile hierarchy claims against Make until a current official source is available.",
+      "destination_phase": "DEFERRED_WITH_REASON",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-011",
+      "task": "auditability",
+      "competitor": "Microsoft Power Automate",
+      "finding_type": "aris_gap",
+      "finding": "Power Automate already documents lifecycle audit logs, run metadata and admin analytics at runtime scale.",
+      "evidence_source_id": "POWER_AUTOMATE_ACTIVITY_LOGS",
+      "implication_for_aris": "If ARIS ever wants enterprise-grade trust, it will need a future runtime audit path beyond candidate-only UX artifacts.",
+      "destination_phase": "CRISOL",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-012",
+      "task": "dashboard",
+      "competitor": "HubSpot Breeze",
+      "finding_type": "aris_gap",
+      "finding": "HubSpot already proves audit summaries and Analyze-tab charts, which is stronger than a purely conceptual dashboard packet.",
+      "evidence_source_id": "HUBSPOT_AUDIT_LOGS",
+      "implication_for_aris": "ARIS dashboard work needs measurable actionability rules, not only widget inventory.",
+      "destination_phase": "BENCHUIX-24",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-013",
+      "task": "demo",
+      "competitor": "Zapier",
+      "finding_type": "aris_learning",
+      "finding": "Zapier proves connector-level safe testing via test mode, which helps demo without live money.",
+      "evidence_source_id": "ZAPIER_TEST_MODE",
+      "implication_for_aris": "ARIS sandbox demos should keep the same no-real-side-effect clarity, but compress the story into a more trust-centric script.",
+      "destination_phase": "BENCHUIX-26",
+      "blocks_candidate_pass": false
+    },
+    {
+      "gap_id": "BX23-014",
+      "task": "dashboard",
+      "competitor": "Salesforce Agentforce",
+      "finding_type": "market_risk",
+      "finding": "Salesforce public positioning is broad and enterprise-heavy, so weakly sourced dashboard claims can easily become theater if ARIS overreacts.",
+      "evidence_source_id": "SALESFORCE_AGENTFORCE_OVERVIEW",
+      "implication_for_aris": "ARIS should answer dashboard competition with task clarity and decision depth, not by copying enterprise breadth claims.",
+      "destination_phase": "BENCHUIX-27",
+      "blocks_candidate_pass": false
+    }
+  ],
+  "all_gaps_have_destination": true
+}

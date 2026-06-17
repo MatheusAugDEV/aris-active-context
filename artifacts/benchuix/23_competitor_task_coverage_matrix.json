@@ -1,0 +1,579 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-23",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "tasks": [
+    "onboarding",
+    "create_automation",
+    "preview_simulation",
+    "approval",
+    "risk_explanation",
+    "evidence_receipt",
+    "rollback_undo_compensate",
+    "failure_degraded_mode",
+    "mobile",
+    "auditability",
+    "dashboard",
+    "demo"
+  ],
+  "competitors": [
+    "Zapier",
+    "Make",
+    "n8n",
+    "Microsoft Power Automate",
+    "Airtable AI",
+    "HubSpot Breeze",
+    "Salesforce Agentforce"
+  ],
+  "rows": [
+    {
+      "competitor": "Zapier",
+      "comparison_category": "direct_workflow_automation",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_QUICKSTART",
+          "note": "Blank Zap plus draft saving gives a concrete first-run path.",
+          "aris_implication": "ARIS needs equally low-friction first setup without exposing runtime mechanics."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_QUICKSTART",
+          "note": "Creation starts directly in the Zap editor with trigger then action flow.",
+          "aris_implication": "ARIS can stay simpler only if the first automation path remains shorter and safer."
+        },
+        "preview_simulation": {
+          "coverage_status": "partial",
+          "source_id": "ZAPIER_TEST_MODE",
+          "note": "Official test mode evidence is connector specific, not a platform-wide deterministic preview.",
+          "aris_implication": "ARIS still has room to differentiate with a single preview contract instead of app-by-app testing."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_HITL_APPROVAL",
+          "note": "Human in the Loop can pause runs for review and approval.",
+          "aris_implication": "ARIS must keep its approval flow more contextual, not merely equivalent in pause mechanics."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "ZAPIER_HITL_APPROVAL",
+          "note": "Approval mechanics are documented, but risk language is not.",
+          "aris_implication": "ARIS should treat explicit risk explanation as a real trust-core differentiator."
+        },
+        "evidence_receipt": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_HISTORY",
+          "note": "Zap history exposes run details, filters and usage review.",
+          "aris_implication": "ARIS receipts need to be as traceable while staying more human-readable."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "ZAPIER_REPLAY",
+          "note": "Replay exists, but the source does not claim honest undo of external effects.",
+          "aris_implication": "ARIS should keep the reversible versus compensating distinction explicit."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_HISTORY",
+          "note": "Run history and statuses provide a strong failure inspection baseline.",
+          "aris_implication": "ARIS should match the inspectability while giving clearer next-step guidance."
+        },
+        "mobile": {
+          "coverage_status": "unknown_due_to_source_gap",
+          "source_id": "ZAPIER_MOBILE_OFFICIAL_GAP",
+          "note": "No current first-party mobile control source was verified.",
+          "aris_implication": "Do not assume Zapier beats ARIS on mobile until an official current source exists."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_HISTORY",
+          "note": "History supports search, filters and run detail review.",
+          "aris_implication": "ARIS needs equivalent traceability with less operator jargon."
+        },
+        "dashboard": {
+          "coverage_status": "partial",
+          "source_id": "ZAPIER_HISTORY",
+          "note": "Task usage and run views exist, but the packet did not verify an advanced operational dashboard narrative.",
+          "aris_implication": "ARIS can still frame dashboard value around actionability instead of raw usage."
+        },
+        "demo": {
+          "coverage_status": "supported",
+          "source_id": "ZAPIER_TEST_MODE",
+          "note": "Connector-level test mode supports safe demoing without real charges.",
+          "aris_implication": "ARIS should preserve the same no-real-money clarity in its sandbox stories."
+        }
+      }
+    },
+    {
+      "competitor": "Make",
+      "comparison_category": "direct_workflow_automation",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "supported",
+          "source_id": "MAKE_CREATE_SCENARIO",
+          "note": "The first-scenario tutorial gives a concrete builder path.",
+          "aris_implication": "ARIS needs equally explicit setup guidance without node-graph overload."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "MAKE_SCENARIOS_API",
+          "note": "Scenario creation and management are explicit in both tutorial and API language.",
+          "aris_implication": "ARIS should keep advanced capability hidden behind a safer business-first layer."
+        },
+        "preview_simulation": {
+          "coverage_status": "not_supported_by_source",
+          "source_id": "MAKE_CREATE_SCENARIO",
+          "note": "The verified sources show creation and execution history, not deterministic preview.",
+          "aris_implication": "ARIS preview remains a meaningful gap-closing opportunity."
+        },
+        "approval": {
+          "coverage_status": "not_supported_by_source",
+          "source_id": "MAKE_SCENARIOS_API",
+          "note": "No official approval gate strong enough for scoring was verified.",
+          "aris_implication": "ARIS should avoid assuming parity where Make source evidence is absent."
+        },
+        "risk_explanation": {
+          "coverage_status": "not_supported_by_source",
+          "source_id": "MAKE_SCENARIOS_API",
+          "note": "No official source in this packet proved user-facing risk explanation.",
+          "aris_implication": "ARIS can turn risk explanation into a product-level contrast, not a hidden backend concern."
+        },
+        "evidence_receipt": {
+          "coverage_status": "partial",
+          "source_id": "MAKE_SCENARIO_HISTORY",
+          "note": "Scenario history and CSV export exist, but not a customer-facing receipt model.",
+          "aris_implication": "ARIS receipts should feel less like telemetry export and more like proof."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "MAKE_SCENARIO_HISTORY",
+          "note": "History mentions replay details, but not honest business rollback semantics.",
+          "aris_implication": "ARIS should keep rollback language explicit and bounded."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "partial",
+          "source_id": "MAKE_SCENARIO_HISTORY",
+          "note": "Operational logs are present, but a degraded-state UX was not evidenced.",
+          "aris_implication": "ARIS should translate failure inspection into clearer next-step guidance."
+        },
+        "mobile": {
+          "coverage_status": "unknown_due_to_source_gap",
+          "source_id": "MAKE_MOBILE_OFFICIAL_GAP",
+          "note": "No current official mobile control document was verified.",
+          "aris_implication": "ARIS can claim mobile intent only after its own future proof, but Make has no verified advantage here."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "MAKE_SCENARIO_HISTORY",
+          "note": "Run history, change log and export support operator audit work.",
+          "aris_implication": "ARIS should meet this level of inspectability with less expert framing."
+        },
+        "dashboard": {
+          "coverage_status": "partial",
+          "source_id": "MAKE_SCENARIO_HISTORY",
+          "note": "Per-scenario history is strong, but a broader action dashboard was not verified.",
+          "aris_implication": "ARIS dashboard should optimize for decision triage, not just run inspection."
+        },
+        "demo": {
+          "coverage_status": "partial",
+          "source_id": "MAKE_CREATE_SCENARIO",
+          "note": "Tutorial gives a demo-like starter story, but not a bounded safe sandbox script.",
+          "aris_implication": "ARIS can outperform here if BENCHUIX-26 stays short and trust-centered."
+        }
+      }
+    },
+    {
+      "competitor": "n8n",
+      "comparison_category": "technical_workflow_automation",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "partial",
+          "source_id": "N8N_CHOOSE_N8N",
+          "note": "Cloud is quick to start, but self-hosted onboarding explicitly requires technical expertise.",
+          "aris_implication": "ARIS should preserve owner-solo simplicity while keeping advanced mode optional."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "N8N_CREATE_WORKFLOW",
+          "note": "Workflow canvas creation is explicit and fully documented.",
+          "aris_implication": "ARIS can learn from power-user capability without inheriting the same complexity baseline."
+        },
+        "preview_simulation": {
+          "coverage_status": "supported",
+          "source_id": "N8N_EXECUTIONS",
+          "note": "Manual executions while inactive create a strong test-before-publish pattern.",
+          "aris_implication": "ARIS preview should stay more business-readable than a raw execution test."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "N8N_HITL_APPROVAL",
+          "note": "Human approval can gate tool execution before the agent acts.",
+          "aris_implication": "ARIS should retain approval strength while reducing AI-builder jargon."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "N8N_HITL_APPROVAL",
+          "note": "Approval exists, but the verified source does not prove owner-facing risk explanation.",
+          "aris_implication": "ARIS should keep its risk microcopy advantage explicit."
+        },
+        "evidence_receipt": {
+          "coverage_status": "partial",
+          "source_id": "N8N_EXECUTIONS",
+          "note": "Executions are inspectable, but the packet did not verify receipt-style proof for nontechnical users.",
+          "aris_implication": "ARIS should keep evidence readable without losing traceability."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "N8N_EXPORT_IMPORT",
+          "note": "Workflow export/import helps change control, not business-effect compensation.",
+          "aris_implication": "ARIS rollback semantics should stay tied to impact honesty, not just artifact portability."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "partial",
+          "source_id": "N8N_EXECUTIONS",
+          "note": "Execution inspection exists, but degraded-state UX for business operators was not evidenced.",
+          "aris_implication": "ARIS should keep failure states human-legible."
+        },
+        "mobile": {
+          "coverage_status": "unknown_due_to_source_gap",
+          "source_id": "N8N_MOBILE_OFFICIAL_GAP",
+          "note": "No official mobile control surface was verified.",
+          "aris_implication": "Do not score mobile advantage against n8n without a first-party source."
+        },
+        "auditability": {
+          "coverage_status": "partial",
+          "source_id": "N8N_EXECUTIONS",
+          "note": "Execution history is strong for builders, but user-facing audit framing is not proven here.",
+          "aris_implication": "ARIS should bridge traceability and business comprehension."
+        },
+        "dashboard": {
+          "coverage_status": "partial",
+          "source_id": "N8N_EVALUATIONS",
+          "note": "Evaluations and quality tracking exist, but not a verified owner-solo operational dashboard.",
+          "aris_implication": "ARIS can learn from evaluation rigor without copying a builder-first surface."
+        },
+        "demo": {
+          "coverage_status": "supported",
+          "source_id": "N8N_EXECUTIONS",
+          "note": "Manual test runs provide a concrete demo path before publishing.",
+          "aris_implication": "ARIS demo should remain shorter and more trust-focused than builder-led walkthroughs."
+        }
+      }
+    },
+    {
+      "competitor": "Microsoft Power Automate",
+      "comparison_category": "direct_workflow_automation",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "partial",
+          "source_id": "POWER_AUTOMATE_OVERVIEW",
+          "note": "The platform overview proves broad flow categories, but not a fast owner-solo path.",
+          "aris_implication": "ARIS should stay lighter than enterprise-first onboarding."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_APPROVALS",
+          "note": "The approval workflow doc proves explicit flow construction with approval actions.",
+          "aris_implication": "ARIS should match clarity while avoiding admin-center complexity."
+        },
+        "preview_simulation": {
+          "coverage_status": "partial",
+          "source_id": "POWER_AUTOMATE_RUN_HISTORY",
+          "note": "Run history and monitoring are strong, but deterministic preview before execution was not evidenced.",
+          "aris_implication": "ARIS preview can still be differentiated as a pre-execution trust contract."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_APPROVALS",
+          "note": "Approval flow support is explicit and mature.",
+          "aris_implication": "ARIS should keep approval simpler and more decision-oriented, not just parity in routing."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "POWER_AUTOMATE_APPROVALS",
+          "note": "Approval actions are documented, but rich risk explanation language is not.",
+          "aris_implication": "ARIS can compete on explanation quality instead of workflow breadth."
+        },
+        "evidence_receipt": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_RUN_HISTORY",
+          "note": "FlowRun records expose status, duration, trigger type and errors at scale.",
+          "aris_implication": "ARIS should decide how much of this depth becomes customer-visible proof."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "POWER_AUTOMATE_RUN_HISTORY",
+          "note": "Rich run records exist, but no honest undo model was verified.",
+          "aris_implication": "ARIS should keep rollback semantics more explicit than enterprise telemetry."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_RUN_HISTORY",
+          "note": "Run records and automation center monitoring create a strong troubleshooting baseline.",
+          "aris_implication": "ARIS should emulate the monitoring depth only where it improves human decisions."
+        },
+        "mobile": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_MOBILE_APPROVALS",
+          "note": "Mobile approve or reject with push notification is explicitly documented.",
+          "aris_implication": "ARIS mobile companion should keep the same actionability with less enterprise framing."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_ACTIVITY_LOGS",
+          "note": "Purview logs cover flow lifecycle and permission changes.",
+          "aris_implication": "ARIS needs a future runtime-grade audit layer if it wants to match enterprise governance depth."
+        },
+        "dashboard": {
+          "coverage_status": "supported",
+          "source_id": "POWER_AUTOMATE_ANALYTICS",
+          "note": "Admin analytics cover runs, usage, errors and flow types.",
+          "aris_implication": "ARIS should define whether its dashboard targets owner action or admin reporting first."
+        },
+        "demo": {
+          "coverage_status": "partial",
+          "source_id": "POWER_AUTOMATE_APPROVALS",
+          "note": "The docs make tutorial-style demos possible, but not a bounded sandbox story optimized for trust.",
+          "aris_implication": "BENCHUIX-26 can still differentiate with a shorter narrative."
+        }
+      }
+    },
+    {
+      "competitor": "Airtable AI",
+      "comparison_category": "app_building_ai_platform",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "supported",
+          "source_id": "AIRTABLE_AUTOMATIONS",
+          "note": "Automation setup is documented and AI can assist in creation.",
+          "aris_implication": "ARIS should keep its first automation path at least this direct while remaining safer."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "AIRTABLE_GENERATE_WITH_AI",
+          "note": "Official AI actions and examples prove automation creation support.",
+          "aris_implication": "ARIS should learn from guided creation without drifting into app-builder complexity."
+        },
+        "preview_simulation": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_AUTOMATIONS",
+          "note": "History and revision are strong, but a deterministic preview was not verified.",
+          "aris_implication": "ARIS preview remains an important trust differentiator."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "AIRTABLE_MOBILE_INTERFACES",
+          "note": "Official mobile interfaces include approve or reject actions.",
+          "aris_implication": "ARIS approvals should keep the same immediacy with richer risk context."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_MOBILE_INTERFACES",
+          "note": "Action support exists, but risk explanation language is not evidenced.",
+          "aris_implication": "ARIS should preserve risk literacy as part of the task, not an optional extra."
+        },
+        "evidence_receipt": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_AUTOMATIONS",
+          "note": "Automation history and version history exist, but not a dedicated business receipt model.",
+          "aris_implication": "ARIS should make evidence feel more explicit and user-readable."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_AUTOMATIONS",
+          "note": "Version history helps workflow rollback, but external-effect compensation is not proven.",
+          "aris_implication": "ARIS should keep rollback honesty tied to effect type."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_AUTOMATIONS",
+          "note": "History aids troubleshooting, but degraded UX guidance was not verified.",
+          "aris_implication": "ARIS should make failure states more directive than mere run history."
+        },
+        "mobile": {
+          "coverage_status": "supported",
+          "source_id": "AIRTABLE_MOBILE_INTERFACES",
+          "note": "Mobile-optimized interfaces and immediate actions are explicitly documented.",
+          "aris_implication": "ARIS mobile work must stay owner-first, not just responsive."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "AIRTABLE_AUDIT_LOGS",
+          "note": "Audit log search, details and API support are explicit.",
+          "aris_implication": "ARIS will need a runtime-grade audit plan later if it wants comparable governance depth."
+        },
+        "dashboard": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_AUDIT_LOGS",
+          "note": "The verified source proves admin reports and logs, not an advanced operator dashboard.",
+          "aris_implication": "ARIS can make dashboard actionability a clearer product story than admin reporting."
+        },
+        "demo": {
+          "coverage_status": "partial",
+          "source_id": "AIRTABLE_GENERATE_WITH_AI",
+          "note": "AI creation examples support demoability, but not a strict trust-first sandbox narrative.",
+          "aris_implication": "ARIS should keep demo framing around safe decisions and proof."
+        }
+      }
+    },
+    {
+      "competitor": "HubSpot Breeze",
+      "comparison_category": "crm_agentic_platform",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_BREEZE_OVERVIEW",
+          "note": "The overview proves breadth, but not a short owner-solo path.",
+          "aris_implication": "ARIS should not copy CRM-platform sprawl into the first-run flow."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "HUBSPOT_RUN_AGENT_WORKFLOWS",
+          "note": "Official workflow action can deploy agents directly from workflows.",
+          "aris_implication": "ARIS should learn from workflow-integrated AI while keeping the control plane simpler."
+        },
+        "preview_simulation": {
+          "coverage_status": "not_supported_by_source",
+          "source_id": "HUBSPOT_RUN_AGENT_WORKFLOWS",
+          "note": "The verified sources prove workflow and approval capabilities, not deterministic preview.",
+          "aris_implication": "ARIS preview remains a strategic opportunity."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "HUBSPOT_APPROVALS",
+          "note": "Approvals cover records, content, exports, quotes and marketing assets.",
+          "aris_implication": "ARIS should keep approval breadth secondary to clarity and safety."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_APPROVALS",
+          "note": "Approval availability is explicit, but risk explanation quality is not evidenced.",
+          "aris_implication": "ARIS can differentiate through stronger explanation of impact and limits."
+        },
+        "evidence_receipt": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_AUDIT_LOGS",
+          "note": "Audit logs and summaries are strong, but a customer-facing receipt model was not verified.",
+          "aris_implication": "ARIS should decide how to expose proof without forcing audit-log literacy."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_WORKFLOW_REVISION_HISTORY",
+          "note": "Workflow changes can be reviewed and reverted, but effect compensation is not evidenced.",
+          "aris_implication": "ARIS should keep rollback semantics tied to business consequence, not only config history."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_AUDIT_LOGS",
+          "note": "Activity history and summaries help review actions, but degraded-state UX was not directly evidenced.",
+          "aris_implication": "ARIS should render failure states more explicitly than audit-centric tooling."
+        },
+        "mobile": {
+          "coverage_status": "supported",
+          "source_id": "HUBSPOT_MOBILE_APPROVALS",
+          "note": "Official mobile approval and request-change flows are explicit.",
+          "aris_implication": "ARIS mobile companion should keep actionability but use calmer decision language."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "HUBSPOT_AUDIT_LOGS",
+          "note": "Audit logs, AI summary and employee access history provide strong governance evidence.",
+          "aris_implication": "ARIS needs a later runtime path if it wants comparable trace depth."
+        },
+        "dashboard": {
+          "coverage_status": "supported",
+          "source_id": "HUBSPOT_AUDIT_LOGS",
+          "note": "Analyze tab totals and charts create a real operational reporting surface.",
+          "aris_implication": "ARIS dashboard should be more action-centered than log-centered."
+        },
+        "demo": {
+          "coverage_status": "partial",
+          "source_id": "HUBSPOT_BREEZE_OVERVIEW",
+          "note": "Breadth supports demo packaging, but the packet did not verify a bounded trust-first sandbox story.",
+          "aris_implication": "ARIS can still win on short, scenario-based safe demos."
+        }
+      }
+    },
+    {
+      "competitor": "Salesforce Agentforce",
+      "comparison_category": "enterprise_agent_platform",
+      "task_coverage": {
+        "onboarding": {
+          "coverage_status": "partial",
+          "source_id": "SALESFORCE_AGENTFORCE_OVERVIEW",
+          "note": "The official page proves lifecycle tooling, but it is enterprise and marketing heavy.",
+          "aris_implication": "ARIS should avoid inheriting enterprise-scale overhead into first contact."
+        },
+        "create_automation": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_AGENTFORCE_OVERVIEW",
+          "note": "Natural-language configuration plus build/test/supervise language indicates broad creation power.",
+          "aris_implication": "ARIS can stay narrower but clearer, especially for owner-solo automation creation."
+        },
+        "preview_simulation": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_TESTING_CENTER",
+          "note": "Testing Center is described as a sandbox-like environment for simulated interactions.",
+          "aris_implication": "ARIS should preserve a more deterministic and shorter preview story in BENCHUIX-26."
+        },
+        "approval": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_ADVANCED_APPROVALS",
+          "note": "Complex multi-step approval rules are explicitly available.",
+          "aris_implication": "ARIS should not mimic complexity by default; it should expose only the necessary gate."
+        },
+        "risk_explanation": {
+          "coverage_status": "partial",
+          "source_id": "SALESFORCE_EVENT_LOGS",
+          "note": "Event logs help testing and troubleshooting, but owner-facing risk explanation is not proven.",
+          "aris_implication": "ARIS can still differentiate on human-readable risk and impact language."
+        },
+        "evidence_receipt": {
+          "coverage_status": "partial",
+          "source_id": "SALESFORCE_EVENT_LOGS",
+          "note": "Event logs and audit data exist, but no customer receipt model was verified.",
+          "aris_implication": "ARIS should decide when deep telemetry becomes visible proof."
+        },
+        "rollback_undo_compensate": {
+          "coverage_status": "not_supported_by_source",
+          "source_id": "SALESFORCE_ADVANCED_APPROVALS",
+          "note": "The verified sources do not prove an honest undo or compensation surface.",
+          "aris_implication": "ARIS should keep rollback honesty as an explicit product choice."
+        },
+        "failure_degraded_mode": {
+          "coverage_status": "partial",
+          "source_id": "SALESFORCE_EVENT_LOGS",
+          "note": "Logs and supervision imply strong troubleshooting, but degraded operator UX was not verified.",
+          "aris_implication": "ARIS should render degraded states as decisions, not just traces."
+        },
+        "mobile": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_MOBILE_AGENTFORCE",
+          "note": "Official help snippets confirm deployment to Salesforce mobile surfaces.",
+          "aris_implication": "ARIS should keep mobile narrow, fast and decision-safe rather than broad."
+        },
+        "auditability": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_EVENT_LOGS",
+          "note": "Enhanced event logs and audit artifacts create a strong trace baseline.",
+          "aris_implication": "ARIS will need a runtime-grade audit layer later if it wants enterprise parity."
+        },
+        "dashboard": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_AUDIT_DASHBOARDS",
+          "note": "Official snippets confirm audit and feedback reports and dashboards.",
+          "aris_implication": "ARIS should anchor dashboard value in actionability, not only oversight."
+        },
+        "demo": {
+          "coverage_status": "supported",
+          "source_id": "SALESFORCE_TESTING_CENTER",
+          "note": "Testing Center provides a strong official demo and test story.",
+          "aris_implication": "ARIS demo must stay simpler and clearer to avoid looking unfinished beside enterprise tooling."
+        }
+      }
+    }
+  ],
+  "all_competitors_have_source_or_are_excluded": true
+}

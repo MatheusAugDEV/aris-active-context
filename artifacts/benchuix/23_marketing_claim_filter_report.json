@@ -1,0 +1,50 @@
+{
+  "phase_id": "BENCHUIX-23",
+  "status": "candidate",
+  "discarded_claims": [
+    {
+      "claim": "Zapier is an AI orchestration platform.",
+      "source_id": "ZAPIER_PLATFORM_OVERVIEW",
+      "discard_reason": "Claim is broad positioning without a task-specific benchmark method.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    },
+    {
+      "claim": "Make is a user friendly no-code integration tool.",
+      "source_id": "MAKE_HOMEPAGE_MARKETING",
+      "discard_reason": "Ease-of-use claim is marketing language without a task method, audience or evidence threshold.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    },
+    {
+      "claim": "Scale and orchestrate your AI automations.",
+      "source_id": "MAKE_HOMEPAGE_MARKETING",
+      "discard_reason": "Platform-scale promise does not prove any individual task outcome.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    },
+    {
+      "claim": "Breeze supports users by completing tasks throughout HubSpot.",
+      "source_id": "HUBSPOT_BREEZE_OVERVIEW",
+      "discard_reason": "Breadth statement is useful context, but it does not prove how a specific task behaves.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    },
+    {
+      "claim": "Agentforce is the most complete enterprise agentic platform.",
+      "source_id": "SALESFORCE_AGENTFORCE_OVERVIEW",
+      "discard_reason": "Superlative vendor comparison without independent task method is not valid evidence.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    },
+    {
+      "claim": "Airtable AI examples imply universal preview and approval quality.",
+      "source_id": "AIRTABLE_GENERATE_WITH_AI",
+      "discard_reason": "Example automations do not demonstrate platform-wide trust behavior for every task.",
+      "can_be_used_as_context_only": true,
+      "used_for_scoring": false
+    }
+  ],
+  "feature_list_only_comparison": false,
+  "marketing_claim_used_as_proof": false
+}

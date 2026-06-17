@@ -1,0 +1,251 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-23",
+    "status": "candidate",
+    "candidate_only": true,
+    "scoring_is_rubric_only": true,
+    "no_competitor_scores_recorded": true
+  },
+  "criteria": [
+    {
+      "criterion_id": "time_to_first_value",
+      "scale": {
+        "0": "Primeiro valor depende de setup tecnico ou tempo indefinido.",
+        "1": "Existe caminho inicial, mas com forte dependencia de ajuda externa.",
+        "2": "Fluxo inicial compreensivel com algum atrito controlado.",
+        "3": "Primeiro valor aparece rapido e com baixa ambiguidade para a tarefa."
+      },
+      "evidence_required": [
+        "fonte oficial do fluxo inicial",
+        "passos claros de setup",
+        "limites ou precondicoes explicitas"
+      ],
+      "invalid_conditions": [
+        "score sem fonte oficial",
+        "marketing claim de velocidade sem metodo",
+        "confundir template gallery com valor entregue"
+      ],
+      "no_source_score_policy": "sem fonte oficial suficiente, a nota fica ausente e a cobertura vira unknown_due_to_source_gap"
+    },
+    {
+      "criterion_id": "clarity_of_next_step",
+      "scale": {
+        "0": "Proximo passo exige inferencia tecnica forte.",
+        "1": "Proximo passo existe mas fica escondido ou fragmentado.",
+        "2": "Proximo passo fica visivel para a maioria dos casos.",
+        "3": "Proximo passo fica explicito, contextual e com baixo risco de erro."
+      },
+      "evidence_required": [
+        "fonte oficial do editor ou inbox relevante",
+        "descricao objetiva da acao seguinte",
+        "evidencia de status ou draft"
+      ],
+      "invalid_conditions": [
+        "score baseado apenas em screenshot de marketing",
+        "ausencia de superficie oficial",
+        "misturar descoberta de recurso com clareza operacional"
+      ],
+      "no_source_score_policy": "na ausencia de fonte, a comparacao fica limitada a comentario de gap"
+    },
+    {
+      "criterion_id": "will_will_not_clarity",
+      "scale": {
+        "0": "O sistema promete agir sem delimitar o que nao fara.",
+        "1": "Existe alguma delimitacao, mas dispersa ou tecnica demais.",
+        "2": "Ha limites razoavelmente claros para a tarefa.",
+        "3": "Vai fazer e nao vai fazer aparecem de forma direta e segura."
+      },
+      "evidence_required": [
+        "fonte oficial com linguagem de limites ou escopo",
+        "acao sensivel coberta por contrato textual",
+        "restricoes explicitas"
+      ],
+      "invalid_conditions": [
+        "score baseado em inferencia sem texto",
+        "claim amplo de plataforma como se fosse contrato de tarefa",
+        "misturar permissao tecnica com linguagem ao usuario"
+      ],
+      "no_source_score_policy": "sem fonte com linguagem suficiente, nao pontuar"
+    },
+    {
+      "criterion_id": "approval_safety",
+      "scale": {
+        "0": "Nao ha gate humano verificavel para a tarefa.",
+        "1": "Gate humano existe mas sem contexto suficiente.",
+        "2": "Gate humano com contexto razoavel e acao clara.",
+        "3": "Gate humano com contexto, estados e baixa ambiguidade decisoria."
+      },
+      "evidence_required": [
+        "fonte oficial de aprovacao",
+        "descricao de pausar e retomar ou aprovar e negar",
+        "escopo do que pode ser aprovado"
+      ],
+      "invalid_conditions": [
+        "usar permissao de admin como se fosse aprovacao operacional",
+        "usar integracao third-party sem prova primaria",
+        "confundir notificar com aprovar"
+      ],
+      "no_source_score_policy": "sem prova primaria do gate, a tarefa fica not_supported_by_source ou unknown_due_to_source_gap"
+    },
+    {
+      "criterion_id": "risk_explanation",
+      "scale": {
+        "0": "Nao ha explicacao de risco verificavel.",
+        "1": "Risco e implicado, mas nao explicado em linguagem operacional.",
+        "2": "Existe explicacao parcial de risco ou impacto.",
+        "3": "Risco aparece com contexto, impacto e limite de interpretacao."
+      },
+      "evidence_required": [
+        "fonte oficial com linguagem de risco, seguranca ou impacto",
+        "descricao contextual da decisao",
+        "limite de interpretacao explicito"
+      ],
+      "invalid_conditions": [
+        "tratar log tecnico como explicacao de risco ao usuario",
+        "substituir risco por claim de trust marketing",
+        "pontuar por ausencia de erro visivel"
+      ],
+      "no_source_score_policy": "sem texto oficial de risco, manter comparacao apenas qualitativa e conservadora"
+    },
+    {
+      "criterion_id": "evidence_quality",
+      "scale": {
+        "0": "Nao ha historico verificavel da tarefa.",
+        "1": "Existe historico basico sem detalhes acionaveis.",
+        "2": "Historico com detalhes uteis para revisao.",
+        "3": "Historico ou recibo com boa rastreabilidade para decisao e suporte."
+      },
+      "evidence_required": [
+        "fonte oficial de history, logs ou receipts",
+        "campos ou filtros descritos",
+        "prova de como inspecionar detalhe da execucao"
+      ],
+      "invalid_conditions": [
+        "usar changelog de produto como recibo operacional",
+        "misturar analytics agregada com prova de tarefa individual",
+        "score sem fonte de rastreabilidade"
+      ],
+      "no_source_score_policy": "sem fonte primaria de historico, nota ausente"
+    },
+    {
+      "criterion_id": "rollback_honesty",
+      "scale": {
+        "0": "Nao ha semantica de desfazer, replay ou compensar.",
+        "1": "Existe reexecucao ou reversao tecnica sem honestidade sobre limites.",
+        "2": "Existe algum mecanismo util com limites reconheciveis.",
+        "3": "Mecanismo e honesto sobre reversivel, compensavel e irreversivel."
+      },
+      "evidence_required": [
+        "fonte oficial de replay, revert ou revision history",
+        "limites claros do mecanismo",
+        "distincao entre repetir e desfazer quando houver"
+      ],
+      "invalid_conditions": [
+        "tratar replay como undo total sem fonte",
+        "pontuar rollback sem explicitar limite",
+        "usar export/import como compensacao automatica"
+      ],
+      "no_source_score_policy": "na ausencia de prova primaria, registrar gap e nao pontuar"
+    },
+    {
+      "criterion_id": "degraded_state_clarity",
+      "scale": {
+        "0": "Falha ou degradacao nao aparece de forma verificavel.",
+        "1": "Erro aparece, mas sem proximo passo claro.",
+        "2": "Erro e monitorado com alguma capacidade de triagem.",
+        "3": "Erro ou degradacao combina estado, causa ou pista e proximo passo."
+      },
+      "evidence_required": [
+        "fonte oficial de history, analytics ou troubleshooting",
+        "status ou categorias de falha",
+        "descricao de como revisar detalhe"
+      ],
+      "invalid_conditions": [
+        "confundir monitoramento admin com clareza ao operador final",
+        "score baseado em promessas de confiabilidade",
+        "sem superficie oficial de falha"
+      ],
+      "no_source_score_policy": "sem fonte de falha ou degradacao, cobertura parcial ou gap"
+    },
+    {
+      "criterion_id": "mobile_readiness",
+      "scale": {
+        "0": "Nao existe superficie movel oficial verificavel.",
+        "1": "Existe acesso movel limitado ou incidental.",
+        "2": "Existe superficie movel para tarefas centrais.",
+        "3": "Existe superficie movel clara para agir e revisar com seguranca."
+      },
+      "evidence_required": [
+        "fonte oficial de app ou interface mobile",
+        "tarefas moveis citadas explicitamente",
+        "limites conhecidos da superficie"
+      ],
+      "invalid_conditions": [
+        "usar blog antigo como prova suficiente",
+        "confundir responsividade implied com superficie oficial",
+        "pontuar sem tarefa movel citada"
+      ],
+      "no_source_score_policy": "sem fonte oficial atual, classificar como unknown_due_to_source_gap"
+    },
+    {
+      "criterion_id": "auditability",
+      "scale": {
+        "0": "Sem trilha de auditoria verificavel.",
+        "1": "Logs existem mas sao limitados ou dificeis de governar.",
+        "2": "Auditoria e pesquisa existem com boa cobertura operacional.",
+        "3": "Auditoria combina eventos, filtros e boa governanca rastreavel."
+      },
+      "evidence_required": [
+        "fonte oficial de audit log ou activity history",
+        "campos, filtros ou exportacao descritos",
+        "escopo dos eventos auditados"
+      ],
+      "invalid_conditions": [
+        "usar case study como prova",
+        "misturar analytics agregada com trilha de auditoria",
+        "sem fonte primaria de eventos"
+      ],
+      "no_source_score_policy": "sem log ou audit trail oficial, nao pontuar"
+    },
+    {
+      "criterion_id": "dashboard_actionability",
+      "scale": {
+        "0": "Nao ha dashboard verificavel para a tarefa.",
+        "1": "Dashboard existe mas e mais vanity ou admin-only.",
+        "2": "Dashboard mostra sinais uteis de operacao.",
+        "3": "Dashboard ajuda a agir com contexto, risco ou priorizacao."
+      },
+      "evidence_required": [
+        "fonte oficial de analytics, reports ou dashboard",
+        "descricao dos sinais mostrados",
+        "tipo de decisao suportada"
+      ],
+      "invalid_conditions": [
+        "pontuar por homepage que promete visibilidade",
+        "confundir auditoria com dashboard operacional",
+        "usar numero agregado sem contexto"
+      ],
+      "no_source_score_policy": "na ausencia de fonte oficial, manter nota ausente"
+    },
+    {
+      "criterion_id": "demo_comprehensibility",
+      "scale": {
+        "0": "Nao ha evidencia oficial de demo segura ou teste guiado.",
+        "1": "Existe tutorial ou teste, mas pouco alinhado a historia de valor.",
+        "2": "Existe demo ou teste guiado compreensivel para parte da tarefa.",
+        "3": "Existe demo ou ambiente de teste claro, seguro e reutilizavel."
+      },
+      "evidence_required": [
+        "fonte oficial de tutorial, test mode ou testing center",
+        "delimitacao do que e real versus teste",
+        "meio de repetir a demonstracao"
+      ],
+      "invalid_conditions": [
+        "tratar marketing video como demo validada",
+        "pontuar sem delimitar ambiente de teste",
+        "usar trial comercial como prova de demo por tarefa"
+      ],
+      "no_source_score_policy": "sem ambiente oficial de teste ou demo, registrar apenas implicacao qualitativa"
+    }
+  ]
+}

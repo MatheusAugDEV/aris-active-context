@@ -1,0 +1,21 @@
+{
+  "phase_id": "BENCHUIX-23",
+  "Project_ARIS_changed": false,
+  "runtime_executed": false,
+  "real_apply_executed": false,
+  "product_executed": false,
+  "bedrock_executed": false,
+  "secrets_accessed": false,
+  "real_customer_data_used": false,
+  "real_billing_used": false,
+  "real_oauth_used": false,
+  "real_integrations_used": false,
+  "package_manager_executed": false,
+  "dependency_changed": false,
+  "live_route_opened": false,
+  "real_locks_opened": false,
+  "marketing_comparison_published": false,
+  "product_claim_made": false,
+  "competitor_scraping_executed": false,
+  "documentary_candidate_only": true
+}

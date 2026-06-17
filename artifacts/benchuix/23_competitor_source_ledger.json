@@ -1,0 +1,1167 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-23",
+    "status": "candidate",
+    "candidate_only": true,
+    "source_ledger_mode": "official_primary_first",
+    "minimum_tasks": [
+      "onboarding",
+      "create_automation",
+      "preview_simulation",
+      "approval",
+      "risk_explanation",
+      "evidence_receipt",
+      "rollback_undo_compensate",
+      "failure_degraded_mode",
+      "mobile",
+      "auditability",
+      "dashboard",
+      "demo"
+    ],
+    "minimum_competitors": [
+      "Zapier",
+      "Make",
+      "n8n",
+      "Microsoft Power Automate",
+      "Airtable AI",
+      "HubSpot Breeze",
+      "Salesforce Agentforce"
+    ],
+    "verified_on": "2026-06-16"
+  },
+  "sources": [
+    {
+      "source_id": "ZAPIER_PLATFORM_OVERVIEW",
+      "competitor": "Zapier",
+      "official_source_name": "What is Zapier?",
+      "url": "https://help.zapier.com/hc/en-us/articles/37518970271245-What-is-Zapier",
+      "source_type": "product_overview_help",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "platform_positioning",
+        "automation_category"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official help search result verified on 2026-06-16; used only as context because it is broad positioning copy.",
+      "claims_supported": [
+        "zapier_positions_itself_as_ai_orchestration_platform",
+        "zapier_combines_workflows_databases_forms_and_ai"
+      ],
+      "claims_not_supported": [
+        "task_specific_onboarding_time",
+        "risk_explanation_quality",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "high",
+      "usable_for_task_comparison": false,
+      "limitations": [
+        "Broad positioning page.",
+        "Not sufficient for scoring any task by itself."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_QUICKSTART",
+      "competitor": "Zapier",
+      "official_source_name": "Zap workflows quick start guide",
+      "url": "https://help.zapier.com/hc/en-us/articles/22234847450893-Zap-workflows-quick-start-guide",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "onboarding",
+        "create_automation"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16.",
+      "claims_supported": [
+        "blank_zap_creation_flow_exists",
+        "zap_editor_is_primary_creation_surface",
+        "draft_state_is_preserved"
+      ],
+      "claims_not_supported": [
+        "approval",
+        "audit_log_export_policy",
+        "mobile"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Covers creation flow, not downstream governance quality."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_HISTORY",
+      "competitor": "Zapier",
+      "official_source_name": "View and manage your Zap history",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "evidence_receipt",
+        "failure_degraded_mode",
+        "auditability",
+        "dashboard"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16; page carried June 15, 2026 update stamp.",
+      "claims_supported": [
+        "zap_run_log_exists",
+        "task_usage_review_exists",
+        "run_details_and_filters_exist",
+        "replay_is_reachable_from_history"
+      ],
+      "claims_not_supported": [
+        "user_facing_risk_explanation_language",
+        "mobile_governance_surface"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "History is operator oriented, not customer-facing proof language."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_HITL_APPROVAL",
+      "competitor": "Zapier",
+      "official_source_name": "Request approval to keep your workflow running with Human in the Loop",
+      "url": "https://help.zapier.com/hc/en-us/articles/38731463206029-Request-approval-to-keep-your-workflow-running-with-Human-in-the-Loop",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16.",
+      "claims_supported": [
+        "workflow_can_pause_for_human_review",
+        "approver_can_approve_decline_or_change_data",
+        "review_notifications_can_route_to_email_slack_or_other_zaps"
+      ],
+      "claims_not_supported": [
+        "risk_taxonomy",
+        "will_will_not_contract",
+        "customer_receipt"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Approval exists, but source does not prove strong risk explanation semantics."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_REPLAY",
+      "competitor": "Zapier",
+      "official_source_name": "Replay Zap runs",
+      "url": "https://help.zapier.com/hc/en-us/articles/8496241726989-Replay-Zap-runs",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "rollback_undo_compensate",
+        "failure_degraded_mode"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16; page carried May 29, 2026 update stamp.",
+      "claims_supported": [
+        "manual_replay_exists",
+        "autoreplay_exists_for_errors",
+        "entire_run_replay_exists"
+      ],
+      "claims_not_supported": [
+        "semantic_undo_of_real_world_effects",
+        "compensating_action_honesty"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Replay is not the same as an honest rollback contract."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_TEST_MODE",
+      "competitor": "Zapier",
+      "official_source_name": "How to use test mode data with Stripe on Zapier",
+      "url": "https://help.zapier.com/hc/en-us/articles/31812286026253-How-to-use-test-mode-data-with-Stripe-on-Zapier",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "preview_simulation",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16; page carried May 29, 2026 update stamp.",
+      "claims_supported": [
+        "app_specific_test_data_flow_exists",
+        "demo_without_real_money_is_possible"
+      ],
+      "claims_not_supported": [
+        "generic_deterministic_preview",
+        "multi_step_simulation_diff"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Evidence is connector specific.",
+        "Does not establish a platform-wide preview model."
+      ]
+    },
+    {
+      "source_id": "ZAPIER_MOBILE_OFFICIAL_GAP",
+      "competitor": "Zapier",
+      "official_source_name": "No current first-party mobile workspace document verified in this packet",
+      "url": "https://help.zapier.com/hc/en-us",
+      "source_type": "source_gap",
+      "source_status": "official_primary_unavailable",
+      "source_scope": [
+        "mobile"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Searches on 2026-06-16 found no current official mobile workflow control document strong enough for scoring.",
+      "claims_supported": [],
+      "claims_not_supported": [
+        "mobile_approval_workspace",
+        "mobile_history_review",
+        "mobile_operator_dashboard"
+      ],
+      "marketing_risk": "none",
+      "usable_for_task_comparison": false,
+      "limitations": [
+        "Cells that depend on mobile stay unknown due to source gap."
+      ]
+    },
+    {
+      "source_id": "MAKE_HOMEPAGE_MARKETING",
+      "competitor": "Make",
+      "official_source_name": "Make homepage",
+      "url": "https://www.make.com/en",
+      "source_type": "product_page",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "platform_positioning"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official search result verified on 2026-06-16; retained only for claim filtering.",
+      "claims_supported": [
+        "make_positions_itself_as_visual_ai_workflow_platform"
+      ],
+      "claims_not_supported": [
+        "approval_quality",
+        "risk_explanation",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "high",
+      "usable_for_task_comparison": false,
+      "limitations": [
+        "Homepage positioning is not enough for task scoring."
+      ]
+    },
+    {
+      "source_id": "MAKE_CREATE_SCENARIO",
+      "competitor": "Make",
+      "official_source_name": "Create your first scenario",
+      "url": "https://help.make.com/create-your-first-scenario",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "onboarding",
+        "create_automation",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16.",
+      "claims_supported": [
+        "first_scenario_tutorial_exists",
+        "visual_module_based_creation_exists",
+        "demo_notification_use_case_exists"
+      ],
+      "claims_not_supported": [
+        "approval",
+        "risk_explanation",
+        "mobile"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Tutorial proves builder onboarding, not approval or risk UX."
+      ]
+    },
+    {
+      "source_id": "MAKE_SCENARIO_HISTORY",
+      "competitor": "Make",
+      "official_source_name": "Scenario history",
+      "url": "https://help.make.com/scenario-history",
+      "source_type": "help_center",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "evidence_receipt",
+        "failure_degraded_mode",
+        "auditability",
+        "dashboard"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official help page on 2026-06-16.",
+      "claims_supported": [
+        "scenario_run_history_exists",
+        "change_log_exists",
+        "export_history_csv_exists",
+        "fulltext_search_exists_for_execution_logs"
+      ],
+      "claims_not_supported": [
+        "semantic_receipt_for_business_owner",
+        "rollback_contract",
+        "approval"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "History is operational telemetry, not trust-language evidence."
+      ]
+    },
+    {
+      "source_id": "MAKE_SCENARIOS_API",
+      "competitor": "Make",
+      "official_source_name": "Scenarios API reference",
+      "url": "https://developers.make.com/api-documentation/api-reference/scenarios",
+      "source_type": "developer_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "create_automation",
+        "auditability"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official developer docs on 2026-06-16.",
+      "claims_supported": [
+        "scenario_create_manage_execute_api_exists",
+        "scenario_inputs_can_be_inspected_and_managed"
+      ],
+      "claims_not_supported": [
+        "approval",
+        "mobile",
+        "customer_facing_risk_explanation"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Developer API does not prove owner-solo usability."
+      ]
+    },
+    {
+      "source_id": "MAKE_MOBILE_OFFICIAL_GAP",
+      "competitor": "Make",
+      "official_source_name": "No current official mobile workflow control document verified in this packet",
+      "url": "https://help.make.com/",
+      "source_type": "source_gap",
+      "source_status": "official_primary_unavailable",
+      "source_scope": [
+        "mobile"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Local verification on 2026-06-16 did not find a current official mobile control document strong enough for scoring.",
+      "claims_supported": [],
+      "claims_not_supported": [
+        "mobile_companion",
+        "mobile_approval_flow",
+        "mobile_dashboard"
+      ],
+      "marketing_risk": "none",
+      "usable_for_task_comparison": false,
+      "limitations": [
+        "Mobile cells remain unknown due to source gap."
+      ]
+    },
+    {
+      "source_id": "N8N_CHOOSE_N8N",
+      "competitor": "n8n",
+      "official_source_name": "Choose your n8n",
+      "url": "https://docs.n8n.io/choose-n8n/",
+      "source_type": "docs_overview",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "onboarding"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official docs search result verified on 2026-06-16; used because it distinguishes cloud quick start from self-hosted complexity.",
+      "claims_supported": [
+        "n8n_cloud_has_no_installation",
+        "self_hosted_requires_setup_and_technical_expertise"
+      ],
+      "claims_not_supported": [
+        "mobile",
+        "owner_solo_speed_in_product"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Search-result evidence is enough for coarse onboarding comparison, not detailed UX scoring."
+      ]
+    },
+    {
+      "source_id": "N8N_CREATE_WORKFLOW",
+      "competitor": "n8n",
+      "official_source_name": "Create a workflow",
+      "url": "https://docs.n8n.io/workflows/create/",
+      "source_type": "developer_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "create_automation"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official docs on 2026-06-16.",
+      "claims_supported": [
+        "workflow_canvas_creation_exists",
+        "trigger_first_creation_model_exists",
+        "publish_to_run_automatically_exists"
+      ],
+      "claims_not_supported": [
+        "approval",
+        "mobile",
+        "business_owner_microcopy"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Creation evidence is technical and editor-centric."
+      ]
+    },
+    {
+      "source_id": "N8N_EXECUTIONS",
+      "competitor": "n8n",
+      "official_source_name": "Executions",
+      "url": "https://docs.n8n.io/workflows/executions/",
+      "source_type": "developer_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "preview_simulation",
+        "evidence_receipt",
+        "failure_degraded_mode",
+        "auditability",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official docs on 2026-06-16.",
+      "claims_supported": [
+        "manual_execution_exists_for_testing",
+        "inactive_during_development_is_recommended",
+        "execution_history_exists"
+      ],
+      "claims_not_supported": [
+        "user_facing_receipt_language",
+        "rollback_contract",
+        "mobile"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Testing is operational, not a business-safe preview contract."
+      ]
+    },
+    {
+      "source_id": "N8N_HITL_APPROVAL",
+      "competitor": "n8n",
+      "official_source_name": "Human-in-the-loop for AI tool calls",
+      "url": "https://docs.n8n.io/advanced-ai/human-in-the-loop-tools/",
+      "source_type": "advanced_ai_docs",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official docs search result verified on 2026-06-16.",
+      "claims_supported": [
+        "tool_execution_can_require_human_approval",
+        "workflow_pauses_until_approve_or_deny",
+        "approval_channels_are_configurable"
+      ],
+      "claims_not_supported": [
+        "risk_taxonomy",
+        "customer_visible_will_not_contract"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Source is AI-tool focused, not broad business approval inbox design."
+      ]
+    },
+    {
+      "source_id": "N8N_EVALUATIONS",
+      "competitor": "n8n",
+      "official_source_name": "Evaluations overview",
+      "url": "https://docs.n8n.io/advanced-ai/evaluations/overview/",
+      "source_type": "advanced_ai_docs",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "dashboard",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official docs search result verified on 2026-06-16; used as evidence for evaluation-centric quality loops.",
+      "claims_supported": [
+        "test_case_comparison_exists",
+        "metric_based_evaluation_exists",
+        "quality_tracking_over_time_exists"
+      ],
+      "claims_not_supported": [
+        "owner_solo_dashboard",
+        "mobile"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Evaluation evidence helps agent quality review, not everyday operator dashboard clarity."
+      ]
+    },
+    {
+      "source_id": "N8N_EXPORT_IMPORT",
+      "competitor": "n8n",
+      "official_source_name": "Export and import workflows",
+      "url": "https://docs.n8n.io/workflows/export-import/",
+      "source_type": "developer_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "rollback_undo_compensate",
+        "auditability"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from official docs on 2026-06-16.",
+      "claims_supported": [
+        "workflow_json_export_exists",
+        "workflow_import_exists"
+      ],
+      "claims_not_supported": [
+        "operator_safe_undo_of_effects",
+        "receipt_for_real_world_compensation"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Version portability is not the same as end-user rollback honesty."
+      ]
+    },
+    {
+      "source_id": "N8N_MOBILE_OFFICIAL_GAP",
+      "competitor": "n8n",
+      "official_source_name": "No official mobile control surface document verified in this packet",
+      "url": "https://docs.n8n.io/",
+      "source_type": "source_gap",
+      "source_status": "official_primary_unavailable",
+      "source_scope": [
+        "mobile"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Local verification on 2026-06-16 did not find an official mobile operator surface strong enough for scoring.",
+      "claims_supported": [],
+      "claims_not_supported": [
+        "mobile_companion",
+        "mobile_approvals",
+        "mobile_dashboard"
+      ],
+      "marketing_risk": "none",
+      "usable_for_task_comparison": false,
+      "limitations": [
+        "Mobile cells remain unknown due to source gap."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_OVERVIEW",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "Power Platform overview entry for Power Automate",
+      "url": "https://learn.microsoft.com/en-us/power-apps/",
+      "source_type": "docs_overview",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "onboarding",
+        "automation_category"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Learn search result verified on 2026-06-16.",
+      "claims_supported": [
+        "power_automate_connects_apps_and_services",
+        "button_and_automated_flow_model_exists"
+      ],
+      "claims_not_supported": [
+        "owner_solo_time_to_value",
+        "risk_language"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "High-level category page, not a step-by-step onboarding proof."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_APPROVALS",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "Create and test an approval workflow with Power Automate",
+      "url": "https://learn.microsoft.com/en-us/power-automate/modern-approvals",
+      "source_type": "learn_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "create_automation",
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Microsoft Learn on 2026-06-16.",
+      "claims_supported": [
+        "approval_action_start_and_wait_exists",
+        "document_and_process_approval_examples_exist"
+      ],
+      "claims_not_supported": [
+        "deterministic_preview",
+        "risk_copy_quality"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Strong for approvals, weaker for preview and trust-language semantics."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_MOBILE_APPROVALS",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "Approve requests on a mobile device",
+      "url": "https://learn.microsoft.com/en-us/power-automate/mobile-approvals",
+      "source_type": "learn_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "mobile",
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Microsoft Learn on 2026-06-16.",
+      "claims_supported": [
+        "mobile_push_for_approvals_exists",
+        "approve_or_reject_from_mobile_exists"
+      ],
+      "claims_not_supported": [
+        "mobile_dashboard_for_owner_solo",
+        "risk_explanation_depth"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Focused on approvals, not broader mobile control-plane clarity."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_ACTIVITY_LOGS",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "View Power Automate activity logs in Microsoft Purview",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/activity-logging-auditing/activity-logs-power-automate",
+      "source_type": "learn_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "auditability"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Microsoft Learn on 2026-06-16; page carried recent update metadata in search results.",
+      "claims_supported": [
+        "purview_audit_logs_exist_for_flow_lifecycle_and_permissions",
+        "audit_search_and_filtering_exist"
+      ],
+      "claims_not_supported": [
+        "owner_solo_receipt_language",
+        "rollback"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Governance strength is enterprise leaning."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_ANALYTICS",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "View analytics for Power Automate cloud flows",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/analytics-flow",
+      "source_type": "learn_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "dashboard",
+        "failure_degraded_mode"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Microsoft Learn on 2026-06-16.",
+      "claims_supported": [
+        "analytics_reports_exist_for_runs_usage_errors_and_flow_types",
+        "shared_flows_and_connectors_are_reported"
+      ],
+      "claims_not_supported": [
+        "desktop_flow_inclusion",
+        "customer_facing_safe_language"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Analytics are admin-centric."
+      ]
+    },
+    {
+      "source_id": "POWER_AUTOMATE_RUN_HISTORY",
+      "competitor": "Microsoft Power Automate",
+      "official_source_name": "Manage cloud flow run history in Dataverse",
+      "url": "https://learn.microsoft.com/en-us/power-automate/dataverse/cloud-flow-run-metadata",
+      "source_type": "learn_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "evidence_receipt",
+        "failure_degraded_mode",
+        "auditability"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Microsoft Learn on 2026-06-16.",
+      "claims_supported": [
+        "flow_run_table_exists",
+        "status_duration_and_error_fields_exist",
+        "automation_center_uses_run_history"
+      ],
+      "claims_not_supported": [
+        "undo_or_compensation_contract",
+        "user_facing_receipt_copy"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Operational monitoring is strong, but it is not a simple owner-facing proof receipt."
+      ]
+    },
+    {
+      "source_id": "AIRTABLE_AUTOMATIONS",
+      "competitor": "Airtable AI",
+      "official_source_name": "Getting started with Airtable automations",
+      "url": "https://support.airtable.com/docs/getting-started-with-airtable-automations",
+      "source_type": "support_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "onboarding",
+        "create_automation",
+        "rollback_undo_compensate",
+        "evidence_receipt"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Airtable support on 2026-06-16.",
+      "claims_supported": [
+        "automation_creation_flow_exists",
+        "automation_history_exists",
+        "version_history_exists"
+      ],
+      "claims_not_supported": [
+        "deterministic_preview_before_run",
+        "risk_taxonomy"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Version history helps governance but is not the same as user-visible rollback honesty."
+      ]
+    },
+    {
+      "source_id": "AIRTABLE_GENERATE_WITH_AI",
+      "competitor": "Airtable AI",
+      "official_source_name": "Airtable automation actions: Generate with AI",
+      "url": "https://support.airtable.com/docs/airtable-automation-actions-generate-with-ai",
+      "source_type": "support_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "create_automation",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Airtable support on 2026-06-16.",
+      "claims_supported": [
+        "ai_actions_in_automations_exist",
+        "interface_form_plus_ai_generation_example_exists"
+      ],
+      "claims_not_supported": [
+        "approval_inbox",
+        "risk_explanation",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Useful for AI-assisted automation creation, not trust-core governance."
+      ]
+    },
+    {
+      "source_id": "AIRTABLE_MOBILE_INTERFACES",
+      "competitor": "Airtable AI",
+      "official_source_name": "Mobile interfaces in Airtable",
+      "url": "https://support.airtable.com/docs/mobile-interfaces-in-airtable",
+      "source_type": "support_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "mobile",
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Airtable support on 2026-06-16.",
+      "claims_supported": [
+        "mobile_optimized_interfaces_exist",
+        "immediate_actions_on_mobile_exist",
+        "approve_or_reject_on_mobile_exists"
+      ],
+      "claims_not_supported": [
+        "risk_explanation_quality",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Mobile support exists, but source does not prove dedicated trust-language patterns."
+      ]
+    },
+    {
+      "source_id": "AIRTABLE_AUDIT_LOGS",
+      "competitor": "Airtable AI",
+      "official_source_name": "How to Access Enterprise Audit Logs",
+      "url": "https://support.airtable.com/docs/accessing-enterprise-audit-logs-in-airtable",
+      "source_type": "support_docs",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "auditability",
+        "dashboard"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Airtable support on 2026-06-16.",
+      "claims_supported": [
+        "audit_log_search_exists",
+        "detailed_event_view_exists",
+        "csv_download_exists",
+        "audit_log_api_exists"
+      ],
+      "claims_not_supported": [
+        "owner_solo_receipt_language",
+        "preview_simulation"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Enterprise admin evidence is strong for auditability, weaker for owner-solo simplicity."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_BREEZE_OVERVIEW",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "Understand Breeze",
+      "url": "https://knowledge.hubspot.com/ai/understand-breeze",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "onboarding",
+        "dashboard",
+        "automation_category"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from HubSpot Knowledge Base on 2026-06-16.",
+      "claims_supported": [
+        "breeze_supports_tasks_content_information_and_workflows",
+        "breeze_has_assistant_agents_tools_knowledge_vaults_and_reporting"
+      ],
+      "claims_not_supported": [
+        "time_to_first_value",
+        "risk_explanation",
+        "rollback"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Overview is broad and must be paired with workflow or approval docs."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_RUN_AGENT_WORKFLOWS",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "Run agents using workflows",
+      "url": "https://knowledge.hubspot.com/workflows/run-agents-using-workflows",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "create_automation"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from HubSpot Knowledge Base on 2026-06-16.",
+      "claims_supported": [
+        "agents_can_run_directly_from_workflows",
+        "agent_inputs_and_outputs_are_configurable"
+      ],
+      "claims_not_supported": [
+        "preview_simulation",
+        "rollback_contract"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Workflow action exists, but source does not prove deterministic preview."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_APPROVALS",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "Overview of approvals in HubSpot",
+      "url": "https://knowledge.hubspot.com/account-management/overview-of-approvals-in-hubspot",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from HubSpot Knowledge Base on 2026-06-16; page carried May 19, 2026 update stamp.",
+      "claims_supported": [
+        "designated_user_approval_flows_exist",
+        "records_content_exports_quotes_and_marketing_assets_can_be_reviewed"
+      ],
+      "claims_not_supported": [
+        "explicit_risk_taxonomy",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Approvals are broad, but risk semantics are not detailed here."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_MOBILE_APPROVALS",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "Approve HubSpot content",
+      "url": "https://knowledge.hubspot.com/website-and-landing-pages/approve-hubspot-content",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "mobile",
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from HubSpot Knowledge Base on 2026-06-16.",
+      "claims_supported": [
+        "mobile_request_approval_exists",
+        "mobile_cancel_approval_exists",
+        "mobile_approve_or_request_changes_exists"
+      ],
+      "claims_not_supported": [
+        "mobile_dashboard_for_all_operations",
+        "risk_explanation"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Mobile approval support is content-centric, not a full automation command center."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_AUDIT_LOGS",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "View and export account activity history",
+      "url": "https://knowledge.hubspot.com/account-management/view-and-export-account-activity-history",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "auditability",
+        "dashboard",
+        "failure_degraded_mode"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from HubSpot Knowledge Base on 2026-06-16.",
+      "claims_supported": [
+        "audit_logs_exist",
+        "ai_summary_of_actions_exists",
+        "analyze_tab_totals_and_charts_exist",
+        "employee_access_history_download_exists"
+      ],
+      "claims_not_supported": [
+        "rollback_of_external_effects",
+        "deterministic_preview"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Strong governance and analytics evidence, but not a user-proof receipt."
+      ]
+    },
+    {
+      "source_id": "HUBSPOT_WORKFLOW_REVISION_HISTORY",
+      "competitor": "HubSpot Breeze",
+      "official_source_name": "View and revert changes to your workflow",
+      "url": "https://knowledge.hubspot.com/workflows/view-workflow-changes",
+      "source_type": "knowledge_base",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "rollback_undo_compensate"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official search result verified on 2026-06-16.",
+      "claims_supported": [
+        "workflow_revision_history_exists",
+        "workflow_revert_exists"
+      ],
+      "claims_not_supported": [
+        "compensating_action_for_external_side_effects"
+      ],
+      "marketing_risk": "low",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Search-result evidence is enough for workflow-change rollback comparison, not for effect compensation."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_AGENTFORCE_OVERVIEW",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Agentforce: The AI Agent Platform",
+      "url": "https://www.salesforce.com/agentforce/",
+      "source_type": "product_page",
+      "source_status": "official_primary_locally_verified",
+      "source_scope": [
+        "onboarding",
+        "create_automation",
+        "dashboard"
+      ],
+      "retrieved_or_prefetched_by": "codex_local_web_verification",
+      "source_freshness_note": "Opened from Salesforce product page on 2026-06-16.",
+      "claims_supported": [
+        "agent_lifecycle_tooling_exists",
+        "build_test_and_supervise_language_is_present",
+        "natural_language_configuration_language_is_present"
+      ],
+      "claims_not_supported": [
+        "task_specific_time_to_value",
+        "risk_explanation_for_end_users",
+        "rollback_honesty"
+      ],
+      "marketing_risk": "high",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "High-level product page; any scoring use must stay conservative and be paired with help sources."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_TESTING_CENTER",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Learn About Agentforce Testing Center",
+      "url": "https://help.salesforce.com/s/articleView?id=005228642&language=en_US&type=1",
+      "source_type": "help_center",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "preview_simulation",
+        "demo"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Salesforce Help search snippet verified on 2026-06-16; direct help page rendered behind shell in local open.",
+      "claims_supported": [
+        "testing_center_is_sandbox_like",
+        "simulate_real_world_user_interactions_exists"
+      ],
+      "claims_not_supported": [
+        "mobile",
+        "rollback"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Source was verified via official search snippet because the rendered help page was not fully accessible in local open."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_MOBILE_AGENTFORCE",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Connect an Agent to Lightning Experience and Mobile",
+      "url": "https://help.salesforce.com/s/articleView?id=ai.agent_deploy_emp_lex.htm&language=en_US&type=5",
+      "source_type": "help_center",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "mobile"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Salesforce Help search snippet verified on 2026-06-16; direct help page rendered behind shell in local open.",
+      "claims_supported": [
+        "agent_deployment_to_salesforce_mobile_exists"
+      ],
+      "claims_not_supported": [
+        "mobile_approval_inbox",
+        "owner_solo_mobile_clarity"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Evidence proves mobile reach, not simple mobile-first control-plane UX."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_ADVANCED_APPROVALS",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Advanced Approvals",
+      "url": "https://help.salesforce.com/s/articleView?id=ind.approvals_advanced_approvals.htm&language=en_US&type=5",
+      "source_type": "help_center",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "approval"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Salesforce Help search snippet verified on 2026-06-16; direct help page rendered behind shell in local open.",
+      "claims_supported": [
+        "complex_multi_step_approval_rules_exist",
+        "approval_preview_language_exists"
+      ],
+      "claims_not_supported": [
+        "risk_explanation_for_business_owner",
+        "rollback"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Search snippet is enough for approval availability, not for detailed copy comparison."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_EVENT_LOGS",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Enable Enhanced Event Logs",
+      "url": "https://help.salesforce.com/s/articleView?id=sf.copilot_setup_enhanced_event_logs.htm&language=en_US&type=5",
+      "source_type": "help_center",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "auditability",
+        "failure_degraded_mode"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Salesforce Help search snippet verified on 2026-06-16; direct help page rendered behind shell in local open.",
+      "claims_supported": [
+        "event_logs_capture_agent_events_and_user_messages",
+        "testing_and_troubleshooting_support_exists"
+      ],
+      "claims_not_supported": [
+        "customer_receipt",
+        "rollback"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Operational traces are strong, but they are not user-facing proof objects."
+      ]
+    },
+    {
+      "source_id": "SALESFORCE_AUDIT_DASHBOARDS",
+      "competitor": "Salesforce Agentforce",
+      "official_source_name": "Einstein Audit and Feedback Data",
+      "url": "https://help.salesforce.com/s/articleView?id=ai.generative_ai_feedback.htm&language=en_US&type=5",
+      "source_type": "help_center",
+      "source_status": "official_primary_advisory_prefetched",
+      "source_scope": [
+        "dashboard",
+        "auditability"
+      ],
+      "retrieved_or_prefetched_by": "codex_web_search_result_verification",
+      "source_freshness_note": "Official Salesforce Help search snippet verified on 2026-06-16; direct help page rendered behind shell in local open.",
+      "claims_supported": [
+        "audit_and_feedback_reports_and_dashboards_exist"
+      ],
+      "claims_not_supported": [
+        "owner_solo_actionability",
+        "risk_explanation"
+      ],
+      "marketing_risk": "medium",
+      "usable_for_task_comparison": true,
+      "limitations": [
+        "Snippet proves dashboard existence, not simplicity or decision quality."
+      ]
+    }
+  ],
+  "all_competitors_have_source_or_are_excluded": true
+}

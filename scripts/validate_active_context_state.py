@@ -1833,7 +1833,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
         _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
         _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
-        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-22", "benchuix_track.current_candidate_phase mismatch")
+        _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-23", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
         _require(benchuix_track.get("schema_tracking_repair_status") == "completed", "benchuix_track.schema_tracking_repair_status mismatch")
@@ -1847,7 +1847,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require(benchuix_track.get("admission_packet_artifact") == "artifacts/benchuix/00_admission_packet.json", "benchuix_track.admission_packet_artifact mismatch")
         _require(benchuix_track.get("no_real_execution_attestation_artifact") == "artifacts/benchuix/00_no_real_execution_attestation.json", "benchuix_track.no_real_execution_attestation_artifact mismatch")
         _require(benchuix_track.get("trilha_lock_active") is True, "benchuix_track.trilha_lock_active mismatch")
-        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-23", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
+        _require(benchuix_track.get("candidate_next_phase_after_operator_gate") == "BENCHUIX-24", "benchuix_track.candidate_next_phase_after_operator_gate mismatch")
         _require(benchuix_track.get("standing_candidate_authorization_active") is True, "benchuix_track.standing_candidate_authorization_active mismatch")
         _require(
             benchuix_track.get("standing_candidate_authorization_scope") == "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
@@ -2000,6 +2000,15 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
         _require((ROOT / "artifacts/benchuix/22_benchuix21_gap_resolution_matrix.json").exists(), "BENCHUIX-22 benchuix21 gap resolution matrix missing on disk")
         _require((ROOT / "artifacts/benchuix/22_no_real_execution_attestation.json").exists(), "BENCHUIX-22 no-real-execution attestation missing on disk")
         _require((ROOT / "artifacts/benchuix/22_validation_evidence.json").exists(), "BENCHUIX-22 validation evidence missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_operator_opening_source.json").exists(), "BENCHUIX-23 operator opening source missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_competitor_source_ledger.json").exists(), "BENCHUIX-23 competitor source ledger missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_competitive_task_matrix.md").exists(), "BENCHUIX-23 competitive task matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_task_benchmark_scoring_rubric.json").exists(), "BENCHUIX-23 task benchmark scoring rubric missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_competitor_task_coverage_matrix.json").exists(), "BENCHUIX-23 competitor task coverage matrix missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_aris_implication_gap_ledger.json").exists(), "BENCHUIX-23 ARIS implication gap ledger missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_marketing_claim_filter_report.json").exists(), "BENCHUIX-23 marketing claim filter report missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_no_real_execution_attestation.json").exists(), "BENCHUIX-23 no-real-execution attestation missing on disk")
+        _require((ROOT / "artifacts/benchuix/23_validation_evidence.json").exists(), "BENCHUIX-23 validation evidence missing on disk")
 
         benchuix_07_operator = _load_json(ROOT / "artifacts/benchuix/07_operator_opening_source.json")
         _require(benchuix_07_operator.get("phase_id") == "BENCHUIX-07", "BENCHUIX-07 operator source phase_id mismatch")
@@ -4605,6 +4614,281 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "BENCHUIX_22_SYNTHETIC_ONLY_OK",
             ):
                 _require(results.get(key) is True, f"BENCHUIX-22 validation evidence missing {key}")
+
+        benchuix_23_operator = _load_json(ROOT / "artifacts/benchuix/23_operator_opening_source.json")
+        _require(benchuix_23_operator.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 operator source phase_id mismatch")
+        _require(benchuix_23_operator.get("opened_from_candidate_phase") == "BENCHUIX-22", "BENCHUIX-23 opened_from_candidate_phase mismatch")
+        _require(benchuix_23_operator.get("opened_candidate_phase") == "BENCHUIX-23", "BENCHUIX-23 opened_candidate_phase mismatch")
+        _require(
+            benchuix_23_operator.get("standing_authorization_artifact") == "artifacts/benchuix/standing_authorization_packet.json",
+            "BENCHUIX-23 standing_authorization_artifact mismatch",
+        )
+        _require(
+            benchuix_23_operator.get("standing_authorization_commit") == "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+            "BENCHUIX-23 standing_authorization_commit mismatch",
+        )
+        _require(
+            benchuix_23_operator.get("previous_candidate_commit") == "90b53a3ecdd95bed99c0c0b9700fa087cd80eca1",
+            "BENCHUIX-23 previous_candidate_commit mismatch",
+        )
+        _require(
+            benchuix_23_operator.get("previous_candidate_ci_run") == "27659088398",
+            "BENCHUIX-23 previous_candidate_ci_run mismatch",
+        )
+        _require(benchuix_23_operator.get("opened_without_new_operator_ritual") is True, "BENCHUIX-23 opened_without_new_operator_ritual mismatch")
+        _require(benchuix_23_operator.get("all_real_locks_remain_false") is True, "BENCHUIX-23 all_real_locks_remain_false mismatch")
+        _require(benchuix_23_operator.get("bedrock_preparation_exception_recorded") is True, "BENCHUIX-23 bedrock_preparation_exception_recorded mismatch")
+        _require(bool(benchuix_23_operator.get("bedrock_preparation_exception_scope")), "BENCHUIX-23 bedrock_preparation_exception_scope missing")
+
+        benchuix_23_ledger = _load_json(ROOT / "artifacts/benchuix/23_competitor_source_ledger.json")
+        benchuix_23_ledger_metadata = benchuix_23_ledger.get("metadata", {})
+        _require(benchuix_23_ledger_metadata.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 source ledger metadata.phase_id mismatch")
+        _require(benchuix_23_ledger_metadata.get("status") == "candidate", "BENCHUIX-23 source ledger metadata.status mismatch")
+        required_tasks = {
+            "onboarding",
+            "create_automation",
+            "preview_simulation",
+            "approval",
+            "risk_explanation",
+            "evidence_receipt",
+            "rollback_undo_compensate",
+            "failure_degraded_mode",
+            "mobile",
+            "auditability",
+            "dashboard",
+            "demo",
+        }
+        required_competitors = {
+            "Zapier",
+            "Make",
+            "n8n",
+            "Microsoft Power Automate",
+            "Airtable AI",
+            "HubSpot Breeze",
+            "Salesforce Agentforce",
+        }
+        _require(set(benchuix_23_ledger_metadata.get("minimum_tasks", [])) == required_tasks, "BENCHUIX-23 source ledger minimum_tasks mismatch")
+        _require(set(benchuix_23_ledger_metadata.get("minimum_competitors", [])) == required_competitors, "BENCHUIX-23 source ledger minimum_competitors mismatch")
+        allowed_source_statuses = {
+            "official_primary_advisory_prefetched",
+            "official_primary_locally_verified",
+            "official_primary_unavailable",
+            "excluded_insufficient_source",
+        }
+        required_source_keys = {
+            "source_id",
+            "competitor",
+            "official_source_name",
+            "source_type",
+            "source_status",
+            "source_scope",
+            "retrieved_or_prefetched_by",
+            "source_freshness_note",
+            "claims_supported",
+            "claims_not_supported",
+            "marketing_risk",
+            "usable_for_task_comparison",
+            "limitations",
+        }
+        benchuix_23_sources = benchuix_23_ledger.get("sources", [])
+        benchuix_23_source_ids: set[str] = set()
+        benchuix_23_usable_source_ids: set[str] = set()
+        benchuix_23_competitors_seen: set[str] = set()
+        for entry in benchuix_23_sources:
+            _require(required_source_keys <= set(entry), f"BENCHUIX-23 source ledger entry missing keys: {required_source_keys - set(entry)}")
+            _require(entry.get("competitor") in required_competitors, "BENCHUIX-23 source ledger competitor mismatch")
+            _require(entry.get("source_status") in allowed_source_statuses, "BENCHUIX-23 source ledger source_status mismatch")
+            _require(isinstance(entry.get("claims_supported"), list), "BENCHUIX-23 source ledger claims_supported must be list")
+            _require(isinstance(entry.get("claims_not_supported"), list), "BENCHUIX-23 source ledger claims_not_supported must be list")
+            _require(isinstance(entry.get("limitations"), list), "BENCHUIX-23 source ledger limitations must be list")
+            _require(isinstance(entry.get("usable_for_task_comparison"), bool), "BENCHUIX-23 source ledger usable_for_task_comparison must be boolean")
+            source_id = entry.get("source_id")
+            _require(source_id not in benchuix_23_source_ids, f"BENCHUIX-23 duplicate source_id: {source_id}")
+            benchuix_23_source_ids.add(source_id)
+            benchuix_23_competitors_seen.add(entry.get("competitor"))
+            if entry.get("usable_for_task_comparison") is True:
+                benchuix_23_usable_source_ids.add(source_id)
+            if entry.get("source_status") in {"official_primary_unavailable", "excluded_insufficient_source"}:
+                _require(entry.get("usable_for_task_comparison") is False, "BENCHUIX-23 unavailable source cannot be used for task comparison")
+        _require(benchuix_23_competitors_seen == required_competitors, "BENCHUIX-23 source ledger must mention every required competitor")
+        _require(benchuix_23_ledger.get("all_competitors_have_source_or_are_excluded") is True, "BENCHUIX-23 all_competitors_have_source_or_are_excluded mismatch")
+
+        benchuix_23_task_matrix = (ROOT / "artifacts/benchuix/23_competitive_task_matrix.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "## onboarding",
+            "## create_automation",
+            "## preview_simulation",
+            "## approval",
+            "## risk_explanation",
+            "## evidence_receipt",
+            "## rollback_undo_compensate",
+            "## failure_degraded_mode",
+            "## mobile",
+            "## auditability",
+            "## dashboard",
+            "## demo",
+            "candidate-only",
+            "limitação",
+        ):
+            _require(required_snippet in benchuix_23_task_matrix, f"BENCHUIX-23 task matrix missing section: {required_snippet}")
+        _require("ARIS vence" not in benchuix_23_task_matrix, "BENCHUIX-23 task matrix cannot declare global victory")
+        _require("market leadership" not in benchuix_23_task_matrix.lower(), "BENCHUIX-23 task matrix cannot declare market leadership")
+
+        benchuix_23_rubric = _load_json(ROOT / "artifacts/benchuix/23_task_benchmark_scoring_rubric.json")
+        rubric_metadata = benchuix_23_rubric.get("metadata", {})
+        _require(rubric_metadata.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 rubric metadata.phase_id mismatch")
+        _require(rubric_metadata.get("status") == "candidate", "BENCHUIX-23 rubric metadata.status mismatch")
+        expected_criteria = {
+            "time_to_first_value",
+            "clarity_of_next_step",
+            "will_will_not_clarity",
+            "approval_safety",
+            "risk_explanation",
+            "evidence_quality",
+            "rollback_honesty",
+            "degraded_state_clarity",
+            "mobile_readiness",
+            "auditability",
+            "dashboard_actionability",
+            "demo_comprehensibility",
+        }
+        rubric_criteria = benchuix_23_rubric.get("criteria", [])
+        _require({entry.get("criterion_id") for entry in rubric_criteria} == expected_criteria, "BENCHUIX-23 rubric criteria mismatch")
+        for entry in rubric_criteria:
+            scale = entry.get("scale", {})
+            _require(set(scale) == {"0", "1", "2", "3"}, f"BENCHUIX-23 rubric scale mismatch for {entry.get('criterion_id')}")
+            _require(isinstance(entry.get("evidence_required"), list) and entry.get("evidence_required"), f"BENCHUIX-23 rubric evidence_required missing for {entry.get('criterion_id')}")
+            _require(isinstance(entry.get("invalid_conditions"), list) and entry.get("invalid_conditions"), f"BENCHUIX-23 rubric invalid_conditions missing for {entry.get('criterion_id')}")
+            _require(bool(entry.get("no_source_score_policy")), f"BENCHUIX-23 rubric no_source_score_policy missing for {entry.get('criterion_id')}")
+
+        benchuix_23_coverage = _load_json(ROOT / "artifacts/benchuix/23_competitor_task_coverage_matrix.json")
+        coverage_metadata = benchuix_23_coverage.get("metadata", {})
+        _require(coverage_metadata.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 coverage metadata.phase_id mismatch")
+        _require(coverage_metadata.get("status") == "candidate", "BENCHUIX-23 coverage metadata.status mismatch")
+        _require(set(benchuix_23_coverage.get("tasks", [])) == required_tasks, "BENCHUIX-23 coverage tasks mismatch")
+        _require(set(benchuix_23_coverage.get("competitors", [])) == required_competitors, "BENCHUIX-23 coverage competitors mismatch")
+        allowed_coverage_statuses = {
+            "supported",
+            "partial",
+            "not_supported_by_source",
+            "not_applicable",
+            "unknown_due_to_source_gap",
+        }
+        rows = benchuix_23_coverage.get("rows", [])
+        _require(len(rows) == len(required_competitors), "BENCHUIX-23 coverage rows length mismatch")
+        coverage_competitors_seen: set[str] = set()
+        for row in rows:
+            competitor = row.get("competitor")
+            _require(competitor in required_competitors, "BENCHUIX-23 coverage row competitor mismatch")
+            coverage_competitors_seen.add(competitor)
+            cells = row.get("task_coverage", {})
+            _require(set(cells) == required_tasks, f"BENCHUIX-23 coverage cells mismatch for {competitor}")
+            for task_id, cell in cells.items():
+                _require({"coverage_status", "source_id", "note", "aris_implication"} <= set(cell), f"BENCHUIX-23 coverage cell missing keys for {competitor}/{task_id}")
+                _require(cell.get("coverage_status") in allowed_coverage_statuses, f"BENCHUIX-23 coverage_status mismatch for {competitor}/{task_id}")
+                _require(cell.get("source_id") in benchuix_23_source_ids, f"BENCHUIX-23 coverage source_id unknown for {competitor}/{task_id}")
+                _require(bool(cell.get("note")), f"BENCHUIX-23 coverage note missing for {competitor}/{task_id}")
+                _require(bool(cell.get("aris_implication")), f"BENCHUIX-23 coverage aris_implication missing for {competitor}/{task_id}")
+                if cell.get("coverage_status") in {"supported", "partial"}:
+                    _require(cell.get("source_id") in benchuix_23_usable_source_ids, f"BENCHUIX-23 supported/partial cell must use usable source for {competitor}/{task_id}")
+        _require(coverage_competitors_seen == required_competitors, "BENCHUIX-23 coverage must include every competitor")
+        _require(benchuix_23_coverage.get("all_competitors_have_source_or_are_excluded") is True, "BENCHUIX-23 coverage all_competitors_have_source_or_are_excluded mismatch")
+
+        benchuix_23_gap_ledger = _load_json(ROOT / "artifacts/benchuix/23_aris_implication_gap_ledger.json")
+        gap_metadata = benchuix_23_gap_ledger.get("metadata", {})
+        _require(gap_metadata.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 gap ledger metadata.phase_id mismatch")
+        _require(gap_metadata.get("status") == "candidate", "BENCHUIX-23 gap ledger metadata.status mismatch")
+        allowed_destinations = {
+            "BENCHUIX-24",
+            "BENCHUIX-25",
+            "BENCHUIX-26",
+            "BENCHUIX-27",
+            "CRISOL",
+            "EXT-SEC",
+            "BEDROCK_INPUT",
+            "DEFERRED_WITH_REASON",
+        }
+        allowed_finding_types = {"aris_strength", "aris_gap", "aris_learning", "source_gap", "market_risk"}
+        gap_entries = benchuix_23_gap_ledger.get("findings", [])
+        for entry in gap_entries:
+            _require(
+                {
+                    "gap_id",
+                    "task",
+                    "competitor",
+                    "finding_type",
+                    "finding",
+                    "evidence_source_id",
+                    "implication_for_aris",
+                    "destination_phase",
+                    "blocks_candidate_pass",
+                } <= set(entry),
+                "BENCHUIX-23 gap ledger entry missing keys",
+            )
+            _require(entry.get("task") in required_tasks, f"BENCHUIX-23 gap task mismatch: {entry.get('task')}")
+            _require(entry.get("competitor") in required_competitors, f"BENCHUIX-23 gap competitor mismatch: {entry.get('competitor')}")
+            _require(entry.get("finding_type") in allowed_finding_types, f"BENCHUIX-23 gap finding_type mismatch: {entry.get('finding_type')}")
+            _require(entry.get("evidence_source_id") in benchuix_23_source_ids, f"BENCHUIX-23 gap evidence_source_id mismatch: {entry.get('evidence_source_id')}")
+            _require(entry.get("destination_phase") in allowed_destinations, f"BENCHUIX-23 destination mismatch: {entry.get('destination_phase')}")
+            _require(isinstance(entry.get("blocks_candidate_pass"), bool), f"BENCHUIX-23 blocks_candidate_pass must be boolean for {entry.get('gap_id')}")
+            _require(bool(entry.get("implication_for_aris")), f"BENCHUIX-23 implication_for_aris missing for {entry.get('gap_id')}")
+        _require(benchuix_23_gap_ledger.get("all_gaps_have_destination") is True, "BENCHUIX-23 all_gaps_have_destination mismatch")
+
+        benchuix_23_marketing = _load_json(ROOT / "artifacts/benchuix/23_marketing_claim_filter_report.json")
+        _require(benchuix_23_marketing.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 marketing report phase_id mismatch")
+        _require(benchuix_23_marketing.get("feature_list_only_comparison") is False, "BENCHUIX-23 feature_list_only_comparison must be false")
+        _require(benchuix_23_marketing.get("marketing_claim_used_as_proof") is False, "BENCHUIX-23 marketing_claim_used_as_proof must be false")
+        for claim in benchuix_23_marketing.get("discarded_claims", []):
+            _require({"claim", "source_id", "discard_reason", "can_be_used_as_context_only", "used_for_scoring"} <= set(claim), "BENCHUIX-23 marketing claim entry missing keys")
+            _require(claim.get("source_id") in benchuix_23_source_ids, "BENCHUIX-23 marketing claim source_id mismatch")
+            _require(claim.get("used_for_scoring") is False, "BENCHUIX-23 discarded marketing claim cannot be used for scoring")
+
+        benchuix_23_no_real = _load_json(ROOT / "artifacts/benchuix/23_no_real_execution_attestation.json")
+        _require(benchuix_23_no_real.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "package_manager_executed",
+            "dependency_changed",
+            "live_route_opened",
+            "real_locks_opened",
+            "marketing_comparison_published",
+            "product_claim_made",
+            "competitor_scraping_executed",
+        ):
+            _require(benchuix_23_no_real.get(key) is False, f"BENCHUIX-23 no-real {key} must be false")
+        _require(benchuix_23_no_real.get("documentary_candidate_only") is True, "BENCHUIX-23 documentary_candidate_only mismatch")
+
+        benchuix_23_evidence = _load_json(ROOT / "artifacts/benchuix/23_validation_evidence.json")
+        _require(benchuix_23_evidence.get("phase_id") == "BENCHUIX-23", "BENCHUIX-23 validation evidence phase_id mismatch")
+        _require(
+            benchuix_23_evidence.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-23 validation evidence status mismatch",
+        )
+        if benchuix_23_evidence.get("status") == "local_validation_pass_recorded":
+            results = benchuix_23_evidence.get("results", {})
+            for key in (
+                "BENCHUIX_23_SOURCE_LEDGER_OK",
+                "BENCHUIX_23_TASK_MATRIX_OK",
+                "BENCHUIX_23_SCORING_RUBRIC_OK",
+                "BENCHUIX_23_COVERAGE_MATRIX_OK",
+                "BENCHUIX_23_GAP_LEDGER_OK",
+                "BENCHUIX_23_MARKETING_FILTER_OK",
+                "BENCHUIX_23_TRACKING_AND_LOCKS_OK",
+                "BENCHUIX_23_ALL_COMPARISONS_HAVE_TASK_AND_SOURCE_OK",
+                "BENCHUIX_23_ALL_GAPS_HAVE_DESTINATION_OK",
+                "BENCHUIX_23_MARKETING_CLAIM_NOT_USED_AS_PROOF_OK",
+                "BENCHUIX_23_ALL_COMPETITORS_HAVE_SOURCE_OR_ARE_EXCLUDED_OK",
+            ):
+                _require(results.get(key) is True, f"BENCHUIX-23 validation evidence missing {key}")
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
