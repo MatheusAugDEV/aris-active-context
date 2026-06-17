@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-27A",
+    "layer_name": "ARIS Visual Sandbox",
+    "artifact_type": "visual_test_criteria",
+    "candidate_only": true,
+    "synthetic_only": true,
+    "real_user_testing_executed": false,
+    "runtime_testing_executed": false,
+    "state_touched": false
+  },
+  "criteria": [
+    {
+      "criterion_id": "VTC-001",
+      "statement": "User understands what ARIS will do.",
+      "evidence_field": "will_do",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-002",
+      "statement": "User understands what ARIS will not do.",
+      "evidence_field": "will_not_do",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-003",
+      "statement": "User understands the risk.",
+      "evidence_field": "risk",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-004",
+      "statement": "User knows whether approval is required.",
+      "evidence_field": "approval_required",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-005",
+      "statement": "User sees a receipt or evidence plan.",
+      "evidence_field": "evidence_plan",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-006",
+      "statement": "User knows whether the action can be undone or compensated.",
+      "evidence_field": "rollback_or_compensation",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-007",
+      "statement": "User understands no real state was touched.",
+      "evidence_field": "state_touched",
+      "required_value": false,
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-008",
+      "statement": "Screen does not use technical jargon as the primary language layer.",
+      "evidence_field": "plain_business_language",
+      "required_for_every_screen": true
+    },
+    {
+      "criterion_id": "VTC-009",
+      "statement": "SandboxBadge appears on every required screen.",
+      "evidence_field": "sandbox_badge_required",
+      "required_value": true,
+      "required_for_every_screen": true
+    },
+    {
+      "criterion_id": "VTC-010",
+      "statement": "Every scenario covers all seven sensitive-action fields.",
+      "evidence_field": "required_action_contract_fields",
+      "required_for_every_scenario": true
+    },
+    {
+      "criterion_id": "VTC-011",
+      "statement": "Degraded mode blocks anything that resembles execution.",
+      "evidence_field": "forbidden_controls",
+      "required_for_screen": "degraded_failure"
+    },
+    {
+      "criterion_id": "VTC-012",
+      "statement": "No React executable artifact, package manifest or preview artifact exists for BENCHUIX-27A.",
+      "evidence_field": "no_executable_visual_artifacts",
+      "required_value": true
+    }
+  ],
+  "required_screens": [
+    "today",
+    "approve",
+    "history_receipts",
+    "rollback_undo",
+    "degraded_failure"
+  ],
+  "required_scenarios": [
+    "barbearia_after_hours_vip_exception",
+    "mercado_suspected_refund_declined",
+    "escritorio_attachment_intercepted"
+  ],
+  "required_components": [
+    "ActionContractCard",
+    "WillDoList",
+    "WillNotDoList",
+    "RiskBadge",
+    "ApprovalRequirement",
+    "EvidencePreview",
+    "RollbackStatus",
+    "StateTouchedIndicator",
+    "SandboxBadge"
+  ],
+  "required_scenario_fields": [
+    "scenario_id",
+    "domain",
+    "event",
+    "will_do",
+    "will_not_do",
+    "risk",
+    "approval_required",
+    "decision_options",
+    "evidence_plan",
+    "receipt_example",
+    "rollback_or_compensation",
+    "state_touched",
+    "synthetic_only"
+  ],
+  "must_remain_false": [
+    "real_user_testing_executed",
+    "runtime_testing_executed",
+    "state_touched"
+  ],
+  "absolute_failure_conditions": [
+    "missing_sandbox_badge",
+    "missing_will_not_do",
+    "missing_state_touched_false",
+    "approval_without_risk",
+    "receipt_without_evidence",
+    "degraded_mode_with_execution_cta",
+    "react_executable_created",
+    "package_json_created",
+    "npm_executed",
+    "preview_run",
+    "project_aris_mutated",
+    "crisol_admitted"
+  ]
+}

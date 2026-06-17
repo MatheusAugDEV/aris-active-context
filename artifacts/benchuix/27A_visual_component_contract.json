@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-27A",
+    "layer_name": "ARIS Visual Sandbox",
+    "artifact_type": "visual_component_contract",
+    "candidate_only": true,
+    "synthetic_only": true,
+    "executable_component_code_created": false,
+    "state_touched": false
+  },
+  "mandatory_primitive": {
+    "component": "ActionContractCard",
+    "required_on": [
+      "sensitive_action",
+      "approval",
+      "automatic_block",
+      "refusal",
+      "receipt_detail",
+      "rollback_or_compensation",
+      "degraded_mode"
+    ],
+    "children": [
+      "WillDoList",
+      "WillNotDoList",
+      "RiskBadge",
+      "ApprovalRequirement",
+      "EvidencePreview",
+      "RollbackStatus",
+      "StateTouchedIndicator",
+      "SandboxBadge"
+    ],
+    "must_never_hide": [
+      "will_not_do",
+      "risk",
+      "approval_required",
+      "evidence_plan",
+      "rollback_or_compensation",
+      "state_touched"
+    ]
+  },
+  "components": [
+    {
+      "name": "AppShell",
+      "role": "Persistent screen structure with visible sandbox context.",
+      "required_props": [
+        "screen_id",
+        "scenario_id",
+        "sandbox_label",
+        "state_touched"
+      ],
+      "forbidden_behavior": [
+        "real_auth_shell",
+        "real_workspace_switching",
+        "live_tenant_context"
+      ]
+    },
+    {
+      "name": "BottomTabBar",
+      "role": "Primary navigation between required screens.",
+      "required_items": [
+        "Hoje",
+        "Aprovar",
+        "Historico",
+        "Desfazer",
+        "Falha"
+      ],
+      "state_touched": false
+    },
+    {
+      "name": "ScenarioSwitcher",
+      "role": "Switch between synthetic domains.",
+      "required_scenarios": [
+        "barbearia_after_hours_vip_exception",
+        "mercado_suspected_refund_declined",
+        "escritorio_attachment_intercepted"
+      ],
+      "forbidden_behavior": [
+        "loading_real_tenant",
+        "saving_selection_remote"
+      ]
+    },
+    {
+      "name": "TodaySummary",
+      "role": "Summarize current synthetic attention items.",
+      "required_fields": [
+        "priority",
+        "status",
+        "risk",
+        "approval_required",
+        "state_touched"
+      ]
+    },
+    {
+      "name": "PendingItem",
+      "role": "Compact representation of an action requiring decision or awareness.",
+      "required_fields": [
+        "event",
+        "state",
+        "risk",
+        "needs_decision",
+        "evidence_preview"
+      ]
+    },
+    {
+      "name": "ApprovalPanel",
+      "role": "Expanded decision surface for the operator.",
+      "required_fields": [
+        "action_contract",
+        "decision_options",
+        "decision_consequence",
+        "operator_gate"
+      ],
+      "forbidden_behavior": [
+        "auto_submit",
+        "preselected_sensitive_approval"
+      ]
+    },
+    {
+      "name": "DecisionBar",
+      "role": "Offer only safe synthetic decisions.",
+      "allowed_options": [
+        "Aprovar excecao sintetica",
+        "Recusar",
+        "Manter bloqueado",
+        "Enviar para revisao",
+        "Gerar comprovante"
+      ],
+      "forbidden_options": [
+        "Executar agora",
+        "Sincronizar real",
+        "Cobrar",
+        "Conectar conta",
+        "Enviar mensagem real"
+      ]
+    },
+    {
+      "name": "ReceiptCard",
+      "role": "Scannable proof summary.",
+      "required_fields": [
+        "receipt_id",
+        "decision",
+        "risk",
+        "verification_code",
+        "state_touched"
+      ]
+    },
+    {
+      "name": "ReceiptDetail",
+      "role": "Full synthetic proof surface.",
+      "required_fields": [
+        "will_do",
+        "will_not_do",
+        "decision",
+        "permission_used",
+        "evidence_summary",
+        "rollback_status",
+        "verification_code",
+        "no_real_state_touched"
+      ]
+    },
+    {
+      "name": "UndoSheet",
+      "role": "Explain reversal or compensation boundary.",
+      "required_fields": [
+        "rollback_type",
+        "operator_action_required",
+        "story_effect",
+        "real_world_effect",
+        "evidence_generated"
+      ]
+    },
+    {
+      "name": "DegradedBanner",
+      "role": "Immediate fail-closed status banner.",
+      "required_fields": [
+        "reason",
+        "blocked_actions",
+        "safe_next_step"
+      ]
+    },
+    {
+      "name": "DegradedScreen",
+      "role": "Full degraded mode surface with no execution-looking actions.",
+      "required_fields": [
+        "failure_summary",
+        "what_is_available",
+        "what_is_blocked",
+        "evidence_plan",
+        "state_touched"
+      ]
+    },
+    {
+      "name": "StatusPill",
+      "role": "Compact state label.",
+      "allowed_states": [
+        "DETECTADO",
+        "PROPOSTO",
+        "BLOQUEADO_AUTO",
+        "AGUARDANDO_APROVACAO",
+        "APROVADO",
+        "RECUSADO",
+        "COMPROVANTE_GERADO",
+        "ROLLBACK_DISPONIVEL",
+        "DESFEITO",
+        "MODO_DEGRADADO"
+      ]
+    },
+    {
+      "name": "SandboxBadge",
+      "role": "Persistent candidate-only and synthetic-only marker.",
+      "required_text": "Sandbox candidate-only. Dados sinteticos. Nenhum estado real foi tocado.",
+      "required_on_every_screen": true
+    }
+  ],
+  "global_forbidden_behaviors": [
+    "fetch",
+    "xhr",
+    "websocket",
+    "real_auth",
+    "real_backend",
+    "database",
+    "secrets",
+    "oauth",
+    "psp",
+    "billing",
+    "public_product_deploy",
+    "project_aris_mutation"
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-27A",
+    "layer_name": "ARIS Visual Sandbox",
+    "artifact_type": "visual_scenario_pack",
+    "candidate_only": true,
+    "synthetic_only": true,
+    "state_touched": false
+  },
+  "data_contract": {
+    "required_fields": [
+      "scenario_id",
+      "domain",
+      "event",
+      "will_do",
+      "will_not_do",
+      "risk",
+      "approval_required",
+      "decision_options",
+      "evidence_plan",
+      "receipt_example",
+      "rollback_or_compensation",
+      "state_touched",
+      "synthetic_only"
+    ],
+    "state_touched_required_value": false,
+    "synthetic_only_required_value": true
+  },
+  "scenarios": [
+    {
+      "scenario_id": "barbearia_after_hours_vip_exception",
+      "domain": "barbearia",
+      "event": {
+        "event_id": "EVT-BARB-20H30",
+        "summary": "VIP-LIGHT requests an after-hours booking at 20:30 in the synthetic schedule.",
+        "initial_state": "Regular hours end at 20:00. After-hours service requires operator exception."
+      },
+      "will_do": [
+        "Block automatic booking in the visual sandbox.",
+        "Prepare a one-time VIP exception proposal.",
+        "Show queue impact and approval requirement.",
+        "Generate synthetic receipt after decision."
+      ],
+      "will_not_do": [
+        "Confirm a real appointment.",
+        "Send a real customer message.",
+        "Change a real schedule.",
+        "Charge any real amount."
+      ],
+      "risk": {
+        "label": "Fila posterior pode atrasar",
+        "severity": "medium",
+        "plain_language": "A excecao pode atrasar dois atendimentos sinteticos seguintes."
+      },
+      "approval_required": true,
+      "decision_options": [
+        {
+          "option_id": "approve_single_vip_exception",
+          "label": "Aprovar excecao sintetica",
+          "next_state": "APROVADO"
+        },
+        {
+          "option_id": "keep_blocked",
+          "label": "Manter bloqueado",
+          "next_state": "RECUSADO"
+        }
+      ],
+      "evidence_plan": {
+        "receipt_id": "RCPT-BARB-001",
+        "evidence_items": [
+          "policy_alias",
+          "requested_slot",
+          "operator_decision",
+          "risk_summary",
+          "state_touched_false"
+        ]
+      },
+      "receipt_example": {
+        "receipt_id": "RCPT-BARB-001",
+        "decision": "approved_single_exception",
+        "verification_code": "VC-BARB-01",
+        "no_real_state_touched": true
+      },
+      "rollback_or_compensation": {
+        "type": "reversible_documentary_only",
+        "label": "Reverter excecao sintetica",
+        "effect": "Marks the sandbox story as reverted and restores the default block in the visual narrative only."
+      },
+      "state_touched": false,
+      "synthetic_only": true
+    },
+    {
+      "scenario_id": "mercado_suspected_refund_declined",
+      "domain": "mercado",
+      "event": {
+        "event_id": "EVT-MKT-REF-204",
+        "summary": "Full refund request exceeds the synthetic daily limit and carries high-risk flags.",
+        "initial_state": "Order PED-MKT-204 is synthetic and already reconciled in the story."
+      },
+      "will_do": [
+        "Decline the instant refund in the visual sandbox.",
+        "Show the synthetic risk signals.",
+        "Open a synthetic manual review story.",
+        "Generate refusal evidence."
+      ],
+      "will_not_do": [
+        "Refund real money.",
+        "Call a real PSP.",
+        "Change real inventory.",
+        "Change real cash or ERP records."
+      ],
+      "risk": {
+        "label": "Perda financeira sintetica",
+        "severity": "high",
+        "plain_language": "Liberar sem revisao aumentaria perda sintetica e abriria precedente fora da politica."
+      },
+      "approval_required": false,
+      "decision_options": [
+        {
+          "option_id": "decline_auto_refund",
+          "label": "Recusar reembolso instantaneo",
+          "next_state": "BLOQUEADO_AUTO"
+        },
+        {
+          "option_id": "create_manual_review",
+          "label": "Gerar revisao manual sintetica",
+          "next_state": "COMPROVANTE_GERADO"
+        }
+      ],
+      "evidence_plan": {
+        "receipt_id": "RCPT-MKT-002",
+        "evidence_items": [
+          "order_alias",
+          "risk_bucket",
+          "daily_limit_band",
+          "policy_block",
+          "state_touched_false"
+        ]
+      },
+      "receipt_example": {
+        "receipt_id": "RCPT-MKT-002",
+        "decision": "declined_auto_refund",
+        "verification_code": "VC-MKT-02",
+        "no_real_state_touched": true
+      },
+      "rollback_or_compensation": {
+        "type": "compensable_via_manual_review_story",
+        "label": "Gerar revisao manual",
+        "effect": "Creates a documentary review step without moving real money."
+      },
+      "state_touched": false,
+      "synthetic_only": true
+    },
+    {
+      "scenario_id": "escritorio_attachment_intercepted",
+      "domain": "escritorio",
+      "event": {
+        "event_id": "EVT-OFC-ANX-07",
+        "summary": "A synthetic attachment carries a policy-exception marker and must be quarantined.",
+        "initial_state": "Document queue is synthetic and no real attachment is opened."
+      },
+      "will_do": [
+        "Intercept the synthetic attachment.",
+        "Mark it for human review.",
+        "Show quarantine reason without offensive detail.",
+        "Generate a synthetic receipt."
+      ],
+      "will_not_do": [
+        "Open a real attachment.",
+        "Run a real document workflow.",
+        "Trigger an external integration.",
+        "Teach how an attack works."
+      ],
+      "risk": {
+        "label": "Linguagem de excecao de politica",
+        "severity": "high",
+        "plain_language": "Aceitar sem revisao criaria decisao sem contexto e sem trilha confiavel."
+      },
+      "approval_required": true,
+      "decision_options": [
+        {
+          "option_id": "confirm_human_review",
+          "label": "Encaminhar para revisao humana",
+          "next_state": "AGUARDANDO_APROVACAO"
+        },
+        {
+          "option_id": "keep_quarantined",
+          "label": "Manter quarentena",
+          "next_state": "BLOQUEADO_AUTO"
+        }
+      ],
+      "evidence_plan": {
+        "receipt_id": "RCPT-OFC-003",
+        "evidence_items": [
+          "attachment_alias",
+          "safe_marker",
+          "quarantine_policy",
+          "human_review_required",
+          "state_touched_false"
+        ]
+      },
+      "receipt_example": {
+        "receipt_id": "RCPT-OFC-003",
+        "decision": "quarantined_for_human_review",
+        "verification_code": "VC-OFC-03",
+        "no_real_state_touched": true
+      },
+      "rollback_or_compensation": {
+        "type": "releasable_only_after_human_documentary_review",
+        "label": "Liberar anexo apos revisao",
+        "effect": "Shows a controlled release story only after human review; no real document changes."
+      },
+      "state_touched": false,
+      "synthetic_only": true
+    }
+  ],
+  "global_prohibitions": [
+    "api",
+    "backend",
+    "database",
+    "real_auth",
+    "fetch",
+    "xhr",
+    "websocket",
+    "secrets",
+    "real_psp",
+    "real_oauth",
+    "real_billing",
+    "real_data",
+    "real_runtime",
+    "project_aris_mutation",
+    "product_ready_claim",
+    "public_product_deploy",
+    "crisol_admission"
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-27A",
+    "layer_name": "ARIS Visual Sandbox",
+    "artifact_type": "visual_state_machine",
+    "candidate_only": true,
+    "synthetic_only": true,
+    "runtime_state_machine_created": false,
+    "state_touched": false
+  },
+  "states": [
+    {
+      "state": "DETECTADO",
+      "meaning": "A synthetic event was detected and can be explained.",
+      "allowed_actor": "ARIS",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    },
+    {
+      "state": "PROPOSTO",
+      "meaning": "ARIS proposes what could happen and shows will/will-not.",
+      "allowed_actor": "ARIS",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    },
+    {
+      "state": "BLOQUEADO_AUTO",
+      "meaning": "A deterministic rule blocks the synthetic action.",
+      "allowed_actor": "deterministic_rule",
+      "sensitive_action_executed": false,
+      "receipt_required": true,
+      "state_touched": false
+    },
+    {
+      "state": "AGUARDANDO_APROVACAO",
+      "meaning": "A sensitive synthetic proposal is waiting for operator decision.",
+      "allowed_actor": "operator",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    },
+    {
+      "state": "APROVADO",
+      "meaning": "The operator approved the synthetic story step.",
+      "allowed_actor": "operator",
+      "sensitive_action_executed": false,
+      "receipt_required": true,
+      "state_touched": false
+    },
+    {
+      "state": "RECUSADO",
+      "meaning": "The operator or deterministic rule refused the synthetic action.",
+      "allowed_actor": "operator_or_rule",
+      "sensitive_action_executed": false,
+      "receipt_required": true,
+      "state_touched": false
+    },
+    {
+      "state": "COMPROVANTE_GERADO",
+      "meaning": "A synthetic receipt is visible.",
+      "allowed_actor": "visual_sandbox",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    },
+    {
+      "state": "ROLLBACK_DISPONIVEL",
+      "meaning": "Rollback or compensation is visible as a synthetic story boundary.",
+      "allowed_actor": "visual_sandbox",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    },
+    {
+      "state": "DESFEITO",
+      "meaning": "The synthetic story was marked undone or compensated.",
+      "allowed_actor": "operator",
+      "sensitive_action_executed": false,
+      "receipt_required": true,
+      "state_touched": false
+    },
+    {
+      "state": "MODO_DEGRADADO",
+      "meaning": "The sandbox cannot safely present an action and must block execution-looking controls.",
+      "allowed_actor": "visual_sandbox",
+      "sensitive_action_executed": false,
+      "state_touched": false
+    }
+  ],
+  "transitions": [
+    {
+      "from": "DETECTADO",
+      "to": "PROPOSTO",
+      "gate": "aris_can_propose",
+      "approval_required": false
+    },
+    {
+      "from": "PROPOSTO",
+      "to": "AGUARDANDO_APROVACAO",
+      "gate": "sensitive_action_requires_operator",
+      "approval_required": true
+    },
+    {
+      "from": "PROPOSTO",
+      "to": "BLOQUEADO_AUTO",
+      "gate": "deterministic_rule_block",
+      "approval_required": false,
+      "receipt_required": true
+    },
+    {
+      "from": "AGUARDANDO_APROVACAO",
+      "to": "APROVADO",
+      "gate": "operator_explicit_approval",
+      "approval_required": true,
+      "forbidden": false
+    },
+    {
+      "from": "AGUARDANDO_APROVACAO",
+      "to": "RECUSADO",
+      "gate": "operator_refusal",
+      "approval_required": true,
+      "receipt_required": true
+    },
+    {
+      "from": "BLOQUEADO_AUTO",
+      "to": "COMPROVANTE_GERADO",
+      "gate": "block_receipt_generation",
+      "receipt_required": true
+    },
+    {
+      "from": "APROVADO",
+      "to": "COMPROVANTE_GERADO",
+      "gate": "synthetic_receipt_generation",
+      "receipt_required": true
+    },
+    {
+      "from": "RECUSADO",
+      "to": "COMPROVANTE_GERADO",
+      "gate": "refusal_receipt_generation",
+      "receipt_required": true
+    },
+    {
+      "from": "COMPROVANTE_GERADO",
+      "to": "ROLLBACK_DISPONIVEL",
+      "gate": "rollback_or_compensation_visible",
+      "approval_required": false
+    },
+    {
+      "from": "ROLLBACK_DISPONIVEL",
+      "to": "DESFEITO",
+      "gate": "operator_synthetic_undo",
+      "approval_required": true,
+      "receipt_required": true
+    },
+    {
+      "from": "DESFEITO",
+      "to": "COMPROVANTE_GERADO",
+      "gate": "undo_receipt_generation",
+      "receipt_required": true
+    },
+    {
+      "from": "*",
+      "to": "MODO_DEGRADADO",
+      "gate": "fail_closed_visual_safety",
+      "approval_required": false
+    }
+  ],
+  "forbidden_transitions": [
+    {
+      "from": "PROPOSTO",
+      "to": "APROVADO",
+      "reason": "ARIS cannot auto-approve sensitive actions."
+    },
+    {
+      "from": "MODO_DEGRADADO",
+      "to": "APROVADO",
+      "reason": "Degraded mode blocks execution-looking actions."
+    },
+    {
+      "from": "MODO_DEGRADADO",
+      "to": "DESFEITO",
+      "reason": "Degraded mode can only show evidence or safe next steps."
+    }
+  ],
+  "global_invariants": {
+    "aris_can_propose": true,
+    "aris_can_auto_approve_sensitive_action": false,
+    "proposal_to_visual_execution_requires_gate": true,
+    "refusal_or_block_generates_receipt": true,
+    "degraded_mode_blocks_execution_looking_actions": true,
+    "state_touched_always_false": true
+  }
+}

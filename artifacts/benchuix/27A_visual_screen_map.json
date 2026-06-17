@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-27A",
+    "layer_name": "ARIS Visual Sandbox",
+    "artifact_type": "visual_screen_map",
+    "route_type": "candidate_only",
+    "synthetic_only": true,
+    "future_preferred_format": "React static prototype",
+    "react_implementation_created": false,
+    "package_json_created": false,
+    "npm_executed": false,
+    "preview_run": false,
+    "state_touched": false
+  },
+  "global_screen_requirements": {
+    "sandbox_badge_required": true,
+    "state_touched_indicator_required": true,
+    "no_real_state_message_required": true,
+    "primary_language": "plain_business_language",
+    "technical_jargon_primary_layer_allowed": false
+  },
+  "screens": [
+    {
+      "screen_id": "today",
+      "title": "Hoje",
+      "purpose": "Show what needs attention now without implying real execution.",
+      "primary_components": [
+        "AppShell",
+        "ScenarioSwitcher",
+        "TodaySummary",
+        "PendingItem",
+        "ActionContractCard",
+        "StatusPill",
+        "BottomTabBar",
+        "SandboxBadge"
+      ],
+      "required_action_contract_fields": [
+        "will_do",
+        "will_not_do",
+        "risk",
+        "approval_required",
+        "evidence_plan",
+        "rollback_or_compensation",
+        "state_touched"
+      ],
+      "entry_states": [
+        "DETECTADO",
+        "PROPOSTO",
+        "BLOQUEADO_AUTO",
+        "AGUARDANDO_APROVACAO",
+        "MODO_DEGRADADO"
+      ],
+      "allowed_navigation": [
+        "approve",
+        "history_receipts",
+        "rollback_undo",
+        "degraded_failure"
+      ],
+      "forbidden_ui_claims": [
+        "running_in_production",
+        "real_schedule_synced",
+        "real_payment_processed",
+        "real_document_opened"
+      ],
+      "state_touched": false
+    },
+    {
+      "screen_id": "approve",
+      "title": "Aprovar",
+      "purpose": "Present the sensitive action contract before any synthetic decision.",
+      "primary_components": [
+        "AppShell",
+        "ApprovalPanel",
+        "ActionContractCard",
+        "DecisionBar",
+        "EvidencePreview",
+        "RollbackStatus",
+        "SandboxBadge",
+        "BottomTabBar"
+      ],
+      "required_action_contract_fields": [
+        "will_do",
+        "will_not_do",
+        "risk",
+        "approval_required",
+        "decision_options",
+        "evidence_plan",
+        "rollback_or_compensation",
+        "state_touched"
+      ],
+      "entry_states": [
+        "PROPOSTO",
+        "AGUARDANDO_APROVACAO",
+        "BLOQUEADO_AUTO",
+        "MODO_DEGRADADO"
+      ],
+      "exit_states": [
+        "APROVADO",
+        "RECUSADO",
+        "COMPROVANTE_GERADO",
+        "MODO_DEGRADADO"
+      ],
+      "approval_rule": "Sensitive actions require operator approval or deterministic block before receipt generation.",
+      "state_touched": false
+    },
+    {
+      "screen_id": "history_receipts",
+      "title": "Historico / Comprovantes",
+      "purpose": "Show synthetic receipts for approvals, refusals, blocks and quarantines.",
+      "primary_components": [
+        "AppShell",
+        "ReceiptCard",
+        "ReceiptDetail",
+        "EvidencePreview",
+        "StatusPill",
+        "StateTouchedIndicator",
+        "SandboxBadge",
+        "BottomTabBar"
+      ],
+      "required_receipt_fields": [
+        "receipt_id",
+        "decision",
+        "will_do",
+        "will_not_do",
+        "risk",
+        "evidence_summary",
+        "rollback_status",
+        "verification_code",
+        "state_touched"
+      ],
+      "entry_states": [
+        "COMPROVANTE_GERADO",
+        "RECUSADO",
+        "BLOQUEADO_AUTO",
+        "DESFEITO"
+      ],
+      "state_touched": false
+    },
+    {
+      "screen_id": "rollback_undo",
+      "title": "Rollback / Desfazer",
+      "purpose": "Explain whether the synthetic story is reversible, compensable or only documentable.",
+      "primary_components": [
+        "AppShell",
+        "UndoSheet",
+        "ActionContractCard",
+        "RollbackStatus",
+        "EvidencePreview",
+        "SandboxBadge",
+        "BottomTabBar"
+      ],
+      "required_rollback_fields": [
+        "rollback_type",
+        "what_changes_in_story",
+        "what_does_not_change_in_real_world",
+        "evidence_generated",
+        "state_touched"
+      ],
+      "entry_states": [
+        "ROLLBACK_DISPONIVEL",
+        "COMPROVANTE_GERADO"
+      ],
+      "exit_states": [
+        "DESFEITO",
+        "COMPROVANTE_GERADO"
+      ],
+      "state_touched": false
+    },
+    {
+      "screen_id": "degraded_failure",
+      "title": "Falha / Modo degradado",
+      "purpose": "Fail closed and prevent anything that resembles execution.",
+      "primary_components": [
+        "AppShell",
+        "DegradedBanner",
+        "DegradedScreen",
+        "ActionContractCard",
+        "StatusPill",
+        "SandboxBadge",
+        "BottomTabBar"
+      ],
+      "required_failure_fields": [
+        "reason",
+        "blocked_actions",
+        "safe_next_step",
+        "evidence_plan",
+        "state_touched"
+      ],
+      "entry_states": [
+        "MODO_DEGRADADO"
+      ],
+      "forbidden_controls": [
+        "approve_execution",
+        "retry_real_action",
+        "connect_integration",
+        "sync_now",
+        "charge_now"
+      ],
+      "state_touched": false
+    }
+  ]
+}

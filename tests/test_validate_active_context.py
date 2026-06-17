@@ -305,6 +305,30 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert Path("artifacts/benchuix/27_benchuix_closure_summary.md").exists()
     assert Path("artifacts/benchuix/27_validation_evidence.json").exists()
     assert Path("artifacts/benchuix/27_no_real_execution_attestation_final.json").exists()
+    assert Path("artifacts/benchuix/27A_visual_sandbox_contract.md").exists()
+    assert Path("artifacts/benchuix/27A_visual_screen_map.json").exists()
+    assert Path("artifacts/benchuix/27A_visual_state_machine.json").exists()
+    assert Path("artifacts/benchuix/27A_visual_component_contract.json").exists()
+    assert Path("artifacts/benchuix/27A_visual_scenario_pack.json").exists()
+    assert Path("artifacts/benchuix/27A_visual_copy_contract.md").exists()
+    assert Path("artifacts/benchuix/27A_visual_test_criteria.json").exists()
+    assert Path("artifacts/benchuix/27A_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/27A_validation_evidence.json").exists()
+
+    benchuix_27a_validation = json.loads(Path("artifacts/benchuix/27A_validation_evidence.json").read_text(encoding="utf-8"))
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["current_candidate_phase"] == "BENCHUIX-27"
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["candidate_next_phase_after_operator_gate"] == "CRISOL"
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["next_phase"] is None
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["active_next_phase"] is None
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["crisol_admitted"] is False
+    assert benchuix_27a_validation["candidate_tracking_preserved"]["live_route_opened"] is False
+
+    benchuix_27a_no_real = json.loads(Path("artifacts/benchuix/27A_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27a_no_real["Project_ARIS_changed"] is False
+    assert benchuix_27a_no_real["package_manager_executed"] is False
+    assert benchuix_27a_no_real["react_executable_created"] is False
+    assert benchuix_27a_no_real["crisol_admitted"] is False
+    assert benchuix_27a_no_real["all_real_locks_remain_false"] is True
 
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
