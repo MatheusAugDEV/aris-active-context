@@ -1,0 +1,49 @@
+{
+  "phase_id": "BENCHUIX-27C",
+  "artifact_type": "visual_usability_severity_rubric",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "severities": {
+    "S1_BLOCKER": {
+      "definition": "Failure breaks trust, safety or candidate-only interpretation and blocks any future synthetic review.",
+      "examples": [
+        "Tela nao mostra SandboxBadge.",
+        "Usuario pode achar que estado real foi tocado.",
+        "Acao sensivel sem will-not-do.",
+        "Aprovacao parecendo execucao real.",
+        "Comprovante ausente em bloqueio ou recusa.",
+        "Rollback prometido sem limite.",
+        "Dado real, API, backend ou secrets inferidos pela UI.",
+        "CRISOL ou produto pronto sugerido."
+      ]
+    },
+    "S2_MAJOR": {
+      "definition": "Failure preserves synthetic status but leaves the operator unable to make a clear decision safely.",
+      "examples": [
+        "Risco pouco claro.",
+        "Evidencia visivel mas insuficiente.",
+        "Decisao primaria ambigua.",
+        "Modo degradado nao bloqueia acao parecida com execucao.",
+        "Linguagem tecnica obscurece o dono-solo."
+      ]
+    },
+    "S3_MINOR": {
+      "definition": "Failure does not change the decision boundary but slows comprehension or makes scanning harder.",
+      "examples": [
+        "Hierarquia visual atrasa leitura do contrato.",
+        "Labels redundantes ou pouco consistentes.",
+        "Copy de rollback exige releitura.",
+        "A sequencia Today -> Approve -> History nao fica imediata."
+      ]
+    },
+    "S4_POLISH": {
+      "definition": "Refinement improves smoothness, density or wording without changing understanding.",
+      "examples": [
+        "Ajuste fino de copy.",
+        "Melhoria de densidade informacional.",
+        "Melhoria de alinhamento de labels.",
+        "Melhoria de acabamento visual."
+      ]
+    }
+  }
+}

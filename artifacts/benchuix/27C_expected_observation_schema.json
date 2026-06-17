@@ -1,0 +1,78 @@
+{
+  "phase_id": "BENCHUIX-27C",
+  "artifact_type": "expected_observation_schema",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "real_user": false,
+  "fixed_values": {
+    "synthetic_only": true,
+    "real_user": false
+  },
+  "required_fields": {
+    "observation_id": {
+      "type": "string",
+      "example": "OBS-BARB-TODAY-001"
+    },
+    "scenario_id": {
+      "type": "string",
+      "allowed_values": [
+        "barbearia_after_hours_vip_exception",
+        "mercado_suspected_refund_declined",
+        "escritorio_attachment_intercepted"
+      ]
+    },
+    "screen_id": {
+      "type": "string",
+      "allowed_values": [
+        "today",
+        "approve",
+        "history_receipts",
+        "rollback_undo",
+        "degraded_failure"
+      ]
+    },
+    "persona_mode": {
+      "type": "string",
+      "allowed_values": [
+        "owner_solo_synthetic"
+      ]
+    },
+    "task_id": {
+      "type": "string",
+      "example": "Q1_will_do"
+    },
+    "expected_answer": {
+      "type": "string"
+    },
+    "observed_answer": {
+      "type": "string"
+    },
+    "understood": {
+      "type": "boolean"
+    },
+    "severity_if_failed": {
+      "type": "string",
+      "allowed_values": [
+        "S1_BLOCKER",
+        "S2_MAJOR",
+        "S3_MINOR",
+        "S4_POLISH"
+      ]
+    },
+    "evidence_reference": {
+      "type": "string",
+      "example": "SandboxBadge + ReceiptDetail + StateTouchedIndicator"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "synthetic_only": {
+      "type": "boolean",
+      "required_value": true
+    },
+    "real_user": {
+      "type": "boolean",
+      "required_value": false
+    }
+  }
+}

@@ -381,6 +381,65 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_27b_no_real["crisol_opened"] is False
     assert benchuix_27b_no_real["all_real_locks_remain_false"] is True
 
+    assert Path("artifacts/benchuix/27C_visual_synthetic_test_matrix.json").exists()
+    assert Path("artifacts/benchuix/27C_scenario_comprehension_protocol.md").exists()
+    assert Path("artifacts/benchuix/27C_visual_static_coverage_audit.json").exists()
+    assert Path("artifacts/benchuix/27C_visual_usability_severity_rubric.json").exists()
+    assert Path("artifacts/benchuix/27C_expected_observation_schema.json").exists()
+    assert Path("artifacts/benchuix/27C_visual_test_fixture_review.json").exists()
+    assert Path("artifacts/benchuix/27C_preview_readiness_boundary.md").exists()
+    assert Path("artifacts/benchuix/27C_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/27C_validation_evidence.json").exists()
+
+    benchuix_27c_matrix = json.loads(Path("artifacts/benchuix/27C_visual_synthetic_test_matrix.json").read_text(encoding="utf-8"))
+    assert benchuix_27c_matrix["phase_id"] == "BENCHUIX-27C"
+    assert benchuix_27c_matrix["candidate_only"] is True
+    assert benchuix_27c_matrix["synthetic_only"] is True
+    assert benchuix_27c_matrix["preview_executed"] is False
+    assert benchuix_27c_matrix["browser_executed"] is False
+    assert benchuix_27c_matrix["real_user_testing_executed"] is False
+    assert {scenario["scenario_id"] for scenario in benchuix_27c_matrix["scenarios"]} == {
+        "barbearia_after_hours_vip_exception",
+        "mercado_suspected_refund_declined",
+        "escritorio_attachment_intercepted",
+    }
+    for scenario in benchuix_27c_matrix["scenarios"]:
+        assert set(scenario["required_user_understanding"]) == {
+            "will_do_understood",
+            "will_not_do_understood",
+            "risk_understood",
+            "approval_requirement_understood",
+            "evidence_visible",
+            "rollback_or_compensation_understood",
+            "no_real_state_touched_understood",
+        }
+
+    benchuix_27c_rubric = json.loads(Path("artifacts/benchuix/27C_visual_usability_severity_rubric.json").read_text(encoding="utf-8"))
+    assert set(benchuix_27c_rubric["severities"]) == {"S1_BLOCKER", "S2_MAJOR", "S3_MINOR", "S4_POLISH"}
+
+    benchuix_27c_observation = json.loads(Path("artifacts/benchuix/27C_expected_observation_schema.json").read_text(encoding="utf-8"))
+    assert benchuix_27c_observation["fixed_values"]["synthetic_only"] is True
+    assert benchuix_27c_observation["fixed_values"]["real_user"] is False
+
+    benchuix_27c_validation = json.loads(Path("artifacts/benchuix/27C_validation_evidence.json").read_text(encoding="utf-8"))
+    assert benchuix_27c_validation["candidate_tracking_preserved"]["current_candidate_phase"] == "BENCHUIX-27"
+    assert benchuix_27c_validation["candidate_tracking_preserved"]["candidate_next_phase_after_operator_gate"] == "CRISOL"
+    assert benchuix_27c_validation["candidate_tracking_preserved"]["next_phase"] is None
+    assert benchuix_27c_validation["candidate_tracking_preserved"]["active_next_phase"] is None
+
+    benchuix_27c_no_real = json.loads(Path("artifacts/benchuix/27C_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27c_no_real["Project_ARIS_changed"] is False
+    assert benchuix_27c_no_real["runtime_executed"] is False
+    assert benchuix_27c_no_real["preview_executed"] is False
+    assert benchuix_27c_no_real["browser_executed"] is False
+    assert benchuix_27c_no_real["localhost_opened"] is False
+    assert benchuix_27c_no_real["package_manager_executed"] is False
+    assert benchuix_27c_no_real["package_json_created"] is False
+    assert benchuix_27c_no_real["node_modules_created"] is False
+    assert benchuix_27c_no_real["real_user_testing_executed"] is False
+    assert benchuix_27c_no_real["crisol_opened"] is False
+    assert benchuix_27c_no_real["all_real_locks_remain_false"] is True
+
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
     module = _load_validator_module()

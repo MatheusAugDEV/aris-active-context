@@ -1,0 +1,264 @@
+{
+  "phase_id": "BENCHUIX-27C",
+  "artifact_type": "visual_synthetic_test_matrix",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "preview_executed": false,
+  "browser_executed": false,
+  "real_user_testing_executed": false,
+  "scenarios": [
+    {
+      "scenario_id": "barbearia_after_hours_vip_exception",
+      "domain": "barbearia",
+      "source_fixture": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js",
+      "required_screens": [
+        "today",
+        "approve",
+        "history_receipts",
+        "rollback_undo",
+        "degraded_failure"
+      ],
+      "required_states": [
+        "DETECTADO",
+        "PROPOSTO",
+        "AGUARDANDO_APROVACAO",
+        "APROVADO",
+        "COMPROVANTE_GERADO",
+        "ROLLBACK_DISPONIVEL",
+        "DESFEITO",
+        "MODO_DEGRADADO"
+      ],
+      "required_components": [
+        "SandboxBadge",
+        "ActionContractCard",
+        "ApprovalPanel",
+        "DecisionBar",
+        "ReceiptDetail",
+        "UndoSheet",
+        "DegradedBanner",
+        "StateTouchedIndicator"
+      ],
+      "required_user_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "test_steps": [
+        "Confirm that Today exposes the synthetic VIP exception, queue impact and SandboxBadge before any decision surface.",
+        "Confirm that Approve repeats the ActionContractCard and DecisionBar without execution-like labels.",
+        "Confirm that History/Receipts exposes a synthetic receipt, verification code and explicit no-real-state evidence.",
+        "Confirm that Rollback explains documentary reversal limits rather than real schedule rollback.",
+        "Confirm that Degraded blocks any approval-looking path and keeps only safe documentary next steps visible."
+      ],
+      "expected_visible_evidence": [
+        "Sandbox candidate-only. Dados sinteticos. Nenhum estado real foi tocado.",
+        "Estado real tocado? Nao. stateTouched: false",
+        "Comprovante demonstrativo: sim",
+        "Gerar comprovante sintetico depois da decisao.",
+        "Decisao fica apenas na historia visual."
+      ],
+      "expected_decision_boundary": {
+        "primary_decision": "Operator may approve a one-time synthetic exception or keep the block.",
+        "must_not_imply": [
+          "real booking confirmation",
+          "real customer outreach",
+          "real charge",
+          "real calendar mutation"
+        ]
+      },
+      "expected_rollback_or_compensation": {
+        "type": "reversao_documental",
+        "boundary": "Rollback only changes the sandbox story and restores the default blocked narrative.",
+        "real_world_effect": "none"
+      },
+      "expected_state_touched_label": "Sandbox candidate-only. Dados sinteticos. Nenhum estado real foi tocado.",
+      "pass_conditions": [
+        "The operator can explain ARIS will block, propose and document a synthetic exception.",
+        "The operator can explain ARIS will not book, message, charge or mutate a real schedule.",
+        "Risk and approval requirement are visible before any synthetic decision label.",
+        "Receipt and rollback surfaces both preserve the no-real-state message."
+      ],
+      "fail_conditions": [
+        "Any screen hides will_not_do or stateTouched:false language.",
+        "Approval looks like direct execution or real booking release.",
+        "Receipt or rollback copy suggests real schedule reversal."
+      ],
+      "blocker_conditions": [
+        "SandboxBadge missing from any required screen.",
+        "No visible evidence that the receipt is demo-only.",
+        "State touched label absent or contradictory."
+      ]
+    },
+    {
+      "scenario_id": "mercado_suspected_refund_declined",
+      "domain": "mercado",
+      "source_fixture": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js",
+      "required_screens": [
+        "today",
+        "approve",
+        "history_receipts",
+        "rollback_undo",
+        "degraded_failure"
+      ],
+      "required_states": [
+        "BLOQUEADO_AUTO",
+        "AGUARDANDO_APROVACAO",
+        "RECUSADO",
+        "COMPROVANTE_GERADO",
+        "ROLLBACK_DISPONIVEL",
+        "DESFEITO",
+        "MODO_DEGRADADO"
+      ],
+      "required_components": [
+        "SandboxBadge",
+        "ActionContractCard",
+        "DecisionBar",
+        "ReceiptCard",
+        "ReceiptDetail",
+        "RollbackStatus",
+        "DegradedBanner",
+        "StateTouchedIndicator"
+      ],
+      "required_user_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "test_steps": [
+        "Confirm that Today and Approve present deterministic block and synthetic manual-review options without refund execution language.",
+        "Confirm that History/Receipts makes the refusal evidence scannable and still demo-only.",
+        "Confirm that Rollback/Undo explains compensation through documentary manual review, not money movement.",
+        "Confirm that Degraded blocks override-like actions and keeps the refusal boundary closed."
+      ],
+      "expected_visible_evidence": [
+        "Nao devolver dinheiro real.",
+        "Nao chamar provedor financeiro real.",
+        "Perda financeira sintetica",
+        "stateTouched:false",
+        "Comprovante demonstrativo: sim"
+      ],
+      "expected_decision_boundary": {
+        "primary_decision": "Keep the refund blocked or create a synthetic manual-review story.",
+        "must_not_imply": [
+          "real PSP call",
+          "real refund issue",
+          "real ERP mutation",
+          "real cash movement"
+        ]
+      },
+      "expected_rollback_or_compensation": {
+        "type": "compensacao_por_revisao_manual",
+        "boundary": "Compensation is a documentary queue only and cannot move real money.",
+        "real_world_effect": "none"
+      },
+      "expected_state_touched_label": "Estado real tocado? Nao. stateTouched: false",
+      "pass_conditions": [
+        "The operator can explain the deterministic block and why risk is high.",
+        "The operator can explain there is no approval needed for the initial block, only for override-like review flow.",
+        "The operator can identify visible refusal evidence and manual-review compensation boundary."
+      ],
+      "fail_conditions": [
+        "Manual review is read as live override of a refund.",
+        "Risk is visible but insufficient to justify the refusal.",
+        "Evidence or receipt is absent for the blocked/refused path."
+      ],
+      "blocker_conditions": [
+        "Any wording implies a real payment action.",
+        "StateTouched false markers are missing.",
+        "Degraded mode leaves an execution-looking refund control active."
+      ]
+    },
+    {
+      "scenario_id": "escritorio_attachment_intercepted",
+      "domain": "escritorio",
+      "source_fixture": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js",
+      "required_screens": [
+        "today",
+        "approve",
+        "history_receipts",
+        "rollback_undo",
+        "degraded_failure"
+      ],
+      "required_states": [
+        "DETECTADO",
+        "PROPOSTO",
+        "BLOQUEADO_AUTO",
+        "AGUARDANDO_APROVACAO",
+        "COMPROVANTE_GERADO",
+        "ROLLBACK_DISPONIVEL",
+        "MODO_DEGRADADO"
+      ],
+      "required_components": [
+        "SandboxBadge",
+        "ActionContractCard",
+        "ApprovalPanel",
+        "DecisionBar",
+        "ReceiptDetail",
+        "RollbackStatus",
+        "DegradedBanner",
+        "StateTouchedIndicator"
+      ],
+      "required_user_understanding": {
+        "will_do_understood": true,
+        "will_not_do_understood": true,
+        "risk_understood": true,
+        "approval_requirement_understood": true,
+        "evidence_visible": true,
+        "rollback_or_compensation_understood": true,
+        "no_real_state_touched_understood": true
+      },
+      "test_steps": [
+        "Confirm that Today and Approve describe interception, quarantine and human review without opening the attachment.",
+        "Confirm that decision labels remain synthetic and do not imply release of a real document or integration.",
+        "Confirm that History/Receipts documents the quarantine evidence and no-real-state boundary.",
+        "Confirm that Rollback describes controlled release only after documentary human review.",
+        "Confirm that Degraded mode keeps the quarantine path fail-closed."
+      ],
+      "expected_visible_evidence": [
+        "Nao abrir anexo real.",
+        "Nao disparar servico externo.",
+        "Mostrar motivo sem detalhe ofensivo.",
+        "Comprovante demonstrativo: sim",
+        "Nenhum estado real foi tocado."
+      ],
+      "expected_decision_boundary": {
+        "primary_decision": "Route to synthetic human review or keep quarantine.",
+        "must_not_imply": [
+          "real attachment open",
+          "real workflow run",
+          "external integration trigger",
+          "unsafe offensive detail"
+        ]
+      },
+      "expected_rollback_or_compensation": {
+        "type": "liberacao_apos_revisao_documental",
+        "boundary": "Release is only a controlled story after human documentary review.",
+        "real_world_effect": "none"
+      },
+      "expected_state_touched_label": "Sandbox candidate-only. Dados sinteticos. Nenhum estado real foi tocado.",
+      "pass_conditions": [
+        "The operator can explain ARIS intercepts and documents the attachment without opening anything real.",
+        "The operator can explain human review is required for release-like movement.",
+        "Evidence and rollback boundary remain visible across approve, history and degraded contexts."
+      ],
+      "fail_conditions": [
+        "The scenario reads like a live security product or live document action.",
+        "The quarantine reason is visible without the no-real-state boundary.",
+        "Rollback copy promises real release without review limits."
+      ],
+      "blocker_conditions": [
+        "Any real-file, integration or production implication appears in the UI contract.",
+        "Receipt detail omits demo-only or no-real-state evidence.",
+        "CRISOL or product-ready language is implied."
+      ]
+    }
+  ]
+}

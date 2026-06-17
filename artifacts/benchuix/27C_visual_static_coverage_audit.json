@@ -1,0 +1,172 @@
+{
+  "phase_id": "BENCHUIX-27C",
+  "artifact_type": "visual_static_coverage_audit",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "required_screens_found": {
+    "today": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/screens/TodayScreen.js"
+    },
+    "approve": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/screens/ApproveScreen.js"
+    },
+    "history_receipts": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/screens/HistoryScreen.js"
+    },
+    "rollback_undo": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/screens/RollbackScreen.js"
+    },
+    "degraded_failure": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/screens/DegradedScreen.js"
+    }
+  },
+  "required_components_found": {
+    "ActionContractCard": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js"
+    },
+    "WillDoList": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/WillDoList.js"
+    },
+    "WillNotDoList": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/WillNotDoList.js"
+    },
+    "RiskBadge": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/RiskBadge.js"
+    },
+    "ApprovalRequirement": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/ApprovalRequirement.js"
+    },
+    "EvidencePreview": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/EvidencePreview.js"
+    },
+    "RollbackStatus": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/RollbackStatus.js"
+    },
+    "StateTouchedIndicator": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/StateTouchedIndicator.js"
+    },
+    "SandboxBadge": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/shell/SandboxBadge.js"
+    },
+    "DecisionBar": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/approve/DecisionBar.js"
+    }
+  },
+  "required_scenarios_found": {
+    "barbearia_after_hours_vip_exception": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js"
+    },
+    "mercado_suspected_refund_declined": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js"
+    },
+    "escritorio_attachment_intercepted": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js"
+    }
+  },
+  "required_states_found": {
+    "DETECTADO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "PROPOSTO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "BLOQUEADO_AUTO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "AGUARDANDO_APROVACAO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "APROVADO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "RECUSADO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "COMPROVANTE_GERADO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "ROLLBACK_DISPONIVEL": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "DESFEITO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    },
+    "MODO_DEGRADADO": {
+      "present": true,
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js"
+    }
+  },
+  "sandbox_badge_coverage": {
+    "all_required_screen_sources_include_badge": true,
+    "screen_paths": [
+      "artifacts/benchuix/visual_sandbox_static/src/screens/TodayScreen.js",
+      "artifacts/benchuix/visual_sandbox_static/src/screens/ApproveScreen.js",
+      "artifacts/benchuix/visual_sandbox_static/src/screens/HistoryScreen.js",
+      "artifacts/benchuix/visual_sandbox_static/src/screens/RollbackScreen.js",
+      "artifacts/benchuix/visual_sandbox_static/src/screens/DegradedScreen.js"
+    ]
+  },
+  "action_contract_card_coverage": {
+    "present_in_today": true,
+    "present_in_approve_via_approval_panel": true,
+    "present_in_rollback": true,
+    "present_in_degraded": true,
+    "supporting_path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js"
+  },
+  "decision_bar_boundary_coverage": {
+    "present": true,
+    "path": "artifacts/benchuix/visual_sandbox_static/src/components/approve/DecisionBar.js",
+    "forbidden_labels_absent": true,
+    "degraded_blocks_owner_approve_override_undo": true
+  },
+  "no_network_pattern_coverage": {
+    "forbidden_patterns_absent": true,
+    "patterns_checked": [
+      "fetch(",
+      "XMLHttpRequest",
+      "WebSocket",
+      "api/",
+      "backend",
+      "oauth",
+      "psp",
+      "billing",
+      "secret",
+      "real_apply"
+    ]
+  },
+  "no_package_boundary_coverage": {
+    "package_json_absent": true,
+    "node_modules_absent": true,
+    "package_manager_command_required": false,
+    "root_directory": "artifacts/benchuix/visual_sandbox_static/"
+  },
+  "no_project_aris_mutation": true,
+  "coverage_gaps": []
+}

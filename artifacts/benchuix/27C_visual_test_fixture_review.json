@@ -1,0 +1,106 @@
+{
+  "phase_id": "BENCHUIX-27C",
+  "artifact_type": "visual_test_fixture_review",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "fixtures": [
+    {
+      "fixture_id": "barbearia.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Fixture preserves willDo, willNotDo, risk, approvalRequired, evidencePlan, rollbackOrCompensation and stateTouched:false.",
+        "Decision labels stay synthetic and do not imply real booking or real charge."
+      ]
+    },
+    {
+      "fixture_id": "mercado.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Fixture keeps refund flow documentary and demo-only.",
+        "No PSP, billing or live refund language is present."
+      ]
+    },
+    {
+      "fixture_id": "escritorio.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Fixture keeps quarantine as a safe documentary story.",
+        "No real attachment open or external integration label appears."
+      ]
+    },
+    {
+      "fixture_id": "stateMachine.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Transitions keep approvals gated and degraded mode blocks approve, override and undo.",
+        "Receipt generation remains explicit for blocked, approved, refused and undone states."
+      ]
+    },
+    {
+      "fixture_id": "invariants.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/domain/invariants.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Invariants enforce no auto-approval and stateTouched false across fixtures.",
+        "Receipts remain demo-only."
+      ]
+    },
+    {
+      "fixture_id": "ActionContractCard.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Component renders SandboxBadge, will-do, will-not-do, risk, approval, evidence, rollback and stateTouched indicator.",
+        "The card keeps the contract visible before any decision."
+      ]
+    },
+    {
+      "fixture_id": "DecisionBar.js",
+      "path": "artifacts/benchuix/visual_sandbox_static/src/components/approve/DecisionBar.js",
+      "fixture_present": true,
+      "synthetic_only": true,
+      "state_touched_false": true,
+      "required_contract_fields_present": true,
+      "forbidden_terms_absent": true,
+      "execution_like_labels_absent": true,
+      "review_notes": [
+        "Decision labels come from scenario fixtures and avoid forbidden execution wording.",
+        "Degraded mode disables approve, override and undo style actions."
+      ]
+    }
+  ]
+}

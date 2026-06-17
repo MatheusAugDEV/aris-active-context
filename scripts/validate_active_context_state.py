@@ -6942,6 +6942,285 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             ):
                 _require(key in results_27b, f"BENCHUIX-27B validation results missing {key}")
 
+        expected_27c_artifacts = {
+            "artifacts/benchuix/27C_visual_synthetic_test_matrix.json",
+            "artifacts/benchuix/27C_scenario_comprehension_protocol.md",
+            "artifacts/benchuix/27C_visual_static_coverage_audit.json",
+            "artifacts/benchuix/27C_visual_usability_severity_rubric.json",
+            "artifacts/benchuix/27C_expected_observation_schema.json",
+            "artifacts/benchuix/27C_visual_test_fixture_review.json",
+            "artifacts/benchuix/27C_preview_readiness_boundary.md",
+            "artifacts/benchuix/27C_no_real_execution_attestation.json",
+            "artifacts/benchuix/27C_validation_evidence.json",
+        }
+        for path in sorted(expected_27c_artifacts):
+            _require((ROOT / path).exists(), f"BENCHUIX-27C artifact missing on disk: {path}")
+
+        benchuix_27c_matrix = _load_json(ROOT / "artifacts/benchuix/27C_visual_synthetic_test_matrix.json")
+        _require(benchuix_27c_matrix.get("phase_id") == "BENCHUIX-27C", "BENCHUIX-27C matrix phase_id mismatch")
+        _require(benchuix_27c_matrix.get("artifact_type") == "visual_synthetic_test_matrix", "BENCHUIX-27C matrix artifact_type mismatch")
+        for key in ("candidate_only", "synthetic_only"):
+            _require(benchuix_27c_matrix.get(key) is True, f"BENCHUIX-27C matrix {key} must be true")
+        for key in ("preview_executed", "browser_executed", "real_user_testing_executed"):
+            _require(benchuix_27c_matrix.get(key) is False, f"BENCHUIX-27C matrix {key} must be false")
+        scenario_entries_27c = benchuix_27c_matrix.get("scenarios", [])
+        _require({scenario.get("scenario_id") for scenario in scenario_entries_27c} == required_27a_scenario_ids, "BENCHUIX-27C matrix scenario ids mismatch")
+        scenario_required_fields_27c = {
+            "scenario_id",
+            "domain",
+            "source_fixture",
+            "required_screens",
+            "required_states",
+            "required_components",
+            "required_user_understanding",
+            "test_steps",
+            "expected_visible_evidence",
+            "expected_decision_boundary",
+            "expected_rollback_or_compensation",
+            "expected_state_touched_label",
+            "pass_conditions",
+            "fail_conditions",
+            "blocker_conditions",
+        }
+        required_understanding_fields = {
+            "will_do_understood",
+            "will_not_do_understood",
+            "risk_understood",
+            "approval_requirement_understood",
+            "evidence_visible",
+            "rollback_or_compensation_understood",
+            "no_real_state_touched_understood",
+        }
+        for scenario in scenario_entries_27c:
+            _require(scenario_required_fields_27c <= set(scenario), f"BENCHUIX-27C matrix scenario missing required field: {scenario.get('scenario_id')}")
+            _require(set(scenario.get("required_user_understanding", {})) == required_understanding_fields, f"BENCHUIX-27C understanding fields mismatch: {scenario.get('scenario_id')}")
+            _require(all(scenario.get("required_user_understanding", {}).values()), f"BENCHUIX-27C understanding field must be true: {scenario.get('scenario_id')}")
+            _require(bool(scenario.get("required_screens")), f"BENCHUIX-27C required_screens empty: {scenario.get('scenario_id')}")
+            _require(bool(scenario.get("required_states")), f"BENCHUIX-27C required_states empty: {scenario.get('scenario_id')}")
+            _require(bool(scenario.get("required_components")), f"BENCHUIX-27C required_components empty: {scenario.get('scenario_id')}")
+            _require(bool(scenario.get("test_steps")), f"BENCHUIX-27C test_steps empty: {scenario.get('scenario_id')}")
+            _require(bool(scenario.get("expected_visible_evidence")), f"BENCHUIX-27C expected_visible_evidence empty: {scenario.get('scenario_id')}")
+            _require("Nenhum estado real foi tocado" in scenario.get("expected_state_touched_label", "") or "stateTouched: false" in scenario.get("expected_state_touched_label", ""), f"BENCHUIX-27C state touched label mismatch: {scenario.get('scenario_id')}")
+            _require((ROOT / scenario.get("source_fixture", "")).exists(), f"BENCHUIX-27C source fixture missing on disk: {scenario.get('scenario_id')}")
+
+        benchuix_27c_protocol = (ROOT / "artifacts/benchuix/27C_scenario_comprehension_protocol.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "Este protocolo não executa sessão real.",
+            "O que ARIS vai fazer?",
+            "O que ARIS nao vai fazer?",
+            "Qual e o risco?",
+            "Voce precisa aprovar?",
+            "Que evidencia aparece?",
+            "Da para desfazer ou compensar?",
+            "Algum estado real foi tocado?",
+            "barbearia_after_hours_vip_exception",
+            "mercado_suspected_refund_declined",
+            "escritorio_attachment_intercepted",
+        ):
+            _require(required_snippet in benchuix_27c_protocol, f"BENCHUIX-27C protocol missing snippet: {required_snippet}")
+
+        benchuix_27c_coverage = _load_json(ROOT / "artifacts/benchuix/27C_visual_static_coverage_audit.json")
+        for key in ("required_screens_found", "required_components_found", "required_scenarios_found", "required_states_found"):
+            _require(key in benchuix_27c_coverage, f"BENCHUIX-27C coverage missing key {key}")
+        _require(set(benchuix_27c_coverage.get("required_screens_found", {})) == required_screen_ids, "BENCHUIX-27C coverage screen ids mismatch")
+        _require(required_27a_scenario_ids <= set(benchuix_27c_coverage.get("required_scenarios_found", {})), "BENCHUIX-27C coverage scenarios mismatch")
+        for key in (
+            "sandbox_badge_coverage",
+            "action_contract_card_coverage",
+            "decision_bar_boundary_coverage",
+            "no_network_pattern_coverage",
+            "no_package_boundary_coverage",
+        ):
+            _require(key in benchuix_27c_coverage, f"BENCHUIX-27C coverage missing key {key}")
+        _require(benchuix_27c_coverage.get("decision_bar_boundary_coverage", {}).get("present") is True, "BENCHUIX-27C decision bar coverage mismatch")
+        _require(benchuix_27c_coverage.get("decision_bar_boundary_coverage", {}).get("forbidden_labels_absent") is True, "BENCHUIX-27C forbidden decision labels mismatch")
+        _require(benchuix_27c_coverage.get("no_network_pattern_coverage", {}).get("forbidden_patterns_absent") is True, "BENCHUIX-27C network coverage mismatch")
+        _require(benchuix_27c_coverage.get("no_package_boundary_coverage", {}).get("package_json_absent") is True, "BENCHUIX-27C package boundary mismatch")
+        _require(benchuix_27c_coverage.get("no_project_aris_mutation") is True, "BENCHUIX-27C no_project_aris_mutation mismatch")
+        _require(benchuix_27c_coverage.get("coverage_gaps") == [], "BENCHUIX-27C coverage gaps must be empty")
+
+        benchuix_27c_rubric = _load_json(ROOT / "artifacts/benchuix/27C_visual_usability_severity_rubric.json")
+        severities_27c = benchuix_27c_rubric.get("severities", {})
+        _require(set(severities_27c) == {"S1_BLOCKER", "S2_MAJOR", "S3_MINOR", "S4_POLISH"}, "BENCHUIX-27C rubric severities mismatch")
+        s1_text_27c = " ".join(severities_27c.get("S1_BLOCKER", {}).get("examples", [])).lower()
+        s2_text_27c = " ".join(severities_27c.get("S2_MAJOR", {}).get("examples", [])).lower()
+        for required_snippet in (
+            "sandboxbadge",
+            "estado real foi tocado",
+            "will-not-do",
+            "aprovacao parecendo execucao real",
+            "comprovante ausente",
+            "rollback prometido sem limite",
+            "backend",
+            "crisol",
+        ):
+            _require(required_snippet in s1_text_27c, f"BENCHUIX-27C S1 rubric missing snippet: {required_snippet}")
+        for required_snippet in (
+            "risco pouco claro",
+            "evidencia visivel mas insuficiente",
+            "decisao primaria ambigua",
+            "modo degradado nao bloqueia",
+            "linguagem tecnica obscurece o dono-solo",
+        ):
+            _require(required_snippet in s2_text_27c, f"BENCHUIX-27C S2 rubric missing snippet: {required_snippet}")
+
+        benchuix_27c_observation = _load_json(ROOT / "artifacts/benchuix/27C_expected_observation_schema.json")
+        _require(benchuix_27c_observation.get("synthetic_only") is True, "BENCHUIX-27C observation schema synthetic_only mismatch")
+        _require(benchuix_27c_observation.get("real_user") is False, "BENCHUIX-27C observation schema real_user mismatch")
+        _require(benchuix_27c_observation.get("fixed_values", {}).get("synthetic_only") is True, "BENCHUIX-27C observation fixed synthetic_only mismatch")
+        _require(benchuix_27c_observation.get("fixed_values", {}).get("real_user") is False, "BENCHUIX-27C observation fixed real_user mismatch")
+
+        benchuix_27c_fixture_review = _load_json(ROOT / "artifacts/benchuix/27C_visual_test_fixture_review.json")
+        expected_27c_fixture_ids = {
+            "barbearia.js",
+            "mercado.js",
+            "escritorio.js",
+            "stateMachine.js",
+            "invariants.js",
+            "ActionContractCard.js",
+            "DecisionBar.js",
+        }
+        _require({entry.get("fixture_id") for entry in benchuix_27c_fixture_review.get("fixtures", [])} == expected_27c_fixture_ids, "BENCHUIX-27C fixture review ids mismatch")
+        for entry in benchuix_27c_fixture_review.get("fixtures", []):
+            for key in (
+                "fixture_present",
+                "synthetic_only",
+                "state_touched_false",
+                "required_contract_fields_present",
+                "forbidden_terms_absent",
+                "execution_like_labels_absent",
+            ):
+                _require(entry.get(key) is True, f"BENCHUIX-27C fixture review {key} mismatch for {entry.get('fixture_id')}")
+            _require((ROOT / entry.get("path", "")).exists(), f"BENCHUIX-27C fixture review path missing: {entry.get('fixture_id')}")
+
+        preview_boundary_27c = (ROOT / "artifacts/benchuix/27C_preview_readiness_boundary.md").read_text(encoding="utf-8").lower()
+        for required_snippet in (
+            "what would still be needed for browser visualization",
+            "does not execute preview",
+            "preview requires a separate phase",
+            "commands still prohibited",
+            "locks that remained false",
+            "future visualization rule",
+            "candidate-only",
+            "synthetic-only",
+        ):
+            _require(required_snippet in preview_boundary_27c, f"BENCHUIX-27C preview boundary missing snippet: {required_snippet}")
+
+        benchuix_27c_no_real = _load_json(ROOT / "artifacts/benchuix/27C_no_real_execution_attestation.json")
+        _require(benchuix_27c_no_real.get("phase_id") == "BENCHUIX-27C", "BENCHUIX-27C no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "preview_executed",
+            "browser_executed",
+            "localhost_opened",
+            "package_manager_executed",
+            "package_json_created",
+            "node_modules_created",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "live_route_opened",
+            "real_locks_opened",
+            "crisol_opened",
+        ):
+            _require(benchuix_27c_no_real.get(key) is False, f"BENCHUIX-27C no-real {key} must be false")
+        _require(benchuix_27c_no_real.get("documentary_candidate_only") is True, "BENCHUIX-27C documentary_candidate_only mismatch")
+        _require(benchuix_27c_no_real.get("visual_test_matrix_only") is True, "BENCHUIX-27C visual_test_matrix_only mismatch")
+        _require(benchuix_27c_no_real.get("all_real_locks_remain_false") is True, "BENCHUIX-27C all_real_locks_remain_false mismatch")
+
+        benchuix_27c_validation = _load_json(ROOT / "artifacts/benchuix/27C_validation_evidence.json")
+        _require(benchuix_27c_validation.get("phase_id") == "BENCHUIX-27C", "BENCHUIX-27C validation phase_id mismatch")
+        _require(
+            benchuix_27c_validation.get("status") in {"pending_local_validation", "local_validation_pass_recorded"},
+            "BENCHUIX-27C validation status mismatch",
+        )
+        _require(set(benchuix_27c_validation.get("created_artifacts", [])) == expected_27c_artifacts, "BENCHUIX-27C created_artifacts mismatch")
+        criteria_27c = benchuix_27c_validation.get("criteria_covered", {})
+        for key in (
+            "visual_synthetic_test_matrix_created",
+            "comprehension_protocol_created",
+            "static_coverage_audit_created",
+            "severity_rubric_created",
+            "observation_schema_created",
+            "fixture_review_created",
+            "preview_readiness_boundary_created",
+            "no_preview_executed",
+            "no_browser_executed",
+            "no_package_manager_executed",
+            "no_project_aris_mutation",
+            "crisol_admitted",
+            "live_route_opened",
+            "all_real_locks_remain_false",
+        ):
+            _require(key in criteria_27c, f"BENCHUIX-27C criteria_covered missing key {key}")
+        for key in (
+            "visual_synthetic_test_matrix_created",
+            "comprehension_protocol_created",
+            "static_coverage_audit_created",
+            "severity_rubric_created",
+            "observation_schema_created",
+            "fixture_review_created",
+            "preview_readiness_boundary_created",
+            "no_preview_executed",
+            "no_browser_executed",
+            "no_package_manager_executed",
+            "no_project_aris_mutation",
+            "all_real_locks_remain_false",
+        ):
+            _require(criteria_27c.get(key) is True, f"BENCHUIX-27C criteria_covered {key} must be true")
+        for key in ("crisol_admitted", "live_route_opened"):
+            _require(criteria_27c.get(key) is False, f"BENCHUIX-27C criteria_covered {key} must be false")
+        tracking_27c = benchuix_27c_validation.get("candidate_tracking_preserved", {})
+        _require(tracking_27c.get("current_candidate_phase") == "BENCHUIX-27", "BENCHUIX-27C validation current candidate mismatch")
+        _require(tracking_27c.get("candidate_next_phase_after_operator_gate") == "CRISOL", "BENCHUIX-27C validation next candidate mismatch")
+        _require(tracking_27c.get("next_phase") is None, "BENCHUIX-27C validation next_phase must remain null")
+        _require(tracking_27c.get("active_next_phase") is None, "BENCHUIX-27C validation active_next_phase must remain null")
+        if benchuix_27c_validation.get("status") == "local_validation_pass_recorded":
+            artifact_hashes_27c = benchuix_27c_validation.get("artifact_hashes", {})
+            for path in sorted(expected_27c_artifacts - {"artifacts/benchuix/27C_validation_evidence.json"}):
+                _require(artifact_hashes_27c.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27C artifact hash mismatch for {path}")
+            results_27c = benchuix_27c_validation.get("results", {})
+            for key in (
+                "ACTIVE_CONTEXT_STATE_json_tool",
+                "ACTIVE_CONTEXT_SCHEMA_json_tool",
+                "visual_synthetic_test_matrix_json_tool",
+                "visual_static_coverage_audit_json_tool",
+                "visual_usability_severity_rubric_json_tool",
+                "expected_observation_schema_json_tool",
+                "visual_test_fixture_review_json_tool",
+                "no_real_execution_attestation_json_tool",
+                "validation_evidence_json_tool",
+                "validator_py_compile",
+                "validator_script",
+                "unittest_discover",
+                "git_diff_check",
+                "git_status_short",
+                "preview_executed",
+                "browser_executed",
+                "localhost_opened",
+                "package_manager_executed",
+                "real_user_testing_executed",
+                "Project_ARIS_changed",
+            ):
+                _require(key in results_27c, f"BENCHUIX-27C validation results missing {key}")
+            context_hashes_27c = benchuix_27c_validation.get("context_hashes", {})
+            for path in (
+                "ACTIVE_CONTEXT_STATE.json",
+                "ACTIVE_CONTEXT_SCHEMA.json",
+                "scripts/validate_active_context_state.py",
+                "tests/test_validate_active_context.py",
+            ):
+                _require(context_hashes_27c.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27C context hash mismatch for {path}")
+
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
             "benchuix_track must move past BENCHUIX-00 after operator gate materialization",
