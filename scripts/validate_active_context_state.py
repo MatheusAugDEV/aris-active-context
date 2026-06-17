@@ -7239,7 +7239,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             "local",
             "synthetic",
             "candidate-only",
-            "artifacts/benchuix/visual_sandbox_static/index.html",
+            "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
             "Do not run `npm`.",
             "Do not run any local server.",
             "Do not open `localhost`.",
@@ -7440,6 +7440,175 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "tests/test_validate_active_context.py",
             ):
                 _require(context_hashes_27d.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27D context hash mismatch for {path}")
+
+        expected_27e_artifacts = {
+            "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
+            "artifacts/benchuix/27E_file_preview_compatibility_report.md",
+            "artifacts/benchuix/27E_file_preview_boundary_attestation.json",
+            "artifacts/benchuix/27E_no_real_execution_attestation.json",
+            "artifacts/benchuix/27E_validation_evidence.json",
+        }
+        for path in sorted(expected_27e_artifacts):
+            _require((ROOT / path).exists(), f"BENCHUIX-27E artifact missing on disk: {path}")
+
+        preview_file_27e = (ROOT / "artifacts/benchuix/visual_sandbox_static/index_file_preview.html").read_text(encoding="utf-8")
+        _require('type="module"' not in preview_file_27e, 'BENCHUIX-27E preview file must not contain type="module"')
+        _require("import " not in preview_file_27e, "BENCHUIX-27E preview file must not contain import statements")
+        for forbidden_pattern in ("fetch(", "XMLHttpRequest", "WebSocket"):
+            _require(forbidden_pattern not in preview_file_27e, f"BENCHUIX-27E preview file forbidden pattern found: {forbidden_pattern}")
+        for required_snippet in (
+            "SandboxBadge",
+            "Sandbox candidate-only. Dados sintéticos. Nenhum estado real foi tocado.",
+            "barbearia_after_hours_vip_exception",
+            "mercado_suspected_refund_declined",
+            "escritorio_attachment_intercepted",
+            "Hoje",
+            "Aprovar",
+            "Histórico / Comprovantes",
+            "Rollback / Desfazer",
+            "Falha / Modo degradado",
+            "ARIS vai",
+            "ARIS não vai",
+            "Risco",
+            "Precisa aprovação?",
+            "Evidência",
+            "Rollback / compensação",
+            "Estado real tocado?",
+        ):
+            _require(required_snippet in preview_file_27e, f"BENCHUIX-27E preview file missing snippet: {required_snippet}")
+
+        report_27e = (ROOT / "artifacts/benchuix/27E_file_preview_compatibility_report.md").read_text(encoding="utf-8")
+        for required_snippet in (
+            "type=module",
+            "file://",
+            "blank screen",
+            "no localhost",
+            "no npm",
+            "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
+            "out of scope",
+        ):
+            _require(required_snippet in report_27e.lower() if required_snippet.islower() else report_27e, f"BENCHUIX-27E report missing snippet: {required_snippet}")
+
+        boundary_27e = _load_json(ROOT / "artifacts/benchuix/27E_file_preview_boundary_attestation.json")
+        _require(boundary_27e.get("phase_id") == "BENCHUIX-27E", "BENCHUIX-27E boundary phase_id mismatch")
+        _require(boundary_27e.get("artifact_type") == "file_preview_boundary_attestation", "BENCHUIX-27E boundary artifact_type mismatch")
+        for key in ("single_file_preview_created", "module_imports_removed_for_preview", "type_module_removed_for_preview"):
+            _require(boundary_27e.get(key) is True, f"BENCHUIX-27E boundary {key} must be true")
+        for key in (
+            "localhost_required",
+            "package_manager_required",
+            "api_required",
+            "backend_required",
+            "real_data_required",
+            "browser_executed_by_codex",
+            "preview_executed_by_codex",
+            "crisol_admitted",
+            "live_route_opened",
+            "product_ready_declared",
+        ):
+            _require(boundary_27e.get(key) is False, f"BENCHUIX-27E boundary {key} must be false")
+
+        no_real_27e = _load_json(ROOT / "artifacts/benchuix/27E_no_real_execution_attestation.json")
+        _require(no_real_27e.get("phase_id") == "BENCHUIX-27E", "BENCHUIX-27E no-real phase_id mismatch")
+        for key in (
+            "Project_ARIS_changed",
+            "runtime_executed",
+            "preview_executed_by_codex",
+            "browser_executed_by_codex",
+            "localhost_opened",
+            "package_manager_executed",
+            "package_json_created",
+            "node_modules_created",
+            "real_demo_executed",
+            "real_user_testing_executed",
+            "field_data_collected",
+            "real_apply_executed",
+            "product_executed",
+            "bedrock_executed",
+            "secrets_accessed",
+            "real_customer_data_used",
+            "real_billing_used",
+            "real_oauth_used",
+            "real_integrations_used",
+            "live_route_opened",
+            "real_locks_opened",
+            "crisol_opened",
+        ):
+            _require(no_real_27e.get(key) is False, f"BENCHUIX-27E no-real {key} must be false")
+        _require(no_real_27e.get("documentary_candidate_only") is True, "BENCHUIX-27E documentary_candidate_only mismatch")
+        _require(no_real_27e.get("file_preview_compatibility_only") is True, "BENCHUIX-27E file_preview_compatibility_only mismatch")
+        _require(no_real_27e.get("all_real_locks_remain_false") is True, "BENCHUIX-27E all_real_locks_remain_false mismatch")
+
+        validation_27e = _load_json(ROOT / "artifacts/benchuix/27E_validation_evidence.json")
+        _require(validation_27e.get("phase_id") == "BENCHUIX-27E", "BENCHUIX-27E validation phase_id mismatch")
+        _require(validation_27e.get("status") in {"pending_local_validation", "local_validation_pass_recorded"}, "BENCHUIX-27E validation status mismatch")
+        _require(set(validation_27e.get("created_artifacts", [])) == expected_27e_artifacts, "BENCHUIX-27E created_artifacts mismatch")
+        criteria_27e = validation_27e.get("criteria_covered", {})
+        for key in (
+            "single_file_preview_created",
+            "type_module_removed_for_preview",
+            "module_imports_removed_for_preview",
+            "no_preview_executed_by_codex",
+            "no_browser_executed_by_codex",
+            "no_localhost_opened",
+            "no_package_manager_executed",
+            "no_project_aris_mutation",
+            "crisol_admitted",
+            "live_route_opened",
+            "all_real_locks_remain_false",
+        ):
+            _require(key in criteria_27e, f"BENCHUIX-27E criteria_covered missing key {key}")
+        for key in (
+            "single_file_preview_created",
+            "type_module_removed_for_preview",
+            "module_imports_removed_for_preview",
+            "no_preview_executed_by_codex",
+            "no_browser_executed_by_codex",
+            "no_localhost_opened",
+            "no_package_manager_executed",
+            "no_project_aris_mutation",
+            "all_real_locks_remain_false",
+        ):
+            _require(criteria_27e.get(key) is True, f"BENCHUIX-27E criteria_covered {key} must be true")
+        for key in ("crisol_admitted", "live_route_opened"):
+            _require(criteria_27e.get(key) is False, f"BENCHUIX-27E criteria_covered {key} must be false")
+        tracking_27e = validation_27e.get("candidate_tracking_preserved", {})
+        _require(tracking_27e.get("current_candidate_phase") == "BENCHUIX-27", "BENCHUIX-27E validation current candidate mismatch")
+        _require(tracking_27e.get("candidate_next_phase_after_operator_gate") == "CRISOL", "BENCHUIX-27E validation next candidate mismatch")
+        _require(tracking_27e.get("next_phase") is None, "BENCHUIX-27E validation next_phase must remain null")
+        _require(tracking_27e.get("active_next_phase") is None, "BENCHUIX-27E validation active_next_phase must remain null")
+        if validation_27e.get("status") == "local_validation_pass_recorded":
+            artifact_hashes_27e = validation_27e.get("artifact_hashes", {})
+            for path in sorted(expected_27e_artifacts - {"artifacts/benchuix/27E_validation_evidence.json"}):
+                _require(artifact_hashes_27e.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27E artifact hash mismatch for {path}")
+            results_27e = validation_27e.get("results", {})
+            for key in (
+                "ACTIVE_CONTEXT_STATE_json_tool",
+                "ACTIVE_CONTEXT_SCHEMA_json_tool",
+                "file_preview_boundary_attestation_json_tool",
+                "no_real_execution_attestation_json_tool",
+                "validation_evidence_json_tool",
+                "validator_py_compile",
+                "validator_script",
+                "unittest_discover",
+                "git_diff_check",
+                "git_status_short",
+                "preview_executed_by_codex",
+                "browser_executed_by_codex",
+                "localhost_opened",
+                "package_manager_executed",
+                "real_user_testing_executed",
+                "Project_ARIS_changed",
+            ):
+                _require(key in results_27e, f"BENCHUIX-27E validation results missing {key}")
+            context_hashes_27e = validation_27e.get("context_hashes", {})
+            for path in (
+                "ACTIVE_CONTEXT_STATE.json",
+                "ACTIVE_CONTEXT_SCHEMA.json",
+                "scripts/validate_active_context_state.py",
+                "tests/test_validate_active_context.py",
+            ):
+                _require(context_hashes_27e.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27E context hash mismatch for {path}")
 
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",

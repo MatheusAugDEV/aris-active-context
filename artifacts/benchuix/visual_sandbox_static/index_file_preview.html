@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARIS Visual Sandbox File Preview</title>
+    <style>
+      :root {
+        --bg: #f7f8fb;
+        --surface: #ffffff;
+        --ink: #17202a;
+        --muted: #5e6b78;
+        --line: #d8dde5;
+        --accent: #176b5f;
+        --accent-2: #255f9a;
+        --warn: #a05a00;
+        --danger: #9b2f3a;
+        --ok: #2f6d3a;
+        --radius: 8px;
+        --shadow: 0 8px 26px rgba(23, 32, 42, 0.08);
+        --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font);
+      }
+
+      button {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ink);
+        cursor: pointer;
+        font: inherit;
+        min-height: 40px;
+        padding: 8px 12px;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+      }
+
+      .app-shell {
+        min-height: 100vh;
+        padding: 18px 18px 96px;
+      }
+
+      .topbar,
+      .summary-panel,
+      .action-contract-card,
+      .approval-panel,
+      .receipt-card,
+      .receipt-detail,
+      .undo-sheet,
+      .degraded-copy,
+      .pending-item,
+      .operator-note {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        margin-bottom: 14px;
+      }
+
+      .workspace,
+      .screen,
+      .toolbar {
+        display: grid;
+        gap: 14px;
+      }
+
+      .toolbar {
+        margin-bottom: 14px;
+      }
+
+      .toolbar-row,
+      .scenario-switcher,
+      .decision-bar,
+      .bottom-tab-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .scenario-chip.is-active,
+      .tab.is-active {
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        font-size: 0.78rem;
+        margin: 0 0 4px;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul {
+        margin-top: 0;
+      }
+
+      .sandbox-badge,
+      .status-pill,
+      .risk-badge,
+      .state-touched,
+      .info-row,
+      .contract-box {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 10px;
+      }
+
+      .sandbox-badge {
+        background: #eef7f4;
+        color: var(--accent);
+        font-weight: 700;
+        max-width: 420px;
+      }
+
+      .status-pill {
+        display: inline-block;
+        font-weight: 700;
+      }
+
+      .summary-panel,
+      .pending-item,
+      .approval-panel,
+      .undo-sheet,
+      .receipt-card,
+      .receipt-detail {
+        display: grid;
+        gap: 12px;
+      }
+
+      .contract-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      }
+
+      .risk-badge {
+        border-color: var(--warn);
+      }
+
+      .degraded-banner {
+        background: #fff6ec;
+        border: 1px solid #e3b477;
+        border-radius: var(--radius);
+        color: var(--warn);
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 12px;
+      }
+
+      .operator-note {
+        background: #f7faff;
+        border-color: #c7d8ec;
+      }
+
+      .safe-note {
+        color: var(--ok);
+        font-weight: 700;
+      }
+
+      .bottom-tab-bar {
+        background: rgba(255, 255, 255, 0.96);
+        border-top: 1px solid var(--line);
+        bottom: 0;
+        left: 0;
+        padding: 10px 18px;
+        position: fixed;
+        right: 0;
+      }
+
+      .decision-copy {
+        border: 1px dashed var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+      }
+
+      @media (max-width: 640px) {
+        .topbar {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="aris-visual-sandbox-root"></div>
+    <script>
+      const ACTION_STATES = {
+        DETECTADO: "DETECTADO",
+        PROPOSTO: "PROPOSTO",
+        BLOQUEADO_AUTO: "BLOQUEADO_AUTO",
+        AGUARDANDO_APROVACAO: "AGUARDANDO_APROVACAO",
+        APROVADO: "APROVADO",
+        RECUSADO: "RECUSADO",
+        COMPROVANTE_GERADO: "COMPROVANTE_GERADO",
+        ROLLBACK_DISPONIVEL: "ROLLBACK_DISPONIVEL",
+        DESFEITO: "DESFEITO"
+      };
+
+      const GLOBAL_MODES = {
+        NORMAL: "NORMAL",
+        MODO_DEGRADADO: "MODO_DEGRADADO"
+      };
+
+      const SCREEN_IDS = {
+        TODAY: "today",
+        APPROVE: "approve",
+        HISTORY: "history",
+        ROLLBACK: "rollback",
+        DEGRADED: "degraded"
+      };
+
+      const SCREEN_LABELS = {
+        [SCREEN_IDS.TODAY]: "Hoje",
+        [SCREEN_IDS.APPROVE]: "Aprovar",
+        [SCREEN_IDS.HISTORY]: "Histórico / Comprovantes",
+        [SCREEN_IDS.ROLLBACK]: "Rollback / Desfazer",
+        [SCREEN_IDS.DEGRADED]: "Falha / Modo degradado"
+      };
+
+      const SCENARIOS = [
+        {
+          scenarioId: "barbearia_after_hours_vip_exception",
+          domain: "barbearia",
+          shortLabel: "Barbearia",
+          title: "Pedido VIP fora do horário",
+          businessAlias: "SINTÉTICO-BARB-LUZ-ALFA",
+          initialActionState: ACTION_STATES.DETECTADO,
+          event: {
+            eventId: "SINTÉTICO-EVT-BARB-20H30",
+            summary: "VIP-LIGHT pede encaixe às 20:30, fora da janela sintética.",
+            initialState: "Agenda sintética fecha às 20:00 e exige exceção do dono."
+          },
+          willDo: [
+            "Bloquear o encaixe automático no sandbox.",
+            "Mostrar impacto na fila sintética.",
+            "Pedir gate do dono para uma exceção VIP.",
+            "Gerar comprovante sintético depois da decisão."
+          ],
+          willNotDo: [
+            "Não confirmar atendimento real.",
+            "Não avisar cliente real.",
+            "Não alterar agenda real.",
+            "Não cobrar valor real."
+          ],
+          risk: {
+            label: "Fila posterior pode atrasar",
+            severity: "médio",
+            plainLanguage: "A exceção pode atrasar dois atendimentos sintéticos seguintes."
+          },
+          approvalRequired: true,
+          decisionOptions: [
+            { label: "Aprovar exceção sintética", action: "OWNER_APPROVE" },
+            { label: "Manter bloqueio", action: "OWNER_REFUSE" },
+            { label: "Gerar comprovante", action: "OWNER_RECEIPT" }
+          ],
+          evidencePlan: {
+            receiptId: "SINTÉTICO-RCPT-BARB-001",
+            items: ["política de horário", "slot pedido", "decisão do dono", "risco resumido", "stateTouched:false"]
+          },
+          receiptExample: {
+            receiptId: "SINTÉTICO-RCPT-BARB-001",
+            decision: "exceção_vip_aprovada_no_sandbox",
+            verificationCode: "SINTÉTICO-VC-BARB-01",
+            isDemo: true
+          },
+          rollbackOrCompensation: {
+            type: "reversão_documental",
+            label: "Reverter exceção sintética",
+            effect: "Marca a história como desfeita sem mudar agenda real."
+          },
+          degradedSafeStep: "Ver comprovante sintético ou manter bloqueio."
+        },
+        {
+          scenarioId: "mercado_suspected_refund_declined",
+          domain: "mercado",
+          shortLabel: "Mercado",
+          title: "Reembolso suspeito recusado",
+          businessAlias: "SINTÉTICO-MERC-PRAÇA-BETA",
+          initialActionState: ACTION_STATES.BLOQUEADO_AUTO,
+          event: {
+            eventId: "SINTÉTICO-EVT-MKT-REF-204",
+            summary: "Pedido PED-MKT-204 solicita reembolso integral acima do limite sintético.",
+            initialState: "Dois sinais sintéticos de risco acionam bloqueio determinístico."
+          },
+          willDo: [
+            "Recusar o reembolso instantâneo no sandbox.",
+            "Mostrar os sinais sintéticos de risco.",
+            "Abrir revisão manual documental.",
+            "Gerar comprovante sintético de recusa."
+          ],
+          willNotDo: [
+            "Não devolver dinheiro real.",
+            "Não chamar provedor financeiro real.",
+            "Não alterar estoque real.",
+            "Não alterar caixa ou ERP real."
+          ],
+          risk: {
+            label: "Perda financeira sintética",
+            severity: "alto",
+            plainLanguage: "Liberar sem revisão aumentaria perda sintética e criaria precedente fora da política."
+          },
+          approvalRequired: false,
+          decisionOptions: [
+            { label: "Manter recusa", action: "OWNER_BLOCK" },
+            { label: "Criar revisão manual", action: "OWNER_OVERRIDE" },
+            { label: "Gerar comprovante", action: "OWNER_RECEIPT" }
+          ],
+          evidencePlan: {
+            receiptId: "SINTÉTICO-RCPT-MKT-002",
+            items: ["pedido sintético", "faixa de risco", "limite diário", "política de bloqueio", "stateTouched:false"]
+          },
+          receiptExample: {
+            receiptId: "SINTÉTICO-RCPT-MKT-002",
+            decision: "reembolso_instantâneo_recusado_no_sandbox",
+            verificationCode: "SINTÉTICO-VC-MKT-02",
+            isDemo: true
+          },
+          rollbackOrCompensation: {
+            type: "compensação_por_revisão_manual",
+            label: "Gerar revisão manual sintética",
+            effect: "Cria fila documental sem movimentar dinheiro real."
+          },
+          degradedSafeStep: "Manter recusa e ver evidência sintética."
+        },
+        {
+          scenarioId: "escritorio_attachment_intercepted",
+          domain: "escritório",
+          shortLabel: "Escritório",
+          title: "Anexo suspeito em quarentena",
+          businessAlias: "SINTÉTICO-OFC-CENTRO-GAMA",
+          initialActionState: ACTION_STATES.DETECTADO,
+          event: {
+            eventId: "SINTÉTICO-EVT-OFC-ANX-07",
+            summary: "Anexo ANX-SAFE-07 traz marcador sintético de exceção de política.",
+            initialState: "Caixa documental sintética exige revisão humana antes de qualquer liberação."
+          },
+          willDo: [
+            "Interceptar o anexo sintético.",
+            "Colocar em quarentena visual.",
+            "Mostrar motivo sem detalhe ofensivo.",
+            "Gerar comprovante sintético."
+          ],
+          willNotDo: [
+            "Não abrir anexo real.",
+            "Não disparar serviço externo.",
+            "Não executar automação real.",
+            "Não ensinar técnica ofensiva."
+          ],
+          risk: {
+            label: "Exceção de política",
+            severity: "alto",
+            plainLanguage: "Liberar sem revisão criaria decisão sem contexto e sem trilha confiável."
+          },
+          approvalRequired: true,
+          decisionOptions: [
+            { label: "Enviar para revisão", action: "OWNER_APPROVE" },
+            { label: "Manter quarentena", action: "OWNER_BLOCK" },
+            { label: "Gerar comprovante", action: "OWNER_RECEIPT" }
+          ],
+          evidencePlan: {
+            receiptId: "SINTÉTICO-RCPT-OFC-003",
+            items: ["anexo sintético", "marcador seguro", "política de quarentena", "revisão humana", "stateTouched:false"]
+          },
+          receiptExample: {
+            receiptId: "SINTÉTICO-RCPT-OFC-003",
+            decision: "anexo_em_quarentena_no_sandbox",
+            verificationCode: "SINTÉTICO-VC-OFC-03",
+            isDemo: true
+          },
+          rollbackOrCompensation: {
+            type: "liberação_após_revisão_documental",
+            label: "Liberar após revisão humana",
+            effect: "Mostra história controlada de liberação sem mudar documento real."
+          },
+          degradedSafeStep: "Manter quarentena e consultar comprovante sintético."
+        }
+      ];
+
+      const VALID_TRANSITIONS = {
+        [ACTION_STATES.DETECTADO]: {
+          OWNER_APPROVE: ACTION_STATES.PROPOSTO,
+          OWNER_BLOCK: ACTION_STATES.BLOQUEADO_AUTO,
+          OWNER_REFUSE: ACTION_STATES.RECUSADO,
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.PROPOSTO]: {
+          OWNER_APPROVE: ACTION_STATES.AGUARDANDO_APROVACAO,
+          OWNER_BLOCK: ACTION_STATES.BLOQUEADO_AUTO,
+          OWNER_REFUSE: ACTION_STATES.RECUSADO,
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.BLOQUEADO_AUTO]: {
+          OWNER_APPROVE: ACTION_STATES.AGUARDANDO_APROVACAO,
+          OWNER_BLOCK: ACTION_STATES.BLOQUEADO_AUTO,
+          OWNER_OVERRIDE: ACTION_STATES.AGUARDANDO_APROVACAO,
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.AGUARDANDO_APROVACAO]: {
+          OWNER_APPROVE: ACTION_STATES.APROVADO,
+          OWNER_REFUSE: ACTION_STATES.RECUSADO,
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.APROVADO]: {
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.RECUSADO]: {
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        },
+        [ACTION_STATES.COMPROVANTE_GERADO]: {
+          OWNER_UNDO: ACTION_STATES.ROLLBACK_DISPONIVEL
+        },
+        [ACTION_STATES.ROLLBACK_DISPONIVEL]: {
+          OWNER_UNDO: ACTION_STATES.DESFEITO
+        },
+        [ACTION_STATES.DESFEITO]: {
+          OWNER_RECEIPT: ACTION_STATES.COMPROVANTE_GERADO
+        }
+      };
+
+      const state = {
+        scenarioId: SCENARIOS[0].scenarioId,
+        screenId: SCREEN_IDS.TODAY,
+        actionState: SCENARIOS[0].initialActionState,
+        globalMode: GLOBAL_MODES.NORMAL
+      };
+
+      const root = document.getElementById("aris-visual-sandbox-root");
+
+      function getScenario() {
+        return SCENARIOS.find((scenario) => scenario.scenarioId === state.scenarioId) || SCENARIOS[0];
+      }
+
+      function sandboxBadge() {
+        return '<div class="sandbox-badge" data-component="SandboxBadge">Sandbox candidate-only. Dados sintéticos. Nenhum estado real foi tocado.</div>';
+      }
+
+      function stateTouchedIndicator() {
+        return '<div class="state-touched" data-component="StateTouchedIndicator" data-state-touched="false"><strong>Estado real tocado?</strong><span> Não. stateTouched: false</span></div>';
+      }
+
+      function statusPill() {
+        return '<span class="status-pill">' + state.actionState + "</span>";
+      }
+
+      function listBox(title, items) {
+        return '<div class="contract-box"><p class="eyebrow">' + title + "</p><ul>" + items.map((item) => "<li>" + item + "</li>").join("") + "</ul></div>";
+      }
+
+      function contractCard(scenario) {
+        return [
+          '<article class="action-contract-card" data-component="ActionContractCard">',
+          sandboxBadge(),
+          '<header><p class="eyebrow">Contrato da ação sensível</p><h3>' + scenario.title + '</h3><p>' + scenario.event.summary + "</p></header>",
+          '<div class="contract-grid">',
+          listBox("ARIS vai", scenario.willDo),
+          listBox("ARIS não vai", scenario.willNotDo),
+          '<div class="risk-badge"><p class="eyebrow">Risco</p><strong>' + scenario.risk.label + "</strong><p>" + scenario.risk.plainLanguage + "</p></div>",
+          '<div class="contract-box"><p class="eyebrow">Precisa aprovação?</p><p>' + (scenario.approvalRequired ? "Sim. Gate explícito do dono." : "Não para o bloqueio inicial. Continua documental.") + "</p></div>",
+          '<div class="contract-box"><p class="eyebrow">Evidência</p><p>Recibo: ' + scenario.evidencePlan.receiptId + "</p><p>" + scenario.evidencePlan.items.join(" / ") + "</p></div>",
+          '<div class="contract-box"><p class="eyebrow">Rollback / compensação</p><strong>' + scenario.rollbackOrCompensation.label + "</strong><p>" + scenario.rollbackOrCompensation.effect + "</p></div>",
+          stateTouchedIndicator(),
+          "</div>",
+          "</article>"
+        ].join("");
+      }
+
+      function decisionBar(scenario) {
+        return '<div class="decision-bar" data-component="DecisionBar">' + scenario.decisionOptions.map((option) => {
+          const blockedInDegraded = state.globalMode === GLOBAL_MODES.MODO_DEGRADADO && ["OWNER_APPROVE", "OWNER_OVERRIDE", "OWNER_UNDO"].includes(option.action);
+          return '<button class="decision-button" data-action="' + option.action + '"' + (blockedInDegraded ? " disabled" : "") + ">" + option.label + "</button>";
+        }).join("") + "</div>";
+      }
+
+      function renderToday(scenario) {
+        return [
+          '<section class="screen" data-screen-name="Hoje">',
+          '<section class="summary-panel" data-component="TodaySummary"><div><p class="eyebrow">Hoje sintético</p><h2>' + scenario.event.summary + '</h2></div>' + statusPill() + '<p>' + scenario.event.initialState + '</p><p class="safe-note">Estado real tocado? não.</p></section>',
+          '<article class="pending-item" data-component="PendingItem"><div><p class="eyebrow">Item sensível</p><h3>' + scenario.title + '</h3><p>' + scenario.risk.plainLanguage + '</p></div>' + statusPill() + "</article>",
+          contractCard(scenario),
+          "</section>"
+        ].join("");
+      }
+
+      function renderApprove(scenario) {
+        return [
+          '<section class="screen" data-screen-name="Aprovar">',
+          '<section class="approval-panel" data-component="ApprovalPanel">',
+          contractCard(scenario),
+          '<div class="decision-copy"><h3>Decisão sintética</h3><p>Leia o contrato antes de decidir. A decisão fica apenas na história visual.</p></div>',
+          decisionBar(scenario),
+          "</section>",
+          "</section>"
+        ].join("");
+      }
+
+      function renderHistory(scenario) {
+        return [
+          '<section class="screen" data-screen-name="Histórico / Comprovantes">',
+          '<article class="receipt-card" data-component="ReceiptCard"><div><p class="eyebrow">Comprovante sintético</p><h3>' + scenario.receiptExample.receiptId + '</h3><p>' + scenario.receiptExample.decision + '</p></div>' + statusPill() + "</article>",
+          '<section class="receipt-detail" data-component="ReceiptDetail"><h3>' + scenario.receiptExample.receiptId + '</h3><p>Código: ' + scenario.receiptExample.verificationCode + '</p><p>Decisão: ' + scenario.receiptExample.decision + '</p><p>Evidência: ' + scenario.evidencePlan.items.join(" / ") + '</p><p>Comprovante demonstrativo: ' + (scenario.receiptExample.isDemo ? "sim" : "não") + "</p>" + stateTouchedIndicator() + "</section>",
+          "</section>"
+        ].join("");
+      }
+
+      function renderRollback(scenario) {
+        return [
+          '<section class="screen" data-screen-name="Rollback / Desfazer">',
+          '<section class="undo-sheet" data-component="UndoSheet"><p class="eyebrow">Rollback / Desfazer</p><h3>' + scenario.rollbackOrCompensation.label + '</h3><p>' + scenario.rollbackOrCompensation.effect + '</p><p>Tipo: ' + scenario.rollbackOrCompensation.type + "</p>" + stateTouchedIndicator() + "</section>",
+          contractCard(scenario),
+          "</section>"
+        ].join("");
+      }
+
+      function renderDegraded(scenario) {
+        return [
+          '<section class="screen" data-screen-name="Falha / Modo degradado">',
+          '<aside class="degraded-banner" data-component="DegradedBanner"><strong>Modo degradado</strong><span>Nenhuma ação parecida com execução fica disponível. ' + scenario.degradedSafeStep + "</span></aside>",
+          '<section class="degraded-copy"><h2>Não é seguro mostrar decisão agora</h2><p>Apenas comprovantes e próximos passos seguros ficam visíveis.</p></section>',
+          contractCard(scenario),
+          "</section>"
+        ].join("");
+      }
+
+      function renderScreen(scenario) {
+        if (state.screenId === SCREEN_IDS.APPROVE) {
+          return renderApprove(scenario);
+        }
+        if (state.screenId === SCREEN_IDS.HISTORY) {
+          return renderHistory(scenario);
+        }
+        if (state.screenId === SCREEN_IDS.ROLLBACK) {
+          return renderRollback(scenario);
+        }
+        if (state.screenId === SCREEN_IDS.DEGRADED) {
+          return renderDegraded(scenario);
+        }
+        return renderToday(scenario);
+      }
+
+      function nextActionState(action) {
+        if (state.globalMode === GLOBAL_MODES.MODO_DEGRADADO && ["OWNER_APPROVE", "OWNER_OVERRIDE", "OWNER_UNDO"].includes(action)) {
+          return state.actionState;
+        }
+        return (VALID_TRANSITIONS[state.actionState] && VALID_TRANSITIONS[state.actionState][action]) || state.actionState;
+      }
+
+      function render() {
+        const scenario = getScenario();
+        root.innerHTML = [
+          '<main class="app-shell" data-component="AppShell" data-state-touched="false">',
+          '<header class="topbar"><div><p class="eyebrow">ARIS Visual Sandbox</p><h1>' + scenario.title + '</h1><p>Alias: ' + scenario.businessAlias + "</p></div>" + sandboxBadge() + "</header>",
+          '<section class="toolbar">',
+          '<section class="operator-note"><p class="eyebrow">Prévia local candidate-only</p><p>Arquivo único compatível com file://. Sem servidor, sem localhost, sem pacote, sem backend, sem dado real.</p></section>',
+          '<div class="toolbar-row"><strong>Cenários:</strong></div>',
+          '<div class="scenario-switcher">' + SCENARIOS.map((entry) => '<button class="scenario-chip' + (entry.scenarioId === state.scenarioId ? " is-active" : "") + '" data-scenario="' + entry.scenarioId + '">' + entry.shortLabel + "</button>").join("") + "</div>",
+          '<div class="toolbar-row"><strong>Telas:</strong></div>',
+          '<nav class="bottom-tab-bar" aria-label="Navegação visual">' + Object.keys(SCREEN_LABELS).map((screenId) => '<button class="tab' + (screenId === state.screenId ? " is-active" : "") + '" data-screen="' + screenId + '">' + SCREEN_LABELS[screenId] + "</button>").join("") + "</nav>",
+          '<div class="toolbar-row"><button data-mode="' + (state.globalMode === GLOBAL_MODES.NORMAL ? "degrade" : "recover") + '">' + (state.globalMode === GLOBAL_MODES.NORMAL ? "Ativar modo degradado" : "Voltar ao modo normal") + '</button><button data-action="OWNER_RECEIPT">Gerar comprovante</button><button data-action="OWNER_UNDO">Mostrar rollback</button></div>',
+          "</section>",
+          '<section class="workspace">' + renderScreen(scenario) + "</section>",
+          "</main>"
+        ].join("");
+
+        root.querySelectorAll("[data-scenario]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const nextScenario = SCENARIOS.find((entry) => entry.scenarioId === button.dataset.scenario);
+            state.scenarioId = nextScenario.scenarioId;
+            state.screenId = SCREEN_IDS.TODAY;
+            state.actionState = nextScenario.initialActionState;
+            state.globalMode = GLOBAL_MODES.NORMAL;
+            render();
+          });
+        });
+
+        root.querySelectorAll("[data-screen]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.screenId = button.dataset.screen;
+            render();
+          });
+        });
+
+        root.querySelectorAll("[data-action]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.actionState = nextActionState(button.dataset.action);
+            if (button.dataset.action === "OWNER_UNDO") {
+              state.screenId = SCREEN_IDS.ROLLBACK;
+            }
+            if (button.dataset.action === "OWNER_RECEIPT") {
+              state.screenId = SCREEN_IDS.HISTORY;
+            }
+            render();
+          });
+        });
+
+        root.querySelectorAll("[data-mode]").forEach((button) => {
+          button.addEventListener("click", () => {
+            if (button.dataset.mode === "degrade") {
+              state.globalMode = GLOBAL_MODES.MODO_DEGRADADO;
+              state.screenId = SCREEN_IDS.DEGRADED;
+            } else {
+              state.globalMode = GLOBAL_MODES.NORMAL;
+              state.screenId = SCREEN_IDS.TODAY;
+            }
+            render();
+          });
+        });
+
+        window.__ARIS_VISUAL_SANDBOX_FILE_PREVIEW__ = {
+          scenarioId: state.scenarioId,
+          screenId: state.screenId,
+          actionState: state.actionState,
+          globalMode: state.globalMode,
+          stateTouched: false,
+          isDemo: true
+        };
+      }
+
+      render();
+    </script>
+  </body>
+</html>

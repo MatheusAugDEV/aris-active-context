@@ -16,7 +16,7 @@ Allow the operator to inspect the ARIS Visual Sandbox manually as a local static
 
 Open this file directly in the browser from the local filesystem:
 
-- `artifacts/benchuix/visual_sandbox_static/index.html`
+- `artifacts/benchuix/visual_sandbox_static/index_file_preview.html`
 
 Preferred instruction:
 

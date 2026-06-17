@@ -503,6 +503,52 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_27d_no_real["crisol_opened"] is False
     assert benchuix_27d_no_real["all_real_locks_remain_false"] is True
 
+    assert Path("artifacts/benchuix/visual_sandbox_static/index_file_preview.html").exists()
+    assert Path("artifacts/benchuix/27E_file_preview_compatibility_report.md").exists()
+    assert Path("artifacts/benchuix/27E_file_preview_boundary_attestation.json").exists()
+    assert Path("artifacts/benchuix/27E_no_real_execution_attestation.json").exists()
+    assert Path("artifacts/benchuix/27E_validation_evidence.json").exists()
+
+    preview_file_27e = Path("artifacts/benchuix/visual_sandbox_static/index_file_preview.html").read_text(encoding="utf-8")
+    assert 'type="module"' not in preview_file_27e
+    assert "import " not in preview_file_27e
+    assert "fetch(" not in preview_file_27e
+    assert "XMLHttpRequest" not in preview_file_27e
+    assert "WebSocket" not in preview_file_27e
+    assert "SandboxBadge" in preview_file_27e
+    assert "barbearia_after_hours_vip_exception" in preview_file_27e
+    assert "mercado_suspected_refund_declined" in preview_file_27e
+    assert "escritorio_attachment_intercepted" in preview_file_27e
+    assert "Estado real tocado?" in preview_file_27e
+
+    benchuix_27e_boundary = json.loads(Path("artifacts/benchuix/27E_file_preview_boundary_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27e_boundary["phase_id"] == "BENCHUIX-27E"
+    assert benchuix_27e_boundary["single_file_preview_created"] is True
+    assert benchuix_27e_boundary["module_imports_removed_for_preview"] is True
+    assert benchuix_27e_boundary["type_module_removed_for_preview"] is True
+    assert benchuix_27e_boundary["localhost_required"] is False
+    assert benchuix_27e_boundary["package_manager_required"] is False
+    assert benchuix_27e_boundary["crisol_admitted"] is False
+
+    benchuix_27e_validation = json.loads(Path("artifacts/benchuix/27E_validation_evidence.json").read_text(encoding="utf-8"))
+    assert benchuix_27e_validation["candidate_tracking_preserved"]["current_candidate_phase"] == "BENCHUIX-27"
+    assert benchuix_27e_validation["candidate_tracking_preserved"]["candidate_next_phase_after_operator_gate"] == "CRISOL"
+    assert benchuix_27e_validation["candidate_tracking_preserved"]["next_phase"] is None
+    assert benchuix_27e_validation["candidate_tracking_preserved"]["active_next_phase"] is None
+
+    benchuix_27e_no_real = json.loads(Path("artifacts/benchuix/27E_no_real_execution_attestation.json").read_text(encoding="utf-8"))
+    assert benchuix_27e_no_real["Project_ARIS_changed"] is False
+    assert benchuix_27e_no_real["runtime_executed"] is False
+    assert benchuix_27e_no_real["preview_executed_by_codex"] is False
+    assert benchuix_27e_no_real["browser_executed_by_codex"] is False
+    assert benchuix_27e_no_real["localhost_opened"] is False
+    assert benchuix_27e_no_real["package_manager_executed"] is False
+    assert benchuix_27e_no_real["package_json_created"] is False
+    assert benchuix_27e_no_real["node_modules_created"] is False
+    assert benchuix_27e_no_real["real_user_testing_executed"] is False
+    assert benchuix_27e_no_real["crisol_opened"] is False
+    assert benchuix_27e_no_real["all_real_locks_remain_false"] is True
+
 
 def test_ci_terminal_state_green_requires_all_terminal_success():
     module = _load_validator_module()

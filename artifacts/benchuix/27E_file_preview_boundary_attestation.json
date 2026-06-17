@@ -1,0 +1,17 @@
+{
+  "phase_id": "BENCHUIX-27E",
+  "artifact_type": "file_preview_boundary_attestation",
+  "single_file_preview_created": true,
+  "module_imports_removed_for_preview": true,
+  "type_module_removed_for_preview": true,
+  "localhost_required": false,
+  "package_manager_required": false,
+  "api_required": false,
+  "backend_required": false,
+  "real_data_required": false,
+  "browser_executed_by_codex": false,
+  "preview_executed_by_codex": false,
+  "crisol_admitted": false,
+  "live_route_opened": false,
+  "product_ready_declared": false
+}

@@ -14,7 +14,7 @@
     "artifacts/benchuix/27D_validation_evidence.json"
   ],
   "artifact_hashes": {
-    "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "ca4161e18a0d9f57fcf4f3dc06f2f26daf17360e8a8da769a58b098904a74403",
+    "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
     "artifacts/benchuix/27D_operator_visual_observation_sheet.json": "d8540489d52713776b88377e41fbbc096c421d6e42a510041fa4ae0de78f1213",
     "artifacts/benchuix/27D_preview_boundary_attestation.json": "53db16dd68d6ae8bac9a9aa4359e82291fe1a92153ab3526bddcf20077c7d193",
     "artifacts/benchuix/27D_static_preview_preflight_checklist.json": "0bb304ab805003c980979a203fb5ab08935782ee71776b58c05a9ed5055d2ebf",
@@ -82,8 +82,8 @@
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
     "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
-    "scripts/validate_active_context_state.py": "287b61929c7e1a9f42e863ce0c205b6c5fafeff1320505e275db96ce22a0d372",
-    "tests/test_validate_active_context.py": "7692851ac5d509fd023461ccd842d933d57e7e1b2357512975a293cbfc0508d0",
+    "scripts/validate_active_context_state.py": "85ded800ce1c56aeea57bcb0bf9c126aac18df51da7b94e61472149758ffad24",
+    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
     "artifacts/benchuix/27B_react_static_prototype_manifest.json": "cab1c85b3686fb9f3dc02c39653be4a4f58caa47ee219a56e0a93d8d20a37056",
     "artifacts/benchuix/27C_visual_synthetic_test_matrix.json": "d340da16fab85b50de2c259a40a211fdb4bf6b3d0898fc50f3acadcd0cad047a",
     "artifacts/benchuix/visual_sandbox_static/README.md": "5e7675b426a80f8af06f716238d133b1be788739a39f0de18095df4a67a1656f",
