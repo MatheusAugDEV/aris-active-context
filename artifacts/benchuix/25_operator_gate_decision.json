@@ -2,12 +2,12 @@
   "phase_id": "BENCHUIX-25",
   "artifact_type": "operator_gate_decision",
   "candidate_only": true,
-  "operator_approval_present": false,
-  "operator_approval_source": null,
-  "operator_approval_text_hash": null,
+  "operator_approval_present": true,
+  "operator_approval_source": "chat_operator_message_2026-06-16_candidate_only_benchuix26",
+  "operator_approval_text_hash": "b30dba06368d7462916e9e0d9d09fa4d6b06df9d725068552724684625acd4d2",
   "approval_scope": {
-    "authorizes_benchuix25_candidate_acceptance": false,
-    "authorizes_benchuix26_candidate_only_admission": false,
+    "authorizes_benchuix25_candidate_acceptance": true,
+    "authorizes_benchuix26_candidate_only_admission": true,
     "authorizes_live_route": false,
     "authorizes_product": false,
     "authorizes_pilot": false,
@@ -30,11 +30,7 @@
     "active_context_state_hash_actual": "056a1c597dcce4717717f56176a451f3d8ca4ba6e4504d3e969ee4800e07c73c",
     "validator_hash_actual": "cdcecea114b3ed1887490dcccc7e1fd1319c1f30a14ba25f31fac86dea27ec9d"
   },
-  "decision": "blocked_missing_operator_approval",
-  "block_reasons": [
-    "explicit_operator_gate_decision_absent",
-    "project_aris_workspace_dirty",
-    "required_read_documents_missing"
-  ],
+  "decision": "admit_benchuix26_candidate_only",
+  "block_reasons": [],
   "no_real_execution_attestation": true
 }

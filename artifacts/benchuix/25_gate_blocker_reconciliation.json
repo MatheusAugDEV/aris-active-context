@@ -3,9 +3,9 @@
   "artifact_type": "gate_blocker_reconciliation",
   "candidate_only": true,
   "source_gate_artifact": "artifacts/benchuix/25_operator_gate_decision.json",
-  "benchuix26_admitted": false,
+  "benchuix26_admitted": true,
   "live_route_opened": false,
-  "operator_approval_present": false,
+  "operator_approval_present": true,
   "canonical_read_order_basis": {
     "state_file": "ACTIVE_CONTEXT_STATE.json",
     "boot_file": "ARIS_BOOT.md",
@@ -173,15 +173,13 @@
     "blocking_for_project_aris_mutation": true,
     "triage_notes": "Read-only triage found 409 modified, 0 staged and 3699 untracked paths in /home/matheus/ARIS/Project_ARIS. The dirty workspace blocks any Project_ARIS mutation, but by itself does not block a hypothetical active-context-only candidate admission. Sensitive path names detected: ['.env.example', 'artifacts/f18/elevenlabs_manual_config_template.env.example', 'artifacts/f19/knowledge_vault_backfill_batch.json', 'artifacts/f19/knowledge_vault_backfill_batch_report.md', 'artifacts/f19/knowledge_vault_backfill_batch_summary.json', 'artifacts/f19/obsidian_vault_bootstrap.json', 'artifacts/f19/obsidian_vault_bootstrap_report.md', 'artifacts/f19/obsidian_vault_bootstrap_summary.json', 'artifacts/f21/local_pathlib_single_vault_file_read_controlled_apply.json', 'artifacts/f21/local_pathlib_single_vault_file_read_controlled_apply_report.md']."
   },
-  "remaining_hard_blockers": [
-    "explicit_operator_gate_decision_absent"
-  ],
+  "remaining_hard_blockers": [],
   "remaining_warnings": [
     "required_read_documents_missing_reconciled_as_prompt_drift",
     "project_aris_workspace_dirty_nonblocking_for_active_context_only_candidate_admission"
   ],
   "authorization_state": {
-    "authorizes_benchuix26_candidate_only_admission": false,
+    "authorizes_benchuix26_candidate_only_admission": true,
     "authorizes_live_route": false,
     "authorizes_product": false,
     "authorizes_pilot": false,
