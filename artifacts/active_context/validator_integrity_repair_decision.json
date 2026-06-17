@@ -1,0 +1,60 @@
+{
+  "phase_id": "ACTIVE_CONTEXT_VALIDATOR_INTEGRITY_REPAIR",
+  "decision": "pass",
+  "status": "validator_integrity_verified_no_restore_needed",
+  "mode": "verification_only",
+  "current_live_phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "current_live_status": "if09_closure_milestone_mirror_sanity_pass",
+  "current_live_decision": "pass",
+  "next_phase": null,
+  "active_next_phase": null,
+  "governance_gate_streak": 0,
+  "historical_basis": {
+    "latest_validator_touch_commit": "6327482b73c7ff3f3fb79cc710997e29b9d84781",
+    "latest_validator_touch_subject": "Materialize BENCHUIX-18 progressive permissions packet",
+    "validator_non_empty_bytes": 1102615,
+    "validator_hash": "e7481ee234a94c8e31a24bfe9a0dcd4c64fffd559817600609d0b18fd93c11a0",
+    "validator_hash_matches_latest_touch_commit": true,
+    "restore_performed": false
+  },
+  "validator_contract_evidence": {
+    "shape_contract_function": "scripts/validate_active_context_state.py:1660",
+    "terminal_route_function": "scripts/validate_active_context_state.py:1629",
+    "ci_terminal_classifier_function": "scripts/validate_active_context_state.py:1511",
+    "if09_closure_function": "scripts/validate_active_context_state.py:4567",
+    "json_output_block": "scripts/validate_active_context_state.py:13927"
+  },
+  "required_validations": {
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "validator_non_empty": "OK",
+    "validator_py_compile": "OK",
+    "validator_script": "PASS",
+    "validator_output_json": "PASS",
+    "unittest_discover": "PASS"
+  },
+  "validator_output_required_fields_present": [
+    "phase_id",
+    "next_phase",
+    "governance_gate_streak",
+    "decision",
+    "status"
+  ],
+  "verified_invariants": {
+    "if09_closure_fields_live": true,
+    "benchuix_candidate_only_track_live": true,
+    "benchuix_current_candidate_phase": "BENCHUIX-18",
+    "benchuix_candidate_next_phase_after_operator_gate": "BENCHUIX-19",
+    "benchuix_19_opened_live": false,
+    "next_phase_remains_null": true,
+    "active_next_phase_remains_null": true,
+    "authorization_real_locks_remain_false": true,
+    "benchuix_real_locks_remain_false": true,
+    "standing_candidate_authorization_real_locks_opened": false
+  },
+  "notes": [
+    "The canonical validator file was present, non-empty, and byte-identical to the latest repository touch commit inspected from local git history.",
+    "No validator source restoration was required.",
+    "Shape validation is enforced by the repository's schema-state contract checks, not by introducing a new external validation engine."
+  ]
+}

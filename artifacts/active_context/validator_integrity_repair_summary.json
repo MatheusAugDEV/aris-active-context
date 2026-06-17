@@ -1,0 +1,34 @@
+{
+  "phase_id": "ACTIVE_CONTEXT_VALIDATOR_INTEGRITY_REPAIR",
+  "status": "validator_integrity_verified_no_restore_needed",
+  "decision": "pass",
+  "validator_file_path": "scripts/validate_active_context_state.py",
+  "validator_hash": "e7481ee234a94c8e31a24bfe9a0dcd4c64fffd559817600609d0b18fd93c11a0",
+  "validator_non_empty_bytes": 1102615,
+  "latest_touch_commit": "6327482b73c7ff3f3fb79cc710997e29b9d84781",
+  "local_validation": {
+    "py_compile": "OK",
+    "validator_script": "PASS",
+    "unittest_discover": "PASS"
+  },
+  "live_state": {
+    "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "decision": "pass",
+    "status": "if09_closure_milestone_mirror_sanity_pass",
+    "next_phase": null,
+    "active_next_phase": null,
+    "governance_gate_streak": 0
+  },
+  "benchuix_track": {
+    "current_candidate_phase": "BENCHUIX-18",
+    "candidate_next_phase_after_operator_gate": "BENCHUIX-19",
+    "track_is_candidate_only": true,
+    "real_locks_opened": false
+  },
+  "scope_result": {
+    "validator_restored_from_history": false,
+    "validator_changed": false,
+    "mirror_updates_required": false,
+    "Project_ARIS_changed": false
+  }
+}

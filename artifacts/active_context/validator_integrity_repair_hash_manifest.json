@@ -1,0 +1,20 @@
+{
+  "phase_id": "ACTIVE_CONTEXT_VALIDATOR_INTEGRITY_REPAIR",
+  "status": "validator_integrity_verified_no_restore_needed",
+  "decision": "pass",
+  "manifest_scope": "source_inputs_and_generated_integrity_artifacts",
+  "hashes": {
+    "scripts/validate_active_context_state.py": "e7481ee234a94c8e31a24bfe9a0dcd4c64fffd559817600609d0b18fd93c11a0",
+    "ACTIVE_CONTEXT_STATE.json": "902e69af629f93098d875e03b5949198899dc64e03b8e7565f4b35ec12f281a6",
+    "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
+    "tests/test_validate_active_context.py": "b178b00a37233fd3d53bb5463a24541a28b8dff076e5bf6adb1fae31cd5c5c2f",
+    "artifacts/active_context/validator_integrity_repair_decision.json": "749a397d1bda2e222cc3f1100d1922d408c026d6937a97c1418be238ae93f37f",
+    "artifacts/active_context/validator_integrity_repair_summary.json": "4c9c44e99eb01a285d9085b1b59d816a93fb731a6165875d9b18f30ab7ec21a1",
+    "artifacts/active_context/validator_integrity_repair_report.md": "5cfc5c8d4e75494765414e190ecb3ab22ea075f41728a91827b50f059acf2d87",
+    "artifacts/active_context/validator_integrity_repair_no_real_execution_attestation.json": "a1eeb5897c1adae65c8b773dd217838ebd1f05a2da6191c12f5e6b073a6a5b13"
+  },
+  "notes": [
+    "The manifest intentionally excludes a self-hash for this file to avoid circularity.",
+    "The validator hash matches the latest local git history touch commit inspected during this repair."
+  ]
+}
