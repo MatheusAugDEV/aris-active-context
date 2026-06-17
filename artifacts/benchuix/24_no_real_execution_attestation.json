@@ -1,0 +1,22 @@
+{
+  "phase_id": "BENCHUIX-24",
+  "Project_ARIS_changed": false,
+  "runtime_executed": false,
+  "analytics_executed": false,
+  "real_user_testing_executed": false,
+  "field_data_collected": false,
+  "real_apply_executed": false,
+  "product_executed": false,
+  "bedrock_executed": false,
+  "secrets_accessed": false,
+  "real_customer_data_used": false,
+  "real_billing_used": false,
+  "real_oauth_used": false,
+  "real_integrations_used": false,
+  "package_manager_executed": false,
+  "dependency_changed": false,
+  "live_route_opened": false,
+  "real_locks_opened": false,
+  "product_metric_claim_made": false,
+  "documentary_candidate_only": true
+}

@@ -1,0 +1,80 @@
+{
+  "phase_id": "BENCHUIX-24",
+  "status": "candidate",
+  "discarded_metrics": [
+    {
+      "candidate_metric": "page_views",
+      "rejection_reason": "Nao responde a nenhuma decisao de produto sobre tarefa critica.",
+      "risk_if_used": "Premia curiosidade ou ruído em vez de conclusao segura.",
+      "replacement_metric": "task_success",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "time_on_dashboard",
+      "rejection_reason": "Tempo de tela nao prova acao nem compreensao.",
+      "risk_if_used": "Incentiva retention artificial e leitura demorada de um dashboard ruim.",
+      "replacement_metric": "preference_vs_competitor",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "total_clicks",
+      "rejection_reason": "Clique bruto sem contexto pode premiar fluxo confuso ou longo.",
+      "risk_if_used": "Mascara atrito como atividade.",
+      "replacement_metric": "time_to_first_value",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "login_streak",
+      "rejection_reason": "Nao mede valor entregue nem tarefa critica.",
+      "risk_if_used": "Transforma dependencia no produto em falso sinal de sucesso.",
+      "replacement_metric": "ability_to_explain",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "automation_count_without_success",
+      "rejection_reason": "Volume de automacoes nao prova valor nem seguranca.",
+      "risk_if_used": "Premia criar automacao irrelevante ou insegura.",
+      "replacement_metric": "time_to_first_safe_automation",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "raw_engagement",
+      "rejection_reason": "Engagement como valor por si contradiz a tese owner-solo e trust-core.",
+      "risk_if_used": "Empurra uso artificial em vez de resolver a tarefa certa.",
+      "replacement_metric": "mobile_usability",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "total_widgets_viewed",
+      "rejection_reason": "Nao responde se o dashboard ajudou a agir.",
+      "risk_if_used": "Incentiva inflacao de interface e complexidade desnecessaria.",
+      "replacement_metric": "performance_pass",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "nps_sem_tarefa",
+      "rejection_reason": "Satisfacao sem tarefa especifica nao explica falha nem valor.",
+      "risk_if_used": "Produz numero politicamente util e operacionalmente vazio.",
+      "replacement_metric": "confidence_to_approve",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "satisfaction_sem_contexto",
+      "rejection_reason": "Nao diferencia ansiedade reduzida de risco escondido.",
+      "risk_if_used": "Permite leituras falsas de confianca.",
+      "replacement_metric": "anxiety_reduction",
+      "used_for_scoring": false
+    },
+    {
+      "candidate_metric": "competitor_preference_sem_tarefa",
+      "rejection_reason": "Preferencia global sem tarefa vira marketing disfarcado.",
+      "risk_if_used": "Produz claim competitivo sem base source-backed e sem metodo.",
+      "replacement_metric": "preference_vs_competitor",
+      "used_for_scoring": false
+    }
+  ],
+  "vanity_metrics_used": false,
+  "engagement_as_value_by_itself": false,
+  "all_metrics_have_method": true,
+  "all_metrics_have_decision": true
+}

@@ -1,0 +1,13 @@
+{
+  "phase_id": "BENCHUIX-24",
+  "opened_from_candidate_phase": "BENCHUIX-23",
+  "opened_candidate_phase": "BENCHUIX-24",
+  "standing_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
+  "standing_authorization_commit": "262eb0b02bbcfe7ce1a03177a4f5b5095593ccea",
+  "previous_candidate_commit": "f72ec518c465b241b4008208c588727b8b138834",
+  "previous_candidate_ci_run": "27660248063",
+  "opened_without_new_operator_ritual": true,
+  "all_real_locks_remain_false": true,
+  "bedrock_preparation_exception_recorded": true,
+  "bedrock_preparation_exception_scope": "Metric scorecard candidate-only como preparo documental de Product Reality Lab. Nao coleta dado real, nao executa analytics real, nao cria tracking real, nao produz claim de produto, nao autoriza browser real, field data real, billing real, OAuth real, integracao real, secrets, producao, Project_ARIS mutation ou real_apply."
+}

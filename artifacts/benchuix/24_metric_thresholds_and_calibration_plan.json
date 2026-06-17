@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-24",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "metrics": [
+    {
+      "metric_id": "time_to_first_value",
+      "initial_candidate_threshold": "<= 180s",
+      "calibration_required": false,
+      "calibration_source_future": "BENCHUIX-25 synthetic task protocol timing ledger",
+      "minimum_sample_future": 12,
+      "segment_required": "owner_solo_primary",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "time_to_first_safe_automation",
+      "initial_candidate_threshold": "<= 300s",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 segmented task timing by business mode",
+      "minimum_sample_future": 18,
+      "segment_required": "owner_solo_vs_owner_plus_helper",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "task_success",
+      "initial_candidate_threshold": ">= 5/6 critical tasks",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 task success matrix",
+      "minimum_sample_future": 24,
+      "segment_required": "persona_and_device_class",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "confidence_to_approve",
+      "initial_candidate_threshold": ">= 4/5 plus limit recall",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 approval confidence rubric",
+      "minimum_sample_future": 18,
+      "segment_required": "risk_level_of_task",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "evidence_comprehension",
+      "initial_candidate_threshold": ">= 80% correct answers",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 receipt comprehension protocol",
+      "minimum_sample_future": 18,
+      "segment_required": "receipt_type_and_task",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "rollback_comprehension",
+      "initial_candidate_threshold": ">= 80% correct classification",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 rollback scenario matrix",
+      "minimum_sample_future": 18,
+      "segment_required": "effect_type",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "anxiety_reduction",
+      "initial_candidate_threshold": "delta >= +1 on 5-point scale with risk recall preserved",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 pre/post trust task protocol",
+      "minimum_sample_future": 24,
+      "segment_required": "anxious_persona_vs_neutral_persona",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "ability_to_explain",
+      "initial_candidate_threshold": ">= 80% with value plus limit plus approval when applicable",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 explain-back rubric",
+      "minimum_sample_future": 24,
+      "segment_required": "task_type",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "mobile_usability",
+      "initial_candidate_threshold": "4/4 mobile critical tasks with <= 3 taps after alert open and no horizontal scroll",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 mobile 4G synthetic runs",
+      "minimum_sample_future": 16,
+      "segment_required": "device_class_and_network_profile",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "accessibility_pass",
+      "initial_candidate_threshold": "0 blocking failures on critical flows",
+      "calibration_required": false,
+      "calibration_source_future": "BENCHUIX-21 accessibility matrices carry-forward",
+      "minimum_sample_future": 0,
+      "segment_required": "critical_flow",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "performance_pass",
+      "initial_candidate_threshold": "all critical surfaces remain within candidate-only budget",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-22 performance SLO evidence plus BENCHUIX-25 segmented task timing",
+      "minimum_sample_future": 12,
+      "segment_required": "surface_and_device_class",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    },
+    {
+      "metric_id": "preference_vs_competitor",
+      "initial_candidate_threshold": "diagnostic only; no global threshold",
+      "calibration_required": true,
+      "calibration_source_future": "BENCHUIX-25 forced-choice task protocol with source-backed competitor task pairing",
+      "minimum_sample_future": 24,
+      "segment_required": "task_and_competitor_pair",
+      "raw_data_required": true,
+      "threshold_change_requires_artifact": true,
+      "invalid_without_method": true
+    }
+  ]
+}

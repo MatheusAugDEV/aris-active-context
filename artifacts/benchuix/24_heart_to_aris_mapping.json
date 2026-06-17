@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-24",
+    "status": "candidate",
+    "candidate_only": true,
+    "heart_is_advisory_only": true
+  },
+  "mappings": [
+    {
+      "heart_dimension": "Happiness",
+      "aris_interpretation": "Confianca situada na tarefa: menos ansiedade, mais clareza para aprovar e mais preferencia task-scoped.",
+      "allowed_metrics": [
+        "confidence_to_approve",
+        "anxiety_reduction",
+        "preference_vs_competitor"
+      ],
+      "forbidden_metrics": [
+        "nps_sem_tarefa",
+        "satisfacao_generica_sem_contexto",
+        "mood_score_sem_risco"
+      ],
+      "why_forbidden": "Sem tarefa e sem risco, happiness vira sentimento sem decisao de produto.",
+      "decision_use": "Decidir se a linguagem de risco, aprovacao e preferencia ainda precisa ajuste antes do teste task-based.",
+      "artifact_link": "artifacts/benchuix/24_metrics_scorecard.json"
+    },
+    {
+      "heart_dimension": "Engagement",
+      "aris_interpretation": "Uso util em tarefa critica, nunca tempo de tela por si.",
+      "allowed_metrics": [
+        "mobile_usability"
+      ],
+      "forbidden_metrics": [
+        "time_on_dashboard",
+        "raw_engagement",
+        "login_streak",
+        "total_widgets_viewed"
+      ],
+      "why_forbidden": "Engagement bruto recompensa permanencia na tela e nao conclusao segura da tarefa.",
+      "decision_use": "Decidir se a superficie movel suporta acao essencial sem empurrar a pessoa para uso artificial.",
+      "artifact_link": "artifacts/benchuix/24_vanity_metric_rejection_report.json"
+    },
+    {
+      "heart_dimension": "Adoption",
+      "aris_interpretation": "Chegar ao primeiro valor e a primeira automacao segura sem setup tecnico escondido.",
+      "allowed_metrics": [
+        "time_to_first_value",
+        "time_to_first_safe_automation"
+      ],
+      "forbidden_metrics": [
+        "signups_totais_sem_ativacao",
+        "automations_created_without_success",
+        "template_clicks_sem_resultado"
+      ],
+      "why_forbidden": "Adoption sem valor entregue confunde entrada no fluxo com sucesso real.",
+      "decision_use": "Decidir se o baseline owner-solo continua simples o suficiente para seguir.",
+      "artifact_link": "artifacts/benchuix/24_measurement_plan.md"
+    },
+    {
+      "heart_dimension": "Retention",
+      "aris_interpretation": "Voltar a fluxos criticos com confianca e explicar o produto sem dependencia artificial.",
+      "allowed_metrics": [
+        "ability_to_explain"
+      ],
+      "forbidden_metrics": [
+        "daily_active_users_sem_tarefa",
+        "return_rate_sem_motivo",
+        "frequency_sem_valor"
+      ],
+      "why_forbidden": "Retencao sem contexto pode premiar dependencia ou friccao recorrente.",
+      "decision_use": "Decidir se o produto deixa um modelo mental util apos a tarefa.",
+      "artifact_link": "artifacts/benchuix/24_metrics_scorecard.json"
+    },
+    {
+      "heart_dimension": "Task Success",
+      "aris_interpretation": "Concluir tarefas criticas, achar prova, entender rollback e manter acessibilidade/performance adequadas.",
+      "allowed_metrics": [
+        "task_success",
+        "evidence_comprehension",
+        "rollback_comprehension",
+        "accessibility_pass",
+        "performance_pass"
+      ],
+      "forbidden_metrics": [
+        "click_count_bruto",
+        "completion_sem_compreensao",
+        "score_agregado_sem_breakdown"
+      ],
+      "why_forbidden": "Sucesso sem compreensao ou sem breakdown mascara falha real de produto.",
+      "decision_use": "Decidir se as tarefas criticas podem seguir para protocolo de usabilidade e demo.",
+      "artifact_link": "artifacts/benchuix/24_metric_thresholds_and_calibration_plan.json"
+    }
+  ],
+  "engagement_as_value_by_itself": false
+}

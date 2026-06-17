@@ -1,0 +1,328 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-24",
+    "status": "candidate",
+    "candidate_only": true,
+    "heart_is_advisory_only": true,
+    "central_question": "Cada metrica responde a uma decisao de produto?"
+  },
+  "metrics": [
+    {
+      "metric_id": "time_to_first_value",
+      "metric_name": "Time to First Value",
+      "heart_dimension_or_aris_dimension": "Adoption",
+      "product_question": "Uma pessoa owner-solo entende valor inicial sem ajuda tecnica?",
+      "signal": "Tempo para sair do estado zero ate visualizar um resultado util candidate-only.",
+      "measurement_method": "Cronometrar walkthrough sintetico do fluxo onboarding -> primeiro preview util usando o protocolo futuro de BENCHUIX-25.",
+      "threshold": "<= 180s em walkthrough sintetico representativo, com no maximo um ponto de hesitacao registrado.",
+      "threshold_type": "fixed_candidate",
+      "required_artifact": "artifacts/benchuix/06_time_to_first_preview_protocol.json",
+      "raw_data_required_future": [
+        "task_id",
+        "start_timestamp",
+        "first_value_timestamp",
+        "hesitation_events",
+        "flow_variant"
+      ],
+      "decision_enabled": "Decidir se a entrada owner-solo continua curta o suficiente para permanecer como baseline do produto.",
+      "invalid_if": [
+        "nao houver task_id",
+        "tempo vier de demonstracao narrada sem marca temporal",
+        "resultado misturar onboarding com setup tecnico fora do fluxo"
+      ],
+      "gaming_risk": "Ocultar passos obrigatorios fora do relogio para parecer mais rapido.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "time_to_first_safe_automation",
+      "metric_name": "Time to First Safe Automation",
+      "heart_dimension_or_aris_dimension": "Adoption",
+      "product_question": "A primeira automacao segura aparece rapido sem abrir risco oculto?",
+      "signal": "Tempo para chegar ate uma automacao proposta com limites, preview e gate de aprovacao quando aplicavel.",
+      "measurement_method": "Cronometrar walkthrough sintetico do fluxo criar automacao -> preview -> proposta segura pronta para aprovacao, sem acao real.",
+      "threshold": "<= 300s em cenario sintetico owner-solo, com will/will-not e risco presentes antes do fim do fluxo.",
+      "threshold_type": "calibratable_candidate",
+      "required_artifact": "artifacts/benchuix/09_create_automation_flow.json",
+      "raw_data_required_future": [
+        "task_id",
+        "start_timestamp",
+        "safe_automation_ready_timestamp",
+        "approval_gate_present",
+        "risk_copy_visible"
+      ],
+      "decision_enabled": "Decidir se o baseline de automacao segura permanece plausivel para dono-solo ou se precisa de reducao de friccao.",
+      "invalid_if": [
+        "nao existir marca temporal de inicio e fim",
+        "fluxo pular preview ou risco",
+        "a automacao final nao tiver limite explicitado"
+      ],
+      "gaming_risk": "Declarar automacao pronta antes de exibir limites ou gates necessarios.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "task_success",
+      "metric_name": "Task Success",
+      "heart_dimension_or_aris_dimension": "Task Success",
+      "product_question": "As tarefas criticas terminam sem explicacao tecnica externa?",
+      "signal": "Percentual de tarefas criticas concluido dentro do protocolo sintetico com saida segura e compreendida.",
+      "measurement_method": "Executar matriz futura de tarefas de BENCHUIX-25 e marcar sucesso apenas quando o resultado final, o proximo passo e o limite de acao forem corretamente entendidos.",
+      "threshold": ">= 5 de 6 tarefas criticas concluidas por segmento principal, sem erro bloqueante de interpretacao.",
+      "threshold_type": "blocking_candidate",
+      "required_artifact": "artifacts/benchuix/24_measurement_plan.md",
+      "raw_data_required_future": [
+        "task_id",
+        "segment",
+        "success_boolean",
+        "blocking_error_category",
+        "completion_timestamp"
+      ],
+      "decision_enabled": "Decidir se a experiencia pode seguir para teste de usabilidade task-based sem reabrir o baseline de UX.",
+      "invalid_if": [
+        "sucesso for medido so por clique final",
+        "nao houver definicao de erro bloqueante",
+        "faltarem segmentos ou tarefas criticas"
+      ],
+      "gaming_risk": "Contar como sucesso tarefas concluídas com ajuda externa ou entendimento incompleto.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "confidence_to_approve",
+      "metric_name": "Confidence to Approve",
+      "heart_dimension_or_aris_dimension": "Happiness",
+      "product_question": "A pessoa entende o suficiente para aprovar uma acao sensivel com calma?",
+      "signal": "Nivel de confianca reportado apos ler risco, will/will-not e impacto.",
+      "measurement_method": "Aplicar pergunta estruturada pos-tarefa em protocolo sintetico: aprovaria agora, por que, e o que ARIS nao fara?",
+      "threshold": ">= 4/5 de confianca somente quando o respondente tambem acertar os limites da acao.",
+      "threshold_type": "blocking_candidate",
+      "required_artifact": "artifacts/benchuix/11_risk_taxonomy.json",
+      "raw_data_required_future": [
+        "task_id",
+        "confidence_score",
+        "limit_recall_boolean",
+        "risk_reasoning_excerpt",
+        "approval_decision"
+      ],
+      "decision_enabled": "Decidir se a inbox de aprovacao comunica contexto suficiente ou se ainda depende de copy e estrutura adicionais.",
+      "invalid_if": [
+        "confianca vier sem checagem de entendimento",
+        "resposta medir satisfacao generica",
+        "nao houver vinculo com uma tarefa de aprovacao"
+      ],
+      "gaming_risk": "Induzir alta confianca com UI otimista mas sem entendimento real do risco.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "evidence_comprehension",
+      "metric_name": "Evidence Comprehension",
+      "heart_dimension_or_aris_dimension": "Task Success",
+      "product_question": "O comprovante explica o que aconteceu sem exigir leitura tecnica?",
+      "signal": "Acerto em perguntas de compreensao sobre recibo, historico e prova da tarefa.",
+      "measurement_method": "Aplicar checklist futura sobre recibo: o que aconteceu, quando, o que foi evitado e qual proximo passo existe.",
+      "threshold": ">= 80% de acerto nas perguntas de recibo para tarefas criticas.",
+      "threshold_type": "calibratable_candidate",
+      "required_artifact": "artifacts/benchuix/14_history_receipt_protocol.json",
+      "raw_data_required_future": [
+        "receipt_id",
+        "question_id",
+        "answer_correct_boolean",
+        "time_to_find_receipt",
+        "time_to_answer"
+      ],
+      "decision_enabled": "Decidir se historico e comprovantes estao prontos para teste mais amplo ou se ainda sao telemetria demais e recibo de menos.",
+      "invalid_if": [
+        "o recibo nao estiver ligado a tarefa individual",
+        "nao houver perguntas padronizadas",
+        "compreensao for inferida sem resposta observavel"
+      ],
+      "gaming_risk": "Usar recibos simplificados demais que omitem limite, falha ou contexto.",
+      "gap_destination": "BENCHUIX-27"
+    },
+    {
+      "metric_id": "rollback_comprehension",
+      "metric_name": "Rollback Comprehension",
+      "heart_dimension_or_aris_dimension": "ARIS Trust Boundary",
+      "product_question": "A pessoa entende claramente o que pode desfazer, compensar ou nao reverter?",
+      "signal": "Acerto na classificacao entre reversivel, compensavel e irreversivel em cenarios sinteticos.",
+      "measurement_method": "Expor cenarios futuros com copy de rollback e pedir classificacao antes da confirmacao final.",
+      "threshold": ">= 80% de classificacao correta nas tarefas com efeito sensivel.",
+      "threshold_type": "calibratable_candidate",
+      "required_artifact": "artifacts/benchuix/15_recovery_decision_tree.json",
+      "raw_data_required_future": [
+        "scenario_id",
+        "classification_answer",
+        "classification_correct_boolean",
+        "time_to_classify",
+        "rollback_copy_version"
+      ],
+      "decision_enabled": "Decidir se a linguagem de recuperacao esta honesta o suficiente para seguir para demo e usabilidade.",
+      "invalid_if": [
+        "replay for tratado como undo total",
+        "nao houver distincao entre reversao e compensacao",
+        "o respondente nao receber o texto real da interface"
+      ],
+      "gaming_risk": "Esconder irreversibilidade em texto secundario para elevar sensacao de controle.",
+      "gap_destination": "BENCHUIX-26"
+    },
+    {
+      "metric_id": "anxiety_reduction",
+      "metric_name": "Anxiety Reduction",
+      "heart_dimension_or_aris_dimension": "Happiness",
+      "product_question": "Preview, risco e limites reduzem ansiedade em vez de empurrar a pessoa para a acao?",
+      "signal": "Delta entre ansiedade antes e depois de ver preview, risco e will/will-not na mesma tarefa.",
+      "measurement_method": "Coletar escala estruturada pre/post em protocolo sintetico, sempre ancorada na mesma tarefa e mesmo risco.",
+      "threshold": "Delta positivo minimo de 1 ponto em escala de 5, sem queda de compreensao de risco.",
+      "threshold_type": "diagnostic_only",
+      "required_artifact": "artifacts/benchuix/24_measurement_plan.md",
+      "raw_data_required_future": [
+        "task_id",
+        "pre_anxiety_score",
+        "post_anxiety_score",
+        "risk_recall_boolean",
+        "copy_variant"
+      ],
+      "decision_enabled": "Decidir se a linguagem de confianca acalma sem virar falsa seguranca.",
+      "invalid_if": [
+        "ansiedade for medida sem tarefa concreta",
+        "delta positivo vier com piora na lembranca de risco",
+        "nao houver escala pre/post comparavel"
+      ],
+      "gaming_risk": "Reduzir ansiedade escondendo risco em vez de explicar risco melhor.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "ability_to_explain",
+      "metric_name": "Ability to Explain",
+      "heart_dimension_or_aris_dimension": "Retention",
+      "product_question": "A pessoa consegue explicar o que ARIS faz e nao faz depois da experiencia?",
+      "signal": "Qualidade da explicacao espontanea sobre valor, limite e aprovacao.",
+      "measurement_method": "Pedir explain-back de 2 a 3 frases apos tarefa critica e avaliar contra rubrica fixa.",
+      "threshold": ">= 80% das respostas contendo valor, limite e gate humano quando a tarefa exigir aprovacao.",
+      "threshold_type": "blocking_candidate",
+      "required_artifact": "artifacts/benchuix/20_trust_language_translation_matrix.json",
+      "raw_data_required_future": [
+        "task_id",
+        "response_excerpt",
+        "mentions_value_boolean",
+        "mentions_limit_boolean",
+        "mentions_approval_boolean"
+      ],
+      "decision_enabled": "Decidir se o produto ja pode ser demonstrado sem explicacao arquitetural longa.",
+      "invalid_if": [
+        "explicacao for julgada sem rubrica",
+        "valor for medido sem mencionar limite",
+        "resposta for guiada palavra por palavra"
+      ],
+      "gaming_risk": "Treinar slogan decorado em vez de entendimento real do contrato do produto.",
+      "gap_destination": "BENCHUIX-26"
+    },
+    {
+      "metric_id": "mobile_usability",
+      "metric_name": "Mobile Usability",
+      "heart_dimension_or_aris_dimension": "Engagement",
+      "product_question": "As tarefas moveis essenciais cabem em contexto curto, com risco e acao claros?",
+      "signal": "Concluir aprovar, pausar, ver recibo e entender falha em superficie movel sem perda de contexto.",
+      "measurement_method": "Executar protocolo sintetico mobile 4G de BENCHUIX-25 com taps, scroll e erros de contexto registrados por tarefa.",
+      "threshold": ">= 4 de 4 tarefas moveis criticas sem scroll horizontal e com no maximo 3 taps apos abrir o alerta contextual.",
+      "threshold_type": "calibratable_candidate",
+      "required_artifact": "artifacts/benchuix/17_mobile_degraded_state_matrix.json",
+      "raw_data_required_future": [
+        "task_id",
+        "device_class",
+        "tap_count",
+        "scroll_events",
+        "context_loss_boolean"
+      ],
+      "decision_enabled": "Decidir se o mobile companion continua focado em acoes essenciais ou se precisa reduzir carga cognitiva antes do protocolo de usabilidade.",
+      "invalid_if": [
+        "tempo de tela for usado como valor",
+        "engagement bruto substituir sucesso da tarefa",
+        "faltarem tarefas moveis criticas"
+      ],
+      "gaming_risk": "Maximizar abertura de tela em vez de conclusao segura da tarefa.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "accessibility_pass",
+      "metric_name": "Accessibility Pass",
+      "heart_dimension_or_aris_dimension": "Task Success",
+      "product_question": "As tarefas essenciais continuam acessiveis sem mouse, sem cor e sem motion obrigatorios?",
+      "signal": "Ausencia de falhas bloqueantes WCAG 2.2 AA nas tarefas criticas definidas.",
+      "measurement_method": "Consumir auditoria candidate-only de BENCHUIX-21 e exigir severidade zero em problemas criticos/serious das tarefas essenciais.",
+      "threshold": "0 falhas bloqueantes nas tarefas criticas; gaps menores precisam destino explicito.",
+      "threshold_type": "blocking_candidate",
+      "required_artifact": "artifacts/benchuix/21_accessibility_gap_severity_matrix.json",
+      "raw_data_required_future": [
+        "flow_id",
+        "criterion_id",
+        "severity",
+        "assistive_technology_surface",
+        "failure_reproduction_steps"
+      ],
+      "decision_enabled": "Decidir se o baseline de acessibilidade permite seguir para teste task-based sem reabrir a fundacao.",
+      "invalid_if": [
+        "a auditoria nao cobrir tarefas criticas",
+        "correcoes forem declaradas sem matriz",
+        "pass vier apenas de narrativa"
+      ],
+      "gaming_risk": "Reportar acessibilidade como score agregado sem preservar falhas por fluxo.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "performance_pass",
+      "metric_name": "Performance Pass",
+      "heart_dimension_or_aris_dimension": "Task Success",
+      "product_question": "A interface responde rapido o suficiente para nao destruir confianca antes da acao?",
+      "signal": "Sinais candidate-only de carregamento e resposta em superficies criticas com base no pacote de BENCHUIX-22.",
+      "measurement_method": "Reusar budgets e SLOs candidate-only de BENCHUIX-22 e validar se cada superficie critica continua dentro do orcamento sintetico declarado.",
+      "threshold": "Dentro do budget candidate-only em todas as superficies criticas; sem declarar Core Web Vitals reais nem dado de campo.",
+      "threshold_type": "calibratable_candidate",
+      "required_artifact": "artifacts/benchuix/22_performance_slo_matrix.json",
+      "raw_data_required_future": [
+        "surface_id",
+        "metric_name",
+        "observed_value",
+        "measurement_environment",
+        "sample_size"
+      ],
+      "decision_enabled": "Decidir se o scorecard pode usar performance como signal de UX sem fingir prova de campo.",
+      "invalid_if": [
+        "threshold candidate-only for tratado como prova real",
+        "faltarem ambiente e sample size",
+        "medicao misturar desktop e mobile sem segmentacao"
+      ],
+      "gaming_risk": "Escolher cenarios faceis ou medianas amplas para esconder piores superficies.",
+      "gap_destination": "BENCHUIX-25"
+    },
+    {
+      "metric_id": "preference_vs_competitor",
+      "metric_name": "Preference vs Competitor",
+      "heart_dimension_or_aris_dimension": "Happiness",
+      "product_question": "Em uma tarefa definida e source-backed, ARIS parece preferivel por clareza e confianca?",
+      "signal": "Preferencia task-scoped e justificada por tarefa, nunca como superioridade global.",
+      "measurement_method": "Usar protocolo futuro de comparacao task-based com uma tarefa, um competidor, uma fonte primaria e uma justificativa observavel.",
+      "threshold": "Diagnostico apenas; sem threshold global agregado e sem claim de mercado enquanto faltar raw data task-based.",
+      "threshold_type": "diagnostic_only",
+      "required_artifact": "artifacts/benchuix/23_competitive_task_matrix.md",
+      "raw_data_required_future": [
+        "task_id",
+        "competitor_id",
+        "preference_choice",
+        "reason_code",
+        "source_anchor_id"
+      ],
+      "decision_enabled": "Decidir qual tarefa merece aprofundamento de demo, copy ou usabilidade antes de qualquer narrativa comparativa externa.",
+      "invalid_if": [
+        "preferencia vier sem tarefa",
+        "comparacao usar marketing claim como prova",
+        "score agregado esconder qual competidor e qual tarefa foram comparados"
+      ],
+      "gaming_risk": "Escolher so tarefas onde ARIS parece melhor e promover isso como verdade global.",
+      "gap_destination": "BENCHUIX-27"
+    }
+  ],
+  "all_metrics_have_method": true,
+  "all_metrics_have_decision": true,
+  "vanity_metrics_used": false,
+  "engagement_as_value_by_itself": false,
+  "raw_score_aggregate_allowed": false
+}

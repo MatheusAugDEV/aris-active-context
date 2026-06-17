@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-24",
+    "status": "candidate",
+    "candidate_only": true
+  },
+  "entries": [
+    {
+      "source_gap_id": "BX23-001",
+      "source_task": "onboarding",
+      "finding_type": "aris_gap",
+      "metric_created_or_linked": "time_to_first_value",
+      "decision_enabled": "Decidir se o onboarding owner-solo continua competitivo em clareza inicial.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-002",
+      "source_task": "create_automation",
+      "finding_type": "aris_learning",
+      "metric_created_or_linked": "time_to_first_safe_automation",
+      "decision_enabled": "Decidir quanta complexidade pode ficar escondida sem quebrar a primeira automacao segura.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-003",
+      "source_task": "preview_simulation",
+      "finding_type": "aris_strength",
+      "metric_created_or_linked": "anxiety_reduction",
+      "decision_enabled": "Decidir se preview e diferenca before/after realmente aumentam confianca antes de acao.",
+      "destination_phase": "BENCHUIX-26",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-004",
+      "source_task": "approval",
+      "finding_type": "aris_learning",
+      "metric_created_or_linked": "confidence_to_approve",
+      "decision_enabled": "Decidir se aprovacao continua mais compreensivel que roteamento enterprise pesado.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-005",
+      "source_task": "risk_explanation",
+      "finding_type": "source_gap",
+      "metric_created_or_linked": "ability_to_explain",
+      "decision_enabled": "Decidir se explicacao de risco e limite permanece um pilar verificavel de produto.",
+      "destination_phase": "BENCHUIX-27",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-006",
+      "source_task": "evidence_receipt",
+      "finding_type": "aris_learning",
+      "metric_created_or_linked": "evidence_comprehension",
+      "decision_enabled": "Decidir se recibo e historico estao legiveis o suficiente para dono-solo.",
+      "destination_phase": "BENCHUIX-27",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-007",
+      "source_task": "rollback_undo_compensate",
+      "finding_type": "aris_strength",
+      "metric_created_or_linked": "rollback_comprehension",
+      "decision_enabled": "Decidir se a honestidade de rollback pode sustentar demo curta sem prometer undo falso.",
+      "destination_phase": "BENCHUIX-26",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-008",
+      "source_task": "failure_degraded_mode",
+      "finding_type": "aris_gap",
+      "metric_created_or_linked": "task_success",
+      "decision_enabled": "Decidir se falha e degradacao geram proximo passo claro em vez de so inspeção tecnica.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-009",
+      "source_task": "mobile",
+      "finding_type": "aris_learning",
+      "metric_created_or_linked": "mobile_usability",
+      "decision_enabled": "Decidir se o mobile companion continua focado em acao segura e calma.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-010",
+      "source_task": "mobile",
+      "finding_type": "source_gap",
+      "metric_created_or_linked": "preference_vs_competitor",
+      "decision_enabled": "Impedir claim comparativo de mobile sem fonte oficial atual do competidor.",
+      "destination_phase": "DEFERRED_WITH_REASON",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-011",
+      "source_task": "auditability",
+      "finding_type": "aris_gap",
+      "metric_created_or_linked": "evidence_comprehension",
+      "decision_enabled": "Decidir o que precisa seguir para profundidade de auditoria futura sem fingir runtime-grade agora.",
+      "destination_phase": "CRISOL",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-012",
+      "source_task": "dashboard",
+      "finding_type": "aris_gap",
+      "metric_created_or_linked": "performance_pass",
+      "decision_enabled": "Decidir se o dashboard e acionavel e leve o bastante para servir decisao em vez de inventario de widgets.",
+      "destination_phase": "BENCHUIX-25",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-013",
+      "source_task": "demo",
+      "finding_type": "aris_learning",
+      "metric_created_or_linked": "ability_to_explain",
+      "decision_enabled": "Decidir se a historia de demo pode ser curta, trust-centric e sem estado real.",
+      "destination_phase": "BENCHUIX-26",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    },
+    {
+      "source_gap_id": "BX23-014",
+      "source_task": "dashboard",
+      "finding_type": "market_risk",
+      "metric_created_or_linked": "preference_vs_competitor",
+      "decision_enabled": "Impedir theater competitivo e manter a comparacao centrada em tarefa e decisao.",
+      "destination_phase": "BENCHUIX-27",
+      "still_open": true,
+      "blocks_benchuix24_pass": false
+    }
+  ],
+  "all_gaps_have_metric_or_destination": true
+}

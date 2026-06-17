@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "phase_id": "BENCHUIX-24",
+    "status": "candidate",
+    "candidate_only": true,
+    "real_data_blocked_in_this_phase": true,
+    "pii_prohibited_by_default": true,
+    "without_raw_data_future_claim_is_invalid": true
+  },
+  "events": [
+    {
+      "event_name": "onboarding_first_value_observed",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "owner_solo_primary",
+      "source_surface": "workspace_onboarding",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "aggregate_only_after_per_task_storage",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "time_to_first_value"
+    },
+    {
+      "event_name": "safe_automation_ready",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "business_mode",
+      "source_surface": "automation_creation_flow",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "preserve_start_end_and_gate_flags",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "time_to_first_safe_automation"
+    },
+    {
+      "event_name": "critical_task_completed",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "persona_device_class",
+      "source_surface": "cross_surface_task_protocol",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_success_and_blocker_by_task",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "task_success"
+    },
+    {
+      "event_name": "approval_confidence_recorded",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "risk_level_of_task",
+      "source_surface": "approval_inbox",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_score_with_limit_recall_boolean",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "confidence_to_approve"
+    },
+    {
+      "event_name": "receipt_comprehension_answered",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "receipt_type",
+      "source_surface": "history_and_receipts",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_question_level_correctness",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "evidence_comprehension"
+    },
+    {
+      "event_name": "rollback_boundary_classified",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "effect_type",
+      "source_surface": "rollback_decision_surface",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_classification_and_correctness",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "rollback_comprehension"
+    },
+    {
+      "event_name": "task_anxiety_delta_recorded",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "persona_anxiety_profile",
+      "source_surface": "preview_and_approval_flow",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_pre_post_scores_together",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "anxiety_reduction"
+    },
+    {
+      "event_name": "explain_back_recorded",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "task_type",
+      "source_surface": "post_task_reflection",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_rubric_flags_not_freeform_identity",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "ability_to_explain"
+    },
+    {
+      "event_name": "mobile_task_path_observed",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "device_class_network_profile",
+      "source_surface": "mobile_companion_pwa",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_taps_scroll_and_context_loss",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "mobile_usability"
+    },
+    {
+      "event_name": "critical_flow_accessibility_audited",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "critical_flow",
+      "source_surface": "accessibility_audit_matrix",
+      "privacy_boundary": "candidate_artifact_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_issue_by_criterion_and_severity",
+      "retention_candidate": "90d_candidate_default",
+      "used_for_decision": "accessibility_pass"
+    },
+    {
+      "event_name": "surface_performance_observed",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "surface_device_class",
+      "source_surface": "performance_budget_matrix",
+      "privacy_boundary": "candidate_artifact_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_surface_metric_sample_size_environment",
+      "retention_candidate": "90d_candidate_default",
+      "used_for_decision": "performance_pass"
+    },
+    {
+      "event_name": "task_scoped_competitor_preference_recorded",
+      "timestamp_required": true,
+      "session_or_task_id_required": true,
+      "segment_required": "task_competitor_pair",
+      "source_surface": "future_benchmark_protocol",
+      "privacy_boundary": "synthetic_or_future_authorized_only",
+      "no_personal_data_by_default": true,
+      "aggregation_policy": "store_choice_reason_and_source_anchor",
+      "retention_candidate": "30d_candidate_default",
+      "used_for_decision": "preference_vs_competitor"
+    }
+  ]
+}
