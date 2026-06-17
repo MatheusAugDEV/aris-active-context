@@ -1,0 +1,47 @@
+{
+  "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "checked_against": "ACTIVE_CONTEXT_STATE.json",
+  "fields_checked": [
+    "previous_phase_id",
+    "current_phase_id",
+    "phase_id",
+    "latest_completed_phase",
+    "decision",
+    "status",
+    "current_status",
+    "next_phase",
+    "active_next_phase",
+    "active_next_phase_class",
+    "latest_completed_next_recommended_step"
+  ],
+  "files_checked": [
+    {
+      "path": "BOOT.md",
+      "drift_found": false,
+      "note": "now renders LIVE ROUTE HEADER section sourced directly from ACTIVE_CONTEXT_STATE.json via render_boot.py; check_boot_sync.py confirms byte-identical regeneration"
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "drift_found": false,
+      "note": "previous_phase_id, current_phase_id, decision, status, next_phase=null, active_next_phase=null already consistent with JSON"
+    },
+    {
+      "path": "NEXT_ACTION.md",
+      "drift_found": false,
+      "note": "active_next_phase=null, next_phase=null, execution_authorization=false already consistent with JSON"
+    },
+    {
+      "path": "ARIS_BOOT.md",
+      "drift_found": false,
+      "note": "static rules file; Infernus/Purgatorium/BenchUX/MAPA layer text now explicitly labeled conditional/historical policy, not live route, via new LIVE_ROUTE_HEADER rule"
+    }
+  ],
+  "new_rule_installed": "LIVE_ROUTE_HEADER",
+  "purpose": "prevent_future_stale_or_silently_contradicting_boot_headers",
+  "infernus_purgatorium_benchux_text_classification": "conditional_or_historical_policy_unless_json_states_otherwise",
+  "drift_label_used_for_violations": "DRIFT",
+  "drift_response_policy": "report_and_correct_never_obey_mirror",
+  "active_route_advanced_by_this_repair": false,
+  "next_phase_preserved": null,
+  "active_next_phase_preserved": null
+}

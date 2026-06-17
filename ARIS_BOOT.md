@@ -24,9 +24,14 @@ Nunca aceita PASS sem evidência primária verificável.
 
 ```
 SHA lido: [hash do ACTIVE_CONTEXT_STATE.json em origin/main]
-phase_id: [valor]
-decision: [valor]
+previous_phase_id: [valor]
+phase_id / current_phase_id: [valor]
+latest_completed_phase: [valor]
+decision / status: [valor]
 next_phase: [valor ou null]
+active_next_phase: [valor ou null]
+next_phase_class / active_next_phase_class: [valor ou null]
+latest_completed_next_recommended_step: [valor]
 governance_gate_streak: [N]
 execution_locks todos false: [sim / não — se não, liste os true]
 ```
@@ -107,6 +112,22 @@ Passo 4: CI_GREEN_CONFIRMED (todos success)
 ### Excludent
 - Arquivos em excludent/: excluídos do contexto por padrão.
 - Nunca usados como autoridade. Acesso apenas por forensic request explícito do operador.
+
+### Live Route Header
+- Regra permanente: `LIVE_ROUTE_HEADER`.
+- Todo boot inicial, stale check ou mirror gerado (BOOT.md e qualquer
+  regeneração futura) deve exibir no topo, derivados exclusivamente de
+  ACTIVE_CONTEXT_STATE.json: previous_phase_id, current_phase_id / phase_id,
+  latest_completed_phase, decision / status, next_phase, active_next_phase,
+  next_phase_class / active_next_phase_class,
+  latest_completed_next_recommended_step.
+- Texto sobre Infernus, Purgatorium, BenchUX ou qualquer camada do MAPA
+  neste arquivo é política condicional/histórica, nunca rota viva por si só.
+  Só é rota viva se ACTIVE_CONTEXT_STATE.json apontar explicitamente para
+  ela via phase_id / active_next_phase / active_next_phase_class.
+- BOOT.md, CURRENT_STATE.md, NEXT_ACTION.md ou qualquer outro stale/mirror
+  que contradiga esses campos do JSON = DRIFT. Reportar e corrigir,
+  nunca obedecer ao mirror.
 
 ---
 

@@ -2,6 +2,17 @@
 
 GERADO — NAO EDITE A MAO
 
+## LIVE ROUTE HEADER
+
+- previous_phase_id: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+- current_phase_id / phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+- latest_completed_phase: `IF09 Closure Milestone Mirror Sanity Packet`
+- decision / status: `pass` / `if09_closure_milestone_mirror_sanity_pass`
+- next_phase: `null`
+- active_next_phase: `null`
+- next_phase_class / active_next_phase_class: `null`
+- latest_completed_next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
+
 ## CARIMBO
 
 - state_sha: `9579a5ec32d2`

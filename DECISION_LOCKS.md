@@ -1,3 +1,35 @@
+## Boot Stale Live Header Rule Repair
+
+- Status: `if09_closure_milestone_mirror_sanity_pass` (unchanged; this is a governance-only markdown/render repair, not a phase advance)
+- Decision: `pass`
+- Scope: governance-only repair to `ARIS_BOOT.md` and the generated `BOOT.md`; no `Project_ARIS` mutation, no `Project_ARIS` tests, no runner rerun, no bots, no runtime, no real_apply, no product, no Bedrock, no secrets.
+- Rule installed in `ARIS_BOOT.md` (section 4, REGRAS HARD): `LIVE_ROUTE_HEADER`.
+  - Requires every boot/stale/mirror to show, derived exclusively from `ACTIVE_CONTEXT_STATE.json`:
+    `previous_phase_id`, `current_phase_id` / `phase_id`, `latest_completed_phase`,
+    `decision` / `status`, `next_phase`, `active_next_phase`,
+    `next_phase_class` / `active_next_phase_class`, `latest_completed_next_recommended_step`.
+  - Declares Infernus/Purgatorium/BenchUX/MAPA-layer text in `ARIS_BOOT.md` as conditional/historical policy, never a live route, unless `ACTIVE_CONTEXT_STATE.json` says so explicitly.
+- `scripts/render_boot.py` updated to render a new `## LIVE ROUTE HEADER` section at the top of `BOOT.md`, sourced directly from the fields above.
+- `BOOT.md` regenerated via `python3 scripts/render_boot.py`; `check_boot_sync.py` confirms byte-identical sync.
+- Artifacts created:
+  - `artifacts/active_context/boot_live_header_rule_repair_packet.json`
+  - `artifacts/active_context/boot_live_header_rule_drift_matrix.json`
+  - `artifacts/active_context/boot_live_header_no_real_execution_attestation.json`
+  - `artifacts/active_context/boot_live_header_validation_evidence.json`
+- `ACTIVE_CONTEXT_STATE.json` NOT structurally mutated:
+  - `phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (unchanged)
+  - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` (unchanged)
+  - `next_phase=null`, `active_next_phase=null` (preserved, not opened)
+  - No Transition Table row exists for a successor to `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, so no new `phase_id` was inferred or created from this repair's name.
+- Drift check: no contradiction found between `BOOT.md`, `CURRENT_STATE.md`, `NEXT_ACTION.md`, `ARIS_BOOT.md` and `ACTIVE_CONTEXT_STATE.json` prior to this repair; this packet hardens the boot contract against future drift.
+- No real lock opened:
+  - `real_apply_authorized=false`
+  - `production_authorized=false`
+  - `product_ready=false`
+  - `runtime_integration_allowed=false`
+  - `secrets_access_authorized=false`
+  - `Project_ARIS changed during this phase=false`
+
 ## IF09 Closure Milestone Mirror Sanity Packet
 
 - Status: `if09_closure_milestone_mirror_sanity_pass`

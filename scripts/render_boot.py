@@ -164,6 +164,22 @@ def _relevant_locks(state: dict[str, Any]) -> list[str]:
     return locks
 
 
+def _live_route_header_lines(state: dict[str, Any]) -> list[str]:
+    return [
+        "## LIVE ROUTE HEADER",
+        "",
+        f"- previous_phase_id: `{_display_optional(state.get('previous_phase_id'))}`",
+        f"- current_phase_id / phase_id: `{_display_optional(state.get('current_phase_id', state.get('phase_id', '')))}`",
+        f"- latest_completed_phase: `{_display_optional(state.get('latest_completed_phase'))}`",
+        f"- decision / status: `{state.get('decision', '')}` / `{state.get('status', state.get('current_status', ''))}`",
+        f"- next_phase: `{_display_optional(state.get('next_phase'))}`",
+        f"- active_next_phase: `{_display_optional(state.get('active_next_phase'))}`",
+        f"- next_phase_class / active_next_phase_class: `{_display_optional(state.get('active_next_phase_class'))}`",
+        f"- latest_completed_next_recommended_step: {_display_optional(state.get('latest_completed_next_recommended_step'))}",
+        "",
+    ]
+
+
 def _model_reasoning_section(state: dict[str, Any]) -> list[str]:
     if not MODEL_REASONING_POLICY_PATH.exists():
         return []
@@ -204,6 +220,7 @@ def render_boot_text() -> str:
         "",
         "GERADO — NAO EDITE A MAO",
         "",
+        *_live_route_header_lines(state),
         "## CARIMBO",
         "",
         f"- state_sha: `{state_sha}`",

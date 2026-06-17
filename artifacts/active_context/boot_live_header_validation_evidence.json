@@ -1,0 +1,55 @@
+{
+  "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "validation_status": "local_validation_pass",
+  "validator_summary": {
+    "decision": "pass",
+    "status": "if09_closure_milestone_mirror_sanity_pass",
+    "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "previous_phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+    "latest_completed_phase": "IF09 Closure Milestone Mirror Sanity Packet",
+    "next_phase": null,
+    "governance_gate_streak": 0,
+    "phase_class": "governance_repair"
+  },
+  "unittest_summary": {
+    "command": "python3 -m unittest discover -s tests -q",
+    "result": "51_of_52_pass",
+    "tests_ran": 52,
+    "failures": 0,
+    "errors": 1,
+    "error_detail": "test_purg04_validator_scope_repair.py expects a sibling Project_ARIS checkout at PROJECT_ROOT/artifacts/infernus/... which is not present in this sandbox; pre-existing environment-only gap, reproduced identically on the unmodified pre-repair tree, unrelated to this repair's scope"
+  },
+  "boot_sync_check": {
+    "command": "scripts/check_boot_sync.py:check_boot_sync()",
+    "result": "BOOT.md in sync"
+  },
+  "file_hashes_sha256": {
+    "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
+    "ARIS_BOOT.md": "be7a3c44be3adefdd6402b15ed07d962738356b2d541cb03ade307f5e48e677d",
+    "BOOT.md": "905bcfd9ca174aa8390e8ab198175313a93f02439ace467da96cb80170699ce5",
+    "scripts/render_boot.py": "4785de38a5004fb2dce1c8282429ded0ea6b7712fee8f388f1aa78671936113f"
+  },
+  "defensive_grep_summary": {
+    "live_route_header_fields_present_in_ARIS_BOOT_md": true,
+    "live_route_header_fields_present_in_BOOT_md": true,
+    "next_phase": null,
+    "active_next_phase": null,
+    "real_apply_authorized": false,
+    "production_authorized": false,
+    "product_ready": false,
+    "secrets_access_authorized": false,
+    "runtime_integration_allowed": false,
+    "project_aris_mutated": false,
+    "project_aris_tests_executed": false
+  },
+  "required_commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+    "python3 -m py_compile scripts/render_boot.py",
+    "python3 -m py_compile scripts/validate_active_context_state.py",
+    "python3 scripts/render_boot.py",
+    "python3 scripts/validate_active_context_state.py",
+    "grep -n \"previous_phase_id\\|current_phase_id\\|phase_id\\|next_phase\\|active_next_phase\\|latest_completed_next_recommended_step\" ARIS_BOOT.md BOOT.md scripts/render_boot.py"
+  ],
+  "ci_workflow_note": ".github/workflows/validate_active_context.yml triggers only on push/pull_request to branch 'main'; this repair was pushed to a feature branch per harness branch-isolation instruction, so GitHub Actions CI does not run automatically on this branch. Local validator + py_compile + json.tool + unittest + check_boot_sync results above are the available terminal evidence pending CI on main."
+}
