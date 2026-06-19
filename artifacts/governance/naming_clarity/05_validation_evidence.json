@@ -1,5 +1,5 @@
 {
-  "decision_stage": "pre_push_local_validation_complete",
+  "decision_stage": "post_push_ci_confirmed_for_content_commit",
   "commands_run": [
     "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
     "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
@@ -41,5 +41,14 @@
     "appended_line_count": 23
   },
   "validator_result": "pass",
-  "ci_terminal_state": "PENDING_FIRST_PUSH"
+  "ci_terminal_state": "CI_GREEN_CONFIRMED",
+  "content_commit_sha": "0c8152048baa79017513805dcd3e9a919abbc0a8",
+  "github_actions": {
+    "workflow_name": "validate-active-context",
+    "run_id": 27804492839,
+    "head_sha": "0c8152048baa79017513805dcd3e9a919abbc0a8",
+    "status": "completed",
+    "conclusion": "success",
+    "observed_at": "2026-06-19T04:00:13Z"
+  }
 }
