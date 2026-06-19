@@ -1,0 +1,72 @@
+{
+  "phase": "BENCHUIX Sandbox Visual Premium Elevation (Synthetic-Only)",
+  "source_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v2.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v3.html",
+  "applied_improvements": [
+    {
+      "category": "single_number_hierarchy",
+      "target": "hoje_primary_metric",
+      "before": "Hoje usava quatro KPIs do mesmo peso visual, sem prioridade clara na leitura inicial.",
+      "after": "Hoje agora abre com uma hero metric dominante no canto superior esquerdo e três métricas subordinadas em cards menores, preservando os mesmos valores derivados do v2."
+    },
+    {
+      "category": "single_number_hierarchy",
+      "target": "estimativa_do_dia_primary_metric",
+      "before": "Estimativa do dia mostrava três cards equivalentes, com Confirmado, Em conversa e Não confirmado competindo visualmente.",
+      "after": "Confirmado virou o número dominante da tela, enquanto Em conversa e Não confirmado foram reduzidos a indicadores secundários de suporte."
+    },
+    {
+      "category": "calendar_elevation",
+      "target": "disponibilidade_week_grid",
+      "before": "Disponibilidade ainda usava sete cards homogêneos de dia, sem sensação de grade horária real.",
+      "after": "Disponibilidade foi redesenhada como grade semanal com trilha de horas, colunas por dia, banda de abertura proporcional e eventos sintéticos posicionados no tempo."
+    },
+    {
+      "category": "calendar_elevation",
+      "target": "disponibilidade_existing_block_controls",
+      "before": "Editar e Remover existiam funcionalmente, mas a semana acima não refletia um calendário premium coerente com essa lista.",
+      "after": "Os controles Editar e Remover foram preservados e a nova grade semanal continua lendo os mesmos bloqueios locais já manipulados no v2."
+    },
+    {
+      "category": "agenda_optional_week_preview",
+      "target": "agenda_day_week_toggle",
+      "before": "Agenda tinha apenas a tabela do dia, sem nenhuma leitura compacta da semana.",
+      "after": "Agenda ganhou alternância visual Dia/Semana; a semana mostra um preview compacto, read-only e sem reescrever a navegação diária."
+    },
+    {
+      "category": "color_desaturation",
+      "target": "status_badges_and_navigation_counts",
+      "before": "Status informativos e contadores laterais ainda carregavam mais saturação visual do que o necessário para um layout calm design.",
+      "after": "Badges neutros foram convertidos para cinzas frios, o contador de conversas ficou neutro e o âmbar ficou concentrado apenas em exceções e decisões pendentes."
+    },
+    {
+      "category": "color_desaturation",
+      "target": "agenda_rows_and_help_cues",
+      "before": "A tabela da agenda usava pills azuis mais decorativas e a tela Ajuda ainda mantinha setas quentes sem necessidade funcional.",
+      "after": "A agenda passou a usar estados neutros para confirmado/concluído/próximo e a Ajuda foi suavizada para não competir visualmente com a fila de decisão."
+    },
+    {
+      "category": "whitespace_and_typography",
+      "target": "hero_cards_and_operational_panels",
+      "before": "A leitura das telas Hoje e Estimativa dependia mais de repetição de bordas e blocos equivalentes do que de hierarquia tipográfica.",
+      "after": "As telas ganharam mais respiro, grupos com ritmo vertical mais claro e contraste de peso/tamanho tipográfico para carregar a hierarquia principal."
+    }
+  ],
+  "manual_state_effect_confirmation": [
+    "Simulação local do Component confirmou que appointmentsCount permanece 5, conversationsCount 3 e approvalsCount 1.",
+    "Simulação local do Component confirmou que dayEstimateLabel permaneceu R$ 780, inConversationEstimateLabel R$ 250 e pendingEstimateLabel R$ 100.",
+    "Simulação local do Component confirmou que Hoje agora promove Exceções pendentes como métrica dominante quando approvalsCount > 0, sem alterar a derivação dos números.",
+    "Simulação local do Component confirmou que a grade semanal de disponibilidade continua refletindo os bloqueios sintéticos existentes: Qua 18/06 com bloqueio parcial, Sex 20/06 com encerramento cedo e Sáb 21/06 como fechado.",
+    "Parse do template embutido e recompilação do Component extraído do v3 confirmaram que o bundle exportado segue estruturalmente válido após o escape do payload."
+  ],
+  "no_network_calls_added": true,
+  "no_real_backend_added": true,
+  "no_runtime_lock_changed": true,
+  "source_data_logic_unchanged": true,
+  "source_data_logic_extension_note": "A única extensão foi de view-model sintético em renderVals para desenhar a grade semanal e o preview semanal da agenda a partir dos mesmos arrays locais já presentes no v2.",
+  "v1_v2_preserved": true,
+  "notes": [
+    "O wrapper legado do export foi preservado; as mudanças ficaram restritas ao payload DC embutido.",
+    "Nenhum texto ou layout proprietário de terceiros foi copiado; apenas princípios genéricos de hierarquia, grade semanal e calm design foram aplicados."
+  ]
+}

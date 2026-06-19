@@ -1,0 +1,35 @@
+{
+  "phase": "BENCHUIX Sandbox Visual Premium Elevation (Synthetic-Only)",
+  "deferred_gaps": [
+    {
+      "item": "accessibility_axe_core",
+      "reason": "A fase continua limitada a elevação visual sintética e não abre um passe completo de acessibilidade.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "mobile_responsiveness",
+      "reason": "Responsividade mobile completa permanece fora de escopo nesta etapa e exigiria revisão estrutural das grades premium.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "light_theme",
+      "reason": "Tema claro segue fora de escopo e demandaria uma fase separada de identidade visual.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "modo_degradado_flag",
+      "reason": "Nenhuma flag de modo degradado foi introduzida porque o sandbox continua 100% local e sintético.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "real_aris_integration",
+      "reason": "A fase continua proibindo backend real, rede, secrets, OAuth e qualquer runtime real; a demonstração permanece inteiramente sintética.",
+      "suggested_future_phase": "Pos-Bedrock"
+    },
+    {
+      "item": "agenda_week_preview_read_only",
+      "reason": "A alternância Dia/Semana foi adicionada, mas a visão semanal permanece read-only e a navegação de datas continua estática para evitar regressão funcional nesta fase visual.",
+      "suggested_future_phase": "Polimento"
+    }
+  ]
+}
