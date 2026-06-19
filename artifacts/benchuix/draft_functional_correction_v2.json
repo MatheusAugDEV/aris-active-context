@@ -1,0 +1,88 @@
+{
+  "phase": "BENCHUIX Sandbox Draft Functional Correction (Synthetic-Only)",
+  "source_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v1.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v2.html",
+  "corrected_gaps": [
+    {
+      "category": "buttons_without_handler",
+      "target": "drawer_excecao_recusar",
+      "before": "O botão Recusar não alterava o estado local nem removia a pendência.",
+      "after": "Recusar fecha o drawer, remove a aprovação correspondente, remove a conversa associada e exibe aviso sintético de notificação."
+    },
+    {
+      "category": "buttons_without_handler",
+      "target": "drawer_excecao_autorizar",
+      "before": "O botão Autorizar exceção era decorativo.",
+      "after": "Autorizar fecha o drawer, remove aprovação e conversa associada e exibe confirmação sintética sem tocar agenda real."
+    },
+    {
+      "category": "buttons_without_handler",
+      "target": "disponibilidade_adicionar_bloqueio",
+      "before": "O botão + Adicionar bloqueio não abria nenhum fluxo editável.",
+      "after": "O botão abre um mini-form sintético com campos controlados e salva uma nova linha no array local de bloqueios."
+    },
+    {
+      "category": "buttons_without_handler",
+      "target": "disponibilidade_editar_remover_bloqueio",
+      "before": "Editar e Remover nas linhas de bloqueio não mutavam a lista.",
+      "after": "Editar recarrega o item no mini-form e salva alterações no mesmo id; Remover exclui o item do array local."
+    },
+    {
+      "category": "generic_record_driven_cards_and_drawers",
+      "target": "aprovacoes_e_hoje",
+      "before": "Hoje e Aprovações tinham card fixo de Rafael e o drawer sempre abria o mesmo conteúdo hardcoded.",
+      "after": "Hoje e Aprovações iteram via sc-for sobre approvalsView e o drawer lê selectedApproval por id."
+    },
+    {
+      "category": "generic_record_driven_cards_and_drawers",
+      "target": "atendimento",
+      "before": "Ver conversa e Decidir abriam drawers fixos sem variar o conteúdo por registro.",
+      "after": "Atendimento itera via sc-for sobre conversationsView; Ana e Carlos abrem drawers distintos e Rafael abre o fluxo de aprovação correspondente."
+    },
+    {
+      "category": "generic_record_driven_cards_and_drawers",
+      "target": "agenda_e_disponibilidade",
+      "before": "Linhas de agenda e bloqueios eram HTML manual duplicado.",
+      "after": "Agenda, preview de Hoje, semana de disponibilidade e tabela de bloqueios passaram a derivar de arrays e sc-for."
+    },
+    {
+      "category": "visual_identity",
+      "target": "sidebar_footer",
+      "before": "O rodapé tinha apenas dot pulsante e texto.",
+      "after": "O rodapé ganhou marca orbital cyan sintética em SVG, preservando a indicação de sandbox."
+    },
+    {
+      "category": "derived_values",
+      "target": "sidebar_badges_and_kpis",
+      "before": "Badges e KPIs principais eram números fixos repetidos no template.",
+      "after": "Contadores de Atendimento e Aprovações, KPIs de Hoje e estados de agenda passaram a derivar dos arrays em state."
+    },
+    {
+      "category": "derived_values",
+      "target": "estimativa_do_dia",
+      "before": "Estimativa do dia, Confirmado, Em conversa e Não confirmado eram hardcodes duplicados.",
+      "after": "Os três totais são calculados em renderVals a partir de appointments, conversations e approvals."
+    },
+    {
+      "category": "client_facing_copy_cleanup",
+      "target": "drawers_cards_ajuda",
+      "before": "Textos client-facing usavam Resposta do ARIS, Como o ARIS funciona, ARIS já está sugerindo e frases equivalentes.",
+      "after": "O texto foi trocado por linguagem neutra de automação e histórico da conversa; ARIS ficou restrito à identidade visual do rodapé."
+    }
+  ],
+  "manual_state_effect_confirmation": [
+    "Simulação do Component confirmou que abrir aprovações diferentes muda selectedApproval por id.",
+    "Simulação do Component confirmou que abrir Ana e Carlos muda selectedConversation com conteúdo distinto.",
+    "Simulação do Component confirmou que Recusar reduz conversationsCount de 3 para 2, approvalsCount de 1 para 0 e pendingEstimate de R$ 100 para R$ 0.",
+    "Simulação do Component confirmou que adicionar bloqueio aumenta a lista de 4 para 5 itens, editar persiste novo motivo e remover retorna a lista para 4 itens.",
+    "Simulação do Component confirmou que remover um agendamento do array fonte muda dayEstimate de R$ 780 para R$ 550."
+  ],
+  "no_network_calls_added": true,
+  "no_real_backend_added": true,
+  "no_runtime_lock_changed": true,
+  "source_draft_v1_preserved": true,
+  "notes": [
+    "O wrapper do bundle foi preservado; a correção foi restrita ao payload DC editável.",
+    "O scan defensivo de rede deve considerar o bloco DC editável, porque o wrapper legado do export já contém fetch() pré-existente fora do escopo desta fase."
+  ]
+}

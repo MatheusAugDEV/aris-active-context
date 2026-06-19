@@ -1,0 +1,30 @@
+{
+  "phase": "BENCHUIX Sandbox Draft Functional Correction (Synthetic-Only)",
+  "deferred_gaps": [
+    {
+      "item": "accessibility_axe_core",
+      "reason": "A fase foi limitada a correção funcional sintética e não abre um passe de a11y completo.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "mobile_responsiveness",
+      "reason": "O escopo explícito proíbe responsividade mobile completa nesta etapa.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "light_theme",
+      "reason": "Tema claro permanece fora de escopo e exigiria outro passe visual.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "modo_degradado_flag",
+      "reason": "Nenhuma flag de modo degradado foi introduzida porque a fase está restrita ao sandbox local e à correção dos handlers.",
+      "suggested_future_phase": "Polimento"
+    },
+    {
+      "item": "real_aris_integration",
+      "reason": "A fase proíbe backend real, rede, secrets, OAuth e qualquer runtime real; a demonstração segue 100% sintética.",
+      "suggested_future_phase": "Pos-Bedrock"
+    }
+  ]
+}
