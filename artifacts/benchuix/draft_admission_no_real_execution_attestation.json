@@ -1,0 +1,11 @@
+{
+  "artifact_type": "no_real_execution_attestation",
+  "phase_scope": "BENCHUIX_design_draft_admission_pre_governance_intake",
+  "project_aris_runtime_changed": false,
+  "project_aris_changed": false,
+  "secrets_accessed": false,
+  "real_backend_connected": false,
+  "benchuix_phase_advanced": false,
+  "all_real_locks_remain_false": true,
+  "runtime_integration_allowed": false
+}

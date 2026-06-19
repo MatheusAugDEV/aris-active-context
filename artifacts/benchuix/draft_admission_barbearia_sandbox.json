@@ -1,0 +1,34 @@
+{
+  "artifact_type": "draft_admission",
+  "draft_id": "barbearia_claude_design_export_draft_v1",
+  "origin": "claude_design_export_pre_governance",
+  "admitted_by": "operator_explicit_request",
+  "candidate_only": true,
+  "synthetic_only": true,
+  "repository_selected": "aris-active-context",
+  "saved_path": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v1.html",
+  "saved_file_sha256": "5bb0d6f06502fa065ddc5e7cf3955b9683e9fcaf8076c0fb9752b8ebd35c1b66",
+  "repository_choice_reason": "BENCHUIX candidate-only visual artifacts already live in aris-active-context under artifacts/benchuix/, including the 27B-27E visual sandbox static prototype lineage; this raw export is governance evidence and should not be mixed into the dirty Project_ARIS worktree.",
+  "source_ingress_mode": "operator_supplied_external_html_export",
+  "completeness_state": "incomplete",
+  "known_gaps": [
+    "buttons without functional handlers: Recusar, Adicionar bloqueio, Editar, Remover",
+    "drawers are fixed and not dynamic per selected record, including Ver conversa and Decidir opening the same content",
+    "ARIS logo and explicit ARIS visual identity are absent",
+    "duplicated values exist without real derivation, including daily estimate style figures",
+    "client-facing text still contains ARIS jargon that requires later copy review",
+    "standalone HTML export is not integrated with the existing visual_sandbox_static source pack",
+    "no real runtime, backend, agenda or operator action wiring exists"
+  ],
+  "explicitly_not_claimed": [
+    "functional",
+    "complete",
+    "integrated_with_aris_runtime",
+    "product_ready",
+    "benchuix_27_finalized"
+  ],
+  "live_route_preserved": true,
+  "benchuix_track_status_unchanged": true,
+  "active_context_pointer_updated": false,
+  "real_locks_opened": false
+}

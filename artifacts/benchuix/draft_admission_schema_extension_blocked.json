@@ -1,0 +1,14 @@
+{
+  "decision": "BLOCKED_SCHEMA_EXTENSION_REQUIRED",
+  "requested_extension_target": "ACTIVE_CONTEXT_STATE.json -> benchuix_track",
+  "requested_extension_purpose": "non-disruptive pointer to the newly admitted Barbearia draft artifact",
+  "blocked_by": [
+    "ACTIVE_CONTEXT_SCHEMA.json sets benchuix_track.additionalProperties=false",
+    "ACTIVE_CONTEXT_STATE.json can only accept a new benchuix_track pointer after schema evolution and validator contract review",
+    "this admission phase is pre-governance intake and should not introduce schema drift risk just to store an informational pointer"
+  ],
+  "safe_action_taken_instead": "The raw HTML draft and admission artifacts were stored under artifacts/benchuix/ without mutating ACTIVE_CONTEXT_STATE.json or ACTIVE_CONTEXT_SCHEMA.json.",
+  "live_route_unchanged": true,
+  "benchuix_track_status_unchanged": true,
+  "real_locks_opened": false
+}
