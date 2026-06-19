@@ -1,0 +1,1890 @@
+{
+  "generated_at": "2026-06-19",
+  "source_files_audited": [
+    "DECISION_LOCKS.md",
+    "ROADMAP_CANONICAL.md",
+    "ACTIVE_CONTEXT_STATE.json"
+  ],
+  "phase_id_count": 51,
+  "classification_counts": {
+    "unambiguous": 20,
+    "ambiguous_reuse": 22,
+    "confusing_but_unique": 9
+  },
+  "explicit_highlight": {
+    "original_historical_label": "IF-09",
+    "later_live_phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "source_of_confusion": "The later governance-only mirror sanity phase reuses IF09 after INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET already closed IF09-FIND-001.",
+    "recommended_display_name": "Post-Revalidation Mirror Sanity Packet"
+  },
+  "entries": [
+    {
+      "phase_id": "BENCHUX_ROUTE_OPENING_PACKET",
+      "first_appearance": {
+        "line": 27,
+        "heading": "IF09 Closure Milestone Mirror Sanity Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "confusing_but_unique",
+      "why": "Uses BENCHUX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track.",
+      "display_name_proposed": "BenchUIX Route Opening Packet Candidate",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          27
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          189
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          702
+        ]
+      }
+    },
+    {
+      "phase_id": "IF-08",
+      "first_appearance": {
+        "line": 694,
+        "heading": "IF-08 W6 Final Audit Controlled Execution Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "confusing_but_unique",
+      "why": "The parent label uses IF-08 with a hyphen, while the child wave packets use IF08_W* without the hyphen and with mixed zero-padding.",
+      "display_name_proposed": "IF-08 Parent Wave Program",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          694
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          256
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          620,
+          746
+        ]
+      }
+    },
+    {
+      "phase_id": "IF-09",
+      "first_appearance": {
+        "line": 628,
+        "heading": "IF-09 Evidence Bundle + Vulnerability Register Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "confusing_but_unique",
+      "why": "The original IF-09 human phase label remains in history while a later live phase_id reuses IF09 for a post-revalidation mirror-sanity packet.",
+      "display_name_proposed": "Original IF-09 Evidence Bundle And Vulnerability Register",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          628
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF-10",
+      "first_appearance": {
+        "line": 562,
+        "heading": "IF-10 Purgatorium Handoff Graph Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          562
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          580
+        ]
+      }
+    },
+    {
+      "phase_id": "IF08_W05",
+      "first_appearance": {
+        "line": 1147,
+        "heading": "IF08_W05 Controlled Execution Canonical Sync Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "confusing_but_unique",
+      "why": "Wave 05 is represented both as IF08_W05 and IF08_W5 in the same historical family, which weakens scanability and ordering clarity.",
+      "display_name_proposed": "IF-08 Wave 05 Canonical Sync Lock",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1147
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF08_W1",
+      "first_appearance": {
+        "line": 1053,
+        "heading": "IF08_W1 Post-Sync Review & W2 Readiness Lock",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 1087,
+          "heading": "IF08_W1 Context/Memory/RAG Controlled Execution Lock",
+          "kind": "heading"
+        },
+        {
+          "line": 1119,
+          "heading": "IF08_W1 Context/Memory/RAG Preflight Readiness Lock",
+          "kind": "heading"
+        }
+      ],
+      "occurrence_count": 3,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1053,
+          1087,
+          1119
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF08_W3",
+      "first_appearance": {
+        "line": 1011,
+        "heading": "IF08_W3 Runtime/Tool/MCP/Sandbox Controlled Execution Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1011
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF08_W4",
+      "first_appearance": {
+        "line": 926,
+        "heading": "IF08_W4 Post-Sync Review & W5 Readiness Lock",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 973,
+          "heading": "IF08_W4 Preflight Readiness Lock",
+          "kind": "heading"
+        }
+      ],
+      "occurrence_count": 2,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          926,
+          973
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF08_W5",
+      "first_appearance": {
+        "line": 772,
+        "heading": "IF08_W5 Business Chaos Controlled Execution Lock",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 824,
+          "heading": "IF08_W5 Business Chaos Preflight Gap Repair Lock",
+          "kind": "heading"
+        },
+        {
+          "line": 879,
+          "heading": "IF08_W5 Business Chaos Preflight Readiness Lock",
+          "kind": "heading"
+        }
+      ],
+      "occurrence_count": 3,
+      "classification": "confusing_but_unique",
+      "why": "Wave 05 is represented both as IF08_W05 and IF08_W5 in the same historical family, which weakens scanability and ordering clarity.",
+      "display_name_proposed": "IF-08 Wave 05 Business Chaos",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          772,
+          824,
+          879
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+      "first_appearance": {
+        "line": 15,
+        "heading": "IF09 Closure Milestone Mirror Sanity Packet",
+        "kind": "assignment"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the IF09 family label after IF-09 evidence/vulnerability work was already completed and after INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET closed IF09-FIND-001.",
+      "display_name_proposed": "Post-Revalidation Mirror Sanity Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          15
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          168,
+          269
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          3,
+          4,
+          679,
+          692
+        ]
+      }
+    },
+    {
+      "phase_id": "INF-FULL-04",
+      "first_appearance": {
+        "line": 1234,
+        "heading": "INF-FULL-04 \u2014 ARIS Infernus FULL Scenario Pack & Harness Readiness Gate Lock",
+        "kind": "heading"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1234
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          253,
+          254
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "INF-FULL-05",
+      "first_appearance": {
+        "line": 1239,
+        "heading": "INF-FULL-04 \u2014 ARIS Infernus FULL Scenario Pack & Harness Readiness Gate Lock",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1239
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          254,
+          255
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          746
+        ]
+      }
+    },
+    {
+      "phase_id": "INF-FULL-06",
+      "first_appearance": {
+        "line": 1215,
+        "heading": "INF-FULL-06 \u2014 ARIS Infernus FULL Excludent Quarantine Gate Lock",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 1220,
+          "heading": "INF-FULL-06 \u2014 ARIS Infernus FULL Excludent Quarantine Gate Lock",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 2,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1215,
+          1220
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          255,
+          256
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          746
+        ]
+      }
+    },
+    {
+      "phase_id": "INF-FULL-07",
+      "first_appearance": {
+        "line": 315,
+        "heading": "ARIS Macro Roadmap Canonicalization (Camadas e Objetivos)",
+        "kind": "assignment"
+      },
+      "reappearances": [
+        {
+          "line": 328,
+          "heading": "Active-Context Post-Roadmap Canonical Sync",
+          "kind": "assignment"
+        },
+        {
+          "line": 328,
+          "heading": "Active-Context Post-Roadmap Canonical Sync",
+          "kind": "assignment"
+        },
+        {
+          "line": 346,
+          "heading": "PURG-01 Stale Next-Step Reconciliation",
+          "kind": "assignment"
+        },
+        {
+          "line": 346,
+          "heading": "PURG-01 Stale Next-Step Reconciliation",
+          "kind": "assignment"
+        },
+        {
+          "line": 1176,
+          "heading": "INF-FULL-07 \u2014 IF-08 Attack Waves Execution Authorization Gate Materialization Lock",
+          "kind": "heading"
+        },
+        {
+          "line": 1181,
+          "heading": "INF-FULL-07 \u2014 IF-08 Attack Waves Execution Authorization Gate Materialization Lock",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 7,
+      "classification": "confusing_but_unique",
+      "why": "Historical mirrors repeatedly narrate INF-FULL-07 as IF-11 Minos Final Verdict + Closure, so the authoritative phase_id and the human ordinal label diverge.",
+      "display_name_proposed": "Infernus FULL 07 / IF-11 Minos Final Verdict Closure",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          315,
+          328,
+          328,
+          346,
+          346,
+          1176,
+          1181
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          256,
+          257
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          619,
+          746
+        ]
+      }
+    },
+    {
+      "phase_id": "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
+      "first_appearance": {
+        "line": 16,
+        "heading": "IF09 Closure Milestone Mirror Sanity Packet",
+        "kind": "assignment"
+      },
+      "reappearances": [
+        {
+          "line": 3237,
+          "heading": "INF Revalidation Adjudication Or Closure Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 3297,
+          "heading": "INF Revalidation Execution Packet",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 3,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          16,
+          3237,
+          3297
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          268,
+          269
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          6,
+          671,
+          693,
+          767
+        ]
+      }
+    },
+    {
+      "phase_id": "INF_REVALIDATION_EXECUTION_PACKET",
+      "first_appearance": {
+        "line": 245,
+        "heading": "INF Revalidation Operator Authorization Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 257,
+          "heading": "INF Revalidation Operator Authorization Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 3225,
+          "heading": "INF Revalidation Adjudication Or Closure Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 3238,
+          "heading": "INF Revalidation Adjudication Or Closure Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 3288,
+          "heading": "INF Revalidation Execution Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 3296,
+          "heading": "INF Revalidation Execution Packet",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 6,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          245,
+          257,
+          3225,
+          3238,
+          3288,
+          3296
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          267,
+          268
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          766
+        ]
+      }
+    },
+    {
+      "phase_id": "INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET",
+      "first_appearance": {
+        "line": 213,
+        "heading": "INF Revalidation Readiness Route Activation Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 247,
+          "heading": "INF Revalidation Operator Authorization Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 255,
+          "heading": "INF Revalidation Operator Authorization Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 3264,
+          "heading": "INF Revalidation Execution Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 3289,
+          "heading": "INF Revalidation Execution Packet",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 5,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          213,
+          247,
+          255,
+          3264,
+          3289
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          266,
+          267
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          765
+        ]
+      }
+    },
+    {
+      "phase_id": "INF_REVALIDATION_READINESS_PACKET",
+      "first_appearance": {
+        "line": 176,
+        "heading": "INF Revalidation Readiness Route Activation Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 203,
+          "heading": "INF Revalidation Readiness Route Activation Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 211,
+          "heading": "INF Revalidation Readiness Route Activation Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 248,
+          "heading": "INF Revalidation Operator Authorization Packet",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 4,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          176,
+          203,
+          211,
+          248
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          265,
+          266
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          764
+        ]
+      }
+    },
+    {
+      "phase_id": "INF_REVALIDATION_ROUTE_ADMISSION_PACKET",
+      "first_appearance": {
+        "line": 154,
+        "heading": "INF Revalidation Route Activation / Amendment Packet",
+        "kind": "assignment"
+      },
+      "reappearances": [
+        {
+          "line": 162,
+          "heading": "INF Revalidation Route Activation / Amendment Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 204,
+          "heading": "INF Revalidation Readiness Route Activation Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2616,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 3197,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Branch Selected: TRACK_REVALIDATION_FIRST",
+          "kind": "assignment"
+        },
+        {
+          "line": 3204,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Branch Selected: TRACK_REVALIDATION_FIRST",
+          "kind": "backtick"
+        },
+        {
+          "line": 3218,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Branch Selected: TRACK_REVALIDATION_FIRST",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 7,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          154,
+          162,
+          204,
+          2616,
+          3197,
+          3204,
+          3218
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          264,
+          265
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          763
+        ]
+      }
+    },
+    {
+      "phase_id": "PURG-01",
+      "first_appearance": {
+        "line": 333,
+        "heading": "PURG-01 Stale Next-Step Reconciliation",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 353,
+          "heading": "PURG-01.1 Findings Triage Classification Packet",
+          "kind": "heading"
+        },
+        {
+          "line": 374,
+          "heading": "PURG-01.2 S3 Track Successor Candidate",
+          "kind": "heading"
+        },
+        {
+          "line": 404,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "heading"
+        },
+        {
+          "line": 430,
+          "heading": "PURG-01 Route Admission",
+          "kind": "heading"
+        },
+        {
+          "line": 1985,
+          "heading": "PURG04 B1/B3 Cleanroom Baseline Repair Blocker Triage",
+          "kind": "backtick"
+        },
+        {
+          "line": 2035,
+          "heading": "PURG04 Cleanroom Fresh Reclone Prerequisite Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2136,
+          "heading": "PURG04 Focused Failure Surface Classification Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2155,
+          "heading": "PURG04 Mixed Surface Repair Split Packet",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 9,
+      "classification": "confusing_but_unique",
+      "why": "The canonical PURG-01 route is surrounded by human subsection labels PURG-01.1 and PURG-01.2, which look phase-like but are not canonical phase_ids.",
+      "display_name_proposed": "Canonical PURG-01 Route Phase",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          333,
+          353,
+          374,
+          404,
+          430,
+          1985,
+          2035,
+          2136,
+          2155
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56,
+          198,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          218,
+          219,
+          225,
+          242,
+          243,
+          259,
+          283,
+          309
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          419,
+          429,
+          440,
+          483,
+          753,
+          754,
+          755,
+          756,
+          757,
+          758,
+          759,
+          760
+        ]
+      }
+    },
+    {
+      "phase_id": "PURG-02",
+      "first_appearance": {
+        "line": 349,
+        "heading": "PURG-01 Stale Next-Step Reconciliation",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 366,
+          "heading": "PURG-01.1 Findings Triage Classification Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 388,
+          "heading": "PURG-01.2 S3 Track Successor Candidate",
+          "kind": "backtick"
+        },
+        {
+          "line": 390,
+          "heading": "PURG-01.2 S3 Track Successor Candidate",
+          "kind": "backtick"
+        },
+        {
+          "line": 395,
+          "heading": "PURG-01.2 S3 Track Successor Candidate",
+          "kind": "backtick"
+        },
+        {
+          "line": 408,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "backtick"
+        },
+        {
+          "line": 419,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "backtick"
+        },
+        {
+          "line": 422,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "backtick"
+        },
+        {
+          "line": 423,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "backtick"
+        },
+        {
+          "line": 1283,
+          "heading": "PURG-02 IF09-FIND-001 S3 RED Baseline",
+          "kind": "heading"
+        },
+        {
+          "line": 1287,
+          "heading": "PURG-02 IF09-FIND-001 S3 RED Baseline",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 11,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          349,
+          366,
+          388,
+          390,
+          395,
+          408,
+          419,
+          422,
+          423,
+          1283,
+          1287
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-03",
+      "first_appearance": {
+        "line": 391,
+        "heading": "PURG-01.2 S3 Track Successor Candidate",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 420,
+          "heading": "PURG-01.2 S3 Scope And Remediation Planning Readiness",
+          "kind": "backtick"
+        },
+        {
+          "line": 1293,
+          "heading": "PURG-02 IF09-FIND-001 S3 RED Baseline",
+          "kind": "backtick"
+        },
+        {
+          "line": 1299,
+          "heading": "PURG-03 IF09-FIND-001 S3 Remediation Plan Compiler Review Packet",
+          "kind": "heading"
+        },
+        {
+          "line": 1318,
+          "heading": "PURG-03 IF09-FIND-001 S3 Remediation Plan Operator Approval Packet",
+          "kind": "heading"
+        }
+      ],
+      "occurrence_count": 5,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          391,
+          420,
+          1293,
+          1299,
+          1318
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-04",
+      "first_appearance": {
+        "line": 1337,
+        "heading": "PURG-04 IF09-FIND-001 S3 Local Remediation Plan Readiness",
+        "kind": "heading"
+      },
+      "reappearances": [
+        {
+          "line": 1357,
+          "heading": "PURG-04 IF09-FIND-001 S3 Local Remediation Apply Approval Packet",
+          "kind": "heading"
+        },
+        {
+          "line": 1379,
+          "heading": "PURG-04 IF09-FIND-001 S3 Local Remediation Apply Result",
+          "kind": "heading"
+        },
+        {
+          "line": 1406,
+          "heading": "PURG-04 Active-Context Validator Blocker Triage Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1427,
+          "heading": "PURG-04 Active-Context Validator Scope Repair",
+          "kind": "heading"
+        },
+        {
+          "line": 1454,
+          "heading": "PURG-04 Active-Context Validator Scope Repair CI Confirmation",
+          "kind": "heading"
+        },
+        {
+          "line": 1498,
+          "heading": "PURG-04 B1 B3 Global Baseline Repair Plan Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1522,
+          "heading": "PURG-04 B2 Current State Path Diagnostic Plan Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1551,
+          "heading": "PURG-04 B2 Active-Context Path Contract Boundary Decision Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1585,
+          "heading": "PURG-04 B2 Active-Context Path Contract Normalization Plan Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1616,
+          "heading": "PURG-04 B2 Active-Context Path Contract Normalization Repair Artifact-Only",
+          "kind": "heading"
+        },
+        {
+          "line": 1641,
+          "heading": "PURG-04 Project_ARIS Worktree Contamination Blocker",
+          "kind": "heading"
+        },
+        {
+          "line": 2291,
+          "heading": "PURG04 Project_ARIS Main Moved Operator Decision Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2340,
+          "heading": "PURG04 Cleanroom Merge Plan With Forbidden Surface Exclusion",
+          "kind": "assignment"
+        },
+        {
+          "line": 2406,
+          "heading": "PURG04 Transition Table Review Gate Repair Packet",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 15,
+      "classification": "confusing_but_unique",
+      "why": "The canonical PURG-04 route coexists with many PURG04_* packet identifiers that drop the hyphen and overload the same number for sub-packets.",
+      "display_name_proposed": "Canonical PURG-04 Route Phase",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1337,
+          1357,
+          1379,
+          1406,
+          1427,
+          1454,
+          1498,
+          1522,
+          1551,
+          1585,
+          1616,
+          1641,
+          2291,
+          2340,
+          2406
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56,
+          260
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-05",
+      "first_appearance": {
+        "line": 2614,
+        "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 2615,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 2,
+      "classification": "confusing_but_unique",
+      "why": "The canonical PURG-05 route coexists with pre-opening packet identifiers under PURG05_*, which makes route-opened vs candidate packet states easy to misread.",
+      "display_name_proposed": "Canonical PURG-05 Route Phase",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2614,
+          2615
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-EXIT",
+      "first_appearance": {
+        "line": 2615,
+        "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2615
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56,
+          58,
+          283
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-RES",
+      "first_appearance": {
+        "line": 2614,
+        "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 2615,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 2,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2614,
+          2615
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          56
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG-S3",
+      "first_appearance": {
+        "line": 363,
+        "heading": "PURG-01.1 Findings Triage Classification Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          363
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE",
+      "first_appearance": {
+        "line": 1942,
+        "heading": "PURG04 B1/B3 Cleanroom Baseline Repair Readiness Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B1 B3 Cleanroom Baseline Repair Blocker Triage",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1942
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET",
+      "first_appearance": {
+        "line": 1897,
+        "heading": "Project_ARIS Cleanroom External Context Pointer Repair",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B1 B3 Cleanroom Baseline Repair Readiness Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1897
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B1_B3_GLOBAL_BASELINE_REPAIR_PLAN_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1496,
+        "heading": "Active-Context No Ritual Authorization Policy Repair",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B1 B3 Global Baseline Repair Plan Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1496
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR_WITH_OPERATOR_STANDING_DIRECTION",
+      "first_appearance": {
+        "line": 1645,
+        "heading": "PURG-04 Project_ARIS Worktree Contamination Blocker",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B1 B3 Project Aris Baseline Repair With Operator Standing Direction",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1645
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1549,
+        "heading": "PURG-04 B2 Current State Path Diagnostic Plan Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Boundary Decision Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1549
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1583,
+        "heading": "PURG-04 B2 Active-Context Path Contract Boundary Decision Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Normalization Plan Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1583
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1614,
+        "heading": "PURG-04 B2 Active-Context Path Contract Normalization Plan Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Normalization Repair Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1614
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1520,
+        "heading": "PURG-04 B1 B3 Global Baseline Repair Plan Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 B2 Current State Path Diagnostic Plan Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1520
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET",
+      "first_appearance": {
+        "line": 1989,
+        "heading": "PURG04 B1/B3 Cleanroom Baseline Repair Blocker Triage",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Cleanroom Fresh Reclone Prerequisite Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1989
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_FOCUSED_FAILURE_SURFACE_CLASSIFICATION_PACKET",
+      "first_appearance": {
+        "line": 2087,
+        "heading": "PURG04 Fresh Reclone Execution Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Focused Failure Surface Classification Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2087
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_FRESH_RECLONE_EXECUTION_PACKET",
+      "first_appearance": {
+        "line": 2039,
+        "heading": "PURG04 Cleanroom Fresh Reclone Prerequisite Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Fresh Reclone Execution Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2039
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 1404,
+        "heading": "PURG-04 IF09-FIND-001 S3 Local Remediation Apply Result",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Global Test Baseline Triage Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          1404
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET",
+      "first_appearance": {
+        "line": 2140,
+        "heading": "PURG04 Focused Failure Surface Classification Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Mixed Surface Repair Split Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2140
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 2706,
+        "heading": "PURG04 Proof-Loop Corpus Materialization Readiness Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2706
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET",
+      "first_appearance": {
+        "line": 2668,
+        "heading": "PURG04 Proof-Loop Corpus Gap Diagnostic And Plan Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Readiness Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2668
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY",
+      "first_appearance": {
+        "line": 2978,
+        "heading": "PURG04 Proof-Loop Corpus Source Hash Manifest Divergence Repair Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 3069,
+          "heading": "PURG04 Proof-Loop Corpus Retry Epoch Finalization Artifact-Only",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 2,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Retry Artifact Only",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2978,
+          3069
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_TRACK_A_MAIN_MERGE_EXECUTION",
+      "first_appearance": {
+        "line": 2305,
+        "heading": "PURG04 Project_ARIS Main Moved Operator Decision Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 2468,
+          "heading": "PURG04 Track A Patch Review And Merge Decision",
+          "kind": "backtick"
+        },
+        {
+          "line": 2539,
+          "heading": "PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 3,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Track A Main Merge Execution",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2305,
+          2468,
+          2539
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          261,
+          262
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          761
+        ]
+      }
+    },
+    {
+      "phase_id": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
+      "first_appearance": {
+        "line": 2255,
+        "heading": "PURG04 Track A Pointer Residual Repair Patch Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 2305,
+          "heading": "PURG04 Project_ARIS Main Moved Operator Decision Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2368,
+          "heading": "PURG04 Cleanroom Merge Plan With Forbidden Surface Exclusion",
+          "kind": "backtick"
+        },
+        {
+          "line": 2435,
+          "heading": "PURG04 Transition Table Review Gate Repair Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2441,
+          "heading": "PURG04 Track A Patch Review And Merge Decision",
+          "kind": "backtick"
+        },
+        {
+          "line": 2532,
+          "heading": "PURG04 Active-Context Canonical Sync Repair After Track A Main Merge",
+          "kind": "backtick"
+        }
+      ],
+      "occurrence_count": 6,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Track A Patch Review And Merge Decision",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2255,
+          2305,
+          2368,
+          2435,
+          2441,
+          2532
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          260,
+          261
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET",
+      "first_appearance": {
+        "line": 48,
+        "heading": "PURG Residual Risk Carry-Forward Admission Packet Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 107,
+          "heading": "PURG Residual Risk Carry-Forward Packet Route Opening",
+          "kind": "assignment"
+        },
+        {
+          "line": 280,
+          "heading": "Active-Context Schema/State Drift Repair",
+          "kind": "backtick"
+        },
+        {
+          "line": 282,
+          "heading": "Active-Context Schema/State Drift Repair",
+          "kind": "assignment"
+        },
+        {
+          "line": 2525,
+          "heading": "PURG04 Track A Main Merge Execution",
+          "kind": "backtick"
+        },
+        {
+          "line": 2589,
+          "heading": "PURG04 Track A Post-Merge Validation Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2595,
+          "heading": "PURG04 Track A Post-Merge Validation Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2602,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2632,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2646,
+          "heading": "PURG04 Proof-Loop Corpus Gap Diagnostic And Plan Artifact-Only",
+          "kind": "backtick"
+        },
+        {
+          "line": 2671,
+          "heading": "PURG04 Proof-Loop Corpus Gap Diagnostic And Plan Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2709,
+          "heading": "PURG04 Proof-Loop Corpus Materialization Readiness Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2744,
+          "heading": "PURG04 Proof-Loop Corpus Materialization Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2788,
+          "heading": "PURG05 Evidence Ledger Signing Custody Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2830,
+          "heading": "PURG05 Evidence Ledger Signing Custody Opening Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2889,
+          "heading": "PURG05 Evidence Ledger Signing Custody Admission Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2946,
+          "heading": "Purgatorium Post-PURG04 Route Decision Recheck Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2988,
+          "heading": "PURG04 Proof-Loop Corpus Source Hash Manifest Divergence Repair Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 3041,
+          "heading": "PURG04 Proof-Loop Corpus Materialization Retry Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 3078,
+          "heading": "PURG04 Proof-Loop Corpus Retry Epoch Finalization Artifact-Only",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 20,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node.",
+      "display_name_proposed": "Post-PURG-04 Track A Post Merge Validation Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          48,
+          107,
+          280,
+          282,
+          2525,
+          2589,
+          2595,
+          2602,
+          2632,
+          2646,
+          2671,
+          2709,
+          2744,
+          2788,
+          2830,
+          2889,
+          2946,
+          2988,
+          3041,
+          3078
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          262,
+          263
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          761
+        ]
+      }
+    },
+    {
+      "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET",
+      "first_appearance": {
+        "line": 2613,
+        "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 2624,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2674,
+          "heading": "PURG04 Proof-Loop Corpus Gap Diagnostic And Plan Artifact-Only",
+          "kind": "backtick"
+        },
+        {
+          "line": 2712,
+          "heading": "PURG04 Proof-Loop Corpus Materialization Readiness Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2824,
+          "heading": "PURG05 Evidence Ledger Signing Custody Opening Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2862,
+          "heading": "PURG05 Evidence Ledger Signing Custody Admission Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 2931,
+          "heading": "Purgatorium Post-PURG04 Route Decision Recheck Artifact-Only",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 7,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-05 route number for candidate/opening/admission packet namespaces before canonical PURG-05 is actually opened.",
+      "display_name_proposed": "Pre-PURG-05 Evidence Ledger Signing Custody Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2613,
+          2624,
+          2674,
+          2712,
+          2824,
+          2862,
+          2931
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+      "first_appearance": {
+        "line": 2882,
+        "heading": "PURG05 Evidence Ledger Signing Custody Admission Packet Artifact-Only",
+        "kind": "assignment"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "ambiguous_reuse",
+      "why": "Reuses the canonical PURG-05 route number for candidate/opening/admission packet namespaces before canonical PURG-05 is actually opened.",
+      "display_name_proposed": "Pre-PURG-05 Evidence Ledger Signing Custody Packet Operator Or Route Opening Packet",
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          2882
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG_REMAINING_ROADMAP_ACTIVATION_DECISION_PACKET",
+      "first_appearance": {
+        "line": 3118,
+        "heading": "PURGATORIUM Remaining Roadmap Canonicalization Packet Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 3185,
+          "heading": "PURG Remaining Roadmap Branch Selection Diagnostic Packet (R1 evidence) \u2014 Artifact-Only, Non-Binding",
+          "kind": "backtick"
+        },
+        {
+          "line": 3197,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Branch Selected: TRACK_REVALIDATION_FIRST",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 3,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          3118,
+          3185,
+          3197
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    },
+    {
+      "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
+      "first_appearance": {
+        "line": 49,
+        "heading": "PURG Residual Risk Carry-Forward Admission Packet Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [
+        {
+          "line": 72,
+          "heading": "PURG Residual Risk Carry-Forward Admission Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 103,
+          "heading": "PURG Residual Risk Carry-Forward Packet Route Opening",
+          "kind": "backtick"
+        },
+        {
+          "line": 106,
+          "heading": "PURG Residual Risk Carry-Forward Packet Route Opening",
+          "kind": "assignment"
+        },
+        {
+          "line": 114,
+          "heading": "PURG Residual Risk Carry-Forward Packet Route Opening",
+          "kind": "backtick"
+        },
+        {
+          "line": 155,
+          "heading": "INF Revalidation Route Activation / Amendment Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 2614,
+          "heading": "Purgatorium Post-PURG04 Route Decision Packet",
+          "kind": "backtick"
+        },
+        {
+          "line": 2782,
+          "heading": "PURG05 Evidence Ledger Signing Custody Packet",
+          "kind": "assignment"
+        },
+        {
+          "line": 3115,
+          "heading": "PURGATORIUM Remaining Roadmap Canonicalization Packet Artifact-Only",
+          "kind": "assignment"
+        },
+        {
+          "line": 3144,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Blocked",
+          "kind": "assignment"
+        },
+        {
+          "line": 3175,
+          "heading": "PURG Remaining Roadmap Branch Selection Diagnostic Packet (R1 evidence) \u2014 Artifact-Only, Non-Binding",
+          "kind": "assignment"
+        },
+        {
+          "line": 3208,
+          "heading": "PURG Remaining Roadmap Activation Decision Packet (R1) \u2014 Branch Selected: TRACK_REVALIDATION_FIRST",
+          "kind": "assignment"
+        }
+      ],
+      "occurrence_count": 12,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          49,
+          72,
+          103,
+          106,
+          114,
+          155,
+          2614,
+          2782,
+          3115,
+          3144,
+          3175,
+          3208
+        ],
+        "ROADMAP_CANONICAL_md_lines": [
+          263,
+          264
+        ],
+        "ACTIVE_CONTEXT_STATE_json_lines": [
+          762
+        ]
+      }
+    },
+    {
+      "phase_id": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET",
+      "first_appearance": {
+        "line": 69,
+        "heading": "PURG Residual Risk Carry-Forward Admission Packet Artifact-Only",
+        "kind": "backtick"
+      },
+      "reappearances": [],
+      "occurrence_count": 1,
+      "classification": "unambiguous",
+      "why": null,
+      "display_name_proposed": null,
+      "present_in": {
+        "DECISION_LOCKS_md_lines": [
+          69
+        ],
+        "ROADMAP_CANONICAL_md_lines": [],
+        "ACTIVE_CONTEXT_STATE_json_lines": []
+      }
+    }
+  ]
+}

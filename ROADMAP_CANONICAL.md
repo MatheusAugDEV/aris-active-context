@@ -192,6 +192,7 @@ The authoritative runner used a read-only git-archive snapshot of Project_ARIS c
 Oracle result for IF09 focused revalidation: `pass`
 No successor row is active after mirror sanity cleanup.
 Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
+>>> NAO LEIA COMO ROTA ATIVA — consulte `ACTIVE_CONTEXT_STATE.json`; o bloco abaixo e HISTORICAL_ONLY e permanece somente por compatibilidade do validator. <<<
 Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
 Latest completed phase: IF-11 Minos Final Verdict + Closure
 Active next phase: PURG-01

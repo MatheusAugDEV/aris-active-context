@@ -80,8 +80,8 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
-    "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
+    "ACTIVE_CONTEXT_STATE.json": "4bd116d915478b5d5a7b0eabe435db2750b6ed49cd80117616c7e8cffa6b21cc",
+    "ACTIVE_CONTEXT_SCHEMA.json": "9b49945a297a337f3c5e6b75f95bf7c0316c3b30c52c7f8a7c464d0766557d68",
     "scripts/validate_active_context_state.py": "85ded800ce1c56aeea57bcb0bf9c126aac18df51da7b94e61472149758ffad24",
     "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
     "artifacts/benchuix/27B_react_static_prototype_manifest.json": "cab1c85b3686fb9f3dc02c39653be4a4f58caa47ee219a56e0a93d8d20a37056",

@@ -3305,3 +3305,26 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `secrets_access_authorized=false`
   - `runtime_integration_allowed=false`
   - `Project_ARIS changed during this phase=false`
+
+## Phase Naming Ambiguity Audit (Governance-Only)
+
+- Scope: naming-clarity audit and metadata-only repair inside `aris-active-context`; no `Project_ARIS` mutation, no runtime, no real_apply, no product/Bedrock/secrets work.
+- Artifacts created:
+  - `artifacts/governance/naming_clarity/00_phase_naming_audit.json`
+  - `artifacts/governance/naming_clarity/01_ambiguity_findings.md`
+  - `artifacts/governance/naming_clarity/02_display_name_proposal.json`
+  - `artifacts/governance/naming_clarity/04_no_real_execution_attestation.json`
+  - `artifacts/governance/naming_clarity/05_validation_evidence.json`
+- Audit summary:
+  - full `DECISION_LOCKS.md` history reviewed for phase-id naming ambiguity
+  - explicit priority finding: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` reuses `IF09` after `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` already closed `IF09-FIND-001`
+  - additional ambiguity families recorded for `PURG04_*`, `PURG05_*`, mixed `IF08_W05` vs `IF08_W5`, `BENCHUX_ROUTE_OPENING_PACKET` vs `BENCHUIX-*`, and `INF-FULL-07` vs human `IF-11` labeling
+- Metadata repair applied:
+  - optional `display_name` support added to `ACTIVE_CONTEXT_SCHEMA.json`
+  - live state annotated with `display_name=Post-Revalidation Mirror Sanity Packet`
+  - authoritative identifiers unchanged: `phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+- Governance invariants:
+  - `live_route_unchanged=true`
+  - `all_real_locks_remain_false=true`
+  - `historical_entries_not_modified=true`
+  - `project_aris_changed=false`

@@ -1,0 +1,188 @@
+{
+  "BENCHUX_ROUTE_OPENING_PACKET": {
+    "display_name_proposed": "BenchUIX Route Opening Packet Candidate",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "Uses BENCHUX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track."
+  },
+  "IF-08": {
+    "display_name_proposed": "IF-08 Parent Wave Program",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "The parent label uses IF-08 with a hyphen, while the child wave packets use IF08_W* without the hyphen and with mixed zero-padding."
+  },
+  "IF-09": {
+    "display_name_proposed": "Original IF-09 Evidence Bundle And Vulnerability Register",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "The original IF-09 human phase label remains in history while a later live phase_id reuses IF09 for a post-revalidation mirror-sanity packet."
+  },
+  "IF08_W05": {
+    "display_name_proposed": "IF-08 Wave 05 Canonical Sync Lock",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "Wave 05 is represented both as IF08_W05 and IF08_W5 in the same historical family, which weakens scanability and ordering clarity."
+  },
+  "IF08_W5": {
+    "display_name_proposed": "IF-08 Wave 05 Business Chaos",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "Wave 05 is represented both as IF08_W05 and IF08_W5 in the same historical family, which weakens scanability and ordering clarity."
+  },
+  "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET": {
+    "display_name_proposed": "Post-Revalidation Mirror Sanity Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the IF09 family label after IF-09 evidence/vulnerability work was already completed and after INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET closed IF09-FIND-001."
+  },
+  "INF-FULL-07": {
+    "display_name_proposed": "Infernus FULL 07 / IF-11 Minos Final Verdict Closure",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "Historical mirrors repeatedly narrate INF-FULL-07 as IF-11 Minos Final Verdict + Closure, so the authoritative phase_id and the human ordinal label diverge."
+  },
+  "PURG-01": {
+    "display_name_proposed": "Canonical PURG-01 Route Phase",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "The canonical PURG-01 route is surrounded by human subsection labels PURG-01.1 and PURG-01.2, which look phase-like but are not canonical phase_ids."
+  },
+  "PURG-04": {
+    "display_name_proposed": "Canonical PURG-04 Route Phase",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "The canonical PURG-04 route coexists with many PURG04_* packet identifiers that drop the hyphen and overload the same number for sub-packets."
+  },
+  "PURG-05": {
+    "display_name_proposed": "Canonical PURG-05 Route Phase",
+    "authoritative_field_unaffected": true,
+    "classification": "confusing_but_unique",
+    "why": "The canonical PURG-05 route coexists with pre-opening packet identifiers under PURG05_*, which makes route-opened vs candidate packet states easy to misread."
+  },
+  "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_BLOCKER_TRIAGE": {
+    "display_name_proposed": "Post-PURG-04 B1 B3 Cleanroom Baseline Repair Blocker Triage",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B1_B3_CLEANROOM_BASELINE_REPAIR_READINESS_PACKET": {
+    "display_name_proposed": "Post-PURG-04 B1 B3 Cleanroom Baseline Repair Readiness Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B1_B3_GLOBAL_BASELINE_REPAIR_PLAN_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 B1 B3 Global Baseline Repair Plan Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B1_B3_PROJECT_ARIS_BASELINE_REPAIR_WITH_OPERATOR_STANDING_DIRECTION": {
+    "display_name_proposed": "Post-PURG-04 B1 B3 Project Aris Baseline Repair With Operator Standing Direction",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_BOUNDARY_DECISION_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Boundary Decision Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_PLAN_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Normalization Plan Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B2_ACTIVE_CONTEXT_PATH_CONTRACT_NORMALIZATION_REPAIR_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 B2 Active Context Path Contract Normalization Repair Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_B2_CURRENT_STATE_PATH_DIAGNOSTIC_PLAN_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 B2 Current State Path Diagnostic Plan Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_CLEANROOM_FRESH_RECLONE_PREREQUISITE_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Cleanroom Fresh Reclone Prerequisite Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_FOCUSED_FAILURE_SURFACE_CLASSIFICATION_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Focused Failure Surface Classification Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_FRESH_RECLONE_EXECUTION_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Fresh Reclone Execution Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_GLOBAL_TEST_BASELINE_TRIAGE_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 Global Test Baseline Triage Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_MIXED_SURFACE_REPAIR_SPLIT_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Mixed Surface Repair Split Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_READINESS_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Readiness Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_PROOF_LOOP_CORPUS_MATERIALIZATION_RETRY_ARTIFACT_ONLY": {
+    "display_name_proposed": "Post-PURG-04 Proof Loop Corpus Materialization Retry Artifact Only",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_TRACK_A_MAIN_MERGE_EXECUTION": {
+    "display_name_proposed": "Post-PURG-04 Track A Main Merge Execution",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION": {
+    "display_name_proposed": "Post-PURG-04 Track A Patch Review And Merge Decision",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET": {
+    "display_name_proposed": "Post-PURG-04 Track A Post Merge Validation Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-04 route number for a post-PURG-04 packet namespace, so the packet can be mistaken for the canonical route node."
+  },
+  "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET": {
+    "display_name_proposed": "Pre-PURG-05 Evidence Ledger Signing Custody Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-05 route number for candidate/opening/admission packet namespaces before canonical PURG-05 is actually opened."
+  },
+  "PURG05_EVIDENCE_LEDGER_SIGNING_CUSTODY_PACKET_OPERATOR_OR_ROUTE_OPENING_PACKET": {
+    "display_name_proposed": "Pre-PURG-05 Evidence Ledger Signing Custody Packet Operator Or Route Opening Packet",
+    "authoritative_field_unaffected": true,
+    "classification": "ambiguous_reuse",
+    "why": "Reuses the canonical PURG-05 route number for candidate/opening/admission packet namespaces before canonical PURG-05 is actually opened."
+  }
+}
