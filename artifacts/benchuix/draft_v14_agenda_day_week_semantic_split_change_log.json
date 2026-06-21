@@ -1,0 +1,86 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V14 (Agenda Day/Week Semantic Split)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v13.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v14.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Separar semanticamente os modos Dia e Semana da Agenda, mantendo o dashboard sandbox-only e preservando os comportamentos entregues de v4 a v13.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma alteracao de ARIS_BOOT.md, ROADMAP_CANONICAL.md, phase_id, current_phase_id, next_phase, active_next_phase, lock ou schema foi executada.",
+      "Nenhuma integracao de backend, runtime real, billing, payment, accounting, support, chatbot, secret, API client ou endpoint externo foi adicionada."
+    ]
+  },
+  "implemented_changes": {
+    "dia_mode_layout": [
+      "O modo Dia agora abre com cabecalho de dia unico, status aberto/fechado, resumo operacional e mensagem de boundary sandbox-only.",
+      "O conteudo principal do modo Dia foi trocado por cards de resumo e timeline/lista do recorte selecionado.",
+      "O estado vazio do dia continua explicito e nao duplica a grade semanal como conteudo primario."
+    ],
+    "semana_mode_layout": [
+      "O modo Semana foi mantido como grade compacta de sete cards, agora com leitura de ritmo, receita confirmada, volume de agenda e status por dia.",
+      "Foi adicionado um strip de resumo semanal para reforcar que a navegacao nesta visao anda por semanas inteiras."
+    ],
+    "navigation_label_behavior": [
+      "No modo Dia, o rotulo central usa Hoje ou a data selecionada e as setas andam dia a dia dentro do sandbox local.",
+      "No modo Semana, o rotulo central usa Semana atual / Semana anterior / Proxima semana e as setas andam por semanas locais sem backend."
+    ],
+    "reduction_of_cognitive_load": [
+      "O modo Dia deixa de mostrar a grade semanal completa ao mesmo tempo, reduzindo a competicao entre detalhe diario e panorama semanal.",
+      "O modo Semana fica livre da timeline detalhada do dia e volta a responder apenas a pergunta de cadencia semanal."
+    ],
+    "help_topic_preservation_update": [
+      "A entrada ? Ajuda da Agenda agora abre o topico `Qual e a diferenca entre Dia e Semana na Agenda?`.",
+      "O topico documenta a diferenca entre os modos, a navegacao anterior/proximo e o fato de a leitura continuar synthetic/sandbox-only."
+    ],
+    "mobile_behavior": [
+      "Os cards de resumo do modo Dia empilham no mobile sem overflow horizontal.",
+      "A timeline do dia colapsa para uma coluna unica no mobile, mantendo tap targets e leitura limpa.",
+      "A grade semanal continua responsiva em 320, 375, 480, 768 e 1024 px."
+    ],
+    "latest_preview_update": [
+      "barbearia_dashboard_latest.html foi atualizado para refletir exatamente o bundle v14.",
+      "O hash SHA-256 do draft v14 e do latest preview e identico."
+    ],
+    "preserved_prior_behavior": [
+      "Hierarquia de decisao de Hoje preservada.",
+      "Tema claro/escuro preservado com localStorage key aris_benchuix_theme.",
+      "Interatividade sandbox do fluxo v6 preservada, incluindo Rafael refletindo na Agenda.",
+      "Pager mobile de Disponibilidade preservado.",
+      "Cenarios onboarding, empty e failure preservados.",
+      "Ajuda local com busca, filtro e expand/collapse preservada.",
+      "Consistencia financeira de Perdido entre Hoje e Estimativa preservada.",
+      "Simplificacao do cluster de controles da Agenda entregue em v13 preservada."
+    ]
+  },
+  "validation": {
+    "active_context_validator": "python3 scripts/validate_active_context_state.py",
+    "headless_runtime_checked": true,
+    "headless_runners": [
+      "google-chrome --headless=new --disable-gpu --virtual-time-budget=50000 --dump-dom http://127.0.0.1:8124/validate_v14.html",
+      "google-chrome --headless=new --disable-gpu --virtual-time-budget=50000 --dump-dom http://127.0.0.1:8124/validate_v14_latest.html"
+    ],
+    "verified_behaviors": [
+      "Carregamento do draft v14 e do latest preview em runtime local.",
+      "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px.",
+      "Persistencia de tema em localStorage pela chave aris_benchuix_theme.",
+      "Modo Dia exibe layout de dia unico e nao exibe a grade semanal como conteudo primario.",
+      "Modo Semana exibe grade semanal compacta com 7 cards e navegacao por semana.",
+      "Ajuda da Agenda abre o topico Dia x Semana e explica navegacao local.",
+      "Fluxo v6 de aprovar Rafael continua refletindo na Agenda.",
+      "Pager mobile de Disponibilidade continua mudando o dia focal corretamente.",
+      "Cenarios onboarding, empty e failure continuam funcionais.",
+      "Busca, filtro e expand/collapse da Ajuda continuam funcionais.",
+      "Hoje e Estimativa exibem exatamente o mesmo valor em Perdido no cenario normal.",
+      "O cenario empty-day continua sem perda inventada.",
+      "O cenario failure continua explicitando revisao manual segura sem alegar backend financeiro real.",
+      "Os controles da Agenda permanecem visiveis em dark mode e light mode."
+    ],
+    "static_scope_checks": [
+      "barbearia_claude_design_export_draft_v14.html e barbearia_dashboard_latest.html sao identicos byte-a-byte.",
+      "Sem ocorrencia de #ff0000 nos artefatos v14.",
+      "Sem fetch(), XMLHttpRequest, WebSocket, ws:// ou wss:// introduzidos no draft v14; a unica URL tecnica detectada continua sendo o namespace SVG padrao."
+    ]
+  }
+}

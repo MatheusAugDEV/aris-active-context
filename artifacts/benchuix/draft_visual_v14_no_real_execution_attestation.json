@@ -1,0 +1,24 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v14.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "Todas as alteracoes do v14 estao confinadas ao HTML bundled do sandbox BenchUIX e a artefatos documentais locais.",
+    "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi tocado.",
+    "A mudanca e estritamente visual/UX para separar semanticamente Agenda Dia e Agenda Semana com dados synthetic/sandbox-only.",
+    "Nenhuma integracao de backend, runtime real, network/API, billing, payment, accounting, support, chatbot, telemetry externa, segredo ou endpoint externo foi adicionada.",
+    "Nenhuma mutacao de governanca canonica, lock, phase_id, next_phase ou active_next_phase foi executada."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY",
+    "COMMIT-PUSH-HASH"
+  ],
+  "notes": [
+    "A validacao exigida por scripts/validate_active_context_state.py passou sem qualquer mutacao do estado ativo.",
+    "O passe v14 foi implementado como semantic split entre visao de dia unico e visao semanal compacta da Agenda, preservando o restante do dashboard local.",
+    "A trilha BenchUIX permanece candidate-only, sandbox-only e operator_review_pending."
+  ]
+}
