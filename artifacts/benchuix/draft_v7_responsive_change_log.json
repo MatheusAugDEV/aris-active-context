@@ -1,0 +1,114 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V7 (Responsivo Mobile/Tablet)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v6.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v7.html",
+  "decision_hint": "WARN",
+  "part_a_breakpoint_audit": [
+    {
+      "width_px": 320,
+      "result": "PASS_WITH_LIMITATION",
+      "notes": [
+        "Sem overflow horizontal na pagina.",
+        "Hoje empilha em uma coluna e o grid de metricas cai para 1 coluna.",
+        "Agenda troca tabela por cards.",
+        "Disponibilidade troca calendario semanal por shell de um dia e cards de bloqueio.",
+        "Limitacao residual: o pager movel de Disponibilidade nao avancou o dia focal no runtime headless."
+      ]
+    },
+    {
+      "width_px": 375,
+      "result": "PASS_WITH_LIMITATION",
+      "notes": [
+        "Sem overflow horizontal na pagina.",
+        "Hoje permanece em pilha unica com alvos de toque >= 44x44.",
+        "Agenda em cards continua legivel.",
+        "Limitacao residual igual a 320px no pager movel de Disponibilidade."
+      ]
+    },
+    {
+      "width_px": 480,
+      "result": "PASS_WITH_LIMITATION",
+      "notes": [
+        "Sem overflow horizontal na pagina.",
+        "Cards financeiros deixam o modo 1 coluna estreito e passam para 2 colunas.",
+        "Agenda ainda usa cards abaixo de 768px.",
+        "Limitacao residual igual a 320px no pager movel de Disponibilidade."
+      ]
+    },
+    {
+      "width_px": 768,
+      "result": "PASS",
+      "notes": [
+        "Sem overflow horizontal na pagina.",
+        "Sidebar segue em drawer porque o corte de navegacao global e abaixo de 1024px.",
+        "Agenda volta para tabela desktop.",
+        "Disponibilidade volta para calendario semanal desktop e tabela desktop de bloqueios."
+      ]
+    },
+    {
+      "width_px": 1024,
+      "result": "PASS",
+      "notes": [
+        "Sem overflow horizontal na pagina.",
+        "Sidebar fixa volta ao layout desktop e o hamburger some.",
+        "Tema do v5 e drawers do v6 continuam funcionais."
+      ]
+    }
+  ],
+  "special_components": [
+    {
+      "component": "sidebar_global_navigation",
+      "treatment": "Abaixo de 1024px a sidebar vira drawer com backdrop e botao hamburger no header."
+    },
+    {
+      "component": "hoje_metric_grid_and_bottom_columns",
+      "treatment": "Cards e colunas empilham em mobile; abaixo de 400px a grade financeira fica em 1 coluna."
+    },
+    {
+      "component": "agenda_dense_day_table",
+      "treatment": "Abaixo de 768px a tabela diaria vira pilha de cards com hora e cliente em destaque."
+    },
+    {
+      "component": "disponibilidade_weekly_calendar",
+      "treatment": "Abaixo de 768px o calendario semanal vira leitura de um dia por vez com cards de bloqueio separados."
+    },
+    {
+      "component": "settings_and_estimate_grids",
+      "treatment": "Grids de duas colunas passam para coluna unica em telas menores."
+    }
+  ],
+  "implementation_decisions": {
+    "mobile_navigation": "drawer_with_backdrop_below_1024",
+    "today_cards_strategy": "single_column_below_768_and_financial_grid_1col_below_400",
+    "agenda_strategy": "table_to_cards_below_768",
+    "availability_mobile_strategy": {
+      "chosen": "one_day_at_a_time_with_prev_today_next_controls",
+      "reason": "Preserva a leitura de horarios, blocos e slots sem esmagar uma grade de 7 colunas em telas de 320-480px.",
+      "observed_headless_limitation": "No runtime validado por Chrome headless, o shell movel ficou preso no primeiro dia renderizado e os botoes proximo/Hoje nao mudaram o dia focal, apesar do shell de um dia, dos cards de bloqueio e do formulario continuarem renderizando."
+    }
+  },
+  "validation_summary": {
+    "no_horizontal_overflow_all_tested_breakpoints": true,
+    "mobile_nav_below_1024_confirmed": true,
+    "agenda_cards_below_768_confirmed": true,
+    "availability_mobile_shell_below_768_confirmed": true,
+    "availability_block_cards_below_768_confirmed": true,
+    "desktop_agenda_and_availability_restored_at_768_and_1024": true,
+    "min_touch_target_44px_mobile_confirmed": true,
+    "v6_interactivity_preserved": true,
+    "v5_theme_preserved": true,
+    "residual_issue_requires_warn": true
+  },
+  "residual_issue": {
+    "component": "availability_mobile_day_pager",
+    "status": "open",
+    "impact": "A navegacao de um dia por vez nao muda o dia focal no runtime headless, entao a leitura mobile de Disponibilidade ficou funcional para abrir o formulario local e ler o shell atual, mas nao para percorrer a semana inteira.",
+    "known_good_subpaths": [
+      "drawer mobile abre e fecha",
+      "Agenda avanca e volta de dia",
+      "drawers de Atendimento e Aprovacoes continuam abrindo e fechando",
+      "formulario de bloqueio abre em Disponibilidade",
+      "Cancelar fecha o formulario local no teste dirigido"
+    ]
+  }
+}
