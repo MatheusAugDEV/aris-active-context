@@ -1,0 +1,23 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v13.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "Todas as alteracoes do v13 estao confinadas ao HTML bundled do sandbox BenchUIX e a artefatos documentais locais.",
+    "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi tocado.",
+    "Nenhuma integracao de backend, runtime real, cobranca, pagamento, contabilidade, suporte, chatbot, telemetria externa, segredo ou endpoint externo foi adicionada.",
+    "A mudanca foi restrita a simplificacao visual/UX da Agenda com dados sinteticos locais."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY",
+    "COMMIT-PUSH-HASH"
+  ],
+  "notes": [
+    "A validacao canonicamente exigida por scripts/validate_active_context_state.py passou sem qualquer mutacao do estado ativo.",
+    "O passe v13 foi implementado como simplificacao da area de controle da Agenda, reforco de contraste em dark/light mode e organizacao mobile do mesmo bundle sandbox-only.",
+    "A trilha BenchUIX permanece candidate-only, sandbox-only e operator_review_pending."
+  ]
+}
