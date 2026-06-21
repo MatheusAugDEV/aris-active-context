@@ -1,0 +1,79 @@
+{
+  "phase": "BENCHUIX-27 v17 — Meu Negócio / Configurações Simplification",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v16.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v17.html",
+  "part_a_inspection": {
+    "menu_label_in_v16": "Configurações",
+    "screen_structure_found_in_v16": "A tela estava organizada em um grid de duas colunas com banner superior de sandbox, cards de Dados do negócio e Horário de funcionamento na coluna esquerda, e cards de Cenários do sandbox, Notificações, Aparência e um resumo colapsável na coluna direita.",
+    "existing_sections_in_v16": [
+      "Dados do negócio",
+      "Horário de funcionamento",
+      "Cenários do sandbox",
+      "Notificações",
+      "Aparência",
+      "Resumo da sessão"
+    ],
+    "theme_location_in_v16": "O controle de tema aparecia em dois lugares: um toggle destacado no topo global da interface e um card de Aparência dentro da própria tela.",
+    "sandbox_appearance_in_v16": "Os cenários de sandbox apareciam como um card aberto e permanente, com resumo do modo atual e quatro ações diretas: Operação base, Onboarding, Dia vazio e Falha segura.",
+    "controls_and_interactions_to_preserve": [
+      "inputs de nome, endereço e telefone",
+      "grade editável dos 7 dias com abertura, fechamento e botão Fechar/Reabrir",
+      "toggles de avisos",
+      "cenários de sandbox normal/onboarding/empty/failure",
+      "persistência de tema via localStorage",
+      "estado compartilhado e notices locais do sandbox",
+      "responsividade mobile do grid e da grade de horários",
+      "estado compartilhado Rafael M., se presente no v16"
+    ],
+    "latest_byte_equal_to_v16_before_change": true,
+    "unexpected_findings_in_v16": [
+      "O nome Configurações aparecia também em textos de orientação fora da própria tela, inclusive em Ajuda e em superfícies de contexto.",
+      "O tema tinha destaque excessivo por estar disponível no topo global e novamente como card completo dentro da tela."
+    ]
+  },
+  "changes_made": [
+    "item de menu renomeado de Configurações para Meu Negócio",
+    "título interno da superfície alterado para Meu Negócio",
+    "tela reorganizada em Dados da barbearia, Quando a barbearia abre, Avisos e Modos de demonstração (sandbox)",
+    "modos de sandbox movidos para uma seção colapsável com linguagem explícita de demonstração",
+    "controle de tema removido do topo global e movido para o rodapé discreto da tela",
+    "microcopy simplificada para linguagem de dono de barbearia",
+    "referências mínimas a Configurações alinhadas para Meu Negócio onde o label antigo quebraria a navegação"
+  ],
+  "preserved_behaviors": [
+    "tema claro/escuro",
+    "localStorage em aris_benchuix_theme",
+    "interatividade existente da tela",
+    "responsividade mobile",
+    "cenários de sandbox",
+    "estado compartilhado Rafael M., se presente no v16"
+  ],
+  "out_of_scope_not_touched": [
+    "Hoje não foi simplificada",
+    "Ajuda não teve fluxo, estrutura ou comportamento redesenhados",
+    "cálculos financeiros não foram alterados",
+    "Agenda, Aprovações, Atendimento e Disponibilidade não tiveram lógica alterada",
+    "ACTIVE_CONTEXT_STATE.json não foi alterado",
+    "ARIS_BOOT.md não foi alterado",
+    "ROADMAP_CANONICAL.md não foi alterado",
+    "locks, fase, benchuix_track.status, next_phase e active_next_phase não foram alterados"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "cmp -s between v16 and latest before change",
+    "cmp -s between v17 and latest after change",
+    "python3 -m json.tool artifacts/benchuix/draft_v17_meu_negocio_change_log.json",
+    "python3 -m json.tool artifacts/benchuix/draft_visual_v17_meu_negocio_no_real_execution_attestation.json",
+    "headless load of v17 via google-chrome --dump-dom over local server",
+    "headless load of latest via google-chrome --dump-dom over local server",
+    "custom local harness validate_v17_meu_negocio.html with DOM assertions for Meu Negócio labels, sections, collapsible sandbox, theme controls and overflow at 320/375/480/768/1024",
+    "git diff checks for ACTIVE_CONTEXT_STATE.json, ARIS_BOOT.md and ROADMAP_CANONICAL.md",
+    "decoded-template scan for prohibited runtime/network strings",
+    "decoded-template scan for pure red alarm colors",
+    "external URL list comparison between v16 and v17"
+  ],
+  "residuals": [
+    "A ajuda recebeu apenas ajustes mínimos de label para evitar apontar para um nome de tela inexistente.",
+    "A validação automática de overflow depende do harness/headless local disponível neste ambiente."
+  ]
+}
