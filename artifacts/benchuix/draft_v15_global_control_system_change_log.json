@@ -1,0 +1,70 @@
+{
+  "artifact": "draft_v15_global_control_system_change_log",
+  "version": "v15",
+  "title": "Global Control System Simplification / Intuitive UI Consistency",
+  "scope": "visual_ux_only_sandbox_dashboard",
+  "source_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v15.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "control_patterns_normalized": [
+    "segmented controls for Agenda day and week modes",
+    "stepper controls for Agenda navigation and Disponibilidade mobile navigation",
+    "quiet help actions normalized to Ajuda buttons",
+    "shared primary, secondary, neutral and link-style actions across main screens",
+    "explicit disabled-looking navigation states instead of ambiguous low-contrast pills"
+  ],
+  "screens_reviewed": [
+    "Hoje",
+    "Agenda",
+    "Atendimento",
+    "Disponibilidade",
+    "Aprovações",
+    "Estimativa do dia",
+    "Configurações",
+    "Ajuda"
+  ],
+  "dark_mode_visibility_improvements": [
+    "Agenda segmented and stepper controls now keep filled surfaces, visible borders and readable inactive text in dark mode",
+    "top-of-screen control clusters use the same button sizing, spacing and border treatment across the sandbox",
+    "help buttons remain quiet without disappearing against dark surfaces"
+  ],
+  "light_mode_visibility_improvements": [
+    "Agenda active and inactive controls preserve readable fill and border contrast after theme toggle",
+    "shared button variants keep the same visual hierarchy in light mode without relying on transparent borders",
+    "help and neutral actions remain readable without competing with the primary action layer"
+  ],
+  "action_hierarchy_changes": [
+    "Revisar and Aprovar are visually elevated as primary actions where operator intervention matters",
+    "Voltar, Cancelar and Limpar use the secondary treatment",
+    "Simular and Salvar no sandbox use neutral or primary sandbox-safe emphasis depending on the task",
+    "Ajuda was demoted to a quieter reference action instead of competing CTAs"
+  ],
+  "mobile_behavior": [
+    "control clusters stack into full-width rows below tablet widths",
+    "Agenda segmented controls and stepper controls expand to grid layouts on mobile",
+    "Disponibilidade mobile navigation keeps usable tap targets and no horizontal overflow"
+  ],
+  "latest_preview_update": {
+    "updated": true,
+    "matches_v15_draft": true
+  },
+  "preserved_prior_behavior": [
+    "v4 six-layer decision hierarchy on Hoje",
+    "v5 light and dark themes with localStorage key aris_benchuix_theme",
+    "v6 shared Rafael M. exception and approval reflection into Agenda",
+    "v7 responsive layout with no horizontal overflow at 320, 375, 480, 768 and 1024 widths",
+    "v8 focused-day mobile navigation in Disponibilidade",
+    "v9 onboarding, empty states, failure states and sandbox scenario selector",
+    "v10 Help local search, filter and expand-collapse behavior",
+    "v11 consistency between Perdido, Estimativa and Recuperável",
+    "v13 simplified Agenda control cluster intent",
+    "v14 semantic split between Dia and Semana in Agenda"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "local HTTP availability check for the latest preview endpoint",
+    "local HTTP availability check for the v15 validation harness",
+    "headless local load and verification via http://127.0.0.1:8124/validate_v15.html",
+    "headless local load and verification via http://127.0.0.1:8124/validate_v15_latest.html",
+    "byte-for-byte equality check between the v15 draft and barbearia_dashboard_latest.html"
+  ]
+}
