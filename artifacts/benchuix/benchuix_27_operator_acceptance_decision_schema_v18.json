@@ -1,0 +1,59 @@
+{
+  "artifact_type": "benchuix_27_operator_acceptance_decision_schema_v18",
+  "status": "CANDIDATE_ONLY",
+  "candidate_phase": "BENCHUIX-27",
+  "allowed_decisions": [
+    "ACCEPT",
+    "ACCEPT_WITH_WARN",
+    "REJECT_FOR_REWORK",
+    "BLOCKED"
+  ],
+  "acceptance_criteria": [
+    "latest preview opens locally and remains reviewable",
+    "visual hierarchy remains strong enough for operator reading",
+    "no critical regression against preserved v4-v16 behavior",
+    "mobile widths remain usable",
+    "evidence remains accessible after progressive disclosure",
+    "candidate is strong enough for future CRISOL preparation without applying transition now"
+  ],
+  "warn_criteria": [
+    "candidate is broadly acceptable but carries minor visual or clarity issues",
+    "non-blocking mobile, navigation or microcopy friction exists",
+    "warns can be documented without invalidating the candidate review outcome"
+  ],
+  "rework_criteria": [
+    "visual hierarchy is weak or confusing",
+    "preserved behavior regressed materially",
+    "operator trust or readability is not sufficient for future CRISOL preparation",
+    "must-fix issues require a targeted visual rework prompt"
+  ],
+  "blocked_criteria": [
+    "preview cannot be reviewed responsibly",
+    "evidence is insufficient to decide",
+    "an external or technical blocker prevents decision",
+    "decision would be speculative without additional clarification"
+  ],
+  "forbidden_implications": [
+    "canonical_approval",
+    "crisol_transition_start",
+    "product_release_authorization",
+    "production_release_authorization",
+    "pilot_authorization",
+    "bedrock_enablement",
+    "real_execution_enablement",
+    "real_apply_enablement",
+    "runtime_integration_opened",
+    "credential_scope_enablement"
+  ],
+  "next_step_by_decision": {
+    "ACCEPT": "prepare a future candidate transition packet for CRISOL without applying any transition in this phase",
+    "ACCEPT_WITH_WARN": "record warns and decide whether they must be corrected before future CRISOL preparation",
+    "REJECT_FOR_REWORK": "open a specific visual rework prompt scoped to the observed failures",
+    "BLOCKED": "stop and register the blocker explicitly before any next action"
+  },
+  "canonical_mutation_allowed": false,
+  "real_execution_authorized": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "bedrock_authorized": false
+}

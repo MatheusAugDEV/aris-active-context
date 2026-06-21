@@ -1,0 +1,34 @@
+{
+  "artifact": "draft_v18_operator_acceptance_packet_change_log",
+  "version": "v18",
+  "title": "Operator Acceptance Decision Packet",
+  "base_used": [
+    "artifacts/benchuix/benchuix_27_operator_review_packet_v17.md",
+    "artifacts/benchuix/benchuix_27_golden_walkthrough_v17.json",
+    "artifacts/benchuix/benchuix_27_visual_qa_matrix_v17.json",
+    "artifacts/benchuix/drafts/barbearia_dashboard_latest.html"
+  ],
+  "files_created": [
+    "artifacts/benchuix/benchuix_27_operator_acceptance_decision_packet_v18.md",
+    "artifacts/benchuix/benchuix_27_operator_acceptance_decision_schema_v18.json",
+    "artifacts/benchuix/benchuix_27_operator_review_form_v18.json",
+    "artifacts/benchuix/draft_v18_operator_acceptance_packet_change_log.json",
+    "artifacts/benchuix/draft_visual_v18_no_real_execution_attestation.json"
+  ],
+  "html_altered": false,
+  "canonical_state_altered": false,
+  "validations_planned_or_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m json.tool on every new v18 JSON artifact",
+    "presence check for the latest preview",
+    "presence check for the v17 review packet",
+    "forbidden-language scan against new v18 artifacts",
+    "forbidden integration string scan",
+    "git diff --stat scope check before commit"
+  ],
+  "residuals": [
+    "operator decision remains intentionally unset",
+    "this packet does not start CRISOL",
+    "this packet does not authorize product, production, pilot, Bedrock or real execution"
+  ]
+}

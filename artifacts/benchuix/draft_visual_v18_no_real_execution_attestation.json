@@ -1,0 +1,36 @@
+{
+  "artifact": "draft_visual_v18_no_real_execution_attestation",
+  "version": "v18",
+  "scope": "documentation_review_decision_only",
+  "assertions": {
+    "documentation_review_only": true,
+    "candidate_only": true,
+    "sandbox_only": true,
+    "no_backend_runtime": true,
+    "no_network_or_api_surface": true,
+    "no_external_service_category_integrations": true,
+    "no_canonical_mutation": true,
+    "product_authorized": false,
+    "production_authorized": false,
+    "pilot_authorized": false,
+    "bedrock_authorized": false,
+    "real_apply_authorized": false
+  },
+  "not_modified": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ARIS_BOOT.md",
+    "ROADMAP_CANONICAL.md",
+    "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+    "phase_id",
+    "current_phase_id",
+    "next_phase",
+    "active_next_phase",
+    "decision locks",
+    "execution authorization flags"
+  ],
+  "notes": [
+    "v18 prepares a deterministic operator decision packet only.",
+    "No canonical approval or transition is implied.",
+    "No real execution surface is opened by these artifacts."
+  ]
+}

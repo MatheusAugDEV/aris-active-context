@@ -1,0 +1,16 @@
+{
+  "artifact_type": "benchuix_27_operator_review_form_v18",
+  "status": "CANDIDATE_ONLY",
+  "candidate_phase": "BENCHUIX-27",
+  "operator_decision": null,
+  "visual_quality_score_0_to_10": null,
+  "clarity_score_0_to_10": null,
+  "mobile_score_0_to_10": null,
+  "trust_score_0_to_10": null,
+  "must_fix_before_crisol": [],
+  "accepted_warns": [],
+  "blocked_reason": "",
+  "operator_notes": "",
+  "review_timestamp_manual": "",
+  "signature_manual_optional": ""
+}
