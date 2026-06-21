@@ -1,0 +1,321 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V6 (Interatividade Real)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v5.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v6.html",
+  "decision_hint": "PASS",
+  "part_a_inventory": [
+    {
+      "element_id": "global.sidebar_business_dropdown",
+      "label": "Sidebar > card do negocio",
+      "original_status": "decorativo/sem acao",
+      "notes": "No v5 a seta sugeria dropdown, mas nao havia menu nem mudanca de estado visivel."
+    },
+    {
+      "element_id": "global.sidebar_nav_hoje",
+      "label": "Sidebar > Hoje",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_agenda",
+      "label": "Sidebar > Agenda",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_atendimento",
+      "label": "Sidebar > Atendimento",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_disponibilidade",
+      "label": "Sidebar > Disponibilidade",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_aprovacoes",
+      "label": "Sidebar > Aprovacoes",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_estimativa",
+      "label": "Sidebar > Estimativa do dia",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_configuracoes",
+      "label": "Sidebar > Configuracoes",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.sidebar_nav_ajuda",
+      "label": "Sidebar > Ajuda",
+      "original_status": "funcional",
+      "notes": "Ja navegava entre telas no sandbox."
+    },
+    {
+      "element_id": "global.header_theme_toggle",
+      "label": "Header > toggle de tema",
+      "original_status": "funcional",
+      "notes": "Entregue no v5 com persistencia localStorage."
+    },
+    {
+      "element_id": "hoje.quick_calc_top",
+      "label": "Hoje > ver calculo (topo dos sinais rapidos)",
+      "original_status": "decorativo/sem acao",
+      "notes": "Duplicava a mesma ideia do card de prova e criava ponto de interacao redundante."
+    },
+    {
+      "element_id": "hoje.proof_toggle",
+      "label": "Hoje > ver calculo no card Prova",
+      "original_status": "funcional",
+      "notes": "O bloco de prova ja expandia por details nativo."
+    },
+    {
+      "element_id": "hoje.open_finance",
+      "label": "Hoje > abrir financeiro",
+      "original_status": "parcialmente funcional",
+      "notes": "Havia CTA visual, mas a consolidacao de fluxo com o calculo duplicado ainda era ambigua."
+    },
+    {
+      "element_id": "hoje.open_approvals",
+      "label": "Hoje > ver aprovacoes",
+      "original_status": "decorativo/sem acao",
+      "notes": "Nao existia como link dedicado no v5."
+    },
+    {
+      "element_id": "hoje.open_availability",
+      "label": "Hoje > ver disponibilidade",
+      "original_status": "funcional",
+      "notes": "Ja fazia roteamento interno simples."
+    },
+    {
+      "element_id": "hoje.open_attendance",
+      "label": "Hoje > ver tudo",
+      "original_status": "funcional",
+      "notes": "Ja fazia roteamento interno simples."
+    },
+    {
+      "element_id": "hoje.open_full_agenda",
+      "label": "Hoje > ver completa",
+      "original_status": "funcional",
+      "notes": "Ja fazia roteamento interno simples."
+    },
+    {
+      "element_id": "hoje.pending_exception_decide",
+      "label": "Hoje > Decidir no card de excecao",
+      "original_status": "parcialmente funcional",
+      "notes": "Abrir o drawer existia, mas o estado compartilhado e a remocao consistente da fila nao estavam fechados para todos os pontos da interface."
+    },
+    {
+      "element_id": "agenda.day_week_toggle",
+      "label": "Agenda > toggle Dia/Semana",
+      "original_status": "parcialmente funcional",
+      "notes": "A troca visual existia, mas a semana usava leitura estatica e sem reflexo do estado da excecao."
+    },
+    {
+      "element_id": "agenda.prev_today_next",
+      "label": "Agenda > navegacao Ontem/Hoje/Amanha",
+      "original_status": "decorativo/sem acao",
+      "notes": "Os botoes estavam visuais, sem trocar dataset nem rotulo de data."
+    },
+    {
+      "element_id": "atendimento.decide_rafael",
+      "label": "Atendimento > Decidir no card do Rafael",
+      "original_status": "parcialmente funcional",
+      "notes": "O CTA visual existia, mas nao fechava o ciclo de atualizacao compartilhada entre Hoje, Atendimento e Aprovacoes."
+    },
+    {
+      "element_id": "atendimento.inline_history",
+      "label": "Atendimento > Ver conversa",
+      "original_status": "parcialmente funcional",
+      "notes": "Havia abertura de detalhe lateral, mas nao expansao inline do proprio card."
+    },
+    {
+      "element_id": "disponibilidade.add_block",
+      "label": "Disponibilidade > + Adicionar bloqueio",
+      "original_status": "parcialmente funcional",
+      "notes": "O formulario/lista ja existiam, mas o calendario ainda nao recebia entradas por slot vazio e o fluxo precisava ser verificado com a grade."
+    },
+    {
+      "element_id": "disponibilidade.edit_remove_block",
+      "label": "Disponibilidade > Editar / Remover",
+      "original_status": "parcialmente funcional",
+      "notes": "As acoes ja existiam na lista, mas precisavam continuar refletindo corretamente no calendario."
+    },
+    {
+      "element_id": "disponibilidade.empty_slots",
+      "label": "Disponibilidade > slots vazios do calendario",
+      "original_status": "decorativo/sem acao",
+      "notes": "No v5 os espacos livres eram apenas leitura visual."
+    },
+    {
+      "element_id": "aprovacoes.decide",
+      "label": "Aprovacoes > Decidir",
+      "original_status": "parcialmente funcional",
+      "notes": "Abria o drawer, mas o estado resolvido nao atualizava de forma comprovada as outras telas."
+    },
+    {
+      "element_id": "config.business_profile_inputs",
+      "label": "Configuracoes > dados do negocio",
+      "original_status": "funcional",
+      "notes": "Entregue no v5 como formulario local em memoria."
+    },
+    {
+      "element_id": "config.business_hours_inputs",
+      "label": "Configuracoes > horario de funcionamento",
+      "original_status": "funcional",
+      "notes": "Entregue no v5 com reflexo na leitura sinteticade Disponibilidade."
+    },
+    {
+      "element_id": "config.notification_toggles",
+      "label": "Configuracoes > notificacoes",
+      "original_status": "funcional",
+      "notes": "Entregue no v5 como toggles locais."
+    },
+    {
+      "element_id": "config.theme_controls",
+      "label": "Configuracoes > Escuro / Claro / Alternar rapido",
+      "original_status": "funcional",
+      "notes": "Entregue no v5 e persistido apenas em localStorage."
+    }
+  ],
+  "part_b_implementation": [
+    {
+      "element_id": "global.sidebar_business_dropdown",
+      "final_status": "implementado",
+      "notes": "Card do negocio agora alterna menu sandbox com 'Sair' marcado como nao funcional e 'Trocar de negocio' marcado como em breve."
+    },
+    {
+      "element_id": "hoje.quick_calc_top",
+      "final_status": "implementado",
+      "notes": "CTA duplicado do topo foi removido e substituido por 'abrir financeiro', deixando o card Prova como ponto unico de verdade para o calculo."
+    },
+    {
+      "element_id": "hoje.proof_toggle",
+      "final_status": "implementado",
+      "notes": "Bloco de prova mantido sem regressao como ponto unico de expansao do calculo."
+    },
+    {
+      "element_id": "hoje.open_finance",
+      "final_status": "implementado",
+      "notes": "Navega para a tela Estimativa do dia."
+    },
+    {
+      "element_id": "hoje.open_approvals",
+      "final_status": "implementado",
+      "notes": "Novo link dedicado navega para a tela Aprovacoes."
+    },
+    {
+      "element_id": "hoje.open_availability",
+      "final_status": "implementado",
+      "notes": "Link mantido e validado navegando para Disponibilidade."
+    },
+    {
+      "element_id": "hoje.open_attendance",
+      "final_status": "implementado",
+      "notes": "Link mantido e validado navegando para Atendimento."
+    },
+    {
+      "element_id": "hoje.open_full_agenda",
+      "final_status": "implementado",
+      "notes": "Link mantido e validado navegando para Agenda."
+    },
+    {
+      "element_id": "hoje.pending_exception_decide",
+      "final_status": "implementado",
+      "notes": "O drawer de decisao agora remove a excecao da fila, atualiza contadores e compartilha o resultado entre Hoje, Atendimento e Aprovacoes."
+    },
+    {
+      "element_id": "agenda.day_week_toggle",
+      "final_status": "implementado",
+      "notes": "Alterna entre tabela diaria e grade semanal, ambas derivadas do mesmo estado sintetico."
+    },
+    {
+      "element_id": "agenda.prev_today_next",
+      "final_status": "implementado",
+      "notes": "Troca data, cabecalho e dataset entre ontem, hoje e amanha, com guardas de limite."
+    },
+    {
+      "element_id": "atendimento.decide_rafael",
+      "final_status": "implementado",
+      "notes": "Usa o mesmo drawer e a mesma resolucao compartilhada da excecao."
+    },
+    {
+      "element_id": "atendimento.inline_history",
+      "final_status": "implementado",
+      "notes": "Conversas nao dependentes de aprovacao agora expandem inline com 2-3 mensagens sinteticas adicionais."
+    },
+    {
+      "element_id": "disponibilidade.add_block",
+      "final_status": "implementado",
+      "notes": "Fluxo validado: abrir formulario, salvar item novo, adicionar linha local e refletir no calendario."
+    },
+    {
+      "element_id": "disponibilidade.edit_remove_block",
+      "final_status": "implementado",
+      "notes": "Fluxo validado: editar motivo e remover item, mantendo lista e calendario coerentes."
+    },
+    {
+      "element_id": "disponibilidade.empty_slots",
+      "final_status": "implementado",
+      "notes": "Slots vazios agora sao botoes clicaveis que pre-preenchem o formulario de bloqueio com dia e horario."
+    },
+    {
+      "element_id": "aprovacoes.decide",
+      "final_status": "implementado",
+      "notes": "Resolver pela tela Aprovacoes usa o mesmo estado compartilhado das outras telas."
+    },
+    {
+      "element_id": "config.business_profile_inputs",
+      "final_status": "implementado",
+      "notes": "Sem regressao observada."
+    },
+    {
+      "element_id": "config.business_hours_inputs",
+      "final_status": "implementado",
+      "notes": "Sem regressao observada."
+    },
+    {
+      "element_id": "config.notification_toggles",
+      "final_status": "implementado",
+      "notes": "Sem regressao observada."
+    },
+    {
+      "element_id": "config.theme_controls",
+      "final_status": "implementado",
+      "notes": "Sem regressao observada; Claro, Escuro e Alternar rapido continuam ativos."
+    },
+    {
+      "element_id": "global.header_theme_toggle",
+      "final_status": "implementado",
+      "notes": "Sem regressao observada; alternancia continua atualizando data-theme e localStorage."
+    }
+  ],
+  "validation_results": {
+    "headless_browser_harness": "PASS",
+    "harness_checked": [
+      "dropdown do negocio abre e fecha por estado",
+      "links de Hoje navegam para Estimativa, Aprovacoes e Disponibilidade",
+      "Adicionar, editar e remover bloqueio atualizam a lista local",
+      "slot vazio abre formulario pre-preenchido",
+      "Ver conversa expande inline em Atendimento",
+      "autorizar Rafael limpa Atendimento/Aprovacoes e injeta Rafael na agenda de amanha",
+      "toggle de tema do v5 continua funcionando a partir de Configuracoes"
+    ],
+    "shared_state_rafael_exception_verified": true,
+    "theme_and_settings_no_regression": true,
+    "network_calls_added": false,
+    "no_red_alarm_color_introduced": true,
+    "new_persistence_added": false
+  },
+  "notes": [
+    "A navegacao semanal continua limitada ao conjunto sintetico atual de segunda, terca e quarta para nao inventar dados novos fora do escopo desta rodada.",
+    "O estado compartilhado da excecao do Rafael permanece somente em memoria da sessao do navegador; nada real e gravado."
+  ]
+}
