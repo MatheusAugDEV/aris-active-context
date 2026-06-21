@@ -1,0 +1,34 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V8 (Fix disponibilidade mobile nav)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v7.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v8.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Corrigir apenas o pager mobile de Disponibilidade no shell one_day_at_a_time.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma edicao em ARIS_BOOT.md.",
+      "Nenhuma execucao real foi introduzida."
+    ]
+  },
+  "root_cause": {
+    "component": "availability_mobile_day_pager",
+    "symptom": "Os botoes anterior/Hoje/proximo atualizavam o estado tecnico, mas o shell mobile permanecia preso em Seg 16/06.",
+    "cause": "A derivacao weekBase usada para availabilityCalendarDays nao carregava o campo id. Com isso, availabilityFocusedDay nao encontrava o dia selecionado por availabilitySelectedDayId e sempre caia no fallback availabilityCalendarDays[0]."
+  },
+  "implemented_fix": {
+    "location": "template bundle do draft v8",
+    "change": "Inclusao de id: day.id na derivacao de weekBase antes da montagem de availabilityCalendarDays.",
+    "behavioral_effect": "availabilityFocusedDay volta a resolver o dia selecionado e o shell mobile passa a refletir o pager."
+  },
+  "validation": {
+    "headless_runtime_checked": true,
+    "state_transition_checked": [
+      "setScreen('disponibilidade')",
+      "click em proximo",
+      "click em anterior",
+      "click em Hoje"
+    ],
+    "expected_result": "O texto do shell mobile muda entre Ter 17/06, Qua 18/06 e volta para Ter 17/06 conforme o pager."
+  }
+}

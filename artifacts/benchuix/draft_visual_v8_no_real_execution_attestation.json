@@ -1,0 +1,19 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v8.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "O draft v8 permanece sandbox-only e visual.",
+    "Nenhuma integracao de rede, pagamento, envio de mensagem ou mutacao externa foi adicionada.",
+    "A correcao atua somente na resolucao visual do dia focal em Disponibilidade mobile."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY"
+  ],
+  "notes": [
+    "ACTIVE_CONTEXT_STATE.json foi somente lido no inicio da tarefa.",
+    "A validacao foi feita em runtime headless local sobre artefato HTML."
+  ]
+}
