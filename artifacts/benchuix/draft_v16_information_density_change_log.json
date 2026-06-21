@@ -1,0 +1,86 @@
+{
+  "artifact": "draft_v16_information_density_change_log",
+  "version": "v16",
+  "title": "Information Density Reduction / Progressive Disclosure",
+  "scope": "visual_ux_only_sandbox_dashboard",
+  "source_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v16.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "screens_simplified": [
+    "Hoje",
+    "Agenda",
+    "Atendimento",
+    "Disponibilidade",
+    "Aprovacoes",
+    "Estimativa do dia",
+    "Configuracoes",
+    "Ajuda"
+  ],
+  "microcopy_removed_or_collapsed": [
+    "Hoje onboarding cards moved behind a collapsed next-steps disclosure",
+    "Hoje failure evidence cards moved behind a single evidence disclosure",
+    "Hoje exception reason and attempted alternatives moved behind a compact context disclosure",
+    "Agenda day secondary alerts and mode-guidance text moved behind a details disclosure",
+    "Atendimento response context moved behind a compact details disclosure on each conversation card",
+    "Disponibilidade active block inventory moved behind a single evidence disclosure",
+    "Aprovacoes reason and attempted alternatives moved behind a compact disclosure per exception card",
+    "Estimativa decision cards now keep title first and hide explanatory body behind evidence disclosures",
+    "Configuracoes session summary moved behind a compact summary disclosure",
+    "Ajuda quick guide cards and quick topics moved behind expandable sections"
+  ],
+  "progressive_disclosure_patterns_added": [
+    "Ver evidencia do calculo",
+    "Ver proximos passos",
+    "Ver evidencia",
+    "Ver detalhes",
+    "Detalhes",
+    "Mostrar motivo",
+    "Ver resumo",
+    "Expandir"
+  ],
+  "evidence_preservation_strategy": [
+    "Primary decision remains visible on every screen",
+    "Secondary evidence moved into native local details-summary disclosures",
+    "One-line summaries remain visible when the evidence is collapsed",
+    "Collapsed evidence can be reopened locally without backend state"
+  ],
+  "mobile_behavior": [
+    "New disclosures stack vertically on mobile and keep tap targets above 44px",
+    "Reduced always-visible copy shortens card height on narrow widths",
+    "No horizontal overflow regression was detected at 320, 375, 480, 768 and 1024 widths"
+  ],
+  "latest_preview_update": {
+    "updated": true,
+    "matches_v16_draft": true
+  },
+  "preserved_prior_behavior": [
+    "v4 six-layer decision hierarchy on Hoje",
+    "v5 light and dark themes with localStorage key aris_benchuix_theme",
+    "v6 shared Rafael M. exception and approval reflection into Agenda",
+    "v7 responsive layout with no horizontal overflow at 320, 375, 480, 768 and 1024 widths",
+    "v8 focused-day mobile navigation in Disponibilidade",
+    "v9 onboarding, empty states, failure states and sandbox scenario selector",
+    "v10 Help local search, filter and expand-collapse behavior",
+    "v11 consistency between Perdido, Estimativa and Recuperavel",
+    "v13 simplified Agenda control cluster intent",
+    "v14 semantic split between Dia and Semana in Agenda",
+    "v15 global control system simplification and visibility in dark/light"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "byte-for-byte equality check between the v16 draft and barbearia_dashboard_latest.html",
+    "direct headless local load of barbearia_claude_design_export_draft_v16.html via google-chrome --dump-dom",
+    "direct headless local load of barbearia_dashboard_latest.html via the v16 latest harness",
+    "headless local validation via http://127.0.0.1:8124/validate_v16.html",
+    "headless local validation via http://127.0.0.1:8124/validate_v16_latest.html",
+    "progressive disclosure open-close checks for Hoje proof and Disponibilidade evidence disclosures",
+    "theme persistence validation via localStorage key aris_benchuix_theme",
+    "Agenda Dia/Semana semantic split and control visibility checks in dark and light themes",
+    "v6 Rafael approval reflection check in Agenda",
+    "v8 Disponibilidade mobile day navigation check",
+    "v9 onboarding, empty and failure state checks",
+    "v10 Help search, filter and FAQ expand-collapse checks",
+    "v11 Hoje versus Estimativa loss-value consistency check",
+    "forbidden-string scan for fetch(), WebSocket, OAuth, billing, payment, accounting, chatbot and telemetry",
+    "color scan confirming no #ff0000 or #f00 alarm color introduction"
+  ]
+}
