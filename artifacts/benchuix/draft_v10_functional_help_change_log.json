@@ -1,0 +1,46 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V10 (Functional Help / Operational FAQ)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v9.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v10.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Adicionar uma camada funcional de ajuda operacional com busca local, filtro por categoria, FAQ expansível e atalhos contextuais a partir das telas já existentes do sandbox.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma integração de suporte real, rede externa, pagamento, envio de mensagem ou backend foi adicionada.",
+      "As interações seguem sandbox-only, com estado local no navegador."
+    ]
+  },
+  "implemented_changes": {
+    "help_surface": [
+      "A tela Ajuda virou uma central operacional com busca local, resumo de resultados e filtros por categoria.",
+      "O FAQ foi reestruturado em cartões expansíveis com resposta em quatro blocos: Situação, O que significa, O que fazer e Onde verificar evidência no dashboard.",
+      "A busca passa a abrir o escopo para todas as categorias quando o operador digita um termo, evitando aprisionar o resultado à categoria do atalho de entrada."
+    ],
+    "contextual_entry_points": [
+      "Hoje ganhou CTA contextual para leitura do risco do dia.",
+      "Agenda, Disponibilidade, Atendimento, Aprovações e Configurações ganharam atalhos diretos para tópicos relevantes da Ajuda.",
+      "Os atalhos caem em tópicos prontos sem depender de chatbot, FAQ externo ou backend de suporte."
+    ],
+    "sandbox_copy_and_behavior": [
+      "O texto operacional foi mantido em português do Brasil com orientação explícita de demo/sandbox.",
+      "A Ajuda explica cenários de exceção, revisão manual, disponibilidade, Rafael e falhas seguras sem prometer execução real.",
+      "FAQ expand/collapse, busca e filtro operam localmente no estado do componente."
+    ]
+  },
+  "validation": {
+    "active_context_validator": "python3 scripts/validate_active_context_state.py",
+    "headless_runtime_checked": true,
+    "headless_runner": "google-chrome --headless sobre harness temporário local validate_v10.html",
+    "verified_behaviors": [
+      "Carregamento do draft v10 em runtime local.",
+      "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px.",
+      "Persistência do tema em localStorage pela chave aris_benchuix_theme.",
+      "Pager mobile de Disponibilidade continua mudando o dia focal corretamente.",
+      "Fluxo v6 de aprovar Rafael continua refletindo na Agenda de amanhã.",
+      "Cenários onboarding, empty e failure continuam funcionais.",
+      "Atalhos contextuais para Ajuda estão presentes nas telas exigidas.",
+      "Busca local, filtro por categoria e expand/collapse do FAQ funcionam no runtime local."
+    ]
+  }
+}

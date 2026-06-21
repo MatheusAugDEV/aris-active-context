@@ -1,0 +1,21 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v10.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "O draft v10 permanece sandbox-only e visual.",
+    "A camada de ajuda funcional opera apenas sobre estado local do navegador.",
+    "Nenhuma integração de rede externa, suporte real, pagamento, envio de mensagem ou mutação fora do HTML foi adicionada."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY",
+    "COMMIT-PUSH-HASH"
+  ],
+  "notes": [
+    "ACTIVE_CONTEXT_STATE.json foi apenas lido e validado; nenhum campo foi tocado.",
+    "A validação de runtime foi feita localmente em headless com harness temporário dedicado ao v10.",
+    "Os atalhos de Ajuda, busca, filtro e FAQ não dependem de backend ou suporte externo."
+  ]
+}
