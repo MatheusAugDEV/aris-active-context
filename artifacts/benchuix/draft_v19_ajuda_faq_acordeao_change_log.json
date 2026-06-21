@@ -1,0 +1,105 @@
+{
+  "phase": "BENCHUIX-27 v19 — Ajuda FAQ Acordeão Simples",
+  "base_draft": "barbearia_claude_design_export_draft_v18.html",
+  "output_draft": "barbearia_claude_design_export_draft_v19.html",
+  "part_a_inspection": {
+    "estrutura_encontrada_na_ajuda": "No v18, Ajuda era uma central complexa com banner de topo, bloco de busca local, categoria ativa, barra de busca, botão Limpar, chips de categorias, disclosure de guia rápido, disclosure de temas rápidos, lista de respostas expansíveis e empty state de busca sem resultado.",
+    "busca_filtros_categorias_contador_encontrados": {
+      "busca": true,
+      "filtros": true,
+      "categorias": true,
+      "contador_de_respostas": true,
+      "botao_limpar_filtro": true,
+      "cards_por_categoria": true
+    },
+    "perguntas_respostas_existentes": [
+      "Por onde começo?",
+      "Qual tela devo olhar primeiro?",
+      "Como saber se o dia está bom ou em risco?",
+      "Como interpretar Perdido, Recuperável e Estimativa do dia?",
+      "Qual é a diferença entre Dia e Semana na Agenda?",
+      "Como cancelo ou remarco um agendamento?",
+      "Como vejo os horários vagos?",
+      "Como entendo conflito de agenda?",
+      "Como lidar com cliente que atrasou ou faltou?",
+      "Como mudo meu horário de funcionamento?",
+      "Como bloqueio um horário?",
+      "Como libero um bloqueio?",
+      "Como vejo a semana no celular?",
+      "Como priorizo uma conversa?",
+      "Como sei se o ARIS está incerto?",
+      "O que faço quando uma mensagem precisa de revisão manual?",
+      "Quando devo aprovar uma exceção?",
+      "O que acontece quando aprovo Rafael M.?",
+      "Como vejo a evidência por trás da recomendação?",
+      "O que fazer quando lembrete falha?",
+      "O que fazer quando a classificação está incerta?",
+      "O que significa dado desatualizado?"
+    ],
+    "textos_financeiros_antigos_encontrados": [
+      "A pergunta Como interpretar Perdido, Recuperável e Estimativa do dia? ainda usava explicitamente a taxonomia financeira antiga.",
+      "Textos de verify ainda citavam Confirmado, Recuperável, Previsto e Perdido na Ajuda.",
+      "A resposta antiga descrevia a fórmula previsto = confirmado + recuperável + perdido."
+    ],
+    "como_a_ajuda_se_conecta_com_outras_telas": "A Ajuda v18 abria telas de destino por botão e badge abre ..., além de ser acionada por botões Ajuda em Hoje, Agenda, Atendimento, Disponibilidade, Aprovações e Meu Negócio via openHelpTopic.",
+    "badge_aviso_sandbox_encontrado": "No topo da Ajuda apareciam o rótulo ajuda sandbox e a mensagem de guia local de demonstração sem assistente externo, sem atendimento externo e sem integração real. O context rail comum também mantinha chip sandbox-only.",
+    "latest_byte_equal_ao_v18_antes_da_mudanca": true,
+    "achados_inesperados": [
+      "A Ajuda v18 funcionava como mini motor de busca, não como FAQ simples.",
+      "O estado inicial já abria um item automaticamente por expandedHelpIds, o que facilitou manter acordeão com múltiplas respostas abertas."
+    ]
+  },
+  "decision_made": {
+    "acordeao": "múltiplas respostas abertas",
+    "motivo_da_escolha": "Era a opção mais simples e já combinava com a estrutura existente de expandedHelpIds, evitando lógica extra de fechamento automático e preservando leitura comparativa entre perguntas."
+  },
+  "changes_made": [
+    "busca removida",
+    "filtros removidos",
+    "categorias removidas",
+    "contador removido",
+    "FAQ acordeão criado",
+    "8 perguntas criadas",
+    "respostas simplificadas para linguagem de dono de barbearia",
+    "badge e aviso de sandbox preservados com linguagem simples"
+  ],
+  "preserved_behaviors": [
+    "tema claro/escuro",
+    "localStorage em aris_benchuix_theme",
+    "responsividade mobile",
+    "Meu Negócio v17",
+    "Hoje e Estimativa v18",
+    "cenários de sandbox",
+    "navegação lateral",
+    "estado compartilhado Rafael M., se presente"
+  ],
+  "out_of_scope_not_touched": [
+    "Hoje não foi alterada além da preservação dos botões Ajuda",
+    "Estimativa do dia não foi alterada",
+    "Meu Negócio não foi alterado além da preservação da navegação",
+    "Agenda, Atendimento, Aprovações e Disponibilidade não tiveram lógica alterada",
+    "cálculos financeiros não foram alterados",
+    "ACTIVE_CONTEXT_STATE.json não foi alterado",
+    "ARIS_BOOT.md não foi alterado",
+    "ROADMAP_CANONICAL.md não foi alterado",
+    "locks, fase, benchuix_track.status, next_phase e active_next_phase não foram alterados"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m json.tool artifacts/benchuix/draft_v19_ajuda_faq_acordeao_change_log.json",
+    "python3 -m json.tool artifacts/benchuix/draft_visual_v19_ajuda_faq_acordeao_no_real_execution_attestation.json",
+    "cmp -s between v18 and latest before change",
+    "cmp -s between v19 and latest after change",
+    "headless load of v19 via google-chrome --dump-dom over local server",
+    "headless load of latest via google-chrome --dump-dom over local server",
+    "custom local harness for Ajuda FAQ, Hoje/Estimativa v18 preservation, Meu Negócio v17 preservation and overflow checks",
+    "git diff checks for ACTIVE_CONTEXT_STATE.json, ARIS_BOOT.md and ROADMAP_CANONICAL.md",
+    "decoded-template scan for prohibited runtime/network strings",
+    "decoded-template scan for forbidden red alarm colors",
+    "external URL comparison between v18 and v19"
+  ],
+  "residuals": [
+    "A lógica antiga de helpQuery/helpCategory continua no código, mas sem superfície visível na tela Ajuda.",
+    "A validação automática de DOM e overflow depende do harness/headless local disponível neste ambiente."
+  ]
+}
