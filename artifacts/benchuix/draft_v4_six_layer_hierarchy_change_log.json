@@ -1,0 +1,59 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V4 (Hoje: six-layer hierarchy)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v3.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v4.html",
+  "scope": "today_screen_only",
+  "decision_target": "PASS",
+  "layers": [
+    {
+      "layer": "diagnostico",
+      "changes": [
+        "Adicionada uma faixa nova no topo absoluto da tela Hoje com frase única de status operacional.",
+        "O texto deriva de approvals.length + conversations com statusKey=awaiting-confirmation.",
+        "A tonalidade permanece neutra quando zerado e passa para âmbar quando existe qualquer ponto de atenção."
+      ]
+    },
+    {
+      "layer": "valor",
+      "changes": [
+        "O bloco Sinais rápidos foi promovido para a primeira superfície financeira lida na coluna dominante da tela Hoje.",
+        "A métrica Perdido foi adicionada e é derivada por ticket médio dos agendamentos confirmados multiplicado pelos freeSlots, somado ao valor de exceções recusadas quando existirem.",
+        "O CTA visível ver cálculo ↓ substitui a antiga derivação escondida em legenda de baixo contraste."
+      ]
+    },
+    {
+      "layer": "gargalo",
+      "changes": [
+        "O card Exceções pendentes foi reestruturado para exibir o número grande como gargalo principal de decisão.",
+        "Foi adicionada a linha financeira Esta exceção pendente representa até R$ X em risco, derivada de approval.requestedValue."
+      ]
+    },
+    {
+      "layer": "causa",
+      "changes": [
+        "A seção Por que precisa de você foi trazida para dentro do card de gargalo em Hoje.",
+        "O texto reaproveita approval.reason da linha de Aprovações, sem duplicar lógica hardcoded."
+      ]
+    },
+    {
+      "layer": "acao",
+      "changes": [
+        "O botão Decidir → foi preservado como ação primária do card de exceção.",
+        "O handler continua apontando para a abertura da aprovação sintética já existente."
+      ]
+    },
+    {
+      "layer": "prova",
+      "changes": [
+        "A prova do número foi elevada para um bloco expansível ver cálculo ↓ com lista dos agendamentos confirmados que compõem a estimativa.",
+        "O mesmo bloco documenta a fórmula usada em Perdido: ticket médio dos confirmados × horários livres + exceções recusadas."
+      ]
+    }
+  ],
+  "deferred": [],
+  "non_changes": [
+    "Nenhuma chamada real de backend, API, WhatsApp ou dado real foi introduzida.",
+    "Agenda, Disponibilidade, Atendimento, Aprovações, Estimativa do dia e Ajuda não tiveram mudanças estruturais fora da superfície Hoje dentro do novo draft.",
+    "ACTIVE_CONTEXT_STATE.json, ARIS_BOOT.md, ROADMAP_CANONICAL.md, locks e phase fields permanecem fora de escopo."
+  ]
+}
