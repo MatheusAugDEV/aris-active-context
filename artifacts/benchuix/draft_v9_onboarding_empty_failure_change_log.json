@@ -1,0 +1,48 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V9 (Onboarding + Empty/Error States)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v8.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v9.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Adicionar onboarding de primeira leitura, estados vazios criveis, falhas seguras de UI e controles locais de troca de cenario no sandbox.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma edicao em ARIS_BOOT.md.",
+      "Nenhuma integracao real, rede externa, pagamento ou envio de mensagem foi introduzido."
+    ]
+  },
+  "implemented_changes": {
+    "state_model": [
+      "Inclusao de demoMode com cenarios normal, onboarding, empty e failure.",
+      "Inclusao de onboardingDismissed para fechar e reabrir o tour sem sair do sandbox."
+    ],
+    "today_surface": [
+      "Painel de onboarding guiado com proximos passos e CTA de navegacao.",
+      "Painel de falha segura com quatro incidentes sinteticos e acoes manuais sugeridas.",
+      "Estado vazio com acoes uteis em vez de dashboard mudo."
+    ],
+    "secondary_surfaces": [
+      "Agenda ganhou empty state explicito sem quebrar a navegacao existente.",
+      "Atendimento ganhou empty state e banner de priorizacao manual em failure.",
+      "Disponibilidade ganhou empty state para ausencia de bloqueios manuais e aviso de dado envelhecido em failure.",
+      "Aprovacoes ganhou empty state mais explicito e banner de revisao manual em failure."
+    ],
+    "settings_surface": [
+      "Configurações agora expoe seletor local de cenarios do sandbox.",
+      "Resumo da sessao preserva informacao de tema, enquanto o cenario ativo fica documentado no card dedicado."
+    ]
+  },
+  "validation": {
+    "active_context_validator": "python3 scripts/validate_active_context_state.py",
+    "headless_runtime_checked": true,
+    "headless_runner": "google-chrome --headless sobre harness temporario local",
+    "verified_behaviors": [
+      "Carregamento do draft v9 em runtime local.",
+      "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px.",
+      "Persistencia do tema em localStorage pela chave aris_benchuix_theme.",
+      "Pager mobile de Disponibilidade continua mudando o dia focal corretamente.",
+      "Fluxo v6 de aprovar Rafael continua refletindo na Agenda de amanha.",
+      "Cenarios onboarding, empty e failure podem ser ativados e refletem na UI."
+    ]
+  }
+}
