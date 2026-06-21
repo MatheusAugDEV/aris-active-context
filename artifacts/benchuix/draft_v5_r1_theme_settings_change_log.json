@@ -1,0 +1,47 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V5 Rodada 1/3 (Configurações + Tema Claro)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v4.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v5.html",
+  "created": [
+    "Tema claro/escuro com bootstrap via data-theme no elemento raiz.",
+    "Persistência do tema em localStorage com a chave aris_benchuix_theme.",
+    "Atalho de alternância de tema no header.",
+    "Nova tela Configurações com seções Dados do negócio, Horário de funcionamento, Notificações, Aparência e resumo sandbox."
+  ],
+  "theme_variable_groups": [
+    "backgrounds: canvas, shell, surfaces, rows, hover, overlay",
+    "borders: strong, soft, faint, hairline, disabled, neutral highlights",
+    "text: primary, secondary, muted, tertiary, subtle, on-accent",
+    "accents: blue, cyan e amber com superfícies e bordas derivadas"
+  ],
+  "settings_structure": {
+    "business_profile": [
+      "name",
+      "address",
+      "phone"
+    ],
+    "business_hours_source": "businessHours state reused by Disponibilidade render logic",
+    "notification_toggles": [
+      "pendingApproval",
+      "dailyEmail",
+      "whatsappFollowups",
+      "morningDigest"
+    ],
+    "appearance_controls": [
+      "header theme toggle",
+      "settings theme controls"
+    ]
+  },
+  "theme_tokens_injected": true,
+  "theme_token_scope": [
+    "dark root palette",
+    "light root palette",
+    "shared semantic tokens for all existing screens"
+  ],
+  "remaining_hardcoded_colors": [],
+  "decision_hint": "PASS",
+  "notes": [
+    "Nenhuma persistência adicional além de localStorage foi introduzida.",
+    "O bloco de tokens semânticos foi embutido no template final para permitir que telas existentes herdem dark/light sem tocar em backend, dados reais ou routing vivo."
+  ]
+}
