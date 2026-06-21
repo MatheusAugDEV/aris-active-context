@@ -1,0 +1,85 @@
+{
+  "phase": "BENCHUIX-27 v18 — Simplificar Hoje / Checar Estimativa",
+  "base_draft": "barbearia_claude_design_export_draft_v17.html",
+  "output_draft": "barbearia_claude_design_export_draft_v18.html",
+  "part_a_inspection": {
+    "estrutura_encontrada_na_tela_hoje": "No v17, Hoje abre com context rail global da tela, onboarding opcional, faixa de diagnóstico, hero dominado por faturamento previsto, spotlight lateral, grade principal com quatro cards financeiros, card de gargalo, disclosure de prova do cálculo e um grid inferior com conversas e agenda de hoje.",
+    "cards_financeiros_encontrados": 4,
+    "jargoes_encontrados": [
+      "Confirmado",
+      "Recuperável",
+      "Previsto",
+      "Perdido",
+      "Prova",
+      "Evidência"
+    ],
+    "formula_encontrada": "O v17 expõe a fórmula em texto já na primeira dobra: previsto = confirmado + recuperável + perdido.",
+    "hierarquia_de_6_camadas_em_hoje": [
+      "Diagnóstico",
+      "Impacto financeiro principal",
+      "Spotlight/valor dominante",
+      "Quatro sinais financeiros",
+      "Gargalo operacional",
+      "Prova do cálculo"
+    ],
+    "estrutura_encontrada_em_estimativa_do_dia": "No v17, Estimativa do dia tem banner de isolamento, hero com valor previsto dominante, coluna lateral com quatro cards financeiros, grade de seis seções decisórias e disclosure final da base do cálculo.",
+    "consistencia_encontrada_entre_hoje_e_estimativa": "Sim. Hoje e Estimativa usam o mesmo lostEstimate local; Hoje o mostra como perdido/lostEstimateLabel e Estimativa o mostra em estimate-lost com a mesma origem sintética.",
+    "latest_byte_equal_ao_v17_antes_da_mudanca": true,
+    "achados_inesperados": [
+      "Mesmo após a simplificação do Meu Negócio em v17, a Ajuda ainda cita explicitamente os quatro sinais financeiros de Hoje; isso foi mantido por estar fora de escopo.",
+      "A fórmula financeira aparecia na primeira dobra de Hoje e também no disclosure de cálculo, duplicando ruído para leitura rápida."
+    ]
+  },
+  "decision_made": {
+    "estrategia_escolhida": "2 blocos simples",
+    "motivo_da_escolha": "Para o dono da barbearia, a leitura mais rápida é separar o que já entrou do que ainda pode entrar. Isso reduz carga cognitiva sem esconder os valores completos, que continuam acessíveis sob disclosure local."
+  },
+  "changes_made": [
+    "Hoje passou a abrir com diagnóstico humano dominante em uma frase, em vez de abrir com o número de previsto como herói principal.",
+    "A visão principal de Hoje foi reduzida para dois blocos simples: Já entrou e Ainda pode entrar.",
+    "O valor que já se perdeu continua visível, mas como resumo compacto em vez de card financeiro dominante.",
+    "Os quatro números completos foram movidos para disclosure local Ver detalhe.",
+    "A fórmula saiu da visão principal e ficou apenas sob Ver cálculo e evidência.",
+    "As explicações de Recuperável, Previsto e Perdido foram traduzidas para linguagem humana no detalhe e na prova.",
+    "Estimativa do dia recebeu simplificação compatível: dois blocos simples na primeira dobra, resumo compacto de Já se perdeu e detalhe financeiro completo sob disclosure.",
+    "A consistência de Perdido entre Hoje e Estimativa foi preservada sem mudar o modelo financeiro sintético."
+  ],
+  "preserved_behaviors": [
+    "hierarquia de 6 camadas preservada como diagnóstico, leitura dominante, resumo financeiro, gargalo, detalhe local e cálculo/evidência",
+    "tema claro/escuro",
+    "localStorage em aris_benchuix_theme",
+    "interatividade existente",
+    "responsividade mobile",
+    "Meu Negócio v17",
+    "cenários de sandbox",
+    "estado compartilhado Rafael M., se presente"
+  ],
+  "out_of_scope_not_touched": [
+    "Ajuda não foi reescrita",
+    "Meu Negócio não foi alterado além da preservação indireta de navegação",
+    "Agenda, Atendimento, Aprovações e Disponibilidade não tiveram lógica alterada",
+    "modelo financeiro sintético não foi alterado",
+    "ACTIVE_CONTEXT_STATE.json não foi alterado",
+    "ARIS_BOOT.md não foi alterado",
+    "ROADMAP_CANONICAL.md não foi alterado",
+    "locks, fase, benchuix_track.status, next_phase e active_next_phase não foram alterados"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m json.tool artifacts/benchuix/draft_v18_hoje_simplification_change_log.json",
+    "python3 -m json.tool artifacts/benchuix/draft_visual_v18_hoje_simplification_no_real_execution_attestation.json",
+    "cmp -s between v17 and latest before change",
+    "cmp -s between v18 and latest after change",
+    "headless load of v18 via google-chrome --dump-dom over local server",
+    "headless load of latest via google-chrome --dump-dom over local server",
+    "custom local harness for Hoje/Estimativa simplification, Meu Negócio preservation and overflow checks",
+    "git diff checks for ACTIVE_CONTEXT_STATE.json, ARIS_BOOT.md and ROADMAP_CANONICAL.md",
+    "decoded-template scan for prohibited runtime/network strings",
+    "decoded-template scan for forbidden red alarm colors",
+    "external URL comparison between v17 and v18"
+  ],
+  "residuals": [
+    "A Ajuda continua mencionando a taxonomia financeira anterior em alguns textos, porque a fase proíbe retrabalho nela.",
+    "A validação automática de overflow e DOM depende do harness/headless local disponível neste ambiente."
+  ]
+}

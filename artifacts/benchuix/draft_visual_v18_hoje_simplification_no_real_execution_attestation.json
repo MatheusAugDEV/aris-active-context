@@ -1,0 +1,19 @@
+{
+  "sandbox_only": true,
+  "no_real_execution": true,
+  "no_real_integration": true,
+  "all_real_locks_remain_false": true,
+  "benchuix_27_status_unchanged": true,
+  "active_context_state_unchanged": true,
+  "aris_boot_unchanged": true,
+  "roadmap_canonical_unchanged": true,
+  "no_backend_runtime": true,
+  "no_network_or_api_surface": true,
+  "no_fetch_websocket_xhr": true,
+  "no_secrets": true,
+  "no_billing_payment_accounting": true,
+  "no_support_or_chatbot_integration": true,
+  "no_product_or_production_authorization": true,
+  "no_pilot_bedrock_or_real_apply": true,
+  "no_red_alarm_color_introduced": true
+}
