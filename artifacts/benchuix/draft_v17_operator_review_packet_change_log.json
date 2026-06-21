@@ -1,0 +1,53 @@
+{
+  "artifact": "draft_v17_operator_review_packet_change_log",
+  "version": "v17",
+  "title": "Operator Review Packet / Golden Walkthrough",
+  "scope": "candidate_only_review_packaging",
+  "source_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v16.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "latest_preview_changed": false,
+  "latest_preview_matches_v16_draft": true,
+  "new_artifacts": [
+    "artifacts/benchuix/benchuix_27_operator_review_packet_v17.md",
+    "artifacts/benchuix/benchuix_27_golden_walkthrough_v17.json",
+    "artifacts/benchuix/benchuix_27_visual_qa_matrix_v17.json",
+    "artifacts/benchuix/draft_visual_v17_no_real_execution_attestation.json",
+    "artifacts/benchuix/draft_v17_operator_review_packet_change_log.json"
+  ],
+  "what_changed": [
+    "Added a narrative operator review packet for the existing latest preview.",
+    "Added a golden walkthrough describing the recommended operator read order.",
+    "Added a visual QA matrix that packages preserved regression expectations.",
+    "Added a no-real-execution attestation specific to the v17 documentation pass."
+  ],
+  "what_did_not_change": [
+    "No dashboard HTML changed.",
+    "No canonical active-context file changed.",
+    "No new runtime, network or product integration path was introduced.",
+    "No new phase or transition was created."
+  ],
+  "preserved_prior_behavior": [
+    "v4 six-layer decision hierarchy on Hoje",
+    "v5 light and dark themes with local persistence",
+    "v6 Rafael reflection into Agenda",
+    "v7 responsive layout expectations",
+    "v8 focused-day mobile navigation in Disponibilidade",
+    "v9 scenario selector modes",
+    "v10 Help search, filter and FAQ behavior",
+    "v11 financial consistency between Hoje and Estimativa",
+    "v13 compact Agenda controls",
+    "v14 Dia versus Semana semantic split",
+    "v15 global control system visibility",
+    "v16 progressive disclosure and evidence preservation"
+  ],
+  "optional_screenshots_generated": false,
+  "validation_plan": [
+    "python3 scripts/validate_active_context_state.py",
+    "json parsing for all new v17 artifacts",
+    "markdown existence/readability check",
+    "headless local load of the latest preview",
+    "existing local validate_v16 harness checks",
+    "forbidden-string scan",
+    "color scan for #ff0000 and #f00"
+  ]
+}

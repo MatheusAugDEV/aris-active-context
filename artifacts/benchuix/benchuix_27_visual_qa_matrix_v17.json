@@ -1,0 +1,117 @@
+{
+  "artifact": "benchuix_27_visual_qa_matrix_v17",
+  "version": "v17",
+  "scope": "operator_review_visual_regression_matrix",
+  "sandbox_only": true,
+  "review_target": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "viewport_matrix": [
+    320,
+    375,
+    480,
+    768,
+    1024
+  ],
+  "checks": [
+    {
+      "id": "latest-preview-load",
+      "category": "preview",
+      "expected": "latest preview opens locally",
+      "status": "pass"
+    },
+    {
+      "id": "latest-equals-v16",
+      "category": "integrity",
+      "expected": "latest preview stays byte-equal to the v16 source draft",
+      "status": "pass"
+    },
+    {
+      "id": "responsive-no-overflow",
+      "category": "responsive",
+      "expected": "no horizontal overflow at all required widths",
+      "status": "pass"
+    },
+    {
+      "id": "v16-progressive-disclosure",
+      "category": "regression",
+      "expected": "v16 disclosure open-close behavior remains stable",
+      "status": "pass"
+    },
+    {
+      "id": "evidence-accessibility",
+      "category": "regression",
+      "expected": "collapsed evidence remains accessible",
+      "status": "pass"
+    },
+    {
+      "id": "v15-dark-light-controls",
+      "category": "regression",
+      "expected": "global controls remain visible in dark and light themes",
+      "status": "pass"
+    },
+    {
+      "id": "v14-agenda-split",
+      "category": "regression",
+      "expected": "Agenda Dia and Semana remain semantically distinct",
+      "status": "pass"
+    },
+    {
+      "id": "v13-agenda-controls",
+      "category": "regression",
+      "expected": "Agenda control cluster remains compact and understandable",
+      "status": "pass"
+    },
+    {
+      "id": "theme-persistence",
+      "category": "state",
+      "expected": "theme persists through localStorage key aris_benchuix_theme",
+      "status": "pass"
+    },
+    {
+      "id": "v6-rafael-reflection",
+      "category": "regression",
+      "expected": "Rafael flow still reflects in Agenda",
+      "status": "pass"
+    },
+    {
+      "id": "v8-mobile-day-navigation",
+      "category": "regression",
+      "expected": "Disponibilidade mobile day navigation remains functional",
+      "status": "pass"
+    },
+    {
+      "id": "v9-scenario-selector",
+      "category": "regression",
+      "expected": "scenario selector supports normal, onboarding, empty and failure",
+      "status": "pass"
+    },
+    {
+      "id": "v10-help-controls",
+      "category": "regression",
+      "expected": "Help search, filter and FAQ collapse remain functional",
+      "status": "pass"
+    },
+    {
+      "id": "v11-loss-value-consistency",
+      "category": "financial-consistency",
+      "expected": "Hoje and Estimativa lost-value match exactly",
+      "status": "pass"
+    },
+    {
+      "id": "forbidden-integration-scan",
+      "category": "safety",
+      "expected": "no forbidden integration strings introduced",
+      "status": "pass"
+    },
+    {
+      "id": "color-scan-no-pure-red",
+      "category": "visual-guard",
+      "expected": "no #ff0000 or #f00 introduced",
+      "status": "pass"
+    }
+  ],
+  "notes": [
+    "This matrix packages operator review expectations around the existing latest preview.",
+    "No screenshot file is required for the matrix to be valid.",
+    "The matrix does not promote candidate state into canonical approval."
+  ]
+}

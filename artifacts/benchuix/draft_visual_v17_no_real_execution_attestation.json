@@ -1,0 +1,34 @@
+{
+  "artifact": "draft_visual_v17_no_real_execution_attestation",
+  "version": "v17",
+  "scope": "operator_review_packet_candidate_only",
+  "assertions": {
+    "documentation_only": true,
+    "review_only": true,
+    "sandbox_only": true,
+    "no_dashboard_html_mutation": true,
+    "no_backend_runtime_integration": true,
+    "no_network_or_api_surface_introduced_in_product_artifact": true,
+    "no_billing_payment_accounting_support_chatbot_integration": true,
+    "no_canonical_governance_mutation": true
+  },
+  "not_modified": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ARIS_BOOT.md",
+    "ROADMAP_CANONICAL.md",
+    "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+    "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v16.html",
+    "phase_id",
+    "current_phase_id",
+    "next_phase",
+    "active_next_phase",
+    "BENCHUIX-27 track status",
+    "decision locks",
+    "real authorization flags"
+  ],
+  "notes": [
+    "v17 introduces operator review packaging around the existing preview only.",
+    "All validation remains local and static.",
+    "No real messaging, scheduling, payment, support, telemetry or external service path is introduced."
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "artifact": "benchuix_27_golden_walkthrough_v17",
+  "version": "v17",
+  "scope": "operator_review_packet_candidate_only",
+  "sandbox_only": true,
+  "review_only": true,
+  "review_target": {
+    "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+    "reference_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v16.html",
+    "matches_reference_draft": true
+  },
+  "canonical_state_snapshot": {
+    "phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "current_phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+    "next_phase": null,
+    "active_next_phase": null,
+    "benchuix_track_status": "operator_review_pending"
+  },
+  "walkthrough_goal": "Verify that the latest static preview still supports first-pass operator reading, evidence recovery and preserved behavior from v4 through v16 without any real execution surface.",
+  "steps": [
+    {
+      "step": 1,
+      "screen": "Hoje",
+      "actions": [
+        "Open the latest preview and stay on the default landing surface.",
+        "Confirm the primary daily read is visible before expanding any disclosure.",
+        "Open and close at least one evidence disclosure."
+      ],
+      "pass_conditions": [
+        "Primary signal is visible without scrolling into buried explanation.",
+        "Evidence remains reachable after disclosure-heavy simplification.",
+        "No runtime or external execution language appears."
+      ]
+    },
+    {
+      "step": 2,
+      "screen": "Agenda Dia",
+      "actions": [
+        "Enter Agenda in day mode.",
+        "Review the selected-day timeline and summary.",
+        "Confirm the day view reads as the operational decision surface."
+      ],
+      "pass_conditions": [
+        "Day timeline remains legible.",
+        "The day summary is not duplicated as a fake weekly grid.",
+        "v6 Rafael reflection remains visible when applicable."
+      ]
+    },
+    {
+      "step": 3,
+      "screen": "Agenda Semana",
+      "actions": [
+        "Switch from day mode to week mode.",
+        "Scan all seven cards before returning to any day."
+      ],
+      "pass_conditions": [
+        "The semantic split between Dia and Semana remains clear.",
+        "Weekly cadence can be scanned quickly.",
+        "v13 compact control intent remains intact."
+      ]
+    },
+    {
+      "step": 4,
+      "screen": "Atendimento",
+      "actions": [
+        "Open Atendimento.",
+        "Review at least one conversation card and its details disclosure."
+      ],
+      "pass_conditions": [
+        "Conversations still read as manual triage, not automation.",
+        "Open items remain understandable as pending operator judgment."
+      ]
+    },
+    {
+      "step": 5,
+      "screen": "Disponibilidade",
+      "actions": [
+        "Open Disponibilidade.",
+        "Exercise the focused-day mobile navigation path."
+      ],
+      "pass_conditions": [
+        "Focused-day navigation remains usable on narrow widths.",
+        "No horizontal overflow appears.",
+        "Synthetic blocks remain legible and local-only."
+      ]
+    },
+    {
+      "step": 6,
+      "screen": "Aprovacoes",
+      "actions": [
+        "Open Aprovacoes.",
+        "Review at least one exception card and its supporting context."
+      ],
+      "pass_conditions": [
+        "Approval review remains clearly human-in-the-loop.",
+        "Context and impact are available without implying live authorization."
+      ]
+    },
+    {
+      "step": 7,
+      "screen": "Estimativa do dia",
+      "actions": [
+        "Open Estimativa do dia.",
+        "Compare the lost-value explanation against Hoje."
+      ],
+      "pass_conditions": [
+        "Predicted, confirmed, recoverable and lost values remain internally coherent.",
+        "Hoje and Estimativa still agree on lost value exactly."
+      ]
+    },
+    {
+      "step": 8,
+      "screen": "Configuracoes",
+      "actions": [
+        "Open Configuracoes.",
+        "Switch theme and scenario locally."
+      ],
+      "pass_conditions": [
+        "Dark and light themes both preserve the control system.",
+        "Theme persistence remains tied to aris_benchuix_theme.",
+        "Scenario switching stays local to the draft."
+      ]
+    },
+    {
+      "step": 9,
+      "screen": "Ajuda",
+      "actions": [
+        "Open Ajuda.",
+        "Exercise search, category filter and FAQ expansion."
+      ],
+      "pass_conditions": [
+        "Help search and filter still return local procedural guidance.",
+        "FAQ collapse/expand still works without external dependency."
+      ]
+    }
+  ],
+  "global_pass_conditions": [
+    "Latest preview opens successfully in a local headless browser run.",
+    "No horizontal overflow at 320, 375, 480, 768 and 1024 widths.",
+    "No forbidden integration strings in the preview source.",
+    "No #ff0000 or #f00 introduction.",
+    "No canonical state mutation."
+  ],
+  "forbidden_categories": [
+    "real backend execution",
+    "fetch or websocket networking",
+    "oauth or external auth",
+    "billing or payment",
+    "accounting",
+    "support or chatbot runtime integration",
+    "telemetry"
+  ]
+}
