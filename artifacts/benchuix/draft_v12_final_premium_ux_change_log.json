@@ -1,0 +1,65 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V12 (Final Premium UX / Visual Coherence Pass)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v11.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v12.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Aplicar um passe final de coerencia visual, hierarquia premium de decisao, polimento de onboarding/vazio/falha, melhor escaneabilidade de Ajuda, refinamentos mobile e acessibilidade leve, preservando todo o comportamento entregue de v4 a v11.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma alteracao de routing, phase_id, lock, schema ou Transition Table foi executada.",
+      "Nenhuma integracao de backend, cobranca, pagamento, contabilidade, coleta externa, credencial, canal em tempo real ou chamada de produto foi adicionada."
+    ]
+  },
+  "implemented_changes": {
+    "cross_screen_consistency": [
+      "Introduzido um rail de contexto compartilhado entre as telas principais com kicker, resumo da tela, leitura dominante, boundary sandbox-only e proximo foco.",
+      "Padronizada a linguagem de superficie para manter a mesma estrutura mental entre Hoje, Agenda, Atendimento, Disponibilidade, Aprovacoes, Estimativa, Configuracoes e Ajuda."
+    ],
+    "decision_hierarchy": [
+      "A tela Hoje ganhou um spotlight lateral usando a metrica dominante do momento com leitura secundaria compacta para reforcar prioridade operacional.",
+      "O heroi financeiro foi reposicionado como pulso do recorte local, sem perder a conciliacao v11 entre previsto, confirmado, recuperavel e perdido."
+    ],
+    "copy_and_state_polish": [
+      "Normalizada a microcopy de operacao base, onboarding, dia vazio e falha segura para reforcar linguagem de incerteza controlada e evitar promessas de runtime real.",
+      "A ajuda passou a evitar mencoes desnecessarias a atendimento externo e a explicitar melhor o caminho de leitura e acao."
+    ],
+    "help_scanability": [
+      "Adicionados cards de guia rapido na Ajuda com fluxo Filtre -> Leia -> Aja.",
+      "Cada resposta da Ajuda agora exibe badge de destino da tela-alvo para reduzir navegacao por tentativa e erro."
+    ],
+    "mobile_and_accessibility": [
+      "Ajustados grids de contexto e spotlight para colapsarem de forma limpa em breakpoints moveis sem overflow.",
+      "Adicionados focus-visible e prefers-reduced-motion para melhorar navegacao assistiva e reduzir animacao quando solicitado."
+    ],
+    "preserved_from_v11": [
+      "Consistencia financeira entre Hoje e Estimativa preservada.",
+      "Persistencia de tema preservada pela chave aris_benchuix_theme.",
+      "Fluxo de aprovacao do Rafael continua refletindo na Agenda.",
+      "Pager mobile de Disponibilidade continua funcional.",
+      "Ajuda continua com busca local, filtro por categoria e expand/collapse."
+    ]
+  },
+  "validation": {
+    "active_context_validator": "python3 scripts/validate_active_context_state.py",
+    "headless_runtime_checked": true,
+    "headless_runner": "google-chrome --headless sobre validate_v12.html servido localmente por http.server temporario",
+    "verified_behaviors": [
+      "Carregamento do draft v12 em runtime local.",
+      "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px.",
+      "Persistencia do tema em localStorage pela chave aris_benchuix_theme.",
+      "Pager mobile de Disponibilidade continua mudando o dia focal corretamente.",
+      "Fluxo v6 de aprovar Rafael continua refletindo na Agenda de amanha.",
+      "Cenarios onboarding, empty e failure continuam funcionais.",
+      "Busca, filtro e expand/collapse da Ajuda continuam funcionais.",
+      "Hoje e Estimativa exibem exatamente o mesmo valor em Perdido no cenario normal.",
+      "O cenario empty-day continua sem perda inventada.",
+      "O cenario failure continua explicitando revisao manual/uncertainty sem alegar backend financeiro real."
+    ],
+    "static_scope_checks": [
+      "Sem ocorrencia de #ff0000 no draft v12.",
+      "Sem chamadas de navegador para rede de produto nem canais em tempo real no draft v12.",
+      "Sem mencoes finais a assistente externo ou atendimento externo na microcopy do draft v12."
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v12.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "Todas as alteracoes do v12 estao confinadas ao HTML bundled do sandbox e a artefatos documentais locais.",
+    "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi tocado.",
+    "Nenhuma integracao de runtime real, cobranca, pagamento, contabilidade, credencial, canal em tempo real, atendimento externo ou coleta externa foi adicionada."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY",
+    "COMMIT-PUSH-HASH"
+  ],
+  "notes": [
+    "A validacao canonicamente exigida por scripts/validate_active_context_state.py passou sem qualquer mutacao do estado ativo.",
+    "O passe v12 foi implementado como refinamento de hierarquia visual, microcopy, responsividade e acessibilidade leve sobre o bundle do v11.",
+    "A trilha BenchUIX permanece candidate-only, sandbox-only e operator_review_pending."
+  ]
+}
