@@ -1,0 +1,81 @@
+{
+  "phase": "BENCHUIX-27 Sandbox Dashboard V11 (Financial Metric Consistency / Perdido Sync)",
+  "base_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v10.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v11.html",
+  "decision_hint": "PASS",
+  "scope": {
+    "allowed_change": "Sincronizar a narrativa financeira local do sandbox entre Hoje e Estimativa do dia, mantendo o comportamento entregue de v4 a v10.",
+    "forbidden_changes_respected": [
+      "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
+      "Nenhuma integração de cobrança, pagamento, contabilidade, suporte, rede externa ou backend foi adicionada.",
+      "A trilha BenchUIX permanece candidate-only, sandbox-only e operator_review_pending."
+    ]
+  },
+  "source_model_of_financial_figures": {
+    "type": "ui_local_synthetic_model",
+    "fields": [
+      "faturamento_previsto",
+      "faturamento_confirmado",
+      "perdido",
+      "recuperavel",
+      "horarios_vagos"
+    ],
+    "derivation": {
+      "faturamento_confirmado": "soma dos agendamentos confirmados do array sintético",
+      "perdido": "horários já vencidos sem encaixe + exceções recusadas",
+      "recuperavel": "horários ainda livres + conversas em andamento + exceções pendentes",
+      "faturamento_previsto": "confirmado + recuperável + perdido"
+    }
+  },
+  "synced_values_between_hoje_and_estimativa": {
+    "perdido_single_source_of_truth": true,
+    "implementation_note": "Hoje e Estimativa agora leem o mesmo valor local de perdido, sem hardcode divergente.",
+    "normal_state_check": "o valor exibido em Perdido na tela Hoje bate exatamente com o card Perdido da tela Estimativa"
+  },
+  "implemented_changes": {
+    "today_surface": [
+      "O herói financeiro de Hoje passou a mostrar o faturamento previsto do dia, não apenas o confirmado.",
+      "Os sinais rápidos foram reorganizados para Confirmado, Recuperável, Previsto e Perdido.",
+      "A prova financeira em Hoje agora decompõe previsto, confirmado, recuperável e perdido com a mesma base local."
+    ],
+    "estimate_surface": [
+      "Estimativa do dia ganhou estrutura de dashboard de decisão com Diagnóstico, Impacto financeiro, Gargalo, Causa provável, Ação recomendada e Evidência.",
+      "A narrativa passou a responder quanto era previsto, quanto está confirmado, quanto foi perdido, quanto ainda pode ser recuperado, qual é a principal causa e qual ação reduz a perda.",
+      "O card Perdido na Estimativa usa o mesmo valor que Hoje, e o previsto reconcilia explicitamente confirmado + recuperável + perdido."
+    ],
+    "scenario_behavior_checked": [
+      "normal: perda e recuperável coerentes com a agenda/conversas/exceções do sandbox",
+      "onboarding: narrativa simplificada sem contradizer os números do cenário base",
+      "empty-day: perda zerada, sem inventar agenda ou caixa perdidos",
+      "automation-failure: a tela declara revisão manual/possível envelhecimento da leitura, sem alegar backend financeiro real"
+    ],
+    "help_update": [
+      "Adicionado o tópico operacional “Como interpretar Perdido, Recuperável e Estimativa do dia?”.",
+      "O tópico explica o significado de perdido, recuperável, por que a leitura é sintética/sandbox e onde conferir evidência no dashboard."
+    ],
+    "preserved_v10_help_behavior": [
+      "Busca local preservada",
+      "Filtro por categoria preservado",
+      "FAQ expansível preservado",
+      "Atalhos contextuais preservados"
+    ]
+  },
+  "validation": {
+    "active_context_validator": "python3 scripts/validate_active_context_state.py",
+    "headless_runtime_checked": true,
+    "headless_runner": "google-chrome --headless sobre harness temporário local validate_v11.html",
+    "additional_repo_benchuix_validator_found": false,
+    "verified_behaviors": [
+      "Carregamento do draft v11 em runtime local.",
+      "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px.",
+      "Persistência do tema em localStorage pela chave aris_benchuix_theme.",
+      "Pager mobile de Disponibilidade continua mudando o dia focal corretamente.",
+      "Fluxo v6 de aprovar Rafael continua refletindo na Agenda de amanhã.",
+      "Cenários onboarding, empty e failure continuam funcionais.",
+      "Busca, filtro e expand/collapse da Ajuda continuam funcionais.",
+      "Hoje e Estimativa exibem exatamente o mesmo valor em Perdido no cenário normal.",
+      "O cenário empty-day mantém perda zerada.",
+      "O cenário automation-failure explicita incerteza/staleness sem alegar evidência de backend."
+    ]
+  }
+}

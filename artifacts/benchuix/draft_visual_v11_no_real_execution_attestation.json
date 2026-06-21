@@ -1,0 +1,21 @@
+{
+  "artifact": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v11.html",
+  "attestation_type": "NO_REAL_EXECUTION",
+  "status": "confirmed",
+  "assertions": [
+    "Todos os valores financeiros do v11 são sintéticos e sandbox-only.",
+    "Nenhuma integração de billing, payment, accounting ou cálculo financeiro de backend foi adicionada.",
+    "Nenhuma API externa, rede, WebSocket, suporte real, chatbot backend ou segredo foi introduzido."
+  ],
+  "guards_respected": [
+    "AC-READ",
+    "NO-REAL-EXEC",
+    "ARTIFACT-ONLY",
+    "COMMIT-PUSH-HASH"
+  ],
+  "notes": [
+    "ACTIVE_CONTEXT_STATE.json foi apenas lido e validado; nenhum campo foi tocado.",
+    "A consistência financeira foi implementada inteiramente no estado local do componente do draft HTML.",
+    "Nenhuma mutação canônica de governança, phase routing ou decision lock foi executada."
+  ]
+}
