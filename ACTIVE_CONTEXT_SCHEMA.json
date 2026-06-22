@@ -14,6 +14,7 @@
   "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false.",
   "schema_3_24_change_summary": "Naming clarity metadata: permit an optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock.",
   "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
+  "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
   "properties": {
     "active_context_version": {
       "enum": [
@@ -1019,7 +1020,8 @@
         "3.22",
         "3.23",
         "3.24",
-        "3.25"
+        "3.25",
+        "3.26"
       ],
       "type": "string"
     },
@@ -1135,6 +1137,18 @@
         },
         "draft_v5_cleanup_ci_run_id": {
           "const": "27924496725",
+          "type": "string"
+        },
+        "draft_v5_runtime_fix_commit_sha": {
+          "const": "9359574d5b78692b5e8b6e9772be0d8d2dff4476",
+          "type": "string"
+        },
+        "draft_v5_runtime_fix_ci_run_id": {
+          "const": "27925514369",
+          "type": "string"
+        },
+        "draft_v5_runtime_fix_evidence_verified_by": {
+          "const": "operator_requested_independent_terminal_reconfirmation",
           "type": "string"
         },
         "draft_v5_evidence_verified_by": {
@@ -1253,6 +1267,9 @@
         "draft_v5_ajuda_ci_run_id",
         "draft_v5_cleanup_commit_sha",
         "draft_v5_cleanup_ci_run_id",
+        "draft_v5_runtime_fix_commit_sha",
+        "draft_v5_runtime_fix_ci_run_id",
+        "draft_v5_runtime_fix_evidence_verified_by",
         "draft_v5_evidence_verified_by",
         "transition_table_artifact",
         "admission_packet_artifact",
@@ -1513,6 +1530,9 @@
         "schema_3_25_change_summary": {
           "type": "string"
         },
+        "schema_3_26_change_summary": {
+          "type": "string"
+        },
         "schema_3_21_change_summary": {
           "type": "string"
         },
@@ -1762,7 +1782,7 @@
     "purg00_source_gap_terminal_blocker",
     "benchuix_track"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v3.25",
+  "title": "ARIS Active Context Canonical Live State Schema v3.26",
   "type": "object",
   "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
   "schema_3_19_change_summary": "INF revalidation execution: admit INF_REVALIDATION_EXECUTION_PACKET as the live controlled execution gate, add infernus_revalidation_execution as a valid live/next route class for roadmap/validator coherence, require the execution artifact family plus deterministic oracle evidence, materialize the operator-authorization successor row, and preserve next_phase/active_next_phase null because adjudication remains candidate-only after execution.",
@@ -1771,5 +1791,6 @@
   "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false.",
   "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false.",
   "schema_3_24_change_summary": "Naming clarity metadata: permit an optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock.",
-  "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
+  "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
+  "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
 }
