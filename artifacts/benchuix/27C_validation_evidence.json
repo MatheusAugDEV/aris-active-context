@@ -87,8 +87,8 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "4bd116d915478b5d5a7b0eabe435db2750b6ed49cd80117616c7e8cffa6b21cc",
-    "ACTIVE_CONTEXT_SCHEMA.json": "9b49945a297a337f3c5e6b75f95bf7c0316c3b30c52c7f8a7c464d0766557d68",
+    "ACTIVE_CONTEXT_STATE.json": "0cb9f0ba004f6711c2c1efe44131c67bf2b73bfea73ee521097871997b191372",
+    "ACTIVE_CONTEXT_SCHEMA.json": "79dc1f43774704941fb5058fbc1f9e606452c38b28ba90a6732d91f66a73de4e",
     "scripts/validate_active_context_state.py": "85ded800ce1c56aeea57bcb0bf9c126aac18df51da7b94e61472149758ffad24",
     "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js": "368c6f9cb9b42144210fe9f3e2eabd4003bbecb00f29dd9a77b9f6086b10df0c",

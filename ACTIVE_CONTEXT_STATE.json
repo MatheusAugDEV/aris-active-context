@@ -161,6 +161,11 @@
         "operator_gate_decision": "accepted",
         "operator_gate_scope": "BENCHUIX-00_AND_00R",
         "operator_gate_commit_sha": "73870715dd0d74bc0757b845d34d430b70d94867",
+        "draft_v5_ajuda_commit_sha": "c21bde747a34066e165a0a34ca2d0744b8b41c85",
+        "draft_v5_ajuda_ci_run_id": "27924231691",
+        "draft_v5_cleanup_commit_sha": "87c71cad57061c0b45ce9ac2fd21739ee600158a",
+        "draft_v5_cleanup_ci_run_id": "27924496725",
+        "draft_v5_evidence_verified_by": "operator_requested_independent_terminal_reconfirmation",
         "transition_table_artifact": "artifacts/benchuix/00_transition_table.json",
         "admission_packet_artifact": "artifacts/benchuix/00_admission_packet.json",
         "no_real_execution_attestation_artifact": "artifacts/benchuix/00_no_real_execution_attestation.json",
@@ -724,7 +729,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.24",
+    "schema_version": "3.25",
     "status": "if09_closure_milestone_mirror_sanity_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -740,7 +745,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.24",
+        "current_schema_version": "3.25",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -768,6 +773,7 @@
         "schema_3_21_change_summary": "BENCHUIX schema tracking repair: admit a non-executable benchuix_track top-level block so the BenchUIX roadmap candidate can be tracked in ACTIVE_CONTEXT_STATE.json without altering the live route, while enforcing trilha_lock_active=true and every BenchUIX execution/product/runtime/secret authorization flag as false.",
         "schema_3_22_change_summary": "BENCHUIX tracking generalization: replace single-phase consts in benchuix_track with bounded enums for BENCHUIX-00 through BENCHUIX-27 and CRISOL, preserving non-executable tracking, trilha_lock_active=true, and all BenchUIX execution/product/runtime/secret authorization flags as false.",
         "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false.",
-        "schema_3_24_change_summary": "Naming clarity metadata: permit optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock."
+        "schema_3_24_change_summary": "Naming clarity metadata: permit optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock.",
+        "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
     }
 }
