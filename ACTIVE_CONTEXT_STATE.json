@@ -184,7 +184,10 @@
         "standing_candidate_authorization_scope": "BENCHUIX-08_THROUGH_CRISOL_CANDIDATE_ONLY",
         "standing_candidate_authorization_artifact": "artifacts/benchuix/standing_authorization_packet.json",
         "standing_candidate_authorization_real_locks_opened": false,
-        "repeated_operator_ritual_required_for_next_candidate_phases": false
+        "repeated_operator_ritual_required_for_next_candidate_phases": false,
+        "draft_v5_ajuda_default_closed_commit_sha": "89f1e7845b7ce4c2f01f75173cc5b3f5e1ec4fd1",
+        "draft_v5_ajuda_default_closed_ci_run_id": "27926171977",
+        "draft_v5_ajuda_default_closed_evidence_verified_by": "operator_requested_independent_terminal_reconfirmation"
     },
     "canonical_branch": "main",
     "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
@@ -732,7 +735,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.26",
+    "schema_version": "3.27",
     "status": "if09_closure_milestone_mirror_sanity_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
@@ -748,7 +751,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.26",
+        "current_schema_version": "3.27",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -778,6 +781,7 @@
         "schema_3_23_change_summary": "BENCHUIX standing authorization materialization: record the operator standing authorization for candidate-only BENCHUIX transitions from BENCHUIX-08 through CRISOL, require a standing authorization artifact family plus validator enforcement, and preserve every real execution/product/runtime/secret/billing/OAuth/customer-data lock as false.",
         "schema_3_24_change_summary": "Naming clarity metadata: permit optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock.",
         "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
-        "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
+        "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
+        "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
     }
 }
