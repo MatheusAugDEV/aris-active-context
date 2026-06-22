@@ -1,0 +1,95 @@
+{
+  "phase": "BENCHUIX-27 v20 — Onboarding Carrossel de Boas-Vindas",
+  "base_draft": "barbearia_claude_design_export_draft_v19.html",
+  "output_draft": "barbearia_claude_design_export_draft_v20.html",
+  "part_a_inspection": {
+    "onboarding_encontrado_ou_ausente": "O v19 nao tinha onboarding persistente de primeiro acesso. Existia apenas um painel guiado ligado ao modo sandbox demoMode='onboarding' dentro da tela Hoje, com onboardingDismissed em memoria local da sessao.",
+    "uso_atual_de_localStorage": [
+      "O topo do template define THEME_KEY='aris_benchuix_theme'.",
+      "window.__arisBenchTheme expõe key, get, set e toggle.",
+      "safeGet lê localStorage e cai para theme dark se falhar.",
+      "safeSet grava somente o tema local deste navegador."
+    ],
+    "chaves_existentes": [
+      "aris_benchuix_theme"
+    ],
+    "chave_de_onboarding_existente": false,
+    "ponto_escolhido_para_rever_boas_vindas": {
+      "local": "Meu Negocio",
+      "motivo": "Era o ponto mais discreto e coerente para reabrir um material de apresentacao sem poluir a Ajuda FAQ v19."
+    },
+    "estrutura_atual_dos_cenarios_de_sandbox": {
+      "estado": "demoMode",
+      "valores": [
+        "normal",
+        "onboarding",
+        "empty",
+        "failure"
+      ],
+      "comportamento": "Os modos continuam sendo acionados por botoes em Meu Negocio e atualizam apenas leitura, cards e notices do sandbox local."
+    },
+    "estrutura_atual_da_ajuda_v19": "A Ajuda v19 permaneceu como FAQ acordeao simples, sem busca, sem filtros e sem categorias visiveis, com badge de sandbox e oito perguntas em linguagem direta.",
+    "latest_byte_equal_ao_v19_antes_da_mudanca": true,
+    "achados_inesperados": [
+      "O modo onboarding legado seguia existindo como cenario de demonstracao, nao como primeiro acesso real.",
+      "O estado compartilhado de Rafael M. continuava presente e conectado entre Atendimento, Aprovacoes e Agenda.",
+      "As ancoras de simplificacao de Hoje e Estimativa do v18 e de Meu Negocio do v17 continuavam presentes no template."
+    ]
+  },
+  "decision_made": {
+    "numero_de_slides_escolhido": 5,
+    "swipe_mobile_implementado": true,
+    "local_escolhido_para_rever_boas_vindas": "Meu Negocio",
+    "motivos_das_escolhas": [
+      "Cinco slides permitiram cobrir promessa, organizacao, decisao humana, leitura do dia e garantia sandbox sem virar tutorial pesado.",
+      "Swipe foi implementado com touchstart e touchend locais, sem dependencia nova.",
+      "Meu Negocio recebeu o ponto de reabertura por ser discreto e consistente com configuracao local do navegador."
+    ]
+  },
+  "changes_made": [
+    "carrossel de boas-vindas criado em overlay modal local",
+    "localStorage de onboarding criado com aris_benchuix_onboarding_seen",
+    "abertura automatica no primeiro acesso quando a chave nao existe",
+    "dots de progresso adicionados",
+    "botoes anterior e proximo adicionados",
+    "botao Pular adicionado",
+    "botao Comecar adicionado no ultimo slide",
+    "rever boas-vindas adicionado em Meu Negocio",
+    "garantia sandbox explicita incorporada ao carrossel",
+    "modo onboarding legado passou a reabrir o carrossel sem criar integracao real"
+  ],
+  "preserved_behaviors": [
+    "tema claro/escuro",
+    "localStorage de tema aris_benchuix_theme",
+    "responsividade mobile",
+    "Meu Negocio v17",
+    "Hoje e Estimativa v18",
+    "Ajuda FAQ v19",
+    "cenarios de sandbox",
+    "navegacao lateral",
+    "estado compartilhado Rafael M., se presente"
+  ],
+  "out_of_scope_not_touched": [
+    "ACTIVE_CONTEXT_STATE.json nao foi alterado",
+    "ARIS_BOOT.md nao foi alterado",
+    "ROADMAP_CANONICAL.md nao foi alterado",
+    "Agenda, Atendimento, Aprovações e Disponibilidade nao receberam mudancas fora do necessario para preservar navegacao",
+    "calculo financeiro nao foi alterado",
+    "nenhum lock, fase, benchuix_track.status, next_phase ou active_next_phase foi alterado",
+    "nenhuma integracao real, backend, API, fetch, XHR ou WebSocket foi introduzido"
+  ],
+  "validation_performed": [
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m json.tool artifacts/benchuix/draft_v20_onboarding_carrossel_change_log.json",
+    "python3 -m json.tool artifacts/benchuix/draft_visual_v20_onboarding_carrossel_no_real_execution_attestation.json",
+    "git diff checks para ACTIVE_CONTEXT_STATE.json, ARIS_BOOT.md e ROADMAP_CANONICAL.md",
+    "cmp -s entre v19 e latest antes da mudanca",
+    "cmp -s entre v20 e latest apos a mudanca",
+    "validacao headless do onboarding de primeiro acesso, persistencia local e reabertura em Meu Negocio",
+    "scan local para preservar FAQ v19, Hoje/Estimativa v18, Meu Negocio v17 e strings sem runtime externo"
+  ],
+  "residuals": [
+    "O estado onboardingSeen ficou registrado no componente como trilha explicita do fluxo, embora a superficie visual dependa de welcomeCarouselVisible e da chave localStorage.",
+    "O modo onboarding legado continua existindo como cenario de demonstracao local e agora convive com o carrossel persistente de primeiro acesso."
+  ]
+}
