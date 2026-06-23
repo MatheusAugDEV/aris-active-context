@@ -1,0 +1,19 @@
+{
+  "artifact": "v20r_replay_button_harness_no_real_execution_attestation",
+  "candidate_only": true,
+  "sandbox_only": true,
+  "synthetic_only": true,
+  "artifact_only_repair": true,
+  "visual_change_authorized": false,
+  "visual_change_required": false,
+  "html_bundle_change_required": false,
+  "active_context_mutated": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "pilot_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "runtime_integration_allowed": false,
+  "secrets_accessed": false,
+  "source_sha256_preserved": true
+}

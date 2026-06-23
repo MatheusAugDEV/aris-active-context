@@ -1,0 +1,23 @@
+{
+  "artifact": "v20r_replay_button_harness_repair_change_log",
+  "version": "v20r",
+  "repair_scope": "harness_evidence_only",
+  "bundle_or_visual_change_required": false,
+  "html_sandbox_change_required": false,
+  "root_cause": "O harness anterior resolvia o texto `Ver boas-vindas novamente` para o `DIV` wrapper que continha o CTA, em vez do `BUTTON` real.",
+  "repair_applied": [
+    "O resolvedor de clique do harness passou a priorizar `button`, `[role=\"button\"]` e `a` com texto exato antes de subir para wrappers clicáveis.",
+    "A evidência passou a registrar explicitamente qual elemento do DOM final foi clicado no passo de replay.",
+    "A rodada headless foi repetida do fluxo completo 1→6 para fechar a ressalva `first_access_flow partial`."
+  ],
+  "behavior_revalidated": [
+    "Sem key local, onboarding aparece.",
+    "`Começar` grava a key e libera o dashboard.",
+    "Reload mantém entrada direta no dashboard.",
+    "`Ver boas-vindas novamente` remove a key, recarrega e reabre o onboarding.",
+    "`pular` grava a key e libera o dashboard."
+  ],
+  "previous_artifact_with_partial": "artifacts/benchuix/v20r_onboarding_source_alignment_report.json",
+  "new_evidence_artifact": "artifacts/benchuix/v20r_replay_button_harness_evidence.json",
+  "partial_closed": true
+}

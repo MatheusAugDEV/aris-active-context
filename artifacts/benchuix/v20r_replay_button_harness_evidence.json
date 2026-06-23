@@ -1,0 +1,114 @@
+{
+  "artifact": "v20r_replay_button_harness_evidence",
+  "version": "v20r",
+  "verdict": "pass",
+  "partial_closed": true,
+  "closes_prior_limitation": "first_access_flow partial",
+  "source_path": "operator_inputs/benchuix/ARIS_Onboarding.html",
+  "source_sha256": "3943704aec7e919ad93ecc9888afc09037ea523666aa2637f81069119318253f",
+  "source_sha256_preserved": true,
+  "visual_changes_required": false,
+  "sandbox_html_changes_required": false,
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "validated_storage_key": "aris_benchuix_onboarding_seen_v1",
+  "headless_harness": {
+    "mode": "same_origin_iframe",
+    "browser": "google-chrome --headless=new",
+    "target_resolution_fix": "O harness passou a priorizar `button` com texto exato antes de wrappers `div/span`, evitando clicar no container com o mesmo texto do CTA de replay."
+  },
+  "steps": [
+    {
+      "order": 1,
+      "name": "initial_onboarding",
+      "status": "pass",
+      "assertion": "Sem key local, o onboarding aparece."
+    },
+    {
+      "order": 2,
+      "name": "complete_onboarding",
+      "status": "pass",
+      "assertion": "Clicar `Começar` abre o dashboard e grava `aris_benchuix_onboarding_seen_v1=true`."
+    },
+    {
+      "order": 3,
+      "name": "reload_persists_dashboard",
+      "status": "pass",
+      "assertion": "Reload abre o dashboard direto."
+    },
+    {
+      "order": 4,
+      "name": "replay_button_resolved",
+      "status": "pass",
+      "assertion": "O alvo resolvido no DOM final e clicado pelo harness foi o `BUTTON` real `Ver boas-vindas novamente`."
+    },
+    {
+      "order": 5,
+      "name": "replay_reopens_onboarding",
+      "status": "pass",
+      "assertion": "Clicar `Ver boas-vindas novamente` remove a key, recarrega e faz o onboarding voltar."
+    },
+    {
+      "order": 6,
+      "name": "skip_onboarding",
+      "status": "pass",
+      "assertion": "Clicar `pular` abre o dashboard e volta a gravar a key."
+    }
+  ],
+  "raw_harness_result": {
+    "artifact": "v20r_replay_button_harness_evidence",
+    "status": "pass",
+    "steps": [
+      {
+        "name": "setup",
+        "timestamp": "2026-06-23T02:29:34.590Z",
+        "localStorageValue": null
+      },
+      {
+        "name": "initial_onboarding",
+        "timestamp": "2026-06-23T02:29:35.074Z",
+        "visible": true,
+        "localStorageValue": null
+      },
+      {
+        "name": "complete_onboarding",
+        "timestamp": "2026-06-23T02:29:35.254Z",
+        "dashboardVisible": true,
+        "localStorageValue": "true"
+      },
+      {
+        "name": "reload_persists_dashboard",
+        "timestamp": "2026-06-23T02:29:35.464Z",
+        "dashboardVisible": true,
+        "localStorageValue": "true"
+      },
+      {
+        "name": "replay_button_resolved",
+        "timestamp": "2026-06-23T02:29:35.644Z",
+        "tag": "BUTTON",
+        "text": "Ver boas-vindas novamente"
+      },
+      {
+        "name": "replay_reopens_onboarding",
+        "timestamp": "2026-06-23T02:29:35.864Z",
+        "visible": true,
+        "localStorageValue": null
+      },
+      {
+        "name": "skip_onboarding",
+        "timestamp": "2026-06-23T02:29:36.044Z",
+        "dashboardVisible": true,
+        "localStorageValue": "true"
+      }
+    ],
+    "completed_at": "2026-06-23T02:29:36.044Z"
+  },
+  "validation_commands": [
+    "sha256sum operator_inputs/benchuix/ARIS_Onboarding.html",
+    "python3 scripts/validate_active_context_state.py",
+    "google-chrome --headless=new --disable-gpu --virtual-time-budget=18000 --dump-dom http://127.0.0.1:8125/tmp_v20r_replay_proof.html"
+  ],
+  "evidence_files": [
+    "/tmp/v20r_replay_proof_dump.html",
+    "/tmp/v20r_replay_button_harness_evidence.raw.json"
+  ]
+}
