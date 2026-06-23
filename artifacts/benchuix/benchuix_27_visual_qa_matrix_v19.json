@@ -1,0 +1,120 @@
+{
+  "artifact": "benchuix_27_visual_qa_matrix_v19",
+  "version": "v19",
+  "scope": "local_headless_visual_qa",
+  "evidence": {
+    "runtime_matrix": [
+      "/tmp/v19_validation/dark_320.json",
+      "/tmp/v19_validation/dark_375.json",
+      "/tmp/v19_validation/dark_480.json",
+      "/tmp/v19_validation/dark_768.json",
+      "/tmp/v19_validation/dark_1024.json",
+      "/tmp/v19_validation/light_1024.json"
+    ]
+  },
+  "checks": [
+    {
+      "id": "dark_mode",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_1024.json",
+      "notes": "Tema armazenado como `dark` com carregamento local completo."
+    },
+    {
+      "id": "light_mode",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/light_1024.json",
+      "notes": "Tema armazenado como `light` com carregamento local completo."
+    },
+    {
+      "id": "sidebar_clickability",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Todas as telas principais foram acionadas por clique programatico nos botoes laterais e detectadas corretamente."
+    },
+    {
+      "id": "agenda_dia",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Modo Dia permanece clicavel e sem overflow."
+    },
+    {
+      "id": "agenda_semana",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Modo Semana preserva a leitura compacta dos sete dias e permanece separado do modo Dia."
+    },
+    {
+      "id": "synthetic_closed_unavailable_holiday_day",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Hoje mostra banner de amanha fechado com CTA de replanejamento; Disponibilidade continua navegavel por dia no sandbox sintetico."
+    },
+    {
+      "id": "flow_whatsapp_to_agenda",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Fluxo `WhatsApp ou formulario -> ARIS entende -> sugere -> aguarda confirmacao -> entra na Agenda` visivel na tela Hoje."
+    },
+    {
+      "id": "mobile_320",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "Sem overflow horizontal em 320 px."
+    },
+    {
+      "id": "mobile_375",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_375.json",
+      "notes": "Sem overflow horizontal em 375 px."
+    },
+    {
+      "id": "mobile_480",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_480.json",
+      "notes": "Sem overflow horizontal em 480 px."
+    },
+    {
+      "id": "tablet_768",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_768.json",
+      "notes": "Sem overflow horizontal em 768 px."
+    },
+    {
+      "id": "desktop_1024",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_1024.json",
+      "notes": "Sem overflow horizontal em 1024 px."
+    },
+    {
+      "id": "availability_mobile_day_navigation",
+      "status": "pass",
+      "evidence": "/tmp/v19_validation/dark_320.json",
+      "notes": "O card movel de Disponibilidade muda o dia focal ao clicar em `->`."
+    },
+    {
+      "id": "no_green_palette",
+      "status": "pass",
+      "notes": "Varredura estatica sem token `green` e sem hex verdes comuns no HTML final."
+    },
+    {
+      "id": "no_pure_red_codes",
+      "status": "pass",
+      "notes": "Varredura estatica sem `#ff0000` e sem `#f00`."
+    },
+    {
+      "id": "no_modo_seguro",
+      "status": "pass",
+      "notes": "A expressao `modo seguro` nao aparece no HTML final."
+    },
+    {
+      "id": "no_aris_nao_vai",
+      "status": "pass",
+      "notes": "A frase `ARIS nao vai` ou `ARIS não vai` nao aparece no HTML final."
+    },
+    {
+      "id": "no_pedidos_as_main_area",
+      "status": "pass",
+      "notes": "Nao ha ocorrencia de `Pedidos` no HTML final."
+    }
+  ]
+}

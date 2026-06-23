@@ -1,0 +1,33 @@
+{
+  "artifact": "draft_visual_v19_no_real_execution_attestation",
+  "version": "v19",
+  "scope": "visual_ux_only_candidate_dashboard",
+  "assertions": {
+    "candidate_only": true,
+    "sandbox_only": true,
+    "no_backend_runtime": true,
+    "no_network_or_api_surface": true,
+    "no_external_integrations": true,
+    "no_active_context_mutation": true,
+    "product_authorized": false,
+    "production_authorized": false,
+    "pilot_authorized": false,
+    "bedrock_authorized": false,
+    "real_apply_authorized": false
+  },
+  "not_modified": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ARIS_BOOT.md",
+    "ROADMAP_CANONICAL.md",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "decision locks",
+    "canonical routing",
+    "CRISOL state"
+  ],
+  "notes": [
+    "v19 permanece candidate-only dentro da trilha BenchUIX.",
+    "Toda a validacao foi local, sintetica e sem backend.",
+    "O preview latest foi atualizado apenas como artefato visual do draft v19.",
+    "Nenhuma autorizacao de produto, piloto, producao, Bedrock ou real_apply e implicada por este conjunto."
+  ]
+}
