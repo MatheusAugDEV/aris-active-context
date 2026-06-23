@@ -1,0 +1,79 @@
+{
+  "artifact": "draft_v20_first_access_onboarding_change_log",
+  "version": "v20",
+  "source_reference": "ARIS Onboarding.html",
+  "source_reference_available_locally": false,
+  "source_reference_note": "O prompt indicou `ARIS Onboarding.html` como referencia visual, mas nenhum arquivo com esse nome foi encontrado no attachment local nem no workspace desta rodada. O contrato visual foi extraido do prompt: fundo escuro premium, ARIS centralizado, microcopy curta, CTA Comecar, opcao de pular e transicao direta para o dashboard.",
+  "source_dashboard": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "implemented_changes": [
+    "Adicionada uma camada full-screen de first access com ARIS centralizado, visual escuro premium e microcopy `Automação com segurança, do jeito certo.`.",
+    "Introduzidos os CTAs `Começar` e `pular`, ambos gravando `aris_benchuix_onboarding_seen_v1 = true` antes de liberar o dashboard.",
+    "Abertura do dashboard passou a respeitar a condicao `localStorage[aris_benchuix_onboarding_seen_v1] !== true`.",
+    "Criada em `Meu Negócio` a ação local `Ver boas-vindas novamente`, que limpa a chave e recarrega o preview local para reabrir o first access.",
+    "A infraestrutura anterior de guia/carrossel foi preservada como ajuda local separada do first access."
+  ],
+  "behavior_preserved": [
+    "Tema dark/light com `aris_benchuix_theme`.",
+    "Sidebar clicavel.",
+    "Agenda Dia/Semana.",
+    "Fluxo Rafael refletindo na Agenda.",
+    "Cenarios normal, onboarding, empty e failure.",
+    "Ajuda com busca, filtro e expand/collapse.",
+    "Consistencia entre Hoje e Estimativa.",
+    "Sem overflow horizontal em 320, 375, 480, 768 e 1024 px."
+  ],
+  "storage_key_used": "aris_benchuix_onboarding_seen_v1",
+  "validations_executed": [
+    {
+      "name": "first_access_flow",
+      "status": "pass",
+      "evidence_file": "/tmp/v20_first_access_flow.json",
+      "verified": [
+        "Sem chave local, o onboarding aparece.",
+        "Clicar `Começar` abre o dashboard e grava a chave.",
+        "Reload abre o dashboard direto.",
+        "A ação `Ver boas-vindas novamente` reabre o onboarding e limpa a chave.",
+        "Clicar `pular` abre o dashboard e volta a gravar a chave."
+      ]
+    },
+    {
+      "name": "responsive_dashboard_matrix_after_onboarding",
+      "status": "pass",
+      "evidence_files": [
+        "/tmp/v20_validation/dark_320.json",
+        "/tmp/v20_validation/dark_375.json",
+        "/tmp/v20_validation/dark_480.json",
+        "/tmp/v20_validation/dark_768.json",
+        "/tmp/v20_validation/dark_1024.json",
+        "/tmp/v20_validation/light_1024.json"
+      ]
+    },
+    {
+      "name": "active_context_validator",
+      "status": "pass",
+      "command": "python3 scripts/validate_active_context_state.py"
+    },
+    {
+      "name": "json_parse_validation",
+      "status": "pass",
+      "command": "python3 -m json.tool on new JSON artifacts"
+    },
+    {
+      "name": "byte_equality_v20_latest",
+      "status": "pass",
+      "command": "cmp -s artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20.html artifacts/benchuix/drafts/barbearia_dashboard_latest.html"
+    },
+    {
+      "name": "headless_latest_load",
+      "status": "pass",
+      "command": "google-chrome --headless=new --disable-gpu --virtual-time-budget=12000 --dump-dom latest preview"
+    },
+    {
+      "name": "forbidden_string_scan",
+      "status": "pass",
+      "command": "scan for fetch(, WebSocket, OAuth, billing, payment, accounting, telemetry, modo seguro, ARIS não vai, #ff0000, #f00"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_only": true,
+  "sandbox_only": true,
+  "no_backend_runtime": true,
+  "no_network_or_api_surface": true,
+  "no_external_integrations": true,
+  "no_active_context_mutation": true,
+  "product_authorized": false,
+  "production_authorized": false,
+  "pilot_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_accessed": false
+}

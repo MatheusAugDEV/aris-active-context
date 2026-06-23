@@ -1,0 +1,13 @@
+{
+  "feature_id": "BENCHUIX_FIRST_ACCESS_ONBOARDING",
+  "display_condition": "first_access_only",
+  "storage_key": "aris_benchuix_onboarding_seen_v1",
+  "reset_method": "local_settings_action",
+  "sandbox_only": true,
+  "synthetic_only": true,
+  "backend_required": false,
+  "network_required": false,
+  "product_authorized": false,
+  "real_apply_authorized": false,
+  "bedrock_authorized": false
+}
