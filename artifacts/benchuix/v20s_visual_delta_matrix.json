@@ -1,0 +1,252 @@
+{
+  "background": {
+    "status": "matched",
+    "evidence": "same rgb(5,7,11) source background and full-viewport canvas bounds"
+  },
+  "typography": {
+    "status": "matched",
+    "evidence": "source runtime document is rendered directly inside the dashboard iframe"
+  },
+  "layout": {
+    "status": "matched",
+    "evidence": "nested iframe rect equals viewport and key element rects match source exactly"
+  },
+  "logo_mark": {
+    "status": "matched",
+    "evidence": "no reinterpretation; source runtime surface is reused directly"
+  },
+  "buttons": {
+    "status": "matched",
+    "evidence": "skip, next arrow, progress dots and Começar come from the source DOM"
+  },
+  "copy": {
+    "status": "matched",
+    "evidence": "all onboarding text is sourced from ARIS_Onboarding.html runtime render"
+  },
+  "spacing": {
+    "status": "matched",
+    "evidence": "skip/next/progress/canvas rects match source and dashboard snapshots exactly"
+  },
+  "animation_transition": {
+    "status": "matched",
+    "evidence": "animated source runtime executes unchanged inside the iframe"
+  },
+  "responsive_behavior": {
+    "status": "matched",
+    "evidence": [
+      {
+        "width": 320,
+        "viewport": {
+          "width": 320,
+          "height": 900
+        },
+        "nestedFrameRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 900
+        },
+        "activeScreen": {
+          "index": "0",
+          "label": "01 — Abertura",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 900
+          }
+        },
+        "skipRect": {
+          "x": 251,
+          "y": 60,
+          "width": 49,
+          "height": 38
+        },
+        "nextRect": {
+          "x": 260,
+          "y": 428,
+          "width": 44,
+          "height": 44
+        },
+        "progressRect": {
+          "x": 0,
+          "y": 826,
+          "width": 320,
+          "height": 29
+        }
+      },
+      {
+        "width": 375,
+        "viewport": {
+          "width": 375,
+          "height": 900
+        },
+        "nestedFrameRect": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 900
+        },
+        "activeScreen": {
+          "index": "0",
+          "label": "01 — Abertura",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 375,
+            "height": 900
+          }
+        },
+        "skipRect": {
+          "x": 306,
+          "y": 60,
+          "width": 49,
+          "height": 38
+        },
+        "nextRect": {
+          "x": 315,
+          "y": 428,
+          "width": 44,
+          "height": 44
+        },
+        "progressRect": {
+          "x": 0,
+          "y": 826,
+          "width": 375,
+          "height": 29
+        }
+      },
+      {
+        "width": 480,
+        "viewport": {
+          "width": 480,
+          "height": 900
+        },
+        "nestedFrameRect": {
+          "x": 0,
+          "y": 0,
+          "width": 480,
+          "height": 900
+        },
+        "activeScreen": {
+          "index": "0",
+          "label": "01 — Abertura",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 480,
+            "height": 900
+          }
+        },
+        "skipRect": {
+          "x": 411,
+          "y": 60,
+          "width": 49,
+          "height": 38
+        },
+        "nextRect": {
+          "x": 420,
+          "y": 428,
+          "width": 44,
+          "height": 44
+        },
+        "progressRect": {
+          "x": 0,
+          "y": 826,
+          "width": 480,
+          "height": 29
+        }
+      },
+      {
+        "width": 768,
+        "viewport": {
+          "width": 768,
+          "height": 900
+        },
+        "nestedFrameRect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 900
+        },
+        "activeScreen": {
+          "index": "0",
+          "label": "01 — Abertura",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 900
+          }
+        },
+        "skipRect": {
+          "x": 699,
+          "y": 60,
+          "width": 49,
+          "height": 38
+        },
+        "nextRect": {
+          "x": 708,
+          "y": 428,
+          "width": 44,
+          "height": 44
+        },
+        "progressRect": {
+          "x": 0,
+          "y": 826,
+          "width": 768,
+          "height": 29
+        }
+      },
+      {
+        "width": 1024,
+        "viewport": {
+          "width": 1024,
+          "height": 900
+        },
+        "nestedFrameRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 900
+        },
+        "activeScreen": {
+          "index": "0",
+          "label": "01 — Abertura",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 900
+          }
+        },
+        "skipRect": {
+          "x": 955,
+          "y": 60,
+          "width": 49,
+          "height": 38
+        },
+        "nextRect": {
+          "x": 964,
+          "y": 428,
+          "width": 44,
+          "height": 44
+        },
+        "progressRect": {
+          "x": 0,
+          "y": 826,
+          "width": 1024,
+          "height": 29
+        }
+      }
+    ]
+  },
+  "screenshot_comparison": {
+    "status": "matched",
+    "pixel_matrix": "identical",
+    "source_png_sha256": "bff63ef35248efe61b0be7757850c8a1755e723bea2de90ae3169db3937780b8",
+    "dashboard_png_sha256": "f4d1b144097fb6f804485c3becbc8a94e3bec7e13f4ddb66699b81f537f459e0",
+    "note": "PNG container bytes differ, but decoded pixels are identical."
+  },
+  "final_status": "matched"
+}

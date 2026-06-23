@@ -1,0 +1,207 @@
+[
+  {
+    "width": 320,
+    "viewport": {
+      "width": 320,
+      "height": 900
+    },
+    "nestedFrameRect": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 900
+    },
+    "activeScreen": {
+      "index": "0",
+      "label": "01 — Abertura",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 900
+      }
+    },
+    "skipRect": {
+      "x": 251,
+      "y": 60,
+      "width": 49,
+      "height": 38
+    },
+    "nextRect": {
+      "x": 260,
+      "y": 428,
+      "width": 44,
+      "height": 44
+    },
+    "progressRect": {
+      "x": 0,
+      "y": 826,
+      "width": 320,
+      "height": 29
+    }
+  },
+  {
+    "width": 375,
+    "viewport": {
+      "width": 375,
+      "height": 900
+    },
+    "nestedFrameRect": {
+      "x": 0,
+      "y": 0,
+      "width": 375,
+      "height": 900
+    },
+    "activeScreen": {
+      "index": "0",
+      "label": "01 — Abertura",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 900
+      }
+    },
+    "skipRect": {
+      "x": 306,
+      "y": 60,
+      "width": 49,
+      "height": 38
+    },
+    "nextRect": {
+      "x": 315,
+      "y": 428,
+      "width": 44,
+      "height": 44
+    },
+    "progressRect": {
+      "x": 0,
+      "y": 826,
+      "width": 375,
+      "height": 29
+    }
+  },
+  {
+    "width": 480,
+    "viewport": {
+      "width": 480,
+      "height": 900
+    },
+    "nestedFrameRect": {
+      "x": 0,
+      "y": 0,
+      "width": 480,
+      "height": 900
+    },
+    "activeScreen": {
+      "index": "0",
+      "label": "01 — Abertura",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 480,
+        "height": 900
+      }
+    },
+    "skipRect": {
+      "x": 411,
+      "y": 60,
+      "width": 49,
+      "height": 38
+    },
+    "nextRect": {
+      "x": 420,
+      "y": 428,
+      "width": 44,
+      "height": 44
+    },
+    "progressRect": {
+      "x": 0,
+      "y": 826,
+      "width": 480,
+      "height": 29
+    }
+  },
+  {
+    "width": 768,
+    "viewport": {
+      "width": 768,
+      "height": 900
+    },
+    "nestedFrameRect": {
+      "x": 0,
+      "y": 0,
+      "width": 768,
+      "height": 900
+    },
+    "activeScreen": {
+      "index": "0",
+      "label": "01 — Abertura",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 900
+      }
+    },
+    "skipRect": {
+      "x": 699,
+      "y": 60,
+      "width": 49,
+      "height": 38
+    },
+    "nextRect": {
+      "x": 708,
+      "y": 428,
+      "width": 44,
+      "height": 44
+    },
+    "progressRect": {
+      "x": 0,
+      "y": 826,
+      "width": 768,
+      "height": 29
+    }
+  },
+  {
+    "width": 1024,
+    "viewport": {
+      "width": 1024,
+      "height": 900
+    },
+    "nestedFrameRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 900
+    },
+    "activeScreen": {
+      "index": "0",
+      "label": "01 — Abertura",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 900
+      }
+    },
+    "skipRect": {
+      "x": 955,
+      "y": 60,
+      "width": 49,
+      "height": 38
+    },
+    "nextRect": {
+      "x": 964,
+      "y": 428,
+      "width": 44,
+      "height": 44
+    },
+    "progressRect": {
+      "x": 0,
+      "y": 826,
+      "width": 1024,
+      "height": 29
+    }
+  }
+]

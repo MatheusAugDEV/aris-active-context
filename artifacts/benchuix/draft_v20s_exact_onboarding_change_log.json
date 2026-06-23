@@ -1,0 +1,26 @@
+{
+  "why_v20r_was_invalid": "It was visually aligned to the bundle fallback/thumbnail instead of the rendered runtime onboarding source.",
+  "source_real_rendered": "operator_inputs/benchuix/ARIS_Onboarding.html rendered through Chrome headless CDP until runtime DOM markers were present.",
+  "screenshot_source": "artifacts/benchuix/v20s_source_rendered_screenshot.png",
+  "dom_rendered": "artifacts/benchuix/v20s_source_rendered_dom.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20s.html",
+  "dashboard_latest": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "changes_made": [
+    "Mounted the real onboarding source in the first-access shell through a full-screen iframe.",
+    "Added click bridging for source-native Começar and pular so the dashboard still manages the local onboarding key.",
+    "Kept Meu Negócio > Ver boas-vindas novamente functional by clearing the local key and reloading.",
+    "Captured exact render evidence and flow evidence with a local CDP harness."
+  ],
+  "validations_executed": [
+    "source sha256 verification",
+    "source headless render screenshot/DOM capture",
+    "dashboard headless onboarding screenshot/DOM capture",
+    "source-vs-dashboard structural comparison",
+    "source-vs-dashboard pixel matrix equality check",
+    "first-access harness flow: no key -> complete -> reload -> replay -> skip",
+    "responsive checks at 320/375/480/768/1024",
+    "draft/latest byte equality",
+    "active context validator",
+    "forbidden-string scan"
+  ]
+}

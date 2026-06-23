@@ -1,0 +1,23 @@
+{
+  "candidate_only": true,
+  "sandbox_only": true,
+  "no_backend_runtime": true,
+  "no_network_or_api_surface": true,
+  "no_external_integrations": true,
+  "no_active_context_mutation": true,
+  "product_authorized": false,
+  "production_authorized": false,
+  "pilot_authorized": false,
+  "bedrock_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_accessed": false,
+  "local_artifacts_only": true,
+  "evidence_paths": [
+    "artifacts/benchuix/v20s_source_render_probe.json",
+    "artifacts/benchuix/v20s_source_rendered_dom.html",
+    "artifacts/benchuix/v20s_source_rendered_screenshot.png",
+    "artifacts/benchuix/v20s_dashboard_onboarding_dom.html",
+    "artifacts/benchuix/v20s_dashboard_onboarding_screenshot.png",
+    "artifacts/benchuix/v20s_first_access_flow_harness_evidence.json"
+  ]
+}

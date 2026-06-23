@@ -1,0 +1,54 @@
+{
+  "key": "aris_benchuix_onboarding_seen_v1",
+  "success": true,
+  "steps": [
+    {
+      "name": "no_key_onboarding_visible",
+      "pass": true,
+      "keyValue": null,
+      "activeScreen": {
+        "index": "0",
+        "label": "01 — Abertura",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 2400
+        }
+      }
+    },
+    {
+      "name": "complete_sets_key_and_enters_dashboard",
+      "pass": true,
+      "keyValue": "true",
+      "dashboardTextExcerpt": "✂\nBarbearia do Téo\nbarbearia\nHoje\nAgenda\nDisponibilidade\nAtendimento\n3\nAprovações\n1\nEstimativa do dia\nMeu Negócio\nAjuda\nARIS\npainel local\nHoje\nquarta, 17 de junho\nsandbox sintético\nOperação base\nPRÓXIMA MELHOR AÇÃO\nExiste fila de exceções aberta. Decida primeiro o que ainda pode virar agenda confirm"
+    },
+    {
+      "name": "reload_skips_onboarding",
+      "pass": true,
+      "keyValue": "true",
+      "dashboardTextExcerpt": "✂\nBarbearia do Téo\nbarbearia\nHoje\nAgenda\nDisponibilidade\nAtendimento\n3\nAprovações\n1\nEstimativa do dia\nMeu Negócio\nAjuda\nARIS\npainel local\nHoje\nquarta, 17 de junho\nsandbox sintético\nOperação base\nPRÓXIMA MELHOR AÇÃO\nExiste fila de exceções aberta. Decida primeiro o que ainda pode virar agenda confirm"
+    },
+    {
+      "name": "replay_clears_key_and_reloads",
+      "pass": true,
+      "keyValue": null,
+      "activeScreen": {
+        "index": "0",
+        "label": "01 — Abertura",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 2400
+        }
+      }
+    },
+    {
+      "name": "skip_sets_key_and_enters_dashboard",
+      "pass": true,
+      "keyValue": "true",
+      "dashboardTextExcerpt": "✂\nBarbearia do Téo\nbarbearia\nHoje\nAgenda\nDisponibilidade\nAtendimento\n3\nAprovações\n1\nEstimativa do dia\nMeu Negócio\nAjuda\nARIS\npainel local\nHoje\nquarta, 17 de junho\nsandbox sintético\nOperação base\nPRÓXIMA MELHOR AÇÃO\nExiste fila de exceções aberta. Decida primeiro o que ainda pode virar agenda confirm"
+    }
+  ]
+}

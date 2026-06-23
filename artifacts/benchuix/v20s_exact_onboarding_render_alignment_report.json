@@ -1,0 +1,127 @@
+{
+  "source_path": "operator_inputs/benchuix/ARIS_Onboarding.html",
+  "source_sha256": "3943704aec7e919ad93ecc9888afc09037ea523666aa2637f81069119318253f",
+  "source_render_success": true,
+  "source_render_method": "Chrome headless via CDP local session; runtime DOM and screenshot captured after rendered source markers became available.",
+  "source_render_wait_condition": "[data-screen] count == 5 and button count >= 6 with __bundler_loading absent/hidden.",
+  "screenshot_path": "artifacts/benchuix/v20s_source_rendered_screenshot.png",
+  "dashboard_screenshot_path": "artifacts/benchuix/v20s_dashboard_onboarding_screenshot.png",
+  "rendered_dom_path": "artifacts/benchuix/v20s_source_rendered_dom.html",
+  "dashboard_rendered_dom_path": "artifacts/benchuix/v20s_dashboard_onboarding_dom.html",
+  "previous_v20r_invalid_reason": "v20r matched the bundle fallback/thumbnail splash (ARIS centralizado + três pontos) instead of the real rendered source runtime.",
+  "exact_visual_contract_from_rendered_source": "The first-access surface now renders the real operator source document inside a full-viewport iframe with zero shell padding, preserving the source layout, typography, copy, controls, animation timing and multi-step structure instead of reimplementing it.",
+  "differences_found_against_v20r": [
+    "v20r showed a minimal static splash; the real source opens on a dark animated stage with skip, next arrow and bottom progress rail.",
+    "v20r collapsed the multi-step onboarding into a single interpreted screen; the source contains five runtime screens plus entry CTA.",
+    "v20r typography, spacing and control placement diverged from the source render."
+  ],
+  "changes_applied": [
+    "Replaced the sandbox first-access visual with a full-screen iframe pointed at /operator_inputs/benchuix/ARIS_Onboarding.html.",
+    "Removed shell padding/background differences so the nested source occupies the full viewport.",
+    "Bridged source clicks for Começar and pular to the existing localStorage-driven dashboard onboarding state.",
+    "Preserved replay behavior from Meu Negócio by clearing the key and reloading the page.",
+    "Added local CDP harness artifacts to capture source render, dashboard render, replay proof and responsive evidence."
+  ],
+  "remaining_visual_delta": {
+    "rendered_pixels": "none",
+    "png_file_bytes": "source and dashboard screenshots serialize to different PNG byte streams, but the decoded pixel matrix is identical.",
+    "structural_match": {
+      "sourceViewport": {
+        "width": 1440,
+        "height": 2400
+      },
+      "dashboardViewport": {
+        "width": 1440,
+        "height": 2400
+      },
+      "nestedFrameRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 2400
+      },
+      "screenCountMatched": true,
+      "activeScreenMatched": true,
+      "backgroundMatched": true,
+      "textPresenceMatched": true,
+      "rects": {
+        "skip": {
+          "matched": true,
+          "left": {
+            "x": 1371,
+            "y": 60,
+            "width": 49,
+            "height": 38
+          },
+          "right": {
+            "x": 1371,
+            "y": 60,
+            "width": 49,
+            "height": 38
+          }
+        },
+        "next": {
+          "matched": true,
+          "left": {
+            "x": 1380,
+            "y": 1178,
+            "width": 44,
+            "height": 44
+          },
+          "right": {
+            "x": 1380,
+            "y": 1178,
+            "width": 44,
+            "height": 44
+          }
+        },
+        "progress": {
+          "matched": true,
+          "left": {
+            "x": 0,
+            "y": 2319,
+            "width": 1440,
+            "height": 29
+          },
+          "right": {
+            "x": 0,
+            "y": 2319,
+            "width": 1440,
+            "height": 29
+          }
+        },
+        "canvas": {
+          "matched": true,
+          "left": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 2400
+          },
+          "right": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 2400
+          }
+        }
+      }
+    }
+  },
+  "validation_summary": {
+    "first_access_flow_success": true,
+    "responsive_widths": [
+      320,
+      375,
+      480,
+      768,
+      1024
+    ],
+    "draft_latest_byte_identical": true,
+    "source_png_sha256": "bff63ef35248efe61b0be7757850c8a1755e723bea2de90ae3169db3937780b8",
+    "dashboard_png_sha256": "f4d1b144097fb6f804485c3becbc8a94e3bec7e13f4ddb66699b81f537f459e0",
+    "draft_sha256": "0268f81b4fa201227cc8226f25bdb48cd2d72ec0882246343c56b7b0448828e0",
+    "latest_sha256": "0268f81b4fa201227cc8226f25bdb48cd2d72ec0882246343c56b7b0448828e0"
+  },
+  "verdict": "PASS"
+}

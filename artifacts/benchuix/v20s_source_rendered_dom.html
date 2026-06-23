@@ -1,0 +1,1174 @@
+<html><head><style>
+    .sc-placeholder{background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:rgba(0,0,0,.7);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:rgba(0,0,0,.5);background:rgba(0,0,0,.05);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style><script>window.__resources = {};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="blob:http://127.0.0.1:8125/d2df80b7-249b-4156-8cef-f99ac21acf8d"></script>
+<style>x-dc{display:none!important}</style><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script><style></style><style>html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}</style><link rel="preconnect" href="https://fonts.googleapis.com" data-dc-tpl="1"><link rel="preconnect" href="https://fonts.gstatic.com" data-dc-tpl="2"><style data-dc-tpl="3">/* thai */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/9a3f4770-fc89-4c09-a65f-9f84f5f89d78") format('woff2');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/5eab7674-c6bb-40df-b24c-e8c2de2e5338") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/30aa9d26-cba8-4980-a787-412f5b069415") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/e3b92c88-0f74-48f5-9e61-e65b4c51d1d6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* thai */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/b40fab2e-91fd-49ed-a12f-d06c8fa2ef17") format('woff2');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/b0997daf-aa1c-44e8-aedc-06f6b841fc1b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/73dd75e3-4601-44eb-8811-e874e958d7f4") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Charm';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/a132a3cd-2717-40f4-b9ce-cbeccdfe9d7a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/ec5fb55d-52c2-4b41-a341-076cb8eb2318") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/1cc0c2e9-da6d-41c0-ae85-e6c70ff94e75") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/bbc32cb6-1642-48ae-8025-b72937e7624c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/a46fe8a8-aaed-47dc-8de9-064675a5ef24") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/a4cf9416-1b5a-4f9b-9a92-ebd16c236191") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/4e2e84d1-1607-43dc-83b8-dac8b2f1cccb") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/95d399ff-38d3-4693-97c6-3c6df2550fe1") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/560aba4f-8a85-4d30-8094-a58e6f1dff08") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Crimson Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/28d6eed7-e860-488f-bb95-08d0c3494bc8") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/6a3df898-adcf-4842-a48b-8314f8aff199") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/3650dd27-499e-4276-b804-8535384a4caa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/6a3df898-adcf-4842-a48b-8314f8aff199") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/3650dd27-499e-4276-b804-8535384a4caa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/6a3df898-adcf-4842-a48b-8314f8aff199") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/3650dd27-499e-4276-b804-8535384a4caa") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/034a27b0-e855-4984-b2e5-c18035d181ef") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/2842cce1-de73-4b36-bf19-7adce616ddba") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/f7300980-7be3-40b9-8554-dbcb282311c1") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/02fdb219-4443-4a3c-9ffa-9c3890052b6d") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/aacbed86-0fde-4929-bbd4-4f851916cbbe") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/45345360-4e95-48aa-b3c8-c5ed4af32f42") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/ad86e5af-3869-4729-9102-ec1c35e4b646") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7082911e-cf1d-4772-87a9-9bdbd951dfb5") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/429e09ab-5fa2-45e6-a39c-a38c5414c77d") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/eaff608e-c8a9-4cb9-a9c6-7c1494dff99f") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/0cd76844-fc34-48b7-95fe-74e8091a7f3d") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/25d19f6f-ccd8-4958-91e9-2a708beb89f8") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7cdff954-a707-4bc4-8755-318b0cdef1b9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/064ef0d6-9aab-4afb-8427-7f667ebdf4c5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7082911e-cf1d-4772-87a9-9bdbd951dfb5") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/429e09ab-5fa2-45e6-a39c-a38c5414c77d") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/eaff608e-c8a9-4cb9-a9c6-7c1494dff99f") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/0cd76844-fc34-48b7-95fe-74e8091a7f3d") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/25d19f6f-ccd8-4958-91e9-2a708beb89f8") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7cdff954-a707-4bc4-8755-318b0cdef1b9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/064ef0d6-9aab-4afb-8427-7f667ebdf4c5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7082911e-cf1d-4772-87a9-9bdbd951dfb5") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/429e09ab-5fa2-45e6-a39c-a38c5414c77d") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/eaff608e-c8a9-4cb9-a9c6-7c1494dff99f") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/0cd76844-fc34-48b7-95fe-74e8091a7f3d") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/25d19f6f-ccd8-4958-91e9-2a708beb89f8") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7cdff954-a707-4bc4-8755-318b0cdef1b9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/064ef0d6-9aab-4afb-8427-7f667ebdf4c5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7082911e-cf1d-4772-87a9-9bdbd951dfb5") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/429e09ab-5fa2-45e6-a39c-a38c5414c77d") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/eaff608e-c8a9-4cb9-a9c6-7c1494dff99f") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/0cd76844-fc34-48b7-95fe-74e8091a7f3d") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/25d19f6f-ccd8-4958-91e9-2a708beb89f8") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/7cdff954-a707-4bc4-8755-318b0cdef1b9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://127.0.0.1:8125/064ef0d6-9aab-4afb-8427-7f667ebdf4c5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="4">
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #05070b;
+    }
+    *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-7px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-anim-float] { animation: none !important; }
+    }
+  </style></head>
+<body>
+
+<div id="dc-root"><div class="sc-host" data-sc-name="ARIS_Onboarding"><div data-dc-tpl="5" style="position: fixed; inset: 0px; overflow: hidden; background: rgb(5, 7, 11);">
+
+  
+  <div data-dc-tpl="6" data-screen="0" data-screen-label="01 — Abertura" style="position: absolute; inset: 0px; transform: translateX(0px); opacity: 1; pointer-events: auto;">
+    <canvas data-dc-tpl="7" width="1440" height="2400" style="position: absolute; inset: 0px; width: 100%; height: 100%; display: block;"></canvas>
+    
+    <div data-dc-tpl="8" style="position: absolute; top: calc(50% + 78px); left: 0px; right: 0px; text-align: center; padding-left: 32px; padding-right: 32px; pointer-events: none; opacity: 0; transition: opacity 0.9s;">
+      <p data-dc-tpl="9" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(126, 144, 168); margin: 0px; line-height: 1.85;">Inteligência que trabalha<br data-dc-tpl="10">pelo seu negócio</p>
+    </div>
+  </div>
+
+  
+  <div data-dc-tpl="11" data-screen="1" data-screen-label="02 — A IA sugere" style="position: absolute; inset: 0px; display: flex; align-items: center; justify-content: center; padding: 0px clamp(24px, 8vw, 64px); transform: translateX(24px); opacity: 0; pointer-events: none;">
+    <div data-dc-tpl="12" style="width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+      <div data-dc-tpl="13" data-anim-icon="" style="margin-bottom: 52px;">
+        <svg data-dc-tpl="14" data-anim-float="" width="54" height="54" viewBox="0 0 54 54" fill="none" style="display: block; animation: 3.2s ease-in-out 0s infinite normal none running floatY;">
+          <circle data-dc-tpl="15" cx="9" cy="27" r="4.5" stroke="#6fa8e8" strokewidth="1.6"></circle>
+          <line data-dc-tpl="16" x1="13.5" y1="27" x2="21" y2="27" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round"></line>
+          <circle data-dc-tpl="17" cx="27" cy="27" r="4" stroke="#6fa8e8" strokewidth="1.6"></circle>
+          <line data-dc-tpl="18" x1="30.8" y1="23.4" x2="40" y2="13" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round"></line>
+          <circle data-dc-tpl="19" cx="44" cy="10" r="4" stroke="#6fa8e8" strokewidth="1.6"></circle>
+          <line data-dc-tpl="20" x1="30.8" y1="30.6" x2="40" y2="41" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round"></line>
+          <circle data-dc-tpl="21" cx="44" cy="44" r="4" stroke="#6fa8e8" strokewidth="1.6"></circle>
+        </svg>
+      </div>
+
+      <div data-dc-tpl="22" data-anim-text="">
+        <h2 data-dc-tpl="23" style="font-family: &quot;Crimson Text&quot;, serif; font-weight: 600; font-size: 42px; line-height: 1.2; color: rgb(232, 234, 240); margin: 0px 0px 20px; letter-spacing: -0.3px;">A IA sugere</h2>
+        <p data-dc-tpl="24" style="font-family: Lora, serif; font-weight: 400; font-size: clamp(15px, 4.2vw, 18px); line-height: 1.78; color: rgb(94, 111, 133); margin: 0px auto; max-width: 300px;">Toda ação começa como uma sugestão, nunca como algo já feito.</p>
+
+        
+        <div data-dc-tpl="25" aria-hidden="true" style="margin-top: 44px; width: 248px; display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1px solid rgba(111, 168, 232, 0.2); border-radius: 11px; background: rgba(111, 168, 232, 0.043); opacity: 0.55; margin-left: auto; margin-right: auto;">
+          <svg data-dc-tpl="26" width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;">
+            <circle data-dc-tpl="27" cx="12" cy="12" r="9" stroke="#6fa8e8" strokewidth="1.6"></circle>
+            <path data-dc-tpl="28" d="M12 7.5 L12 12 L15 14" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round" strokelinejoin="round"></path>
+          </svg>
+          <span data-dc-tpl="29" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 13px; color: rgb(126, 144, 168); letter-spacing: 0.01em;">Sugestão aguardando revisão</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div data-dc-tpl="30" data-screen="2" data-screen-label="03 — Você está no controle" style="position: absolute; inset: 0px; display: flex; align-items: center; justify-content: center; padding: 0px clamp(24px, 8vw, 64px); transform: translateX(24px); opacity: 0; pointer-events: none;">
+    <div data-dc-tpl="31" style="width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+      <div data-dc-tpl="32" data-anim-icon="" style="margin-bottom: 52px;">
+        <svg data-dc-tpl="33" data-anim-float="" width="54" height="54" viewBox="0 0 54 54" fill="none" style="display: block; animation: 3.2s ease-in-out 0.5s infinite normal none running floatY;">
+          <path data-dc-tpl="34" d="M27 5 L45 14 L45 28 C45 40 27 49 27 49 C27 49 9 40 9 28 L9 14 Z" stroke="#6fa8e8" strokewidth="1.6" strokelinejoin="round"></path>
+          <rect data-dc-tpl="35" x="18.5" y="30" width="17" height="12" rx="3" stroke="#6fa8e8" strokewidth="1.6"></rect>
+          <path data-dc-tpl="36" d="M22 30 L22 24 C22 20 32 20 32 24 L32 30" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round"></path>
+          <circle data-dc-tpl="37" cx="27" cy="36" r="2" fill="#6fa8e8"></circle>
+        </svg>
+      </div>
+
+      <div data-dc-tpl="38" data-anim-text="">
+        <h2 data-dc-tpl="39" style="font-family: &quot;Crimson Text&quot;, serif; font-weight: 600; font-size: 42px; line-height: 1.2; color: rgb(232, 234, 240); margin: 0px 0px 20px; letter-spacing: -0.3px;">Você está no controle</h2>
+        <p data-dc-tpl="40" style="font-family: Lora, serif; font-weight: 400; font-size: clamp(15px, 4.2vw, 18px); line-height: 1.78; color: rgb(94, 111, 133); margin: 0px auto; max-width: 300px;">Nada é executado sem regras claras de aprovação. Você decide o que acontece.</p>
+
+        
+        <div data-dc-tpl="41" aria-hidden="true" style="margin-top: 44px; display: flex; gap: 12px; justify-content: center; opacity: 0.55;">
+          <div data-dc-tpl="42" style="display: flex; align-items: center; gap: 7px; padding: 11px 20px; border-radius: 10px; background: rgba(111, 168, 232, 0.14); border: 1px solid rgba(111, 168, 232, 0.3);">
+            <svg data-dc-tpl="43" width="15" height="15" viewBox="0 0 24 24" fill="none"><path data-dc-tpl="44" d="M5 12.5 L10 17 L19 7" stroke="#6fa8e8" strokewidth="2" strokelinecap="round" strokelinejoin="round"></path></svg>
+            <span data-dc-tpl="45" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 500; font-size: 13px; color: rgb(156, 192, 236);">Aprovar</span>
+          </div>
+          <div data-dc-tpl="46" style="display: flex; align-items: center; gap: 7px; padding: 11px 20px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.12);">
+            <svg data-dc-tpl="47" width="15" height="15" viewBox="0 0 24 24" fill="none"><path data-dc-tpl="48" d="M6 6 L18 18 M18 6 L6 18" stroke="#6b7688" strokewidth="2" strokelinecap="round"></path></svg>
+            <span data-dc-tpl="49" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 500; font-size: 13px; color: rgb(107, 118, 136);">Recusar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div data-dc-tpl="50" data-screen="3" data-screen-label="04 — Tudo fica registrado" style="position: absolute; inset: 0px; display: flex; align-items: center; justify-content: center; padding: 0px clamp(24px, 8vw, 64px); transform: translateX(24px); opacity: 0; pointer-events: none;">
+    <div data-dc-tpl="51" style="width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+      <div data-dc-tpl="52" data-anim-icon="" style="margin-bottom: 52px;">
+        <svg data-dc-tpl="53" data-anim-float="" width="54" height="54" viewBox="0 0 54 54" fill="none" style="display: block; animation: 3.2s ease-in-out 1s infinite normal none running floatY;">
+          <path data-dc-tpl="54" d="M27 9 L45 19 L27 29 L9 19 Z" stroke="#6fa8e8" strokewidth="1.6" strokelinejoin="round"></path>
+          <path data-dc-tpl="55" d="M9 19 L9 29 L27 39 L45 29 L45 19" stroke="#6fa8e8" strokewidth="1.6" strokelinejoin="round"></path>
+          <path data-dc-tpl="56" d="M9 29 L9 39 L27 49 L45 39 L45 29" stroke="#6fa8e8" strokewidth="1.6" strokelinejoin="round"></path>
+        </svg>
+      </div>
+
+      <div data-dc-tpl="57" data-anim-text="">
+        <h2 data-dc-tpl="58" style="font-family: &quot;Crimson Text&quot;, serif; font-weight: 600; font-size: 42px; line-height: 1.2; color: rgb(232, 234, 240); margin: 0px 0px 20px; letter-spacing: -0.3px;">Tudo fica registrado</h2>
+        <p data-dc-tpl="59" style="font-family: Lora, serif; font-weight: 400; font-size: clamp(15px, 4.2vw, 18px); line-height: 1.78; color: rgb(94, 111, 133); margin: 0px auto; max-width: 300px;">Cada ação é guardada, rastreável e pode ser desfeita se precisar.</p>
+
+        
+        <div data-dc-tpl="60" aria-hidden="true" style="margin-top: 42px; width: 252px; display: flex; flex-direction: column; gap: 11px; opacity: 0.5; margin-left: auto; margin-right: auto;">
+          <div data-dc-tpl="61" style="display: flex; align-items: center; gap: 11px;">
+            <svg data-dc-tpl="62" width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><circle data-dc-tpl="63" cx="12" cy="12" r="9" stroke="#6fa8e8" strokewidth="1.5"></circle><path data-dc-tpl="64" d="M8 12 L11 15 L16 9" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round" strokelinejoin="round"></path></svg>
+            <span data-dc-tpl="65" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 13px; color: rgb(126, 144, 168);">Agendamento confirmado</span>
+          </div>
+          <div data-dc-tpl="66" style="display: flex; align-items: center; gap: 11px;">
+            <svg data-dc-tpl="67" width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><circle data-dc-tpl="68" cx="12" cy="12" r="9" stroke="#6fa8e8" strokewidth="1.5"></circle><path data-dc-tpl="69" d="M8 12 L11 15 L16 9" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round" strokelinejoin="round"></path></svg>
+            <span data-dc-tpl="70" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 13px; color: rgb(126, 144, 168);">Mensagem enviada ao cliente</span>
+          </div>
+          <div data-dc-tpl="71" style="display: flex; align-items: center; gap: 11px;">
+            <svg data-dc-tpl="72" width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><circle data-dc-tpl="73" cx="12" cy="12" r="9" stroke="#6fa8e8" strokewidth="1.5"></circle><path data-dc-tpl="74" d="M8 12 L11 15 L16 9" stroke="#6fa8e8" strokewidth="1.6" strokelinecap="round" strokelinejoin="round"></path></svg>
+            <span data-dc-tpl="75" style="font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 13px; color: rgb(126, 144, 168);">Pagamento registrado</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div data-dc-tpl="76" data-screen="4" data-screen-label="05 — Entrar" style="position: absolute; inset: 0px; display: flex; align-items: center; justify-content: center; padding: 0px clamp(24px, 8vw, 64px); transform: translateX(24px); opacity: 0; pointer-events: none;">
+    <div data-dc-tpl="77" style="width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
+      <div data-dc-tpl="78" data-anim-icon="" style="margin-bottom: 32px;">
+        <svg data-dc-tpl="79" data-anim-float="" width="40" height="40" viewBox="0 0 54 54" fill="none" style="display: block; animation: 3.2s ease-in-out 0s infinite normal none running floatY;">
+          <path data-dc-tpl="80" d="M27 5 L45 14 L45 28 C45 40 27 49 27 49 C27 49 9 40 9 28 L9 14 Z" stroke="#6fa8e8" strokewidth="1.6" strokelinejoin="round"></path>
+          <path data-dc-tpl="81" d="M19 27 L25 33 L36 21" stroke="#6fa8e8" strokewidth="1.8" strokelinecap="round" strokelinejoin="round"></path>
+        </svg>
+      </div>
+
+      <div data-dc-tpl="82" data-anim-text="" style="display: flex; flex-direction: column; align-items: center;">
+        <p data-dc-tpl="83" style="font-family: Lora, serif; font-weight: 400; font-style: italic; font-size: clamp(14px, 3.8vw, 16px); color: rgb(126, 144, 168); letter-spacing: 0.03em; margin: 0px 0px 56px;">Automação com segurança, do jeito certo.</p>
+        <button data-dc-tpl="84" class="scp0 scp1" style="width: clamp(240px, 80vw, 320px); height: 56px; background: rgb(26, 74, 138); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 12px; font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 500; font-size: 16px; color: rgb(232, 234, 240); cursor: pointer; letter-spacing: 0.03em; transition: background 0.2s, transform 0.15s;"><span class="sc-interp">Começar</span></button>
+      </div>
+
+    </div>
+  </div>
+
+  
+
+  
+  
+    <button data-dc-tpl="86" class="scp2" style="position: absolute; top: clamp(44px, 7vh, 60px); right: 20px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; font-family: &quot;DM Sans&quot;, sans-serif; font-weight: 400; font-size: 14px; color: rgba(255, 255, 255, 0.24); cursor: pointer; padding: 10px 8px; z-index: 40; transition: color 0.3s;">pular</button>
+  
+
+  
+  
+
+  
+  
+    <button data-dc-tpl="92" class="scp3 scp4" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; z-index: 40; color: rgb(232, 234, 240); display: flex; align-items: center; justify-content: center; transition: color 0.25s;">
+      <svg data-dc-tpl="93" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path data-dc-tpl="94" d="M8 4 L14 10 L8 16" stroke="currentColor" strokewidth="2" strokelinecap="round" strokelinejoin="round"></path>
+      </svg>
+    </button>
+  
+
+  
+  <div data-dc-tpl="95" style="position: absolute; bottom: clamp(28px, 5vh, 52px); left: 0px; right: 0px; display: flex; gap: 8px; justify-content: center; align-items: center; z-index: 40;">
+    <button data-dc-tpl="96" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; padding: 12px 4px; display: flex; align-items: center; justify-content: center;">
+      <div data-dc-tpl="97" style="height: 5px; width: 22px; background: rgb(111, 168, 232); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s;"></div>
+    </button>
+    <button data-dc-tpl="98" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; padding: 12px 4px; display: flex; align-items: center; justify-content: center;">
+      <div data-dc-tpl="99" style="height: 5px; width: 6px; background: rgba(255, 255, 255, 0.2); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s;"></div>
+    </button>
+    <button data-dc-tpl="100" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; padding: 12px 4px; display: flex; align-items: center; justify-content: center;">
+      <div data-dc-tpl="101" style="height: 5px; width: 6px; background: rgba(255, 255, 255, 0.2); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s;"></div>
+    </button>
+    <button data-dc-tpl="102" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; padding: 12px 4px; display: flex; align-items: center; justify-content: center;">
+      <div data-dc-tpl="103" style="height: 5px; width: 6px; background: rgba(255, 255, 255, 0.2); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s;"></div>
+    </button>
+    <button data-dc-tpl="104" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; padding: 12px 4px; display: flex; align-items: center; justify-content: center;">
+      <div data-dc-tpl="105" style="height: 5px; width: 6px; background: rgba(255, 255, 255, 0.2); border-radius: 3px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s;"></div>
+    </button>
+  </div></div></div></div>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = { currentScreen: 0, taglineVisible: false, animDone: false, entered: false };
+
+  canvasRef    = React.createRef();
+  containerRef = React.createRef();
+
+  _transitioning  = false;
+  _particlesDone  = false;
+  _rafId          = null;
+  _touchStartX    = 0;
+  _touchStartY    = 0;
+  _cleanupFns     = [];
+
+  // ─────────────────────────────────────────────────────────
+  // Lifecycle
+  // ─────────────────────────────────────────────────────────
+
+  componentDidMount() {
+    this._initScreens();
+    this._initCanvas();
+    this._initTouch();
+
+    const onKey = (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') this.navigate(1);
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   this.navigate(-1);
+    };
+    window.addEventListener('keydown', onKey);
+    this._cleanupFns.push(() => window.removeEventListener('keydown', onKey));
+  }
+
+  componentWillUnmount() {
+    if (this._rafId) cancelAnimationFrame(this._rafId);
+    this._cleanupFns.forEach(fn => fn());
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // Screen init
+  // ─────────────────────────────────────────────────────────
+
+  _initScreens() {
+    const c = this.containerRef.current;
+    if (!c) return;
+    c.querySelectorAll('[data-screen]').forEach((s, i) => {
+      s.style.transform    = 'translateX(0)';
+      s.style.opacity      = i === 0 ? '1' : '0';
+      s.style.pointerEvents = i === 0 ? 'auto' : 'none';
+      if (i > 0) s.style.transform = 'translateX(24px)';
+    });
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // Navigation
+  // ─────────────────────────────────────────────────────────
+
+  navigate(dir) {
+    if (this.state.currentScreen === 0 && !this._particlesDone) this._finishAnim();
+    const { currentScreen } = this.state;
+    const next = currentScreen + dir;
+    if (next < 0 || next > 4 || this._transitioning) return;
+    this._doTransition(currentScreen, next, dir > 0 ? 1 : -1);
+  }
+
+  jumpTo(idx) {
+    if (this._transitioning) return;
+    const { currentScreen } = this.state;
+    if (idx === currentScreen) return;
+    if (currentScreen === 0 && !this._particlesDone && idx > 0) this._finishAnim();
+    this._doTransition(currentScreen, idx, idx > currentScreen ? 1 : -1);
+  }
+
+  _doTransition(from, to, dir) {
+    this._transitioning = true;
+    this.setState({ currentScreen: to });
+
+    const c   = this.containerRef.current;
+    const all = [...c.querySelectorAll('[data-screen]')];
+    const out = all[from];
+    const inn = all[to];
+
+    // Park off-screen
+    all.forEach((s, i) => {
+      if (i !== from && i !== to) {
+        s.style.transition    = 'none';
+        s.style.opacity       = '0';
+        s.style.transform     = `translateX(${i < from ? '-24px' : '24px'})`;
+        s.style.pointerEvents = 'none';
+      }
+    });
+
+    // Reset outgoing stagger elements so they don't hold stale transforms
+    this._resetStagger(out);
+
+    // Place incoming off-screen
+    inn.style.transition  = 'none';
+    inn.style.opacity     = '0';
+    inn.style.transform   = `translateX(${dir > 0 ? '24px' : '-24px'})`;
+    inn.style.pointerEvents = 'none';
+
+    void inn.getBoundingClientRect(); // flush
+
+    const DUR  = 460;
+    const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const FADE = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+    // Slide out
+    out.style.transition = `transform ${DUR}ms ${EASE}, opacity ${Math.round(DUR * 0.55)}ms ${FADE}`;
+    out.style.transform  = `translateX(${dir > 0 ? '-24px' : '24px'})`;
+    out.style.opacity    = '0';
+
+    // Slide in
+    inn.style.transition = `transform ${DUR}ms ${EASE}, opacity ${Math.round(DUR * 0.65)}ms ${FADE}`;
+    inn.style.transform  = 'translateX(0)';
+    inn.style.opacity    = '1';
+
+    // Stagger icon → text
+    this._triggerStagger(inn);
+
+    setTimeout(() => {
+      out.style.transition    = 'none';
+      out.style.pointerEvents = 'none';
+      inn.style.pointerEvents = 'auto';
+      this._transitioning     = false;
+    }, DUR + 80);
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // Stagger helpers
+  // ─────────────────────────────────────────────────────────
+
+  _resetStagger(screen) {
+    const icon = screen.querySelector('[data-anim-icon]');
+    const text = screen.querySelector('[data-anim-text]');
+    if (icon) { icon.style.transition = 'none'; icon.style.transform = ''; icon.style.opacity = ''; }
+    if (text) { text.style.transition = 'none'; text.style.transform = ''; text.style.opacity = ''; }
+  }
+
+  _triggerStagger(screen) {
+    const icon = screen.querySelector('[data-anim-icon]');
+    const text = screen.querySelector('[data-anim-text]');
+    const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+    const animEl = (el, delay) => {
+      if (!el) return;
+      el.style.transition = 'none';
+      el.style.transform  = 'translateY(18px)';
+      void el.getBoundingClientRect();
+      const run = () => {
+        el.style.transition = `transform 0.52s ${EASE}`;
+        el.style.transform  = 'translateY(0)';
+      };
+      delay ? setTimeout(run, delay) : run();
+    };
+
+    animEl(icon, 0);
+    animEl(text, 96);
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // Touch
+  // ─────────────────────────────────────────────────────────
+
+  _initTouch() {
+    const c = this.containerRef.current;
+    if (!c) return;
+    const onStart = (e) => {
+      this._touchStartX = e.touches[0].clientX;
+      this._touchStartY = e.touches[0].clientY;
+    };
+    const onEnd = (e) => {
+      const dx = e.changedTouches[0].clientX - this._touchStartX;
+      const dy = Math.abs(e.changedTouches[0].clientY - this._touchStartY);
+      if (Math.abs(dx) > 40 && dy < 80) this.navigate(dx < 0 ? 1 : -1);
+    };
+    c.addEventListener('touchstart', onStart, { passive: true });
+    c.addEventListener('touchend',   onEnd,   { passive: true });
+    this._cleanupFns.push(() => {
+      c.removeEventListener('touchstart', onStart);
+      c.removeEventListener('touchend',   onEnd);
+    });
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // Canvas / Particles
+  // ─────────────────────────────────────────────────────────
+
+  _initCanvas() {
+    const tryStart = () => {
+      const canvas = this.canvasRef.current;
+      if (!canvas) { setTimeout(tryStart, 100); return; }
+
+      // Measure actual rendered size after layout
+      setTimeout(() => {
+        const r = canvas.getBoundingClientRect();
+        const W = Math.round(r.width)  || window.innerWidth;
+        const H = Math.round(r.height) || window.innerHeight;
+        canvas.width  = W;
+        canvas.height = H;
+
+        canvas.addEventListener('click', () => {
+          if (this._particlesDone) this.navigate(1);
+        });
+
+        const run = () => this._runParticles(W, H);
+        (document.fonts && document.fonts.ready)
+          ? document.fonts.ready.then(run)
+          : setTimeout(run, 700);
+      }, 80);
+    };
+    tryStart();
+  }
+
+  _finishAnim() {
+    if (this._rafId) { cancelAnimationFrame(this._rafId); this._rafId = null; }
+    const canvas = this.canvasRef.current;
+    if (canvas) {
+      const W = canvas.width, H = canvas.height;
+      const ctx = canvas.getContext('2d');
+      const fs  = this._fontSize(W);
+      ctx.clearRect(0, 0, W, H);
+      ctx.globalAlpha = 1;
+      ctx.fillStyle   = '#e8eaf0';
+      ctx.font        = `700 ${fs}px Charm`;
+      ctx.textAlign   = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('ARIS', W / 2, H / 2);
+    }
+    this._particlesDone = true;
+    this.setState({ animDone: true, taglineVisible: true });
+  }
+
+  _fontSize(W) {
+    return Math.min(Math.max(Math.round(W * 0.22), 72), 108);
+  }
+
+  _runParticles(W, H) {
+    const canvas = this.canvasRef.current;
+    if (!canvas) return;
+    const ctx  = canvas.getContext('2d');
+    const CX   = W / 2;
+    const CY   = H / 2;
+    const FS   = this._fontSize(W);
+
+    // Sample letter pixels from an offscreen canvas
+    const off  = document.createElement('canvas');
+    off.width  = W; off.height = H;
+    const oc   = off.getContext('2d');
+    oc.fillStyle = '#fff';
+    oc.font      = `700 ${FS}px Charm`;
+    oc.textAlign = 'center';
+    oc.textBaseline = 'middle';
+    oc.fillText('ARIS', CX, CY);
+
+    const { data } = oc.getImageData(0, 0, W, H);
+    const targets  = [];
+    const STEP     = Math.max(4, Math.round(W / 88));
+
+    for (let y = 0; y < H; y += STEP) {
+      for (let x = 0; x < W; x += STEP) {
+        if (data[(y * W + x) * 4 + 3] > 100) {
+          targets.push({ x: x + STEP / 2, y: y + STEP / 2 });
+        }
+      }
+    }
+
+    if (!targets.length) { setTimeout(() => this._runParticles(W, H), 300); return; }
+
+    // Shuffle so particles don't converge in raster order
+    for (let i = targets.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [targets[i], targets[j]] = [targets[j], targets[i]];
+    }
+
+    const SPREAD = Math.min(W, H) * 0.55;
+    const particles = targets.map(t => {
+      const ang = Math.random() * Math.PI * 2;
+      const r   = 60  + Math.random() * SPREAD;
+      const vx  = (Math.random() - 0.5) * 0.8;
+      const vy  = (Math.random() - 0.5) * 0.8;
+      const sx  = CX + Math.cos(ang) * r;
+      const sy  = CY + Math.sin(ang) * r;
+      return {
+        sx, sy,
+        endX: sx + vx * 30,
+        endY: sy + vy * 30,
+        targetX: t.x,
+        targetY: t.y,
+        vx, vy,
+        size:  0.8 + Math.random() * 1.5,
+        delay: Math.random() * 0.32,
+      };
+    });
+
+    const T0    = performance.now();
+    const DR    = 420;    // drift phase ms
+    const CV    = 1900;   // converge phase ms
+    const ST    = 340;    // settle/text fade ms
+    const TOTAL = DR + CV + ST;
+
+    const loop = (now) => {
+      if (this._particlesDone) return;
+      const el = now - T0;
+      ctx.clearRect(0, 0, W, H);
+
+      particles.forEach(p => {
+        const pe = el - p.delay * DR;
+        if (pe <= 0) return;
+
+        let px, py, alpha;
+
+        if (pe < DR) {
+          const dt = pe / DR;
+          px    = p.sx + p.vx * dt * 30;
+          py    = p.sy + p.vy * dt * 30;
+          alpha = Math.min(dt * 2.2, 0.62);
+          ctx.globalAlpha = alpha;
+          ctx.fillStyle   = '#6fa8e8';
+        } else {
+          const ct   = Math.min((pe - DR) / CV, 1);
+          const ease = 1 - Math.pow(1 - ct, 4); // quartic ease-out
+          px    = p.endX + (p.targetX - p.endX) * ease;
+          py    = p.endY + (p.targetY - p.endY) * ease;
+          alpha = 0.62 + ease * 0.38;
+          // Interpolate blue (#6fa8e8) → near-white (#e8eaf0)
+          const rr = Math.round(111 + (232 - 111) * ease);
+          const gg = Math.round(168 + (234 - 168) * ease);
+          const bb = Math.round(232 + (240 - 232) * ease);
+          ctx.globalAlpha = Math.min(alpha, 1);
+          ctx.fillStyle   = `rgb(${rr},${gg},${bb})`;
+        }
+
+        const sz = p.size * (pe < DR ? 1 : 1 + ((pe - DR) / CV) * 0.3);
+        ctx.beginPath();
+        ctx.arc(px, py, sz, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Cross-fade crisp wordmark over settled dots
+      if (el > DR + CV) {
+        const t = Math.min((el - DR - CV) / ST, 1);
+        ctx.globalAlpha  = t;
+        ctx.fillStyle    = '#e8eaf0';
+        ctx.font         = `700 ${FS}px Charm`;
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('ARIS', CX, CY);
+      }
+
+      if (el < TOTAL) {
+        this._rafId = requestAnimationFrame(loop);
+      } else {
+        ctx.clearRect(0, 0, W, H);
+        ctx.globalAlpha  = 1;
+        ctx.fillStyle    = '#e8eaf0';
+        ctx.font         = `700 ${FS}px Charm`;
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('ARIS', CX, CY);
+        this._particlesDone = true;
+        this.setState({ animDone: true, taglineVisible: true });
+      }
+    };
+
+    this._rafId = requestAnimationFrame(loop);
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // renderVals
+  // ─────────────────────────────────────────────────────────
+
+  renderVals() {
+    const { currentScreen, taglineVisible, entered } = this.state;
+
+    const dotColor = (i) => i === currentScreen ? '#6fa8e8' : 'rgba(255,255,255,0.2)';
+    const dotWidth = (i) => i === currentScreen ? '22px' : '6px';
+
+    return {
+      containerRef: this.containerRef,
+      canvasRef:    this.canvasRef,
+
+      // Nav handlers
+      goNext: () => this.navigate(1),
+      goPrev: () => this.navigate(-1),
+      skip:   () => this.jumpTo(4),
+      goTo0:  () => this.jumpTo(0),
+      goTo1:  () => this.jumpTo(1),
+      goTo2:  () => this.jumpTo(2),
+      goTo3:  () => this.jumpTo(3),
+      goTo4:  () => this.jumpTo(4),
+
+      // Visibility
+      showPrev: currentScreen > 0,
+      showNext: currentScreen < 4,
+      showSkip: currentScreen < 4,
+
+      // Tagline fade on screen 0
+      taglineOpacity: taglineVisible ? '1' : '0',
+
+      // Closing screen
+      handleEntrar: () => this.setState({ entered: true }),
+      comecarlabel:  entered ? 'Bem-vindo.' : 'Começar',
+      entrarBg:     entered ? '#0d2e56' : '#1a4a8a',
+
+      // Progress dots
+      d0w: dotWidth(0), d0c: dotColor(0),
+      d1w: dotWidth(1), d1c: dotColor(1),
+      d2w: dotWidth(2), d2c: dotColor(2),
+      d3w: dotWidth(3), d3c: dotColor(3),
+      d4w: dotWidth(4), d4c: dotColor(4),
+    };
+  }
+}
+</script>
+
+
+</body></html>
