@@ -1,0 +1,83 @@
+{
+  "artifact": "draft_v20r_first_access_onboarding_change_log",
+  "version": "v20r",
+  "source_reference": "operator_inputs/benchuix/ARIS_Onboarding.html",
+  "source_reference_available_locally": true,
+  "source_reference_sha256": "3943704aec7e919ad93ecc9888afc09037ea523666aa2637f81069119318253f",
+  "source_reference_note": "A rodada v20r usou o arquivo local rastreavel como contrato visual para reparar o desalinhamento residual do first access v20.",
+  "source_dashboard": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20r.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "implemented_changes": [
+    "Onboarding reduzido para wordmark `ARIS` em serif sobre fundo escuro praticamente plano.",
+    "Tres pontos azuis adicionados abaixo do wordmark para reproduzir a assinatura visual da fonte.",
+    "Icone orbital, cards de explicacao e excesso de texto removidos do first access.",
+    "CTAs `Começar` e `pular` preservados sem alterar a chave `aris_benchuix_onboarding_seen_v1`."
+  ],
+  "behavior_preserved": [
+    "Tema dark/light com `aris_benchuix_theme`.",
+    "Sidebar clicavel.",
+    "Agenda Dia/Semana.",
+    "Fluxo Rafael refletindo na Agenda.",
+    "Cenarios normal, onboarding, empty e failure.",
+    "Ajuda com busca, filtro e expand/collapse.",
+    "Consistencia entre Hoje e Estimativa.",
+    "Acao `Ver boas-vindas novamente` continua presente em `Meu Negócio`."
+  ],
+  "storage_key_used": "aris_benchuix_onboarding_seen_v1",
+  "validations_executed": [
+    {
+      "name": "source_sha256",
+      "status": "pass",
+      "command": "sha256sum operator_inputs/benchuix/ARIS_Onboarding.html"
+    },
+    {
+      "name": "active_context_validator",
+      "status": "pass",
+      "command": "python3 scripts/validate_active_context_state.py"
+    },
+    {
+      "name": "first_access_flow",
+      "status": "partial",
+      "evidence_file": "/tmp/v20r_first_access_flow.json",
+      "verified": [
+        "Sem chave local, o onboarding aparece.",
+        "Clicar `Começar` abre o dashboard e grava a chave.",
+        "Reload abre o dashboard direto."
+      ],
+      "limit": "O clique automatizado do replay em headless nao disparou o botao, embora o source preserve o handler `replayFirstAccessOnboarding` com `localStorage.removeItem(...)` e `window.location.reload()`."
+    },
+    {
+      "name": "responsive_dashboard_matrix_after_onboarding",
+      "status": "pass",
+      "evidence_files": [
+        "/tmp/v20r_validation/dark_320.json",
+        "/tmp/v20r_validation/dark_375.json",
+        "/tmp/v20r_validation/dark_480.json",
+        "/tmp/v20r_validation/dark_768.json",
+        "/tmp/v20r_validation/dark_1024.json",
+        "/tmp/v20r_validation/light_1024.json"
+      ]
+    },
+    {
+      "name": "json_parse_validation",
+      "status": "pass",
+      "command": "python3 -m json.tool on new JSON artifacts"
+    },
+    {
+      "name": "byte_equality_v20r_latest",
+      "status": "pass",
+      "command": "cmp -s artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20r.html artifacts/benchuix/drafts/barbearia_dashboard_latest.html"
+    },
+    {
+      "name": "headless_latest_load",
+      "status": "pass",
+      "command": "google-chrome --headless=new --disable-gpu --virtual-time-budget=12000 --dump-dom latest preview"
+    },
+    {
+      "name": "forbidden_string_scan",
+      "status": "pass",
+      "command": "scan for fetch(, WebSocket, OAuth, billing, payment, accounting, telemetry, modo seguro, ARIS não vai, #ff0000, #f00"
+    }
+  ]
+}

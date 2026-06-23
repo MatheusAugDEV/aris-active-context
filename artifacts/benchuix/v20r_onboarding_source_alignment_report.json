@@ -1,0 +1,92 @@
+{
+  "artifact": "v20r_onboarding_source_alignment_report",
+  "version": "v20r",
+  "source_path": "operator_inputs/benchuix/ARIS_Onboarding.html",
+  "source_sha256": "3943704aec7e919ad93ecc9888afc09037ea523666aa2637f81069119318253f",
+  "expected_source_sha256": "3943704aec7e919ad93ecc9888afc09037ea523666aa2637f81069119318253f",
+  "source_sha256_matches_expected": true,
+  "source_available_locally": true,
+  "prior_v20_commit_sha": "c506743879b859e7022cb193f4a306c041bf0cb5",
+  "visual_contract_extracted": {
+    "background": "#05070B com atmosfera quase totalmente plana",
+    "primary_mark": "wordmark serif ARIS em grande escala",
+    "secondary_mark": "tres pontos azuis centralizados abaixo do wordmark",
+    "copy_density": "minima",
+    "cta_density": "baixa",
+    "tone": "entrada silenciosa, premium e controlada"
+  },
+  "comparison_against_v20": {
+    "alignment_result": "v20_not_fully_aligned",
+    "mismatches_found": [
+      "v20 usava painel perceptivel, enquanto a fonte local privilegia splash quase sem container.",
+      "v20 exibia icone orbital e cards explicativos que nao aparecem na fonte local.",
+      "v20 trazia texto de apoio e estrutura mais densos do que a composicao minimalista da fonte."
+    ],
+    "preserved_behavior": [
+      "Chave local `aris_benchuix_onboarding_seen_v1`.",
+      "CTAs `Começar` e `pular` liberando o dashboard local.",
+      "Acesso `Ver boas-vindas novamente` em `Meu Negócio`.",
+      "Sem mudanca de tema, dados sandbox ou outras rotas do dashboard."
+    ]
+  },
+  "changes_required": true,
+  "changes_applied": [
+    "Onboarding reduzido para splash dark quase plano com wordmark serif `ARIS` centralizado.",
+    "Introduzida linha de tres pontos azuis abaixo do wordmark para aproximar a composicao da fonte local.",
+    "Removidos icone orbital, cards explicativos e excesso de texto do first access v20.",
+    "Mantidos `Começar`, `pular` e a trilha de replay local sem alterar a chave de armazenamento."
+  ],
+  "output_draft": "artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20r.html",
+  "latest_preview": "artifacts/benchuix/drafts/barbearia_dashboard_latest.html",
+  "validation_summary": [
+    {
+      "name": "source_sha256",
+      "status": "pass",
+      "evidence": "sha256sum operator_inputs/benchuix/ARIS_Onboarding.html"
+    },
+    {
+      "name": "active_context_validator",
+      "status": "pass",
+      "evidence": "python3 scripts/validate_active_context_state.py"
+    },
+    {
+      "name": "byte_equality_v20r_latest",
+      "status": "pass",
+      "evidence": "cmp -s artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20r.html artifacts/benchuix/drafts/barbearia_dashboard_latest.html"
+    },
+    {
+      "name": "headless_latest_load",
+      "status": "pass",
+      "evidence": "/tmp/v20r_latest_dump.html"
+    },
+    {
+      "name": "responsive_matrix_after_onboarding",
+      "status": "pass",
+      "evidence_files": [
+        "/tmp/v20r_validation/dark_320.json",
+        "/tmp/v20r_validation/dark_375.json",
+        "/tmp/v20r_validation/dark_480.json",
+        "/tmp/v20r_validation/dark_768.json",
+        "/tmp/v20r_validation/dark_1024.json",
+        "/tmp/v20r_validation/light_1024.json"
+      ],
+      "note": "Sem overflow horizontal. Off-canvas sidebar e drawers fechados continuam fora da viewport por design."
+    },
+    {
+      "name": "first_access_flow",
+      "status": "partial",
+      "evidence_file": "/tmp/v20r_first_access_flow.json",
+      "verified": [
+        "Sem chave local, o onboarding v20r aparece.",
+        "Clicar `Começar` grava a chave e revela o dashboard.",
+        "Reload abre o dashboard direto quando a chave permanece `true`."
+      ],
+      "limit": "O clique automatizado do botao `Ver boas-vindas novamente` nao disparou no harness headless, embora o handler local permaneça ligado ao source e preserve `localStorage.removeItem(...)` seguido de `window.location.reload()`."
+    },
+    {
+      "name": "forbidden_string_scan",
+      "status": "pass",
+      "evidence": "grep -RniE \"fetch\\\\(|WebSocket|OAuth|billing|payment|accounting|telemetry|modo seguro|ARIS não vai|#ff0000|#f00\" artifacts/benchuix/drafts/barbearia_claude_design_export_draft_v20r.html artifacts/benchuix/drafts/barbearia_dashboard_latest.html"
+    }
+  ]
+}
