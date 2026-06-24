@@ -169,6 +169,12 @@
         "draft_v5_runtime_fix_ci_run_id": "27925514369",
         "draft_v5_runtime_fix_evidence_verified_by": "operator_requested_independent_terminal_reconfirmation",
         "draft_v5_evidence_verified_by": "operator_requested_independent_terminal_reconfirmation",
+        "exact_source_onboarding_fix_commit_sha": "fa2c4b5f74a1f0013bc6f4246f751a616f0b56e4",
+        "exact_source_onboarding_fix_ci_run_id": "28073282617",
+        "exact_source_onboarding_fix_files_corrected": [
+            "artifacts/benchuix/drafts/barbearia_dashboard_OPEN_DIRETO.html"
+        ],
+        "exact_source_onboarding_fix_evidence_verified_by": "operator_requested_independent_terminal_reconfirmation",
         "transition_table_artifact": "artifacts/benchuix/00_transition_table.json",
         "admission_packet_artifact": "artifacts/benchuix/00_admission_packet.json",
         "no_real_execution_attestation_artifact": "artifacts/benchuix/00_no_real_execution_attestation.json",

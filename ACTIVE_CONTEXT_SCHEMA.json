@@ -1156,6 +1156,24 @@
           "const": "operator_requested_independent_terminal_reconfirmation",
           "type": "string"
         },
+        "exact_source_onboarding_fix_commit_sha": {
+          "const": "fa2c4b5f74a1f0013bc6f4246f751a616f0b56e4",
+          "type": "string"
+        },
+        "exact_source_onboarding_fix_ci_run_id": {
+          "const": "28073282617",
+          "type": "string"
+        },
+        "exact_source_onboarding_fix_files_corrected": {
+          "const": [
+            "artifacts/benchuix/drafts/barbearia_dashboard_OPEN_DIRETO.html"
+          ],
+          "type": "array"
+        },
+        "exact_source_onboarding_fix_evidence_verified_by": {
+          "const": "operator_requested_independent_terminal_reconfirmation",
+          "type": "string"
+        },
         "transition_table_artifact": {
           "const": "artifacts/benchuix/00_transition_table.json",
           "type": "string"
@@ -1284,6 +1302,10 @@
         "draft_v5_runtime_fix_ci_run_id",
         "draft_v5_runtime_fix_evidence_verified_by",
         "draft_v5_evidence_verified_by",
+        "exact_source_onboarding_fix_commit_sha",
+        "exact_source_onboarding_fix_ci_run_id",
+        "exact_source_onboarding_fix_files_corrected",
+        "exact_source_onboarding_fix_evidence_verified_by",
         "transition_table_artifact",
         "admission_packet_artifact",
         "no_real_execution_attestation_artifact",
