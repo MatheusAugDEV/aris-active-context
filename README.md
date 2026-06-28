@@ -1,3 +1,11 @@
+## Current snapshot
+- Latest completed phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`.
+- Next authorized phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`.
+- P18 dry-run verified: `True`.
+- Real apply remains false: `False`.
+- Bedrock verdict: `WARN` with preparation exception `True`.
+- Product promotion remains false.
+- Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
 # aris-active-context
 
 ## Leia Primeiro
