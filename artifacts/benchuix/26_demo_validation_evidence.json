@@ -98,7 +98,7 @@
     "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
     "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf"
   },
-  "validation_evidence_sha256": "7a3b162e7502e551f1eeffe06e3a0781af5cb21f67c5673144b88764315d6d23",
+  "validation_evidence_sha256": "7db60e8aef66926852ff940c714c9397b1887302db34984e0937889974cb1cc7",
   "notes": [
     "BENCHUIX-26 materializa somente roteiro fechado, sandbox documental, dados sinteticos, timing, comprovantes e linguagem de valor.",
     "Nenhuma demo real foi executada.",
