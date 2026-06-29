@@ -429,6 +429,7 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
     assert benchuix_27c_validation["candidate_tracking_preserved"]["active_next_phase"] is None
     assert benchuix_27c_validation["context_hash_scope"] == (
         "ACTIVE_CONTEXT_SCHEMA.json hash is scoped to schema.properties.benchuix_track only; "
+        "ACTIVE_CONTEXT_STATE.json hash is scoped to state.properties.benchuix_track only; "
         "serialized with json.dumps(sort_keys=True, separators=(',', ':'))."
     )
 
@@ -437,6 +438,12 @@ def test_benchuix_track_is_non_executable_and_ready_for_operator_review():
         json.dumps(schema["properties"]["benchuix_track"], sort_keys=True, separators=(",", ":")).encode("utf-8")
     ).hexdigest()
     assert benchuix_27c_validation["context_hashes"]["ACTIVE_CONTEXT_SCHEMA.json"] == expected_schema_hash
+
+    state = json.loads(Path("ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
+    expected_state_hash = hashlib.sha256(
+        json.dumps(state["benchuix_track"], sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    assert benchuix_27c_validation["context_hashes"]["ACTIVE_CONTEXT_STATE.json"] == expected_state_hash
 
     benchuix_27c_no_real = json.loads(Path("artifacts/benchuix/27C_no_real_execution_attestation.json").read_text(encoding="utf-8"))
     assert benchuix_27c_no_real["Project_ARIS_changed"] is False
