@@ -24,11 +24,12 @@ GERADO — NAO EDITE A MAO
   Infernus FULL
   Purgatorium FULL
   Infernus Revalidation
+  Diagnóstico de Automação (+ Camada de Construção condicional)
   BenchUX
+  Cinzel-mínimo
   Crisol
-  Polimento
   EXT-SEC 00→04
-  Cinzel
+  Cinzel completo
   EXT-SEC 05→06
   Bedrock Gate
   Produto Parte 2 / Design Partner
