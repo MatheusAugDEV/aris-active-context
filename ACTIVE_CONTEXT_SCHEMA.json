@@ -600,6 +600,13 @@
       "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
       "type": "string"
     },
+    "last_phase": {
+      "description": "derived read-only view, computed from previous_phase_id/phase_id/next_phase — never edit manually",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "display_name": {
       "type": "string"
     },
@@ -971,12 +978,26 @@
         "null"
       ]
     },
+    "next_phase_simple": {
+      "description": "derived read-only view, computed from previous_phase_id/phase_id/next_phase — never edit manually",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "next_phase_authorized_by_operator": {
       "type": "boolean"
     },
     "phase_id": {
       "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
       "type": "string"
+    },
+    "phase_now": {
+      "description": "derived read-only view, computed from previous_phase_id/phase_id/next_phase — never edit manually",
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "scenario_count": {
       "type": "integer"
@@ -1056,7 +1077,8 @@
         "3.24",
         "3.25",
         "3.26",
-        "3.27"
+        "3.27",
+        "3.28"
       ],
       "type": "string"
     },
@@ -1607,6 +1629,9 @@
         },
         "schema_3_27_change_summary": {
           "type": "string"
+        },
+        "schema_3_28_change_summary": {
+          "type": "string"
         }
       },
       "required": [
@@ -1848,8 +1873,9 @@
     "purg00_source_gap_terminal_blocker",
     "benchuix_track"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v3.27",
+  "title": "ARIS Active Context Canonical Live State Schema v3.28",
   "type": "object",
   "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
-  "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock."
+  "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
+  "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields."
 }

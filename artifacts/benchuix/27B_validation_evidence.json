@@ -132,10 +132,10 @@
     "Project_ARIS_touched": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
-    "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
-    "scripts/validate_active_context_state.py": "b81060697a31ee21a091a9069e839ce77286df2b1f86b37af1a2ff96b37d88b9",
-    "tests/test_validate_active_context.py": "e33a1f707190ae52c3293fd1998deebfbb5e535d337a5737b420e1d9c421b8e9"
+    "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
+    "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
+    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
+    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de"
   },
   "notes": [
     "BENCHUIX-27B is recorded via artifacts and validator while ACTIVE_CONTEXT_STATE.json remains phase-level BENCHUIX-27.",

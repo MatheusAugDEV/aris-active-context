@@ -1377,6 +1377,32 @@ def _load_json(path: pathlib.Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _sync_simple_view_fields(state: dict[str, Any]) -> list[str]:
+    derived_fields = {
+        "last_phase": state.get("previous_phase_id"),
+        "phase_now": state.get("phase_id"),
+        "next_phase_simple": state.get("next_phase"),
+    }
+    corrections: list[str] = []
+    updated = False
+    sentinel = object()
+
+    for field, expected_value in derived_fields.items():
+        current_value = state.get(field, sentinel)
+        if current_value is sentinel or current_value != expected_value:
+            state[field] = expected_value
+            corrections.append(field)
+            updated = True
+
+    if updated:
+        STATE_PATH.write_text(
+            json.dumps(state, ensure_ascii=False, indent=4) + "\n",
+            encoding="utf-8",
+        )
+
+    return corrections
+
+
 def _load_jsonl(path: pathlib.Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for line in path.read_text(encoding="utf-8").splitlines():
@@ -16691,6 +16717,7 @@ def _check_purg00_handoff_intake_authority_lock_artifacts(state: dict[str, Any])
 
 def main() -> None:
     state = _load_json(STATE_PATH)
+    derived_simple_view_corrections = _sync_simple_view_fields(state)
     _load_json(SCHEMA_PATH)
 
     _require(state["phase_id"] == CURRENT_LIVE_PHASE_ID, "unexpected phase_id")
@@ -17871,6 +17898,7 @@ def main() -> None:
         "ci_enforcement_active": True,
         "anti_proliferation_rule_active": True,
         "fixture_materialization_executed": state.get("fixture_materialization_executed", False),
+        "derived_simple_view_corrections": derived_simple_view_corrections,
     }, indent=2))
 
 

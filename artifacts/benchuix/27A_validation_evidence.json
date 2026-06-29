@@ -96,10 +96,10 @@
     "artifacts/benchuix/27A_no_real_execution_attestation.json": "19d103638ed457611ce9750f7305b10f1a81eecd00151612f71583aee80f30e6"
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
-    "ACTIVE_CONTEXT_SCHEMA.json": "a583cfa1c2d3f165bc53d345f580a5bd0924c8f9d1e6268fbf16fa2192d89e83",
-    "scripts/validate_active_context_state.py": "2316101c0e0303da17cc8550c5dd74b7c757ba5d55f97247033210c87b23a068",
-    "tests/test_validate_active_context.py": "558f69ee4658819a203f07e1ba6a6372fae31bbae6c098ce68c4bfa789ef83b3"
+    "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
+    "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
+    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
+    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de"
   },
   "notes": [
     "BENCHUIX-27A is recorded as an artifact-only substep under BENCHUIX-27.",

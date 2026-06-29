@@ -87,9 +87,9 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "1d40d0b57e6047a2cd0a9f6a361d21a930218e1961798d50532a95577767f72f",
-    "ACTIVE_CONTEXT_SCHEMA.json": "f6e4d25b851bd0ddcba5266e0f9cce4eed064bc9851652d8f0f6f08a7ea5b605",
-    "scripts/validate_active_context_state.py": "85ded800ce1c56aeea57bcb0bf9c126aac18df51da7b94e61472149758ffad24",
+    "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
+    "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
+    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
     "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js": "368c6f9cb9b42144210fe9f3e2eabd4003bbecb00f29dd9a77b9f6086b10df0c",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js": "3b2fd343619fdce7bcfb8256a0906fc08ba09b7d111df932070161fbbd97eb0e",

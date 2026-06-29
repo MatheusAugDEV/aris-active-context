@@ -80,10 +80,10 @@
     "Project_ARIS_touched": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "9579a5ec32d25da9462a65f6c8feaa47b6637509a69e38f9b95bcc45c154db97",
-    "BOOT.md": "f12229dbb44c7a01be09f6f898fec0d7cddd79a0259a59811ab2f2e76c56aa90",
-    "scripts/validate_active_context_state.py": "c92385027a374fcda3c1c69491289a9796ab2acbd26870f13e960d6777ec5e51",
-    "tests/test_validate_active_context.py": "30cfab3dc4dd7bf801dd0c655980ac67c85f04c6c4c7137ab7aa2473b58999c1"
+    "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
+    "BOOT.md": "80af201642ca49f73313327da2484cd94ac2577e87843e246613ff9e1755bd43",
+    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
+    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de"
   },
   "notes": [
     "BENCHUIX-27 fecha a trilha candidate-only com ledger de gaps, anti-theater rules e handoff para Crisol.",
