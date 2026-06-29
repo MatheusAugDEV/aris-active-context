@@ -12,6 +12,13 @@ Live routing still comes from `ACTIVE_CONTEXT_STATE.json`; if this file conflict
 
 Operator source for this macro chain: `operator_inputs/roadmap_aris_camadas_objetivos.md` (ROADMAP ARIS — CAMADAS E OBJETIVOS).
 
+## 0. Lapidarium
+
+- Natureza: saneamento estrutural.
+- Objetivo: absorver o objetivo de Polimento e manter o repositório limpo sem abrir capacidade nova.
+- Fases internas: 0(✓) / 1(✓) / 1.5(ativa, sem artefato) / 2-6(planned).
+- Limites explícitos: não constrói nada; não é produto; prepara o terreno para a sequência seguinte.
+
 ## Macro Chain — Camadas e Objetivos
 
 ```text
@@ -21,15 +28,17 @@ Purgatorium FULL
   ↓
 Infernus Revalidation
   ↓
+Diagnóstico de Automação (+ Camada de Construção condicional)
+  ↓
 BenchUX
+  ↓
+Cinzel-mínimo
   ↓
 Crisol
   ↓
-Polimento
-  ↓
 EXT-SEC 00→04
   ↓
-Cinzel
+Cinzel completo
   ↓
 EXT-SEC 05→06
   ↓
@@ -67,6 +76,21 @@ EXT-SEC 07→08 contínuo
 - Gate de saída: veredito de revalidação registrado para todos os findings em escopo.
 - Limites explícitos: nenhuma outra camada pode declarar esses status de finding.
 
+### 3.5 Diagnóstico de Automação
+
+- Natureza: avaliação estrutural.
+- Objetivo: avaliar se o ARIS está pronto para automatizar antes de construir.
+- Formato: checklist de 7 camadas com input/perception, reasoning, orquestração, tools/action, memória, observabilidade e governança runtime; critérios detalhados ainda TBD.
+- Saída condicional: se achar gap estrutural que bloqueie BenchUX/Cinzel, abre a Camada de Construção de Automação.
+- Limites explícitos: não constrói nada; é avaliação.
+
+### 3.6 Camada de Construção de Automação (condicional)
+
+- Natureza: construção escopada.
+- Objetivo: construir só o gap identificado pelo diagnóstico.
+- Condição: só abre se 3.5 achar gap bloqueante.
+- Limites explícitos: não abre por padrão; não é reconstrução geral.
+
 ### 4. BenchUX
 
 - Natureza: validação de produto/experiência.
@@ -75,6 +99,13 @@ EXT-SEC 07→08 contínuo
 - Entrega esperada: relatório de benchmark comparativo de UX/posicionamento.
 - Gate de saída: comparação registrada com evidência, não apenas narrativa.
 - Limites explícitos: não é marketing.
+
+### 4.5 Cinzel-mínimo
+
+- Natureza: prova de vida.
+- Objetivo: executar 1 workflow ponta a ponta com 3-5 execuções reais.
+- Escopo principal: validação básica sem fault injection.
+- Limites explícitos: não testa resiliência a falhas; isso fica para Cinzel completo.
 
 ### 5. Crisol
 
@@ -103,7 +134,7 @@ EXT-SEC 07→08 contínuo
 - Gate de saída: closeout EXT-SEC-04 com todos os artifacts presentes.
 - Limites explícitos: artifact-first; sem sistema vivo; sem runtime real.
 
-### 8. Cinzel
+### 8. Cinzel completo
 
 - Natureza: validação de automação aplicada.
 - Objetivo: validar automação útil em SMB brasileiro simulado.
@@ -128,7 +159,7 @@ EXT-SEC 07→08 contínuo
 - Escopo principal: não é fase de construção.
 - Entrega esperada: decisão explícita de Bedrock (PASS/WARN/BLOCK/NEEDS_REVIEW/REGRESSION/OBSOLETE).
 - Gate de saída: decisão explícita do operador.
-- Limites explícitos: só ocorre depois de Infernus, Purgatorium, Revalidation, BenchUX, Crisol, Polimento, EXT-SEC 00→04, Cinzel e EXT-SEC 05→06.
+- Limites explícitos: só ocorre depois de Infernus, Purgatorium, Revalidation, Diagnóstico de Automação, Camada de Construção de Automação quando aberta, BenchUX, Cinzel-mínimo, Crisol, EXT-SEC 00→04, Cinzel completo e EXT-SEC 05→06.
 
 ### 11. Produto Parte 2 / Design Partner
 
@@ -287,16 +318,19 @@ phase IDs (e.g. `PURG-01`..`PURG-EXIT`, `INF-FULL-*`, `BEDROCK-01`), is recorded
 ```text
 INF-FULL -> PURG-FULL
 PURG-FULL -> INF-REVALIDATION
-INF-REVALIDATION -> BENCHUX
-BENCHUX -> CRISOL
-CRISOL -> POLIMENTO
-POLIMENTO -> EXT-SEC-00
+INF-REVALIDATION -> DIAGNOSTICO-AUTOMACAO
+DIAGNOSTICO-AUTOMACAO -> CAMADA-CONSTRUCAO-AUTOMACAO (condicional)
+DIAGNOSTICO-AUTOMACAO -> BENCHUIX (se sem gap)
+CAMADA-CONSTRUCAO-AUTOMACAO -> BENCHUIX
+BENCHUIX -> CINZEL-MINIMO
+CINZEL-MINIMO -> CRISOL
+CRISOL -> EXT-SEC-00
 EXT-SEC-00 -> EXT-SEC-01
 EXT-SEC-01 -> EXT-SEC-02
 EXT-SEC-02 -> EXT-SEC-03
 EXT-SEC-03 -> EXT-SEC-04
-EXT-SEC-04 -> CINZEL
-CINZEL -> EXT-SEC-05
+EXT-SEC-04 -> CINZEL-COMPLETO
+CINZEL-COMPLETO -> EXT-SEC-05
 EXT-SEC-05 -> EXT-SEC-06
 EXT-SEC-06 -> BEDROCK
 BEDROCK -> PRODUCT-P2-DESIGN-PARTNER
