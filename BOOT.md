@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `58457536f695`
+- state_sha: `b5b786d82447`
 - schema_version: `3.29`
 
 ## AVISO DE STALE
@@ -15,9 +15,9 @@ GERADO — NAO EDITE A MAO
 
 - camada: `Unknown`
 - phase_id: `LAPIDARIUM`
-- status: `lapidarium_phase_1_5_test_isolation_active`
+- status: `lapidarium_fase_2_nomenclatura_pass`
 - decision: `pass`
-- resumo: Lapidarium Fase 1.5 - Isolamento de Testes; aguardando LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS sem autorizacao de execucao.
+- resumo: Lapidarium Fase 2 - Nomenclatura Aplicação; aguardando LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO sem autorizacao de execucao.
 
 ## MAPA
 
@@ -37,7 +37,7 @@ GERADO — NAO EDITE A MAO
 
 ## PROXIMO PASSO
 
-- active_next_phase: `LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS`
+- active_next_phase: `LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO`
 - next_phase_class: `lapidarium_remediation`
 - advance_mode: `operator`
 - travas relevantes:
@@ -49,7 +49,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO.
 
 ## REGRAS DE AGORA
 

@@ -3339,7 +3339,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Rationale:
   - `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` was closed correctly
   - the cursor advances to the in-progress Lapidarium work, not to the next macro layer
-  - `next_phase` and `active_next_phase` point to `LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS`, which is the next step inside Lapidarium
+  - `next_phase` and `active_next_phase` point to `LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO`, which is the next step inside Lapidarium
 - Preservation guarantees:
   - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
   - `phase_id=current_phase_id=LAPIDARIUM`
