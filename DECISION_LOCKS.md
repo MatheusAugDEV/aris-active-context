@@ -1440,6 +1440,27 @@ The following track references are historical_residual_route_noise. They do NOT 
   - any attempt to reinterpret the preserved blocked history as `pass`, `resolved`, `closed`, or `remediation_proven`
 - A focused validator test was added in `tests/test_purg04_validator_scope_repair.py`.
 - Local validations now pass:
+
+## IF08-W0.5 Post-Sync Review Scope Repair for Lapidarium
+
+- Status: `if08_w05_post_sync_review_scope_repair_pass`
+- Decision: `pass`
+- Scope: restrict `_check_if08_w05_post_sync_review_artifacts(state)` to the IF08/PURG/INF-revalidation lineage only, so unrelated `phase_class` values like `lapidarium_remediation` do not get blocked by this ancestral IF08 finding.
+- Included `phase_class` values discovered in `DECISION_LOCKS.md` historical grep:
+  - `governance_repair`
+  - `infernus_full_execution`
+  - `purgatorium_post_merge_validation`
+  - `purgatorium_route_admission`
+  - `infernus_revalidation_route_admission`
+  - `infernus_revalidation_readiness`
+  - `infernus_revalidation_operator_authorization`
+  - `infernus_revalidation_execution`
+  - `infernus_revalidation_adjudication_or_closure`
+- Excluded from the guard:
+  - `lapidarium_remediation`
+  - `purgatorium_full_intake` and `purgatorium_full_authority_materialization` were not observed in the historical `phase_class` grep and remain outside the explicit guard until/if they appear in a lineage that truly needs this check.
+- No historical IF08 artifact was rewritten; the repair only scopes the validator check by `phase_class`.
+- Canonical artifact: `artifacts/purgatorium/purg04_active_context_validator_blocker_triage_artifact_only.json`
   - `python3 -m unittest discover -s tests -p 'test_purg04_validator_scope_repair.py'`
   - `python3 scripts/validate_active_context_state.py`
 - `Project_ARIS` remains unchanged.

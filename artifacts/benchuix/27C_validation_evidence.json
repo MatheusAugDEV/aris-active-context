@@ -87,10 +87,10 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "b5b786d82447901a229ae0ad20c4852718e1db13e3e31217697abaa20114fe26",
+    "ACTIVE_CONTEXT_STATE.json": "61df6d1b644bf5937fc83e4d0789cd84bda876c2ab343ee787d5aaf2538229be",
     "ACTIVE_CONTEXT_SCHEMA.json": "e554e84c1139d220bb494bc96b2d3c632b9087b8ae5b9751e18aa6b203547580",
-    "scripts/validate_active_context_state.py": "29b1ad4694279255694ad5419275f60d7e1dae9716a2108425d988cf94e0bab1",
-    "tests/test_validate_active_context.py": "5910a1802d595038c277d077136c2275925c1ddc04c88b63a7d962bdff91e74c",
+    "scripts/validate_active_context_state.py": "41a57816188fae1a92d9044a2a25dc20e2dfd2adc3abb57d3636b7e76e96826a",
+    "tests/test_validate_active_context.py": "8737ee0b7f0c379df80b6d18c252ce8857a20b963eb0f181c7e589bff066b6da",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js": "368c6f9cb9b42144210fe9f3e2eabd4003bbecb00f29dd9a77b9f6086b10df0c",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js": "3b2fd343619fdce7bcfb8256a0906fc08ba09b7d111df932070161fbbd97eb0e",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js": "0bfe5512c83c01a0be5ade62b53c868c7cad7d84bc3e1868e0583c636f901385",
@@ -99,7 +99,7 @@
     "artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js": "d01167b4aa75851b07f9eac9d43679027b350bfb5520868697489ea25835f323",
     "artifacts/benchuix/visual_sandbox_static/src/components/approve/DecisionBar.js": "ecef45d65833971c67e9d63432052c8ce691fbfb65d9c89e03bc99325351e625"
   },
-  "context_hash_scope": "ACTIVE_CONTEXT_SCHEMA.json hash is scoped to schema.properties.benchuix_track only; serialized with json.dumps(sort_keys=True, separators=(',', ':')).",
+  "context_hash_scope": "ACTIVE_CONTEXT_SCHEMA.json hash is scoped to schema.properties.benchuix_track only; ACTIVE_CONTEXT_STATE.json hash is scoped to state.properties.benchuix_track only; serialized with json.dumps(sort_keys=True, separators=(',', ':')).",
   "notes": [
     "BENCHUIX-27C remains artifact-only and does not mutate ACTIVE_CONTEXT_STATE.json unless future schema or validator work requires it.",
     "Preview, browser, localhost, package manager and real-user execution remain out of scope."

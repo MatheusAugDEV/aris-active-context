@@ -458,6 +458,18 @@ IF08_W05_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w05_post_sync_review"
 IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W05_POST_SYNC_ROOT / "decision.json"
 IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W05_POST_SYNC_ROOT / "summary.json"
 IF08_W05_POST_SYNC_ACTIVE_REPORT_PATH = IF08_W05_POST_SYNC_ROOT / "report.md"
+IF08_W05_POST_SYNC_ACTIVE_NO_EXECUTION_PATH = IF08_W05_POST_SYNC_ROOT / "no_execution_attestation.json"
+IF08_W05_POST_SYNC_SCOPE_PHASE_CLASSES = {
+    "governance_repair",
+    "infernus_full_execution",
+    "purgatorium_post_merge_validation",
+    "purgatorium_route_admission",
+    "infernus_revalidation_route_admission",
+    "infernus_revalidation_readiness",
+    "infernus_revalidation_operator_authorization",
+    "infernus_revalidation_execution",
+    "infernus_revalidation_adjudication_or_closure",
+}
 IF08_W1_PREFLIGHT_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_preflight_readiness_decision_2026_06_07.json")
 IF08_W1_PREFLIGHT_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_preflight_readiness_summary_2026_06_07.json")
 IF08_W1_PREFLIGHT_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_context_memory_rag_preflight_readiness_report_2026_06_07.md")
@@ -1603,6 +1615,14 @@ def _benchuix_27c_schema_contract_hash() -> str:
     benchuix_track_schema = schema["properties"]["benchuix_track"]
     return hashlib.sha256(
         json.dumps(benchuix_track_schema, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
+def _benchuix_27c_state_contract_hash() -> str:
+    state = _load_json(ROOT / "ACTIVE_CONTEXT_STATE.json")
+    benchuix_track_state = state["benchuix_track"]
+    return hashlib.sha256(
+        json.dumps(benchuix_track_state, sort_keys=True, separators=(",", ":")).encode("utf-8")
     ).hexdigest()
 
 
@@ -7248,6 +7268,7 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 _require(key in results_27c, f"BENCHUIX-27C validation results missing {key}")
         context_hashes_27c = benchuix_27c_validation.get("context_hashes", {})
         expected_schema_contract_hash_27c = _benchuix_27c_schema_contract_hash()
+        expected_state_contract_hash_27c = _benchuix_27c_state_contract_hash()
         for path in (
             "ACTIVE_CONTEXT_STATE.json",
             "ACTIVE_CONTEXT_SCHEMA.json",
@@ -7257,6 +7278,8 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
             expected_hash = (
                 expected_schema_contract_hash_27c
                 if path == "ACTIVE_CONTEXT_SCHEMA.json"
+                else expected_state_contract_hash_27c
+                if path == "ACTIVE_CONTEXT_STATE.json"
                 else hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
             )
             _require(context_hashes_27c.get(path) == expected_hash, f"BENCHUIX-27C context hash mismatch for {path}")
@@ -7479,7 +7502,14 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "scripts/validate_active_context_state.py",
                 "tests/test_validate_active_context.py",
             ):
-                _require(context_hashes_27d.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27D context hash mismatch for {path}")
+                expected_hash = (
+                    _benchuix_27c_state_contract_hash()
+                    if path == "ACTIVE_CONTEXT_STATE.json"
+                    else _benchuix_27c_schema_contract_hash()
+                    if path == "ACTIVE_CONTEXT_SCHEMA.json"
+                    else hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+                )
+                _require(context_hashes_27d.get(path) == expected_hash, f"BENCHUIX-27D context hash mismatch for {path}")
 
         expected_27e_artifacts = {
             "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
@@ -7648,7 +7678,14 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "scripts/validate_active_context_state.py",
                 "tests/test_validate_active_context.py",
             ):
-                _require(context_hashes_27e.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27E context hash mismatch for {path}")
+                expected_hash = (
+                    _benchuix_27c_state_contract_hash()
+                    if path == "ACTIVE_CONTEXT_STATE.json"
+                    else _benchuix_27c_schema_contract_hash()
+                    if path == "ACTIVE_CONTEXT_SCHEMA.json"
+                    else hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+                )
+                _require(context_hashes_27e.get(path) == expected_hash, f"BENCHUIX-27E context hash mismatch for {path}")
 
         _require(
             benchuix_track["current_candidate_phase"] != "BENCHUIX-00",
@@ -11847,6 +11884,12 @@ def _require_if08_w05_historical_blocked_payload(
 
 
 def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
+    # IF08-W0.5 post-sync review is an ancestral artifact of the Infernus FULL -> Purgatorium ->
+    # Infernus Revalidation chain. Fases outside that family (for example Lapidarium) do not
+    # share causal responsibility for this finding and must not be blocked by it.
+    if state.get("phase_class") not in IF08_W05_POST_SYNC_SCOPE_PHASE_CLASSES:
+        return
+
     for path in (
         IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH,
         IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH,
@@ -11929,10 +11972,10 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     if not external_available:
         return
 
-    decision = _load_json(IF08_W05_POST_SYNC_DECISION_PATH)
-    summary = _load_json(IF08_W05_POST_SYNC_SUMMARY_PATH)
-    no_execution = _load_json(IF08_W05_POST_SYNC_NO_EXECUTION_PATH)
     if _state_preserves_if08_w05_historical_blocked(state):
+        decision = _load_json(IF08_W05_POST_SYNC_DECISION_PATH)
+        summary = _load_json(IF08_W05_POST_SYNC_SUMMARY_PATH)
+        no_execution = _load_json(IF08_W05_POST_SYNC_NO_EXECUTION_PATH)
         _require_if08_w05_historical_blocked_payload(
             decision,
             "project post-sync decision",
@@ -11979,12 +12022,16 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
             _require(no_execution.get(key) is False, f"project post-sync no_execution.{key} must be false")
         return
 
+    decision = _load_json(IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH)
+    summary = _load_json(IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH)
+    no_execution = _load_json(IF08_W05_POST_SYNC_ACTIVE_NO_EXECUTION_PATH)
+
     _require(decision.get("phase_id") == "IF-08-W05-POST-SYNC-REVIEW", "project post-sync decision phase_id mismatch")
     _require(decision.get("decision") == "pass", "project post-sync decision must be pass")
     _require(decision.get("status") == IF08_W05_POST_SYNC_STATUS, "project post-sync decision status mismatch")
     _require(decision.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync decision source phase mismatch")
     _require(decision.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync decision source status mismatch")
-    _require(decision.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync decision source project sha mismatch")
+    _require(decision.get("source_project_sha") == IF08_W05_POST_SYNC_PROJECT_SHA, "project post-sync decision source project sha mismatch")
     _require(decision.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync decision source ci state mismatch")
     _require(decision.get("w05_ter") == 1.0, "project post-sync decision w05_ter must be 1.0")
     _require(decision.get("w05_tamper_attempts_expected") == 4, "project post-sync decision tamper_attempts_expected must be 4")
@@ -12007,7 +12054,7 @@ def _check_if08_w05_post_sync_review_artifacts(state: dict[str, Any]) -> None:
     _require(summary.get("status") == IF08_W05_POST_SYNC_STATUS, "project post-sync summary status mismatch")
     _require(summary.get("source_phase") == IF08_W05_CONTROLLED_PHASE, "project post-sync summary source phase mismatch")
     _require(summary.get("source_status") == IF08_W05_CONTROLLED_STATUS, "project post-sync summary source status mismatch")
-    _require(summary.get("source_project_sha") == IF08_W05_CONTROLLED_PROJECT_SHA, "project post-sync summary source project sha mismatch")
+    _require(summary.get("source_project_sha") == IF08_W05_POST_SYNC_PROJECT_SHA, "project post-sync summary source project sha mismatch")
     _require(summary.get("source_ci_state") == IF08_W05_CONTROLLED_CI_STATE, "project post-sync summary source ci state mismatch")
     _require(summary.get("w05_ter") == 1.0, "project post-sync summary w05_ter must be 1.0")
     _require(summary.get("w05_tamper_attempts_expected") == 4, "project post-sync summary tamper_attempts_expected must be 4")

@@ -2,11 +2,11 @@
     "active_context_version": "3.0",
     "phase_id": "LAPIDARIUM",
     "current_phase_id": "LAPIDARIUM",
-    "display_name": "Lapidarium Fase 1.5 — Isolamento de Testes",
+    "display_name": "Lapidarium Fase 3 — Verificação de Cache",
     "previous_phase_id": "LAPIDARIUM",
     "last_phase": "LAPIDARIUM",
     "phase_now": "LAPIDARIUM",
-    "next_phase_simple": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+    "next_phase_simple": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
@@ -67,9 +67,9 @@
         ],
         "condition": "ci_green_and_validator_pass"
     },
-    "active_next_phase": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+    "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
     "active_next_phase_class": "lapidarium_remediation",
-    "next_phase": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+    "next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
     "next_phase_authorized_by_operator": true,
     "anti_proliferation_rule_active": true,
     "ci_enforcement_active": true,
@@ -271,23 +271,23 @@
         ]
     },
     "current_live_route": {
-        "active_next_phase": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+        "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
         "active_next_phase_class": "lapidarium_remediation",
-        "current_status": "lapidarium_fase_2_nomenclatura_pass",
+        "current_status": "lapidarium_fase_3_cache_verificacao_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
-        "latest_completed_status": "lapidarium_fase_2_nomenclatura_pass",
+        "latest_completed_phase": "Lapidarium Fase 3 - Verificação de Cache",
+        "latest_completed_status": "lapidarium_fase_3_cache_verificacao_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "lapidarium_fase_2_nomenclatura_pass",
-        "latest_completed_project_commit_sha": "1f4c9f80afb9131a6aba551a49037b40c7f590c6",
+        "status": "lapidarium_fase_3_cache_verificacao_pass",
+        "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO"
+        "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO"
     },
-    "current_status": "lapidarium_fase_2_nomenclatura_pass",
+    "current_status": "lapidarium_fase_3_cache_verificacao_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+    "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -676,8 +676,8 @@
         "real_cost_spent": false,
         "real_quota_consumed": false
     },
-    "latest_completed_project_commit_sha": "1f4c9f80afb9131a6aba551a49037b40c7f590c6",
-    "latest_completed_status": "lapidarium_fase_2_nomenclatura_pass",
+    "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
+    "latest_completed_status": "lapidarium_fase_3_cache_verificacao_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -688,28 +688,28 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
+        "latest_execution_phase": "Lapidarium Fase 3 - Verificação de Cache",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "Lapidarium Fase 1.5 - Isolamento de Testes",
-        "latest_execution_status": "lapidarium_fase_2_nomenclatura_pass"
+        "previous_execution_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
+        "latest_execution_status": "lapidarium_fase_3_cache_verificacao_pass"
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "INF Revalidation Adjudication Or Closure Packet",
-        "proof_source": "artifacts/active_context/if09_closure_milestone_sanity_packet.json",
-        "to_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
-        "to_status": "lapidarium_fase_2_nomenclatura_pass",
+        "from_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
+        "proof_source": "artifacts/lapidarium/fase3_cache_verificacao.json",
+        "to_phase": "Lapidarium Fase 3 - Verificação de Cache",
+        "to_status": "lapidarium_fase_3_cache_verificacao_pass",
         "transition_type": "governance_repair",
-        "verified_via": "The post-closure mirror sanity packet reconciled derived mirrors so that stale pre-closure notes are explicitly labeled HISTORICAL_ONLY and SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET, preserved IF09-FIND-001 as closed with remediation_proven=true, kept all real/runtime/product/Bedrock/secrets locks false, and emitted a documentary BenchUX route-opening candidate without activating any live route."
+        "verified_via": "The Lapidarium cache verification confirmed 35993 generated cache build artifacts were already covered by .gitignore, required no deletion, and advanced the live cursor to the next Lapidarium step without changing any real/runtime/product/Bedrock/secrets locks."
     },
-    "latest_completed_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
+    "latest_completed_phase": "Lapidarium Fase 3 - Verificação de Cache",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-        "deferred_phase": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO.",
+        "deferred_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -723,15 +723,15 @@
         "execution_authorization": false,
         "notes": [
             "Lapidarium cursor advanced after phase 2 nomenclature application.",
-            "Phase 1.5 remains closed and phase 2 is now the latest completed step.",
-            "Next: LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO"
+            "Phase 1.5 remains closed and phase 3 is now the latest completed step.",
+            "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
-        "phase": "LAPIDARIUM_FASE_3_LIMPEZA_CACHE_GERADO",
+        "phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
         "phase_class": "lapidarium_remediation",
         "planning_only": false,
         "review_only": false,
-        "status": "lapidarium_fase_2_nomenclatura_pass"
+        "status": "lapidarium_fase_3_cache_verificacao_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -749,7 +749,7 @@
     },
     "schema_version": "3.29",
     "roadmap_version": "v2",
-    "status": "lapidarium_fase_2_nomenclatura_pass",
+    "status": "lapidarium_fase_3_cache_verificacao_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,

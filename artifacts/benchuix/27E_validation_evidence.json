@@ -68,10 +68,10 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "b5b786d82447901a229ae0ad20c4852718e1db13e3e31217697abaa20114fe26",
-    "ACTIVE_CONTEXT_SCHEMA.json": "f976d4e00a7c07931c5621f854ce76fb1a976e4da29a70d2e005be8584c16b98",
-    "scripts/validate_active_context_state.py": "29b1ad4694279255694ad5419275f60d7e1dae9716a2108425d988cf94e0bab1",
-    "tests/test_validate_active_context.py": "5910a1802d595038c277d077136c2275925c1ddc04c88b63a7d962bdff91e74c",
+    "ACTIVE_CONTEXT_STATE.json": "61df6d1b644bf5937fc83e4d0789cd84bda876c2ab343ee787d5aaf2538229be",
+    "ACTIVE_CONTEXT_SCHEMA.json": "e554e84c1139d220bb494bc96b2d3c632b9087b8ae5b9751e18aa6b203547580",
+    "scripts/validate_active_context_state.py": "41a57816188fae1a92d9044a2a25dc20e2dfd2adc3abb57d3636b7e76e96826a",
+    "tests/test_validate_active_context.py": "8737ee0b7f0c379df80b6d18c252ce8857a20b963eb0f181c7e589bff066b6da",
     "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
     "artifacts/benchuix/visual_sandbox_static/index.html": "0ce2ec4e7a93342c07ba3704579a330ff1c8f442e77738a0745473ab64fd5289",
     "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13"
