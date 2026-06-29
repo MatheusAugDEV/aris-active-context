@@ -1598,6 +1598,14 @@ def _canonical_hash_without_field(data: dict[str, Any], field: str) -> str:
     ).hexdigest()
 
 
+def _benchuix_27c_schema_contract_hash() -> str:
+    schema = _load_json(SCHEMA_PATH)
+    benchuix_track_schema = schema["properties"]["benchuix_track"]
+    return hashlib.sha256(
+        json.dumps(benchuix_track_schema, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+
+
 def _require_paths_match(state: dict[str, Any], paths: list[str], label: str) -> None:
     baseline_value = _value_at_path(state, paths[0])
     for other_path in paths[1:]:
@@ -7238,14 +7246,20 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
                 "Project_ARIS_changed",
             ):
                 _require(key in results_27c, f"BENCHUIX-27C validation results missing {key}")
-            context_hashes_27c = benchuix_27c_validation.get("context_hashes", {})
-            for path in (
-                "ACTIVE_CONTEXT_STATE.json",
-                "ACTIVE_CONTEXT_SCHEMA.json",
-                "scripts/validate_active_context_state.py",
-                "tests/test_validate_active_context.py",
-            ):
-                _require(context_hashes_27c.get(path) == hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), f"BENCHUIX-27C context hash mismatch for {path}")
+        context_hashes_27c = benchuix_27c_validation.get("context_hashes", {})
+        expected_schema_contract_hash_27c = _benchuix_27c_schema_contract_hash()
+        for path in (
+            "ACTIVE_CONTEXT_STATE.json",
+            "ACTIVE_CONTEXT_SCHEMA.json",
+            "scripts/validate_active_context_state.py",
+            "tests/test_validate_active_context.py",
+        ):
+            expected_hash = (
+                expected_schema_contract_hash_27c
+                if path == "ACTIVE_CONTEXT_SCHEMA.json"
+                else hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+            )
+            _require(context_hashes_27c.get(path) == expected_hash, f"BENCHUIX-27C context hash mismatch for {path}")
 
         expected_27d_artifacts = {
             "artifacts/benchuix/27D_local_static_preview_operator_runbook.md",

@@ -88,9 +88,9 @@
   },
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
-    "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
-    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
-    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
+    "ACTIVE_CONTEXT_SCHEMA.json": "e554e84c1139d220bb494bc96b2d3c632b9087b8ae5b9751e18aa6b203547580",
+    "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
+    "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js": "368c6f9cb9b42144210fe9f3e2eabd4003bbecb00f29dd9a77b9f6086b10df0c",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js": "3b2fd343619fdce7bcfb8256a0906fc08ba09b7d111df932070161fbbd97eb0e",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js": "0bfe5512c83c01a0be5ade62b53c868c7cad7d84bc3e1868e0583c636f901385",
@@ -99,6 +99,7 @@
     "artifacts/benchuix/visual_sandbox_static/src/components/contract/ActionContractCard.js": "d01167b4aa75851b07f9eac9d43679027b350bfb5520868697489ea25835f323",
     "artifacts/benchuix/visual_sandbox_static/src/components/approve/DecisionBar.js": "ecef45d65833971c67e9d63432052c8ce691fbfb65d9c89e03bc99325351e625"
   },
+  "context_hash_scope": "ACTIVE_CONTEXT_SCHEMA.json hash is scoped to schema.properties.benchuix_track only; serialized with json.dumps(sort_keys=True, separators=(',', ':')).",
   "notes": [
     "BENCHUIX-27C remains artifact-only and does not mutate ACTIVE_CONTEXT_STATE.json unless future schema or validator work requires it.",
     "Preview, browser, localhost, package manager and real-user execution remain out of scope."
