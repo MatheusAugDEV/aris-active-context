@@ -3328,3 +3328,26 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `all_real_locks_remain_false=true`
   - `historical_entries_not_modified=true`
   - `project_aris_changed=false`
+
+## Lapidarium Cursor Activation Resume
+
+- Scope: governance/documentation only; activate the Lapidarium cursor on the live active-context state, preserve IF09 closure as the previous phase, and keep all real execution surfaces closed.
+- Preconditions already resolved in this session:
+  - `ACTIVE_CONTEXT_SCHEMA.json` admits `LAPIDARIUM` as a valid `phase_id/current_phase_id` target through the existing pattern contract and carries `schema_3_29_change_summary`
+  - the BENCHUIX-27C hash-scope repair is already in place, so unrelated schema drift no longer couples to the BenchUIX 27C contract
+  - `ROADMAP_CANONICAL.md` already contains the Lapidarium line in the macro transition table
+- Rationale:
+  - `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` was closed correctly
+  - the cursor advances to the in-progress Lapidarium work, not to the next macro layer
+  - `next_phase` and `active_next_phase` point to `LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS`, which is the next step inside Lapidarium
+- Preservation guarantees:
+  - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+  - `phase_id=current_phase_id=LAPIDARIUM`
+  - `phase_class=lapidarium_remediation`
+  - `next_phase_authorized_by_operator=true`
+  - `roadmap_version=v2`
+  - `real_apply_authorized=false`
+  - `runtime_integration_allowed=false`
+  - `product_authorized=false`
+  - `secrets_access_authorized=false`
+  - `historical_entries_not_modified=true`

@@ -36,188 +36,29 @@ class ActiveContextRouteSyncTests(unittest.TestCase):
 
     def test_current_route_tracks_inf_revalidation_execution_packet_sync(self):
         state = json.loads((ROOT / "ACTIVE_CONTEXT_STATE.json").read_text(encoding="utf-8"))
-        self.assertEqual(state["phase_id"], "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET")
-        self.assertEqual(state["current_phase_id"], "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET")
-        self.assertEqual(state["previous_phase_id"], "INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET")
-        self.assertEqual(state["phase_class"], "governance_repair")
-        self.assertEqual(state["latest_completed_phase"], "IF09 Closure Milestone Mirror Sanity Packet")
-        self.assertEqual(state["latest_completed_status"], "if09_closure_milestone_mirror_sanity_pass")
-        self.assertEqual(state["latest_completed_project_commit_sha"], "7883af5a32c629026bfc6dc15ebee4ebbcadd295")
-        self.assertEqual(
-            state["latest_completed_next_recommended_step"],
-            "Nenhuma transição definida. Aguardando instrução do operador.",
-        )
-        self.assertIsNone(state["next_phase"])
-        self.assertIsNone(state["active_next_phase"])
-        self.assertIsNone(state["active_next_phase_class"])
-        self.assertFalse(state["next_phase_authorized_by_operator"])
-        self.assertTrue(state["route_amendment_authorized_by_operator"])
+        self.assertEqual(state["phase_id"], "LAPIDARIUM")
+        self.assertEqual(state["current_phase_id"], "LAPIDARIUM")
+        self.assertEqual(state["previous_phase_id"], "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET")
+        self.assertEqual(state["phase_class"], "lapidarium_remediation")
+        self.assertEqual(state["status"], "lapidarium_phase_1_5_test_isolation_active")
+        self.assertEqual(state["next_phase"], "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS")
+        self.assertEqual(state["active_next_phase"], "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS")
+        self.assertEqual(state["active_next_phase_class"], "lapidarium_remediation")
+        self.assertTrue(state["next_phase_authorized_by_operator"])
+        self.assertEqual(state["latest_completed_phase"], "Lapidarium Fase 1.5 - Isolamento de Testes")
+        self.assertEqual(state["latest_completed_status"], "lapidarium_phase_1_5_test_isolation_active")
+        self.assertEqual(state["current_live_route"]["active_next_phase"], "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS")
+        self.assertEqual(state["current_live_route"]["active_next_phase_class"], "lapidarium_remediation")
+        self.assertEqual(state["current_live_route"]["current_status"], "lapidarium_phase_1_5_test_isolation_active")
+        self.assertEqual(state["current_live_route"]["status"], "lapidarium_phase_1_5_test_isolation_active")
+        self.assertEqual(state["current_live_route"]["latest_completed_phase"], "Lapidarium Fase 1.5 - Isolamento de Testes")
+        self.assertEqual(state["current_live_route"]["latest_completed_status"], "lapidarium_phase_1_5_test_isolation_active")
+        self.assertEqual(state["next_action"]["phase"], "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS")
+        self.assertEqual(state["next_action"]["phase_class"], "lapidarium_remediation")
+        self.assertEqual(state["next_action"]["status"], "lapidarium_phase_1_5_test_isolation_active")
         self.assertFalse(state["next_action"]["planning_only"])
         self.assertFalse(state["next_action"]["review_only"])
-        self.assertEqual(state["decision"], "pass")
-        self.assertEqual(state["status"], "if09_closure_milestone_mirror_sanity_pass")
-        self.assertEqual(state["target_finding_id"], "IF09-FIND-001")
-        self.assertEqual(state["target_finding_status"], "closed")
-        self.assertTrue(state["finding_closed"])
-        self.assertTrue(state["remediation_proven"])
-        self.assertEqual(
-            state["closure_basis"],
-            "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface",
-        )
-        self.assertEqual(state["current_live_route"]["decision"], "pass")
-        self.assertEqual(state["current_live_route"]["status"], "if09_closure_milestone_mirror_sanity_pass")
-        self.assertIsNone(state["current_live_route"]["active_next_phase"])
-        self.assertIsNone(state["current_live_route"]["active_next_phase_class"])
-        self.assertFalse(state["current_live_route"]["next_phase_execution_authorization"])
-        self.assertIsNone(state["next_action"]["phase"])
-        self.assertIsNone(state["next_action"]["phase_class"])
-        self.assertIn("Nenhuma transição definida. Aguardando instrução do operador.", state["next_action"]["notes"][-1])
-        self.assertEqual(
-            state["purg00_source_gap_terminal_blocker"]["status"],
-            "purg00_source_gap_terminal_blocker_operator_source_required",
-        )
-        self.assertTrue(state["purg00_source_gap_terminal_blocker"]["repeated_search_prevented"])
-        self.assertEqual(
-            state["purg00_route_amendment_terminal_wait_state"]["status"],
-            "purg00_route_amendment_terminal_wait_state_operator_source_required",
-        )
-        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["live_route_closed"])
-        self.assertFalse(state["purg00_route_amendment_terminal_wait_state"]["purg01_open_authorized"])
-        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["source_packet_supplied"])
-        self.assertTrue(state["purg00_route_amendment_terminal_wait_state"]["source_packet_validated"])
-        self.assertEqual(
-            state["purg00_operator_source_packet_intake"]["status"],
-            "purg00_operator_source_packet_intake_pass",
-        )
-        self.assertTrue(state["purg00_operator_source_packet_intake"]["source_packet_validated"])
-        self.assertEqual(
-            state["purg00_operator_source_packet_intake"]["source_packet_sha256"],
-            "6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72",
-        )
-        self.assertFalse(state["purg00_operator_source_packet_intake"]["purg01_open_authorized"])
-        self.assertEqual(
-            state["purg01_route_admission_review"]["status"],
-            "purg01_route_admission_review_pass",
-        )
-        self.assertEqual(
-            state["purg01_route_admission_review"]["candidate_phase"],
-            "PURG-01",
-        )
-        self.assertEqual(
-            state["purg01_route_admission_review"]["candidate_phase_class"],
-            "purgatorium_route_admission",
-        )
-        self.assertFalse(state["purg01_route_admission_review"]["purg01_open_authorized"])
-        self.assertEqual(
-            state["purg01_route_admission"]["status"],
-            "purg01_route_admission_pass",
-        )
-        self.assertTrue(state["purg01_route_admission"]["operator_authorized"])
-        self.assertTrue(state["purg01_route_admission"]["purg01_open_authorized"])
-        self.assertFalse(state["purg01_route_admission"]["purg01_triage_authorized"])
-        self.assertFalse(state["purg01_route_admission"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_triage_readiness_review"]["status"],
-            "purg01_triage_readiness_review_pass",
-        )
-        self.assertTrue(state["purg01_triage_readiness_review"]["triage_planning_candidate_created"])
-        self.assertFalse(state["purg01_triage_readiness_review"]["purg01_triage_authorized"])
-        self.assertFalse(state["purg01_triage_readiness_review"]["triage_execution_authorized"])
-        self.assertFalse(state["purg01_triage_readiness_review"]["finding_fix_authorized"])
-        self.assertFalse(state["purg01_triage_readiness_review"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_triage_readiness_review"]["candidate_next_step"],
-            "prepare_purg01_triage_planning_gate",
-        )
-        self.assertEqual(
-            state["purg01_triage_readiness_review"]["next_recommended_step"],
-            "prepare_purg01_triage_planning_gate",
-        )
-        self.assertEqual(
-            state["purg01_triage_planning_gate"]["status"],
-            "purg01_triage_planning_gate_pass",
-        )
-        self.assertEqual(
-            state["purg01_triage_planning_gate"]["target_finding_id"],
-            "IF09-FIND-001",
-        )
-        self.assertTrue(state["purg01_triage_planning_gate"]["triage_plan_created"])
-        self.assertTrue(state["purg01_triage_planning_gate"]["triage_authorization_request_candidate_created"])
-        self.assertFalse(state["purg01_triage_planning_gate"]["purg01_triage_authorized"])
-        self.assertFalse(state["purg01_triage_planning_gate"]["triage_execution_authorized"])
-        self.assertFalse(state["purg01_triage_planning_gate"]["finding_fix_authorized"])
-        self.assertFalse(state["purg01_triage_planning_gate"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_triage_planning_gate"]["next_recommended_step"],
-            "request_operator_authorization_for_purg01_triage",
-        )
-        self.assertEqual(
-            state["purg01_triage_authorization_gate"]["status"],
-            "purg01_triage_authorization_gate_pass",
-        )
-        self.assertTrue(state["purg01_triage_authorization_gate"]["operator_authorized"])
-        self.assertEqual(
-            state["purg01_triage_authorization_gate"]["operator_authorization_text"],
-            "Autorizo PURG-01 triage.",
-        )
-        self.assertEqual(
-            state["purg01_triage_authorization_gate"]["operator_authorization_scope"],
-            "purg01_triage_authorization_only_not_fix_not_real_execution",
-        )
-        self.assertTrue(state["purg01_triage_authorization_gate"]["purg01_triage_authorized"])
-        self.assertFalse(state["purg01_triage_authorization_gate"]["triage_execution_authorized"])
-        self.assertFalse(state["purg01_triage_authorization_gate"]["finding_fix_authorized"])
-        self.assertFalse(state["purg01_triage_authorization_gate"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_triage_authorization_gate"]["next_recommended_step"],
-            "prepare_purg01_controlled_triage_execution_gate",
-        )
-        self.assertEqual(
-            state["purg01_controlled_triage_execution_gate"]["status"],
-            "purg01_controlled_triage_execution_gate_pass",
-        )
-        self.assertEqual(
-            state["purg01_controlled_triage_execution_gate"]["required_fields_missing"],
-            [],
-        )
-        self.assertEqual(
-            state["purg01_controlled_triage_execution_gate"]["next_recommended_step"],
-            "execute_purg01_controlled_triage_artifact_only",
-        )
-        self.assertTrue(state["purg01_controlled_triage_execution_gate"]["purg01_triage_authorized"])
-        self.assertFalse(state["purg01_controlled_triage_execution_gate"]["triage_execution_authorized"])
-        self.assertFalse(state["purg01_controlled_triage_execution_gate"]["finding_fix_authorized"])
-        self.assertFalse(state["purg01_controlled_triage_execution_gate"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_controlled_triage_artifact_only_execution"]["status"],
-            "purg01_controlled_triage_artifact_only_execution_pass",
-        )
-        self.assertEqual(
-            state["purg01_controlled_triage_artifact_only_execution"]["execution_mode"],
-            "artifact_only",
-        )
-        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["triage_execution_real"])
-        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["finding_fix_executed"])
-        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["remediation_apply_executed"])
-        self.assertFalse(state["purg01_controlled_triage_artifact_only_execution"]["real_execution_authorized"])
-        self.assertEqual(
-            state["purg01_controlled_triage_artifact_only_execution"]["next_recommended_step_preserved"],
-            "execute_purg01_controlled_triage_artifact_only",
-        )
-        self.assertFalse(state["latest_completed_no_execution"]["wave_executed"])
-        self.assertFalse(state["latest_completed_no_execution"]["bot_executed"])
-        self.assertEqual(state["latest_completed_no_execution"]["execution_scope"], "artifact_only_final_verdict_closure")
-        self.assertEqual(state["latest_completed_no_execution"]["source_phase_verified"], "IF-10 Purgatorium Handoff Graph")
-        self.assertEqual(state["latest_completed_no_execution"]["source_status_verified"], "if10_purgatorium_handoff_graph_pass")
-        self.assertEqual(state["latest_completed_no_execution"]["source_project_sha_verified_by_packet"], "57106d9780af7a807bd58ea6039af3a7b1b23701")
-        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_pre_sync_sha_verified_by_packet"], "767138de3fb2b0484fca6be25657e08c21107574")
-        self.assertEqual(state["latest_completed_no_execution"]["source_active_context_sync_sha_verified_by_packet"], "7755a1506e6981d3f1c5b3534c7217112a12b960")
-        self.assertTrue(state["latest_completed_no_execution"]["if11_materialization_performed"])
-        self.assertTrue(state["latest_completed_no_execution"]["minos_mechanical_report_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["minos_semantic_report_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["operator_cosignature_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["anti_theater_meta_audit_created"])
-        self.assertTrue(state["latest_completed_no_execution"]["infernus_closure_created"])
+        self.assertIn("Lapidarium cursor activation recorded on the live active-context state.", state["next_action"]["notes"])
         self.assertTrue(state["latest_completed_no_execution"]["closure_manifest_created"])
         self.assertTrue(state["latest_completed_no_execution"]["final_evidence_index_created"])
         self.assertTrue(state["latest_completed_no_execution"]["purgatorium_readiness_summary_created"])

@@ -1,0 +1,23 @@
+{
+  "phase_id": "IF-08-W05-POST-SYNC-REVIEW",
+  "decision": "blocked",
+  "status": "if08_w05_post_sync_review_blocked",
+  "source_phase": "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
+  "source_status": "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
+  "source_project_sha": "9ad30a803ffe2227551bdbe2856633eef1165047",
+  "source_ci_state": "CI_GREEN_CONFIRMED",
+  "w05_ter": 1.0,
+  "w05_tamper_attempts_expected": 4,
+  "w05_tamper_attempts_detected": 4,
+  "w05_canonical_sync_verified": false,
+  "w1_execution_performed": false,
+  "w1_preparation_allowed_next": false,
+  "w1_execution_allowed": false,
+  "next_recommended_step": "repair_if08_w05_post_sync_review_blockers",
+  "blocking_findings": [
+    "latest_completed_status/current_status mismatch against W0.5 canonical status",
+    "recorded project sha does not match expected W0.5 canonical sha",
+    "pre-sync defer marker missing; review is not anchored on the canonical sync closure",
+    "W1 wave definition does not match the canonroadmap"
+  ]
+}

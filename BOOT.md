@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `5a94581894cf`
+- state_sha: `ecc05a9ef417`
 - schema_version: `3.28`
 
 ## AVISO DE STALE
@@ -14,10 +14,10 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Unknown`
-- phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
-- status: `if09_closure_milestone_mirror_sanity_pass`
+- phase_id: `LAPIDARIUM`
+- status: `lapidarium_phase_1_5_test_isolation_active`
 - decision: `pass`
-- resumo: IF09 Closure Milestone Mirror Sanity Packet; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: Lapidarium Fase 1.5 - Isolamento de Testes; aguardando LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS sem autorizacao de execucao.
 
 ## MAPA
 
@@ -37,11 +37,11 @@ GERADO — NAO EDITE A MAO
 
 ## PROXIMO PASSO
 
-- active_next_phase: `null`
-- next_phase_class: `null`
+- active_next_phase: `LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS`
+- next_phase_class: `lapidarium_remediation`
 - advance_mode: `operator`
 - travas relevantes:
-  - next_phase_authorized_by_operator=False
+  - next_phase_authorized_by_operator=True
   - next_phase_execution_authorization=False
   - operator_approval_packet_review_is_execution_approval=False
   - real_apply_authorized=False
@@ -49,7 +49,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS.
 
 ## REGRAS DE AGORA
 

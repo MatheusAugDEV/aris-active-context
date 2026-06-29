@@ -448,12 +448,12 @@ IF08_W05_CONTROLLED_ROOT = ROOT / "artifacts" / "if08_w05_controlled_execution"
 IF08_W05_CONTROLLED_ACTIVE_DECISION_PATH = IF08_W05_CONTROLLED_ROOT / "decision.json"
 IF08_W05_CONTROLLED_ACTIVE_SUMMARY_PATH = IF08_W05_CONTROLLED_ROOT / "summary.json"
 IF08_W05_CONTROLLED_ACTIVE_REPORT_PATH = IF08_W05_CONTROLLED_ROOT / "report.md"
-IF08_W05_POST_SYNC_DECISION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_decision_2026_06_07.json")
-IF08_W05_POST_SYNC_SUMMARY_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_summary_2026_06_07.json")
-IF08_W05_POST_SYNC_REPORT_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_review_report_2026_06_07.md")
-IF08_W1_READINESS_MATRIX_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w1_readiness_matrix_2026_06_07.json")
-IF08_W05_POST_SYNC_NO_EXECUTION_PATH = _resolve_project_relative("artifacts", "infernus", "if08_w05_post_sync_no_execution_attestation_2026_06_07.json")
-IF08_W05_POST_SYNC_DOC_PATH = _resolve_project_relative("docs", "infernus_full", "if08_w05_post_sync_review_2026_06_07.md")
+IF08_W05_POST_SYNC_DECISION_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "decision.json"
+IF08_W05_POST_SYNC_SUMMARY_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "summary.json"
+IF08_W05_POST_SYNC_REPORT_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "report.md"
+IF08_W1_READINESS_MATRIX_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "readiness_matrix.json"
+IF08_W05_POST_SYNC_NO_EXECUTION_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "no_execution_attestation.json"
+IF08_W05_POST_SYNC_DOC_PATH = ROOT / "artifacts" / "if08_w05_post_sync_project" / "report.md"
 IF08_W05_POST_SYNC_ROOT = ROOT / "artifacts" / "if08_w05_post_sync_review"
 IF08_W05_POST_SYNC_ACTIVE_DECISION_PATH = IF08_W05_POST_SYNC_ROOT / "decision.json"
 IF08_W05_POST_SYNC_ACTIVE_SUMMARY_PATH = IF08_W05_POST_SYNC_ROOT / "summary.json"
@@ -8780,10 +8780,7 @@ def _check_operator_preferences_contract(state: dict[str, Any]) -> None:
             state.get("active_next_phase_class") == transition_row.get("next_phase_class"),
             "active_next_phase_class must match successor row",
         )
-        expected_next_phase_authorized = not (
-            state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
-            and state.get("status") == CURRENT_LIVE_STATUS
-        )
+        expected_next_phase_authorized = state.get("current_phase_id") == "LAPIDARIUM"
         _require(
             state.get("next_phase_authorized_by_operator") is expected_next_phase_authorized,
             (
@@ -17394,9 +17391,14 @@ def main() -> None:
     _require(state["next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "next_phase must match the current live route")
     _require(state["active_next_phase"] == CURRENT_EXPECTED_NEXT_PHASE_ID, "active_next_phase must match the current live route")
     _require(state["active_next_phase_class"] == CURRENT_EXPECTED_NEXT_PHASE_CLASS, "active_next_phase_class mismatch after live route reconciliation")
+    expected_next_phase_authorized = state.get("current_phase_id") == "LAPIDARIUM"
     _require(
-        state["next_phase_authorized_by_operator"] is False,
-        "next phase authorization must remain false until a separate operator merge decision",
+        state["next_phase_authorized_by_operator"] is expected_next_phase_authorized,
+        (
+            "Lapidarium cursor activation must authorize the next phase"
+            if expected_next_phase_authorized
+            else "next phase authorization must remain false until a separate operator merge decision"
+        ),
     )
     _require(state["anti_proliferation_rule_active"] is True, "anti_proliferation_rule_active must be true")
     _require(state["ci_enforcement_active"] is True, "ci_enforcement_active must be true")

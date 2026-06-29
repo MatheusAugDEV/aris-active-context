@@ -298,6 +298,7 @@ Exception: execution of waves against real system, real apply, product promotion
 | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |
 | INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |
 | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |
+| LAPIDARIUM | pass | LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS | lapidarium_remediation | operator | lapidarium cursor activation decision + phase 2 file consolidation inventory + bootstrap sync |
 | BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
 | CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
 | BEDROCK-01 | pass | null | product | operator | product promotion artifact |

@@ -80,6 +80,7 @@
         "infernus_revalidation_operator_authorization",
         "infernus_revalidation_execution",
         "infernus_revalidation_adjudication_or_closure",
+        "lapidarium_remediation",
         "history_only",
         null
       ],
@@ -529,14 +530,15 @@
             "purgatorium_route_admission",
             "purgatorium_track_a_main_merge_execution",
             "purgatorium_post_merge_validation",
-            "infernus_revalidation_route_admission",
-            "infernus_revalidation_readiness",
-            "infernus_revalidation_operator_authorization",
-            "infernus_revalidation_execution",
-            "infernus_revalidation_adjudication_or_closure",
-            "history_only",
-            null
-          ],
+        "infernus_revalidation_route_admission",
+        "infernus_revalidation_readiness",
+        "infernus_revalidation_operator_authorization",
+        "infernus_revalidation_execution",
+        "infernus_revalidation_adjudication_or_closure",
+        "lapidarium_remediation",
+        "history_only",
+        null
+      ],
           "type": [
             "string",
             "null"
@@ -597,7 +599,7 @@
       "type": "boolean"
     },
     "current_phase_id": {
-      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
+      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+|LAPIDARIUM)$",
       "type": "string"
     },
     "last_phase": {
@@ -989,7 +991,7 @@
       "type": "boolean"
     },
     "phase_id": {
-      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
+      "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+|LAPIDARIUM)$",
       "type": "string"
     },
     "phase_now": {
@@ -998,6 +1000,10 @@
         "string",
         "null"
       ]
+    },
+    "roadmap_version": {
+      "const": "v2",
+      "type": "string"
     },
     "scenario_count": {
       "type": "integer"
@@ -1078,7 +1084,8 @@
         "3.25",
         "3.26",
         "3.27",
-        "3.28"
+        "3.28",
+        "3.29"
       ],
       "type": "string"
     },
@@ -1632,6 +1639,9 @@
         },
         "schema_3_28_change_summary": {
           "type": "string"
+        },
+        "schema_3_29_change_summary": {
+          "type": "string"
         }
       },
       "required": [
@@ -1873,9 +1883,10 @@
     "purg00_source_gap_terminal_blocker",
     "benchuix_track"
   ],
-  "title": "ARIS Active Context Canonical Live State Schema v3.28",
+  "title": "ARIS Active Context Canonical Live State Schema v3.29",
   "type": "object",
   "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
   "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
-  "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields."
+  "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
+  "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone."
 }

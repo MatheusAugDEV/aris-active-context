@@ -93,12 +93,12 @@
     "Project_ARIS_touched": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
-    "BOOT.md": "80af201642ca49f73313327da2484cd94ac2577e87843e246613ff9e1755bd43",
-    "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
-    "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf"
+    "ACTIVE_CONTEXT_STATE.json": "ecc05a9ef417b264eed87cb78a14fa8cc7e630ba48fef375752ceb955fef767c",
+    "BOOT.md": "40ed5901ffa35b3415ece6e8a38d5fda3aef66c659875f763b7667ad00698fa1",
+    "scripts/validate_active_context_state.py": "29b1ad4694279255694ad5419275f60d7e1dae9716a2108425d988cf94e0bab1",
+    "tests/test_validate_active_context.py": "5910a1802d595038c277d077136c2275925c1ddc04c88b63a7d962bdff91e74c"
   },
-  "validation_evidence_sha256": "7db60e8aef66926852ff940c714c9397b1887302db34984e0937889974cb1cc7",
+  "validation_evidence_sha256": "0d0aa378fa373e960e5c9eb80c4e5b05ba1fccc1fc1b89245a653735cfdc806d",
   "notes": [
     "BENCHUIX-26 materializa somente roteiro fechado, sandbox documental, dados sinteticos, timing, comprovantes e linguagem de valor.",
     "Nenhuma demo real foi executada.",

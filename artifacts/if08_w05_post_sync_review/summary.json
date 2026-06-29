@@ -16,5 +16,9 @@
   "w1_readiness_state": "ready_for_preparation",
   "w1_preparation_allowed_next": true,
   "w1_execution_allowed": false,
-  "next_recommended_step": "prepare_if08_w1_context_memory_rag_preflight_readiness"
+  "next_recommended_step": "prepare_if08_w1_context_memory_rag_preflight_readiness",
+  "source_phase": "IF-08 W0.5 Controlled Ledger/Evidence Integrity Execution",
+  "source_status": "if08_w05_controlled_ledger_evidence_integrity_execution_pass",
+  "source_project_sha": "6b8dc72edc168402700c63cca076bf533bd3b65a",
+  "source_ci_state": "CI_GREEN_CONFIRMED"
 }

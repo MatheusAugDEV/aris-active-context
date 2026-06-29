@@ -1,0 +1,33 @@
+{
+  "decision": "pass",
+  "status": "lapidarium_cursor_activation_pass",
+  "task_id": "LAPIDARIUM_CURSOR_ACTIVATION_RESUME",
+  "scope": "governance/documentation only; active-context cursor activation and related markdown/roadmap sync",
+  "rationale": "IF09 was closed correctly (remediation_proven=true). The active cursor should advance to the in-progress Lapidarium operation rather than to the next macro layer. Fase 2 is the next step inside Lapidarium. Schema 3.29 and the BENCHUIX-27C hash-scope repair were resolved in the same session.",
+  "prerequisites": [
+    "schema_3_29_adopted",
+    "benchuix_27c_hash_scope_repair_completed",
+    "roadmap_lapidarium_row_present"
+  ],
+  "previous_phase_id": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+  "phase_id": "LAPIDARIUM",
+  "current_phase_id": "LAPIDARIUM",
+  "phase_class": "lapidarium_remediation",
+  "display_name": "Lapidarium Fase 1.5 — Isolamento de Testes",
+  "next_phase": "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS",
+  "active_next_phase": "LAPIDARIUM_FASE_2_CONSOLIDACAO_ARQUIVOS",
+  "active_next_phase_class": "lapidarium_remediation",
+  "roadmap_version": "v2",
+  "schema_version": "3.28",
+  "real_execution_authorized": false,
+  "product_authorized": false,
+  "production_authorized": false,
+  "real_apply_authorized": false,
+  "secrets_authorized": false,
+  "runtime_real_authorized": false,
+  "notes": [
+    "This packet records a cursor activation only.",
+    "It does not authorize any runtime, product, apply, or secrets operation.",
+    "It preserves IF09 closure as previous_phase_id and does not reopen the closed finding."
+  ]
+}
