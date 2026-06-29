@@ -24,6 +24,37 @@
       ],
       "type": "string"
     },
+    "last_resolved_divergence": {
+      "additionalProperties": false,
+      "properties": {
+        "ci_status": {
+          "type": "string"
+        },
+        "final_sha": {
+          "type": "string"
+        },
+        "key_decisions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "resolved_at": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "summary",
+        "final_sha",
+        "ci_status",
+        "resolved_at",
+        "key_decisions"
+      ],
+      "type": "object"
+    },
     "active_next_phase": {
       "type": [
         "string",
@@ -56,6 +87,9 @@
         "string",
         "null"
       ]
+    },
+    "sha_lido": {
+      "type": "string"
     },
     "additional_live_state_sources_allowed": {
       "const": false,

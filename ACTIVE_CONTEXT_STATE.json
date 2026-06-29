@@ -211,6 +211,19 @@
         "no_local_only_update_is_canonical": true,
         "no_unpushed_commit_is_canonical": true
     },
+    "sha_lido": "a98fb3c51cfac6e0832e56202e577062e9d37577",
+    "last_resolved_divergence": {
+        "summary": "Lapidarium local-vs-origin divergence resolved: rebase completed, oversized blobs removed via git filter-repo, submodule pointer model aligned to the upstream ACTIVE_CONTEXT_POINTER.md contract, and CodeQL guarded for private repo status.",
+        "final_sha": "a98fb3c51cfac6e0832e56202e577062e9d37577",
+        "ci_status": "all_workflows_success_or_skipped",
+        "resolved_at": "2026-06-28",
+        "key_decisions": [
+            "Adopted the upstream ACTIVE_CONTEXT_POINTER.md contract instead of formalizing aris-active-context as a Git submodule",
+            "Removed five oversized artifacts/f17/*.json blobs from history via git filter-repo, with local backups preserved outside git",
+            "Used --force-with-lease for the single required force push because the rewritten history had not been published before",
+            "Guarded .github/workflows/codeql.yml with github.event.repository.private == false because CodeQL/code scanning is unavailable for this private repository"
+        ]
+    },
     "completed_phases": {
         "latest": {
             "phase": "IF09 Closure Milestone Mirror Sanity Packet",
