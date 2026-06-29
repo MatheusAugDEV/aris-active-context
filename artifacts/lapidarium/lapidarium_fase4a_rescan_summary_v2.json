@@ -1,0 +1,58 @@
+{
+  "artifact_id": "lapidarium_fase4a_rescan_summary_v2",
+  "status": "lapidarium_fase4a_rescan_summary_v2_recorded",
+  "scope": "read_only_rescan_no_dataset_mutation",
+  "source_dataset": "Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+  "dataset_json_valid": true,
+  "base_seems_source_genuine_count": 3880,
+  "old_exclusion_count": 4,
+  "new_exclusion_count": 5,
+  "newly_detected_corrupt_entries_count": 1,
+  "newly_detected_corrupt_entries": ["how --stat --summary 5dda82a"],
+  "known_gap_verified": true,
+  "known_gap_verification_detail": "The reported gap candidate 'how --stat --summary 5dda82a' was independently re-derived by the expanded heuristic scan (matched heuristics B: cli_long_flag, cli_short_hex_token; and C: file_type_overstriking_or_content_match) without relying on the prior session's self-report. Forensic evidence collected fresh in this task confirms: exists_on_disk=true, git_tracked=true (verified via git ls-files -z exact match, not substring grep), size_bytes=15915, file type='ASCII text, with overstriking', content matches 'SUMMARY OF LESS COMMANDS', same originating commit baf7977b6b33cd3938cfe2ca92144b1f60dbbd0b as the previously known weird file '[:alnum:] \\n \\'.",
+  "candidates_per_entry": {
+    "[:alnum:] \\n \\": {
+      "status": "reconfirmed",
+      "heuristics_matched": ["A:backslash", "C:file_type_overstriking_or_content_match", "C:frequent_backspace_overstrike_bytes_corroborating"],
+      "exists_on_disk": true,
+      "git_tracked": true
+    },
+    "es\"' | head -25": {
+      "status": "reconfirmed",
+      "heuristics_matched": ["A:pipe", "A:quote", "B:cli_short_flag", "E:nonexistent_with_corrupt_signal"],
+      "exists_on_disk": false,
+      "git_tracked": false
+    },
+    "json": {
+      "status": "reconfirmed",
+      "heuristics_matched": ["D:import_token_leakage", "E:nonexistent_with_corrupt_signal"],
+      "exists_on_disk": false,
+      "git_tracked": false
+    },
+    "re": {
+      "status": "reconfirmed",
+      "heuristics_matched": ["D:import_token_leakage", "E:nonexistent_with_corrupt_signal"],
+      "exists_on_disk": false,
+      "git_tracked": false
+    },
+    "how --stat --summary 5dda82a": {
+      "status": "newly_confirmed",
+      "heuristics_matched": ["B:cli_long_flag", "B:cli_short_hex_token", "C:file_type_overstriking_or_content_match", "C:frequent_backspace_overstrike_bytes_corroborating"],
+      "exists_on_disk": true,
+      "git_tracked": true
+    }
+  },
+  "false_positives_eliminated": [
+    {
+      "path": "debug_audio.wav",
+      "initial_heuristic_hit": "C:frequent_backspace_overstrike_bytes (uncorrected version)",
+      "correction_applied": "required primary textual/file-type signal before counting backspace density",
+      "final_classification": "false_positive_legitimate_path"
+    }
+  ],
+  "no_additional_corrupt_entries_found_beyond_these_5": true,
+  "scan_method": "python3_json_load_plus_os_path_exists_plus_file_command_plus_raw_byte_read_read_only",
+  "dataset_modified": false,
+  "real_execution_performed": false
+}

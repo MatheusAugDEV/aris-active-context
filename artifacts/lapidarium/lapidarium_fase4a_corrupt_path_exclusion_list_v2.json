@@ -1,0 +1,93 @@
+{
+  "artifact_id": "lapidarium_fase4a_corrupt_path_exclusion_list_v2",
+  "status": "lapidarium_fase4a_corrupt_path_exclusion_list_v2_recorded",
+  "supersedes": "artifacts/lapidarium/lapidarium_fase4a_corrupt_path_exclusion_list.json",
+  "purpose": "Complete set of entries to exclude from LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO planning input, expanding the v1 list of 4 with the independently re-verified gap entry.",
+  "source_dataset": "Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+  "source_dataset_unmodified": true,
+  "excluded_entries_count": 5,
+  "excluded_entries": [
+    {
+      "raw_value": "[:alnum:] \\n \\",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": true,
+      "git_tracked": true,
+      "classification": "tracked_accidental_shell_output_artifact",
+      "detected_heuristics": ["A:backslash", "C:file_type_overstriking_or_content_match"],
+      "filesystem_action_required_later": true,
+      "recommended_future_action": "surgical_removal_after_operator_authorization",
+      "operator_authorization_required": true,
+      "removed_in_this_task": false,
+      "carried_over_from_v1": true
+    },
+    {
+      "raw_value": "es\"' | head -25",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "git_tracked": false,
+      "classification": "non_existent_corrupt_shell_fragment",
+      "detected_heuristics": ["A:pipe", "A:quote", "B:cli_short_flag", "E:nonexistent_with_corrupt_signal"],
+      "filesystem_action_required_later": false,
+      "recommended_future_action": "no_filesystem_action_possible",
+      "operator_authorization_required": false,
+      "removed_in_this_task": false,
+      "carried_over_from_v1": true
+    },
+    {
+      "raw_value": "json",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "git_tracked": false,
+      "classification": "non_existent_corrupt_import_token",
+      "detected_heuristics": ["D:import_token_leakage", "E:nonexistent_with_corrupt_signal"],
+      "filesystem_action_required_later": false,
+      "recommended_future_action": "no_filesystem_action_possible",
+      "operator_authorization_required": false,
+      "removed_in_this_task": false,
+      "carried_over_from_v1": true
+    },
+    {
+      "raw_value": "re",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "git_tracked": false,
+      "classification": "non_existent_corrupt_import_token",
+      "detected_heuristics": ["D:import_token_leakage", "E:nonexistent_with_corrupt_signal"],
+      "filesystem_action_required_later": false,
+      "recommended_future_action": "no_filesystem_action_possible",
+      "operator_authorization_required": false,
+      "removed_in_this_task": false,
+      "carried_over_from_v1": true
+    },
+    {
+      "raw_value": "how --stat --summary 5dda82a",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": true,
+      "git_tracked": true,
+      "classification": "tracked_accidental_shell_output_artifact",
+      "detected_heuristics": ["B:cli_long_flag", "B:cli_short_hex_token", "C:file_type_overstriking_or_content_match"],
+      "filesystem_action_required_later": true,
+      "recommended_future_action": "surgical_removal_after_operator_authorization",
+      "operator_authorization_required": true,
+      "removed_in_this_task": false,
+      "carried_over_from_v1": false,
+      "newly_added_in_v2": true,
+      "same_origin_commit_as": "[:alnum:] \\n \\",
+      "origin_commit_sha": "baf7977b6b33cd3938cfe2ca92144b1f60dbbd0b"
+    }
+  ],
+  "excluded_entries_not_removed_from_source_dataset": true,
+  "false_positives_explicitly_not_excluded": [
+    {
+      "raw_value": "debug_audio.wav",
+      "reason": "binary audio data, not a pager/help-output artifact; matched an uncorrected heuristic in an intermediate pass only"
+    }
+  ],
+  "dataset_modified": false,
+  "real_execution_performed": false
+}

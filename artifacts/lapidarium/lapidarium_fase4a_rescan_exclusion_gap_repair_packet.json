@@ -1,0 +1,73 @@
+{
+  "artifact_id": "lapidarium_fase4a_rescan_exclusion_gap_repair_packet",
+  "status": "lapidarium_fase4a_rescan_exclusion_gap_repair_recorded",
+  "decision": "pending_operator_review",
+  "previous_exclusion_list": "artifacts/lapidarium/lapidarium_fase4a_corrupt_path_exclusion_list.json",
+  "previous_exclusion_count": 4,
+  "new_exclusion_list_v2": "artifacts/lapidarium/lapidarium_fase4a_corrupt_path_exclusion_list_v2.json",
+  "new_exclusion_count": 5,
+  "newly_detected_corrupt_entries": [
+    {
+      "raw_value": "how --stat --summary 5dda82a",
+      "classification": "tracked_accidental_shell_output_artifact",
+      "same_origin_commit_as": "[:alnum:] \\n \\",
+      "origin_commit_sha": "baf7977b6b33cd3938cfe2ca92144b1f60dbbd0b"
+    }
+  ],
+  "known_gap_verified": true,
+  "known_gap_verification_method": "independent_expanded_heuristic_rescan_plus_fresh_forensic_byte_level_evidence_collection_not_self_report",
+  "canonical_state_observed": {
+    "phase_id": "LAPIDARIUM",
+    "current_phase_id": "LAPIDARIUM",
+    "display_name": "Lapidarium Fase 3 — Verificação de Cache",
+    "status": "lapidarium_fase_3_cache_verificacao_pass",
+    "current_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "schema_version": "3.29",
+    "next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "active_next_phase_class": "lapidarium_remediation",
+    "next_phase_execution_authorization": false,
+    "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
+    "authorization_real_apply_authorized": false,
+    "authorization_production_authorized": false,
+    "authorization_product_ready": false,
+    "authorization_runtime_integration_allowed": false,
+    "authorization_secrets_access_authorized": false
+  },
+  "prior_fase4a_artifact_verification": {
+    "dataset_json_valid": true,
+    "corrupt_entries_quarantined_count": 4,
+    "dataset_safe_for_fase4_readonly_planning": true,
+    "dataset_safe_for_cleanup_execution": false,
+    "sanitized_view_required_before_cleanup": true,
+    "real_execution_performed": false,
+    "old_exclusion_list_count": 4,
+    "old_exclusion_list_status_for_known_4": "still_valid",
+    "old_exclusion_list_status_overall": "incomplete_due_to_newly_discovered_candidate_gap_verified"
+  },
+  "base_seems_source_genuine_count": 3880,
+  "dataset_json_valid": true,
+  "dataset_modified": false,
+  "project_repo_mutated": false,
+  "cleanup_executed": false,
+  "files_deleted": false,
+  "files_moved": false,
+  "weird_files_removed": false,
+  "generator_repaired": false,
+  "active_context_state_changed": false,
+  "active_context_state_change_justification": "ACTIVE_CONTEXT_SCHEMA.json declares additionalProperties=false and has no property for fase4a rescan state; forcing schema evolution was not necessary for an artifact-only governance record, so ACTIVE_CONTEXT_STATE.json was left untouched per the task's own fallback instruction.",
+  "dataset_safe_for_fase4_readonly_planning_with_v2_exclusion": true,
+  "dataset_safe_for_cleanup_execution": false,
+  "heuristics_artifact": "artifacts/lapidarium/lapidarium_fase4a_shell_fragment_detection_heuristics_v2.json",
+  "rescan_summary_artifact": "artifacts/lapidarium/lapidarium_fase4a_rescan_summary_v2.json",
+  "no_cleanup_attestation_artifact": "artifacts/lapidarium/lapidarium_fase4a_rescan_no_cleanup_execution_attestation.json",
+  "false_positive_correction_note": "An intermediate pass of heuristic C (pager/help-output detection) flagged debug_audio.wav using raw backspace-byte density alone. This was corrected before finalizing results: debug_audio.wav is binary audio data ('file' reports 'data'), not ASCII overstrike text, and is confirmed NOT corrupt. It remains in the sanitized planning set with no exclusion.",
+  "no_additional_corrupt_entries_found_beyond_the_5_in_v2": true,
+  "recommended_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO_READONLY_PLAN_V2",
+  "recommended_next_phase_alternatives": [
+    "LAPIDARIUM_FASE_4A_MANUAL_CORRUPTION_REVIEW",
+    "LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR"
+  ],
+  "recommendation_rationale": "With the v2 exclusion list (5 entries) applied, the seems_source_genuine base set (3,880) reduces to a sanitized set of 3,875 with no further corrupt-pattern matches found by the expanded A-E heuristic family. Fase 4 read-only planning can proceed using lapidarium_fase4a_corrupt_path_exclusion_list_v2.json as the mandatory exclusion input. A future Fase 4B should still repair the Fase 1 generator's quoting/escaping bug, since the same accidental-shell-output failure mode produced two near-identical 15,915-byte artifacts in a single commit and could recur on regeneration.",
+  "real_execution_performed": false
+}

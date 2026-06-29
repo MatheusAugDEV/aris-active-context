@@ -1,0 +1,48 @@
+{
+  "artifact_id": "lapidarium_fase4a_shell_fragment_detection_heuristics_v2",
+  "status": "lapidarium_fase4a_shell_fragment_detection_heuristics_v2_recorded",
+  "scope": "read_only_heuristic_definition_no_dataset_mutation",
+  "heuristic_families": {
+    "A_character_meta": {
+      "description": "Detect shell-special characters embedded in a path-like string",
+      "signals": ["pipe", "quote", "backslash", "semicolon", "backtick", "angle_bracket", "dollar", "control_character_or_cr_tab", "unmatched_bracket"]
+    },
+    "B_cli_fragment": {
+      "description": "Detect strings shaped like a CLI invocation fragment rather than a filesystem path",
+      "signals": [
+        "cli_long_flag (token starting with --)",
+        "cli_short_flag (token starting with - and length <= 4)",
+        "cli_short_hex_token (6-12 char hex token, e.g. a git short SHA)",
+        "cli_command_like_first_token (first path segment's first word is a known command name: git, show, log, diff, grep, sed, awk, tr, xargs, find, head, tail, less, man, cat, python, python3, node, npm, npx, bash, sh, zsh)"
+      ],
+      "gating_rule": "Only applies when the string contains a space; a normal path with spaces and no command/flag/hex signal is NOT flagged (avoids false positives on legitimately spaced filenames)"
+    },
+    "C_pager_help_artifact": {
+      "description": "Detect accidental captured pager/help output on existing regular files",
+      "signals": [
+        "file_type_overstriking_or_content_match (primary signal: `file` reports 'overstriking', OR raw bytes contain the literal string 'SUMMARY OF LESS COMMANDS' once 0x08 backspace bytes are stripped)",
+        "frequent_backspace_overstrike_bytes_corroborating (corroborating only: >=10 occurrences of 0x08 in first 2048 bytes, never used alone)",
+        "less_man_help_content_match (content match confirmed)"
+      ],
+      "false_positive_correction": "An earlier pass of this heuristic flagged debug_audio.wav using backspace-byte-count alone (25 occurrences of 0x08 in raw PCM audio data, which is incidental noise, not overstrike formatting). The heuristic was corrected to require the primary textual signal (file type 'overstriking' or literal pager-help content match) before backspace density is considered at all. After correction, debug_audio.wav no longer matches and is confirmed NOT corrupt."
+    },
+    "D_import_token_leakage": {
+      "description": "Detect bare Python import/module tokens leaked into the path field by the Fase 1 generator",
+      "tokens_checked": ["json", "re", "os", "sys", "pathlib", "subprocess", "typing"],
+      "gating_rule": "Only classified as corrupt when category=orfao_candidato AND orphan_signal=seems_source_genuine AND the token does not exist as a legitimate file/dir at that exact path in the project"
+    },
+    "E_nonexistent_with_corrupt_signal": {
+      "description": "A path in seems_source_genuine that does not exist on disk AND already matched at least one other heuristic (A, B, or D)",
+      "purpose": "Confirms the entry could never have been a real source file; it is purely a corrupted string artifact of the generator"
+    }
+  },
+  "false_positive_excluded": {
+    "path": "debug_audio.wav",
+    "reason": "binary audio data (file reports 'data', not ASCII text with overstriking); incidental 0x08 byte occurrences in raw PCM samples are not a pager/help-output signal",
+    "classification": "false_positive_legitimate_path",
+    "action": "left_in_planning_set_no_exclusion"
+  },
+  "heuristics_applied_to_base_set_count": 3880,
+  "total_matches_after_correction": 5,
+  "real_execution_performed": false
+}
