@@ -70,8 +70,8 @@
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
     "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
-    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
-    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
+    "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
+    "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf",
     "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
     "artifacts/benchuix/visual_sandbox_static/index.html": "0ce2ec4e7a93342c07ba3704579a330ff1c8f442e77738a0745473ab64fd5289",
     "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13"

@@ -95,8 +95,8 @@
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
     "BOOT.md": "80af201642ca49f73313327da2484cd94ac2577e87843e246613ff9e1755bd43",
-    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
-    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de"
+    "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
+    "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf"
   },
   "validation_evidence_sha256": "7a3b162e7502e551f1eeffe06e3a0781af5cb21f67c5673144b88764315d6d23",
   "notes": [

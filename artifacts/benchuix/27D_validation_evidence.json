@@ -82,8 +82,8 @@
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "5a94581894cfc0ea758752d970cd5e417bfd4c07eb822e65d1606acf6e6d4a78",
     "ACTIVE_CONTEXT_SCHEMA.json": "bf255f542277b284dd78977b02e59f83666ae6f3bfac79bce3569e0e0effeddc",
-    "scripts/validate_active_context_state.py": "2dbad15aa34f7500197b9af0f90516d35a75ff146c9220aaec811850bb4a73fd",
-    "tests/test_validate_active_context.py": "db58375a540a9022ce48b8e4dd3b0c8eee03646d631c864f756c046810df21de",
+    "scripts/validate_active_context_state.py": "0f56b3a4e42f919a874ca761d820b5f677426c8d6f59b9ad106119bc632eda8a",
+    "tests/test_validate_active_context.py": "e0d48c7426fccaca2f68246986f71046f27c227345f1182f94e1332aa40db4bf",
     "artifacts/benchuix/27B_react_static_prototype_manifest.json": "cab1c85b3686fb9f3dc02c39653be4a4f58caa47ee219a56e0a93d8d20a37056",
     "artifacts/benchuix/27C_visual_synthetic_test_matrix.json": "d340da16fab85b50de2c259a40a211fdb4bf6b3d0898fc50f3acadcd0cad047a",
     "artifacts/benchuix/visual_sandbox_static/README.md": "5e7675b426a80f8af06f716238d133b1be788739a39f0de18095df4a67a1656f",
