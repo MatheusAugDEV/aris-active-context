@@ -1,0 +1,105 @@
+{
+  "artifact_id": "lapidarium_fase4a_dataset_integrity_quarantine_packet",
+  "status": "lapidarium_fase4a_dataset_integrity_quarantine_recorded",
+  "decision": "pending_operator_review",
+  "previous_status": "lapidarium_fase_3_cache_verificacao_pass",
+  "intended_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+  "scope": "artifact_only_governance_evidence_no_dataset_or_filesystem_mutation",
+  "canonical_state_observed": {
+    "phase_id": "LAPIDARIUM",
+    "current_phase_id": "LAPIDARIUM",
+    "display_name": "Lapidarium Fase 3 — Verificação de Cache",
+    "status": "lapidarium_fase_3_cache_verificacao_pass",
+    "current_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "schema_version": "3.29",
+    "next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "active_next_phase_class": "lapidarium_remediation",
+    "next_phase_execution_authorization": false,
+    "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
+    "authorization_real_apply_authorized": false,
+    "authorization_production_authorized": false,
+    "authorization_product_ready": false,
+    "authorization_runtime_integration_allowed": false,
+    "authorization_secrets_access_authorized": false
+  },
+  "raw_dataset_preserved": true,
+  "historical_dataset_rewritten": false,
+  "cleanup_executed": false,
+  "files_deleted": false,
+  "weird_file_removed": false,
+  "weird_file_classification": "tracked_accidental_shell_output_artifact",
+  "corrupt_entries_quarantined_count": 4,
+  "suspicious_entries_count": 4,
+  "dataset_json_valid": true,
+  "dataset_safe_for_fase4_readonly_planning": true,
+  "dataset_safe_for_cleanup_execution": false,
+  "sanitized_view_required_before_cleanup": true,
+  "future_removal_requires_operator_authorization": true,
+  "recommended_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO_READONLY_PLAN",
+  "recommended_next_phase_alternative": "LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR",
+  "recommendation_rationale": "Fase 4 read-only planning over the seems_source_genuine set (3,880 entries) can proceed safely if the 4 quarantined corrupt entries are excluded from the planning input set per lapidarium_fase4a_corrupt_path_exclusion_list.json. A separate Fase 4B should repair the Fase 1 generator's quoting/escaping bug so future regenerations of fase1_triagem_classificacao.json do not reintroduce shell-fragment or import-token leakage into path fields.",
+  "dataset_scan_reference_artifact": "artifacts/lapidarium/lapidarium_fase4a_dataset_integrity_scan_summary.json",
+  "exclusion_list_reference_artifact": "artifacts/lapidarium/lapidarium_fase4a_corrupt_path_exclusion_list.json",
+  "no_cleanup_attestation_reference_artifact": "artifacts/lapidarium/lapidarium_fase4a_no_cleanup_execution_attestation.json",
+  "weird_tracked_file_evidence": {
+    "path_repr": "'[:alnum:] \\\\n \\\\'",
+    "path_literal_note": "filename contains the two literal characters backslash-n (not a real newline) followed by a space and a trailing backslash",
+    "exists_on_disk": true,
+    "git_tracked": true,
+    "git_ls_files_output": "\"[:alnum:] \\\\n \\\\\"",
+    "git_log_touching_commits": [
+      {
+        "sha": "baf7977b6b33cd3938cfe2ca92144b1f60dbbd0b",
+        "author": "MatheusAugDEV <matheusaugusto99@gmail.com>",
+        "date": "Fri Apr 17 21:12:23 2026 -0300",
+        "message": "chore: isolate pre-P1.14 local changes"
+      },
+      {
+        "sha": "0c4b1c2c6402eef7b6d0b13eb9818b94b691426b",
+        "author": "MatheusAugDEV <matheusaugusto99@gmail.com>",
+        "date": "Fri Apr 17 21:12:23 2026 -0300",
+        "message": "(same isolation batch)"
+      }
+    ],
+    "file_type": "ASCII text, with overstriking",
+    "size_bytes": 15915,
+    "permissions": "0664 (-rw-rw-r--)",
+    "owner": "matheus:matheus",
+    "timestamps": {
+      "access": "2026-06-28 22:40:52 -0300",
+      "modification": "2026-05-07 12:38:47 -0300",
+      "change": "2026-05-07 12:38:47 -0300",
+      "creation": "2026-05-07 12:38:47 -0300"
+    },
+    "first_512_bytes_hex": "0a202020202020202020202020202020202020205308535508554d084d4d084d410841520852590859204f084f460846204c084c450845530853530853204308434f084f4d084d4d084d4108414e084e4408445308530a0a202020202020436f6d6d616e6473206d61726b65642077697468202a206d61792062652070726563656465642062792061206e756d6265722c205f084e2e0a2020202020204e6f74657320696e20706172656e74686573657320696e64696361746520746865206265686176696f72206966205f084e20697320676976656e2e0a20202020202041206b6579207072656365646564206279206120636172657420696e6469636174657320746865204374726c206b65793b2074687573205e4b206973206374726c2d4b2e0a0a2020682020482020202020202020202020202020202020446973706c617920746869732068656c702e0a20207120203a7120205120203a5120205a5a2020202020457869742e0a202d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d0a0a2020202020202020202020202020202020202020202020202020204d084d4f084f5608564908494e084e4708470a0a20206520205e4520206a20205e4e2020435220202a2020",
+    "first_bytes_escaped_text_excerpt": "S^HSU^HUM^HMM^HMA^HAR^HRY^HY O^HOF^HF L^HLE^HES^HSS^HS C^HCO^HOM^HMM^HMA^HAN^HND^HDS^HS ... (SUMMARY OF LESS COMMANDS, with 0x08 backspace overstrike bytes between each duplicated letter pair, the classic less/man pager bold-text rendering technique)",
+    "byte_0x08_meaning": "ASCII backspace, used by less/man to fake bold/underline via character-overstrike when rendered to a non-formatting terminal/file",
+    "interpretation": "captured output of a pager help screen (e.g. less --help or man's SUMMARY OF LESS COMMANDS), most likely produced when a malformed shell command (containing an unescaped POSIX character class like [:alnum:] and stray backslash-n) was redirected to a file whose name became the leftover unparsed command fragment",
+    "classification": "tracked_accidental_shell_output_artifact",
+    "recommended_future_action": "surgical_removal_after_operator_authorization",
+    "removed_in_this_task": false
+  },
+  "markdown_drift_detected": {
+    "observed": true,
+    "files_affected": [
+      "CURRENT_STATE.md",
+      "NEXT_ACTION.md"
+    ],
+    "description": "CURRENT_STATE.md and NEXT_ACTION.md currently render unrelated ARIS-CONTEXT-P19/P18 historical entries at their head rather than the canonical Lapidarium Fase 3 state recorded in ACTIVE_CONTEXT_STATE.json. Per the anti-corruption contract (json_beats_markdown=true, markdown_conflict_policy=fail_closed), ACTIVE_CONTEXT_STATE.json was treated as sole authority for this packet and the Markdown drift was not corrected as part of this artifact-only task.",
+    "action_taken": "none_flagged_as_residual_risk_only"
+  },
+  "pre_existing_unstaged_governance_repo_changes_detected": {
+    "observed": true,
+    "files": [
+      "ARIS_PHASE_LEDGER.md",
+      "CONTEXT_INDEX.md",
+      "CURRENT_STATE.md",
+      "NEXT_ACTION.md",
+      "PROJECT_CONTEXT_ARIS.md"
+    ],
+    "description": "These five files had pre-existing unstaged modifications (insertions only, appearing to duplicate older ARIS-CONTEXT-P15/P16/P18/P19 ledger entries) before this task began. They were not created or modified by this task and were deliberately excluded from the commit in this packet.",
+    "action_taken": "left_untouched_not_staged_not_committed"
+  },
+  "real_execution_performed": false
+}

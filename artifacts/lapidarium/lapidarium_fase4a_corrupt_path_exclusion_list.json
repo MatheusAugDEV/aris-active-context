@@ -1,0 +1,56 @@
+{
+  "artifact_id": "lapidarium_fase4a_corrupt_path_exclusion_list",
+  "status": "lapidarium_fase4a_corrupt_path_exclusion_list_recorded",
+  "purpose": "Entries that must be excluded from LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO planning input because they are corrupt artifacts of the Fase 1 dataset generator rather than genuine source-code or documentation paths.",
+  "source_dataset": "Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+  "source_dataset_unmodified": true,
+  "exclusion_basis": "category=orfao_candidato AND orphan_signal=seems_source_genuine AND (fails existence check OR is a known accidental shell/import-token artifact)",
+  "excluded_entries": [
+    {
+      "raw_value": "[:alnum:] \\n \\",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": true,
+      "exclusion_reason": "tracked_accidental_shell_output_artifact",
+      "classification": "tracked_accidental_shell_output_artifact",
+      "cross_reference": "see lapidarium_fase4a_dataset_integrity_quarantine_packet.json weird_tracked_file_evidence",
+      "future_action": "surgical_removal_after_operator_authorization",
+      "removed_in_this_task": false
+    },
+    {
+      "raw_value": "es\"' | head -25",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "exclusion_reason": "corrupt_shell_command_fragment_never_a_real_filesystem_path",
+      "classification": "non_existent_corrupt_path_string",
+      "future_action": "no_filesystem_action_possible_or_required_path_does_not_exist",
+      "removed_in_this_task": false
+    },
+    {
+      "raw_value": "json",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "exclusion_reason": "corrupt_python_import_token_leaked_into_path_field",
+      "classification": "non_existent_corrupt_path_string",
+      "future_action": "no_filesystem_action_possible_or_required_path_does_not_exist",
+      "removed_in_this_task": false
+    },
+    {
+      "raw_value": "re",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false,
+      "exclusion_reason": "corrupt_python_import_token_leaked_into_path_field",
+      "classification": "non_existent_corrupt_path_string",
+      "future_action": "no_filesystem_action_possible_or_required_path_does_not_exist",
+      "removed_in_this_task": false
+    }
+  ],
+  "excluded_entries_count": 4,
+  "excluded_entries_not_removed_from_source_dataset": true,
+  "note_on_unrelated_missing_paths": "artifacts/f17/safe_move_batch_candidates.json, artifacts/f17/safe_move_batch_candidates_summary.json, artifacts/f17/safe_move_reference_scan_summary.json, and frontend/dist/index.html are also missing on disk but carry category=vivo_subordinado (not orfao_candidato/seems_source_genuine) and are therefore out of scope for this exclusion list.",
+  "dataset_modified": false,
+  "real_execution_performed": false
+}

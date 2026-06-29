@@ -1,0 +1,141 @@
+{
+  "artifact_id": "lapidarium_fase4a_dataset_integrity_scan_summary",
+  "status": "lapidarium_fase4a_dataset_integrity_scan_summary_recorded",
+  "scope": "read_only_scan_no_dataset_mutation",
+  "dataset_path": "Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+  "dataset_instances_found": 1,
+  "dataset_json_valid": true,
+  "dataset_top_level_type": "dict",
+  "dataset_top_level_keys": [
+    "generated_at",
+    "phase0_source_commit",
+    "scope_rules",
+    "validation",
+    "category_counts",
+    "on_disk_items",
+    "broken_reference_registry",
+    "authority_broken_references_addendum"
+  ],
+  "path_classification_container_key": "on_disk_items",
+  "inferred_value_fields": [
+    "category",
+    "evidence",
+    "evidence_kind",
+    "orphan_signal",
+    "reference_tiers"
+  ],
+  "total_items": 46831,
+  "entries_with_path_like_field": 46831,
+  "existing_paths_count": 46824,
+  "missing_paths_count": 7,
+  "missing_paths": [
+    {
+      "path": "artifacts/f17/safe_move_batch_candidates.json",
+      "category": "vivo_subordinado",
+      "orphan_signal": null,
+      "note": "unrelated_missing_build_or_handoff_artifact_not_in_seems_source_genuine_set"
+    },
+    {
+      "path": "artifacts/f17/safe_move_batch_candidates_summary.json",
+      "category": "vivo_subordinado",
+      "orphan_signal": null,
+      "note": "unrelated_missing_build_or_handoff_artifact_not_in_seems_source_genuine_set"
+    },
+    {
+      "path": "artifacts/f17/safe_move_reference_scan_summary.json",
+      "category": "vivo_subordinado",
+      "orphan_signal": null,
+      "note": "unrelated_missing_build_or_handoff_artifact_not_in_seems_source_genuine_set"
+    },
+    {
+      "path": "frontend/dist/index.html",
+      "category": "vivo_subordinado",
+      "orphan_signal": null,
+      "note": "unrelated_missing_build_or_handoff_artifact_not_in_seems_source_genuine_set"
+    },
+    {
+      "path": "es\"' | head -25",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "note": "corrupt_shell_fragment_leaked_into_path_field_never_existed_on_disk"
+    },
+    {
+      "path": "json",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "note": "corrupt_python_import_token_leaked_into_path_field_never_existed_on_disk"
+    },
+    {
+      "path": "re",
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "note": "corrupt_python_import_token_leaked_into_path_field_never_existed_on_disk"
+    }
+  ],
+  "suspicious_pattern_scan": {
+    "categories_checked": [
+      "newline",
+      "carriage_return",
+      "tab",
+      "pipe",
+      "single_quote",
+      "double_quote",
+      "backtick",
+      "semicolon",
+      "angle_bracket",
+      "dollar",
+      "backslash",
+      "unmatched_bracket",
+      "leading_dash",
+      "control_chars"
+    ],
+    "per_category_match_count": {
+      "newline": 0,
+      "carriage_return": 0,
+      "tab": 0,
+      "pipe": 1,
+      "single_quote": 1,
+      "double_quote": 1,
+      "backtick": 0,
+      "semicolon": 0,
+      "angle_bracket": 0,
+      "dollar": 0,
+      "backslash": 1,
+      "unmatched_bracket": 0,
+      "leading_dash": 0,
+      "control_chars": 0
+    },
+    "union_of_pattern_matched_paths_count": 2,
+    "note": "Pattern-based regex scan alone surfaces only the 2 entries with pipe/quote/backslash characters. A targeted existence-plus-classification cross-check additionally surfaced 'json' and 're' as corrupt entries sharing the same category=orfao_candidato and orphan_signal=seems_source_genuine bucket, even though they do not trip the character-class heuristics. Total corrupt entries confirmed in the seems_source_genuine set: 4, not 2."
+  },
+  "specific_target_checks": {
+    "es_quote_pipe_head25": {
+      "queried_as": "es\"\\| head -25",
+      "found_exact_value": "es\"' | head -25",
+      "present": true,
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": false
+    },
+    "alnum_bracket_n_backslash": {
+      "queried_as": "[:alnum:] \\n \\",
+      "found_exact_value": "[:alnum:] \\n \\",
+      "present": true,
+      "category": "orfao_candidato",
+      "orphan_signal": "seems_source_genuine",
+      "exists_on_disk": true,
+      "note": "this_is_the_weird_tracked_file_see_quarantine_packet_section_weird_file_evidence"
+    }
+  },
+  "corrupt_entries_in_seems_source_genuine_set_count": 4,
+  "corrupt_entries_in_seems_source_genuine_set": [
+    "[:alnum:] \\n \\",
+    "es\"' | head -25",
+    "json",
+    "re"
+  ],
+  "dataset_modified": false,
+  "dataset_rewritten": false,
+  "scan_method": "python3_json_load_plus_os_path_exists_read_only",
+  "real_execution_performed": false
+}
