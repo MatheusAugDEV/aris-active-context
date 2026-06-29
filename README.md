@@ -1,11 +1,10 @@
 ## Current snapshot
-- Latest completed phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`.
-- Next authorized phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`.
-- P18 dry-run verified: `True`.
-- Real apply remains false: `False`.
-- Bedrock verdict: `WARN` with preparation exception `True`.
-- Product promotion remains false.
-- Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
+- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
+- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
+- Decision: `pass`.
+- Status: `if09_closure_milestone_mirror_sanity_pass`.
+- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
+- Historical P19/P20 snapshot and downstream notes remain below for audit context.
 # aris-active-context
 
 ## Leia Primeiro

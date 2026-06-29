@@ -1,3 +1,12 @@
+## CURRENT CANONICAL NEXT ACTION (IF09)
+
+next_phase: `null` (per `ACTIVE_CONTEXT_STATE.json`)
+stop_message: `Nenhuma transicao definida. Aguardando instrucao do operador.`
+
+The P20 recommendation below is HISTORICAL (from the P15-P19 numbering era) and was superseded when the canonical schema moved to `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`. It was never authorized or executed under that name.
+
+---
+
 ## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
 - status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
 - next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`

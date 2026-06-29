@@ -1,3 +1,16 @@
+## CURRENT CANONICAL STATE (IF09)
+
+phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+next_phase: `null`
+decision: `pass`
+status: `if09_closure_milestone_mirror_sanity_pass`
+sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`
+last_resolved_divergence: `Lapidarium local-vs-origin divergence resolved (rebase, oversized blob removal, submodule pointer model corrected, CodeQL guard added). See ACTIVE_CONTEXT_STATE.json for full detail.`
+
+Source of truth: ACTIVE_CONTEXT_STATE.json. This file's content below this line is HISTORICAL (P15-P19 era) and superseded.
+
+---
+
 ## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
 - status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
 - previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
