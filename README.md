@@ -1,4 +1,18 @@
 ## Current snapshot
+- Latest completed phase: `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`.
+- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
+- Decision: `pass`.
+- Status: `lapidarium_final_route_reconciliation_pass`.
+- Candidate-only next route: `BENCHUX_ROUTE_OPENING_PACKET` (not authorized).
+- All execution_locks: false.
+## Current snapshot [HISTORICAL_ONLY — IF09]
+- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded by LAPIDARIUM phases).
+- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
+- Decision: `pass`.
+- Status: `if09_closure_milestone_mirror_sanity_pass`.
+- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
+- Historical P19/P20 snapshot and downstream notes remain below for audit context.
+## Current snapshot [HISTORICAL_ONLY — P19]
 - Latest completed phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`.
 - Next authorized phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`.
 - P18 dry-run verified: `True`.
@@ -6,13 +20,6 @@
 - Bedrock verdict: `WARN` with preparation exception `True`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
-- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
-- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
-- Decision: `pass`.
-- Status: `if09_closure_milestone_mirror_sanity_pass`.
-- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
-- Historical P19/P20 snapshot and downstream notes remain below for audit context.
 # aris-active-context
 
 ## Leia Primeiro
@@ -85,20 +92,21 @@ Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
 
-phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
-status: if09_closure_milestone_mirror_sanity_pass
-latest_completed_phase: IF09 Closure Milestone Mirror Sanity Packet
-latest_completed_status: if09_closure_milestone_mirror_sanity_pass
+phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
+status: lapidarium_final_route_reconciliation_pass
+latest_completed_phase: Lapidarium — Final Route Reconciliation
+latest_completed_status: lapidarium_final_route_reconciliation_pass
 next_phase: null
-next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
-technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
+active_next_phase: null
+next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET
 Todos execution_locks: false
-Selected branch: `TRACK_REVALIDATION_FIRST`
-Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
-Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
-IF09-FIND-001 closed
-BENCHUX_ROUTE_OPENING_PACKET
-Project_ARIS main workspace: não alterado por este IF09 closure milestone mirror sanity packet
+Latest completed project commit SHA: `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+Latest completed CI state: `CI_GREEN_CONFIRMED`
+IF09-FIND-001 closed by Infernus Revalidation adjudication.
+BenchUX next gate candidate only: `BENCHUX_ROUTE_OPENING_PACKET`
+Project_ARIS main workspace: não alterado
+
+> **HISTORICAL_ONLY — SUPERSEDED_BY_LAPIDARIUM**
 
 O packet canônico de mirror sanity está registrado em `artifacts/active_context/if09_closure_milestone_sanity_packet.json`. Ele consome a row viva `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET -> IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, reafirma `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, saneia mirrors derivados e emite `artifacts/benchux/benchux_route_opening_candidate.json` apenas como candidato documental.
 
@@ -111,6 +119,15 @@ SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
 NOT_CURRENT_STATE
 
 As seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual.
+
+### IF09 Closure Milestone — Evidence Anchor [HISTORICAL_ONLY]
+
+Âncoras de evidência para o validator. Não representam estado vivo. Superseded by LAPIDARIUM.
+
+latest_completed_phase: IF09 Closure Milestone Mirror Sanity Packet
+status: if09_closure_milestone_mirror_sanity_pass
+technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
+Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 
 ## PURG-04 proof-loop corpus materialization
 

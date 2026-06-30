@@ -195,9 +195,9 @@ e passou por decisão explícita de Bedrock.
 
 ## Active Route
 
-Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet
-Current phase_id/current_phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
-Current status/status: if09_closure_milestone_mirror_sanity_pass
+Latest completed phase: Lapidarium — Final Route Reconciliation
+Current phase_id/current_phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
+Current status/status: lapidarium_final_route_reconciliation_pass
 Decision: pass
 Active next phase: null
 Active next phase class: null
@@ -209,22 +209,15 @@ runtime_integration_allowed: false
 production_authorized: false
 product_ready: false
 secrets_access_authorized: false
-Selected branch: `TRACK_REVALIDATION_FIRST`
-Explicit operator authorization for the future INF revalidation execution contract was consumed by the controlled execution packet.
-Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
-Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
-Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
+Latest completed project commit SHA: `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
 Latest completed CI state: `CI_GREEN_CONFIRMED`
-Merge to Project_ARIS main: `executed earlier at 7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 IF09-FIND-001 closed by Infernus Revalidation adjudication.
 BenchUX next gate candidate only: `BENCHUX_ROUTE_OPENING_PACKET`
 Project_ARIS main workspace remains untouched.
-The authoritative runner used a read-only git-archive snapshot of Project_ARIS commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295` because the live Project_ARIS workspace HEAD had already advanced to `6cec74deb7a99b7eb227df84a902650ca092e00f`.
-Oracle result for IF09 focused revalidation: `pass`
-No successor row is active after mirror sanity cleanup.
-Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
+Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET`
 >>> NAO LEIA COMO ROTA ATIVA — consulte `ACTIVE_CONTEXT_STATE.json`; o bloco abaixo e HISTORICAL_ONLY e permanece somente por compatibilidade do validator. <<<
 Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
+Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet [HISTORICAL_ONLY — superseded by LAPIDARIUM]
 Latest completed phase: IF-11 Minos Final Verdict + Closure
 Active next phase: PURG-01
 Active next phase class: purgatorium_route_admission
