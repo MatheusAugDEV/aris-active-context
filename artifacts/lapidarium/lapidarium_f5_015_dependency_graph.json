@@ -1,0 +1,60 @@
+{
+  "artifact_id": "lapidarium_f5_015_dependency_graph",
+  "phase": "LAPIDARIUM_F5_015_NESTED_GIT_REPOSITORY_REVIEW",
+  "generated_at": "2026-06-30T04:10:00Z",
+  "nodes": [
+    {
+      "id": "project_aris",
+      "type": "repo",
+      "label": "Project_ARIS"
+    },
+    {
+      "id": "nested_repo",
+      "type": "repo",
+      "label": "gogogadgetbytes/smart-connections-mcp snapshot"
+    },
+    {
+      "id": "nested_runtime_files",
+      "type": "file_group",
+      "label": "src/index.ts, src/security.ts, src/data.ts, src/tools.ts, src/search.ts, src/embeddings.ts"
+    },
+    {
+      "id": "nested_manifest_files",
+      "type": "file_group",
+      "label": "package.json, package-lock.json, server.json, tsconfig.json, README.md, CONTRIBUTING.md, LICENSE, .gitignore"
+    },
+    {
+      "id": "governance_tests",
+      "type": "consumer_group",
+      "label": "src/aris/context/* and tests/test_f21a* references"
+    }
+  ],
+  "edges": [
+    {
+      "from": "nested_repo",
+      "to": "nested_runtime_files",
+      "relation": "contains_runtime_entrypoints"
+    },
+    {
+      "from": "nested_repo",
+      "to": "nested_manifest_files",
+      "relation": "contains_manifests_docs"
+    },
+    {
+      "from": "project_aris",
+      "to": "nested_repo",
+      "relation": "references_snapshot_as_read_only_evidence"
+    },
+    {
+      "from": "governance_tests",
+      "to": "nested_repo",
+      "relation": "reads_snapshot_path"
+    }
+  ],
+  "observations": [
+    "The nested repo is not registered as a submodule in Project_ARIS (.gitmodules absent, no 160000 entry).",
+    "The parent .gitignore ignores external/mcp_candidates/*/source/, keeping the snapshot out of parent tracking.",
+    "Project_ARIS references the snapshot in read-only governance and test code, not in product/runtime code.",
+    "The nested repo itself is read-only by design and exposes no write tools."
+  ]
+}

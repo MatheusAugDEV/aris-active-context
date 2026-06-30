@@ -1,0 +1,51 @@
+{
+  "artifact_id": "lapidarium_f5_015_supply_chain_analysis",
+  "phase": "LAPIDARIUM_F5_015_NESTED_GIT_REPOSITORY_REVIEW",
+  "generated_at": "2026-06-30T04:10:00Z",
+  "risk_level": "medium_high",
+  "threats": [
+    {
+      "name": "third_party_origin",
+      "description": "Nested repo points at a third-party GitHub remote, so upstream trust and update provenance are external to Project_ARIS."
+    },
+    {
+      "name": "detached_snapshot",
+      "description": "The working tree is checked out at a detached HEAD commit older than the local main branch tip, which makes the snapshot easy to drift from the maintained branch."
+    },
+    {
+      "name": "shadow_dependency",
+      "description": "The snapshot is referenced by 31 governance/test files in Project_ARIS, so removal would break read-only audit flows even though runtime does not consume it."
+    },
+    {
+      "name": "transitive_model_download",
+      "description": "The nested project downloads a Hugging Face model at runtime, introducing an external dependency even though the server itself is read-only."
+    }
+  ],
+  "mitigations": [
+    "Keep the snapshot quarantined under external/mcp_candidates.",
+    "Do not promote to product/runtime dependency.",
+    "Avoid removal until the governance/test references are retired or repointed.",
+    "If integration is ever desired, convert explicitly to submodule or vendor it with a pinned policy."
+  ],
+  "files_used_in_nested_repo": [
+    "src/index.ts",
+    "src/security.ts",
+    "src/data.ts",
+    "src/tools.ts",
+    "src/search.ts",
+    "src/embeddings.ts",
+    "package.json",
+    "package-lock.json",
+    "server.json",
+    "tsconfig.json",
+    "README.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    ".gitignore"
+  ],
+  "project_dependency_summary": {
+    "governance_test_refs": 31,
+    "runtime_refs": 0,
+    "product_refs": 0
+  }
+}

@@ -31,6 +31,21 @@
 
 ---
 
+## LAPIDARIUM_FASE_5_NESTED_GIT_REPOSITORY_REVIEW
+
+- Status: `lapidarium_fase5_nested_git_review_pass`
+- Decision: `quarantine`
+- Date: `2026-06-30`
+- Scope: read-only review of `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source`. No files removed, no Git metadata altered, no runtime executed, no secrets accessed.
+- Repo facts: detached `HEAD` at `b8c39ae192aa09f49b42492971b1880940276b44`; local `main` and `origin/main` both at `24481f8e718e7247b17de2be34305648be9e9224`; remote origin is `https://github.com/gogogadgetbytes/smart-connections-mcp`.
+- Dependency facts: 13 tracked files in the nested repo; 31 governance/test references in Project_ARIS; no product/runtime dependency observed.
+- Supply chain risk: medium_high. Removal risk: high.
+- Locks opened: none. All execution locks remain false.
+- Artifacts: `artifacts/lapidarium/lapidarium_f5_015_*`
+- Next: keep the snapshot quarantined and read-only unless the operator later authorizes a submodule/vendor conversion.
+
+---
+
 ## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET
 
 - Status: `lapidarium_fase5_cleanup_executed`

@@ -970,5 +970,27 @@
         "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_report.md"
     ],
-    "lapidarium_fase5_remaining_low_scope_next_step": "operator_authorize_f5_004_f5_005_f5_006_removal_if_desired"
+    "lapidarium_fase5_remaining_low_scope_next_step": "operator_authorize_f5_004_f5_005_f5_006_removal_if_desired",
+    "lapidarium_fase5_nested_git_review_completed": true,
+    "lapidarium_fase5_nested_git_review_date": "2026-06-30",
+    "lapidarium_fase5_nested_git_review_decision": "QUARANTINE",
+    "lapidarium_fase5_nested_git_review_confidence": "HIGH",
+    "lapidarium_fase5_nested_git_review_repo_path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+    "lapidarium_fase5_nested_git_review_remote_origin": "https://github.com/gogogadgetbytes/smart-connections-mcp",
+    "lapidarium_fase5_nested_git_review_head_commit": "b8c39ae192aa09f49b42492971b1880940276b44",
+    "lapidarium_fase5_nested_git_review_main_commit": "24481f8e718e7247b17de2be34305648be9e9224",
+    "lapidarium_fase5_nested_git_review_tracked_files_count": 13,
+    "lapidarium_fase5_nested_git_review_reference_count": 31,
+    "lapidarium_fase5_nested_git_review_governance_dependency": true,
+    "lapidarium_fase5_nested_git_review_runtime_dependency": false,
+    "lapidarium_fase5_nested_git_review_supply_chain_risk": "medium_high",
+    "lapidarium_fase5_nested_git_review_removal_risk": "high",
+    "lapidarium_fase5_nested_git_review_artifacts": [
+        "artifacts/lapidarium/lapidarium_f5_015_nested_git_review_packet.json",
+        "artifacts/lapidarium/lapidarium_f5_015_supply_chain_analysis.json",
+        "artifacts/lapidarium/lapidarium_f5_015_dependency_graph.json",
+        "artifacts/lapidarium/lapidarium_f5_015_recommendation_report.md",
+        "artifacts/lapidarium/lapidarium_f5_015_validation_evidence.json"
+    ],
+    "lapidarium_fase5_nested_git_review_next_step": "keep_snapshot_quarantined_read_only_and_do_not_remove_without_explicit_operator_authorization"
 }

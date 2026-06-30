@@ -2140,6 +2140,57 @@
         },
         "lapidarium_fase5_remaining_low_scope_next_step": {
             "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_nested_git_review_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_confidence": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_repo_path": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_remote_origin": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_head_commit": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_main_commit": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_tracked_files_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_nested_git_review_reference_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_nested_git_review_governance_dependency": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_nested_git_review_runtime_dependency": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_nested_git_review_supply_chain_risk": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_removal_risk": {
+            "type": "string"
+        },
+        "lapidarium_fase5_nested_git_review_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_nested_git_review_next_step": {
+            "type": "string"
         }
     },
     "required": [
@@ -2227,5 +2278,6 @@
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
     "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone.",
-    "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed."
+    "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
+    "schema_3_31_change_summary": "Lapidarium Fase 5 nested Git repository review: admit lapidarium_fase5_nested_git_review_* tracking fields for the read-only review of F5-015, recording the nested third-party Smart Connections MCP repo as a quarantined snapshot with detached HEAD/origin-main metadata, governance/test-only references in Project_ARIS, and no runtime or product dependency."
 }

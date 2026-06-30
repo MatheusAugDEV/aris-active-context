@@ -1,0 +1,64 @@
+{
+  "artifact_id": "lapidarium_f5_015_validation_evidence",
+  "phase": "LAPIDARIUM_F5_015_NESTED_GIT_REPOSITORY_REVIEW",
+  "generated_at": "2026-06-30T04:10:00Z",
+  "all_passed": true,
+  "validations": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "boot_rendered_from_state",
+      "command": "python3 scripts/render_boot.py",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_present",
+      "result": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source exists",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_detached_head",
+      "result": "HEAD=b8c39ae192aa09f49b42492971b1880940276b44",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_main_equals_origin_main",
+      "result": "main=origin/main=24481f8e718e7247b17de2be34305648be9e9224",
+      "passed": true
+    },
+    {
+      "check": "project_reference_count",
+      "result": "31 non-artifact references found in src/aris/context and tests",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_tracked_files_count",
+      "result": "13 tracked files",
+      "passed": true
+    },
+    {
+      "check": "no_mutation_executed",
+      "result": "read-only review only",
+      "passed": true
+    }
+  ]
+}

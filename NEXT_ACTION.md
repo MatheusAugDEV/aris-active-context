@@ -2,7 +2,7 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_NESTED_GIT_REPOSITORY_REVIEW (2026-06-30)
 
 ---
 
@@ -10,7 +10,7 @@
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
-- **sha_lido:** `0a64f632bd25e50c29112a4468298b72ee31af73`
+- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
 
 ### Status Atual
 
@@ -18,7 +18,8 @@
 
 F5-004 e F5-005 já estavam ausentes do current HEAD/index do Project_ARIS e, por isso, não exigiram nova remoção.
 F5-006 foi removido com `git rm -- legacy/wake/tts.py.backup`.
-F5-013/F5-014/F5-015 permanecem fora do escopo e sem intervenção nesta execução.
+F5-015 foi revisado read-only e classificado como QUARANTINE.
+F5-013/F5-014 permanecem fora do escopo e sem intervenção nesta execução.
 
 ---
 
@@ -26,7 +27,7 @@ F5-013/F5-014/F5-015 permanecem fora do escopo e sem intervenção nesta execuç
 
 **1. OPERADOR — Decisões de itens BLOQUEADOS (separadas, por finding):**
 - **F4-FIND-002** (`F5-015`): Nested Git repo em `external/mcp_candidates/` —
-  escolher estratégia: submodule / vendor / remove / quarantine
+  recomendado: manter quarentena read-only; só converter para submodule/vendor se houver integração explícita
 - **F4-FIND-003** (`F5-013`, `F5-014`): PostScript binários em `legacy/experiments/` —
   confirmar origem e intenção antes de qualquer remoção (ação irreversível)
 
