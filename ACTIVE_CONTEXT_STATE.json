@@ -797,5 +797,17 @@
         "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields."
-    }
+    },
+    "lapidarium_pref4_drift_repair_completed": true,
+    "lapidarium_pref4_drift_repair_date": "2026-06-29",
+    "lapidarium_pref4_drift_repair_decision": "pass",
+    "lapidarium_pref4_latest_repair_artifacts": [
+        "artifacts/active_context/lapidarium_pref4_mirror_validator_drift_repair_packet.json",
+        "artifacts/active_context/lapidarium_pref4_mirror_validator_drift_matrix.json",
+        "artifacts/active_context/lapidarium_pref4_no_real_execution_attestation.json",
+        "artifacts/active_context/lapidarium_pref4_validation_evidence.json"
+    ],
+    "lapidarium_pref4_no_lock_real_opened": true,
+    "lapidarium_pref4_next_phase_preserved": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "lapidarium_pref4_phase4_executed": false
 }

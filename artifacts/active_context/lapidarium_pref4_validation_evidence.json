@@ -1,0 +1,36 @@
+{
+    "phase_id": "LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR",
+    "date": "2026-06-29",
+    "commands": [
+        {
+            "cmd": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null && echo VALID",
+            "exit_code": 0,
+            "stdout": "VALID",
+            "stderr": ""
+        },
+        {
+            "cmd": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null && echo VALID",
+            "exit_code": 0,
+            "stdout": "VALID",
+            "stderr": ""
+        },
+        {
+            "cmd": "test -s scripts/validate_active_context_state.py && echo EXISTS_NONEMPTY || echo EMPTY_OR_MISSING",
+            "exit_code": 0,
+            "stdout": "EXISTS_NONEMPTY",
+            "stderr": ""
+        },
+        {
+            "cmd": "python3 scripts/validate_active_context_state.py 2>&1 | python3 -m json.tool > /dev/null && echo OUTPUT_VALID_JSON",
+            "exit_code": 0,
+            "stdout": "OUTPUT_VALID_JSON",
+            "stderr": ""
+        },
+        {
+            "cmd": "python3 -c \"import json,subprocess; r=subprocess.run([\"python3\",\"scripts/validate_active_context_state.py\"],capture_output=True,text=True); d=json.loads(r.stdout); print(d[\"decision\"])\"",
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import json,subprocess; r=subprocess.run([python3,scripts/validate_active_context_state.py],capture_output=True,text=True)"
+        }
+    ]
+}

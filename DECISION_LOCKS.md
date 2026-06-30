@@ -1,3 +1,30 @@
+## LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR
+
+- Status: `lapidarium_pref4_mirror_validator_drift_repair_pass`
+- Decision: `pass`
+- Date: `2026-06-29`
+- Scope: governance/documentary mirror repair only — `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`, `artifacts/active_context/`, `ACTIVE_CONTEXT_STATE.json` drift_repair_record field.
+- Drift detected:
+  - `CURRENT_STATE.md` declared `phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, `next_phase=null` as active canonical state.
+  - `NEXT_ACTION.md` declared `next_phase=null`, IF09 as active route.
+  - Both contradicted `ACTIVE_CONTEXT_STATE.json` which has `phase_id=LAPIDARIUM`, `next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`.
+- Validator (`scripts/validate_active_context_state.py`): exists, 17969 lines, passes — no repair needed.
+- Files repaired: `CURRENT_STATE.md`, `NEXT_ACTION.md`, `DECISION_LOCKS.md`
+- Files updated: `ACTIVE_CONTEXT_STATE.json` (drift_repair_record added)
+- Artifacts created:
+  - `artifacts/active_context/lapidarium_pref4_mirror_validator_drift_repair_packet.json`
+  - `artifacts/active_context/lapidarium_pref4_mirror_validator_drift_matrix.json`
+  - `artifacts/active_context/lapidarium_pref4_no_real_execution_attestation.json`
+  - `artifacts/active_context/lapidarium_pref4_validation_evidence.json`
+- Locks opened: none
+- No Project_ARIS mutation.
+- No runtime, no real_apply, no product, no Bedrock, no secrets, no dependency install.
+- No branch created. No force push.
+- Fase 4 (`LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`) NOT executed — authorized but not started.
+- `next_phase` preserved as `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`.
+
+---
+
 ## IF09 Closure Milestone Mirror Sanity Packet
 
 - Status: `if09_closure_milestone_mirror_sanity_pass`

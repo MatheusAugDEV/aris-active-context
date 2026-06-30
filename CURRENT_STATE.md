@@ -1,396 +1,124 @@
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+# CURRENT_STATE
 
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
-
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
-
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
-
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
-
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
-
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
-
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
-
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
-
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
-
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
-
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
-
-## CURRENT CANONICAL STATE (IF09)
-
-phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
-next_phase: `null`
-decision: `pass`
-status: `if09_closure_milestone_mirror_sanity_pass`
-sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`
-last_resolved_divergence: `Lapidarium local-vs-origin divergence resolved (rebase, oversized blob removal, submodule pointer model corrected, CodeQL guard added). See ACTIVE_CONTEXT_STATE.json for full detail.`
-
-Source of truth: ACTIVE_CONTEXT_STATE.json. This file's content below this line is HISTORICAL (P15-P19 era) and superseded.
+> Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
+> JSON é autoridade máxima. Markdown contraditório é drift.
+> Última atualização: LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR (2026-06-29)
 
 ---
 
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+## CURRENT CANONICAL STATE (LAPIDARIUM)
 
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
+- **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
+- **phase_id:** `LAPIDARIUM`
+- **current_phase_id:** `LAPIDARIUM`
+- **display_name:** `Lapidarium Fase 3 — Verificação de Cache`
+- **status:** `lapidarium_fase_3_cache_verificacao_pass`
+- **decision:** `pass`
+- **phase_class:** `lapidarium_remediation`
+- **next_phase:** `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- **active_next_phase:** `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- **next_phase_authorized_by_operator:** `true`
+- **governance_gate_streak:** `0`
+- **gate_opened_at:** `2026-06-15`
+- **gate_max_cycles:** `3`
+- **gate_cycles_used:** `0`
+- **sha_lido:** `55f068163a7d9bc747901ae1f6f68348d9c6ba41`
 
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+### Execution Locks (todos false)
 
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
+- `real_apply_authorized: false`
+- `production_authorized: false`
+- `product_ready: false`
+- `runtime_integration_allowed: false`
+- `runtime_refactor_authorized: false`
+- `secrets_access_authorized: false`
+- `package_installation_authorized: false`
+- `package_manager_execution_authorized: false`
+- `external_llm_api_authorized: false`
+- `host_filesystem_mutation_authorized: false`
+- `frontend_backend_action_runtime_audio_mutation_authorized: false`
+- `generic_action_runtime_activated: false`
+- `approval_execution_authorized: false`
+- `container_image_vm_creation_authorized: false`
+- `debian_harness_execution_authorized: false`
+- `dependency_change_authorized: false`
+- `real_dry_run_execution_authorized: false`
+- `network_authorized_scope: github_active_context_governance_only`
 
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
+### Lapidarium Closure Evidence
 
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
+- `finding_closed: true`
+- `target_finding_id: IF09-FIND-001`
+- `target_finding_status: closed`
+- `remediation_proven: true`
+- `closure_basis: deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`
+- `fixture_materialization_executed: true`
+- `fixture_count: 65`
+- `scenario_count: 13`
+- `minos_verdict_executed: true`
 
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+### Pre-F4 Drift Repair Note
 
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
+- This mirror was repaired by `LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR` (2026-06-29).
+- Prior canonical section incorrectly declared `phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` with `next_phase=null`.
+- That was drift: `ACTIVE_CONTEXT_STATE.json` has `phase_id=LAPIDARIUM` and `next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`.
+- **This repair does not execute Fase 4.**
+- **Fase 4 (`LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`) is authorized but not yet started.**
 
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+---
 
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
+## Historical Appendix
 
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
+`HISTORICAL_ONLY`
+`SUPERSEDED_BY_LAPIDARIUM_FASE3_AND_PREF4_DRIFT_REPAIR`
+`NOT_CURRENT_STATE`
 
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
+The sections below are preserved for audit trail only. They describe prior governance phases
+(IF09, P15–P19 era). None of them describe the current live route.
 
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
+---
 
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
+### IF09 Closure Milestone Mirror Sanity Packet (HISTORICAL)
 
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
+`HISTORICAL_ONLY` — This section described the IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET phase.
+It is superseded. The live canonical phase is `LAPIDARIUM`. See JSON.
 
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
-
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
-
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
-
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
-
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
-
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
-
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
-
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
-
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
-
-## ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- previous phase: `ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run`
-- p18 dry-run verified: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- warning count: `8`
-- blocker count: `10`
-- bedrock_preparation_exception: `True`
-- bedrock_verdict_compatible: `True`
-- bedrock_verdict: `WARN`
-- next phase recommendation: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`
-
-This phase validates P18 evidence only and keeps real apply, live rewrite, runtime, network, MCP, and vault actions blocked.
-## ARIS-CONTEXT-P18 — Artifact Reference-Only Controlled Apply Dry-Run
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- controlled apply dry-run executed: `True`
-- real apply executed: `False`
-- selected candidates: `0`
-- simulated surfaces: `0`
-- rollback entries: `0`
-- projected prompt surface tokens: `0`
-- projected reduction tokens: `0`
-- next phase recommendation: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`
-
-This phase performs a synthetic dry-run only and does not mutate live context or artifacts.
-## ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-- controlled apply plan validation harness created: `True`
-- matrix rows checked: `79`
-- rollback entries checked: `53`
-- next phase recommendation: `ARIS-CONTEXT-P17 — Artifact Reference-Only Controlled Apply Readiness Gate`
-
-This phase validates the controlled apply plan only and does not apply artifact references or rewrite live context.
-
-## ARIS-CONTEXT-P15 — Artifact Reference-Only Controlled Apply Plan
-- status: `artifact_reference_only_controlled_apply_plan_warn`
-- controlled apply plan created: `True`
-- eligible for future apply: `53`
-- blocked high-risk references: `2`
-- blocked missing risk review: `5`
-- deferred hot-path review: `17`
-- deferred manual review: `2`
-- next phase recommendation: `ARIS-CONTEXT-P16 — Artifact Reference-Only Controlled Apply Plan Validation Harness`
-
-This phase is plan-only and does not apply artifact references, modify artifacts, or rewrite live context.
-
-# CURRENT_STATE
-
-> Fonte primária: ACTIVE_CONTEXT_STATE.json. Este arquivo é mirror derivado.
-
-## IF09 Closure Milestone Mirror Sanity Packet
-
-- phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
-- current_phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
+- phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` ← HISTORICAL, not current
+- current_phase_id: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` ← HISTORICAL
 - previous_phase_id: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
 - latest_completed_phase: `IF09 Closure Milestone Mirror Sanity Packet`
 - status: `if09_closure_milestone_mirror_sanity_pass`
 - decision: `pass`
 - phase_class: `governance_repair`
-- active_next_phase: `null`
-- next_phase: `null`
-- next_phase_authorized_by_operator: `false`
+- active_next_phase: `null` ← HISTORICAL, superseded; current JSON has LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO
+- next_phase: `null` ← HISTORICAL, superseded
+- next_phase_authorized_by_operator: `false` ← HISTORICAL, superseded
 - latest_completed_ci_state: `CI_GREEN_CONFIRMED`
-- latest_completed_next_recommended_step: `Nenhuma transição definida. Aguardando instrução do operador.`
-- execution_locks: todos `false`
-- selected_branch: `TRACK_REVALIDATION_FIRST`
-- Track A patch lineage: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
-- Track A merge lineage: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 - IF09-FIND-001: `closed`
 - finding_closed: `true`
 - remediation_proven: `true`
 - closure_basis: `deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`
-- BenchUX route candidate only: `BENCHUX_ROUTE_OPENING_PACKET`
-- Nota documental: este gate saneou mirrors derivados para que qualquer referência pré-closure a `IF09-FIND-001 open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET candidate-only` ou `revalidation not executed` permaneça apenas como histórico rotulado.
-- Nota documental: a closure canônica permanece ancorada em `artifacts/purgatorium/inf_revalidation_adjudication_closure_packet.json`, `inf_revalidation_adjudication_closure_decision.json`, `inf_revalidation_execution_oracle_result.json`, `inf_revalidation_execution_regression_matrix.json` e `inf_revalidation_execution_no_forbidden_surface_attestation.json`.
-- Nota documental: nenhuma rota BenchUX foi ativada; `next_phase` e `active_next_phase` permanecem `null`, e o artifact `artifacts/benchux/benchux_route_opening_candidate.json` é apenas candidato documental.
 
-## Historical Appendix
+### ARIS-CONTEXT P15–P19 (HISTORICAL)
 
-HISTORICAL_ONLY
-SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
-NOT_CURRENT_STATE
+`HISTORICAL_ONLY`
+`SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
+`NOT_CURRENT_STATE`
 
 - As notas abaixo preservam trilhas anteriores para auditoria.
 - Qualquer menção a `IF09-FIND-001 open`, `finding_closed=false` ou `remediation_proven=false` abaixo deste ponto não descreve o estado vivo atual.
-- A trilha restante do Purgatorium, carriers residuais e etapas de activation/readiness/operator authorization continuam históricas após a closure de IF09 e o sanity cleanup de mirrors.
+
+#### ARIS-CONTEXT-P19 (HISTORICAL)
+- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
+- next phase recommendation: `ARIS-CONTEXT-P20` ← HISTORICAL, never executed under canonical schema
+
+#### ARIS-CONTEXT-P18 (HISTORICAL)
+- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
+- real apply executed: `False`
+
+#### ARIS-CONTEXT-P16 (HISTORICAL)
+- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
+
+#### ARIS-CONTEXT-P15 (HISTORICAL)
+- status: `artifact_reference_only_controlled_apply_plan_warn`
+- eligible for future apply: `53`

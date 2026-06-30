@@ -1,0 +1,63 @@
+{
+    "phase_id": "LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR",
+    "date": "2026-06-29",
+    "authority": "ACTIVE_CONTEXT_STATE.json",
+    "rows": [
+        {
+            "file": "CURRENT_STATE.md",
+            "field_or_excerpt": "CURRENT CANONICAL STATE — phase_id",
+            "value_in_json": "LAPIDARIUM",
+            "value_in_mirror": "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
+            "action_applied": "Replaced full file with current canonical state referencing LAPIDARIUM and next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO; IF09 block moved to HISTORICAL_ONLY appendix",
+            "result": "REPAIRED"
+        },
+        {
+            "file": "CURRENT_STATE.md",
+            "field_or_excerpt": "CURRENT CANONICAL STATE — next_phase",
+            "value_in_json": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "value_in_mirror": "null",
+            "action_applied": "Replaced full file; active next_phase now explicit in canonical section",
+            "result": "REPAIRED"
+        },
+        {
+            "file": "NEXT_ACTION.md",
+            "field_or_excerpt": "CURRENT CANONICAL NEXT ACTION — next_phase",
+            "value_in_json": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "value_in_mirror": "null",
+            "action_applied": "Replaced full file; active next_phase now explicit; IF09 section moved to HISTORICAL_ONLY",
+            "result": "REPAIRED"
+        },
+        {
+            "file": "NEXT_ACTION.md",
+            "field_or_excerpt": "stop_message / active route",
+            "value_in_json": "next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO (authorized)",
+            "value_in_mirror": "Aguardando instrução do operador (null route)",
+            "action_applied": "Mirror now correctly states authorized next_phase",
+            "result": "REPAIRED"
+        },
+        {
+            "file": "DECISION_LOCKS.md",
+            "field_or_excerpt": "Lapidarium PreF4 drift repair record",
+            "value_in_json": "N/A (new repair event)",
+            "value_in_mirror": "ABSENT",
+            "action_applied": "Prepended LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR entry to DECISION_LOCKS.md",
+            "result": "ADDED"
+        },
+        {
+            "file": "scripts/validate_active_context_state.py",
+            "field_or_excerpt": "file existence and validity",
+            "value_in_json": "boot requires validator before decision",
+            "value_in_mirror": "EXISTS, 17969 lines, runs, decision=pass",
+            "action_applied": "NO REPAIR NEEDED",
+            "result": "OK_NO_CHANGE"
+        },
+        {
+            "file": "ACTIVE_CONTEXT_STATE.json",
+            "field_or_excerpt": "drift_repair_record",
+            "value_in_json": "absent (pre-repair)",
+            "value_in_mirror": "N/A",
+            "action_applied": "Added lapidarium_pref4_drift_repair_completed=true and latest_repair_artifacts list",
+            "result": "UPDATED"
+        }
+    ]
+}

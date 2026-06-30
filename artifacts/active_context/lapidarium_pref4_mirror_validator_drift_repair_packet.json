@@ -1,0 +1,27 @@
+{
+    "phase_id": "LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR",
+    "repair_date": "2026-06-29",
+    "source_state_sha_lido": "55f068163a7d9bc747901ae1f6f68348d9c6ba41",
+    "source_state_blob_sha": "55f068163a7d9bc747901ae1f6f68348d9c6ba41",
+    "canonical_phase_id": "LAPIDARIUM",
+    "canonical_display_name": "Lapidarium Fase 3 — Verificação de Cache",
+    "canonical_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "canonical_active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "canonical_next_phase_authorized_by_operator": true,
+    "canonical_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "drift_detected": true,
+    "drift_description": "CURRENT_STATE.md and NEXT_ACTION.md carry IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET as active canonical phase with next_phase=null, contradicting ACTIVE_CONTEXT_STATE.json which has phase_id=LAPIDARIUM and next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "validator_empty_or_invalid": false,
+    "validator_status": "pass — scripts/validate_active_context_state.py exists (17969 lines), runs, returns decision=pass",
+    "files_repaired": [
+        "CURRENT_STATE.md",
+        "NEXT_ACTION.md",
+        "DECISION_LOCKS.md"
+    ],
+    "locks_opened": [],
+    "project_aris_changed": false,
+    "real_execution_authorized": false,
+    "phase_4_executed": false,
+    "decision": "pass",
+    "authority": "ACTIVE_CONTEXT_STATE.json is authoritative. Markdown mirrors were stale/contradictory and have been replaced with current-state content."
+}
