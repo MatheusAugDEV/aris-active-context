@@ -1,0 +1,176 @@
+{
+    "artifact_id": "lapidarium_fase4_revisao_codigo_genuino_packet",
+    "date": "2026-06-30",
+    "phase_id": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "source_state_sha_lido": "43503baad5012d8a921ba2b2f534e08ae2e9474b",
+    "canonical_phase_id": "LAPIDARIUM",
+    "canonical_display_name": "Lapidarium Fase 3 — Verificação de Cache",
+    "canonical_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "canonical_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "canonical_next_phase_authorized_by_operator": true,
+    "validator_decision": "pass",
+    "validator_file": "scripts/validate_active_context_state.py",
+    "pref4_repair_recorded_in_locks": true,
+    "mirrors_point_to_f4_not_if09": true,
+    "review_scope": "read_only",
+    "dataset_source": "Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+    "exclusion_list_applied": "artifacts/lapidarium/lapidarium_fase4a_corrupt_path_exclusion_list_v2.json",
+    "base_seems_source_genuine_count": 3880,
+    "excluded_v2_count": 5,
+    "sanitized_count": 3875,
+    "dataset_original_untouched": true,
+    "classification_summary": {
+        "A_SOURCE_CODE_GENUINE": {
+            "count": 933,
+            "pct": 24.1,
+            "assessment": "KEEP — código Python/TypeScript genuíno do produto ARIS em src/ e frontend/"
+        },
+        "B_TEST_CODE_GENUINE": {
+            "count": 1072,
+            "pct": 27.7,
+            "assessment": "KEEP — suítes de teste genuínas em tests/"
+        },
+        "C_DOCS_LEGITIMATE": {
+            "count": 937,
+            "pct": 24.2,
+            "assessment": "KEEP — documentação legítima em docs/"
+        },
+        "D_SCRIPTS_LEGITIMATE": {
+            "count": 866,
+            "pct": 22.3,
+            "assessment": "KEEP — scripts de governança e validação em scripts/"
+        },
+        "E_CONFIG_INFRA": {
+            "count": 4,
+            "pct": 0.1,
+            "assessment": "KEEP — pyproject.toml, uv.lock, .env.example, .gitignore"
+        },
+        "F_ASSETS_BINARY": {
+            "count": 4,
+            "pct": 0.1,
+            "assessment": "KEEP — assets UI (PNG). Legacy binaries (onnx/bin) em G."
+        },
+        "G_LEGACY_HISTORICAL": {
+            "count": 15,
+            "pct": 0.39,
+            "assessment": "OPERATOR_REVIEW — código legado/experiments; PostScript items suspeitos; backups"
+        },
+        "H_HIDDEN_OR_TOOLING": {
+            "count": 28,
+            "pct": 0.72,
+            "assessment": "KEEP (tooling/CI) — EXCEPT .env que é risco de segurança (ver FP-05)"
+        },
+        "I_TEMP_OR_AUDIT": {
+            "count": 2,
+            "pct": 0.05,
+            "assessment": "SCHEDULE_REMOVAL — temp_audit/ após autorização operador"
+        },
+        "J_SUSPICIOUS_REVIEW": {
+            "count": 14,
+            "pct": 0.36,
+            "assessment": "OPERATOR_REVIEW — external/ submodule, debug_audio.wav, teste.wav"
+        }
+    },
+    "high_confidence_genuine_code": {
+        "count": 3808,
+        "pct": 98.3,
+        "categories": [
+            "A_SOURCE_CODE_GENUINE",
+            "B_TEST_CODE_GENUINE",
+            "C_DOCS_LEGITIMATE",
+            "D_SCRIPTS_LEGITIMATE"
+        ]
+    },
+    "requires_operator_review": {
+        "count": 67,
+        "pct": 1.7,
+        "categories": [
+            "E_CONFIG_INFRA",
+            "F_ASSETS_BINARY",
+            "G_LEGACY_HISTORICAL",
+            "H_HIDDEN_OR_TOOLING",
+            "I_TEMP_OR_AUDIT",
+            "J_SUSPICIOUS_REVIEW"
+        ]
+    },
+    "critical_findings": [
+        {
+            "id": "F4-FIND-001",
+            "severity": "HIGH",
+            "category": "SECURITY",
+            "description": ".env file is git-tracked (appears in seems_source_genuine set). Secrets must not be committed. Requires immediate operator attention: remove from tracking, rotate secrets.",
+            "path": ".env",
+            "action_required": true,
+            "operator_authorization_required": true,
+            "scope_this_phase": "flag_only — no action taken"
+        },
+        {
+            "id": "F4-FIND-002",
+            "severity": "MEDIUM",
+            "category": "SUPPLY_CHAIN",
+            "description": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp contains a nested Git repo (not a declared submodule). 12 source files classified. Operator must decide: declare as submodule, vendor, or remove.",
+            "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/",
+            "action_required": true,
+            "operator_authorization_required": true,
+            "scope_this_phase": "flag_only — no action taken"
+        },
+        {
+            "id": "F4-FIND-003",
+            "severity": "MEDIUM",
+            "category": "SUSPICIOUS_BINARY",
+            "description": "legacy/experiments/genai (20.9MB PostScript) and legacy/experiments/threading (7.0MB PostScript) are large binary documents in experiments/. May be accidental pager/manual captures similar to known weird files but different format (PostScript vs ASCII overstrike).",
+            "paths": [
+                "legacy/experiments/genai",
+                "legacy/experiments/threading"
+            ],
+            "action_required": true,
+            "operator_authorization_required": true,
+            "scope_this_phase": "flag_only — no action taken"
+        },
+        {
+            "id": "F4-FIND-004",
+            "severity": "MEDIUM",
+            "category": "GENERATOR_RISK",
+            "description": "The Fase 1 dataset generator has a quoting/escaping bug that produced 2 accidental shell output artifacts. This bug could recur on dataset regeneration. Recommend LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR.",
+            "action_required": true,
+            "operator_authorization_required": false,
+            "scope_this_phase": "flag_only — no repair executed"
+        }
+    ],
+    "recommended_next_steps": [
+        {
+            "priority": 1,
+            "action": "OPERATOR_SECURITY_REMEDIATION: remove .env from git tracking and rotate any committed secrets (F4-FIND-001). This is independent of Lapidarium phases and should be expedited.",
+            "phase_gate_required": false
+        },
+        {
+            "priority": 2,
+            "action": "LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR: fix the Fase 1 generator bug before using the dataset for automated cleanup (F4-FIND-004).",
+            "phase_gate_required": true,
+            "authorization_needed": "operator_prompt_for_4B"
+        },
+        {
+            "priority": 3,
+            "action": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN: plan surgical removal of confirmed lixo (temp_audit/, legacy backups, suspicious PostScript binaries, tart=always) after operator review and explicit authorization per item.",
+            "phase_gate_required": true,
+            "authorization_needed": "operator_review_per_item_then_fase5_prompt"
+        },
+        {
+            "priority": 4,
+            "action": "SUPPLY_CHAIN_REVIEW: resolve external/ nested Git repo decision (F4-FIND-002).",
+            "phase_gate_required": true,
+            "authorization_needed": "operator_decision_on_external_mcp"
+        }
+    ],
+    "decision": "pass",
+    "status": "lapidarium_fase4_revisao_codigo_genuino_pass",
+    "confirmations": {
+        "fase4_executed_as_readonly": true,
+        "project_aris_not_altered": true,
+        "no_cleanup_deletion_move": true,
+        "all_locks_remain_false": true,
+        "exclusion_list_v2_applied": true,
+        "sanitized_count_verified": 3875,
+        "validator_pass": true
+    }
+}

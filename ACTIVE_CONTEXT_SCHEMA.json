@@ -1826,6 +1826,48 @@
         },
         "lapidarium_pref4_phase4_executed": {
             "type": "boolean"
+        },
+        "lapidarium_fase4_revisao_codigo_genuino_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase4_date": {
+            "type": "string"
+        },
+        "lapidarium_fase4_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase4_status": {
+            "type": "string"
+        },
+        "lapidarium_fase4_sanitized_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase4_high_confidence_genuine_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase4_requires_operator_review_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase4_critical_findings": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase4_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase4_no_lock_opened": {
+            "type": "boolean"
+        },
+        "lapidarium_fase4_project_aris_unchanged": {
+            "type": "boolean"
+        },
+        "lapidarium_fase4_readonly_confirmed": {
+            "type": "boolean"
         }
     },
     "required": [

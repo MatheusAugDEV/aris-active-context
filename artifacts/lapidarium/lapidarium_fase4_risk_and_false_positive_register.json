@@ -1,0 +1,119 @@
+{
+    "artifact_id": "lapidarium_fase4_risk_and_false_positive_register",
+    "date": "2026-06-30",
+    "phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "review_scope": "read_only — nenhum arquivo removido, movido ou alterado",
+    "false_positive_risks": [
+        {
+            "id": "FP-01",
+            "paths": [
+                "legacy/experiments/genai",
+                "legacy/experiments/threading"
+            ],
+            "description": "Itens sem extensão classificados como G_LEGACY mas são PostScript documents (~20MB e ~7MB). O formato PostScript é incomum para um projeto Python AI — podem ser dumps de manual/pager capturados acidentalmente (similar ao padrão dos 2 weird files já identificados como accidental shell output). MAS diferem em tipo ('PostScript document' vs 'ASCII text, with overstriking').",
+            "false_positive_direction": "Podem parecer 'fonte genuíno' (nome de diretório = legacy/experiments) mas o conteúdo binário grande (PostScript) é altamente suspeito.",
+            "risk_level": "MEDIUM",
+            "recommended_action": "Operator must inspect content before any decision. Do NOT remove without forensic confirmation.",
+            "operator_authorization_required": true
+        },
+        {
+            "id": "FP-02",
+            "paths": [
+                "legacy/experiments/tart=always"
+            ],
+            "description": "Nome com '=' sugere argumento CLI capturado. Conteúdo: UTF-8 text com linhas longas (377 chars) e escape sequences. Pode ser shell output capturado acidentalmente — padrão similar aos 2 weird files.",
+            "false_positive_direction": "Parece artifact acidental mas está em legacy/experiments/ — pode ser intencional (experimento).",
+            "risk_level": "MEDIUM",
+            "recommended_action": "Operator review: inspect content for CLI-output signatures before removal.",
+            "operator_authorization_required": true
+        },
+        {
+            "id": "FP-03",
+            "paths": [
+                "debug_audio.wav"
+            ],
+            "description": "File type='data' (não RIFF WAV válido). Tamanho 265600 bytes. Rescan fase4a já confirmou: NÃO é overstrike ASCII (não é o mesmo padrão dos weird files) mas também não é áudio WAV válido. Foi mantido na sanitized set pelo rescan mas é suspeito.",
+            "false_positive_direction": "Pode ser debug artifact corrompido ou capturado acidentalmente. Nome 'debug_audio' sugere desenvolvimento.",
+            "risk_level": "LOW-MEDIUM",
+            "recommended_action": "Keep in sanitized set per rescan verdict. Flag for operator review before any removal.",
+            "operator_authorization_required": true
+        },
+        {
+            "id": "FP-04",
+            "paths": [
+                "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source/..."
+            ],
+            "path_count": 12,
+            "description": "Submodule Git externo presente como código-fonte completo com .git/ interno. O dataset fase1 classifica apenas os arquivos raiz como seems_source_genuine (não os .git/ internals), o que é correto. Porém a presença de um repo Git aninhado sem ser submodule declarado no .gitmodules do projeto raiz é um risco de supply chain e escopo.",
+            "false_positive_direction": "Esses arquivos são código fonte genuíno (TypeScript MCP server), mas pertencem a um projeto externo. Não são código do ARIS.",
+            "risk_level": "MEDIUM",
+            "recommended_action": "Operator must decide: convert to proper git submodule, vendor, or remove. Do NOT treat as ARIS source.",
+            "operator_authorization_required": true
+        },
+        {
+            "id": "FP-05",
+            "paths": [
+                ".env"
+            ],
+            "description": ".env está rastreado no Git (apparece em seems_source_genuine pois existe no disco com git_tracked=True). Arquivo de segredos NÃO deve ser commitado. Tamanho 861 bytes.",
+            "false_positive_direction": "Não é falso positivo de classificação — é genuinamente rastreado — mas representa risco de segurança grave.",
+            "risk_level": "HIGH",
+            "recommended_action": "SECURITY: .env must be removed from git tracking and rotated. Requires operator authorization and separate remediation. NOT a cleanup this phase can execute.",
+            "operator_authorization_required": true,
+            "security_risk": true
+        },
+        {
+            "id": "FP-06",
+            "paths": [
+                "temp_audit/ambiguity_resolver_report.md",
+                "temp_audit/ambiguity_resolver_summary.json"
+            ],
+            "description": "Arquivos de auditoria temporária commitados. São lixo derivado de uma fase anterior, não código fonte genuíno do produto.",
+            "false_positive_direction": "Classificados como seems_source_genuine pois existem no disco mas são claramente artifacts temporários.",
+            "risk_level": "LOW",
+            "recommended_action": "Schedule for removal after operator authorization. Not urgent.",
+            "operator_authorization_required": true
+        },
+        {
+            "id": "FP-07",
+            "paths": [
+                "legacy/wake/tts.py.backup",
+                "legacy/wake/wake.py.backup"
+            ],
+            "description": "Arquivos .backup — cópias de backup explicitamente nomeadas. São lixo histórico.",
+            "false_positive_direction": "Classificados como G_LEGACY corretamente. Podem ser removidos após operator authorization.",
+            "risk_level": "LOW",
+            "recommended_action": "Remove after operator authorization. Confirm no production dependency.",
+            "operator_authorization_required": true
+        }
+    ],
+    "false_negative_risks": [
+        {
+            "id": "FN-01",
+            "description": "O generator da Fase 1 tem bug de quoting/escaping que produziu os 2 weird files (e potencialmente mais). Não há garantia de que TODOS os artifacts acidentais foram detectados — apenas que os 5 da exclusion list v2 foram identificados com certeza.",
+            "risk_level": "MEDIUM",
+            "recommended_action": "LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR deve consertar o generator antes de usar o dataset para limpeza automática.",
+            "operator_authorization_required": false
+        },
+        {
+            "id": "FN-02",
+            "description": "legacy/experiments/genai e legacy/experiments/threading podem ser PostScript manuals capturados acidentalmente (como os weird files) mas escaparam dos heurísticos A-E porque são PostScript, não ASCII overstrike.",
+            "risk_level": "MEDIUM",
+            "recommended_action": "Expand heuristics to cover PostScript and other large binary document formats in legacy/. Investigate before any automated cleanup.",
+            "operator_authorization_required": true
+        }
+    ],
+    "overall_risk_assessment": {
+        "high_risk_items": 1,
+        "medium_risk_items": 4,
+        "low_risk_items": 2,
+        "security_issues_found": 1,
+        "items_requiring_operator_authorization": 7,
+        "cleanup_safe_without_review": false,
+        "main_finding": "O conjunto sanitizado de 3.875 entradas é dominado por código genuíno de alta confiança (A+B+C+D = 3.808 entradas, 98.3%). As 67 entradas restantes requerem revisão do operador antes de qualquer ação. O risco mais crítico é .env rastreado no Git (FP-05 — risco de segurança). O risco de falso negativo principal é o generator quebrado da Fase 1 (FN-01)."
+    },
+    "project_aris_mutated": false,
+    "real_execution_performed": false,
+    "files_deleted": false,
+    "cleanup_executed": false
+}

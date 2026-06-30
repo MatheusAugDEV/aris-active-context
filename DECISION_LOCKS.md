@@ -1,3 +1,35 @@
+## LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO
+
+- Status: `lapidarium_fase4_revisao_codigo_genuino_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: read-only review of 3,875 sanitized seems_source_genuine entries — classification, risk analysis, artifact production. No file deleted, moved, or modified. No cleanup executed.
+- Counts:
+  - base_seems_source_genuine: `3880`
+  - excluded_v2: `5`
+  - sanitized_reviewed: `3875`
+  - high_confidence_genuine (A+B+C+D): `3808` (98.3%)
+  - requires_operator_review: `67`
+- Critical findings:
+  - `F4-FIND-001` [HIGH/SECURITY]: `.env` git-tracked — requires immediate operator remediation
+  - `F4-FIND-002` [MEDIUM]: Nested Git repo in `external/mcp_candidates/` without declared submodule
+  - `F4-FIND-003` [MEDIUM]: PostScript binaries in `legacy/experiments/genai` and `legacy/experiments/threading` (~28MB total) — may be accidental captures
+  - `F4-FIND-004` [MEDIUM]: Fase 1 generator quoting bug — fix before automated cleanup
+- Artifacts created:
+  - `artifacts/lapidarium/lapidarium_fase4_revisao_codigo_genuino_packet.json`
+  - `artifacts/lapidarium/lapidarium_fase4_sanitized_input_manifest.json`
+  - `artifacts/lapidarium/lapidarium_fase4_review_classification_matrix.json`
+  - `artifacts/lapidarium/lapidarium_fase4_risk_and_false_positive_register.json`
+  - `artifacts/lapidarium/lapidarium_fase4_no_real_execution_attestation.json`
+  - `artifacts/lapidarium/lapidarium_fase4_validation_evidence.json`
+  - `artifacts/lapidarium/lapidarium_fase4_report.md`
+- Locks opened: none — all execution locks remain false
+- No Project_ARIS mutation. No runtime/real_apply/product/Bedrock/secrets/cleanup/deletion.
+- No branch. No force push.
+- Recommended next: LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR or LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN per operator instruction.
+
+---
+
 ## LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR
 
 - Status: `lapidarium_pref4_mirror_validator_drift_repair_pass`

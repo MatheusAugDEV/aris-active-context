@@ -2,94 +2,76 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR (2026-06-29)
+> Última atualização: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL NEXT ACTION (LAPIDARIUM)
+## CURRENT CANONICAL NEXT ACTION (Após Fase 4)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
-- **display_name:** `Lapidarium Fase 3 — Verificação de Cache`
-- **status:** `lapidarium_fase_3_cache_verificacao_pass`
-- **next_phase:** `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- **active_next_phase:** `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- **next_phase_authorized_by_operator:** `true`
-- **sha_lido:** `55f068163a7d9bc747901ae1f6f68348d9c6ba41`
+- **lapidarium_fase4_decision:** `pass`
+- **sha_lido:** `43503baad5012d8a921ba2b2f534e08ae2e9474b`
 
-### Próxima Ação Canônica
+### Status da Fase 4
 
-A próxima fase canônica autorizada é **`LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`**.
+A **Fase 4 foi concluída com sucesso como read-only review** em 2026-06-30.
 
-- Esta autorização foi registrada pelo operador (`next_phase_authorized_by_operator=true`).
-- **Esta fase ainda não foi executada.**
-- Nenhum lock real está aberto: todos os `execution_locks` permanecem `false`.
-- A execução de `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO` requer prompt explícito do operador direcionado à Fase 4.
+- 3.875 candidatos sanitizados revisados e classificados
+- 3.808 (98,3%) são código genuíno de alta confiança (A+B+C+D)
+- 67 requerem revisão do operador antes de qualquer ação
+- Nenhum arquivo foi deletado, movido ou alterado
+- Todos os locks reais permaneceram `false`
 
-### Pre-F4 Drift Repair Note
+### Próximas Ações Recomendadas (por prioridade)
 
-- Este mirror foi reparado por `LAPIDARIUM_PREF4_MIRROR_VALIDATOR_DRIFT_REPAIR` (2026-06-29).
-- O mirror anterior incorretamente declarava `next_phase=null` e referenciava
-  `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` como fase ativa.
-- Isso era drift em relação ao `ACTIVE_CONTEXT_STATE.json`.
-- **Este reparo não executa a Fase 4.**
+**1. IMEDIATO — SEGURANÇA (independente das fases):**
+Remover `.env` do git tracking e rotar segredos (F4-FIND-001).
+```
+git rm --cached .env
+echo ".env" >> .gitignore  # se ainda não constar
+# rotar todos os segredos
+```
+Isso NÃO exige prompt de fase — é uma remediação de segurança urgente.
 
-### Execution Locks
+**2. FASE 4B — Generator Repair (recomendado antes de cleanup):**
+Emitir prompt para `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`.
+Corrige o bug de quoting do generator da Fase 1 que produziu 2 artifacts acidentais.
+Impede reintrodução dos mesmos artefatos corrompidos em regenerações futuras.
 
-Todos os locks reais permanecem `false`:
-- `real_apply_authorized: false`
-- `production_authorized: false`
-- `runtime_integration_allowed: false`
-- `secrets_access_authorized: false`
-- `package_installation_authorized: false`
-- `external_llm_api_authorized: false`
-- `host_filesystem_mutation_authorized: false`
+**3. FASE 5 — Cleanup Execution Plan:**
+Emitir prompt para `LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN`.
+Planejamento cirúrgico de remoção de lixo confirmado:
+- `temp_audit/` (2 arquivos de auditoria derivados)
+- `legacy/wake/tts.py.backup`, `legacy/wake/wake.py.backup`
+- `legacy/experiments/tart=always` (sujeito a inspeção confirmando shell output)
+- `legacy/experiments/genai` e `legacy/experiments/threading` (sujeito a confirmação PostScript acidental)
+
+**4. SUPPLY CHAIN — External MCP:**
+Decidir destino de `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/` (F4-FIND-002).
+Não iniciar sem decisão do operador.
+
+### Aguardando Instrução
+
+A execução da próxima subfase depende de instrução explícita do operador.
+Nenhuma ação de cleanup, generator repair ou remoção de arquivo será iniciada
+sem prompt específico. Todos os locks reais permanecem `false`.
 
 ---
 
 ## Historical Appendix
 
 `HISTORICAL_ONLY`
-`SUPERSEDED_BY_LAPIDARIUM_FASE3_AND_PREF4_DRIFT_REPAIR`
+`SUPERSEDED_BY_LAPIDARIUM_FASE4`
 `NOT_CURRENT_STATE`
 
-As seções abaixo preservam trilhas históricas de fases anteriores para auditoria.
-Nenhuma delas descreve a rota viva atual.
+### IF09 / next_phase=null (HISTORICAL)
 
----
-
-### IF09 Closure — Próxima Ação (HISTORICAL)
-
-`HISTORICAL_ONLY` — Este bloco descrevia o estado pós-IF09 com `next_phase=null`.
-Foi superseded. O JSON canônico tem `next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`.
-
-- latest_completed_phase: `IF09 Closure Milestone Mirror Sanity Packet`
-- status: `if09_closure_milestone_mirror_sanity_pass`
-- active_next_phase: `null` ← HISTORICAL, superseded
-- next_phase: `null` ← HISTORICAL, superseded
-- Próximo passo histórico: `Nenhuma transição definida. Aguardando instrução do operador.` ← HISTORICAL
-
-`IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` consolidou o marco pós-closure e preservou
-`IF09-FIND-001` como `closed`. Essa fase está encerrada e superseded pela progressão até
-`LAPIDARIUM` e a autorização de `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`.
+`HISTORICAL_ONLY` — O estado IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET com next_phase=null
+é histórico e superseded. A fase viva é LAPIDARIUM com Fase 4 concluída.
 
 ### ARIS-CONTEXT P15–P19 (HISTORICAL)
 
 `HISTORICAL_ONLY`
 `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
 `NOT_CURRENT_STATE`
-
-#### ARIS-CONTEXT-P19 (HISTORICAL)
-- status: `artifact_reference_only_controlled_apply_dry_run_validation_harness_blocked`
-- next phase recommendation: `ARIS-CONTEXT-P20` ← HISTORICAL, nunca executado sob schema canônico
-- warnings: `8`, blockers: `10`
-
-#### ARIS-CONTEXT-P18 (HISTORICAL)
-- status: `artifact_reference_only_controlled_apply_dry_run_blocked`
-- real apply executed: `False`
-
-#### ARIS-CONTEXT-P16 (HISTORICAL)
-- status: `artifact_reference_only_controlled_apply_plan_validation_harness_warn`
-
-#### ARIS-CONTEXT-P15 (HISTORICAL)
-- status: `artifact_reference_only_controlled_apply_plan_warn`

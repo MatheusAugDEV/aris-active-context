@@ -809,5 +809,30 @@
     ],
     "lapidarium_pref4_no_lock_real_opened": true,
     "lapidarium_pref4_next_phase_preserved": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-    "lapidarium_pref4_phase4_executed": false
+    "lapidarium_pref4_phase4_executed": false,
+    "lapidarium_fase4_revisao_codigo_genuino_completed": true,
+    "lapidarium_fase4_date": "2026-06-30",
+    "lapidarium_fase4_decision": "pass",
+    "lapidarium_fase4_status": "lapidarium_fase4_revisao_codigo_genuino_pass",
+    "lapidarium_fase4_sanitized_count": 3875,
+    "lapidarium_fase4_high_confidence_genuine_count": 3808,
+    "lapidarium_fase4_requires_operator_review_count": 67,
+    "lapidarium_fase4_critical_findings": [
+        "F4-FIND-001",
+        "F4-FIND-002",
+        "F4-FIND-003",
+        "F4-FIND-004"
+    ],
+    "lapidarium_fase4_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase4_revisao_codigo_genuino_packet.json",
+        "artifacts/lapidarium/lapidarium_fase4_sanitized_input_manifest.json",
+        "artifacts/lapidarium/lapidarium_fase4_review_classification_matrix.json",
+        "artifacts/lapidarium/lapidarium_fase4_risk_and_false_positive_register.json",
+        "artifacts/lapidarium/lapidarium_fase4_no_real_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase4_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase4_report.md"
+    ],
+    "lapidarium_fase4_no_lock_opened": true,
+    "lapidarium_fase4_project_aris_unchanged": true,
+    "lapidarium_fase4_readonly_confirmed": true
 }
