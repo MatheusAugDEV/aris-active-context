@@ -1,0 +1,39 @@
+{
+    "artifact_id": "lapidarium_final_residuals_carry_forward_register",
+    "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "generated_at": "2026-06-30T04:15:00Z",
+    "residuals": [
+        {
+            "item_id": "F5-013",
+            "status": "EXTERNAL_QUARANTINE",
+            "external_quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai",
+            "sha256": "1b78d457da8748672fd6b1a3152ba5ba416aa0be1a283ffb13f2b8354bf4da58",
+            "condition_for_future_action": "Explicit operator origin/intent confirmation before any future action."
+        },
+        {
+            "item_id": "F5-014",
+            "status": "EXTERNAL_QUARANTINE",
+            "external_quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading",
+            "sha256": "779bbb2a030886c3fd0e1bd89f687badd0a205a029fbc6f83a2c08f1db93d12f",
+            "condition_for_future_action": "Explicit operator origin/intent confirmation before any future action."
+        },
+        {
+            "item_id": "F5-015",
+            "status": "QUARANTINE_READ_ONLY_FORMALIZED",
+            "external_quarantine_path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+            "sha256": null,
+            "condition_for_future_action": "Explicit operator integration decision before any submodule/vendor/remove/quarantine real action."
+        },
+        {
+            "item_id": "F5-016/.env",
+            "status": "KEEP",
+            "external_quarantine_path": null,
+            "sha256": null,
+            "manual_rotation_required": true,
+            "condition_for_future_action": "Manual secret-rotation decision outside the cleanup flow; content must not be read by Codex."
+        }
+    ],
+    "no_additional_cleanup_executed": true,
+    "no_file_removed_or_moved": true,
+    "no_env_read": true
+}

@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `d6e3e89bbe60`
-- schema_version: `3.30`
+- state_sha: `255c7f360838`
+- schema_version: `3.34`
 
 ## AVISO DE STALE
 
@@ -14,10 +14,10 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Unknown`
-- phase_id: `LAPIDARIUM`
-- status: `lapidarium_fase_3_cache_verificacao_pass`
+- phase_id: `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- status: `lapidarium_final_route_reconciliation_pass`
 - decision: `pass`
-- resumo: Lapidarium Fase 3 - Verificação de Cache; aguardando LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO sem autorizacao de execucao.
+- resumo: Lapidarium — Final Route Reconciliation; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
@@ -37,11 +37,11 @@ GERADO — NAO EDITE A MAO
 
 ## PROXIMO PASSO
 
-- active_next_phase: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- next_phase_class: `lapidarium_remediation`
+- active_next_phase: `null`
+- next_phase_class: `null`
 - advance_mode: `operator`
 - travas relevantes:
-  - next_phase_authorized_by_operator=True
+  - next_phase_authorized_by_operator=False
   - next_phase_execution_authorization=False
   - operator_approval_packet_review_is_execution_approval=False
   - real_apply_authorized=False
@@ -49,7 +49,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET.
 
 ## REGRAS DE AGORA
 

@@ -1,18 +1,18 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "LAPIDARIUM",
-    "current_phase_id": "LAPIDARIUM",
-    "display_name": "Lapidarium Fase 3 — Verificação de Cache",
-    "previous_phase_id": "LAPIDARIUM",
-    "last_phase": "LAPIDARIUM",
-    "phase_now": "LAPIDARIUM",
-    "next_phase_simple": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "current_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "display_name": "Lapidarium — Final Route Reconciliation",
+    "previous_phase_id": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+    "last_phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+    "phase_now": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "next_phase_simple": null,
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
     "gate_cycles_used": 0,
     "governance_gate_streak": 0,
     "seen_gate_signatures": [],
-    "phase_class": "lapidarium_remediation",
+    "phase_class": "governance_repair",
     "fixture_materialization_allowed": true,
     "fixture_materialization_executed": true,
     "fixture_count": 65,
@@ -67,10 +67,10 @@
         ],
         "condition": "ci_green_and_validator_pass"
     },
-    "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-    "active_next_phase_class": "lapidarium_remediation",
-    "next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-    "next_phase_authorized_by_operator": true,
+    "active_next_phase": null,
+    "active_next_phase_class": null,
+    "next_phase": null,
+    "next_phase_authorized_by_operator": false,
     "anti_proliferation_rule_active": true,
     "ci_enforcement_active": true,
     "additional_live_state_sources_allowed": false,
@@ -271,23 +271,23 @@
         ]
     },
     "current_live_route": {
-        "active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-        "active_next_phase_class": "lapidarium_remediation",
-        "current_status": "lapidarium_fase_3_cache_verificacao_pass",
+        "active_next_phase": null,
+        "active_next_phase_class": null,
+        "current_status": "lapidarium_final_route_reconciliation_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "Lapidarium Fase 3 - Verificação de Cache",
-        "latest_completed_status": "lapidarium_fase_3_cache_verificacao_pass",
+        "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
+        "latest_completed_status": "lapidarium_final_route_reconciliation_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "lapidarium_fase_3_cache_verificacao_pass",
+        "status": "lapidarium_final_route_reconciliation_pass",
         "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET"
     },
-    "current_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "current_status": "lapidarium_final_route_reconciliation_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -677,7 +677,7 @@
         "real_quota_consumed": false
     },
     "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
-    "latest_completed_status": "lapidarium_fase_3_cache_verificacao_pass",
+    "latest_completed_status": "lapidarium_final_route_reconciliation_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -688,28 +688,32 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "Lapidarium Fase 3 - Verificação de Cache",
+        "latest_execution_phase": "Lapidarium — Final Route Reconciliation",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
-        "latest_execution_status": "lapidarium_fase_3_cache_verificacao_pass"
+        "previous_execution_phase": "Lapidarium Fase 5 Residuals Safe Resolution",
+        "latest_execution_status": "lapidarium_final_route_reconciliation_pass",
+        "governance_repairs": [
+            "Lapidarium residual safe resolution",
+            "Lapidarium final route reconciliation and handoff"
+        ]
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "Lapidarium Fase 2 - Nomenclatura Aplicação",
-        "proof_source": "artifacts/lapidarium/fase3_cache_verificacao.json",
-        "to_phase": "Lapidarium Fase 3 - Verificação de Cache",
-        "to_status": "lapidarium_fase_3_cache_verificacao_pass",
+        "from_phase": "Lapidarium Fase 5 Residuals Safe Resolution",
+        "proof_source": "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
+        "to_phase": "Lapidarium — Final Route Reconciliation",
+        "to_status": "lapidarium_final_route_reconciliation_pass",
         "transition_type": "governance_repair",
-        "verified_via": "The Lapidarium cache verification confirmed 35993 generated cache build artifacts were already covered by .gitignore, required no deletion, and advanced the live cursor to the next Lapidarium step without changing any real/runtime/product/Bedrock/secrets locks."
+        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route BENCHUX_ROUTE_OPENING_PACKET."
     },
-    "latest_completed_phase": "Lapidarium Fase 3 - Verificação de Cache",
+    "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
-        "deferred_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. ROADMAP_CANONICAL.md não define sucessor para LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO.",
+        "deferred_phase": null,
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -722,16 +726,16 @@
     "next_action": {
         "execution_authorization": false,
         "notes": [
-            "Lapidarium cursor advanced after phase 2 nomenclature application.",
-            "Phase 1.5 remains closed and phase 3 is now the latest completed step.",
-            "Next: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO"
+            "Lapidarium final route reconciliation and handoff completed.",
+            "Nenhuma transição definida. Aguardando instrução do operador.",
+            "Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
-        "phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
-        "phase_class": "lapidarium_remediation",
+        "phase": null,
+        "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "lapidarium_fase_3_cache_verificacao_pass"
+        "status": "lapidarium_final_route_reconciliation_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -747,9 +751,9 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.30",
+    "schema_version": "3.34",
     "roadmap_version": "v2",
-    "status": "lapidarium_fase_3_cache_verificacao_pass",
+    "status": "lapidarium_final_route_reconciliation_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -764,7 +768,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.30",
+        "current_schema_version": "3.34",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -797,7 +801,8 @@
         "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
-        "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed."
+        "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
+        "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only BENCHUX_ROUTE_OPENING_PACKET handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees."
     },
     "lapidarium_pref4_drift_repair_completed": true,
     "lapidarium_pref4_drift_repair_date": "2026-06-29",
@@ -1139,5 +1144,55 @@
         "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_report.md"
     ],
-    "lapidarium_fase5_residuals_safe_resolution_next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation"
+    "lapidarium_fase5_residuals_safe_resolution_next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation",
+    "lapidarium_stale_display_name": "Lapidarium Fase 3 — Verificação de Cache",
+    "lapidarium_stale_phase_id": "LAPIDARIUM",
+    "lapidarium_stale_current_phase_id": "LAPIDARIUM",
+    "lapidarium_stale_previous_phase_id": "LAPIDARIUM",
+    "lapidarium_stale_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "lapidarium_stale_active_next_phase": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "lapidarium_stale_next_phase_simple": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+    "lapidarium_stale_active_next_phase_class": "lapidarium_remediation",
+    "lapidarium_stale_next_phase_authorized_by_operator": true,
+    "lapidarium_final_route_reconciliation_completed": true,
+    "lapidarium_final_route_reconciliation_date": "2026-06-30",
+    "lapidarium_final_route_reconciliation_decision": "pass",
+    "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
+    "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
+    "lapidarium_route_stale_pointers_reconciled": true,
+    "lapidarium_next_route_candidate": "BENCHUX_ROUTE_OPENING_PACKET",
+    "lapidarium_next_route_candidate_execution_authorized": false,
+    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET",
+    "lapidarium_final_route_reconciliation_artifacts": [
+        "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
+        "artifacts/lapidarium/lapidarium_final_stale_pointer_register.json",
+        "artifacts/lapidarium/lapidarium_final_handoff_decision.json",
+        "artifacts/lapidarium/lapidarium_final_residuals_carry_forward_register.json",
+        "artifacts/lapidarium/lapidarium_final_no_macro_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_final_route_reconciliation_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_final_route_reconciliation_report.md"
+    ],
+    "lapidarium_final_stale_pointer_register_fields": [
+        "display_name",
+        "phase_id",
+        "current_phase_id",
+        "previous_phase_id",
+        "active_next_phase",
+        "active_next_phase_class",
+        "next_phase",
+        "next_phase_simple",
+        "next_phase_authorized_by_operator",
+        "next_action.phase",
+        "locks.deferred_phase"
+    ],
+    "lapidarium_final_residuals_carry_forward_summary": {
+        "F5-013": "external quarantine with preserved hash",
+        "F5-014": "external quarantine with preserved hash",
+        "F5-015": "QUARANTINE_READ_ONLY_FORMALIZED",
+        "F5-016/.env": "KEEP with manual rotation required and no content read"
+    },
+    "lapidarium_final_route_reconciliation_route_candidate_only": true,
+    "lapidarium_final_route_reconciliation_no_macro_execution": true,
+    "lapidarium_final_route_reconciliation_no_file_move": true,
+    "lapidarium_final_route_reconciliation_no_cleanup": true
 }

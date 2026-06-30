@@ -1,0 +1,84 @@
+{
+    "artifact_id": "lapidarium_final_stale_pointer_register",
+    "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "generated_at": "2026-06-30T04:15:00Z",
+    "entries": [
+        {
+            "field": "display_name",
+            "previous_value": "Lapidarium Fase 3 — Verificação de Cache",
+            "new_value": "Lapidarium — Final Route Reconciliation",
+            "reason": "The live route is now a terminal final-handoff state instead of the stale Lapidarium Fase 3 cache-verification label.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md, lapidarium_fase5_residuals_safe_resolution_packet.json"
+        },
+        {
+            "field": "phase_id",
+            "previous_value": "LAPIDARIUM",
+            "new_value": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+            "reason": "The active route was terminalized after the F5 residual safe resolution so F4 is no longer the live pointer.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md"
+        },
+        {
+            "field": "current_phase_id",
+            "previous_value": "LAPIDARIUM",
+            "new_value": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+            "reason": "The canonical current phase now reflects the final route reconciliation packet.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md"
+        },
+        {
+            "field": "previous_phase_id",
+            "previous_value": "LAPIDARIUM",
+            "new_value": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+            "reason": "The handoff follows the F5 residual safe resolution, not the original cache verification phase.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, lapidarium_fase5_residuals_safe_resolution_packet.json"
+        },
+        {
+            "field": "active_next_phase",
+            "previous_value": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "new_value": null,
+            "reason": "No successor row is active after the final handoff; candidate-only next route is recorded separately.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md"
+        },
+        {
+            "field": "next_phase",
+            "previous_value": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "new_value": null,
+            "reason": "The live route is terminal and no longer points to the Lapidarium Fase 4 review packet.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md"
+        },
+        {
+            "field": "next_phase_simple",
+            "previous_value": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "new_value": null,
+            "reason": "The derived simple view must stop advertising Fase 4 as an active next step.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, scripts/validate_active_context_state.py"
+        },
+        {
+            "field": "active_next_phase_class",
+            "previous_value": "lapidarium_remediation",
+            "new_value": null,
+            "reason": "The terminal wait-state has no successor class.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, scripts/validate_active_context_state.py"
+        },
+        {
+            "field": "next_phase_authorized_by_operator",
+            "previous_value": true,
+            "new_value": false,
+            "reason": "Execution authorization is not granted for the candidate-only handoff.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, ROADMAP_CANONICAL.md"
+        },
+        {
+            "field": "next_action.phase",
+            "previous_value": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "new_value": null,
+            "reason": "The next action is a terminal wait-state plus candidate-only route selection, not an executable phase.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, scripts/validate_active_context_state.py"
+        },
+        {
+            "field": "locks.deferred_phase",
+            "previous_value": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+            "new_value": null,
+            "reason": "The deferred phase lock must not keep a live executable successor in a terminal route.",
+            "source_evidence": "ACTIVE_CONTEXT_STATE.json, scripts/validate_active_context_state.py"
+        }
+    ]
+}

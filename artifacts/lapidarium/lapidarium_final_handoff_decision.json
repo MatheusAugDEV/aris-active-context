@@ -1,0 +1,21 @@
+{
+    "artifact_id": "lapidarium_final_handoff_decision",
+    "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "generated_at": "2026-06-30T04:15:00Z",
+    "macro_roadmap_source": "ROADMAP_CANONICAL.md",
+    "candidate_next_route": "BENCHUX_ROUTE_OPENING_PACKET",
+    "why_candidate_only": "The macro roadmap shows BenchUX as the next macro-chain destination, but the live state must remain non-executable and candidate-only until an explicit operator route-selection decision exists.",
+    "execution_authorized": false,
+    "locks_required_before_execution": [
+        "next_phase_authorized_by_operator=true",
+        "next_phase_execution_authorization=true",
+        "runtime_integration_allowed=true",
+        "production_authorized=true",
+        "product_ready=true",
+        "secrets_access_authorized=true",
+        "real_apply_authorized=true",
+        "Bedrock decision explicitly granted"
+    ],
+    "operator_decision_required_before_execution": "Explicit operator selection of the next macro route and a separate execution authorization gate are both required before any macrophase can start.",
+    "no_macro_execution": true
+}

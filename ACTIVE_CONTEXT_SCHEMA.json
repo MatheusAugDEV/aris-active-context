@@ -1086,7 +1086,8 @@
                 "3.27",
                 "3.28",
                 "3.29",
-                "3.30"
+                "3.30",
+                "3.34"
             ],
             "type": "string"
         },
@@ -1646,6 +1647,9 @@
                 },
                 "schema_3_30_change_summary": {
                     "type": "string"
+                },
+                "schema_3_34_change_summary": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -2136,7 +2140,9 @@
         },
         "lapidarium_fase5_remaining_low_scope_artifacts": {
             "type": "array",
-            "items": {"type": "string"}
+            "items": {
+                "type": "string"
+            }
         },
         "lapidarium_fase5_remaining_low_scope_next_step": {
             "type": "string"
@@ -2469,6 +2475,120 @@
         },
         "lapidarium_fase5_residuals_safe_resolution_next_step": {
             "type": "string"
+        },
+        "lapidarium_final_route_reconciliation_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_final_route_reconciliation_date": {
+            "type": "string"
+        },
+        "lapidarium_final_route_reconciliation_decision": {
+            "type": "string"
+        },
+        "lapidarium_final_route_reconciliation_status": {
+            "type": "string"
+        },
+        "lapidarium_final_status": {
+            "type": "string"
+        },
+        "lapidarium_route_stale_pointers_reconciled": {
+            "type": "boolean"
+        },
+        "lapidarium_stale_phase_id": {
+            "type": "string"
+        },
+        "lapidarium_stale_current_phase_id": {
+            "type": "string"
+        },
+        "lapidarium_stale_previous_phase_id": {
+            "type": "string"
+        },
+        "lapidarium_stale_display_name": {
+            "type": "string"
+        },
+        "lapidarium_stale_active_next_phase": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lapidarium_stale_active_next_phase_class": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lapidarium_stale_next_phase": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lapidarium_stale_next_phase_simple": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lapidarium_stale_next_phase_authorized_by_operator": {
+            "type": "boolean"
+        },
+        "lapidarium_next_route_candidate": {
+            "type": "string"
+        },
+        "lapidarium_next_route_candidate_execution_authorized": {
+            "type": "boolean"
+        },
+        "lapidarium_final_route_reconciliation_next_step": {
+            "type": "string"
+        },
+        "lapidarium_final_route_reconciliation_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_final_stale_pointer_register_fields": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_final_residuals_carry_forward_summary": {
+            "additionalProperties": false,
+            "properties": {
+                "F5-013": {
+                    "type": "string"
+                },
+                "F5-014": {
+                    "type": "string"
+                },
+                "F5-015": {
+                    "type": "string"
+                },
+                "F5-016/.env": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "F5-013",
+                "F5-014",
+                "F5-015",
+                "F5-016/.env"
+            ],
+            "type": "object"
+        },
+        "lapidarium_final_route_reconciliation_route_candidate_only": {
+            "type": "boolean"
+        },
+        "lapidarium_final_route_reconciliation_no_macro_execution": {
+            "type": "boolean"
+        },
+        "lapidarium_final_route_reconciliation_no_file_move": {
+            "type": "boolean"
+        },
+        "lapidarium_final_route_reconciliation_no_cleanup": {
+            "type": "boolean"
         }
     },
     "required": [
@@ -2550,7 +2670,7 @@
         "purg00_source_gap_terminal_blocker",
         "benchuix_track"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.30",
+    "title": "ARIS Active Context Canonical Live State Schema v3.34",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

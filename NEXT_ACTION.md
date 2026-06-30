@@ -2,32 +2,28 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION (2026-06-30)
+> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
 
 ---
 
 ## CURRENT CANONICAL NEXT ACTION
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM`
-- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
+- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
 
 ### Status Atual
 
-**Fase 5 encerrada como `CLOSED_WITH_BLOCKED_RESIDUALS` em 2026-06-30.**
+**Lapidarium foi reconciliado até a Fase 5 residual safe resolution e agora está em handoff terminal.**
 
-F5-001/F5-002/F5-003/F5-006/F5-007/F5-008/F5-009/F5-010/F5-011/F5-012 ficaram REMOVED.
-F5-004/F5-005 já estavam ABSENT do current HEAD/index do Project_ARIS.
-F5-015 permanece QUARANTINE read-only.
-F5-013/F5-014 permanecem BLOCKED.
-F5-016/.env permanece KEEP.
-Nenhum cleanup adicional foi executado nesta etapa de fechamento.
+O ponteiro ativo de Fase 4 foi rebaixado para histórico/superseded.
+O next route existe somente como candidato: `BENCHUX_ROUTE_OPENING_PACKET`.
+Nenhuma macrofase foi executada.
 
-Fase 5 residual safe resolution formalizada:
-F5-013/F5-014 foram movidos para quarentena externa com hash preservado.
-F5-015 foi documentado como quarantine read-only sem tocar no nested `.git`.
-F5-016/.env recebeu apenas o pacote/checklist de rotação manual.
-Nenhuma execução de PostScript, nenhuma leitura de `.env` e nenhuma reescrita de histórico foram realizadas.
+F5-013/F5-014 continuam em quarentena externa com hash preservado.
+F5-015 continua como quarantine read-only formalizada.
+F5-016/.env continua KEEP com rotação manual requerida.
 
 ---
 
@@ -46,7 +42,7 @@ Nenhuma execução de PostScript, nenhuma leitura de `.env` e nenhuma reescrita 
 Todos os locks de runtime, produto e Bedrock permanecem `false`. Nenhuma ação
 não autorizada explicitamente pelo operador será iniciada.
 
-Fase 5 está fechada; só resta autorização explícita futura para qualquer um dos itens residuais.
+Fase 5 está fechada; o route handoff é terminal e o próximo passo permanece apenas como candidato.
 
 ---
 

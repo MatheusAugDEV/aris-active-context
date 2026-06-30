@@ -1,0 +1,19 @@
+{
+    "artifact_id": "lapidarium_final_no_macro_execution_attestation",
+    "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "generated_at": "2026-06-30T04:15:00Z",
+    "no_infernus_execution": true,
+    "no_purgatorium_execution": true,
+    "no_benchux_execution": true,
+    "no_crisol_execution": true,
+    "no_runtime": true,
+    "no_product": true,
+    "no_bedrock": true,
+    "no_real_apply": true,
+    "no_secrets_read": true,
+    "no_cleanup_execution": true,
+    "no_file_deletion": true,
+    "no_file_move": true,
+    "no_history_rewrite": true,
+    "no_force_push": true
+}

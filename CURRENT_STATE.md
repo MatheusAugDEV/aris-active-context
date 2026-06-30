@@ -2,19 +2,45 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION (2026-06-30)
+> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 Residuals Safe Resolution Updated)
+## CURRENT CANONICAL STATE (LAPIDARIUM — Final Route Reconciliation Updated)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM`
-- **current_phase_id:** `LAPIDARIUM`
-- **display_name:** `Lapidarium Fase 3 — Verificação de Cache`
-- **status:** `lapidarium_fase5_cleanup_executed`
-- **phase_class:** `lapidarium_remediation`
-- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
+- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- **display_name:** `Lapidarium — Final Route Reconciliation`
+- **status:** `lapidarium_final_route_reconciliation_pass`
+- **phase_class:** `governance_repair`
+- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+
+### Final Route Reconciliation (Concluída 2026-06-30)
+
+- `lapidarium_final_route_reconciliation_completed`: `true`
+- `lapidarium_final_route_reconciliation_decision`: `pass`
+- `lapidarium_final_status`: `LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION`
+- `lapidarium_route_stale_pointers_reconciled`: `true`
+- `lapidarium_next_route_candidate`: `BENCHUX_ROUTE_OPENING_PACKET`
+- `lapidarium_next_route_candidate_execution_authorized`: `false`
+- `lapidarium_final_route_reconciliation_next_step`: `NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET`
+- `lapidarium_final_route_reconciliation_route_candidate_only`: `true`
+- `lapidarium_final_route_reconciliation_no_macro_execution`: `true`
+- `lapidarium_final_route_reconciliation_no_file_move`: `true`
+- `lapidarium_final_route_reconciliation_no_cleanup`: `true`
+- `lapidarium_final_route_reconciliation_artifacts`: `artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json`, `artifacts/lapidarium/lapidarium_final_stale_pointer_register.json`, `artifacts/lapidarium/lapidarium_final_handoff_decision.json`, `artifacts/lapidarium/lapidarium_final_residuals_carry_forward_register.json`, `artifacts/lapidarium/lapidarium_final_no_macro_execution_attestation.json`, `artifacts/lapidarium/lapidarium_final_route_reconciliation_validation_evidence.json`, `artifacts/lapidarium/lapidarium_final_route_reconciliation_report.md`
+- `lapidarium_stale_phase_id`: `LAPIDARIUM`
+- `lapidarium_stale_current_phase_id`: `LAPIDARIUM`
+- `lapidarium_stale_previous_phase_id`: `LAPIDARIUM`
+- `lapidarium_stale_display_name`: `Lapidarium Fase 3 — Verificação de Cache`
+- `lapidarium_stale_active_next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `lapidarium_stale_active_next_phase_class`: `lapidarium_remediation`
+- `lapidarium_stale_next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `lapidarium_stale_next_phase_simple`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `lapidarium_stale_next_phase_authorized_by_operator`: `true`
+- `lapidarium_final_residuals_carry_forward_summary`: `F5-013`, `F5-014`, `F5-015`, `F5-016/.env`
+- Final handoff is terminal. The next route exists only as a candidate and is not authorized.
 
 ### Fase 5 — Authorized Minimal Cleanup Execution (Concluída 2026-06-30)
 

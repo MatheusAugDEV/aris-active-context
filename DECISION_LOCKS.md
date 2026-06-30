@@ -1,3 +1,14 @@
+## LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
+
+- Status: `lapidarium_final_route_reconciliation_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: terminal governance/artifact reconciliation after Lapidarium F5 residual safe resolution. The live route is now a terminal handoff state. Stale Fase 3/Fase 4 pointers were reclassified as historical. The next route remains candidate-only as `BENCHUX_ROUTE_OPENING_PACKET`.
+- No macro execution: true
+- Locks opened: none. All execution locks remain false.
+- Artifacts: `artifacts/lapidarium/lapidarium_final_route_reconciliation_*`
+- Next: candidate-only route handoff remains `BENCHUX_ROUTE_OPENING_PACKET`; await explicit operator authorization before any future macro execution.
+
 ## LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION
 
 - Status: `lapidarium_fase5_residuals_safe_resolution_pass`

@@ -1,0 +1,55 @@
+{
+    "artifact_id": "lapidarium_final_route_reconciliation_validation_evidence",
+    "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "generated_at": "2026-06-30T04:15:00Z",
+    "all_passed": true,
+    "finalization_status": "completed_pending_commit_push_ci",
+    "checks": [
+        {
+            "check": "active_context_state_json_valid",
+            "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+            "passed": true
+        },
+        {
+            "check": "active_context_schema_json_valid",
+            "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+            "passed": true
+        },
+        {
+            "check": "validator_script_exists",
+            "command": "test -s scripts/validate_active_context_state.py",
+            "passed": true
+        },
+        {
+            "check": "validator_decision_pass",
+            "command": "python3 scripts/validate_active_context_state.py",
+            "passed": true,
+            "result": "decision=pass"
+        },
+        {
+            "check": "stale_pointers_reconciled",
+            "passed": true,
+            "result": "Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical and the live route is terminal"
+        },
+        {
+            "check": "candidate_next_route_recorded",
+            "passed": true,
+            "result": "BENCHUX_ROUTE_OPENING_PACKET recorded as candidate-only and not authorized for execution"
+        },
+        {
+            "check": "no_macro_execution",
+            "passed": true,
+            "result": "No Infernus, Purgatorium, BenchUX, or Crisol execution was performed"
+        },
+        {
+            "check": "no_file_move_or_deletion",
+            "passed": true,
+            "result": "No additional files were moved or deleted in this reconciliation"
+        },
+        {
+            "check": "no_secrets_read",
+            "passed": true,
+            "result": ".env content was not read"
+        }
+    ]
+}
