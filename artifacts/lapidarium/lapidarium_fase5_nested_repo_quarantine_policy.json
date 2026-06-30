@@ -1,0 +1,42 @@
+{
+  "artifact_id": "lapidarium_fase5_nested_repo_quarantine_policy",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "item_id": "F5-015",
+  "status": "QUARANTINE_READ_ONLY_FORMALIZED",
+  "nested_repo_path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+  "repo_root": "/home/matheus/ARIS/Project_ARIS/external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+  "remote_origin": "https://github.com/gogogadgetbytes/smart-connections-mcp",
+  "head_commit": "b8c39ae192aa09f49b42492971b1880940276b44",
+  "main_commit": "24481f8e718e7247b17de2be34305648be9e9224",
+  "detached_head": true,
+  "tracked_files_count": 13,
+  "project_reference_count": 31,
+  "allowed_usage": [
+    "read-only governance reference",
+    "audit evidence",
+    "snapshot comparison"
+  ],
+  "forbidden_usage": [
+    "runtime import",
+    "build dependency",
+    "product integration",
+    "automatic execution",
+    "submodule conversion without future authorization",
+    "vendoring without future authorization",
+    "removal without future authorization"
+  ],
+  "future_allowed_paths": [
+    "keep_snapshot_read_only",
+    "convert_to_submodule",
+    "vendor_with_manifest",
+    "remove"
+  ],
+  "no_nested_git_mutation": true,
+  "marker_created": true,
+  "marker_path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/QUARANTINE_READ_ONLY.md",
+  "no_runtime_dependency": true,
+  "no_product_dependency": true,
+  "supply_chain_risk": "medium_high",
+  "removal_risk": "high"
+}

@@ -2,7 +2,7 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION (2026-06-30)
 
 ---
 
@@ -23,6 +23,12 @@ F5-013/F5-014 permanecem BLOCKED.
 F5-016/.env permanece KEEP.
 Nenhum cleanup adicional foi executado nesta etapa de fechamento.
 
+Fase 5 residual safe resolution formalizada:
+F5-013/F5-014 foram movidos para quarentena externa com hash preservado.
+F5-015 foi documentado como quarantine read-only sem tocar no nested `.git`.
+F5-016/.env recebeu apenas o pacote/checklist de rotação manual.
+Nenhuma execução de PostScript, nenhuma leitura de `.env` e nenhuma reescrita de histórico foram realizadas.
+
 ---
 
 ### Próximas Ações (por prioridade)
@@ -31,6 +37,7 @@ Nenhum cleanup adicional foi executado nesta etapa de fechamento.
 - **F4-FIND-003** (`F5-013`, `F5-014`): confirmar origem e intenção antes de qualquer ação futura
 - **F4-FIND-002** (`F5-015`): decidir integração explícita antes de submodule/vendor/remove/quarantine real
 - **F4-FIND-001** (`F5-016` / `.env`): decidir rotação manual de segredos fora do fluxo de cleanup
+- Qualquer alteração real em F5-015 continua bloqueada até autorização explícita futura; o snapshot read-only fica apenas como referência de governança.
 
 ---
 

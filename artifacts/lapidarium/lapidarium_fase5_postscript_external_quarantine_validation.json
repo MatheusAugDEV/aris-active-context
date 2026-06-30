@@ -1,0 +1,36 @@
+{
+  "artifact_id": "lapidarium_fase5_postscript_external_quarantine_validation",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "original_paths_absent",
+      "command": "test ! -e /home/matheus/ARIS/Project_ARIS/legacy/experiments/genai && test ! -e /home/matheus/ARIS/Project_ARIS/legacy/experiments/threading",
+      "passed": true,
+      "result": "original paths absent"
+    },
+    {
+      "check": "quarantine_paths_present",
+      "command": "test -e /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai && test -e /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading",
+      "passed": true,
+      "result": "quarantine paths present"
+    },
+    {
+      "check": "sha256_preserved",
+      "command": "sha256sum /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading",
+      "passed": true,
+      "result": "sha256 preserved after move"
+    },
+    {
+      "check": "source_review_packet_reference",
+      "result": "lapidarium_f5_013_014_postscript_review_packet.json recorded ignored untracked PostScript files and zero runtime references",
+      "passed": true
+    },
+    {
+      "check": "no_postscript_execution_or_rendering",
+      "result": "No PostScript execution, rendering, or viewer commands were used",
+      "passed": true
+    }
+  ]
+}

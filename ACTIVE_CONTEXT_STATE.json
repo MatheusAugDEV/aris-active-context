@@ -1104,5 +1104,40 @@
         "artifacts/lapidarium/lapidarium_fase5_blocked_residuals_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase5_closure_report.md"
     ],
-    "lapidarium_fase5_blocked_residuals_next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation"
+    "lapidarium_fase5_blocked_residuals_next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation",
+    "lapidarium_fase5_residuals_safe_resolution_completed": true,
+    "lapidarium_fase5_residuals_safe_resolution_date": "2026-06-30",
+    "lapidarium_fase5_residuals_safe_resolution_decision": "pass",
+    "lapidarium_fase5_residuals_safe_resolution_status": "lapidarium_fase5_residuals_safe_resolution_pass",
+    "lapidarium_fase5_residuals_safe_resolution_project_repo_head_before": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+    "lapidarium_fase5_residuals_safe_resolution_project_repo_head_after": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+    "lapidarium_fase5_postscript_quarantine_external": true,
+    "lapidarium_fase5_postscript_deleted": false,
+    "lapidarium_fase5_postscript_executed": false,
+    "lapidarium_fase5_postscript_rendered": false,
+    "lapidarium_fase5_nested_repo_quarantine_read_only_formalized": true,
+    "lapidarium_fase5_nested_git_mutated": false,
+    "lapidarium_fase5_env_read": false,
+    "lapidarium_fase5_env_manual_rotation_required": true,
+    "lapidarium_fase5_env_rotation_executed_by_codex": false,
+    "lapidarium_fase5_no_history_rewrite": true,
+    "lapidarium_fase5_no_force_push": true,
+    "lapidarium_fase5_postscript_external_quarantine_root": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript",
+    "lapidarium_fase5_postscript_external_quarantine_count": 2,
+    "lapidarium_fase5_postscript_external_quarantine_items": [
+        "F5-013",
+        "F5-014"
+    ],
+    "lapidarium_fase5_nested_repo_quarantine_policy_marker": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/QUARANTINE_READ_ONLY.md",
+    "lapidarium_fase5_residuals_safe_resolution_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_packet.json",
+        "artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_manifest.json",
+        "artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_validation.json",
+        "artifacts/lapidarium/lapidarium_fase5_nested_repo_quarantine_policy.json",
+        "artifacts/lapidarium/lapidarium_fase5_env_manual_rotation_packet.md",
+        "artifacts/lapidarium/lapidarium_fase5_residuals_no_destruction_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_report.md"
+    ],
+    "lapidarium_fase5_residuals_safe_resolution_next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation"
 }

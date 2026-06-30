@@ -1,3 +1,16 @@
+## LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION
+
+- Status: `lapidarium_fase5_residuals_safe_resolution_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: safe-resolution of the remaining phase 5 residuals. F5-013/F5-014 were moved to external quarantine; F5-015 was formalized as read-only quarantine without mutating nested `.git`; F5-016/.env received a manual rotation packet only. No PostScript was executed or rendered. No secrets were read.
+- PostScript quarantine: external root `/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript` preserves `legacy/experiments/genai` and `legacy/experiments/threading` with sha256 intact.
+- Nested repo quarantine: `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source` remains read-only; no submodule conversion, vendoring, removal, or nested Git mutation occurred.
+- .env handling: `.env` remains kept; manual rotation required; no secret content was read or printed.
+- Locks opened: none. All execution locks remain false.
+- Artifacts: `artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_*`
+- Next: await explicit operator authorization for any future action on F5-013/F5-014/F5-015 or `.env`.
+
 ## LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW
 
 - Status: `lapidarium_fase5_remaining_low_scope_review_pass`

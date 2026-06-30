@@ -1,0 +1,71 @@
+{
+  "artifact_id": "lapidarium_fase5_residuals_safe_resolution_packet",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "decision": "pass",
+  "confidence": "HIGH",
+  "project_repo": "Project_ARIS",
+  "project_repo_head_before_resolution": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+  "project_repo_head_after_resolution": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+  "postscript_quarantine_external": {
+    "root": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript",
+    "items": [
+      {
+        "item_id": "F5-013",
+        "original_path": "legacy/experiments/genai",
+        "quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai",
+        "sha256_before": "1b78d457da8748672fd6b1a3152ba5ba416aa0be1a283ffb13f2b8354bf4da58",
+        "size_bytes": 20919684,
+        "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+        "moved_at": "2026-06-30T03:49:01Z"
+      },
+      {
+        "item_id": "F5-014",
+        "original_path": "legacy/experiments/threading",
+        "quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading",
+        "sha256_before": "779bbb2a030886c3fd0e1bd89f687badd0a205a029fbc6f83a2c08f1db93d12f",
+        "size_bytes": 6976967,
+        "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+        "moved_at": "2026-06-30T03:49:01Z"
+      }
+    ]
+  },
+  "nested_repo_quarantine_read_only": {
+    "item_id": "F5-015",
+    "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+    "repo_root": "/home/matheus/ARIS/Project_ARIS/external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+    "remote_origin": "https://github.com/gogogadgetbytes/smart-connections-mcp",
+    "head_commit": "b8c39ae192aa09f49b42492971b1880940276b44",
+    "main_commit": "24481f8e718e7247b17de2be34305648be9e9224",
+    "origin_main_commit": "24481f8e718e7247b17de2be34305648be9e9224",
+    "status": "QUARANTINE_READ_ONLY_FORMALIZED",
+    "no_nested_git_mutation": true,
+    "no_runtime_dependency": true,
+    "no_product_dependency": true
+  },
+  "env_rotation": {
+    "item_id": "F5-016/.env",
+    "exists_confirmed": true,
+    "ignored_confirmed": true,
+    "content_read": false,
+    "manual_rotation_required": true,
+    "rotation_executed_by_codex": false,
+    "never_commit_env": true
+  },
+  "no_postscript_execution": true,
+  "no_postscript_rendering": true,
+  "no_postscript_deletion": true,
+  "no_history_rewrite": true,
+  "no_force_push": true,
+  "artifacts": [
+    "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_packet.json",
+    "artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_manifest.json",
+    "artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_validation.json",
+    "artifacts/lapidarium/lapidarium_fase5_nested_repo_quarantine_policy.json",
+    "artifacts/lapidarium/lapidarium_fase5_env_manual_rotation_packet.md",
+    "artifacts/lapidarium/lapidarium_fase5_residuals_no_destruction_attestation.json",
+    "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_validation_evidence.json",
+    "artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_report.md"
+  ],
+  "next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation"
+}

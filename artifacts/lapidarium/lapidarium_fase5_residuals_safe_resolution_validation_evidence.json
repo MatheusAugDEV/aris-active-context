@@ -1,0 +1,66 @@
+{
+  "artifact_id": "lapidarium_fase5_residuals_safe_resolution_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "all_passed": true,
+  "finalization_status": "pending_commit_push_ci",
+  "checks": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "postscript_paths_moved_to_external_quarantine",
+      "result": "legacy/experiments/genai and legacy/experiments/threading are absent from Project_ARIS and present under the quarantine root",
+      "passed": true
+    },
+    {
+      "check": "postscript_sha256_preserved",
+      "result": "sha256 matches pre-move hashes recorded in the review packet",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_present_clean",
+      "result": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source exists and status --short is clean",
+      "passed": true
+    },
+    {
+      "check": "nested_repo_no_git_mutation",
+      "result": "nested .git was not touched",
+      "passed": true
+    },
+    {
+      "check": "env_existence_and_ignore_only",
+      "command": "test -e /home/matheus/ARIS/Project_ARIS/.env && git -C /home/matheus/ARIS/Project_ARIS check-ignore -v .env",
+      "passed": true,
+      "result": "env exists and is ignored (.gitignore:6:*.env)"
+    },
+    {
+      "check": "no_postscript_execution_or_rendering",
+      "result": "No PostScript execution, rendering, or viewer commands were used",
+      "passed": true
+    },
+    {
+      "check": "no_history_rewrite_or_force_push",
+      "result": "No history rewrite or force push was performed",
+      "passed": true
+    }
+  ]
+}

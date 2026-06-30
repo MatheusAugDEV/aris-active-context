@@ -1,0 +1,34 @@
+{
+  "artifact_id": "lapidarium_fase5_postscript_external_quarantine_manifest",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "quarantine_root": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript",
+  "moved_items": [
+    {
+      "item_id": "F5-013",
+      "original_path": "legacy/experiments/genai",
+      "quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai",
+      "sha256_before": "1b78d457da8748672fd6b1a3152ba5ba416aa0be1a283ffb13f2b8354bf4da58",
+      "sha256_after": "1b78d457da8748672fd6b1a3152ba5ba416aa0be1a283ffb13f2b8354bf4da58",
+      "size_bytes": 20919684,
+      "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+      "moved_at": "2026-06-30T03:49:01Z",
+      "rollback_command": "mv /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/genai /home/matheus/ARIS/Project_ARIS/legacy/experiments/genai"
+    },
+    {
+      "item_id": "F5-014",
+      "original_path": "legacy/experiments/threading",
+      "quarantine_path": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading",
+      "sha256_before": "779bbb2a030886c3fd0e1bd89f687badd0a205a029fbc6f83a2c08f1db93d12f",
+      "sha256_after": "779bbb2a030886c3fd0e1bd89f687badd0a205a029fbc6f83a2c08f1db93d12f",
+      "size_bytes": 6976967,
+      "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+      "moved_at": "2026-06-30T03:49:01Z",
+      "rollback_command": "mv /home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript/legacy/experiments/threading /home/matheus/ARIS/Project_ARIS/legacy/experiments/threading"
+    }
+  ],
+  "source_original_paths_absent": true,
+  "source_hashes_preserved": true,
+  "no_delete": true,
+  "no_partial_move": true
+}

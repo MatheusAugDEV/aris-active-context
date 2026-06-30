@@ -1,0 +1,19 @@
+{
+  "artifact_id": "lapidarium_fase5_residuals_no_destruction_attestation",
+  "phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+  "generated_at": "2026-06-30T03:58:48Z",
+  "no_postscript_deletion": true,
+  "no_postscript_execution": true,
+  "no_postscript_rendering": true,
+  "no_nested_git_mutation": true,
+  "no_env_content_read": true,
+  "no_history_rewrite": true,
+  "no_force_push": true,
+  "no_partial_move": true,
+  "external_quarantine_used": true,
+  "external_quarantine_root": "/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript",
+  "f5_013_f5_014_sha256_preserved": true,
+  "f5_015_intact": true,
+  "env_intact": true,
+  "attestation": "No destructive action was performed on the residuals. The PostScript binaries were quarantined externally, the nested repo remained untouched in read-only form, and .env was not read."
+}

@@ -2,11 +2,11 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 Blocked Residuals Closure Updated)
+## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 Residuals Safe Resolution Updated)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
@@ -106,6 +106,31 @@
 - `lapidarium_fase5_blocked_residuals_next_step`: `await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation`
 - Closure confirms no additional cleanup executed and no files removed or moved.
 - F5-013/F5-014 remain BLOCKED; F5-015 remains QUARANTINE read-only; F5-016/.env remain KEEP.
+
+### Fase 5 — Residuals Safe Resolution (Concluída 2026-06-30)
+
+- `lapidarium_fase5_residuals_safe_resolution_completed`: `true`
+- `lapidarium_fase5_residuals_safe_resolution_decision`: `pass`
+- `lapidarium_fase5_postscript_quarantine_external`: `true`
+- `lapidarium_fase5_postscript_external_quarantine_root`: `/home/matheus/ARIS/quarantine/Project_ARIS/lapidarium_f5_postscript`
+- `lapidarium_fase5_postscript_external_quarantine_count`: `2`
+- `lapidarium_fase5_postscript_deleted`: `false`
+- `lapidarium_fase5_postscript_executed`: `false`
+- `lapidarium_fase5_postscript_rendered`: `false`
+- `lapidarium_fase5_nested_repo_quarantine_read_only_formalized`: `true`
+- `lapidarium_fase5_nested_git_mutated`: `false`
+- `lapidarium_fase5_env_read`: `false`
+- `lapidarium_fase5_env_manual_rotation_required`: `true`
+- `lapidarium_fase5_env_rotation_executed_by_codex`: `false`
+- `lapidarium_fase5_no_history_rewrite`: `true`
+- `lapidarium_fase5_no_force_push`: `true`
+- `lapidarium_fase5_residuals_safe_resolution_artifacts`: `artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_packet.json`, `artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_manifest.json`, `artifacts/lapidarium/lapidarium_fase5_postscript_external_quarantine_validation.json`, `artifacts/lapidarium/lapidarium_fase5_nested_repo_quarantine_policy.json`, `artifacts/lapidarium/lapidarium_fase5_env_manual_rotation_packet.md`, `artifacts/lapidarium/lapidarium_fase5_residuals_no_destruction_attestation.json`, `artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_validation_evidence.json`, `artifacts/lapidarium/lapidarium_fase5_residuals_safe_resolution_report.md`
+- `lapidarium_fase5_nested_repo_quarantine_policy_marker`: `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/QUARANTINE_READ_ONLY.md`
+- `lapidarium_fase5_residuals_safe_resolution_next_step`: `await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation`
+- F5-013/F5-014 moved to the external quarantine root with sha256 preserved.
+- F5-015 formalized as read-only quarantine without mutating nested `.git`.
+- F5-016/.env manual rotation packet created; `.env` was not read or printed.
+- No PostScript execution or rendering was performed.
 
 ### Fase 4B — Dataset Generator Quoting Repair (Concluída 2026-06-30)
 
