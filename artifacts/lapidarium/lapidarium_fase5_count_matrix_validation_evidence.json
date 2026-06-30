@@ -1,0 +1,116 @@
+{
+  "artifact_id": "lapidarium_fase5_count_matrix_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR",
+  "generated_at": "2026-06-30T02:15:00Z",
+  "no_cleanup_executed": true,
+  "validations": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "result": "decision=pass",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_candidate_count",
+      "assertion": "plan_packet.candidate_count == len(decision_matrix.decisions)",
+      "values": "16 == 16",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_remove_candidate",
+      "assertion": "plan_packet.remove_candidate_count == count(decision=='REMOVE_CANDIDATE' in matrix)",
+      "values": "10 == 10",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_needs_operator",
+      "assertion": "plan_packet.needs_operator_decision_count == count(decision=='NEEDS_OPERATOR_DECISION' in matrix)",
+      "values": "2 == 2",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_blocked",
+      "assertion": "plan_packet.blocked_count == count(decision=='BLOCKED' in matrix)",
+      "values": "3 == 3",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_keep",
+      "assertion": "plan_packet.keep_count == count(decision=='KEEP' in matrix)",
+      "values": "1 == 1",
+      "passed": true
+    },
+    {
+      "check": "count_consistency_sum",
+      "assertion": "remove + quarantine + needs + blocked + keep == candidate_count",
+      "values": "10 + 0 + 2 + 3 + 1 == 16",
+      "passed": true
+    },
+    {
+      "check": "state_remove_candidate_matches_matrix",
+      "assertion": "state.lapidarium_fase5_remove_candidate_count == count(REMOVE_CANDIDATE in matrix)",
+      "values": "10 == 10",
+      "passed": true
+    },
+    {
+      "check": "inventory_remove_matches_matrix",
+      "assertion": "inventory REMOVE_CANDIDATE tally == decision_matrix REMOVE_CANDIDATE tally",
+      "values": "10 == 10",
+      "passed": true
+    },
+    {
+      "check": "no_item_outside_inventory_in_approval_matrix",
+      "assertion": "all item_ids in approval_matrix are in inventory",
+      "values": "15 items in approval_matrix, all in inventory (F5-001..F5-016 excluding F5-016 which is KEEP)",
+      "passed": true
+    },
+    {
+      "check": "cleanup_fields_still_false",
+      "assertion": "cleanup_executed=false, files_deleted=false, files_moved=false, git_rm_executed=false",
+      "values": "all false ✓",
+      "passed": true
+    },
+    {
+      "check": "env_not_read_or_printed",
+      "result": "pass — no .env content accessed in this repair phase",
+      "passed": true
+    },
+    {
+      "check": "no_destructive_commands_executed",
+      "result": "pass — only JSON edits and mirror text fixes; no rm/mv/git rm",
+      "passed": true
+    },
+    {
+      "check": "all_repaired_artifacts_valid_json",
+      "artifacts": [
+        "lapidarium_fase5_item_decision_matrix.json",
+        "lapidarium_fase5_cleanup_execution_plan_packet.json",
+        "lapidarium_fase5_count_matrix_before_after.json",
+        "lapidarium_fase5_count_matrix_reconciliation_packet.json",
+        "lapidarium_fase5_count_matrix_validation_evidence.json",
+        "lapidarium_fase5_count_matrix_no_cleanup_attestation.json"
+      ],
+      "result": "pass — all valid JSON",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

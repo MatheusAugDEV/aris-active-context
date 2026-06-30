@@ -1,0 +1,37 @@
+{
+  "artifact_id": "lapidarium_fase5_count_matrix_no_cleanup_attestation",
+  "phase": "LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR",
+  "generated_at": "2026-06-30T02:15:00Z",
+  "decision": "pass",
+  "attestation": {
+    "no_deletion": true,
+    "no_move": true,
+    "no_git_rm": true,
+    "no_cleanup_execution": true,
+    "no_runtime": true,
+    "no_real_apply": true,
+    "no_product": true,
+    "no_bedrock": true,
+    "no_secrets_read": true,
+    "no_secrets_printed": true,
+    "no_env_content_read": true,
+    "no_history_rewrite": true,
+    "no_force_push": true,
+    "no_item_authorized_for_cleanup": true,
+    "governance_repair_only": true,
+    "plan_only_preserved": true
+  },
+  "scope_of_changes": [
+    "JSON field value corrections in existing artifact files (count fields only)",
+    "Removed self-contradictory note string from plan_packet",
+    "Updated CURRENT_STATE.md mirror count field",
+    "Updated ACTIVE_CONTEXT_STATE.json count field",
+    "Created 4 new reconciliation artifact files"
+  ],
+  "guards_respected": [
+    "AC-READ", "GOVERNANCE-REPAIR-ONLY", "ARTIFACT-ONLY",
+    "NO-CLEANUP-EXECUTION", "NO-FILE-DELETION", "NO-FILE-MOVE", "NO-GIT-RM",
+    "NO-RUNTIME", "NO-REAL-APPLY", "NO-PRODUCT", "NO-BEDROCK",
+    "NO-SECRETS", "NO-SECRET-PRINT", "MAIN-ONLY", "COMMIT-PUSH-HASH"
+  ]
+}

@@ -11,7 +11,7 @@
   "git_rm_executed": false,
   "operator_approval_required_per_item": true,
   "candidate_count": 16,
-  "remove_candidate_count": 9,
+  "remove_candidate_count": 10,
   "quarantine_candidate_count": 0,
   "needs_operator_decision_count": 2,
   "blocked_count": 3,
@@ -19,7 +19,7 @@
   "blocked_pending_supply_chain_count": 1,
   "summary": {
     "REMOVE_CANDIDATE": {
-      "count": 9,
+      "count": 10,
       "items": [
         "temp_audit/ambiguity_resolver_report.md",
         "temp_audit/ambiguity_resolver_summary.json",
@@ -31,8 +31,7 @@
         "teste.wav",
         "[:alnum:] \\n \\",
         "how --stat --summary 5dda82a"
-      ],
-      "note": "Count is 9 but list shows 10 — 'how --stat --summary 5dda82a' is F5-012, counted as the 9th in REMOVE_CANDIDATE; tart=always is F5-008. Correct count: 9 items in remove candidate (F5-001 through F5-012 minus F5-004 and F5-005). Let me clarify: F5-001,002,003=temp_audit; F5-006,007=backups; F5-008=tart=always; F5-009=debug_audio; F5-010=teste.wav; F5-011,F5-012=shell artifacts. Total: 9 items."
+      ]
     },
     "NEEDS_OPERATOR_DECISION": {
       "count": 2,
@@ -75,5 +74,6 @@
   "no_secret_print": true,
   "no_file_deletion": true,
   "no_git_rm": true,
-  "validator_decision": "pass"
+  "validator_decision": "pass",
+  "count_reconciliation_note": "Counts reconciled by LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR (2026-06-30). Previous: remove_candidate=9, blocked=3. Correct (from item lists): remove_candidate=10, blocked=3."
 }

@@ -11,7 +11,7 @@
 - Keep: .env (F4-FIND-001 false positive — no action required)
 - Locks opened: none — all execution locks remain false
 - No file deletion, no file move, no git rm, no cleanup execution, no secrets read/printed
-- Artifacts: 9 files in artifacts/lapidarium/lapidarium_fase5_*
+- Artifacts: 9 JSON+MD files in artifacts/lapidarium/lapidarium_fase5_*
 - Next: Operator reviews lapidarium_fase5_operator_approval_matrix.json and authorizes items per item_id
 
 ---

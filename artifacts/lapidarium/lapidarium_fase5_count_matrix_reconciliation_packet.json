@@ -1,0 +1,65 @@
+{
+  "artifact_id": "lapidarium_fase5_count_matrix_reconciliation_packet",
+  "phase": "LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR",
+  "generated_at": "2026-06-30T02:15:00Z",
+  "active_context_sha_at_start": "cb254a234b300f4bbf37915496155835e6eacbdc",
+  "decision": "pass",
+  "governance_repair_only": true,
+  "no_cleanup_executed": true,
+  "no_item_authorized": true,
+  "drift_summary": {
+    "root_cause": "Manual arithmetic error in original Fase 5 generation. The decision_matrix.decision_summary and plan_packet.remove_candidate_count were set to 9, but the actual decisions list contains 10 REMOVE_CANDIDATE items. Similarly BLOCKED was mis-set to 4 in the summary while the list has 3.",
+    "fields_wrong_before": {
+      "plan_packet.remove_candidate_count": 9,
+      "plan_packet.blocked_count": "was correct at 3 but summary in note was confusing",
+      "decision_matrix.decision_summary.REMOVE_CANDIDATE": 9,
+      "decision_matrix.decision_summary.BLOCKED": 4,
+      "state.lapidarium_fase5_remove_candidate_count": 9
+    },
+    "fields_correct_after": {
+      "plan_packet.remove_candidate_count": 10,
+      "plan_packet.blocked_count": 3,
+      "decision_matrix.decision_summary.REMOVE_CANDIDATE": 10,
+      "decision_matrix.decision_summary.BLOCKED": 3,
+      "state.lapidarium_fase5_remove_candidate_count": 10
+    }
+  },
+  "reconciled_counts": {
+    "candidate_count": 16,
+    "REMOVE_CANDIDATE": 10,
+    "QUARANTINE_CANDIDATE": 0,
+    "NEEDS_OPERATOR_DECISION": 2,
+    "BLOCKED": 3,
+    "KEEP": 1,
+    "sum": 16,
+    "sum_check": "PASS"
+  },
+  "remove_candidate_items": [
+    "F5-001: temp_audit/ambiguity_resolver_report.md",
+    "F5-002: temp_audit/ambiguity_resolver_summary.json",
+    "F5-003: temp_audit/ambiguity_resolution_samples.jsonl",
+    "F5-006: legacy/wake/tts.py.backup",
+    "F5-007: legacy/wake/wake.py.backup",
+    "F5-008: legacy/experiments/tart=always",
+    "F5-009: debug_audio.wav",
+    "F5-010: teste.wav",
+    "F5-011: [:alnum:] \\n \\",
+    "F5-012: how --stat --summary 5dda82a"
+  ],
+  "artifacts_created": [
+    "artifacts/lapidarium/lapidarium_fase5_count_matrix_reconciliation_packet.json",
+    "artifacts/lapidarium/lapidarium_fase5_count_matrix_before_after.json",
+    "artifacts/lapidarium/lapidarium_fase5_count_matrix_validation_evidence.json",
+    "artifacts/lapidarium/lapidarium_fase5_count_matrix_no_cleanup_attestation.json"
+  ],
+  "artifacts_corrected": [
+    "artifacts/lapidarium/lapidarium_fase5_item_decision_matrix.json",
+    "artifacts/lapidarium/lapidarium_fase5_cleanup_execution_plan_packet.json"
+  ],
+  "state_corrected": "ACTIVE_CONTEXT_STATE.json — lapidarium_fase5_remove_candidate_count: 9→10",
+  "mirrors_corrected": [
+    "CURRENT_STATE.md — lapidarium_fase5_remove_candidate_count: 9→10"
+  ],
+  "validator_decision": "pass",
+  "next_recommended_step": "Operator reviews the reconciled lapidarium_fase5_operator_approval_matrix.json and authorizes specific item_ids explicitly if cleanup is desired. No item has been authorized. Blocked items (F5-013/014/015) still require separate decision prompts."
+}

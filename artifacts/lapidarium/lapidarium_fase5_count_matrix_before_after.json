@@ -1,0 +1,61 @@
+{
+  "artifact_id": "lapidarium_fase5_count_matrix_before_after",
+  "phase": "LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR",
+  "generated_at": "2026-06-30T02:15:00Z",
+  "no_cleanup_executed": true,
+  "drift_source": "Arithmetic error in original Fase 5 generation: two separate fields (decision_matrix.decision_summary and plan_packet top-level counts) were set by hand and disagreed with the actual item lists they summarize.",
+  "before": {
+    "source": "lapidarium_fase5_cleanup_execution_plan_packet.json + decision_matrix.decision_summary (original)",
+    "candidate_count": 16,
+    "remove_candidate_count": 9,
+    "quarantine_candidate_count": 0,
+    "needs_operator_decision_count": 2,
+    "blocked_count": 4,
+    "keep_count": 1,
+    "contradictions": [
+      "plan_packet listed remove_candidate_count=9 but had a note 'Count is 9 but list shows 10' — self-contradictory",
+      "decision_matrix.decision_summary had BLOCKED=4 but the decisions list has only 3 BLOCKED entries (F5-013, F5-014, F5-015)",
+      "decision_matrix.decision_summary had REMOVE_CANDIDATE=9 but the decisions list has 10 REMOVE_CANDIDATE entries",
+      "state.lapidarium_fase5_remove_candidate_count was 9, inconsistent with list"
+    ]
+  },
+  "after": {
+    "source": "Recomputed from lapidarium_fase5_item_decision_matrix.json decisions list (ground truth)",
+    "candidate_count": 16,
+    "remove_candidate_count": 10,
+    "quarantine_candidate_count": 0,
+    "needs_operator_decision_count": 2,
+    "blocked_count": 3,
+    "keep_count": 1,
+    "sum_check": "10 + 0 + 2 + 3 + 1 = 16 ✓"
+  },
+  "files_corrected": [
+    {
+      "file": "artifacts/lapidarium/lapidarium_fase5_item_decision_matrix.json",
+      "field": "decision_summary",
+      "change": "REMOVE_CANDIDATE 9→10, BLOCKED 4→3"
+    },
+    {
+      "file": "artifacts/lapidarium/lapidarium_fase5_cleanup_execution_plan_packet.json",
+      "fields": ["remove_candidate_count", "summary.REMOVE_CANDIDATE.count"],
+      "change": "9→10; contradictory note removed"
+    },
+    {
+      "file": "ACTIVE_CONTEXT_STATE.json",
+      "field": "lapidarium_fase5_remove_candidate_count",
+      "change": "9→10"
+    },
+    {
+      "file": "CURRENT_STATE.md",
+      "field": "lapidarium_fase5_remove_candidate_count mirror",
+      "change": "9→10"
+    }
+  ],
+  "files_not_changed": [
+    "lapidarium_fase5_cleanup_candidate_inventory.json — already had correct tally (REMOVE_CANDIDATE=10)",
+    "lapidarium_fase5_operator_approval_matrix.json — lists items individually, not by count summary",
+    "lapidarium_fase5_rollback_plan.json — no count fields",
+    "lapidarium_fase5_blocked_or_deferred_items.json — lists 3 BLOCKED + 2 NEEDS, no count fields",
+    "NEXT_ACTION.md — no stale count field found"
+  ]
+}

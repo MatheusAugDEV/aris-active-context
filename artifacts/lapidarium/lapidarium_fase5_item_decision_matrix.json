@@ -5,11 +5,11 @@
   "plan_only": true,
   "cleanup_executed": false,
   "decision_summary": {
-    "REMOVE_CANDIDATE": 9,
+    "REMOVE_CANDIDATE": 10,
     "KEEP": 1,
     "QUARANTINE_CANDIDATE": 0,
     "NEEDS_OPERATOR_DECISION": 2,
-    "BLOCKED": 4
+    "BLOCKED": 3
   },
   "decisions": [
     {
@@ -124,5 +124,6 @@
       "confidence": "HIGH",
       "justification": "F4-FIND-001 resolved as false positive — .env was never git-tracked. Correctly gitignored. Contains local configuration. Must not be deleted. Secret rotation is operator responsibility."
     }
-  ]
+  ],
+  "count_reconciliation_note": "Counts reconciled by LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR (2026-06-30). Original summary had REMOVE_CANDIDATE=9 and BLOCKED=4; correct values derived from decisions list: REMOVE_CANDIDATE=10 and BLOCKED=3."
 }

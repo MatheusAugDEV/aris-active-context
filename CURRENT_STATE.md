@@ -22,7 +22,7 @@
 - `lapidarium_fase5_plan_only`: `true`
 - `lapidarium_fase5_cleanup_executed`: `false`
 - `lapidarium_fase5_candidate_count`: `16`
-- `lapidarium_fase5_remove_candidate_count`: `9`
+- `lapidarium_fase5_remove_candidate_count`: `10`
 - `lapidarium_fase5_needs_operator_decision_count`: `2`
 - `lapidarium_fase5_blocked_count`: `3`
 - `lapidarium_fase5_keep_count`: `1`
