@@ -1,0 +1,41 @@
+{
+  "artifact_id": "lapidarium_fase5_residual_risk_register",
+  "phase": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+  "generated_at": "2026-06-30T03:37:24Z",
+  "decision": "CLOSED_WITH_BLOCKED_RESIDUALS",
+  "risks": [
+    {
+      "item_id": "F5-013",
+      "risk": "Unknown origin and intent for a large PostScript artifact",
+      "impact": "High",
+      "likelihood": "Medium",
+      "residual_state": "BLOCKED",
+      "trigger_for_action": "Explicit operator confirmation of origin and intent"
+    },
+    {
+      "item_id": "F5-014",
+      "risk": "Unknown origin and intent for a large PostScript artifact",
+      "impact": "High",
+      "likelihood": "Medium",
+      "residual_state": "BLOCKED",
+      "trigger_for_action": "Explicit operator confirmation of origin and intent"
+    },
+    {
+      "item_id": "F5-015",
+      "risk": "Supply-chain exposure if the nested repo is integrated incorrectly",
+      "impact": "High",
+      "likelihood": "Medium",
+      "residual_state": "QUARANTINE_READ_ONLY",
+      "trigger_for_action": "Explicit operator integration decision"
+    },
+    {
+      "item_id": "F5-016",
+      "risk": "Local secret exposure remains an operator responsibility",
+      "impact": "High",
+      "likelihood": "Low",
+      "residual_state": "KEEP",
+      "trigger_for_action": "Manual secret rotation decision outside cleanup flow"
+    }
+  ],
+  "conclusion": "Residual risk is limited to explicit operator decisions. No additional cleanup is justified without new authorization."
+}

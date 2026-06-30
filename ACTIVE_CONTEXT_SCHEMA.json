@@ -2304,6 +2304,96 @@
         },
         "lapidarium_fase5_postscript_review_next_step": {
             "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_closure_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_blocked_residuals_closure_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_closure_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_closure_status": {
+            "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_project_repo_head_before_closure": {
+            "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_project_repo_head_after_closure": {
+            "type": "string"
+        },
+        "lapidarium_fase5_blocked_residuals_removed_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_residuals_already_absent_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_residuals_quarantined_read_only_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_residuals_blocked_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_residuals_keep_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_residuals_removed_items": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_already_absent_items": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_quarantined_read_only_items": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_blocked_items": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_keep_items": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_future_authorization_requirements": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_no_additional_cleanup_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_blocked_residuals_no_file_removed_or_moved": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_blocked_residuals_f5_013_f5_014_f5_015_intact": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_blocked_residuals_env_intact": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_blocked_residuals_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_blocked_residuals_next_step": {
+            "type": "string"
         }
     },
     "required": [
@@ -2393,5 +2483,6 @@
     "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone.",
     "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
     "schema_3_31_change_summary": "Lapidarium Fase 5 nested Git repository review: admit lapidarium_fase5_nested_git_review_* tracking fields for the read-only review of F5-015, recording the nested third-party Smart Connections MCP repo as a quarantined snapshot with detached HEAD/origin-main metadata, governance/test-only references in Project_ARIS, and no runtime or product dependency.",
-    "schema_3_32_change_summary": "Lapidarium Fase 5 PostScript binary review: admit lapidarium_fase5_postscript_review_* tracking fields for the read-only review of F5-013/F5-014, recording the ignored untracked ImageMagick-generated PostScript files, zero runtime references, governance-only reference hits, and blocked decision pending operator origin/intent confirmation."
+    "schema_3_32_change_summary": "Lapidarium Fase 5 PostScript binary review: admit lapidarium_fase5_postscript_review_* tracking fields for the read-only review of F5-013/F5-014, recording the ignored untracked ImageMagick-generated PostScript files, zero runtime references, governance-only reference hits, and blocked decision pending operator origin/intent confirmation.",
+    "schema_3_33_change_summary": "Lapidarium Fase 5 blocked residuals closure: admit lapidarium_fase5_blocked_residuals_* tracking fields for the governance-only closure packet, recording the final item-state counts, explicit future authorization requirements, no-additional-cleanup attestation, and the CLOSED_WITH_BLOCKED_RESIDUALS decision without changing any real execution lock."
 }

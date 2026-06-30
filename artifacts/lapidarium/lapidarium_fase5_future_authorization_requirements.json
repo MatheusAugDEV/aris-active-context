@@ -1,0 +1,29 @@
+{
+  "artifact_id": "lapidarium_fase5_future_authorization_requirements",
+  "phase": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+  "generated_at": "2026-06-30T03:37:24Z",
+  "decision": "CLOSED_WITH_BLOCKED_RESIDUALS",
+  "requirements": [
+    {
+      "item_id": "F5-013",
+      "requirement": "Explicit operator confirmation of origin and intent before any future action"
+    },
+    {
+      "item_id": "F5-014",
+      "requirement": "Explicit operator confirmation of origin and intent before any future action"
+    },
+    {
+      "item_id": "F5-015",
+      "requirement": "Explicit operator integration decision before any submodule/vendor/remove/quarantine real action"
+    },
+    {
+      "item_id": "F5-016",
+      "requirement": "Manual secret-rotation decision outside the cleanup flow"
+    },
+    {
+      "item_id": ".env",
+      "requirement": "Manual secret-rotation decision outside the cleanup flow"
+    }
+  ],
+  "no_future_action_without_operator": true
+}

@@ -31,6 +31,19 @@
 
 ---
 
+## LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET
+
+- Status: `lapidarium_fase5_blocked_residuals_closure_pass`
+- Decision: `CLOSED_WITH_BLOCKED_RESIDUALS`
+- Date: `2026-06-30`
+- Scope: governance/artifact-only closure of Fase 5. No cleanup executed, no files removed or moved, no Git metadata altered, no runtime executed, no secrets accessed.
+- Final item state: removed=10, already_absent=2, quarantined_read_only=1, blocked=2, keep=1.
+- Residuals: F5-013/F5-014 remain BLOCKED; F5-015 remains QUARANTINE read-only; F5-016/.env remains KEEP.
+- Future authorization requirements: explicit operator origin/intention confirmation for F5-013/F5-014; explicit integration decision for F5-015; manual secret-rotation decision for F5-016/.env.
+- Locks opened: none. All execution locks remain false.
+- Artifacts: `artifacts/lapidarium/lapidarium_fase5_blocked_residuals_*`
+- Next: await explicit operator authorization if any residual item is to be acted on later.
+
 ## LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW
 
 - Status: `lapidarium_fase5_postscript_binary_review_pass`

@@ -1,0 +1,32 @@
+{
+  "artifact_id": "lapidarium_fase5_final_item_state_matrix",
+  "phase": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+  "generated_at": "2026-06-30T03:37:24Z",
+  "decision": "CLOSED_WITH_BLOCKED_RESIDUALS",
+  "matrix": [
+    {"item_id": "F5-001", "path": "artifacts/lapidarium/ambiguity_resolver_report.md", "final_state": "REMOVED"},
+    {"item_id": "F5-002", "path": "artifacts/lapidarium/ambiguity_resolver_summary.json", "final_state": "REMOVED"},
+    {"item_id": "F5-003", "path": "artifacts/lapidarium/ambiguity_resolution_samples.jsonl", "final_state": "REMOVED"},
+    {"item_id": "F5-006", "path": "legacy/wake/tts.py.backup", "final_state": "REMOVED"},
+    {"item_id": "F5-007", "path": "legacy/wake/wake.py.backup", "final_state": "REMOVED"},
+    {"item_id": "F5-008", "path": "legacy/experiments/tart=always", "final_state": "REMOVED"},
+    {"item_id": "F5-009", "path": "debug_audio.wav", "final_state": "REMOVED"},
+    {"item_id": "F5-010", "path": "teste.wav", "final_state": "REMOVED"},
+    {"item_id": "F5-011", "path": "[:alnum:] \\n \\", "final_state": "REMOVED"},
+    {"item_id": "F5-012", "path": "how --stat --summary 5dda82a", "final_state": "REMOVED"},
+    {"item_id": "F5-004", "path": "temp_audit/f15z1", "final_state": "ALREADY_ABSENT"},
+    {"item_id": "F5-005", "path": "temp_audit/f15z1_post_z3", "final_state": "ALREADY_ABSENT"},
+    {"item_id": "F5-015", "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source", "final_state": "QUARANTINE_READ_ONLY"},
+    {"item_id": "F5-013", "path": "legacy/experiments/genai", "final_state": "BLOCKED"},
+    {"item_id": "F5-014", "path": "legacy/experiments/threading", "final_state": "BLOCKED"},
+    {"item_id": "F5-016", "path": ".env", "final_state": "KEEP"},
+    {"item_id": ".env", "path": ".env", "final_state": "KEEP"}
+  ],
+  "summary": {
+    "removed": 10,
+    "already_absent": 2,
+    "quarantined_read_only": 1,
+    "blocked": 2,
+    "keep": 1
+  }
+}

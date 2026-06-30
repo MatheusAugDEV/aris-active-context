@@ -1,0 +1,41 @@
+{
+  "artifact_id": "lapidarium_fase5_blocked_residuals_closure_packet",
+  "phase": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+  "generated_at": "2026-06-30T03:37:24Z",
+  "decision": "CLOSED_WITH_BLOCKED_RESIDUALS",
+  "project_repo": "Project_ARIS",
+  "project_repo_head_before_closure": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+  "project_repo_head_after_closure": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+  "counts": {
+    "removed": 10,
+    "already_absent": 2,
+    "quarantined_read_only": 1,
+    "blocked": 2,
+    "keep": 1
+  },
+  "item_states": [
+    {"item_id": "F5-001", "state": "REMOVED"},
+    {"item_id": "F5-002", "state": "REMOVED"},
+    {"item_id": "F5-003", "state": "REMOVED"},
+    {"item_id": "F5-006", "state": "REMOVED"},
+    {"item_id": "F5-007", "state": "REMOVED"},
+    {"item_id": "F5-008", "state": "REMOVED"},
+    {"item_id": "F5-009", "state": "REMOVED"},
+    {"item_id": "F5-010", "state": "REMOVED"},
+    {"item_id": "F5-011", "state": "REMOVED"},
+    {"item_id": "F5-012", "state": "REMOVED"},
+    {"item_id": "F5-004", "state": "ALREADY_ABSENT"},
+    {"item_id": "F5-005", "state": "ALREADY_ABSENT"},
+    {"item_id": "F5-015", "state": "QUARANTINE_READ_ONLY"},
+    {"item_id": "F5-013", "state": "BLOCKED"},
+    {"item_id": "F5-014", "state": "BLOCKED"},
+    {"item_id": "F5-016", "state": "KEEP"},
+    {"item_id": ".env", "state": "KEEP"}
+  ],
+  "no_additional_cleanup_executed": true,
+  "no_file_removed_or_moved": true,
+  "f5_013_f5_014_f5_015_intact": true,
+  "env_intact": true,
+  "future_authorization_required": true,
+  "next_step": "await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation"
+}

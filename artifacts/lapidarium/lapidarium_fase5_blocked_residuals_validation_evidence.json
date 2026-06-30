@@ -1,0 +1,60 @@
+{
+  "artifact_id": "lapidarium_fase5_blocked_residuals_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+  "generated_at": "2026-06-30T03:37:24Z",
+  "all_passed": true,
+  "finalization_status": "pending_commit_push_ci",
+  "checks": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pending",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "f5_013_present",
+      "passed": true,
+      "result": "legacy/experiments/genai present and untouched"
+    },
+    {
+      "check": "f5_014_present",
+      "passed": true,
+      "result": "legacy/experiments/threading present and untouched"
+    },
+    {
+      "check": "f5_015_present",
+      "passed": true,
+      "result": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source present and untouched"
+    },
+    {
+      "check": "env_present",
+      "passed": true,
+      "result": ".env present and not read"
+    },
+    {
+      "check": "no_additional_cleanup_executed",
+      "passed": true,
+      "result": "No cleanup, removal, or move executed in this closure step"
+    },
+    {
+      "check": "no_forbidden_commands_used",
+      "passed": true,
+      "result": "No rm, mv, git rm, find -delete, rm -rf, git submodule, or PostScript execution commands used"
+    }
+  ]
+}

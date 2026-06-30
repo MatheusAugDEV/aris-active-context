@@ -2,11 +2,11 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 PostScript Binary Review Updated)
+## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 Blocked Residuals Closure Updated)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
@@ -82,6 +82,30 @@
 - `lapidarium_fase5_postscript_review_artifacts`: `artifacts/lapidarium/lapidarium_f5_013_014_postscript_review_packet.json`, `artifacts/lapidarium/lapidarium_f5_013_014_supply_chain_analysis.json`, `artifacts/lapidarium/lapidarium_f5_013_014_dependency_graph.json`, `artifacts/lapidarium/lapidarium_f5_013_014_recommendation_report.md`, `artifacts/lapidarium/lapidarium_f5_013_014_validation_evidence.json`
 - `lapidarium_fase5_postscript_review_next_step`: `await_explicit_operator_confirmation_of_origin_and_intent_before_any_removal_or_quarantine`
 - F5-013/F5-014 remain blocked; F5-015 remains untouched.
+
+### Fase 5 — Blocked Residuals Closure (Concluída 2026-06-30)
+
+- `lapidarium_fase5_blocked_residuals_closure_completed`: `true`
+- `lapidarium_fase5_blocked_residuals_closure_decision`: `CLOSED_WITH_BLOCKED_RESIDUALS`
+- `lapidarium_fase5_blocked_residuals_closure_status`: `lapidarium_fase5_closed_with_blocked_residuals`
+- `lapidarium_fase5_blocked_residuals_removed_count`: `10`
+- `lapidarium_fase5_blocked_residuals_already_absent_count`: `2`
+- `lapidarium_fase5_blocked_residuals_quarantined_read_only_count`: `1`
+- `lapidarium_fase5_blocked_residuals_blocked_count`: `2`
+- `lapidarium_fase5_blocked_residuals_keep_count`: `1`
+- `lapidarium_fase5_blocked_residuals_removed_items`: `F5-001`, `F5-002`, `F5-003`, `F5-006`, `F5-007`, `F5-008`, `F5-009`, `F5-010`, `F5-011`, `F5-012`
+- `lapidarium_fase5_blocked_residuals_already_absent_items`: `F5-004`, `F5-005`
+- `lapidarium_fase5_blocked_residuals_quarantined_read_only_items`: `F5-015`
+- `lapidarium_fase5_blocked_residuals_blocked_items`: `F5-013`, `F5-014`
+- `lapidarium_fase5_blocked_residuals_keep_items`: `F5-016`, `.env`
+- `lapidarium_fase5_blocked_residuals_no_additional_cleanup_executed`: `true`
+- `lapidarium_fase5_blocked_residuals_no_file_removed_or_moved`: `true`
+- `lapidarium_fase5_blocked_residuals_f5_013_f5_014_f5_015_intact`: `true`
+- `lapidarium_fase5_blocked_residuals_env_intact`: `true`
+- `lapidarium_fase5_blocked_residuals_artifacts`: `artifacts/lapidarium/lapidarium_fase5_blocked_residuals_closure_packet.json`, `artifacts/lapidarium/lapidarium_fase5_final_item_state_matrix.json`, `artifacts/lapidarium/lapidarium_fase5_residual_risk_register.json`, `artifacts/lapidarium/lapidarium_fase5_future_authorization_requirements.json`, `artifacts/lapidarium/lapidarium_fase5_no_additional_cleanup_attestation.json`, `artifacts/lapidarium/lapidarium_fase5_blocked_residuals_validation_evidence.json`, `artifacts/lapidarium/lapidarium_fase5_closure_report.md`
+- `lapidarium_fase5_blocked_residuals_next_step`: `await_explicit_operator_authorization_for_f5_013_f5_014_f5_015_or_env_rotation`
+- Closure confirms no additional cleanup executed and no files removed or moved.
+- F5-013/F5-014 remain BLOCKED; F5-015 remains QUARANTINE read-only; F5-016/.env remain KEEP.
 
 ### Fase 4B — Dataset Generator Quoting Repair (Concluída 2026-06-30)
 

@@ -2,7 +2,7 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET (2026-06-30)
 
 ---
 
@@ -14,26 +14,23 @@
 
 ### Status Atual
 
-**Cleanup de baixo escopo atualizado em 2026-06-30.**
+**Fase 5 encerrada como `CLOSED_WITH_BLOCKED_RESIDUALS` em 2026-06-30.**
 
-F5-004 e F5-005 já estavam ausentes do current HEAD/index do Project_ARIS e, por isso, não exigiram nova remoção.
-F5-006 foi removido com `git rm -- legacy/wake/tts.py.backup`.
-F5-015 foi revisado read-only e classificado como QUARANTINE.
-F5-013/F5-014 permaneceram fora do escopo da execução anterior; nesta revisão read-only subsequente, ambos ficaram BLOCKED.
+F5-001/F5-002/F5-003/F5-006/F5-007/F5-008/F5-009/F5-010/F5-011/F5-012 ficaram REMOVED.
+F5-004/F5-005 já estavam ABSENT do current HEAD/index do Project_ARIS.
+F5-015 permanece QUARANTINE read-only.
+F5-013/F5-014 permanecem BLOCKED.
+F5-016/.env permanece KEEP.
+Nenhum cleanup adicional foi executado nesta etapa de fechamento.
 
 ---
 
 ### Próximas Ações (por prioridade)
 
-**1. OPERADOR — Decisões de itens BLOQUEADOS (separadas, por finding):**
-- **F4-FIND-002** (`F5-015`): Nested Git repo em `external/mcp_candidates/` —
-  recomendado: manter quarentena read-only; só converter para submodule/vendor se houver integração explícita
-- **F4-FIND-003** (`F5-013`, `F5-014`): PostScript binários em `legacy/experiments/` —
-  confirmar origem e intenção antes de qualquer remoção ou quarentena (ação irreversível)
-
-**2. OPERADOR — Rotação de Segredos (independente de fase):**
-Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
-`.env` está corretamente gitignored — avaliação de risco é responsabilidade do operador.
+**1. OPERADOR — Autorizações futuras explícitas, se desejadas:**
+- **F4-FIND-003** (`F5-013`, `F5-014`): confirmar origem e intenção antes de qualquer ação futura
+- **F4-FIND-002** (`F5-015`): decidir integração explícita antes de submodule/vendor/remove/quarantine real
+- **F4-FIND-001** (`F5-016` / `.env`): decidir rotação manual de segredos fora do fluxo de cleanup
 
 ---
 
@@ -42,7 +39,7 @@ Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
 Todos os locks de runtime, produto e Bedrock permanecem `false`. Nenhuma ação
 não autorizada explicitamente pelo operador será iniciada.
 
-F5-013/F5-014 continuam BLOCKED até confirmação explícita de origem e intenção.
+Fase 5 está fechada; só resta autorização explícita futura para qualquer um dos itens residuais.
 
 ---
 
