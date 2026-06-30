@@ -2191,6 +2191,119 @@
         },
         "lapidarium_fase5_nested_git_review_next_step": {
             "type": "string"
+        },
+        "lapidarium_fase5_postscript_review_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_postscript_review_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_postscript_review_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_postscript_review_confidence": {
+            "type": "string"
+        },
+        "lapidarium_fase5_postscript_review_sha_before": {
+            "type": "string"
+        },
+        "lapidarium_fase5_postscript_review_item_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_postscript_review_runtime_reference_hits": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_postscript_review_governance_reference_hits": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_postscript_review_no_postscript_execution": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_postscript_review_no_postscript_rendering": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_postscript_review_no_file_removal_or_move": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_postscript_review_items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "item_id": {
+                        "type": "string"
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "exists_on_disk": {
+                        "type": "boolean"
+                    },
+                    "git_tracked": {
+                        "type": "boolean"
+                    },
+                    "git_ignored": {
+                        "type": "boolean"
+                    },
+                    "size_bytes": {
+                        "type": "integer"
+                    },
+                    "file_type": {
+                        "type": "string"
+                    },
+                    "creator": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "creation_date": {
+                        "type": "string"
+                    },
+                    "runtime_dependency": {
+                        "type": "boolean"
+                    },
+                    "governance_dependency": {
+                        "type": "boolean"
+                    },
+                    "supply_chain_risk": {
+                        "type": "string"
+                    },
+                    "removal_risk": {
+                        "type": "string"
+                    },
+                    "decision": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "item_id",
+                    "path",
+                    "exists_on_disk",
+                    "git_tracked",
+                    "git_ignored",
+                    "size_bytes",
+                    "file_type",
+                    "creator",
+                    "title",
+                    "creation_date",
+                    "runtime_dependency",
+                    "governance_dependency",
+                    "supply_chain_risk",
+                    "removal_risk",
+                    "decision"
+                ]
+            }
+        },
+        "lapidarium_fase5_postscript_review_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "lapidarium_fase5_postscript_review_next_step": {
+            "type": "string"
         }
     },
     "required": [
@@ -2279,5 +2392,6 @@
     "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
     "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone.",
     "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
-    "schema_3_31_change_summary": "Lapidarium Fase 5 nested Git repository review: admit lapidarium_fase5_nested_git_review_* tracking fields for the read-only review of F5-015, recording the nested third-party Smart Connections MCP repo as a quarantined snapshot with detached HEAD/origin-main metadata, governance/test-only references in Project_ARIS, and no runtime or product dependency."
+    "schema_3_31_change_summary": "Lapidarium Fase 5 nested Git repository review: admit lapidarium_fase5_nested_git_review_* tracking fields for the read-only review of F5-015, recording the nested third-party Smart Connections MCP repo as a quarantined snapshot with detached HEAD/origin-main metadata, governance/test-only references in Project_ARIS, and no runtime or product dependency.",
+    "schema_3_32_change_summary": "Lapidarium Fase 5 PostScript binary review: admit lapidarium_fase5_postscript_review_* tracking fields for the read-only review of F5-013/F5-014, recording the ignored untracked ImageMagick-generated PostScript files, zero runtime references, governance-only reference hits, and blocked decision pending operator origin/intent confirmation."
 }

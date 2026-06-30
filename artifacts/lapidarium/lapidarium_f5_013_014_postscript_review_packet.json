@@ -1,0 +1,64 @@
+{
+  "artifact_id": "lapidarium_f5_013_014_postscript_review_packet",
+  "phase": "LAPIDARIUM_F5_013_014_POSTSCRIPT_BINARY_REVIEW",
+  "generated_at": "2026-06-30T03:18:18Z",
+  "decision": "BLOCKED",
+  "confidence": "HIGH",
+  "project_repo": "Project_ARIS",
+  "project_repo_head_before_review": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea",
+  "review_scope": [
+    "legacy/experiments/genai",
+    "legacy/experiments/threading"
+  ],
+  "items": [
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "size_bytes": 20919684,
+      "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+      "creator": "ImageMagick",
+      "creation_date": "2026-04-12T02:32:21+00:00",
+      "git_tracked": false,
+      "git_ignored": true,
+      "runtime_dependency": false,
+      "governance_dependency": true,
+      "decision": "BLOCKED",
+      "notes": "Ignored by .gitignore, no live runtime references, origin and intent unresolved."
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "size_bytes": 6976967,
+      "file_type": "PostScript document text conforming DSC level 3.0, Level 1",
+      "creator": "ImageMagick",
+      "creation_date": "2026-04-14T01:16:00+00:00",
+      "git_tracked": false,
+      "git_ignored": true,
+      "runtime_dependency": false,
+      "governance_dependency": true,
+      "decision": "BLOCKED",
+      "notes": "Ignored by .gitignore, no live runtime references, origin and intent unresolved."
+    }
+  ],
+  "reference_scan": {
+    "runtime_code_hits": 0,
+    "governance_hits": 81,
+    "runtime_scan_scope": [
+      "src",
+      "tests",
+      "docs",
+      ".github",
+      "top-level markdown"
+    ],
+    "governance_scan_scope": [
+      "artifacts/lapidarium",
+      "aris-active-context/CURRENT_STATE.md",
+      "aris-active-context/NEXT_ACTION.md",
+      "aris-active-context/DECISION_LOCKS.md"
+    ]
+  },
+  "no_mutation": true,
+  "no_postscript_execution": true,
+  "no_postscript_rendering": true,
+  "recommended_action": "await explicit operator confirmation of origin and intent before any removal or quarantine"
+}

@@ -31,6 +31,18 @@
 
 ---
 
+## LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW
+
+- Status: `lapidarium_fase5_postscript_binary_review_pass`
+- Decision: `BLOCKED`
+- Date: `2026-06-30`
+- Scope: read-only review of `legacy/experiments/genai` and `legacy/experiments/threading`. No files removed, moved, rendered, or executed. No Git metadata altered. No secrets accessed.
+- File facts: both paths are untracked, ignored by `.gitignore`, and identified as PostScript DSC Level 3.0 documents created by ImageMagick. `src/tests/docs/.github` search returned 0 live references; governance references remain in artifacts and mirrors.
+- Risk facts: runtime dependency is false; governance dependency is true only through review artifacts; removal risk remains high because origin and intent are unconfirmed.
+- Locks opened: none. All execution locks remain false.
+- Artifacts: `artifacts/lapidarium/lapidarium_f5_013_014_*`
+- Next: keep both items blocked until the operator explicitly confirms origin, intent, and whether any removal or quarantine is desired.
+
 ## LAPIDARIUM_FASE_5_NESTED_GIT_REPOSITORY_REVIEW
 
 - Status: `lapidarium_fase5_nested_git_review_pass`

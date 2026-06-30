@@ -1,0 +1,79 @@
+{
+  "artifact_id": "lapidarium_f5_013_014_validation_evidence",
+  "phase": "LAPIDARIUM_F5_013_014_POSTSCRIPT_BINARY_REVIEW",
+  "generated_at": "2026-06-30T03:18:18Z",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "project_repo_head_captured",
+      "command": "git -C /home/matheus/ARIS/Project_ARIS rev-parse HEAD",
+      "passed": true,
+      "result": "0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea"
+    },
+    {
+      "check": "postscript_files_exist",
+      "command": "stat /home/matheus/ARIS/Project_ARIS/legacy/experiments/genai /home/matheus/ARIS/Project_ARIS/legacy/experiments/threading",
+      "passed": true
+    },
+    {
+      "check": "postscript_files_untracked_or_ignored",
+      "command": "git -C /home/matheus/ARIS/Project_ARIS check-ignore -v legacy/experiments/genai legacy/experiments/threading",
+      "passed": true,
+      "result": ".gitignore ignores both paths"
+    },
+    {
+      "check": "postscript_headers_read",
+      "command": "sed -n '1,12p' legacy/experiments/genai; sed -n '1,12p' legacy/experiments/threading",
+      "passed": true,
+      "result": "ImageMagick / PostScript DSC headers confirmed"
+    },
+    {
+      "check": "runtime_reference_scan_zero_hits",
+      "command": "grep -R -n -I --exclude-dir=.git --exclude-dir=artifacts --exclude-dir=aris-active-context --exclude-dir=node_modules --exclude-dir=.venv -e 'legacy/experiments/genai' -e 'legacy/experiments/threading' -e 'F4-FIND-003' /home/matheus/ARIS/Project_ARIS/src /home/matheus/ARIS/Project_ARIS/tests /home/matheus/ARIS/Project_ARIS/docs /home/matheus/ARIS/Project_ARIS/.github /home/matheus/ARIS/Project_ARIS/*.md 2>/dev/null | wc -l",
+      "passed": true,
+      "result": "0"
+    },
+    {
+      "check": "governance_reference_scan_hits",
+      "command": "grep -R -n -I --exclude-dir=.git -e 'legacy/experiments/genai' -e 'legacy/experiments/threading' /home/matheus/ARIS/Project_ARIS/artifacts/lapidarium /home/matheus/ARIS/Project_ARIS/aris-active-context/artifacts/lapidarium /home/matheus/ARIS/Project_ARIS/aris-active-context/CURRENT_STATE.md /home/matheus/ARIS/Project_ARIS/aris-active-context/NEXT_ACTION.md /home/matheus/ARIS/Project_ARIS/aris-active-context/DECISION_LOCKS.md 2>/dev/null | wc -l",
+      "passed": true,
+      "result": "81"
+    },
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "boot_rendered_from_state",
+      "command": "python3 scripts/render_boot.py",
+      "passed": true
+    },
+    {
+      "check": "no_postscript_execution_or_rendering",
+      "passed": true,
+      "result": "No PostScript execution, rendering, or viewer commands were used"
+    },
+    {
+      "check": "no_file_removal_or_move",
+      "passed": true,
+      "result": "No files were removed or moved in the review"
+    }
+  ]
+}

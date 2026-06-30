@@ -2,11 +2,11 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_NESTED_GIT_REPOSITORY_REVIEW (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 Cleanup Execution Updated)
+## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 5 PostScript Binary Review Updated)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
@@ -65,6 +65,23 @@
 - `lapidarium_fase5_nested_git_review_supply_chain_risk`: `medium_high`
 - `lapidarium_fase5_nested_git_review_removal_risk`: `high`
 - `lapidarium_fase5_nested_git_review_next_step`: `keep_snapshot_quarantined_read_only_and_do_not_remove_without_explicit_operator_authorization`
+
+### Fase 5 — PostScript Binary Review (Concluída 2026-06-30)
+
+- `lapidarium_fase5_postscript_review_completed`: `true`
+- `lapidarium_fase5_postscript_review_decision`: `BLOCKED`
+- `lapidarium_fase5_postscript_review_confidence`: `HIGH`
+- `lapidarium_fase5_postscript_review_sha_before`: `0b2d53e9cda3cc15a28fa9c3e1d0b24edc7135ea`
+- `lapidarium_fase5_postscript_review_runtime_reference_hits`: `0`
+- `lapidarium_fase5_postscript_review_governance_reference_hits`: `81`
+- `lapidarium_fase5_postscript_review_no_postscript_execution`: `true`
+- `lapidarium_fase5_postscript_review_no_postscript_rendering`: `true`
+- `lapidarium_fase5_postscript_review_no_file_removal_or_move`: `true`
+- Evidence: `legacy/experiments/genai` and `legacy/experiments/threading` are untracked, ignored by `.gitignore`, and identified as PostScript DSC Level 3.0 files created by ImageMagick.
+- Evidence: source/tests/docs/.github search returned `0` live hits; references are confined to governance artifacts and active-context mirrors.
+- `lapidarium_fase5_postscript_review_artifacts`: `artifacts/lapidarium/lapidarium_f5_013_014_postscript_review_packet.json`, `artifacts/lapidarium/lapidarium_f5_013_014_supply_chain_analysis.json`, `artifacts/lapidarium/lapidarium_f5_013_014_dependency_graph.json`, `artifacts/lapidarium/lapidarium_f5_013_014_recommendation_report.md`, `artifacts/lapidarium/lapidarium_f5_013_014_validation_evidence.json`
+- `lapidarium_fase5_postscript_review_next_step`: `await_explicit_operator_confirmation_of_origin_and_intent_before_any_removal_or_quarantine`
+- F5-013/F5-014 remain blocked; F5-015 remains untouched.
 
 ### Fase 4B — Dataset Generator Quoting Repair (Concluída 2026-06-30)
 

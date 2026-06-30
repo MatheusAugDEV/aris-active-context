@@ -1,0 +1,79 @@
+{
+  "artifact_id": "lapidarium_f5_013_014_dependency_graph",
+  "phase": "LAPIDARIUM_F5_013_014_POSTSCRIPT_BINARY_REVIEW",
+  "generated_at": "2026-06-30T03:18:18Z",
+  "nodes": [
+    {
+      "id": "F5-013",
+      "type": "file",
+      "path": "legacy/experiments/genai"
+    },
+    {
+      "id": "F5-014",
+      "type": "file",
+      "path": "legacy/experiments/threading"
+    },
+    {
+      "id": "gitignore_legacy_experiments",
+      "type": "policy",
+      "path": ".gitignore"
+    },
+    {
+      "id": "F4-FIND-003",
+      "type": "finding",
+      "path": "artifacts/lapidarium/lapidarium_fase4_report.md"
+    },
+    {
+      "id": "governance_artifacts",
+      "type": "artifact_group",
+      "path": "artifacts/lapidarium/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "F5-013",
+      "to": "gitignore_legacy_experiments",
+      "relation": "ignored_by"
+    },
+    {
+      "from": "F5-014",
+      "to": "gitignore_legacy_experiments",
+      "relation": "ignored_by"
+    },
+    {
+      "from": "F5-013",
+      "to": "F4-FIND-003",
+      "relation": "flagged_by"
+    },
+    {
+      "from": "F5-014",
+      "to": "F4-FIND-003",
+      "relation": "flagged_by"
+    },
+    {
+      "from": "F5-013",
+      "to": "governance_artifacts",
+      "relation": "documented_in"
+    },
+    {
+      "from": "F5-014",
+      "to": "governance_artifacts",
+      "relation": "documented_in"
+    }
+  ],
+  "runtime_dependency_edges": [],
+  "product_dependency_edges": [],
+  "governance_dependency_edges": [
+    {
+      "from": "F5-013",
+      "to": "governance_artifacts",
+      "relation": "governance_review_subject"
+    },
+    {
+      "from": "F5-014",
+      "to": "governance_artifacts",
+      "relation": "governance_review_subject"
+    }
+  ],
+  "conclusion": "No active runtime or product dependency detected. The files are linked only to governance artifacts and an ignore policy, so removal remains blocked pending operator confirmation."
+}

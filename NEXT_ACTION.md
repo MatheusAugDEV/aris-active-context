@@ -2,7 +2,7 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_5_NESTED_GIT_REPOSITORY_REVIEW (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_5_POSTSCRIPT_BINARY_REVIEW (2026-06-30)
 
 ---
 
@@ -19,7 +19,7 @@
 F5-004 e F5-005 já estavam ausentes do current HEAD/index do Project_ARIS e, por isso, não exigiram nova remoção.
 F5-006 foi removido com `git rm -- legacy/wake/tts.py.backup`.
 F5-015 foi revisado read-only e classificado como QUARANTINE.
-F5-013/F5-014 permanecem fora do escopo e sem intervenção nesta execução.
+F5-013/F5-014 permaneceram fora do escopo da execução anterior; nesta revisão read-only subsequente, ambos ficaram BLOCKED.
 
 ---
 
@@ -29,7 +29,7 @@ F5-013/F5-014 permanecem fora do escopo e sem intervenção nesta execução.
 - **F4-FIND-002** (`F5-015`): Nested Git repo em `external/mcp_candidates/` —
   recomendado: manter quarentena read-only; só converter para submodule/vendor se houver integração explícita
 - **F4-FIND-003** (`F5-013`, `F5-014`): PostScript binários em `legacy/experiments/` —
-  confirmar origem e intenção antes de qualquer remoção (ação irreversível)
+  confirmar origem e intenção antes de qualquer remoção ou quarentena (ação irreversível)
 
 **2. OPERADOR — Rotação de Segredos (independente de fase):**
 Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
@@ -41,6 +41,8 @@ Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
 
 Todos os locks de runtime, produto e Bedrock permanecem `false`. Nenhuma ação
 não autorizada explicitamente pelo operador será iniciada.
+
+F5-013/F5-014 continuam BLOCKED até confirmação explícita de origem e intenção.
 
 ---
 

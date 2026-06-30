@@ -1,0 +1,27 @@
+{
+  "artifact_id": "lapidarium_f5_013_014_supply_chain_analysis",
+  "phase": "LAPIDARIUM_F5_013_014_POSTSCRIPT_BINARY_REVIEW",
+  "generated_at": "2026-06-30T03:18:18Z",
+  "decision": "BLOCKED",
+  "item_ids": [
+    "F5-013",
+    "F5-014"
+  ],
+  "provenance_signals": [
+    "PostScript DSC headers show ImageMagick as creator",
+    "Titles match the basenames genai and threading",
+    "Both files are ignored by .gitignore and are not tracked by git",
+    "No live references were found in src/tests/docs/.github",
+    "Governance references exist only in artifacts and active-context mirrors"
+  ],
+  "risk_assessment": {
+    "provenance_risk": "medium",
+    "integrity_risk": "medium",
+    "supply_chain_risk": "medium",
+    "removal_risk": "high"
+  },
+  "conclusion": "These items look like locally generated PostScript artifacts, but the original source and intended use are unresolved. They should remain blocked until an operator confirms origin and intent.",
+  "no_runtime_dependency": true,
+  "no_product_dependency": true,
+  "no_secret_signal": true
+}
