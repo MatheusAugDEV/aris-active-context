@@ -74,6 +74,18 @@
       "check": "no_file_removal_or_move",
       "passed": true,
       "result": "No files were removed or moved in the review"
+    },
+    {
+      "check": "head_equals_origin_main",
+      "command": "git fetch origin main && test \"$(git rev-parse HEAD)\" = \"$(git rev-parse origin/main)\" && echo \"HEAD == origin/main\"",
+      "passed": true,
+      "result": "HEAD == origin/main"
+    },
+    {
+      "check": "ci_run_terminal_state",
+      "command": "gh run watch 28418216516 --exit-status",
+      "passed": true,
+      "result": "completed success"
     }
   ]
 }
