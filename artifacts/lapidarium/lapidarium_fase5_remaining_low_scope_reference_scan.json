@@ -1,0 +1,198 @@
+{
+  "artifact_id": "lapidarium_fase5_remaining_low_scope_reference_scan",
+  "phase": "LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW",
+  "generated_at": "2026-06-29T00:00:00Z",
+  "scan_type": "read_only_reference_search",
+  "no_cleanup_executed": true,
+  "search_scope": ["src/**/*.py", "scripts/**/*.py", "tests/**/*.py", "*.md", "*.json", "artifacts/**"],
+  "items": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "search_terms": ["f15z1", "temp_audit/f15z1"],
+      "references_found": [
+        {
+          "file": "artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+          "type": "inventory_listing",
+          "nature": "path entry in filesystem cartography scan",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_refinamento_aris_genuino.json",
+          "type": "inventory_listing",
+          "nature": "path entry in Lapidarium Phase 1 genuine-source classification",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_triagem_classificacao.json",
+          "type": "inventory_listing",
+          "nature": "path entry in Lapidarium Phase 1 triage classification (classified as temporary_file)",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/full_file_inventory.json",
+          "type": "inventory_listing",
+          "nature": "path entry in F17 full file inventory",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/full_file_inventory_report.md",
+          "type": "inventory_listing",
+          "nature": "markdown report listing",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/file_reorganization_decision_matrix.json",
+          "type": "decision_entry",
+          "nature": "decision matrix entry: classified as candidate for future removal",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/migration_plan_update_proposal.json",
+          "type": "inventory_listing",
+          "nature": "migration plan path listing",
+          "is_live_dependency": false
+        }
+      ],
+      "source_code_imports": "NONE — no .py files in src/, scripts/, tests/ import or reference temp_audit/f15z1",
+      "script_dependencies": "NONE — no scripts depend on these TSV files at runtime",
+      "live_dependency_count": 0,
+      "all_references_are_historical_inventory": true
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "search_terms": ["f15z1_post_z3", "temp_audit/f15z1_post_z3"],
+      "references_found": [
+        {
+          "file": "artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+          "type": "inventory_listing",
+          "nature": "path entry in filesystem cartography scan",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_refinamento_aris_genuino.json",
+          "type": "inventory_listing",
+          "nature": "path entry in Lapidarium Phase 1 genuine-source classification",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_triagem_classificacao.json",
+          "type": "inventory_listing",
+          "nature": "path entry in Lapidarium Phase 1 triage classification (classified as temporary_file)",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/full_file_inventory.json",
+          "type": "inventory_listing",
+          "nature": "path entry in F17 full file inventory",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/migration_plan_expansion_summary.json",
+          "type": "inventory_listing",
+          "nature": "migration plan path listing",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/migration_plan_expansion_candidates.json",
+          "type": "inventory_listing",
+          "nature": "migration plan candidates listing",
+          "is_live_dependency": false
+        }
+      ],
+      "source_code_imports": "NONE — no .py files in src/, scripts/, tests/ import or reference temp_audit/f15z1_post_z3",
+      "script_dependencies": "NONE",
+      "live_dependency_count": 0,
+      "all_references_are_historical_inventory": true
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "search_terms": ["tts.py.backup", "tts.py", "legacy/wake/tts"],
+      "references_found_for_backup": [
+        {
+          "file": "ARCHITECTURE_STATUS.md",
+          "type": "documentary_reference",
+          "nature": "architectural status listing of legacy/wake/ directory",
+          "is_live_dependency": false
+        },
+        {
+          "file": "PROJECT_CONTEXT_ARIS.md",
+          "type": "documentary_reference",
+          "nature": "project context mention of legacy TTS backup",
+          "is_live_dependency": false
+        },
+        {
+          "file": "src/aris/audio/voice_runtime_shadow_wiring_plan.py",
+          "type": "documentary_reference",
+          "nature": "mentions tts.py.backup as a legacy artifact to be superseded",
+          "is_live_dependency": false
+        },
+        {
+          "file": "src/aris/audio/voice_runtime_wiring_readiness.py",
+          "type": "documentary_reference",
+          "nature": "mentions tts.py.backup in readiness inventory",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+          "type": "inventory_listing",
+          "nature": "path entry in cartography scan",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_refinamento_aris_genuino.json",
+          "type": "inventory_listing",
+          "nature": "classified as FP-07 backup file",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_correcao_import_real.json",
+          "type": "inventory_listing",
+          "nature": "import correction record",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/lapidarium/fase1_refinamento_report.md",
+          "type": "inventory_listing",
+          "nature": "phase 1 refinement report listing",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/post_repair_continuity_gate.json",
+          "type": "inventory_listing",
+          "nature": "F17 continuity gate listing",
+          "is_live_dependency": false
+        },
+        {
+          "file": "artifacts/f17/migration_plan_expansion_candidates.json",
+          "type": "inventory_listing",
+          "nature": "migration plan candidates",
+          "is_live_dependency": false
+        }
+      ],
+      "references_found_for_active_tts": [
+        {
+          "file": "src/aris/voice/tts.py",
+          "type": "active_module",
+          "nature": "ACTIVE TTS implementation — 698 lines, fully integrated with ARIS settings/secrets/logging",
+          "is_live_dependency": true,
+          "note": "This is NOT the backup. This is the evolved production TTS."
+        },
+        {
+          "file": "src/aris/turn/boot_manager.py",
+          "type": "import",
+          "nature": "imports TTSRuntimeError, falar, get_tts_runtime_status, is_tts_runtime_executable FROM src/aris/voice/tts.py (not from legacy/wake/tts.py.backup)",
+          "is_live_dependency": true,
+          "note": "The active TTS is imported. The backup is not."
+        }
+      ],
+      "backup_imported_anywhere": false,
+      "backup_importable": false,
+      "active_tts_is_separate": true,
+      "live_dependency_count_for_backup": 0,
+      "all_backup_references_are_documentary": true
+    }
+  ]
+}

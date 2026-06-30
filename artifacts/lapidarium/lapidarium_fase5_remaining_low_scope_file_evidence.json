@@ -1,0 +1,113 @@
+{
+  "artifact_id": "lapidarium_fase5_remaining_low_scope_file_evidence",
+  "phase": "LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW",
+  "generated_at": "2026-06-29T00:00:00Z",
+  "evidence_type": "read_only_file_inspection",
+  "no_cleanup_executed": true,
+  "items": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "exists_on_disk": true,
+      "type": "directory",
+      "tracked_in_git": true,
+      "git_log": ["5125c4d3 Capture pre-rebase legacy docs and audit history (lapidarium triage)"],
+      "directory_size_bytes": 32768,
+      "directory_size_human": "32K",
+      "files": [
+        {"name": "scripts_run1.tsv", "size_bytes": 3190, "lines": 33},
+        {"name": "scripts_run2.tsv", "size_bytes": 3190, "lines": 33},
+        {"name": "tests_run1.tsv",   "size_bytes": 9780, "lines": 32},
+        {"name": "tests_run2.tsv",   "size_bytes": 9780, "lines": 32}
+      ],
+      "content_columns_scripts": ["script_path", "exit_code", "status_string"],
+      "content_columns_tests": ["test_module", "exit_code", "output_fragment"],
+      "sample_scripts_run1": [
+        "scripts/run_f15f_golden_response_quality_gate.py\t0\tstatus: golden_suite_warn",
+        "scripts/run_f15f_golden_response_evaluation_consolidation.py\t0\tstatus: golden_suite_warn"
+      ],
+      "sample_tests_run1": [
+        "tests.test_response_f15f_f3\t0\tRan 23 tests in 0.593s||OK|"
+      ],
+      "scripts_with_nonzero_exit": "Lines 18-26 in f15z1/scripts_run1: exit=1 for f15g_g-human-evidence and f15h/f15i scripts (fixture_materialization_approval_warn, human_evidence_workflow_consolidation_invalid, etc.)",
+      "run1_vs_run2_identical": "scripts_run1 == scripts_run2 within f15z1; tests_run1 != tests_run2 (timing differences only)",
+      "inventory_size_error": "Inventory reported 120B for f15z1 — this was the directory block size reported by stat, not the content size. Actual content is ~26KB across 4 TSV files.",
+      "inventory_type_error": "Inventory classified as 'file' / 'text/plain'. CORRECTION: is a directory.",
+      "phase_marker_check": "NEGATIVE — content is execution output TSV data, not a gate lock file or marker token",
+      "mtime": "2026-06-28T15:08:00Z"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "exists_on_disk": true,
+      "type": "directory",
+      "tracked_in_git": true,
+      "git_log": ["5125c4d3 Capture pre-rebase legacy docs and audit history (lapidarium triage)"],
+      "directory_size_bytes": 32768,
+      "directory_size_human": "32K",
+      "files": [
+        {"name": "scripts_run1.tsv", "size_bytes": 3181, "lines": 33},
+        {"name": "scripts_run2.tsv", "size_bytes": 3181, "lines": 33},
+        {"name": "tests_run1.tsv",   "size_bytes": 9780, "lines": 32},
+        {"name": "tests_run2.tsv",   "size_bytes": 9780, "lines": 32}
+      ],
+      "diff_vs_f15z1_scripts_run1": "Lines 14,16,18-26: all previously exit=0/warn or exit=1/blocked → now exit=0/passed/ready/completed. Specifically: fixture_materialization_approval now 'passed', human_evidence_* now 'ready', f15h/f15i now 'ready'/'completed'/'passed'.",
+      "diff_vs_f15z1_tests_run1": "Lines 17-28 (g16-g19, h1, i1-i7): exit code changed from 1 → 0 (tests now pass). Timing difference in line 1.",
+      "diff_vs_f15z1_scripts_run2": "Same delta as scripts_run1.",
+      "diff_vs_f15z1_tests_run2": "Same delta as tests_run1 plus timing difference.",
+      "semantic_meaning": "f15z1 = F15 Zone 1 state (some tests failing/blocked). f15z1_post_z3 = F15 post-Zone-3 state (those tests now passing). Together they document F15 zone progression.",
+      "inventory_size_error": "Inventory reported 120B — same directory stat block error as F5-004.",
+      "inventory_type_error": "Inventory classified as 'file' / 'text/plain'. CORRECTION: is a directory.",
+      "phase_marker_check": "NEGATIVE — content is execution output TSV data, not a gate lock file or marker token",
+      "mtime": "2026-06-28T15:08:00Z"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "exists_on_disk": true,
+      "type": "file",
+      "tracked_in_git": true,
+      "git_log": [
+        "dcf6da5f chore(etapa-0b): isola legado e organiza quarentena estrutural",
+        "49343a05 Consolida arquitetura oficial atual do ARIS"
+      ],
+      "size_bytes": 6621,
+      "mime_type": "Python script, Unicode text, UTF-8 text executable",
+      "mtime": "2026-04-15T12:35:00Z",
+      "python_imports": ["from google import genai", "from google.genai import types", "os", "re", "subprocess", "tempfile", "time", "threading", "soundfile", "dotenv"],
+      "legacy_wake_directory_contents": ["aris_daemon.py", "capture_wakeword_dataset.py", "enroll.py", "speaker_verify.py", "tts.py.backup", "wake_engine.py", "wake.py"],
+      "tts_py_without_backup_exists": false,
+      "active_tts_path": "src/aris/voice/tts.py",
+      "active_tts_size_bytes": 24800,
+      "active_tts_lines": 698,
+      "backup_vs_active_size_ratio": "6621B vs 24800B — active module is 3.75x larger",
+      "backup_is_importable": false,
+      "backup_importable_reason": ".backup extension; not on Python module path",
+      "git_history_preserves_backup": true,
+      "git_history_commits": ["49343a05", "dcf6da5f"],
+      "phase_marker_check": "NEGATIVE — is a Python source file, not a gate marker"
+    }
+  ],
+  "nine_absent_items_confirmed": {
+    "F5-001": {"path": "temp_audit/ambiguity_resolver_report.md", "exists_on_disk": false, "in_git_index": false},
+    "F5-002": {"path": "temp_audit/ambiguity_resolver_summary.json", "exists_on_disk": false, "in_git_index": false},
+    "F5-003": {"path": "temp_audit/ambiguity_resolution_samples.jsonl", "exists_on_disk": false, "in_git_index": false},
+    "F5-007": {"path": "legacy/wake/wake.py.backup", "exists_on_disk": false, "in_git_index": false},
+    "F5-008": {"path": "legacy/experiments/tart=always", "exists_on_disk": false, "in_git_index": false},
+    "F5-009": {"path": "debug_audio.wav", "exists_on_disk": false, "in_git_index": false},
+    "F5-010": {"path": "teste.wav", "exists_on_disk": false, "in_git_index": false},
+    "F5-011": {"path": "[:alnum:] \\n \\", "exists_on_disk": false, "in_git_index": false},
+    "F5-012": {"path": "how --stat --summary 5dda82a", "exists_on_disk": false, "in_git_index": false}
+  },
+  "blocked_items_untouched": {
+    "F5-013": {"path": "legacy/experiments/genai", "exists_on_disk": true},
+    "F5-014": {"path": "legacy/experiments/threading", "exists_on_disk": true},
+    "F5-015": {"path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp", "exists_on_disk": true}
+  },
+  "env_check": {
+    "path": ".env",
+    "exists_on_disk": true,
+    "content_read": false,
+    "content_printed": false
+  }
+}

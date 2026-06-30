@@ -1,0 +1,96 @@
+{
+  "artifact_id": "lapidarium_fase5_remaining_low_scope_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW",
+  "generated_at": "2026-06-29T00:00:00Z",
+  "all_passed": true,
+  "validations": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "result": "decision=pass",
+      "passed": true
+    },
+    {
+      "check": "f5_004_exists_on_disk",
+      "result": "temp_audit/f15z1 exists (directory)",
+      "passed": true
+    },
+    {
+      "check": "f5_005_exists_on_disk",
+      "result": "temp_audit/f15z1_post_z3 exists (directory)",
+      "passed": true
+    },
+    {
+      "check": "f5_006_exists_on_disk",
+      "result": "legacy/wake/tts.py.backup exists (file, 6621B)",
+      "passed": true
+    },
+    {
+      "check": "f5_013_untouched",
+      "result": "legacy/experiments/genai exists (not touched)",
+      "passed": true
+    },
+    {
+      "check": "f5_014_untouched",
+      "result": "legacy/experiments/threading exists (not touched)",
+      "passed": true
+    },
+    {
+      "check": "f5_015_untouched",
+      "result": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp exists (not touched)",
+      "passed": true
+    },
+    {
+      "check": "env_not_read_or_printed",
+      "result": ".env exists, content was not read or printed",
+      "passed": true
+    },
+    {
+      "check": "nine_removed_items_absent",
+      "result": "F5-001 through F5-003, F5-007 through F5-012 all absent from disk and git index",
+      "passed": true
+    },
+    {
+      "check": "no_cleanup_command_executed",
+      "result": "No rm, git rm, mv, find -delete, rm -rf executed",
+      "passed": true
+    },
+    {
+      "check": "all_new_artifacts_valid_json",
+      "artifacts": [
+        "lapidarium_fase5_remaining_low_scope_review_packet.json",
+        "lapidarium_fase5_remaining_low_scope_file_evidence.json",
+        "lapidarium_fase5_remaining_low_scope_reference_scan.json",
+        "lapidarium_fase5_remaining_low_scope_decision_matrix.json",
+        "lapidarium_fase5_remaining_low_scope_no_cleanup_attestation.json",
+        "lapidarium_fase5_remaining_low_scope_validation_evidence.json",
+        "lapidarium_fase5_remaining_low_scope_report.md (not JSON)"
+      ],
+      "result": "pass — all JSON artifacts valid",
+      "passed": true
+    },
+    {
+      "check": "head_equals_origin_main_before_commit",
+      "result": "HEAD == origin/main == c5bd314cc9c44dcdb908fd392ec26a77829f95e7",
+      "passed": true
+    }
+  ]
+}

@@ -77,6 +77,16 @@
 
 ---
 
+### Fase 5 — Remaining Low Scope Review (Concluída 2026-06-29)
+
+- `lapidarium_fase5_remaining_low_scope_review_decision`: `pass`
+- `lapidarium_fase5_remaining_low_scope_no_cleanup_executed`: `true`
+- **F5-004** (`temp_audit/f15z1`): REMOVE_CANDIDATE (HIGH) — é diretório com 4 TSVs de resultado F15 Zone 1; sem imports funcionais; git history preserva
+- **F5-005** (`temp_audit/f15z1_post_z3`): REMOVE_CANDIDATE (HIGH) — diretório com 4 TSVs pós-Zone-3; sem imports funcionais; git history preserva
+- **F5-006** (`legacy/wake/tts.py.backup`): REMOVE_CANDIDATE (HIGH) — TTS ativo confirmado em `src/aris/voice/tts.py` (698 linhas); backup não é única cópia; git history preserva
+- Itens F5-013/F5-014/F5-015 continuam BLOQUEADOS e intocados
+- `.env` não foi lido/imprimido
+
 ## Historical Appendix
 
 `HISTORICAL_ONLY`

@@ -747,7 +747,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.29",
+    "schema_version": "3.30",
     "roadmap_version": "v2",
     "status": "lapidarium_fase_3_cache_verificacao_pass",
     "validation_policy": {
@@ -764,7 +764,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.29",
+        "current_schema_version": "3.30",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -796,7 +796,8 @@
         "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
-        "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields."
+        "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
+        "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed."
     },
     "lapidarium_pref4_drift_repair_completed": true,
     "lapidarium_pref4_drift_repair_date": "2026-06-29",
@@ -943,5 +944,31 @@
     "lapidarium_fase5_cleanup_execution_env_not_accessed": true,
     "lapidarium_fase5_cleanup_execution_scope_escape": false,
     "lapidarium_fase5_cleanup_execution_sha_before": "0a64f632bd25e50c29112a4468298b72ee31af73",
-    "lapidarium_fase5_cleanup_execution_validator_decision": "pass"
+    "lapidarium_fase5_cleanup_execution_validator_decision": "pass",
+    "lapidarium_fase5_remaining_low_scope_review_completed": true,
+    "lapidarium_fase5_remaining_low_scope_review_date": "2026-06-29",
+    "lapidarium_fase5_remaining_low_scope_review_decision": "pass",
+    "lapidarium_fase5_remaining_low_scope_review_sha_at_start": "c5bd314cc9c44dcdb908fd392ec26a77829f95e7",
+    "lapidarium_fase5_remaining_low_scope_f5_004_decision": "REMOVE_CANDIDATE",
+    "lapidarium_fase5_remaining_low_scope_f5_004_confidence": "HIGH",
+    "lapidarium_fase5_remaining_low_scope_f5_004_correction": "is a directory (4 TSV files), not a file as inventory stated",
+    "lapidarium_fase5_remaining_low_scope_f5_005_decision": "REMOVE_CANDIDATE",
+    "lapidarium_fase5_remaining_low_scope_f5_005_confidence": "HIGH",
+    "lapidarium_fase5_remaining_low_scope_f5_005_correction": "is a directory (4 TSV files), not a file as inventory stated",
+    "lapidarium_fase5_remaining_low_scope_f5_006_decision": "REMOVE_CANDIDATE",
+    "lapidarium_fase5_remaining_low_scope_f5_006_confidence": "HIGH",
+    "lapidarium_fase5_remaining_low_scope_f5_006_resolution": "active TTS confirmed at src/aris/voice/tts.py (698 lines); backup is not unique copy",
+    "lapidarium_fase5_remaining_low_scope_no_cleanup_executed": true,
+    "lapidarium_fase5_remaining_low_scope_env_not_accessed": true,
+    "lapidarium_fase5_remaining_low_scope_blocked_items_untouched": true,
+    "lapidarium_fase5_remaining_low_scope_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_review_packet.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_file_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_reference_scan.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_decision_matrix.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_no_cleanup_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_report.md"
+    ],
+    "lapidarium_fase5_remaining_low_scope_next_step": "operator_authorize_f5_004_f5_005_f5_006_removal_if_desired"
 }

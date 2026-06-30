@@ -1,3 +1,22 @@
+## LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW
+
+- Status: `lapidarium_fase5_remaining_low_scope_review_pass`
+- Decision: `pass`
+- Date: `2026-06-29`
+- Scope: Read-only inspection of F5-004, F5-005, F5-006. No cleanup executed. No file deleted, moved, or removed from git. `.env` not read.
+- F5-004 (`temp_audit/f15z1`): REMOVE_CANDIDATE (HIGH) — directory with 4 TSV files (F15 Zone 1 execution snapshots). No functional imports. Git history preserves.
+- F5-005 (`temp_audit/f15z1_post_z3`): REMOVE_CANDIDATE (HIGH) — directory with 4 TSV files (F15 post-Zone-3 snapshots). No functional imports. Git history preserves.
+- F5-006 (`legacy/wake/tts.py.backup`): REMOVE_CANDIDATE (HIGH) — active TTS confirmed at src/aris/voice/tts.py (698 lines); backup is not the only TTS copy; not importable; git history preserves.
+- Inventory correction: F5-004 and F5-005 were classified as files (120B) but are directories (~32KB each).
+- F5-013/F5-014/F5-015 remain BLOCKED and were not touched.
+- All 9 previously authorized removed items confirmed absent.
+- No cleanup executed. No real lock opened. All execution locks remain false.
+- Artifacts: 7 JSON+MD in artifacts/lapidarium/lapidarium_fase5_remaining_low_scope_*
+- SHA at start: c5bd314cc9c44dcdb908fd392ec26a77829f95e7
+- Next: Operator may authorize F5-004/F5-005/F5-006 removal in separate prompt; or proceed to next phase.
+
+---
+
 ## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET
 
 - Status: `lapidarium_fase5_cleanup_executed`

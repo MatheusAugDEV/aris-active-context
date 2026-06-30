@@ -1085,7 +1085,8 @@
                 "3.26",
                 "3.27",
                 "3.28",
-                "3.29"
+                "3.29",
+                "3.30"
             ],
             "type": "string"
         },
@@ -1642,6 +1643,9 @@
                 },
                 "schema_3_29_change_summary": {
                     "type": "string"
+                },
+                "schema_3_30_change_summary": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -2081,6 +2085,61 @@
         },
         "lapidarium_fase5_cleanup_execution_validator_decision": {
             "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_review_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_remaining_low_scope_review_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_review_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_review_sha_at_start": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_004_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_004_confidence": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_004_correction": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_005_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_005_confidence": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_005_correction": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_006_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_006_confidence": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_f5_006_resolution": {
+            "type": "string"
+        },
+        "lapidarium_fase5_remaining_low_scope_no_cleanup_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_remaining_low_scope_env_not_accessed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_remaining_low_scope_blocked_items_untouched": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_remaining_low_scope_artifacts": {
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "lapidarium_fase5_remaining_low_scope_next_step": {
+            "type": "string"
         }
     },
     "required": [
@@ -2162,10 +2221,11 @@
         "purg00_source_gap_terminal_blocker",
         "benchuix_track"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.29",
+    "title": "ARIS Active Context Canonical Live State Schema v3.30",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
-    "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone."
+    "schema_3_29_change_summary": "Admits LAPIDARIUM as first-class phase_id and lapidarium_remediation as phase_class, enabling the cursor to point to the in-progress Lapidarium operation instead of remaining frozen at the closed IF09 milestone.",
+    "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed."
 }

@@ -1,0 +1,83 @@
+{
+  "artifact_id": "lapidarium_fase5_remaining_low_scope_decision_matrix",
+  "phase": "LAPIDARIUM_FASE_5_REMAINING_LOW_SCOPE_ITEM_REVIEW",
+  "generated_at": "2026-06-29T00:00:00Z",
+  "review_type": "read_only_no_cleanup_execution",
+  "no_cleanup_executed": true,
+  "decision_summary": {
+    "REMOVE_CANDIDATE": 3,
+    "KEEP": 0,
+    "QUARANTINE_CANDIDATE": 0,
+    "BLOCKED": 0
+  },
+  "decisions": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "previous_decision": "NEEDS_OPERATOR_DECISION",
+      "new_decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "key_findings": [
+        "CORRECTION: is a directory (not file as inventory stated). Contains 4 TSV files with F15 Zone 1 test/script execution snapshots.",
+        "Content is execution output data (exit codes + status strings), NOT a gate marker or lock file.",
+        "No source code imports in src/, scripts/, or tests/ — only inventory listings in lapidarium/f17 artifacts.",
+        "Git history preserves all content (commit 5125c4d3).",
+        "The run1/run2 duplication means data is already redundant within the directory itself.",
+        "F15 phase artifacts in artifacts/f15/ are the authoritative execution record.",
+        "The 'f15z1' naming means F15 Zone 1, not a Lapidarium gate reference.",
+        "Phase gate marker check: NEGATIVE."
+      ],
+      "risk_of_removal": "LOW",
+      "removal_prerequisite": "Explicit operator authorization per item_id",
+      "proposed_command": "git rm -r temp_audit/f15z1",
+      "rollback": "git checkout 5125c4d3 -- temp_audit/f15z1/"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "previous_decision": "NEEDS_OPERATOR_DECISION",
+      "new_decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "key_findings": [
+        "CORRECTION: is a directory (not file as inventory stated). Contains 4 TSV files with F15 post-Zone-3 test/script execution snapshots.",
+        "Content shows state progression from Zone-1 to post-Zone-3: previously blocked/warn tests now pass.",
+        "No source code imports in src/, scripts/, or tests/ — only inventory listings.",
+        "Git history preserves all content (commit 5125c4d3).",
+        "F15 phase artifacts in artifacts/f15/ are the authoritative execution record of this state.",
+        "Phase gate marker check: NEGATIVE.",
+        "Removing both f15z1 and f15z1_post_z3 loses no unique information not already in git history or F15 phase artifacts."
+      ],
+      "risk_of_removal": "LOW",
+      "removal_prerequisite": "Explicit operator authorization per item_id",
+      "proposed_command": "git rm -r temp_audit/f15z1_post_z3",
+      "rollback": "git checkout 5125c4d3 -- temp_audit/f15z1_post_z3/"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "previous_decision": "REMOVE_CANDIDATE (confidence MEDIUM — concern: may be only copy of TTS)",
+      "new_decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "key_findings": [
+        "Active TTS module confirmed at src/aris/voice/tts.py (698 lines, 24800B, fully integrated).",
+        "src/aris/turn/boot_manager.py imports TTSRuntimeError, falar, get_tts_runtime_status, is_tts_runtime_executable from src/aris/voice/tts.py — NOT from legacy/wake/tts.py.backup.",
+        "The backup has .backup extension and is NOT importable as a Python module.",
+        "No file imports legacy/wake/tts.py.backup anywhere.",
+        "Backup is a legacy pre-refactor snapshot (~130 lines, google.genai/soundfile/dotenv); active module is a substantial refactor (~698 lines, full ARIS framework integration).",
+        "Git history preserves backup content at commits 49343a05 and dcf6da5f.",
+        "Previous concern 'may be only TTS code copy' is RESOLVED: active production TTS exists at src/aris/voice/tts.py.",
+        "Documentary references in ARCHITECTURE_STATUS.md, PROJECT_CONTEXT_ARIS.md, voice wiring readiness files are all non-functional mentions."
+      ],
+      "risk_of_removal": "LOW",
+      "removal_prerequisite": "Explicit operator authorization per item_id",
+      "proposed_command": "git rm legacy/wake/tts.py.backup",
+      "rollback": "git checkout dcf6da5f -- legacy/wake/tts.py.backup"
+    }
+  ],
+  "items_out_of_scope": [
+    {"item_id": "F5-013", "path": "legacy/experiments/genai",                                      "status": "BLOCKED — NOT REVIEWED IN THIS PHASE"},
+    {"item_id": "F5-014", "path": "legacy/experiments/threading",                                  "status": "BLOCKED — NOT REVIEWED IN THIS PHASE"},
+    {"item_id": "F5-015", "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp", "status": "BLOCKED — NOT REVIEWED IN THIS PHASE"},
+    {"item_id": "F5-016", "path": ".env",                                                          "status": "KEEP — NOT REVIEWED IN THIS PHASE"}
+  ]
+}
