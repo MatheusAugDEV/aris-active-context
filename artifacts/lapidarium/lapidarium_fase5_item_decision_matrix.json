@@ -1,0 +1,128 @@
+{
+  "artifact_id": "lapidarium_fase5_item_decision_matrix",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "plan_only": true,
+  "cleanup_executed": false,
+  "decision_summary": {
+    "REMOVE_CANDIDATE": 9,
+    "KEEP": 1,
+    "QUARANTINE_CANDIDATE": 0,
+    "NEEDS_OPERATOR_DECISION": 2,
+    "BLOCKED": 4
+  },
+  "decisions": [
+    {
+      "item_id": "F5-001",
+      "path": "temp_audit/ambiguity_resolver_report.md",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "temp_audit/ was created as transient audit workspace. Files are Lapidarium triage outputs, not production source. No downstream imports detected. Operator approval required before git rm."
+    },
+    {
+      "item_id": "F5-002",
+      "path": "temp_audit/ambiguity_resolver_summary.json",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "Companion summary to F5-001. Same reasoning — transient audit output, no production dependency."
+    },
+    {
+      "item_id": "F5-003",
+      "path": "temp_audit/ambiguity_resolution_samples.jsonl",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "JSONL audit samples in temp_audit/. Transient data, no production dependency."
+    },
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "decision": "NEEDS_OPERATOR_DECISION",
+      "confidence": "MEDIUM",
+      "justification": "Name 'f15z1' suggests a phase 15 zone 1 checkpoint marker. 120B — likely a small marker/lock file. Could be a gate checkpoint from a previous phase. Operator must confirm purpose before removal."
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "decision": "NEEDS_OPERATOR_DECISION",
+      "confidence": "MEDIUM",
+      "justification": "Name 'f15z1_post_z3' suggests a post-Z3 checkpoint. Same pattern as f15z1. Operator must confirm purpose."
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "MEDIUM",
+      "justification": "FP-07: .backup extension indicates safety snapshot. No tts.py exists without the .backup suffix in legacy/wake/ — meaning the backup IS the only copy. Git history preserves content regardless. Operator approval required; verify whether tts.py content is still needed."
+    },
+    {
+      "item_id": "F5-007",
+      "path": "legacy/wake/wake.py.backup",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "FP-07: legacy/wake/wake.py exists (confirmed). The .backup is a redundant snapshot. Git history preserves content."
+    },
+    {
+      "item_id": "F5-008",
+      "path": "legacy/experiments/tart=always",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "FP-02: Filename with '=' is anomalous — looks like a CLI argument fragment ('--restart=always' tail). Untracked. No plausible legitimate source file would be named 'tart=always'."
+    },
+    {
+      "item_id": "F5-009",
+      "path": "debug_audio.wav",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "FP-03: 'debug_audio' name is explicit debug artifact. file command reports 'data' (invalid WAV format). Untracked. Created 2026-04-10 — appears to be a debug capture session artifact."
+    },
+    {
+      "item_id": "F5-010",
+      "path": "teste.wav",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "Untracked test WAV file ('teste' = Portuguese for 'test'). Valid WAV format but clearly a test audio capture. Created 2026-04-10. Not production."
+    },
+    {
+      "item_id": "F5-011",
+      "path": "[:alnum:] \\n \\",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "Filename is a POSIX character class fragment from a tr/sed shell command. ASCII text with overstriking = pager output artifact. Tracked in git but git log returns empty (possible filename encoding issue in log). No legitimate file would have this name. MEDIUM risk only due to shell quoting requirements for git rm."
+    },
+    {
+      "item_id": "F5-012",
+      "path": "how --stat --summary 5dda82a",
+      "decision": "REMOVE_CANDIDATE",
+      "confidence": "HIGH",
+      "justification": "Filename is the literal tail of a git command. ASCII text with overstriking. 1 commit (pre-P1.14 isolation). Same size as F5-011 (15915B) — paired accidental capture. No legitimate use."
+    },
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "decision": "BLOCKED",
+      "confidence": "LOW",
+      "justification": "F4-FIND-003: 20.9MB PostScript. Untracked. Could be accidental man-page capture OR intentional reference material. BLOCKED until operator confirms origin and intent. Do not remove without explicit operator approval."
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "decision": "BLOCKED",
+      "confidence": "LOW",
+      "justification": "F4-FIND-003: 7.0MB PostScript. Same pattern as F5-013. BLOCKED until operator confirms."
+    },
+    {
+      "item_id": "F5-015",
+      "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+      "decision": "BLOCKED",
+      "confidence": "N/A",
+      "justification": "F4-FIND-002: Supply chain decision required. Nested .git at source/.git. Not a declared submodule. Entire directory is untracked. High false-positive risk — this is an intentional MCP candidate. Operator must choose: submodule, vendor, remove, or quarantine."
+    },
+    {
+      "item_id": "F5-016",
+      "path": ".env",
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "justification": "F4-FIND-001 resolved as false positive — .env was never git-tracked. Correctly gitignored. Contains local configuration. Must not be deleted. Secret rotation is operator responsibility."
+    }
+  ]
+}

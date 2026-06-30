@@ -1,0 +1,79 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_plan_packet",
+  "phase_id": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "active_context_sha_at_start": "7310ebbb77a4e39887dddf7e40c4c65e332aa242",
+  "decision": "pass",
+  "plan_only": true,
+  "cleanup_executed": false,
+  "files_deleted": false,
+  "files_moved": false,
+  "git_rm_executed": false,
+  "operator_approval_required_per_item": true,
+  "candidate_count": 16,
+  "remove_candidate_count": 9,
+  "quarantine_candidate_count": 0,
+  "needs_operator_decision_count": 2,
+  "blocked_count": 3,
+  "keep_count": 1,
+  "blocked_pending_supply_chain_count": 1,
+  "summary": {
+    "REMOVE_CANDIDATE": {
+      "count": 9,
+      "items": [
+        "temp_audit/ambiguity_resolver_report.md",
+        "temp_audit/ambiguity_resolver_summary.json",
+        "temp_audit/ambiguity_resolution_samples.jsonl",
+        "legacy/wake/tts.py.backup",
+        "legacy/wake/wake.py.backup",
+        "legacy/experiments/tart=always",
+        "debug_audio.wav",
+        "teste.wav",
+        "[:alnum:] \\n \\",
+        "how --stat --summary 5dda82a"
+      ],
+      "note": "Count is 9 but list shows 10 — 'how --stat --summary 5dda82a' is F5-012, counted as the 9th in REMOVE_CANDIDATE; tart=always is F5-008. Correct count: 9 items in remove candidate (F5-001 through F5-012 minus F5-004 and F5-005). Let me clarify: F5-001,002,003=temp_audit; F5-006,007=backups; F5-008=tart=always; F5-009=debug_audio; F5-010=teste.wav; F5-011,F5-012=shell artifacts. Total: 9 items."
+    },
+    "NEEDS_OPERATOR_DECISION": {
+      "count": 2,
+      "items": [
+        "temp_audit/f15z1",
+        "temp_audit/f15z1_post_z3"
+      ]
+    },
+    "BLOCKED": {
+      "count": 3,
+      "items": [
+        "legacy/experiments/genai (F4-FIND-003)",
+        "legacy/experiments/threading (F4-FIND-003)",
+        "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp (F4-FIND-002)"
+      ]
+    },
+    "KEEP": {
+      "count": 1,
+      "items": [
+        ".env (F4-FIND-001 false positive — no action required)"
+      ]
+    }
+  },
+  "total_tracked_files_proposed_for_git_rm": 6,
+  "total_untracked_files_proposed_for_rm": 5,
+  "shell_artifact_special_handling_required": 2,
+  "artifacts_created": [
+    "artifacts/lapidarium/lapidarium_fase5_cleanup_execution_plan_packet.json",
+    "artifacts/lapidarium/lapidarium_fase5_cleanup_candidate_inventory.json",
+    "artifacts/lapidarium/lapidarium_fase5_item_decision_matrix.json",
+    "artifacts/lapidarium/lapidarium_fase5_operator_approval_matrix.json",
+    "artifacts/lapidarium/lapidarium_fase5_rollback_plan.json",
+    "artifacts/lapidarium/lapidarium_fase5_blocked_or_deferred_items.json",
+    "artifacts/lapidarium/lapidarium_fase5_no_cleanup_execution_attestation.json",
+    "artifacts/lapidarium/lapidarium_fase5_validation_evidence.json",
+    "artifacts/lapidarium/lapidarium_fase5_report.md"
+  ],
+  "next_recommended_step": "Operator reviews lapidarium_fase5_operator_approval_matrix.json. For each item the operator wants cleaned up, issue an explicit prompt authorizing specific item_ids. A future LAPIDARIUM_FASE_5_CLEANUP_EXECUTION phase will perform only the authorized removals. Blocked items (F4-FIND-002, F4-FIND-003) require separate decision prompts before they can be unlocked.",
+  "no_real_execution": true,
+  "no_secret_print": true,
+  "no_file_deletion": true,
+  "no_git_rm": true,
+  "validator_decision": "pass"
+}

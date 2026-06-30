@@ -1,0 +1,63 @@
+{
+  "artifact_id": "lapidarium_fase5_blocked_or_deferred_items",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "plan_only": true,
+  "cleanup_executed": false,
+  "blocked_count": 3,
+  "needs_operator_decision_count": 2,
+  "items": [
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "decision": "BLOCKED",
+      "finding_reference": "F4-FIND-003",
+      "block_reason": "20.9MB PostScript file. Origin unknown — could be accidental pager/man capture OR intentional reference material. Action on this file is irreversible (untracked — no git history). Operator must confirm: (a) what created this file, (b) whether the content is still needed, (c) whether a backup exists, BEFORE any removal.",
+      "required_operator_action": "Issue explicit decision prompt confirming origin and approving removal. Include confirmation that a backup has been made if content might be needed.",
+      "future_phase_required": "LAPIDARIUM_FASE_5_F4_FIND003_RESOLUTION or equivalent",
+      "unblock_condition": "Operator issues explicit written approval naming F5-013 and 'legacy/experiments/genai'"
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "decision": "BLOCKED",
+      "finding_reference": "F4-FIND-003",
+      "block_reason": "7.0MB PostScript file. Same pattern as genai. Origin unknown. Irreversible if removed (untracked). Operator must confirm origin and intent.",
+      "required_operator_action": "Same as F5-013. Explicit decision prompt required.",
+      "future_phase_required": "LAPIDARIUM_FASE_5_F4_FIND003_RESOLUTION or equivalent",
+      "unblock_condition": "Operator issues explicit written approval naming F5-014 and 'legacy/experiments/threading'"
+    },
+    {
+      "item_id": "F5-015",
+      "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+      "decision": "BLOCKED",
+      "finding_reference": "F4-FIND-002",
+      "block_reason": "Supply chain decision: nested git repo (source/.git detected) not declared as submodule. 42 files. Operator must choose integration strategy. High false-positive risk — this is likely intentional MCP evaluation material.",
+      "required_operator_action": "Choose one of the 4 strategies listed in lapidarium_fase5_cleanup_candidate_inventory.json F5-015 and issue explicit decision prompt.",
+      "options": [
+        "declare_submodule: git submodule add <remote-url> external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/source",
+        "vendor_with_manifest: remove source/.git dir only, write vendor manifest, track files directly in Project_ARIS",
+        "remove_after_operator_approval: rm -rf external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+        "quarantine: add to EXCLUDENT_POLICY.md, do not track"
+      ],
+      "future_phase_required": "LAPIDARIUM_FASE_5_F4_FIND002_RESOLUTION or equivalent",
+      "unblock_condition": "Operator issues explicit strategy selection naming F5-015"
+    },
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "decision": "NEEDS_OPERATOR_DECISION",
+      "block_reason": "Name suggests phase 15 zone 1 checkpoint. 120B file. Operator must read contents and confirm this is safe to remove.",
+      "required_operator_action": "Read file, confirm purpose, issue explicit approval or KEEP decision.",
+      "unblock_condition": "Operator confirms purpose of f15z1 file"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "decision": "NEEDS_OPERATOR_DECISION",
+      "block_reason": "Name suggests post-Z3 checkpoint. Same size as f15z1. Operator must verify contents.",
+      "required_operator_action": "Read file, confirm purpose, issue explicit approval or KEEP decision.",
+      "unblock_condition": "Operator confirms purpose of f15z1_post_z3 file"
+    }
+  ]
+}

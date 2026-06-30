@@ -1,0 +1,56 @@
+{
+  "artifact_id": "lapidarium_fase5_no_cleanup_execution_attestation",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "decision": "pass",
+  "attestation": {
+    "no_deletion": true,
+    "no_move": true,
+    "no_git_rm": true,
+    "no_cleanup_execution": true,
+    "no_runtime": true,
+    "no_real_apply": true,
+    "no_product": true,
+    "no_bedrock": true,
+    "no_secrets_read": true,
+    "no_secrets_printed": true,
+    "no_env_content_read": true,
+    "no_env_content_printed": true,
+    "no_history_rewrite": true,
+    "no_force_push": true,
+    "no_dependency_install": true,
+    "no_branch_creation": true,
+    "no_file_mutation_in_project_aris": true,
+    "plan_only": true,
+    "all_real_execution_locks_false": true
+  },
+  "commands_executed": [
+    "git ls-files -- <path> (read-only git metadata query)",
+    "git log --oneline -5 -- <path> (read-only git history query)",
+    "file -b --mime-type <path> (read-only file metadata, no content read)",
+    "os.path.getsize / os.path.exists (read-only filesystem metadata)",
+    "os.walk (read-only directory traversal, no content read)",
+    "python3 -c / python3 << 'PYEOF' (read-only data analysis scripts)",
+    "date -u (timestamp only)",
+    "ls (directory listing)"
+  ],
+  "commands_NOT_executed": [
+    "rm (no file deletion)",
+    "mv (no file move)",
+    "git rm (no index removal)",
+    "find -delete (no deletion)",
+    "cat .env (no secrets read)",
+    "head .env (no secrets read)",
+    "grep .env (no secrets read)",
+    "git filter-repo (no history rewrite)",
+    "git push --force (no force push)",
+    "pip install / npm install (no dependency install)",
+    "git checkout -b (no branch creation)"
+  ],
+  "guards_respected": [
+    "AC-READ", "PLAN-ONLY", "NO-CLEANUP-EXECUTION", "NO-FILE-DELETION",
+    "NO-FILE-MOVE", "NO-GIT-RM", "NO-RUNTIME", "NO-REAL-APPLY",
+    "NO-PRODUCT", "NO-BEDROCK", "NO-SECRETS", "NO-SECRET-PRINT",
+    "NO-HISTORY-REWRITE", "NO-FORCE-PUSH", "MAIN-ONLY", "COMMIT-PUSH-HASH"
+  ]
+}

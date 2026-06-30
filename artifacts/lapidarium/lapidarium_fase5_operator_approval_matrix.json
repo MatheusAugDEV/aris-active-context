@@ -1,0 +1,150 @@
+{
+  "artifact_id": "lapidarium_fase5_operator_approval_matrix",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "plan_only": true,
+  "cleanup_executed": false,
+  "instructions": "Each item listed here requires explicit per-item operator authorization before any future cleanup execution phase can proceed. No item may be acted upon by inference, batch approval, or implied consent. Each approval must name the item_id and proposed_action explicitly.",
+  "items_requiring_explicit_approval": [
+    {
+      "item_id": "F5-001",
+      "path": "temp_audit/ambiguity_resolver_report.md",
+      "proposed_action": "git rm temp_audit/ambiguity_resolver_report.md",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This file is not needed for production or future phases",
+      "approval_status": "PENDING"
+    },
+    {
+      "item_id": "F5-002",
+      "path": "temp_audit/ambiguity_resolver_summary.json",
+      "proposed_action": "git rm temp_audit/ambiguity_resolver_summary.json",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This file is not needed for production or future phases",
+      "approval_status": "PENDING"
+    },
+    {
+      "item_id": "F5-003",
+      "path": "temp_audit/ambiguity_resolution_samples.jsonl",
+      "proposed_action": "git rm temp_audit/ambiguity_resolution_samples.jsonl",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This file is not needed for production or future phases",
+      "approval_status": "PENDING"
+    },
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "proposed_action": "git rm temp_audit/f15z1",
+      "risk_level": "LOW",
+      "operator_must_confirm": "Confirm: this file is not a phase gate checkpoint that any future phase depends on",
+      "approval_status": "PENDING — NEEDS_OPERATOR_DECISION",
+      "additional_verification_required": "Operator must read file contents and confirm it is safe to remove"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "proposed_action": "git rm temp_audit/f15z1_post_z3",
+      "risk_level": "LOW",
+      "operator_must_confirm": "Confirm: this file is not a phase gate checkpoint",
+      "approval_status": "PENDING — NEEDS_OPERATOR_DECISION",
+      "additional_verification_required": "Operator must read file contents and confirm it is safe to remove"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "proposed_action": "git rm legacy/wake/tts.py.backup",
+      "risk_level": "LOW",
+      "operator_must_confirm": "The TTS code in this backup is either no longer needed or preserved sufficiently in git history",
+      "approval_status": "PENDING",
+      "note": "No tts.py (without .backup) exists in legacy/wake/ — the backup is the only copy of this code. Git history will preserve it after git rm."
+    },
+    {
+      "item_id": "F5-007",
+      "path": "legacy/wake/wake.py.backup",
+      "proposed_action": "git rm legacy/wake/wake.py.backup",
+      "risk_level": "LOW",
+      "operator_must_confirm": "The wake.py.backup is redundant because legacy/wake/wake.py exists and git history preserves it",
+      "approval_status": "PENDING"
+    },
+    {
+      "item_id": "F5-008",
+      "path": "legacy/experiments/tart=always",
+      "proposed_action": "rm 'legacy/experiments/tart=always'",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This file is an accidental CLI argument capture, not intentional source",
+      "approval_status": "PENDING",
+      "note": "Untracked — rm only, no git rm needed"
+    },
+    {
+      "item_id": "F5-009",
+      "path": "debug_audio.wav",
+      "proposed_action": "rm debug_audio.wav",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This is a debug capture artifact, not a production audio asset",
+      "approval_status": "PENDING",
+      "note": "Untracked — rm only. Invalid WAV format (file reports 'data')."
+    },
+    {
+      "item_id": "F5-010",
+      "path": "teste.wav",
+      "proposed_action": "rm teste.wav",
+      "risk_level": "LOW",
+      "operator_must_confirm": "This test recording is not a production asset and can be discarded",
+      "approval_status": "PENDING",
+      "note": "Untracked — rm only. Valid RIFF WAV but clearly test capture."
+    },
+    {
+      "item_id": "F5-011",
+      "path": "[:alnum:] \\n \\",
+      "proposed_action": "git rm -- '[:alnum:] \\n \\'",
+      "risk_level": "MEDIUM",
+      "operator_must_confirm": "This is an accidental pager output artifact, not intentional source",
+      "approval_status": "PENDING",
+      "note": "Tracked. Shell filename quoting required. Use single quotes and -- separator."
+    },
+    {
+      "item_id": "F5-012",
+      "path": "how --stat --summary 5dda82a",
+      "proposed_action": "git rm -- 'how --stat --summary 5dda82a'",
+      "risk_level": "MEDIUM",
+      "operator_must_confirm": "This is an accidental git command output capture, not intentional source",
+      "approval_status": "PENDING",
+      "note": "Tracked. Shell filename quoting required."
+    },
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "proposed_action": "rm 'legacy/experiments/genai'  [REQUIRES SEPARATE OPERATOR DECISION]",
+      "risk_level": "MEDIUM",
+      "operator_must_confirm": "REQUIRED: Confirm this PostScript file (20.9MB) is not intentional reference material; confirm its origin (pager capture vs. intentional placement)",
+      "approval_status": "BLOCKED — DO NOT ACT WITHOUT SEPARATE EXPLICIT DECISION",
+      "finding_reference": "F4-FIND-003"
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "proposed_action": "rm 'legacy/experiments/threading'  [REQUIRES SEPARATE OPERATOR DECISION]",
+      "risk_level": "MEDIUM",
+      "operator_must_confirm": "REQUIRED: Confirm this PostScript file (7.0MB) is not intentional reference material",
+      "approval_status": "BLOCKED — DO NOT ACT WITHOUT SEPARATE EXPLICIT DECISION",
+      "finding_reference": "F4-FIND-003"
+    },
+    {
+      "item_id": "F5-015",
+      "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+      "proposed_action": "SUPPLY CHAIN DECISION REQUIRED — options in inventory",
+      "risk_level": "MEDIUM",
+      "operator_must_confirm": "REQUIRED: Choose one of: (a) declare_submodule, (b) vendor_with_manifest, (c) remove_after_operator_approval, (d) quarantine",
+      "approval_status": "BLOCKED — SUPPLY CHAIN DECISION",
+      "finding_reference": "F4-FIND-002"
+    }
+  ],
+  "items_not_requiring_approval": [
+    {
+      "item_id": "F5-016",
+      "path": ".env",
+      "decision": "KEEP",
+      "rationale": "F4-FIND-001 false positive — no action required. Gitignored. Content not read."
+    }
+  ],
+  "how_to_authorize": "To authorize an item, the operator must issue an explicit prompt naming the item_id(s) and approved actions. A new cleanup execution phase will then be started with only the authorized items in scope."
+}

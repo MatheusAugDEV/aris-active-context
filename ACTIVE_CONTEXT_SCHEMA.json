@@ -1973,6 +1973,63 @@
             "items": {
                 "type": "string"
             }
+        },
+        "lapidarium_fase5_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_completion_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_decision": {
+            "type": "string"
+        },
+        "lapidarium_fase5_plan_only": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_cleanup_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_files_deleted": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_files_moved": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_git_rm_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_candidate_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_remove_candidate_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_quarantine_candidate_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_needs_operator_decision_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_blocked_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_keep_count": {
+            "type": "integer"
+        },
+        "lapidarium_fase5_operator_approval_required_per_item": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_no_secret_print": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_no_real_execution": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     },
     "required": [

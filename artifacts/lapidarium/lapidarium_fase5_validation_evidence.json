@@ -1,0 +1,84 @@
+{
+  "artifact_id": "lapidarium_fase5_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "decision": "pass",
+  "validations": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "result": "pass",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "result": "decision=pass",
+      "passed": true
+    },
+    {
+      "check": "all_new_artifacts_valid_json",
+      "artifacts_validated": [
+        "lapidarium_fase5_cleanup_execution_plan_packet.json",
+        "lapidarium_fase5_cleanup_candidate_inventory.json",
+        "lapidarium_fase5_item_decision_matrix.json",
+        "lapidarium_fase5_operator_approval_matrix.json",
+        "lapidarium_fase5_rollback_plan.json",
+        "lapidarium_fase5_blocked_or_deferred_items.json",
+        "lapidarium_fase5_no_cleanup_execution_attestation.json",
+        "lapidarium_fase5_validation_evidence.json"
+      ],
+      "result": "pass — all JSON files written with json.dump/verified",
+      "passed": true
+    },
+    {
+      "check": "no_destructive_commands_executed",
+      "method": "Command audit from attestation + session review",
+      "result": "pass — no rm, mv, git rm, find -delete executed",
+      "passed": true
+    },
+    {
+      "check": "all_execution_locks_false",
+      "method": "State inspection",
+      "result": "pass — real_apply_authorized, production_authorized, secrets_access_authorized, runtime_integration_allowed, package_installation_authorized, external_llm_api_authorized: all NOT_FOUND (default=false)",
+      "passed": true
+    },
+    {
+      "check": "env_not_read_or_printed",
+      "method": "Session audit",
+      "result": "pass — .env content never read, accessed, or printed",
+      "passed": true
+    },
+    {
+      "check": "candidate_inventory_complete",
+      "method": "Cross-reference with Fase 4 risk register and F4-FIND-001/002/003",
+      "result": "pass — 16 items inventoried, all F4/4A findings covered",
+      "passed": true
+    },
+    {
+      "check": "no_item_deleted_or_moved",
+      "method": "git diff --stat",
+      "result": "pass — only artifact JSON files added; no project files deleted or moved",
+      "passed": true
+    },
+    {
+      "check": "render_boot_run_after_state_update",
+      "command": "python3 scripts/render_boot.py",
+      "result": "pass — run before validator",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

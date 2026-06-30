@@ -1,3 +1,21 @@
+## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN
+
+- Status: `lapidarium_fase5_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: Plan-only. 16 cleanup candidates surveyed and classified. No files deleted, moved, or removed from git. No secrets read.
+- Candidate counts: remove_candidate=9, needs_operator_decision=2, blocked=3, keep=1
+- Remove candidates: temp_audit/ (3 files), legacy/wake/*.backup (2), tart=always, debug_audio.wav, teste.wav, shell artifact files (2)
+- Needs operator decision: temp_audit/f15z1, temp_audit/f15z1_post_z3
+- Blocked: legacy/experiments/genai (F4-FIND-003), legacy/experiments/threading (F4-FIND-003), external/mcp_candidates/... (F4-FIND-002)
+- Keep: .env (F4-FIND-001 false positive — no action required)
+- Locks opened: none — all execution locks remain false
+- No file deletion, no file move, no git rm, no cleanup execution, no secrets read/printed
+- Artifacts: 9 files in artifacts/lapidarium/lapidarium_fase5_*
+- Next: Operator reviews lapidarium_fase5_operator_approval_matrix.json and authorizes items per item_id
+
+---
+
 ## LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR
 
 - Status: `lapidarium_fase4b_pass`

@@ -1,0 +1,161 @@
+{
+  "artifact_id": "lapidarium_fase5_rollback_plan",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN",
+  "generated_at": "2026-06-30T01:41:00Z",
+  "plan_only": true,
+  "cleanup_executed": false,
+  "preamble": "This plan describes rollback procedures for each proposed future action. No actions have been executed. All rollback procedures assume the cleanup was performed in a single commit so that git revert or git checkout can restore cleanly.",
+  "rollback_entries": [
+    {
+      "item_id": "F5-001",
+      "path": "temp_audit/ambiguity_resolver_report.md",
+      "proposed_future_command": "git rm temp_audit/ambiguity_resolver_report.md && git commit -m 'lapidarium F5: remove temp_audit/ambiguity_resolver_report.md'",
+      "precondition": "Operator approval F5-001 received",
+      "post_action_validation": "git ls-files -- temp_audit/ambiguity_resolver_report.md returns empty",
+      "rollback_command": "git revert HEAD  OR  git checkout <commit-before-rm> -- temp_audit/ambiguity_resolver_report.md",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "Low — file is preserved in git history"
+    },
+    {
+      "item_id": "F5-002",
+      "path": "temp_audit/ambiguity_resolver_summary.json",
+      "proposed_future_command": "git rm temp_audit/ambiguity_resolver_summary.json && git commit",
+      "precondition": "Operator approval F5-002 received",
+      "post_action_validation": "git ls-files -- temp_audit/ambiguity_resolver_summary.json returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- temp_audit/ambiguity_resolver_summary.json",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "Low"
+    },
+    {
+      "item_id": "F5-003",
+      "path": "temp_audit/ambiguity_resolution_samples.jsonl",
+      "proposed_future_command": "git rm temp_audit/ambiguity_resolution_samples.jsonl && git commit",
+      "precondition": "Operator approval F5-003 received",
+      "post_action_validation": "git ls-files -- temp_audit/ambiguity_resolution_samples.jsonl returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- temp_audit/ambiguity_resolution_samples.jsonl",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "Low"
+    },
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "proposed_future_command": "git rm temp_audit/f15z1 && git commit",
+      "precondition": "Operator approval F5-004 received AND operator has verified file contents are safe to remove",
+      "post_action_validation": "git ls-files -- temp_audit/f15z1 returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- temp_audit/f15z1",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "Low — but verify no phase gate depends on this file"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "proposed_future_command": "git rm temp_audit/f15z1_post_z3 && git commit",
+      "precondition": "Operator approval F5-005 received AND operator has verified file contents",
+      "post_action_validation": "git ls-files -- temp_audit/f15z1_post_z3 returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- temp_audit/f15z1_post_z3",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "Low — verify no phase gate dependency"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "proposed_future_command": "git rm legacy/wake/tts.py.backup && git commit",
+      "precondition": "Operator approval F5-006 received; operator has confirmed TTS code is no longer needed or is preserved in git history",
+      "post_action_validation": "git ls-files -- legacy/wake/tts.py.backup returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- legacy/wake/tts.py.backup",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "LOW — git history preserves content",
+      "note": "After rollback, file is restored but no tts.py (non-backup) exists — the backup IS the only copy"
+    },
+    {
+      "item_id": "F5-007",
+      "path": "legacy/wake/wake.py.backup",
+      "proposed_future_command": "git rm legacy/wake/wake.py.backup && git commit",
+      "precondition": "Operator approval F5-007 received",
+      "post_action_validation": "git ls-files -- legacy/wake/wake.py.backup returns empty",
+      "rollback_command": "git checkout <commit-before-rm> -- legacy/wake/wake.py.backup",
+      "rollback_complexity": "LOW",
+      "residual_risk_if_not_rolled_back": "LOW — legacy/wake/wake.py is the live version"
+    },
+    {
+      "item_id": "F5-008",
+      "path": "legacy/experiments/tart=always",
+      "proposed_future_command": "rm 'legacy/experiments/tart=always'",
+      "precondition": "Operator approval F5-008 received",
+      "post_action_validation": "[ ! -f 'legacy/experiments/tart=always' ] && echo REMOVED",
+      "rollback_command": "NOT POSSIBLE via git (file was untracked). Requires manual restoration from operator backup if needed.",
+      "rollback_complexity": "IRREVERSIBLE — untracked file; no git history",
+      "residual_risk_if_not_rolled_back": "LOW — file is an anomalous CLI fragment with no legitimate use detected"
+    },
+    {
+      "item_id": "F5-009",
+      "path": "debug_audio.wav",
+      "proposed_future_command": "rm debug_audio.wav",
+      "precondition": "Operator approval F5-009 received",
+      "post_action_validation": "[ ! -f debug_audio.wav ] && echo REMOVED",
+      "rollback_command": "NOT POSSIBLE via git (untracked). Requires local backup from operator if needed.",
+      "rollback_complexity": "IRREVERSIBLE — untracked file",
+      "residual_risk_if_not_rolled_back": "VERY LOW — invalid WAV format debug artifact"
+    },
+    {
+      "item_id": "F5-010",
+      "path": "teste.wav",
+      "proposed_future_command": "rm teste.wav",
+      "precondition": "Operator approval F5-010 received",
+      "post_action_validation": "[ ! -f teste.wav ] && echo REMOVED",
+      "rollback_command": "NOT POSSIBLE via git (untracked). Operator may retain a local copy if needed.",
+      "rollback_complexity": "IRREVERSIBLE — untracked file",
+      "residual_risk_if_not_rolled_back": "VERY LOW — test recording"
+    },
+    {
+      "item_id": "F5-011",
+      "path": "[:alnum:] \\n \\",
+      "proposed_future_command": "git rm -- '[:alnum:] \\n \\' && git commit",
+      "precondition": "Operator approval F5-011 received; careful shell quoting verified",
+      "post_action_validation": "git ls-files -- '[:alnum:] \\n \\' returns empty",
+      "rollback_command": "git revert HEAD  OR  git checkout <commit-before-rm> -- '[:alnum:] \\n \\'",
+      "rollback_complexity": "MEDIUM — requires careful shell quoting in rollback command too",
+      "residual_risk_if_not_rolled_back": "VERY LOW — pager artifact with no legitimate use"
+    },
+    {
+      "item_id": "F5-012",
+      "path": "how --stat --summary 5dda82a",
+      "proposed_future_command": "git rm -- 'how --stat --summary 5dda82a' && git commit",
+      "precondition": "Operator approval F5-012 received; careful shell quoting verified",
+      "post_action_validation": "git ls-files -- 'how --stat --summary 5dda82a' returns empty",
+      "rollback_command": "git checkout baf7977b -- 'how --stat --summary 5dda82a'",
+      "rollback_complexity": "MEDIUM — shell quoting required",
+      "residual_risk_if_not_rolled_back": "VERY LOW — git command output artifact"
+    },
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "proposed_future_command": "rm 'legacy/experiments/genai'  [BLOCKED — OPERATOR DECISION REQUIRED FIRST]",
+      "precondition": "Operator must explicitly confirm origin and intent via a separate decision prompt BEFORE this item can be authorized",
+      "post_action_validation": "[ ! -f 'legacy/experiments/genai' ] && echo REMOVED",
+      "rollback_command": "NOT POSSIBLE via git (untracked 20.9MB PostScript). Operator must retain a backup copy before removal.",
+      "rollback_complexity": "IRREVERSIBLE without operator backup",
+      "residual_risk_if_not_rolled_back": "MEDIUM — if this was intentional reference material, loss would be irreversible"
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "proposed_future_command": "rm 'legacy/experiments/threading'  [BLOCKED — OPERATOR DECISION REQUIRED FIRST]",
+      "precondition": "Operator must confirm origin and intent via separate decision prompt BEFORE authorization",
+      "post_action_validation": "[ ! -f 'legacy/experiments/threading' ] && echo REMOVED",
+      "rollback_command": "NOT POSSIBLE via git (untracked 7.0MB PostScript). Operator must retain backup.",
+      "rollback_complexity": "IRREVERSIBLE without operator backup",
+      "residual_risk_if_not_rolled_back": "MEDIUM — same as F5-013"
+    },
+    {
+      "item_id": "F5-015",
+      "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+      "proposed_future_command": "SUPPLY CHAIN DECISION REQUIRED — command depends on operator choice",
+      "precondition": "Operator must select integration strategy (submodule / vendor / remove / quarantine) via separate decision prompt",
+      "post_action_validation": "Depends on chosen strategy",
+      "rollback_command": "Depends on chosen strategy; removal would be irreversible for untracked files",
+      "rollback_complexity": "HIGH — 42 files including a nested .git; removal touches multiple untracked files",
+      "residual_risk_if_not_rolled_back": "LOW — the directory is untracked, so it doesn't affect git state"
+    }
+  ]
+}

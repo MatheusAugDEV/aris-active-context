@@ -882,5 +882,33 @@
         "artifacts/lapidarium/lapidarium_fase4b_no_cleanup_execution_attestation.json",
         "artifacts/lapidarium/lapidarium_fase4b_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase4b_report.md"
+    ],
+    "lapidarium_fase5_completed": true,
+    "lapidarium_fase5_completion_date": "2026-06-30",
+    "lapidarium_fase5_decision": "pass",
+    "lapidarium_fase5_plan_only": true,
+    "lapidarium_fase5_cleanup_executed": false,
+    "lapidarium_fase5_files_deleted": false,
+    "lapidarium_fase5_files_moved": false,
+    "lapidarium_fase5_git_rm_executed": false,
+    "lapidarium_fase5_candidate_count": 16,
+    "lapidarium_fase5_remove_candidate_count": 9,
+    "lapidarium_fase5_quarantine_candidate_count": 0,
+    "lapidarium_fase5_needs_operator_decision_count": 2,
+    "lapidarium_fase5_blocked_count": 3,
+    "lapidarium_fase5_keep_count": 1,
+    "lapidarium_fase5_operator_approval_required_per_item": true,
+    "lapidarium_fase5_no_secret_print": true,
+    "lapidarium_fase5_no_real_execution": true,
+    "lapidarium_fase5_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase5_cleanup_execution_plan_packet.json",
+        "artifacts/lapidarium/lapidarium_fase5_cleanup_candidate_inventory.json",
+        "artifacts/lapidarium/lapidarium_fase5_item_decision_matrix.json",
+        "artifacts/lapidarium/lapidarium_fase5_operator_approval_matrix.json",
+        "artifacts/lapidarium/lapidarium_fase5_rollback_plan.json",
+        "artifacts/lapidarium/lapidarium_fase5_blocked_or_deferred_items.json",
+        "artifacts/lapidarium/lapidarium_fase5_no_cleanup_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase5_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase5_report.md"
     ]
 }
