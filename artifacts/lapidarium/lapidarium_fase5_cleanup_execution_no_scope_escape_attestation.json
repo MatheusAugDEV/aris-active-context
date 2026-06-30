@@ -1,0 +1,38 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_no_scope_escape_attestation",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "decision": "pass",
+  "guards_respected": [
+    "AC-READ", "AUTHORIZED-ITEMS-ONLY", "MINIMAL-SAFE-SET", "NO-INFERENCE",
+    "NO-BULK-CLEANUP", "NO-SECRETS", "NO-SECRET-PRINT", "NO-RUNTIME",
+    "NO-REAL-APPLY", "NO-PRODUCT", "NO-BEDROCK", "NO-HISTORY-REWRITE",
+    "NO-FORCE-PUSH", "MAIN-ONLY", "COMMIT-PUSH-HASH"
+  ],
+  "attestation": {
+    "only_authorized_items_removed": true,
+    "items_authorized": ["F5-001","F5-002","F5-003","F5-007","F5-008","F5-009","F5-010","F5-011","F5-012"],
+    "f5_006_preserved": true,
+    "f5_004_f5_005_preserved": true,
+    "f5_013_f5_014_f5_015_preserved": true,
+    "env_preserved": true,
+    "env_not_read": true,
+    "env_not_printed": true,
+    "no_glob_used": true,
+    "no_find_delete_used": true,
+    "no_rm_rf_used": true,
+    "no_bulk_cleanup": true,
+    "no_directory_removed_by_inference": true,
+    "no_runtime_executed": true,
+    "no_bedrock_called": true,
+    "no_product_called": true,
+    "no_real_apply": true,
+    "no_history_rewrite": true,
+    "no_force_push": true,
+    "shell_false_for_all_subprocess_calls": true,
+    "f011_path_resolved_via_null_delimited_ls_files": true,
+    "precheck_ran_before_actions": true,
+    "postcheck_ran_after_actions": true,
+    "scope_escape": false
+  }
+}

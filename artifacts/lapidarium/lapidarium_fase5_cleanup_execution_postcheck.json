@@ -1,0 +1,34 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_postcheck",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "decision": "pass",
+  "authorized_items_removed": [
+    {"item_id":"F5-001","path":"temp_audit/ambiguity_resolver_report.md",       "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-002","path":"temp_audit/ambiguity_resolver_summary.json",    "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-003","path":"temp_audit/ambiguity_resolution_samples.jsonl", "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-007","path":"legacy/wake/wake.py.backup",                    "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-008","path":"legacy/experiments/tart=always",                "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-009","path":"debug_audio.wav",                               "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-010","path":"teste.wav",                                     "on_disk":false,"still_tracked":false,"removed_ok":true},
+    {"item_id":"F5-011","path":"[:alnum:] \\n \\",                              "on_disk":false,"still_tracked":false,"still_in_index_scan":false,"removed_ok":true,"note":"Confirmed absent from git ls-files -z full scan post-removal"},
+    {"item_id":"F5-012","path":"how --stat --summary 5dda82a",                  "on_disk":false,"still_tracked":false,"removed_ok":true}
+  ],
+  "not_authorized_items_preserved": [
+    {"item_id":"F5-004","path":"temp_audit/f15z1",                                              "exists":true,"preserved":true},
+    {"item_id":"F5-005","path":"temp_audit/f15z1_post_z3",                                      "exists":true,"preserved":true},
+    {"item_id":"F5-006","path":"legacy/wake/tts.py.backup",                                     "exists":true,"preserved":true},
+    {"item_id":"F5-013","path":"legacy/experiments/genai",                                      "exists":true,"preserved":true},
+    {"item_id":"F5-014","path":"legacy/experiments/threading",                                  "exists":true,"preserved":true},
+    {"item_id":"F5-015","path":"external/mcp_candidates/gogogadgetbytes_smart_connections_mcp", "exists":true,"preserved":true},
+    {"item_id":"F5-016","path":".env",                                                          "exists":true,"preserved":true,"note":"Not read or printed"}
+  ],
+  "removed_ok_count": 9,
+  "removed_ok_total": 9,
+  "preserved_ok_count": 7,
+  "preserved_ok_total": 7,
+  "env_accessed": false,
+  "secrets_printed": false,
+  "scope_escape": false,
+  "postcheck_overall": "PASS"
+}

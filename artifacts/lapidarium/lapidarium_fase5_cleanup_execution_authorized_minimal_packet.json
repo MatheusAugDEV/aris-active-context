@@ -1,0 +1,104 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_authorized_minimal_packet",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "sha_at_start": "0a64f632bd25e50c29112a4468298b72ee31af73",
+  "decision": "pass",
+  "execution_type": "authorized_minimal_safe_set",
+  "authorized_items": [
+    {
+      "item_id": "F5-001",
+      "path": "temp_audit/ambiguity_resolver_report.md",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Temp audit output — generated report, no longer needed",
+      "removed": true
+    },
+    {
+      "item_id": "F5-002",
+      "path": "temp_audit/ambiguity_resolver_summary.json",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Temp audit output — generated summary, no longer needed",
+      "removed": true
+    },
+    {
+      "item_id": "F5-003",
+      "path": "temp_audit/ambiguity_resolution_samples.jsonl",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Temp audit output — generated samples, no longer needed",
+      "removed": true
+    },
+    {
+      "item_id": "F5-007",
+      "path": "legacy/wake/wake.py.backup",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Backup of wake.py; active wake.py still present; backup adds no value",
+      "removed": true
+    },
+    {
+      "item_id": "F5-008",
+      "path": "legacy/experiments/tart=always",
+      "type": "untracked",
+      "action": "rm",
+      "reason": "Untracked misnamed file; not in git history",
+      "removed": true
+    },
+    {
+      "item_id": "F5-009",
+      "path": "debug_audio.wav",
+      "type": "untracked",
+      "action": "rm",
+      "reason": "Untracked debug audio artifact",
+      "removed": true
+    },
+    {
+      "item_id": "F5-010",
+      "path": "teste.wav",
+      "type": "untracked",
+      "action": "rm",
+      "reason": "Untracked test audio file",
+      "removed": true
+    },
+    {
+      "item_id": "F5-011",
+      "path": "[:alnum:] \\n \\",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Accidental pager capture with POSIX character class in filename; corrupt overstrike artifact from Lapidarium Fase 4B investigation",
+      "removed": true,
+      "note": "Path resolved via git ls-files -z null-delimited scan; subprocess with shell=False"
+    },
+    {
+      "item_id": "F5-012",
+      "path": "how --stat --summary 5dda82a",
+      "type": "tracked",
+      "action": "git rm",
+      "reason": "Accidental pager capture with CLI flags in filename; corrupt overstrike artifact from Lapidarium Fase 4B investigation",
+      "removed": true
+    }
+  ],
+  "not_authorized_items": [
+    {"item_id":"F5-004","path":"temp_audit/f15z1",                                              "preserved":true,"reason":"Possible gate marker — operator must read content before authorizing"},
+    {"item_id":"F5-005","path":"temp_audit/f15z1_post_z3",                                      "preserved":true,"reason":"Possible gate marker — operator must read content before authorizing"},
+    {"item_id":"F5-006","path":"legacy/wake/tts.py.backup",                                     "preserved":true,"reason":"May be only copy of TTS code — separate decision required"},
+    {"item_id":"F5-013","path":"legacy/experiments/genai",                                      "preserved":true,"reason":"BLOCKED: PostScript binary, origin unconfirmed (F4-FIND-003)"},
+    {"item_id":"F5-014","path":"legacy/experiments/threading",                                  "preserved":true,"reason":"BLOCKED: PostScript binary, origin unconfirmed (F4-FIND-003)"},
+    {"item_id":"F5-015","path":"external/mcp_candidates/gogogadgetbytes_smart_connections_mcp", "preserved":true,"reason":"BLOCKED: Nested git repo, supply chain decision pending (F4-FIND-002)"},
+    {"item_id":"F5-016","path":".env",                                                          "preserved":true,"reason":"KEEP: Correctly gitignored; rotation is operator responsibility"}
+  ],
+  "counts": {
+    "authorized": 9,
+    "removed": 9,
+    "not_authorized": 7,
+    "preserved": 7
+  },
+  "guards_respected": [
+    "AC-READ", "AUTHORIZED-ITEMS-ONLY", "MINIMAL-SAFE-SET", "NO-INFERENCE",
+    "NO-BULK-CLEANUP", "NO-SECRETS", "NO-SECRET-PRINT", "NO-RUNTIME",
+    "NO-REAL-APPLY", "NO-PRODUCT", "NO-BEDROCK", "NO-HISTORY-REWRITE",
+    "NO-FORCE-PUSH", "MAIN-ONLY", "COMMIT-PUSH-HASH"
+  ]
+}

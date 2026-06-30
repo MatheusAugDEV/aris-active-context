@@ -1,0 +1,31 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_precheck",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "sha_at_start": "0a64f632bd25e50c29112a4468298b72ee31af73",
+  "decision": "pass",
+  "authorized_set": ["F5-001","F5-002","F5-003","F5-007","F5-008","F5-009","F5-010","F5-011","F5-012"],
+  "not_authorized_set": ["F5-004","F5-005","F5-006","F5-013","F5-014","F5-015","F5-016"],
+  "precheck_items": [
+    {"item_id":"F5-001","path":"temp_audit/ambiguity_resolver_report.md",       "type":"tracked",   "exists":true,"size_bytes":2009, "ok":true},
+    {"item_id":"F5-002","path":"temp_audit/ambiguity_resolver_summary.json",    "type":"tracked",   "exists":true,"size_bytes":490,  "ok":true},
+    {"item_id":"F5-003","path":"temp_audit/ambiguity_resolution_samples.jsonl", "type":"tracked",   "exists":true,"size_bytes":9351, "ok":true},
+    {"item_id":"F5-007","path":"legacy/wake/wake.py.backup",                    "type":"tracked",   "exists":true,"size_bytes":7219, "ok":true},
+    {"item_id":"F5-008","path":"legacy/experiments/tart=always",                "type":"untracked", "exists":true,"size_bytes":1700, "ok":true},
+    {"item_id":"F5-009","path":"debug_audio.wav",                               "type":"untracked", "exists":true,"size_bytes":265600,"ok":true},
+    {"item_id":"F5-010","path":"teste.wav",                                     "type":"untracked", "exists":true,"size_bytes":40044,"ok":true},
+    {"item_id":"F5-011","path":"[:alnum:] \\n \\",                              "type":"tracked",   "exists":true,"size_bytes":15915,"ok":true,"note":"Filename resolved via git ls-files -z null-delimited scan"},
+    {"item_id":"F5-012","path":"how --stat --summary 5dda82a",                  "type":"tracked",   "exists":true,"size_bytes":15915,"ok":true}
+  ],
+  "not_authorized_precheck": [
+    {"item_id":"F5-004","path":"temp_audit/f15z1",                                              "exists":true},
+    {"item_id":"F5-005","path":"temp_audit/f15z1_post_z3",                                      "exists":true},
+    {"item_id":"F5-006","path":"legacy/wake/tts.py.backup",                                     "exists":true},
+    {"item_id":"F5-013","path":"legacy/experiments/genai",                                      "exists":true},
+    {"item_id":"F5-014","path":"legacy/experiments/threading",                                  "exists":true},
+    {"item_id":"F5-015","path":"external/mcp_candidates/gogogadgetbytes_smart_connections_mcp", "exists":true},
+    {"item_id":"F5-016","path":".env",                                                          "exists":true}
+  ],
+  "precheck_overall": "PASS",
+  "f011_resolution_note": "F5-011 exact filename resolved from git ls-files -z as bytes b'[:alnum:] \\\\n \\\\'; decoded to '[:alnum:] \\\\n \\\\'; exists on disk and tracked confirmed before action"
+}

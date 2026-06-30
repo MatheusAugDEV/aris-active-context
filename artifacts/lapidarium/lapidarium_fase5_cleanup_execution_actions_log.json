@@ -1,0 +1,96 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_actions_log",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "all_actions_succeeded": true,
+  "actions": [
+    {
+      "item_id": "F5-001",
+      "path": "temp_audit/ambiguity_resolver_report.md",
+      "action": "git rm -- temp_audit/ambiguity_resolver_report.md",
+      "returncode": 0,
+      "stdout": "rm 'temp_audit/ambiguity_resolver_report.md'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-002",
+      "path": "temp_audit/ambiguity_resolver_summary.json",
+      "action": "git rm -- temp_audit/ambiguity_resolver_summary.json",
+      "returncode": 0,
+      "stdout": "rm 'temp_audit/ambiguity_resolver_summary.json'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-003",
+      "path": "temp_audit/ambiguity_resolution_samples.jsonl",
+      "action": "git rm -- temp_audit/ambiguity_resolution_samples.jsonl",
+      "returncode": 0,
+      "stdout": "rm 'temp_audit/ambiguity_resolution_samples.jsonl'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-007",
+      "path": "legacy/wake/wake.py.backup",
+      "action": "git rm -- legacy/wake/wake.py.backup",
+      "returncode": 0,
+      "stdout": "rm 'legacy/wake/wake.py.backup'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-011",
+      "path": "[:alnum:] \\n \\",
+      "action": "git rm -- '[:alnum:] \\n \\'",
+      "returncode": 0,
+      "stdout": "rm '[...alnum...] \\n \\'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true,
+      "note": "Path resolved via git ls-files -z null-delimited; subprocess(['git','rm','--', name]) with shell=False to prevent metacharacter expansion"
+    },
+    {
+      "item_id": "F5-012",
+      "path": "how --stat --summary 5dda82a",
+      "action": "git rm -- 'how --stat --summary 5dda82a'",
+      "returncode": 0,
+      "stdout": "rm 'how --stat --summary 5dda82a'",
+      "post_tracked": false,
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-008",
+      "path": "legacy/experiments/tart=always",
+      "action": "rm -- legacy/experiments/tart=always",
+      "returncode": 0,
+      "pre_tracked_check": "git ls-files returned empty — confirmed untracked before rm",
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-009",
+      "path": "debug_audio.wav",
+      "action": "rm -- debug_audio.wav",
+      "returncode": 0,
+      "pre_tracked_check": "git ls-files returned empty — confirmed untracked before rm",
+      "post_on_disk": false,
+      "ok": true
+    },
+    {
+      "item_id": "F5-010",
+      "path": "teste.wav",
+      "action": "rm -- teste.wav",
+      "returncode": 0,
+      "pre_tracked_check": "git ls-files returned empty — confirmed untracked before rm",
+      "post_on_disk": false,
+      "ok": true
+    }
+  ]
+}

@@ -1,10 +1,41 @@
+## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET
+
+- Status: `lapidarium_fase5_cleanup_executed`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: Authorized cleanup of 9 items. Precheck=PASS, Postcheck=PASS. CI=green. HEAD==origin/main.
+- Items removed (9): F5-001 (ambiguity_resolver_report.md), F5-002 (ambiguity_resolver_summary.json), F5-003 (ambiguity_resolution_samples.jsonl), F5-007 (wake.py.backup), F5-008 (tart=always, untracked), F5-009 (debug_audio.wav, untracked), F5-010 (teste.wav, untracked), F5-011 ([:alnum:] \\n \\, overstrike artifact), F5-012 (how --stat --summary 5dda82a, overstrike artifact)
+- Items preserved (not authorized): F5-004, F5-005, F5-006, F5-013, F5-014, F5-015, F5-016
+- F5-006 (tts.py.backup) preserved: may be only TTS code copy — separate operator decision required
+- F5-013/F5-014 (PostScript binaries) preserved: blocked, origin unconfirmed
+- F5-015 (nested git repo) preserved: blocked, supply chain decision pending
+- .env preserved: not read, not printed
+- No scope escape, no glob, no find -delete, no rm -rf, no history rewrite, no force push
+- Artifacts: 8 JSON+MD in artifacts/lapidarium/lapidarium_fase5_cleanup_execution_*
+- SHA before: 0a64f632bd25e50c29112a4468298b72ee31af73
+- Next: Operator reviews F5-006 separately; decides F5-004/F5-005; emits separate prompts for F5-013/F5-014/F5-015 if needed
+
+---
+
+## LAPIDARIUM_FASE_5_COUNT_MATRIX_RECONCILIATION_REPAIR
+
+- Status: `lapidarium_fase5_count_matrix_reconciliation_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: Governance-repair-only. No cleanup executed. No item authorized. Fixed arithmetic drift in Fase 5 artifacts: remove_candidate_count 9→10, blocked_count summary 4→3. Contradictory note removed from plan_packet.
+- Artifacts corrected: lapidarium_fase5_item_decision_matrix.json, lapidarium_fase5_cleanup_execution_plan_packet.json
+- State corrected: ACTIVE_CONTEXT_STATE.json lapidarium_fase5_remove_candidate_count 9→10, CURRENT_STATE.md mirror
+- Artifacts created: 4 count_matrix_* JSON files in artifacts/lapidarium/
+
+---
+
 ## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN
 
 - Status: `lapidarium_fase5_pass`
 - Decision: `pass`
 - Date: `2026-06-30`
 - Scope: Plan-only. 16 cleanup candidates surveyed and classified. No files deleted, moved, or removed from git. No secrets read.
-- Candidate counts: remove_candidate=9, needs_operator_decision=2, blocked=3, keep=1
+- Candidate counts: remove_candidate=10, needs_operator_decision=2, blocked=3, keep=1
 - Remove candidates: temp_audit/ (3 files), legacy/wake/*.backup (2), tart=always, debug_audio.wav, teste.wav, shell artifact files (2)
 - Needs operator decision: temp_audit/f15z1, temp_audit/f15z1_post_z3
 - Blocked: legacy/experiments/genai (F4-FIND-003), legacy/experiments/threading (F4-FIND-003), external/mcp_candidates/... (F4-FIND-002)

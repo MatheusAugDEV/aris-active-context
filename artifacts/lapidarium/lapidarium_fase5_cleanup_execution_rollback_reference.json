@@ -1,0 +1,24 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_rollback_reference",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+  "generated_at": "2026-06-30T03:00:00Z",
+  "sha_before_cleanup": "0a64f632bd25e50c29112a4468298b72ee31af73",
+  "rollback_procedure": {
+    "description": "To restore the 6 tracked files removed from git history, checkout from the SHA before this commit.",
+    "command_tracked": "git checkout 0a64f632bd25e50c29112a4468298b72ee31af73 -- temp_audit/ambiguity_resolver_report.md temp_audit/ambiguity_resolver_summary.json temp_audit/ambiguity_resolution_samples.jsonl legacy/wake/wake.py.backup 'how --stat --summary 5dda82a'",
+    "command_f011": "git show 0a64f632bd25e50c29112a4468298b72ee31af73:'[:alnum:] \\n \\' > '[:alnum:] \\n \\' && git add -- '[:alnum:] \\n \\'",
+    "untracked_files_note": "F5-008 (legacy/experiments/tart=always), F5-009 (debug_audio.wav), F5-010 (teste.wav) were UNTRACKED and are NOT recoverable from git history. They must be restored from an external backup if needed.",
+    "full_rollback": "git revert HEAD --no-edit  # reverts the entire cleanup commit"
+  },
+  "items_rollback_matrix": [
+    {"item_id":"F5-001","path":"temp_audit/ambiguity_resolver_report.md",       "recoverable_from_git":true},
+    {"item_id":"F5-002","path":"temp_audit/ambiguity_resolver_summary.json",    "recoverable_from_git":true},
+    {"item_id":"F5-003","path":"temp_audit/ambiguity_resolution_samples.jsonl", "recoverable_from_git":true},
+    {"item_id":"F5-007","path":"legacy/wake/wake.py.backup",                    "recoverable_from_git":true},
+    {"item_id":"F5-008","path":"legacy/experiments/tart=always",                "recoverable_from_git":false,"note":"Was untracked — not in git history"},
+    {"item_id":"F5-009","path":"debug_audio.wav",                               "recoverable_from_git":false,"note":"Was untracked — not in git history"},
+    {"item_id":"F5-010","path":"teste.wav",                                     "recoverable_from_git":false,"note":"Was untracked — not in git history"},
+    {"item_id":"F5-011","path":"[:alnum:] \\n \\",                              "recoverable_from_git":true,"note":"Overstrike artifact; recoverable but content was corrupt pager output"},
+    {"item_id":"F5-012","path":"how --stat --summary 5dda82a",                  "recoverable_from_git":true,"note":"Overstrike artifact; recoverable but content was corrupt pager output"}
+  ]
+}
