@@ -1,0 +1,28 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_remaining_low_scope_packet",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET",
+  "generated_at": "2026-06-30T03:30:00Z",
+  "decision": "pass",
+  "project_repo": "Project_ARIS",
+  "project_repo_head_before_action": "2293ae51b9b093c18b63aa853400cd166b0853e5",
+  "project_repo_head_after_action": "0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c",
+  "authorized_items": [
+    "F5-004",
+    "F5-005",
+    "F5-006"
+  ],
+  "actual_mutations": [
+    "F5-006 removed"
+  ],
+  "precheck_discrepancy": [
+    "F5-004 already absent from current Project_ARIS HEAD/index",
+    "F5-005 already absent from current Project_ARIS HEAD/index"
+  ],
+  "blocked_items_untouched": [
+    "F5-013",
+    "F5-014",
+    "F5-015",
+    "F5-016"
+  ],
+  "no_scope_escape": true
+}

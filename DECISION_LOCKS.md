@@ -17,6 +17,20 @@
 
 ---
 
+## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET
+
+- Status: `lapidarium_fase5_remaining_low_scope_cleanup_execution_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: Actual cleanup execution for the remaining low-scope set. F5-006 was removed. F5-004 and F5-005 were already absent from the current Project_ARIS HEAD/index and required no new mutation in this execution. F5-013/F5-014/F5-015 remained untouched. `.env` was not read.
+- Locks opened: none. All execution locks remain false.
+- No history rewrite. No force push. No runtime. No product. No Bedrock.
+- Artifacts: `artifacts/lapidarium/lapidarium_fase5_cleanup_execution_remaining_low_scope_*`
+- Project CI: success (`28416738257`)
+- Next: separate operator prompts only for any blocked F5-013/F5-014/F5-015 follow-up, if ever authorized.
+
+---
+
 ## LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET
 
 - Status: `lapidarium_fase5_cleanup_executed`

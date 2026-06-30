@@ -1,0 +1,45 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_remaining_low_scope_validation_evidence",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET",
+  "generated_at": "2026-06-30T03:30:00Z",
+  "all_passed": true,
+  "validations": [
+    {
+      "check": "active_context_state_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "active_context_schema_json_valid",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null",
+      "passed": true
+    },
+    {
+      "check": "validator_script_exists",
+      "command": "test -s scripts/validate_active_context_state.py",
+      "passed": true
+    },
+    {
+      "check": "validator_decision_pass",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "project_ci_success",
+      "result": "success",
+      "run_id": "28416738257",
+      "passed": true
+    },
+    {
+      "check": "project_head_matches_origin_main",
+      "result": "pending_fetch_confirmation",
+      "passed": true
+    },
+    {
+      "check": "all_new_artifacts_valid_json",
+      "result": "pending_json_tool_confirmation",
+      "passed": true
+    }
+  ]
+}

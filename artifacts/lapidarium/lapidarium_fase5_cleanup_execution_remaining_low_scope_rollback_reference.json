@@ -1,0 +1,23 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_remaining_low_scope_rollback_reference",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET",
+  "generated_at": "2026-06-30T03:30:00Z",
+  "rollback_reference": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "rollback_command": "git checkout 5125c4d3 -- temp_audit/f15z1/"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "rollback_command": "git checkout 5125c4d3 -- temp_audit/f15z1_post_z3/"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "rollback_command": "git checkout dcf6da5f -- legacy/wake/tts.py.backup"
+    }
+  ],
+  "no_scope_escape": true
+}

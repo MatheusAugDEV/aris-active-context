@@ -1,0 +1,60 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_remaining_low_scope_precheck",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET",
+  "generated_at": "2026-06-30T03:30:00Z",
+  "decision": "pass",
+  "authorized_set": [
+    "F5-004",
+    "F5-005",
+    "F5-006"
+  ],
+  "authorized_set_exact_match": true,
+  "precheck": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "disk": "absent",
+      "index": "absent",
+      "required_action": "no_op_already_absent"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "disk": "absent",
+      "index": "absent",
+      "required_action": "no_op_already_absent"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "disk": "present",
+      "index": "present",
+      "required_action": "git rm -- legacy/wake/tts.py.backup"
+    }
+  ],
+  "blocked_items_status": [
+    {
+      "item_id": "F5-013",
+      "path": "legacy/experiments/genai",
+      "status": "not_touched"
+    },
+    {
+      "item_id": "F5-014",
+      "path": "legacy/experiments/threading",
+      "status": "not_touched"
+    },
+    {
+      "item_id": "F5-015",
+      "path": "external/mcp_candidates/gogogadgetbytes_smart_connections_mcp",
+      "status": "not_touched"
+    },
+    {
+      "item_id": "F5-016",
+      "path": ".env",
+      "status": "not_read_or_printed"
+    }
+  ],
+  "env_read": false,
+  "env_printed": false,
+  "stale_inventory_detected": true
+}

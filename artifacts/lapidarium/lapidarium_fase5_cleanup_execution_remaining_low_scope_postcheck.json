@@ -1,0 +1,38 @@
+{
+  "artifact_id": "lapidarium_fase5_cleanup_execution_remaining_low_scope_postcheck",
+  "phase": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_REMAINING_LOW_SCOPE_SET",
+  "generated_at": "2026-06-30T03:30:00Z",
+  "decision": "pass",
+  "postcheck": [
+    {
+      "item_id": "F5-004",
+      "path": "temp_audit/f15z1",
+      "disk": "absent",
+      "index": "absent"
+    },
+    {
+      "item_id": "F5-005",
+      "path": "temp_audit/f15z1_post_z3",
+      "disk": "absent",
+      "index": "absent"
+    },
+    {
+      "item_id": "F5-006",
+      "path": "legacy/wake/tts.py.backup",
+      "disk": "absent",
+      "index": "absent"
+    }
+  ],
+  "blocked_items_untouched": [
+    "F5-013",
+    "F5-014",
+    "F5-015",
+    "F5-016"
+  ],
+  "env_read": false,
+  "env_printed": false,
+  "project_ci": {
+    "run_id": "28416738257",
+    "status": "success"
+  }
+}
