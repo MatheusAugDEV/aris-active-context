@@ -1,0 +1,82 @@
+{
+    "artifact_id": "lapidarium_f4_find001_env_tracking_evidence",
+    "date": "2026-06-30",
+    "phase_id": "LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT",
+    "note": "No .env content is printed, read, or stored in this artifact.",
+    "commands": [
+        {
+            "cmd": "git ls-files -- .env",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        },
+        {
+            "cmd": "git ls-files -- .env",
+            "cwd": "/home/matheus/ARIS/Project_ARIS/aris-active-context",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        },
+        {
+            "cmd": "git log --all --oneline --diff-filter=A -- .env 2>&1 | head -5",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        },
+        {
+            "cmd": "git log --all --oneline --diff-filter=D -- .env 2>&1 | head -5",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        },
+        {
+            "cmd": "git check-ignore -v .env 2>&1",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": ".gitignore:6:*.env\t.env",
+            "stderr": ""
+        },
+        {
+            "cmd": "test -f .env && echo EXISTS || echo MISSING",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "EXISTS",
+            "stderr": ""
+        },
+        {
+            "cmd": "test -f .env.example && echo EXISTS || echo MISSING",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "EXISTS",
+            "stderr": ""
+        },
+        {
+            "cmd": "grep -n '^.env' /home/matheus/ARIS/Project_ARIS/.gitignore | head -10",
+            "cwd": "/home/matheus/ARIS/Project_ARIS/aris-active-context",
+            "exit_code": 0,
+            "stdout": "1:.env\n2:.env.*\n4:.env.local\n5:.envrc\n12:venv/",
+            "stderr": ""
+        },
+        {
+            "cmd": "git status --short 2>&1 | head -5",
+            "cwd": "/home/matheus/ARIS/Project_ARIS",
+            "exit_code": 0,
+            "stdout": "M PROJECT_CONTEXT_ARIS.md\n M artifacts/acb_cap_05/advanced_supply_chain_decision.json\n M artifacts/acb_cap_05/advanced_supply_chain_report.md\n M artifacts/acb_cap_05/advanced_supply_chain_summary.json\n M artifacts/acb_cap_05/attestation_envelope.json",
+            "stderr": ""
+        }
+    ],
+    "interpretation": {
+        "ls_files_before": "0 entries — .env was NOT tracked in Project_ARIS",
+        "ls_files_active_context": "0 entries — .env was NOT tracked in aris-active-context",
+        "git_log_added": "empty — .env was never committed",
+        "git_log_deleted": "empty — .env was never committed",
+        "check_ignore": ".gitignore:6:*.env — rule confirmed active, .env is correctly ignored",
+        "env_on_disk": "EXISTS — file preserved locally, not deleted",
+        "env_example": "EXISTS — template already present, not overwritten",
+        "gitignore_rule": "Line 1: '.env' (exact) + Line 6: '*.env' (glob) — comprehensive coverage",
+        "conclusion": "No git rm --cached was needed. Containment was already effective before this phase."
+    }
+}

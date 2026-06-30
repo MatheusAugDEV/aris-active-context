@@ -2,76 +2,62 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO (2026-06-30)
+> Última atualização: LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL NEXT ACTION (Após Fase 4)
+## CURRENT CANONICAL NEXT ACTION
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
-- **lapidarium_fase4_decision:** `pass`
-- **sha_lido:** `43503baad5012d8a921ba2b2f534e08ae2e9474b`
+- **sha_lido:** `bf0728b4e511272117133cd97497c7382174dbad`
 
-### Status da Fase 4
+### Status Atual
 
-A **Fase 4 foi concluída com sucesso como read-only review** em 2026-06-30.
+A **contenção de F4-FIND-001 foi registrada com decisão=pass** em 2026-06-30.
 
-- 3.875 candidatos sanitizados revisados e classificados
-- 3.808 (98,3%) são código genuíno de alta confiança (A+B+C+D)
-- 67 requerem revisão do operador antes de qualquer ação
-- Nenhum arquivo foi deletado, movido ou alterado
-- Todos os locks reais permaneceram `false`
+Resultado principal: `.env` nunca estava git-tracked — o campo `git_tracked=True` no dataset
+da Fase 1 era um falso positivo do scanner. O `.gitignore` já tinha regras adequadas.
+Nenhuma ação técnica de remoção foi necessária.
 
-### Próximas Ações Recomendadas (por prioridade)
+---
 
-**1. IMEDIATO — SEGURANÇA (independente das fases):**
-Remover `.env` do git tracking e rotar segredos (F4-FIND-001).
-```
-git rm --cached .env
-echo ".env" >> .gitignore  # se ainda não constar
-# rotar todos os segredos
-```
-Isso NÃO exige prompt de fase — é uma remediação de segurança urgente.
+### Próximas Ações (por prioridade)
 
-**2. FASE 4B — Generator Repair (recomendado antes de cleanup):**
-Emitir prompt para `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`.
-Corrige o bug de quoting do generator da Fase 1 que produziu 2 artifacts acidentais.
-Impede reintrodução dos mesmos artefatos corrompidos em regenerações futuras.
+**1. OPERADOR — Rotação de Segredos (manual, independente de fase):**
+Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
+- Avaliar risco de exposição do `.env` local (861 bytes)
+- Rotacionar credenciais se houver risco de exposição por outros meios além do git
+- Esta ação não requer prompt de fase — é responsabilidade do operador
 
-**3. FASE 5 — Cleanup Execution Plan:**
-Emitir prompt para `LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN`.
-Planejamento cirúrgico de remoção de lixo confirmado:
-- `temp_audit/` (2 arquivos de auditoria derivados)
-- `legacy/wake/tts.py.backup`, `legacy/wake/wake.py.backup`
-- `legacy/experiments/tart=always` (sujeito a inspeção confirmando shell output)
-- `legacy/experiments/genai` e `legacy/experiments/threading` (sujeito a confirmação PostScript acidental)
+**2. LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR (próxima fase recomendada):**
+- Corrigir bug de quoting/escaping do generator da Fase 1
+- Investigar também o método de detecção de `git_tracked` (que produziu o falso positivo FP-05)
+- Emitir prompt explícito para iniciar
+- Requer: CI green atual ✓ | validator pass ✓ | F4-FIND-001 containment registrado ✓
 
-**4. SUPPLY CHAIN — External MCP:**
-Decidir destino de `external/mcp_candidates/gogogadgetbytes_smart_connections_mcp/` (F4-FIND-002).
-Não iniciar sem decisão do operador.
+**3. LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN (após 4B):**
+- Planejamento cirúrgico de remoção de lixo confirmado
+- Requer 4B concluída e decisão do operador por item
+
+**4. Findings pendentes de decisão do operador (não requerem nova fase imediata):**
+- F4-FIND-002: Nested Git repo em `external/mcp_candidates/` — decidir submodule/vendor/remove
+- F4-FIND-003: PostScript binários em `legacy/experiments/` — inspecionar antes de qualquer remoção
+- F4-FIND-004: Bug do generator — coberto por Fase 4B
+
+---
 
 ### Aguardando Instrução
 
-A execução da próxima subfase depende de instrução explícita do operador.
-Nenhuma ação de cleanup, generator repair ou remoção de arquivo será iniciada
-sem prompt específico. Todos os locks reais permanecem `false`.
+Todos os locks reais permanecem `false`. Nenhuma ação de cleanup, runtime ou produto
+será iniciada sem instrução explícita do operador.
 
 ---
 
 ## Historical Appendix
 
 `HISTORICAL_ONLY`
-`SUPERSEDED_BY_LAPIDARIUM_FASE4`
+`SUPERSEDED_BY_LAPIDARIUM_FASE4_AND_F4_FIND001_CONTAINMENT`
 `NOT_CURRENT_STATE`
 
-### IF09 / next_phase=null (HISTORICAL)
-
-`HISTORICAL_ONLY` — O estado IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET com next_phase=null
-é histórico e superseded. A fase viva é LAPIDARIUM com Fase 4 concluída.
-
-### ARIS-CONTEXT P15–P19 (HISTORICAL)
-
-`HISTORICAL_ONLY`
-`SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
-`NOT_CURRENT_STATE`
+Referências a IF09/next_phase=null e P15–P19 são históricas e superseded.

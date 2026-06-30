@@ -1,3 +1,31 @@
+## LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT
+
+- Status: `lapidarium_f4_find001_env_containment_pass_pre_existing`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Source finding: `F4-FIND-001` (LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO)
+- Scope: verification and governance record of .env tracking status; no git rm --cached executed; no secrets read or printed; no history rewrite.
+- Result: .env was NOT git-tracked (git ls-files returns 0 entries; git log --all --diff-filter=A returns empty). git_tracked=True in the Fase 1 dataset was a scanner false positive. .gitignore already had rule on line 1 (.env) and line 6 (*.env). Containment was pre-existing.
+- .env preserved locally: true
+- .gitignore rule confirmed: true
+- git rm --cached executed: false (not needed)
+- history rewrite: false
+- force push: false
+- secret printed or copied: false
+- rotation_pending_operator: true — operator must assess exposure risk and rotate credentials as appropriate
+- false_positive_finding: The fase1_triagem_classificacao.json git_tracked=True for .env was a scanner false positive; contributes evidence for F4-FIND-004 (generator reliability issue).
+- Artifacts created:
+  - artifacts/lapidarium/lapidarium_f4_find001_env_containment_packet.json
+  - artifacts/lapidarium/lapidarium_f4_find001_env_tracking_evidence.json
+  - artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md
+  - artifacts/lapidarium/lapidarium_f4_find001_no_secret_exposure_attestation.json
+  - artifacts/lapidarium/lapidarium_f4_find001_validation_evidence.json
+- Locks opened: none — all execution locks remain false
+- No Project_ARIS mutation. No runtime/real_apply/product/Bedrock/secrets.
+- Next recommended: LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR
+
+---
+
 ## LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO
 
 - Status: `lapidarium_fase4_revisao_codigo_genuino_pass`

@@ -834,5 +834,25 @@
     ],
     "lapidarium_fase4_no_lock_opened": true,
     "lapidarium_fase4_project_aris_unchanged": true,
-    "lapidarium_fase4_readonly_confirmed": true
+    "lapidarium_fase4_readonly_confirmed": true,
+    "lapidarium_f4_find001_containment_completed": true,
+    "lapidarium_f4_find001_containment_date": "2026-06-30",
+    "lapidarium_f4_find001_containment_decision": "pass",
+    "lapidarium_f4_find001_containment_status": "lapidarium_f4_find001_env_containment_pass_pre_existing",
+    "lapidarium_f4_find001_env_was_tracked": false,
+    "lapidarium_f4_find001_env_tracked_after": false,
+    "lapidarium_f4_find001_env_preserved_locally": true,
+    "lapidarium_f4_find001_gitignore_rule_confirmed": true,
+    "lapidarium_f4_find001_git_rm_cached_executed": false,
+    "lapidarium_f4_find001_false_positive_in_fase1_dataset": true,
+    "lapidarium_f4_find001_history_rewrite_executed": false,
+    "lapidarium_f4_find001_secret_printed": false,
+    "lapidarium_f4_find001_rotation_pending_operator": true,
+    "lapidarium_f4_find001_artifacts": [
+        "artifacts/lapidarium/lapidarium_f4_find001_env_containment_packet.json",
+        "artifacts/lapidarium/lapidarium_f4_find001_env_tracking_evidence.json",
+        "artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md",
+        "artifacts/lapidarium/lapidarium_f4_find001_no_secret_exposure_attestation.json",
+        "artifacts/lapidarium/lapidarium_f4_find001_validation_evidence.json"
+    ]
 }

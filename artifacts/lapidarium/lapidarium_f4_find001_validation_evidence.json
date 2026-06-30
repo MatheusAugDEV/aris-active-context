@@ -1,0 +1,59 @@
+{
+    "artifact_id": "lapidarium_f4_find001_validation_evidence",
+    "date": "2026-06-30",
+    "phase_id": "LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT",
+    "commands": [
+        {
+            "cmd": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json > /dev/null && echo VALID",
+            "exit_code": 0,
+            "stdout": "VALID",
+            "stderr": ""
+        },
+        {
+            "cmd": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json > /dev/null && echo VALID",
+            "exit_code": 0,
+            "stdout": "VALID",
+            "stderr": ""
+        },
+        {
+            "cmd": "test -s scripts/validate_active_context_state.py && echo EXISTS_NONEMPTY",
+            "exit_code": 0,
+            "stdout": "EXISTS_NONEMPTY",
+            "stderr": ""
+        },
+        {
+            "cmd": "python3 scripts/validate_active_context_state.py | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d[\"decision\"])'",
+            "exit_code": 0,
+            "stdout": "pass",
+            "stderr": ""
+        },
+        {
+            "cmd": "git ls-files -- .env",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        },
+        {
+            "cmd": "test -f .env && echo FILE_PRESERVED || echo MISSING",
+            "exit_code": 0,
+            "stdout": "FILE_PRESERVED",
+            "stderr": ""
+        },
+        {
+            "cmd": "git check-ignore -v .env 2>&1",
+            "exit_code": 0,
+            "stdout": ".gitignore:6:*.env\t.env",
+            "stderr": ""
+        },
+        {
+            "cmd": "git log --all --oneline --diff-filter=A -- .env 2>&1 | head -3",
+            "exit_code": 0,
+            "stdout": "",
+            "stderr": ""
+        }
+    ],
+    "validation_5_ls_files_empty": true,
+    "validation_6_env_preserved": true,
+    "validation_7_check_ignore_active": true,
+    "note_validation_8": "Prohibited command (grep content of .env into artifacts) — NOT executed per NO-SECRET-PRINT guard"
+}

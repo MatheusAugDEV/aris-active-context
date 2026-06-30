@@ -1868,6 +1868,51 @@
         },
         "lapidarium_fase4_readonly_confirmed": {
             "type": "boolean"
+        },
+        "lapidarium_f4_find001_containment_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_containment_date": {
+            "type": "string"
+        },
+        "lapidarium_f4_find001_containment_decision": {
+            "type": "string"
+        },
+        "lapidarium_f4_find001_containment_status": {
+            "type": "string"
+        },
+        "lapidarium_f4_find001_env_was_tracked": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_env_tracked_after": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_env_preserved_locally": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_gitignore_rule_confirmed": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_git_rm_cached_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_false_positive_in_fase1_dataset": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_history_rewrite_executed": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_secret_printed": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_rotation_pending_operator": {
+            "type": "boolean"
+        },
+        "lapidarium_f4_find001_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     },
     "required": [

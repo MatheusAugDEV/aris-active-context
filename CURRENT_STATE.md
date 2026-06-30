@@ -2,11 +2,11 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO (2026-06-30)
+> Última atualização: LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 4 Concluída)
+## CURRENT CANONICAL STATE (LAPIDARIUM — F4-FIND-001 Containment Pass)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
@@ -14,68 +14,52 @@
 - **display_name:** `Lapidarium Fase 3 — Verificação de Cache`
 - **status:** `lapidarium_fase_3_cache_verificacao_pass`
 - **phase_class:** `lapidarium_remediation`
-- **sha_lido:** `43503baad5012d8a921ba2b2f534e08ae2e9474b`
+- **sha_lido:** `bf0728b4e511272117133cd97497c7382174dbad`
 
-### Fase 4 — Resultado (Read-Only Review Concluída)
+### Fase 4 — Read-Only Review (Concluída 2026-06-30)
 
-- **lapidarium_fase4_decision:** `pass`
-- **lapidarium_fase4_status:** `lapidarium_fase4_revisao_codigo_genuino_pass`
-- **lapidarium_fase4_date:** `2026-06-30`
-- **lapidarium_fase4_sanitized_count:** `3875`
-- **lapidarium_fase4_high_confidence_genuine_count:** `3808` (98,3%)
-- **lapidarium_fase4_requires_operator_review_count:** `67`
-- **lapidarium_fase4_readonly_confirmed:** `true`
-- **lapidarium_fase4_project_aris_unchanged:** `true`
-- **lapidarium_fase4_no_lock_opened:** `true`
+- `lapidarium_fase4_decision`: `pass`
+- `lapidarium_fase4_sanitized_count`: `3875`
+- `lapidarium_fase4_high_confidence_genuine_count`: `3808` (98,3%)
+- `lapidarium_fase4_readonly_confirmed`: `true`
 
-### Findings Críticos da Fase 4
+### F4-FIND-001 — ENV Containment (Concluído 2026-06-30)
 
-- `F4-FIND-001` [ALTA/SEGURANÇA]: `.env` git-tracked — requer remediação imediata do operador
-- `F4-FIND-002` [MÉDIO]: Repo Git aninhado em `external/mcp_candidates/` sem submodule declarado
-- `F4-FIND-003` [MÉDIO]: `legacy/experiments/genai` e `legacy/experiments/threading` são PostScript binários suspeitos (~28MB total)
-- `F4-FIND-004` [MÉDIO]: Bug de quoting no generator da Fase 1 — corrigir antes de cleanup automático
-
-### Next Phase / Rota Canônica
-
-- **next_phase:** `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- **next_phase_authorized_by_operator:** `true`
-- **Nota:** Fase 4 foi concluída como read-only. A próxima subfase recomendada é
-  `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR` ou `LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN`,
-  dependendo de decisão do operador. Aguardando instrução explícita.
+- **phase:** `LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT`
+- **decision:** `pass`
+- **status:** `lapidarium_f4_find001_env_containment_pass_pre_existing`
+- **env_was_tracked:** `false` — verificação direta confirmou que `.env` nunca foi commitado
+- **env_tracked_after:** `false`
+- **env_preserved_locally:** `true`
+- **gitignore_rule_confirmed:** `true` (linha 1: `.env`, linha 6: `*.env`)
+- **git_rm_cached_executed:** `false` — não necessário
+- **false_positive_in_fase1_dataset:** `true` — `git_tracked=True` era scanner false positive
+- **history_rewrite_executed:** `false`
+- **secret_printed:** `false`
+- **rotation_pending_operator:** `true` — operador deve avaliar risco de exposição e rotacionar se necessário
 
 ### Execution Locks (todos false)
 
 - `real_apply_authorized: false`
 - `production_authorized: false`
-- `product_ready: false`
-- `runtime_integration_allowed: false`
 - `secrets_access_authorized: false`
+- `runtime_integration_allowed: false`
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
-- `host_filesystem_mutation_authorized: false`
 
-### Pre-F4 Drift Repair (PREF4)
+### next_phase
 
-- PREF4 executado em 2026-06-29 — mirrors reparados antes da Fase 4.
-- Entrada registrada em `DECISION_LOCKS.md`.
+- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `next_phase_authorized_by_operator`: `true`
+- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- Aguardando instrução explícita do operador.
 
 ---
 
 ## Historical Appendix
 
 `HISTORICAL_ONLY`
-`SUPERSEDED_BY_LAPIDARIUM_FASE4`
+`SUPERSEDED_BY_LAPIDARIUM_FASE4_AND_F4_FIND001_CONTAINMENT`
 `NOT_CURRENT_STATE`
 
-As seções abaixo preservam histórico de auditoria de fases anteriores.
-
-### IF09 Closure Milestone Mirror Sanity Packet (HISTORICAL)
-
-`HISTORICAL_ONLY` — phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET com next_phase=null
-é estado histórico superseded. A fase canônica viva é LAPIDARIUM.
-
-### ARIS-CONTEXT P15–P19 (HISTORICAL)
-
-`HISTORICAL_ONLY`
-`SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
-`NOT_CURRENT_STATE`
+Seções de IF09 e P15–P19 são históricas. A fase viva é LAPIDARIUM.
