@@ -1,3 +1,34 @@
+## LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR
+
+- Status: `lapidarium_fase4b_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: Root cause analysis and repair of Fase 1 dataset generator. 4 bug classes identified, 5 corrupt entries fixed, 1 git_tracked false positive fixed. Repaired standalone generator written. 39 regression tests, all passing. Dry-run executed — original dataset NOT overwritten.
+- Bugs fixed:
+  - BUG-1: `git ls-files --others` without `--exclude-standard` → .env false positive (git_tracked=True)
+  - BUG-2: Shell command fragment filenames accepted without path validation
+  - BUG-3: Python import tokens ('json', 're') treated as path keys
+  - BUG-4: Shell pipe fragment from `shell=True` subprocess leaked into path list
+- Corrupt entries fixed: 5 (all removed from new generator output)
+- Regression tests: 39 tests, 39 passed
+- Dataset regenerated: false — original preserved, dry-run only
+- No file deletion, no cleanup, no secret print, no history rewrite, no force push
+- New generator script: `Project_ARIS/scripts/run_lapidarium_fase1_triagem_generator.py`
+- Test file: `Project_ARIS/tests/test_lapidarium_fase1_generator_f4b.py`
+- Locks opened: none — all execution locks remain false
+- Artifacts created:
+  - artifacts/lapidarium/lapidarium_fase4b_generator_quoting_repair_packet.json
+  - artifacts/lapidarium/lapidarium_fase4b_root_cause_report.json
+  - artifacts/lapidarium/lapidarium_fase4b_git_tracked_false_positive_repair.json
+  - artifacts/lapidarium/lapidarium_fase4b_regression_tests_manifest.json
+  - artifacts/lapidarium/lapidarium_fase4b_dataset_comparison_report.json
+  - artifacts/lapidarium/lapidarium_fase4b_no_cleanup_execution_attestation.json
+  - artifacts/lapidarium/lapidarium_fase4b_validation_evidence.json
+  - artifacts/lapidarium/lapidarium_fase4b_report.md
+- Next recommended: LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN
+
+---
+
 ## LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT
 
 - Status: `lapidarium_f4_find001_env_containment_pass_pre_existing`

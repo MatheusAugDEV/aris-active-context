@@ -2,7 +2,7 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_SECURITY_F4_FIND_001_ENV_CONTAINMENT (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR (2026-06-30)
 
 ---
 
@@ -10,15 +10,16 @@
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
 - **phase_id:** `LAPIDARIUM`
-- **sha_lido:** `bf0728b4e511272117133cd97497c7382174dbad`
+- **sha_lido:** `62044ef1bdde4d262b1d4addde2a9bd3359e6099`
 
 ### Status Atual
 
-A **contenção de F4-FIND-001 foi registrada com decisão=pass** em 2026-06-30.
+A **Fase 4B foi concluída com decisão=pass** em 2026-06-30.
 
-Resultado principal: `.env` nunca estava git-tracked — o campo `git_tracked=True` no dataset
-da Fase 1 era um falso positivo do scanner. O `.gitignore` já tinha regras adequadas.
-Nenhuma ação técnica de remoção foi necessária.
+Resultado principal: 4 bug classes identificadas no generator inline da Fase 1. Generator
+corrigido escrito em `Project_ARIS/scripts/run_lapidarium_fase1_triagem_generator.py`.
+39 testes regressivos, todos passando. Dry-run executado — dataset original preservado.
+`.env` corretamente retorna `git_tracked=False` no novo generator.
 
 ---
 
@@ -30,20 +31,14 @@ Ver `artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md`.
 - Rotacionar credenciais se houver risco de exposição por outros meios além do git
 - Esta ação não requer prompt de fase — é responsabilidade do operador
 
-**2. LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR (próxima fase recomendada):**
-- Corrigir bug de quoting/escaping do generator da Fase 1
-- Investigar também o método de detecção de `git_tracked` (que produziu o falso positivo FP-05)
-- Emitir prompt explícito para iniciar
-- Requer: CI green atual ✓ | validator pass ✓ | F4-FIND-001 containment registrado ✓
-
-**3. LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN (após 4B):**
+**2. LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_PLAN (próxima fase recomendada):**
 - Planejamento cirúrgico de remoção de lixo confirmado
-- Requer 4B concluída e decisão do operador por item
+- Requer decisão do operador por item candidato a remoção
+- Fase 4B concluída ✓ | CI green ✓ | validator pass ✓
 
-**4. Findings pendentes de decisão do operador (não requerem nova fase imediata):**
+**3. Findings pendentes de decisão do operador (não requerem nova fase imediata):**
 - F4-FIND-002: Nested Git repo em `external/mcp_candidates/` — decidir submodule/vendor/remove
 - F4-FIND-003: PostScript binários em `legacy/experiments/` — inspecionar antes de qualquer remoção
-- F4-FIND-004: Bug do generator — coberto por Fase 4B
 
 ---
 

@@ -854,5 +854,33 @@
         "artifacts/lapidarium/lapidarium_f4_find001_rotation_checklist.md",
         "artifacts/lapidarium/lapidarium_f4_find001_no_secret_exposure_attestation.json",
         "artifacts/lapidarium/lapidarium_f4_find001_validation_evidence.json"
+    ],
+    "lapidarium_fase4b_completed": true,
+    "lapidarium_fase4b_completion_date": "2026-06-30",
+    "lapidarium_fase4b_decision": "pass",
+    "lapidarium_fase4b_bugs_found": 4,
+    "lapidarium_fase4b_corrupt_entries_fixed": 5,
+    "lapidarium_fase4b_false_positives_fixed": 1,
+    "lapidarium_fase4b_generator_script": "Project_ARIS/scripts/run_lapidarium_fase1_triagem_generator.py",
+    "lapidarium_fase4b_regression_tests_file": "Project_ARIS/tests/test_lapidarium_fase1_generator_f4b.py",
+    "lapidarium_fase4b_regression_tests_count": 39,
+    "lapidarium_fase4b_regression_tests_passed": 39,
+    "lapidarium_fase4b_dry_run_executed": true,
+    "lapidarium_fase4b_dataset_regenerated": false,
+    "lapidarium_fase4b_original_dataset_preserved": true,
+    "lapidarium_fase4b_git_tracked_bug_fixed": true,
+    "lapidarium_fase4b_shell_true_eliminated": true,
+    "lapidarium_fase4b_no_real_execution": true,
+    "lapidarium_fase4b_no_file_deletion": true,
+    "lapidarium_fase4b_no_secret_print": true,
+    "lapidarium_fase4b_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase4b_generator_quoting_repair_packet.json",
+        "artifacts/lapidarium/lapidarium_fase4b_root_cause_report.json",
+        "artifacts/lapidarium/lapidarium_fase4b_git_tracked_false_positive_repair.json",
+        "artifacts/lapidarium/lapidarium_fase4b_regression_tests_manifest.json",
+        "artifacts/lapidarium/lapidarium_fase4b_dataset_comparison_report.json",
+        "artifacts/lapidarium/lapidarium_fase4b_no_cleanup_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase4b_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase4b_report.md"
     ]
 }
