@@ -573,6 +573,15 @@
                 },
                 "status": {
                     "type": "string"
+                },
+                "latest_completed_project_commit_sha": {
+                    "type": "string"
+                },
+                "latest_completed_ci_state": {
+                    "type": "string"
+                },
+                "latest_completed_next_recommended_step": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -585,7 +594,10 @@
                 "active_next_phase_class",
                 "next_phase_execution_authorization",
                 "operator_approval_packet_review_is_execution_approval",
-                "h4_h5_hx_active_current_route"
+                "h4_h5_hx_active_current_route",
+                "latest_completed_project_commit_sha",
+                "latest_completed_ci_state",
+                "latest_completed_next_recommended_step"
             ],
             "type": "object"
         },
@@ -1088,7 +1100,8 @@
                 "3.29",
                 "3.30",
                 "3.34",
-                "3.35"
+                "3.35",
+                "3.36"
             ],
             "type": "string"
         },
@@ -1653,6 +1666,9 @@
                     "type": "string"
                 },
                 "schema_3_35_change_summary": {
+                    "type": "string"
+                },
+                "schema_3_36_change_summary": {
                     "type": "string"
                 }
             },
@@ -2649,6 +2665,44 @@
         },
         "lapidarium_true_phases_roadmap_canonical_matches_state": {
             "type": "boolean"
+        },
+        "schema_3_36_change_summary": {
+            "type": "string"
+        },
+        "lapidarium_fase2_true_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase2_true_completion_date": {
+            "type": "string"
+        },
+        "lapidarium_fase2_true_decision": {
+            "enum": [
+                "pass",
+                "blocked",
+                "warn",
+                "fail"
+            ],
+            "type": "string"
+        },
+        "lapidarium_fase2_true_target_architecture_sha256": {
+            "type": "string"
+        },
+        "lapidarium_fase2_true_adr_shas": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 3,
+            "type": "array"
+        },
+        "lapidarium_fase2_true_fase0_fase1_verified": {
+            "type": "boolean"
+        },
+        "lapidarium_fase2_true_artifacts": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
         }
     },
     "required": [
@@ -2728,9 +2782,17 @@
         "finding_count",
         "purg00_source_data_gap_resolution",
         "purg00_source_gap_terminal_blocker",
-        "benchuix_track"
+        "benchuix_track",
+        "schema_3_36_change_summary",
+        "lapidarium_fase2_true_completed",
+        "lapidarium_fase2_true_completion_date",
+        "lapidarium_fase2_true_decision",
+        "lapidarium_fase2_true_target_architecture_sha256",
+        "lapidarium_fase2_true_adr_shas",
+        "lapidarium_fase2_true_fase0_fase1_verified",
+        "lapidarium_fase2_true_artifacts"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.35",
+    "title": "ARIS Active Context Canonical Live State Schema v3.36",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

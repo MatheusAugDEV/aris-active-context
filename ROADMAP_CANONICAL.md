@@ -137,7 +137,7 @@ Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE
 
 ## 15. Lapidarium Fase 2 — Arquitetura Alvo True
 phase_id: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE
-Status: CANDIDATE
+Status: CLOSED
 Objetivo: Definir a arquitetura alvo candidata para a trilha True sem abrir execução.
 Resultado final esperado: target architecture charter candidate materializado com limites e premissas explícitos.
 Pesquisa / arquitetura / decisões:

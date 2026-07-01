@@ -1,0 +1,56 @@
+{
+    "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "display_name": "Lapidarium True — Fase 2: Arquitetura Alvo",
+    "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+    "decision": "pass",
+    "previous_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "current_phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "next_phase": null,
+    "active_next_phase": null,
+    "next_route_candidate": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+    "route_consolidation": {
+        "opening_status": "lapidarium_fase2_architecture_target_candidate_opening_pass",
+        "content_status": "lapidarium_fase2_target_architecture_content_pass",
+        "closure_status": "lapidarium_fase2_arquitetura_alvo_true_pass"
+    },
+    "project": {
+        "project_commit_sha": "8d7ceabbc71d35c75bf3c9c0e3c03b22c431701f",
+        "project_ci_state": "CI_GREEN_CONFIRMED"
+    },
+    "source_documents": {
+        "target_architecture": {
+            "path": "TARGET_ARCHITECTURE.md",
+            "sha256": "5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e"
+        },
+        "adr_005": {
+            "path": "docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md",
+            "sha256": "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c"
+        },
+        "adr_006": {
+            "path": "docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md",
+            "sha256": "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90"
+        },
+        "adr_007": {
+            "path": "docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md",
+            "sha256": "1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d"
+        }
+    },
+    "state_hashes": {
+        "ACTIVE_CONTEXT_STATE.json": "1f534a8e9382e9cb95cc146aeb1b7a29f2e8c753b9d8dc49dfbe052e9dce79a2",
+        "ACTIVE_CONTEXT_SCHEMA.json": "2b96bd00a3dff0144df3436aa23127766a14c94c00bb69dc40d016bae0efb6ec",
+        "ROADMAP_CANONICAL.md": "9dc01ceea1353f96ae3a88b4e5860cb9380f0952660d25efa01b9571c78a3f1d",
+        "DECISION_LOCKS.md": "4344faddcd0cc845e5e4160d71d13da462de45ff19fb561d6f0752cde0de49e1",
+        "BOOT.md": "e55dbaac4e7b9e8cb11d751846ce617566ae00a508a1d1d17a129464065d6aae"
+    },
+    "prior_round_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json",
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md",
+        "artifacts/lapidarium/lapidarium_fase2_target_architecture_content_packet.json",
+        "artifacts/lapidarium/lapidarium_fase2_fase0_fase1_input_verification.json",
+        "artifacts/lapidarium/lapidarium_fase2_content_no_real_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase2_content_validation_evidence.json"
+    ],
+    "completion_date": "2026-06-30",
+    "schema_version": "3.36",
+    "schema_3_36_change_summary": "Lapidarium Fase 2 closure: promote the design-only architecture target to CLOSED, record the consolidated closure packet and new top-level completion fields, advance the canonical next candidate to LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE, and preserve no real execution."
+}

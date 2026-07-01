@@ -42,7 +42,7 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
-LAPIDARIUM_TERMINAL_PHASE_ID = "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET"
+LAPIDARIUM_TERMINAL_PHASE_ID = "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
 
 LEGACY_TRANSITION_TABLE_TEXT = """| current_phase_id | decision | next_phase_id | next_phase_class | advance_mode | minimum_deliverable |
 |------------------|----------|---------------|------------------|--------------|---------------------|
@@ -18036,11 +18036,14 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
-        "## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING",
-        "lapidarium_fase2_architecture_target_candidate_opening_pass",
-        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json",
-        "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
-        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md",
+        "## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CLOSURE",
+        "lapidarium_fase2_arquitetura_alvo_true_pass",
+        "artifacts/lapidarium/lapidarium_fase2_arquitetura_alvo_true_closure_packet.json",
+        "TARGET_ARCHITECTURE.md",
+        "ADR_005_CLEAN_ARCHITECTURE.md",
+        "ADR_006_LLM_ADAPTER_PATTERN.md",
+        "ADR_007_DIATAXIS_ADR_TAXONOMY.md",
+        "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
@@ -18066,6 +18069,11 @@ def main() -> None:
         "## 14. Post-Lapidarium Architecture Track Opening",
         "Status: CLOSED",
         "Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+        "## 15. Lapidarium Fase 2 — Arquitetura Alvo True",
+        "Status: CLOSED",
+        "Próxima fase: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+        "## 16. Lapidarium Fase 3 — Execução por Fatias True",
+        "Status: CANDIDATE",
         "## 19. Lapidarium Fase 6 — Guarda True",
     )
     _mirror_contains(

@@ -11,6 +11,24 @@
 - Locks opened: none. All execution locks remain false.
 - Next: keep the candidate-only design track active until a future explicit execution authorization.
 
+## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CLOSURE
+
+- Status: `lapidarium_fase2_arquitetura_alvo_true_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: consolidate the route opening, architecture content, and closure for `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE` without opening runtime, product, Bedrock, secrets, env-read, or other execution surfaces.
+- Closure packet: `artifacts/lapidarium/lapidarium_fase2_arquitetura_alvo_true_closure_packet.json`
+- No-real-execution attestation: `artifacts/lapidarium/lapidarium_fase2_closure_no_real_execution_attestation.json`
+- Validation evidence: `artifacts/lapidarium/lapidarium_fase2_closure_validation_evidence.json`
+- Route opening artifacts: `artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json`, `artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md`
+- Content artifacts: `artifacts/lapidarium/lapidarium_fase2_target_architecture_content_packet.json`, `artifacts/lapidarium/lapidarium_fase2_fase0_fase1_input_verification.json`, `artifacts/lapidarium/lapidarium_fase2_content_no_real_execution_attestation.json`, `artifacts/lapidarium/lapidarium_fase2_content_validation_evidence.json`
+- Source docs: `TARGET_ARCHITECTURE.md` (sha256:5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e), `docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md` (sha256:ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c), `docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md` (sha256:3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90), `docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md` (sha256:1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d)
+- Completion flags: `lapidarium_fase2_true_completed=true`, `lapidarium_fase2_true_fase0_fase1_verified=true`
+- Next recommended route: `NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE`
+- Locks opened: none. All execution locks remain false.
+- Locked surfaces remain false: true
+- Next: candidate-only Fase 3 remains the next route candidate; no real execution is authorized by this closure.
+
 ## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING
 
 - Status: `lapidarium_fase2_architecture_target_candidate_opening_pass`

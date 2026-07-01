@@ -1,0 +1,135 @@
+{
+    "artifact_type": "validation_evidence",
+    "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+    "decision": "pass",
+    "date": "2026-06-30",
+    "commands": [
+        {
+            "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+            "exit_code": 0,
+            "key_fields": {
+                "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+                "current_phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+                "display_name": "Lapidarium True — Fase 2: Arquitetura Alvo",
+                "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+                "schema_version": "3.36",
+                "next_phase": null,
+                "active_next_phase": null
+            }
+        },
+        {
+            "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+            "exit_code": 0,
+            "key_fields": {
+                "schema_version_enum_has_3_36": true,
+                "top_level_fields_added": [
+                    "schema_3_36_change_summary",
+                    "lapidarium_fase2_true_completed",
+                    "lapidarium_fase2_true_completion_date",
+                    "lapidarium_fase2_true_decision",
+                    "lapidarium_fase2_true_target_architecture_sha256",
+                    "lapidarium_fase2_true_adr_shas",
+                    "lapidarium_fase2_true_fase0_fase1_verified",
+                    "lapidarium_fase2_true_artifacts"
+                ],
+                "current_live_route_mirrors_added": [
+                    "latest_completed_project_commit_sha",
+                    "latest_completed_ci_state",
+                    "latest_completed_next_recommended_step"
+                ]
+            }
+        },
+        {
+            "command": "python3 scripts/validate_active_context_state.py",
+            "exit_code": 0,
+            "output": {
+                "decision": "pass",
+                "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+                "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+                "previous_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+                "latest_completed_phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
+                "latest_completed_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+                "next_phase": null,
+                "gate_opened_at": "2026-06-15",
+                "gate_max_cycles": 3,
+                "gate_cycles_used": 0,
+                "governance_gate_streak": 0,
+                "phase_class": "governance_repair",
+                "fixture_count": 65,
+                "scenario_count": 13,
+                "fixture_scenario_count": 13,
+                "current_phase_planned_scenario_count": 16,
+                "current_phase_planned_bot_count": 16,
+                "current_phase_mutation_family_count": 10,
+                "current_phase_oracle_count": 9,
+                "bot_execution_executed": true,
+                "current_phase_bots_executed": false,
+                "bot_execution_log_count": 1,
+                "minos_verdict_executed": true,
+                "minos_verdict_count": 1,
+                "uv_lock_exists": true,
+                "acb_core_01_artifacts_exist": true,
+                "acb_core_02_artifacts_exist": true,
+                "acb_cap_01_artifacts_exist": true,
+                "acb_cap_05_artifacts_exist": true,
+                "inf_full_01_scope_artifacts_exist": true,
+                "inf_full_03_artifacts_exist": true,
+                "inf_full_04_artifacts_exist": true,
+                "inf_full_route_sync_artifacts_exist": true,
+                "auto_advance_enabled": true,
+                "ci_enforcement_active": true,
+                "anti_proliferation_rule_active": true,
+                "fixture_materialization_executed": true,
+                "derived_simple_view_corrections": []
+            }
+        },
+        {
+            "command": "sed -n \"138,153p\" ROADMAP_CANONICAL.md",
+            "exit_code": 0,
+            "output_lines": [
+                "## 15. Lapidarium Fase 2 — Arquitetura Alvo True",
+                "phase_id: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+                "Status: CLOSED",
+                "Objetivo: Definir a arquitetura alvo candidata para a trilha True sem abrir execução.",
+                "Resultado final esperado: target architecture charter candidate materializado com limites e premissas explícitos.",
+                "Pesquisa / arquitetura / decisões:",
+                "Entrega mínima pra fechar (evidência): `TARGET_ARCHITECTURE.md` (sha256:5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e) + `docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md` (sha256:ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c) + `docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md` (sha256:3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90) + `docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md` (sha256:1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d).",
+                "Próxima fase: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+                "",
+                "## 16. Lapidarium Fase 3 — Execução por Fatias True",
+                "phase_id: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+                "Status: CANDIDATE",
+                "Objetivo: Planejar a execução por fatias da trilha True sem tocar runtime real.",
+                "Resultado final esperado: plano de fatias e critérios de progressão candidate-only.",
+                "Pesquisa / arquitetura / decisões:",
+                "Entrega mínima pra fechar (evidência): matriz de fatias, critérios de aceite e travas de execução preservadas."
+            ]
+        },
+        {
+            "command": "python3 -m json.tool artifacts/lapidarium/lapidarium_fase2_arquitetura_alvo_true_closure_packet.json",
+            "exit_code": 0,
+            "artifact_hash": "652b5e3985d36fa5bde701af9af863c817f9aaaafbdc5286ace8996b80768555"
+        },
+        {
+            "command": "python3 -m json.tool artifacts/lapidarium/lapidarium_fase2_closure_no_real_execution_attestation.json",
+            "exit_code": 0,
+            "artifact_hash": "08582588426acbac581ea2657af27d684df2c49971249948daf8ac0bdc7d38e3"
+        }
+    ],
+    "artifact_hashes": {
+        "artifacts/lapidarium/lapidarium_fase2_arquitetura_alvo_true_closure_packet.json": "652b5e3985d36fa5bde701af9af863c817f9aaaafbdc5286ace8996b80768555",
+        "artifacts/lapidarium/lapidarium_fase2_closure_no_real_execution_attestation.json": "08582588426acbac581ea2657af27d684df2c49971249948daf8ac0bdc7d38e3",
+        "ACTIVE_CONTEXT_STATE.json": "1f534a8e9382e9cb95cc146aeb1b7a29f2e8c753b9d8dc49dfbe052e9dce79a2",
+        "ACTIVE_CONTEXT_SCHEMA.json": "2b96bd00a3dff0144df3436aa23127766a14c94c00bb69dc40d016bae0efb6ec",
+        "ROADMAP_CANONICAL.md": "9dc01ceea1353f96ae3a88b4e5860cb9380f0952660d25efa01b9571c78a3f1d",
+        "DECISION_LOCKS.md": "4344faddcd0cc845e5e4160d71d13da462de45ff19fb561d6f0752cde0de49e1",
+        "BOOT.md": "e55dbaac4e7b9e8cb11d751846ce617566ae00a508a1d1d17a129464065d6aae"
+    },
+    "notes": [
+        "ACTIVE_CONTEXT_STATE.json and ACTIVE_CONTEXT_SCHEMA.json both parsed successfully with json.tool.",
+        "Validator returned the promoted Lapidarium Fase 2 closure state with next_phase null and candidate-only Fase 3 preserved.",
+        "Roadmap block 15 is CLOSED and block 16 remains CANDIDATE.",
+        "No real execution occurred; only governance artifacts were written."
+    ]
+}

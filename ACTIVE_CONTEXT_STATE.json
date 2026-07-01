@@ -1,11 +1,11 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
-    "current_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
-    "display_name": "Lapidarium — Final Route Reconciliation",
-    "previous_phase_id": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
-    "last_phase": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
-    "phase_now": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "current_phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "display_name": "Lapidarium True — Fase 2: Arquitetura Alvo",
+    "previous_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "last_phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+    "phase_now": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "next_phase_simple": null,
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
@@ -229,16 +229,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "IF09 Closure Milestone Mirror Sanity Packet",
+            "phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
             "decision": "pass",
-            "status": "if09_closure_milestone_mirror_sanity_pass"
+            "status": "lapidarium_fase2_arquitetura_alvo_true_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 66,
+        "total_phases_completed": 67,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -273,21 +273,21 @@
     "current_live_route": {
         "active_next_phase": null,
         "active_next_phase_class": null,
-        "current_status": "lapidarium_final_route_reconciliation_pass",
+        "current_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
-        "latest_completed_status": "lapidarium_final_route_reconciliation_pass",
+        "latest_completed_phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
+        "latest_completed_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "lapidarium_final_route_reconciliation_pass",
-        "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
+        "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+        "latest_completed_project_commit_sha": "8d7ceabbc71d35c75bf3c9c0e3c03b22c431701f",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE"
     },
-    "current_status": "lapidarium_final_route_reconciliation_pass",
+    "current_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -676,8 +676,8 @@
         "real_cost_spent": false,
         "real_quota_consumed": false
     },
-    "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
-    "latest_completed_status": "lapidarium_final_route_reconciliation_pass",
+    "latest_completed_project_commit_sha": "8d7ceabbc71d35c75bf3c9c0e3c03b22c431701f",
+    "latest_completed_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -688,32 +688,33 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "Lapidarium — Final Route Reconciliation",
+        "latest_execution_phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "Lapidarium Fase 5 Residuals Safe Resolution",
-        "latest_execution_status": "lapidarium_final_route_reconciliation_pass",
+        "previous_execution_phase": "Lapidarium — Final Route Reconciliation",
+        "latest_execution_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
         "governance_repairs": [
             "Lapidarium residual safe resolution",
-            "Lapidarium final route reconciliation and handoff"
+            "Lapidarium final route reconciliation and handoff",
+            "Lapidarium Fase 2 arquitetura alvo closure"
         ]
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "Lapidarium Fase 5 Residuals Safe Resolution",
-        "proof_source": "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
-        "to_phase": "Lapidarium — Final Route Reconciliation",
-        "to_status": "lapidarium_final_route_reconciliation_pass",
-        "transition_type": "governance_repair",
-        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE."
+        "from_phase": "Lapidarium — Final Route Reconciliation",
+        "proof_source": "artifacts/lapidarium/lapidarium_fase2_arquitetura_alvo_true_closure_packet.json",
+        "to_phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
+        "to_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+        "transition_type": "lapidarium_true_phases_architecture_closure",
+        "verified_via": "TARGET_ARCHITECTURE.md and ADR_005/006/007 are present and SHA-validated; roadmap block 15 is CLOSED, block 16 remains CANDIDATE, and the live route advances to the Fase 3 candidate without opening execution."
     },
-    "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
+    "latest_completed_phase": "Lapidarium True — Fase 2: Arquitetura Alvo",
     "locks": {
         "canonical_live_state_file": "ACTIVE_CONTEXT_STATE.json",
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -726,16 +727,16 @@
     "next_action": {
         "execution_authorization": false,
         "notes": [
-            "Lapidarium final route reconciliation and handoff completed.",
+            "Lapidarium Fase 2 arquitetura alvo closure completed.",
             "Nenhuma transição definida. Aguardando instrução do operador.",
-            "Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
+            "Candidate-only next route: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": null,
         "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "lapidarium_final_route_reconciliation_pass"
+        "status": "lapidarium_fase2_arquitetura_alvo_true_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -751,9 +752,9 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.35",
+    "schema_version": "3.36",
     "roadmap_version": "v2",
-    "status": "lapidarium_final_route_reconciliation_pass",
+    "status": "lapidarium_fase2_arquitetura_alvo_true_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -768,7 +769,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.35",
+        "current_schema_version": "3.36",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -803,7 +804,8 @@
         "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
         "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
         "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only DIAGNOSTICO_AUTOMACAO_GATE handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees.",
-        "schema_3_35_change_summary": "Lapidarium True Phases route amendment: admit the operator-supplied post-Lapidarium candidate track as a new candidate-only macro branch, record collision-safe *_TRUE naming for Fase 4/Fase 5 labels, preserve closed Lapidarium, and update the canonical next candidate to POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING without opening any real execution surface."
+        "schema_3_35_change_summary": "Lapidarium True Phases route amendment: admit the operator-supplied post-Lapidarium candidate track as a new candidate-only macro branch, record collision-safe *_TRUE naming for Fase 4/Fase 5 labels, preserve closed Lapidarium, and update the canonical next candidate to POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING without opening any real execution surface.",
+        "schema_3_36_change_summary": "Lapidarium Fase 2 closure: promote the design-only architecture target to CLOSED, record the consolidated closure packet and new top-level completion fields, advance the canonical next candidate to LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE, and preserve no real execution."
     },
     "lapidarium_pref4_drift_repair_completed": true,
     "lapidarium_pref4_drift_repair_date": "2026-06-29",
@@ -1161,7 +1163,7 @@
     "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
     "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
     "lapidarium_route_stale_pointers_reconciled": true,
-    "lapidarium_next_route_candidate": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "lapidarium_next_route_candidate": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
     "lapidarium_next_route_candidate_execution_authorized": false,
     "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "lapidarium_final_route_reconciliation_artifacts": [
@@ -1210,9 +1212,28 @@
         "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET vs LAPIDARIUM_FASE_5_SELO_TRUE"
     ],
     "lapidarium_true_phases_recommended_route_handling": "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
-    "lapidarium_true_phases_next_candidate_phase": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "lapidarium_true_phases_next_candidate_phase": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
     "lapidarium_true_phases_execution_authorized": false,
     "lapidarium_true_phases_phase2_execution_authorized": false,
     "lapidarium_true_phases_roadmap_canonical_updated": true,
-    "lapidarium_true_phases_roadmap_canonical_matches_state": true
+    "lapidarium_true_phases_roadmap_canonical_matches_state": true,
+    "lapidarium_fase2_true_completed": true,
+    "lapidarium_fase2_true_completion_date": "2026-06-30",
+    "lapidarium_fase2_true_decision": "pass",
+    "lapidarium_fase2_true_target_architecture_sha256": "5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e",
+    "lapidarium_fase2_true_adr_shas": [
+        "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c",
+        "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90",
+        "1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d"
+    ],
+    "lapidarium_fase2_true_fase0_fase1_verified": true,
+    "lapidarium_fase2_true_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json",
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md",
+        "artifacts/lapidarium/lapidarium_fase2_target_architecture_content_packet.json",
+        "artifacts/lapidarium/lapidarium_fase2_fase0_fase1_input_verification.json",
+        "artifacts/lapidarium/lapidarium_fase2_content_no_real_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase2_content_validation_evidence.json"
+    ],
+    "schema_3_36_change_summary": "Lapidarium Fase 2 closure: promote the design-only architecture target to CLOSED, record the consolidated closure packet and new top-level completion fields, advance the canonical next candidate to LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE, and preserve no real execution."
 }

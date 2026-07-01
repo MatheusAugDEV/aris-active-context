@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `6327a1a2db4c`
-- schema_version: `3.35`
+- state_sha: `1f534a8e9382`
+- schema_version: `3.36`
 
 ## AVISO DE STALE
 
@@ -14,10 +14,10 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Unknown`
-- phase_id: `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- status: `lapidarium_final_route_reconciliation_pass`
+- phase_id: `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- status: `lapidarium_fase2_arquitetura_alvo_true_pass`
 - decision: `pass`
-- resumo: Lapidarium — Final Route Reconciliation; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: Lapidarium True — Fase 2: Arquitetura Alvo; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
 
 ## REGRAS DE AGORA
 
