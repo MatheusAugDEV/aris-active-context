@@ -1,0 +1,60 @@
+{
+  "artifact_id": "lapidarium_true_phases_route_options_matrix",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "options": [
+    {
+      "option_id": "direct_reopen_lapidarium",
+      "label": "Direct reopen Lapidarium",
+      "recommended": false,
+      "compatible_with_current_roadmap": false,
+      "pros": [
+        "Makes the proposal immediately visible as a live continuation."
+      ],
+      "cons": [
+        "Rewrites closed history and risks reopening execution boundaries."
+      ],
+      "risk": "high"
+    },
+    {
+      "option_id": "create_post_lapidarium_track",
+      "label": "Create post-Lapidarium architecture track",
+      "recommended": true,
+      "compatible_with_current_roadmap": true,
+      "pros": [
+        "Preserves closed Lapidarium history.",
+        "Admits the operator source as a candidate-only branch.",
+        "Keeps execution locks closed."
+      ],
+      "cons": [
+        "Adds a new route branch that must be carried forward explicitly."
+      ],
+      "risk": "low_medium"
+    },
+    {
+      "option_id": "diagnostico_precondition_candidate",
+      "label": "Treat as DIAGNOSTICO_AUTOMACAO precondition candidate",
+      "recommended": false,
+      "compatible_with_current_roadmap": true,
+      "pros": [
+        "Avoids reopening Lapidarium while preserving the proposal."
+      ],
+      "cons": [
+        "Does not reflect the operator-supplied phase sequence faithfully enough."
+      ],
+      "risk": "medium"
+    },
+    {
+      "option_id": "block_pending_clarification",
+      "label": "Block pending operator clarification",
+      "recommended": false,
+      "compatible_with_current_roadmap": true,
+      "pros": [
+        "Maximally conservative."
+      ],
+      "cons": [
+        "Unnecessarily discards a complete operator source packet."
+      ],
+      "risk": "low"
+    }
+  ]
+}

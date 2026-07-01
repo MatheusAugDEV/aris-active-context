@@ -1,0 +1,18 @@
+{
+  "artifact_id": "lapidarium_true_phases_no_execution_attestation",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "operator_source_materialized_only": true,
+  "no_reopen_by_default": true,
+  "no_phase2_execution": true,
+  "no_runtime": true,
+  "no_real_apply": true,
+  "no_product": true,
+  "no_bedrock": true,
+  "no_secrets": true,
+  "no_env_read": true,
+  "no_file_move": true,
+  "no_file_deletion": true,
+  "no_history_rewrite": true,
+  "no_force_push": true,
+  "summary": "Candidate-only route amendment. The closed Lapidarium remains closed and no real execution surface was opened."
+}

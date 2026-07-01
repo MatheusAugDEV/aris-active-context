@@ -1,0 +1,16 @@
+{
+  "artifact_id": "lapidarium_true_phases_operator_source_receipt",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "received_at": "2026-06-30T00:00:00-03:00",
+  "source_path": "operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md",
+  "operator_source_hash": "eeeb2339c9dc591f70e232eed4bba0e6fc0b5384d4d018053702b3abc2c6763b",
+  "source_treated_as_operator_provided": true,
+  "verbatim_copy_materialized": true,
+  "phase_list_extracted": [
+    "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO",
+    "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS",
+    "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+    "LAPIDARIUM_FASE_5_SELO_TRUE",
+    "LAPIDARIUM_FASE_6_GUARDA"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_id": "lapidarium_true_phases_roadmap_canonical_diff",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "block_0_before": "## 0. Lapidarium\nphase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET\nStatus: CLOSED\nObjetivo: Encerrar a reconciliação final de rota e consolidar o handoff terminal sem abrir execução nova.\nResultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e candidato seguinte registrado só como referência.\nPesquisa / arquitetura / decisões:\nEntrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e candidato de próxima rota preservado em artefato/state.\nPróxima fase: DIAGNOSTICO_AUTOMACAO_GATE",
+  "block_0_after": "## 0. Lapidarium\nphase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET\nStatus: CLOSED\nObjetivo: Encerrar a reconciliação final de rota e consolidar o handoff terminal sem abrir execução nova.\nResultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e trilha pós-Lapidarium candidate-only registrada.\nPesquisa / arquitetura / decisões:\nEntrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e operador source + candidate track preservados em artefato/state.\nPróxima fase: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+  "new_blocks_added": [
+    {
+      "section": "14",
+      "phase_id": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+      "title": "Post-Lapidarium Architecture Track Opening"
+    },
+    {
+      "section": "15",
+      "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+      "title": "Lapidarium Fase 2 — Arquitetura Alvo True"
+    },
+    {
+      "section": "16",
+      "phase_id": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+      "title": "Lapidarium Fase 3 — Execução por Fatias True"
+    },
+    {
+      "section": "17",
+      "phase_id": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+      "title": "Lapidarium Fase 4 — Canonização True"
+    },
+    {
+      "section": "18",
+      "phase_id": "LAPIDARIUM_FASE_5_SELO_TRUE",
+      "title": "Lapidarium Fase 5 — Selo True"
+    },
+    {
+      "section": "19",
+      "phase_id": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+      "title": "Lapidarium Fase 6 — Guarda True"
+    }
+  ],
+  "state_alignment": {
+    "lapidarium_next_route_candidate": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "lapidarium_true_phases_next_candidate_phase": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "roadmap_canonical_matches_state": true
+  }
+}

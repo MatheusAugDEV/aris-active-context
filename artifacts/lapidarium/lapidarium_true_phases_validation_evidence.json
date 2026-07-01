@@ -1,0 +1,35 @@
+{
+  "artifact_id": "lapidarium_true_phases_validation_evidence",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "all_passed": true,
+  "final_status": "route_amendment_packet_complete_pending_commit_push_ci",
+  "checks": [
+    {
+      "check": "json_tool_state",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_schema",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+      "passed": true
+    },
+    {
+      "check": "validator_script",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "unittest_discover",
+      "command": "python3 -m unittest discover -s tests -p 'test_validate_active_context.py'",
+      "passed": true,
+      "result": "Ran 1 test, OK"
+    }
+  ],
+  "notes": [
+    "Operator source copied verbatim into operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md.",
+    "Closed Lapidarium remains canonical; the new track is candidate-only.",
+    "ROADMAP_CANONICAL.md and ACTIVE_CONTEXT_STATE.json are aligned on POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING."
+  ]
+}

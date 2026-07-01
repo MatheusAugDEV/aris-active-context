@@ -283,11 +283,11 @@
         "status": "lapidarium_final_route_reconciliation_pass",
         "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING"
     },
     "current_status": "lapidarium_final_route_reconciliation_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -751,7 +751,7 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.34",
+    "schema_version": "3.35",
     "roadmap_version": "v2",
     "status": "lapidarium_final_route_reconciliation_pass",
     "validation_policy": {
@@ -768,7 +768,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.34",
+        "current_schema_version": "3.35",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -802,7 +802,8 @@
         "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
         "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
-        "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only DIAGNOSTICO_AUTOMACAO_GATE handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees."
+        "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only DIAGNOSTICO_AUTOMACAO_GATE handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees.",
+        "schema_3_35_change_summary": "Lapidarium True Phases route amendment: admit the operator-supplied post-Lapidarium candidate track as a new candidate-only macro branch, record collision-safe *_TRUE naming for Fase 4/Fase 5 labels, preserve closed Lapidarium, and update the canonical next candidate to POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING without opening any real execution surface."
     },
     "lapidarium_pref4_drift_repair_completed": true,
     "lapidarium_pref4_drift_repair_date": "2026-06-29",
@@ -1160,9 +1161,9 @@
     "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
     "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
     "lapidarium_route_stale_pointers_reconciled": true,
-    "lapidarium_next_route_candidate": "DIAGNOSTICO_AUTOMACAO_GATE",
+    "lapidarium_next_route_candidate": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
     "lapidarium_next_route_candidate_execution_authorized": false,
-    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE",
+    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
     "lapidarium_final_route_reconciliation_artifacts": [
         "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
         "artifacts/lapidarium/lapidarium_final_stale_pointer_register.json",
@@ -1194,5 +1195,24 @@
     "lapidarium_final_route_reconciliation_route_candidate_only": true,
     "lapidarium_final_route_reconciliation_no_macro_execution": true,
     "lapidarium_final_route_reconciliation_no_file_move": true,
-    "lapidarium_final_route_reconciliation_no_cleanup": true
+    "lapidarium_final_route_reconciliation_no_cleanup": true,
+    "schema_3_35_change_summary": "Lapidarium True Phases route amendment: admit the operator-supplied post-Lapidarium candidate track as a new candidate-only macro branch, record collision-safe *_TRUE naming for Fase 4/Fase 5 labels, preserve closed Lapidarium, and update the canonical next candidate to POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING without opening any real execution surface.",
+    "lapidarium_true_phases_operator_source_received": true,
+    "lapidarium_true_phases_operator_source_path": "operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md",
+    "lapidarium_true_phases_route_amendment_completed": true,
+    "lapidarium_true_phases_route_amendment_decision": "pass",
+    "lapidarium_true_phases_conflicts_with_closed_lapidarium": true,
+    "lapidarium_true_phases_label_collision_detected": true,
+    "lapidarium_true_phases_label_collision_items": [
+        "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO vs LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+        "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET vs LAPIDARIUM_FASE_5_SELO_TRUE",
+        "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION vs LAPIDARIUM_FASE_5_SELO_TRUE",
+        "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET vs LAPIDARIUM_FASE_5_SELO_TRUE"
+    ],
+    "lapidarium_true_phases_recommended_route_handling": "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
+    "lapidarium_true_phases_next_candidate_phase": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "lapidarium_true_phases_execution_authorized": false,
+    "lapidarium_true_phases_phase2_execution_authorized": false,
+    "lapidarium_true_phases_roadmap_canonical_updated": true,
+    "lapidarium_true_phases_roadmap_canonical_matches_state": true
 }

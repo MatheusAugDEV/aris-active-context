@@ -1,0 +1,32 @@
+{
+  "artifact_id": "lapidarium_true_phases_label_collision_register",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "collision_detected": true,
+  "recommended_naming_rule": "Use *_TRUE suffix for any proposed phase that collides with an already-canonical historical or live label; preserve historical labels untouched.",
+  "collisions": [
+    {
+      "proposed_label": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+      "existing_label": "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO",
+      "collision_type": "semantic_overlap",
+      "resolution": "Suffix with _TRUE and keep the genuine review label historical."
+    },
+    {
+      "proposed_label": "LAPIDARIUM_FASE_5_SELO_TRUE",
+      "existing_label": "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET",
+      "collision_type": "phase_number_overlap",
+      "resolution": "Suffix with _TRUE and treat cleanup as historical evidence, not part of the new track."
+    },
+    {
+      "proposed_label": "LAPIDARIUM_FASE_5_SELO_TRUE",
+      "existing_label": "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION",
+      "collision_type": "phase_number_overlap",
+      "resolution": "Suffix with _TRUE and preserve the residual safe-resolution handoff as closed history."
+    },
+    {
+      "proposed_label": "LAPIDARIUM_FASE_5_SELO_TRUE",
+      "existing_label": "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET",
+      "collision_type": "phase_number_overlap",
+      "resolution": "Suffix with _TRUE and keep blocked residuals closure historical."
+    }
+  ]
+}

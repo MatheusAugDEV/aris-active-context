@@ -1087,7 +1087,8 @@
                 "3.28",
                 "3.29",
                 "3.30",
-                "3.34"
+                "3.34",
+                "3.35"
             ],
             "type": "string"
         },
@@ -1649,6 +1650,9 @@
                     "type": "string"
                 },
                 "schema_3_34_change_summary": {
+                    "type": "string"
+                },
+                "schema_3_35_change_summary": {
                     "type": "string"
                 }
             },
@@ -2589,6 +2593,62 @@
         },
         "lapidarium_final_route_reconciliation_no_cleanup": {
             "type": "boolean"
+        },
+        "schema_3_35_change_summary": {
+            "type": "string"
+        },
+        "lapidarium_true_phases_operator_source_received": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_operator_source_path": {
+            "type": "string"
+        },
+        "lapidarium_true_phases_route_amendment_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_route_amendment_decision": {
+            "enum": [
+                "pass",
+                "blocked"
+            ],
+            "type": "string"
+        },
+        "lapidarium_true_phases_conflicts_with_closed_lapidarium": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_label_collision_detected": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_label_collision_items": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+        },
+        "lapidarium_true_phases_recommended_route_handling": {
+            "enum": [
+                "REOPEN_LAPIDARIUM_AS_TRUE_PHASES",
+                "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
+                "KEEP_AS_DIAGNOSTICO_AUTOMACAO_PRECONDITION_CANDIDATE",
+                "BLOCK_PENDING_OPERATOR_CLARIFICATION"
+            ],
+            "type": "string"
+        },
+        "lapidarium_true_phases_next_candidate_phase": {
+            "type": "string"
+        },
+        "lapidarium_true_phases_execution_authorized": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_phase2_execution_authorized": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_roadmap_canonical_updated": {
+            "type": "boolean"
+        },
+        "lapidarium_true_phases_roadmap_canonical_matches_state": {
+            "type": "boolean"
         }
     },
     "required": [
@@ -2670,7 +2730,7 @@
         "purg00_source_gap_terminal_blocker",
         "benchuix_track"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.34",
+    "title": "ARIS Active Context Canonical Live State Schema v3.35",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

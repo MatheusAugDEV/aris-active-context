@@ -4,10 +4,10 @@
 phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
 Status: CLOSED
 Objetivo: Encerrar a reconciliação final de rota e consolidar o handoff terminal sem abrir execução nova.
-Resultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e candidato seguinte registrado só como referência.
+Resultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e trilha pós-Lapidarium candidate-only registrada.
 Pesquisa / arquitetura / decisões:
-Entrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e candidato de próxima rota preservado em artefato/state.
-Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE
+Entrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e operador source + candidate track preservados em artefato/state.
+Próxima fase: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING
 
 ## 1. Infernus FULL
 phase_id: INFERNUS_FULL
@@ -125,3 +125,57 @@ Resultado final esperado: ciclo contínuo de segurança operacional documentado 
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): ciclo de vulnerability management, retest, emulação adversarial, incident response, backup/restore e revisão de isolamento de tenant.
 Próxima fase: contínuo
+
+## 14. Post-Lapidarium Architecture Track Opening
+phase_id: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING
+Status: CANDIDATE
+Objetivo: Admitir a proposta True Phases 2–6 como trilha pós-Lapidarium candidate-only sem reabrir Lapidarium.
+Resultado final esperado: operador source recebido, conflito classificado, label collisions registradas e trilha candidate-only admitida sem execução real.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): operator source receipt, conflict analysis, collision register, route options matrix, roadmap diff e no-execution attestation.
+Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE
+
+## 15. Lapidarium Fase 2 — Arquitetura Alvo True
+phase_id: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE
+Status: CANDIDATE
+Objetivo: Definir a arquitetura alvo candidata para a trilha True sem abrir execução.
+Resultado final esperado: target architecture charter candidate materializado com limites e premissas explícitos.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): escopo, fronteiras, restrições, interfaces e dependências de arquitetura.
+Próxima fase: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
+
+## 16. Lapidarium Fase 3 — Execução por Fatias True
+phase_id: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
+Status: CANDIDATE
+Objetivo: Planejar a execução por fatias da trilha True sem tocar runtime real.
+Resultado final esperado: plano de fatias e critérios de progressão candidate-only.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): matriz de fatias, critérios de aceite e travas de execução preservadas.
+Próxima fase: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE
+
+## 17. Lapidarium Fase 4 — Canonização True
+phase_id: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE
+Status: CANDIDATE
+Objetivo: Canonizar o encadeamento True sem colidir com a revisão genuína já executada.
+Resultado final esperado: pacote de canonização candidate-only com diferenciação explícita da revisão histórica.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): matriz de conflito de rótulos, regra de precedência e diff canônico.
+Próxima fase: LAPIDARIUM_FASE_5_SELO_TRUE
+
+## 18. Lapidarium Fase 5 — Selo True
+phase_id: LAPIDARIUM_FASE_5_SELO_TRUE
+Status: CANDIDATE
+Objetivo: Selar a trilha True sem reabrir o conjunto de limpeza já encerrado.
+Resultado final esperado: pacote de selagem candidate-only com lock e provenance claros.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): evidência de selagem, proveniência e locks preservados.
+Próxima fase: LAPIDARIUM_FASE_6_GUARDA_TRUE
+
+## 19. Lapidarium Fase 6 — Guarda True
+phase_id: LAPIDARIUM_FASE_6_GUARDA_TRUE
+Status: CANDIDATE
+Objetivo: Registrar a guarda final da trilha True e a sua ponte segura para a automação.
+Resultado final esperado: guarda candidate-only concluída e pronto para retomar o caminho macro existente.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): attestation da guarda, critérios de avanço e preservação do estado canônico.
+Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE

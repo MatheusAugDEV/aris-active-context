@@ -1,3 +1,18 @@
+## LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET
+
+- Status: `lapidarium_true_phases_route_amendment_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: operator-source-only route amendment for the proposed Lapidarium True Phases 2–6. The closed Lapidarium handoff remains canonical; this amendment creates a candidate-only post-Lapidarium architecture track and does not open execution.
+- Closed Lapidarium remains canonical: true
+- Proposed track handling: `CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK`
+- Next candidate route: `POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING`
+- Locks opened: none. All execution locks remain false.
+- Locked surfaces remain false: true
+- Operator source file: `operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md`
+- Artifacts: `artifacts/lapidarium/lapidarium_true_phases_*`
+- Next: candidate-only opening packet for the post-Lapidarium architecture track; await explicit operator authorization before any future execution.
+
 ## LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
 
 - Status: `lapidarium_final_route_reconciliation_pass`

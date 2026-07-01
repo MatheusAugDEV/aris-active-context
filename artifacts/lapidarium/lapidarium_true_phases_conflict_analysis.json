@@ -1,0 +1,26 @@
+{
+  "artifact_id": "lapidarium_true_phases_conflict_analysis",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "current_canonical_lapidarium_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
+  "current_route_candidate_before_amendment": "DIAGNOSTICO_AUTOMACAO_GATE",
+  "new_operator_claim": {
+    "claim": "Five phases remain to be admitted as the Lapidarium True Phases track.",
+    "phase_ids": [
+      "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO",
+      "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS",
+      "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+      "LAPIDARIUM_FASE_5_SELO_TRUE",
+      "LAPIDARIUM_FASE_6_GUARDA"
+    ]
+  },
+  "direct_reopen_risk": "high",
+  "ignore_proposal_risk": "medium_high",
+  "recommended_safe_handling": "Create a post-Lapidarium candidate-only architecture track, preserve the closed Lapidarium terminal state, and keep real execution locked.",
+  "precedence_decision": "operator_source_is_strong_but_does_not_replace_closed_history",
+  "resulting_next_candidate": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+  "diagnostico_relationship": "preceded_now; preserved_downstream after the True track chain",
+  "notes": [
+    "The proposal conflicts semantically with the closed Lapidarium terminal handoff, but not strongly enough to justify reopening the historical closure.",
+    "The current live route remains non-executable."
+  ]
+}

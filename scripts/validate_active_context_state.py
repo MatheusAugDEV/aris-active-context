@@ -18035,11 +18035,19 @@ def main() -> None:
         NO_TRANSITION_DEFINED_MESSAGE,
     )
     _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
+        "## LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+        "lapidarium_true_phases_route_amendment_pass",
+        "lapidarium_true_phases_2_to_6_operator_source.md",
+        "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+        "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
+    )
+    _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
         "# ARIS ROADMAP CANONICAL",
         "## 0. Lapidarium",
         "phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
-        "Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE",
+        "Próxima fase: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
         "## 1. Infernus FULL",
         "## 2. Purgatorium FULL",
         "## 3. Infernus Revalidation",
@@ -18047,6 +18055,8 @@ def main() -> None:
         "Próxima fase: se gap bloqueante → Camada de Construção de Automação; senão → BenchUIX",
         "## 5. BenchUIX",
         "## 13. EXT-SEC 07→08 contínuo",
+        "## 14. Post-Lapidarium Architecture Track Opening",
+        "## 19. Lapidarium Fase 6 — Guarda True",
     )
     _mirror_contains(
         ROOT / "EXCLUDENT_POLICY.md",

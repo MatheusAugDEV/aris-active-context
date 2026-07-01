@@ -1,0 +1,26 @@
+{
+  "artifact_id": "lapidarium_true_phases_route_amendment_packet",
+  "phase": "LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
+  "decision": "pass",
+  "operator_source_received": true,
+  "operator_source_path": "operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md",
+  "operator_source_hash": "eeeb2339c9dc591f70e232eed4bba0e6fc0b5384d4d018053702b3abc2c6763b",
+  "closed_lapidarium_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
+  "conflict_detected": true,
+  "conflict_summary": "The proposal asserts an additional Lapidarium 2–6 sequence even though the closed terminal handoff already records the route as complete.",
+  "label_collision_detected": true,
+  "label_collision_items": [
+    "LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO vs LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+    "LAPIDARIUM_FASE_5_CLEANUP_EXECUTION_AUTHORIZED_MINIMAL_SAFE_SET vs LAPIDARIUM_FASE_5_SELO_TRUE",
+    "LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION vs LAPIDARIUM_FASE_5_SELO_TRUE",
+    "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET vs LAPIDARIUM_FASE_5_SELO_TRUE"
+  ],
+  "recommended_route_handling": "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
+  "next_candidate_phase": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+  "execution_authorized": false,
+  "phase2_execution_authorized": false,
+  "roadmap_canonical_updated": true,
+  "roadmap_canonical_matches_state": true,
+  "closed_lapidarium_reopened": false,
+  "diagnostico_automacao_gate_status": "preceded_and_preserved_downstream_after_true_track"
+}
