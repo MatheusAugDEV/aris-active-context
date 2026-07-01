@@ -146,12 +146,12 @@ Próxima fase: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
 
 ## 16. Lapidarium Fase 3 — Execução por Fatias True
 phase_id: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
-Status: CANDIDATE
-Objetivo: Planejar a execução por fatias da trilha True sem tocar runtime real.
-Resultado final esperado: plano de fatias e critérios de progressão candidate-only.
+Status: CLOSED
+Objetivo: Planejar e revisar a execução por fatias da trilha True sem tocar runtime real.
+Resultado final esperado: plano de fatias e critérios de progressão candidate-only fechados.
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): matriz de fatias, critérios de aceite e travas de execução preservadas.
-Próxima fase: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE
+Próxima fase:
 
 ## 17. Lapidarium Fase 4 — Canonização True
 phase_id: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE

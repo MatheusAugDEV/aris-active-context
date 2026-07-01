@@ -15,6 +15,7 @@
     "schema_3_24_change_summary": "Naming clarity metadata: permit an optional top-level display_name in ACTIVE_CONTEXT_STATE.json so the live phase can carry a human-readable alias without changing phase_id/current_phase_id/next_phase/active_next_phase or any real lock.",
     "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
+    "schema_3_37_change_summary": "Lapidarium Fase 3 execution-by-slices planning closure: add phase 3 completion attestation fields, source-sha lineage, and artifact lists for the candidate-only slice plan/review packet while keeping next_phase null and preserving no real runtime execution.",
     "properties": {
         "active_context_version": {
             "enum": [
@@ -1101,7 +1102,8 @@
                 "3.30",
                 "3.34",
                 "3.35",
-                "3.36"
+                "3.36",
+                "3.37"
             ],
             "type": "string"
         },
@@ -2669,6 +2671,9 @@
         "schema_3_36_change_summary": {
             "type": "string"
         },
+        "schema_3_37_change_summary": {
+            "type": "string"
+        },
         "lapidarium_fase2_true_completed": {
             "type": "boolean"
         },
@@ -2698,6 +2703,38 @@
             "type": "boolean"
         },
         "lapidarium_fase2_true_artifacts": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+        },
+        "lapidarium_fase3_true_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase3_true_completion_date": {
+            "type": "string"
+        },
+        "lapidarium_fase3_true_decision": {
+            "enum": [
+                "pass",
+                "blocked",
+                "warn",
+                "fail"
+            ],
+            "type": "string"
+        },
+        "lapidarium_fase3_true_target_architecture_sha256": {
+            "type": "string"
+        },
+        "lapidarium_fase3_true_adr_shas": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 3,
+            "type": "array"
+        },
+        "lapidarium_fase3_true_artifacts": {
             "items": {
                 "type": "string"
             },
