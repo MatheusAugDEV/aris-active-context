@@ -2,30 +2,28 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_6_GUARDA_TRUE + F5 residuals follow-up sync (2026-07-01)
 
 ---
 
 ## CURRENT CANONICAL NEXT ACTION
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+- **phase_id:** `LAPIDARIUM_FASE_6_GUARDA_TRUE`
+- **current_phase_id:** `LAPIDARIUM_FASE_6_GUARDA_TRUE`
+- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
 
 ### Status Atual
 
-**Lapidarium foi reconciliado até a Fase 5 residual safe resolution e agora está em handoff terminal.**
+**Lapidarium está em Fase 6 guard com o follow-up F5 residual sincronizado ao estado canônico do Project_ARIS.**
 
-O ponteiro ativo de Fase 4 foi rebaixado para histórico/superseded.
 O next route existe somente como candidato: `DIAGNOSTICO_AUTOMACAO_GATE`.
 Nenhuma macrofase foi executada.
 
-F5-013/F5-014 continuam em quarentena externa com hash preservado.
-F5-015 continua como quarantine read-only formalizada.
-F5-016/.env continua KEEP com rotação manual requerida.
-
----
+Latest Project_ARIS SHA: `880451a76dd9a45cfb38ba4b4065027287a7dade` (previous `5ca666e51026db49c13b5aaea178baeeaca814e2`).
+CI state: `CI_GREEN_CONFIRMED`.
+F5-013/F5-014 continuam `investigate_more`.
+F5-015 foi remediado via remoção do clone aninhado e documentação externa npm/npx.
 
 ### Próximas Ações (por prioridade)
 

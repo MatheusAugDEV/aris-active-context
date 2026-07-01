@@ -1,9 +1,11 @@
 ## Current snapshot
-- Latest completed phase: `ARIS-CONTEXT-P19 — Artifact Reference-Only Controlled Apply Dry-Run Validation Harness`.
-- Next authorized phase: `ARIS-CONTEXT-P20 — Artifact Reference-Only Controlled Apply Final Readiness Gate`.
-- P18 dry-run verified: `True`.
-- Real apply remains false: `False`.
-- Bedrock verdict: `WARN` with preparation exception `True`.
+- Latest completed phase: `Lapidarium True — Fase 6: Guarda`.
+- Latest Project_ARIS SHA: `880451a76dd9a45cfb38ba4b4065027287a7dade` (previous `5ca666e51026db49c13b5aaea178baeeaca814e2`).
+- CI state: `CI_GREEN_CONFIRMED`.
+- F5-013/F5-014 remain `investigate_more`.
+- F5-015 was remediated by removing the nested clone and externalizing Smart Connections MCP via npm/npx documentation.
+- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
+- Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
 ## Current snapshot

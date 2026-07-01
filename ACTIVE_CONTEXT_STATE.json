@@ -281,7 +281,7 @@
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
         "status": "lapidarium_fase6_guarda_true_pass",
-        "latest_completed_project_commit_sha": "5ca666e51026db49c13b5aaea178baeeaca814e2",
+        "latest_completed_project_commit_sha": "880451a76dd9a45cfb38ba4b4065027287a7dade",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
         "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE"
     },
@@ -676,7 +676,7 @@
         "real_cost_spent": false,
         "real_quota_consumed": false
     },
-    "latest_completed_project_commit_sha": "5ca666e51026db49c13b5aaea178baeeaca814e2",
+    "latest_completed_project_commit_sha": "880451a76dd9a45cfb38ba4b4065027287a7dade",
     "latest_completed_status": "lapidarium_fase6_guarda_true_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
@@ -700,7 +700,10 @@
             "Lapidarium Fase 3 execução por fatias candidate-only planning and review",
             "Lapidarium Fase 4 canonização candidate-only planning and review",
             "Lapidarium Fase 5 selo true",
-            "Lapidarium Fase 6 guarda true"
+            "Lapidarium Fase 6 guarda true",
+            "Lapidarium F5 residuals follow-up synchronized: project SHA 880451a76dd9a45cfb38ba4b4065027287a7dade (previous 5ca666e51026db49c13b5aaea178baeeaca814e2), CI_GREEN_CONFIRMED, F5-013/F5-014 remain investigate_more, F5-015 remediated via nested clone removal and npm externalization, DIAGNOSTICO_AUTOMACAO_GATE remains candidate-only, next_phase and active_next_phase remain null",
+            "F5 residuals follow-up evidence artifacts: artifacts/lapidarium/lapidarium_f5_residuals_followup_packet.json; artifacts/lapidarium/lapidarium_f5_013_014_provenance_investigation.json; artifacts/lapidarium/lapidarium_f5_015_removal_and_npm_migration_packet.json; artifacts/lapidarium/lapidarium_f5_residuals_followup_no_real_execution_attestation.json; artifacts/lapidarium/lapidarium_f5_residuals_followup_validation_evidence.json; artifacts/lapidarium/lapidarium_f5_residuals_followup_report.md; docs/external_tools/smart_connections_mcp.md",
+            "F5 residuals follow-up boundary preserved: no runtime/product execution authorized; historical F21 references retained by design"
         ]
     },
     "last_transition": {

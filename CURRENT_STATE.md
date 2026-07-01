@@ -2,45 +2,34 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_6_GUARDA_TRUE + F5 residuals follow-up sync (2026-07-01)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Final Route Reconciliation Updated)
+## CURRENT CANONICAL STATE (LAPIDARIUM — Fase 6 Guarda / F5 residuals follow-up synced)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **display_name:** `Lapidarium — Final Route Reconciliation`
-- **status:** `lapidarium_final_route_reconciliation_pass`
+- **phase_id:** `LAPIDARIUM_FASE_6_GUARDA_TRUE`
+- **current_phase_id:** `LAPIDARIUM_FASE_6_GUARDA_TRUE`
+- **display_name:** `Lapidarium True — Fase 6: Guarda`
+- **status:** `lapidarium_fase6_guarda_true_pass`
 - **phase_class:** `governance_repair`
-- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
 
-### Final Route Reconciliation (Concluída 2026-06-30)
+### Fase 6 Guarda + F5 Residuals Follow-up (Concluída 2026-07-01)
 
-- `lapidarium_final_route_reconciliation_completed`: `true`
-- `lapidarium_final_route_reconciliation_decision`: `pass`
-- `lapidarium_final_status`: `LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION`
-- `lapidarium_route_stale_pointers_reconciled`: `true`
+- `lapidarium_fase6_true_completed`: `true`
+- `lapidarium_fase6_true_completion_date`: `2026-07-01`
+- `lapidarium_fase6_true_decision`: `pass`
+- `lapidarium_fase6_true_artifacts`: `artifacts/lapidarium/lapidarium_fase6_guarda_true_packet.json`, `artifacts/lapidarium/lapidarium_fase6_true_guard_attestation.json`, `artifacts/lapidarium/lapidarium_fase6_true_advance_criteria.json`, `artifacts/lapidarium/lapidarium_fase6_true_track_consolidation_summary.json`, `artifacts/lapidarium/lapidarium_fase6_true_no_real_execution_attestation.json`, `artifacts/lapidarium/lapidarium_fase6_true_validation_evidence.json`, `artifacts/lapidarium/lapidarium_fase6_true_report.md`
+- `lapidarium_true_track_status`: `COMPLETE`
+- `latest_completed_project_commit_sha`: `880451a76dd9a45cfb38ba4b4065027287a7dade` (previous `5ca666e51026db49c13b5aaea178baeeaca814e2`)
+- `latest_completed_ci_state`: `CI_GREEN_CONFIRMED`
+- `latest_completed_next_recommended_step`: `NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE`
+- `lapidarium_f5_residuals_followup`: F5-013/F5-014 remain `investigate_more`; F5-015 remediated via nested clone removal and npm externalization; evidence artifacts recorded in `artifacts/lapidarium/` and `docs/external_tools/`
 - `lapidarium_next_route_candidate`: `DIAGNOSTICO_AUTOMACAO_GATE`
 - `lapidarium_next_route_candidate_execution_authorized`: `false`
-- `lapidarium_final_route_reconciliation_next_step`: `NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE`
-- `lapidarium_final_route_reconciliation_route_candidate_only`: `true`
-- `lapidarium_final_route_reconciliation_no_macro_execution`: `true`
-- `lapidarium_final_route_reconciliation_no_file_move`: `true`
-- `lapidarium_final_route_reconciliation_no_cleanup`: `true`
-- `lapidarium_final_route_reconciliation_artifacts`: `artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json`, `artifacts/lapidarium/lapidarium_final_stale_pointer_register.json`, `artifacts/lapidarium/lapidarium_final_handoff_decision.json`, `artifacts/lapidarium/lapidarium_final_residuals_carry_forward_register.json`, `artifacts/lapidarium/lapidarium_final_no_macro_execution_attestation.json`, `artifacts/lapidarium/lapidarium_final_route_reconciliation_validation_evidence.json`, `artifacts/lapidarium/lapidarium_final_route_reconciliation_report.md`
-- `lapidarium_stale_phase_id`: `LAPIDARIUM`
-- `lapidarium_stale_current_phase_id`: `LAPIDARIUM`
-- `lapidarium_stale_previous_phase_id`: `LAPIDARIUM`
-- `lapidarium_stale_display_name`: `Lapidarium Fase 3 — Verificação de Cache`
-- `lapidarium_stale_active_next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `lapidarium_stale_active_next_phase_class`: `lapidarium_remediation`
-- `lapidarium_stale_next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `lapidarium_stale_next_phase_simple`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `lapidarium_stale_next_phase_authorized_by_operator`: `true`
-- `lapidarium_final_residuals_carry_forward_summary`: `F5-013`, `F5-014`, `F5-015`, `F5-016/.env`
-- Final handoff is terminal. The next route exists only as a candidate and is not authorized.
+- `lapidarium_fase6_true_no_runtime_or_product_authorization`: `true`
 
 ### Fase 5 — Authorized Minimal Cleanup Execution (Concluída 2026-06-30)
 
