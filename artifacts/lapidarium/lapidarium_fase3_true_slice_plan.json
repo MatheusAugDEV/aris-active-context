@@ -1,0 +1,281 @@
+{
+  "artifact_id": "lapidarium_fase3_true_slice_plan",
+  "artifact_type": "lapidarium_true_slice_plan",
+  "phase_id": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE_PLANNING_SUBGATE",
+  "display_name": "Lapidarium True - Fase 3: Execucao por Fatias",
+  "target_phase_id": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+  "target_phase_label": "Lapidarium Fase 3 - Execucao por Fatias True",
+  "created_at": "2026-07-01",
+  "decision": "pass",
+  "review_status": "READY_FOR_OPERATOR_REVIEW",
+  "planning_only": true,
+  "candidate_only": true,
+  "design_only": true,
+  "synthetic_only": true,
+  "execution_authorized": false,
+  "runtime_authorized": false,
+  "product_authorized": false,
+  "bedrock_authorized": false,
+  "secrets_authorized": false,
+  "state_mutation_authorized": false,
+  "route_opened": false,
+  "state_advanced": false,
+  "current_live_route_preserved": true,
+  "boot_file_used": "BOOT.md",
+  "route_state_before": {
+    "current_phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "current_status": "lapidarium_fase2_arquitetura_alvo_true_pass",
+    "next_phase": null,
+    "active_next_phase": null,
+    "next_route_candidate": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+    "phase_2_closed_in_live_state": true,
+    "phase_3_candidate_confirmed": true
+  },
+  "roadmap_check": {
+    "phase_15_status": "CLOSED",
+    "phase_15_next_phase": "LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE",
+    "phase_16_status": "CANDIDATE",
+    "phase_16_next_phase": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE"
+  },
+  "validation_basis": {
+    "phase_2_closed_in_live_state": true,
+    "route_candidate_points_to_f3": true,
+    "active_next_phase_is_null": true,
+    "next_phase_is_null": true,
+    "no_execution_surfaces_opened": true
+  },
+  "source_documents": {
+    "active_context_state": {
+      "path": "ACTIVE_CONTEXT_STATE.json",
+      "sha256": "1f534a8e9382e9cb95cc146aeb1b7a29f2e8c753b9d8dc49dfbe052e9dce79a2"
+    },
+    "boot": {
+      "path": "BOOT.md",
+      "sha256": "e55dbaac4e7b9e8cb11d751846ce617566ae00a508a1d1d17a129464065d6aae"
+    },
+    "roadmap": {
+      "path": "ROADMAP_CANONICAL.md",
+      "sha256": "9dc01ceea1353f96ae3a88b4e5860cb9380f0952660d25efa01b9571c78a3f1d"
+    },
+    "decision_locks": {
+      "path": "DECISION_LOCKS.md",
+      "sha256": "4344faddcd0cc845e5e4160d71d13da462de45ff19fb561d6f0752cde0de49e1"
+    },
+    "readme": {
+      "path": "README.md",
+      "sha256": "a84b8e6517d9f215d6f5b15eff0806ec58eb0e1102bf75fb69ae014fdd983f9b"
+    },
+    "target_architecture": {
+      "path": "/home/matheus/ARIS/Project_ARIS/TARGET_ARCHITECTURE.md",
+      "sha256": "5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e"
+    },
+    "adr_005_clean_architecture": {
+      "path": "/home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md",
+      "sha256": "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c"
+    },
+    "adr_006_llm_adapter_pattern": {
+      "path": "/home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md",
+      "sha256": "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90"
+    },
+    "adr_007_diataxis_adr_taxonomy": {
+      "path": "/home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md",
+      "sha256": "1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d"
+    }
+  },
+  "slice_matrix": [
+    {
+      "slice_id": "F3-SLICE-01",
+      "title": "LLM provider port boundary",
+      "source_basis": [
+        "TARGET_ARCHITECTURE.md LLM Adapter Pattern",
+        "ADR 006 LLM Adapter Pattern for Providers",
+        "ADR 005 Clean Architecture for ARIS"
+      ],
+      "scope": [
+        "src/aris/actions/responders/ai.py",
+        "src/aris/model_gateway/model_gateway_v2_cost_control.py",
+        "src/aris/response/policy.py"
+      ],
+      "objective": "Hide direct provider SDK access behind LLMProviderPort and keep provider selection in policy or use-case code.",
+      "acceptance_criteria": [
+        "The application layer speaks to a stable LLMProviderPort instead of a concrete SDK.",
+        "Groq and Claude are treated as adapters, not as application-level dependencies.",
+        "Provider selection stays in policy or use-case code.",
+        "No domain module imports a provider SDK."
+      ],
+      "preserved_constraints": [
+        "No runtime execution",
+        "No product authorization",
+        "No Bedrock authorization",
+        "No secrets access",
+        "No environment mutation"
+      ],
+      "blocked_if": [
+        "The slice would require runtime execution",
+        "The slice would move provider SDK ownership into the domain layer",
+        "The slice would change live active-context state"
+      ]
+    },
+    {
+      "slice_id": "F3-SLICE-02",
+      "title": "Use-case orchestration boundary",
+      "source_basis": [
+        "TARGET_ARCHITECTURE.md Use Cases / Application",
+        "ADR 005 Clean Architecture for ARIS"
+      ],
+      "scope": [
+        "src/aris/app/orchestrator.py",
+        "src/aris/app/state_machine.py",
+        "src/aris/app/interaction_router.py",
+        "src/aris/turn/*",
+        "src/aris/actions/*",
+        "src/aris/response/composition/*",
+        "src/aris/response/planning/*",
+        "src/aris/response/evaluation/*",
+        "src/aris/response/review/*"
+      ],
+      "objective": "Keep orchestration in the application layer and prevent transport or framework concerns from becoming use-case policy.",
+      "acceptance_criteria": [
+        "Use cases coordinate domain objects and outward ports.",
+        "Transport layout, filesystem layout, and secret handling stay out of use cases.",
+        "Application flow remains deterministic and testable without network access.",
+        "The orchestration boundary remains explicit in the slice plan."
+      ],
+      "preserved_constraints": [
+        "No runtime execution",
+        "No product authorization",
+        "No Bedrock authorization",
+        "No secrets access",
+        "No environment mutation"
+      ],
+      "blocked_if": [
+        "The slice requires transport-layer changes to decide business policy",
+        "The slice depends on a live runtime or external provider call"
+      ]
+    },
+    {
+      "slice_id": "F3-SLICE-03",
+      "title": "Domain purity and enterprise rules",
+      "source_basis": [
+        "TARGET_ARCHITECTURE.md Domain / Enterprise Rules",
+        "ADR 005 Clean Architecture for ARIS"
+      ],
+      "scope": [
+        "src/aris/intelligence/*",
+        "src/aris/response/contract.py",
+        "src/aris/response/system.py",
+        "src/aris/response/style.py",
+        "src/aris/capabilities/*",
+        "src/aris/action_runtime_contracts/*",
+        "src/aris/voice/voice_models.py"
+      ],
+      "objective": "Keep the domain layer pure, with data shapes and rules that do not depend on provider SDKs, env vars, the filesystem, or network services.",
+      "acceptance_criteria": [
+        "Domain modules remain free of provider SDK imports.",
+        "Domain modules remain free of environment and filesystem reads.",
+        "Domain modules expose pure dataclasses, enums, and pure functions only.",
+        "Domain rules stay testable independently of adapters and drivers."
+      ],
+      "preserved_constraints": [
+        "No runtime execution",
+        "No product authorization",
+        "No Bedrock authorization",
+        "No secrets access",
+        "No environment mutation"
+      ],
+      "blocked_if": [
+        "The slice would add framework ownership to the domain layer",
+        "The slice would require product or runtime authorization"
+      ]
+    },
+    {
+      "slice_id": "F3-SLICE-04",
+      "title": "Adapter and driver surface consolidation",
+      "source_basis": [
+        "TARGET_ARCHITECTURE.md Interface Adapters and Frameworks / Drivers",
+        "ADR 005 Clean Architecture for ARIS",
+        "ADR 006 LLM Adapter Pattern for Providers"
+      ],
+      "scope": [
+        "src/aris/model_gateway/model_gateway_v2_cost_control.py",
+        "src/aris/audio/voice_provider_selector.py",
+        "src/aris/voice/providers/elevenlabs_provider.py",
+        "src/aris/backend/app.py"
+      ],
+      "objective": "Make adapter boundaries explicit so framework-specific code remains replaceable and does not absorb business policy.",
+      "acceptance_criteria": [
+        "Adapters translate DTOs, errors, and provider/framework shapes without owning business rules.",
+        "Framework and driver code stays at the perimeter.",
+        "The adapter layer can be replaced without changing the domain model.",
+        "Boundary translation is centralized instead of duplicated."
+      ],
+      "preserved_constraints": [
+        "No runtime execution",
+        "No product authorization",
+        "No Bedrock authorization",
+        "No secrets access",
+        "No environment mutation"
+      ],
+      "blocked_if": [
+        "The slice would move policy into the driver layer",
+        "The slice would require live provider or network calls"
+      ]
+    },
+    {
+      "slice_id": "F3-SLICE-05",
+      "title": "Documentation taxonomy alignment",
+      "source_basis": [
+        "TARGET_ARCHITECTURE.md Diataxis Classification",
+        "ADR 007 Diataxis ADR Taxonomy for Project ARIS"
+      ],
+      "scope": [
+        "docs/architecture/*",
+        "docs/decisions/*",
+        "PROJECT_CONTEXT_ARIS.md",
+        "CURRENT_STATE.md",
+        "CONTEXT_INDEX.md",
+        "docs/runbooks/*",
+        "docs/reference/*",
+        "docs/diagnostics/*"
+      ],
+      "objective": "Keep explanation, reference, how-to, and tutorial content in the right document family so the architecture model stays readable and does not drift into operations.",
+      "acceptance_criteria": [
+        "Architecture explanation remains separated from operational how-to content.",
+        "Decision records stay explanation-first and are not repurposed as operational instructions.",
+        "Reference pages state facts without smuggling in procedural guidance.",
+        "The documentation surface follows the Diataxis classifier declared in the target architecture."
+      ],
+      "preserved_constraints": [
+        "No runtime execution",
+        "No product authorization",
+        "No Bedrock authorization",
+        "No secrets access",
+        "No environment mutation"
+      ],
+      "blocked_if": [
+        "The slice would require changing runtime behavior",
+        "The slice would flatten documentation families into one operational bundle"
+      ]
+    }
+  ],
+  "progression_order": [
+    "F3-SLICE-01",
+    "F3-SLICE-02",
+    "F3-SLICE-03",
+    "F3-SLICE-04",
+    "F3-SLICE-05"
+  ],
+  "recommended_first_slice": "F3-SLICE-01",
+  "next_recommended_phase_literal": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
+  "acceptance_gate": {
+    "slice_matrix_derived_only_from_target_architecture": true,
+    "phase_2_closed_in_live_state": true,
+    "route_candidate_points_to_phase_3": true,
+    "no_live_state_mutation_required": true,
+    "no_runtime_surface_opened": true
+  },
+  "notes": [
+    "The slice matrix is anchored only to explicit layer and module boundaries named in TARGET_ARCHITECTURE.md and its two ADR support documents.",
+    "This artifact is planning-only and does not authorize runtime, product, Bedrock, secrets, or environment mutation."
+  ]
+}
