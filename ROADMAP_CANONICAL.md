@@ -160,16 +160,16 @@ Objetivo: Canonizar o encadeamento True sem colidir com a revisão genuína já 
 Resultado final esperado: pacote de canonização candidate-only com diferenciação explícita da revisão histórica.
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): matriz de conflito de rótulos, regra de precedência e diff canônico.
-Próxima fase:
+Próxima fase: LAPIDARIUM_FASE_5_SELO_TRUE
 
 ## 18. Lapidarium Fase 5 — Selo True
 phase_id: LAPIDARIUM_FASE_5_SELO_TRUE
-Status: CANDIDATE
+Status: CLOSED
 Objetivo: Selar a trilha True sem reabrir o conjunto de limpeza já encerrado.
 Resultado final esperado: pacote de selagem candidate-only com lock e provenance claros.
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): evidência de selagem, proveniência e locks preservados.
-Próxima fase: LAPIDARIUM_FASE_6_GUARDA_TRUE
+Próxima fase: se selagem candidate-only conclui sem execucao real → LAPIDARIUM_FASE_6_GUARDA_TRUE; senão → aguardando instrucao do operador
 
 ## 19. Lapidarium Fase 6 — Guarda True
 phase_id: LAPIDARIUM_FASE_6_GUARDA_TRUE

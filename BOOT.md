@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `565075a9cd01`
-- schema_version: `3.38`
+- state_sha: `48587f244d14`
+- schema_version: `3.39`
 
 ## AVISO DE STALE
 
@@ -14,10 +14,10 @@ GERADO — NAO EDITE A MAO
 ## ONDE ESTOU
 
 - camada: `Unknown`
-- phase_id: `LAPIDARIUM_FASE_4_CANONIZACAO_TRUE`
-- status: `lapidarium_fase4_canonizacao_true_pass`
+- phase_id: `LAPIDARIUM_FASE_5_SELO_TRUE`
+- status: `lapidarium_fase5_selo_true_pass`
 - decision: `pass`
-- resumo: Lapidarium True — Fase 4: Canonização; sem transicao sucessora definida, aguardando instrucao do operador.
+- resumo: Lapidarium True — Fase 5: Selo; sem transicao sucessora definida, aguardando instrucao do operador.
 
 ## MAPA
 
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_5_SELO_TRUE
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_6_GUARDA_TRUE
 
 ## REGRAS DE AGORA
 

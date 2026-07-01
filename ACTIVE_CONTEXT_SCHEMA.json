@@ -1105,7 +1105,8 @@
                 "3.35",
                 "3.36",
                 "3.37",
-                "3.38"
+                "3.38",
+                "3.39"
             ],
             "type": "string"
         },
@@ -2767,6 +2768,31 @@
             },
             "minItems": 1,
             "type": "array"
+        },
+        "schema_3_39_change_summary": {
+            "type": "string"
+        },
+        "lapidarium_fase5_true_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase5_true_completion_date": {
+            "type": "string"
+        },
+        "lapidarium_fase5_true_decision": {
+            "type": "string",
+            "enum": [
+                "pass",
+                "blocked",
+                "warn",
+                "fail"
+            ]
+        },
+        "lapidarium_fase5_true_artifacts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
         }
     },
     "required": [
@@ -2858,9 +2884,14 @@
         "lapidarium_fase4_true_completed",
         "lapidarium_fase4_true_completion_date",
         "lapidarium_fase4_true_decision",
-        "lapidarium_fase4_true_artifacts"
+        "lapidarium_fase4_true_artifacts",
+        "schema_3_39_change_summary",
+        "lapidarium_fase5_true_completed",
+        "lapidarium_fase5_true_completion_date",
+        "lapidarium_fase5_true_decision",
+        "lapidarium_fase5_true_artifacts"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.38",
+    "title": "ARIS Active Context Canonical Live State Schema v3.39",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
