@@ -16,6 +16,7 @@
     "schema_3_25_change_summary": "BENCHUIX evidence tracking enrichment: record independently reverified draft_v5 ajuda and cleanup commit/run evidence inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_37_change_summary": "Lapidarium Fase 3 execution-by-slices planning closure: add phase 3 completion attestation fields, source-sha lineage, and artifact lists for the candidate-only slice plan/review packet while keeping next_phase null and preserving no real runtime execution.",
+    "schema_3_38_change_summary": "Lapidarium Fase 4 canonization closure: add phase 4 completion attestation fields and artifact lists for the candidate-only canonization packet while keeping the current route closed, preserving the historical review packet, and maintaining no real runtime execution.",
     "properties": {
         "active_context_version": {
             "enum": [
@@ -1103,7 +1104,8 @@
                 "3.34",
                 "3.35",
                 "3.36",
-                "3.37"
+                "3.37",
+                "3.38"
             ],
             "type": "string"
         },
@@ -2674,6 +2676,9 @@
         "schema_3_37_change_summary": {
             "type": "string"
         },
+        "schema_3_38_change_summary": {
+            "type": "string"
+        },
         "lapidarium_fase2_true_completed": {
             "type": "boolean"
         },
@@ -2735,6 +2740,28 @@
             "type": "array"
         },
         "lapidarium_fase3_true_artifacts": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+        },
+        "lapidarium_fase4_true_completed": {
+            "type": "boolean"
+        },
+        "lapidarium_fase4_true_completion_date": {
+            "type": "string"
+        },
+        "lapidarium_fase4_true_decision": {
+            "enum": [
+                "pass",
+                "blocked",
+                "warn",
+                "fail"
+            ],
+            "type": "string"
+        },
+        "lapidarium_fase4_true_artifacts": {
             "items": {
                 "type": "string"
             },
@@ -2827,9 +2854,13 @@
         "lapidarium_fase2_true_target_architecture_sha256",
         "lapidarium_fase2_true_adr_shas",
         "lapidarium_fase2_true_fase0_fase1_verified",
-        "lapidarium_fase2_true_artifacts"
+        "lapidarium_fase2_true_artifacts",
+        "lapidarium_fase4_true_completed",
+        "lapidarium_fase4_true_completion_date",
+        "lapidarium_fase4_true_decision",
+        "lapidarium_fase4_true_artifacts"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.36",
+    "title": "ARIS Active Context Canonical Live State Schema v3.38",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

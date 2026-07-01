@@ -151,16 +151,16 @@ Objetivo: Planejar e revisar a execução por fatias da trilha True sem tocar ru
 Resultado final esperado: plano de fatias e critérios de progressão candidate-only fechados.
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): matriz de fatias, critérios de aceite e travas de execução preservadas.
-Próxima fase:
+Próxima fase: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE
 
 ## 17. Lapidarium Fase 4 — Canonização True
 phase_id: LAPIDARIUM_FASE_4_CANONIZACAO_TRUE
-Status: CANDIDATE
+Status: CLOSED
 Objetivo: Canonizar o encadeamento True sem colidir com a revisão genuína já executada.
 Resultado final esperado: pacote de canonização candidate-only com diferenciação explícita da revisão histórica.
 Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): matriz de conflito de rótulos, regra de precedência e diff canônico.
-Próxima fase: LAPIDARIUM_FASE_5_SELO_TRUE
+Próxima fase:
 
 ## 18. Lapidarium Fase 5 — Selo True
 phase_id: LAPIDARIUM_FASE_5_SELO_TRUE
