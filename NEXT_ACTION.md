@@ -2,23 +2,22 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE (2026-06-30)
 
 ---
 
 ## CURRENT CANONICAL NEXT ACTION
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+- **phase_id:** `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- **current_phase_id:** `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
 
 ### Status Atual
 
-**Lapidarium foi reconciliado até a Fase 5 residual safe resolution e agora está em handoff terminal.**
+**Lapidarium foi reconciliado, a trilha True foi admitida (candidate-only) e a Fase 2 — Arquitetura Alvo True foi fechada (CLOSED) em 2026-06-30.**
 
-O ponteiro ativo de Fase 4 foi rebaixado para histórico/superseded.
-O next route existe somente como candidato: `DIAGNOSTICO_AUTOMACAO_GATE`.
+Nenhuma execução real foi aberta. O next route existe somente como candidato: `LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE`.
 Nenhuma macrofase foi executada.
 
 F5-013/F5-014 continuam em quarentena externa com hash preservado.

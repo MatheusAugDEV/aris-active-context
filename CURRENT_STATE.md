@@ -2,21 +2,23 @@
 
 > Fonte primária: `ACTIVE_CONTEXT_STATE.json`. Este arquivo é mirror derivado.
 > JSON é autoridade máxima. Markdown contraditório é drift.
-> Última atualização: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET (2026-06-30)
+> Última atualização: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE (2026-06-30)
 
 ---
 
-## CURRENT CANONICAL STATE (LAPIDARIUM — Final Route Reconciliation Updated)
+## CURRENT CANONICAL STATE (Lapidarium Fase 2 — Arquitetura Alvo True, CLOSED)
 
 - **Source of truth:** `ACTIVE_CONTEXT_STATE.json`
-- **phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **current_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
-- **display_name:** `Lapidarium — Final Route Reconciliation`
-- **status:** `lapidarium_final_route_reconciliation_pass`
+- **phase_id:** `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- **current_phase_id:** `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- **previous_phase_id:** `LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET`
+- **display_name:** `Lapidarium True — Fase 2: Arquitetura Alvo`
+- **status:** `lapidarium_fase2_arquitetura_alvo_true_pass`
 - **phase_class:** `governance_repair`
-- **sha_lido:** `72a0f266b1cf5fa296bd33ad41d79e0c3e73091d`
+- **sha_lido:** `0b2d53e9f7cda6f03e1ee433e4ee0a4b8a6a4d1c`
+- **latest_completed_next_recommended_step:** `NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE`
 
-### Final Route Reconciliation (Concluída 2026-06-30)
+### Final Route Reconciliation (Concluída 2026-06-30 — SUPERSEDED_BY_LAPIDARIUM_FASE2_ARQUITETURA_ALVO_TRUE)
 
 - `lapidarium_final_route_reconciliation_completed`: `true`
 - `lapidarium_final_route_reconciliation_decision`: `pass`
@@ -193,9 +195,10 @@
 
 ### next_phase
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- `next_phase`: `null` (SUPERSEDED — histórico anterior indicava `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`, absorvido pelo fechamento de Lapidarium e reaberto sob a trilha True)
+- `active_next_phase`: `null`
+- `next_phase_authorized_by_operator`: `false`
+- Candidate-only next route: `LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE`
 - Aguardando instrução explícita do operador.
 
 ---
