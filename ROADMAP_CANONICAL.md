@@ -141,7 +141,7 @@ Status: CANDIDATE
 Objetivo: Definir a arquitetura alvo candidata para a trilha True sem abrir execução.
 Resultado final esperado: target architecture charter candidate materializado com limites e premissas explícitos.
 Pesquisa / arquitetura / decisões:
-Entrega mínima pra fechar (evidência): escopo, fronteiras, restrições, interfaces e dependências de arquitetura.
+Entrega mínima pra fechar (evidência): `TARGET_ARCHITECTURE.md` (sha256:5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e) + `docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md` (sha256:ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c) + `docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md` (sha256:3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90) + `docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md` (sha256:1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d).
 Próxima fase: LAPIDARIUM_FASE_3_EXECUCAO_POR_FATIAS_TRUE
 
 ## 16. Lapidarium Fase 3 — Execução por Fatias True

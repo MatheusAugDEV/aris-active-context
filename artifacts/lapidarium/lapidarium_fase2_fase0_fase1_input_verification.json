@@ -1,0 +1,67 @@
+{
+  "artifact_id": "lapidarium_fase2_fase0_fase1_input_verification",
+  "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+  "created_at": "2026-06-30T23:32:16-03:00",
+  "decision": "pass",
+  "phase0_phase1_artifacts_found": true,
+  "phase0_phase1_artifacts": [
+    "artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+    "artifacts/lapidarium/fase0_cartografia_diagnostico_automacao.json",
+    "artifacts/lapidarium/fase0_cartografia_report.md",
+    "artifacts/lapidarium/fase1_triagem_classificacao.json",
+    "artifacts/lapidarium/fase1_triagem_report.md",
+    "artifacts/lapidarium/fase1_triagem_nomenclatura_proposta.json",
+    "artifacts/lapidarium/fase1_consolidacao_final.json",
+    "artifacts/lapidarium/fase1_consolidacao_final_report.md",
+    "artifacts/lapidarium/fase1_refinamento_report.md",
+    "artifacts/lapidarium/fase1_correcao_import_real_report.md",
+    "artifacts/lapidarium/fase1_correcao_execucao_direta_report.md"
+  ],
+  "search_commands": [
+    {
+      "command": "git -C /home/matheus/ARIS/Project_ARIS log --all --full-history --oneline -- artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json artifacts/lapidarium/fase1_triagem_classificacao.json | head -n 20",
+      "output": [
+        "6989bf10 Lapidarium fase1 triagem artifacts",
+        "fd1b2d75 Lapidarium fase1 triagem artifacts",
+        "e3c5b2e3 Add Lapidarium phase 0 cartography artifacts",
+        "a1f433f4 Add Lapidarium phase 0 cartography artifacts"
+      ]
+    },
+    {
+      "command": "find /home/matheus/ARIS/Project_ARIS/artifacts/lapidarium -maxdepth 1 -type f | grep -E 'fase0_cartografia|fase1_(triagem|consolidacao|refinamento|correcao)' | sort | head -n 50",
+      "output": [
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase0_cartografia_diagnostico_automacao.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase0_cartografia_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase0_cartografia_report.md",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_consolidacao_final.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_consolidacao_final_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_consolidacao_final_report.md",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_execucao_direta.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_execucao_direta_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_execucao_direta_report.md",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_import_real.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_import_real_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_correcao_import_real_report.md",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_refinamento_aris_genuino.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_refinamento_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_refinamento_report.md",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_triagem_classificacao.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_triagem_no_real_execution_attestation.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_triagem_nomenclatura_proposta.json",
+        "/home/matheus/ARIS/Project_ARIS/artifacts/lapidarium/fase1_triagem_report.md"
+      ]
+    }
+  ],
+  "input_assessment": {
+    "phase0_found": true,
+    "phase1_found": true,
+    "phase0_structural_input": "repo cartography and automation diagnosis exist in artifacts/lapidarium/",
+    "phase1_structural_input": "triage, consolidation, refinement, and correction artifacts exist in artifacts/lapidarium/",
+    "gap": "none"
+  },
+  "notes": [
+    "The discovery step found real phase 0 and phase 1 Lapidarium artifacts in the repository.",
+    "This verification did not require any runtime or product execution."
+  ]
+}

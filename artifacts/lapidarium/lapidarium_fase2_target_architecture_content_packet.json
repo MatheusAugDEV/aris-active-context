@@ -1,0 +1,78 @@
+{
+  "artifact_id": "lapidarium_fase2_target_architecture_content_packet",
+  "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+  "created_at": "2026-06-30T23:32:16-03:00",
+  "decision": "pass",
+  "operator_authorized": true,
+  "execution_authorized": false,
+  "design_only": true,
+  "no_runtime_execution": true,
+  "no_product_execution": true,
+  "no_bedrock_execution": true,
+  "no_secrets_access": true,
+  "no_env_read": true,
+  "no_history_rewrite": true,
+  "no_force_push": true,
+  "target_architecture_created": true,
+  "source_artifacts": [
+    "artifacts/lapidarium/fase0_cartografia_mapa_estrutural.json",
+    "artifacts/lapidarium/fase0_cartografia_diagnostico_automacao.json",
+    "artifacts/lapidarium/fase1_triagem_classificacao.json",
+    "artifacts/lapidarium/fase1_consolidacao_final.json",
+    "artifacts/lapidarium/fase1_refinamento_report.md"
+  ],
+  "source_artifact_verification": {
+    "phase0_phase1_artifacts_found": true,
+    "history_proof_commits": [
+      "6989bf10",
+      "fd1b2d75",
+      "e3c5b2e3",
+      "a1f433f4"
+    ]
+  },
+  "created_files": [
+    {
+      "path": "TARGET_ARCHITECTURE.md",
+      "sha256": "5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e",
+      "bytes": 8624
+    },
+    {
+      "path": "docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md",
+      "sha256": "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c",
+      "bytes": 1502
+    },
+    {
+      "path": "docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md",
+      "sha256": "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90",
+      "bytes": 1832
+    },
+    {
+      "path": "docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md",
+      "sha256": "1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d",
+      "bytes": 1668
+    }
+  ],
+  "supporting_updates": [
+    {
+      "path": "docs/decisions/index.md",
+      "sha256": "4c2caaf4c011daed59b32b9707e28c5383999de28d58b26083142498adec4eb8",
+      "bytes": 944,
+      "reason": "ADR index updated to expose the new architecture decisions"
+    }
+  ],
+  "required_content_topics": [
+    "source_of_truth_hierarchy",
+    "clean_architecture_layers",
+    "real_module_mapping",
+    "llm_adapter_pattern",
+    "diataxis_taxonomy",
+    "phase_0_1_structural_carry_over",
+    "admission_contracts"
+  ],
+  "execution_authorized_false_did_not_block_documentation": true,
+  "notes": [
+    "The route had already been opened in the previous packet; this packet adds the missing design content.",
+    "Clean Architecture is documented as the target model, not as a runtime mutation.",
+    "Claude is treated as a future provider adapter target; Groq is the current direct provider edge."
+  ]
+}

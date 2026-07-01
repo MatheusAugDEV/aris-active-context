@@ -1,0 +1,86 @@
+{
+  "artifact_id": "lapidarium_fase2_content_validation_evidence",
+  "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+  "created_at": "2026-06-30T23:32:16-03:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "target_architecture_present",
+      "command": "test -s /home/matheus/ARIS/Project_ARIS/TARGET_ARCHITECTURE.md",
+      "passed": true
+    },
+    {
+      "check": "target_architecture_content_topics",
+      "command": "python3 - <<'PY'\nfrom pathlib import Path\ntext = Path('/home/matheus/ARIS/Project_ARIS/TARGET_ARCHITECTURE.md').read_text(encoding='utf-8')\nneedles = ['Source-of-Truth Hierarchy', 'Clean Architecture View', 'LLM Adapter Pattern', 'Diataxis Classification', 'Phase 0 / Phase 1 Structural Carry-Over']\nmissing = [needle for needle in needles if needle not in text]\nassert not missing, missing\nprint('ok')\nPY",
+      "passed": true,
+      "result": "All five required content topics were found in TARGET_ARCHITECTURE.md."
+    },
+    {
+      "check": "adr_files_present",
+      "command": "test -s /home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md && test -s /home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md && test -s /home/matheus/ARIS/Project_ARIS/docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md",
+      "passed": true
+    },
+    {
+      "check": "json_tool_packet",
+      "command": "python3 -m json.tool /home/matheus/ARIS/Project_ARIS/aris-active-context/artifacts/lapidarium/lapidarium_fase2_target_architecture_content_packet.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_input_verification",
+      "command": "python3 -m json.tool /home/matheus/ARIS/Project_ARIS/aris-active-context/artifacts/lapidarium/lapidarium_fase2_fase0_fase1_input_verification.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_noexec",
+      "command": "python3 -m json.tool /home/matheus/ARIS/Project_ARIS/aris-active-context/artifacts/lapidarium/lapidarium_fase2_content_no_real_execution_attestation.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_validation",
+      "command": "python3 -m json.tool /home/matheus/ARIS/Project_ARIS/aris-active-context/artifacts/lapidarium/lapidarium_fase2_content_validation_evidence.json",
+      "passed": true
+    },
+    {
+      "check": "active_context_validator",
+      "command": "python3 /home/matheus/ARIS/Project_ARIS/aris-active-context/scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "roadmap_evidence_line_updated",
+      "command": "grep -n \"TARGET_ARCHITECTURE.md.*sha256:5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e\" /home/matheus/ARIS/Project_ARIS/aris-active-context/ROADMAP_CANONICAL.md",
+      "passed": true
+    },
+    {
+      "check": "decision_locks_entry_added",
+      "command": "grep -n \"LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CONTENT_PACKET\" /home/matheus/ARIS/Project_ARIS/aris-active-context/DECISION_LOCKS.md",
+      "passed": true
+    },
+    {
+      "check": "project_aris_status_focus",
+      "command": "git -C /home/matheus/ARIS/Project_ARIS status --short -- TARGET_ARCHITECTURE.md docs/decisions",
+      "passed": true,
+      "result": "A TARGET_ARCHITECTURE.md; A docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md; A docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md; A docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md; M docs/decisions/index.md; no deletions or renames in the touched files."
+    },
+    {
+      "check": "project_aris_full_status",
+      "command": "git -C /home/matheus/ARIS/Project_ARIS status --short",
+      "passed": true,
+      "result": "Pre-existing unrelated dirty files remained in the worktree; this task introduced only documentation files and no deletions or renames."
+    }
+  ],
+  "file_hashes": {
+    "TARGET_ARCHITECTURE.md": "5cd2106e4e13fd781bd5cdbeab96e12955a131c4b01fbf5e1f291590a4920d4e",
+    "docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md": "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c",
+    "docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md": "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90",
+    "docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md": "1b9b26c5963a66cfa49992845995990bb93d7e30b7e32fb1a2cf830a625e592d",
+    "docs/decisions/index.md": "4c2caaf4c011daed59b32b9707e28c5383999de28d58b26083142498adec4eb8",
+    "ROADMAP_CANONICAL.md": "1c122dea57d8bfb71b58ab4171df0df38665d7ceecea08b9cd7435390612cf98",
+    "DECISION_LOCKS.md": "e3da1a79d850b5158005e520d9ca74bbf04485d26648de96097aceb909207589"
+  },
+  "notes": [
+    "The current execution_authorized=false flag did not block design documentation creation.",
+    "Phase 0 and Phase 1 input artifacts were found in the repository history and on disk.",
+    "The new docs are design-only and do not alter runtime surfaces."
+  ]
+}

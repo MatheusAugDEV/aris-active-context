@@ -1,3 +1,16 @@
+## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CONTENT_PACKET
+
+- Status: `lapidarium_fase2_target_architecture_content_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: design-doc materialization for `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`. The route was already opened by the prior candidate packet; this entry records the missing content creation only.
+- Created files: `TARGET_ARCHITECTURE.md`, `docs/decisions/ADR_005_CLEAN_ARCHITECTURE.md`, `docs/decisions/ADR_006_LLM_ADAPTER_PATTERN.md`, `docs/decisions/ADR_007_DIATAXIS_ADR_TAXONOMY.md`
+- Supporting update: `docs/decisions/index.md`
+- execution_authorized=false did not block documentation: true
+- Locked surfaces remain false: true
+- Locks opened: none. All execution locks remain false.
+- Next: keep the candidate-only design track active until a future explicit execution authorization.
+
 ## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING
 
 - Status: `lapidarium_fase2_architecture_target_candidate_opening_pass`
