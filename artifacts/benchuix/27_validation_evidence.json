@@ -81,8 +81,8 @@
   },
   "context_hashes": {
     "ACTIVE_CONTEXT_STATE.json": "b5b786d82447901a229ae0ad20c4852718e1db13e3e31217697abaa20114fe26",
-    "BOOT.md": "40ed5901ffa35b3415ece6e8a38d5fda3aef66c659875f763b7667ad00698fa1",
-    "scripts/validate_active_context_state.py": "29b1ad4694279255694ad5419275f60d7e1dae9716a2108425d988cf94e0bab1",
+    "BOOT.md": "185d51169f642b07677ded22826117b242de91c678d9d8a4fb6cf7b593bb0bfc",
+    "scripts/validate_active_context_state.py": "ebf8281b6b36ab879a29c42269d49a125839835cfacc4e0460bb6069b4618502",
     "tests/test_validate_active_context.py": "5910a1802d595038c277d077136c2275925c1ddc04c88b63a7d962bdff91e74c"
   },
   "notes": [

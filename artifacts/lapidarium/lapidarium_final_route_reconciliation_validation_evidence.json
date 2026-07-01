@@ -34,12 +34,12 @@
         {
             "check": "candidate_next_route_recorded",
             "passed": true,
-            "result": "BENCHUX_ROUTE_OPENING_PACKET recorded as candidate-only and not authorized for execution"
+            "result": "DIAGNOSTICO_AUTOMACAO_GATE recorded as candidate-only and not authorized for execution"
         },
         {
             "check": "no_macro_execution",
             "passed": true,
-            "result": "No Infernus, Purgatorium, BenchUX, or Crisol execution was performed"
+            "result": "No Infernus, Purgatorium, BenchUIX, or Crisol execution was performed"
         },
         {
             "check": "no_file_move_or_deletion",

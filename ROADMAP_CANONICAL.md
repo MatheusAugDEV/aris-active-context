@@ -1,387 +1,127 @@
-# ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS
-
-Status: MACRO_ROADMAP_CANONICAL_ACTIVE
-Authority: macro roadmap authority
-Live-state authority: ACTIVE_CONTEXT_STATE.json
-Conflict rule: ACTIVE_CONTEXT_STATE.json > ARIS_BOOT.md > ROADMAP_CANONICAL.md > DECISION_LOCKS.md > phase-specific roadmaps > artifacts/docs > archive > excludent
-Real execution authorized by this document: false
-Product/Bedrock/real_apply/secrets/runtime real authorized by this document: false
-
-This file is the canonical macro roadmap authority for active direction.
-Live routing still comes from `ACTIVE_CONTEXT_STATE.json`; if this file conflicts with `ACTIVE_CONTEXT_STATE.json`, `ACTIVE_CONTEXT_STATE.json` wins and the drift is blocking.
-
-Operator source for this macro chain: `operator_inputs/roadmap_aris_camadas_objetivos.md` (ROADMAP ARIS — CAMADAS E OBJETIVOS).
+# ARIS ROADMAP CANONICAL
 
 ## 0. Lapidarium
+phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
+Status: CLOSED
+Objetivo: Encerrar a reconciliação final de rota e consolidar o handoff terminal sem abrir execução nova.
+Resultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e candidato seguinte registrado só como referência.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e candidato de próxima rota preservado em artefato/state.
+Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE
 
-- Natureza: saneamento estrutural.
-- Objetivo: absorver o objetivo de Polimento e manter o repositório limpo sem abrir capacidade nova.
-- Fases internas: 0(✓) / 1(✓) / 1.5(ativa, sem artefato) / 2-6(planned).
-- Limites explícitos: não constrói nada; não é produto; prepara o terreno para a sequência seguinte.
+## 1. Infernus FULL
+phase_id: INFERNUS_FULL
+Status: CLOSED
+Objetivo: Revelar falhas reais do sistema sob condições adversariais controladas.
+Resultado final esperado: Minos final verdict + closure pass, com handoff Purgatorium pronto em `artifacts/infernus/if11_minos_final_verdict_closure/`.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): evidence bundle, vulnerability register, handoff graph e Minos verdict materializados e validados em artefatos.
+Próxima fase: Purgatorium FULL
 
-## Macro Chain — Camadas e Objetivos
+## 2. Purgatorium FULL
+phase_id: PURGATORIUM_FULL
+Status: CLOSED
+Objetivo: Corrigir, mitigar ou quarentenar os findings vindos do Infernus.
+Resultado final esperado: PURG-EXIT concluído com `IF09-FIND-001` tratado via S3, sem fechar finding aqui.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): pacote completo em `artifacts/purgatorium/*` com findings tratados, mitigados ou quarentenados.
+Próxima fase: Infernus Revalidation
 
-```text
-Infernus FULL
-  ↓
-Purgatorium FULL
-  ↓
-Infernus Revalidation
-  ↓
-Diagnóstico de Automação (+ Camada de Construção condicional)
-  ↓
-BenchUX
-  ↓
-Cinzel-mínimo
-  ↓
-Crisol
-  ↓
-EXT-SEC 00→04
-  ↓
-Cinzel completo
-  ↓
-EXT-SEC 05→06
-  ↓
-Bedrock Gate
-  ↓
-Produto Parte 2 / Design Partner
-  ↓
-EXT-SEC 07→08 contínuo
-```
+## 3. Infernus Revalidation
+phase_id: INFERNUS_REVALIDATION
+Status: CLOSED
+Objetivo: Revalidar os findings tratados pelo Purgatorium.
+Resultado final esperado: `IF09-FIND-001` fechado, `finding_closed=true` e `remediation_proven=true` já refletidos no estado canônico.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): veredito de revalidação registrado para o finding em escopo.
+Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE
 
-### 1. Infernus FULL
+## 4. Diagnóstico de Automação
+phase_id: DIAGNOSTICO_AUTOMACAO_GATE
+Status: CANDIDATE
+Objetivo: Avaliar se o ARIS está pronto para automatizar antes de construir.
+Resultado final esperado: checklist das 7 camadas com decisão explícita gap/sem-gap e, se houver gap bloqueante, abertura da camada de construção.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): checklist fechado das camadas input/perception, reasoning, orquestração, tools/action, memória, observabilidade e governança runtime.
+Próxima fase: se gap bloqueante → Camada de Construção de Automação; senão → BenchUIX
 
-- Natureza: adversarial ofensivo-controlado.
-- Objetivo: revelar falhas reais do sistema sob condições adversariais controladas.
-- Escopo principal: waves sintéticas isoladas, evidence bundle, vulnerability register, handoff graph e Minos verdict.
-- Entrega esperada: evidence bundle, vulnerability register, handoff graph e Minos verdict.
-- Gate de saída: Minos final verdict + closure pass, com handoff Purgatorium pronto.
-- Limites explícitos: não promete segurança absoluta; não autoriza produto, Bedrock, real_apply, secrets ou runtime real.
+## 5. BenchUIX
+phase_id: BENCHUIX_TRACK
+Status: CANDIDATE
+Objetivo: Validar posicionamento competitivo, produto e experiência antes de avançar para as fases de consolidação e segurança ampliada.
+Resultado final esperado: BENCHUIX-27 completo, trilha pronta para revisão do operador e sem abertura de locks reais.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): as 28 subfases BENCHUIX-00 a BENCHUIX-27 materializadas em artefatos e o pacote de revisão do operador pronto.
+Próxima fase: Cinzel-mínimo
 
-### 2. Purgatorium FULL
+## 6. Cinzel-mínimo
+phase_id: CINZEL_MINIMO
+Status: PLANNED
+Objetivo: Executar uma prova de vida com um workflow ponta a ponta e 3-5 execuções reais.
+Resultado final esperado: um fluxo mínimo validado sem fault injection e com evidência suficiente para mostrar vida operacional.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): workflow ponta a ponta, evidências de execução e registro de resultado.
+Próxima fase: Crisol
 
-- Natureza: corretiva/mitigadora.
-- Objetivo: corrigir, mitigar ou colocar em quarentena os findings do Infernus.
-- Escopo principal / sequência interna: PURG-PRE → PURG-00 → PURG-01 → PURG-02 → PURG-03 → PURG-Sx → PURG-04 → PURG-05 → PURG-RES → PURG-EXIT. `PURG-Sx` é track condicional, não fila obrigatória.
-- Entrega esperada: findings corrigidos, mitigados ou quarentenados, com evidência registrada.
-- Gate de saída: PURG-EXIT com evidência completa e sem reset pendente.
-- Limites explícitos: Purgatorium não fecha finding; GREEN sem reset é inválido; residual não vira resolved.
+## 7. Crisol
+phase_id: CRISOL
+Status: PLANNED
+Objetivo: Consolidar o sistema e remover contradições internas.
+Resultado final esperado: sistema tecnicamente coeso, com contradições relevantes removidas.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): artefato de consolidação mostrando o que foi harmonizado e o que permaneceu deliberadamente separado.
+Próxima fase: EXT-SEC 00→04
 
-### 3. Infernus Revalidation
+## 8. EXT-SEC 00→04
+phase_id: EXT_SEC_00_04
+Status: PLANNED
+Objetivo: Preparar a base defensiva pré-Bedrock sem sistema vivo.
+Resultado final esperado: pacote defensivo artifact-first com ledger, threat model, hardening, fixtures sintéticas e closeout.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): artifacts de segurança defensiva completos e validados.
+Próxima fase: Cinzel completo
 
-- Natureza: validação adversarial pós-correção.
-- Objetivo: revalidar os findings tratados pelo Purgatorium.
-- Escopo principal: única camada que pode declarar `finding_closed`, `finding_regressed`, `finding_partially_mitigated`, `finding_still_open`, `new_regression_found`.
-- Entrega esperada: veredito de revalidação por finding.
-- Gate de saída: veredito de revalidação registrado para todos os findings em escopo.
-- Limites explícitos: nenhuma outra camada pode declarar esses status de finding.
+## 9. Cinzel completo
+phase_id: CINZEL_COMPLETO
+Status: PLANNED
+Objetivo: Validar automação útil em ambiente simulado de SMB brasileiro.
+Resultado final esperado: pelo menos 5 cenários/workflows com métricas de tempo, custo, aprovação, rollback, retry e artefatos.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): métricas completas registradas para todos os cenários mínimos.
+Próxima fase: EXT-SEC 05→06
 
-### 3.5 Diagnóstico de Automação
+## 10. EXT-SEC 05→06
+phase_id: EXT_SEC_05_06
+Status: PLANNED
+Objetivo: Executar a etapa externa autorizada de segurança ofensiva e retest.
+Resultado final esperado: relatório de DAST/pentest e retest com escopo, janela, contas de teste, dados sintéticos, rollback e autorização legal documentados.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): autorização, escopo e evidência completa do teste externo.
+Próxima fase: Bedrock Gate
 
-- Natureza: avaliação estrutural.
-- Objetivo: avaliar se o ARIS está pronto para automatizar antes de construir.
-- Formato: checklist de 7 camadas com input/perception, reasoning, orquestração, tools/action, memória, observabilidade e governança runtime; critérios detalhados ainda TBD.
-- Saída condicional: se achar gap estrutural que bloqueie BenchUX/Cinzel, abre a Camada de Construção de Automação.
-- Limites explícitos: não constrói nada; é avaliação.
+## 11. Bedrock Gate
+phase_id: BEDROCK_GATE
+Status: PLANNED
+Objetivo: Tomar a decisão máxima sobre produto real.
+Resultado final esperado: decisão explícita de Bedrock registrada pelo operador.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): veredito Bedrock (PASS/WARN/BLOCK/NEEDS_REVIEW/REGRESSION/OBSOLETE) com evidência primária.
+Próxima fase: Produto Parte 2 / Design Partner
 
-### 3.6 Camada de Construção de Automação (condicional)
+## 12. Produto Parte 2 / Design Partner
+phase_id: PRODUTO_PARTE_2_DESIGN_PARTNER
+Status: PLANNED
+Objetivo: Conduzir o primeiro uso real controlado.
+Resultado final esperado: design partner ativo, feedback estruturado e ciclo inicial documentado.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): vertical, ICP, prospects, contrato, pricing, onboarding, suporte e feedback registrados.
+Próxima fase: EXT-SEC 07→08
 
-- Natureza: construção escopada.
-- Objetivo: construir só o gap identificado pelo diagnóstico.
-- Condição: só abre se 3.5 achar gap bloqueante.
-- Limites explícitos: não abre por padrão; não é reconstrução geral.
-
-### 4. BenchUX
-
-- Natureza: validação de produto/experiência.
-- Objetivo: validar posicionamento competitivo e experiência.
-- Escopo principal: comparação com alternativas reais no momento da execução.
-- Entrega esperada: relatório de benchmark comparativo de UX/posicionamento.
-- Gate de saída: comparação registrada com evidência, não apenas narrativa.
-- Limites explícitos: não é marketing.
-
-### 4.5 Cinzel-mínimo
-
-- Natureza: prova de vida.
-- Objetivo: executar 1 workflow ponta a ponta com 3-5 execuções reais.
-- Escopo principal: validação básica sem fault injection.
-- Limites explícitos: não testa resiliência a falhas; isso fica para Cinzel completo.
-
-### 5. Crisol
-
-- Natureza: consolidação.
-- Objetivo: consolidar o sistema completo.
-- Escopo principal: remoção de contradições internas.
-- Entrega esperada: sistema transformado em produto técnico coeso.
-- Gate de saída: ausência de contradições internas relevantes registradas.
-- Limites explícitos: não introduz capacidade nova além de consolidação.
-
-### 6. Polimento
-
-- Natureza: limpeza cirúrgica.
-- Objetivo: preparar o repositório para EXT-SEC/SAST/SCA/secret scanning com menos ruído.
-- Escopo principal: limpeza sem capacidade nova.
-- Entrega esperada: repositório limpo, pronto para varreduras de segurança.
-- Gate de saída: limpeza concluída sem introdução de capacidade nova.
-- Limites explícitos: sem capacidade nova; sem mudança funcional.
-
-### 7. EXT-SEC 00→04
-
-- Natureza: programa defensivo pré-Bedrock.
-- Objetivo: preparar o sistema defensivamente antes do Bedrock Gate.
-- Escopo principal / sequência interna: artifact-first, sem sistema vivo. Source ledger primário, threat model, hardening, fixtures sintéticas, closeout.
-- Entrega esperada: artifacts de segurança defensiva (ledger, threat model, hardening plan, fixtures, closeout).
-- Gate de saída: closeout EXT-SEC-04 com todos os artifacts presentes.
-- Limites explícitos: artifact-first; sem sistema vivo; sem runtime real.
-
-### 8. Cinzel completo
-
-- Natureza: validação de automação aplicada.
-- Objetivo: validar automação útil em SMB brasileiro simulado.
-- Escopo principal: mínimo 5 cenários/workflows.
-- Entrega esperada: métricas de tempo, custo, aprovação, rollback, retry e artifacts.
-- Gate de saída: métricas completas registradas para todos os cenários mínimos.
-- Limites explícitos: ambiente simulado; sem cliente real.
-
-### 9. EXT-SEC 05→06
-
-- Natureza: segurança ofensiva autorizada externa.
-- Objetivo: DAST autorizado / pentest externo / retest.
-- Escopo principal: staging-prod isolado.
-- Entrega esperada: relatório de DAST/pentest e retest.
-- Gate de saída: autorização, escopo, janela, contas de teste, dados sintéticos, rollback e legal authorization todos documentados e atendidos.
-- Limites explícitos: exige autorização, escopo, janela, contas de teste, dados sintéticos, rollback e legal authorization.
-
-### 10. Bedrock Gate
-
-- Natureza: gate máximo de decisão.
-- Objetivo: decidir produto real.
-- Escopo principal: não é fase de construção.
-- Entrega esperada: decisão explícita de Bedrock (PASS/WARN/BLOCK/NEEDS_REVIEW/REGRESSION/OBSOLETE).
-- Gate de saída: decisão explícita do operador.
-- Limites explícitos: só ocorre depois de Infernus, Purgatorium, Revalidation, Diagnóstico de Automação, Camada de Construção de Automação quando aberta, BenchUX, Cinzel-mínimo, Crisol, EXT-SEC 00→04, Cinzel completo e EXT-SEC 05→06.
-
-### 11. Produto Parte 2 / Design Partner
-
-- Natureza: comercialização controlada.
-- Objetivo: primeiro uso real.
-- Escopo principal: vertical, ICP, prospects, contrato, pricing, onboarding, suporte e feedback.
-- Entrega esperada: design partner ativo com feedback estruturado.
-- Gate de saída: onboarding e ciclo de feedback inicial documentados.
-- Limites explícitos: somente após Bedrock Gate explícito.
-
-### 12. EXT-SEC 07→08 contínuo
-
-- Natureza: segurança contínua pós-produto.
-- Objetivo: manter segurança contínua após o início de produto.
-- Escopo principal: vulnerability management, retest, adversarial emulation, incident response, backup/restore drills, tenant isolation review.
-- Entrega esperada: ciclo contínuo de segurança operacional documentado.
-- Gate de saída: não aplicável (contínuo).
-- Limites explícitos: contínuo; depende da existência de produto ativo (camada 11).
-
-## Princípio final
-
-O ARIS não vira produto porque parece pronto.
-O ARIS vira produto quando sobreviveu a ataque,
-corrigiu o que foi encontrado,
-foi revalidado,
-foi comparado,
-foi consolidado,
-foi limpo,
-foi auditado,
-foi demonstrado,
-foi testado externamente,
-e passou por decisão explícita de Bedrock.
-
-## Active Route
-
-Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet
-Current phase_id/current_phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
-Current status/status: if09_closure_milestone_mirror_sanity_pass
-Decision: pass
-Active next phase: null
-Active next phase class: null
-next_phase_authorized_by_operator: false
-next_phase_execution_authorization: false
-operator_approval_packet_review_is_execution_approval: false
-real_apply_authorized: false
-runtime_integration_allowed: false
-production_authorized: false
-product_ready: false
-secrets_access_authorized: false
-Selected branch: `TRACK_REVALIDATION_FIRST`
-Explicit operator authorization for the future INF revalidation execution contract was consumed by the controlled execution packet.
-Patch branch: `codex/purg04-track-a-pointer-residual-repair-20260612`
-Patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
-Latest completed project commit SHA: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
-Latest completed CI state: `CI_GREEN_CONFIRMED`
-Merge to Project_ARIS main: `executed earlier at 7883af5a32c629026bfc6dc15ebee4ebbcadd295`
-IF09-FIND-001 closed by Infernus Revalidation adjudication.
-BenchUX next gate candidate only: `BENCHUX_ROUTE_OPENING_PACKET`
-Project_ARIS main workspace remains untouched.
-The authoritative runner used a read-only git-archive snapshot of Project_ARIS commit `7883af5a32c629026bfc6dc15ebee4ebbcadd295` because the live Project_ARIS workspace HEAD had already advanced to `6cec74deb7a99b7eb227df84a902650ca092e00f`.
-Oracle result for IF09 focused revalidation: `pass`
-No successor row is active after mirror sanity cleanup.
-Next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
->>> NAO LEIA COMO ROTA ATIVA — consulte `ACTIVE_CONTEXT_STATE.json`; o bloco abaixo e HISTORICAL_ONLY e permanece somente por compatibilidade do validator. <<<
-Historical stale mirror appendix preserved only for validator compatibility; non-authoritative:
-Latest completed phase: IF-11 Minos Final Verdict + Closure
-Active next phase: PURG-01
-Active next phase class: purgatorium_route_admission
-Standing authorization: canonroadmap approved by operator — see INFERNUS_STANDING_AUTHORIZATION.md
-Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`
-PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`
-Live route terminalized by: `purg00_route_amendment_terminal_wait_state_operator_source_required`
-PURG-PRE canonical authority execution verified by: `purg_pre_canonical_authority_execution_pass`
-PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`
-PURG-00 route admitted by: `purg00_route_admission_pass`
-PURG-00 handoff intake / authority lock status: `purg00_handoff_intake_authority_lock_blocked`
-PURG-00 route amendment terminal wait-state status: `purg00_route_amendment_terminal_wait_state_operator_source_required`
-PURG-00 operator source packet intake: `purg00_operator_source_packet_intake_pass`
-PURG-01 route admission review: `purg01_route_admission_review_pass`
-PURG-01 route admitted by: `purg01_route_admission_pass`
-PURG-01 triage readiness review: `purg01_triage_readiness_review_pass`
-PURG-01 triage planning gate: `purg01_triage_planning_gate_pass`
-PURG-01 triage authorization gate: `purg01_triage_authorization_gate_pass`
-PURG-01 controlled triage execution gate: `purg01_controlled_triage_execution_gate_pass`
-PURG-00 execution: false
-PURG-00 intake executed: true
-Future PURG-01 triage readiness: CONTROLLED_EXECUTION_GATE_PASS
-PURG-01 triage authorized: true
-Operator primary source packet supplied and validated: true
-Next non-execution step: `execute_purg01_controlled_triage_artifact_only`
-Real execution (waves against real systems, runtime, apply): false — requires operator execution command
-W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.
-IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].
-IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, records the controlled triage execution gate as pass from the operator packet plus IF10 handoff graph evidence, keeps triage execution unopened, and limits the next move to execute_purg01_controlled_triage_artifact_only without authorizing any real execution surface.
-
-Standing Authorization Policy
-Historical note: the operator-approved `infernus_full_canonroadmap.md` granted standing authorization for Infernus FULL while that program was active. After IF-11, that document is superseded and forensic-only. The post-Infernus technical direction document is `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`, but it does not open a live route by itself and does not authorize real execution.
-Exception: execution of waves against real system, real apply, product promotion, Bedrock require explicit operator execution command.
-
-## Transition Table
-
-| current_phase_id | decision | next_phase_id | next_phase_class | advance_mode | minimum_deliverable |
-|------------------|----------|---------------|------------------|--------------|---------------------|
-| AC-REPAIR-01 | pass | AC-OBS-02 | observability | auto | anti_proliferation_rule_active=true in JSON |
-| AC-OBS-02 | pass | AC-TRANS-03 | transition_engine | auto | assert_mirror_sync.py exists and passes |
-| AC-TRANS-03 | pass | AC-CONTRACT-04 | contract | auto | minimum_deliverable enforcement in validator for all pass transitions |
-| AC-CONTRACT-04 | pass | AC-BREAK-05 | circuit_breaker | auto | governance_gate_streak field in state with validator enforcement |
-| AC-BREAK-05 | pass | ACB-CORE-01 | capability_build | prompt_only | acb_decision artifact exists |
-| INF-MAT-01 | pass | INF-BOT-01 | bot_execution | prompt_only | at least 1 bot execution log with hash in artifacts/ |
-| INF-BOT-01 | pass | INF-MINOS-01 | minos_verdict | prompt_only | minos verdict JSON with deterministic threshold results |
-| INF-MINOS-01 | pass | PURG-01 | purgatorium | prompt_only | at least 1 finding record with severity and status |
-| PURG-01 | pass | ACB-CORE-01 | capability_build | prompt_only | acb_decision artifact exists |
-| ACB-CORE-01 | pass | ACB-CORE-02 | capability_build | prompt_only | uv.lock + pip-audit CI gate + SBOM exists |
-| ACB-CORE-02 | pass | ACB-CAP-01 | capability_build | prompt_only | __all__ snapshot committed |
-| ACB-CAP-01 | pass | ACB-CAP-02 | capability_build | prompt_only | FastAPI health check + auth passing |
-| ACB-CAP-02 | pass | ACB-CAP-03 | capability_build | prompt_only | MCP sandbox running + STDIO banned |
-| ACB-CAP-03 | pass | ACB-CAP-04 | capability_build | prompt_only | runtime public API documented |
-| ACB-CAP-04 | pass | ACB-CAP-05 | capability_build | prompt_only | pilot gates defined |
-| ACB-CAP-05 | pass | INF-FULL-01 | infernus_full | operator | all ACB complete + Infernus spec exists |
-| INF-FULL-01 | pass | INF-FULL-02 | infernus_full | canonroadmap | scope charter decision + scope matrix + module scope manifest + charter markdown |
-| INF-FULL-02 | pass | INF-FULL-03 | infernus_full | canonroadmap | historical infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
-| INF-FULL-03 | pass | INF-FULL-04 | infernus_full | canonroadmap | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
-| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
-| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
-| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
-| INF-FULL-07 | pass | PURG-PRE | purgatorium_full_authority_materialization | operator | purg_pre_route_admission_decision.json + operator review packet + schema/validator admission + no-real-exec attestation |
-| PURG-PRE | pass | PURG-00 | purgatorium_full_intake | operator | purg00_route_admission_decision.json + purg00_operator_review_packet + schema/validator admission + no-real-exec attestation |
-| PURG-00 | pass | PURG-01 | purgatorium_route_admission | operator | purg01_route_admission_decision.json + operator authorization + no-real-exec attestation + validator evidence |
-| PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence |
-| PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |
-| PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact |
-| PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | pass | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | purgatorium_route_admission | operator | purg_residual_risk_carry_forward_route_opening_packet.json + route-opening operator authorization + validator evidence |
-| PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | pass | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | infernus_revalidation_route_admission | operator | inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate |
-| INF_REVALIDATION_ROUTE_ADMISSION_PACKET | pass | INF_REVALIDATION_READINESS_PACKET | infernus_revalidation_readiness | operator | inf_revalidation_readiness_packet.json + scenario scope + oracle contract + abort criteria + no-real-execution attestation |
-| INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix |
-| INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |
-| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |
-| INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |
-| LAPIDARIUM | pass | LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO | lapidarium_remediation | operator | lapidarium cache verification pass + phase 4 code review preparation + bootstrap sync |
-| BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
-| CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
-| BEDROCK-01 | pass | null | product | operator | product promotion artifact |
-
-## Macro Transition Table — Future Extension (documental, not yet active)
-
-The macro transitions below describe the high-level "Camadas e Objetivos" chain
-(Infernus FULL → ... → EXT-SEC 07→08 contínuo). They are documental references only.
-They do not appear in the live `## Transition Table` above, are not consumed by
-`scripts/validate_active_context_state.py`, and do not change `active_next_phase`,
-`next_phase`, `current_phase_id`, or any live-route field in `ACTIVE_CONTEXT_STATE.json`.
-
-The full proposed mapping, including a `Phase ID Mapping` against existing
-phase IDs (e.g. `PURG-01`..`PURG-EXIT`, `INF-FULL-*`, `BEDROCK-01`), is recorded in:
-
-`artifacts/roadmap/macro_transition_table_extension_candidate.json`
-
-```text
-INF-FULL -> PURG-FULL
-PURG-FULL -> INF-REVALIDATION
-INF-REVALIDATION -> DIAGNOSTICO-AUTOMACAO
-DIAGNOSTICO-AUTOMACAO -> CAMADA-CONSTRUCAO-AUTOMACAO (condicional)
-DIAGNOSTICO-AUTOMACAO -> BENCHUIX (se sem gap)
-CAMADA-CONSTRUCAO-AUTOMACAO -> BENCHUIX
-BENCHUIX -> CINZEL-MINIMO
-CINZEL-MINIMO -> CRISOL
-CRISOL -> EXT-SEC-00
-EXT-SEC-00 -> EXT-SEC-01
-EXT-SEC-01 -> EXT-SEC-02
-EXT-SEC-02 -> EXT-SEC-03
-EXT-SEC-03 -> EXT-SEC-04
-EXT-SEC-04 -> CINZEL-COMPLETO
-CINZEL-COMPLETO -> EXT-SEC-05
-EXT-SEC-05 -> EXT-SEC-06
-EXT-SEC-06 -> BEDROCK
-BEDROCK -> PRODUCT-P2-DESIGN-PARTNER
-PRODUCT-P2-DESIGN-PARTNER -> EXT-SEC-07
-EXT-SEC-07 -> EXT-SEC-08-CONTINUOUS
-```
-
-Activation of any row in this candidate table requires: an explicit operator
-gate, schema/validator support for the new phase_id/phase_class values, an
-admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern,
-and CI terminal green. None of these conditions are satisfied by this document
-alone.
-
-## Candidate Governance Layers
-
-### FIDES — Programa de Conformidade Legal e Regulatória
-status: CANDIDATE
-activation_condition: após Bedrock Gate
-altera_rota_ativa: false
-criado_em: 2026-06-16
-
-Pergunta central:
-"Se a ANPD fiscalizar amanhã, se um cliente mover ação,
-se um conselho profissional investigar — o ARIS tem
-evidência verificável de que operou dentro dos limites
-legais em cada ação executada?"
-
-PASS somente quando a resposta for SIM absoluto.
-BLOCK é o estado padrão de qualquer controle sem
-evidência verificável.
-
-Separação de escopo:
-  EXT-SEC → resiste ao adversário técnico
-  FIDES   → opera de boa-fé dentro da lei
-
-Módulos planejados:
-  FIDES-00  Source Ledger & Boundary Charter
-  FIDES-01  Regulated Vertical Classification Gate
-  FIDES-02  Qualified Approver Identity Binding
-  FIDES-03  Approval Quality / Anti-Rubber-Stamp
-  FIDES-04  LGPD Role, DPA & Data Processing Boundary
-  FIDES-05  Training/Data Isolation
-  FIDES-06  Incident & Regulatory Notification Workflow
-  FIDES-07  Vertical Compliance Packs
-            (contabilidade / saúde / advocacia)
-
-Referência desta conversa:
-  Origem: sessão Claude junho 2026
-  Pesquisa jurídica base: relatório de inteligência
-  jurídica produzido nesta sessão — três verticais,
-  CDC/CC/LGPD/conselhos profissionais, jurisprudência
-  STJ, comparação internacional EU AI Act / OpenAI /
-  Microsoft / NIST AI RMF.
+## 13. EXT-SEC 07→08 contínuo
+phase_id: EXT_SEC_07_08_CONTINUOUS
+Status: PLANNED
+Objetivo: Manter o ciclo de segurança contínua após o início do produto.
+Resultado final esperado: ciclo contínuo de segurança operacional documentado e sustentado no tempo.
+Pesquisa / arquitetura / decisões:
+Entrega mínima pra fechar (evidência): ciclo de vulnerability management, retest, emulação adversarial, incident response, backup/restore e revisão de isolamento de tenant.
+Próxima fase: contínuo

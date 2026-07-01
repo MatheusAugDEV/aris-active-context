@@ -2,7 +2,7 @@
 
 ## Definicao
 
-BenchUIX e a trilha governada da camada BenchUX para validar Product Reality Lab, UX/UI, benchmark, design system, performance, trust UX e demo readiness em modo pre-produto.
+BenchUIX e a trilha governada da camada BenchUIX para validar Product Reality Lab, UX/UI, benchmark, design system, performance, trust UX e demo readiness em modo pre-produto.
 
 Esta camada existe apos Infernus Revalidation e antes de Crisol.
 

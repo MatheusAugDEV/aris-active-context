@@ -9,7 +9,7 @@ Date: 2026-06-30
 ## Outcome
 
 - The stale Lapidarium Fase 3/Fase 4 active-route pointers were reconciled into a terminal handoff state.
-- The next route is recorded only as a candidate: `BENCHUX_ROUTE_OPENING_PACKET`.
+- The next route is recorded only as a candidate: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - No macrophase was executed.
 - No additional file was moved or deleted.
 - No secrets were read.
@@ -28,7 +28,7 @@ Date: 2026-06-30
 - F5-013 and F5-014 remain in external quarantine with hashes preserved.
 - F5-015 remains read-only quarantine formalized in place.
 - F5-016 / `.env` remains keep, with manual rotation required.
-- The candidate-only route is BenchUX, but execution remains unauthorized.
+- The candidate-only route is BenchUIX, but execution remains unauthorized.
 
 ## Next Step
 

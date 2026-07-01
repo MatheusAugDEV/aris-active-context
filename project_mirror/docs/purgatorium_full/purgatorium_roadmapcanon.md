@@ -159,7 +159,7 @@ ROADMAP_CANONICAL.md:
     - Infernus revela.
     - Purgatorium corrige.
     - Infernus revalida.
-    - BenchUX valida produto real.
+    - BenchUIX valida produto real.
     - Crisol refina.
     - Bedrock decide.
 

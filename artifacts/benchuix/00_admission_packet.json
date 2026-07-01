@@ -1,12 +1,12 @@
 {
   "phase_id": "BENCHUIX-00",
   "phase_name": "Charter, Anti-escopo e Admission Packet",
-  "roadmap_path_read": "/home/matheus/ARIS/Project_ARIS/aris-active-context/Benchuix_roadmap.md",
-  "roadmap_sha256": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+  "roadmap_path_read": "/home/matheus/ARIS/Project_ARIS/aris-active-context/ROADMAP_CANONICAL.md",
+  "roadmap_sha256": "8d2982629282d1f9b78d3d30d9bb86e1a3596b66305b1a81647f44d52ac14a43",
   "roadmap_required_sections_verified": true,
   "transition_table_complete": true,
   "artifacts_created": [
-    "Benchuix_roadmap.md",
+    "ROADMAP_CANONICAL.md",
     "artifacts/benchuix/00_charter.md",
     "artifacts/benchuix/00_transition_table.json",
     "artifacts/benchuix/00_research_source_ledger.json",
@@ -14,7 +14,7 @@
     "artifacts/benchuix/00_admission_packet.json"
   ],
   "artifact_sha256": {
-    "Benchuix_roadmap.md": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+    "ROADMAP_CANONICAL.md": "8d2982629282d1f9b78d3d30d9bb86e1a3596b66305b1a81647f44d52ac14a43",
     "artifacts/benchuix/00_charter.md": "df0d6115ce348bf6bb3bc88b64ab652d4e559e65fe920db28601dd50a3573423",
     "artifacts/benchuix/00_transition_table.json": "fe98e714b842a4a80a90af4169ce9b8bba3009a364b0c5c3436ad7d2b02801c6",
     "artifacts/benchuix/00_research_source_ledger.json": "e15749482821e187a446e50e79ddac573c520fb3c760ae2ccf35f29c048bafae",

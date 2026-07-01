@@ -72,4 +72,4 @@ Informe o operador o que está pronto para executar.
 Aguarde comando explícito de execução.
 
 Extensão futura
-Quando o Infernus estiver completo, o operador aprovará o plano da camada seguinte (Purgatorium, BenchUX, etc.) e esse arquivo será atualizado para incluir a nova standing authorization. O padrão é o mesmo: plano aprovado = autorização standing para toda a sequência.
+Quando o Infernus estiver completo, o operador aprovará o plano da camada seguinte (Purgatorium, BenchUIX, etc.) e esse arquivo será atualizado para incluir a nova standing authorization. O padrão é o mesmo: plano aprovado = autorização standing para toda a sequência.

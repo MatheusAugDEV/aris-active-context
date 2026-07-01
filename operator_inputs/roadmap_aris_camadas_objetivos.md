@@ -16,7 +16,7 @@ Purgatorium FULL
   ↓
 Infernus Revalidation
   ↓
-BenchUX
+BenchUIX
   ↓
 Crisol
   ↓
@@ -79,7 +79,7 @@ Product/Bedrock/real_apply/secrets/runtime real authorized by this document: fal
 - Gate de saída: veredito de revalidação registrado para todos os findings em escopo.
 - Limites explícitos: nenhuma outra camada pode declarar esses status de finding.
 
-### 4. BenchUX
+### 4. BenchUIX
 
 - Natureza: validação de produto/experiência.
 - Objetivo: validar posicionamento competitivo e experiência do ARIS.
@@ -141,7 +141,7 @@ Product/Bedrock/real_apply/secrets/runtime real authorized by this document: fal
 - Escopo principal: não é fase de construção.
 - Entrega esperada: decisão explícita de Bedrock (PASS/WARN/BLOCK/NEEDS_REVIEW/REGRESSION/OBSOLETE).
 - Gate de saída: decisão explícita do operador.
-- Limites explícitos: só ocorre depois de Infernus, Purgatorium, Revalidation, BenchUX, Crisol, Polimento, EXT-SEC 00→04, Cinzel e EXT-SEC 05→06.
+- Limites explícitos: só ocorre depois de Infernus, Purgatorium, Revalidation, BenchUIX, Crisol, Polimento, EXT-SEC 00→04, Cinzel e EXT-SEC 05→06.
 
 ### 11. Produto Parte 2 / Design Partner
 
@@ -184,8 +184,8 @@ e passou por decisão explícita de Bedrock.
 ```text
 INF-FULL -> PURG-FULL
 PURG-FULL -> INF-REVALIDATION
-INF-REVALIDATION -> BENCHUX
-BENCHUX -> CRISOL
+INF-REVALIDATION -> BENCHUIX
+BENCHUIX -> CRISOL
 CRISOL -> POLIMENTO
 POLIMENTO -> EXT-SEC-00
 EXT-SEC-00 -> EXT-SEC-01

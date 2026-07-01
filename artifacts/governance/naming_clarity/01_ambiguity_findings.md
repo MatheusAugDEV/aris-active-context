@@ -17,9 +17,9 @@ Live-route facts preserved during this audit:
 
 ## Additional findings
 
-### BENCHUX_ROUTE_OPENING_PACKET
+### DIAGNOSTICO_AUTOMACAO_GATE
 - Classification: `confusing_but_unique`
-- Why it confuses: Uses BENCHUX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track.
+- Why it confuses: Uses BENCHUIX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track.
 - Suggested `display_name`: `BenchUIX Route Opening Packet Candidate`
 - First DECISION_LOCKS occurrence: line 27 under `IF09 Closure Milestone Mirror Sanity Packet`
 - Cross-file presence: ROADMAP lines 189; ACTIVE_CONTEXT_STATE lines 702

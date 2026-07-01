@@ -59,7 +59,7 @@ Regras:
 
 ## 1. Doutrina
 
-**Infernus revela. Purgatorium corrige. Infernus revalida. BenchUX valida produto real. Crisol refina. Bedrock decide.**
+**Infernus revela. Purgatorium corrige. Infernus revalida. BenchUIX valida produto real. Crisol refina. Bedrock decide.**
 
 O Infernus FULL é o laboratório adversarial do ARIS.
 

@@ -18,7 +18,7 @@
 **Lapidarium foi reconciliado até a Fase 5 residual safe resolution e agora está em handoff terminal.**
 
 O ponteiro ativo de Fase 4 foi rebaixado para histórico/superseded.
-O next route existe somente como candidato: `BENCHUX_ROUTE_OPENING_PACKET`.
+O next route existe somente como candidato: `DIAGNOSTICO_AUTOMACAO_GATE`.
 Nenhuma macrofase foi executada.
 
 F5-013/F5-014 continuam em quarentena externa com hash preservado.

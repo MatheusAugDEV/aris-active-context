@@ -19,7 +19,7 @@
   },
   "entries": [
     {
-      "phase_id": "BENCHUX_ROUTE_OPENING_PACKET",
+      "phase_id": "DIAGNOSTICO_AUTOMACAO_GATE",
       "first_appearance": {
         "line": 27,
         "heading": "IF09 Closure Milestone Mirror Sanity Packet",
@@ -28,7 +28,7 @@
       "reappearances": [],
       "occurrence_count": 1,
       "classification": "confusing_but_unique",
-      "why": "Uses BENCHUX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track.",
+      "why": "Uses BENCHUIX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track.",
       "display_name_proposed": "BenchUIX Route Opening Packet Candidate",
       "present_in": {
         "DECISION_LOCKS_md_lines": [

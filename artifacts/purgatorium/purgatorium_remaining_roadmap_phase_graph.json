@@ -6,7 +6,7 @@
   "entry_locks_live_phase": "PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET",
   "entry_node": "PURG_CURRENT_TERMINAL_STATE_LOCK",
   "sentinels": [
-    "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+    "BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
     "BLOCKED_OPERATOR_DIRECTION_REQUIRED"
   ],
   "node_count": 23,
@@ -1046,7 +1046,7 @@
         "incomplete evidence bundle",
         "any product/Bedrock implication"
       ],
-      "next_on_pass": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "next_on_pass": "BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "live Transition Table mutation",
@@ -1216,8 +1216,8 @@
     },
     {
       "r_label": "SENTINEL",
-      "phase_id": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
-      "name": "BenchUX / Macro Handoff Admission (external)",
+      "phase_id": "BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "name": "BenchUIX / Macro Handoff Admission (external)",
       "type": "external_macro_handoff_sentinel",
       "phase_class": "external_macro_handoff_sentinel",
       "requires_operator": true,

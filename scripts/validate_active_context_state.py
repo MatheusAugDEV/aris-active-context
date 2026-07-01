@@ -6,6 +6,7 @@ import json
 import pathlib
 import re
 import sys
+import unicodedata
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -41,6 +42,50 @@ ACB_CAP_05_EVIDENCE_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_projec
 ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_sha_resync_2026_06_06.json"
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
+LAPIDARIUM_TERMINAL_PHASE_ID = "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET"
+
+LEGACY_TRANSITION_TABLE_TEXT = """| current_phase_id | decision | next_phase_id | next_phase_class | advance_mode | minimum_deliverable |
+|------------------|----------|---------------|------------------|--------------|---------------------|
+| AC-REPAIR-01 | pass | AC-OBS-02 | observability | auto | anti_proliferation_rule_active=true in JSON |
+| AC-OBS-02 | pass | AC-TRANS-03 | transition_engine | auto | assert_mirror_sync.py exists and passes |
+| AC-TRANS-03 | pass | AC-CONTRACT-04 | contract | auto | minimum_deliverable enforcement in validator for all pass transitions |
+| AC-CONTRACT-04 | pass | AC-BREAK-05 | circuit_breaker | auto | governance_gate_streak field in state with validator enforcement |
+| AC-BREAK-05 | pass | ACB-CORE-01 | capability_build | prompt_only | acb_decision artifact exists |
+| INF-MAT-01 | pass | INF-BOT-01 | bot_execution | prompt_only | at least 1 bot execution log with hash in artifacts/ |
+| INF-BOT-01 | pass | INF-MINOS-01 | minos_verdict | prompt_only | minos verdict JSON with deterministic threshold results |
+| INF-MINOS-01 | pass | PURG-01 | purgatorium | prompt_only | at least 1 finding record with severity and status |
+| PURG-01 | pass | ACB-CORE-01 | capability_build | prompt_only | acb_decision artifact exists |
+| ACB-CORE-01 | pass | ACB-CORE-02 | capability_build | prompt_only | uv.lock + pip-audit CI gate + SBOM exists |
+| ACB-CORE-02 | pass | ACB-CAP-01 | capability_build | prompt_only | __all__ snapshot committed |
+| ACB-CAP-01 | pass | ACB-CAP-02 | capability_build | prompt_only | FastAPI health check + auth passing |
+| ACB-CAP-02 | pass | ACB-CAP-03 | capability_build | prompt_only | MCP sandbox running + STDIO banned |
+| ACB-CAP-03 | pass | ACB-CAP-04 | capability_build | prompt_only | runtime public API documented |
+| ACB-CAP-04 | pass | ACB-CAP-05 | capability_build | prompt_only | pilot gates defined |
+| ACB-CAP-05 | pass | INF-FULL-01 | infernus_full | operator | all ACB complete + Infernus spec exists |
+| INF-FULL-01 | pass | INF-FULL-02 | infernus_full | canonroadmap | scope charter decision + scope matrix + module scope manifest + charter markdown |
+| INF-FULL-02 | pass | INF-FULL-03 | infernus_full | canonroadmap | historical infernus_full_canonroadmap.md + if00 transition/hermeticity + if01 ledger + if02 ontology/coverage + if03 oracle pack + if04 bot/permission pack |
+| INF-FULL-03 | pass | INF-FULL-04 | infernus_full | canonroadmap | scenario pack + controls design + harness readiness + sandbox/cost/quota/replay/kill-switch contracts |
+| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence |
+| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap | excludent policy + move manifest + only-canonroadmap-visible evidence + validator evidence |
+| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap | IF-08 authorization decision artifact + no execution attestation + successor validation matrix + validator evidence |
+| INF-FULL-07 | pass | PURG-PRE | purgatorium_full_authority_materialization | operator | purg_pre_route_admission_decision.json + operator review packet + schema/validator admission + no-real-exec attestation |
+| PURG-PRE | pass | PURG-00 | purgatorium_full_intake | operator | purg00_route_admission_decision.json + purg00_operator_review_packet + schema/validator admission + no-real-exec attestation |
+| PURG-00 | pass | PURG-01 | purgatorium_route_admission | operator | purg01_route_admission_decision.json + operator authorization + no-real-exec attestation + validator evidence |
+| PURG-04 | pass | PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | purgatorium_route_admission | operator | purg04_track_a_patch_review_and_merge_decision.json + cleanroom merge plan + no-execution attestation + validator evidence |
+| PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION | pass | PURG04_TRACK_A_MAIN_MERGE_EXECUTION | purgatorium_track_a_main_merge_execution | operator | explicit operator execution authorization artifact + cleanroom diff/no-forbidden-surface proof + Project_ARIS merge commit + CI evidence + validator evidence |
+| PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact |
+| PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | pass | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | purgatorium_route_admission | operator | purg_residual_risk_carry_forward_route_opening_packet.json + route-opening operator authorization + validator evidence |
+| PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | pass | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | infernus_revalidation_route_admission | operator | inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate |
+| INF_REVALIDATION_ROUTE_ADMISSION_PACKET | pass | INF_REVALIDATION_READINESS_PACKET | infernus_revalidation_readiness | operator | inf_revalidation_readiness_packet.json + scenario scope + oracle contract + abort criteria + no-real-execution attestation |
+| INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix |
+| INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |
+| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |
+| INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |
+| LAPIDARIUM | pass | LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO | lapidarium_remediation | operator | lapidarium cache verification pass + phase 4 code review preparation + bootstrap sync |
+| BENCH-01 | pass | CRISOL-01 | crisol | prompt_only | crisol refinement artifact with evidence |
+| CRISOL-01 | pass | BEDROCK-01 | bedrock | operator | operator sign-off artifact |
+| BEDROCK-01 | pass | null | product | operator | product promotion artifact |
+"""
 
 # ── HISTORICAL POSITION CONSTANTS (DO NOT CHANGE — used by HISTORICAL_ARTIFACT checks) ──
 # These values describe the state at the time historical artifacts were created.
@@ -1058,7 +1103,7 @@ PHASE_DELIVERABLES = {
         and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("target_finding_status") == "closed"
         and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("finding_closed") is True
         and _load_json(IF09_CLOSURE_MILESTONE_SANITY_PACKET_PATH).get("remediation_proven") is True
-        and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET"
+        and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("candidate_next_gate") == "DIAGNOSTICO_AUTOMACAO_GATE"
         and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("candidate_only") is True
         and _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH).get("state_advanced") is False
     ),
@@ -1700,17 +1745,125 @@ def classify_ci_terminal_state(workflows: list[dict[str, Any]]) -> str:
     return "CI_GREEN_CONFIRMED"
 
 
-def _parse_transition_table() -> list[dict[str, str]]:
-    roadmap_text = (ROOT / "ROADMAP_CANONICAL.md").read_text(encoding="utf-8")
+ROADMAP_PHASE_HEADER_RE = re.compile(r"^##\s+(?P<ordinal>\d+)\.\s+(?P<title>.+?)\s*$")
+ROADMAP_PHASE_ID_RE = re.compile(r"^phase_id:\s*(?P<phase_id>.+?)\s*$", re.IGNORECASE)
+ROADMAP_STATUS_RE = re.compile(r"^Status:\s*(?P<status>.+?)\s*$", re.IGNORECASE)
+ROADMAP_NEXT_PHASE_RE = re.compile(r"^Pr[oó]xima fase:\s*(?P<next_phase>.+?)\s*$", re.IGNORECASE)
+
+
+def _slugify_phase_token(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value)
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^A-Za-z0-9]+", "_", ascii_text).strip("_").lower()
+
+
+def _parse_roadmap_phase_blocks(roadmap_text: str | None = None) -> list[dict[str, Any]]:
+    text = roadmap_text if roadmap_text is not None else (ROOT / "ROADMAP_CANONICAL.md").read_text(encoding="utf-8")
+    blocks: list[dict[str, Any]] = []
+    current: dict[str, Any] | None = None
+    for line in text.splitlines():
+        heading_match = ROADMAP_PHASE_HEADER_RE.match(line)
+        if heading_match:
+            if current is not None:
+                blocks.append(current)
+            current = {
+                "heading": line.strip(),
+                "title": heading_match.group("title").strip(),
+                "phase_id": "",
+                "status": "",
+                "objetivo": "",
+                "resultado_final_esperado": "",
+                "next_phase": "",
+            }
+            continue
+        if current is None:
+            continue
+        stripped = line.strip()
+        if not stripped:
+            continue
+        phase_id_match = ROADMAP_PHASE_ID_RE.match(stripped)
+        if phase_id_match:
+            current["phase_id"] = phase_id_match.group("phase_id").strip()
+            continue
+        status_match = ROADMAP_STATUS_RE.match(stripped)
+        if status_match:
+            current["status"] = status_match.group("status").strip()
+            continue
+        if stripped.startswith("Objetivo:"):
+            current["objetivo"] = stripped.split(":", 1)[1].strip()
+            continue
+        if stripped.startswith("Resultado final esperado:"):
+            current["resultado_final_esperado"] = stripped.split(":", 1)[1].strip()
+            continue
+        next_phase_match = ROADMAP_NEXT_PHASE_RE.match(stripped)
+        if next_phase_match:
+            current["next_phase"] = next_phase_match.group("next_phase").strip()
+            continue
+    if current is not None:
+        blocks.append(current)
+    return blocks
+
+
+def _find_roadmap_phase_block(phase_identifier: str, *, roadmap_text: str | None = None) -> dict[str, Any] | None:
+    if not phase_identifier:
+        return None
+    needle = phase_identifier.strip()
+    slug = _slugify_phase_token(needle)
+    for block in _parse_roadmap_phase_blocks(roadmap_text):
+        candidates = [
+            block.get("phase_id", ""),
+            block.get("title", ""),
+            block.get("heading", ""),
+        ]
+        if needle in candidates:
+            return block
+        if slug and any(slug == _slugify_phase_token(candidate) for candidate in candidates if candidate):
+            return block
+        if block.get("status", "").upper() == "ACTIVE" and needle.upper() == "ACTIVE":
+            return block
+    return None
+
+
+def _parse_next_phase_spec(next_phase_text: str) -> dict[str, Any]:
+    text = next_phase_text.strip()
+    conditional_match = re.match(
+        r"^se\s+(?P<condition>.+?)\s*(?:→|->)\s*(?P<then>.+?)\s*(?:;|,)?\s*sen[ãa]o\s*(?:→|->)\s*(?P<else>.+?)\s*$",
+        text,
+        re.IGNORECASE,
+    )
+    if conditional_match:
+        then_candidate = conditional_match.group("then").strip()
+        else_candidate = conditional_match.group("else").strip()
+        return {
+            "next_phase_raw": text,
+            "next_phase_id": None,
+            "next_phase_candidates": [then_candidate, else_candidate],
+            "next_phase_requires_operator_decision": True,
+            "condition": conditional_match.group("condition").strip(),
+            "next_phase_class": None,
+            "next_phase_candidate_classes": [_slugify_phase_token(then_candidate), _slugify_phase_token(else_candidate)],
+        }
+    return {
+        "next_phase_raw": text,
+        "next_phase_id": text or None,
+        "next_phase_candidates": [text] if text else [],
+        "next_phase_requires_operator_decision": False,
+        "condition": None,
+        "next_phase_class": _slugify_phase_token(text) if text else None,
+        "next_phase_candidate_classes": [_slugify_phase_token(text)] if text else [],
+    }
+
+
+def _parse_legacy_transition_rows() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     in_table = False
-    for line in roadmap_text.splitlines():
-        if line.startswith("## Transition Table"):
+    for line in LEGACY_TRANSITION_TABLE_TEXT.splitlines():
+        if line.startswith("| current_phase_id |"):
             in_table = True
             continue
-        if in_table and line.startswith("## "):
-            break
-        if not in_table or not line.strip().startswith("|"):
+        if not in_table:
+            continue
+        if not line.strip().startswith("|"):
             continue
         if set(line.replace("|", "").replace("-", "").strip()) == set():
             continue
@@ -1730,7 +1883,33 @@ def _parse_transition_table() -> list[dict[str, str]]:
     return rows
 
 
-def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] | None:
+def _roadmap_transition_row_for_block(block: dict[str, Any], decision: str) -> dict[str, Any]:
+    parsed_next_phase = _parse_next_phase_spec(block.get("next_phase", ""))
+    next_phase_id = parsed_next_phase["next_phase_id"]
+    next_phase_class = parsed_next_phase["next_phase_class"]
+    return {
+        "current_phase_id": block.get("phase_id") or block.get("title") or block.get("heading") or "",
+        "decision": decision,
+        "next_phase_id": next_phase_id,
+        "next_phase_class": next_phase_class,
+        "advance_mode": "prompt_only" if next_phase_id else "operator",
+        "minimum_deliverable": block.get("resultado_final_esperado", ""),
+        "next_phase_requires_operator_decision": parsed_next_phase["next_phase_requires_operator_decision"],
+        "next_phase_candidates": parsed_next_phase["next_phase_candidates"],
+        "next_phase_raw": parsed_next_phase["next_phase_raw"],
+    }
+
+
+def _parse_transition_table() -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for block in _parse_roadmap_phase_blocks():
+        if block.get("phase_id"):
+            rows.append(_roadmap_transition_row_for_block(block, "pass"))
+    rows.extend(_parse_legacy_transition_rows())
+    return rows
+
+
+def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, Any] | None:
     for row in _parse_transition_table():
         if row["current_phase_id"] == current_phase_id and row["decision"] == decision:
             return row
@@ -1739,15 +1918,9 @@ def _get_transition_row(current_phase_id: str, decision: str) -> dict[str, str] 
 
 def _load_live_position() -> dict[str, str]:
     state = _load_json(STATE_PATH)
-    transition_row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
     next_action = state.get("next_action") or {}
     history_summary = state.get("history_summary") or {}
     last_transition = state.get("last_transition") or {}
-    active_next_phase = state.get("active_next_phase", "")
-    active_next_phase_class = state.get("active_next_phase_class", "")
-    if transition_row is not None:
-        active_next_phase = active_next_phase or transition_row.get("next_phase_id", "")
-        active_next_phase_class = active_next_phase_class or transition_row.get("next_phase_class", "")
     return {
         "phase_id": state.get("phase_id", ""),
         "current_phase_id": state.get("current_phase_id", ""),
@@ -1757,8 +1930,8 @@ def _load_live_position() -> dict[str, str]:
         "latest_completed_phase": state.get("latest_completed_phase", ""),
         "latest_completed_status": state.get("latest_completed_status", ""),
         "schema_version": state.get("schema_version", ""),
-        "active_next_phase": active_next_phase,
-        "active_next_phase_class": active_next_phase_class,
+        "active_next_phase": state.get("active_next_phase", ""),
+        "active_next_phase_class": state.get("active_next_phase_class", ""),
         "phase_class": state.get("phase_class", ""),
         "latest_completed_next_recommended_step": state.get("latest_completed_next_recommended_step", ""),
         "latest_completed_project_commit_sha": state.get("latest_completed_project_commit_sha", ""),
@@ -1798,32 +1971,39 @@ CURRENT_EXPECTED_NEXT_PHASE_CLASS = _live["active_next_phase_class"]
 
 def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
     row = _get_transition_row(state.get("current_phase_id", ""), state.get("decision", ""))
-    if (
-        state.get("current_phase_id") == CURRENT_LIVE_PHASE_ID
-        and state.get("decision") == EXPECTED_DECISION
-        and state.get("status") == CURRENT_LIVE_STATUS
-        and row is None
-    ):
-        row = {
-            "next_phase_id": CURRENT_EXPECTED_NEXT_PHASE_ID,
-            "next_phase_class": CURRENT_EXPECTED_NEXT_PHASE_CLASS,
-        }
+    if state.get("current_phase_id") == LAPIDARIUM_TERMINAL_PHASE_ID:
+        _require(row is not None, "BLOCK: Lapidarium terminal route block must exist in ROADMAP_CANONICAL.md")
+        _require(state.get("next_phase") is None, "BLOCK: Lapidarium terminal route must keep next_phase null")
+        _require(state.get("active_next_phase") is None, "BLOCK: Lapidarium terminal route must keep active_next_phase null")
+        _require(
+            state.get("lapidarium_next_route_candidate") == row.get("next_phase_id"),
+            "BLOCK: Lapidarium next route candidate must match ROADMAP_CANONICAL.md",
+        )
+        return
     if state.get("status") in PURG00_LIVE_ROUTE_PRESERVING_STATUSES:
         row = _get_transition_row(PURG_PRE_LIVE_ROUTE_PHASE_ID, "pass")
-        _require(row is not None, "BLOCK: PURG-PRE route successor must exist in Transition Table")
+        _require(row is not None, "BLOCK: PURG-PRE route successor must exist in ROADMAP_CANONICAL.md")
     if state.get("status") == PURG01_ROUTE_ADMISSION_STATUS:
         row = _get_transition_row(EXPECTED_NEXT_PHASE_ID, "pass")
-        _require(row is not None, "BLOCK: PURG-00 route successor must exist in Transition Table")
+        _require(row is not None, "BLOCK: PURG-00 route successor must exist in ROADMAP_CANONICAL.md")
     if row is None:
         _require(state.get("next_phase") is None, "BLOCK: terminal phase without successor must keep next_phase null")
         _require(state.get("active_next_phase") is None, "BLOCK: terminal phase without successor must keep active_next_phase null")
         return
+    if row.get("next_phase_requires_operator_decision"):
+        _require(state.get("next_phase") is None, "BLOCK: conditional roadmap successor must keep next_phase null until operator decision")
+        _require(state.get("active_next_phase") is None, "BLOCK: conditional roadmap successor must keep active_next_phase null until operator decision")
+        _require(
+            len(row.get("next_phase_candidates", [])) == 2,
+            "BLOCK: conditional roadmap successor must expose exactly two candidates",
+        )
+        return
     next_phase = state.get("next_phase")
-    _require(next_phase == row["next_phase_id"], f"BLOCK: next_phase '{next_phase}' must match Transition Table '{row['next_phase_id']}'")
-    _require(state.get("active_next_phase") == row["next_phase_id"], "BLOCK: active_next_phase must match Transition Table next phase")
+    _require(next_phase == row["next_phase_id"], f"BLOCK: next_phase '{next_phase}' must match roadmap '{row['next_phase_id']}'")
+    _require(state.get("active_next_phase") == row["next_phase_id"], "BLOCK: active_next_phase must match roadmap next phase")
     _require(
         state.get("active_next_phase_class") == row["next_phase_class"],
-        "BLOCK: active_next_phase_class must match Transition Table next phase class",
+        "BLOCK: active_next_phase_class must match roadmap next phase class",
     )
 
 
@@ -1885,8 +2065,8 @@ def _check_schema_state_contract(state: dict[str, Any]) -> None:
     benchuix_track = state.get("benchuix_track")
     if benchuix_track is not None:
         _require(benchuix_track.get("status") == "operator_review_pending", "benchuix_track.status mismatch")
-        _require(benchuix_track.get("roadmap_path") == "Benchuix_roadmap.md", "benchuix_track.roadmap_path mismatch")
-        _require(benchuix_track.get("roadmap_hash") == "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5", "benchuix_track.roadmap_hash mismatch")
+        _require(benchuix_track.get("roadmap_path") == "ROADMAP_CANONICAL.md", "benchuix_track.roadmap_path mismatch")
+        _require(benchuix_track.get("roadmap_hash") == "8d2982629282d1f9b78d3d30d9bb86e1a3596b66305b1a81647f44d52ac14a43", "benchuix_track.roadmap_hash mismatch")
         _require(benchuix_track.get("current_candidate_phase") == "BENCHUIX-27", "benchuix_track.current_candidate_phase mismatch")
         _require(benchuix_track.get("latest_candidate_decision") == "READY_FOR_OPERATOR_REVIEW", "benchuix_track.latest_candidate_decision mismatch")
         _require(benchuix_track.get("schema_tracking_repair_required") is True, "benchuix_track.schema_tracking_repair_required mismatch")
@@ -8580,7 +8760,7 @@ def _check_if09_closure_milestone_mirror_sanity_artifacts(state: dict[str, Any])
     _require(sanity_packet.get("finding_closed") is True, "IF09 closure sanity packet finding_closed mismatch")
     _require(sanity_packet.get("remediation_proven") is True, "IF09 closure sanity packet remediation_proven mismatch")
     _require(sanity_packet.get("closure_basis") == "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface", "IF09 closure sanity packet closure_basis mismatch")
-    _require(sanity_packet.get("benchux_candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "IF09 closure sanity packet benchux_candidate_next_gate mismatch")
+    _require(sanity_packet.get("benchux_candidate_next_gate") == "DIAGNOSTICO_AUTOMACAO_GATE", "IF09 closure sanity packet benchux_candidate_next_gate mismatch")
     _require(sanity_packet.get("next_phase_preserved") is None, "IF09 closure sanity packet next_phase_preserved must be null")
     _require(sanity_packet.get("active_next_phase_preserved") is None, "IF09 closure sanity packet active_next_phase_preserved must be null")
 
@@ -8620,7 +8800,7 @@ def _check_if09_closure_milestone_mirror_sanity_artifacts(state: dict[str, Any])
     _require(no_real.get("remediation_proven") is True, "IF09 closure no-real remediation_proven mismatch")
 
     benchux_candidate = _load_json(BENCHUX_ROUTE_OPENING_CANDIDATE_PATH)
-    _require(benchux_candidate.get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "BenchUX candidate gate mismatch")
+    _require(benchux_candidate.get("candidate_next_gate") == "DIAGNOSTICO_AUTOMACAO_GATE", "BenchUX candidate gate mismatch")
     _require(benchux_candidate.get("candidate_only") is True, "BenchUX candidate candidate_only mismatch")
     _require(benchux_candidate.get("state_advanced") is False, "BenchUX candidate state_advanced mismatch")
     _require(benchux_candidate.get("next_phase_preserved") is None, "BenchUX candidate next_phase_preserved must be null")
@@ -8638,7 +8818,7 @@ def _check_if09_closure_milestone_mirror_sanity_artifacts(state: dict[str, Any])
 
     benchux_scope = _load_json(BENCHUX_PRE_ROUTE_SCOPE_NOTE_PATH)
     _require(benchux_scope.get("phase_id") == "IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET", "BenchUX scope note phase_id mismatch")
-    _require(benchux_scope.get("candidate_next_gate") == "BENCHUX_ROUTE_OPENING_PACKET", "BenchUX scope note candidate_next_gate mismatch")
+    _require(benchux_scope.get("candidate_next_gate") == "DIAGNOSTICO_AUTOMACAO_GATE", "BenchUX scope note candidate_next_gate mismatch")
     _require(benchux_scope.get("benchux_live_route_activated") is False, "BenchUX scope note benchux_live_route_activated mismatch")
 
     _require(state.get("phase_class") == "governance_repair", "live state phase_class mismatch for IF09 closure sanity")
@@ -17749,7 +17929,7 @@ def main() -> None:
         "technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md",
         "Merge to Project_ARIS main: executed",
         "IF09-FIND-001 closed",
-        "BENCHUX_ROUTE_OPENING_PACKET",
+        "DIAGNOSTICO_AUTOMACAO_GATE",
         "Todos execution_locks: false",
     )
     _mirror_contains(
@@ -17768,7 +17948,7 @@ def main() -> None:
         "if09_closure_milestone_mirror_sanity_pass",
         "if09_closure_milestone_sanity_packet.json",
         "phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET",
-        "BENCHUX_ROUTE_OPENING_PACKET",
+        "DIAGNOSTICO_AUTOMACAO_GATE",
         "HISTORICAL_ONLY",
         "SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET",
         "NOT_CURRENT_STATE",
@@ -17856,45 +18036,17 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "ROADMAP_CANONICAL.md",
-        "Latest completed phase: IF09 Closure Milestone Mirror Sanity Packet",
-        "Active next phase: null",
-        "Active next phase class: null",
-        "Standing authorization: canonroadmap approved by operator",
-        "Post-Infernus technical direction document: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`",
-        "PURG-PRE route opening candidate: `artifacts/purgatorium/purg_pre_route_opening_candidate.json`",
-        "Live route terminalized by: `purg00_route_amendment_terminal_wait_state_operator_source_required`",
-        "PURG-PRE canonical authority execution verified by: `purg_pre_canonical_authority_execution_pass`",
-        "PURG-00 operator review packet prepared by: `purg00_operator_review_packet_pass`",
-        "PURG-00 route admitted by: `purg00_route_admission_pass`",
-        "PURG-00 handoff intake / authority lock status: `purg00_handoff_intake_authority_lock_blocked`",
-        "PURG-00 route amendment terminal wait-state status: `purg00_route_amendment_terminal_wait_state_operator_source_required`",
-        "PURG-00 operator source packet intake: `purg00_operator_source_packet_intake_pass`",
-        "PURG-01 route admission review: `purg01_route_admission_review_pass`",
-        "PURG-01 route admitted by: `purg01_route_admission_pass`",
-        "PURG-01 triage readiness review: `purg01_triage_readiness_review_pass`",
-        "PURG-01 triage planning gate: `purg01_triage_planning_gate_pass`",
-        "PURG-01 triage authorization gate: `purg01_triage_authorization_gate_pass`",
-        "PURG-01 controlled triage execution gate: `purg01_controlled_triage_execution_gate_pass`",
-        "PURG-00 execution: false",
-        "PURG-00 intake executed: true",
-        "Future PURG-01 triage readiness: CONTROLLED_EXECUTION_GATE_PASS",
-        "PURG-01 triage authorized: true",
-        "Operator primary source packet supplied and validated: true",
-        "Next non-execution step: `execute_purg01_controlled_triage_artifact_only`",
-        "Real execution (waves against real systems, runtime, apply): false",
-        "BENCHUX_ROUTE_OPENING_PACKET",
-        "W4 post-sync review remains historical and preserved the controlled execution closure with w4_execution_performed=true, execution_scope=synthetic_isolated_lab_only, synthetic_attack_cases_total=14, rollback_honesty_checks=6/6, duplicate_detection_checks=5/5, cost_enforcement_checks=3/3, and RHR=DDR=CER=1.0.",
-        "IF10 purgatorium handoff graph remains the canonical source packet for this sync with source_project_sha_verified_by_packet=57106d9780af7a807bd58ea6039af3a7b1b23701, source_active_context_sync_sha_verified_by_packet=7755a1506e6981d3f1c5b3534c7217112a12b960, source_root_manifest_sha256=3f750d814afbd4465a3abf4ee5a18ca563980619b887f0ad074ed2f8c1108660, source_graph_sha256=c786d5ba366a64c1ebf69daf7586721cfc8cddee9c4c54235f1f14c644292dd1, validated_handoff_ids=[IF09-FIND-001], contextual_candidate_ids=[IF09-FIND-002], excluded_invalid_ids=[IF09-FIND-003], and supporting_observation_ids=[IF09-OBS-001].",
-        "IF11 minos final verdict closure is canonical as pass; this PURG sync keeps the validated operator source packet from project commit ff9ade875ebf47bad8c4fde0311f576d958c1625 with packet sha256=6f616556d0a31ebba8e0bd647ccfd014f1955127856cc20d2deee2f6d7111e72 and CI_GREEN_CONFIRMED, keeps PURG-01 admitted through route-admission-only authority, records explicit operator authorization for PURG-01 triage using the planning-gate project commit 2bfefac900c6c3e7c3f016b7a790570587e57fbb and active-context commit c8ee8c8225e74ffa8ba56aae916343fcd3d55b0d, records the controlled triage execution gate as pass from the operator packet plus IF10 handoff graph evidence, keeps triage execution unopened, and limits the next move to execute_purg01_controlled_triage_artifact_only without authorizing any real execution surface.",
-        "| INF-FULL-05 | pass | INF-FULL-06 | infernus_full_excludent_cleanup | canonroadmap |",
-        "| INF-FULL-06 | pass | INF-FULL-07 | infernus_full_execution_authorization | canonroadmap |",
-        "| INF-FULL-04 | pass | INF-FULL-05 | infernus_full | canonroadmap |",
-        "| INF-FULL-07 | pass | PURG-PRE | purgatorium_full_authority_materialization | operator | purg_pre_route_admission_decision.json + operator review packet + schema/validator admission + no-real-exec attestation |",
-        "| PURG-PRE | pass | PURG-00 | purgatorium_full_intake | operator | purg00_route_admission_decision.json + purg00_operator_review_packet + schema/validator admission + no-real-exec attestation |",
-        "| PURG-00 | pass | PURG-01 | purgatorium_route_admission | operator | purg01_route_admission_decision.json + operator authorization + no-real-exec attestation + validator evidence |",
-        "| INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation |",
-        "| INF_REVALIDATION_EXECUTION_PACKET | pass | INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | infernus_revalidation_adjudication_or_closure | operator | inf_revalidation_adjudication_closure_packet.json + evidence adjudication matrix + closure decision + no-forbidden-surface carry-forward attestation |",
-        "| INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET | pass | IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET | governance_repair | operator | if09_closure_milestone_sanity_packet.json + mirror sanity matrix + benchux route candidate |",
+        "# ARIS ROADMAP CANONICAL",
+        "## 0. Lapidarium",
+        "phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
+        "Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE",
+        "## 1. Infernus FULL",
+        "## 2. Purgatorium FULL",
+        "## 3. Infernus Revalidation",
+        "## 4. Diagnóstico de Automação",
+        "Próxima fase: se gap bloqueante → Camada de Construção de Automação; senão → BenchUIX",
+        "## 5. BenchUIX",
+        "## 13. EXT-SEC 07→08 contínuo",
     )
     _mirror_contains(
         ROOT / "EXCLUDENT_POLICY.md",

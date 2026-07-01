@@ -22,9 +22,9 @@
 - `lapidarium_final_route_reconciliation_decision`: `pass`
 - `lapidarium_final_status`: `LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION`
 - `lapidarium_route_stale_pointers_reconciled`: `true`
-- `lapidarium_next_route_candidate`: `BENCHUX_ROUTE_OPENING_PACKET`
+- `lapidarium_next_route_candidate`: `DIAGNOSTICO_AUTOMACAO_GATE`
 - `lapidarium_next_route_candidate_execution_authorized`: `false`
-- `lapidarium_final_route_reconciliation_next_step`: `NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET`
+- `lapidarium_final_route_reconciliation_next_step`: `NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE`
 - `lapidarium_final_route_reconciliation_route_candidate_only`: `true`
 - `lapidarium_final_route_reconciliation_no_macro_execution`: `true`
 - `lapidarium_final_route_reconciliation_no_file_move`: `true`

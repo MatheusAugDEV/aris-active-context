@@ -8,7 +8,7 @@
     "stale_pointers_found": true,
     "stale_pointers_reconciled": true,
     "final_lapidarium_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
-    "next_route_candidate": "BENCHUX_ROUTE_OPENING_PACKET",
+    "next_route_candidate": "DIAGNOSTICO_AUTOMACAO_GATE",
     "next_route_execution_authorized": false,
     "final_phase_id": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
     "final_display_name": "Lapidarium — Final Route Reconciliation",
@@ -22,6 +22,6 @@
     "no_bedrock": true,
     "no_infernus": true,
     "no_purgatorium": true,
-    "no_benchux": true,
+    "no_benchuix": true,
     "no_crisol": true
 }

@@ -1,9 +1,9 @@
 {
-  "BENCHUX_ROUTE_OPENING_PACKET": {
+  "DIAGNOSTICO_AUTOMACAO_GATE": {
     "display_name_proposed": "BenchUIX Route Opening Packet Candidate",
     "authoritative_field_unaffected": true,
     "classification": "confusing_but_unique",
-    "why": "Uses BENCHUX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track."
+    "why": "Uses BENCHUIX spelling while the tracked candidate program in schema/state is BENCHUIX-xx, creating near-duplicate family names for the same macro track."
   },
   "IF-08": {
     "display_name_proposed": "IF-08 Parent Wave Program",

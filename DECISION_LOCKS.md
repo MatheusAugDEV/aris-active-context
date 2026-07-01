@@ -3,11 +3,11 @@
 - Status: `lapidarium_final_route_reconciliation_pass`
 - Decision: `pass`
 - Date: `2026-06-30`
-- Scope: terminal governance/artifact reconciliation after Lapidarium F5 residual safe resolution. The live route is now a terminal handoff state. Stale Fase 3/Fase 4 pointers were reclassified as historical. The next route remains candidate-only as `BENCHUX_ROUTE_OPENING_PACKET`.
+- Scope: terminal governance/artifact reconciliation after Lapidarium F5 residual safe resolution. The live route is now a terminal handoff state. Stale Fase 3/Fase 4 pointers were reclassified as historical. The next route remains candidate-only as `DIAGNOSTICO_AUTOMACAO_GATE`.
 - No macro execution: true
 - Locks opened: none. All execution locks remain false.
 - Artifacts: `artifacts/lapidarium/lapidarium_final_route_reconciliation_*`
-- Next: candidate-only route handoff remains `BENCHUX_ROUTE_OPENING_PACKET`; await explicit operator authorization before any future macro execution.
+- Next: candidate-only route handoff remains `DIAGNOSTICO_AUTOMACAO_GATE`; await explicit operator authorization before any future macro execution.
 
 ## LAPIDARIUM_FASE_5_RESIDUALS_SAFE_RESOLUTION
 
@@ -273,8 +273,8 @@
   - `artifacts/active_context/if09_closure_milestone_superseded_notes_manifest.json`
   - `artifacts/active_context/if09_closure_milestone_no_real_execution_attestation.json`
   - `artifacts/active_context/if09_closure_milestone_validation_evidence.json`
-  - `artifacts/benchux/benchux_route_opening_candidate.json`
-  - `artifacts/benchux/benchux_pre_route_scope_note.json`
+  - `artifacts/benchuix/benchuix_route_opening_candidate.json`
+  - `artifacts/benchuix/benchuix_pre_route_scope_note.json`
 - ACTIVE_CONTEXT_STATE advanced canonically to:
   - `phase_id=current_phase_id=IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`
   - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
@@ -287,11 +287,11 @@
   - `finding_closed=true`
   - `remediation_proven=true`
   - `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`
-- BenchUX preserved as documentary candidate only:
-  - `BENCHUX_ROUTE_OPENING_PACKET`
+- BenchUIX preserved as documentary candidate only:
+  - `DIAGNOSTICO_AUTOMACAO_GATE`
   - `candidate_only=true`
   - `state_advanced=false`
-  - `benchux_execution_authorized=false`
+  - `benchuix_execution_authorized=false`
 - Historical labels applied to stale mirrors:
   - `HISTORICAL_ONLY`
   - `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
@@ -570,7 +570,7 @@
 - Decision: `pass`
 - Scope: governance/documentation consolidation only — no phase execution, no real_apply, no product, no Bedrock, no runtime real.
 - `ROADMAP_CANONICAL.md` rewritten as the single active macro roadmap authority ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), based on operator input `operator_inputs/roadmap_aris_camadas_objetivos.md`.
-- Macro chain recorded: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUX -> Crisol -> Polimento -> EXT-SEC 00->04 -> Cinzel -> EXT-SEC 05->06 -> Bedrock Gate -> Produto Parte 2 / Design Partner -> EXT-SEC 07->08 contínuo.
+- Macro chain recorded: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUIX -> Crisol -> Polimento -> EXT-SEC 00->04 -> Cinzel -> EXT-SEC 05->06 -> Bedrock Gate -> Produto Parte 2 / Design Partner -> EXT-SEC 07->08 contínuo.
 - Live `## Transition Table` in `ROADMAP_CANONICAL.md` preserved verbatim (same rows, same parsing contract for `scripts/validate_active_context_state.py`).
 - New macro transitions recorded only as a documental candidate in `artifacts/roadmap/macro_transition_table_extension_candidate.json` (not active, not consumed by validator, no phase_id/phase_class added to live state or schema).
 - Roadmap inventory completed: `artifacts/roadmap/roadmap_inventory_classification.json`. No `macro_roadmap_duplicate_or_conflict` and no `invalid_unclear_roadmap` found; `roadmap_excludent_move_manifest.json` is empty.
@@ -3603,7 +3603,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Audit summary:
   - full `DECISION_LOCKS.md` history reviewed for phase-id naming ambiguity
   - explicit priority finding: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` reuses `IF09` after `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` already closed `IF09-FIND-001`
-  - additional ambiguity families recorded for `PURG04_*`, `PURG05_*`, mixed `IF08_W05` vs `IF08_W5`, `BENCHUX_ROUTE_OPENING_PACKET` vs `BENCHUIX-*`, and `INF-FULL-07` vs human `IF-11` labeling
+  - additional ambiguity families recorded for `PURG04_*`, `PURG05_*`, mixed `IF08_W05` vs `IF08_W5`, `DIAGNOSTICO_AUTOMACAO_GATE` vs `BENCHUIX-*`, and `INF-FULL-07` vs human `IF-11` labeling
 - Metadata repair applied:
   - optional `display_name` support added to `ACTIVE_CONTEXT_SCHEMA.json`
   - live state annotated with `display_name=Post-Revalidation Mirror Sanity Packet`

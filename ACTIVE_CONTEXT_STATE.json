@@ -152,8 +152,8 @@
     },
     "benchuix_track": {
         "status": "operator_review_pending",
-        "roadmap_path": "Benchuix_roadmap.md",
-        "roadmap_hash": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+        "roadmap_path": "ROADMAP_CANONICAL.md",
+        "roadmap_hash": "8d2982629282d1f9b78d3d30d9bb86e1a3596b66305b1a81647f44d52ac14a43",
         "current_candidate_phase": "BENCHUIX-27",
         "latest_candidate_decision": "READY_FOR_OPERATOR_REVIEW",
         "schema_tracking_repair_required": true,
@@ -283,11 +283,11 @@
         "status": "lapidarium_final_route_reconciliation_pass",
         "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE"
     },
     "current_status": "lapidarium_final_route_reconciliation_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -705,7 +705,7 @@
         "to_phase": "Lapidarium — Final Route Reconciliation",
         "to_status": "lapidarium_final_route_reconciliation_pass",
         "transition_type": "governance_repair",
-        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route BENCHUX_ROUTE_OPENING_PACKET."
+        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route DIAGNOSTICO_AUTOMACAO_GATE."
     },
     "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
     "locks": {
@@ -713,7 +713,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -728,7 +728,7 @@
         "notes": [
             "Lapidarium final route reconciliation and handoff completed.",
             "Nenhuma transição definida. Aguardando instrução do operador.",
-            "Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET"
+            "Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": null,
@@ -802,7 +802,7 @@
         "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
         "schema_3_28_change_summary": "Adds derived read-only simple-view fields (last_phase, phase_now, next_phase_simple) computed from existing canonical fields, for quick state reading without removing or duplicating source-of-truth fields.",
         "schema_3_30_change_summary": "Lapidarium Fase 5 remaining low-scope review: admit lapidarium_fase5_remaining_low_scope_* tracking fields for the read-only review of F5-004/F5-005/F5-006, recording REMOVE_CANDIDATE decisions with inventory corrections (F5-004/F5-005 are directories not files) and TTS resolution (F5-006 backup superseded by active src/aris/voice/tts.py), while preserving all real execution locks false and no cleanup executed.",
-        "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only BENCHUX_ROUTE_OPENING_PACKET handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees."
+        "schema_3_34_change_summary": "Lapidarium final route reconciliation: admit lapidarium_final_route_reconciliation_* tracking fields for the terminal handoff packet, reclassify stale LAPIDARIUM next-route pointers as historical, record candidate-only DIAGNOSTICO_AUTOMACAO_GATE handoff metadata, and preserve no-macro-execution, no-file-move, and no-cleanup guarantees."
     },
     "lapidarium_pref4_drift_repair_completed": true,
     "lapidarium_pref4_drift_repair_date": "2026-06-29",
@@ -1160,9 +1160,9 @@
     "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
     "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
     "lapidarium_route_stale_pointers_reconciled": true,
-    "lapidarium_next_route_candidate": "BENCHUX_ROUTE_OPENING_PACKET",
+    "lapidarium_next_route_candidate": "DIAGNOSTICO_AUTOMACAO_GATE",
     "lapidarium_next_route_candidate_execution_authorized": false,
-    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: BENCHUX_ROUTE_OPENING_PACKET",
+    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE",
     "lapidarium_final_route_reconciliation_artifacts": [
         "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
         "artifacts/lapidarium/lapidarium_final_stale_pointer_register.json",

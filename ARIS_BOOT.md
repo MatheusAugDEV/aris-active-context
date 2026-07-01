@@ -76,7 +76,7 @@ Markdown que contradiz o JSON = drift. Reportar, não obedecer.
   Modelo não pode zerar streak manualmente. Sem exceção. Sem waiver.
 
 ### Transição de fase
-- next_phase deriva EXCLUSIVAMENTE da Transition Table do ROADMAP_CANONICAL.md.
+- next_phase deriva EXCLUSIVAMENTE do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md — fonte única, sem tabela separada.
 - Proibido inferir de: nomes de arquivos, histórico de gates, padrão narrativo.
 - next_phase == null → PARAR. Reportar: "Nenhuma transição definida.
   Aguardando instrução do operador."

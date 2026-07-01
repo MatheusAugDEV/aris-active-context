@@ -413,7 +413,7 @@
     {
       "current_phase_id": "PURG_FINAL_EXIT_PACKET",
       "decision": "pass",
-      "next_phase_id": "BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
+      "next_phase_id": "BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
       "next_phase_class": "external_macro_handoff_sentinel",
       "advance_mode": "operator",
       "minimum_deliverable": "purg_final_exit_packet.json, purg_final_exit_evidence_bundle.json, purg_final_exit_residual_risk_matrix.json, purg_final_exit_next_macro_candidate.json",

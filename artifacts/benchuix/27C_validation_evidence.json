@@ -87,10 +87,10 @@
     "Project_ARIS_changed": false
   },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "61df6d1b644bf5937fc83e4d0789cd84bda876c2ab343ee787d5aaf2538229be",
-    "ACTIVE_CONTEXT_SCHEMA.json": "e554e84c1139d220bb494bc96b2d3c632b9087b8ae5b9751e18aa6b203547580",
-    "scripts/validate_active_context_state.py": "41a57816188fae1a92d9044a2a25dc20e2dfd2adc3abb57d3636b7e76e96826a",
-    "tests/test_validate_active_context.py": "8737ee0b7f0c379df80b6d18c252ce8857a20b963eb0f181c7e589bff066b6da",
+    "ACTIVE_CONTEXT_STATE.json": "d71df4e43a24d03cd1cbc31c7fa5d574f6db085c79ef9e2b8020dc2c03533b05",
+    "ACTIVE_CONTEXT_SCHEMA.json": "ed7e6f53de8438deb22647f3dc0dea758fe8b992ed2d77f0880f199e0b0234d6",
+    "scripts/validate_active_context_state.py": "ebf8281b6b36ab879a29c42269d49a125839835cfacc4e0460bb6069b4618502",
+    "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/barbearia.js": "368c6f9cb9b42144210fe9f3e2eabd4003bbecb00f29dd9a77b9f6086b10df0c",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js": "3b2fd343619fdce7bcfb8256a0906fc08ba09b7d111df932070161fbbd97eb0e",
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/escritorio.js": "0bfe5512c83c01a0be5ade62b53c868c7cad7d84bc3e1868e0583c636f901385",

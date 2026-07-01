@@ -3,8 +3,8 @@
     "phase": "LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
     "generated_at": "2026-06-30T04:15:00Z",
     "macro_roadmap_source": "ROADMAP_CANONICAL.md",
-    "candidate_next_route": "BENCHUX_ROUTE_OPENING_PACKET",
-    "why_candidate_only": "The macro roadmap shows BenchUX as the next macro-chain destination, but the live state must remain non-executable and candidate-only until an explicit operator route-selection decision exists.",
+    "candidate_next_route": "DIAGNOSTICO_AUTOMACAO_GATE",
+    "why_candidate_only": "The macro roadmap shows BenchUIX as the next macro-chain destination, but the live state must remain non-executable and candidate-only until an explicit operator route-selection decision exists.",
     "execution_authorized": false,
     "locks_required_before_execution": [
         "next_phase_authorized_by_operator=true",

@@ -11,7 +11,7 @@
   "secrets_accessed": false,
   "package_manager_executed": false,
   "dependency_changed": false,
-  "benchux_live_route_activated": false,
+  "benchuix_live_route_activated": false,
   "production_authorized": false,
   "product_ready": false,
   "runtime_integration_allowed": false,

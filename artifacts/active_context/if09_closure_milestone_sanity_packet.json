@@ -11,7 +11,7 @@
   "closure_basis": "deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface",
   "next_phase_preserved": null,
   "active_next_phase_preserved": null,
-  "benchux_candidate_next_gate": "BENCHUX_ROUTE_OPENING_PACKET",
+  "benchuix_candidate_next_gate": "DIAGNOSTICO_AUTOMACAO_GATE",
   "project_aris_touched": false,
   "project_aris_tests_executed": false,
   "runner_rerun_executed": false,

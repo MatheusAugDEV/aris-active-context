@@ -97,12 +97,12 @@ Selected branch: `TRACK_REVALIDATION_FIRST`
 Track A patch: branch `codex/purg04-track-a-pointer-residual-repair-20260612`, patch commit `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 Merge to Project_ARIS main: executed at `7883af5a32c629026bfc6dc15ebee4ebbcadd295` with `CI_GREEN_CONFIRMED`
 IF09-FIND-001 closed
-BENCHUX_ROUTE_OPENING_PACKET
+DIAGNOSTICO_AUTOMACAO_GATE
 Project_ARIS main workspace: não alterado por este IF09 closure milestone mirror sanity packet
 
-O packet canônico de mirror sanity está registrado em `artifacts/active_context/if09_closure_milestone_sanity_packet.json`. Ele consome a row viva `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET -> IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, reafirma `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, saneia mirrors derivados e emite `artifacts/benchux/benchux_route_opening_candidate.json` apenas como candidato documental.
+O packet canônico de mirror sanity está registrado em `artifacts/active_context/if09_closure_milestone_sanity_packet.json`. Ele consome a row viva `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET -> IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, reafirma `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, saneia mirrors derivados e emite `artifacts/benchuix/benchuix_route_opening_candidate.json` apenas como candidato documental.
 
-Como artifact family desta fase viva, o repositório agora registra `artifacts/active_context/if09_closure_milestone_sanity_packet.json`, `if09_closure_milestone_mirror_drift_matrix.json`, `if09_closure_milestone_superseded_notes_manifest.json`, `if09_closure_milestone_no_real_execution_attestation.json`, `if09_closure_milestone_validation_evidence.json`, `artifacts/benchux/benchux_route_opening_candidate.json` e `benchux_pre_route_scope_note.json`. Esses artifacts mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados, rotulam stale notes como `HISTORICAL_ONLY`, `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` e `NOT_CURRENT_STATE`, e deixam BenchUX estritamente fora da rota viva.
+Como artifact family desta fase viva, o repositório agora registra `artifacts/active_context/if09_closure_milestone_sanity_packet.json`, `if09_closure_milestone_mirror_drift_matrix.json`, `if09_closure_milestone_superseded_notes_manifest.json`, `if09_closure_milestone_no_real_execution_attestation.json`, `if09_closure_milestone_validation_evidence.json`, `artifacts/benchuix/benchuix_route_opening_candidate.json` e `benchuix_pre_route_scope_note.json`. Esses artifacts mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados, rotulam stale notes como `HISTORICAL_ONLY`, `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` e `NOT_CURRENT_STATE`, e deixam BenchUIX estritamente fora da rota viva.
 
 ## Historical Appendix
 

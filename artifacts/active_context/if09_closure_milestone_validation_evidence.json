@@ -29,7 +29,7 @@
     "runtime_integration_allowed": false,
     "dependency_change_authorized": false,
     "package_manager_execution_authorized": false,
-    "benchux_live_route_activated": false,
+    "benchuix_live_route_activated": false,
     "project_aris_mutated": false,
     "project_aris_tests_executed": false,
     "revalidation_runner_executed": false,
@@ -40,7 +40,7 @@
     "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
     "python3 -m json.tool artifacts/active_context/if09_closure_milestone_sanity_packet.json",
     "python3 -m json.tool artifacts/active_context/if09_closure_milestone_mirror_drift_matrix.json",
-    "python3 -m json.tool artifacts/benchux/benchux_route_opening_candidate.json",
+    "python3 -m json.tool artifacts/benchuix/benchuix_route_opening_candidate.json",
     "python3 scripts/validate_active_context_state.py",
     "python3 -m unittest discover -s tests -q"
   ]

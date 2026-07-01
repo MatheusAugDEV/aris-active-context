@@ -77,11 +77,11 @@ aceito `7883af5a...`. O fechamento do finding é exclusivo da camada **Infernus 
 | R11 | `PURG_FINDING_CLOSURE_ELIGIBILITY_PACKET` | artifact_only_eligibility | no | no | no | PURG_FINDING_CLOSE_OPERATOR_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
 | R12 | `PURG_FINDING_CLOSE_OPERATOR_PACKET` | operator_gate | yes | no | no | PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
 | R13 | `PURG_FINDING_CLOSE_CANONICAL_STATE_UPDATE_PACKET` | canonical_state_update | yes | no | yes | PURG_FINAL_EXIT_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
-| R14 | `PURG_FINAL_EXIT_PACKET` | exit_gate | yes | no | yes | BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
+| R14 | `PURG_FINAL_EXIT_PACKET` | exit_gate | yes | no | yes | BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
 | LB-PLAN | `PURG03_REMEDIATION_PLAN_REVISION_PACKET` | artifact_only_loopback_revision | no | no | no | PURG04_TRACK_A_PATCH_REVISION_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
 | LB-PATCH | `PURG04_TRACK_A_PATCH_REVISION_PACKET` | artifact_only_loopback_revision | no | no | no | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | BLOCKED_OPERATOR_DIRECTION_REQUIRED |
 | SENTINEL | `BLOCKED_OPERATOR_DIRECTION_REQUIRED` | terminal_block_sentinel | yes | no | no | — | — |
-| SENTINEL | `BENCHUX_OR_MACRO_HANDOFF_ADMISSION_PACKET` | external_macro_handoff_sentinel | yes | no | no | — | — |
+| SENTINEL | `BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET` | external_macro_handoff_sentinel | yes | no | no | — | — |
 
 Entry: the live phase `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET` is frozen by **R0**
 (`PURG_CURRENT_TERMINAL_STATE_LOCK`); the first activation transition is `live → R1`,
@@ -313,7 +313,7 @@ Fonte: `artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.
 - Este documento é uma trilha técnica **subordinada**: não vence `ACTIVE_CONTEXT_STATE.json`
   nem `ROADMAP_CANONICAL.md`, e não autoriza execução real, produto, Bedrock, secrets,
   real_apply ou runtime por si só.
-- A sequência macro de saída (Purgatorium FULL → Infernus Revalidation → BenchUX → …)
+- A sequência macro de saída (Purgatorium FULL → Infernus Revalidation → BenchUIX → …)
   permanece definida em `ROADMAP_CANONICAL.md`; esta trilha apenas detalha o interior
   restante do Purgatorium e o handoff para a próxima camada macro.
 

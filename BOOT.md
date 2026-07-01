@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `255c7f360838`
+- state_sha: `4e1dd502cb65`
 - schema_version: `3.34`
 
 ## AVISO DE STALE
@@ -24,12 +24,11 @@ GERADO — NAO EDITE A MAO
   Infernus FULL
   Purgatorium FULL
   Infernus Revalidation
-  Diagnóstico de Automação (+ Camada de Construção condicional)
-  BenchUX
-  Cinzel-mínimo
+  BenchUIX
   Crisol
+  Polimento
   EXT-SEC 00→04
-  Cinzel completo
+  Cinzel
   EXT-SEC 05→06
   Bedrock Gate
   Produto Parte 2 / Design Partner
@@ -49,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: BENCHUX_ROUTE_OPENING_PACKET.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE.
 
 ## REGRAS DE AGORA
 
