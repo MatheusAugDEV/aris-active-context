@@ -8,7 +8,7 @@
     "allowed_change": "Simplificar a faixa de controles da Agenda, reforcar contraste em dark/light mode, reduzir ruido visual e manter o comportamento local entregue de v4 a v12.",
     "forbidden_changes_respected": [
       "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
-      "Nenhuma alteracao de routing, phase_id, lock, schema ou Transition Table foi executada.",
+      "Nenhuma alteracao de routing, phase_id, lock, schema ou Próxima fase foi executada.",
       "Nenhuma integracao de backend, runtime real, cobranca, pagamento, contabilidade, suporte, chatbot, telemetria externa ou credencial foi adicionada."
     ]
   },

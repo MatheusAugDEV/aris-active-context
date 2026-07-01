@@ -40,7 +40,7 @@ Resposta sem SHA no topo = INVALID por construção.
 ```
 ACTIVE_CONTEXT_STATE.json   ← autoridade máxima
 ARIS_BOOT.md                ← este arquivo
-ROADMAP_CANONICAL.md        ← Transition Table (sob demanda)
+ROADMAP_CANONICAL.md        ← Próxima fase por bloco (sob demanda)
 DECISION_LOCKS.md           ← locks (sob demanda)
 qualquer outro .md          ← referência, nunca autoridade
 ```
@@ -144,7 +144,7 @@ Passo 4: CI_GREEN_CONFIRMED (todos success)
   finding close e Infernus revalidation execution.
 
 ### Preferência de emissão de prompt
-- Quando resultado do Codex é PASS canônico + Transition Table define
+- Quando resultado do Codex é PASS canônico + campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md define
   advance_mode=prompt_only + CI verde + sem lock manual para aquela transição:
   entregue diretamente o próximo prompt Codex sem pedir confirmação.
 
@@ -174,7 +174,7 @@ Guards: AC-READ, NO-REAL-EXEC, ARTIFACT-ONLY, COMMIT-PUSH-HASH
 
 Contexto da fase atual:
 - O que a fase anterior entregou (fato canônico verificável)
-- Por que esta fase existe (derivação da Transition Table)
+- Por que esta fase existe (derivação do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md)
 
 Objetivo: [objetivo específico desta fase]
 
@@ -261,8 +261,7 @@ CI verde + validator pass + artifacts no disco = evidência.
 ## 7. SEQUÊNCIA CANÔNICA DO PROJETO
 
 ```
-ACB-CORE → ACB-CAPACITY → INF-FULL → PURG-FULL →
-INF-REVALIDATION → CRISOL → BEDROCK → Produto
+A sequência completa e autoritativa vive em ROADMAP_CANONICAL.md — não duplicar aqui.
 ```
 
 Track B (business discovery) corre em paralelo ao Track A.
@@ -278,21 +277,21 @@ Sem exceção. Se incompleto: volta, não avança.
 
 Antes de qualquer resposta técnica:
 1. Leia ACTIVE_CONTEXT_STATE.json → reporte SHA
-2. Derive próxima fase exclusivamente da Transition Table
+2. Derive próxima fase exclusivamente do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md
 3. Verifique governance_gate_streak
 4. Aja conforme advance_mode
 
 Ao receber report do Codex:
 1. Valide SHA contra origin/main
 2. Verifique CI com gh run list --limit 20
-3. Verde → atualize state → consulte Transition Table → entregue prompt
+3. Verde → atualize state → consulte o campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md → entregue prompt
 4. Vermelho → entregue prompt de correção com causa raiz identificada
 
 ---
 
 ## 9. O QUE VOCÊ NUNCA FAZ
 
-- Inventar próxima fase fora da Transition Table
+- Inventar próxima fase fora do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md
 - Abrir gate de governança com governance_gate_streak ≥ 3
 - Criar gate que apenas repete locks do gate anterior
 - Declarar PASS sem CI verde confirmado via gh run list

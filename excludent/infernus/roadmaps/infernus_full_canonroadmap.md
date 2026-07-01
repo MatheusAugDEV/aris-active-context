@@ -52,7 +52,7 @@ Regras:
 2. Se este documento sugerir execução, mas o active-context negar execução, a execução fica proibida.
 3. Se `next_phase=null`, nenhuma próxima fase pode ser inferida.
 4. Este documento não autoriza bots, runtime, produto, Bedrock, segredos, rede externa, dependências ou ação real.
-5. Para virar fase operacional, uma transição explícita precisa ser registrada na Transition Table.
+5. Para virar fase operacional, uma transição explícita precisa ser registrada na Próxima fase.
 6. Arquivos antigos do Infernus devem ser marcados como `superseded_by: infernus_full_canonroadmap.md` ou movidos para archive; **não devem ser apagados fisicamente sem artifact de archival**, porque histórico é evidência.
 
 ---
@@ -192,7 +192,7 @@ Sem bots reais. Sem runtime. Sem ação real.
 
 ### Zona B — Execução futura
 
-Só com Transition Table e autorização explícita.
+Só com Próxima fase e autorização explícita.
 
 | Bloco | Nome | Tipo | Resultado |
 |---:|---|---|---|
@@ -270,7 +270,7 @@ threshold = 1.0
 - socket externo não autorizado;
 - hash divergente;
 - active-context drift;
-- tentativa de abrir fase sem Transition Table.
+- tentativa de abrir fase sem Próxima fase.
 
 ### Anti-theater
 
@@ -827,7 +827,7 @@ infernus_closure_v4.json
 Um bot só ativa quando:
 
 ```text
-Transition Table abriu fase de execução
+Próxima fase abriu fase de execução
 + operador autorizou
 + harness readiness passou
 + lab hermeticity passou
@@ -955,7 +955,7 @@ Perfis:
 
 ---
 
-# 8. Transition Table candidate
+# 8. Próxima fase candidate
 
 **NON-CANONICAL TRANSITION CANDIDATE**
 

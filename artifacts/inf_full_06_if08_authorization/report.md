@@ -20,7 +20,7 @@
 
 - `F21-A53` is not part of the active Infernus FULL route.
 - Any surviving `F21-A53` references are `historical_residual_route_noise`.
-- The Transition Table is the only valid routing authority for `next_phase`.
+- The Próxima fase is the only valid routing authority for `next_phase`.
 
 ## IF-08 Successor Validation
 
@@ -42,7 +42,7 @@
 - `secrets_access_authorized=false`
 - `dependency_mutation_authorized=false`
 
-## Transition Table Update
+## Próxima fase Update
 
 Added row:
 

@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `4e1dd502cb65`
+- state_sha: `9ff309456702`
 - schema_version: `3.34`
 
 ## AVISO DE STALE
@@ -54,7 +54,7 @@ GERADO — NAO EDITE A MAO
 
 - TODO R2: mover para RULES/ por phase_class.
 - JSON vence tudo; markdown que contradiz = drift, pare e reporte.
-- Proximo passo so da Transition Table; nao inferir de nome de arquivo nem historico.
+- Proximo passo so do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md; nao inferir de nome de arquivo nem historico.
 - Sem execucao real/runtime/produto/Bedrock/secrets sem lock=true.
 - Self-report nao e PASS; PASS = artifact + hash + CI verde + validator.
 - excludent/ e archive/ nao sao fonte; forensic-only.

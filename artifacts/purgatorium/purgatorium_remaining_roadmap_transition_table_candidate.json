@@ -7,7 +7,7 @@
   "not_active": true,
   "not_consumed_by_validator": true,
   "live_transition_table_unchanged": true,
-  "note": "Candidate rows only. None of these rows is active. The live Transition Table in ROADMAP_CANONICAL.md is unchanged and remains terminal at PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET (next_phase=null).",
+  "note": "Candidate rows only. None of these rows is active. The live Próxima fase in ROADMAP_CANONICAL.md is unchanged and remains terminal at PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET (next_phase=null).",
   "row_count": 28,
   "rows": [
     {

@@ -13,7 +13,7 @@
   "schema_route_safe_for_live_state_update": false,
   "blocking_findings": [
     "ACTIVE_CONTEXT_SCHEMA.json and scripts/validate_active_context_state.py contain no explicit route or successor modeling for PURG04_TRACK_A_MAIN_MERGE_EXECUTION.",
-    "ROADMAP_CANONICAL.md Transition Table contains no successor row for PURG-04/pass into a merge-execution or post-merge validation phase.",
+    "ROADMAP_CANONICAL.md Próxima fase contains no successor row for PURG-04/pass into a merge-execution or post-merge validation phase.",
     "scripts/validate_active_context_state.py hardcodes the current live mirrors around PURG-04 Track A patch pass and next_phase PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION, but contains no modeled successor for a merge-executed live state.",
     "Executing the Project_ARIS main merge and recording it only in artifact plus DECISION_LOCKS while leaving ACTIVE_CONTEXT_STATE.json at the pre-merge review gate would create canonical live-state drift."
   ],

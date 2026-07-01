@@ -23,7 +23,7 @@ Only PURG-PRE authority/materialization verification.
 - product/Bedrock/runtime/real_apply/secrets not touched
 
 ## NEXT STEP CANDIDATE
-Future PURG-00 admission, only if Transition Table and operator authorize.
+Future PURG-00 admission, only if Próxima fase and operator authorize.
 
 ## HARD LOCKS
 All forbidden flags false.

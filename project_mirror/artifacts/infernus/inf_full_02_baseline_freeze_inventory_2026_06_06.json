@@ -596,7 +596,7 @@
       "item_id": "post_inf_full_02_transition_row",
       "path": "aris-active-context/ROADMAP_CANONICAL.md",
       "classification": "missing_expected_blocking",
-      "reason": "The Transition Table does not yet define a canonical successor row for INF-FULL-02."
+      "reason": "The Próxima fase does not yet define a canonical successor row for INF-FULL-02."
     }
   ],
   "inventory_counts": {

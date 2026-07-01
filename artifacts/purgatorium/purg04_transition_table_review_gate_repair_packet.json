@@ -39,7 +39,7 @@
     "drift_detected": true,
     "classification": "structural_route_drift",
     "severity": "blocking_fail_closed",
-    "reason": "The live PURG-04 route points to PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION while the Transition Table still routed PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
+    "reason": "The live PURG-04 route points to PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION while the Próxima fase still routed PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
   },
   "repair_strategy": {
     "type": "transition_table_alignment_without_live_state_mutation",
@@ -100,7 +100,7 @@
     "python3 -m json.tool artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json",
     "python3 scripts/check_boot_sync.py",
     "python3 scripts/validate_active_context_state.py",
-    "python3 - <<'PY' ... parse ROADMAP_CANONICAL.md Transition Table rows for PURG-04 and PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION ... PY"
+    "python3 - <<'PY' ... parse ROADMAP_CANONICAL.md Próxima fase rows for PURG-04 and PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION ... PY"
   ],
   "validation_results": {
     "json_tool": "pass",

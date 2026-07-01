@@ -14,12 +14,12 @@ This gate is review-only / pre-execution only. It does not execute bots, start r
 
 - Previous canonical phase: `INF-FULL-04`
 - Previous status: `inf_full_04_scenario_pack_harness_readiness_pass`
-- Transition Table successor used: `INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence`
+- Próxima fase successor used: `INF-FULL-04 | pass | INF-FULL-05 | infernus_full | prompt_only | if07 pre-execution review decision artifact + no bot/runtime execution attestation + scenario-count normalization evidence + validator evidence`
 - Standing authorization scope: `infernus_full_pre_execution_gated_sequence`
 
 ## Minimum Deliverable Satisfaction
 
-The gate materializes the IF-07 deliverables required by the Transition Table:
+The gate materializes the IF-07 deliverables required by the Próxima fase:
 
 - `artifacts/infernus/if07_pre_execution_review_decision_2026_06_06.json`
 - `artifacts/infernus/if07_no_execution_attestation_2026_06_06.json`

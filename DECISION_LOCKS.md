@@ -373,7 +373,7 @@
   - `status=purg_residual_risk_carry_forward_route_opening_pass`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | pass | PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | purgatorium_route_admission | operator | purg_residual_risk_carry_forward_route_opening_packet.json + route-opening operator authorization + validator evidence`
   - no successor row exists for `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
@@ -421,7 +421,7 @@
   - `status=inf_revalidation_route_admission_opened`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET | pass | INF_REVALIDATION_ROUTE_ADMISSION_PACKET | infernus_revalidation_route_admission | operator | inf_revalidation_route_admission_packet.json + required inputs + scope matrix + forbidden actions + next candidate`
   - no successor row exists for `INF_REVALIDATION_ROUTE_ADMISSION_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
@@ -470,7 +470,7 @@
   - `status=inf_revalidation_readiness_opened`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - `INF_REVALIDATION_ROUTE_ADMISSION_PACKET | pass | INF_REVALIDATION_READINESS_PACKET | infernus_revalidation_readiness | operator | inf_revalidation_readiness_packet.json + scenario scope + oracle contract + abort criteria + no-real-execution attestation`
   - no successor row exists for `INF_REVALIDATION_READINESS_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
@@ -514,7 +514,7 @@
   - `status=inf_revalidation_operator_authorization_pass`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - `INF_REVALIDATION_READINESS_PACKET | pass | INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | infernus_revalidation_operator_authorization | operator | inf_revalidation_operator_authorization_packet.json + execution contract + safety lock matrix`
   - no successor row exists for `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
@@ -540,7 +540,7 @@
   - `versioning_contract` now includes the live `schema_3_0_change_summary` and `schema_3_1_change_summary` keys
 - `scripts/validate_active_context_state.py` now enforces schema↔state contract coherence directly and reports the canonical stored `governance_gate_streak` instead of an in-memory derived increment.
 - Tests updated to the current live route:
-  - `INF-FULL-07 -> PURG-PRE` remains historical Transition Table truth
+  - `INF-FULL-07 -> PURG-PRE` remains historical Próxima fase truth
   - live state assertions now target `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
 - Live route preserved:
   - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
@@ -571,7 +571,7 @@
 - Scope: governance/documentation consolidation only — no phase execution, no real_apply, no product, no Bedrock, no runtime real.
 - `ROADMAP_CANONICAL.md` rewritten as the single active macro roadmap authority ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), based on operator input `operator_inputs/roadmap_aris_camadas_objetivos.md`.
 - Macro chain recorded: Infernus FULL -> Purgatorium FULL -> Infernus Revalidation -> BenchUIX -> Crisol -> Polimento -> EXT-SEC 00->04 -> Cinzel -> EXT-SEC 05->06 -> Bedrock Gate -> Produto Parte 2 / Design Partner -> EXT-SEC 07->08 contínuo.
-- Live `## Transition Table` in `ROADMAP_CANONICAL.md` preserved verbatim (same rows, same parsing contract for `scripts/validate_active_context_state.py`).
+- Live `## Próxima fase` in `ROADMAP_CANONICAL.md` preserved verbatim (same rows, same parsing contract for `scripts/validate_active_context_state.py`).
 - New macro transitions recorded only as a documental candidate in `artifacts/roadmap/macro_transition_table_extension_candidate.json` (not active, not consumed by validator, no phase_id/phase_class added to live state or schema).
 - Roadmap inventory completed: `artifacts/roadmap/roadmap_inventory_classification.json`. No `macro_roadmap_duplicate_or_conflict` and no `invalid_unclear_roadmap` found; `roadmap_excludent_move_manifest.json` is empty.
 - `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md` and `project_mirror/docs/infernus_full/infernus_full_canonroadmap.md` preserved as phase-specific subordinate roadmaps; neither overrides `ACTIVE_CONTEXT_STATE.json` or `ROADMAP_CANONICAL.md`.
@@ -588,9 +588,9 @@
 - Decision: do **not** force a new field into `ACTIVE_CONTEXT_STATE.json` or `ACTIVE_CONTEXT_SCHEMA.json` for this sync. `ACTIVE_CONTEXT_STATE.json` is left byte-identical. The sync is recorded only via this lock entry, the `README.md` "Roadmap macro canônico" section, and `artifacts/roadmap/post_roadmap_canonical_sync_decision.json`.
 - `roadmap_canonical_commit_sha`: `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09`
 - `roadmap_authority`: `ROADMAP_CANONICAL.md` (Status: `MACRO_ROADMAP_CANONICAL_ACTIVE`)
-- `macro_transition_extension_status`: `documental_not_active` (see `## Macro Transition Table — Future Extension (documental, not yet active)` in `ROADMAP_CANONICAL.md` and `artifacts/roadmap/macro_transition_table_extension_candidate.json`)
+- `macro_transition_extension_status`: `documental_not_active` (see `## Macro Próxima fase — Future Extension (documental, not yet active)` in `ROADMAP_CANONICAL.md` and `artifacts/roadmap/macro_transition_table_extension_candidate.json`)
 - Live route preserved: `phase_id=INF-FULL-07`, `current_phase_id=INF-FULL-07`, `active_next_phase=PURG-01`, `next_phase=PURG-01`, `current_status=if11_minos_final_verdict_closure_pass`, `status=purg01_route_admission_pass`, `latest_completed_phase=IF-11 Minos Final Verdict + Closure`, `latest_completed_status=if11_minos_final_verdict_closure_pass`.
-- Live `## Transition Table` in `ROADMAP_CANONICAL.md` unchanged; future Macro Transition Table remains documental, not consumed by the validator, not promoted to live.
+- Live `## Próxima fase` in `ROADMAP_CANONICAL.md` unchanged; future Macro Próxima fase remains documental, not consumed by the validator, not promoted to live.
 - This sync does not advance phase_id/current_phase_id/active_next_phase/next_phase/current_status/latest_completed_phase/latest_completed_status, does not close IF09-FIND-001, does not reopen IF-08/W4, and does not invert any lock in `ACTIVE_CONTEXT_STATE.json.authorization`.
 - real_execution_authorized=false, product_authorized=false, bedrock_authorized=false, real_apply_authorized=false, secrets_authorized=false, runtime_real_authorized=false.
 
@@ -1514,7 +1514,7 @@
 - baseline_freeze_applied=false.
 - Standing operator authorization is limited to pre-execution Infernus FULL gates.
 - The next canonical route is INF-FULL-05, mapped from `IF-07 — Pre-Execution Review Gate`.
-- Prompt emission for INF-FULL-05 is allowed without new ritual authorization because the Transition Table is prompt_only and execution flags remain false.
+- Prompt emission for INF-FULL-05 is allowed without new ritual authorization because the Próxima fase is prompt_only and execution flags remain false.
 - No bot execution, runtime execution, product promotion, pilot authorization, Bedrock execution, secrets access, package installation, dependency mutation, or external network execution is authorized.
 - fixture_materialization_executed=true (65 files / 13 scenarios on disk).
 - current_phase_planned_scenario_count=16 (IF-05 planning packet only).
@@ -2587,7 +2587,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Consistency review result:
   - `ACTIVE_CONTEXT_STATE.json`, `BOOT.md`, `CURRENT_STATE.md`, `NEXT_ACTION.md`, and the latest `DECISION_LOCKS.md` packet are consistent on the live PURG-04 review gate
   - `ROADMAP_CANONICAL.md` Active Route is consistent with that same PURG-04 review gate
-  - `ROADMAP_CANONICAL.md` Transition Table remains contradictory because `PURG-04/pass` still points directly to `PURG04_TRACK_A_MAIN_MERGE_EXECUTION` and does not model `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
+  - `ROADMAP_CANONICAL.md` Próxima fase remains contradictory because `PURG-04/pass` still points directly to `PURG04_TRACK_A_MAIN_MERGE_EXECUTION` and does not model `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
 - Classification:
   - `BLOCKED_OPERATOR_REVIEW_REQUIRED`
   - `MERGE_NOT_AUTHORIZED`
@@ -2605,7 +2605,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `bedrock_allowed=false`
   - `secrets_allowed=false`
 - Recommended operator option: `C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION`
-  - rationale: the blocker is real and fail-closed, but the recorded review packet also shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch. A new cleanroom merge-plan packet is the narrowest next admissible move because it preserves review-only governance, excludes `ACTIVE_CONTEXT_POINTER.md`, and avoids inventing merge or rebase authority while the Transition Table gap remains unresolved.
+  - rationale: the blocker is real and fail-closed, but the recorded review packet also shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch. A new cleanroom merge-plan packet is the narrowest next admissible move because it preserves review-only governance, excludes `ACTIVE_CONTEXT_POINTER.md`, and avoids inventing merge or rebase authority while the Próxima fase gap remains unresolved.
 - Merge attempted: `false`
 - Rebase attempted: `false`
 - Project_ARIS changed: `false`
@@ -2649,9 +2649,9 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `excludent/**`
   - dependency files
   - any IF08 route-text or canonical-text surface
-- Transition Table contradiction remains risk-only and fail-closed:
+- Próxima fase contradiction remains risk-only and fail-closed:
   - live route remains `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
-  - Transition Table still maps `PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
+  - Próxima fase still maps `PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
   - this packet does not repair that contradiction and cannot authorize automatic merge advancement
 - Authorization locks preserved:
   - `merge_execution_authorized_now=false`
@@ -2675,14 +2675,14 @@ The following track references are historical_residual_route_noise. They do NOT 
 - IF09-FIND-001 remains open; closure only via Infernus Revalidation
 - Canonical artifact: `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
 
-## PURG04 Transition Table Review Gate Repair Packet
+## PURG04 Próxima fase Review Gate Repair Packet
 
 - Status: `governance_only_transition_table_repair_pass`
 - Decision: `pass`
-- Scope: governance-only repair of the `ROADMAP_CANONICAL.md` Transition Table so the live PURG-04 review gate is modeled explicitly; no merge, no rebase, no Project_ARIS mutation, no live-route mutation
+- Scope: governance-only repair of the `ROADMAP_CANONICAL.md` Próxima fase so the live PURG-04 review gate is modeled explicitly; no merge, no rebase, no Project_ARIS mutation, no live-route mutation
 - Source packet verified:
   - `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
-- Repair applied to Transition Table only:
+- Repair applied to Próxima fase only:
   - replaced direct `PURG-04/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
   - added explicit `PURG-04/pass -> PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION`
   - added explicit `PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION/pass -> PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
@@ -2730,7 +2730,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `artifacts/purgatorium/purg04_project_aris_main_moved_operator_decision_packet.json`
   - `artifacts/purgatorium/purg04_cleanroom_merge_plan_with_forbidden_surface_exclusion.json`
   - `artifacts/purgatorium/purg04_transition_table_review_gate_repair_packet.json`
-- Transition Table review gate row verified and successor row present for future execution only.
+- Próxima fase review gate row verified and successor row present for future execution only.
 - Forbidden surface exclusion preserved:
   - `ACTIVE_CONTEXT_POINTER.md`
   - `.gitmodules`
@@ -2818,7 +2818,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Source Project_ARIS merge commit: `7883af5a32c629026bfc6dc15ebee4ebbcadd295`
 - Source patch commit: `1e9a04a02846f3261ae72d0c95fbee6b0163b45b`
 - Source Project_ARIS CI state: `CI_GREEN_CONFIRMED`
-- Transition Table row verified and preserved:
+- Próxima fase row verified and preserved:
   - `PURG04_TRACK_A_MAIN_MERGE_EXECUTION | pass | PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET | purgatorium_post_merge_validation | operator | purg04_track_a_post_merge_validation_packet.json + Project_ARIS CI green or explicit CI confirmation artifact`
 - Live state synchronized to:
   - `phase_id=current_phase_id=PURG04_TRACK_A_MAIN_MERGE_EXECUTION`
@@ -2876,7 +2876,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `latest_completed_status=purg04_track_a_post_merge_validation_packet_pass`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - no successor row exists for `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
   - next canonical step: `Nenhuma transição definida. Aguardando instrução do operador.`
 
@@ -2917,7 +2917,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `phase_id=current_phase_id=PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET`
   - `next_phase=null`
   - `active_next_phase=null`
-  - no Transition Table/schema/validator/state patch was applied in this cycle
+  - no Próxima fase/schema/validator/state patch was applied in this cycle
 - Safety locks preserved:
   - `IF09-FIND-001` remains open
   - `remediation_proven=false`
@@ -3377,7 +3377,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 
 - Status: `purgatorium_remaining_roadmap_canonicalization_packet_artifact_only_pass`
 - Decision: `pass`
-- Scope: documentation-only / artifact-only canonicalization of the remaining Purgatorium technical trail; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no finding close, no remediation_proven change, no live Transition Table change, no ACTIVE_CONTEXT_STATE.json change.
+- Scope: documentation-only / artifact-only canonicalization of the remaining Purgatorium technical trail; no Project_ARIS mutation, no Project_ARIS tests, no proof-loop execution, no runtime, no real_apply, no finding close, no remediation_proven change, no live Próxima fase change, no ACTIVE_CONTEXT_STATE.json change.
 - Roadmap file: `project_mirror/docs/purgatorium_full/purgatorium_remaining_roadmapcanon.md`
 - Roadmap status: `canonical_technical_trail_pending_active_transition_activation`
 - Artifacts materialized:
@@ -3396,7 +3396,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - GitHub CI green is not treated as proof that the local global Project_ARIS suite is green.
 - Route preservation:
   - `ACTIVE_CONTEXT_STATE.json` unchanged
-  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - live Próxima fase in `ROADMAP_CANONICAL.md` unchanged
   - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
   - `next_phase=null`
   - `active_next_phase=null`
@@ -3422,10 +3422,10 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json`
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_no_real_execution_attestation.json`
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json`
-- candidate_next_gate: `BLOCKED_OPERATOR_DIRECTION_REQUIRED` (sentinel of the remaining-roadmap phase graph; not an active Transition Table row).
+- candidate_next_gate: `BLOCKED_OPERATOR_DIRECTION_REQUIRED` (sentinel of the remaining-roadmap phase graph; not an active Próxima fase row).
 - Route preservation:
   - `ACTIVE_CONTEXT_STATE.json` unchanged
-  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - live Próxima fase in `ROADMAP_CANONICAL.md` unchanged
   - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
   - `next_phase=null`
   - `active_next_phase=null`
@@ -3456,7 +3456,7 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Gate compression analysis (Task 5): both candidate collapses (R5+R6 and R9+R10+R11) were found non-collapsible without losing a distinct operator/evidence check; `requires_amendment_to_apply=true`, `roadmap_changed_now=false`, recommendation `keep_as_is`.
 - Route preservation:
   - `ACTIVE_CONTEXT_STATE.json` unchanged
-  - `ROADMAP_CANONICAL.md` and live Transition Table unchanged
+  - `ROADMAP_CANONICAL.md` and live Próxima fase unchanged
   - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
   - `next_phase=null`
   - `active_next_phase=null`
@@ -3486,10 +3486,10 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_amendment_candidate.json`
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_no_real_execution_attestation.json`
   - `artifacts/purgatorium/purg_remaining_roadmap_activation_next_route_candidate.json`
-- `candidate_next_gate`: `INF_REVALIDATION_ROUTE_ADMISSION_PACKET` (candidate of the remaining-roadmap phase graph; not an active Transition Table row).
+- `candidate_next_gate`: `INF_REVALIDATION_ROUTE_ADMISSION_PACKET` (candidate of the remaining-roadmap phase graph; not an active Próxima fase row).
 - Route preservation:
   - `ACTIVE_CONTEXT_STATE.json` unchanged
-  - live Transition Table in `ROADMAP_CANONICAL.md` unchanged
+  - live Próxima fase in `ROADMAP_CANONICAL.md` unchanged
   - `phase_id=current_phase_id=PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
   - `next_phase=null`
   - `active_next_phase=null`
@@ -3500,7 +3500,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - Project_ARIS changed: `false`
   - Project_ARIS tests executed: `false`
   - proof-loop / revalidation / runtime / real_apply executed: `false`
-- This gate records the branch selection and emits `candidate_next_gate=INF_REVALIDATION_ROUTE_ADMISSION_PACKET` only; activating this row in the live Transition Table requires a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern.
+- This gate records the branch selection and emits `candidate_next_gate=INF_REVALIDATION_ROUTE_ADMISSION_PACKET` only; activating this row in the live Próxima fase requires a separate, explicit operator amendment-activation step plus schema/validator support and an admission decision artifact analogous to the PURG-PRE/PURG-00/PURG-01 pattern.
 - Active-context final commit SHA for this ledger entry: `reported_after_commit_in_delivery_report`
 - CI terminal state for this ledger entry: `reported_after_push_in_delivery_report`
 ## INF Revalidation Adjudication Or Closure Packet
@@ -3576,7 +3576,7 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `status=inf_revalidation_execution_pass`
   - `active_next_phase=null`
   - `next_phase=null`
-- Transition Table result:
+- Próxima fase result:
   - `INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET | pass | INF_REVALIDATION_EXECUTION_PACKET | infernus_revalidation_execution | operator | inf_revalidation_execution_packet.json + deterministic oracle result + regression matrix + no-forbidden-surface attestation`
   - no successor row exists for `INF_REVALIDATION_EXECUTION_PACKET`
   - future candidate only: `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`

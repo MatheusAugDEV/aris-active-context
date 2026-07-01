@@ -24,7 +24,7 @@ The operator review packet is complete and remains artifact-only.
 
 - Explicit schema change for the live-route phase-class enum set.
 - Explicit validator change for the `INF-FULL-07 -> PURG-PRE` transition.
-- `ROADMAP_CANONICAL.md` Transition Table row that admits the route.
+- `ROADMAP_CANONICAL.md` Próxima fase row that admits the route.
 - Dedicated route-admission artifact pack.
 - Active-context sync after the route-admission decision.
 - CI terminal green after the route-admission patch.

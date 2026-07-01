@@ -20,7 +20,7 @@ This gate is review-only and pre-execution only. It reviews the coherence of the
 
 ## Minimum Deliverable Satisfaction
 
-The minimum deliverable from the Transition Table is satisfied by:
+The minimum deliverable from the Próxima fase is satisfied by:
 
 - `if07_pre_execution_review_decision_2026_06_06.json`
 - `if07_no_execution_attestation_2026_06_06.json`

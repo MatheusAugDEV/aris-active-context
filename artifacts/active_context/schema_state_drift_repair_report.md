@@ -12,7 +12,7 @@
 - Stale live-state requirements absent from `ACTIVE_CONTEXT_STATE.json` were removed from the schema contract.
 - Missing live-state keys used by the current PURG04 route are now declared in the schema.
 - `scripts/validate_active_context_state.py` now checks schema/state coherence directly and reports `governance_gate_streak=0` exactly as stored.
-- Historical tests pinned to IF-08 were updated to the current PURG04 live route while preserving the historical `INF-FULL-07 -> PURG-PRE` Transition Table truth.
+- Historical tests pinned to IF-08 were updated to the current PURG04 live route while preserving the historical `INF-FULL-07 -> PURG-PRE` Próxima fase truth.
 
 ## Preserved live route
 

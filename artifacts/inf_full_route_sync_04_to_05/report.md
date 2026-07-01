@@ -7,9 +7,9 @@ Source block in saved canonroadmap: `IF-07 — Pre-Execution Review Gate`
 ## Deterministic diagnosis
 
 - `ACTIVE_CONTEXT_STATE.json` was canonically at `INF-FULL-04 | pass`.
-- The Transition Table had no `INF-FULL-04 -> ...` row.
+- The Próxima fase had no `INF-FULL-04 -> ...` row.
 - The saved canonroadmap in `Project_ARIS/docs/infernus_full/infernus_full_canonroadmap.md` defines `IF-07 — Pre-Execution Review Gate` as the immediate pre-execution successor after `IF-06`.
-- The standing authorization artifact allows only pre-execution gated sequence continuity and Transition Table updates while all execution flags remain false.
+- The standing authorization artifact allows only pre-execution gated sequence continuity and Próxima fase updates while all execution flags remain false.
 - The IF06 artifact field `ready_for_inf_full_05_dry_run_evidence_simulation=true` is retained as historical naming drift, not as authority for the immediate canonical successor.
 
 ## Applied sync fix

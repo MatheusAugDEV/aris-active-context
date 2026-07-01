@@ -9,7 +9,7 @@ O operador autorizou route admission com "pode começar".
 ## WHAT CHANGED
 schema
 validator
-Transition Table
+Próxima fase
 ACTIVE_CONTEXT live route
 mirrors
 tests

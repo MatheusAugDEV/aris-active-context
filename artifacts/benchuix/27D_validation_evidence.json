@@ -1,46 +1,19 @@
 {
-  "phase_id": "BENCHUIX-27D",
-  "artifact_type": "validation_evidence",
-  "status": "local_validation_pass_recorded",
-  "candidate_only": true,
-  "synthetic_only": true,
-  "created_artifacts": [
-    "artifacts/benchuix/27D_local_static_preview_operator_runbook.md",
-    "artifacts/benchuix/27D_operator_visual_observation_sheet.json",
-    "artifacts/benchuix/27D_preview_boundary_attestation.json",
-    "artifacts/benchuix/27D_static_preview_preflight_checklist.json",
-    "artifacts/benchuix/27D_manual_preview_result_schema.json",
-    "artifacts/benchuix/27D_no_real_execution_attestation.json",
-    "artifacts/benchuix/27D_validation_evidence.json"
-  ],
   "artifact_hashes": {
     "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
+    "artifacts/benchuix/27D_manual_preview_result_schema.json": "f3f2bfed317edbadbdf9754507d6dce7da29287a3bb9afea51eaf4b83554d7a8",
+    "artifacts/benchuix/27D_no_real_execution_attestation.json": "1715bac65546611814a5e927fc097ca5d94a1285ad44f6efa145361e47ad7e66",
     "artifacts/benchuix/27D_operator_visual_observation_sheet.json": "d8540489d52713776b88377e41fbbc096c421d6e42a510041fa4ae0de78f1213",
     "artifacts/benchuix/27D_preview_boundary_attestation.json": "53db16dd68d6ae8bac9a9aa4359e82291fe1a92153ab3526bddcf20077c7d193",
-    "artifacts/benchuix/27D_static_preview_preflight_checklist.json": "0bb304ab805003c980979a203fb5ab08935782ee71776b58c05a9ed5055d2ebf",
-    "artifacts/benchuix/27D_manual_preview_result_schema.json": "f3f2bfed317edbadbdf9754507d6dce7da29287a3bb9afea51eaf4b83554d7a8",
-    "artifacts/benchuix/27D_no_real_execution_attestation.json": "1715bac65546611814a5e927fc097ca5d94a1285ad44f6efa145361e47ad7e66"
+    "artifacts/benchuix/27D_static_preview_preflight_checklist.json": "0bb304ab805003c980979a203fb5ab08935782ee71776b58c05a9ed5055d2ebf"
   },
-  "criteria_covered": {
-    "operator_runbook_created": true,
-    "observation_sheet_created": true,
-    "preview_boundary_attestation_created": true,
-    "preflight_checklist_created": true,
-    "manual_preview_result_schema_created": true,
-    "no_preview_executed_by_codex": true,
-    "no_browser_executed_by_codex": true,
-    "no_localhost_opened": true,
-    "no_package_manager_executed": true,
-    "no_project_aris_mutation": true,
-    "crisol_admitted": false,
-    "live_route_opened": false,
-    "all_real_locks_remain_false": true
-  },
+  "artifact_type": "validation_evidence",
+  "candidate_only": true,
   "candidate_tracking_preserved": {
-    "current_candidate_phase": "BENCHUIX-27",
+    "active_next_phase": null,
     "candidate_next_phase_after_operator_gate": "CRISOL",
-    "next_phase": null,
-    "active_next_phase": null
+    "current_candidate_phase": "BENCHUIX-27",
+    "next_phase": null
   },
   "commands": [
     "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
@@ -57,41 +30,68 @@
     "git diff --check",
     "git status --short"
   ],
-  "results": {
-    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
-    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
-    "operator_visual_observation_sheet_json_tool": "OK",
-    "preview_boundary_attestation_json_tool": "OK",
-    "static_preview_preflight_checklist_json_tool": "OK",
-    "manual_preview_result_schema_json_tool": "OK",
-    "no_real_execution_attestation_json_tool": "OK",
-    "validation_evidence_json_tool": "OK",
-    "validator_py_compile": "OK",
-    "validator_script": "PASS",
-    "unittest_discover": "PASS",
-    "unittest_count": 52,
-    "git_diff_check": "clean",
-    "git_status_short": "tracked_27d_artifacts_plus_validator_test_and_27c_context_sync",
-    "preview_executed_by_codex": false,
-    "browser_executed_by_codex": false,
-    "localhost_opened": false,
-    "package_manager_executed": false,
-    "real_user_testing_executed": false,
-    "Project_ARIS_changed": false
-  },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "d71df4e43a24d03cd1cbc31c7fa5d574f6db085c79ef9e2b8020dc2c03533b05",
     "ACTIVE_CONTEXT_SCHEMA.json": "ed7e6f53de8438deb22647f3dc0dea758fe8b992ed2d77f0880f199e0b0234d6",
-    "scripts/validate_active_context_state.py": "ebf8281b6b36ab879a29c42269d49a125839835cfacc4e0460bb6069b4618502",
-    "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac",
+    "ACTIVE_CONTEXT_STATE.json": "d71df4e43a24d03cd1cbc31c7fa5d574f6db085c79ef9e2b8020dc2c03533b05",
     "artifacts/benchuix/27B_react_static_prototype_manifest.json": "cab1c85b3686fb9f3dc02c39653be4a4f58caa47ee219a56e0a93d8d20a37056",
     "artifacts/benchuix/27C_visual_synthetic_test_matrix.json": "d340da16fab85b50de2c259a40a211fdb4bf6b3d0898fc50f3acadcd0cad047a",
     "artifacts/benchuix/visual_sandbox_static/README.md": "5e7675b426a80f8af06f716238d133b1be788739a39f0de18095df4a67a1656f",
     "artifacts/benchuix/visual_sandbox_static/index.html": "0ce2ec4e7a93342c07ba3704579a330ff1c8f442e77738a0745473ab64fd5289",
-    "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13"
+    "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13",
+    "scripts/validate_active_context_state.py": "e4179a656503d5bb91abe723b3a9d041e50b93776c7c5b0f2dea2bf1df17b4c1",
+    "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac"
+  },
+  "created_artifacts": [
+    "artifacts/benchuix/27D_local_static_preview_operator_runbook.md",
+    "artifacts/benchuix/27D_operator_visual_observation_sheet.json",
+    "artifacts/benchuix/27D_preview_boundary_attestation.json",
+    "artifacts/benchuix/27D_static_preview_preflight_checklist.json",
+    "artifacts/benchuix/27D_manual_preview_result_schema.json",
+    "artifacts/benchuix/27D_no_real_execution_attestation.json",
+    "artifacts/benchuix/27D_validation_evidence.json"
+  ],
+  "criteria_covered": {
+    "all_real_locks_remain_false": true,
+    "crisol_admitted": false,
+    "live_route_opened": false,
+    "manual_preview_result_schema_created": true,
+    "no_browser_executed_by_codex": true,
+    "no_localhost_opened": true,
+    "no_package_manager_executed": true,
+    "no_preview_executed_by_codex": true,
+    "no_project_aris_mutation": true,
+    "observation_sheet_created": true,
+    "operator_runbook_created": true,
+    "preflight_checklist_created": true,
+    "preview_boundary_attestation_created": true
   },
   "notes": [
     "BENCHUIX-27D defines a manual operator packet only and does not execute the preview.",
     "Codex does not open browser, localhost or package-manager surfaces in this phase."
-  ]
+  ],
+  "phase_id": "BENCHUIX-27D",
+  "results": {
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "Project_ARIS_changed": false,
+    "browser_executed_by_codex": false,
+    "git_diff_check": "clean",
+    "git_status_short": "tracked_27d_artifacts_plus_validator_test_and_27c_context_sync",
+    "localhost_opened": false,
+    "manual_preview_result_schema_json_tool": "OK",
+    "no_real_execution_attestation_json_tool": "OK",
+    "operator_visual_observation_sheet_json_tool": "OK",
+    "package_manager_executed": false,
+    "preview_boundary_attestation_json_tool": "OK",
+    "preview_executed_by_codex": false,
+    "real_user_testing_executed": false,
+    "static_preview_preflight_checklist_json_tool": "OK",
+    "unittest_count": 52,
+    "unittest_discover": "PASS",
+    "validation_evidence_json_tool": "OK",
+    "validator_py_compile": "OK",
+    "validator_script": "PASS"
+  },
+  "status": "local_validation_pass_recorded",
+  "synthetic_only": true
 }

@@ -93,4 +93,4 @@ Planned bots:
 
 Probable next step if later formalized: `INF-FULL-05 Dry-Run Evidence Simulation Gate`.
 
-This is not opened canonically here. `next_phase` remains `null` until a new Transition Table row is recorded.
+This is not opened canonically here. `next_phase` remains `null` until a new Próxima fase row is recorded.

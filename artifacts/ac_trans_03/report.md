@@ -18,8 +18,8 @@
 
 ## Tasks Completed
 
-### Task 1 — Transition Table
-Added `## Transition Table` to `ROADMAP_CANONICAL.md` with 10 rows: AC-REPAIR-01 through BEDROCK-01. Also updated Active Route to reflect AC-TRANS-03 as latest completed phase.
+### Task 1 — Próxima fase
+Added `## Próxima fase` to `ROADMAP_CANONICAL.md` with 10 rows: AC-REPAIR-01 through BEDROCK-01. Also updated Active Route to reflect AC-TRANS-03 as latest completed phase.
 
 ### Task 2 — Autonomous Loop Handler
 Replaced `OPERATOR_PREFERENCES.md` entirely with: TRIGGER 1 (auto-detect Codex report by SHA/keywords), TRIGGER 2 (\"vamos continuar\" fallback), REGRA DE ADVANCE_MODE (auto/prompt_only/operator), REGRA DE RESPOSTA (SHA header format).

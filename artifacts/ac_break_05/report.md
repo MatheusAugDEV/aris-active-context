@@ -26,7 +26,7 @@ from recurring, and sets `governance_gate_streak = 4` so the block is immediatel
 | `scripts/validate_active_context_state.py` | Added `_check_governance_streak`, `_check_gate_signature`, `_check_cycle_nudge`, `_apply_streak_management` |
 | `ACTIVE_CONTEXT_SCHEMA.json` | New required fields: `governance_gate_streak` (int), `seen_gate_signatures` (array), `phase_class` (string) |
 | `ACTIVE_CONTEXT_STATE.json` | `governance_gate_streak=4`, `seen_gate_signatures=[]`, `phase_class="circuit_breaker"`, `current_phase_id="AC-BREAK-05"` |
-| `ROADMAP_CANONICAL.md` | AC-BREAK-05 row added to Transition Table; Active Route updated |
+| `ROADMAP_CANONICAL.md` | AC-BREAK-05 row added to Próxima fase; Active Route updated |
 | `MANDATORY_READ_FIRST_RULES.md` | REGRA DE CIRCUIT BREAKER section added |
 
 ---

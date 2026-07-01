@@ -3,7 +3,7 @@
 > **Subordinate technical trail.** This roadmap is the canonical *remaining* technical
 > trail of the Purgatorium layer. It is subordinate to `ACTIVE_CONTEXT_STATE.json` and
 > `ROADMAP_CANONICAL.md`. **It does not activate a successor row by itself.** The live
-> Transition Table only changes through a separate, operator-authorized gate.
+> Próxima fase only changes through a separate, operator-authorized gate.
 
 - artifact_id source: `artifacts/purgatorium/purgatorium_remaining_roadmap_canonicalization_packet.json`
 - roadmap_status: `canonical_technical_trail_pending_active_transition_activation`
@@ -31,7 +31,7 @@ Project_ARIS latest_completed_project_commit_sha: 7883af5a32c629026bfc6dc15ebee4
 
 O Purgatorium **não está fechado**. A rota residual `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`
 foi aberta artifact-only por autorização explícita do operador e é **terminal** na live
-Transition Table (sem sucessor). `IF09-FIND-001` permanece `open`; `remediation_proven=false`
+Próxima fase (sem sucessor). `IF09-FIND-001` permanece `open`; `remediation_proven=false`
 é preservado; nenhum lock de execução real foi aberto; `Project_ARIS` permanece no commit
 aceito `7883af5a...`. O fechamento do finding é exclusivo da camada **Infernus Revalidation**.
 
@@ -50,7 +50,7 @@ aceito `7883af5a...`. O fechamento do finding é exclusivo da camada **Infernus 
 ## Limites (este gate de canonicalização)
 
 - Não altera `ACTIVE_CONTEXT_STATE.json`.
-- Não altera a live Transition Table de `ROADMAP_CANONICAL.md`.
+- Não altera a live Próxima fase de `ROADMAP_CANONICAL.md`.
 - Não executa `PURG-EXIT`, Infernus Revalidation, runtime, proof-loop, testes do `Project_ARIS` ou real_apply.
 - Não fecha `IF09-FIND-001` e não marca `remediation_proven=true`.
 - CI verde do GitHub **não** é tratado como prova de que a suite local global do `Project_ARIS` está verde.
@@ -113,9 +113,9 @@ gated by the R0 lock artifact.
 - name: Roadmap Activation Decision Packet
 - type: `operator_route_governance_decision` · requires_operator: `True` · allows_execution: `False` · allows_state_change: `False`
 - artifacts: `purg_remaining_roadmap_activation_decision_packet.json`, `purg_remaining_roadmap_activation_amendment_candidate.json`
-- PASS: operator selects exactly one route; amendment candidate created; active Transition Table NOT changed in this phase
+- PASS: operator selects exactly one route; amendment candidate created; active Próxima fase NOT changed in this phase
 - BLOCK: ambiguous decision; attempt to execute revalidation; attempt to close finding
-- notes: Branch gate. Activates the candidate roadmap and picks the initial branch. Does not mutate the live Transition Table.
+- notes: Branch gate. Activates the candidate roadmap and picks the initial branch. Does not mutate the live Próxima fase.
 
 ### R2 — `PURG_EXIT_READINESS_PACKET`
 - name: PURG Exit Readiness Packet
@@ -308,7 +308,7 @@ Fonte: `artifacts/purgatorium/purgatorium_remaining_roadmap_no_deviation_policy.
 
 ## Relação com ROADMAP_CANONICAL.md
 
-- `ROADMAP_CANONICAL.md` é a única autoridade de roadmap macro; sua live Transition Table
+- `ROADMAP_CANONICAL.md` é a única autoridade de roadmap macro; sua live Próxima fase
   permanece **inalterada** e terminal em `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET` (`next_phase=null`).
 - Este documento é uma trilha técnica **subordinada**: não vence `ACTIVE_CONTEXT_STATE.json`
   nem `ROADMAP_CANONICAL.md`, e não autoriza execução real, produto, Bedrock, secrets,

@@ -3,7 +3,7 @@
   "requested_transition": "INF-FULL-07 -> PURG-PRE",
   "validator_accepts_requested_transition": false,
   "required_validator_change": "Update EXPECTED_NEXT_PHASE_ID, EXPECTED_NEXT_PHASE_CLASS, live-route consistency checks, and any PURG-PRE candidate-only assumptions, then add explicit PURG-PRE route-admission artifact validation.",
-  "risk_if_changed": "Changing the validator without synchronized schema, Transition Table, and active-context updates can admit a live-route mutation that still fails canonical policy or creates a false PASS.",
+  "risk_if_changed": "Changing the validator without synchronized schema, Próxima fase, and active-context updates can admit a live-route mutation that still fails canonical policy or creates a false PASS.",
   "tests_required_before_acceptance": [
     "tests/test_active_context_route_sync_unittest.py::test_purg_operator_review_packet_artifacts_validate",
     "tests/test_active_context_route_sync_unittest.py::test_purg_pre_authority_materialization_artifacts_validate",

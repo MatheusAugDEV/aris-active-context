@@ -1,7 +1,7 @@
 {
   "phase_id": "AC-CONTRACT-04",
   "phase": "ARIS Active-Context Phase Contract Hardening Gate",
-  "summary": "AC-CONTRACT-04 adds minimum_deliverable to every Transition Table row, adds REGRA DE ENTREGAVEL MINIMO to MANDATORY_READ_FIRST_RULES.md, updates the validator with deliverable enforcement for gated pass states, refreshes the validation test suite with an INF-MAT-01 negative case, advances state from AC-TRANS-03 to AC-CONTRACT-04, and keeps next_phase null.",
+  "summary": "AC-CONTRACT-04 adds minimum_deliverable to every Próxima fase row, adds REGRA DE ENTREGAVEL MINIMO to MANDATORY_READ_FIRST_RULES.md, updates the validator with deliverable enforcement for gated pass states, refreshes the validation test suite with an INF-MAT-01 negative case, advances state from AC-TRANS-03 to AC-CONTRACT-04, and keeps next_phase null.",
   "date": "2026-06-03",
   "artifacts_created": [
     "artifacts/ac_contract_04/decision.json",

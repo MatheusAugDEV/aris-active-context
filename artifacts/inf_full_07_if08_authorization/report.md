@@ -10,7 +10,7 @@
 - `next_phase` and `active_next_phase` were `null`.
 - `EXCLUDENT_POLICY.md` was mandatory input and remained active.
 
-## Transition Table Duplicate Resolution
+## Próxima fase Duplicate Resolution
 
 - Preserved active row: `INF-FULL-05 -> INF-FULL-06 | infernus_full_excludent_cleanup`.
 - Removed the competing active authorization row from `INF-FULL-05`.

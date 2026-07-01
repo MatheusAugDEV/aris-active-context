@@ -1,40 +1,17 @@
 {
-  "phase_id": "BENCHUIX-27E",
-  "artifact_type": "validation_evidence",
-  "status": "local_validation_pass_recorded",
-  "candidate_only": true,
-  "synthetic_only": true,
-  "created_artifacts": [
-    "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
-    "artifacts/benchuix/27E_file_preview_compatibility_report.md",
-    "artifacts/benchuix/27E_file_preview_boundary_attestation.json",
-    "artifacts/benchuix/27E_no_real_execution_attestation.json",
-    "artifacts/benchuix/27E_validation_evidence.json"
-  ],
   "artifact_hashes": {
-    "artifacts/benchuix/visual_sandbox_static/index_file_preview.html": "dc8b138906221eb49bb5be69e461e83d0ac900c8e8d5e8bc21f2b763b808e600",
-    "artifacts/benchuix/27E_file_preview_compatibility_report.md": "097a061b73cb57c18fc30d3ae77f6a52a9f5d63cbb93b9073335d39b91428e4f",
     "artifacts/benchuix/27E_file_preview_boundary_attestation.json": "b495e32d9bcabe2afe5072e2c2b7e961a210478885ee3b6d70c0da5009ba3f68",
-    "artifacts/benchuix/27E_no_real_execution_attestation.json": "cd716fffc67749f3b1f61e56c41197c3156b669379168e0c5863210696e17150"
+    "artifacts/benchuix/27E_file_preview_compatibility_report.md": "097a061b73cb57c18fc30d3ae77f6a52a9f5d63cbb93b9073335d39b91428e4f",
+    "artifacts/benchuix/27E_no_real_execution_attestation.json": "cd716fffc67749f3b1f61e56c41197c3156b669379168e0c5863210696e17150",
+    "artifacts/benchuix/visual_sandbox_static/index_file_preview.html": "dc8b138906221eb49bb5be69e461e83d0ac900c8e8d5e8bc21f2b763b808e600"
   },
-  "criteria_covered": {
-    "single_file_preview_created": true,
-    "type_module_removed_for_preview": true,
-    "module_imports_removed_for_preview": true,
-    "no_preview_executed_by_codex": true,
-    "no_browser_executed_by_codex": true,
-    "no_localhost_opened": true,
-    "no_package_manager_executed": true,
-    "no_project_aris_mutation": true,
-    "crisol_admitted": false,
-    "live_route_opened": false,
-    "all_real_locks_remain_false": true
-  },
+  "artifact_type": "validation_evidence",
+  "candidate_only": true,
   "candidate_tracking_preserved": {
-    "current_candidate_phase": "BENCHUIX-27",
+    "active_next_phase": null,
     "candidate_next_phase_after_operator_gate": "CRISOL",
-    "next_phase": null,
-    "active_next_phase": null
+    "current_candidate_phase": "BENCHUIX-27",
+    "next_phase": null
   },
   "commands": [
     "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
@@ -48,36 +25,59 @@
     "git diff --check",
     "git status --short"
   ],
-  "results": {
-    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
-    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
-    "file_preview_boundary_attestation_json_tool": "OK",
-    "no_real_execution_attestation_json_tool": "OK",
-    "validation_evidence_json_tool": "OK",
-    "validator_py_compile": "OK",
-    "validator_script": "PASS",
-    "unittest_discover": "PASS",
-    "unittest_count": 52,
-    "git_diff_check": "clean",
-    "git_status_short": "tracked_27e_artifacts_plus_validator_test_and_27c_27d_sync",
-    "preview_executed_by_codex": false,
-    "browser_executed_by_codex": false,
-    "localhost_opened": false,
-    "package_manager_executed": false,
-    "real_user_testing_executed": false,
-    "Project_ARIS_changed": false
-  },
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "d71df4e43a24d03cd1cbc31c7fa5d574f6db085c79ef9e2b8020dc2c03533b05",
     "ACTIVE_CONTEXT_SCHEMA.json": "ed7e6f53de8438deb22647f3dc0dea758fe8b992ed2d77f0880f199e0b0234d6",
-    "scripts/validate_active_context_state.py": "ebf8281b6b36ab879a29c42269d49a125839835cfacc4e0460bb6069b4618502",
-    "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac",
+    "ACTIVE_CONTEXT_STATE.json": "d71df4e43a24d03cd1cbc31c7fa5d574f6db085c79ef9e2b8020dc2c03533b05",
     "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
     "artifacts/benchuix/visual_sandbox_static/index.html": "0ce2ec4e7a93342c07ba3704579a330ff1c8f442e77738a0745473ab64fd5289",
-    "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13"
+    "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13",
+    "scripts/validate_active_context_state.py": "e4179a656503d5bb91abe723b3a9d041e50b93776c7c5b0f2dea2bf1df17b4c1",
+    "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac"
+  },
+  "created_artifacts": [
+    "artifacts/benchuix/visual_sandbox_static/index_file_preview.html",
+    "artifacts/benchuix/27E_file_preview_compatibility_report.md",
+    "artifacts/benchuix/27E_file_preview_boundary_attestation.json",
+    "artifacts/benchuix/27E_no_real_execution_attestation.json",
+    "artifacts/benchuix/27E_validation_evidence.json"
+  ],
+  "criteria_covered": {
+    "all_real_locks_remain_false": true,
+    "crisol_admitted": false,
+    "live_route_opened": false,
+    "module_imports_removed_for_preview": true,
+    "no_browser_executed_by_codex": true,
+    "no_localhost_opened": true,
+    "no_package_manager_executed": true,
+    "no_preview_executed_by_codex": true,
+    "no_project_aris_mutation": true,
+    "single_file_preview_created": true,
+    "type_module_removed_for_preview": true
   },
   "notes": [
     "BENCHUIX-27E repairs the local file preview path without executing browser or localhost surfaces.",
     "The preview remains candidate-only, synthetic-only and non-product."
-  ]
+  ],
+  "phase_id": "BENCHUIX-27E",
+  "results": {
+    "ACTIVE_CONTEXT_SCHEMA_json_tool": "OK",
+    "ACTIVE_CONTEXT_STATE_json_tool": "OK",
+    "Project_ARIS_changed": false,
+    "browser_executed_by_codex": false,
+    "file_preview_boundary_attestation_json_tool": "OK",
+    "git_diff_check": "clean",
+    "git_status_short": "tracked_27e_artifacts_plus_validator_test_and_27c_27d_sync",
+    "localhost_opened": false,
+    "no_real_execution_attestation_json_tool": "OK",
+    "package_manager_executed": false,
+    "preview_executed_by_codex": false,
+    "real_user_testing_executed": false,
+    "unittest_count": 52,
+    "unittest_discover": "PASS",
+    "validation_evidence_json_tool": "OK",
+    "validator_py_compile": "OK",
+    "validator_script": "PASS"
+  },
+  "status": "local_validation_pass_recorded",
+  "synthetic_only": true
 }

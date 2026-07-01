@@ -59,7 +59,7 @@
     },
     "contradictions": [
       "ACTIVE_CONTEXT_STATE.json, BOOT.md, CURRENT_STATE.md, NEXT_ACTION.md, ROADMAP_CANONICAL.md Active Route, and the latest DECISION_LOCKS packet all point to PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION as the live review gate.",
-      "ROADMAP_CANONICAL.md Transition Table does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and instead routes PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
+      "ROADMAP_CANONICAL.md Próxima fase does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and instead routes PURG-04/pass directly to PURG04_TRACK_A_MAIN_MERGE_EXECUTION."
     ],
     "fail_closed_result": "no_merge_no_rebase_review_only_until_operator_decides"
   },
@@ -114,7 +114,7 @@
   },
   "recommended_option": {
     "option": "C_AUTHORIZE_NEW_CLEANROOM_MERGE_PLAN_PACKET_WITH_FORBIDDEN_SURFACE_EXCLUSION",
-    "technical_justification": "The blocker is real because Project_ARIS main moved on a forbidden surface, so merge and rebase must remain unauthorized now. At the same time, the recorded review packet shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch itself. A new cleanroom merge-plan packet is therefore the narrowest admissible next move: it keeps review-only governance, preserves the current origin/main pointer state, explicitly excludes ACTIVE_CONTEXT_POINTER.md, and avoids inventing execution authority while the Transition Table still lacks an explicit row for PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION."
+    "technical_justification": "The blocker is real because Project_ARIS main moved on a forbidden surface, so merge and rebase must remain unauthorized now. At the same time, the recorded review packet shows no Track A overlap with the main movement and no forbidden-surface touch inside the patch itself. A new cleanroom merge-plan packet is therefore the narrowest admissible next move: it keeps review-only governance, preserves the current origin/main pointer state, explicitly excludes ACTIVE_CONTEXT_POINTER.md, and avoids inventing execution authority while the Próxima fase still lacks an explicit row for PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION."
   },
   "no_execution_attestation": {
     "merge_attempted": false,

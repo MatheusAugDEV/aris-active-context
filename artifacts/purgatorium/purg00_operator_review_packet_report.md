@@ -15,7 +15,7 @@ Prepares operator review and route admission plan for PURG-00.
 - No closure
 
 ## WHY PURG-00 IS NOT OPEN YET
-- Requires Transition Table row
+- Requires Próxima fase row
 - Requires schema admission
 - Requires validator admission
 - Requires operator authorization

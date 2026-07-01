@@ -59,7 +59,7 @@ Only `INF-FULL-03` is opened canonically here. The downstream chain remains plan
 
 `INF-FULL-03` does not open a successor automatically. Any future execution-oriented phase still requires:
 
-1. explicit Transition Table row,
+1. explicit Próxima fase row,
 2. explicit operator authorization,
 3. validator pass,
 4. CI verification,

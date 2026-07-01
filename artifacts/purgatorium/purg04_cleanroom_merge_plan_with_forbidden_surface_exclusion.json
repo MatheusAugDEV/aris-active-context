@@ -52,7 +52,7 @@
       "active_next_phase": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
       "active_next_phase_class": "purgatorium_route_admission"
     },
-    "risk_statement": "The Transition Table does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and therefore cannot be used here to authorize or auto-advance any merge execution.",
+    "risk_statement": "The Próxima fase does not model PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION and therefore cannot be used here to authorize or auto-advance any merge execution.",
     "repair_attempted_in_this_packet": false
   },
   "fail_closed_policy": {
@@ -60,7 +60,7 @@
     "merge_automatic_advance_blocked": true,
     "rebase_automatic_advance_blocked": true,
     "live_route_mutation_blocked": true,
-    "reason": "Forbidden surface drift exists on Project_ARIS main and the Transition Table remains contradictory relative to the live PURG-04 review gate.",
+    "reason": "Forbidden surface drift exists on Project_ARIS main and the Próxima fase remains contradictory relative to the live PURG-04 review gate.",
     "enforcement": [
       "No merge execution is authorized by this packet.",
       "No rebase is authorized by this packet.",
@@ -175,7 +175,7 @@
     "live_gate_remains": "PURG04_TRACK_A_PATCH_REVIEW_AND_MERGE_DECISION",
     "blocked_state_remains": "BLOCKED_OPERATOR_REVIEW_REQUIRED",
     "future_execution_authorization_required_separately": true,
-    "rationale": "This packet only materializes option C as a bounded cleanroom merge plan. Because the forbidden-surface blocker and Transition Table contradiction both remain active, the plan cannot advance to merge execution automatically."
+    "rationale": "This packet only materializes option C as a bounded cleanroom merge plan. Because the forbidden-surface blocker and Próxima fase contradiction both remain active, the plan cannot advance to merge execution automatically."
   },
   "no_execution_attestation": {
     "merge_attempted": false,

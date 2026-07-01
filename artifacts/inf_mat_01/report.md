@@ -12,7 +12,7 @@
 
 AC-BREAK-05 installed the circuit breaker and set `governance_gate_streak = 4`,
 immediately blocking any new governance gate. INF-MAT-01 is the first capacity gate —
-the only valid successor per the Transition Table. Its pass resets the streak to 0.
+the only valid successor per the Próxima fase. Its pass resets the streak to 0.
 
 Operator authorized fixture materialization. `fixture_materialization_allowed = true`
 was committed first (commit `d36a2e3`) before any fixture file was created.

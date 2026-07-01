@@ -17,7 +17,7 @@ não confie. Arquivo faltando/stale/inacessível/contraditório = reporte drift
 ANTES de decidir.
 
 ## Precedência source-of-truth
-JSON > schema > validator > ROADMAP_CANONICAL/Transition Table > DECISION_LOCKS >
+JSON > schema > validator > ROADMAP_CANONICAL/Próxima fase > DECISION_LOCKS >
 CURRENT_STATE/NEXT_ACTION (mirrors) > OPERATOR_PREFERENCES > nada mais.
 Preferências nunca anulam locks.
 

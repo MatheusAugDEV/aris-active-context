@@ -9,7 +9,7 @@
     "scripts/validate_active_context_state.py": "Updated with _check_governance_streak, _check_gate_signature, _check_cycle_nudge, _apply_streak_management",
     "ACTIVE_CONTEXT_SCHEMA.json": "Added governance_gate_streak (integer, default 0), seen_gate_signatures (array, default []), phase_class (string) to properties and required",
     "ACTIVE_CONTEXT_STATE.json": "governance_gate_streak=4, seen_gate_signatures=[], phase_class=circuit_breaker, current_phase_id=AC-BREAK-05",
-    "ROADMAP_CANONICAL.md": "Added AC-BREAK-05 row to Transition Table; updated Active Route to AC-BREAK-05",
+    "ROADMAP_CANONICAL.md": "Added AC-BREAK-05 row to Próxima fase; updated Active Route to AC-BREAK-05",
     "MANDATORY_READ_FIRST_RULES.md": "Added REGRA DE CIRCUIT BREAKER section",
     "artifacts/ac_break_05/decision.json": "Gate decision record",
     "artifacts/ac_break_05/summary.json": "This file",

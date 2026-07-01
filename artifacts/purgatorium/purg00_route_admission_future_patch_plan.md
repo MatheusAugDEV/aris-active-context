@@ -1,7 +1,7 @@
 PATCH PLAN ONLY — DO NOT APPLY IN THIS PHASE
 
 1. Add purgatorium_full_intake to schema live-route phase-class enums.
-2. Add ROADMAP_CANONICAL Transition Table row for PURG-PRE | pass | PURG-00.
+2. Add ROADMAP_CANONICAL Próxima fase row for PURG-PRE | pass | PURG-00.
 3. Add validator route rule for PURG-PRE -> PURG-00.
 4. Add artifact requirements for PURG-00 route admission.
 5. Mutate ACTIVE_CONTEXT_STATE.json only in a dedicated route-admission phase.

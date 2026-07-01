@@ -25,4 +25,4 @@
 
 ## Route semantics
 
-The active Transition Table now admits `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET -> PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`. No successor row exists for `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, so the route remains terminal and awaits explicit operator direction.
+The active Próxima fase now admits `PURG04_TRACK_A_POST_MERGE_VALIDATION_PACKET -> PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`. No successor row exists for `PURG_RESIDUAL_RISK_CARRY_FORWARD_PACKET`, so the route remains terminal and awaits explicit operator direction.

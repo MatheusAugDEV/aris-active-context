@@ -7,7 +7,7 @@
     "allowed_change": "Aplicar um passe final de coerencia visual, hierarquia premium de decisao, polimento de onboarding/vazio/falha, melhor escaneabilidade de Ajuda, refinamentos mobile e acessibilidade leve, preservando todo o comportamento entregue de v4 a v11.",
     "forbidden_changes_respected": [
       "Nenhum campo de ACTIVE_CONTEXT_STATE.json foi alterado.",
-      "Nenhuma alteracao de routing, phase_id, lock, schema ou Transition Table foi executada.",
+      "Nenhuma alteracao de routing, phase_id, lock, schema ou Próxima fase foi executada.",
       "Nenhuma integracao de backend, cobranca, pagamento, contabilidade, coleta externa, credencial, canal em tempo real ou chamada de produto foi adicionada."
     ]
   },

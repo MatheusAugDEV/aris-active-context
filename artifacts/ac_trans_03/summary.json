@@ -1,7 +1,7 @@
 {
   "phase_id": "AC-TRANS-03",
   "phase": "ARIS Active-Context Transition Engine & Autonomous Loop Gate",
-  "summary": "AC-TRANS-03 installs the Transition Table in ROADMAP_CANONICAL.md, replaces OPERATOR_PREFERENCES.md with the autonomous loop handler (TRIGGER 1, TRIGGER 2, REGRA DE ADVANCE_MODE, REGRA DE RESPOSTA), adds REGRA DE TRANSICAO to MANDATORY_READ_FIRST_RULES.md, updates the validator to enforce next_phase against the Transition Table, refreshes the test suite (test_validate_active_context.py), archives the stale anti-corruption validator tests, and advances state from AC-OBS-02 to AC-TRANS-03.",
+  "summary": "AC-TRANS-03 installs the Próxima fase in ROADMAP_CANONICAL.md, replaces OPERATOR_PREFERENCES.md with the autonomous loop handler (TRIGGER 1, TRIGGER 2, REGRA DE ADVANCE_MODE, REGRA DE RESPOSTA), adds REGRA DE TRANSICAO to MANDATORY_READ_FIRST_RULES.md, updates the validator to enforce next_phase against the Próxima fase, refreshes the test suite (test_validate_active_context.py), archives the stale anti-corruption validator tests, and advances state from AC-OBS-02 to AC-TRANS-03.",
   "date": "2026-06-03",
   "artifacts_created": [
     "artifacts/ac_trans_03/decision.json",

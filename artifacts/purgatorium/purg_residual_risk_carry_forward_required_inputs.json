@@ -156,7 +156,7 @@
       "evidence_class": "canonical_state",
       "required_for_future_residual_packet": true,
       "admissibility": "pass_transition_table_snapshot",
-      "blocker_if_missing": "Residual packet cannot prove the live Transition Table context and terminal no-successor condition."
+      "blocker_if_missing": "Residual packet cannot prove the live Próxima fase context and terminal no-successor condition."
     },
     {
       "path": "DECISION_LOCKS.md",

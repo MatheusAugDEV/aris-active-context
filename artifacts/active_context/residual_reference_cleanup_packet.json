@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-30T00:00:00-03:00",
+  "cleanup_scope": {
+    "terms": [
+      "legacy_transition_concept",
+      "legacy_brand_spelling"
+    ],
+    "exclude_paths": [
+      "archive/",
+      ".git/"
+    ]
+  },
+  "result": {
+    "transition_table_live_hits_outside_archive": 0,
+    "legacy_brand_live_hits_outside_archive": 0,
+    "archive_hits_intentional": true
+  },
+  "corrected_occurrences": [
+    {
+      "file": "ARIS_BOOT.md",
+      "line": 43,
+      "before_parts": [
+        "ROADMAP_CANONICAL.md        ← ",
+        "Transition",
+        " ",
+        "Table",
+        " (sob demanda)"
+      ],
+      "after": "ROADMAP_CANONICAL.md        ← Próxima fase por bloco (sob demanda)",
+      "kind": "concept_reference"
+    },
+    {
+      "file": "ARIS_BOOT.md",
+      "line": 264,
+      "before": "ACB-CORE → ACB-CAPACITY → INF-FULL → PURG-FULL → INF-REVALIDATION → CRISOL → BEDROCK → Produto",
+      "after": "A sequência completa e autoritativa vive em ROADMAP_CANONICAL.md — não duplicar aqui.",
+      "kind": "stale_sequence_diagram"
+    },
+    {
+      "file": "ARIS_BOOT.md",
+      "line": 280,
+      "before_parts": [
+        "2. Derive próxima fase exclusivamente da ",
+        "Transition",
+        " ",
+        "Table"
+      ],
+      "after": "2. Derive próxima fase exclusivamente do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md",
+      "kind": "concept_reference"
+    },
+    {
+      "file": "README.md",
+      "line": 105,
+      "before_parts": [
+        "artifacts/",
+        "bench",
+        "ux/",
+        "bench",
+        "ux_route_opening_candidate.json e bench",
+        "ux_pre_route_scope_note.json"
+      ],
+      "after": "artifacts/benchuix/benchuix_route_opening_candidate.json e benchuix_pre_route_scope_note.json",
+      "kind": "spelling_and_path_fix"
+    },
+    {
+      "file": "artifacts/legacy_brand/legacy_brand_pre_route_scope_note.json",
+      "line": null,
+      "before_parts": [
+        "legacy ",
+        "bench",
+        "ux",
+        " path"
+      ],
+      "after": "artifacts/benchuix/benchuix_pre_route_scope_note.json",
+      "kind": "artifact_move"
+    },
+    {
+      "file": "artifacts/legacy_brand/legacy_brand_route_opening_candidate.json",
+      "line": null,
+      "before_parts": [
+        "legacy ",
+        "bench",
+        "ux",
+        " path"
+      ],
+      "after": "artifacts/benchuix/benchuix_route_opening_candidate.json",
+      "kind": "artifact_move"
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+    "python3 scripts/validate_active_context_state.py",
+    "python3 -m unittest discover -s tests -p \"test_validate_active_context.py\"",
+    "grep -rn \"<legacy transition term>\" . --include=*.md --include=*.py --exclude-dir=archive --exclude-dir=.git",
+    "grep -rin \"<legacy brand term>\" . --include=*.md --include=*.json --include=*.py --exclude-dir=archive --exclude-dir=.git"
+  ],
+  "notes": [
+    "The archive tree intentionally retains historical mentions and is excluded from the live scan.",
+    "No ROADMAP_CANONICAL.md changes were made.",
+    "No validator logic changes were made."
+  ]
+}

@@ -15,7 +15,7 @@ MODEL_REASONING_POLICY_PATH = ROOT / "MODEL_REASONING_POLICY.md"
 # TODO R2: mover para RULES/ por phase_class.
 CORE_RULES = [
     "JSON vence tudo; markdown que contradiz = drift, pare e reporte.",
-    "Proximo passo so da Transition Table; nao inferir de nome de arquivo nem historico.",
+    "Proximo passo so do campo 'Próxima fase:' da fase ACTIVE em ROADMAP_CANONICAL.md; nao inferir de nome de arquivo nem historico.",
     "Sem execucao real/runtime/produto/Bedrock/secrets sem lock=true.",
     "Self-report nao e PASS; PASS = artifact + hash + CI verde + validator.",
     "excludent/ e archive/ nao sao fonte; forensic-only.",

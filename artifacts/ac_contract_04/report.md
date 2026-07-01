@@ -16,8 +16,8 @@
 
 ## Tasks Completed
 
-### Task 1 — Transition Table
-Added `minimum_deliverable` to every Transition Table row in `ROADMAP_CANONICAL.md`.
+### Task 1 — Próxima fase
+Added `minimum_deliverable` to every Próxima fase row in `ROADMAP_CANONICAL.md`.
 
 ### Task 2 — Deliverable Enforcement
 Added `PHASE_DELIVERABLES` and `_check_minimum_deliverable()` to `scripts/validate_active_context_state.py`.

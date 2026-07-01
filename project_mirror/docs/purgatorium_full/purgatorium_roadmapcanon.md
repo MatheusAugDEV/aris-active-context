@@ -15,11 +15,11 @@
 
 Este arquivo consolida a versão canônica do roadmap do **Purgatorium** depois do fechamento do Infernus IF-11 e substitui o `infernus_full_canonroadmap.md` como documento de direção técnica ativa pós-Infernus.
 
-Ele é o documento de direção técnica ativa do Purgatorium, mas não altera sozinho a rota viva: não autoriza execução real, não substitui `ACTIVE_CONTEXT_STATE.json`, não substitui a Transition Table de `ROADMAP_CANONICAL.md` e não fecha finding.
+Ele é o documento de direção técnica ativa do Purgatorium, mas não altera sozinho a rota viva: não autoriza execução real, não substitui `ACTIVE_CONTEXT_STATE.json`, não substitui a Próxima fase de `ROADMAP_CANONICAL.md` e não fecha finding.
 
 Para virar rota operacional executável e válida no active-context, precisa existir:
 
-1. entrada explícita na Transition Table;
+1. entrada explícita na Próxima fase;
 2. active-context remoto sincronizado;
 3. validator pass;
 4. artifacts nomeados no disco;
@@ -432,7 +432,7 @@ product_allowed: false
 
 ### Objetivo
 
-Materializar este canonroadmap aprovado pelo operador como autoridade técnica ativa do Purgatorium, mover o Infernus canonroadmap para excludent/historical, e abrir rota operacional somente por Transition Table válida.
+Materializar este canonroadmap aprovado pelo operador como autoridade técnica ativa do Purgatorium, mover o Infernus canonroadmap para excludent/historical, e abrir rota operacional somente por Próxima fase válida.
 
 ### Inputs
 

@@ -6,7 +6,7 @@ Add `purgatorium_full_authority_materialization` to the live-route phase-class e
 2. validator transition rule change needed
 Replace the fail-closed `INF-FULL-07 -> IF-08` assumption with an explicit route-admission gate that can admit `INF-FULL-07 -> PURG-PRE` only when the operator-reviewed evidence pack exists.
 
-3. ROADMAP_CANONICAL Transition Table row needed
+3. ROADMAP_CANONICAL Próxima fase row needed
 Add an explicit row that documents the future `INF-FULL-07 | pass | PURG-PRE` route with its phase class, advance mode, and minimum deliverable.
 
 4. ACTIVE_CONTEXT_STATE live route mutation needed

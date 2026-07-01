@@ -59,7 +59,7 @@
   "canonical_successor_assessment": {
     "next_phase_defined_in_transition_table": false,
     "canonical_successor": null,
-    "advisory_note": "No successor row exists for INF-FULL-02 in ROADMAP_CANONICAL.md. F5 Bot Materialization appears in docs/infernus_full/infernus_full_roadmap_v1.md but remains advisory-only until the Transition Table is amended."
+    "advisory_note": "No successor row exists for INF-FULL-02 in ROADMAP_CANONICAL.md. F5 Bot Materialization appears in docs/infernus_full/infernus_full_roadmap_v1.md but remains advisory-only until the Próxima fase is amended."
   },
   "observed_workspace_constraints": {
     "project_repository_dirty": true,

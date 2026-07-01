@@ -47,7 +47,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -91,7 +91,7 @@
       "pass_criteria": [
         "operator selects exactly one route",
         "amendment candidate created",
-        "active Transition Table NOT changed in this phase"
+        "active Próxima fase NOT changed in this phase"
       ],
       "block_criteria": [
         "ambiguous decision",
@@ -106,7 +106,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -124,7 +124,7 @@
         "dependency/package-manager use",
         "MCP/RAG/memory write"
       ],
-      "notes": "Branch gate. Activates the candidate roadmap and picks the initial branch. Does not mutate the live Transition Table.",
+      "notes": "Branch gate. Activates the candidate roadmap and picks the initial branch. Does not mutate the live Próxima fase.",
       "choices": [
         "TRACK_EXIT_FIRST",
         "TRACK_REVALIDATION_FIRST",
@@ -169,7 +169,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -226,7 +226,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -282,7 +282,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -339,7 +339,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -393,7 +393,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -448,7 +448,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "proof-loop execution",
         "runtime execution",
         "real_apply",
@@ -505,7 +505,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -560,7 +560,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -613,7 +613,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -669,7 +669,7 @@
       "next_on_block": "INF_REVALIDATION_FAILURE_LOOPBACK_TRIAGE_PACKET",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "runtime execution",
         "real_apply",
@@ -726,7 +726,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -782,7 +782,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -835,7 +835,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -889,7 +889,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -942,7 +942,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -996,7 +996,7 @@
       "next_on_pass": "PURG_FINAL_EXIT_PACKET",
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -1049,7 +1049,7 @@
       "next_on_pass": "BENCHUIX_OR_MACRO_HANDOFF_ADMISSION_PACKET",
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -1104,7 +1104,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -1155,7 +1155,7 @@
       "next_on_block": "BLOCKED_OPERATOR_DIRECTION_REQUIRED",
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -1194,7 +1194,7 @@
       "next_on_block": null,
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
@@ -1233,7 +1233,7 @@
       "next_on_block": null,
       "forbidden_actions": [
         "ACTIVE_CONTEXT_STATE.json mutation",
-        "live Transition Table mutation",
+        "live Próxima fase mutation",
         "Project_ARIS mutation",
         "Project_ARIS tests execution",
         "proof-loop execution",
