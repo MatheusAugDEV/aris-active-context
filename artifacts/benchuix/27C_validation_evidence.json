@@ -44,7 +44,7 @@
     "artifacts/benchuix/visual_sandbox_static/src/data/scenarios/mercado.js": "3b2fd343619fdce7bcfb8256a0906fc08ba09b7d111df932070161fbbd97eb0e",
     "artifacts/benchuix/visual_sandbox_static/src/domain/invariants.js": "bd0925e7edd7be778a7a6bf2570991ab76bb3717db61f1b4fe0902d904f647c3",
     "artifacts/benchuix/visual_sandbox_static/src/domain/stateMachine.js": "af3c9888809be1731c118567dc2b3f42d7cc0bd8437ee05de1cad23c8f2718ab",
-    "scripts/validate_active_context_state.py": "eee5668f8f4c11baa14ee12d38d3133f822b5ee917ef03af69a442413cfd4f36",
+    "scripts/validate_active_context_state.py": "c1359f3f68840888574d443308e8f16df0ff266d28527d4113472bc9f38196c7",
     "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac"
   },
   "created_artifacts": [

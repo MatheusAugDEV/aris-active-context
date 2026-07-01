@@ -1,11 +1,11 @@
 {
     "active_context_version": "3.0",
-    "phase_id": "LAPIDARIUM_FASE_5_SELO_TRUE",
-    "current_phase_id": "LAPIDARIUM_FASE_5_SELO_TRUE",
-    "display_name": "Lapidarium True — Fase 5: Selo",
-    "previous_phase_id": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
-    "last_phase": "LAPIDARIUM_FASE_4_CANONIZACAO_TRUE",
-    "phase_now": "LAPIDARIUM_FASE_5_SELO_TRUE",
+    "phase_id": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+    "current_phase_id": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+    "display_name": "Lapidarium True — Fase 6: Guarda",
+    "previous_phase_id": "LAPIDARIUM_FASE_5_SELO_TRUE",
+    "last_phase": "LAPIDARIUM_FASE_5_SELO_TRUE",
+    "phase_now": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
     "next_phase_simple": null,
     "gate_opened_at": "2026-06-15",
     "gate_max_cycles": 3,
@@ -229,16 +229,16 @@
     },
     "completed_phases": {
         "latest": {
-            "phase": "Lapidarium True — Fase 5: Selo",
+            "phase": "Lapidarium True — Fase 6: Guarda",
             "decision": "pass",
-            "status": "lapidarium_fase5_selo_true_pass"
+            "status": "lapidarium_fase6_guarda_true_pass"
         },
         "latest_capability": {
             "phase": "ARIS Capability Build Advanced Supply Chain Gate",
             "decision": "pass",
             "status": "acb_cap_05_pass"
         },
-        "total_phases_completed": 70,
+        "total_phases_completed": 71,
         "full_history": "archive/derived_mirrors/completed_phases_history.json"
     },
     "cross_field_consistency_policy": {
@@ -273,21 +273,21 @@
     "current_live_route": {
         "active_next_phase": null,
         "active_next_phase_class": null,
-        "current_status": "lapidarium_fase5_selo_true_pass",
+        "current_status": "lapidarium_fase6_guarda_true_pass",
         "decision": "pass",
         "h4_h5_hx_active_current_route": false,
-        "latest_completed_phase": "Lapidarium True — Fase 5: Selo",
-        "latest_completed_status": "lapidarium_fase5_selo_true_pass",
+        "latest_completed_phase": "Lapidarium True — Fase 6: Guarda",
+        "latest_completed_status": "lapidarium_fase6_guarda_true_pass",
         "next_phase_execution_authorization": false,
         "operator_approval_packet_review_is_execution_approval": false,
-        "status": "lapidarium_fase5_selo_true_pass",
-        "latest_completed_project_commit_sha": "92be22e750940ed6d1d96408d990ec5b53172792",
+        "status": "lapidarium_fase6_guarda_true_pass",
+        "latest_completed_project_commit_sha": "5ca666e51026db49c13b5aaea178baeeaca814e2",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_6_GUARDA_TRUE"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE"
     },
-    "current_status": "lapidarium_fase5_selo_true_pass",
+    "current_status": "lapidarium_fase6_guarda_true_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_6_GUARDA_TRUE",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: DIAGNOSTICO_AUTOMACAO_GATE",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -676,8 +676,8 @@
         "real_cost_spent": false,
         "real_quota_consumed": false
     },
-    "latest_completed_project_commit_sha": "92be22e750940ed6d1d96408d990ec5b53172792",
-    "latest_completed_status": "lapidarium_fase5_selo_true_pass",
+    "latest_completed_project_commit_sha": "5ca666e51026db49c13b5aaea178baeeaca814e2",
+    "latest_completed_status": "lapidarium_fase6_guarda_true_pass",
     "permanent_active_update_rule_installed": true,
     "decision": "pass",
     "drift_signals": {
@@ -688,30 +688,31 @@
         "markdown_mirror_drift": "fail_closed"
     },
     "history_summary": {
-        "latest_execution_phase": "Lapidarium True — Fase 5: Selo",
+        "latest_execution_phase": "Lapidarium True — Fase 6: Guarda",
         "ledger_mode": "historical_only",
         "markdown_mirrors_are_non_authoritative": true,
-        "previous_execution_phase": "Lapidarium True — Fase 4: Canonização",
-        "latest_execution_status": "lapidarium_fase5_selo_true_pass",
+        "previous_execution_phase": "Lapidarium True — Fase 5: Selo",
+        "latest_execution_status": "lapidarium_fase6_guarda_true_pass",
         "governance_repairs": [
             "Lapidarium residual safe resolution",
             "Lapidarium final route reconciliation and handoff",
             "Lapidarium Fase 2 arquitetura alvo closure",
             "Lapidarium Fase 3 execução por fatias candidate-only planning and review",
             "Lapidarium Fase 4 canonização candidate-only planning and review",
-            "Lapidarium Fase 5 selo true"
+            "Lapidarium Fase 5 selo true",
+            "Lapidarium Fase 6 guarda true"
         ]
     },
     "last_transition": {
         "decision": "pass",
-        "from_phase": "Lapidarium True — Fase 4: Canonização",
-        "proof_source": "artifacts/lapidarium/lapidarium_fase5_selo_true_packet.json",
-        "to_phase": "Lapidarium True — Fase 5: Selo",
-        "to_status": "lapidarium_fase5_selo_true_pass",
-        "transition_type": "lapidarium_true_phases_seal_closure",
-        "verified_via": "Historical Fase 5 residuals packet stayed read-only; roadmap block 17 now points to LAPIDARIUM_FASE_5_SELO_TRUE, block 18 is CLOSED with a candidate-only bridge to LAPIDARIUM_FASE_6_GUARDA_TRUE, and the seal packet consolidates provenance without opening runtime execution."
+        "from_phase": "Lapidarium True — Fase 5: Selo",
+        "proof_source": "artifacts/lapidarium/lapidarium_fase6_guarda_true_packet.json",
+        "to_phase": "Lapidarium True — Fase 6: Guarda",
+        "to_status": "lapidarium_fase6_guarda_true_pass",
+        "transition_type": "lapidarium_true_phases_guard_closure",
+        "verified_via": "Historical Fase 6 guard packet consolidated the closed True track, block 19 is CLOSED with a flat candidate-only bridge to DIAGNOSTICO_AUTOMACAO_GATE, and the guard packet preserves the canonical state without activating the macro route."
     },
-    "latest_completed_phase": "Lapidarium True — Fase 5: Selo",
+    "latest_completed_phase": "Lapidarium True — Fase 6: Guarda",
     "lapidarium_fase3_true_adr_shas": [
         "ec45058bd4c6c393657d08acde0f8c7bcd27154950ae4173c83ff9be2b9ce00c",
         "3dfa73d3b75af8c3316573a2d1ddc9a43631ab4a0c112caee1c7927dcae47f90",
@@ -747,7 +748,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_6_GUARDA_TRUE",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -764,14 +765,16 @@
             "Nenhuma transição definida. Aguardando instrução do operador.",
             "Candidate-only next route: LAPIDARIUM_FASE_5_SELO_TRUE",
             "Lapidarium Fase 5 selo true pass completed.",
-            "Candidate-only next route: LAPIDARIUM_FASE_6_GUARDA_TRUE"
+            "Candidate-only next route: LAPIDARIUM_FASE_6_GUARDA_TRUE",
+            "Lapidarium Fase 6 guarda true pass completed.",
+            "Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": null,
         "phase_class": null,
         "planning_only": false,
         "review_only": false,
-        "status": "lapidarium_fase5_selo_true_pass"
+        "status": "lapidarium_fase6_guarda_true_pass"
     },
     "required_update_policy": {
         "current_route_must_be_written_in_json_first": true,
@@ -787,9 +790,9 @@
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.39",
+    "schema_version": "3.40",
     "roadmap_version": "v2",
-    "status": "lapidarium_fase5_selo_true_pass",
+    "status": "lapidarium_fase6_guarda_true_pass",
     "validation_policy": {
         "connector_fallback_allowed": true,
         "fail_closed_on_live_route_drift": true,
@@ -804,7 +807,7 @@
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.39",
+        "current_schema_version": "3.40",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -1198,7 +1201,7 @@
     "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
     "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
     "lapidarium_route_stale_pointers_reconciled": true,
-    "lapidarium_next_route_candidate": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+    "lapidarium_next_route_candidate": "DIAGNOSTICO_AUTOMACAO_GATE",
     "lapidarium_next_route_candidate_execution_authorized": false,
     "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "lapidarium_final_route_reconciliation_artifacts": [
@@ -1247,7 +1250,7 @@
         "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET vs LAPIDARIUM_FASE_5_SELO_TRUE"
     ],
     "lapidarium_true_phases_recommended_route_handling": "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
-    "lapidarium_true_phases_next_candidate_phase": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+    "lapidarium_true_phases_next_candidate_phase": "DIAGNOSTICO_AUTOMACAO_GATE",
     "lapidarium_true_phases_execution_authorized": false,
     "lapidarium_true_phases_phase2_execution_authorized": false,
     "lapidarium_true_phases_roadmap_canonical_updated": true,
@@ -1285,5 +1288,19 @@
         "artifacts/lapidarium/lapidarium_fase5_true_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase5_true_report.md"
     ],
-    "schema_3_39_change_summary": "Lapidarium Fase 5 seal closure: add phase 5 completion attestation fields and artifact lists for the candidate-only seal packet while keeping no real runtime execution and preserving the candidate-only bridge to LAPIDARIUM_FASE_6_GUARDA_TRUE."
+    "schema_3_39_change_summary": "Lapidarium Fase 5 seal closure: add phase 5 completion attestation fields and artifact lists for the candidate-only seal packet while keeping no real runtime execution and preserving the candidate-only bridge to LAPIDARIUM_FASE_6_GUARDA_TRUE.",
+    "lapidarium_true_track_status": "COMPLETE",
+    "lapidarium_fase6_true_completed": true,
+    "lapidarium_fase6_true_completion_date": "2026-07-01",
+    "lapidarium_fase6_true_decision": "pass",
+    "lapidarium_fase6_true_artifacts": [
+        "artifacts/lapidarium/lapidarium_fase6_guarda_true_packet.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_guard_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_advance_criteria.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_track_consolidation_summary.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_no_real_execution_attestation.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_validation_evidence.json",
+        "artifacts/lapidarium/lapidarium_fase6_true_report.md"
+    ],
+    "schema_3_40_change_summary": "Lapidarium Fase 6 guard closure: add phase 6 completion attestation fields, the COMPLETE track marker, and the final candidate-only bridge to DIAGNOSTICO_AUTOMACAO_GATE while preserving no real runtime execution."
 }

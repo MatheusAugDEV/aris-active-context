@@ -43,6 +43,7 @@ ACB_CAP_05_RESYNC_PATH = ROOT / "artifacts" / "decisions" / "acb_cap_05_project_
 OPERATOR_PREFERENCES_PATH = ROOT / "archive" / "superseded" / "OPERATOR_PREFERENCES.md"
 ARIS_BOOT_PATH = ROOT / "ARIS_BOOT.md"
 LAPIDARIUM_TERMINAL_PHASE_ID = "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
+LAPIDARIUM_GUARD_PHASE_ID = "LAPIDARIUM_FASE_6_GUARDA_TRUE"
 
 LEGACY_TRANSITION_TABLE_TEXT = """| current_phase_id | decision | next_phase_id | next_phase_class | advance_mode | minimum_deliverable |
 |------------------|----------|---------------|------------------|--------------|---------------------|
@@ -1978,6 +1979,15 @@ def _check_next_phase_in_transition_table(state: dict[str, Any]) -> None:
         _require(
             state.get("lapidarium_next_route_candidate") == row.get("next_phase_id"),
             "BLOCK: Lapidarium next route candidate must match ROADMAP_CANONICAL.md",
+        )
+        return
+    if state.get("current_phase_id") == LAPIDARIUM_GUARD_PHASE_ID:
+        _require(row is not None, "BLOCK: Lapidarium guard route block must exist in ROADMAP_CANONICAL.md")
+        _require(state.get("next_phase") is None, "BLOCK: Lapidarium guard route must keep next_phase null")
+        _require(state.get("active_next_phase") is None, "BLOCK: Lapidarium guard route must keep active_next_phase null")
+        _require(
+            state.get("lapidarium_next_route_candidate") == row.get("next_phase_id"),
+            "BLOCK: Lapidarium guard route candidate must match ROADMAP_CANONICAL.md",
         )
         return
     if state.get("status") in PURG00_LIVE_ROUTE_PRESERVING_STATUSES:

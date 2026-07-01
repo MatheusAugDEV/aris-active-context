@@ -173,7 +173,7 @@ Próxima fase: se selagem candidate-only conclui sem execucao real → LAPIDARIU
 
 ## 19. Lapidarium Fase 6 — Guarda True
 phase_id: LAPIDARIUM_FASE_6_GUARDA_TRUE
-Status: CANDIDATE
+Status: CLOSED
 Objetivo: Registrar a guarda final da trilha True e a sua ponte segura para a automação.
 Resultado final esperado: guarda candidate-only concluída e pronto para retomar o caminho macro existente.
 Pesquisa / arquitetura / decisões:
