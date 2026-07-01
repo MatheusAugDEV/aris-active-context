@@ -24,10 +24,10 @@
     "git diff --check"
   ],
   "context_hashes": {
-    "ACTIVE_CONTEXT_STATE.json": "8216f10ddb08cbfa22c8522fa657f933629b71015289f4fa903dc39711ac1a4a",
-    "BOOT.md": "3af58a372ec93e6dc2772b4bedcf4c5a8b3fdf3dce2c44dc2a503dd0980dda57",
+    "ACTIVE_CONTEXT_STATE.json": "6327a1a2db4c77e70153ceaa0c5c188e14147c75a530766b858cfc1b4e84684d",
+    "BOOT.md": "40447944e0386744227487725e4c9332cd255e868a8fe318e71fec86f37379fe",
     "scripts/render_boot.py": "5a8610576316db75c5eedbe709b1c63337e5f99cf12cf7e7b78f982685be8e75",
-    "scripts/validate_active_context_state.py": "d21b349fe7e94de88c6b45e2e3f55c858ccb53aea98ae0788e371c54d46f683d",
+    "scripts/validate_active_context_state.py": "0aa5f71402847354158fe5afe17ff0f8ba1dd80fb212398e8616318d029ac862",
     "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac"
   },
   "created_artifacts": [
@@ -90,5 +90,6 @@
     "validator_py_compile": "OK",
     "validator_script": "PASS"
   },
-  "status": "local_validation_pass_recorded"
+  "status": "local_validation_pass_recorded",
+  "validation_evidence_sha256": "870b7bce48375be647f51e05b0c0c751feafa986c023f82f52a510e2c61a4e41"
 }

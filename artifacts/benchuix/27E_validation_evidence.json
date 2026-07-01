@@ -31,7 +31,7 @@
     "artifacts/benchuix/27D_local_static_preview_operator_runbook.md": "e7997987b619e7376580fe223f1dd99f8ca04990337e8a9ae9e53abe059f6698",
     "artifacts/benchuix/visual_sandbox_static/index.html": "0ce2ec4e7a93342c07ba3704579a330ff1c8f442e77738a0745473ab64fd5289",
     "artifacts/benchuix/visual_sandbox_static/src/App.js": "69da393b843af6790bdc04276bf6bfb0a7e5c354124e1fe4d6b51eed31fabf13",
-    "scripts/validate_active_context_state.py": "d21b349fe7e94de88c6b45e2e3f55c858ccb53aea98ae0788e371c54d46f683d",
+    "scripts/validate_active_context_state.py": "0aa5f71402847354158fe5afe17ff0f8ba1dd80fb212398e8616318d029ac862",
     "tests/test_validate_active_context.py": "969c38912c2087232474de5bb91fbe269ead8809a204d96b35e7e51d5cb8cdac"
   },
   "created_artifacts": [

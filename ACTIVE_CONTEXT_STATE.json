@@ -283,11 +283,11 @@
         "status": "lapidarium_final_route_reconciliation_pass",
         "latest_completed_project_commit_sha": "72a0f266b1cf5fa296bd33ad41d79e0c3e73091d",
         "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING"
+        "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
     },
     "current_status": "lapidarium_final_route_reconciliation_pass",
     "latest_completed_ci_state": "CI_GREEN_CONFIRMED",
-    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "latest_completed_next_recommended_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "purg00_source_data_gap_resolution": {
         "decision": "blocked",
         "status": "purg00_source_data_gap_blocked_primary_source_incomplete",
@@ -705,7 +705,7 @@
         "to_phase": "Lapidarium — Final Route Reconciliation",
         "to_status": "lapidarium_final_route_reconciliation_pass",
         "transition_type": "governance_repair",
-        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route DIAGNOSTICO_AUTOMACAO_GATE."
+        "verified_via": "Stale Lapidarium Fase 3/Fase 4 live pointers were reclassified as historical; the live route was reconciled to a terminal handoff state with no successor row and candidate-only next route LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE."
     },
     "latest_completed_phase": "Lapidarium — Final Route Reconciliation",
     "locks": {
@@ -713,7 +713,7 @@
         "canonical_schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "canonical_source": "GitHub repository MatheusAugDEV/aris-active-context main branch",
         "deferred_phase": null,
-        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE.",
+        "deferred_phase_reason": "Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE.",
         "every_transition_must_update_commit_push_and_verify_github_active_context": true,
         "github_active_context_is_the_only_canonical_active_context_source": true,
         "h4_h5_hx_active_current_route": false,
@@ -728,7 +728,7 @@
         "notes": [
             "Lapidarium final route reconciliation and handoff completed.",
             "Nenhuma transição definida. Aguardando instrução do operador.",
-            "Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE"
+            "Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE"
         ],
         "operator_approval_packet_review_is_execution_approval": false,
         "phase": null,
@@ -1161,9 +1161,9 @@
     "lapidarium_final_route_reconciliation_status": "lapidarium_final_route_reconciliation_pass",
     "lapidarium_final_status": "LAPIDARIUM_CLOSED_AFTER_F5_RESIDUAL_SAFE_RESOLUTION",
     "lapidarium_route_stale_pointers_reconciled": true,
-    "lapidarium_next_route_candidate": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "lapidarium_next_route_candidate": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "lapidarium_next_route_candidate_execution_authorized": false,
-    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "lapidarium_final_route_reconciliation_next_step": "NEXT_ROUTE_CANDIDATE_ONLY: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "lapidarium_final_route_reconciliation_artifacts": [
         "artifacts/lapidarium/lapidarium_final_route_reconciliation_packet.json",
         "artifacts/lapidarium/lapidarium_final_stale_pointer_register.json",
@@ -1210,7 +1210,7 @@
         "LAPIDARIUM_FASE_5_BLOCKED_RESIDUALS_CLOSURE_PACKET vs LAPIDARIUM_FASE_5_SELO_TRUE"
     ],
     "lapidarium_true_phases_recommended_route_handling": "CREATE_POST_LAPIDARIUM_ARCHITECTURE_TRACK",
-    "lapidarium_true_phases_next_candidate_phase": "POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+    "lapidarium_true_phases_next_candidate_phase": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
     "lapidarium_true_phases_execution_authorized": false,
     "lapidarium_true_phases_phase2_execution_authorized": false,
     "lapidarium_true_phases_roadmap_canonical_updated": true,

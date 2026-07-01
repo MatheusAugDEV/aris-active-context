@@ -4,7 +4,7 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `8216f10ddb08`
+- state_sha: `6327a1a2db4c`
 - schema_version: `3.35`
 
 ## AVISO DE STALE
@@ -48,7 +48,7 @@ GERADO — NAO EDITE A MAO
   - production_authorized=False
   - product_ready=False
   - secrets_access_authorized=False
-  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: DIAGNOSTICO_AUTOMACAO_GATE.
+  - deferred_phase_reason=Nenhuma transição definida. Aguardando instrução do operador. Candidate-only next route: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE.
 
 ## REGRAS DE AGORA
 

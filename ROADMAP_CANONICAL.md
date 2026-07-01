@@ -4,10 +4,10 @@
 phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET
 Status: CLOSED
 Objetivo: Encerrar a reconciliação final de rota e consolidar o handoff terminal sem abrir execução nova.
-Resultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e trilha pós-Lapidarium candidate-only registrada.
+Resultado final esperado: Estado terminal reconciliado, successor row removida da rota viva e candidate-only route para LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE registrada.
 Pesquisa / arquitetura / decisões:
-Entrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e operador source + candidate track preservados em artefato/state.
-Próxima fase: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING
+Entrega mínima pra fechar (evidência): `ACTIVE_CONTEXT_STATE.json` reconciliado, `ARIS_BOOT.md` alinhado e candidate route da Fase 2 preservada em artefato/state.
+Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE
 
 ## 1. Infernus FULL
 phase_id: INFERNUS_FULL
@@ -128,7 +128,7 @@ Próxima fase: contínuo
 
 ## 14. Post-Lapidarium Architecture Track Opening
 phase_id: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING
-Status: CANDIDATE
+Status: CLOSED
 Objetivo: Admitir a proposta True Phases 2–6 como trilha pós-Lapidarium candidate-only sem reabrir Lapidarium.
 Resultado final esperado: operador source recebido, conflito classificado, label collisions registradas e trilha candidate-only admitida sem execução real.
 Pesquisa / arquitetura / decisões:

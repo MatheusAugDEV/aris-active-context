@@ -1,3 +1,19 @@
+## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING
+
+- Status: `lapidarium_fase2_architecture_target_candidate_opening_pass`
+- Decision: `pass`
+- Date: `2026-06-30`
+- Scope: candidate-only route opening for `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`. The phase remains design-only, with no runtime, product, Bedrock, secrets, env-read, file-move, or deletion surface opened.
+- Closed block 14 evidence satisfied: true
+- Route opening packet: `artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json`
+- Architecture report: `artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md`
+- Next candidate route: `LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE`
+- Locks opened: none. All execution locks remain false.
+- Locked surfaces remain false: true
+- Operator source file: `operator_inputs/lapidarium_true_phases_2_to_6_operator_source.md`
+- Artifacts: `artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_*`
+- Next: candidate-only Fase 2 architecture target remains design-only until a future explicit operator execution authorization.
+
 ## LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET
 
 - Status: `lapidarium_true_phases_route_amendment_pass`

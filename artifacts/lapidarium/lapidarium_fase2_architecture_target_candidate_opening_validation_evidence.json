@@ -1,0 +1,88 @@
+{
+  "artifact_id": "lapidarium_fase2_architecture_target_candidate_opening_validation_evidence",
+  "phase_id": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING",
+  "created_at": "2026-06-30T23:14:37-03:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "json_tool_state",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_schema",
+      "command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_packet",
+      "command": "python3 -m json.tool artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_noexec",
+      "command": "python3 -m json.tool artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_no_real_execution_attestation.json",
+      "passed": true
+    },
+    {
+      "check": "json_tool_validation",
+      "command": "python3 -m json.tool artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_validation_evidence.json",
+      "passed": true
+    },
+    {
+      "check": "validator_script",
+      "command": "python3 scripts/validate_active_context_state.py",
+      "passed": true,
+      "result": "decision=pass"
+    },
+    {
+      "check": "roadmap_state_alignment",
+      "command": "grep -n \"Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE\" ROADMAP_CANONICAL.md && grep -n \"lapidarium_next_route_candidate\\|lapidarium_true_phases_next_candidate_phase\" ACTIVE_CONTEXT_STATE.json",
+      "passed": true,
+      "result": "ROADMAP_CANONICAL.md and ACTIVE_CONTEXT_STATE.json aligned on LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE."
+    },
+    {
+      "check": "target_architecture_absent",
+      "command": "test ! -e TARGET_ARCHITECTURE.md",
+      "passed": true
+    },
+    {
+      "check": "project_aris_no_move_delete",
+      "command": "git status --short -- Project_ARIS | cat",
+      "passed": true,
+      "result": "No Project_ARIS files were removed or moved in this phase."
+    },
+    {
+      "check": "no_env_read",
+      "command": "grep -RIn \"\\.env\" artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_* | cat",
+      "passed": true,
+      "result": ".env was not read; only governance references were emitted."
+    },
+    {
+      "check": "no_root_mirror_edits",
+      "command": "git status --short -- CURRENT_STATE.md NEXT_ACTION.md | cat",
+      "passed": true,
+      "result": "Root mirrors were not touched."
+    }
+  ],
+  "state_alignment": {
+    "roadmap_next_phase": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "state_next_candidate": "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+    "matched": true
+  },
+  "file_hashes": {
+    "ACTIVE_CONTEXT_STATE.json": "6327a1a2db4c77e70153ceaa0c5c188e14147c75a530766b858cfc1b4e84684d",
+    "ACTIVE_CONTEXT_SCHEMA.json": "ca3f02fa78ecfc7a94d1562dff20e84f69364c199164b413f268c898a37d4908",
+    "ROADMAP_CANONICAL.md": "333b19f43d74673eae1c35103503cfdd11a2472847d30d00bc4f1541d1a1ae36",
+    "BOOT.md": "40447944e0386744227487725e4c9332cd255e868a8fe318e71fec86f37379fe",
+    "scripts/validate_active_context_state.py": "0aa5f71402847354158fe5afe17ff0f8ba1dd80fb212398e8616318d029ac862",
+    "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json": "99bdedfe64a2fdfbaf6d697bd9a455d79206fd472750a6855639df55f983bf65",
+    "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_no_real_execution_attestation.json": "c88999bef10b05b50b30051aedf8287c80e8cefeab0f369b61b1ce0c8e32c1ce",
+    "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md": "6642d4e0fdc120887b3c5a952a3f015aa4b44a09004e694cf08068905e72c687"
+  },
+  "notes": [
+    "Operator source receipt remains in artifacts/lapidarium/lapidarium_true_phases_operator_source_receipt.json.",
+    "Decision locks ledger was updated with the candidate-only Fase 2 opening packet.",
+    "Clean Architecture is documented as a design sketch only; no runtime or product surface was opened."
+  ]
+}

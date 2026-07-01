@@ -18036,6 +18036,14 @@ def main() -> None:
     )
     _mirror_contains(
         ROOT / "DECISION_LOCKS.md",
+        "## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_CANDIDATE_OPENING",
+        "lapidarium_fase2_architecture_target_candidate_opening_pass",
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_packet.json",
+        "LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
+        "artifacts/lapidarium/lapidarium_fase2_architecture_target_candidate_opening_report.md",
+    )
+    _mirror_contains(
+        ROOT / "DECISION_LOCKS.md",
         "## LAPIDARIUM_TRUE_PHASES_ROUTE_AMENDMENT_PACKET",
         "lapidarium_true_phases_route_amendment_pass",
         "lapidarium_true_phases_2_to_6_operator_source.md",
@@ -18047,7 +18055,7 @@ def main() -> None:
         "# ARIS ROADMAP CANONICAL",
         "## 0. Lapidarium",
         "phase_id: LAPIDARIUM_FINAL_ROUTE_RECONCILIATION_AND_HANDOFF_PACKET",
-        "Próxima fase: POST_LAPIDARIUM_ARCHITECTURE_TRACK_OPENING",
+        "Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
         "## 1. Infernus FULL",
         "## 2. Purgatorium FULL",
         "## 3. Infernus Revalidation",
@@ -18056,6 +18064,8 @@ def main() -> None:
         "## 5. BenchUIX",
         "## 13. EXT-SEC 07→08 contínuo",
         "## 14. Post-Lapidarium Architecture Track Opening",
+        "Status: CLOSED",
+        "Próxima fase: LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE",
         "## 19. Lapidarium Fase 6 — Guarda True",
     )
     _mirror_contains(
