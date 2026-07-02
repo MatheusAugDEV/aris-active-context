@@ -182,9 +182,11 @@
 
 ### next_phase
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+`HISTORICAL_ONLY` — snapshot from the Fase 4 era, superseded by the Fase 6 Guarda True state documented at the top of this file. Live values per `ACTIVE_CONTEXT_STATE.json`: `next_phase: null`, `active_next_phase: null`, `next_phase_authorized_by_operator: false`, candidate-only next route `DIAGNOSTICO_AUTOMACAO_GATE` (`lapidarium_next_route_candidate_execution_authorized: false`).
+
+- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO` (historical value, no longer live)
+- `next_phase_authorized_by_operator`: `true` (historical value, no longer live)
+- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR` (historical)
 - Aguardando instrução explícita do operador.
 
 ---
