@@ -11,6 +11,15 @@
 - Locks opened: none. All execution locks remain false.
 - Next: keep the candidate-only design track active until a future explicit execution authorization.
 
+## AUTOMATION_V1_ROADMAP_V5_FREEZE
+
+- Scope: `docs/automation_v1/ROADMAP_AUTOMATION_V1.md`
+- Covered items: D10–D27
+- Freeze rule: `AUTOMATION_V1_ROADMAP_V5_FREEZE`
+- F0.D: option (c)
+- Future roadmap changes require explicit lock in `DECISION_LOCKS.md`
+- Real locks opened: none. All execution/product/runtime/secret locks remain false.
+
 ## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CLOSURE
 
 - Status: `lapidarium_fase2_arquitetura_alvo_true_pass`

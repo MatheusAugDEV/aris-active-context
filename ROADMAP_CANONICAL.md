@@ -45,6 +45,11 @@ Pesquisa / arquitetura / decisões:
 Entrega mínima pra fechar (evidência): checklist fechado das camadas input/perception, reasoning, orquestração, tools/action, memória, observabilidade e governança runtime.
 Próxima fase: se gap bloqueante → Camada de Construção de Automação; senão → BenchUIX
 
+### ARIS Automation V1
+- Camada de construção condicional pós-Diagnóstico de Automação e pré-BenchUIX.
+- Referência compacta: `docs/automation_v1/ROADMAP_AUTOMATION_V1.md`.
+- Freeze: v5 executável; mudanças futuras só via lock explícito em `DECISION_LOCKS.md`.
+
 ## 5. BenchUIX
 phase_id: BENCHUIX_TRACK
 Status: CANDIDATE
