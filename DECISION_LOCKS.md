@@ -1,3 +1,14 @@
+## ACX_R0_SPEC_FROZEN_TRACK_FREEZE
+
+- Status: `acx_r0_spec_frozen_pass`
+- Decision: `pass`
+- Date: `2026-07-03`
+- Scope: ACX-R0 spec freeze for ACX v2 `Lastro`. Created `docs/acx/ACX_SPEC.md` and recorded the frozen track only; no implementation surfaces were opened.
+- Created files: `docs/acx/ACX_SPEC.md`
+- Locked surfaces remain false: true
+- Locks opened: none. All execution locks remain false.
+- Next: ACX-R1 may proceed only after explicit operator authorization and validator/tooling work.
+
 ## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CONTENT_PACKET
 
 - Status: `lapidarium_fase2_target_architecture_content_pass`
