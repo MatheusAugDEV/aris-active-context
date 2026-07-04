@@ -3,11 +3,23 @@
 - Status: `acx_r0_spec_frozen_pass`
 - Decision: `pass`
 - Date: `2026-07-03`
-- Scope: ACX-R0 spec freeze for ACX v2 `Lastro`. Created `docs/acx/ACX_SPEC.md` and recorded the frozen track only; no implementation surfaces were opened.
-- Created files: `docs/acx/ACX_SPEC.md`
-- Locked surfaces remain false: true
-- Locks opened: none. All execution locks remain false.
-- Next: ACX-R1 may proceed only after explicit operator authorization and validator/tooling work.
+- Scope: congelamento completo da spec ACX v2 "Lastro" (`docs/acx/ACX_SPEC.md`, 9 seções, 0–8) que substitui o comportamento implícito do ACX v1. Nenhum código, nenhuma mutação em `Project_ARIS`, nenhum lock real aberto.
+- Track criado: `ACX-R` (Active Context Reform), fases R0–R4, sequenciais e dependentes.
+- Artifact commitado: `docs/acx/ACX_SPEC.md`.
+- Conteúdo da spec:
+  - §1 Inventário de 5 fatos duplicados
+  - §2 FSM: `IDLE → SPEC_FROZEN → AUTHORIZED → EXECUTING → REPORTED → VALIDATED → CLOSED → IDLE`; `roadmap_cursor` tipado (`CANDIDATE | AUTHORIZED | ACTIVE | END` + evento `EXTEND`), substituindo `null`
+  - §3 Schema v2: `state_blob_hash` / `project_commit_sha` (renome do `sha_lido` ambíguo), `ledger_head_hash`
+  - §4 Tabela de 8 invariantes com mecanismo de garantia
+  - §5 22 achados de risco (12 estado vivo + 10 teóricos + 4 pesquisa de mercado), cada um mapeado pra fase de destino
+  - §6 Disciplina de migração de schema: golden-fixture + refold + diff zero antes de qualquer bump
+  - §7 **Decisão pendente, não bloqueante**: ledger genesis — reconciliação `IF09-FIND-001 closed` (JSON) vs `open` ×30 (`DECISION_LOCKS.md`, entradas históricas). Adiada explicitamente para R2, por instrução do operador em 2026-07-03. **R2 não pode começar sem resolver esta decisão primeiro.**
+  - §8 Critério de sucesso: `manual_repair=0` como tipo de evento no ledger, medido nas 3 fases reais seguintes ao R4
+- Correção de registro: esta entrada substitui uma versão anterior mais curta que não mencionava a decisão pendente do §7; nenhuma mudança de conteúdo na spec em si, só reconciliação do registro.
+- Teto de tamanho da spec respeitado: ~150 linhas efetivas de conteúdo normativo.
+- Locks opened: none. Todos os locks de execução permanecem `false`.
+- Real execution, runtime, product, Bedrock, secrets: não tocados.
+- Próximo passo: `ACX-R1 — Validador único` (`tools/acx_validate.py`, ~150–200 linhas), condicionado a autorização explícita de operador para início. R2 requer resolução prévia da decisão do §7.
 
 ## LAPIDARIUM_FASE_2_ARQUITETURA_ALVO_TRUE_CONTENT_PACKET
 
