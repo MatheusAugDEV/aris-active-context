@@ -1,7 +1,19 @@
 {
   "phase_id": "ACX_R1B_VALIDATOR_LEGACY_DEPENDENCY_REMOVAL",
   "head_before": "b8e4e172ebe3e55a05344d10467ead85a034daf8",
-  "head_after": "74b1a8ab959058f87ebba5083256f0d39636bc40",
+  "head_after": "a24cc275f2fbea76ef60710d3b8215ca6162bc86",
+  "implementation_commit_sha": "a24cc275f2fbea76ef60710d3b8215ca6162bc86",
+  "implementation_parent_sha": "74b1a8ab959058f87ebba5083256f0d39636bc40",
+  "origin_main_at_review": "b8e4e172ebe3e55a05344d10467ead85a034daf8",
+  "evidence_repair_reason": "stale anchors detected by independent review",
+  "evidence_repair_commit_sha": null,
+  "evidence_repair_commit_sha_note": "filled by final response after commit, not embedded to avoid self-referential hash loop",
+  "validation_subject": "implementation_commit_sha",
+  "push_status": "not_pushed",
+  "r2_opened": false,
+  "f09_resolved": false,
+  "final_pass_declared": false,
+  "self_reference_avoided": true,
   "files_changed": [
     "tools/acx_validate.py",
     "artifacts/acx/r1b_validator_cutover_evidence.json"
