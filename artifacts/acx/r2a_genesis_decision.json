@@ -1,0 +1,59 @@
+{
+  "phase_id": "ACX-R2A",
+  "purpose": "genesis_decision_for_shadow_ledger_spec",
+  "head_before": "a0e5a093e17e97448aacc908549f5d18ede0ba4a",
+  "head_after": null,
+  "head_after_policy": "not_embedded_in_same_commit_artifact_to_avoid_git_self_reference; final_commit_sha_must_be_reported_after_commit_creation",
+  "post_commit_sha_evidence": "reported_in_operator_return_after_commit",
+  "genesis_decision": {
+    "baseline_source": "ACTIVE_CONTEXT_STATE.json",
+    "baseline_policy": "current_validated_state_becomes_genesis_baseline",
+    "historical_lock_policy": "historical_only_no_rewrite",
+    "if09_find_001_resolution": "ACTIVE_CONTEXT_STATE.json keeps IF09-FIND-001 closed with remediation_proven=true; contradictory open entries in DECISION_LOCKS.md are historical_only and remain untouched; the ledger starts from the validated JSON baseline instead of replaying markdown lock history line by line.",
+    "decision_summary": "Use the current validated JSON state as the genesis baseline, preserve conflicting markdown lock history as historical_only, and do not rewrite DECISION_LOCKS.md in ACX-R2A."
+  },
+  "required_names": {
+    "state_blob_hash": true,
+    "project_commit_sha": true,
+    "ledger_head_hash": true,
+    "sha_lido_reintroduced": false
+  },
+  "canonical_hash_serialization": {
+    "sort_keys": true,
+    "encoding": "UTF-8",
+    "newline": "LF",
+    "paths": "relative_posix",
+    "event_sha256_excluded_from_own_hash": true,
+    "hash_algorithm_explicit": "sha256",
+    "canonicalization_version_explicit": true
+  },
+  "migration_authority": {
+    "active_context_state_json_remains_live_canonical_source": true,
+    "ledger_is_shadow_only_in_r2a_r2b": true,
+    "no_runtime_authority_change": true
+  },
+  "validation": {
+    "canonical_validator": "python3 tools/acx_validate.py -> pass",
+    "r1b_anti_legacy_test": "python3 -m unittest tests.test_no_legacy_imports -> pass",
+    "git_status_after": "## main...origin/main [ahead 1]"
+  },
+  "files_changed": [
+    "docs/acx/LEDGER_SPEC.md",
+    "artifacts/acx/r2a_genesis_decision.json"
+  ],
+  "limitations": [
+    "MANDATORY_FILE_NOT_FOUND:MANDATORY_READ_FIRST_RULES.md",
+    "MANDATORY_FILE_NOT_FOUND:OPERATOR_PREFERENCES.md",
+    "MANDATORY_FILE_NOT_FOUND:PROMPT_CONTRACT.md",
+    "A committed artifact cannot stably contain the SHA of the same commit that contains it; final head_after must be reported as post-commit evidence.",
+    "The archived superseded copies exist under archive/superseded/, but the requested root paths are absent."
+  ],
+  "non_goals_respected": {
+    "no_cli_created": true,
+    "no_ledger_created": true,
+    "no_hook_created": true,
+    "no_schema_bump": true,
+    "no_roadmap_edit": true,
+    "no_push": true
+  }
+}
