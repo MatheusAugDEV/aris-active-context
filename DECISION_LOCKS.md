@@ -3754,3 +3754,20 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Artifacts: `tools/acx_validate.py`, `tests/test_acx_validate.py`, `archive/superseded/validate_active_context_state.py`, `.pre-commit-config.yaml`, `.github/workflows/validate_active_context.yml`, `ACTIVE_CONTEXT_SCHEMA.json`, `ACTIVE_CONTEXT_STATE.json`, `BOOT.md`, `scripts/render_boot.py`.
 - Locks opened: none. Todos os locks de execução permanecem `false`.
 - Próximo passo: `ACX-R1b — Remoção do shim legado` (reimplementar explicitamente, em `tools/acx_validate.py`, as regras do código legado de fato exercitadas pelos testes, eliminando a importação em runtime de `archive/superseded/validate_active_context_state.py`), condicionado a autorização de operador. R2 aguarda R1b.
+
+## ACX_R1B_LEGACY_SHIM_AUDIT_CLOSURE
+
+- Status: `acx_r1b_legacy_shim_audit_closed`
+- Decision: `pass`
+- Date: `2026-07-05`
+- Scope: read-only audit of the current `tools/acx_validate.py` head against the archived legacy validator path.
+- Findings:
+  - `grep -nE "archive/superseded|SourceFileLoader|importlib|runpy|spec_from_file_location|exec\\(|eval\\(" tools/acx_validate.py` returned no matches.
+  - `tools/acx_validate.py` is standalone in current HEAD and does not reference `archive/superseded/validate_active_context_state.py`.
+  - `python3 -m py_compile tools/acx_validate.py` passed.
+  - `python3 -m unittest discover -s tests -p '*validat*' -q` passed with 8 tests.
+  - `python3 tools/acx_validate.py` passed on the current repo state.
+  - Drift fixture check in a temp copy with a stale `BOOT.md` state_sha failed as expected with freshness drift.
+- Result: no code removal was required in this revision because the shim claim was not reproducible in the current validator head.
+- Locks opened: none. Todos os locks de execução permanecem `false`.
+- Next: keep R2 blocked only by the normal canonical operator process, not by a live legacy import in `tools/acx_validate.py`.
