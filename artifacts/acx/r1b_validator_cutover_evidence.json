@@ -1,0 +1,90 @@
+{
+  "phase_id": "ACX_R1B_VALIDATOR_LEGACY_DEPENDENCY_REMOVAL",
+  "head_before": "b8e4e172ebe3e55a05344d10467ead85a034daf8",
+  "head_after": "74b1a8ab959058f87ebba5083256f0d39636bc40",
+  "files_changed": [
+    "tools/acx_validate.py",
+    "artifacts/acx/r1b_validator_cutover_evidence.json"
+  ],
+  "commands_run": [
+    {
+      "command": "grep -nE \"archive/superseded|validate_active_context_state|_load_legacy_compat|importlib\\.util|types\\.ModuleType\" tools/acx_validate.py",
+      "result": "no matches"
+    },
+    {
+      "command": "python3 -m unittest tests.test_roadmap_single_source_parser tests.test_active_context_route_sync_unittest tests.test_purg04_validator_scope_repair tests.test_acx_validate",
+      "result": "pass"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "result": "pass (Ran 61 tests in 0.217s)"
+    },
+    {
+      "command": "python3 tools/acx_validate.py",
+      "result": "pass"
+    }
+  ],
+  "legacy_dependency_scan_results": {
+    "command": "grep -nE \"archive/superseded|validate_active_context_state|_load_legacy_compat|importlib\\.util|types\\.ModuleType\" tools/acx_validate.py",
+    "matches": [],
+    "conclusion": "tools/acx_validate.py no longer imports, executes, or dynamically loads the archived validator"
+  },
+  "tests_run": [
+    {
+      "command": "python3 -m unittest tests.test_roadmap_single_source_parser",
+      "result": "Ran 4 tests in 0.017s, OK"
+    },
+    {
+      "command": "python3 -m unittest tests.test_active_context_route_sync_unittest",
+      "result": "Ran 49 tests in 0.152s, OK"
+    },
+    {
+      "command": "python3 -m unittest tests.test_purg04_validator_scope_repair",
+      "result": "Ran 2 tests in 0.020s, OK"
+    },
+    {
+      "command": "python3 -m unittest tests.test_acx_validate",
+      "result": "Ran 5 tests in 0.100s, OK"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "result": "Ran 61 tests in 0.217s, OK"
+    }
+  ],
+  "validator_run_result": {
+    "command": "python3 tools/acx_validate.py",
+    "returncode": 0,
+    "stdout": {
+      "status": "pass",
+      "phase_id": "LAPIDARIUM_FASE_6_GUARDA_TRUE",
+      "next_phase": null,
+      "roadmap_cursor": {
+        "authorized_by": null,
+        "phase_id": "DIAGNOSTICO_AUTOMACAO_GATE",
+        "state": "CANDIDATE"
+      },
+      "schema_version": "3.41",
+      "state_sha": "a8afcd65c0a60531e6b44b5c15a9555be53c3d0ef384d3fa46f519d463aafb51",
+      "errors": []
+    }
+  },
+  "lock_state_summary": {
+    "real_apply_authorized": false,
+    "production_authorized": false,
+    "runtime_integration_allowed": false,
+    "real_dry_run_execution_authorized": false,
+    "secrets_access_authorized": false,
+    "execution_authorized": null,
+    "product_ready": false
+  },
+  "evidence_hashes": {
+    "tools/acx_validate.py": "70ca724dacf88ba990a1ed90b748d77b5f27d0405e5b1bb2287c5b13b60a1ee8",
+    "ACTIVE_CONTEXT_STATE.json": "a8afcd65c0a60531e6b44b5c15a9555be53c3d0ef384d3fa46f519d463aafb51",
+    "ACTIVE_CONTEXT_SCHEMA.json": "7384f3389371b3035cac78d8cf338001eef154d779206db0458681ac663b8985",
+    "BOOT.md": "4a640f427809a08809fbdaef52ed66747112f06a2c0617c7535ea542f58ce635"
+  },
+  "residual_risks": [
+    "The repository still has unrelated pre-existing dirty files outside this phase scope.",
+    "The IF09/IF10/IF11 bundle checks are intentionally permissive when the full artifact bundle is absent; they only enforce the bundle when the relevant paths are present."
+  ]
+}

@@ -4,8 +4,8 @@ GERADO — NAO EDITE A MAO
 
 ## CARIMBO
 
-- state_sha: `90d845e7864e`
-- schema_version: `3.40`
+- state_sha: `a8afcd65c0a6`
+- schema_version: `3.41`
 
 ## AVISO DE STALE
 
@@ -64,7 +64,7 @@ GERADO — NAO EDITE A MAO
 
 - Atualize `ACTIVE_CONTEXT_STATE.json` primeiro.
 - Regenere `BOOT.md` com `python3 scripts/render_boot.py`.
-- Rode `python3 scripts/validate_active_context_state.py`.
+- Rode `python3 tools/acx_validate.py`.
 - Commit e push apenas com BOOT sincronizado; o hook recusa drift.
 
 ## DISCIPLINA DE LEITURA
@@ -78,4 +78,4 @@ GERADO — NAO EDITE A MAO
 - `ROADMAP_CANONICAL.md`
 - `ACTIVE_CONTEXT_STATE.json`
 - `artifacts/`
-- `scripts/validate_active_context_state.py`
+- `tools/acx_validate.py`

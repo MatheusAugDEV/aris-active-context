@@ -12,6 +12,4 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Validar estado canonico
-        run: python scripts/validate_active_context_state.py
-      - name: Provar ausencia de fixture nao-autorizada
-        run: python scripts/assert_no_unauthorized_fixtures.py
+        run: python3 tools/acx_validate.py

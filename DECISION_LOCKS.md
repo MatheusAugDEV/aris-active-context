@@ -3723,10 +3723,34 @@ The following track references are historical_residual_route_noise. They do NOT 
   - `previous_phase_id=INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET`
   - `phase_id=current_phase_id=LAPIDARIUM`
   - `phase_class=lapidarium_remediation`
-  - `next_phase_authorized_by_operator=true`
-  - `roadmap_version=v2`
-  - `real_apply_authorized=false`
-  - `runtime_integration_allowed=false`
-  - `product_authorized=false`
-  - `secrets_access_authorized=false`
-  - `historical_entries_not_modified=true`
+- `next_phase_authorized_by_operator=true`
+- `roadmap_version=v2`
+- `real_apply_authorized=false`
+- `runtime_integration_allowed=false`
+- `product_authorized=false`
+- `secrets_access_authorized=false`
+- `historical_entries_not_modified=true`
+
+## ACX_R1_VALIDATOR_CUTOVER_PARTIAL
+
+- Status: `acx_r1_validator_cutover_partial_pass`
+- Decision: `pass`
+- Date: `2026-07-03`
+- Scope: substituição do entrypoint de validação (`scripts/validate_active_context_state.py`, 17.969 linhas → `tools/acx_validate.py`, 338 linhas) com prova de detecção de drift real. Nenhuma mutação em `Project_ARIS`, nenhum lock real aberto.
+- Prova de detecção (evidência central desta fase): validador novo, rodado contra o commit `24f7a9817993dd09b57dfa1f7eb114bbfcefa45b` (estado imediatamente anterior), encontrou:
+  - Violação FSM-proxy prevista pela spec: `current_phase_id=LAPIDARIUM_FASE_6_GUARDA_TRUE` com `Próxima fase: DIAGNOSTICO_AUTOMACAO_GATE` no ROADMAP, mas `next_phase=null` sem cursor tipado justificando
+  - ~50 propriedades inesperadas em `latest_completed_no_execution`, não detectadas pelo validador anterior
+  - `benchuix_track.roadmap_hash` divergente do valor esperado pelo schema
+  - Padrões inválidos em `phase_id`/`previous_phase_id`
+  - `BOOT.md` desatualizado em relação ao `state_sha` real (freshness check)
+- Correção aplicada: campo `roadmap_cursor` implementado em `ACTIVE_CONTEXT_STATE.json`/`ACTIVE_CONTEXT_SCHEMA.json` (`state=CANDIDATE`, `phase_id=DIAGNOSTICO_AUTOMACAO_GATE`, `authorized_by=null`), demais propriedades e hash reconciliados. `schema_version` incrementado `3.40→3.41` seguindo disciplina de migração do §6 da `ACX_SPEC.md`.
+- Resultado pós-correção: `tools/acx_validate.py` reporta `status: pass`, `errors: []`.
+- **PENDÊNCIA EXPLÍCITA — ACX_R1B_LEGACY_SHIM_REMOVAL (não é R1 completo):**
+  - `tools/acx_validate.py` contém um shim de compatibilidade que importa e executa em memória o código arquivado (`archive/superseded/validate_active_context_state.py`), remapeando paths em runtime.
+  - Confirmado por evidência direta: sem o shim, os testes legados (`test_roadmap_single_source_parser.py`, `test_active_context_route_sync_unittest.py`, `test_purg04_validator_scope_repair.py`) não passam — dependem de funções privadas e constantes só existentes no código legado.
+  - Classificação: **dependência funcional, não compatibilidade cosmética.** O objetivo original do R1 (matar a causa-raiz F-05 identificada em `ACX_SPEC.md` §5) não foi atingido por completo — o código de 17.969 linhas continua vivo e executando, apenas encapsulado.
+  - Risco registrado: se houver regra legada relevante não reimplementada explicitamente no validador novo, ela fica invisível até o shim ser removido — pior momento possível para descobrir.
+  - Bloqueio para o futuro: **R2 (CLI único escritor, `tools/acx.py`) não deve começar antes de R1b resolver esta dependência**, porque o CLI vai escrever estado validado por este validador; validação parcialmente dependente de código legado enfraquece a garantia central do R2.
+- Artifacts: `tools/acx_validate.py`, `tests/test_acx_validate.py`, `archive/superseded/validate_active_context_state.py`, `.pre-commit-config.yaml`, `.github/workflows/validate_active_context.yml`, `ACTIVE_CONTEXT_SCHEMA.json`, `ACTIVE_CONTEXT_STATE.json`, `BOOT.md`, `scripts/render_boot.py`.
+- Locks opened: none. Todos os locks de execução permanecem `false`.
+- Próximo passo: `ACX-R1b — Remoção do shim legado` (reimplementar explicitamente, em `tools/acx_validate.py`, as regras do código legado de fato exercitadas pelos testes, eliminando a importação em runtime de `archive/superseded/validate_active_context_state.py`), condicionado a autorização de operador. R2 aguarda R1b.

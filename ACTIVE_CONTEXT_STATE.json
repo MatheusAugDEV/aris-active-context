@@ -71,6 +71,11 @@
     "active_next_phase_class": null,
     "next_phase": null,
     "next_phase_authorized_by_operator": false,
+    "roadmap_cursor": {
+        "authorized_by": null,
+        "phase_id": "DIAGNOSTICO_AUTOMACAO_GATE",
+        "state": "CANDIDATE"
+    },
     "anti_proliferation_rule_active": true,
     "ci_enforcement_active": true,
     "additional_live_state_sources_allowed": false,
@@ -125,7 +130,7 @@
         "roadmap_authority": "ROADMAP_CANONICAL.md",
         "schema_file": "ACTIVE_CONTEXT_SCHEMA.json",
         "state_file": "ACTIVE_CONTEXT_STATE.json",
-        "validator_script": "scripts/validate_active_context_state.py",
+        "validator_script": "tools/acx_validate.py",
         "readme": "README.md",
         "history_archive": "archive/"
     },
@@ -787,13 +792,13 @@
         "on_any_transition": [
             "update_ACTIVE_CONTEXT_STATE.json",
             "validate_against_ACTIVE_CONTEXT_SCHEMA.json",
-            "run_scripts/validate_active_context_state.py",
+            "run_tools/acx_validate.py",
             "commit",
             "push",
             "verify_GitHub_main"
         ]
     },
-    "schema_version": "3.40",
+    "schema_version": "3.41",
     "roadmap_version": "v2",
     "status": "lapidarium_fase6_guarda_true_pass",
     "validation_policy": {
@@ -805,12 +810,12 @@
             "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json"
         ],
         "markdown_mirror_validation_required": true,
-        "required_validator": "scripts/validate_active_context_state.py"
+        "required_validator": "tools/acx_validate.py"
     },
     "versioning_contract": {
         "active_context_version_meaning": "Version of the active-context governance system architecture. Incremented when the governance model itself changes structurally.",
         "current_active_context_version": "3.0",
-        "current_schema_version": "3.40",
+        "current_schema_version": "3.41",
         "increment_active_context_version_when": "the governance model or canonical architecture changes fundamentally",
         "increment_schema_version_when": "schema field set changes, validation rules change structurally, or new required fields are added",
         "schema_2_11_change_summary": "INF-FULL-07 resolves the duplicate INF-FULL-05 -> INF-FULL-06 authorization drift by preserving only the excludent-cleanup route as active, materializes INF-FULL-06 -> INF-FULL-07 as the canonical IF-08 authorization gate, updates boot-read receipts to include EXCLUDENT_POLICY.md plus the saved infernus_full_canonroadmap source, and enforces a new inf_full_07_if08_authorization artifact pack while keeping IF-08, waves, bots, runtime, Bedrock, product, secrets, dependency mutation, dry-run, and apply execution fully false.",
@@ -1305,5 +1310,6 @@
         "artifacts/lapidarium/lapidarium_fase6_true_validation_evidence.json",
         "artifacts/lapidarium/lapidarium_fase6_true_report.md"
     ],
-    "schema_3_40_change_summary": "Lapidarium Fase 6 guard closure: add phase 6 completion attestation fields, the COMPLETE track marker, and the final candidate-only bridge to DIAGNOSTICO_AUTOMACAO_GATE while preserving no real runtime execution."
+    "schema_3_40_change_summary": "Lapidarium Fase 6 guard closure: add phase 6 completion attestation fields, the COMPLETE track marker, and the final candidate-only bridge to DIAGNOSTICO_AUTOMACAO_GATE while preserving no real runtime execution.",
+    "schema_3_41_change_summary": "ACX-R1 validator cutover: add typed roadmap_cursor support for candidate-only null next_phase reconciliation, move the active validator entrypoint to tools/acx_validate.py, and preserve the no-real-execution governance surface."
 }

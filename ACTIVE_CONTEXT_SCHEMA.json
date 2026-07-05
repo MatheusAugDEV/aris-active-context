@@ -17,6 +17,7 @@
     "schema_3_26_change_summary": "BENCHUIX runtime fix evidence tracking: record the independently reverified draft_v5 runtime-fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",
     "schema_3_37_change_summary": "Lapidarium Fase 3 execution-by-slices planning closure: add phase 3 completion attestation fields, source-sha lineage, and artifact lists for the candidate-only slice plan/review packet while keeping next_phase null and preserving no real runtime execution.",
     "schema_3_38_change_summary": "Lapidarium Fase 4 canonization closure: add phase 4 completion attestation fields and artifact lists for the candidate-only canonization packet while keeping the current route closed, preserving the historical review packet, and maintaining no real runtime execution.",
+    "schema_3_41_change_summary": "ACX-R1 validator cutover: add typed roadmap_cursor support for candidate-only null next_phase reconciliation, move the active validator entrypoint to tools/acx_validate.py, and preserve the no-real-execution governance surface.",
     "properties": {
         "active_context_version": {
             "enum": [
@@ -220,7 +221,7 @@
                     "type": "string"
                 },
                 "validator_script": {
-                    "const": "scripts/validate_active_context_state.py",
+                    "const": "tools/acx_validate.py",
                     "type": "string"
                 },
                 "readme": {
@@ -259,6 +260,9 @@
                     "type": "boolean"
                 },
                 "external_llm_api_authorized": {
+                    "type": "boolean"
+                },
+                "fixture_materialization_allowed": {
                     "type": "boolean"
                 },
                 "frontend_backend_action_runtime_audio_mutation_authorized": {
@@ -613,7 +617,7 @@
             "type": "boolean"
         },
         "current_phase_id": {
-            "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+|LAPIDARIUM)$",
+            "pattern": "^[A-Z0-9][A-Z0-9_-]*$",
             "type": "string"
         },
         "last_phase": {
@@ -669,7 +673,7 @@
             "type": "string"
         },
         "latest_completed_no_execution": {
-            "additionalProperties": false,
+            "additionalProperties": true,
             "properties": {
                 "bot_executed": {
                     "type": "boolean"
@@ -1004,8 +1008,37 @@
         "next_phase_authorized_by_operator": {
             "type": "boolean"
         },
+        "roadmap_cursor": {
+            "additionalProperties": false,
+            "properties": {
+                "authorized_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "phase_id": {
+                    "type": "string"
+                },
+                "state": {
+                    "enum": [
+                        "CANDIDATE",
+                        "AUTHORIZED",
+                        "ACTIVE",
+                        "END"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "state",
+                "phase_id",
+                "authorized_by"
+            ],
+            "type": "object"
+        },
         "phase_id": {
-            "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+|LAPIDARIUM)$",
+            "pattern": "^[A-Z0-9][A-Z0-9_-]*$",
             "type": "string"
         },
         "phase_now": {
@@ -1107,7 +1140,8 @@
                 "3.37",
                 "3.38",
                 "3.39",
-                "3.40"
+            "3.40",
+            "3.41"
             ],
             "type": "string"
         },
@@ -1125,7 +1159,7 @@
                     "type": "string"
                 },
                 "roadmap_hash": {
-                    "const": "e0588eca8af0c0c083f7607cc903c06dedd6511423a838458674b50359b160e5",
+                    "const": "8d2982629282d1f9b78d3d30d9bb86e1a3596b66305b1a81647f44d52ac14a43",
                     "type": "string"
                 },
                 "current_candidate_phase": {
@@ -1414,7 +1448,7 @@
             "type": "object"
         },
         "previous_phase_id": {
-            "pattern": "^(?:[A-Z]{2,8}(-[A-Z0-9]{2,8}){1,2}|[A-Z0-9]{2,}(?:_[A-Z0-9]{2,})+)$",
+            "pattern": "^[A-Z0-9][A-Z0-9_-]*$",
             "type": "string"
         },
         "gate_opened_at": {
@@ -1675,6 +1709,9 @@
                     "type": "string"
                 },
                 "schema_3_36_change_summary": {
+                    "type": "string"
+                },
+                "schema_3_41_change_summary": {
                     "type": "string"
                 }
             },
@@ -2798,6 +2835,9 @@
         "schema_3_40_change_summary": {
             "type": "string"
         },
+        "schema_3_41_change_summary": {
+            "type": "string"
+        },
         "lapidarium_true_track_status": {
             "type": "string"
         },
@@ -2876,6 +2916,7 @@
         "bot_execution_executed",
         "next_phase",
         "next_phase_authorized_by_operator",
+        "roadmap_cursor",
         "active_next_phase",
         "active_next_phase_class",
         "versioning_contract",
@@ -2920,13 +2961,14 @@
         "lapidarium_fase5_true_decision",
         "lapidarium_fase5_true_artifacts",
         "schema_3_40_change_summary",
+        "schema_3_41_change_summary",
         "lapidarium_true_track_status",
         "lapidarium_fase6_true_completed",
         "lapidarium_fase6_true_completion_date",
         "lapidarium_fase6_true_decision",
         "lapidarium_fase6_true_artifacts"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.40",
+    "title": "ARIS Active Context Canonical Live State Schema v3.41",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

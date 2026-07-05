@@ -1,0 +1,83 @@
+{
+  "task_id": "ACX_R1B_LEGACY_VALIDATOR_CUTOVER_REPAIR_AUDIT",
+  "timestamp": "2026-07-05T14:59:59Z",
+  "head_before": "74b1a8ab959058f87ebba5083256f0d39636bc40",
+  "head_after": "74b1a8ab959058f87ebba5083256f0d39636bc40",
+  "origin_main": "b8e4e172ebe3e55a05344d10467ead85a034daf8",
+  "preexisting_dirty_tree": {
+    "detected": true,
+    "not_caused_by_this_task": true,
+    "modified_tracked_files": [
+      ".github/workflows/validate_active_context.yml",
+      "ACTIVE_CONTEXT_SCHEMA.json",
+      "ACTIVE_CONTEXT_STATE.json",
+      "BOOT.md",
+      "DECISION_LOCKS.md",
+      "scripts/render_boot.py",
+      "tests/test_active_context_route_sync_unittest.py",
+      "tests/test_purg04_validator_scope_repair.py",
+      "tests/test_roadmap_single_source_parser.py",
+      "tests/test_validate_active_context.py"
+    ],
+    "untracked_files_preexisting": [
+      ".pre-commit-config.yaml",
+      "artifacts/acx/r1b_validator_cutover_evidence.json",
+      "tests/test_acx_validate.py"
+    ],
+    "note": "This audit only inspected these files (read-only) and did not modify, stage, or commit any of them. They fall outside the R1b scope allowlist and their presence is reported per the ABSOLUTE BLOCKERS rule, not resolved."
+  },
+  "files_changed_by_this_task": [
+    "artifacts/acx/r1b_validator_cutover_repair_evidence.json"
+  ],
+  "legacy_dependency_scan": {
+    "file_existence": {
+      "tools/acx_validate.py": {"exists": true, "exit_code": 0},
+      "archive/superseded/validate_active_context_state.py": {"exists": true, "exit_code": 0}
+    },
+    "broad_grep_command": "grep -RInE \"archive/superseded|validate_active_context_state|SourceFileLoader|spec_from_file_location|importlib|runpy|exec\\(|eval\\(\" tools scripts tests artifacts/acx docs/acx DECISION_LOCKS.md ACTIVE_CONTEXT_STATE.json ACTIVE_CONTEXT_SCHEMA.json",
+    "broad_grep_matches_in_tools_acx_validate_py": 0,
+    "broad_grep_matches_elsewhere": [
+      "tests/test_purg04_validator_scope_repair.py: loads a module named validate_active_context_state via spec_from_file_location from a path variable (legacy-style test harness pattern, does not reference tools/acx_validate.py)",
+      "tests/test_roadmap_single_source_parser.py: same pattern as above",
+      "tests/test_active_context_route_sync_unittest.py: same pattern as above",
+      "tests/test_validate_active_context.py: same pattern as above, multiple call sites",
+      "tests/test_acx_validate.py: spec_from_file_location loading tools/acx_validate.py itself (expected, this is the new validator's own test)",
+      "DECISION_LOCKS.md: historical narrative references to the legacy validator and to the completed shim-removal decision, no executable code",
+      "artifacts/acx/r1b_validator_cutover_evidence.json: contains the grep command string itself as evidence text from a prior pass, not executable code"
+    ],
+    "focused_scan_command": "grep -nE \"archive/superseded|validate_active_context_state|SourceFileLoader|spec_from_file_location|importlib|runpy|exec\\(|eval\\(\" tools/acx_validate.py",
+    "focused_scan_result": "no matches",
+    "conclusion": "tools/acx_validate.py contains zero references to the archived legacy validator path, zero dynamic-loading calls, and zero exec/eval calls."
+  },
+  "ast_scan_summary": {
+    "target": "tools/acx_validate.py",
+    "import_statements": [
+      "hashlib", "json", "pathlib", "re", "sys", "unicodedata"
+    ],
+    "importfrom_statements": [
+      "from __future__ import annotations",
+      "from typing import Any"
+    ],
+    "watched_calls_found": [],
+    "conclusion": "AST walk confirms only stdlib imports; no importlib/runpy/exec/eval/SourceFileLoader/spec_from_file_location calls exist in the new validator."
+  },
+  "validation_commands": [
+    {"command": "python3 -m json.tool ACTIVE_CONTEXT_STATE.json", "exit_code": 0},
+    {"command": "python3 -m json.tool ACTIVE_CONTEXT_SCHEMA.json", "exit_code": 0},
+    {"command": "python3 tools/acx_validate.py", "exit_code": 0, "result_status": "pass"},
+    {"command": "python3 scripts/validate_active_context_state.py", "exit_code": 2, "note": "File does not exist at this path; it was relocated to archive/superseded/validate_active_context_state.py by the already-committed R1a/R1b cutover (commit 74b1a8a). This is the expected post-cutover state, not a regression, but is recorded literally per instructions rather than assumed."},
+    {"command": "python3 -m unittest discover -s tests -p \"*acx*\"", "exit_code": 0, "result": "Ran 5 tests, OK"},
+    {"command": "python3 -m unittest discover -s tests -p \"*active_context*\"", "exit_code": 0, "result": "Ran 50 tests, OK"},
+    {"command": "python3 -m unittest discover -s tests", "exit_code": 0, "result": "Ran 61 tests, OK"}
+  ],
+  "repair_needed": false,
+  "repair_performed": false,
+  "legacy_runtime_path_remaining": false,
+  "prior_evidence_artifact_found": {
+    "path": "artifacts/acx/r1b_validator_cutover_evidence.json",
+    "note": "A prior R1b pass already committed the legacy-shim removal at HEAD (74b1a8a) and produced its own evidence artifact under a different filename. This audit independently re-verified that result via fresh grep, AST scan, and full test run rather than trusting the prior artifact's claims."
+  },
+  "conclusion": "READY_FOR_OPERATOR_REVIEW",
+  "conclusion_caveat": "The R1b legacy-dependency cutover itself is clean and independently re-verified: tools/acx_validate.py has no runtime import, delegation, or dynamic-load path to archive/superseded/validate_active_context_state.py, confirmed by grep and AST scan, with all 61 tests passing. However, the working tree carries a pre-existing, task-unrelated dirty diff (10 modified tracked files, 3 untracked paths) that this audit did not create and explicitly did not touch, stage, or commit, per scope restrictions. That dirty tree should be reconciled by the operator (or a separately scoped task) before any commit is made in this repository, including this evidence artifact.",
+  "no_pass_declaration": true
+}

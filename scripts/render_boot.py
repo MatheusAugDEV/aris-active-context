@@ -246,7 +246,7 @@ def render_boot_text() -> str:
             "",
             "- Atualize `ACTIVE_CONTEXT_STATE.json` primeiro.",
             "- Regenere `BOOT.md` com `python3 scripts/render_boot.py`.",
-            "- Rode `python3 scripts/validate_active_context_state.py`.",
+            "- Rode `python3 tools/acx_validate.py`.",
             "- Commit e push apenas com BOOT sincronizado; o hook recusa drift.",
             "",
             "## DISCIPLINA DE LEITURA",
@@ -260,7 +260,7 @@ def render_boot_text() -> str:
             "- `ROADMAP_CANONICAL.md`",
             "- `ACTIVE_CONTEXT_STATE.json`",
             "- `artifacts/`",
-            "- `scripts/validate_active_context_state.py`",
+            "- `tools/acx_validate.py`",
             "",
         ]
     )

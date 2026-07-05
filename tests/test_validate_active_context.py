@@ -11,7 +11,7 @@ from pathlib import Path
 def _load_validator_module():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -21,7 +21,7 @@ def _load_validator_module():
 
 def test_validator_passes():
     r = subprocess.run(
-        ["python3", "scripts/validate_active_context_state.py"],
+        ["python3", "tools/acx_validate.py"],
         capture_output=True, text=True
     )
     assert r.returncode == 0, r.stdout + r.stderr
@@ -29,7 +29,7 @@ def test_validator_passes():
 
 def test_validator_reports_lapidarium_cursor_activation_summary():
     r = subprocess.run(
-        ["python3", "scripts/validate_active_context_state.py"],
+        ["python3", "tools/acx_validate.py"],
         capture_output=True,
         text=True,
     )
@@ -610,7 +610,7 @@ def test_ci_terminal_state_failed_detects_terminal_failure():
 def test_minimum_deliverable_blocks_inf_mat_pass_without_real_fixture_dirs():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -639,7 +639,7 @@ def test_minimum_deliverable_blocks_inf_mat_pass_without_real_fixture_dirs():
 def test_minimum_deliverable_blocks_inf_bot_pass_without_log():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -668,7 +668,7 @@ def test_minimum_deliverable_blocks_inf_bot_pass_without_log():
 def test_minimum_deliverable_blocks_inf_minos_pass_without_verdict():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -697,7 +697,7 @@ def test_minimum_deliverable_blocks_inf_minos_pass_without_verdict():
 def test_minimum_deliverable_blocks_purg_pass_without_finding():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -725,7 +725,7 @@ def test_minimum_deliverable_blocks_purg_pass_without_finding():
 def test_minimum_deliverable_blocks_acb_core_01_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -755,7 +755,7 @@ def test_minimum_deliverable_blocks_acb_core_01_pass_without_project_deliverable
 def test_minimum_deliverable_allows_acb_core_01_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -796,7 +796,7 @@ def test_minimum_deliverable_allows_acb_core_01_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_core_02_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -826,7 +826,7 @@ def test_minimum_deliverable_blocks_acb_core_02_pass_without_project_deliverable
 def test_minimum_deliverable_allows_acb_core_02_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -869,7 +869,7 @@ def test_minimum_deliverable_allows_acb_core_02_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_cap_01_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -899,7 +899,7 @@ def test_minimum_deliverable_blocks_acb_cap_01_pass_without_project_deliverables
 def test_minimum_deliverable_allows_acb_cap_01_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -945,7 +945,7 @@ def test_minimum_deliverable_allows_acb_cap_01_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_cap_02_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -975,7 +975,7 @@ def test_minimum_deliverable_blocks_acb_cap_02_pass_without_project_deliverables
 def test_minimum_deliverable_allows_acb_cap_02_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1021,7 +1021,7 @@ def test_minimum_deliverable_allows_acb_cap_02_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_cap_03_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1051,7 +1051,7 @@ def test_minimum_deliverable_blocks_acb_cap_03_pass_without_project_deliverables
 def test_minimum_deliverable_allows_acb_cap_03_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1098,7 +1098,7 @@ def test_minimum_deliverable_allows_acb_cap_03_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_cap_04_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1128,7 +1128,7 @@ def test_minimum_deliverable_blocks_acb_cap_04_pass_without_project_deliverables
 def test_minimum_deliverable_allows_acb_cap_04_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1176,7 +1176,7 @@ def test_minimum_deliverable_allows_acb_cap_04_with_evidence_artifact_only():
 def test_minimum_deliverable_blocks_acb_cap_05_pass_without_project_deliverables():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1206,7 +1206,7 @@ def test_minimum_deliverable_blocks_acb_cap_05_pass_without_project_deliverables
 def test_minimum_deliverable_allows_acb_cap_05_with_evidence_artifact_only():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1254,7 +1254,7 @@ def test_minimum_deliverable_allows_acb_cap_05_with_evidence_artifact_only():
 def test_boot_receipt_blocks_when_operator_preferences_missing():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1267,7 +1267,7 @@ def test_boot_receipt_blocks_when_operator_preferences_missing():
                     "ACTIVE_CONTEXT_STATE.json",
                     "AGENT_IDENTITY.md",
                     "ACTIVE_CONTEXT_SCHEMA.json",
-                    "scripts/validate_active_context_state.py",
+                    "tools/acx_validate.py",
                     "ROADMAP_CANONICAL.md",
                     "MANDATORY_READ_FIRST_RULES.md",
                     "CURRENT_STATE.md",
@@ -1285,7 +1285,7 @@ def test_boot_receipt_blocks_when_operator_preferences_missing():
 def test_prompt_preference_allows_clean_prompt_only_transition():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1303,7 +1303,7 @@ def test_prompt_preference_allows_clean_prompt_only_transition():
 def test_prompt_preference_does_not_override_operator_transition():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1321,7 +1321,7 @@ def test_prompt_preference_does_not_override_operator_transition():
 def test_prompt_preference_does_not_override_manual_lock():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1339,7 +1339,7 @@ def test_prompt_preference_does_not_override_manual_lock():
 def test_prompt_preference_requires_previous_phase_pass():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1357,7 +1357,7 @@ def test_prompt_preference_requires_previous_phase_pass():
 def test_prompt_preference_requires_green_ci_and_validator():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
@@ -1382,7 +1382,7 @@ def test_prompt_preference_requires_green_ci_and_validator():
 def test_transition_table_contains_inf_full_07_canonroadmap_successor():
     spec = importlib.util.spec_from_file_location(
         "validate_active_context_state",
-        Path("scripts/validate_active_context_state.py"),
+        Path("tools/acx_validate.py"),
     )
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
