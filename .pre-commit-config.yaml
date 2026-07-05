@@ -8,6 +8,6 @@ repos:
         pass_filenames: false
       - id: acx-legacy-import-quarantine
         name: acx legacy import quarantine
-        entry: python3 -m pytest tests/test_no_legacy_imports.py -q
+        entry: python3 -m unittest tests.test_no_legacy_imports
         language: system
         pass_filenames: false

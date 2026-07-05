@@ -14,4 +14,4 @@ jobs:
       - name: Validar estado canonico
         run: python3 tools/acx_validate.py
       - name: Validar quarentena de imports legados
-        run: python3 -m pytest tests/test_no_legacy_imports.py -q
+        run: python3 -m unittest tests.test_no_legacy_imports

@@ -1,0 +1,29 @@
+{
+  "phase_id": "ACX-R1b-RAT",
+  "purpose": "ci_failure_triage_and_repair",
+  "failed_run_id": "28756933707",
+  "failed_head_sha": "fb97f74881799de2274a8e2b9e804b0c14199199",
+  "failure_classification": "r1b_ci_environment_failure",
+  "failed_workflow": "validate-active-context",
+  "failed_job": "validate",
+  "failed_step": "Validar quarentena de imports legados",
+  "failed_command": "python3 -m pytest tests/test_no_legacy_imports.py -q",
+  "root_cause_summary": "GitHub Actions runner did not have pytest installed, so the newly added legacy-import quarantine step failed before executing the test body.",
+  "repair_scope": [
+    ".github/workflows/validate_active_context.yml",
+    ".pre-commit-config.yaml"
+  ],
+  "validation": {
+    "local_anti_legacy_test": "python3 -m unittest tests.test_no_legacy_imports -> passed",
+    "local_residual_plus_anti_legacy": "python3 -m pytest tests/test_roadmap_single_source_parser.py tests/test_active_context_route_sync_unittest.py tests/test_no_legacy_imports.py -q -> passed",
+    "local_unittest_discover": "python3 -m unittest discover -s tests -p 'test_*.py' -> passed",
+    "canonical_validator": "python3 tools/acx_validate.py -> passed"
+  },
+  "limitations": [
+    "The historical unrelated failures reported by python3 -m pytest -q remain outside the R1b-RAT scope.",
+    "CI verification for the repaired commit still needs a new GitHub Actions run after publishing."
+  ],
+  "no_r2a_started": true,
+  "no_ledger_created": true,
+  "no_force_push": true
+}
