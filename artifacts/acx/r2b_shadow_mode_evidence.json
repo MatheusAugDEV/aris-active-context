@@ -1,0 +1,62 @@
+{
+  "phase_id": "ACX-R2B",
+  "purpose": "cli_writer_shadow_mode",
+  "head_before": "08b5ebc452c1b6fde904cef0af2c4369fa5295c9",
+  "head_after": "POST_COMMIT_SHA_REPORTED_EXTERNALLY",
+  "head_after_policy": "not_embedded_in_same_commit_artifact_to_avoid_git_self_reference",
+  "shadow_mode": {
+    "active_context_state_json_remains_live_canonical_source": true,
+    "ledger_is_shadow_only": true,
+    "no_runtime_authority_change": true,
+    "no_hooks_created": true,
+    "no_ci_enforcement_created": true
+  },
+  "cli": {
+    "path": "tools/acx.py",
+    "commands": [
+      "event append",
+      "fold",
+      "verify-chain"
+    ]
+  },
+  "ledger": {
+    "path": ".acx/ledger.jsonl",
+    "ledger_head_hash": "0c93ea4cfe82cb701bae5ad29a42c39afd4e32640f119dfc356b76201711f59f",
+    "verify_chain_result": "python3 tools/acx.py verify-chain --ledger .acx/ledger.jsonl -> pass",
+    "state_blob_hash": "a8afcd65c0a60531e6b44b5c15a9555be53c3d0ef384d3fa46f519d463aafb51"
+  },
+  "golden_fixture": {
+    "ledger": "tests/fixtures/acx_ledger/golden_ledger.jsonl",
+    "expected_state": "tests/fixtures/acx_ledger/expected_state.json",
+    "fold_diff_zero": true
+  },
+  "coverage_matrix": {
+    "R2B-COV-01_verify_chain_intact": "covered_passed",
+    "R2B-COV-02_verify_chain_tampered": "covered_passed",
+    "R2B-COV-03_fold_diff_zero": "covered_passed",
+    "R2B-COV-04_fold_deterministic": "covered_passed",
+    "R2B-COV-05_append_prev_sha256": "covered_passed",
+    "R2B-COV-06_reject_conflicting_event_sha256": "covered_passed",
+    "R2B-COV-07_reject_conflicting_prev_sha256": "covered_passed",
+    "R2B-COV-08_does_not_modify_ACTIVE_CONTEXT_STATE": "covered_passed"
+  },
+  "validation": {
+    "acx_ledger_shadow_tests": "python3 -m unittest tests.test_acx_ledger_shadow -> pass (8 tests)",
+    "r1b_anti_legacy_test": "python3 -m unittest tests.test_no_legacy_imports -> pass",
+    "canonical_validator": "python3 tools/acx_validate.py -> pass",
+    "git_status_after": "## main...origin/main [ahead 1]"
+  },
+  "files_changed": [
+    "tools/acx.py",
+    ".acx/ledger.jsonl",
+    "tests/test_acx_ledger_shadow.py",
+    "tests/fixtures/acx_ledger/golden_ledger.jsonl",
+    "tests/fixtures/acx_ledger/expected_state.json",
+    "artifacts/acx/r2b_shadow_mode_evidence.json"
+  ],
+  "limitations": [
+    "The shadow CLI currently supports genesis and no-op violation_advisory replay only; other state-mutating event types are intentionally blocked in shadow mode.",
+    "Coverage is explicit for the eight required ledger shadow scenarios and verified with unittest.",
+    "The final post-commit SHA must be reported externally because the evidence artifact is itself part of the same commit."
+  ]
+}
