@@ -6,3 +6,8 @@ repos:
         entry: python3 tools/acx_validate.py
         language: system
         pass_filenames: false
+      - id: acx-legacy-import-quarantine
+        name: acx legacy import quarantine
+        entry: python3 -m pytest tests/test_no_legacy_imports.py -q
+        language: system
+        pass_filenames: false

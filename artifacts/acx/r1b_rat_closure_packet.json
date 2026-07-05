@@ -1,0 +1,48 @@
+{
+  "phase_id": "ACX-R1b-RAT",
+  "head_before": "709941b9bc791b01bc622106d7762c6b18bbae85",
+  "head_after": "ca55b5d68389ff6c84ac9d788dea2253e0e3d987",
+  "residual_tests": {
+    "tests/test_roadmap_single_source_parser.py": {
+      "classification": "pass_standalone",
+      "command": "pytest tests/test_roadmap_single_source_parser.py -q",
+      "result_summary": "4 passed in 0.05s"
+    },
+    "tests/test_active_context_route_sync_unittest.py": {
+      "classification": "pass_standalone",
+      "command": "pytest tests/test_active_context_route_sync_unittest.py -q",
+      "result_summary": "49 passed in 0.26s"
+    }
+  },
+  "anti_legacy_gate": {
+    "test_path": "tests/test_no_legacy_imports.py",
+    "ast_static_imports_covered": true,
+    "ast_dynamic_imports_covered": true,
+    "runpy_covered": true,
+    "source_file_loader_covered": true,
+    "sys_path_manipulation_covered": true,
+    "exec_eval_literal_covered": true,
+    "result_summary": "python3 -m pytest tests/test_no_legacy_imports.py -q -> 1 passed in 0.14s"
+  },
+  "grep_triage": {
+    "command": "git grep -n -- 'archive/superseded\\|archive\\.superseded\\|SourceFileLoader\\|importlib\\|runpy' -- tools tests || true",
+    "result_summary": "Only benign importlib.util.spec_from_file_location usage in existing tests; no archive/superseded, archive.superseded, SourceFileLoader, or runpy legacy-path references found.",
+    "decision_role": "triage_only_not_gate"
+  },
+  "validation": {
+    "local_suite_result": "python3 -m unittest discover -s tests -p 'test_*.py' -> 62 passed; python3 -m pytest -q -> 97 passed, 4 unrelated pre-existing failures",
+    "canonical_validator_result": "passed via python3 tools/acx_validate.py"
+  },
+  "files_changed": [
+    ".github/workflows/validate_active_context.yml",
+    ".pre-commit-config.yaml",
+    "artifacts/acx/r1b_rat_closure_packet.json",
+    "tests/test_no_legacy_imports.py"
+  ],
+  "limitations": [
+    "The repository already had unrelated dirty changes in ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_SCHEMA.json, and BOOT.md before this work.",
+    "python3 -m pytest -q has 4 unrelated pre-existing failures in archive/tests/test_active_context_anti_corruption_validator.py and tests/test_validate_active_context.py",
+    "post_commit_dirty_state_observed_and_reconciled"
+  ],
+  "rollback": "git revert of the single ACX-R1b-RAT commit removes only additive quarantine changes"
+}
