@@ -8,13 +8,8 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
-- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
-- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
-- Decision: `pass`.
-- Status: `if09_closure_milestone_mirror_sanity_pass`.
-- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
-- Historical P19/P20 snapshot and downstream notes remain below for audit context.
+
+`HISTORICAL_ONLY` — the duplicate "Current snapshot" block previously here (`IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, sha_lido `a98fb3c51cfac6e0832e56202e577062e9d37577`) was a stale leftover superseded by the live snapshot above; removed by active-context doctor mirror cleanup 2026-07-02. See "## Estado canônico atual" below (now labeled historical) for the preserved detail.
 # aris-active-context
 
 ## Leia Primeiro
@@ -86,6 +81,12 @@ PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
 ## Estado canônico atual
+
+`HISTORICAL_ONLY`
+`SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE`
+`NOT_CURRENT_STATE`
+
+Este bloco descreve o estado de uma fase anterior (`IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`) e é preservado apenas para auditoria. O estado canônico vivo é o registrado em "## Current snapshot" no topo deste arquivo, derivado de `ACTIVE_CONTEXT_STATE.json`.
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
