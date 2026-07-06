@@ -1,0 +1,92 @@
+{
+  "phase_id": "ACX-R6",
+  "purpose": "Implement a stateless ACX gate compiler and operator packet compiler that derive review material from repository facts without becoming an authority of decision.",
+  "operator_extend_authorization": true,
+  "operator_extend_phrase": "EXTEND ACX-R6 autorizado.",
+  "head_before": "718fa46436c90e30eadc700238d93635c54145b2",
+  "head_after": "718fa46436c90e30eadc700238d93635c54145b2",
+  "origin_main_before": "718fa46436c90e30eadc700238d93635c54145b2",
+  "origin_main_after": "718fa46436c90e30eadc700238d93635c54145b2",
+  "files_read": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "tools/acx_validate.py",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "DECISION_LOCKS.md",
+    "ARIS_BOOT.md",
+    "BOOT.md",
+    "LAB_OPERATING_CONTRACT.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "README.md",
+    "docs/acx/ACX_SPEC.md",
+    "docs/acx/ROLLBACK.md",
+    "tools/acx.py",
+    "authority_manifest.json",
+    ".pre-commit-config.yaml",
+    "tests/test_acx_evidence_transition_guards.py",
+    "tests/test_acx_manual_write_block.py",
+    "tests/test_acx_authority_manifest.py",
+    "tests/test_acx_ledger_shadow.py",
+    "tests/test_no_legacy_imports.py"
+  ],
+  "files_changed": [
+    "tools/acx.py",
+    "tests/test_acx_gate_compiler_operator_packet.py",
+    "artifacts/acx/r6_gate_compiler_operator_packet_evidence.json"
+  ],
+  "commands_run": [
+    "git rev-parse --show-toplevel",
+    "git branch --show-current",
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/main",
+    "git status --short --branch",
+    "git status --porcelain",
+    "git log --oneline -10",
+    "python3 tools/acx_validate.py",
+    "python3 -m unittest tests.test_acx_evidence_transition_guards",
+    "python3 -m unittest tests.test_acx_manual_write_block",
+    "python3 -m unittest tests.test_acx_authority_manifest",
+    "python3 -m unittest tests.test_acx_ledger_shadow",
+    "python3 -m unittest tests.test_no_legacy_imports",
+    "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "python3 tools/acx.py verify-chain --ledger .acx/ledger.jsonl",
+    "python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json",
+    "grep -nE \"gate|packet|GATE_APPROVAL|state_blob_hash|rollback_plan|limitations|PASS|DONE|CONCLU|APROV|READY|AUTHORIZED|AUTORIZADO\" tools/acx.py docs/acx/ACX_SPEC.md tests/*.py || true",
+    "git restore authority_manifest.json",
+    "git ls-remote origin refs/heads/main"
+  ],
+  "tests_run": [
+    "python3 -m unittest tests.test_acx_gate_compiler_operator_packet",
+    "python3 -m unittest tests.test_acx_evidence_transition_guards",
+    "python3 -m unittest tests.test_acx_manual_write_block",
+    "python3 -m unittest tests.test_acx_authority_manifest",
+    "python3 -m unittest tests.test_acx_ledger_shadow",
+    "python3 -m unittest tests.test_no_legacy_imports",
+    "python3 -m unittest discover -s tests -p 'test_*.py'"
+  ],
+  "validations": [
+    "python3 -m unittest tests.test_acx_gate_compiler_operator_packet passed",
+    "python3 -m unittest tests.test_acx_evidence_transition_guards passed",
+    "python3 -m unittest tests.test_acx_manual_write_block passed",
+    "python3 -m unittest tests.test_acx_authority_manifest passed",
+    "python3 -m unittest tests.test_acx_ledger_shadow passed",
+    "python3 -m unittest tests.test_no_legacy_imports passed",
+    "python3 -m unittest discover -s tests -p 'test_*.py' passed",
+    "python3 tools/acx.py verify-chain --ledger .acx/ledger.jsonl passed",
+    "python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json passed",
+    "python3 tools/acx_validate.py passed and only regenerated advisory manifest residue",
+    "authority_manifest.json was restored after validation residue",
+    "hard mode remained disabled"
+  ],
+  "warnings": [
+    "compiler output is advisory only",
+    "operator review is still required"
+  ],
+  "limitations": [
+    "compiler does not decide approval",
+    "compiler does not change live state"
+  ],
+  "rollback_plan": "Restore the modified files from git and rerun the compiler and validator if any later correction is required."
+}

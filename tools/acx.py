@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import importlib.util
 import hashlib
 import json
@@ -69,6 +70,8 @@ MANUAL_WRITE_GUARD_MESSAGE = "ACX_DISABLE_HOOK=1 set; manual-write guard bypasse
 ACX_MODE_ADVISORY = "advisory"
 ACX_MODE_HARD = "hard"
 TRANSITION_RULES_VERSION = "acx-r5-advisory-v1"
+GATE_COMPILER_VERSION = "acx-r6-gate-compiler-v1"
+PACKET_MAX_WORDS = 300
 ADVISORY_REPORT_PROSE_TOKENS = (
     "PASS",
     "DONE",
@@ -91,6 +94,18 @@ ADVISORY_TRANSITION_RULES = {
         }
     },
 }
+FORBIDDEN_DECISION_VOCABULARY = (
+    "PASS",
+    "DONE",
+    "CONCLUÍDO",
+    "CONCLUIDO",
+    "APROVADO",
+    "APPROVED",
+    "AUTORIZADO",
+    "AUTHORIZED",
+    "PRONTO",
+    "READY",
+)
 
 
 class LedgerError(RuntimeError):
@@ -1022,8 +1037,511 @@ def scan_advisory_report_prose(
                         "supporting_evidence": "report text contains agent-decision language",
                     },
                 }
-            )
+                )
     return violations
+
+
+def _phase_slug(phase_id: str) -> str:
+    slug = phase_id.strip().lower()
+    slug = re.sub(r"^acx[-_]", "", slug)
+    slug = re.sub(r"[^a-z0-9]+", "_", slug)
+    return slug.strip("_")
+
+
+def compute_state_blob_hash(state_path: Path) -> str:
+    return hashlib.sha256(_read_bytes(state_path)).hexdigest()
+
+
+def compute_head_sha(root: Path = ROOT) -> str:
+    head_sha = _git_stdout(root, ["rev-parse", "HEAD"]).strip()
+    if not head_sha:
+        raise LedgerError("unable to compute HEAD sha")
+    return head_sha
+
+
+def compute_ledger_head_hash(ledger_path: Path) -> str | None:
+    entries = _load_ledger(ledger_path)
+    if not entries:
+        return None
+    return entries[-1][1].get("event_sha256")
+
+
+def load_authority_allowlist(manifest_path: Path, phase_id: str | None = None) -> list[str]:
+    manifest = _load_authority_manifest(manifest_path)
+    classes = manifest.get("classes")
+    if not isinstance(classes, dict):
+        raise LedgerError("manifest classes must be a JSON object")
+
+    phase_allowlists = manifest.get("phase_allowlists")
+    if phase_id is not None and isinstance(phase_allowlists, dict):
+        phase_allowlist = phase_allowlists.get(phase_id)
+        if isinstance(phase_allowlist, list):
+            allowlist = phase_allowlist
+        else:
+            allowlist = classes.get("canonical_live", [])
+    else:
+        allowlist = classes.get("canonical_live", [])
+
+    if not isinstance(allowlist, list):
+        raise LedgerError("manifest canonical_live allowlist must be a list")
+
+    normalized = sorted(
+        {
+            item
+            for item in allowlist
+            if isinstance(item, str) and item.strip()
+        }
+    )
+    return normalized
+
+
+def discover_phase_evidence_artifacts(root: Path, phase_id: str) -> list[str]:
+    artifacts_root = root / "artifacts" / "acx"
+    if not artifacts_root.exists():
+        return []
+
+    slug = _phase_slug(phase_id)
+    matches: list[str] = []
+    for path in sorted(artifacts_root.glob("*.json")):
+        rel_path = _relative_posix(path, root=root)
+        name = path.name.lower()
+        if slug and slug in name:
+            matches.append(rel_path)
+            continue
+        try:
+            payload = _load_json(path)
+        except Exception:
+            continue
+        if isinstance(payload, dict) and payload.get("phase_id") == phase_id:
+            matches.append(rel_path)
+    return matches
+
+
+def _load_state_authorization(state_path: Path) -> dict[str, Any]:
+    state = _load_json(state_path)
+    if not isinstance(state, dict):
+        raise LedgerError("state must be a JSON object")
+    authorization = state.get("authorization")
+    if not isinstance(authorization, dict):
+        raise LedgerError("state authorization must be a JSON object")
+    return authorization
+
+
+def compile_gate_approval(
+    phase_id: str,
+    *,
+    root: Path = ROOT,
+    state_path: Path | None = None,
+    manifest_path: Path | None = None,
+    ledger_path: Path | None = None,
+    state_blob_hash: str | None = None,
+) -> dict[str, Any]:
+    root = _normalize_root(root)
+    state_path = state_path or (root / "ACTIVE_CONTEXT_STATE.json")
+    manifest_path = manifest_path or (root / AUTHORITY_MANIFEST_FILENAME)
+    ledger_path = ledger_path or (root / ".acx" / "ledger.jsonl")
+
+    computed_state_hash = compute_state_blob_hash(state_path)
+    if state_blob_hash is not None and state_blob_hash != computed_state_hash:
+        raise LedgerError("state_blob_hash must be recomputed from ACTIVE_CONTEXT_STATE.json bytes")
+
+    authorization = _load_state_authorization(state_path)
+    allowlist = load_authority_allowlist(manifest_path, phase_id=phase_id)
+    head_sha = compute_head_sha(root)
+    ledger_head_hash = compute_ledger_head_hash(ledger_path)
+
+    real_execution_authorized = any(
+        bool(authorization.get(key))
+        for key in (
+            "approval_execution_authorized",
+            "real_apply_authorized",
+            "real_dry_run_execution_authorized",
+            "generic_action_runtime_activated",
+        )
+    )
+    runtime_product_bedrock_secrets_opened = any(
+        bool(authorization.get(key))
+        for key in (
+            "runtime_integration_allowed",
+            "product_ready",
+            "production_authorized",
+            "secrets_access_authorized",
+        )
+    )
+
+    network_scope = authorization.get("network_authorized_scope")
+    gate = {
+        "record_type": "GATE_APPROVAL",
+        "task_id": f"{phase_id}:gate_compiler",
+        "phase_id": phase_id,
+        "generated_at_source": "system",
+        "compiler_version": GATE_COMPILER_VERSION,
+        "state_blob_hash": computed_state_hash,
+        "head_sha": head_sha,
+        "ledger_head_hash": ledger_head_hash,
+        "transition_rules_version": TRANSITION_RULES_VERSION,
+        "allowlist": allowlist,
+        "network_policy": {
+            "authorized_scope": network_scope,
+            "external_network_allowed": False,
+            "github_governance_only": network_scope == "github_active_context_governance_only",
+        },
+        "rollback_policy": {
+            "source": "docs/acx/ROLLBACK.md",
+            "compensating_event_required": True,
+            "destructive_cleanup_allowed": False,
+            "state_restoration_is_non_destructive": True,
+        },
+        "real_execution_authorized": real_execution_authorized,
+        "runtime_product_bedrock_secrets_opened": runtime_product_bedrock_secrets_opened,
+        "decision_authority": "operator_or_gate_not_compiler",
+    }
+    return gate
+
+
+def validate_gate_approval(
+    gate: Any,
+    *,
+    root: Path = ROOT,
+    state_path: Path | None = None,
+    manifest_path: Path | None = None,
+    ledger_path: Path | None = None,
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(gate, dict):
+        return ["gate approval must be a JSON object"]
+
+    state_path = state_path or (root / "ACTIVE_CONTEXT_STATE.json")
+    manifest_path = manifest_path or (root / AUTHORITY_MANIFEST_FILENAME)
+    ledger_path = ledger_path or (root / ".acx" / "ledger.jsonl")
+
+    required_fields = [
+        "record_type",
+        "task_id",
+        "phase_id",
+        "generated_at_source",
+        "compiler_version",
+        "state_blob_hash",
+        "head_sha",
+        "transition_rules_version",
+        "allowlist",
+        "network_policy",
+        "rollback_policy",
+        "real_execution_authorized",
+        "runtime_product_bedrock_secrets_opened",
+        "decision_authority",
+    ]
+    for field in required_fields:
+        if field not in gate:
+            errors.append(f"missing required field: {field}")
+
+    for field in ("record_type", "task_id", "phase_id", "generated_at_source", "compiler_version", "head_sha", "transition_rules_version", "decision_authority"):
+        value = gate.get(field)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{field} must be a non-empty string")
+
+    if gate.get("record_type") != "GATE_APPROVAL":
+        errors.append("record_type must be 'GATE_APPROVAL'")
+    if gate.get("generated_at_source") != "system":
+        errors.append("generated_at_source must be 'system'")
+    if gate.get("decision_authority") != "operator_or_gate_not_compiler":
+        errors.append("decision_authority must be 'operator_or_gate_not_compiler'")
+    if not _validate_sha256_hex(gate.get("state_blob_hash")):
+        errors.append("state_blob_hash must be a sha256 hex digest")
+
+    ledger_head_hash = gate.get("ledger_head_hash")
+    if ledger_head_hash is not None and not _validate_sha256_hex(ledger_head_hash):
+        errors.append("ledger_head_hash must be a sha256 hex digest or null")
+
+    allowlist = gate.get("allowlist")
+    if not isinstance(allowlist, list) or any(not isinstance(item, str) or not item.strip() for item in allowlist):
+        errors.append("allowlist must be a list of non-empty strings")
+    elif not allowlist:
+        errors.append("allowlist must not be empty")
+    elif allowlist != load_authority_allowlist(manifest_path, phase_id=gate.get("phase_id")):
+        errors.append("allowlist must be derived from authority_manifest.json")
+
+    for field in ("network_policy", "rollback_policy"):
+        if not isinstance(gate.get(field), dict):
+            errors.append(f"{field} must be a JSON object")
+
+    for field in ("real_execution_authorized", "runtime_product_bedrock_secrets_opened"):
+        if not isinstance(gate.get(field), bool):
+            errors.append(f"{field} must be a boolean")
+
+    computed_state_hash = compute_state_blob_hash(state_path)
+    if gate.get("state_blob_hash") != computed_state_hash:
+        errors.append("state_blob_hash must be computed from ACTIVE_CONTEXT_STATE.json bytes")
+
+    if gate.get("head_sha") != compute_head_sha(root):
+        errors.append("head_sha must match git rev-parse HEAD")
+
+    if gate.get("ledger_head_hash") != compute_ledger_head_hash(ledger_path):
+        errors.append("ledger_head_hash must match the current ledger head hash")
+
+    if gate.get("transition_rules_version") != TRANSITION_RULES_VERSION:
+        errors.append(f"transition_rules_version must be {TRANSITION_RULES_VERSION!r}")
+
+    return errors
+
+
+def render_gate_approval(gate: dict[str, Any], *, root: Path = ROOT) -> str:
+    if not isinstance(gate, dict):
+        raise LedgerError("gate approval must be a JSON object")
+    rendered = json.dumps(gate, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    vocabulary_hits = contains_forbidden_decision_vocabulary(rendered)
+    if vocabulary_hits:
+        raise LedgerError("gate approval contains forbidden decision vocabulary")
+    return rendered
+
+
+def _packet_default_fields(phase_id: str) -> dict[str, Any]:
+    return {
+        "phase_id": phase_id,
+        "objective": f"Compile review packet material for {phase_id} from repository facts.",
+        "changed_files": [],
+        "evidence_artifacts": [],
+        "validations": [],
+        "warnings": [
+            "compiler output is advisory only",
+            "operator review is still required",
+        ],
+        "limitations": [
+            "compiler does not decide approval",
+            "compiler does not change live state",
+        ],
+        "rollback_plan": "Restore source files from git and rerun the compiler after any correction.",
+        "requested_operator_decision": "operator_review_requested",
+    }
+
+
+def _normalize_packet_lists(packet: dict[str, Any]) -> dict[str, Any]:
+    normalized = copy.deepcopy(packet)
+    for field in ("changed_files", "evidence_artifacts", "validations", "warnings", "limitations"):
+        value = normalized.get(field)
+        if value is None:
+            normalized[field] = []
+            continue
+        if not isinstance(value, list):
+            normalized[field] = [str(value)]
+            continue
+        normalized[field] = [item for item in value if isinstance(item, str)]
+    return normalized
+
+
+def validate_operator_packet(packet: Any, *, root: Path = ROOT) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(packet, dict):
+        return ["packet must be a JSON object"]
+
+    required_fields = [
+        "phase_id",
+        "objective",
+        "changed_files",
+        "evidence_artifacts",
+        "validations",
+        "warnings",
+        "limitations",
+        "rollback_plan",
+        "requested_operator_decision",
+    ]
+    for field in required_fields:
+        if field not in packet:
+            errors.append(f"missing required field: {field}")
+
+    for field in ("phase_id", "objective", "rollback_plan", "requested_operator_decision"):
+        value = packet.get(field)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{field} must be a non-empty string")
+
+    for field in ("changed_files", "evidence_artifacts", "validations", "warnings", "limitations"):
+        value = packet.get(field)
+        if not isinstance(value, list):
+            errors.append(f"{field} must be a list")
+            continue
+        if any(not isinstance(item, str) or not item.strip() for item in value):
+            errors.append(f"{field} must contain only non-empty strings")
+
+    warnings = packet.get("warnings")
+    if not isinstance(warnings, list) or not warnings or any(
+        not isinstance(item, str) or not item.strip() for item in warnings
+    ):
+        errors.append("warnings must not be empty")
+    limitations = packet.get("limitations")
+    if not isinstance(limitations, list) or not limitations or any(
+        not isinstance(item, str) or not item.strip() for item in limitations
+    ):
+        errors.append("limitations must not be empty")
+    if not isinstance(packet.get("rollback_plan"), str) or not packet.get("rollback_plan", "").strip():
+        errors.append("rollback_plan must not be empty")
+
+    try:
+        rendered = render_operator_packet(packet, root=root)
+    except LedgerError as exc:
+        errors.append(str(exc))
+        return errors
+    vocabulary_hits = contains_forbidden_decision_vocabulary(rendered)
+    if vocabulary_hits:
+        errors.append(
+            "forbidden decision vocabulary present: " + ", ".join(sorted(set(vocabulary_hits)))
+        )
+
+    if len(rendered.split()) > PACKET_MAX_WORDS:
+        errors.append(f"packet exceeds target max word count of {PACKET_MAX_WORDS}")
+
+    return errors
+
+
+def contains_forbidden_decision_vocabulary(text: str) -> list[str]:
+    if not isinstance(text, str):
+        return []
+    matches: list[str] = []
+    upper_text = text.upper()
+    for token in FORBIDDEN_DECISION_VOCABULARY:
+        pattern = r"\b" + re.escape(token.upper()) + r"\b"
+        if re.search(pattern, upper_text):
+            matches.append(token)
+    return matches
+
+
+def _trim_packet_for_word_limit(packet: dict[str, Any], *, max_words: int) -> dict[str, Any]:
+    working = _normalize_packet_lists(packet)
+    candidate_sizes = [
+        (8, 8, 8),
+        (4, 4, 4),
+        (2, 2, 2),
+        (1, 1, 1),
+        (0, 0, 0),
+    ]
+
+    def _summarize_list(items: list[str], limit: int) -> list[str]:
+        if limit < 0:
+            limit = 0
+        if len(items) <= limit:
+            return items
+        if limit == 0:
+            return [f"... {len(items)} more"]
+        summarized = items[:limit]
+        summarized.append(f"... {len(items) - limit} more")
+        return summarized
+
+    for changed_files_limit, evidence_limit, validation_limit in candidate_sizes:
+        candidate = copy.deepcopy(working)
+        candidate["changed_files"] = _summarize_list(candidate.get("changed_files", []), changed_files_limit)
+        candidate["evidence_artifacts"] = _summarize_list(candidate.get("evidence_artifacts", []), evidence_limit)
+        candidate["validations"] = _summarize_list(candidate.get("validations", []), validation_limit)
+        rendered = json.dumps(candidate, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+        if len(rendered.split()) <= max_words:
+            return candidate
+
+    return working
+
+
+def render_operator_packet(packet: dict[str, Any], *, root: Path = ROOT, max_words: int = PACKET_MAX_WORDS) -> str:
+    if not isinstance(packet, dict):
+        raise LedgerError("packet must be a JSON object")
+    compressed = _trim_packet_for_word_limit(packet, max_words=max_words)
+    rendered = json.dumps(compressed, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+    if contains_forbidden_decision_vocabulary(rendered):
+        raise LedgerError("operator packet contains forbidden decision vocabulary")
+    return rendered
+
+
+def compile_operator_packet(
+    phase_id: str,
+    *,
+    root: Path = ROOT,
+    state_path: Path | None = None,
+    manifest_path: Path | None = None,
+    ledger_path: Path | None = None,
+    evidence_path: Path | None = None,
+) -> dict[str, Any]:
+    root = _normalize_root(root)
+    state_path = state_path or (root / "ACTIVE_CONTEXT_STATE.json")
+    manifest_path = manifest_path or (root / AUTHORITY_MANIFEST_FILENAME)
+    ledger_path = ledger_path or (root / ".acx" / "ledger.jsonl")
+
+    gate = compile_gate_approval(
+        phase_id,
+        root=root,
+        state_path=state_path,
+        manifest_path=manifest_path,
+        ledger_path=ledger_path,
+    )
+    evidence_artifacts = discover_phase_evidence_artifacts(root, phase_id)
+    if evidence_path is not None:
+        explicit_path = evidence_path if evidence_path.is_absolute() else (root / evidence_path)
+        explicit_rel = _relative_posix(explicit_path.resolve(), root=root)
+        if explicit_rel not in evidence_artifacts and explicit_path.exists():
+            evidence_artifacts = [explicit_rel, *evidence_artifacts]
+    if not evidence_artifacts:
+        raise LedgerError(f"no phase evidence artifacts found for {phase_id}")
+
+    evidence_payloads: list[dict[str, Any]] = []
+    for rel_path in evidence_artifacts:
+        payload = _load_json(root / rel_path)
+        if isinstance(payload, dict):
+            evidence_payloads.append(payload)
+
+    primary = evidence_payloads[0] if evidence_payloads else {}
+    objective = primary.get("purpose")
+    if not isinstance(objective, str) or not objective.strip():
+        objective = f"Compile review packet material for {phase_id} from repository facts."
+
+    changed_files = primary.get("files_changed")
+    if not isinstance(changed_files, list) or not all(isinstance(item, str) for item in changed_files):
+        changed_files = _git_stdout(root, ["show", "--pretty=format:", "--name-only", "HEAD"]).splitlines()
+    changed_files = [item for item in changed_files if isinstance(item, str) and item.strip()]
+
+    validations = primary.get("validations")
+    if not isinstance(validations, list) or any(not isinstance(item, str) or not item.strip() for item in validations):
+        validations = primary.get("tests_run")
+    if not isinstance(validations, list) or any(not isinstance(item, str) or not item.strip() for item in validations):
+        validations = [
+            "validate_active_context.py",
+            "tools/acx_validate.py",
+        ]
+
+    warnings = primary.get("warnings")
+    if not isinstance(warnings, list) or any(not isinstance(item, str) or not item.strip() for item in warnings):
+        warnings = [
+            "compiler output is advisory only",
+            "operator review is still required",
+        ]
+
+    limitations = primary.get("limitations")
+    if not isinstance(limitations, list) or any(not isinstance(item, str) or not item.strip() for item in limitations):
+        limitations = [
+            "compiler does not decide approval",
+            "compiler does not change live state",
+        ]
+
+    rollback_plan = primary.get("rollback_plan")
+    if not isinstance(rollback_plan, str) or not rollback_plan.strip():
+        rollback_plan = "Restore source files from git and rerun the compiler after any correction."
+
+    requested_operator_decision = primary.get("requested_operator_decision")
+    if not isinstance(requested_operator_decision, str) or not requested_operator_decision.strip():
+        requested_operator_decision = "operator_review_requested"
+
+    packet = {
+        "phase_id": phase_id,
+        "objective": objective,
+        "changed_files": changed_files,
+        "evidence_artifacts": evidence_artifacts,
+        "validations": validations,
+        "warnings": warnings,
+        "limitations": limitations,
+        "rollback_plan": rollback_plan,
+        "requested_operator_decision": requested_operator_decision,
+        "gate_reference": {
+            "task_id": gate["task_id"],
+            "state_blob_hash": gate["state_blob_hash"],
+            "head_sha": gate["head_sha"],
+            "decision_authority": gate["decision_authority"],
+        },
+    }
+    return packet
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -1062,6 +1580,21 @@ def _build_parser() -> argparse.ArgumentParser:
     manual_write_parser.add_argument("--ledger", required=True, type=Path)
     manual_write_parser.add_argument("--state", required=True, type=Path)
 
+    gate_parser = subparsers.add_parser("gate")
+    gate_parser.add_argument("phase_id")
+    gate_parser.add_argument("--phase", dest="phase_id_opt")
+    gate_parser.add_argument("--manifest", type=Path, default=ROOT / AUTHORITY_MANIFEST_FILENAME)
+    gate_parser.add_argument("--ledger", type=Path, default=ROOT / ".acx" / "ledger.jsonl")
+    gate_parser.add_argument("--state", type=Path, default=ROOT / "ACTIVE_CONTEXT_STATE.json")
+
+    packet_parser = subparsers.add_parser("packet")
+    packet_parser.add_argument("phase_id", nargs="?")
+    packet_parser.add_argument("--phase", dest="phase_id_opt")
+    packet_parser.add_argument("--evidence", type=Path)
+    packet_parser.add_argument("--manifest", type=Path, default=ROOT / AUTHORITY_MANIFEST_FILENAME)
+    packet_parser.add_argument("--ledger", type=Path, default=ROOT / ".acx" / "ledger.jsonl")
+    packet_parser.add_argument("--state", type=Path, default=ROOT / "ACTIVE_CONTEXT_STATE.json")
+
     return parser
 
 
@@ -1084,6 +1617,43 @@ def main(argv: list[str] | None = None) -> int:
             render_check(root, args.manifest)
         elif args.command == "guard" and args.guard_command == "manual-write":
             guard_manual_write(args.manifest, args.ledger, args.state, root=root)
+        elif args.command == "gate":
+            phase_id = args.phase_id or args.phase_id_opt
+            if not phase_id:
+                raise LedgerError("phase_id is required")
+            gate = compile_gate_approval(
+                phase_id,
+                root=root,
+                state_path=args.state,
+                manifest_path=args.manifest,
+                ledger_path=args.ledger,
+            )
+            errors = validate_gate_approval(
+                gate,
+                root=root,
+                state_path=args.state,
+                manifest_path=args.manifest,
+                ledger_path=args.ledger,
+            )
+            if errors:
+                raise LedgerError("; ".join(errors))
+            print(render_gate_approval(gate), end="")
+        elif args.command == "packet":
+            phase_id = args.phase_id or args.phase_id_opt
+            if not phase_id:
+                raise LedgerError("phase_id is required")
+            packet = compile_operator_packet(
+                phase_id,
+                root=root,
+                state_path=args.state,
+                manifest_path=args.manifest,
+                ledger_path=args.ledger,
+                evidence_path=args.evidence,
+            )
+            errors = validate_operator_packet(packet, root=root)
+            if errors:
+                raise LedgerError("; ".join(errors))
+            print(render_operator_packet(packet, root=root), end="")
         else:  # pragma: no cover - argparse prevents this
             raise LedgerError(f"unsupported command: {args.command}")
     except LedgerError as exc:
