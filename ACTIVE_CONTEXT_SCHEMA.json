@@ -18,6 +18,7 @@
     "schema_3_37_change_summary": "Lapidarium Fase 3 execution-by-slices planning closure: add phase 3 completion attestation fields, source-sha lineage, and artifact lists for the candidate-only slice plan/review packet while keeping next_phase null and preserving no real runtime execution.",
     "schema_3_38_change_summary": "Lapidarium Fase 4 canonization closure: add phase 4 completion attestation fields and artifact lists for the candidate-only canonization packet while keeping the current route closed, preserving the historical review packet, and maintaining no real runtime execution.",
     "schema_3_41_change_summary": "ACX-R1 validator cutover: add typed roadmap_cursor support for candidate-only null next_phase reconciliation, move the active validator entrypoint to tools/acx_validate.py, and preserve the no-real-execution governance surface.",
+    "schema_3_42_change_summary": "ACX-R full closure metadata: add acx_meta_track_pointer as a read-only discoverability pointer for technically published ACX-R tracks, bump the canonical schema version to 3.42, and preserve candidate-only roadmap_cursor plus all real execution locks false.",
     "properties": {
         "active_context_version": {
             "enum": [
@@ -1037,6 +1038,34 @@
             ],
             "type": "object"
         },
+        "acx_meta_track_pointer": {
+            "additionalProperties": false,
+            "properties": {
+                "track_id": {
+                    "type": "string"
+                },
+                "latest_commit_sha": {
+                    "type": "string"
+                },
+                "latest_ci_run_id": {
+                    "type": "string"
+                },
+                "reconciliation_entry_ref": {
+                    "type": "string"
+                },
+                "phase_formally_closed": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "track_id",
+                "latest_commit_sha",
+                "latest_ci_run_id",
+                "reconciliation_entry_ref",
+                "phase_formally_closed"
+            ],
+            "type": "object"
+        },
         "phase_id": {
             "pattern": "^[A-Z0-9][A-Z0-9_-]*$",
             "type": "string"
@@ -1141,7 +1170,8 @@
                 "3.38",
                 "3.39",
             "3.40",
-            "3.41"
+            "3.41",
+            "3.42"
             ],
             "type": "string"
         },
@@ -1712,6 +1742,9 @@
                     "type": "string"
                 },
                 "schema_3_41_change_summary": {
+                    "type": "string"
+                },
+                "schema_3_42_change_summary": {
                     "type": "string"
                 }
             },
@@ -2838,6 +2871,9 @@
         "schema_3_41_change_summary": {
             "type": "string"
         },
+        "schema_3_42_change_summary": {
+            "type": "string"
+        },
         "lapidarium_true_track_status": {
             "type": "string"
         },
@@ -2917,6 +2953,7 @@
         "next_phase",
         "next_phase_authorized_by_operator",
         "roadmap_cursor",
+        "acx_meta_track_pointer",
         "active_next_phase",
         "active_next_phase_class",
         "versioning_contract",
@@ -2968,7 +3005,7 @@
         "lapidarium_fase6_true_decision",
         "lapidarium_fase6_true_artifacts"
     ],
-    "title": "ARIS Active Context Canonical Live State Schema v3.41",
+    "title": "ARIS Active Context Canonical Live State Schema v3.42",
     "type": "object",
     "schema_3_18_change_summary": "INF revalidation operator authorization: admit INF_REVALIDATION_OPERATOR_AUTHORIZATION_PACKET as the live post-readiness operator gate, add infernus_revalidation_operator_authorization as a valid live/next route class, require the operator-authorization artifact family, materialize the readiness successor row, and preserve next_phase/active_next_phase null because the new operator gate has no active successor row yet.",
     "schema_3_27_change_summary": "BENCHUIX help accordion default-closed evidence tracking: record the independently reverified draft_v5 Ajuda default-closed fix commit and CI run inside benchuix_track without changing the live route, any phase pointer, or any execution/product/runtime/secret authorization lock.",

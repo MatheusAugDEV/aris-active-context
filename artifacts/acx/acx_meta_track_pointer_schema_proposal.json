@@ -1,0 +1,23 @@
+{
+  "proposed_field": "acx_meta_track_pointer",
+  "purpose": "permitir que um agente fazendo boot canônico descubra a existência de tracks técnicos publicados (como ACX-R) sem abrir roadmap_cursor para AUTHORIZED nem conceder autoridade de fase",
+  "motivating_evidence": "esta lacuna foi observada na prática: R2A-R7 existiram, publicados, com CI verde, por um intervalo em que DECISION_LOCKS.md não os refletia - só git log/gh run list revelavam a existência real, e nenhum dos dois está no canonical_read_order",
+  "proposed_shape": {
+    "acx_meta_track_pointer": {
+      "track_id": "string",
+      "latest_commit_sha": "string",
+      "latest_ci_run_id": "string",
+      "reconciliation_entry_ref": "string (aponta para a seção correspondente em DECISION_LOCKS.md, ex: ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION)",
+      "phase_formally_closed": "boolean (false até avaliação de conteúdo formal)"
+    }
+  },
+  "schema_version_bump_required": true,
+  "migration_discipline": "golden-fixture + refold + diff zero antes do bump, conforme §6 da ACX_SPEC.md",
+  "explicitly_not_authorized_by_this_proposal": [
+    "aplicação do campo no schema real",
+    "mutação de ACTIVE_CONTEXT_STATE.json",
+    "promoção de roadmap_cursor para AUTHORIZED",
+    "fechamento formal de qualquer fase R2A-R7"
+  ],
+  "requires_before_apply": "autorização explícita do operador em uma fase futura separada, com o texto de autorização registrado em DECISION_LOCKS.md antes de qualquer edição de ACTIVE_CONTEXT_SCHEMA.json"
+}

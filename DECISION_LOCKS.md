@@ -3792,3 +3792,107 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Locks reais: todos preservados `false`. Nenhum runtime, produto, secrets, Bedrock ou dependency mutation autorizado por este pacote.
 - Fix aplicado nesta mesma fase: gap residual do R4 (ver Parte B).
 - Next: revisão de conteúdo de R2B, R3, R5, R6; proposta (não aplicação) de mecanismo de descoberta estrutural (acx_meta_track_pointer).
+
+## ACX_R2A_LEDGER_GENESIS_CLOSURE
+
+- Status: `acx_r2a_ledger_genesis_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal do genesis técnico do ledger ACX-R2A, com baseline canônico ancorado no estado JSON validado e entradas históricas conflitantes classificadas como `historical_only`.
+- Evidência:
+  - `docs/acx/LEDGER_SPEC.md:1-24` estabelece que `ACTIVE_CONTEXT_STATE.json` é a fonte canônica viva durante ACX-R2A/R2B e que o ledger é `shadow/audit-only`.
+  - `docs/acx/LEDGER_SPEC.md:25-34` define o genesis como baseline do estado validado atual e preserva o histórico conflitante como `historical_only`.
+  - `ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION` registra o commit `08b5ebc` e a resolução do §7 sem reescrever `DECISION_LOCKS.md`.
+- Locks reais: todos preservados `false`.
+
+## ACX_R2B_SHADOW_LEDGER_CLOSURE
+
+- Status: `acx_r2b_shadow_ledger_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal da CLI shadow do ledger e do fold/verify-chain de R2B sem conceder autoridade decisória ao ledger sobre o JSON canônico.
+- Evidência:
+  - `artifacts/acx/r2b_r3_r5_r6_content_review.md` confirma `event append`, `fold`, `verify-chain`, o golden fixture com diff zero e o comportamento shadow-only.
+  - `a7faa9e2186289a619fdb250171a8c836d922286` implementa `tools/acx.py` com `append_event`, `fold` e `verify_chain`.
+- Locks reais: todos preservados `false`.
+
+## ACX_R3_AUTHORITY_MANIFEST_CLOSURE
+
+- Status: `acx_r3_authority_manifest_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal da geração e validação advisory do authority manifest após resolver o gap de rastreabilidade para `artifact_integrity_policy`.
+- Evidência:
+  - `artifacts/acx/r2b_r3_r5_r6_content_review.md` confirma que o manifest é gerado por script e que render-check é advisory.
+  - `artifacts/acx/r3_manifest_derivation_gap_resolution.md` cita a derivação explícita via `tools/acx.py:280-285`, `tools/acx.py:418-425` e `tools/acx.py:586-590`.
+  - `7274d5429f7683106e14c5cf966da3c2c1341708` é o commit da fase R3.
+- Locks reais: todos preservados `false`.
+
+## ACX_R4_MANUAL_WRITE_BLOCK_CLOSURE
+
+- Status: `acx_r4_manual_write_block_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal do bloqueio de escrita manual por comparação de fold staged, sem tocar runtime, schema ou roadmap.
+- Evidência:
+  - `ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION` registra o commit `ba251ec` e descreve `guard_manual_write` recomputando o fold em memória a partir do índice staged e comparando hash a hash contra o `ACTIVE_CONTEXT_STATE.json` staged.
+  - O mesmo registro mantém `CI 28761179944 success`.
+- Locks reais: todos preservados `false`.
+
+## ACX_R5_EVIDENCE_TRANSITION_GUARDS_CLOSURE
+
+- Status: `acx_r5_evidence_transition_guards_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal das guardas advisory de evidência/transição, incluindo anti-replay e lint de linguagem decisória.
+- Evidência:
+  - `artifacts/acx/r2b_r3_r5_r6_content_review.md` confirma `compute_head_sha(root)` via `git rev-parse`, anti-replay por `head_before`, e `violation_advisory` sem alterar `can_transition`.
+  - `718fa46436c90e30eadc700238d93635c54145b2` é o commit da fase R5.
+- Locks reais: todos preservados `false`.
+
+## ACX_R6_GATE_COMPILER_CLOSURE
+
+- Status: `acx_r6_gate_compiler_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal do gate compiler e operator packet compiler em modo advisory.
+- Evidência:
+  - `artifacts/acx/r2b_r3_r5_r6_content_review.md` confirma `state_blob_hash` computado do arquivo real pelo CLI e output sem vocabulário decisório proibido.
+  - `1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e` é o commit da fase R6.
+- Locks reais: todos preservados `false`.
+
+## ACX_R7_INFERNUS_ADVERSARIAL_CLOSURE
+
+- Status: `acx_r7_infernus_adversarial_closed`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: fechamento formal da suíte adversarial Infernus-ACX baseada em injeções mecânicas e chamadas reais ao CLI/módulo.
+- Evidência:
+  - `ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION` registra o commit `48839f3`, CI `28763869417 success`, e que 12 injeções mecânicas foram verificadas por chamadas reais a funções do CLI/módulo.
+- Locks reais: todos preservados `false`.
+
+## ACX_R_META_TRACK_POINTER_APPLICATION_RETRY
+
+- Status: `acx_r_meta_track_pointer_applied_retry`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: retry da Parte C com sincronização de `BOOT.md` via render oficial após a aplicação do `acx_meta_track_pointer` no state/schema canônicos.
+- Authorization exact text: `vamos corrigir tudo de uma vez, todos os gaps, erros, falhas, td`
+- Render command executed: `python3 scripts/render_boot.py`
+- Hashes:
+  - `BOOT.md` before render: `4a640f427809a08809fbdaef52ed66747112f06a2c0617c7535ea542f58ce635`
+  - `BOOT.md` after render: `2c63f6ebeeb2803b916d33a047622c29b32084f239edb74c2cfcf26cedbfca83`
+  - `BOOT.md` matches `scripts.render_boot.render_boot_text()` byte-for-byte.
+- Campos alterados com exatidão:
+  - `ACTIVE_CONTEXT_STATE.json.acx_meta_track_pointer` adicionado com `track_id=ACX-R`, `latest_commit_sha=4ca7a123af07aa9401e863663186335208a7c15b`, `latest_ci_run_id=28764841297`, `reconciliation_entry_ref=ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION`, `phase_formally_closed=true`.
+  - `ACTIVE_CONTEXT_STATE.json.schema_version` atualizado de `3.41` para `3.42`.
+  - `ACTIVE_CONTEXT_STATE.json.versioning_contract.current_schema_version` atualizado de `3.41` para `3.42`.
+  - `ACTIVE_CONTEXT_STATE.json.versioning_contract.schema_3_42_change_summary` adicionado.
+  - `ACTIVE_CONTEXT_SCHEMA.json.acx_meta_track_pointer` adicionado.
+  - `ACTIVE_CONTEXT_SCHEMA.json.required` expandido com `acx_meta_track_pointer`.
+  - `ACTIVE_CONTEXT_SCHEMA.json.schema_version` enum expandido com `3.42`.
+  - `ACTIVE_CONTEXT_SCHEMA.json.versioning_contract.properties.schema_3_42_change_summary` adicionado.
+  - `ACTIVE_CONTEXT_SCHEMA.json.schema_3_42_change_summary` adicionado.
+  - `ACTIVE_CONTEXT_SCHEMA.json.title` atualizado para v3.42.
+- `roadmap_cursor` preservado: `CANDIDATE`, `authorized_by=null`.
+- Locks reais preservados: todos `false`.

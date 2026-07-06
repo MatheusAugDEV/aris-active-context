@@ -269,12 +269,101 @@ def _discover_repo_files(root: Path) -> list[str]:
     return _walk_repo_files(root)
 
 
-def _classify_authority_path(path_value: str) -> tuple[str, str, str]:
+def _load_active_context_state(root: Path) -> dict[str, Any]:
+    state_path = _normalize_root(root) / "ACTIVE_CONTEXT_STATE.json"
+    payload = _load_json(state_path)
+    if not isinstance(payload, dict):
+        raise LedgerError("ACTIVE_CONTEXT_STATE.json must be a JSON object")
+    return payload
+
+
+def _load_artifact_integrity_policy(root: Path) -> dict[str, Any]:
+    state = _load_active_context_state(root)
+    policy = state.get("artifact_integrity_policy")
+    if not isinstance(policy, dict):
+        raise LedgerError("artifact_integrity_policy must be a JSON object")
+    return policy
+
+
+def _policy_prefix_match(
+    path_value: str,
+    policy: dict[str, Any],
+) -> tuple[str, dict[str, Any]] | None:
+    prefixes = policy.get("classified_artifact_prefixes")
+    if not isinstance(prefixes, dict):
+        raise LedgerError("artifact_integrity_policy.classified_artifact_prefixes must be a JSON object")
+
+    matches: list[tuple[str, dict[str, Any]]] = []
+    for prefix, meta in prefixes.items():
+        if not isinstance(prefix, str) or not isinstance(meta, dict):
+            continue
+        if path_value.startswith(prefix):
+            matches.append((prefix, meta))
+
+    if not matches:
+        return None
+
+    prefix, meta = max(matches, key=lambda item: len(item[0]))
+    return prefix, meta
+
+
+def _classify_authority_path(path_value: str, *, artifact_policy: dict[str, Any]) -> tuple[str, str, str]:
     if any(path_value.startswith(prefix) for prefix in ARCHIVED_FORBIDDEN_PREFIXES):
         return (
             "archived_forbidden",
             "Superseded archive quarantine is historical and live-code forbidden.",
             "path_prefix:archive/superseded/",
+        )
+    policy_match = _policy_prefix_match(path_value, artifact_policy)
+    if policy_match is not None:
+        prefix, meta = policy_match
+        policy_classification = meta.get("classification")
+        policy_reason = meta.get("reason")
+        if not isinstance(policy_classification, str) or not isinstance(policy_reason, str):
+            raise LedgerError(
+                f"artifact_integrity_policy prefix metadata must declare classification and reason: {prefix}"
+            )
+        if prefix == "archive/":
+            if path_value.startswith("archive/derived_mirrors/"):
+                return (
+                    "doc_support",
+                    f"{policy_reason} Historical mirror support material retained for audit context.",
+                    f"policy_prefix:{prefix}:{policy_classification}",
+                )
+            return (
+                "doc_support",
+                f"{policy_reason} Archived supporting material retained for audit context.",
+                f"policy_prefix:{prefix}:{policy_classification}",
+            )
+        if prefix == "artifacts/":
+            return (
+                "doc_support",
+                f"{policy_reason} Evidence artifact or support output, not a live source of authority.",
+                f"policy_prefix:{prefix}:{policy_classification}",
+            )
+    if path_value.startswith("project_mirror/"):
+        return (
+            "doc_support",
+            "Project mirror support material, not the live active-context source of truth.",
+            "path_prefix:project_mirror/",
+        )
+    if path_value.startswith("tests/"):
+        return (
+            "doc_support",
+            "Test or fixture support material.",
+            "path_prefix:tests/",
+        )
+    if path_value == "README.md":
+        return (
+            "doc_support",
+            "Repository overview and operator guidance.",
+            "path_exact:README.md",
+        )
+    if path_value == "DECISION_LOCKS.md" or path_value == "LAB_OPERATING_CONTRACT.md":
+        return (
+            "doc_support",
+            "Governance support document referenced by live validation.",
+            f"path_exact:{path_value}",
         )
     if path_value in {
         "ACTIVE_CONTEXT_STATE.json",
@@ -313,48 +402,6 @@ def _classify_authority_path(path_value: str) -> tuple[str, str, str]:
             reason = "Derived mirror/render that reflects live state but is not authoritative."
             source_rule = "mirror_marker:derived_render"
         return ("derived_render", reason, source_rule)
-    if path_value.startswith("archive/derived_mirrors/"):
-        return (
-            "doc_support",
-            "Historical mirror support material retained for audit context.",
-            "path_prefix:archive/derived_mirrors/",
-        )
-    if path_value.startswith("archive/"):
-        return (
-            "doc_support",
-            "Archived supporting material retained for audit context.",
-            "path_prefix:archive/",
-        )
-    if path_value.startswith("artifacts/"):
-        return (
-            "doc_support",
-            "Evidence artifact or support output, not a live source of authority.",
-            "path_prefix:artifacts/",
-        )
-    if path_value.startswith("project_mirror/"):
-        return (
-            "doc_support",
-            "Project mirror support material, not the live active-context source of truth.",
-            "path_prefix:project_mirror/",
-        )
-    if path_value.startswith("tests/"):
-        return (
-            "doc_support",
-            "Test or fixture support material.",
-            "path_prefix:tests/",
-        )
-    if path_value == "README.md":
-        return (
-            "doc_support",
-            "Repository overview and operator guidance.",
-            "path_exact:README.md",
-        )
-    if path_value == "DECISION_LOCKS.md" or path_value == "LAB_OPERATING_CONTRACT.md":
-        return (
-            "doc_support",
-            "Governance support document referenced by live validation.",
-            f"path_exact:{path_value}",
-        )
     if path_value.endswith(".md"):
         return (
             "doc_support",
@@ -370,10 +417,11 @@ def _classify_authority_path(path_value: str) -> tuple[str, str, str]:
 
 def _build_authority_manifest(root: Path) -> dict[str, Any]:
     root = _normalize_root(root)
+    artifact_policy = _load_artifact_integrity_policy(root)
     entries: dict[str, dict[str, str]] = {}
     classes: dict[str, list[str]] = {key: [] for key in ALLOWED_AUTHORITY_CLASSES}
     for rel_path in _discover_repo_files(root):
-        authority_class, reason, source_rule = _classify_authority_path(rel_path)
+        authority_class, reason, source_rule = _classify_authority_path(rel_path, artifact_policy=artifact_policy)
         entries[rel_path] = {
             "class": authority_class,
             "reason": reason,
@@ -535,10 +583,11 @@ def validate_authority_manifest_classifications(
     if not isinstance(entries, dict):
         return ["manifest entries must be a JSON object"]
 
+    artifact_policy = _load_artifact_integrity_policy(root)
     for path_value, payload in sorted(entries.items()):
         if not isinstance(payload, dict):
             continue
-        expected_class, _, _ = _classify_authority_path(path_value)
+        expected_class, _, _ = _classify_authority_path(path_value, artifact_policy=artifact_policy)
         class_name = payload.get("class")
         if class_name != expected_class:
             errors.append(
