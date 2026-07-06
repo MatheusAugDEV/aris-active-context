@@ -563,6 +563,80 @@ class ACXInfernusAdversarialTest(unittest.TestCase):
                 },
             )
 
+    def test_13_ledger_advanced_without_state_staged_is_detected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            _bootstrap_manual_write_repo(root)
+
+            def _run_local_acx(args: list[str]) -> subprocess.CompletedProcess[str]:
+                return subprocess.run(
+                    [sys.executable, str(TOOLS), "--root", str(root), *args],
+                    cwd=root,
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+
+            event_path = root / "advance_event.json"
+            _write_text(
+                event_path,
+                json.dumps(
+                    {
+                        "event_id": "33333333-3333-4333-8333-333333333333",
+                        "event_type": "genesis",
+                        "event_schema_version": "1.0",
+                        "phase_id": "ACX-R7",
+                        "timestamp_utc": "2026-07-06T00:00:00Z",
+                        "project_commit_sha": CURRENT_HEAD,
+                        "payload": {
+                            "baseline_state_path": "ALT_STATE.json",
+                        },
+                    },
+                    sort_keys=True,
+                    indent=2,
+                    ensure_ascii=False,
+                )
+                + "\n",
+            )
+            _write_bytes(root / "ALT_STATE.json", b"{\"alt\": true}\n")
+            add_event = _run_local_acx(["event", "append", str(event_path), "--ledger", ".acx/ledger.jsonl"])
+            self.assertEqual(add_event.returncode, 0, add_event.stderr)
+
+            stage_result = _run_git(root, ["add", ".acx/ledger.jsonl"])
+            self.assertEqual(stage_result.returncode, 0, stage_result.stderr)
+
+            command = (
+                "python3 tools/acx.py guard manual-write "
+                "--manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json"
+            )
+            result = _run_local_acx([
+                "guard",
+                "manual-write",
+                "--manifest",
+                "authority_manifest.json",
+                "--ledger",
+                ".acx/ledger.jsonl",
+                "--state",
+                "ACTIVE_CONTEXT_STATE.json",
+            ])
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("manual write block", result.stderr)
+            self._record(
+                self._testMethodName,
+                command,
+                {
+                    "injection_id": 13,
+                    "name": "ledger advanced without state staged",
+                    "expected_violation_type": "manual_write_block",
+                    "detected": True,
+                    "mechanism": "guard_failure",
+                    "message": result.stderr.strip() or result.stdout.strip(),
+                    "live_state_mutated": False,
+                    "live_ledger_mutated": False,
+                },
+            )
+
 
 if __name__ == "__main__":  # pragma: no cover - unittest CLI support
     unittest.main()

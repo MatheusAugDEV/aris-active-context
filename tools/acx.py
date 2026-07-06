@@ -847,13 +847,13 @@ def guard_manual_write(manifest_path: Path, ledger_path: Path, state_path: Path,
 
     staged_paths = set(_git_cached_name_only(root))
     state_rel = _normalize_repo_relative_path(str(state_path), root=root)
-    if state_rel not in staged_paths:
+    ledger_rel = _normalize_repo_relative_path(str(ledger_path), root=root)
+    if state_rel not in staged_paths and ledger_rel not in staged_paths:
         return
 
     manifest = _load_authority_manifest(manifest_path)
     _validate_authority_manifest_payload(manifest)
 
-    ledger_rel = _normalize_repo_relative_path(str(ledger_path), root=root)
     staged_state = _git_index_bytes(root, state_rel)
     staged_ledger_text = _git_index_bytes(root, ledger_rel).decode("utf-8")
     entries = _ledger_entries_from_text(staged_ledger_text)

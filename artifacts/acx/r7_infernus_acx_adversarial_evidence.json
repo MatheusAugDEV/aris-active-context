@@ -2,7 +2,7 @@
   "all_injections_detected": true,
   "ci_changed": false,
   "commands_run": [
-    "python3 tools/acx.py --root /tmp/tmpdo88gn2w render --check --manifest /tmp/tmpdo88gn2w/authority_manifest.json",
+    "python3 tools/acx.py --root /tmp/tmpn2_x_m3y render --check --manifest /tmp/tmpn2_x_m3y/authority_manifest.json",
     "LEGACY_SCANNER._collect_violations(tempfile static import)",
     "LEGACY_SCANNER._collect_violations(tempfile dynamic import)",
     "ACX.can_transition(ACX-R4 -> ACX-R6)",
@@ -15,7 +15,7 @@
     "ACX.validate_transition_rules_revision(candidate_rules)",
     "ACX.validate_authority_manifest_classifications(mutated_manifest)"
   ],
-  "detected_count": 12,
+  "detected_count": 13,
   "files_changed": [
     "tools/acx.py",
     "tests/test_acx_infernus_adversarial.py",
@@ -31,8 +31,8 @@
     "tests/test_no_legacy_imports.py"
   ],
   "hard_mode_enabled": false,
-  "head_after": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
-  "head_before": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "head_after": "48839f33857cadac165c6b4e3ada55ff0d1e2200",
+  "head_before": "48839f33857cadac165c6b4e3ada55ff0d1e2200",
   "injection_results": [
     {
       "detected": true,
@@ -153,6 +153,16 @@
       "mechanism": "validator_event",
       "message": "manifest entry class mismatch for BOOT.md: expected 'derived_render', got 'canonical_live'",
       "name": "new file without class in authority_manifest.json or derived_render treated as canonical_live"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "manual_write_block",
+      "injection_id": 13,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "guard_failure",
+      "message": "error: manual write block: fatal: path 'ALT_STATE.json' exists on disk, but not in the index",
+      "name": "ledger advanced without state staged"
     }
   ],
   "limitations": [
@@ -168,8 +178,8 @@
   "operator_auth": "EXTEND ACX-R7 autorizado.",
   "operator_extend_authorization": true,
   "operator_extend_phrase": "EXTEND ACX-R7 autorizado.",
-  "origin_main_after": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
-  "origin_main_before": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "origin_main_after": "48839f33857cadac165c6b4e3ada55ff0d1e2200",
+  "origin_main_before": "48839f33857cadac165c6b4e3ada55ff0d1e2200",
   "phase_id": "ACX-R7",
   "purpose": "Infernus-ACX adversarial closure",
   "roadmap_changed": false,
@@ -189,7 +199,8 @@
     "test_09_agent_report_contains_decision_vocabulary_is_detected",
     "test_10_direct_manual_edit_to_state_without_ledger_event_is_detected",
     "test_11_transition_table_edited_in_place_instead_of_new_version_is_detected",
-    "test_12_new_file_without_class_or_derived_render_as_canonical_live_is_detected"
+    "test_12_new_file_without_class_or_derived_render_as_canonical_live_is_detected",
+    "test_13_ledger_advanced_without_state_staged_is_detected"
   ],
   "visual_log_inspection_used_as_detection": false
 }

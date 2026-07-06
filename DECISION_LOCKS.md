@@ -3771,3 +3771,24 @@ The following track references are historical_residual_route_noise. They do NOT 
 - Result: no code removal was required in this revision because the shim claim was not reproducible in the current validator head.
 - Locks opened: none. Todos os locks de execução permanecem `false`.
 - Next: keep R2 blocked only by the normal canonical operator process, not by a live legacy import in `tools/acx_validate.py`.
+
+## ACX_R_TECHNICAL_PUBLICATION_RECONCILIATION
+
+- Status: `acx_r_technical_publication_reconciliation_pass`
+- Decision: `pass`
+- Date: `2026-07-06`
+- Scope: reconciliar a existência técnica verificada de R2A–R7 com o ledger de governança canônico. Nenhuma fase é declarada formalmente CLOSED por este pacote; apenas a publicação técnica e sua conformidade estrutural com o design são registradas.
+- Evidência verificada via terminal (git log, git ls-remote, git diff --stat, gh run list — nenhum dado por autorrelato):
+  - R2A `08b5ebc` — docs(acx): specify r2a ledger genesis. Resolve a decisão pendente do §7 (ACX_R0_SPEC_FROZEN_TRACK_FREEZE): fold atual declarado baseline; entradas históricas conflitantes (IF09-FIND-001 e correlatas) classificadas `historical_only`; DECISION_LOCKS.md não reescrito nesta fase.
+  - R2B — shadow ledger CLI. CI `28758889743` success.
+  - R3 `7274d54` — authority manifest, checks em modo advisory. CI `28760052192` success.
+  - R4 `ba251ec` — manual write block (guard_manual_write recomputa fold em memória a partir do índice git staged e compara hash a hash contra o state staged). CI `28761179944` success.
+  - R5 `718fa46` — guardas de evidência/transição em advisory. CI `28762134502` success.
+  - R6 `1881d5e` — gate compiler + operator packet. CI `28763063850` success.
+  - R7 `48839f3` — suíte adversarial Infernus-ACX, 12 injeções mecânicas verificadas (chamadas reais a funções do CLI/módulo, não leitura do próprio artifact de evidência). CI `28763869417` success.
+  - `git diff --stat 7274d54^..48839f3` sobre ACTIVE_CONTEXT_STATE.json, ACTIVE_CONTEXT_SCHEMA.json, DECISION_LOCKS.md, ROADMAP_CANONICAL.md: vazio — confirmado que nenhuma fase de R3 a R7 tocou arquivo canônico.
+- roadmap_cursor: permanece `CANDIDATE`, `authorized_by=null`. Este pacote NÃO promove para `AUTHORIZED` e não altera nenhum campo do ACTIVE_CONTEXT_STATE.json.
+- Nenhuma fase (R2A–R7) é declarada `CLOSED` como decisão canônica formal por este registro. Fechamento formal permanece avaliação separada.
+- Locks reais: todos preservados `false`. Nenhum runtime, produto, secrets, Bedrock ou dependency mutation autorizado por este pacote.
+- Fix aplicado nesta mesma fase: gap residual do R4 (ver Parte B).
+- Next: revisão de conteúdo de R2B, R3, R5, R6; proposta (não aplicação) de mecanismo de descoberta estrutural (acx_meta_track_pointer).
