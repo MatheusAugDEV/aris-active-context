@@ -1,0 +1,81 @@
+{
+  "phase_id": "ACX-R4",
+  "purpose": "manual_write_block_hard_writer_and_precommit_hook",
+  "head_before": "7274d5429f7683106e14c5cf966da3c2c1341708",
+  "head_after": "POST_COMMIT_SHA_REPORTED_EXTERNALLY",
+  "head_after_policy": "not_embedded_in_same_commit_artifact_to_avoid_git_self_reference",
+  "guard": {
+    "command": "python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json",
+    "result": "pass",
+    "bypass_env": "ACX_DISABLE_HOOK=1",
+    "hook_registration": ".pre-commit-config.yaml"
+  },
+  "validation": {
+    "manual_write_block_tests": "python3 -m unittest tests.test_acx_manual_write_block -q -> pass (8 tests)",
+    "authority_manifest_tests": "python3 -m unittest tests.test_acx_authority_manifest -q -> pass (5 tests)",
+    "ledger_shadow_tests": "python3 -m unittest tests.test_acx_ledger_shadow -q -> pass (8 tests)",
+    "legacy_imports_test": "python3 -m unittest tests.test_no_legacy_imports -q -> pass (1 test)",
+    "verify_chain": "python3 tools/acx.py verify-chain --ledger .acx/ledger.jsonl -> pass",
+    "unittest_discover": "python3 -m unittest discover -s tests -p 'test_*.py' -> pass (83 tests)",
+    "canonical_validator": "python3 tools/acx_validate.py -> pass",
+    "canonical_surface_diff": "git diff --exit-code 7274d5429f7683106e14c5cf966da3c2c1341708 -- ACTIVE_CONTEXT_STATE.json ACTIVE_CONTEXT_SCHEMA.json BOOT.md CURRENT_STATE.md NEXT_ACTION.md DECISION_LOCKS.md ARIS_PHASE_LEDGER.md CONTEXT_INDEX.md authority_manifest.json -> pass"
+  },
+  "coverage_matrix": {
+    "R4-COV-01": {
+      "required_scenario": "clean/no state change passes",
+      "covered": true,
+      "evidence": "test_clean_stage_passes"
+    },
+    "R4-COV-02": {
+      "required_scenario": "manual state edit without ledger blocked",
+      "covered": true,
+      "evidence": "test_manual_state_edit_without_ledger_blocked"
+    },
+    "R4-COV-03": {
+      "required_scenario": "manual state edit plus unrelated ledger event blocked",
+      "covered": true,
+      "evidence": "test_manual_state_edit_plus_unrelated_ledger_blocked"
+    },
+    "R4-COV-04": {
+      "required_scenario": "matching staged fold passes",
+      "covered": true,
+      "evidence": "test_matching_staged_fold_passes"
+    },
+    "R4-COV-05": {
+      "required_scenario": "emergency bypass works with explicit message",
+      "covered": true,
+      "evidence": "test_emergency_bypass_prints_message_and_passes"
+    },
+    "R4-COV-06": {
+      "required_scenario": "guard does not modify ACTIVE_CONTEXT_STATE.json",
+      "covered": true,
+      "evidence": "test_guard_does_not_modify_state_or_ledger"
+    },
+    "R4-COV-07": {
+      "required_scenario": "guard does not modify .acx/ledger.jsonl",
+      "covered": true,
+      "evidence": "test_guard_does_not_modify_state_or_ledger"
+    },
+    "R4-COV-08": {
+      "required_scenario": "invalid staged ledger chain blocked",
+      "covered": true,
+      "evidence": "test_invalid_staged_ledger_chain_blocked"
+    }
+  },
+  "worktree": {
+    "authority_manifest_restored": true,
+    "authority_manifest_in_final_diff": false,
+    "expected_final_changes": [
+      ".pre-commit-config.yaml",
+      "tools/acx.py",
+      "docs/acx/ROLLBACK.md",
+      "tests/test_acx_manual_write_block.py",
+      "artifacts/acx/r4_manual_write_block_evidence.json"
+    ]
+  },
+  "notes": [
+    "The canonical validator temporarily regenerated authority_manifest.json during validation, so the file was restored to HEAD before final status checks.",
+    "The manual-write guard prints an explicit bypass message when ACX_DISABLE_HOOK=1 is set.",
+    "The unittest discover run emitted historical BLOCK lines while still exiting successfully."
+  ]
+}

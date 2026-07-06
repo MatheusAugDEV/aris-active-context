@@ -11,3 +11,9 @@ repos:
         entry: python3 -m unittest tests.test_no_legacy_imports
         language: system
         pass_filenames: false
+      - id: acx-manual-write-block
+        name: acx manual write block
+        entry: python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json
+        language: system
+        pass_filenames: false
+        always_run: true

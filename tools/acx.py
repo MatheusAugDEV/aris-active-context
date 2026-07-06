@@ -6,6 +6,7 @@ import importlib.util
 import hashlib
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -63,6 +64,7 @@ SCAN_EXCLUSIONS = {
     AUTHORITY_MANIFEST_FILENAME: "Self-generated advisory output; excluded from scan to avoid manifest recursion.",
     AUTHORITY_EVIDENCE_FILENAME: "Self-generated advisory evidence; excluded from scan to avoid evidence recursion.",
 }
+MANUAL_WRITE_GUARD_MESSAGE = "ACX_DISABLE_HOOK=1 set; manual-write guard bypassed"
 
 
 class LedgerError(RuntimeError):
@@ -89,6 +91,98 @@ def _write_bytes(path: Path, data: bytes) -> None:
 def _write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
+
+
+def _run_git(root: Path, args: list[str]) -> subprocess.CompletedProcess[bytes]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=root,
+        capture_output=True,
+        check=False,
+    )
+
+
+def _git_stdout(root: Path, args: list[str]) -> str:
+    result = subprocess.run(
+        ["git", *args],
+        cwd=root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        message = result.stderr.strip() or result.stdout.strip() or "git command failed"
+        raise LedgerError(message)
+    return result.stdout
+
+
+def _normalize_repo_relative_path(path_value: str, *, root: Path) -> str:
+    path = Path(path_value)
+    if path.is_absolute():
+        try:
+            return path.resolve().relative_to(root).as_posix()
+        except ValueError as exc:
+            raise LedgerError(f"path is outside repo root: {path_value!r}") from exc
+    return path.as_posix()
+
+
+def _git_cached_name_only(root: Path) -> list[str]:
+    output = _git_stdout(root, ["diff", "--cached", "--name-only"])
+    return [line.strip() for line in output.splitlines() if line.strip()]
+
+
+def _git_index_bytes(root: Path, relative_path: str) -> bytes:
+    result = _run_git(root, ["show", f":{relative_path}"])
+    if result.returncode != 0:
+        message = (
+            result.stderr.decode("utf-8", errors="replace").strip()
+            or result.stdout.decode("utf-8", errors="replace").strip()
+            or f"unable to read staged path: {relative_path}"
+        )
+        raise LedgerError(message)
+    return result.stdout
+
+
+def _ledger_entries_from_text(text: str) -> list[tuple[int, dict[str, Any]]]:
+    entries: list[tuple[int, dict[str, Any]]] = []
+    for lineno, raw_line in enumerate(text.splitlines(), 1):
+        line = raw_line.strip()
+        if not line:
+            continue
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise LedgerError(f"line {lineno}: invalid JSON: {exc.msg}") from exc
+        if not isinstance(event, dict):
+            raise LedgerError(f"line {lineno}: event must be a JSON object")
+        entries.append((lineno, event))
+    return entries
+
+
+def _path_bytes_reader_from_root(root: Path):
+    def _reader(path_value: str) -> bytes:
+        return _read_bytes(_resolve_relative_path(path_value, relative_to=root))
+
+    return _reader
+
+
+def _path_bytes_reader_from_index(root: Path):
+    def _reader(path_value: str) -> bytes:
+        relative_path = _normalize_repo_relative_path(path_value, root=root)
+        return _git_index_bytes(root, relative_path)
+
+    return _reader
+
+
+def _read_path_bytes(
+    path_value: str,
+    *,
+    root: Path = ROOT,
+    path_reader: Any = None,
+) -> bytes:
+    if path_reader is not None:
+        return path_reader(path_value)
+    return _read_bytes(_resolve_relative_path(path_value, relative_to=root))
 
 
 def _normalize_root(root: Path | None) -> Path:
@@ -442,20 +536,7 @@ def _resolve_relative_path(path_value: str, *, relative_to: Path = ROOT) -> Path
 def _load_ledger(ledger_path: Path) -> list[tuple[int, dict[str, Any]]]:
     if not ledger_path.exists():
         return []
-    entries: list[tuple[int, dict[str, Any]]] = []
-    with ledger_path.open("r", encoding="utf-8", newline="") as handle:
-        for lineno, raw_line in enumerate(handle, 1):
-            line = raw_line.strip()
-            if not line:
-                continue
-            try:
-                event = json.loads(line)
-            except json.JSONDecodeError as exc:
-                raise LedgerError(f"line {lineno}: invalid JSON: {exc.msg}") from exc
-            if not isinstance(event, dict):
-                raise LedgerError(f"line {lineno}: event must be a JSON object")
-            entries.append((lineno, event))
-    return entries
+    return _ledger_entries_from_text(ledger_path.read_text(encoding="utf-8"))
 
 
 def _ensure_field(
@@ -525,6 +606,7 @@ def _validate_event_record(
     previous_hash: str | None,
     check_baseline: bool,
     root: Path = ROOT,
+    path_reader: Any = None,
 ) -> str:
     if event.get("hash_algorithm") != DEFAULT_HASH_ALGORITHM:
         raise LedgerError(
@@ -562,8 +644,9 @@ def _validate_event_record(
             raise LedgerError(
                 f"line {line_no}: genesis payload baseline_state_path must be a string"
             )
-        resolved = _resolve_relative_path(baseline_path, relative_to=root)
-        state_hash = _state_hash_from_bytes(_read_bytes(resolved))
+        state_hash = _state_hash_from_bytes(
+            _read_path_bytes(baseline_path, root=root, path_reader=path_reader)
+        )
         if event.get("state_blob_hash") != state_hash:
             raise LedgerError(
                 f"line {line_no}: state_blob_hash mismatch: expected {state_hash!r}, "
@@ -591,6 +674,15 @@ def append_event(event_path: Path, ledger_path: Path, *, root: Path = ROOT) -> N
 
 def verify_chain(ledger_path: Path, *, root: Path = ROOT) -> None:
     entries = _load_ledger(ledger_path)
+    _verify_ledger_entries(entries, root=root, path_reader=_path_bytes_reader_from_root(root))
+
+
+def _verify_ledger_entries(
+    entries: list[tuple[int, dict[str, Any]]],
+    *,
+    root: Path = ROOT,
+    path_reader: Any = None,
+) -> None:
     previous_hash = None
     for line_no, event in entries:
         previous_hash = _validate_event_record(
@@ -599,18 +691,23 @@ def verify_chain(ledger_path: Path, *, root: Path = ROOT) -> None:
             previous_hash=previous_hash,
             check_baseline=True,
             root=root,
+            path_reader=path_reader,
         )
 
 
-def _fold_genesis_state(event: dict[str, Any], *, root: Path = ROOT) -> bytes:
+def _fold_genesis_state(
+    event: dict[str, Any],
+    *,
+    root: Path = ROOT,
+    path_reader: Any = None,
+) -> bytes:
     payload = event.get("payload")
     if not isinstance(payload, dict):
         raise LedgerError("genesis payload must be a JSON object")
 
     baseline_path = payload.get("baseline_state_path")
     if isinstance(baseline_path, str):
-        resolved = _resolve_relative_path(baseline_path, relative_to=root)
-        state_bytes = _read_bytes(resolved)
+        state_bytes = _read_path_bytes(baseline_path, root=root, path_reader=path_reader)
         expected_hash = event.get("state_blob_hash")
         if expected_hash is not None and _state_hash_from_bytes(state_bytes) != expected_hash:
             raise LedgerError(
@@ -631,8 +728,12 @@ def _fold_genesis_state(event: dict[str, Any], *, root: Path = ROOT) -> bytes:
     raise LedgerError("genesis payload missing baseline_state_path or baseline_state")
 
 
-def fold(ledger_path: Path, out_path: Path, *, root: Path = ROOT) -> None:
-    entries = _load_ledger(ledger_path)
+def _fold_ledger_entries(
+    entries: list[tuple[int, dict[str, Any]]],
+    *,
+    root: Path = ROOT,
+    path_reader: Any = None,
+) -> bytes:
     if not entries:
         raise LedgerError("ledger is empty")
 
@@ -645,10 +746,11 @@ def fold(ledger_path: Path, out_path: Path, *, root: Path = ROOT) -> None:
             previous_hash=previous_hash,
             check_baseline=True,
             root=root,
+            path_reader=path_reader,
         )
         event_type = event.get("event_type")
         if event_type == "genesis":
-            folded_state = _fold_genesis_state(event, root=root)
+            folded_state = _fold_genesis_state(event, root=root, path_reader=path_reader)
         elif event_type == "violation_advisory":
             continue
         else:
@@ -659,7 +761,44 @@ def fold(ledger_path: Path, out_path: Path, *, root: Path = ROOT) -> None:
     if folded_state is None:
         raise LedgerError("ledger does not contain a genesis event")
 
-    _write_bytes(out_path, folded_state)
+    return folded_state
+
+
+def fold(ledger_path: Path, out_path: Path, *, root: Path = ROOT) -> None:
+    entries = _load_ledger(ledger_path)
+    _write_bytes(out_path, _fold_ledger_entries(entries, root=root, path_reader=_path_bytes_reader_from_root(root)))
+
+
+def guard_manual_write(manifest_path: Path, ledger_path: Path, state_path: Path, *, root: Path = ROOT) -> None:
+    if os.environ.get("ACX_DISABLE_HOOK") == "1":
+        print(MANUAL_WRITE_GUARD_MESSAGE)
+        return
+
+    staged_paths = set(_git_cached_name_only(root))
+    state_rel = _normalize_repo_relative_path(str(state_path), root=root)
+    if state_rel not in staged_paths:
+        return
+
+    manifest = _load_authority_manifest(manifest_path)
+    _validate_authority_manifest_payload(manifest)
+
+    ledger_rel = _normalize_repo_relative_path(str(ledger_path), root=root)
+    staged_state = _git_index_bytes(root, state_rel)
+    staged_ledger_text = _git_index_bytes(root, ledger_rel).decode("utf-8")
+    entries = _ledger_entries_from_text(staged_ledger_text)
+    staged_reader = _path_bytes_reader_from_index(root)
+
+    try:
+        folded_state = _fold_ledger_entries(entries, root=root, path_reader=staged_reader)
+    except LedgerError as exc:
+        raise LedgerError(f"manual write block: {exc}") from exc
+    if folded_state != staged_state:
+        folded_sha = hashlib.sha256(folded_state).hexdigest()
+        staged_sha = hashlib.sha256(staged_state).hexdigest()
+        raise LedgerError(
+            "manual write block: staged ACTIVE_CONTEXT_STATE.json does not match staged ledger fold "
+            f"(state_sha={staged_sha}, folded_sha={folded_sha})"
+        )
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -691,6 +830,13 @@ def _build_parser() -> argparse.ArgumentParser:
     render_parser.add_argument("--check", action="store_true")
     render_parser.add_argument("--manifest", required=True, type=Path)
 
+    guard_parser = subparsers.add_parser("guard")
+    guard_subparsers = guard_parser.add_subparsers(dest="guard_command", required=True)
+    manual_write_parser = guard_subparsers.add_parser("manual-write")
+    manual_write_parser.add_argument("--manifest", required=True, type=Path)
+    manual_write_parser.add_argument("--ledger", required=True, type=Path)
+    manual_write_parser.add_argument("--state", required=True, type=Path)
+
     return parser
 
 
@@ -711,6 +857,8 @@ def main(argv: list[str] | None = None) -> int:
             authority_check(root, args.manifest)
         elif args.command == "render" and args.check:
             render_check(root, args.manifest)
+        elif args.command == "guard" and args.guard_command == "manual-write":
+            guard_manual_write(args.manifest, args.ledger, args.state, root=root)
         else:  # pragma: no cover - argparse prevents this
             raise LedgerError(f"unsupported command: {args.command}")
     except LedgerError as exc:
