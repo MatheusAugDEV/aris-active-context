@@ -1,0 +1,195 @@
+{
+  "all_injections_detected": true,
+  "ci_changed": false,
+  "commands_run": [
+    "python3 tools/acx.py --root /tmp/tmpdo88gn2w render --check --manifest /tmp/tmpdo88gn2w/authority_manifest.json",
+    "LEGACY_SCANNER._collect_violations(tempfile static import)",
+    "LEGACY_SCANNER._collect_violations(tempfile dynamic import)",
+    "ACX.can_transition(ACX-R4 -> ACX-R6)",
+    "ACX.validate_transition_evidence_bundle(missing commands)",
+    "ACX.validate_transition_evidence_bundle(missing files_read)",
+    "ACX.validate_transition_evidence_bundle(stale head)",
+    "ACX.validate_gate_write_allowlist(gate, ['tmp/attack.txt'])",
+    "ACX.scan_advisory_report_prose('READY PASS APPROVED CONCLUIDO', ...)",
+    "python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json",
+    "ACX.validate_transition_rules_revision(candidate_rules)",
+    "ACX.validate_authority_manifest_classifications(mutated_manifest)"
+  ],
+  "detected_count": 12,
+  "files_changed": [
+    "tools/acx.py",
+    "tests/test_acx_infernus_adversarial.py",
+    "artifacts/acx/r7_infernus_acx_adversarial_evidence.json"
+  ],
+  "files_read": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ROADMAP_CANONICAL.md",
+    "BOOT.md",
+    "authority_manifest.json",
+    ".acx/ledger.jsonl",
+    "tools/acx.py",
+    "tests/test_no_legacy_imports.py"
+  ],
+  "hard_mode_enabled": false,
+  "head_after": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "head_before": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "injection_results": [
+    {
+      "detected": true,
+      "expected_violation_type": "render_drift",
+      "injection_id": 1,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "validator_event",
+      "message": "error: BOOT.md drift detected against scripts/render_boot.py",
+      "name": "manual edit to derived_render contradicting canonical JSON"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "legacy_import",
+      "injection_id": 2,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "1: static import 'archive.superseded.legacy_module'",
+      "name": "static import from archive/superseded/*"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "legacy_dynamic_import",
+      "injection_id": 3,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "2: dynamic import 'importlib.util.spec_from_file_location' -> 'legacy archive/superseded/legacy.py'",
+      "name": "dynamic legacy import via importlib/__import__/runpy/SourceFileLoader"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "transition_skip",
+      "injection_id": 4,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "ACX-R4 -> ACX-R6 was rejected because no advisory rule exists for the skip.",
+      "name": "invalid transition skip"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "missing_commands",
+      "injection_id": 5,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "missing required field: commands; commands must be a list",
+      "name": "evidence without commands[]"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "missing_files_read",
+      "injection_id": 6,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "missing required field: files_read; files_read must be a list",
+      "name": "evidence without files_read[]"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "stale_evidence",
+      "injection_id": 7,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "stale bundle: head_before does not match current HEAD",
+      "name": "evidence replayed after base HEAD changed"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "write_outside_allowlist",
+      "injection_id": 8,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "guard_failure",
+      "message": "write outside gate allowlist: tmp/attack.txt",
+      "name": "write outside allowlist declared in generated GATE_APPROVAL"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "decision_vocabulary",
+      "injection_id": 9,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "advisory_violation",
+      "message": "APPROVED, CONCLUIDO, PASS, READY",
+      "name": "agent report contains decision vocabulary"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "manual_write_block",
+      "injection_id": 10,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "guard_failure",
+      "message": "error: manual write block: line 1: state_blob_hash mismatch: expected '549b845b0719a1c12e2144f1ff5c1cd9d8f6fa0e7a76b47e85dd6a3668c69e8a', got 'a8afcd65c0a60531e6b44b5c15a9555be53c3d0ef384d3fa46f519d463aafb51'",
+      "name": "direct manual edit to ACTIVE_CONTEXT_STATE.json without ledger event"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "transition_rules_revision",
+      "injection_id": 11,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "pure_function_rejection",
+      "message": "transition table changed without a new transition_rules_version",
+      "name": "transition table edited in place instead of new version"
+    },
+    {
+      "detected": true,
+      "expected_violation_type": "authority_manifest_classification",
+      "injection_id": 12,
+      "live_ledger_mutated": false,
+      "live_state_mutated": false,
+      "mechanism": "validator_event",
+      "message": "manifest entry class mismatch for BOOT.md: expected 'derived_render', got 'canonical_live'",
+      "name": "new file without class in authority_manifest.json or derived_render treated as canonical_live"
+    }
+  ],
+  "limitations": [
+    "local advisory suite only",
+    "no live state mutation",
+    "no CI execution"
+  ],
+  "live_ledger_mutated_by_suite": false,
+  "live_state_mutated_by_suite": false,
+  "mechanical_detection_only": true,
+  "next_recommended_step": "If accepted, publish the R7 commit and then request operator review for the next phase.",
+  "not_detected_count": 0,
+  "operator_auth": "EXTEND ACX-R7 autorizado.",
+  "operator_extend_authorization": true,
+  "operator_extend_phrase": "EXTEND ACX-R7 autorizado.",
+  "origin_main_after": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "origin_main_before": "1881d5eea2743f17b3a7289e0f61dc8a2cb4f89e",
+  "phase_id": "ACX-R7",
+  "purpose": "Infernus-ACX adversarial closure",
+  "roadmap_changed": false,
+  "rollback_plan": "Delete the local evidence artifact and restore the worktree from git if the operator rejects the closure.",
+  "runtime_product_bedrock_secrets_opened": false,
+  "schema_changed": false,
+  "state_changed": false,
+  "tests_run": [
+    "test_01_manual_edit_to_derived_render_contradicts_canonical_json",
+    "test_02_static_import_from_archive_superseded_is_detected",
+    "test_03_dynamic_legacy_import_via_importlib_is_detected",
+    "test_04_invalid_transition_skip_is_rejected",
+    "test_05_evidence_without_commands_is_detected",
+    "test_06_evidence_without_files_read_is_detected",
+    "test_07_evidence_replayed_after_head_change_is_detected",
+    "test_08_write_outside_gate_allowlist_is_detected",
+    "test_09_agent_report_contains_decision_vocabulary_is_detected",
+    "test_10_direct_manual_edit_to_state_without_ledger_event_is_detected",
+    "test_11_transition_table_edited_in_place_instead_of_new_version_is_detected",
+    "test_12_new_file_without_class_or_derived_render_as_canonical_live_is_detected"
+  ],
+  "visual_log_inspection_used_as_detection": false
+}

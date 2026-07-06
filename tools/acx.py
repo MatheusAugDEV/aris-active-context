@@ -517,6 +517,36 @@ def _authority_check_manifest(manifest: dict[str, Any], *, root: Path) -> None:
         ):
             raise LedgerError(f"manifest class bucket out of sync: {class_name}")
 
+    classification_errors = validate_authority_manifest_classifications(manifest, root=root)
+    if classification_errors:
+        raise LedgerError(classification_errors[0])
+
+
+def validate_authority_manifest_classifications(
+    manifest: Any,
+    *,
+    root: Path = ROOT,
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(manifest, dict):
+        return ["manifest must be a JSON object"]
+
+    entries = manifest.get("entries")
+    if not isinstance(entries, dict):
+        return ["manifest entries must be a JSON object"]
+
+    for path_value, payload in sorted(entries.items()):
+        if not isinstance(payload, dict):
+            continue
+        expected_class, _, _ = _classify_authority_path(path_value)
+        class_name = payload.get("class")
+        if class_name != expected_class:
+            errors.append(
+                "manifest entry class mismatch for "
+                f"{path_value}: expected {expected_class!r}, got {class_name!r}"
+            )
+    return errors
+
 
 def authority_manifest(root: Path, out_path: Path) -> None:
     manifest = _build_authority_manifest(root)
@@ -1006,6 +1036,31 @@ def can_transition(
     return True
 
 
+def validate_transition_rules_revision(
+    candidate_rules: Any,
+    *,
+    baseline_rules: dict[str, Any] | None = None,
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(candidate_rules, dict):
+        return ["transition rules must be a JSON object"]
+
+    baseline = baseline_rules if isinstance(baseline_rules, dict) else ADVISORY_TRANSITION_RULES
+    candidate_version = candidate_rules.get("transition_rules_version")
+    candidate_transitions = candidate_rules.get("transitions")
+    baseline_version = baseline.get("transition_rules_version")
+    baseline_transitions = baseline.get("transitions")
+
+    if not isinstance(candidate_version, str) or not candidate_version.strip():
+        errors.append("transition_rules_version must be a non-empty string")
+    if not isinstance(candidate_transitions, dict):
+        errors.append("transitions must be a JSON object")
+    if candidate_version == baseline_version and candidate_transitions != baseline_transitions:
+        errors.append("transition table changed without a new transition_rules_version")
+
+    return errors
+
+
 def scan_advisory_report_prose(
     report_text: str,
     *,
@@ -1039,6 +1094,39 @@ def scan_advisory_report_prose(
                 }
                 )
     return violations
+
+
+def validate_gate_write_allowlist(
+    gate: Any,
+    changed_files: Any,
+    *,
+    root: Path = ROOT,
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(gate, dict):
+        return ["gate approval must be a JSON object"]
+
+    allowlist = gate.get("allowlist")
+    if not isinstance(allowlist, list):
+        return ["allowlist must be a list"]
+    if not isinstance(changed_files, list):
+        return ["changed_files must be a list"]
+
+    normalized_allowlist: set[str] = set()
+    for item in allowlist:
+        if not isinstance(item, str) or not item.strip():
+            continue
+        normalized_allowlist.add(_normalize_repo_relative_path(item, root=root))
+
+    for item in changed_files:
+        if not isinstance(item, str) or not item.strip():
+            errors.append("changed_files must contain only non-empty strings")
+            continue
+        normalized_item = _normalize_repo_relative_path(item, root=root)
+        if normalized_item not in normalized_allowlist:
+            errors.append(f"write outside gate allowlist: {normalized_item}")
+
+    return errors
 
 
 def _phase_slug(phase_id: str) -> str:
