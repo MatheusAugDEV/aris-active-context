@@ -6,6 +6,7 @@ import importlib.util
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -65,6 +66,31 @@ SCAN_EXCLUSIONS = {
     AUTHORITY_EVIDENCE_FILENAME: "Self-generated advisory evidence; excluded from scan to avoid evidence recursion.",
 }
 MANUAL_WRITE_GUARD_MESSAGE = "ACX_DISABLE_HOOK=1 set; manual-write guard bypassed"
+ACX_MODE_ADVISORY = "advisory"
+ACX_MODE_HARD = "hard"
+TRANSITION_RULES_VERSION = "acx-r5-advisory-v1"
+ADVISORY_REPORT_PROSE_TOKENS = (
+    "PASS",
+    "DONE",
+    "CONCLUÍDO",
+    "CONCLUIDO",
+    "APROVADO",
+    "APPROVED",
+    "READY",
+)
+ADVISORY_TRANSITION_RULES = {
+    "transition_rules_version": TRANSITION_RULES_VERSION,
+    "transitions": {
+        "ACX-R4": {
+            "ACX-R5": {
+                "required_mode": ACX_MODE_ADVISORY,
+                "require_clean_git_status": True,
+                "require_empty_files_changed": True,
+                "require_artifact_hashes": True,
+            }
+        }
+    },
+}
 
 
 class LedgerError(RuntimeError):
@@ -799,6 +825,205 @@ def guard_manual_write(manifest_path: Path, ledger_path: Path, state_path: Path,
             "manual write block: staged ACTIVE_CONTEXT_STATE.json does not match staged ledger fold "
             f"(state_sha={staged_sha}, folded_sha={folded_sha})"
         )
+
+
+def current_acx_mode() -> str:
+    return os.environ.get("ACX_MODE", ACX_MODE_ADVISORY)
+
+
+def hard_mode_enabled() -> bool:
+    return current_acx_mode() == ACX_MODE_HARD
+
+
+def _validate_sha256_hex(value: Any) -> bool:
+    return isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value) is not None
+
+
+def validate_transition_artifacts(artifacts: Any, *, root: Path = ROOT) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(artifacts, list):
+        return ["artifacts must be a list"]
+    for index, artifact in enumerate(artifacts):
+        if not isinstance(artifact, dict):
+            errors.append(f"artifacts[{index}] must be a JSON object")
+            continue
+        path_value = artifact.get("path")
+        sha256_value = artifact.get("sha256")
+        if not isinstance(path_value, str) or not path_value:
+            errors.append(f"artifacts[{index}].path must be a non-empty string")
+            continue
+        if not _validate_sha256_hex(sha256_value):
+            errors.append(f"artifacts[{index}].sha256 must be a sha256 hex digest")
+            continue
+        resolved = _resolve_relative_path(path_value, relative_to=root)
+        if not resolved.exists():
+            errors.append(f"artifacts[{index}].path missing on disk: {path_value}")
+            continue
+        actual_sha256 = hashlib.sha256(resolved.read_bytes()).hexdigest()
+        if actual_sha256 != sha256_value:
+            errors.append(
+                f"artifacts[{index}].sha256 mismatch for {path_value}: expected {actual_sha256!r}, got {sha256_value!r}"
+            )
+    return errors
+
+
+def validate_transition_evidence_bundle(
+    bundle: Any,
+    *,
+    current_head: str | None = None,
+    root: Path = ROOT,
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(bundle, dict):
+        return ["evidence bundle must be a JSON object"]
+
+    required_fields = [
+        "phase_id",
+        "from_phase",
+        "to_phase",
+        "mode",
+        "head_before",
+        "head_after",
+        "git_status_before",
+        "git_status_after",
+        "files_read",
+        "files_changed",
+        "commands",
+        "artifacts",
+        "rollback_plan",
+        "limitations",
+        "transition_rules_version",
+    ]
+    for field in required_fields:
+        if field not in bundle:
+            errors.append(f"missing required field: {field}")
+
+    if bundle.get("mode") != ACX_MODE_ADVISORY:
+        errors.append("mode must be 'advisory'")
+    if bundle.get("transition_rules_version") != TRANSITION_RULES_VERSION:
+        errors.append(
+            "transition_rules_version must be "
+            f"{TRANSITION_RULES_VERSION!r}"
+        )
+
+    for field in ("phase_id", "from_phase", "to_phase", "head_before", "head_after", "rollback_plan"):
+        value = bundle.get(field)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{field} must be a non-empty string")
+
+    for field in ("git_status_before", "git_status_after"):
+        value = bundle.get(field)
+        if not isinstance(value, str):
+            errors.append(f"{field} must be a string")
+
+    for field in ("files_read", "files_changed", "commands", "limitations"):
+        value = bundle.get(field)
+        if not isinstance(value, list):
+            errors.append(f"{field} must be a list")
+            continue
+        if any(not isinstance(item, str) or not item.strip() for item in value):
+            errors.append(f"{field} must contain only non-empty strings")
+
+    artifacts = bundle.get("artifacts")
+    errors.extend(validate_transition_artifacts(artifacts, root=root))
+
+    if current_head is not None and bundle.get("head_before") != current_head:
+        errors.append(
+            "stale bundle: head_before does not match current HEAD"
+        )
+
+    files_changed = bundle.get("files_changed")
+    if isinstance(files_changed, list) and not files_changed:
+        if bundle.get("git_status_before") != "" or bundle.get("git_status_after") != "":
+            errors.append("read-only evidence must have empty git_status_before and git_status_after")
+        if bundle.get("head_before") != bundle.get("head_after"):
+            errors.append("read-only evidence must keep head_before equal to head_after")
+
+    return errors
+
+
+def _get_transition_rule(rules: dict[str, Any], from_phase: str, to_phase: str) -> dict[str, Any] | None:
+    transitions = rules.get("transitions")
+    if not isinstance(transitions, dict):
+        return None
+    from_rules = transitions.get(from_phase)
+    if not isinstance(from_rules, dict):
+        return None
+    rule = from_rules.get(to_phase)
+    if not isinstance(rule, dict):
+        return None
+    return rule
+
+
+def can_transition(
+    from_phase: str,
+    to_phase: str,
+    evidence: Any,
+    rules: dict[str, Any],
+    *,
+    current_head: str | None = None,
+    root: Path = ROOT,
+) -> bool:
+    if not isinstance(rules, dict):
+        return False
+    if rules.get("transition_rules_version") != TRANSITION_RULES_VERSION:
+        return False
+    rule = _get_transition_rule(rules, from_phase, to_phase)
+    if rule is None:
+        return False
+    if not isinstance(evidence, dict):
+        return False
+    if evidence.get("from_phase") != from_phase or evidence.get("to_phase") != to_phase:
+        return False
+    if evidence.get("mode") != ACX_MODE_ADVISORY:
+        return False
+    effective_current_head = current_head if current_head is not None else evidence.get("head_before")
+    if validate_transition_evidence_bundle(evidence, current_head=effective_current_head, root=root):
+        return False
+    if rule.get("required_mode") not in {None, ACX_MODE_ADVISORY}:
+        return False
+    if rule.get("require_clean_git_status") and (
+        evidence.get("git_status_before") != "" or evidence.get("git_status_after") != ""
+    ):
+        return False
+    if rule.get("require_empty_files_changed") and evidence.get("files_changed"):
+        return False
+    return True
+
+
+def scan_advisory_report_prose(
+    report_text: str,
+    *,
+    phase_id: str,
+    from_phase: str,
+    to_phase: str,
+) -> list[dict[str, Any]]:
+    if not isinstance(report_text, str):
+        return []
+
+    report_upper = report_text.upper()
+    violations: list[dict[str, Any]] = []
+    seen_tokens: set[str] = set()
+    for token in ADVISORY_REPORT_PROSE_TOKENS:
+        if token in seen_tokens:
+            continue
+        if token.upper() in report_upper:
+            seen_tokens.add(token)
+            violations.append(
+                {
+                    "event_type": "violation_advisory",
+                    "phase_id": phase_id,
+                    "payload": {
+                        "violated_rule": "advisory_report_prose",
+                        "from_phase": from_phase,
+                        "to_phase": to_phase,
+                        "matched_token": token,
+                        "severity": "low",
+                        "supporting_evidence": "report text contains agent-decision language",
+                    },
+                }
+            )
+    return violations
 
 
 def _build_parser() -> argparse.ArgumentParser:

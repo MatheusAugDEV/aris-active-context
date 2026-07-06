@@ -1,0 +1,108 @@
+{
+  "phase_id": "ACX-R5",
+  "purpose": "advisory_evidence_and_transition_guards_foundation",
+  "mode": "advisory",
+  "advisory_only": true,
+  "hard_mode_enabled": false,
+  "schema_changed": false,
+  "roadmap_changed": false,
+  "state_changed": false,
+  "runtime_product_bedrock_secrets_opened": false,
+  "transition_rules_version": "acx-r5-advisory-v1",
+  "head_before": "ba251ece18b3ca1d5f46a1928a5a745b48e90426",
+  "head_after": "POST_COMMIT_SHA_REPORTED_EXTERNALLY",
+  "head_after_policy": "not_embedded_in_same_commit_artifact_to_avoid_git_self_reference",
+  "origin_main_before": "ba251ece18b3ca1d5f46a1928a5a745b48e90426",
+  "origin_main_after": "POST_PUSH_SHA_REPORTED_EXTERNALLY",
+  "origin_main_after_policy": "not_embedded_in_same_commit_artifact_to_avoid_git_self_reference",
+  "git_status_before": "",
+  "git_status_after": "",
+  "files_read": [
+    "ACTIVE_CONTEXT_STATE.json",
+    "ACTIVE_CONTEXT_SCHEMA.json",
+    "tools/acx_validate.py",
+    "CURRENT_STATE.md",
+    "NEXT_ACTION.md",
+    "DECISION_LOCKS.md",
+    "ARIS_BOOT.md",
+    "BOOT.md",
+    "LAB_OPERATING_CONTRACT.md",
+    "CONTEXT_INDEX.md",
+    "ARIS_PHASE_LEDGER.md",
+    "README.md",
+    "docs/acx/ACX_SPEC.md",
+    "docs/acx/ROLLBACK.md",
+    "tools/acx.py",
+    "authority_manifest.json",
+    ".pre-commit-config.yaml",
+    "tests/test_acx_evidence_transition_guards.py",
+    "tests/test_acx_manual_write_block.py",
+    "tests/test_acx_authority_manifest.py",
+    "tests/test_acx_ledger_shadow.py",
+    "tests/test_no_legacy_imports.py"
+  ],
+  "files_changed": [
+    "artifacts/acx/r5_evidence_transition_advisory_evidence.json",
+    "tests/test_acx_evidence_transition_guards.py",
+    "tools/acx.py"
+  ],
+  "commands_run": [
+    "git rev-parse --show-toplevel",
+    "git branch --show-current",
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/main",
+    "git status --short --branch",
+    "git status --porcelain",
+    "git log --oneline -8",
+    "python3 tools/acx_validate.py",
+    "python3 -m unittest tests.test_acx_evidence_transition_guards",
+    "python3 -m unittest tests.test_acx_manual_write_block",
+    "python3 -m unittest tests.test_acx_authority_manifest",
+    "python3 -m unittest tests.test_acx_ledger_shadow",
+    "python3 -m unittest tests.test_no_legacy_imports",
+    "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "python3 tools/acx.py verify-chain --ledger .acx/ledger.jsonl",
+    "python3 tools/acx.py guard manual-write --manifest authority_manifest.json --ledger .acx/ledger.jsonl --state ACTIVE_CONTEXT_STATE.json",
+    "grep -nE \"can_transition|ACX_MODE|phase open|phase close|transition|evidence|violation_advisory|PASS|DONE|CONCLU|APROV\" tools/acx.py docs/acx/ACX_SPEC.md docs/acx/ROLLBACK.md tests/*.py || true"
+  ],
+  "tests_run": [
+    "python3 -m unittest tests.test_acx_evidence_transition_guards -> pass (11 tests)",
+    "python3 -m unittest tests.test_acx_manual_write_block -> pass (8 tests)",
+    "python3 -m unittest tests.test_acx_authority_manifest -> pass (5 tests)",
+    "python3 -m unittest tests.test_acx_ledger_shadow -> pass (8 tests)",
+    "python3 -m unittest tests.test_no_legacy_imports -> pass (1 test)",
+    "python3 -m unittest discover -s tests -p 'test_*.py' -> pass (94 tests)"
+  ],
+  "validations": {
+    "transition_acceptance": "pass",
+    "invalid_transition_rejected": "pass",
+    "incomplete_evidence_rejected": "pass",
+    "stale_bundle_rejected": "pass",
+    "dirty_read_only_evidence_rejected": "pass",
+    "pass_like_prose_generates_violation_data": "pass",
+    "advisory_violation_no_canonical_mutation": "pass",
+    "hard_mode_default_disabled": "pass",
+    "explicit_transition_rule_version": "pass",
+    "artifact_sha256_validation": "pass",
+    "real_ledger_verify_chain": "pass",
+    "manual_write_guard": "pass",
+    "canonical_validator": "pass"
+  },
+  "artifacts": [
+    {
+      "path": "tools/acx.py",
+      "sha256": "73c86edecdd87c7432f440bb02856218b56282785494bb8d77013c2b3ca1b7ef"
+    },
+    {
+      "path": "tests/test_acx_evidence_transition_guards.py",
+      "sha256": "2d57eb85ad666693b5d316f5f248bc58c67915fc8c3a3fb36e6fb4d79f82adcd"
+    }
+  ],
+  "rollback_plan": "If advisory evidence or transition validation proves too permissive, revert the R5 commit and keep ACX-R4 hard manual-write blocking intact; do not alter state, schema, roadmap, or CI.",
+  "limitations": [
+    "Advisory mode does not block transitions by itself; it only records evidence and returns a pure can_transition result.",
+    "Report prose scanning is advisory lint and does not rewrite canonical state.",
+    "authority_manifest.json is advisory residue during validation and may need restoration before final status."
+  ],
+  "next_recommended_step": "publish ACX-R5 after reconciling advisory manifest residue and verifying CI"
+}
