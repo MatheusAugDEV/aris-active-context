@@ -180,11 +180,12 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (HISTÓRICO — Fase 4, substituído pelo estado vivo no topo deste documento; relabeled by active-context doctor 2026-07-07)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- `next_phase` (à época): `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `next_phase_authorized_by_operator` (à época): `true`
+- Próxima subfase recomendada (à época): `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- Estado vivo atual (`ACTIVE_CONTEXT_STATE.json`): `next_phase: null`, `next_phase_authorized_by_operator: false`, candidate-only route `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Aguardando instrução explícita do operador.
 
 ---
