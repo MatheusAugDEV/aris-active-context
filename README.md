@@ -8,13 +8,9 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
-- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
-- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
-- Decision: `pass`.
-- Status: `if09_closure_milestone_mirror_sanity_pass`.
-- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
-- Historical P19/P20 snapshot and downstream notes remain below for audit context.
+
+<!-- HISTORICAL_ONLY: superseded duplicate "Current snapshot" block (IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET, sha_lido a98fb3c51cfac6e0832e56202e577062e9d37577) removed by active-context doctor 2026-07-07 as stale mirror drift; the live snapshot is the one above, sourced from ACTIVE_CONTEXT_STATE.json. -->
+
 # aris-active-context
 
 ## Leia Primeiro
@@ -85,14 +81,16 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Estado canônico histórico (IF09 Closure Milestone — HISTORICAL_ONLY, NOT_CURRENT_STATE)
 
-phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
-status: if09_closure_milestone_mirror_sanity_pass
-latest_completed_phase: IF09 Closure Milestone Mirror Sanity Packet
-latest_completed_status: if09_closure_milestone_mirror_sanity_pass
-next_phase: null
-next_recommended_step: Nenhuma transição definida. Aguardando instrução do operador.
+> O estado vivo atual é o "## Current snapshot" no topo deste documento, derivado de `ACTIVE_CONTEXT_STATE.json` (`phase_id: LAPIDARIUM_FASE_6_GUARDA_TRUE`). O bloco abaixo é o registro histórico da fase IF09 Closure Milestone e não descreve o estado vivo atual. Relabeled by active-context doctor 2026-07-07 to remove ambiguity (was presented above the Historical Appendix boundary without an explicit historical tag).
+
+phase_id (à época): IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
+status (à época): if09_closure_milestone_mirror_sanity_pass
+latest_completed_phase (à época): IF09 Closure Milestone Mirror Sanity Packet
+latest_completed_status (à época): if09_closure_milestone_mirror_sanity_pass
+next_phase (à época): null
+next_recommended_step (à época): Nenhuma transição definida. Aguardando instrução do operador.
 technical_roadmap_post_infernus: project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md
 Todos execution_locks: false
 Selected branch: `TRACK_REVALIDATION_FIRST`
