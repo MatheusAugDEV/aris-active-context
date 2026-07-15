@@ -8,7 +8,7 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
+## Historical snapshot (superseded — see current snapshot above)
 - Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
 - Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
 - Decision: `pass`.

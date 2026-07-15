@@ -180,12 +180,14 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (current canonical, synced with ACTIVE_CONTEXT_STATE.json)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- `next_phase`: `null`
+- `next_phase_authorized_by_operator`: `false`
+- Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE` (roadmap_cursor.state=CANDIDATE, não ativado)
 - Aguardando instrução explícita do operador.
+
+`HISTORICAL (Fase 4 era, superseded)`: este bloco antes afirmava `next_phase=LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO` e `next_phase_authorized_by_operator=true`, com subfase recomendada `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`. Ambas as fases já foram concluídas (ver seções Fase 4 e Fase 4B acima); os valores estavam desatualizados frente ao JSON vivo e foram corrigidos nesta sincronização.
 
 ---
 
