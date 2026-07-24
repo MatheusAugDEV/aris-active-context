@@ -8,6 +8,14 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
+## Historical Appendix (superseded snapshots below)
+
+HISTORICAL_ONLY
+SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE_LIVE_STATE
+NOT_CURRENT_STATE
+
+As seções abaixo (até o próximo marcador "Historical Appendix") preservam snapshots anteriores para auditoria e não descrevem o estado vivo atual. O estado vivo atual é exclusivamente o snapshot acima ("Current snapshot" no topo deste arquivo).
+
 ## Current snapshot
 - Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
 - Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
