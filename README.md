@@ -8,13 +8,6 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
-- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
-- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
-- Decision: `pass`.
-- Status: `if09_closure_milestone_mirror_sanity_pass`.
-- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
-- Historical P19/P20 snapshot and downstream notes remain below for audit context.
 # aris-active-context
 
 ## Leia Primeiro
@@ -85,6 +78,14 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
+## Historical Appendix (IF09 Closure Milestone snapshot)
+
+HISTORICAL_ONLY
+SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE
+NOT_CURRENT_STATE
+
+A seção "Estado canônico atual" abaixo, e tudo que a segue até o próximo "## Historical Appendix", descreve o estado histórico da fase `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` e trilhas anteriores, preservado para auditoria. O estado canônico vivo atual é `LAPIDARIUM_FASE_6_GUARDA_TRUE` — ver `ACTIVE_CONTEXT_STATE.json` e o bloco "Current snapshot" no topo deste arquivo.
+
 ## Estado canônico atual
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
@@ -106,13 +107,7 @@ O packet canônico de mirror sanity está registrado em `artifacts/active_contex
 
 Como artifact family desta fase viva, o repositório agora registra `artifacts/active_context/if09_closure_milestone_sanity_packet.json`, `if09_closure_milestone_mirror_drift_matrix.json`, `if09_closure_milestone_superseded_notes_manifest.json`, `if09_closure_milestone_no_real_execution_attestation.json`, `if09_closure_milestone_validation_evidence.json`, `artifacts/benchuix/benchuix_route_opening_candidate.json` e `benchuix_pre_route_scope_note.json`. Esses artifacts mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados, rotulam stale notes como `HISTORICAL_ONLY`, `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` e `NOT_CURRENT_STATE`, e deixam BenchUIX estritamente fora da rota viva.
 
-## Historical Appendix
-
-HISTORICAL_ONLY
-SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
-NOT_CURRENT_STATE
-
-As seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual.
+(Continuação do apêndice histórico: as seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual.)
 
 ## PURG-04 proof-loop corpus materialization
 

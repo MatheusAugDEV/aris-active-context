@@ -147,6 +147,14 @@
 - F5-016/.env manual rotation packet created; `.env` was not read or printed.
 - No PostScript execution or rendering was performed.
 
+## Historical Appendix (pre-Fase 6 Lapidarium log)
+
+`HISTORICAL_ONLY`
+`SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE`
+`NOT_CURRENT_STATE`
+
+As seções abaixo (Fase 4B, Fase 4, F4-FIND-001, Execution Locks e o antigo campo `next_phase`) registram o log histórico do Lapidarium anterior à trilha True e não descrevem o estado vivo atual. O `next_phase` canônico vivo é `null` (ver `ACTIVE_CONTEXT_STATE.json`); o valor `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO` abaixo é um ponteiro histórico já superado (rastreado em `ACTIVE_CONTEXT_STATE.json.lapidarium_stale_next_phase`).
+
 ### Fase 4B — Dataset Generator Quoting Repair (Concluída 2026-06-30)
 
 - `lapidarium_fase4b_decision`: `pass`
@@ -199,10 +207,4 @@
 - Itens F5-013/F5-014/F5-015 continuam BLOQUEADOS e intocados
 - `.env` não foi lido/imprimido
 
-## Historical Appendix
-
-`HISTORICAL_ONLY`
-`SUPERSEDED_BY_LAPIDARIUM_FASE4_AND_F4_FIND001_CONTAINMENT`
-`NOT_CURRENT_STATE`
-
-Seções de IF09 e P15–P19 são históricas. A fase viva é LAPIDARIUM.
+(Continuação do apêndice histórico: seções de IF09 e P15–P19 também são históricas. A fase viva atual é `LAPIDARIUM_FASE_6_GUARDA_TRUE`.)
