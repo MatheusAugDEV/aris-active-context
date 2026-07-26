@@ -182,9 +182,9 @@
 
 ### next_phase
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- `next_phase`: `null`
+- `next_phase_authorized_by_operator`: `false`
+- Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`
 - Aguardando instrução explícita do operador.
 
 ---
