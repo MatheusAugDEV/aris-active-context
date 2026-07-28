@@ -180,16 +180,17 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (HISTORICAL — SUPERSEDED)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
-- Aguardando instrução explícita do operador.
+`HISTORICAL_ONLY` — snapshot anterior à Fase 4. Valor vivo atual em `ACTIVE_CONTEXT_STATE.json`: `next_phase`: `null`, `next_phase_authorized_by_operator`: `false`. Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
+
+- `next_phase` (histórico): `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `next_phase_authorized_by_operator` (histórico): `true`
+- Próxima subfase recomendada (histórico): `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
 
 ---
 
-### Fase 5 — Remaining Low Scope Review (Concluída 2026-06-29)
+### Fase 5 — Remaining Low Scope Review (Concluída 2026-06-29) (HISTORICAL — SUPERSEDED por "Fase 5 — Remaining Low Scope Cleanup Execution", 2026-06-30, acima)
 
 - `lapidarium_fase5_remaining_low_scope_review_decision`: `pass`
 - `lapidarium_fase5_remaining_low_scope_no_cleanup_executed`: `true`
