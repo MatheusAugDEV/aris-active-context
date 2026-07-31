@@ -180,12 +180,14 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (HISTORICAL_ONLY — Fase 4 era, superseded)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
-- Aguardando instrução explícita do operador.
+> Live value in `ACTIVE_CONTEXT_STATE.json`: `next_phase: null`, `next_phase_authorized_by_operator: false`. The block below is a historical snapshot from the Fase 4 era and does not describe the current live route.
+
+- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO` (historical, no longer live)
+- `next_phase_authorized_by_operator`: `true` (historical, no longer live)
+- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR` (historical)
+- Aguardando instrução explícita do operador. (historical narrative)
 
 ---
 
