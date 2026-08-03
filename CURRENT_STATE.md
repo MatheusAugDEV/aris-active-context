@@ -180,12 +180,13 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (histórico — Fase 4, superseded)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
-- Aguardando instrução explícita do operador.
+> Bloco histórico do momento em que Fase 4 era o next_phase vivo. Superseded pelas Fases 4B/5/6 acima. O `next_phase` vivo atual é `null` (ver topo deste arquivo e `ACTIVE_CONTEXT_STATE.json`).
+
+- `next_phase` (à época): `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `next_phase_authorized_by_operator` (à época): `true`
+- Próxima subfase recomendada (à época): `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
 
 ---
 
