@@ -8,7 +8,10 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
+## Historical State Snapshot (IF09 era — SUPERSEDED)
+
+> HISTORICAL_ONLY — supersedido pelo Current snapshot acima (LAPIDARIUM_FASE_6_GUARDA_TRUE).
+
 - Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
 - Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
 - Decision: `pass`.
@@ -85,7 +88,9 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Estado canônico anterior (IF09 era — SUPERSEDED)
+
+> HISTORICAL_ONLY — ver Current snapshot no topo do arquivo para o estado vivo atual.
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
