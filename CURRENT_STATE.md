@@ -180,12 +180,13 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (histórico — Fase 4, superseded)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
-- Aguardando instrução explícita do operador.
+`HISTORICAL_ONLY` — os valores abaixo refletiam o estado durante a Fase 4 e estão desatualizados frente ao JSON vivo.
+
+- `next_phase` (live, `ACTIVE_CONTEXT_STATE.json`): `null`
+- `next_phase_authorized_by_operator` (live): `false`
+- Candidate-only next route (live): `DIAGNOSTICO_AUTOMACAO_GATE`
 
 ---
 
@@ -202,7 +203,7 @@
 ## Historical Appendix
 
 `HISTORICAL_ONLY`
-`SUPERSEDED_BY_LAPIDARIUM_FASE4_AND_F4_FIND001_CONTAINMENT`
+`SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE`
 `NOT_CURRENT_STATE`
 
 Seções de IF09 e P15–P19 são históricas. A fase viva é LAPIDARIUM.

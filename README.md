@@ -8,7 +8,10 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
+
+`HISTORICAL_ONLY` — the "Current snapshot" block below (`IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`) is a superseded pre-Lapidarium snapshot, retained for audit continuity. It does not describe the live state; see the snapshot above and `ACTIVE_CONTEXT_STATE.json` for the current canonical state.
+
+## Current snapshot (historical, pre-Lapidarium)
 - Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
 - Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
 - Decision: `pass`.
@@ -85,7 +88,9 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Estado canônico atual (histórico, pré-Lapidarium)
+
+`HISTORICAL_ONLY` — esta seção descreve um estado pré-Lapidarium e está desatualizada frente ao JSON vivo. O `phase_id` canônico atual é `LAPIDARIUM_FASE_6_GUARDA_TRUE` (ver "Current snapshot" no topo deste arquivo e `ACTIVE_CONTEXT_STATE.json`).
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
