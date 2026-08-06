@@ -182,9 +182,11 @@
 
 ### next_phase
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+`HISTORICAL_ONLY` — bloco abaixo descreve o estado no início da Fase 4 e foi superado pelas Fases 4B/5/6 True já registradas acima. Valores vivos atuais: `next_phase`: `null`, `next_phase_authorized_by_operator`: `false`. Rota candidata (não autorizada): `DIAGNOSTICO_AUTOMACAO_GATE`.
+
+- ~~`next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`~~
+- ~~`next_phase_authorized_by_operator`: `true`~~
+- ~~Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`~~
 - Aguardando instrução explícita do operador.
 
 ---

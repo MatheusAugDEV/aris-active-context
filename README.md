@@ -66,7 +66,8 @@ raiz/
   INFERNUS_STANDING_AUTHORIZATION.md
   EXCLUDENT_POLICY.md
   BEDROCK_GATE.md
-  scripts/                         ← validate_active_context_state.py
+  scripts/                         ← render_boot.py, check_boot_sync.py, mirror/fixture asserts
+  tools/                           ← acx_validate.py (validador canônico)
   artifacts/                       ← evidence chain
   project_mirror/                  ← espelho do projeto principal
   excludent/                       ← quarentena (nunca lido por padrão)
@@ -85,7 +86,18 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Estado vivo atual
+
+> Ver `ACTIVE_CONTEXT_STATE.json` para a fonte de verdade. Resumo (não normativo):
+
+phase_id: LAPIDARIUM_FASE_6_GUARDA_TRUE
+status: lapidarium_fase6_guarda_true_pass
+next_phase: null
+active_next_phase: null
+roadmap_cursor: DIAGNOSTICO_AUTOMACAO_GATE (CANDIDATE, não autorizado)
+Todos execution_locks: false
+
+## Estado canônico atual (HISTÓRICO — SUPERSEDED — ver "Estado vivo atual" acima)
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
