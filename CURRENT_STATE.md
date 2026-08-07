@@ -180,12 +180,14 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (HISTORICAL_ONLY — SUPERSEDED)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
-- Aguardando instrução explícita do operador.
+`HISTORICAL_ONLY`. Snapshot from the Fase 4 authorization window (pre-dates Lapidarium True Fase 2–6 and the Fase 6 Guarda closure). Superseded; do not treat as current.
+
+- `next_phase` (at the time): `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
+- `next_phase_authorized_by_operator` (at the time): `true`
+- Próxima subfase recomendada (at the time): `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- **Live canonical value now:** `next_phase: null`, `active_next_phase: null` (see `ACTIVE_CONTEXT_STATE.json`; candidate-only next route is `DIAGNOSTICO_AUTOMACAO_GATE`).
 
 ---
 
