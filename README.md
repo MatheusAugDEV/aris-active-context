@@ -85,7 +85,7 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Estado canônico atual (HISTÓRICO — SUPERSEDED_BY_LAPIDARIUM_FASE_6_GUARDA_TRUE — ver "Current snapshot" no topo do arquivo para o estado vivo)
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
