@@ -8,13 +8,7 @@
 - Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Product promotion remains false.
 - Runtime mutation, network use, dependency install, MCP activation, Obsidian bulk read, and Vault write remain blocked.
-## Current snapshot
-- Latest completed phase: `IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET` (superseded snapshot below remains historical).
-- Next authorized phase: `none` (current canonical `next_phase` is `null` in `ACTIVE_CONTEXT_STATE.json`).
-- Decision: `pass`.
-- Status: `if09_closure_milestone_mirror_sanity_pass`.
-- sha_lido: `a98fb3c51cfac6e0832e56202e577062e9d37577`.
-- Historical P19/P20 snapshot and downstream notes remain below for audit context.
+
 # aris-active-context
 
 ## Leia Primeiro
@@ -40,7 +34,7 @@ Este repositório responde três perguntas:
 
 `ROADMAP_CANONICAL.md` é a única autoridade de roadmap macro ativa ("ARIS ROADMAP CANONICAL — CAMADAS E OBJETIVOS"), baseada no documento do operador `operator_inputs/roadmap_aris_camadas_objetivos.md`. Roadmaps de fase/subsistema (ex.: `project_mirror/docs/purgatorium_full/purgatorium_roadmapcanon.md`) são subordinados e nunca vencem `ACTIVE_CONTEXT_STATE.json` nem `ROADMAP_CANONICAL.md`. Roadmaps macro concorrentes devem estar em `excludent/` (ver `EXCLUDENT_POLICY.md`).
 
-A canonicalização do roadmap macro foi registrada e validada no commit `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09` (ver `DECISION_LOCKS.md` § "Active-Context Post-Roadmap Canonical Sync" e `artifacts/roadmap/post_roadmap_canonical_sync_decision.json`). `ACTIVE_CONTEXT_STATE.json` permanece inalterado (sem novos campos, `additionalProperties: false` no schema); a Macro Próxima fase futura permanece documental, não consumida pelo validador, e a rota viva (`active_next_phase=PURG-01`) permanece preservada.
+A canonicalização do roadmap macro foi registrada e validada no commit `dcf1e7cfd7473e3d83fd7d50a9a27f33dc798a09` (ver `DECISION_LOCKS.md` § "Active-Context Post-Roadmap Canonical Sync" e `artifacts/roadmap/post_roadmap_canonical_sync_decision.json`). `ACTIVE_CONTEXT_STATE.json` permanece inalterado (sem novos campos, `additionalProperties: false` no schema); a Macro Próxima fase futura permanece documental, não consumida pelo validador. Na época desse commit a rota viva era `active_next_phase=PURG-01`; a rota viva atual é a de `ACTIVE_CONTEXT_STATE.json` (`active_next_phase=null`, ver `## Current snapshot` no topo deste arquivo).
 
 ## Referência sob demanda
 
@@ -85,7 +79,15 @@ Markdown que contradiz o JSON = drift. O JSON vence sempre.
 PASS só existe com: CI terminal green + validator pass + artifact no disco.
 Resposta sem SHA no topo = INVALID.
 
-## Estado canônico atual
+## Historical Appendix
+
+HISTORICAL_ONLY
+SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
+NOT_CURRENT_STATE
+
+As seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual. O estado vivo atual é o bloco `## Current snapshot` no topo deste arquivo.
+
+## Estado histórico (IF09 Closure Milestone Mirror Sanity Packet — superseded)
 
 phase_id: IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET
 status: if09_closure_milestone_mirror_sanity_pass
@@ -105,14 +107,6 @@ Project_ARIS main workspace: não alterado por este IF09 closure milestone mirro
 O packet canônico de mirror sanity está registrado em `artifacts/active_context/if09_closure_milestone_sanity_packet.json`. Ele consome a row viva `INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET -> IF09_CLOSURE_MILESTONE_MIRROR_SANITY_PACKET`, preserva `next_phase=null` e `active_next_phase=null`, reafirma `finding_closed=true`, `remediation_proven=true` e `closure_basis=deterministic_oracle_pass_plus_no_regression_plus_no_forbidden_surface`, saneia mirrors derivados e emite `artifacts/benchuix/benchuix_route_opening_candidate.json` apenas como candidato documental.
 
 Como artifact family desta fase viva, o repositório agora registra `artifacts/active_context/if09_closure_milestone_sanity_packet.json`, `if09_closure_milestone_mirror_drift_matrix.json`, `if09_closure_milestone_superseded_notes_manifest.json`, `if09_closure_milestone_no_real_execution_attestation.json`, `if09_closure_milestone_validation_evidence.json`, `artifacts/benchuix/benchuix_route_opening_candidate.json` e `benchuix_pre_route_scope_note.json`. Esses artifacts mantêm `Project_ARIS` intocado, preservam runtime/real_apply/product/Bedrock/secrets fechados, rotulam stale notes como `HISTORICAL_ONLY`, `SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET` e `NOT_CURRENT_STATE`, e deixam BenchUIX estritamente fora da rota viva.
-
-## Historical Appendix
-
-HISTORICAL_ONLY
-SUPERSEDED_BY_INF_REVALIDATION_ADJUDICATION_OR_CLOSURE_PACKET
-NOT_CURRENT_STATE
-
-As seções abaixo preservam trilhas e locks anteriores para auditoria. Qualquer menção abaixo deste ponto a `IF09-FIND-001 remains open`, `finding_closed=false`, `remediation_proven=false`, `INF_REVALIDATION_EXECUTION_PACKET` candidate-only ou `revalidation not executed` é histórica e não descreve o estado vivo atual.
 
 ## PURG-04 proof-loop corpus materialization
 
