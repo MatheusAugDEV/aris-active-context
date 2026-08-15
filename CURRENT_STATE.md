@@ -180,11 +180,11 @@
 - `package_installation_authorized: false`
 - `external_llm_api_authorized: false`
 
-### next_phase
+### next_phase (HISTORICAL — valores de Fase 4, superseded pela Fase 6 Guarda True; ver "CURRENT CANONICAL STATE" no topo deste arquivo)
 
-- `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`
-- `next_phase_authorized_by_operator`: `true`
-- Próxima subfase recomendada: `LAPIDARIUM_FASE_4B_DATASET_GENERATOR_QUOTING_REPAIR`
+- Valores históricos referentes à Fase 4 (2026-06-30): `next_phase`: `LAPIDARIUM_FASE_4_REVISAO_CODIGO_GENUINO`, `next_phase_authorized_by_operator`: `true`.
+- Estado canônico atual em `ACTIVE_CONTEXT_STATE.json`: `next_phase`: `null`, `active_next_phase`: `null`, `next_phase_authorized_by_operator`: `false`.
+- Candidate-only next route: `DIAGNOSTICO_AUTOMACAO_GATE`.
 - Aguardando instrução explícita do operador.
 
 ---
